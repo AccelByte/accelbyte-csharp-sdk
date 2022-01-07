@@ -1,0 +1,858 @@
+{
+  "host": "demo.accelbyte.io",
+  "info": {
+    "contact": {
+      "email": "engineering@accelbyte.io",
+      "name": "Engineering Team at AccelByte",
+      "url": "https://accelbyte.io"
+    },
+    "description": "Justice DS Log Manager Service",
+    "title": "justice-ds-log-manager-service",
+    "version": "2.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "HasPermission": {
+      "authorizationUrl": "https://dummy.oauth.net/auth",
+      "flow": "accessCode",
+      "scopes": {
+        "ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]": "ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]",
+        "ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ]": "ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ]"
+      },
+      "tokenUrl": "https://dumy.oauth.net/token",
+      "type": "oauth2"
+    },
+    "HasScope": {
+      "authorizationUrl": "https://dummy.oauth.net/auth",
+      "flow": "accessCode",
+      "scopes": {
+        "social": "social"
+      },
+      "tokenUrl": "https://dumy.oauth.net/token",
+      "type": "oauth2"
+    },
+    "authorization": {
+      "in": "header",
+      "name": "Authorization",
+      "type": "apiKey"
+    }
+  },
+  "swagger": "2.0",
+  "paths": {
+    "/dslogmanager/namespaces/{namespace}/servers/search": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "```\nRequired permission: ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ]\n\nThis endpoint used to retrieve terminated servers in a namespace\n```",
+        "operationId": "listTerminatedServers",
+        "parameters": [
+          {
+            "description": "namespace of the game",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "region of the server",
+            "in": "query",
+            "name": "region",
+            "type": "string"
+          },
+          {
+            "description": "provider of the server",
+            "in": "query",
+            "name": "provider",
+            "type": "string"
+          },
+          {
+            "description": "session id of the game",
+            "in": "query",
+            "name": "session_id",
+            "type": "string"
+          },
+          {
+            "description": "pod name of the server",
+            "in": "query",
+            "name": "pod_name",
+            "type": "string"
+          },
+          {
+            "description": "ID of the party",
+            "in": "query",
+            "name": "party_id",
+            "type": "string"
+          },
+          {
+            "description": "ID of the user",
+            "in": "query",
+            "name": "user_id",
+            "type": "string"
+          },
+          {
+            "description": "game mode of the game",
+            "in": "query",
+            "name": "game_mode",
+            "type": "string"
+          },
+          {
+            "description": "deployment of the game",
+            "in": "query",
+            "name": "deployment",
+            "type": "string"
+          },
+          {
+            "description": "start date on last update of the game RFC 3339",
+            "in": "query",
+            "name": "start_date",
+            "type": "string"
+          },
+          {
+            "description": "end date on last update of the game RFC 3339",
+            "in": "query",
+            "name": "end_date",
+            "type": "string"
+          },
+          {
+            "description": "next",
+            "in": "query",
+            "name": "next",
+            "type": "string"
+          },
+          {
+            "description": "previous",
+            "in": "query",
+            "name": "previous",
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json",
+          "text/x-log"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/models.ListTerminatedServersResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Retrieve All Terminated Servers",
+        "tags": [
+          "Terminated Servers"
+        ]
+      }
+    },
+    "/dslogmanager/namespaces/{namespace}/servers/{podName}/logs/download": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]\n\nRequired scope: social\n\nThis endpoint will download dedicated server\u0026#39;s log file (.log).",
+        "operationId": "downloadServerLogs",
+        "parameters": [
+          {
+            "description": "namespace of the game",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "name of the DS pod",
+            "in": "path",
+            "name": "podName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json",
+          "text/x-log"
+        ],
+        "responses": {
+          "200": {
+            "description": "server logs downloaded."
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]"
+            ],
+            "HasScope": [
+              "social"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Download dedicated server log files",
+        "tags": [
+          "Terminated Servers"
+        ]
+      }
+    },
+    "/dslogmanager/namespaces/{namespace}/servers/{podName}/logs/exists": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]\n\nRequired scope: social\n\nThis endpoint will check log file existence before download file.",
+        "operationId": "checkServerLogs",
+        "parameters": [
+          {
+            "description": "namespace of the game",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "name of the DS pod",
+            "in": "path",
+            "name": "podName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json",
+          "text/x-log"
+        ],
+        "responses": {
+          "200": {
+            "description": "Log exists.",
+            "schema": {
+              "$ref": "#/definitions/models.LogFileStatus"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]"
+            ],
+            "HasScope": [
+              "social"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Check dedicated server log files existence",
+        "tags": [
+          "Terminated Servers"
+        ]
+      }
+    },
+    "/dslogmanager/servers/logs/download": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]\n\nRequired scope: social\n\nThis endpoint will download dedicated server\u0026#39;s log file (.zip).",
+        "operationId": "batchDownloadServerLogs",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/models.BatchDownloadLogsRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "server logs downloaded."
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]"
+            ],
+            "HasScope": [
+              "social"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Batch Download dedicated server log files",
+        "tags": [
+          "All Terminated Servers"
+        ]
+      }
+    },
+    "/dslogmanager/servers/search": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "```\nRequired permission: ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ]\n\nThis endpoint used to retrieve terminated servers in all namespace\n```",
+        "operationId": "listAllTerminatedServers",
+        "parameters": [
+          {
+            "description": "namespace of the server",
+            "in": "query",
+            "name": "namespace",
+            "type": "string"
+          },
+          {
+            "description": "region of the server",
+            "in": "query",
+            "name": "region",
+            "type": "string"
+          },
+          {
+            "description": "provider of the server",
+            "in": "query",
+            "name": "provider",
+            "type": "string"
+          },
+          {
+            "description": "session id of the game",
+            "in": "query",
+            "name": "session_id",
+            "type": "string"
+          },
+          {
+            "description": "pod name of the server",
+            "in": "query",
+            "name": "pod_name",
+            "type": "string"
+          },
+          {
+            "description": "ID of the party",
+            "in": "query",
+            "name": "party_id",
+            "type": "string"
+          },
+          {
+            "description": "ID of the user",
+            "in": "query",
+            "name": "user_id",
+            "type": "string"
+          },
+          {
+            "description": "game mode of the game",
+            "in": "query",
+            "name": "game_mode",
+            "type": "string"
+          },
+          {
+            "description": "deployment of the game",
+            "in": "query",
+            "name": "deployment",
+            "type": "string"
+          },
+          {
+            "description": "next",
+            "in": "query",
+            "name": "next",
+            "type": "string"
+          },
+          {
+            "description": "previous",
+            "in": "query",
+            "name": "previous",
+            "type": "string"
+          },
+          {
+            "description": "start date on last update of the game RFC 3339",
+            "in": "query",
+            "name": "start_date",
+            "type": "string"
+          },
+          {
+            "description": "end date on last update of the game RFC 3339",
+            "in": "query",
+            "name": "end_date",
+            "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "limit",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/models.ListTerminatedServersResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Retrieve All Terminated Servers",
+        "tags": [
+          "All Terminated Servers"
+        ]
+      }
+    },
+    "/dslogmanager/v1/messages": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "get the list of messages.",
+        "operationId": "publicGetMessages",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/log.AppMessageDeclaration"
+              },
+              "type": "array"
+            }
+          },
+          "500": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "get service messages"
+      }
+    }
+  },
+  "definitions": {
+    "log.AppMessageDeclaration": {
+      "properties": {
+        "Attributes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "Code": {
+          "type": "string"
+        },
+        "CodeName": {
+          "type": "string"
+        },
+        "Section": {
+          "type": "string"
+        },
+        "Service": {
+          "type": "string"
+        },
+        "Text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Attributes",
+        "Code",
+        "CodeName",
+        "Section",
+        "Service",
+        "Text"
+      ]
+    },
+    "models.BatchDownloadLogsRequest": {
+      "properties": {
+        "Downloads": {
+          "items": {
+            "$ref": "#/definitions/models.DownloadLogsRequest"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "Downloads"
+      ]
+    },
+    "models.DownloadLogsRequest": {
+      "properties": {
+        "alloc_id": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "pod_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "alloc_id",
+        "namespace",
+        "pod_name"
+      ]
+    },
+    "models.ListTerminatedServersResponse": {
+      "properties": {
+        "data": {
+          "items": {
+            "$ref": "#/definitions/models.NotifPayloadServerStatusChange"
+          },
+          "type": "array"
+        },
+        "paging": {
+          "$ref": "#/definitions/models.PagingCursor"
+        }
+      },
+      "required": [
+        "data",
+        "paging"
+      ]
+    },
+    "models.LogFileStatus": {
+      "properties": {
+        "log_existence": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "log_existence"
+      ]
+    },
+    "models.MatchResult": {
+      "properties": {
+        "game_mode": {
+          "type": "string"
+        },
+        "matching_allies": {
+          "items": {
+            "$ref": "#/definitions/models.RequestMatchingAlly"
+          },
+          "type": "array"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "session_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "game_mode",
+        "matching_allies",
+        "namespace",
+        "session_id"
+      ]
+    },
+    "models.NotifPayloadServerStatusChange": {
+      "properties": {
+        "match": {
+          "$ref": "#/definitions/models.MatchResult"
+        },
+        "server": {
+          "$ref": "#/definitions/models.Server"
+        }
+      },
+      "required": [
+        "match",
+        "server"
+      ]
+    },
+    "models.PagingCursor": {
+      "properties": {
+        "first": {
+          "type": "string"
+        },
+        "last": {
+          "type": "string"
+        },
+        "next": {
+          "type": "string"
+        },
+        "previous": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "first",
+        "last",
+        "next",
+        "previous"
+      ]
+    },
+    "models.RequestMatchMember": {
+      "properties": {
+        "user_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "user_id"
+      ]
+    },
+    "models.RequestMatchParty": {
+      "properties": {
+        "party_attributes": {
+          "type": "object"
+        },
+        "party_id": {
+          "type": "string"
+        },
+        "party_members": {
+          "items": {
+            "$ref": "#/definitions/models.RequestMatchMember"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "party_attributes",
+        "party_id",
+        "party_members"
+      ]
+    },
+    "models.RequestMatchingAlly": {
+      "properties": {
+        "matching_parties": {
+          "items": {
+            "$ref": "#/definitions/models.RequestMatchParty"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "matching_parties"
+      ]
+    },
+    "models.Server": {
+      "properties": {
+        "allocation_id": {
+          "type": "string"
+        },
+        "alternate_ips": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "cpu_limit": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "deployment": {
+          "type": "string"
+        },
+        "game_version": {
+          "type": "string"
+        },
+        "image_version": {
+          "type": "string"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "last_update": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "mem_limit": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "params": {
+          "type": "string"
+        },
+        "pod_name": {
+          "type": "string"
+        },
+        "port": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ports": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "type": "object"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "session_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "status_history": {
+          "items": {
+            "$ref": "#/definitions/models.StatusHistory"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "allocation_id",
+        "alternate_ips",
+        "cpu_limit",
+        "deployment",
+        "game_version",
+        "image_version",
+        "ip",
+        "last_update",
+        "mem_limit",
+        "namespace",
+        "params",
+        "pod_name",
+        "port",
+        "ports",
+        "provider",
+        "region",
+        "session_id",
+        "status",
+        "status_history"
+      ]
+    },
+    "models.StatusHistory": {
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "time_stamp": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "time_stamp"
+      ]
+    },
+    "response.Error": {
+      "properties": {
+        "errorCode": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "errorMessage": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "errorCode",
+        "errorMessage"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1822 @@
+{
+  "host": "demo.accelbyte.io",
+  "info": {
+    "contact": {
+      "email": "engineering@accelbyte.io",
+      "name": "Engineering Team at AccelByte",
+      "url": "https://accelbyte.io"
+    },
+    "description": "Justice GDPR Service",
+    "title": "justice-gdpr-service",
+    "version": "1.11.3"
+  },
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "HasPermission": {
+      "authorizationUrl": "https://dummy.oauth.net/auth",
+      "flow": "accessCode",
+      "scopes": {
+        "ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [CREATE]": "ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [CREATE]",
+        "ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [DELETE]": "ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [DELETE]",
+        "ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [READ]": "ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [READ]",
+        "ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [UPDATE]": "ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [UPDATE]",
+        "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER [READ]": "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER [READ]",
+        "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [CREATE]": "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [CREATE]",
+        "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [DELETE]": "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [DELETE]",
+        "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [READ]": "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [READ]"
+      },
+      "tokenUrl": "https://dumy.oauth.net/token",
+      "type": "oauth2"
+    },
+    "HasScope": {
+      "authorizationUrl": "https://dummy.oauth.net/auth",
+      "flow": "accessCode",
+      "scopes": {
+        "account": "account"
+      },
+      "tokenUrl": "https://dumy.oauth.net/token",
+      "type": "oauth2"
+    },
+    "authorization": {
+      "in": "header",
+      "name": "Authorization",
+      "type": "apiKey"
+    }
+  },
+  "swagger": "2.0",
+  "paths": {
+    "/gdpr/admin/namespaces/{namespace}/deletions": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "\u0026lt;p\u0026gt;Required permission \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:INFORMATION:USER[READ]\u0026lt;/code\u0026gt; and scope \u0026lt;code\u0026gt;account\u0026lt;/code\u0026gt;\u0026lt;/p\u0026gt;",
+        "operationId": "AdminGetListDeletionDataRequest",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The day in UTC of the deletion request. format : YYYY-MM-DD. Default : today time in UTC.",
+            "in": "query",
+            "name": "requestDate",
+            "type": "string"
+          },
+          {
+            "description": "The day in UTC format to get deletion request list after that. format : YYYY-MM-DD",
+            "in": "query",
+            "name": "after",
+            "type": "string"
+          },
+          {
+            "description": "The day in UTC format to get deletion request list before that. format : YYYY-MM-DD",
+            "in": "query",
+            "name": "before",
+            "type": "string"
+          },
+          {
+            "description": "the maximum number of data that may be returned (1...100)",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          },
+          {
+            "description": "The start position that points to query data",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/models.ListDeletionDataResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [],
+            "HasScope": [
+              "account"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Retrieve all user's account deletion requests in specified date",
+        "tags": [
+          "Data Deletion"
+        ]
+      }
+    },
+    "/gdpr/admin/namespaces/{namespace}/emails/configurations": {
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Delete a list of admin email addresses to stop receiving personal data request notification. \n\t\t\t\u0026lt;p\u0026gt;Required permission \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [DELETE]\u0026lt;/code\u0026gt; and scope \u0026lt;code\u0026gt;account\u0026lt;/code\u0026gt;\u0026lt;/p\u0026gt;",
+        "operationId": "DeleteAdminEmailConfiguration",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "collectionFormat": "csv",
+            "description": "list of admin email to delete",
+            "in": "query",
+            "items": {
+              "type": "string"
+            },
+            "name": "emails",
+            "required": true,
+            "type": "array"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [DELETE]"
+            ],
+            "HasScope": [
+              "account"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Delete admin emails configurations",
+        "tags": [
+          "Data Retrieval"
+        ]
+      },
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Get list of admin email address configuration. \n\t\t\t\u0026lt;p\u0026gt;Required permission \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [READ]\u0026lt;/code\u0026gt; and scope \u0026lt;code\u0026gt;account\u0026lt;/code\u0026gt;\u0026lt;/p\u0026gt;",
+        "operationId": "GetAdminEmailConfiguration",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [READ]"
+            ],
+            "HasScope": [
+              "account"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Get admin email addresses configuration",
+        "tags": [
+          "Data Retrieval"
+        ]
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Add admin email address for receiving personal data request notification. \n\t\t\t\u0026lt;p\u0026gt;Required permission \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [CREATE]\u0026lt;/code\u0026gt; and scope \u0026lt;code\u0026gt;account\u0026lt;/code\u0026gt;\u0026lt;/p\u0026gt;",
+        "operationId": "SaveAdminEmailConfiguration",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [CREATE]"
+            ],
+            "HasScope": [
+              "account"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Add admin email address configuration",
+        "tags": [
+          "Data Retrieval"
+        ]
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Update admin email address for receiving personal data request notification. \u0026lt;p\u0026gt;Required permission \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [UPDATE]\u0026lt;/code\u0026gt;\u0026lt;/p\u0026gt;",
+        "operationId": "UpdateAdminEmailConfiguration",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [UPDATE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Update admin email address configuration",
+        "tags": [
+          "Data Retrieval"
+        ]
+      }
+    },
+    "/gdpr/admin/namespaces/{namespace}/requests": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "\u0026lt;p\u0026gt;Required permission \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:INFORMATION:USER [READ]\u0026lt;/code\u0026gt; and scope \u0026lt;code\u0026gt;account\u0026lt;/code\u0026gt;\u0026lt;/p\u0026gt;",
+        "operationId": "AdminGetListPersonalDataRequest",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "request date with format YYYY-MM-DD. Default value today UTC",
+            "in": "query",
+            "name": "requestDate",
+            "type": "string"
+          },
+          {
+            "description": "the maximum number of data that may be returned (1...100)",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          },
+          {
+            "description": "The start position that points to query data",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/models.ListPersonalDataResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER [READ]"
+            ],
+            "HasScope": [
+              "account"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Get list personal data requests",
+        "tags": [
+          "Data Retrieval"
+        ]
+      }
+    },
+    "/gdpr/admin/namespaces/{namespace}/users/{userId}/deletions": {
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "\u0026lt;p\u0026gt;Required permission \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [DELETE]\u0026lt;/code\u0026gt; and scope \u0026lt;code\u0026gt;account\u0026lt;/code\u0026gt;\u0026lt;/p\u0026gt;",
+        "operationId": "AdminCancelUserAccountDeletionRequest",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM ID of the user",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [DELETE]"
+            ],
+            "HasScope": [
+              "account"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Cancel user's account deletion request",
+        "tags": [
+          "Data Deletion"
+        ]
+      },
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "\u0026lt;p\u0026gt;Required permission \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId}[READ]\u0026lt;/code\u0026gt; and scope \u0026lt;code\u0026gt;account\u0026lt;/code\u0026gt;\u0026lt;/p\u0026gt;",
+        "operationId": "AdminGetUserAccountDeletionRequest",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM ID of the user",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/models.DeletionData"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [],
+            "HasScope": [
+              "account"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Retrieve specific user's account deletion request",
+        "tags": [
+          "Data Deletion"
+        ]
+      },
+      "post": {
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "description": "\u0026lt;p\u0026gt;Required permission \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [CREATE]\u0026lt;/code\u0026gt; and scope \u0026lt;code\u0026gt;account\u0026lt;/code\u0026gt;\u0026lt;/p\u0026gt;",
+        "operationId": "AdminSubmitUserAccountDeletionRequest",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM ID of the user",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/models.RequestDeleteResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [CREATE]"
+            ],
+            "HasScope": [
+              "account"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Submit user's account deletion requests",
+        "tags": [
+          "Data Deletion"
+        ]
+      }
+    },
+    "/gdpr/admin/namespaces/{namespace}/users/{userId}/requests": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "\u0026lt;p\u0026gt;Required permission \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [READ]\u0026lt;/code\u0026gt; and scope \u0026lt;code\u0026gt;account\u0026lt;/code\u0026gt;\u0026lt;/p\u0026gt;",
+        "operationId": "AdminGetUserPersonalDataRequests",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM id of the user",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the maximum number of data that may be returned (1...100)",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          },
+          {
+            "description": "The start position that points to query data",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/models.UserPersonalDataResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [READ]"
+            ],
+            "HasScope": [
+              "account"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Get user's personal data requests",
+        "tags": [
+          "Data Retrieval"
+        ]
+      },
+      "post": {
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "description": "\u0026lt;p\u0026gt;Required permission \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [CREATE]\u0026lt;/code\u0026gt; and scope \u0026lt;code\u0026gt;account\u0026lt;/code\u0026gt;\u0026lt;/p\u0026gt;\n\u0026lt;p\u0026gt;If admin request data for themselves, password is need to be set\u0026lt;/p\u0026gt;",
+        "operationId": "AdminRequestDataRetrieval",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM user ID",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM password of the user",
+            "in": "formData",
+            "name": "password",
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/models.DataRetrievalResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [CREATE]"
+            ],
+            "HasScope": [
+              "account"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Submit user personal data retrieval request",
+        "tags": [
+          "Data Retrieval"
+        ]
+      }
+    },
+    "/gdpr/admin/namespaces/{namespace}/users/{userId}/requests/{requestDate}": {
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "\u0026lt;p\u0026gt;Required permission \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [DELETE]\u0026lt;/code\u0026gt; and scope \u0026lt;code\u0026gt;account\u0026lt;/code\u0026gt;\u0026lt;/p\u0026gt;",
+        "operationId": "AdminCancelUserPersonalDataRequest",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM id of the user",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Request date in RFC3339 format",
+            "in": "path",
+            "name": "requestDate",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [DELETE]"
+            ],
+            "HasScope": [
+              "account"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Cancel user's personal data requests",
+        "tags": [
+          "Data Retrieval"
+        ]
+      }
+    },
+    "/gdpr/admin/namespaces/{namespace}/users/{userId}/requests/{requestDate}/generate": {
+      "post": {
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "description": "\u0026lt;p\u0026gt;Required permission \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [READ]\u0026lt;/code\u0026gt; and scope \u0026lt;code\u0026gt;account\u0026lt;/code\u0026gt;\u0026lt;/p\u0026gt;",
+        "operationId": "AdminGeneratePersonalDataURL",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM id of the user",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Request date in RFC3339 format",
+            "in": "path",
+            "name": "requestDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM password of the user",
+            "in": "formData",
+            "name": "password",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/models.UserDataURL"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [READ]"
+            ],
+            "HasScope": [
+              "account"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Generate personal data download url",
+        "tags": [
+          "Data Retrieval"
+        ]
+      }
+    },
+    "/gdpr/public/namespaces/{namespace}/users/{userId}/deletions": {
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "\u0026lt;p\u0026gt;Requires valid user access token\u0026lt;/p\u0026gt;",
+        "operationId": "PublicCancelUserAccountDeletionRequest",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM ID of the user",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Cancel user's account deletion request",
+        "tags": [
+          "Data Deletion"
+        ]
+      },
+      "post": {
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "description": "\u0026lt;p\u0026gt;Requires valid user access token and password",
+        "operationId": "PublicSubmitUserAccountDeletionRequest",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM ID of the user",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM password of the user",
+            "in": "formData",
+            "name": "password",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/models.RequestDeleteResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Submit user's account deletion requests",
+        "tags": [
+          "Data Deletion"
+        ]
+      }
+    },
+    "/gdpr/public/namespaces/{namespace}/users/{userId}/deletions/status": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "\u0026lt;p\u0026gt;Requires valid user access token\u0026lt;/p\u0026gt;",
+        "operationId": "PublicGetUserAccountDeletionStatus",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM ID of the user",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/models.DeletionStatus"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Retrieve specific user's account deletion status",
+        "tags": [
+          "Data Deletion"
+        ]
+      }
+    },
+    "/gdpr/public/namespaces/{namespace}/users/{userId}/requests": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "\u0026lt;p\u0026gt;Requires valid user access token\u0026lt;/p\u0026gt;",
+        "operationId": "PublicGetUserPersonalDataRequests",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM id of the user",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the maximum number of data that may be returned (1...100)",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          },
+          {
+            "description": "The start position that points to query data",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/models.UserPersonalDataResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Get user's personal data requests",
+        "tags": [
+          "Data Retrieval"
+        ]
+      },
+      "post": {
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "description": "\u0026lt;p\u0026gt;Requires valid user access token\u0026lt;/p\u0026gt;",
+        "operationId": "PublicRequestDataRetrieval",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM id of the user",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM password of the user",
+            "in": "formData",
+            "name": "password",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/models.DataRetrievalResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Submit personal data retrieval request",
+        "tags": [
+          "Data Retrieval"
+        ]
+      }
+    },
+    "/gdpr/public/namespaces/{namespace}/users/{userId}/requests/{requestDate}": {
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "\u0026lt;p\u0026gt;Requires valid user access token\u0026lt;/p\u0026gt;",
+        "operationId": "PublicCancelUserPersonalDataRequest",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM id of the user",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Request date in RFC3339 format",
+            "in": "path",
+            "name": "requestDate",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "schema": {
+              "$ref": "#/definitions/models.ListPersonalDataResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Cancel user's personal data requests",
+        "tags": [
+          "Data Retrieval"
+        ]
+      }
+    },
+    "/gdpr/public/namespaces/{namespace}/users/{userId}/requests/{requestDate}/generate": {
+      "post": {
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "description": "\u0026lt;p\u0026gt;Requires valid user access token\u0026lt;/p\u0026gt;",
+        "operationId": "PublicGeneratePersonalDataURL",
+        "parameters": [
+          {
+            "description": "namespace of the user",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM id of the user",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Request date in RFC3339 format",
+            "in": "path",
+            "name": "requestDate",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "IAM password of the user",
+            "in": "formData",
+            "name": "password",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/models.UserDataURL"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Generate personal data download url",
+        "tags": [
+          "Data Retrieval"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "models.DataRetrievalResponse": {
+      "properties": {
+        "Namespace": {
+          "type": "string"
+        },
+        "RequestDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Namespace",
+        "RequestDate",
+        "UserID"
+      ]
+    },
+    "models.DeletionData": {
+      "properties": {
+        "DisplayName": {
+          "type": "string"
+        },
+        "RequestDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "DisplayName",
+        "RequestDate",
+        "Status",
+        "UserID"
+      ]
+    },
+    "models.DeletionStatus": {
+      "properties": {
+        "DeletionStatus": {
+          "type": "boolean"
+        },
+        "DisplayName": {
+          "type": "string"
+        },
+        "ExecutionDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "DeletionStatus",
+        "DisplayName",
+        "Status",
+        "UserID"
+      ]
+    },
+    "models.ListDeletionDataResponse": {
+      "properties": {
+        "Data": {
+          "items": {
+            "$ref": "#/definitions/models.DeletionData"
+          },
+          "type": "array"
+        },
+        "Paging": {
+          "$ref": "#/definitions/models.Pagination"
+        }
+      },
+      "required": [
+        "Data",
+        "Paging"
+      ]
+    },
+    "models.ListPersonalDataResponse": {
+      "properties": {
+        "Data": {
+          "items": {
+            "$ref": "#/definitions/models.PersonalData"
+          },
+          "type": "array"
+        },
+        "Paging": {
+          "$ref": "#/definitions/models.Pagination"
+        }
+      },
+      "required": [
+        "Data",
+        "Paging"
+      ]
+    },
+    "models.Pagination": {
+      "properties": {
+        "First": {
+          "type": "string"
+        },
+        "Last": {
+          "type": "string"
+        },
+        "Next": {
+          "type": "string"
+        },
+        "Previous": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "First",
+        "Last",
+        "Next",
+        "Previous"
+      ]
+    },
+    "models.PersonalData": {
+      "properties": {
+        "DataExpirationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "DisplayName": {
+          "type": "string"
+        },
+        "RequestDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "ServiceErrors": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "ServiceStatuses": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "DataExpirationDate",
+        "DisplayName",
+        "RequestDate",
+        "ServiceErrors",
+        "ServiceStatuses",
+        "Status",
+        "UserID"
+      ]
+    },
+    "models.RequestDeleteResponse": {
+      "properties": {
+        "Namespace": {
+          "type": "string"
+        },
+        "UserID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Namespace",
+        "UserID"
+      ]
+    },
+    "models.UserDataURL": {
+      "properties": {
+        "URL": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "URL"
+      ]
+    },
+    "models.UserPersonalData": {
+      "properties": {
+        "DataExpirationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "RequestDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "DataExpirationDate",
+        "RequestDate",
+        "Status"
+      ]
+    },
+    "models.UserPersonalDataResponse": {
+      "properties": {
+        "Data": {
+          "items": {
+            "$ref": "#/definitions/models.UserPersonalData"
+          },
+          "type": "array"
+        },
+        "Paging": {
+          "$ref": "#/definitions/models.Pagination"
+        }
+      },
+      "required": [
+        "Data",
+        "Paging"
+      ]
+    },
+    "response.Error": {
+      "properties": {
+        "errorCode": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "errorMessage": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "errorCode",
+        "errorMessage"
+      ]
+    }
+  }
+}
