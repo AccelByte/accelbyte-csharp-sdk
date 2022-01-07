@@ -1,0 +1,229 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Text.Json;
+using System.Web;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Client;
+using AccelByte.Sdk.Core.Repository;
+using NUnit.Framework;
+
+namespace AccelByte.Sdk.Tests
+{
+    public class Tests
+    {
+        private static Core.Client.HttpClient _httpClient = new DefaultHttpClient();
+        private static TokenRepository _tokenRepository = DefaultTokenRepository.getInstance();
+
+        private static TestConfigRepository _httpbinConfigRepository = new TestConfigRepository(
+            "https://httpbin.org", 
+            "DUMMY_CLIENT_ID", 
+            "DUMMY_CLIENT_SECRET");
+        private static TestConfigRepository _clientConfigRepository = new TestConfigRepository(
+            Environment.GetEnvironmentVariable("BASE_URL")!, 
+            Environment.GetEnvironmentVariable("CLIENT_ID")!, 
+            Environment.GetEnvironmentVariable("CLIENT_SECRET")!);
+        private static TestConfigRepository _userConfigRepository = new TestConfigRepository(
+            Environment.GetEnvironmentVariable("BASE_URL")!, 
+            Environment.GetEnvironmentVariable("WEBSITE_CLIENT_ID")!,    // Use Oauth Client Id for Justice Adminportal Website
+            null!);
+
+        [Test]
+        [TestCase("GET")]
+        [TestCase("POST")]
+        [TestCase("PUT")]
+        [TestCase("PATCH")]
+        [TestCase("DELETE")]
+        public void HttpbinRequestMethod(string method)
+        {
+            var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
+            var sdk = new AccelByteSDK(config);
+
+            var op = new HttpbinOperation(new HttpMethod(method));
+
+            var response = sdk.runRequest(op);
+
+            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) as HttpbinAnythingResponse ??
+                    throw new AssertionException("Result is null");
+
+            Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
+        }
+
+        [Test]
+        [TestCase("POST", "abc/def:123?x=1&y=2")] // Special characters need to be escaped
+        public void HttpbinRequestPathParam(string method, string pathParam)
+        {
+            var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
+            var sdk = new AccelByteSDK(config);
+
+            var op = new HttpbinOperation(
+                    new HttpMethod(method), 
+                    "/anything/{test_path_param}",
+                    new Dictionary<string, string>() {
+                        {"test_path_param", pathParam}
+                    });
+
+            var response = sdk.runRequest(op);
+
+            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) as HttpbinAnythingResponse ??
+                    throw new AssertionException("Result is null");
+
+            var bashPath = sdk.Configuration.ConfigRepository.BaseUrl;
+            var escapedPathParam = HttpUtility.UrlEncode(pathParam);
+            var url = op.GetFullUrl(bashPath);
+            var isPathParamEscaped = url.Contains(escapedPathParam);
+
+            Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
+            Assert.True(isPathParamEscaped, $"Path param assert failed: {url}");
+
+            var args = result.Args ?? throw new AssertionException("Args is null");
+
+            Assert.False(args.Any(), $"Args assert failed: {args.Count}");
+        }
+
+        [Test]
+        [TestCase("GET", "?key=key&", "?value=value&")] // Special characters need to be escaped
+        public void HttpbinRequestQueryString(string method, string key, string value)
+        {
+            var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
+            var sdk = new AccelByteSDK(config);
+
+            var op = new HttpbinOperation(new HttpMethod(method),
+                    queryParams: new Dictionary<string, string>() { { key, value } });
+
+            var response = sdk.runRequest(op);
+
+            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) as HttpbinAnythingResponse ??
+                    throw new AssertionException("Result is null");
+
+            var args = result.Args ?? throw new AssertionException("Args is null");
+
+            Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
+            Assert.AreEqual(args[key], value, $"Query value assert failed: {value}");
+        }
+
+        [Test]
+        [TestCase("POST", "?key=key&", "?value=value&")] // Special characters need to be escaped
+        public void HttpbinRequestFormParam(string method, string key, string value)
+        {
+            var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
+            var sdk = new AccelByteSDK(config);
+
+            var op = new HttpbinOperation(new HttpMethod(method));
+
+            op.FormParams[key] = value;
+
+            var response = sdk.runRequest(op);
+
+            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) as HttpbinAnythingResponse ??
+                    throw new AssertionException("Result is null");
+
+            var form = result.Form ?? throw new AssertionException("Form is null");
+
+            Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
+            Assert.AreEqual(form[key], value, $"Form value assert failed: {value}");
+        }
+
+        [Test]
+        [TestCase("POST")] // Special characters need to be escaped
+        public void HttpbinRequestJson(string method)
+        {
+            var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
+            var sdk = new AccelByteSDK(config);
+
+            var request = new TestRequest()
+            {
+                Name = "test item",
+                Weight = 1.2345,
+                Quantity = 999,
+                Dimensions = new Dictionary<string, double>() { { "x", 6.7890 } }
+            };
+
+            var op = new HttpbinOperation(new HttpMethod(method), bodyParams: request);
+
+            var response = sdk.runRequest(op);
+
+            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) as HttpbinAnythingResponse ??
+                    throw new AssertionException("Result is null");
+
+            Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
+
+            var dataString = result.Data ?? throw new AssertionException("Data string is null");
+            var data = JsonSerializer.Deserialize<TestRequest>(result.Data) ?? throw new AssertionException("Data is null");;
+
+            Assert.AreEqual(request.Name, data.Name);
+            Assert.AreEqual(request.Weight, data.Weight);
+            Assert.AreEqual(request.Quantity, data.Quantity);
+            CollectionAssert.AreEqual(request.Dimensions, data.Dimensions);
+        }
+
+        [Test]
+        [TestCase("POST")] // Special characters need to be escaped
+        public void HttpbinRequestError(string method)
+        {
+            var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
+            var sdk = new AccelByteSDK(config);
+
+            var request = new TestRequest();
+
+            var op = new HttpbinOperation(new HttpMethod(method), path: "/status/500",
+                    bodyParams: request);
+
+            var response = sdk.runRequest(op);
+
+            Assert.Throws<HttpResponseException>(() =>
+            {
+                op.ParseResponse(response.Code, response.ContentType, response.Payload);
+            });
+        }
+
+        [Test]
+        [Ignore("WIP Setup Jenkins environment variable")]
+        public void LoginLogoutClient()
+        {
+            var config = new AccelByteConfig(_httpClient, _tokenRepository, _clientConfigRepository);
+            var sdk = new AccelByteSDK(config);
+
+            Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.BaseUrl));
+            Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.ClientId));
+            Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.ClientSecret));
+
+            Assert.IsTrue(sdk.LoginClient(), $"Login client failed");
+            Assert.IsTrue(!string.IsNullOrEmpty(sdk.Configuration.TokenRepository.GetToken()));
+
+            sdk.Logout();
+            Assert.IsTrue(string.IsNullOrEmpty(sdk.Configuration.TokenRepository.GetToken()));
+        }
+
+        [Test]
+        [Ignore("WIP Setup Jenkins environment variable")]
+        public void LoginLogoutUser()
+        {
+            var config = new AccelByteConfig(_httpClient, _tokenRepository, _userConfigRepository);
+            var sdk = new AccelByteSDK(config);
+
+            Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.BaseUrl));
+            Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.ClientId));
+            //Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.ClientSecret)); // Not required for user login
+
+            var username = Environment.GetEnvironmentVariable("ADMIN_USER_NAME") ?? 
+                    throw new AssertionException("Username is null"); 
+            var password = Environment.GetEnvironmentVariable("ADMIN_USER_PASS") ?? 
+                    throw new AssertionException("Password is null"); 
+
+            Assert.True(!string.IsNullOrEmpty(username));
+            Assert.True(!string.IsNullOrEmpty(password));
+
+            Assert.IsTrue(sdk.LoginUser(username, password), $"Login user failed") ;
+            Assert.IsTrue(!string.IsNullOrEmpty(sdk.Configuration.TokenRepository.GetToken()));
+
+            sdk.Logout();
+            Assert.IsTrue(string.IsNullOrEmpty(sdk.Configuration.TokenRepository.GetToken()));
+        }
+
+        // TODO Redirect response
+
+        // TODO Binary request & response
+    }
+}
