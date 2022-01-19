@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Core.Client
                 payload = response.Content.ReadAsStream();
             }
 
-            return new HttpResponse(response.StatusCode, contentType, payload);
+            return new HttpResponse(response.StatusCode, contentType, payload!);
         }
 
         private static bool IsMediaTypeApplicationJson(string mediaType)

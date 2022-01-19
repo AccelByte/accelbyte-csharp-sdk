@@ -30,18 +30,10 @@ namespace AccelByte.Sdk.Core
 
         public string? LocationQuery { get; init; }
 
-        public abstract object? ParseResponse(HttpStatusCode code, string contentTpe, Stream payload);
-
-        public Dictionary<string, Dictionary<string, string>> GetAllParams()
-        {
-            return new Dictionary<string, Dictionary<string, string>>(); // TODO
-        }
-
         public string GetFullUrl(string baseUrl)
         {
             return Operation.CreateFullUrl(this.Path, baseUrl, PathParams, QueryParams);
         }
-
         private static string CreateFullUrl(string url, string baseUrl, Dictionary<string, string> pathParams, Dictionary<string, string> queryParams)
         {
             var result = new StringBuilder();

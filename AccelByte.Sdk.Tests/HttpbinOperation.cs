@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Tests
 
         public override string? Security {get; set;}
 
-        public override object? ParseResponse(HttpStatusCode code, string contentTpe, Stream payload)
+        public HttpbinAnythingResponse? ParseResponse(HttpStatusCode code, string contentTpe, Stream payload)
         {
             if (code != (HttpStatusCode)200)
             {

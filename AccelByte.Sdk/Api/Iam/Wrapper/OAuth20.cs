@@ -10,25 +10,94 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public OAuth20(AccelByteSDK sdk){
             _sdk = sdk;
         }
-
-        // TODO More
-
-        public OauthmodelTokenResponseV3 TokenGrantV3(TokenGrantV3 input) {
+        
+        public Model.OauthmodelTokenThirdPartyResponse? AdminRetrieveUserThirdPartyPlatformTokenV3(AdminRetrieveUserThirdPartyPlatformTokenV3 input) {
             var response = _sdk.runRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
-                    response.Payload) as OauthmodelTokenResponseV3;
+                    response.Payload);
         }
+        public void RevokeUserV3(RevokeUserV3 input) {
+            var response = _sdk.runRequest(input);
 
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public string AuthorizeV3(AuthorizeV3 input) {
             var response = _sdk.runRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
-                    response.Payload) as string;
+                    response.Payload);
+        }
+        public Model.OauthmodelTokenIntrospectResponse? TokenIntrospectionV3(TokenIntrospectionV3 input) {
+            var response = _sdk.runRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OauthcommonJWKSet? GetJWKSV3(GetJWKSV3 input) {
+            var response = _sdk.runRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OauthmodelTokenThirdPartyResponse? RetrieveUserThirdPartyPlatformTokenV3(RetrieveUserThirdPartyPlatformTokenV3 input) {
+            var response = _sdk.runRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public string AuthCodeRequestV3(AuthCodeRequestV3 input) {
+            var response = _sdk.runRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OauthmodelTokenResponse? PlatformTokenGrantV3(PlatformTokenGrantV3 input) {
+            var response = _sdk.runRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OauthapiRevocationList? GetRevocationListV3(GetRevocationListV3 input) {
+            var response = _sdk.runRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void TokenRevocationV3(TokenRevocationV3 input) {
+            var response = _sdk.runRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OauthmodelTokenResponseV3? TokenGrantV3(TokenGrantV3 input) {
+            var response = _sdk.runRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
         }
     }
 }

@@ -84,9 +84,11 @@ namespace AccelByte.Sdk.Core
                     
             tokenGrantV3.Security = null;
 
-            var token = oAuth20.TokenGrantV3(tokenGrantV3);
+            var token = oAuth20.TokenGrantV3(tokenGrantV3) ??
+                    throw new Exception($"TokenGrantV3 returned null");
 
-            Configuration.TokenRepository.StoreToken(token.AccessToken);
+            Configuration.TokenRepository.StoreToken(token.AccessToken ??
+                    throw new Exception($"Access token is null"));
 
             return true;
         }
@@ -102,10 +104,11 @@ namespace AccelByte.Sdk.Core
                          "client_credentials");
             var oAuth20 = new OAuth20(this);
 
-            var token = oAuth20.TokenGrantV3(tokenGrantV3);
+            var token = oAuth20.TokenGrantV3(tokenGrantV3) ??
+                    throw new Exception($"TokenGrantV3 returned null");
 
-
-            Configuration.TokenRepository.StoreToken(token.AccessToken);
+            Configuration.TokenRepository.StoreToken(token.AccessToken ??
+                    throw new Exception($"Access token is null"));
 
             return true;
         }
