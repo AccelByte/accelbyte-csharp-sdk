@@ -1,7 +1,6 @@
-// Fidler $env:HTTPS_PROXY="127.0.0.1:8888"
-
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -21,15 +20,15 @@ namespace AccelByte.Sdk.Tests
         private static TokenRepository _tokenRepository = DefaultTokenRepository.getInstance();
 
         private static TestConfigRepository _httpbinConfigRepository = new TestConfigRepository(
-            "https://httpbin.org", 
-            "DUMMY_CLIENT_ID", 
+            "https://httpbin.org",
+            "DUMMY_CLIENT_ID",
             "DUMMY_CLIENT_SECRET");
         private static TestConfigRepository _clientConfigRepository = new TestConfigRepository(
-            Environment.GetEnvironmentVariable("BASE_URL")!, 
-            Environment.GetEnvironmentVariable("CLIENT_ID")!, 
+            Environment.GetEnvironmentVariable("BASE_URL")!,
+            Environment.GetEnvironmentVariable("CLIENT_ID")!,
             Environment.GetEnvironmentVariable("CLIENT_SECRET")!);
         private static TestConfigRepository _userConfigRepository = new TestConfigRepository(
-            Environment.GetEnvironmentVariable("BASE_URL")!, 
+            Environment.GetEnvironmentVariable("BASE_URL")!,
             Environment.GetEnvironmentVariable("WEBSITE_CLIENT_ID")!,    // Use Oauth Client Id for Justice Adminportal Website
             null!);
 
@@ -48,7 +47,7 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.runRequest(op);
 
-            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) ??
+            var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
@@ -62,7 +61,7 @@ namespace AccelByte.Sdk.Tests
             var sdk = new AccelByteSDK(config);
 
             var op = new HttpbinOperation(
-                    new HttpMethod(method), 
+                    new HttpMethod(method),
                     "/anything/{test_path_param}",
                     new Dictionary<string, string>() {
                         {"test_path_param", pathParam}
@@ -70,7 +69,7 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.runRequest(op);
 
-            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) ??
+            var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             var bashPath = sdk.Configuration.ConfigRepository.BaseUrl;
@@ -94,17 +93,71 @@ namespace AccelByte.Sdk.Tests
             var sdk = new AccelByteSDK(config);
 
             var op = new HttpbinOperation(new HttpMethod(method),
-                    queryParams: new Dictionary<string, string>() { { key, value } });
+                    queryParams: new Dictionary<string, dynamic>() { { key, value } });
 
             var response = sdk.runRequest(op);
 
-            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) ??
+            var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             var args = result.Args ?? throw new AssertionException("Args is null");
 
             Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
-            Assert.AreEqual(args[key], value, $"Query value assert failed: {value}");
+            Assert.AreEqual(value, args[key], $"Query value assert failed: {value}");
+        }
+
+        [Test]
+        [TestCase("GET", "csv")]
+        [TestCase("GET", "multi")]
+        public void HttpbinRequestQueryStringArray(string method, string collectionFormat)
+        {
+            var key = "?key=key&";  // Special characters need to be escaped
+            var value = new List<string> { "?a=a&\"?a=a&", "?b=b&\"?b=b&" };  // Special characters need to be escaped
+
+            var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
+            var sdk = new AccelByteSDK(config);
+
+            var op = new HttpbinOperation(new HttpMethod(method),
+                    queryParams: new Dictionary<string, dynamic>() {
+                        { key, value }
+                    },
+                    collectionFormatMap: new Dictionary<string, string>() {
+                        {key, collectionFormat } 
+                    });
+
+            var response = sdk.runRequest(op);
+
+            if (collectionFormat == "multi")
+            {
+                var result = op.ParseResponse<Dictionary<string,List<string>>>(response.Code, response.ContentType, response.Payload) ??
+                        throw new AssertionException("Result is null");
+
+                var args = result.Args ?? throw new AssertionException("Args is null");
+
+                Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
+                Assert.AreEqual(value, args[key], $"Query value assert failed: {args[key]}");
+            }
+            else if (collectionFormat == "csv")
+            {
+                var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
+                        throw new AssertionException("Result is null");
+
+                var args = result.Args ?? throw new AssertionException("Args is null");
+
+                var expected = new StringBuilder();
+
+                foreach (var v in value)
+                {
+                    expected.Append($"\"{v.Replace("\"", "\"\"")}\"");
+                    expected.Append(",");
+                }
+
+                Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
+                Assert.AreEqual(expected.ToString(), args[key], $"Query value assert failed: {args[key]}");
+            }
+            else {
+                throw new NotSupportedException($"Unsupported test collection format (format: {collectionFormat})");
+            }
         }
 
         [Test]
@@ -120,7 +173,7 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.runRequest(op);
 
-            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) ??
+            var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             var form = result.Form ?? throw new AssertionException("Form is null");
@@ -143,7 +196,7 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.runRequest(op);
 
-            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) ??
+            var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             var form = result.Form ?? throw new AssertionException("Form is null");
@@ -175,13 +228,13 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.runRequest(op);
 
-            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) as HttpbinAnythingResponse ??
+            var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
 
             var dataString = result.Data ?? throw new AssertionException("Data string is null");
-            var data = JsonSerializer.Deserialize<TestRequest>(result.Data) ?? throw new AssertionException("Data is null");;
+            var data = JsonSerializer.Deserialize<TestRequest>(result.Data) ?? throw new AssertionException("Data is null"); ;
 
             Assert.AreEqual(request.Name, data.Name);
             Assert.AreEqual(request.Weight, data.Weight);
@@ -205,7 +258,7 @@ namespace AccelByte.Sdk.Tests
 
             Assert.Throws<HttpResponseException>(() =>
             {
-                op.ParseResponse(response.Code, response.ContentType, response.Payload);
+                op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload);
             });
         }
 
@@ -238,15 +291,15 @@ namespace AccelByte.Sdk.Tests
             Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.ClientId));
             //Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.ClientSecret)); // Not required for user login
 
-            var username = Environment.GetEnvironmentVariable("ADMIN_USER_NAME") ?? 
-                    throw new AssertionException("Username is null"); 
-            var password = Environment.GetEnvironmentVariable("ADMIN_USER_PASS") ?? 
-                    throw new AssertionException("Password is null"); 
+            var username = Environment.GetEnvironmentVariable("ADMIN_USER_NAME") ??
+                    throw new AssertionException("Username is null");
+            var password = Environment.GetEnvironmentVariable("ADMIN_USER_PASS") ??
+                    throw new AssertionException("Password is null");
 
             Assert.True(!string.IsNullOrEmpty(username));
             Assert.True(!string.IsNullOrEmpty(password));
 
-            Assert.IsTrue(sdk.LoginUser(username, password), $"Login user failed") ;
+            Assert.IsTrue(sdk.LoginUser(username, password), $"Login user failed");
             Assert.IsTrue(!string.IsNullOrEmpty(sdk.Configuration.TokenRepository.GetToken()));
 
             sdk.Logout();

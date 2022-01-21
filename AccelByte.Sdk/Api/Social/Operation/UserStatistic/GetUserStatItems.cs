@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+            
         }
 
         public override string Path => "/social/v1/admin/namespaces/{namespace}/users/{userId}/statitems";

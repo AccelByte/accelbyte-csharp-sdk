@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             
             
             
+            
         }
 
         public override string Path => "/game-telemetry/v1/protected/steamIds/{steamId}/playtime/{playtime}";

@@ -15,8 +15,10 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            QueryParams["emails"] = Convert.ToString(emails)!;
+            if (emails != null) QueryParams["emails"] = emails;
             
+            
+            CollectionFormatMap["emails"] = "csv";
             
             
         }

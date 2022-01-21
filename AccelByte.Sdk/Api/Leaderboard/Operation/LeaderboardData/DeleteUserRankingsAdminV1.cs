@@ -17,8 +17,10 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            QueryParams["leaderboardCode"] = Convert.ToString(leaderboardCode)!;
+            if (leaderboardCode != null) QueryParams["leaderboardCode"] = leaderboardCode;
             
+            
+            CollectionFormatMap["leaderboardCode"] = "multi";
             
             
         }

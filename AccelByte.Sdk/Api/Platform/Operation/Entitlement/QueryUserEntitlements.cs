@@ -27,10 +27,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (appType != null) QueryParams["appType"] = appType;
             if (entitlementClazz != null) QueryParams["entitlementClazz"] = entitlementClazz;
             if (entitlementName != null) QueryParams["entitlementName"] = entitlementName;
-            if (itemId != null) QueryParams["itemId"] = Convert.ToString(itemId)!;
+            if (itemId != null) QueryParams["itemId"] = itemId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
+            
+            CollectionFormatMap["itemId"] = "multi";
             
             
         }

@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+            
         }
 
         public override string Path => "/platform/admin/payment/config/provider/{id}";

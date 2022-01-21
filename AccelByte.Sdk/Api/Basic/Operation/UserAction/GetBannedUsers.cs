@@ -15,8 +15,10 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            QueryParams["userIds"] = Convert.ToString(userIds)!;
+            if (userIds != null) QueryParams["userIds"] = userIds;
             
+            
+            CollectionFormatMap["userIds"] = "multi";
             
             
         }

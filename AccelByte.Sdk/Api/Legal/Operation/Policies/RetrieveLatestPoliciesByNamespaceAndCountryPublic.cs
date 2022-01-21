@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+            
         }
 
         public override string Path => "/agreement/public/policies/namespaces/{namespace}/countries/{countryCode}";

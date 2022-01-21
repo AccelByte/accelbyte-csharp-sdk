@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             
             
+            
             BodyParams = body;
             
         }

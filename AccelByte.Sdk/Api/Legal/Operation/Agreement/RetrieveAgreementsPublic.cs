@@ -15,6 +15,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+            
         }
 
         public override string Path => "/agreement/public/agreements/policies";

@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             if (countryCode != null) QueryParams["countryCode"] = countryCode;
             
             
+            
             BodyParams = body;
             
         }

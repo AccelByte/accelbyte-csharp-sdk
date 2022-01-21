@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+            
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/users/{userId}/subscriptions";

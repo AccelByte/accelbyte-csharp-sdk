@@ -17,8 +17,10 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (passCodes != null) QueryParams["passCodes"] = Convert.ToString(passCodes)!;
+            if (passCodes != null) QueryParams["passCodes"] = passCodes;
             
+            
+            CollectionFormatMap["passCodes"] = "multi";
             
             
         }

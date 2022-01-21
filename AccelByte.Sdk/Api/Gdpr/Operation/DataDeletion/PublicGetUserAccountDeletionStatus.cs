@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             
+            
         }
 
         public override string Path => "/gdpr/public/namespaces/{namespace}/users/{userId}/deletions/status";

@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             
             
+            
         }
 
         public override string Path => "/leaderboard/v1/admin/namespaces/{namespace}/leaderboards";

@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+            
         }
 
         public override string Path => "/iam/v3/oauth/admin/namespaces/{namespace}/users/{userId}/revoke";

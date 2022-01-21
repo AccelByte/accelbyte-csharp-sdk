@@ -17,8 +17,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            QueryParams["itemIds"] = Convert.ToString(itemIds)!;
+            if (itemIds != null) QueryParams["itemIds"] = itemIds;
             
+            
+            CollectionFormatMap["itemIds"] = "multi";
             
             
         }

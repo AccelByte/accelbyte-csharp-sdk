@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+            
         }
 
         public override string Path => "/agreement/public/eligibilities/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}";

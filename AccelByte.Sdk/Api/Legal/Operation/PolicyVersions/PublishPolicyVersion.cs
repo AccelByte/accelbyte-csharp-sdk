@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+            
         }
 
         public override string Path => "/agreement/admin/policies/versions/{policyVersionId}/latest";

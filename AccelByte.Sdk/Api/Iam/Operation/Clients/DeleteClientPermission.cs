@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+            
         }
 
         public override string Path => "/iam/clients/{clientId}/clientpermissions/{resource}/{action}";

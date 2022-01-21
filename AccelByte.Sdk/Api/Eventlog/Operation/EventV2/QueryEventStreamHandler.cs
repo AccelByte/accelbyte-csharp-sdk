@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             if (startDate != null) QueryParams["startDate"] = startDate;
             
             
+            
             BodyParams = body;
             
         }

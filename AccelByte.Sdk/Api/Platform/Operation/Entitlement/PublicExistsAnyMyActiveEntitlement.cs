@@ -17,10 +17,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (appIds != null) QueryParams["appIds"] = Convert.ToString(appIds)!;
-            if (itemIds != null) QueryParams["itemIds"] = Convert.ToString(itemIds)!;
-            if (skus != null) QueryParams["skus"] = Convert.ToString(skus)!;
+            if (appIds != null) QueryParams["appIds"] = appIds;
+            if (itemIds != null) QueryParams["itemIds"] = itemIds;
+            if (skus != null) QueryParams["skus"] = skus;
             
+            
+            CollectionFormatMap["appIds"] = "multi";
+            CollectionFormatMap["itemIds"] = "multi";
+            CollectionFormatMap["skus"] = "multi";
             
             
         }

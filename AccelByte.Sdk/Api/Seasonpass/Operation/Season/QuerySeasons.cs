@@ -19,8 +19,10 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (status != null) QueryParams["status"] = Convert.ToString(status)!;
+            if (status != null) QueryParams["status"] = status;
             
+            
+            CollectionFormatMap["status"] = "multi";
             
             
         }

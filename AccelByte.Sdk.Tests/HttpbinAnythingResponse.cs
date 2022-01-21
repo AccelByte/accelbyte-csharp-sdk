@@ -4,7 +4,7 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Tests
 {
-    public class HttpbinAnythingResponse : Model
+    public class HttpbinAnythingResponse<TArgs> : Model
     {
         [JsonPropertyName("method")]
         public string? Method { get; set; }
@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Tests
         public Dictionary<string, string>? Headers { get; set; }
 
         [JsonPropertyName("args")]
-        public Dictionary<string, string>? Args { get; set; }
+        public TArgs? Args { get; set; }
 
         [JsonPropertyName("form")]
         public Dictionary<string, string>? Form { get; set; }

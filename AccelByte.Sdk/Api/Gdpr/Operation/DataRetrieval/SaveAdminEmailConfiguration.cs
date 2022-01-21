@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             
+            
             BodyParams = body;
             
         }

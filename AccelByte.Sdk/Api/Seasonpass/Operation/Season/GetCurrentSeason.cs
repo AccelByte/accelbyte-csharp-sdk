@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             
             
+            
         }
 
         public override string Path => "/seasonpass/admin/namespaces/{namespace}/seasons/current";

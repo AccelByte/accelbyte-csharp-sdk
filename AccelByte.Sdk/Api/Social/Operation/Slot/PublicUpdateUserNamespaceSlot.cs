@@ -24,11 +24,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["userId"] = userId;
             
             if (label != null) QueryParams["label"] = label;
-            if (tags != null) QueryParams["tags"] = Convert.ToString(tags)!;
+            if (tags != null) QueryParams["tags"] = tags;
             
             if (checksum != null) FormParams["checksum"] = checksum;
             if (customAttribute != null) FormParams["customAttribute"] = customAttribute;
             if (file != null) FormParams["file"] = file;
+            
+            CollectionFormatMap["tags"] = "multi";
             
             
         }

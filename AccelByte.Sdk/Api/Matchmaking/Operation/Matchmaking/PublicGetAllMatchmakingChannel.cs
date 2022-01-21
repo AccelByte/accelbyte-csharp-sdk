@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             
             
+            
         }
 
         public override string Path => "/matchmaking/v1/public/namespaces/{namespace}/channels";

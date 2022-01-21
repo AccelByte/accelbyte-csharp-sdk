@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+            
             BodyParams = body;
             
         }

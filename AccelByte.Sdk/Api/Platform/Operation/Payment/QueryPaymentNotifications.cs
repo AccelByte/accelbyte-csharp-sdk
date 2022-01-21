@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+            
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/payment/notifications";

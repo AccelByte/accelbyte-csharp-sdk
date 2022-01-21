@@ -15,6 +15,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             
             
             
+            
             BodyParams = body;
             
         }

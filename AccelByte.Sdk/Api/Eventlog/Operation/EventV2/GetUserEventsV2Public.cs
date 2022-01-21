@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+            
         }
 
         public override string Path => "/event/v2/public/namespaces/{namespace}/users/{userId}/event";

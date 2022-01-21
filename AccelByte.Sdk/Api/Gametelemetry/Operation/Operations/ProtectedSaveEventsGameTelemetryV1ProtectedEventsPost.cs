@@ -15,6 +15,7 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             
             
             
+            
             BodyParams = body;
             
         }

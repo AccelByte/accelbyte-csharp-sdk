@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+            
             BodyParams = body;
             
         }

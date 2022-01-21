@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+            
         }
 
         public override string Path => "/basic/v1/public/namespaces/{namespace}/folders/{folder}/files";

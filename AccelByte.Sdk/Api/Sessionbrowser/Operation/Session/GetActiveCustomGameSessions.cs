@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             
             
+            
         }
 
         public override string Path => "/sessionbrowser/admin/namespaces/{namespace}/gamesession/active/custom-game";

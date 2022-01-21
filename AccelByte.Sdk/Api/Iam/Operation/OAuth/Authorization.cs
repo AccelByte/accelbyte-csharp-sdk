@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (responseType != null) FormParams["response_type"] = responseType;
             
             
+            
             LocationQuery = "PLACEHOLDER";
         }
 

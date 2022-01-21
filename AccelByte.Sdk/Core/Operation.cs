@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Net;
 using System.Text;
 using System.Web;
@@ -20,11 +21,13 @@ namespace AccelByte.Sdk.Core
 
         public Dictionary<string, string> PathParams { get; } = new Dictionary<string, string>();
 
-        public Dictionary<string, string> QueryParams { get; } = new Dictionary<string, string>();
+        public Dictionary<string, dynamic> QueryParams { get; } = new Dictionary<string, dynamic>();
 
         public Dictionary<string, string> HeaderParams { get; } = new Dictionary<string, string>();
 
         public Dictionary<string, dynamic> FormParams { get; } = new Dictionary<string, dynamic>();
+
+        public Dictionary<string, string> CollectionFormatMap { get; } = new Dictionary<string, string>();
 
         public object? BodyParams { get; init; }
 
@@ -32,9 +35,9 @@ namespace AccelByte.Sdk.Core
 
         public string GetFullUrl(string baseUrl)
         {
-            return Operation.CreateFullUrl(this.Path, baseUrl, PathParams, QueryParams);
+            return CreateFullUrl(this.Path, baseUrl, PathParams, QueryParams);
         }
-        private static string CreateFullUrl(string url, string baseUrl, Dictionary<string, string> pathParams, Dictionary<string, string> queryParams)
+        private string CreateFullUrl(string url, string baseUrl, Dictionary<string, string> pathParams, Dictionary<string, dynamic> queryParams)
         {
             var result = new StringBuilder();
 
@@ -55,11 +58,47 @@ namespace AccelByte.Sdk.Core
 
             // query params
             var queryParamBuilder = new StringBuilder();
+
             foreach (var queryParam in queryParams)
             {
-                if (queryParam.Value != null)
+                if (queryParam.Value is IList)
                 {
-                    if (queryParam.Value != "")
+                    var queryStringFormat = string.Empty;
+
+                    if (!CollectionFormatMap.TryGetValue(queryParam.Key, out queryStringFormat))
+                    {
+                        queryStringFormat = "csv";
+                    }
+
+                    if (queryStringFormat == "csv")
+                    {
+                        queryParamBuilder.Append("&");
+                        queryParamBuilder.Append(HttpUtility.UrlEncode(queryParam.Key));
+                        queryParamBuilder.Append("=");
+                        foreach (var qsai in queryParam.Value)
+                        {
+                            queryParamBuilder.Append(HttpUtility.UrlEncode($"\"{qsai.Replace("\"", "\"\"")}\""));
+                            queryParamBuilder.Append(",");
+                        }
+                    }
+                    else if (queryStringFormat == "multi")
+                    {
+                        foreach (var qsai in queryParam.Value)
+                        {
+                            queryParamBuilder.Append("&");
+                            queryParamBuilder.Append(HttpUtility.UrlEncode(queryParam.Key));
+                            queryParamBuilder.Append("=");
+                            queryParamBuilder.Append(HttpUtility.UrlEncode(qsai));
+                        }
+                    }
+                    else
+                    {
+                        throw new NotSupportedException($"Unsupported query collection format (format: {queryStringFormat})");
+                    }
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(queryParam.Value))
                     {
                         queryParamBuilder.Append("&");
                         queryParamBuilder.Append(HttpUtility.UrlEncode(queryParam.Key));

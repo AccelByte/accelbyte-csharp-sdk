@@ -17,8 +17,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
-            if (features != null) QueryParams["features"] = Convert.ToString(features)!;
+            if (features != null) QueryParams["features"] = features;
             
+            
+            CollectionFormatMap["features"] = "multi";
             
             
         }

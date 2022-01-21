@@ -25,12 +25,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (endTime != null) QueryParams["endTime"] = endTime;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (orderNos != null) QueryParams["orderNos"] = Convert.ToString(orderNos)!;
+            if (orderNos != null) QueryParams["orderNos"] = orderNos;
             if (sortBy != null) QueryParams["sortBy"] = sortBy;
             if (startTime != null) QueryParams["startTime"] = startTime;
             if (status != null) QueryParams["status"] = status;
             if (withTotal != null) QueryParams["withTotal"] = Convert.ToString(withTotal)!;
             
+            
+            CollectionFormatMap["orderNos"] = "multi";
             
             
         }

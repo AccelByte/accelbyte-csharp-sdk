@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+            
         }
 
         public override string Path => "/group/v1/public/namespaces/{namespace}/groups/{groupId}/rules/defined/{allowedAction}";

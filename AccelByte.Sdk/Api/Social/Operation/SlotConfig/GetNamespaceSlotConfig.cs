@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+            
         }
 
         public override string Path => "/social/admin/namespaces/{namespace}/config";

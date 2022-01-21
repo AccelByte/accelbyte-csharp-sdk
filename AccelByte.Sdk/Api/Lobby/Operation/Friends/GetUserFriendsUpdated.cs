@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+            
         }
 
         public override string Path => "/friends/namespaces/{namespace}/me";

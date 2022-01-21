@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             
             
+            
         }
 
         public override string Path => "/dsmcontroller/namespaces/{namespace}/sessions/{sessionID}";

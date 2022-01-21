@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+            
         }
 
         public override string Path => "/agreement/public/localized-policy-versions/{localizedPolicyVersionId}";

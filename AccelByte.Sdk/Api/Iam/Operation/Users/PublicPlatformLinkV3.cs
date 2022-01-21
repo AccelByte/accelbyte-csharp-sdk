@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (ticket != null) FormParams["ticket"] = ticket;
             
             
+            
         }
 
         public override string Path => "/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}";

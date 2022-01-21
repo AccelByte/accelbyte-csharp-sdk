@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+            
         }
 
         public override string Path => "/lobby/v1/admin/chat/namespaces/{namespace}/users/{userId}/friends/{friendId}";

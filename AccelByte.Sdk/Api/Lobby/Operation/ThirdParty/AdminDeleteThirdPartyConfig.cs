@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+            
         }
 
         public override string Path => "/lobby/v1/admin/thirdparty/namespaces/{namespace}/config/steam";

@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             
             
+            
         }
 
         public override string Path => "/leaderboard/v2/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/{userId}/visibility";

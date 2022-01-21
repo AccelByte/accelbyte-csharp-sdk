@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+            
             BodyParams = body;
             
         }

@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (file != null) FormParams["file"] = file;
             
             
+            
         }
 
         public override string Path => "/platform/admin/payment/config/merchant/{id}/wxpayconfig/cert";

@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+            
         }
 
         public override string Path => "/platform/admin/payment/config/merchant/{id}/checkoutconfig/test";

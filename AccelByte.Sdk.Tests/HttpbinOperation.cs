@@ -15,9 +15,10 @@ namespace AccelByte.Sdk.Tests
         public HttpbinOperation(HttpMethod method, 
                 string path = "/anything",
                 Dictionary<string, string> pathParams = null!,
-                Dictionary<string, string> queryParams = null!,
+                Dictionary<string, dynamic> queryParams = null!,
                 object? bodyParams = null!,
-                string consumes = "application/json")
+                string consumes = "application/json",
+                Dictionary<string, string> collectionFormatMap = null!)
         {
             Method = method;
 
@@ -39,6 +40,15 @@ namespace AccelByte.Sdk.Tests
                 }
             }
 
+            if (collectionFormatMap != null)
+            {
+                foreach (var p in collectionFormatMap)
+                {
+                    CollectionFormatMap.Add(p.Key, p.Value);
+                }
+            }
+            
+
             BodyParams = bodyParams;
 
             _consumes = consumes;
@@ -54,7 +64,7 @@ namespace AccelByte.Sdk.Tests
 
         public override string? Security {get; set;}
 
-        public HttpbinAnythingResponse? ParseResponse(HttpStatusCode code, string contentTpe, Stream payload)
+        public HttpbinAnythingResponse<TArgs>? ParseResponse<TArgs>(HttpStatusCode code, string contentTpe, Stream payload)
         {
             if (code != (HttpStatusCode)200)
             {
@@ -63,7 +73,7 @@ namespace AccelByte.Sdk.Tests
                 throw new HttpResponseException(code, jsonString);
             }
 
-            return JsonSerializer.Deserialize<HttpbinAnythingResponse>(payload);
+            return JsonSerializer.Deserialize<HttpbinAnythingResponse<TArgs>>(payload);
         }
     }
 }

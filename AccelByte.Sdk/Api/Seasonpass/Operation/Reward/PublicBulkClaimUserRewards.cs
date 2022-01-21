@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             
             
+            
         }
 
         public override string Path => "/seasonpass/public/namespaces/{namespace}/users/{userId}/seasons/current/rewards/bulk";

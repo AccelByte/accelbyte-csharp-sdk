@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             
             
+            
         }
 
         public override string Path => "/cloudsave/v1/namespaces/{namespace}/users/me/records/{key}/public";

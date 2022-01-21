@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+            
             LocationQuery = "code";
         }
 
