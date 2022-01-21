@@ -1,7 +1,11 @@
+// Fidler $env:HTTPS_PROXY="127.0.0.1:8888"
+
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Web;
 using AccelByte.Sdk.Core;
@@ -44,7 +48,7 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.runRequest(op);
 
-            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) as HttpbinAnythingResponse ??
+            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
@@ -66,7 +70,7 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.runRequest(op);
 
-            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) as HttpbinAnythingResponse ??
+            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             var bashPath = sdk.Configuration.ConfigRepository.BaseUrl;
@@ -94,7 +98,7 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.runRequest(op);
 
-            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) as HttpbinAnythingResponse ??
+            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             var args = result.Args ?? throw new AssertionException("Args is null");
@@ -110,20 +114,47 @@ namespace AccelByte.Sdk.Tests
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
             var sdk = new AccelByteSDK(config);
 
-            var op = new HttpbinOperation(new HttpMethod(method));
+            var op = new HttpbinOperation(new HttpMethod(method), consumes: "application/x-www-form-urlencoded");
 
             op.FormParams[key] = value;
 
             var response = sdk.runRequest(op);
 
-            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) as HttpbinAnythingResponse ??
+            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             var form = result.Form ?? throw new AssertionException("Form is null");
 
             Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
-            Assert.AreEqual(form[key], value, $"Form value assert failed: {value}");
+            Assert.AreEqual(form[key], value, $"Form value assert failed: {form[key]}");
         }
+
+        [Test]
+        [TestCase("POST")] // Special characters need to be escaped
+        public void HttpbinRequestUploadFile(string method)
+        {
+            var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
+            var sdk = new AccelByteSDK(config);
+
+            var op = new HttpbinOperation(new HttpMethod(method), consumes: "multipart/form-data");
+
+            op.FormParams["strategy"] = "replace";
+            op.FormParams["file"] = new MemoryStream(Encoding.UTF8.GetBytes("ABC123"));
+
+            var response = sdk.runRequest(op);
+
+            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) ??
+                    throw new AssertionException("Result is null");
+
+            var form = result.Form ?? throw new AssertionException("Form is null");
+            var headers = result.Headers ?? throw new AssertionException("Headers is null");
+
+            Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
+            Assert.AreEqual(headers["Content-Type"], "multipart/form-data", $"Form value assert failed: {headers["Content-Type"]}");
+
+            // TODO Improve assertion
+        }
+
 
         [Test]
         [TestCase("POST")] // Special characters need to be escaped

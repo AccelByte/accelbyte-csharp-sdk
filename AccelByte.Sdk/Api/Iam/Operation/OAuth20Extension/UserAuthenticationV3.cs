@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             if (clientId != null) FormParams["client_id"] = clientId;
-            if (extendExp != null) FormParams["extend_exp"] = Convert.ToString(extendExp)!; // XXX Handle stream
+            if (extendExp != null) FormParams["extend_exp"] = Convert.ToString(extendExp)!;
             if (redirectUri != null) FormParams["redirect_uri"] = redirectUri;
             if (password != null) FormParams["password"] = password;
             if (requestId != null) FormParams["request_id"] = requestId;

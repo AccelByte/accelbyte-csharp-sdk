@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (storeId != null) QueryParams["storeId"] = storeId;
             
-            if (file != null) FormParams["file"] = Convert.ToString(file)!; // XXX Handle stream
+            if (file != null) FormParams["file"] = file;
             
             
         }

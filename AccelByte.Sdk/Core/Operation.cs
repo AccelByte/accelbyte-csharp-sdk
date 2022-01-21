@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Core
 
         public Dictionary<string, string> HeaderParams { get; } = new Dictionary<string, string>();
 
-        public Dictionary<string, string> FormParams { get; } = new Dictionary<string, string>();
+        public Dictionary<string, dynamic> FormParams { get; } = new Dictionary<string, dynamic>();
 
         public object? BodyParams { get; init; }
 

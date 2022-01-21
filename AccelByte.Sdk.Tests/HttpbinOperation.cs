@@ -10,11 +10,14 @@ namespace AccelByte.Sdk.Tests
 {
     public class HttpbinOperation : Operation
     {
+        private readonly string _consumes;
+
         public HttpbinOperation(HttpMethod method, 
                 string path = "/anything",
                 Dictionary<string, string> pathParams = null!,
                 Dictionary<string, string> queryParams = null!,
-                object? bodyParams = null!)
+                object? bodyParams = null!,
+                string consumes = "application/json")
         {
             Method = method;
 
@@ -37,13 +40,15 @@ namespace AccelByte.Sdk.Tests
             }
 
             BodyParams = bodyParams;
+
+            _consumes = consumes;
         }
 
         public override string Path { get; }
 
         public override HttpMethod Method { get; }
 
-        public override string[] Consumes => new[] { BodyParams != null ? "application/json" : "application/x-www-form-urlencoded" };
+        public override string[] Consumes =>  new[] { _consumes };
 
         public override string[] Produces => new[] { "application/json" };
 

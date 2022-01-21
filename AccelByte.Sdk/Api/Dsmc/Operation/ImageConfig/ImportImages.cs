@@ -14,7 +14,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         {
             
             
-            FormParams["file"] = Convert.ToString(file)!; // XXX Handle stream
+            if (file != null) FormParams["file"] = file;
             
             
         }

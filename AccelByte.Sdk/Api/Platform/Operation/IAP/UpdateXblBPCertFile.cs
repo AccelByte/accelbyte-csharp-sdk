@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
-            if (file != null) FormParams["file"] = Convert.ToString(file)!; // XXX Handle stream
+            if (file != null) FormParams["file"] = file;
             if (password != null) FormParams["password"] = password;
             
             

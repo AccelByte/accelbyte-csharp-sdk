@@ -12,13 +12,16 @@ namespace AccelByte.Sdk.Tests
         [JsonPropertyName("url")]
         public string? Url { get; set; }
 
+        [JsonPropertyName("headers")]
+        public Dictionary<string, string>? Headers { get; set; }
+
         [JsonPropertyName("args")]
         public Dictionary<string, string>? Args { get; set; }
 
         [JsonPropertyName("form")]
         public Dictionary<string, string>? Form { get; set; }
 
-         [JsonPropertyName("data")]
+        [JsonPropertyName("data")]
         public string? Data { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             QueryParams["replaceExisting"] = Convert.ToString(replaceExisting)!;
             
-            if (file != null) FormParams["file"] = Convert.ToString(file)!; // XXX Handle stream
+            if (file != null) FormParams["file"] = file;
             
             
         }

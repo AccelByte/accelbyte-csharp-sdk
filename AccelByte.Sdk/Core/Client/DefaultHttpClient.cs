@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Mime;
@@ -40,7 +41,40 @@ namespace AccelByte.Sdk.Core.Client
             }
             else if (operation.FormParams.Any())
             {
-                request.Content = new FormUrlEncodedContent(operation.FormParams);
+
+                if (contentType == "application/x-www-form-urlencoded")
+                {
+                    var formUrlEncoded = operation.FormParams.ToDictionary(kvp => kvp.Key, kvp => (string)kvp.Value);
+
+                    request.Content = new FormUrlEncodedContent(formUrlEncoded);
+                }
+                else if (contentType == "multipart/form-data")
+                {
+                    var boundary = $"Upload----{DateTime.Now.ToString(CultureInfo.InvariantCulture)}";
+                    var content = new MultipartFormDataContent(boundary);
+
+                    foreach (var kvp in operation.FormParams)
+                    {
+                        if (kvp.Value is string)
+                        {
+                            content.Add(new StringContent((string)kvp.Value), kvp.Key);
+                        }
+                        else if (kvp.Value is Stream stream)
+                        {
+                            content.Add(new StreamContent(stream), kvp.Key);
+                        }
+                        else
+                        {
+                            throw new NotSupportedException($"Unsupported multipart form data type (content type: {kvp.Value.GetType()})");
+                        }
+                    }
+
+                    request.Content = content;
+                }
+                else
+                {
+                    throw new NotSupportedException($"Unsupported form content type (content type: {contentType})");
+                }
             }
             else
             {

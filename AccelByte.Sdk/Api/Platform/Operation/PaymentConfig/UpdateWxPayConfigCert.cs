@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["id"] = id;
             
             
-            if (file != null) FormParams["file"] = Convert.ToString(file)!; // XXX Handle stream
+            if (file != null) FormParams["file"] = file;
             
             
         }
