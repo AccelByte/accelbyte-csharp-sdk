@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         }
         
         public void UpdateImage(UpdateImage input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public void CreateImage(CreateImage input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public Model.ModelsImportResponse? ImportImages(ImportImages input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public Model.ModelsListImageResponse? ListImages(ListImages input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public void DeleteImage(DeleteImage input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public List<Model.ModelsImageRecord>? ExportImages(ExportImages input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -60,7 +60,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public Model.ModelsGetImageLimitResponse? GetImageLimit(GetImageLimit input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -68,7 +68,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public Model.ModelsGetImageDetailResponse? GetImageDetail(GetImageDetail input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public Model.ModelsGetImageDetailResponse? ImageDetailClient(ImageDetailClient input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

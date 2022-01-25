@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         
         public void AnonymizeUserAgreement(AnonymizeUserAgreement input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 

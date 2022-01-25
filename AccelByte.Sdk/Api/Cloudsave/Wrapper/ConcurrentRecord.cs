@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
         
         public void PutGameRecordConcurrentHandlerV1(PutGameRecordConcurrentHandlerV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.Payload);
         }
         public void PutPlayerPublicRecordConcurrentHandlerV1(PutPlayerPublicRecordConcurrentHandlerV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 

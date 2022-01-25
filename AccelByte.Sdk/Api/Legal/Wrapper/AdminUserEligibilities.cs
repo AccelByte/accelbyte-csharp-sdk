@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         
         public Model.RetrieveUserEligibilitiesIndirectResponse? AdminRetrieveEligibilities(AdminRetrieveEligibilities input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

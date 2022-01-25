@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         
         public Model.ModelsPaginatedGetChannelResponse? GetChannels(GetChannels input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsChannelResponse? CreateChannel(CreateChannel input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsChannelResponse? UpdateChannel(UpdateChannel input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public void DeleteChannel(DeleteChannel input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 

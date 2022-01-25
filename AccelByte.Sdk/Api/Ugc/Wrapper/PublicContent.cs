@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         
         public Model.ModelsPaginatedContentDownloadResponse? SearchChannelSpecificContent(SearchChannelSpecificContent input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsPaginatedContentDownloadResponse? PublicSearchContent(PublicSearchContent input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsContentDownloadResponse? DownloadContentByShareCode(DownloadContentByShareCode input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsContentDownloadResponse? PublicDownloadContentByContentID(PublicDownloadContentByContentID input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsGetContentPreviewResponse? PublicDownloadContentPreview(PublicDownloadContentPreview input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsCreateContentResponse? CreateContentDirect(CreateContentDirect input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -60,7 +60,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsCreateContentResponse? CreateContentS3(CreateContentS3 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -68,7 +68,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsCreateContentResponse? UpdateContentS3(UpdateContentS3 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsCreateContentResponse? UpdateContentDirect(UpdateContentDirect input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -84,7 +84,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public void DeleteContent(DeleteContent input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -92,7 +92,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsPaginatedContentDownloadResponse? PublicGetUserContent(PublicGetUserContent input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -100,7 +100,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsUpdateScreenshotResponse? UpdateScreenshots(UpdateScreenshots input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -108,7 +108,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsCreateScreenshotResponse? UploadContentScreenshot(UploadContentScreenshot input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -116,7 +116,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public void DeleteContentScreenshot(DeleteContentScreenshot input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 

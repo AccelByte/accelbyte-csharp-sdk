@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         
         public List<Model.RetrieveUserEligibilitiesResponse>? RetrieveEligibilitiesPublic(RetrieveEligibilitiesPublic input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public Model.RetrieveUserEligibilitiesIndirectResponse? RetrieveEligibilitiesPublicIndirect(RetrieveEligibilitiesPublicIndirect input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

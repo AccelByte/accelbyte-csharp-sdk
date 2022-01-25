@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
         
         public Model.AccountcommonBans? GetBansType(GetBansType input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public Model.AccountcommonBanReasons? GetListBanReason(GetListBanReason input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public Model.AccountcommonBansV3? AdminGetBansTypeV3(AdminGetBansTypeV3 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public Model.AccountcommonBanReasonsV3? AdminGetListBanReasonV3(AdminGetListBanReasonV3 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public Model.ModelGetUserBanV3Response? AdminGetBannedUsersV3(AdminGetBannedUsersV3 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public Model.AccountcommonBansV3? AdminGetBansTypeWithNamespaceV3(AdminGetBansTypeWithNamespaceV3 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         
         public List<Model.RetrievePolicyResponse>? RetrievePolicies(RetrievePolicies input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public void UpdatePolicy(UpdatePolicy input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public void SetDefaultPolicy1(SetDefaultPolicy1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public List<Model.RetrievePolicyPublicResponse>? RetrieveLatestPolicies(RetrieveLatestPolicies input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public List<Model.RetrievePolicyPublicResponse>? RetrieveLatestPoliciesPublic(RetrieveLatestPoliciesPublic input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public List<Model.RetrievePolicyPublicResponse>? RetrieveLatestPoliciesByNamespaceAndCountryPublic(RetrieveLatestPoliciesByNamespaceAndCountryPublic input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

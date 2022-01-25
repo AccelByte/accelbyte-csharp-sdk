@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
         }
         
         public Model.ModelsListTerminatedServersResponse? ListTerminatedServers(ListTerminatedServers input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
                     response.Payload);
         }
         public void DownloadServerLogs(DownloadServerLogs input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
                     response.Payload);
         }
         public Model.ModelsLogFileStatus? CheckServerLogs(CheckServerLogs input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         }
         
         public Model.ModelsGetHiddenUserResponse? GetHiddenUsersV2(GetHiddenUsersV2 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
                     response.Payload);
         }
         public Model.ModelsGetUserVisibilityResponse? GetUserVisibilityStatusV2(GetUserVisibilityStatusV2 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
                     response.Payload);
         }
         public Model.ModelsGetUserVisibilityResponse? SetUserLeaderboardVisibilityStatusV2(SetUserLeaderboardVisibilityStatusV2 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
                     response.Payload);
         }
         public Model.ModelsGetUserVisibilityResponse? SetUserVisibilityStatusV2(SetUserVisibilityStatusV2 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         
         public List<Model.PaymentAccount>? PublicGetPaymentAccounts(PublicGetPaymentAccounts input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public void PublicDeletePaymentAccount(PublicDeletePaymentAccount input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 

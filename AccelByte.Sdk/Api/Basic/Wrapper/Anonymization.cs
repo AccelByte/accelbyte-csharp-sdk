@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         }
         
         public void AnonymizeUserProfile(AnonymizeUserProfile input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 

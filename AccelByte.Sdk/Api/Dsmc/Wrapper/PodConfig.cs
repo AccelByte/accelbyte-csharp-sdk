@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         }
         
         public Model.ModelsListPodConfigResponse? GetAllPodConfig(GetAllPodConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public Model.ModelsPodConfigRecord? GetPodConfig(GetPodConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public Model.ModelsPodConfigRecord? CreatePodConfig(CreatePodConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public void DeletePodConfig(DeletePodConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public Model.ModelsPodConfigRecord? UpdatePodConfig(UpdatePodConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

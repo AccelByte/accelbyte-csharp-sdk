@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         }
         
         public Model.ModelsDefaultProvider? GetDefaultProvider(GetDefaultProvider input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public List<string>? ListProviders(ListProviders input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public Model.ModelsDefaultProvider? ListProvidersByRegion(ListProvidersByRegion input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

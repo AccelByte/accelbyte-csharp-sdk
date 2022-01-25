@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Core
 
         public AccelByteConfig Configuration { get; }
 
-        public HttpResponse runRequest(Operation operation)
+        public HttpResponse RunRequest(Operation operation)
         {
             var baseUrl = Configuration.ConfigRepository.BaseUrl;
 

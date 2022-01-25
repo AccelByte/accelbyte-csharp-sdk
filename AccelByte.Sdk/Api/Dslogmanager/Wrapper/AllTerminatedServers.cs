@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
         }
         
         public void BatchDownloadServerLogs(BatchDownloadServerLogs input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
                     response.Payload);
         }
         public Model.ModelsListTerminatedServersResponse? ListAllTerminatedServers(ListAllTerminatedServers input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

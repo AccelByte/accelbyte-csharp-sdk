@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         }
         
         public Model.Equ8Config? GetConfig(GetConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.Payload);
         }
         public void DeleteConfig(DeleteConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.Payload);
         }
         public Model.Equ8Config? UpdateConfig(UpdateConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         }
         
         public Model.ModelsPartyData? AdminUpdatePartyAttributesV1(AdminUpdatePartyAttributesV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public List<Model.LogAppMessageDeclaration>? PublicGetMessages(PublicGetMessages input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

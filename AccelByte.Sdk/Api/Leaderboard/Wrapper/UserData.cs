@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         }
         
         public Model.ModelsGetAllUserLeaderboardsResp? GetUserLeaderboardRankingsAdminV1(GetUserLeaderboardRankingsAdminV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

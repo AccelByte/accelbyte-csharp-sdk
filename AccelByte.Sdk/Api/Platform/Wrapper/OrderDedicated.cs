@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         
         public Model.OrderSyncResult? SyncOrders(SyncOrders input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
         }
         
         public void Heartbeat(Heartbeat input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 

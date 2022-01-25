@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         }
         
         public Model.ModelsPartyData? AdminGetPartyDataV1(AdminGetPartyDataV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public Model.ModelsPartyData? AdminGetUserPartyV1(AdminGetUserPartyV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public Model.ModelsPartyData? PublicGetPartyDataV1(PublicGetPartyDataV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public Model.ModelsPartyData? PublicUpdatePartyAttributesV1(PublicUpdatePartyAttributesV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

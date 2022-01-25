@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
         }
         
         public void DeleteServer(DeleteServer input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
                     response.Payload);
         }
         public void SetServerAlias(SetServerAlias input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 

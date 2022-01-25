@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         }
         
         public Model.ModelsEventRegistry? GetRegisteredEventsHandler(GetRegisteredEventsHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public void RegisterEventHandler(RegisterEventHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public Model.ModelsEventRegistry? GetRegisteredEventIDHandler(GetRegisteredEventIDHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public void UpdateEventRegistryHandler(UpdateEventRegistryHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public void UnregisterEventIDHandler(UnregisterEventIDHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public Model.ModelsEventRegistry? GetRegisteredEventsByEventTypeHandler(GetRegisteredEventsByEventTypeHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Net;
 using System.Text;
 using System.Web;
 
@@ -9,7 +8,8 @@ namespace AccelByte.Sdk.Core
     {
         public const string SECURITY_BASIC = "Basic";
         public const string SECURITY_BEARER = "Bearer";
-
+        public const string COLLECTION_FORMAT_CSV = "csv";
+        public const string COLLECTION_FORMAT_MULTI = "multi";
         public abstract string Path { get; }
         public abstract HttpMethod Method { get; }
 
@@ -33,84 +33,80 @@ namespace AccelByte.Sdk.Core
 
         public string? LocationQuery { get; init; }
 
-        public string GetFullUrl(string baseUrl)
+        public string GetUrl(string baseUrl)
         {
-            return CreateFullUrl(this.Path, baseUrl, PathParams, QueryParams);
+            return BuildUrl(baseUrl, Path, PathParams, QueryParams);
         }
-        private string CreateFullUrl(string url, string baseUrl, Dictionary<string, string> pathParams, Dictionary<string, dynamic> queryParams)
+        private string BuildUrl(string baseUrl, string path, Dictionary<string, string> pathParams, Dictionary<string, dynamic> queryParams) // TODO Move to helper
         {
-            var result = new StringBuilder();
-
-            if (baseUrl != null && baseUrl.EndsWith("/"))
+            if (path == null) 
             {
-                baseUrl = baseUrl.Split("/")[0] + "//" + baseUrl.Split("/")[2];
+                throw new ArgumentNullException(nameof(path));
             }
-            result.Append(baseUrl);
+            
+            if (baseUrl == null) 
+            {
+                throw new ArgumentNullException(nameof(baseUrl));
+            }
+
+            var url = new StringBuilder(baseUrl.TrimEnd('/'));
 
             if (pathParams != null)
             {
-                foreach (var pathParam in pathParams)
+                foreach (var pp in pathParams)
                 {
-                    url = url.Replace("{" + pathParam.Key + "}", HttpUtility.UrlEncode(pathParam.Value));
+                    path = path.Replace("{" + pp.Key + "}", HttpUtility.UrlEncode(pp.Value));
                 }
-                result.Append(url);
             }
 
-            // query params
-            var queryParamBuilder = new StringBuilder();
+            url.Append(path);
 
-            foreach (var queryParam in queryParams)
+            if (queryParams != null && queryParams.Any())
             {
-                if (queryParam.Value is IList)
+                url.Append("?");
+
+                foreach (var qp in queryParams)
                 {
-                    var queryStringFormat = string.Empty;
-
-                    if (!CollectionFormatMap.TryGetValue(queryParam.Key, out queryStringFormat))
+                    if (qp.Value is IList)
                     {
-                        queryStringFormat = "csv";
-                    }
+                        var collectionFormat = string.Empty;
 
-                    if (queryStringFormat == "csv")
-                    {
-                        queryParamBuilder.Append("&");
-                        queryParamBuilder.Append(HttpUtility.UrlEncode(queryParam.Key));
-                        queryParamBuilder.Append("=");
-                        foreach (var qsai in queryParam.Value)
+                        if (!CollectionFormatMap.TryGetValue(qp.Key, out collectionFormat)) 
                         {
-                            queryParamBuilder.Append(HttpUtility.UrlEncode($"\"{qsai.Replace("\"", "\"\"")}\""));
-                            queryParamBuilder.Append(",");
+                            collectionFormat = COLLECTION_FORMAT_CSV;   // Default collection format CSV
                         }
-                    }
-                    else if (queryStringFormat == "multi")
-                    {
-                        foreach (var qsai in queryParam.Value)
+
+                        switch (collectionFormat)
                         {
-                            queryParamBuilder.Append("&");
-                            queryParamBuilder.Append(HttpUtility.UrlEncode(queryParam.Key));
-                            queryParamBuilder.Append("=");
-                            queryParamBuilder.Append(HttpUtility.UrlEncode(qsai));
+                            case COLLECTION_FORMAT_CSV:
+                                url.Append($"{HttpUtility.UrlEncode(qp.Key)}=");
+                                foreach (var v in qp.Value) {
+                                    var escapedValue = v.Replace("\"", "\"\"");    // Escape " if any
+                                    url.Append($"{HttpUtility.UrlEncode($"\"{escapedValue}\"")},");
+                                }
+                                url.Length--;   // Trim end ","
+                                url.Append("&");
+                                break;
+                            case COLLECTION_FORMAT_MULTI:
+                                foreach (var v in qp.Value) 
+                                {
+                                    url.Append($"{HttpUtility.UrlEncode(qp.Key)}={HttpUtility.UrlEncode(v)}&");
+                                }
+                                break;
+                            default:
+                                throw new NotSupportedException($"Unsupported query collection format (format: {collectionFormat})");
                         }
                     }
                     else
                     {
-                        throw new NotSupportedException($"Unsupported query collection format (format: {queryStringFormat})");
+                        url.Append($"{HttpUtility.UrlEncode(qp.Key)}={HttpUtility.UrlEncode(qp.Value)}&");
                     }
                 }
-                else
-                {
-                    if (!string.IsNullOrEmpty(queryParam.Value))
-                    {
-                        queryParamBuilder.Append("&");
-                        queryParamBuilder.Append(HttpUtility.UrlEncode(queryParam.Key));
-                        queryParamBuilder.Append("=");
-                        queryParamBuilder.Append(HttpUtility.UrlEncode(queryParam.Value));
-                    }
-                }
-            }
-            result.Append("?");
-            result.Append(queryParamBuilder);
 
-            return result.ToString();
+                url.Length--;   // Trim end "&"
+            }
+
+            return url.ToString();
         }
     }
 }

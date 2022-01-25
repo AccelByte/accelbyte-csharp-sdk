@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         }
         
         public Model.PassInfo? GetPass(GetPass input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public void DeletePass(DeletePass input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public Model.PassInfo? UpdatePass(UpdatePass input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public List<Model.PassInfo>? QueryPasses(QueryPasses input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public Model.PassInfo? CreatePass(CreatePass input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public Model.UserSeasonSummary? GrantUserPass(GrantUserPass input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

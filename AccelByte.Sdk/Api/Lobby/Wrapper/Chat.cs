@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         }
         
         public List<Model.ModelChatMessageResponse>? PersonalChatHistory(PersonalChatHistory input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public List<Model.ModelChatMessageResponse>? AdminChatHistory(AdminChatHistory input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public List<Model.ModelChatMessageResponse>? GetPersonalChatHistoryV1Public(GetPersonalChatHistoryV1Public input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

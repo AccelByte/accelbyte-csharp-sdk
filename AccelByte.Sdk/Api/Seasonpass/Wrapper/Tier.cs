@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         }
         
         public Model.Tier? UpdateTier(UpdateTier input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public void DeleteTier(DeleteTier input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public Model.TierPagingSlicedResult? QueryTiers(QueryTiers input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public List<Model.Tier>? CreateTier(CreateTier input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public Model.UserSeasonSummary? GrantUserTier(GrantUserTier input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public Model.UserSeasonSummary? GrantUserExp(GrantUserExp input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         }
         
         public Model.ModelsGetConfigResponse? AdminGetThirdPartyConfig(AdminGetThirdPartyConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public Model.ModelsUpdateConfigResponse? AdminUpdateThirdPartyConfig(AdminUpdateThirdPartyConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public Model.ModelsCreateConfigResponse? AdminCreateThirdPartyConfig(AdminCreateThirdPartyConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public string? AdminDeleteThirdPartyConfig(AdminDeleteThirdPartyConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

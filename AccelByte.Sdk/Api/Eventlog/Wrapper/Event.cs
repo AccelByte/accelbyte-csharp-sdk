@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         }
         
         public Model.ModelsEventResponse? GetEventByNamespaceHandler(GetEventByNamespaceHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public void PostEventHandler(PostEventHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public Model.ModelsEventResponse? GetEventByEventIDHandler(GetEventByEventIDHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public Model.ModelsEventResponse? GetEventByEventTypeHandler(GetEventByEventTypeHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public Model.ModelsEventResponse? GetEventByEventTypeAndEventIDHandler(GetEventByEventTypeAndEventIDHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public Model.ModelsEventResponse? GetEventByUserIDHandler(GetEventByUserIDHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -60,7 +60,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public Model.ModelsEventResponse? GetEventByUserIDAndEventIDHandler(GetEventByUserIDAndEventIDHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -68,7 +68,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public Model.ModelsEventResponse? GetEventByUserIDAndEventTypeHandler(GetEventByUserIDAndEventTypeHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public Model.ModelsEventResponse? GetEventByUserEventIDAndEventTypeHandler(GetEventByUserEventIDAndEventTypeHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

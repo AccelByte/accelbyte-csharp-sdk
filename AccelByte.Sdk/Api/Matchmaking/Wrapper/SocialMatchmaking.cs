@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         }
         
         public Model.ModelsUpdatePlayerPlaytimeWeightResponse? UpdatePlayTimeWeight(UpdatePlayTimeWeight input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

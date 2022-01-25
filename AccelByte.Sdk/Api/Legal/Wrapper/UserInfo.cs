@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         
         public List<Model.RetrieveUserInfoCacheStatusResponse>? GetUserInfoStatus(GetUserInfoStatus input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public void SyncUserInfo(SyncUserInfo input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public void InvalidateUserInfoCache(InvalidateUserInfoCache input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 

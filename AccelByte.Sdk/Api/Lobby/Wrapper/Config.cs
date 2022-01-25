@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         }
         
         public Model.ModelsConfigList? AdminGetAllConfigV1(AdminGetAllConfigV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public Model.ModelsConfigReq? AdminGetConfigV1(AdminGetConfigV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public Model.ModelsConfigReq? AdminUpdateConfigV1(AdminUpdateConfigV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public List<Model.ModelsConfigExport>? ExportConfig(ExportConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public Model.ModelsImportConfigResponse? ImportConfig(ImportConfig input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

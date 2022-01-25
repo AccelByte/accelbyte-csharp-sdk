@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
         
         public void LoginSSOClient(LoginSSOClient input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public void LogoutSSOClient(LogoutSSOClient input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 

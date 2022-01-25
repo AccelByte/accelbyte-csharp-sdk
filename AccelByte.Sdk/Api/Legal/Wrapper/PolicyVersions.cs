@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         
         public Model.UpdatePolicyVersionResponse? UpdatePolicyVersion(UpdatePolicyVersion input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public void PublishPolicyVersion(PublishPolicyVersion input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public List<Model.RetrievePolicyVersionResponse>? RetrieveSinglePolicyVersion(RetrieveSinglePolicyVersion input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public Model.CreatePolicyVersionResponse? CreatePolicyVersion(CreatePolicyVersion input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public List<Model.RetrievePolicyVersionResponse>? RetrievePolicyVersions(RetrievePolicyVersions input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

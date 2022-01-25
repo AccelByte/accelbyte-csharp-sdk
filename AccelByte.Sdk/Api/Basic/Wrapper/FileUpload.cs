@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         }
         
         public Model.FileUploadUrlInfo? GeneratedUploadUrl(GeneratedUploadUrl input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.Payload);
         }
         public Model.FileUploadUrlInfo? GeneratedUserUploadContentUrl(GeneratedUserUploadContentUrl input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.Payload);
         }
         public Model.FileUploadUrlInfo? PublicGeneratedUploadUrl(PublicGeneratedUploadUrl input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.Payload);
         }
         public Model.FileUploadUrlInfo? PublicGeneratedUserUploadContentUrl(PublicGeneratedUserUploadContentUrl input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         }
         
         public Model.ModelsEventResponseV2? QueryEventStreamHandler(QueryEventStreamHandler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public Model.ModelsEventResponseV2? GetEventSpecificUserV2Handler(GetEventSpecificUserV2Handler input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public Model.ModelsEventResponseV2? GetPublicEditHistory(GetPublicEditHistory input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         public Model.ModelsEventResponseV2? GetUserEventsV2Public(GetUserEventsV2Public input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 

@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
         
         public Model.ModelsListGameRecordKeys? ListGameRecordsHandlerV1(ListGameRecordsHandlerV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.Payload);
         }
         public Model.ModelsGameRecord? AdminGetGameRecordHandlerV1(AdminGetGameRecordHandlerV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
                     response.Code, 
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.Payload);
         }
         public void AdminPutGameRecordHandlerV1(AdminPutGameRecordHandlerV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.Payload);
         }
         public void AdminPostGameRecordHandlerV1(AdminPostGameRecordHandlerV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.Payload);
         }
         public void AdminDeleteGameRecordHandlerV1(AdminDeleteGameRecordHandlerV1 input) {
-            var response = _sdk.runRequest(input);
+            var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
                     response.Code, 

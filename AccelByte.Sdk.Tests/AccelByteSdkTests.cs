@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -16,18 +15,18 @@ namespace AccelByte.Sdk.Tests
 {
     public class Tests
     {
-        private static Core.Client.HttpClient _httpClient = new DefaultHttpClient();
-        private static TokenRepository _tokenRepository = DefaultTokenRepository.getInstance();
+        private static readonly Core.Client.HttpClient _httpClient = new DefaultHttpClient();
+        private static readonly TokenRepository _tokenRepository = DefaultTokenRepository.getInstance();
 
-        private static TestConfigRepository _httpbinConfigRepository = new TestConfigRepository(
+        private static readonly TestConfigRepository _httpbinConfigRepository = new TestConfigRepository(
             "https://httpbin.org",
             "DUMMY_CLIENT_ID",
             "DUMMY_CLIENT_SECRET");
-        private static TestConfigRepository _clientConfigRepository = new TestConfigRepository(
+        private static readonly TestConfigRepository _clientConfigRepository = new TestConfigRepository(
             Environment.GetEnvironmentVariable("BASE_URL")!,
             Environment.GetEnvironmentVariable("CLIENT_ID")!,
             Environment.GetEnvironmentVariable("CLIENT_SECRET")!);
-        private static TestConfigRepository _userConfigRepository = new TestConfigRepository(
+        private static readonly TestConfigRepository _userConfigRepository = new TestConfigRepository(
             Environment.GetEnvironmentVariable("BASE_URL")!,
             Environment.GetEnvironmentVariable("WEBSITE_CLIENT_ID")!,    // Use Oauth Client Id for Justice Adminportal Website
             null!);
@@ -45,7 +44,7 @@ namespace AccelByte.Sdk.Tests
 
             var op = new HttpbinOperation(new HttpMethod(method));
 
-            var response = sdk.runRequest(op);
+            var response = sdk.RunRequest(op);
 
             var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
@@ -67,14 +66,14 @@ namespace AccelByte.Sdk.Tests
                         {"test_path_param", pathParam}
                     });
 
-            var response = sdk.runRequest(op);
+            var response = sdk.RunRequest(op);
 
             var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
-            var bashPath = sdk.Configuration.ConfigRepository.BaseUrl;
+            var basePath = sdk.Configuration.ConfigRepository.BaseUrl;
             var escapedPathParam = HttpUtility.UrlEncode(pathParam);
-            var url = op.GetFullUrl(bashPath);
+            var url = op.GetUrl(basePath);
             var isPathParamEscaped = url.Contains(escapedPathParam);
 
             Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
@@ -95,7 +94,7 @@ namespace AccelByte.Sdk.Tests
             var op = new HttpbinOperation(new HttpMethod(method),
                     queryParams: new Dictionary<string, dynamic>() { { key, value } });
 
-            var response = sdk.runRequest(op);
+            var response = sdk.RunRequest(op);
 
             var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
@@ -125,9 +124,9 @@ namespace AccelByte.Sdk.Tests
                         {key, collectionFormat } 
                     });
 
-            var response = sdk.runRequest(op);
+            var response = sdk.RunRequest(op);
 
-            if (collectionFormat == "multi")
+            if (collectionFormat == Operation.COLLECTION_FORMAT_MULTI)
             {
                 var result = op.ParseResponse<Dictionary<string,List<string>>>(response.Code, response.ContentType, response.Payload) ??
                         throw new AssertionException("Result is null");
@@ -137,7 +136,7 @@ namespace AccelByte.Sdk.Tests
                 Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
                 Assert.AreEqual(value, args[key], $"Query value assert failed: {args[key]}");
             }
-            else if (collectionFormat == "csv")
+            else if (collectionFormat == Operation.COLLECTION_FORMAT_CSV)
             {
                 var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
                         throw new AssertionException("Result is null");
@@ -145,12 +144,12 @@ namespace AccelByte.Sdk.Tests
                 var args = result.Args ?? throw new AssertionException("Args is null");
 
                 var expected = new StringBuilder();
-
                 foreach (var v in value)
                 {
-                    expected.Append($"\"{v.Replace("\"", "\"\"")}\"");
-                    expected.Append(",");
+                    var escapedValue = v.Replace("\"", "\"\"");
+                    expected.Append($"\"{escapedValue}\",");
                 }
+                expected.Length--;   // Trim end ","
 
                 Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
                 Assert.AreEqual(expected.ToString(), args[key], $"Query value assert failed: {args[key]}");
@@ -171,7 +170,7 @@ namespace AccelByte.Sdk.Tests
 
             op.FormParams[key] = value;
 
-            var response = sdk.runRequest(op);
+            var response = sdk.RunRequest(op);
 
             var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
@@ -194,7 +193,7 @@ namespace AccelByte.Sdk.Tests
             op.FormParams["strategy"] = "replace";
             op.FormParams["file"] = new MemoryStream(Encoding.UTF8.GetBytes("ABC123"));
 
-            var response = sdk.runRequest(op);
+            var response = sdk.RunRequest(op);
 
             var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
@@ -226,7 +225,7 @@ namespace AccelByte.Sdk.Tests
 
             var op = new HttpbinOperation(new HttpMethod(method), bodyParams: request);
 
-            var response = sdk.runRequest(op);
+            var response = sdk.RunRequest(op);
 
             var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
@@ -254,7 +253,7 @@ namespace AccelByte.Sdk.Tests
             var op = new HttpbinOperation(new HttpMethod(method), path: "/status/500",
                     bodyParams: request);
 
-            var response = sdk.runRequest(op);
+            var response = sdk.RunRequest(op);
 
             Assert.Throws<HttpResponseException>(() =>
             {
