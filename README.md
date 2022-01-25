@@ -36,11 +36,11 @@ var configRepository = new DefaultConfigRepository();
 
 var config = new AccelByteConfig(httpClient, tokenRepository, configRepository);
 var sdk = new AccelByteSDK(config);
- ```
+```
 
 ## Logging In
 
-### loginUser
+### LoginUser
 
 ```csharp
 bool login = sdk.LoginUser("myUsername", "myPassword");
@@ -50,7 +50,7 @@ if (!login) {
 ```
 
 
-### loginClient (client credentials type)
+### LoginClient (client credentials type)
 
 ```csharp
 bool login = sdk.LoginClient();
