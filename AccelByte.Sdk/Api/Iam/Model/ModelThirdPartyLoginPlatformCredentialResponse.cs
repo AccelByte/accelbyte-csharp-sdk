@@ -49,5 +49,8 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("TeamID")]
         public string? TeamID { get; set; }
         
+        [JsonPropertyName("registeredDomains")]
+        public List<AccountcommonRegisteredDomain>? RegisteredDomains { get; set; }
+        
     }
 }

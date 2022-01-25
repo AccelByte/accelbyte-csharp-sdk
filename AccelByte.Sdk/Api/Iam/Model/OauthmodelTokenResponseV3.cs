@@ -37,17 +37,26 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("platform_user_id")]
         public string? PlatformUserId { get; set; }
         
+        [JsonPropertyName("refresh_expires_in")]
+        public int? RefreshExpiresIn { get; set; }
+        
         [JsonPropertyName("refresh_token")]
         public string? RefreshToken { get; set; }
         
         [JsonPropertyName("roles")]
         public List<string>? Roles { get; set; }
         
+        [JsonPropertyName("scope")]
+        public string? Scope { get; set; }
+        
         [JsonPropertyName("token_type")]
         public string? TokenType { get; set; }
         
         [JsonPropertyName("user_id")]
         public string? UserId { get; set; }
+        
+        [JsonPropertyName("xuid")]
+        public string? Xuid { get; set; }
         
     }
 }

@@ -8,7 +8,7 @@
     },
     "description": "Justice IAM Service",
     "title": "justice-iam-service",
-    "version": "5.0.0"
+    "version": "5.1.1"
   },
   "schemes": [
     "https"
@@ -32,6 +32,8 @@
         "ADMIN:NAMESPACE:{namespace}:CLIENT [READ]": "ADMIN:NAMESPACE:{namespace}:CLIENT [READ]",
         "ADMIN:NAMESPACE:{namespace}:CLIENT [UPDATE]": "ADMIN:NAMESPACE:{namespace}:CLIENT [UPDATE]",
         "ADMIN:NAMESPACE:{namespace}:CLIENT:{clientId} [DELETE]": "ADMIN:NAMESPACE:{namespace}:CLIENT:{clientId} [DELETE]",
+        "ADMIN:NAMESPACE:{namespace}:CLIENTDOMAIN [DELETE]": "ADMIN:NAMESPACE:{namespace}:CLIENTDOMAIN [DELETE]",
+        "ADMIN:NAMESPACE:{namespace}:CLIENTDOMAIN [UPDATE]": "ADMIN:NAMESPACE:{namespace}:CLIENTDOMAIN [UPDATE]",
         "ADMIN:NAMESPACE:{namespace}:DELETIONSTATUS:USER:{userId} [READ]": "ADMIN:NAMESPACE:{namespace}:DELETIONSTATUS:USER:{userId} [READ]",
         "ADMIN:NAMESPACE:{namespace}:DELETIONSTATUS:USER:{userId} [UPDATE]": "ADMIN:NAMESPACE:{namespace}:DELETIONSTATUS:USER:{userId} [UPDATE]",
         "ADMIN:NAMESPACE:{namespace}:HISTORY:LOGIN:USER:{userId} [READ]": "ADMIN:NAMESPACE:{namespace}:HISTORY:LOGIN:USER:{userId} [READ]",
@@ -6485,7 +6487,7 @@
         "operationId": "AdminResetInputValidations",
         "parameters": [
           {
-            "description": "Name of the input validation field to reset: username, displayName, or passwords",
+            "description": "Name of the input validation field to reset: username, displayName, or password",
             "in": "path",
             "name": "field",
             "required": true,
@@ -8051,6 +8053,161 @@
           }
         ],
         "summary": "Add Third Party Platform Credential",
+        "tags": [
+          "Third Party Credential"
+        ]
+      }
+    },
+    "/iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/clients/domain": {
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "\u0026lt;p\u0026gt;This is the API to unregister 3rd Platform domain.\u0026lt;/p\u0026gt;\n\t\t\t\t\t \u0026lt;p\u0026gt;It needs ADMIN:NAMESPACE:{namespace}:CLIENTDOMAIN [DELETE] resource.\u0026lt;/p\u0026gt;\n\t\t",
+        "operationId": "DeleteThirdPartyLoginPlatformDomainV3",
+        "parameters": [
+          {
+            "description": "Namespace, only accept alphabet and numeric",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Platform ID",
+            "in": "path",
+            "name": "platformId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/model.PlatformDomainDeleteRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "Domain unregister succeeded"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/rest.ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Platform client not found",
+            "schema": {
+              "$ref": "#/definitions/rest.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/rest.ErrorResponse"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:CLIENTDOMAIN [DELETE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Unregister Third Party Platform Credential's domain",
+        "tags": [
+          "Third Party Credential"
+        ]
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "\u0026lt;p\u0026gt;This is the API to set 3rd Platform domain.\u0026lt;/p\u0026gt;\n\t\t\t\t\t \u0026lt;p\u0026gt;It needs ADMIN:NAMESPACE:{namespace}:CLIENTDOMAIN [UPDATE] resource.\u0026lt;/p\u0026gt;\n\t\t",
+        "operationId": "UpdateThirdPartyLoginPlatformDomainV3",
+        "parameters": [
+          {
+            "description": "Namespace, only accept alphabet and numeric",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Platform ID",
+            "in": "path",
+            "name": "platformId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/model.PlatformDomainUpdateRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Domain config updated",
+            "schema": {
+              "$ref": "#/definitions/model.PlatformDomainResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/rest.ErrorResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Platform client not found",
+            "schema": {
+              "$ref": "#/definitions/rest.ErrorResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/rest.ErrorResponse"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:CLIENTDOMAIN [UPDATE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Set Third Party Platform Credential's domain",
         "tags": [
           "Third Party Credential"
         ]
@@ -12946,7 +13103,7 @@
         "consumes": [
           "application/x-www-form-urlencoded"
         ],
-        "description": "\u0026#39;Generate url to request auth code from third party platform \u0026lt;br\u0026gt;\n               \u0026lt;h2\u0026gt;Supported platforms:\u0026lt;/h2\u0026gt;\u0026lt;ul\u0026gt;\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;steamopenid\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to steam login page, then redirect back to platform\n               authenticate endpoint after successfully authenticating user steam.\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;xblweb\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to xbox login page, then redirect back to platform\n               authenticate endpoint after successfully authenticating xbox user.\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;ps4web\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to psn login page, then redirect back to platform\n               authenticate endpoint after successfully authenticating psn user.\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;epicgames\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to Epicgames OAuth login page. then redirect to platform\n               authenticate endpoint after successfully authenticating an Epicgames credential\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;twitch\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to twitch login page, then redirect back to platform\n               authenticate endpoint after successfully authenticating twitch user.\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;azure\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to azure login page, then redirect back to platform\n               authenticate(saml) endpoint after successfully authenticating azure user.\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;facebook\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to facebook login page, then redirect back to platform\n               authenticate endpoint after successfully authenticating facebook user.\n               \u0026lt;/ul\u0026gt; action code : 10702\u0026#39;",
+        "description": "Generate url to request auth code from third party platform \u0026lt;br\u0026gt;\n               \u0026lt;h2\u0026gt;Supported platforms:\u0026lt;/h2\u0026gt;\u0026lt;ul\u0026gt;\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;steamopenid\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to steam login page, then redirect back to platform\n               authenticate endpoint after successfully authenticating user steam.\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;xblweb\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to xbox login page, then redirect back to platform\n               authenticate endpoint after successfully authenticating xbox user.\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;ps4web\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to psn login page, then redirect back to platform\n               authenticate endpoint after successfully authenticating psn user.\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;epicgames\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to Epicgames OAuth login page. then redirect to platform\n               authenticate endpoint after successfully authenticating an Epicgames credential\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;twitch\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to twitch login page, then redirect back to platform\n               authenticate endpoint after successfully authenticating twitch user.\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;azure\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to azure login page, then redirect back to platform\n               authenticate(saml) endpoint after successfully authenticating azure user.\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;facebook\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to facebook login page, then redirect back to platform\n               authenticate endpoint after successfully authenticating facebook user.\n               \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;google\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;This endpoint redirects to google login page, then redirect back to platform\n               authenticate endpoint after successfully authenticating google user.\t\t\t\t\n               \u0026lt;/ul\u0026gt; action code : 10702\u0026#39;",
         "operationId": "AuthCodeRequestV3",
         "parameters": [
           {
@@ -13252,7 +13409,7 @@
         "consumes": [
           "*/*"
         ],
-        "description": "This endpoint authenticates user platform. It validates user to its\n          respective platforms. Deactivated or login-banned users are unable to login. \u0026lt;br\u0026gt;\n          \u0026lt;h2\u0026gt;Supported platforms:\u0026lt;/h2\u0026gt;\u0026lt;ul\u0026gt;\n          \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;steamopenid\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;Steam login page will redirects to this endpoint after login success\n          as previously defined on openID request parameter \u0026lt;code\u0026gt;openid.return_to\u0026lt;/code\u0026gt; when request login to steam\n          https://openid.net/specs/openid-authentication-2_0.html#anchor27\n          \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;ps4web\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;PS4 login page will redirects to this endpoint after login success\n          as previously defined on authorize request parameter \u0026lt;code\u0026gt;redirect_uri\u0026lt;/code\u0026gt; \n\t\t  https://ps4.siedev.net/resources/documents/WebAPI/1/Auth_WebAPI-Reference/0002.html#0GetAccessTokenUsingAuthorizationCode\n          \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;xblweb\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;XBL login page will redirects to this endpoint after login success\n          as previously defined on authorize request parameter \u0026lt;code\u0026gt;redirect_uri\u0026lt;/code\u0026gt; \n          \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;epicgames\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;Epicgames login page will redirects to this endpoint after login success\n          or an error occurred. If error, it redirects to the login page.\n          \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;twitch\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;Twitch login page will redirects to this endpoint after login success\n          as previously defined on authorize request parameter \u0026lt;code\u0026gt;redirect_uri\u0026lt;/code\u0026gt;\n          \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;facebook\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;Facebook login page will redirects to this endpoint after login success\n          as previously defined on authorize request parameter \u0026lt;code\u0026gt;redirect_uri\u0026lt;/code\u0026gt;\n          \u0026lt;/ul\u0026gt; action code : 10709",
+        "description": "This endpoint authenticates user platform. It validates user to its\n          respective platforms. Deactivated or login-banned users are unable to login. \u0026lt;br\u0026gt;\n          \u0026lt;h2\u0026gt;Supported platforms:\u0026lt;/h2\u0026gt;\u0026lt;ul\u0026gt;\n          \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;steamopenid\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;Steam login page will redirects to this endpoint after login success\n          as previously defined on openID request parameter \u0026lt;code\u0026gt;openid.return_to\u0026lt;/code\u0026gt; when request login to steam\n          https://openid.net/specs/openid-authentication-2_0.html#anchor27\n          \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;ps4web\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;PS4 login page will redirects to this endpoint after login success\n          as previously defined on authorize request parameter \u0026lt;code\u0026gt;redirect_uri\u0026lt;/code\u0026gt; \n\t\t  https://ps4.siedev.net/resources/documents/WebAPI/1/Auth_WebAPI-Reference/0002.html#0GetAccessTokenUsingAuthorizationCode\n          \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;xblweb\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;XBL login page will redirects to this endpoint after login success\n          as previously defined on authorize request parameter \u0026lt;code\u0026gt;redirect_uri\u0026lt;/code\u0026gt; \n          \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;epicgames\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;Epicgames login page will redirects to this endpoint after login success\n          or an error occurred. If error, it redirects to the login page.\n          \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;twitch\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;Twitch login page will redirects to this endpoint after login success\n          as previously defined on authorize request parameter \u0026lt;code\u0026gt;redirect_uri\u0026lt;/code\u0026gt;\n          \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;facebook\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;Facebook login page will redirects to this endpoint after login success\n          as previously defined on authorize request parameter \u0026lt;code\u0026gt;redirect_uri\u0026lt;/code\u0026gt;\n          \u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;google\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;Google login page will redirects to this endpoint after login success\n          as previously defined on authorize request parameter \u0026lt;code\u0026gt;redirect_uri\u0026lt;/code\u0026gt;\n          \u0026lt;/ul\u0026gt; action code : 10709",
         "operationId": "PlatformAuthenticationV3",
         "parameters": [
           {
@@ -13885,7 +14042,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Required valid user authorization.\n\t\t\u0026lt;p\u0026gt;Notes:\u0026lt;/p\u0026gt;\n\t\t\u0026lt;ul\u0026gt;\n\t\t\t\u0026lt;li\u0026gt;This endpoint bulk get users\u0026#39; basic info by userId, max allowed 20 at a time\u0026lt;/li\u0026gt;\n\t\t\t\u0026lt;li\u0026gt;If namespace is game, will search by game user Id, other wise will search by publisher namespace\u0026lt;/li\u0026gt;\n\t\t\t\u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;Result will include displayName(if it exists)\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;\n\t\t\u0026lt;/ul\u0026gt;\n\t\t",
+        "description": "\u0026lt;p\u0026gt;Notes:\u0026lt;/p\u0026gt;\n\t\t\u0026lt;ul\u0026gt;\n\t\t\t\u0026lt;li\u0026gt;This endpoint bulk get users\u0026#39; basic info by userId, max allowed 20 at a time\u0026lt;/li\u0026gt;\n\t\t\t\u0026lt;li\u0026gt;If namespace is game, will search by game user Id, other wise will search by publisher namespace\u0026lt;/li\u0026gt;\n\t\t\t\u0026lt;li\u0026gt;\u0026lt;strong\u0026gt;Result will include displayName(if it exists)\u0026lt;/strong\u0026gt;\u0026lt;/li\u0026gt;\n\t\t\u0026lt;/ul\u0026gt;\n\t\t",
         "operationId": "PublicBulkGetUsers",
         "parameters": [
           {
@@ -13916,12 +14073,6 @@
           },
           "400": {
             "description": "\u003ctable\u003e\u003ctr\u003e\u003ctd\u003eerrorCode\u003c/td\u003e\u003ctd\u003eerrorMessage\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e20002\u003c/td\u003e\u003ctd\u003evalidation error\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e10185\u003c/td\u003e\u003ctd\u003epublisher namespace not allowed\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e",
-            "schema": {
-              "$ref": "#/definitions/rest.ErrorResponse"
-            }
-          },
-          "401": {
-            "description": "\u003ctable\u003e\u003ctr\u003e\u003ctd\u003eerrorCode\u003c/td\u003e\u003ctd\u003eerrorMessage\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e20001\u003c/td\u003e\u003ctd\u003eunauthorized access\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e",
             "schema": {
               "$ref": "#/definitions/rest.ErrorResponse"
             }
@@ -18496,6 +18647,34 @@
         "platformUserId"
       ]
     },
+    "accountcommon.RegisteredDomain": {
+      "properties": {
+        "affectedClientIDs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "namespaces": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "roleId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "affectedClientIDs",
+        "domain",
+        "namespaces",
+        "roleId"
+      ]
+    },
     "accountcommon.Role": {
       "properties": {
         "AdminRole": {
@@ -19928,6 +20107,57 @@
         "Resource"
       ]
     },
+    "model.PlatformDomainDeleteRequest": {
+      "properties": {
+        "domain": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "domain"
+      ]
+    },
+    "model.PlatformDomainResponse": {
+      "properties": {
+        "registeredDomains": {
+          "items": {
+            "$ref": "#/definitions/accountcommon.RegisteredDomain"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "registeredDomains"
+      ]
+    },
+    "model.PlatformDomainUpdateRequest": {
+      "properties": {
+        "affectedClientIDs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "assignedNamespaces": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "roleId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "affectedClientIDs",
+        "assignedNamespaces",
+        "domain",
+        "roleId"
+      ]
+    },
     "model.PlatformUserIDRequest": {
       "properties": {
         "platformUserIds": {
@@ -21012,6 +21242,12 @@
         },
         "TeamID": {
           "type": "string"
+        },
+        "registeredDomains": {
+          "items": {
+            "$ref": "#/definitions/accountcommon.RegisteredDomain"
+          },
+          "type": "array"
         }
       },
       "required": [
@@ -21029,7 +21265,8 @@
         "PlatformId",
         "RedirectUri",
         "Secret",
-        "TeamID"
+        "TeamID",
+        "registeredDomains"
       ]
     },
     "model.UnlinkUserPlatformRequest": {
@@ -22511,6 +22748,10 @@
         "platform_user_id": {
           "type": "string"
         },
+        "refresh_expires_in": {
+          "format": "int32",
+          "type": "integer"
+        },
         "refresh_token": {
           "type": "string"
         },
@@ -22520,10 +22761,16 @@
           },
           "type": "array"
         },
+        "scope": {
+          "type": "string"
+        },
         "token_type": {
           "type": "string"
         },
         "user_id": {
+          "type": "string"
+        },
+        "xuid": {
           "type": "string"
         }
       },
@@ -22535,10 +22782,13 @@
         "namespace",
         "namespace_roles",
         "permissions",
+        "refresh_expires_in",
         "refresh_token",
         "roles",
+        "scope",
         "token_type",
-        "user_id"
+        "user_id",
+        "xuid"
       ]
     },
     "oauthmodel.TokenThirdPartyResponse": {

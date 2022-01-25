@@ -35,6 +35,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public void FulfillRewards(FulfillRewards input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.FulfillmentResult? PublicRedeemCode(PublicRedeemCode input) {
             var response = _sdk.RunRequest(input);
 
