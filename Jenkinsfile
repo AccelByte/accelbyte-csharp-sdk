@@ -8,7 +8,10 @@ library(
   )
 )
 
-bitbucketHttpsCredentials = "Bitbucket_Build_AccelByte"
+bitbucketCredentialsHttps = "Bitbucket_Build_AccelByte"
+bitbucketCredentialsSsh = "build_account_bitbucket_key"
+
+justiceCodegenSdkMockServerCommit = "4dbaa04"
 
 bitbucketPayload = null
 bitbucketCommitHref = null
@@ -28,7 +31,7 @@ pipeline {
             }
           }
           if (bitbucketCommitHref) {
-            bitbucket.setBuildStatus(bitbucketHttpsCredentials, bitbucketCommitHref, "INPROGRESS", env.JOB_NAME, "${env.JOB_NAME}-${env.BUILD_NUMBER}", "Jenkins", "${env.BUILD_URL}console")
+            bitbucket.setBuildStatus(bitbucketCredentialsHttps, bitbucketCommitHref, "INPROGRESS", env.JOB_NAME, "${env.JOB_NAME}-${env.BUILD_NUMBER}", "Jenkins", "${env.BUILD_URL}console")
           }
         }
       }
@@ -68,7 +71,15 @@ pipeline {
      stages {
        stage('Unit Tests') {
          steps {
-           sh "make test"
+           sshagent(credentials: [bitbucketCredentialsSsh]) {
+             sh "rm -rf .justice-codegen-sdk-mock-server"
+             sh "git clone git@bitbucket.org:accelbyte/justice-codegen-sdk-mock-server.git .justice-codegen-sdk-mock-server"
+             dir(".justice-codegen-sdk-mock-server")
+             {
+               sh "git checkout ${justiceCodegenSdkMockServerCommit}"
+             }
+           }
+           sh "make test SDK_MOCK_SERVER_PATH=.justice-codegen-sdk-mock-server"
          }
        }
      }
@@ -78,14 +89,14 @@ pipeline {
     success {
       script {
         if (bitbucketCommitHref) {
-          bitbucket.setBuildStatus(bitbucketHttpsCredentials, bitbucketCommitHref, "SUCCESSFUL", env.JOB_NAME, "${env.JOB_NAME}-${env.BUILD_NUMBER}", "Jenkins", "${env.BUILD_URL}console")
+          bitbucket.setBuildStatus(bitbucketCredentialsHttps, bitbucketCommitHref, "SUCCESSFUL", env.JOB_NAME, "${env.JOB_NAME}-${env.BUILD_NUMBER}", "Jenkins", "${env.BUILD_URL}console")
         }
       }
     }
     failure {
       script {
         if (bitbucketCommitHref) {
-          bitbucket.setBuildStatus(bitbucketHttpsCredentials, bitbucketCommitHref, "FAILED", env.JOB_NAME, "${env.JOB_NAME}-${env.BUILD_NUMBER}", "Jenkins", "${env.BUILD_URL}console")
+          bitbucket.setBuildStatus(bitbucketCredentialsHttps, bitbucketCommitHref, "FAILED", env.JOB_NAME, "${env.JOB_NAME}-${env.BUILD_NUMBER}", "Jenkins", "${env.BUILD_URL}console")
         }
       }
     }
