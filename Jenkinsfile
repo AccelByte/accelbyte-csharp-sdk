@@ -54,7 +54,7 @@ pipeline {
         }
         stage('Lint spec') {
           steps {
-            sh "[ ! -f spec/TIMESTAMP ] && exit 1"  // Make sure TIMESTAMP file is present in spec directory
+            sh "[ -f spec/TIMESTAMP ] || exit 1"  // Make sure TIMESTAMP file is present in spec directory
           }
         }
       }
