@@ -19,17 +19,17 @@ namespace AccelByte.Sdk.Tests
         private static readonly TokenRepository _tokenRepository = DefaultTokenRepository.getInstance();
 
         private static readonly TestConfigRepository _httpbinConfigRepository = new TestConfigRepository(
-            "https://httpbin.org",
+            "https://httpbin.org",      // Requires internet connection
             "DUMMY_CLIENT_ID",
             "DUMMY_CLIENT_SECRET");
         private static readonly TestConfigRepository _clientConfigRepository = new TestConfigRepository(
-            Environment.GetEnvironmentVariable("BASE_URL")!,
-            Environment.GetEnvironmentVariable("CLIENT_ID")!,
-            Environment.GetEnvironmentVariable("CLIENT_SECRET")!);
+            "http://localhost:8080",    // Requires justice-codegen-sdk-mock-server with iam.json loaded
+            "bar",
+            "foo");
         private static readonly TestConfigRepository _userConfigRepository = new TestConfigRepository(
-            Environment.GetEnvironmentVariable("BASE_URL")!,
-            Environment.GetEnvironmentVariable("WEBSITE_CLIENT_ID")!,    // Use Oauth Client Id for Justice Adminportal Website
-            null!);
+            "http://localhost:8080",    // Requires justice-codegen-sdk-mock-server with iam.json loaded
+            "bar",
+            "foo");
 
         [Test]
         [TestCase("GET")]
@@ -202,9 +202,7 @@ namespace AccelByte.Sdk.Tests
             var headers = result.Headers ?? throw new AssertionException("Headers is null");
 
             Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
-            Assert.AreEqual(headers["Content-Type"], "multipart/form-data", $"Form value assert failed: {headers["Content-Type"]}");
-
-            // TODO Improve assertion
+            Assert.AreEqual(headers["Content-Type"], "multipart/form-data", $"Form value assert failed: {headers["Content-Type"]}");    // XXX Assertion need to be improved
         }
 
 
@@ -262,7 +260,6 @@ namespace AccelByte.Sdk.Tests
         }
 
         [Test]
-        [Ignore("WIP Setup Jenkins environment variable")]
         public void LoginLogoutClient()
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _clientConfigRepository);
@@ -280,7 +277,6 @@ namespace AccelByte.Sdk.Tests
         }
 
         [Test]
-        [Ignore("WIP Setup Jenkins environment variable")]
         public void LoginLogoutUser()
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _userConfigRepository);
@@ -290,22 +286,12 @@ namespace AccelByte.Sdk.Tests
             Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.ClientId));
             //Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.ClientSecret)); // Not required for user login
 
-            var username = Environment.GetEnvironmentVariable("ADMIN_USER_NAME") ??
-                    throw new AssertionException("Username is null");
-            var password = Environment.GetEnvironmentVariable("ADMIN_USER_PASS") ??
-                    throw new AssertionException("Password is null");
-
-            Assert.True(!string.IsNullOrEmpty(username));
-            Assert.True(!string.IsNullOrEmpty(password));
-
-            Assert.IsTrue(sdk.LoginUser(username, password), $"Login user failed");
+            Assert.IsTrue(sdk.LoginUser("user", "user"), $"Login user failed");
             Assert.IsTrue(!string.IsNullOrEmpty(sdk.Configuration.TokenRepository.GetToken()));
 
             sdk.Logout();
             Assert.IsTrue(string.IsNullOrEmpty(sdk.Configuration.TokenRepository.GetToken()));
         }
-
-        // TODO Redirect response
 
         // TODO Binary request & response
     }
