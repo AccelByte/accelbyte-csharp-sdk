@@ -7,7 +7,7 @@ using System.Text.Json;
 
 namespace AccelByte.Sdk.Core.Client
 {
-    public class DefaultHttpClient : HttpClient
+    public class DefaultHttpClient : IHttpClient
     {
         private static readonly HttpClientHandler Handler = new HttpClientHandler() 
         { 

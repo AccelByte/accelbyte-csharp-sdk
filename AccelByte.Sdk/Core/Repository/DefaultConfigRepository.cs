@@ -1,6 +1,6 @@
 namespace AccelByte.Sdk.Core.Repository
 {
-    public class DefaultConfigRepository : ConfigRepository
+    public class DefaultConfigRepository : IConfigRepository
     {
 
         private const String BASE_URL = "AB_BASE_URL";

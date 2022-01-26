@@ -1,6 +1,6 @@
 namespace AccelByte.Sdk.Core.Repository
 {
-    public interface ConfigRepository
+    public interface IConfigRepository
     {
         string BaseUrl { get; }
 

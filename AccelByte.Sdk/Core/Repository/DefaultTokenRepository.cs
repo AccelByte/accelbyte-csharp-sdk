@@ -1,7 +1,7 @@
 namespace AccelByte.Sdk.Core.Repository
 {
 
-    public class DefaultTokenRepository : TokenRepository
+    public class DefaultTokenRepository : ITokenRepository
     {
         public static object InstanceLock = new object();
         private static DefaultTokenRepository Instance = default!;

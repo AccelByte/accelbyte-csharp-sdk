@@ -2,7 +2,7 @@ using AccelByte.Sdk.Core.Repository;
 
 namespace AccelByte.Sdk.Tests
 {
-    public class TestConfigRepository : ConfigRepository
+    public class TestConfigRepository : IConfigRepository
     {
         public TestConfigRepository(string baseUrl, string clientId, string clientSecret)
         {
