@@ -67,7 +67,7 @@ if (!logout) {
 }
 ```
 
-## API Covered:
+## API Covered
 
 All REST API from AccelByte services are included, except websocket on lobby service.
 
