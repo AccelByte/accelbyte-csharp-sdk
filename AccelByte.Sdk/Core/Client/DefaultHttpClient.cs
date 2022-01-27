@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Core.Client
 
                 if (operation.Produces.Any())
                 {
-                    headers["Accept"] = operation.Consumes.First();    // XXX First only
+                    headers["Accept"] = operation.Produces.First();    // XXX First only
                 }
 
                 var url = operation.GetUrl(baseURL);
@@ -87,6 +87,8 @@ namespace AccelByte.Sdk.Core.Client
                 }
                 else
                 {
+                    if (contentType == String.Empty)
+                        contentType = "text/plain";
                     request.Content = new StringContent(string.Empty, Encoding.UTF8, contentType);
                 }
 
