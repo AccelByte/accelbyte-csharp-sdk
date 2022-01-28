@@ -53,6 +53,23 @@ namespace AccelByte.Sdk.Tests
         }
 
         [Test]
+        [TestCase("GET")]
+        public void HttpbinNoRequestBodyType(string method)
+        {
+            var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
+            var sdk = new AccelByteSDK(config);
+
+            var op = new HttpbinOperation(new HttpMethod(method), "/anything", null, null, null, "", null);
+
+            var response = sdk.RunRequest(op);
+
+            var result = op.ParseResponse<Dictionary<string, string>>(response.Code, response.ContentType, response.Payload) ??
+                    throw new AssertionException("Result is null");
+
+            Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
+        }
+
+        [Test]
         [TestCase("POST", "abc/def:123?x=1&y=2")] // Special characters need to be escaped
         public void HttpbinRequestPathParam(string method, string pathParam)
         {

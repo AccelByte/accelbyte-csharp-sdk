@@ -10,7 +10,7 @@ namespace AccelByte.Sdk.Tests
 {
     public class HttpbinOperation : Operation
     {
-        private readonly string _consumes;
+        private string[] _Consumes;
 
         public HttpbinOperation(HttpMethod method, 
                 string path = "/anything",
@@ -51,14 +51,17 @@ namespace AccelByte.Sdk.Tests
 
             BodyParams = bodyParams;
 
-            _consumes = consumes;
+            if (consumes.Trim() != string.Empty)
+                _Consumes = new string[] { consumes };
+            else
+                _Consumes = new string[] { };
         }
 
         public override string Path { get; }
 
         public override HttpMethod Method { get; }
 
-        public override string[] Consumes =>  new[] { _consumes };
+        public override string[] Consumes => _Consumes;
 
         public override string[] Produces => new[] { "application/json" };
 
