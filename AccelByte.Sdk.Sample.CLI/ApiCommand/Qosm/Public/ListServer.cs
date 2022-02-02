@@ -1,0 +1,42 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Sample.CLI.Command;
+
+using AccelByte.Sdk.Api.Qosm.Wrapper;
+using AccelByte.Sdk.Api.Qosm.Model;
+using AccelByte.Sdk.Api.Qosm.Operation;
+
+namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Qosm
+{
+    [SdkConsoleCommand("qosm","listserver")]
+    public class ListServerCommand: ISdkConsoleCommand
+    {
+        private AccelByteSDK _SDK;
+
+        public string ServiceName{ get { return "Qosm"; } }
+
+        public string OperationName{ get { return "ListServer"; } }
+
+        public ListServerCommand(AccelByteSDK sdk)
+        {
+            _SDK = sdk;
+        }
+
+        public string Run()
+        {
+            AccelByte.Sdk.Api.Qosm.Wrapper.Public wrapper = new AccelByte.Sdk.Api.Qosm.Wrapper.Public(_SDK);
+
+            ListServer operation = new ListServer(
+            );            
+
+            AccelByte.Sdk.Api.Qosm.Model.ModelsListServerResponse? response = wrapper.ListServer(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
+        }
+    }
+}

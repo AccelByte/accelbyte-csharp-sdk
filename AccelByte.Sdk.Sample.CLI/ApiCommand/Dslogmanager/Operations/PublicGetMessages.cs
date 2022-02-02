@@ -1,0 +1,42 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Sample.CLI.Command;
+
+using AccelByte.Sdk.Api.Dslogmanager.Wrapper;
+using AccelByte.Sdk.Api.Dslogmanager.Model;
+using AccelByte.Sdk.Api.Dslogmanager.Operation;
+
+namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Dslogmanager
+{
+    [SdkConsoleCommand("dslogmanager","publicgetmessages")]
+    public class PublicGetMessagesCommand: ISdkConsoleCommand
+    {
+        private AccelByteSDK _SDK;
+
+        public string ServiceName{ get { return "Dslogmanager"; } }
+
+        public string OperationName{ get { return "PublicGetMessages"; } }
+
+        public PublicGetMessagesCommand(AccelByteSDK sdk)
+        {
+            _SDK = sdk;
+        }
+
+        public string Run()
+        {
+            AccelByte.Sdk.Api.Dslogmanager.Wrapper.Operations wrapper = new AccelByte.Sdk.Api.Dslogmanager.Wrapper.Operations(_SDK);
+
+            PublicGetMessages operation = new PublicGetMessages(
+            );            
+
+            List<AccelByte.Sdk.Api.Dslogmanager.Model.LogAppMessageDeclaration>? response = wrapper.PublicGetMessages(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
+        }
+    }
+}

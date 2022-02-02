@@ -29,6 +29,8 @@ namespace AccelByte.Sdk.Sample.CLI
 
         public string OperationName { get; private set; } = String.Empty;
 
+        public Stream? FileUpload { get; private set; } = null;
+
         public CommandArguments(string[] args)
         {
             _Parameters = new Dictionary<string, string>();
@@ -83,6 +85,15 @@ namespace AccelByte.Sdk.Sample.CLI
                             if (aValue == String.Empty)
                                 throw new CommandArgumentException("Request body content is specified but has empty value.");
                             _RequestFileContent = aValue;
+                        }
+                        else if (aKey == "upload")
+                        {
+                            //set file to be uploaded.
+                            if (aValue == String.Empty)
+                                throw new CommandArgumentException("File upload is specified but has empty value.");
+                            if (!File.Exists(aValue))
+                                throw new CommandArgumentException("Specified file for upload does not exists.");
+                            FileUpload = new FileStream(aValue, FileMode.Open, FileAccess.Read);
                         }
                         else if (aKey == "lt")
                         {

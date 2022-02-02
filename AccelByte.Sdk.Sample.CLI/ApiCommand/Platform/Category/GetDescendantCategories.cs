@@ -1,0 +1,54 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Sample.CLI.Command;
+
+using AccelByte.Sdk.Api.Platform.Wrapper;
+using AccelByte.Sdk.Api.Platform.Model;
+using AccelByte.Sdk.Api.Platform.Operation;
+
+namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Platform
+{
+    [SdkConsoleCommand("platform","getdescendantcategories")]
+    public class GetDescendantCategoriesCommand: ISdkConsoleCommand
+    {
+        private AccelByteSDK _SDK;
+
+        public string ServiceName{ get { return "Platform"; } }
+
+        public string OperationName{ get { return "GetDescendantCategories"; } }
+
+        [SdkCommandArgument("categoryPath")]
+        public string CategoryPath { get; set; } = String.Empty;
+
+        [SdkCommandArgument("namespace")]
+        public string Namespace { get; set; } = String.Empty;
+
+        [SdkCommandArgument("storeId")]
+        public string? StoreId { get; set; }
+
+        public GetDescendantCategoriesCommand(AccelByteSDK sdk)
+        {
+            _SDK = sdk;
+        }
+
+        public string Run()
+        {
+            AccelByte.Sdk.Api.Platform.Wrapper.Category wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Category(_SDK);
+
+            GetDescendantCategories operation = new GetDescendantCategories(
+                CategoryPath,                
+                Namespace,                
+                StoreId                
+            );            
+
+            List<AccelByte.Sdk.Api.Platform.Model.FullCategoryInfo>? response = wrapper.GetDescendantCategories(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
+        }
+    }
+}

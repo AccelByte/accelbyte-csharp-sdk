@@ -31,6 +31,15 @@
         "AB_CLIENT_ID": "bar",
         "AB_BASE_URL": "http://localhost:8080"
       }
+    },
+    "Test - File Upload": {
+      "commandName": "Project",
+      "commandLineArgs": "--sn achievement --op importachievements --namespace test_ns --upload \"D:\\\\Test\\\\csv-example.csv\" --strategy test_strategy",
+      "environmentVariables": {
+        "AB_CLIENT_SECRET": "foo",
+        "AB_CLIENT_ID": "bar",
+        "AB_BASE_URL": "http://localhost:8080"
+      }
     }
   }
 }

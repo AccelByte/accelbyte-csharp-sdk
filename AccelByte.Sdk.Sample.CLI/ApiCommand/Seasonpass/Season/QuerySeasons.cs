@@ -1,0 +1,58 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Sample.CLI.Command;
+
+using AccelByte.Sdk.Api.Seasonpass.Wrapper;
+using AccelByte.Sdk.Api.Seasonpass.Model;
+using AccelByte.Sdk.Api.Seasonpass.Operation;
+
+namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Seasonpass
+{
+    [SdkConsoleCommand("seasonpass","queryseasons")]
+    public class QuerySeasonsCommand: ISdkConsoleCommand
+    {
+        private AccelByteSDK _SDK;
+
+        public string ServiceName{ get { return "Seasonpass"; } }
+
+        public string OperationName{ get { return "QuerySeasons"; } }
+
+        [SdkCommandArgument("namespace")]
+        public string Namespace { get; set; } = String.Empty;
+
+        [SdkCommandArgument("limit")]
+        public int? Limit { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public int? Offset { get; set; }
+
+        [SdkCommandArgument("status")]
+        public List<string>? Status { get; set; }
+
+        public QuerySeasonsCommand(AccelByteSDK sdk)
+        {
+            _SDK = sdk;
+        }
+
+        public string Run()
+        {
+            AccelByte.Sdk.Api.Seasonpass.Wrapper.Season wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Season(_SDK);
+
+            QuerySeasons operation = new QuerySeasons(
+                Namespace,                
+                Limit,                
+                Offset,                
+                Status                
+            );            
+
+            AccelByte.Sdk.Api.Seasonpass.Model.ListSeasonInfoPagingSlicedResult? response = wrapper.QuerySeasons(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
+        }
+    }
+}

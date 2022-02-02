@@ -1,0 +1,78 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Sample.CLI.Command;
+
+using AccelByte.Sdk.Api.Platform.Wrapper;
+using AccelByte.Sdk.Api.Platform.Model;
+using AccelByte.Sdk.Api.Platform.Operation;
+
+namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Platform
+{
+    [SdkConsoleCommand("platform","queryorders")]
+    public class QueryOrdersCommand: ISdkConsoleCommand
+    {
+        private AccelByteSDK _SDK;
+
+        public string ServiceName{ get { return "Platform"; } }
+
+        public string OperationName{ get { return "QueryOrders"; } }
+
+        [SdkCommandArgument("namespace")]
+        public string Namespace { get; set; } = String.Empty;
+
+        [SdkCommandArgument("endTime")]
+        public string? EndTime { get; set; }
+
+        [SdkCommandArgument("limit")]
+        public int? Limit { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public int? Offset { get; set; }
+
+        [SdkCommandArgument("orderNos")]
+        public List<string>? OrderNos { get; set; }
+
+        [SdkCommandArgument("sortBy")]
+        public string? SortBy { get; set; }
+
+        [SdkCommandArgument("startTime")]
+        public string? StartTime { get; set; }
+
+        [SdkCommandArgument("status")]
+        public string? Status { get; set; }
+
+        [SdkCommandArgument("withTotal")]
+        public bool? WithTotal { get; set; }
+
+        public QueryOrdersCommand(AccelByteSDK sdk)
+        {
+            _SDK = sdk;
+        }
+
+        public string Run()
+        {
+            AccelByte.Sdk.Api.Platform.Wrapper.Order wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Order(_SDK);
+
+            QueryOrders operation = new QueryOrders(
+                Namespace,                
+                EndTime,                
+                Limit,                
+                Offset,                
+                OrderNos,                
+                SortBy,                
+                StartTime,                
+                Status,                
+                WithTotal                
+            );            
+
+            AccelByte.Sdk.Api.Platform.Model.OrderPagingResult? response = wrapper.QueryOrders(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
+        }
+    }
+}
