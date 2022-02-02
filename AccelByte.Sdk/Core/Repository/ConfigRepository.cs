@@ -1,11 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace AccelByte.Sdk.Core.Repository
 {
-    public interface IConfigRepository
+    public class ConfigRepository
     {
-        string BaseUrl { get; }
-
-        string ClientId { get; }
-
-        string ClientSecret { get; }
+        public static readonly IConfigRepository Default = new DefaultConfigRepository();
     }
 }

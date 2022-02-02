@@ -1,0 +1,36 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "environmentVariables": {},
+      "distributionName": ""
+    },
+    "Do Login Test": {
+      "commandName": "Project",
+      "commandLineArgs": "--op login --user user --pass user",
+      "environmentVariables": {
+        "AB_CLIENT_SECRET": "foo",
+        "AB_CLIENT_ID": "bar",
+        "AB_BASE_URL": "http://localhost:8080"
+      }
+    },
+    "Test - AdminGetBannedUsersV3 ": {
+      "commandName": "Project",
+      "commandLineArgs": "--sn iam --op AdminGetBannedUsersV3 --namespace test",
+      "environmentVariables": {
+        "AB_CLIENT_SECRET": "foo",
+        "AB_CLIENT_ID": "bar",
+        "AB_BASE_URL": "http://localhost:8080"
+      }
+    },
+    "Test - JSON Request Body": {
+      "commandName": "Project",
+      "commandLineArgs": "--sn iam --op AdminCreateClientV3 --namespace test_ns --reqfile \"D:\\\\Test\\\\create_client_test.json\"",
+      "environmentVariables": {
+        "AB_CLIENT_SECRET": "foo",
+        "AB_CLIENT_ID": "bar",
+        "AB_BASE_URL": "http://localhost:8080"
+      }
+    }
+  }
+}

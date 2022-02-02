@@ -1,7 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace AccelByte.Sdk.Core.Client
 {
-    public interface IHttpClient
+    public class HttpClient
     {
-        HttpResponse SendRequest(Operation operation, String baseUrl, Dictionary<string,string> headers);
+        public static readonly IHttpClient Default = new DefaultHttpClient();
     }
 }

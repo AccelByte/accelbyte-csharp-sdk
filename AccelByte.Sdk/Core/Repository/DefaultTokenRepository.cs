@@ -8,7 +8,7 @@ namespace AccelByte.Sdk.Core.Repository
 
         private string _token = string.Empty;
 
-        public static DefaultTokenRepository getInstance()
+        public static DefaultTokenRepository GetInstance()
         {
             lock (InstanceLock)
             {

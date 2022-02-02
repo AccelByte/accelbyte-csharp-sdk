@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Tests
     public class Tests
     {
         private static readonly IHttpClient _httpClient = new DefaultHttpClient();
-        private static readonly ITokenRepository _tokenRepository = DefaultTokenRepository.getInstance();
+        private static readonly ITokenRepository _tokenRepository = DefaultTokenRepository.GetInstance();
 
         private static readonly TestConfigRepository _httpbinConfigRepository = new TestConfigRepository(
             "https://httpbin.org",      // Requires internet connection
