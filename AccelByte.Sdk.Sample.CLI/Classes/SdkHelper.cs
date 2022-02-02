@@ -44,6 +44,18 @@ namespace AccelByte.Sdk.Sample.CLI
             return sdk;
         }
 
+        public static AccelByteSDK CreatyEmptySdk()
+        {
+            IConfigRepository cRepo = ConfigRepository.Default;
+            IHttpClient httpClient = HttpClient.Default;
+            ITokenRepository tokenRepo = new FileBasedTokenRepository();
+
+            AccelByteConfig config = new AccelByteConfig(httpClient, tokenRepo, cRepo);
+            AccelByteSDK sdk = new AccelByteSDK(config);
+
+            return sdk;
+        }
+
         public static string SerializeToJson(object modelObj)
         {
             return JsonSerializer.Serialize(modelObj, modelObj.GetType(), new JsonSerializerOptions()

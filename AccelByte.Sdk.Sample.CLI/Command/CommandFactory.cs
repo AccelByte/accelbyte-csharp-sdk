@@ -41,6 +41,14 @@ namespace AccelByte.Sdk.Sample.CLI.Command
                     });
                     pi.SetValue(cmd, bodyObj);
                 }
+
+                SdkCommandFileAttribute? ufArg = pi.GetCustomAttribute<SdkCommandFileAttribute>();
+                if (ufArg != null)
+                {
+                    if (cArgs.FileUpload == null)
+                        continue;
+                    pi.SetValue(cmd, cArgs.FileUpload);
+                }
             }
         }
 
@@ -88,6 +96,94 @@ namespace AccelByte.Sdk.Sample.CLI.Command
 
             AttachParameterValuesToCommandObject(cArgs, obj);
             return obj;
+        }
+
+        public void EchoCommandParams(ISdkConsoleCommand cmd)
+        {
+            Type t = cmd.GetType();
+
+            bool isRequestBodyRequired = false;
+            bool isFileUploadRequired = false;
+            List<string> aParams = new List<string>();
+
+            foreach (PropertyInfo pi in t.GetProperties())
+            {
+                SdkCommandArgumentAttribute? attArg = pi.GetCustomAttribute<SdkCommandArgumentAttribute>();
+                if (attArg != null)
+                    aParams.Add(attArg.ParameterName);
+
+                SdkCommandDataAttribute? dtArg = pi.GetCustomAttribute<SdkCommandDataAttribute>();
+                if (dtArg != null)
+                    isRequestBodyRequired = true;
+
+                SdkCommandFileAttribute? ufArg = pi.GetCustomAttribute<SdkCommandFileAttribute>();
+                if (ufArg != null)
+                    isFileUploadRequired = true;
+            }
+
+            Console.WriteLine("\n\nOperation {0} - {1}", cmd.ServiceName, cmd.OperationName);
+            if (aParams.Count > 0)
+            {
+                string msg = "\nOption(s)\n";
+                foreach (string aParam in aParams)
+                    msg += "\t--" + aParam + "\n";
+                Console.WriteLine(msg);
+            }
+
+            if (isRequestBodyRequired)
+                Console.WriteLine("\nRequest body is required.");
+
+            if (isFileUploadRequired)
+                Console.WriteLine("\nFile upload is required.");
+        }
+
+        public void EchoAllServiceNames(AccelByteSDK sdk)
+        {
+            Console.WriteLine("Available API Service(s):");
+            foreach (KeyValuePair<string, Dictionary<string, Type>> pair in _CommandTypes)
+            {
+                if (pair.Value.Count <= 0)
+                    continue;
+
+                KeyValuePair<string, Type> fValue = pair.Value.First();
+                ISdkConsoleCommand? obj = (Activator.CreateInstance(fValue.Value, sdk) as ISdkConsoleCommand);
+                if (obj == null)
+                    continue;
+                Console.WriteLine("\t- {0}", obj.ServiceName);
+            }            
+        }        
+
+        public void EchoAllOperationInService(AccelByteSDK sdk, string serviceName)
+        {
+            if (!_CommandTypes.ContainsKey(serviceName))
+            { 
+                Console.WriteLine("No operation within {0} service.", serviceName);
+                return;
+            }
+
+            Console.WriteLine("Available operation(s):");
+            foreach (KeyValuePair<string,Type> pair in _CommandTypes[serviceName])
+            {
+                ISdkConsoleCommand? obj = (Activator.CreateInstance(pair.Value, sdk) as ISdkConsoleCommand);
+                if (obj == null)
+                    continue;
+                Console.WriteLine("\t- {0}", obj.OperationName);
+            }
+        }
+
+        public void EchoAllOperations(AccelByteSDK sdk)
+        {
+            Console.WriteLine("Available service/operations:");
+            foreach (KeyValuePair<string, Dictionary<string, Type>> pair in _CommandTypes)
+            {
+                foreach (KeyValuePair<string, Type> op in pair.Value)
+                {
+                    ISdkConsoleCommand? obj = (Activator.CreateInstance(op.Value, sdk) as ISdkConsoleCommand);
+                    if (obj == null)
+                        continue;
+                    Console.WriteLine("\t- {0} - {1}", obj.ServiceName, obj.OperationName);
+                }                              
+            }
         }
     }
 }

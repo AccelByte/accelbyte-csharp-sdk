@@ -18,7 +18,27 @@ namespace AccelByte.Sdk.Sample.CLI
                     "AccelByte.Sdk.Sample.CLI.ApiCommand",
                     Assembly.GetExecutingAssembly());
 
-                if (cArgs.OperationName == "login")
+                if (cArgs.OperationName == "")
+                {
+                    if (cArgs.IsListAllAsked)
+                    {
+                        AccelByteSDK sdk = SdkHelper.CreatyEmptySdk();
+                        cFactory.EchoAllOperations(sdk);
+                    }
+                    else if (cArgs.IsListAsked && (cArgs.ServiceName == String.Empty))
+                    {
+                        AccelByteSDK sdk = SdkHelper.CreatyEmptySdk();
+                        cFactory.EchoAllServiceNames(sdk);
+                    }
+                    else if (cArgs.IsListAsked && (cArgs.ServiceName != String.Empty))
+                    {
+                        AccelByteSDK sdk = SdkHelper.CreatyEmptySdk();
+                        cFactory.EchoAllOperationInService(sdk, cArgs.ServiceName);
+                    }
+                    else
+                        cArgs.EchoUsage();
+                }
+                else if (cArgs.OperationName == "login")
                 {
                     AccelByteSDK sdk = SdkHelper.CreateSdkAndLogin(cArgs);
                     Console.WriteLine("Login OK. Press enter to exit.");
@@ -27,14 +47,20 @@ namespace AccelByte.Sdk.Sample.CLI
                 {
                     AccelByteSDK sdk = SdkHelper.CreateSdkAndLogin(cArgs);
                     ISdkConsoleCommand cmd = cFactory.CreateCommandObject(cArgs, sdk);
-
-                    Console.WriteLine("Running {0} :: {1}", cmd.ServiceName, cmd.OperationName);
-                    string response = cmd.Run();
-                    Console.WriteLine("Response:\n{0}", response);
-                    Console.WriteLine("\nRun finished. Press enter to exit.");
-                }
-
-                Console.ReadLine();
+                    if (cArgs.IsHelpAsked)
+                    {
+                        cArgs.EchoUsage();
+                        cFactory.EchoCommandParams(cmd);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Running {0} :: {1}", cmd.ServiceName, cmd.OperationName);
+                        string response = cmd.Run();
+                        Console.WriteLine("Response:\n{0}", response);
+                        Console.WriteLine("\nRun finished. Press enter to exit.");
+                        Console.ReadLine();
+                    }                    
+                }                
             }
             catch (Exception ex)
             {

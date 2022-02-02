@@ -31,6 +31,12 @@ namespace AccelByte.Sdk.Sample.CLI
 
         public Stream? FileUpload { get; private set; } = null;
 
+        public bool IsHelpAsked { get; private set; } = false;
+
+        public bool IsListAsked { get; private set; } = false;
+
+        public bool IsListAllAsked { get; private set; } = false;
+
         public CommandArguments(string[] args)
         {
             _Parameters = new Dictionary<string, string>();
@@ -132,6 +138,18 @@ namespace AccelByte.Sdk.Sample.CLI
                                 throw new CommandArgumentException("Login password is specified but has empty value.");
                             LoginPassword = aValue;
                         }
+                        else if (aKey == "help")
+                        {
+                            IsHelpAsked = true;
+                        }
+                        else if (aKey == "list")
+                        {
+                            IsListAsked = true;
+                        }
+                        else if (aKey == "list-all")
+                        {
+                            IsListAllAsked = true;
+                        }
                         else
                             _Parameters.Add(aKey, aValue);
                     }
@@ -139,6 +157,26 @@ namespace AccelByte.Sdk.Sample.CLI
                         throw new CommandArgumentException();
                 }
             }
+        }
+
+        public void EchoUsage()
+        {
+            Console.WriteLine("usage: AccelByte.Sdk.Sample.CLI.exe [options]");
+            string opts = "\t--sn\tSpecify API service name\n"
+                + "\t--op\tSpecify which operation to execute\n"
+                + "\t--lt\tSpecify login type, default to 'user'\n"
+                + "\t--user\tSpecify username for login operation\n"
+                + "\t--pass\tSpecify password for login operation\n"
+                + "\t--reqfile\tSpecify json file to be used as request body\n"
+                + "\t--reqbody\tSpecify json string to be used as request body\n"
+                + "\t--upload\tSpecify a file to be uploaded\n\n"
+                + "User Login:\n"
+                + "\tAccelByte.Sdk.Sample.CLI.exe --op login --user <username> --password <password>\n\n"
+                + "Client Login:\n"
+                + "\tAccelByte.Sdk.Sample.CLI.exe --op login --lt client\n\n"
+                + "To know about any other parameters used by any operation, use this:\n"
+                + "\tAccelByte.Sdk.Sample.CLI.exe --sn <service_name> --op <operation> --help";
+            Console.WriteLine(opts);
         }
     }
 }
