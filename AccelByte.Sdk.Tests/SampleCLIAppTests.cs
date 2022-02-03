@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
-using AccelByte.Sdk.Sample.CLI;
+using AccelByte.Sdk.Sample.Cli;
 
 namespace AccelByte.Sdk.Tests
 {
