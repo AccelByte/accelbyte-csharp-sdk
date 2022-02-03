@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk", "AccelByte.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Tests", "AccelByte.Sdk.Tests\AccelByte.Sdk.Tests.csproj", "{05326FE8-9312-4ADA-839F-7491B8E5301D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.Cli", "AccelByte.Sdk.Sample.CLI\AccelByte.Sdk.Sample.Cli.csproj", "{9781AC78-EBD8-4C58-9535-18B85F843441}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.Cli", "AccelByte.Sdk.Sample.Cli\AccelByte.Sdk.Sample.Cli.csproj", "{9781AC78-EBD8-4C58-9535-18B85F843441}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
