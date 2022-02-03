@@ -8,7 +8,7 @@ using System.IO;
 
 using AccelByte.Sdk.Core.Repository;
 
-namespace AccelByte.Sdk.Sample.CLI
+namespace AccelByte.Sdk.Sample.Cli
 {
     public class FileBasedTokenRepository : ITokenRepository
     {

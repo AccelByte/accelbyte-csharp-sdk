@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Gametelemetry.Wrapper;
 using AccelByte.Sdk.Api.Gametelemetry.Model;
 using AccelByte.Sdk.Api.Gametelemetry.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Gametelemetry
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
 {
     [SdkConsoleCommand("gametelemetry","protectedsaveeventsgametelemetryv1protectedeventspost")]
     public class ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostCommand: ISdkConsoleCommand

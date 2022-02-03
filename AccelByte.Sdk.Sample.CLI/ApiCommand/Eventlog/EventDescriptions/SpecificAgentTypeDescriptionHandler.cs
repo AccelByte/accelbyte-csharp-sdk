@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Eventlog.Wrapper;
 using AccelByte.Sdk.Api.Eventlog.Model;
 using AccelByte.Sdk.Api.Eventlog.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Eventlog
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
     [SdkConsoleCommand("eventlog","specificagenttypedescriptionhandler")]
     public class SpecificAgentTypeDescriptionHandlerCommand: ISdkConsoleCommand

@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Dslogmanager.Wrapper;
 using AccelByte.Sdk.Api.Dslogmanager.Model;
 using AccelByte.Sdk.Api.Dslogmanager.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Dslogmanager
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
 {
     [SdkConsoleCommand("dslogmanager","downloadserverlogs")]
     public class DownloadServerLogsCommand: ISdkConsoleCommand

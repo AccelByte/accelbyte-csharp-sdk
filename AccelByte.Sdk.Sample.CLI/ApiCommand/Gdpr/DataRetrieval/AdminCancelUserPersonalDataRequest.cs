@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Gdpr.Wrapper;
 using AccelByte.Sdk.Api.Gdpr.Model;
 using AccelByte.Sdk.Api.Gdpr.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Gdpr
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
 {
     [SdkConsoleCommand("gdpr","admincanceluserpersonaldatarequest")]
     public class AdminCancelUserPersonalDataRequestCommand: ISdkConsoleCommand

@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Platform.Wrapper;
 using AccelByte.Sdk.Api.Platform.Model;
 using AccelByte.Sdk.Api.Platform.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Platform
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
     [SdkConsoleCommand("platform","deleteiapitemconfig")]
     public class DeleteIAPItemConfigCommand: ISdkConsoleCommand

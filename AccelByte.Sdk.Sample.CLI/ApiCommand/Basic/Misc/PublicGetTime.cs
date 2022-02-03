@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Basic.Wrapper;
 using AccelByte.Sdk.Api.Basic.Model;
 using AccelByte.Sdk.Api.Basic.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Basic
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
     [SdkConsoleCommand("basic","publicgettime")]
     public class PublicGetTimeCommand: ISdkConsoleCommand

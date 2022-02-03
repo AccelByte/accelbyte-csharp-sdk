@@ -2,20 +2,20 @@
 using System.Reflection;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
-namespace AccelByte.Sdk.Sample.CLI
+namespace AccelByte.Sdk.Sample.Cli
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("AccelByte Sdk C# CLI App");
+            Console.WriteLine("AccelByte Sdk C# Cli App");
             try
             {
                 CommandArguments cArgs = new CommandArguments(args);
                 CommandFactory cFactory = new CommandFactory(
-                    "AccelByte.Sdk.Sample.CLI.ApiCommand",
+                    "AccelByte.Sdk.Sample.Cli.ApiCommand",
                     Assembly.GetExecutingAssembly());
 
                 if (cArgs.OperationName == "")

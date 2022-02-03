@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Qosm.Wrapper;
 using AccelByte.Sdk.Api.Qosm.Model;
 using AccelByte.Sdk.Api.Qosm.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Qosm
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
 {
     [SdkConsoleCommand("qosm","heartbeat")]
     public class HeartbeatCommand: ISdkConsoleCommand

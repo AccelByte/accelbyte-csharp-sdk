@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AccelByte.Sdk.Sample.CLI
+namespace AccelByte.Sdk.Sample.Cli
 {
     public class CommandArgumentException : Exception
     {

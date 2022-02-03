@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AccelByte.Sdk.Sample.CLI.Command
+namespace AccelByte.Sdk.Sample.Cli.Command
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public class SdkCommandArgumentAttribute : Attribute

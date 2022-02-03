@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Dsmc.Wrapper;
 using AccelByte.Sdk.Api.Dsmc.Model;
 using AccelByte.Sdk.Api.Dsmc.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Dsmc
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
     [SdkConsoleCommand("dsmc","updatedeployment")]
     public class UpdateDeploymentCommand: ISdkConsoleCommand

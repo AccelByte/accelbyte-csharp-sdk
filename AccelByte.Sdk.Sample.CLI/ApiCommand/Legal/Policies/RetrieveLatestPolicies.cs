@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Legal.Wrapper;
 using AccelByte.Sdk.Api.Legal.Model;
 using AccelByte.Sdk.Api.Legal.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Legal
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
     [SdkConsoleCommand("legal","retrievelatestpolicies")]
     public class RetrieveLatestPoliciesCommand: ISdkConsoleCommand

@@ -9,7 +9,7 @@ using System.Text.Json.Serialization;
 
 using AccelByte.Sdk.Core;
 
-namespace AccelByte.Sdk.Sample.CLI.Command
+namespace AccelByte.Sdk.Sample.Cli.Command
 {
     public class CommandFactory
     {

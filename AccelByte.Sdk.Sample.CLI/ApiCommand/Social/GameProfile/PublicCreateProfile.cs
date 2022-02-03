@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Social.Wrapper;
 using AccelByte.Sdk.Api.Social.Model;
 using AccelByte.Sdk.Api.Social.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Social
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
     [SdkConsoleCommand("social","publiccreateprofile")]
     public class PublicCreateProfileCommand: ISdkConsoleCommand

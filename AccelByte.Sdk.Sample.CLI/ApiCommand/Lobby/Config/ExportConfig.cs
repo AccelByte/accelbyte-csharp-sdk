@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Lobby.Wrapper;
 using AccelByte.Sdk.Api.Lobby.Model;
 using AccelByte.Sdk.Api.Lobby.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Lobby
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
     [SdkConsoleCommand("lobby","exportconfig")]
     public class ExportConfigCommand: ISdkConsoleCommand

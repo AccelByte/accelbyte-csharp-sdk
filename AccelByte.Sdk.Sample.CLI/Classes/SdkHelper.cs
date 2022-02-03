@@ -9,7 +9,7 @@ using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Client;
 using AccelByte.Sdk.Core.Repository;
 
-namespace AccelByte.Sdk.Sample.CLI
+namespace AccelByte.Sdk.Sample.Cli
 {
     public class SdkHelper
     {

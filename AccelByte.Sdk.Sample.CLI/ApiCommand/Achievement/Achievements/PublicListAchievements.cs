@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Achievement.Wrapper;
 using AccelByte.Sdk.Api.Achievement.Model;
 using AccelByte.Sdk.Api.Achievement.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Achievement
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
     [SdkConsoleCommand("achievement","publiclistachievements")]
     public class PublicListAchievementsCommand: ISdkConsoleCommand

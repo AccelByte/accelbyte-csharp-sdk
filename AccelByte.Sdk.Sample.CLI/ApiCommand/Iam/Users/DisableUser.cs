@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Iam.Wrapper;
 using AccelByte.Sdk.Api.Iam.Model;
 using AccelByte.Sdk.Api.Iam.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Iam
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
     [SdkConsoleCommand("iam","disableuser")]
     public class DisableUserCommand: ISdkConsoleCommand

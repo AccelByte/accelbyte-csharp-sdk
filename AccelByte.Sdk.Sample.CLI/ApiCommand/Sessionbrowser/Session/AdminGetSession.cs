@@ -3,13 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
-using AccelByte.Sdk.Sample.CLI.Command;
+using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Sessionbrowser.Wrapper;
 using AccelByte.Sdk.Api.Sessionbrowser.Model;
 using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
-namespace AccelByte.Sdk.Sample.CLI.ApiCommand.Sessionbrowser
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
     [SdkConsoleCommand("sessionbrowser","admingetsession")]
     public class AdminGetSessionCommand: ISdkConsoleCommand

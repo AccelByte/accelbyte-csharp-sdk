@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace AccelByte.Sdk.Sample.CLI
+namespace AccelByte.Sdk.Sample.Cli
 {
     public class CommandArguments
     {
