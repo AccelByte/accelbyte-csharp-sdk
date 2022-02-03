@@ -15,7 +15,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\AccelByte.Sdk.Sample.CLI\AccelByte.Sdk.Sample.Cli.csproj" />
+    <ProjectReference Include="..\AccelByte.Sdk.Sample.Cli\AccelByte.Sdk.Sample.Cli.csproj" />
     <ProjectReference Include="..\AccelByte.Sdk\AccelByte.Sdk.csproj" />
   </ItemGroup>
 
