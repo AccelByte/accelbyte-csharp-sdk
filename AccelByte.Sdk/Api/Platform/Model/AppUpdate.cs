@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public Dictionary<string, AppLocalization>? Localizations { get; set; }
         
         [JsonPropertyName("platformRequirements")]
-        public Dictionary<object, object>? PlatformRequirements { get; set; }
+        public Dictionary<string, object>? PlatformRequirements { get; set; }
         
         [JsonPropertyName("platforms")]
         public List<string>? Platforms { get; set; }

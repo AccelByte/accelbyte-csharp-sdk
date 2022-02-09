@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public string? Password { get; set; }
         
         [JsonPropertyName("settings")]
-        public Dictionary<object, object>? Settings { get; set; }
+        public Dictionary<string, object>? Settings { get; set; }
         
     }
 }

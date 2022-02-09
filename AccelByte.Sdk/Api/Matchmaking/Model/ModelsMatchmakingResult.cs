@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public string? Namespace { get; set; }
         
         [JsonPropertyName("party_attributes")]
-        public Dictionary<object, object>? PartyAttributes { get; set; }
+        public Dictionary<string, object>? PartyAttributes { get; set; }
         
         [JsonPropertyName("party_id")]
         public string? PartyId { get; set; }

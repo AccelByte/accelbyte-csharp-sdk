@@ -11,7 +11,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? CurrencyNamespace { get; set; }
         
         [JsonPropertyName("customParameters")]
-        public Dictionary<object, object>? CustomParameters { get; set; }
+        public Dictionary<string, object>? CustomParameters { get; set; }
         
         [JsonPropertyName("description")]
         public string? Description { get; set; }

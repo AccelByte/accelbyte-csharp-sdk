@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<object, object>? GetAllPartyInAllChannel(GetAllPartyInAllChannel input) {
+        public Dictionary<string, object>? GetAllPartyInAllChannel(GetAllPartyInAllChannel input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

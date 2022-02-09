@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
         public string? UserId { get; set; }
         
         [JsonPropertyName("value")]
-        public Dictionary<object, object>? Value { get; set; }
+        public Dictionary<string, object>? Value { get; set; }
         
     }
 }

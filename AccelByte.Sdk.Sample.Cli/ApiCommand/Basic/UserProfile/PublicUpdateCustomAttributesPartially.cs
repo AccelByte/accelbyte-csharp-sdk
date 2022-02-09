@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public Dictionary<object, object>? Body { get; set; }
+        public Dictionary<string, object>? Body { get; set; }
                 
         public PublicUpdateCustomAttributesPartiallyCommand(AccelByteSDK sdk)
         {
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 Body                
             );            
 
-            Dictionary<object, object>? response = wrapper.PublicUpdateCustomAttributesPartially(operation);
+            Dictionary<string, object>? response = wrapper.PublicUpdateCustomAttributesPartially(operation);
             if (response == null)
                 return "No response from server.";
 

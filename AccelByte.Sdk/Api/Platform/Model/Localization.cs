@@ -8,7 +8,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Description { get; set; }
         
         [JsonPropertyName("localExt")]
-        public Dictionary<object, object>? LocalExt { get; set; }
+        public Dictionary<string, object>? LocalExt { get; set; }
         
         [JsonPropertyName("longDescription")]
         public string? LongDescription { get; set; }

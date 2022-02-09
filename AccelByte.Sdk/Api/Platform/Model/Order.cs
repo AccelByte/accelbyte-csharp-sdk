@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? ExpireTime { get; set; }
         
         [JsonPropertyName("ext")]
-        public Dictionary<object, object>? Ext { get; set; }
+        public Dictionary<string, object>? Ext { get; set; }
         
         [JsonPropertyName("free")]
         public bool? Free { get; set; }

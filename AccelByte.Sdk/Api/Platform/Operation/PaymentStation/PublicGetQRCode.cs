@@ -1,4 +1,5 @@
 using System.Net;
+using System.IO;
 using System.Text.Json;
 using AccelByte.Sdk.Api.Platform.Model;
 using AccelByte.Sdk.Core;
@@ -33,10 +34,26 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public override string? Security {get; set;} = "Bearer";
         
         public byte[]? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
-            if (code == (HttpStatusCode)200)
+        {            
+            if (code == (HttpStatusCode)204)
             {
-                return JsonSerializer.Deserialize<byte[]>(payload);
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    payload.CopyTo(ms);
+                    return ms.ToArray();
+                }
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    payload.CopyTo(ms);
+                    return ms.ToArray();
+                }
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

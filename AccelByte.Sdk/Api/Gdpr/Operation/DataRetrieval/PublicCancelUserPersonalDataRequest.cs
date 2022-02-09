@@ -1,4 +1,5 @@
 using System.Net;
+using System.IO;
 using System.Text.Json;
 using AccelByte.Sdk.Api.Gdpr.Model;
 using AccelByte.Sdk.Core;
@@ -35,8 +36,16 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public override string? Security {get; set;} = "Bearer";
         
         public Model.ModelsListPersonalDataResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
+            {
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                return JsonSerializer.Deserialize<Model.ModelsListPersonalDataResponse>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
             {
                 return JsonSerializer.Deserialize<Model.ModelsListPersonalDataResponse>(payload);
             }

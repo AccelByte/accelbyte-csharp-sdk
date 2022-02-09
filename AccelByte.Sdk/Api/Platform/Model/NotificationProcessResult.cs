@@ -8,7 +8,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Code { get; set; }
         
         [JsonPropertyName("customParam")]
-        public Dictionary<object, object>? CustomParam { get; set; }
+        public Dictionary<string, object>? CustomParam { get; set; }
         
         [JsonPropertyName("severity")]
         public int? Severity { get; set; }

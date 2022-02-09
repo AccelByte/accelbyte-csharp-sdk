@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Namespace { get; set; }
         
         [JsonPropertyName("notification")]
-        public Dictionary<object, object>? Notification { get; set; }
+        public Dictionary<string, object>? Notification { get; set; }
         
         [JsonPropertyName("notificationSource")]
         public string? NotificationSource { get; set; }

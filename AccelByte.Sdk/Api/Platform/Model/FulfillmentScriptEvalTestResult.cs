@@ -8,7 +8,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? ErrorStackTrace { get; set; }
         
         [JsonPropertyName("result")]
-        public Dictionary<object, object>? Result { get; set; }
+        public Dictionary<string, object>? Result { get; set; }
         
     }
 }

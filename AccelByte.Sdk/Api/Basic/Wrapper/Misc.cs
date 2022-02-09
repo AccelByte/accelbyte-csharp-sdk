@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<object, object>? GetLanguages(GetLanguages input) {
+        public Dictionary<string, object>? GetLanguages(GetLanguages input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<object, object>? PublicGetLanguages(PublicGetLanguages input) {
+        public Dictionary<string, object>? PublicGetLanguages(PublicGetLanguages input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

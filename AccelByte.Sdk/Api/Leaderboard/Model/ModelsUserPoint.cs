@@ -5,7 +5,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
     public class ModelsUserPoint : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("additionalData")]
-        public Dictionary<object, object>? AdditionalData { get; set; }
+        public Dictionary<string, object>? AdditionalData { get; set; }
         
         [JsonPropertyName("hidden")]
         public bool? Hidden { get; set; }

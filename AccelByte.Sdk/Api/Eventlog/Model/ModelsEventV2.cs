@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
         public string? Namespace { get; set; }
         
         [JsonPropertyName("payload")]
-        public Dictionary<object, object>? Payload { get; set; }
+        public Dictionary<string, object>? Payload { get; set; }
         
         [JsonPropertyName("sessionId")]
         public string? SessionId { get; set; }

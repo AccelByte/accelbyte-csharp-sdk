@@ -47,10 +47,10 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public SeasonSummary? Season { get; set; }
         
         [JsonPropertyName("toClaimRewards")]
-        public Dictionary<object, object>? ToClaimRewards { get; set; }
+        public Dictionary<string, object>? ToClaimRewards { get; set; }
         
         [JsonPropertyName("claimingRewards")]
-        public Dictionary<object, object>? ClaimingRewards { get; set; }
+        public Dictionary<string, object>? ClaimingRewards { get; set; }
         
     }
 }

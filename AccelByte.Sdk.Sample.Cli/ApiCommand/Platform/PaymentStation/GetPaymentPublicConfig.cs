@@ -48,7 +48,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Region                
             );            
 
-            Dictionary<object, object>? response = wrapper.GetPaymentPublicConfig(operation);
+            Dictionary<string, object>? response = wrapper.GetPaymentPublicConfig(operation);
             if (response == null)
                 return "No response from server.";
 

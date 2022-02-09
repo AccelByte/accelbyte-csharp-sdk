@@ -14,7 +14,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public string? AvatarUrl { get; set; }
         
         [JsonPropertyName("customAttributes")]
-        public Dictionary<object, object>? CustomAttributes { get; set; }
+        public Dictionary<string, object>? CustomAttributes { get; set; }
         
         [JsonPropertyName("dateOfBirth")]
         public DateTime? DateOfBirth { get; set; }
@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public string? LastName { get; set; }
         
         [JsonPropertyName("privateCustomAttributes")]
-        public Dictionary<object, object>? PrivateCustomAttributes { get; set; }
+        public Dictionary<string, object>? PrivateCustomAttributes { get; set; }
         
         [JsonPropertyName("timeZone")]
         public string? TimeZone { get; set; }

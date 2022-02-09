@@ -1,4 +1,5 @@
 using System.Net;
+using System.IO;
 using System.Text.Json;
 using AccelByte.Sdk.Api.Ugc.Model;
 using AccelByte.Sdk.Core;

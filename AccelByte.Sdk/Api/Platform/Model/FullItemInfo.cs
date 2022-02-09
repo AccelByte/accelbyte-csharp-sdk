@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? EntitlementType { get; set; }
         
         [JsonPropertyName("ext")]
-        public Dictionary<object, object>? Ext { get; set; }
+        public Dictionary<string, object>? Ext { get; set; }
         
         [JsonPropertyName("features")]
         public List<string>? Features { get; set; }
@@ -80,7 +80,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public Recurring? Recurring { get; set; }
         
         [JsonPropertyName("regionData")]
-        public Dictionary<object, object>? RegionData { get; set; }
+        public Dictionary<string, object>? RegionData { get; set; }
         
         [JsonPropertyName("seasonType")]
         public string? SeasonType { get; set; }

@@ -1,4 +1,5 @@
 using System.Net;
+using System.IO;
 using System.Text.Json;
 using AccelByte.Sdk.Api.Platform.Model;
 using AccelByte.Sdk.Core;
@@ -36,11 +37,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string? Security {get; set;} = "Bearer";
         
-        public Dictionary<object, object>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
-            if (code == (HttpStatusCode)200)
+        public Dictionary<string, object>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        {            
+            if (code == (HttpStatusCode)204)
             {
-                return JsonSerializer.Deserialize<Dictionary<object, object>>(payload);
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                return JsonSerializer.Deserialize<Dictionary<string, object>>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return JsonSerializer.Deserialize<Dictionary<string, object>>(payload);
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

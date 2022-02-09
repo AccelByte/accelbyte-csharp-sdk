@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<object, object>? GetPaymentPublicConfig(GetPaymentPublicConfig input) {
+        public Dictionary<string, object>? GetPaymentPublicConfig(GetPaymentPublicConfig input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

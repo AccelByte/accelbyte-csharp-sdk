@@ -1,4 +1,5 @@
 using System.Net;
+using System.IO;
 using System.Text.Json;
 using AccelByte.Sdk.Api.Dsmc.Model;
 using AccelByte.Sdk.Core;
@@ -33,8 +34,16 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public override string? Security {get; set;} = "Bearer";
         
         public Model.ModelsServerSessionResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
-            if (code == (HttpStatusCode)200)
+        {            
+            if (code == (HttpStatusCode)204)
+            {
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                return JsonSerializer.Deserialize<Model.ModelsServerSessionResponse>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
             {
                 return JsonSerializer.Deserialize<Model.ModelsServerSessionResponse>(payload);
             }

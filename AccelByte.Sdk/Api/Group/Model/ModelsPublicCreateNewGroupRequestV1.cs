@@ -8,7 +8,7 @@ namespace AccelByte.Sdk.Api.Group.Model
         public string? ConfigurationCode { get; set; }
         
         [JsonPropertyName("customAttributes")]
-        public Dictionary<object, object>? CustomAttributes { get; set; }
+        public Dictionary<string, object>? CustomAttributes { get; set; }
         
         [JsonPropertyName("groupDescription")]
         public string? GroupDescription { get; set; }

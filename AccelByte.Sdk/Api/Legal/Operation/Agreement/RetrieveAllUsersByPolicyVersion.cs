@@ -1,4 +1,5 @@
 using System.Net;
+using System.IO;
 using System.Text.Json;
 using AccelByte.Sdk.Api.Legal.Model;
 using AccelByte.Sdk.Core;
@@ -37,8 +38,16 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public override string? Security {get; set;} = "Bearer";
         
         public List<Model.PagedRetrieveUserAcceptedAgreementResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
-            if (code == (HttpStatusCode)200)
+        {            
+            if (code == (HttpStatusCode)204)
+            {
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                return JsonSerializer.Deserialize<List<Model.PagedRetrieveUserAcceptedAgreementResponse>>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
             {
                 return JsonSerializer.Deserialize<List<Model.PagedRetrieveUserAcceptedAgreementResponse>>(payload);
             }

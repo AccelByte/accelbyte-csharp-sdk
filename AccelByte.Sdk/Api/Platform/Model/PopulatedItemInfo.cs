@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? EntitlementType { get; set; }
         
         [JsonPropertyName("ext")]
-        public Dictionary<object, object>? Ext { get; set; }
+        public Dictionary<string, object>? Ext { get; set; }
         
         [JsonPropertyName("features")]
         public List<string>? Features { get; set; }
@@ -68,7 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public bool? Listable { get; set; }
         
         [JsonPropertyName("localExt")]
-        public Dictionary<object, object>? LocalExt { get; set; }
+        public Dictionary<string, object>? LocalExt { get; set; }
         
         [JsonPropertyName("longDescription")]
         public string? LongDescription { get; set; }

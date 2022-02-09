@@ -8,7 +8,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
         public string? UpdatedAt { get; set; }
         
         [JsonPropertyName("value")]
-        public Dictionary<object, object>? Value { get; set; }
+        public Dictionary<string, object>? Value { get; set; }
         
     }
 }

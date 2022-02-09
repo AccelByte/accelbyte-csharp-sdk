@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<object, object>? GetCustomAttributesInfo(GetCustomAttributesInfo input) {
+        public Dictionary<string, object>? GetCustomAttributesInfo(GetCustomAttributesInfo input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<object, object>? UpdateCustomAttributesPartially(UpdateCustomAttributesPartially input) {
+        public Dictionary<string, object>? UpdateCustomAttributesPartially(UpdateCustomAttributesPartially input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<object, object>? GetPrivateCustomAttributesInfo(GetPrivateCustomAttributesInfo input) {
+        public Dictionary<string, object>? GetPrivateCustomAttributesInfo(GetPrivateCustomAttributesInfo input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<object, object>? UpdatePrivateCustomAttributesPartially(UpdatePrivateCustomAttributesPartially input) {
+        public Dictionary<string, object>? UpdatePrivateCustomAttributesPartially(UpdatePrivateCustomAttributesPartially input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -155,7 +155,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<object, object>? PublicGetCustomAttributesInfo(PublicGetCustomAttributesInfo input) {
+        public Dictionary<string, object>? PublicGetCustomAttributesInfo(PublicGetCustomAttributesInfo input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -163,7 +163,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<object, object>? PublicUpdateCustomAttributesPartially(PublicUpdateCustomAttributesPartially input) {
+        public Dictionary<string, object>? PublicUpdateCustomAttributesPartially(PublicUpdateCustomAttributesPartially input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

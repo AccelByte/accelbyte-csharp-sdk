@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 UserId                
             );            
 
-            Dictionary<object, object>? response = wrapper.GetCustomAttributesInfo(operation);
+            Dictionary<string, object>? response = wrapper.GetCustomAttributesInfo(operation);
             if (response == null)
                 return "No response from server.";
 

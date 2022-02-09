@@ -14,7 +14,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public string? AvatarUrl { get; set; }
         
         [JsonPropertyName("customAttributes")]
-        public Dictionary<object, object>? CustomAttributes { get; set; }
+        public Dictionary<string, object>? CustomAttributes { get; set; }
         
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }

@@ -5,7 +5,7 @@ namespace AccelByte.Sdk.Api.Social.Model
     public class BulkUserStatItemUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("additionalData")]
-        public Dictionary<object, object>? AdditionalData { get; set; }
+        public Dictionary<string, object>? AdditionalData { get; set; }
         
         [JsonPropertyName("additionalKey")]
         public string? AdditionalKey { get; set; }
