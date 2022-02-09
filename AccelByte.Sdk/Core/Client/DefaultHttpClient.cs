@@ -40,6 +40,12 @@ namespace AccelByte.Sdk.Core.Client
 
                 if (operation.BodyParams != null)
                 {
+                    if (contentType == String.Empty)
+                    {
+                        contentType = "application/json";
+                        headers["Content-Type"] = contentType;
+                    }
+
                     if (IsMediaTypeJson(contentType))
                     {
                         var jsonString = JsonSerializer.Serialize(operation.BodyParams);
@@ -72,13 +78,16 @@ namespace AccelByte.Sdk.Core.Client
                                 }
                                 else if (kvp.Value is Stream stream)
                                 {
-                                    content.Add(new StreamContent(stream), kvp.Key);
+                                    StreamContent fsStream = new StreamContent(stream);
+                                    fsStream.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                                    content.Add(fsStream, kvp.Key, "name.bin");
                                 }
                                 else
                                 {
                                     throw new NotSupportedException($"Unsupported multipart form data type (content type: {kvp.Value.GetType()})");
                                 }
                             }
+                            headers["Content-Type"] = ("multipart/form-data; boundary=" + boundary);
                             request.Content = content;
                             break;
                         default:

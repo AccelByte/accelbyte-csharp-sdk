@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 
 using AccelByte.Sdk.Core;
@@ -8,9 +9,8 @@ namespace AccelByte.Sdk.Sample.Cli
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
-            Console.WriteLine("AccelByte Sdk C# Cli App");
             try
             {
                 CommandArguments cArgs = new CommandArguments(args);
@@ -41,7 +41,6 @@ namespace AccelByte.Sdk.Sample.Cli
                 else if (cArgs.OperationName == "login")
                 {
                     AccelByteSDK sdk = SdkHelper.CreateSdkAndLogin(cArgs);
-                    Console.WriteLine("Login OK. Press enter to exit.");
                 }
                 else
                 {
@@ -54,19 +53,18 @@ namespace AccelByte.Sdk.Sample.Cli
                     }
                     else
                     {
-                        Console.WriteLine("Running {0} :: {1}", cmd.ServiceName, cmd.OperationName);
                         string response = cmd.Run();
                         Console.WriteLine("Response:\n{0}", response);
-                        Console.WriteLine("\nRun finished. Press enter to exit.");
-                        Console.ReadLine();
                     }                    
-                }                
+                } 
+
+		        return 0;               
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine("Exception: {0}", ex.Message);
-                Console.ReadLine();
+		        return 2;
             }
         }
     }

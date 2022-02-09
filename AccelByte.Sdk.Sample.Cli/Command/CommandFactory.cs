@@ -24,7 +24,40 @@ namespace AccelByte.Sdk.Sample.Cli.Command
                 if (attArg != null)
                 {
                     if (cArgs.Parameters.ContainsKey(attArg.ParameterName))
-                        pi.SetValue(cmd, cArgs.Parameters[attArg.ParameterName]);
+                    {
+                        if (pi.PropertyType == typeof(List<string>))
+                        {
+                            object? bodyObj = JsonSerializer.Deserialize(cArgs.Parameters[attArg.ParameterName], pi.PropertyType, new JsonSerializerOptions()
+                            {
+                                WriteIndented = true,
+                                AllowTrailingCommas = true,
+                                ReadCommentHandling = JsonCommentHandling.Skip
+                            });
+                            pi.SetValue(cmd, bodyObj);
+                        }
+                        else if ((pi.PropertyType == typeof(int)) || (pi.PropertyType == typeof(int?)))
+                        {
+                            string iValue = cArgs.Parameters[attArg.ParameterName].ToLower();
+                            pi.SetValue(cmd, int.Parse(iValue));
+                        }
+                        else if ((pi.PropertyType == typeof(long)) || (pi.PropertyType == typeof(long?)))
+                        {
+                            string iValue = cArgs.Parameters[attArg.ParameterName].ToLower();
+                            pi.SetValue(cmd, long.Parse(iValue));
+                        }
+                        else if ((pi.PropertyType == typeof(double)) || (pi.PropertyType == typeof(double?)))
+                        {
+                            string iValue = cArgs.Parameters[attArg.ParameterName].ToLower();
+                            pi.SetValue(cmd, double.Parse(iValue));
+                        }
+                        else if ((pi.PropertyType == typeof(bool)) || (pi.PropertyType == typeof(bool?)))
+                        {
+                            string bValue = cArgs.Parameters[attArg.ParameterName].ToLower();
+                            pi.SetValue(cmd, (bValue == "true"));
+                        }
+                        else
+                            pi.SetValue(cmd, Convert.ChangeType(cArgs.Parameters[attArg.ParameterName], pi.PropertyType));
+                    }
                 }
 
                 SdkCommandDataAttribute? dtArg = pi.GetCustomAttribute<SdkCommandDataAttribute>();

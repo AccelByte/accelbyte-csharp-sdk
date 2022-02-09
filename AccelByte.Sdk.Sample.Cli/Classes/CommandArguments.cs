@@ -53,14 +53,14 @@ namespace AccelByte.Sdk.Sample.Cli
                     if (part.Length <= 2)
                         throw new CommandArgumentException();
 
-                    if (part.Substring(0, 2) == "--")
+                    if (part.Substring(0, Math.Min(2, part.Length)) == "--")
                     {
                         string aKey = part.Substring(2).Trim();
                         string aValue = String.Empty;
                         if (args.Length > (cIndex + 1))
                         {
                             aValue = args[cIndex + 1].Trim();
-                            if (aValue.Substring(0, 2) == "--")
+                            if (aValue.Substring(0, Math.Min(2, aValue.Length)) == "--")
                             {
                                 aValue = String.Empty;
                                 cIndex += 1;
@@ -71,6 +71,15 @@ namespace AccelByte.Sdk.Sample.Cli
                         else
                         {
                             cIndex += 1;
+                        }                        
+
+                        if (aValue != String.Empty) 
+                        {
+                            if (aValue.Length > 2)
+                            {
+                                if ((aValue.Substring(0,1) == "'") && (aValue.Substring(aValue.Length -1,1) == "'"))
+                                    aValue = aValue.Substring(1, aValue.Length - 2);
+                            }
                         }
 
                         if (aKey == "reqfile")
@@ -142,7 +151,7 @@ namespace AccelByte.Sdk.Sample.Cli
                         {
                             IsHelpAsked = true;
                         }
-                        else if (aKey == "list")
+                        else if (aKey == "list-ops")
                         {
                             IsListAsked = true;
                         }

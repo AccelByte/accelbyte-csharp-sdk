@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Sample.Cli
         public FileBasedTokenRepository()
         {
             string aLoc = Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)!;
-            _FileName = (aLoc + "\\token.txt");
+            _FileName = (aLoc + Path.DirectorySeparatorChar + "token.txt");
         }
 
         public string GetToken()
