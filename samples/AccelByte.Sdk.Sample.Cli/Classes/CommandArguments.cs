@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 
 using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Sample.Cli
 {
@@ -110,7 +111,10 @@ namespace AccelByte.Sdk.Sample.Cli
                                 throw new CommandArgumentException("File upload is specified but has empty value.");
                             if (!File.Exists(aValue))
                                 throw new CommandArgumentException("Specified file for upload does not exists.");
-                            FileUpload = new FileUploadStream(aValue, FileMode.Open, FileAccess.Read);
+                            FileUploadStream fuStream = new FileUploadStream(aValue, FileMode.Open, FileAccess.Read);
+                            MimeTypes mt = new MimeTypes();
+                            fuStream.MimeType = mt.ConvertFromFilename(aValue, "application/octet-stream");
+                            FileUpload = fuStream;
                         }
                         else if (aKey == "lt")
                         {

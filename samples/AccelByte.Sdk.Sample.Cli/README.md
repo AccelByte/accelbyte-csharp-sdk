@@ -10,7 +10,7 @@
 ### Set up environment variables
 You have to declare these environment variables below:
 
-`AB_BAE_URL` (required)
+`AB_BASE_URL` (required)
 
 `AB_CLIENT_ID` (required)
 
