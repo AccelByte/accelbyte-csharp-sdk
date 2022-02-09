@@ -11,8 +11,6 @@ library(
 bitbucketCredentialsHttps = "Bitbucket_Build_AccelByte"
 bitbucketCredentialsSsh = "build_account_bitbucket_key"
 
-justiceCodegenSdkMockServerCommit = "4dbaa04"
-
 bitbucketPayload = null
 bitbucketCommitHref = null
 
@@ -71,14 +69,10 @@ pipeline {
      stages {
        stage('Unit Tests') {
          steps {
-           sshagent(credentials: [bitbucketCredentialsSsh]) {
-             sh "rm -rf .justice-codegen-sdk-mock-server"
-             sh "git clone git@bitbucket.org:accelbyte/justice-codegen-sdk-mock-server.git .justice-codegen-sdk-mock-server"
-             dir(".justice-codegen-sdk-mock-server")
-             {
-               sh "git checkout ${justiceCodegenSdkMockServerCommit}"
-             }
-           }
+            sshagent(credentials: [bitbucketCredentialsSsh]) {
+              sh "rm -rf .justice-codegen-sdk-mock-server"
+              sh "git clone --depth 1 git@bitbucket.org:accelbyte/justice-codegen-sdk-mock-server.git .justice-codegen-sdk-mock-server"
+            }
            sh "make test SDK_MOCK_SERVER_PATH=.justice-codegen-sdk-mock-server"
          }
        }
