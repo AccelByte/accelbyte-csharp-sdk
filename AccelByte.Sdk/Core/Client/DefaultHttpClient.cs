@@ -5,6 +5,9 @@ using System.Net.Mime;
 using System.Text;
 using System.Text.Json;
 
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Util;
+
 namespace AccelByte.Sdk.Core.Client
 {
     public class DefaultHttpClient : IHttpClient
@@ -75,6 +78,12 @@ namespace AccelByte.Sdk.Core.Client
                                 if (kvp.Value is string str)
                                 {
                                     content.Add(new StringContent(str), kvp.Key);
+                                }
+                                else if (kvp.Value is FileUploadStream fusStream)
+                                {
+                                    StreamContent fsStream = new StreamContent(fusStream);
+                                    fsStream.Headers.ContentType = new MediaTypeHeaderValue(fusStream.MimeType);
+                                    content.Add(fsStream, kvp.Key, fusStream.FileName);
                                 }
                                 else if (kvp.Value is Stream stream)
                                 {

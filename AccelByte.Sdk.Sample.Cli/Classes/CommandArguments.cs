@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
+using AccelByte.Sdk.Core;
+
 namespace AccelByte.Sdk.Sample.Cli
 {
     public class CommandArguments
@@ -108,7 +110,7 @@ namespace AccelByte.Sdk.Sample.Cli
                                 throw new CommandArgumentException("File upload is specified but has empty value.");
                             if (!File.Exists(aValue))
                                 throw new CommandArgumentException("Specified file for upload does not exists.");
-                            FileUpload = new FileStream(aValue, FileMode.Open, FileAccess.Read);
+                            FileUpload = new FileUploadStream(aValue, FileMode.Open, FileAccess.Read);
                         }
                         else if (aKey == "lt")
                         {
