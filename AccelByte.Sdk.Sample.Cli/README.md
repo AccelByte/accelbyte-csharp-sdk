@@ -66,11 +66,11 @@ Just hit Build in the main menu, or right click in "AccelByte.Sdk.Sample.Cli", t
 
 7. To list all API service names:
 
-    `AccelByte.Sdk.Sample.Cli.exe --list`
+    `AccelByte.Sdk.Sample.Cli.exe --list-ops`
 
 8. To list all operations in an API service:
 
-    `AccelByte.Sdk.Sample.Cli.exe --sn <service_name> --list`
+    `AccelByte.Sdk.Sample.Cli.exe --sn <service_name> --list-ops`
 
 9. To list all operations in all services:
 
