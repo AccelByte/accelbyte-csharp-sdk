@@ -24,5 +24,5 @@ test_cli:
 			(DOCKER_RUN_ARGS="-t --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data -w /data --network host --name justice-codegen-sdk-mock-server" bash "$(SDK_MOCK_SERVER_PATH)/mock-server.sh" -s /data/spec &) && \
 			(for i in $$(seq 1 10); do bash -c "timeout 1 echo > /dev/tcp/127.0.0.1/8080" 2>/dev/null && exit 0 || sleep 10; done; exit 1) && \
 			sed -i "s/\r//" tests/sh/* && \
-			(for FILE in $$(ls tests/sh/*.sh | grep -v run-cli-all-tests.sh); do PATH="samples/AccelByte.Sdk.Sample.Cli/bin/Debug/net6.0/linux-x64/publish:$$PATH" bash $$FILE || touch /data/test.err; done)'
+			(for FILE in $$(ls tests/sh/*.sh | grep -v run-cli-all-tests.sh); do PATH="samples/AccelByte.Sdk.Sample.Cli/bin/Debug/net6.0/linux-x64/publish:$$PATH" bash $$FILE || touch test.err; done)'
 	[ ! -f test.err ]

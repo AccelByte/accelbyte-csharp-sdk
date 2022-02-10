@@ -8,7 +8,7 @@
 #- Run the Justice SDK Mock Server first before running this script.
 
 CLI_EXE="AccelByte.Sdk.Sample.Cli"
-CLI_TOKEN_FILE="/tmp/token.txt"
+CLI_TOKEN_FILE="$(dirname "$(which $CLI_EXE)")/token.txt"
 
 TEMP_FILE="file.tmp"
 TEMP_JSON_INPUT="input_json.json"
