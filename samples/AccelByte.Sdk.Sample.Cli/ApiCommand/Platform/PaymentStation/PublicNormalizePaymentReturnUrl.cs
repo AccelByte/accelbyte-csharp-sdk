@@ -51,16 +51,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string? UserId { get; set; }
 
         [SdkCommandArgument("orderNo")]
-        public string OrderNo { get; set; }
+        public string OrderNo { get; set; } = String.Empty;
 
         [SdkCommandArgument("paymentOrderNo")]
-        public string PaymentOrderNo { get; set; }
+        public string PaymentOrderNo { get; set; } = String.Empty;
 
         [SdkCommandArgument("paymentProvider")]
-        public string PaymentProvider { get; set; }
+        public string PaymentProvider { get; set; } = String.Empty;
 
         [SdkCommandArgument("returnUrl")]
-        public string ReturnUrl { get; set; }
+        public string ReturnUrl { get; set; } = String.Empty;
 
         public PublicNormalizePaymentReturnUrlCommand(AccelByteSDK sdk)
         {

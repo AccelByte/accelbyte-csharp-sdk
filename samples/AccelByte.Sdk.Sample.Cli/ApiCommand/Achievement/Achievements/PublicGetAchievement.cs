@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("language")]
-        public string Language { get; set; }
+        public string Language { get; set; } = String.Empty;
 
         public PublicGetAchievementCommand(AccelByteSDK sdk)
         {

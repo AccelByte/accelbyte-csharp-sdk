@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public XblReconcileRequest? Body { get; set; }
+        public XblReconcileRequest Body { get; set; } = new XblReconcileRequest();
                 
         public SyncXboxInventoryCommand(AccelByteSDK sdk)
         {

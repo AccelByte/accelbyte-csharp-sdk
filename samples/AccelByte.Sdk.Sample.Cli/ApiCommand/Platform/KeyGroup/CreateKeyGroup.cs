@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public KeyGroupCreate? Body { get; set; }
+        public KeyGroupCreate Body { get; set; } = new KeyGroupCreate();
                 
         public CreateKeyGroupCommand(AccelByteSDK sdk)
         {

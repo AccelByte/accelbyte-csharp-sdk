@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string PartyId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelFreeFormNotificationRequestV1? Body { get; set; }
+        public ModelFreeFormNotificationRequestV1 Body { get; set; } = new ModelFreeFormNotificationRequestV1();
                 
         public SendPartyFreeformNotificationV1AdminCommand(AccelByteSDK sdk)
         {

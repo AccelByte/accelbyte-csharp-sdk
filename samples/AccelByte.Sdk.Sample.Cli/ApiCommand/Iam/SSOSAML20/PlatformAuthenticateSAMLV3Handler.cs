@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string? Error { get; set; }
 
         [SdkCommandArgument("state")]
-        public string State { get; set; }
+        public string State { get; set; } = String.Empty;
 
         public PlatformAuthenticateSAMLV3HandlerCommand(AccelByteSDK sdk)
         {

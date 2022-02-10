@@ -39,10 +39,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
         public string? UserID { get; set; }
 
         [SdkCommandArgument("limit")]
-        public double Limit { get; set; }
+        public double Limit { get; set; } = 0.0;
 
         [SdkCommandArgument("offset")]
-        public double Offset { get; set; }
+        public double Offset { get; set; } = 0.0;
 
         public SearchSessionsV2Command(AccelByteSDK sdk)
         {

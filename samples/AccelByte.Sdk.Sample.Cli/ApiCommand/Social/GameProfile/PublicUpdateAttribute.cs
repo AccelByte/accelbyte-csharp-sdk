@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public AccelByte.Sdk.Api.Social.Model.Attribute? Body { get; set; }
+        public AccelByte.Sdk.Api.Social.Model.Attribute Body { get; set; } = new AccelByte.Sdk.Api.Social.Model.Attribute();
                 
         public PublicUpdateAttributeCommand(AccelByteSDK sdk)
         {

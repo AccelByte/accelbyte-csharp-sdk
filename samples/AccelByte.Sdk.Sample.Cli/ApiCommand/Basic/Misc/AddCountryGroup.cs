@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public AddCountryGroupRequest? Body { get; set; }
+        public AddCountryGroupRequest Body { get; set; } = new AddCountryGroupRequest();
                 
         public AddCountryGroupCommand(AccelByteSDK sdk)
         {

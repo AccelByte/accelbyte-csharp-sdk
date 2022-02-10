@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public UserProfileBulkRequest? Body { get; set; }
+        public UserProfileBulkRequest Body { get; set; } = new UserProfileBulkRequest();
                 
         public AdminGetUserProfilePublicInfoByIdsCommand(AccelByteSDK sdk)
         {

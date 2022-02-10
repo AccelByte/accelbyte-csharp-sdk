@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         public string EventId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsEventRegistry? Body { get; set; }
+        public ModelsEventRegistry Body { get; set; } = new ModelsEventRegistry();
                 
         public UpdateEventRegistryHandlerCommand(AccelByteSDK sdk)
         {

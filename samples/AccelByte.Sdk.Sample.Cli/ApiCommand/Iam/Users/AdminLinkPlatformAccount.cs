@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelLinkPlatformAccountRequest? Body { get; set; }
+        public ModelLinkPlatformAccountRequest Body { get; set; } = new ModelLinkPlatformAccountRequest();
                 
         public AdminLinkPlatformAccountCommand(AccelByteSDK sdk)
         {

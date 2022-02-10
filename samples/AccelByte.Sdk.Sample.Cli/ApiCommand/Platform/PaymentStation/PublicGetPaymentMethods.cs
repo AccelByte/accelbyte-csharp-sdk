@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("paymentOrderNo")]
-        public string PaymentOrderNo { get; set; }
+        public string PaymentOrderNo { get; set; } = String.Empty;
 
         public PublicGetPaymentMethodsCommand(AccelByteSDK sdk)
         {

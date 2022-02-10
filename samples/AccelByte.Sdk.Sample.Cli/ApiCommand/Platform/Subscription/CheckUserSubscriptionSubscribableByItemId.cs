@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandArgument("itemId")]
-        public string ItemId { get; set; }
+        public string ItemId { get; set; } = String.Empty;
 
         public CheckUserSubscriptionSubscribableByItemIdCommand(AccelByteSDK sdk)
         {

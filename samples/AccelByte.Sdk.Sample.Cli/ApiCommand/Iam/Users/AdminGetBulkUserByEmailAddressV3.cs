@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelListEmailAddressRequest? Body { get; set; }
+        public ModelListEmailAddressRequest Body { get; set; } = new ModelListEmailAddressRequest();
                 
         public AdminGetBulkUserByEmailAddressV3Command(AccelByteSDK sdk)
         {

@@ -48,7 +48,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string? UserId { get; set; }
 
         [SdkCommandArgument("platformId")]
-        public string PlatformId { get; set; }
+        public string PlatformId { get; set; } = String.Empty;
 
         public AdminSearchUsersV2Command(AccelByteSDK sdk)
         {

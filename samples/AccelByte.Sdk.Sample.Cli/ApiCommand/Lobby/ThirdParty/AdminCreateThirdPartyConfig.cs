@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsCreateConfigRequest? Body { get; set; }
+        public ModelsCreateConfigRequest Body { get; set; } = new ModelsCreateConfigRequest();
                 
         public AdminCreateThirdPartyConfigCommand(AccelByteSDK sdk)
         {

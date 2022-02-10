@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? Validate { get; set; }
 
         [SdkCommandData("body")]
-        public PayPalConfig? Body { get; set; }
+        public PayPalConfig Body { get; set; } = new PayPalConfig();
                 
         public UpdatePayPalConfigCommand(AccelByteSDK sdk)
         {

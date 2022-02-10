@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string OperationName{ get { return "UpdateImage"; } }
 
         [SdkCommandData("body")]
-        public ModelsImageRecordUpdate? Body { get; set; }
+        public ModelsImageRecordUpdate Body { get; set; } = new ModelsImageRecordUpdate();
                 
         public UpdateImageCommand(AccelByteSDK sdk)
         {

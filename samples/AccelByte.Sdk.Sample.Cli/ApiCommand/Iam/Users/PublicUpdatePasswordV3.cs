@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUserPasswordUpdateV3Request? Body { get; set; }
+        public ModelUserPasswordUpdateV3Request Body { get; set; } = new ModelUserPasswordUpdateV3Request();
                 
         public PublicUpdatePasswordV3Command(AccelByteSDK sdk)
         {

@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsContentLikeRequest? Body { get; set; }
+        public ModelsContentLikeRequest Body { get; set; } = new ModelsContentLikeRequest();
                 
         public UpdateContentLikeStatusCommand(AccelByteSDK sdk)
         {

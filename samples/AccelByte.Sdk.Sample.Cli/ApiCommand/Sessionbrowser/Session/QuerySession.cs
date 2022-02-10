@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         public string? UserId { get; set; }
 
         [SdkCommandArgument("sessionType")]
-        public string SessionType { get; set; }
+        public string SessionType { get; set; } = String.Empty;
 
         public QuerySessionCommand(AccelByteSDK sdk)
         {

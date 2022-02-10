@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ADTOForUpdateEqu8ConfigAPICall? Body { get; set; }
+        public ADTOForUpdateEqu8ConfigAPICall Body { get; set; } = new ADTOForUpdateEqu8ConfigAPICall();
                 
         public UpdateConfigCommand(AccelByteSDK sdk)
         {

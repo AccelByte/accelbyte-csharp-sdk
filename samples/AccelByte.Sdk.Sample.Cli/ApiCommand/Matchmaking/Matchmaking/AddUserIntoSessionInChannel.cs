@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsMatchAddUserIntoSessionRequest? Body { get; set; }
+        public ModelsMatchAddUserIntoSessionRequest Body { get; set; } = new ModelsMatchAddUserIntoSessionRequest();
                 
         public AddUserIntoSessionInChannelCommand(AccelByteSDK sdk)
         {

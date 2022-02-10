@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string WalletId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public DebitRequest? Body { get; set; }
+        public DebitRequest Body { get; set; } = new DebitRequest();
                 
         public DebitUserWalletCommand(AccelByteSDK sdk)
         {

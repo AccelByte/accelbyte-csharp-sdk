@@ -30,13 +30,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         public string? PublisherUserId { get; set; }
 
         [SdkCommandArgument("clientId")]
-        public string ClientId { get; set; }
+        public string ClientId { get; set; } = String.Empty;
 
         [SdkCommandArgument("countryCode")]
-        public string CountryCode { get; set; }
+        public string CountryCode { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public List<AcceptAgreementRequest>? Body { get; set; }
+        public List<AcceptAgreementRequest> Body { get; set; } = new List<AcceptAgreementRequest>();
                 
         public IndirectBulkAcceptVersionedPolicyCommand(AccelByteSDK sdk)
         {

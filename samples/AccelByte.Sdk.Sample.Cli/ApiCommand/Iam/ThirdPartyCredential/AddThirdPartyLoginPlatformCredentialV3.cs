@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string PlatformId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelThirdPartyLoginPlatformCredentialRequest? Body { get; set; }
+        public ModelThirdPartyLoginPlatformCredentialRequest Body { get; set; } = new ModelThirdPartyLoginPlatformCredentialRequest();
                 
         public AddThirdPartyLoginPlatformCredentialV3Command(AccelByteSDK sdk)
         {

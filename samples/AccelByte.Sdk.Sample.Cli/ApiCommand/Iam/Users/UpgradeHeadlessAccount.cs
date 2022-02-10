@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUpgradeHeadlessAccountRequest? Body { get; set; }
+        public ModelUpgradeHeadlessAccountRequest Body { get; set; } = new ModelUpgradeHeadlessAccountRequest();
                 
         public UpgradeHeadlessAccountCommand(AccelByteSDK sdk)
         {

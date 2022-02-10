@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ExternalPaymentOrderCreate? Body { get; set; }
+        public ExternalPaymentOrderCreate Body { get; set; } = new ExternalPaymentOrderCreate();
                 
         public CreatePaymentOrderByDedicatedCommand(AccelByteSDK sdk)
         {

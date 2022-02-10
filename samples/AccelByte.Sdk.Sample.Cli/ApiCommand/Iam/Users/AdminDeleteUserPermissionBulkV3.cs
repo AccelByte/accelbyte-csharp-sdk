@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public List<ModelPermissionDeleteRequest>? Body { get; set; }
+        public List<ModelPermissionDeleteRequest> Body { get; set; } = new List<ModelPermissionDeleteRequest>();
                 
         public AdminDeleteUserPermissionBulkV3Command(AccelByteSDK sdk)
         {

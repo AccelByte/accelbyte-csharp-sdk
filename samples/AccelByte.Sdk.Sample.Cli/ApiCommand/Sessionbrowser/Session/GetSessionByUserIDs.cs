@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("userIds")]
-        public string UserIds { get; set; }
+        public string UserIds { get; set; } = String.Empty;
 
         public GetSessionByUserIDsCommand(AccelByteSDK sdk)
         {

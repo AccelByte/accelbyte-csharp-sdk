@@ -39,10 +39,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string? TargetAuthPage { get; set; }
 
         [SdkCommandArgument("clientId")]
-        public string ClientId { get; set; }
+        public string ClientId { get; set; } = String.Empty;
 
         [SdkCommandArgument("responseType")]
-        public string ResponseType { get; set; }
+        public string ResponseType { get; set; } = String.Empty;
 
         public AuthorizeV3Command(AccelByteSDK sdk)
         {

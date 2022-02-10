@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public PaymentOrderRefund? Body { get; set; }
+        public PaymentOrderRefund Body { get; set; } = new PaymentOrderRefund();
                 
         public RefundUserPaymentOrderCommand(AccelByteSDK sdk)
         {

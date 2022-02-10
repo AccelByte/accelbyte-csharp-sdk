@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string RoleId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelRoleManagersRequest? Body { get; set; }
+        public ModelRoleManagersRequest Body { get; set; } = new ModelRoleManagersRequest();
                 
         public RemoveRoleManagersCommand(AccelByteSDK sdk)
         {

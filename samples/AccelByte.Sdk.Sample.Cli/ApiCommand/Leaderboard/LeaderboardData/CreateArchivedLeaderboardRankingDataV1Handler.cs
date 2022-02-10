@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsArchiveLeaderboardReq? Body { get; set; }
+        public ModelsArchiveLeaderboardReq Body { get; set; } = new ModelsArchiveLeaderboardReq();
                 
         public CreateArchivedLeaderboardRankingDataV1HandlerCommand(AccelByteSDK sdk)
         {

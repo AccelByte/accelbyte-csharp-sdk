@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdateGroupCustomAttributesRequestV1? Body { get; set; }
+        public ModelsUpdateGroupCustomAttributesRequestV1 Body { get; set; } = new ModelsUpdateGroupCustomAttributesRequestV1();
                 
         public UpdateGroupCustomAttributesPublicV1Command(AccelByteSDK sdk)
         {

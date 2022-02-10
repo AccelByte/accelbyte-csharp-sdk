@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string? EntitlementClazz { get; set; }
 
         [SdkCommandArgument("sku")]
-        public string Sku { get; set; }
+        public string Sku { get; set; } = String.Empty;
 
         public PublicGetMyEntitlementOwnershipBySkuCommand(AccelByteSDK sdk)
         {

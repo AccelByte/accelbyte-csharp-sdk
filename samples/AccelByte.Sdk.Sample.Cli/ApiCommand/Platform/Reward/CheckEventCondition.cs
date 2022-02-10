@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string RewardId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public EventPayload? Body { get; set; }
+        public EventPayload Body { get; set; } = new EventPayload();
                 
         public CheckEventConditionCommand(AccelByteSDK sdk)
         {

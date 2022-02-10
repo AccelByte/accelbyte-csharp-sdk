@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("replaceExisting")]
-        public bool ReplaceExisting { get; set; }
+        public bool ReplaceExisting { get; set; } = false;
 
         [SdkCommandFile("file")]
         public Stream? File { get; set; }

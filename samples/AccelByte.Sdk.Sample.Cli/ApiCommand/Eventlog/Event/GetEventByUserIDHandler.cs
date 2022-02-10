@@ -30,13 +30,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         public double? Offset { get; set; }
 
         [SdkCommandArgument("endDate")]
-        public string EndDate { get; set; }
+        public string EndDate { get; set; } = String.Empty;
 
         [SdkCommandArgument("pageSize")]
-        public double PageSize { get; set; }
+        public double PageSize { get; set; } = 0.0;
 
         [SdkCommandArgument("startDate")]
-        public string StartDate { get; set; }
+        public string StartDate { get; set; } = String.Empty;
 
         public GetEventByUserIDHandlerCommand(AccelByteSDK sdk)
         {

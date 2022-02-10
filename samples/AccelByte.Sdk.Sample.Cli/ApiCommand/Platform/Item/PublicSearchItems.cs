@@ -36,10 +36,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string? StoreId { get; set; }
 
         [SdkCommandArgument("keyword")]
-        public string Keyword { get; set; }
+        public string Keyword { get; set; } = String.Empty;
 
         [SdkCommandArgument("language")]
-        public string Language { get; set; }
+        public string Language { get; set; } = String.Empty;
 
         public PublicSearchItemsCommand(AccelByteSDK sdk)
         {

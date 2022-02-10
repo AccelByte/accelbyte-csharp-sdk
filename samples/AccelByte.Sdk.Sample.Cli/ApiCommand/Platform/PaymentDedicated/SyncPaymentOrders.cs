@@ -24,10 +24,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string? NextEvaluatedKey { get; set; }
 
         [SdkCommandArgument("end")]
-        public string End { get; set; }
+        public string End { get; set; } = String.Empty;
 
         [SdkCommandArgument("start")]
-        public string Start { get; set; }
+        public string Start { get; set; } = String.Empty;
 
         public SyncPaymentOrdersCommand(AccelByteSDK sdk)
         {

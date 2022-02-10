@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public AppleIAPConfigRequest? Body { get; set; }
+        public AppleIAPConfigRequest Body { get; set; } = new AppleIAPConfigRequest();
                 
         public UpdateAppleIAPConfigCommand(AccelByteSDK sdk)
         {

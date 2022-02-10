@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? ActiveOnly { get; set; }
 
         [SdkCommandArgument("appId")]
-        public string AppId { get; set; }
+        public string AppId { get; set; } = String.Empty;
 
         public GetUserAppEntitlementByAppIdCommand(AccelByteSDK sdk)
         {

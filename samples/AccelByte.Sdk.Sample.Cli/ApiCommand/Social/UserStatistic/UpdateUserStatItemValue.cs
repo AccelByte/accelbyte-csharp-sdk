@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         public string? AdditionalKey { get; set; }
 
         [SdkCommandData("body")]
-        public StatItemUpdate? Body { get; set; }
+        public StatItemUpdate Body { get; set; } = new StatItemUpdate();
                 
         public UpdateUserStatItemValueCommand(AccelByteSDK sdk)
         {

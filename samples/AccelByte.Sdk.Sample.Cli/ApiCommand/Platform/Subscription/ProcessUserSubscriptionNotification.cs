@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public TradeNotification? Body { get; set; }
+        public TradeNotification Body { get; set; } = new TradeNotification();
                 
         public ProcessUserSubscriptionNotificationCommand(AccelByteSDK sdk)
         {

@@ -60,7 +60,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string? OpenidSigned { get; set; }
 
         [SdkCommandArgument("state")]
-        public string State { get; set; }
+        public string State { get; set; } = String.Empty;
 
         public PlatformAuthenticationV3Command(AccelByteSDK sdk)
         {

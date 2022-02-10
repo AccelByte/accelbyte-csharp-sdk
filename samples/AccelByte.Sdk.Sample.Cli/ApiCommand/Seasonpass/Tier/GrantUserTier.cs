@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public UserTierGrant? Body { get; set; }
+        public UserTierGrant Body { get; set; } = new UserTierGrant();
                 
         public GrantUserTierCommand(AccelByteSDK sdk)
         {

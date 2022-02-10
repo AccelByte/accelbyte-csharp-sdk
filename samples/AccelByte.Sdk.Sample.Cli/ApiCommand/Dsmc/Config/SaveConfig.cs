@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string OperationName{ get { return "SaveConfig"; } }
 
         [SdkCommandData("body")]
-        public ModelsDSMConfigRecord? Body { get; set; }
+        public ModelsDSMConfigRecord Body { get; set; } = new ModelsDSMConfigRecord();
                 
         public SaveConfigCommand(AccelByteSDK sdk)
         {

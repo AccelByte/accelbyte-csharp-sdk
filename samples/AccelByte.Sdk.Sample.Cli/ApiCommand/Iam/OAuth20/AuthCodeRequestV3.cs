@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string? RedirectUri { get; set; }
 
         [SdkCommandArgument("requestId")]
-        public string RequestId { get; set; }
+        public string RequestId { get; set; } = String.Empty;
 
         public AuthCodeRequestV3Command(AccelByteSDK sdk)
         {

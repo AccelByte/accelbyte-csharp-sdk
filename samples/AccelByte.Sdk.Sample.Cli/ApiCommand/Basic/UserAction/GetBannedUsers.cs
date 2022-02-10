@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("userIds")]
-        public List<string> UserIds { get; set; }
+        public List<string> UserIds { get; set; } = new List<string>();
 
         public GetBannedUsersCommand(AccelByteSDK sdk)
         {

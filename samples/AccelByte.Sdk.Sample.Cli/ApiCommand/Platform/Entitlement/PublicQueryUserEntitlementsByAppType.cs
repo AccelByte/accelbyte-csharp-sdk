@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public int? Offset { get; set; }
 
         [SdkCommandArgument("appType")]
-        public string AppType { get; set; }
+        public string AppType { get; set; } = String.Empty;
 
         public PublicQueryUserEntitlementsByAppTypeCommand(AccelByteSDK sdk)
         {

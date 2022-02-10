@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? Force { get; set; }
 
         [SdkCommandData("body")]
-        public CancelRequest? Body { get; set; }
+        public CancelRequest Body { get; set; } = new CancelRequest();
                 
         public CancelSubscriptionCommand(AccelByteSDK sdk)
         {

@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelNotificationWithTemplateRequest? Body { get; set; }
+        public ModelNotificationWithTemplateRequest Body { get; set; } = new ModelNotificationWithTemplateRequest();
                 
         public NotificationWithTemplateByUserIDCommand(AccelByteSDK sdk)
         {

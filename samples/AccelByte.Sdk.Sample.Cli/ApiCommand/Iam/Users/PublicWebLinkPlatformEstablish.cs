@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string PlatformId { get; set; } = String.Empty;
 
         [SdkCommandArgument("state")]
-        public string State { get; set; }
+        public string State { get; set; } = String.Empty;
 
         public PublicWebLinkPlatformEstablishCommand(AccelByteSDK sdk)
         {

@@ -27,10 +27,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string? ZipCode { get; set; }
 
         [SdkCommandArgument("paymentOrderNo")]
-        public string PaymentOrderNo { get; set; }
+        public string PaymentOrderNo { get; set; } = String.Empty;
 
         [SdkCommandArgument("paymentProvider")]
-        public string PaymentProvider { get; set; }
+        public string PaymentProvider { get; set; } = String.Empty;
 
         public GetPaymentTaxValueCommand(AccelByteSDK sdk)
         {

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public PlatformDLCConfigUpdate? Body { get; set; }
+        public PlatformDLCConfigUpdate Body { get; set; } = new PlatformDLCConfigUpdate();
                 
         public UpdatePlatformDLCConfigCommand(AccelByteSDK sdk)
         {

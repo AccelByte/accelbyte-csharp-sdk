@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string PartyId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsPartyPUTCustomAttributesRequest? Body { get; set; }
+        public ModelsPartyPUTCustomAttributesRequest Body { get; set; } = new ModelsPartyPUTCustomAttributesRequest();
                 
         public PublicUpdatePartyAttributesV1Command(AccelByteSDK sdk)
         {

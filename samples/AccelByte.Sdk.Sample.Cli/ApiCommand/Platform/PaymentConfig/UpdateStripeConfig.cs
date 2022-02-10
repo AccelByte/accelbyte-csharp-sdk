@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? Validate { get; set; }
 
         [SdkCommandData("body")]
-        public StripeConfig? Body { get; set; }
+        public StripeConfig Body { get; set; } = new StripeConfig();
                 
         public UpdateStripeConfigCommand(AccelByteSDK sdk)
         {

@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public TicketSaleDecrementRequest? Body { get; set; }
+        public TicketSaleDecrementRequest Body { get; set; } = new TicketSaleDecrementRequest();
                 
         public DecreaseTicketSaleCommand(AccelByteSDK sdk)
         {

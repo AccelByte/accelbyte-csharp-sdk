@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("userIds")]
-        public string UserIds { get; set; }
+        public string UserIds { get; set; } = String.Empty;
 
         public PublicGetUserProfilePublicInfoByIdsCommand(AccelByteSDK sdk)
         {

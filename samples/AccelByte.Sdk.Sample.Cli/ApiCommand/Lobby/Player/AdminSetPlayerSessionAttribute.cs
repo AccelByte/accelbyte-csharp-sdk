@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsSetPlayerSessionAttributeRequest? Body { get; set; }
+        public ModelsSetPlayerSessionAttributeRequest Body { get; set; } = new ModelsSetPlayerSessionAttributeRequest();
                 
         public AdminSetPlayerSessionAttributeCommand(AccelByteSDK sdk)
         {

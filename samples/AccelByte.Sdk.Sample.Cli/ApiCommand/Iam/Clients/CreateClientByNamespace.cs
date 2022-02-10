@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ClientmodelClientCreateRequest? Body { get; set; }
+        public ClientmodelClientCreateRequest Body { get; set; } = new ClientmodelClientCreateRequest();
                 
         public CreateClientByNamespaceCommand(AccelByteSDK sdk)
         {

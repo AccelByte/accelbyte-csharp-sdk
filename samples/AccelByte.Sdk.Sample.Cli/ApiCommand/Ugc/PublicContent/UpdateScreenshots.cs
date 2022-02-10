@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdateScreenshotRequest? Body { get; set; }
+        public ModelsUpdateScreenshotRequest Body { get; set; } = new ModelsUpdateScreenshotRequest();
                 
         public UpdateScreenshotsCommand(AccelByteSDK sdk)
         {

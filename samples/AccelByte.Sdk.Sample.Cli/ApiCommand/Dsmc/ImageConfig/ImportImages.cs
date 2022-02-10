@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string OperationName{ get { return "ImportImages"; } }
 
         [SdkCommandFile("file")]
-        public Stream File { get; set; }
+        public Stream File { get; set; } = new MemoryStream();
                     
         public ImportImagesCommand(AccelByteSDK sdk)
         {

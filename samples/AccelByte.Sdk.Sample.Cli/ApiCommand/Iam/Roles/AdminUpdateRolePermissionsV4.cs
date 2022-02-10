@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string RoleId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public AccountcommonPermissionsV3? Body { get; set; }
+        public AccountcommonPermissionsV3 Body { get; set; } = new AccountcommonPermissionsV3();
                 
         public AdminUpdateRolePermissionsV4Command(AccelByteSDK sdk)
         {

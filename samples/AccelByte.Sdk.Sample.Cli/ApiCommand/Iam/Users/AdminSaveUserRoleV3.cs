@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public List<ModelNamespaceRoleRequest>? Body { get; set; }
+        public List<ModelNamespaceRoleRequest> Body { get; set; } = new List<ModelNamespaceRoleRequest>();
                 
         public AdminSaveUserRoleV3Command(AccelByteSDK sdk)
         {

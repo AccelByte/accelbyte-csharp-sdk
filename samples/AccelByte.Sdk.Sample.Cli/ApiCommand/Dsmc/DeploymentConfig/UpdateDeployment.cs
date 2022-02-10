@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdateDeploymentRequest? Body { get; set; }
+        public ModelsUpdateDeploymentRequest Body { get; set; } = new ModelsUpdateDeploymentRequest();
                 
         public UpdateDeploymentCommand(AccelByteSDK sdk)
         {

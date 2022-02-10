@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("emails")]
-        public List<string> Emails { get; set; }
+        public List<string> Emails { get; set; } = new List<string>();
 
         public DeleteAdminEmailConfigurationCommand(AccelByteSDK sdk)
         {

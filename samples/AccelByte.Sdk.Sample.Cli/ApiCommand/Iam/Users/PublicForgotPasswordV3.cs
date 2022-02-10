@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelForgotPasswordRequestV3? Body { get; set; }
+        public ModelForgotPasswordRequestV3 Body { get; set; } = new ModelForgotPasswordRequestV3();
                 
         public PublicForgotPasswordV3Command(AccelByteSDK sdk)
         {

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         public string PolicyVersionId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public CreateLocalizedPolicyVersionRequest? Body { get; set; }
+        public CreateLocalizedPolicyVersionRequest Body { get; set; } = new CreateLocalizedPolicyVersionRequest();
                 
         public CreateLocalizedPolicyVersionCommand(AccelByteSDK sdk)
         {

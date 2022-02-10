@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelCreateTemplateRequest? Body { get; set; }
+        public ModelCreateTemplateRequest Body { get; set; } = new ModelCreateTemplateRequest();
                 
         public CreateTemplateCommand(AccelByteSDK sdk)
         {

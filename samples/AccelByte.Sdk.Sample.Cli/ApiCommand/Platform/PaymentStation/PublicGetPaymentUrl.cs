@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public PaymentUrlCreate? Body { get; set; }
+        public PaymentUrlCreate Body { get; set; } = new PaymentUrlCreate();
                 
         public PublicGetPaymentUrlCommand(AccelByteSDK sdk)
         {

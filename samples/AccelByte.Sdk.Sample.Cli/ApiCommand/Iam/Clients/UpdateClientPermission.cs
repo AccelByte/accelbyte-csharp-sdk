@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string ClientId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public AccountcommonClientPermissions? Body { get; set; }
+        public AccountcommonClientPermissions Body { get; set; } = new AccountcommonClientPermissions();
                 
         public UpdateClientPermissionCommand(AccelByteSDK sdk)
         {

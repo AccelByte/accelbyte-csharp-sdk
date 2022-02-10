@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public EpicGamesIAPConfigRequest? Body { get; set; }
+        public EpicGamesIAPConfigRequest Body { get; set; } = new EpicGamesIAPConfigRequest();
                 
         public UpdateEpicGamesIAPConfigCommand(AccelByteSDK sdk)
         {

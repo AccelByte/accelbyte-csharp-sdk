@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsDeleteBulkLeaderboardsReq? Body { get; set; }
+        public ModelsDeleteBulkLeaderboardsReq Body { get; set; } = new ModelsDeleteBulkLeaderboardsReq();
                 
         public DeleteBulkLeaderboardConfigurationAdminV1Command(AccelByteSDK sdk)
         {

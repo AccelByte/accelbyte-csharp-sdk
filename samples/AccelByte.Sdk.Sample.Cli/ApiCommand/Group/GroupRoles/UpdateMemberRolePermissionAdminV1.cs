@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdateMemberRolePermissionsRequestV1? Body { get; set; }
+        public ModelsUpdateMemberRolePermissionsRequestV1 Body { get; set; } = new ModelsUpdateMemberRolePermissionsRequestV1();
                 
         public UpdateMemberRolePermissionAdminV1Command(AccelByteSDK sdk)
         {

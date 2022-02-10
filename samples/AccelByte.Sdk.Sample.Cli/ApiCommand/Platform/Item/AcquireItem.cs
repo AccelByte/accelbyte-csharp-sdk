@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ItemAcquireRequest? Body { get; set; }
+        public ItemAcquireRequest Body { get; set; } = new ItemAcquireRequest();
                 
         public AcquireItemCommand(AccelByteSDK sdk)
         {

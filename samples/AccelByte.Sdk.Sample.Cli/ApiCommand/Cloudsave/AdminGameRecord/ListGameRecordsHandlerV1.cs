@@ -27,10 +27,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
         public string? Query { get; set; }
 
         [SdkCommandArgument("limit")]
-        public long Limit { get; set; }
+        public long Limit { get; set; } = 0;
 
         [SdkCommandArgument("offset")]
-        public long Offset { get; set; }
+        public long Offset { get; set; } = 0;
 
         public ListGameRecordsHandlerV1Command(AccelByteSDK sdk)
         {

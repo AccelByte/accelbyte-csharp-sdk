@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? Sandbox { get; set; }
 
         [SdkCommandData("body")]
-        public CheckoutConfig? Body { get; set; }
+        public CheckoutConfig Body { get; set; } = new CheckoutConfig();
                 
         public TestCheckoutConfigCommand(AccelByteSDK sdk)
         {

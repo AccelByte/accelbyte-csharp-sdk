@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string OperationName{ get { return "CreateImage"; } }
 
         [SdkCommandData("body")]
-        public ModelsCreateImageRequest? Body { get; set; }
+        public ModelsCreateImageRequest Body { get; set; } = new ModelsCreateImageRequest();
                 
         public CreateImageCommand(AccelByteSDK sdk)
         {

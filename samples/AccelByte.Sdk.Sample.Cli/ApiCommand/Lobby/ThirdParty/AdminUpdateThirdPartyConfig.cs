@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdateConfigRequest? Body { get; set; }
+        public ModelsUpdateConfigRequest Body { get; set; } = new ModelsUpdateConfigRequest();
                 
         public AdminUpdateThirdPartyConfigCommand(AccelByteSDK sdk)
         {

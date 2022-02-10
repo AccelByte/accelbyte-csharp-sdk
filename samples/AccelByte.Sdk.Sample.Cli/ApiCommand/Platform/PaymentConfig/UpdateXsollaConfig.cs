@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? Validate { get; set; }
 
         [SdkCommandData("body")]
-        public XsollaConfig? Body { get; set; }
+        public XsollaConfig Body { get; set; } = new XsollaConfig();
                 
         public UpdateXsollaConfigCommand(AccelByteSDK sdk)
         {

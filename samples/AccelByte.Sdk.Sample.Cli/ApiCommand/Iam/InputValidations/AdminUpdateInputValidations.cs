@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string OperationName{ get { return "AdminUpdateInputValidations"; } }
 
         [SdkCommandData("body")]
-        public List<ModelInputValidationUpdatePayload>? Body { get; set; }
+        public List<ModelInputValidationUpdatePayload> Body { get; set; } = new List<ModelInputValidationUpdatePayload>();
                 
         public AdminUpdateInputValidationsCommand(AccelByteSDK sdk)
         {

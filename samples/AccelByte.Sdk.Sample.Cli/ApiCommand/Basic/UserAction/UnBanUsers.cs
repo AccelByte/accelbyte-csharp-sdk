@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ADTOForUnbanUserAPICall? Body { get; set; }
+        public ADTOForUnbanUserAPICall Body { get; set; } = new ADTOForUnbanUserAPICall();
                 
         public UnBanUsersCommand(AccelByteSDK sdk)
         {

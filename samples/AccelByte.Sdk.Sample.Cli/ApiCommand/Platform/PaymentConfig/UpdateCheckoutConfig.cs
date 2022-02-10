@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? Validate { get; set; }
 
         [SdkCommandData("body")]
-        public CheckoutConfig? Body { get; set; }
+        public CheckoutConfig Body { get; set; } = new CheckoutConfig();
                 
         public UpdateCheckoutConfigCommand(AccelByteSDK sdk)
         {

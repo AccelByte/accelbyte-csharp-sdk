@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public CodeCreate? Body { get; set; }
+        public CodeCreate Body { get; set; } = new CodeCreate();
                 
         public CreateCodesCommand(AccelByteSDK sdk)
         {

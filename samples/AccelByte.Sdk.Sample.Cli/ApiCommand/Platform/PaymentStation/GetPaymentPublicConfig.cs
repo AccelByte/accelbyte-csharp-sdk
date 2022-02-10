@@ -27,10 +27,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? Sandbox { get; set; }
 
         [SdkCommandArgument("paymentProvider")]
-        public string PaymentProvider { get; set; }
+        public string PaymentProvider { get; set; } = String.Empty;
 
         [SdkCommandArgument("region")]
-        public string Region { get; set; }
+        public string Region { get; set; } = String.Empty;
 
         public GetPaymentPublicConfigCommand(AccelByteSDK sdk)
         {

@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string Region { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsCreateRegionOverrideRequest? Body { get; set; }
+        public ModelsCreateRegionOverrideRequest Body { get; set; } = new ModelsCreateRegionOverrideRequest();
                 
         public CreateRootRegionOverrideCommand(AccelByteSDK sdk)
         {

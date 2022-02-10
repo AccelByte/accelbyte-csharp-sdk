@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public IAPItemConfigUpdate? Body { get; set; }
+        public IAPItemConfigUpdate Body { get; set; } = new IAPItemConfigUpdate();
                 
         public UpdateIAPItemConfigCommand(AccelByteSDK sdk)
         {

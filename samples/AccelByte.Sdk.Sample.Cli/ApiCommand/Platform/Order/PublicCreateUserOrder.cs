@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public OrderCreate? Body { get; set; }
+        public OrderCreate Body { get; set; } = new OrderCreate();
                 
         public PublicCreateUserOrderCommand(AccelByteSDK sdk)
         {

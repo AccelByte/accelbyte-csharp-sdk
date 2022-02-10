@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public CampaignUpdate? Body { get; set; }
+        public CampaignUpdate Body { get; set; } = new CampaignUpdate();
                 
         public UpdateCampaignCommand(AccelByteSDK sdk)
         {

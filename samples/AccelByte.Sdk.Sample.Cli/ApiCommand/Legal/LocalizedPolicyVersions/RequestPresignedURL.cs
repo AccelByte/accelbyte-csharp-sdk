@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         public string LocalizedPolicyVersionId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public UploadPolicyVersionAttachmentRequest? Body { get; set; }
+        public UploadPolicyVersionAttachmentRequest Body { get; set; } = new UploadPolicyVersionAttachmentRequest();
                 
         public RequestPresignedURLCommand(AccelByteSDK sdk)
         {

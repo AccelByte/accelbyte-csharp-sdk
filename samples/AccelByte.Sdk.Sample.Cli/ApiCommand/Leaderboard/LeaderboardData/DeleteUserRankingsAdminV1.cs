@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandArgument("leaderboardCode")]
-        public List<string> LeaderboardCode { get; set; }
+        public List<string> LeaderboardCode { get; set; } = new List<string>();
 
         public DeleteUserRankingsAdminV1Command(AccelByteSDK sdk)
         {

@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
         public string? Slug { get; set; }
 
         [SdkCommandArgument("leaderboardCodes")]
-        public string LeaderboardCodes { get; set; }
+        public string LeaderboardCodes { get; set; } = String.Empty;
 
         public AdminGetArchivedLeaderboardRankingDataV1HandlerCommand(AccelByteSDK sdk)
         {

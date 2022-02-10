@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string OperationName{ get { return "CreateNamespace"; } }
 
         [SdkCommandData("body")]
-        public NamespaceCreate? Body { get; set; }
+        public NamespaceCreate Body { get; set; } = new NamespaceCreate();
                 
         public CreateNamespaceCommand(AccelByteSDK sdk)
         {

@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         public string? AdditionalKey { get; set; }
 
         [SdkCommandData("body")]
-        public List<BulkStatItemUpdate>? Body { get; set; }
+        public List<BulkStatItemUpdate> Body { get; set; } = new List<BulkStatItemUpdate>();
                 
         public BulkUpdateUserStatItemCommand(AccelByteSDK sdk)
         {

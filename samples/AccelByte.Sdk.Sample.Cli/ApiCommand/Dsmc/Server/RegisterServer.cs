@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsRegisterServerRequest? Body { get; set; }
+        public ModelsRegisterServerRequest Body { get; set; } = new ModelsRegisterServerRequest();
                 
         public RegisterServerCommand(AccelByteSDK sdk)
         {

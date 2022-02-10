@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
         public string SeasonId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public TierCreate? Body { get; set; }
+        public TierCreate Body { get; set; } = new TierCreate();
                 
         public CreateTierCommand(AccelByteSDK sdk)
         {

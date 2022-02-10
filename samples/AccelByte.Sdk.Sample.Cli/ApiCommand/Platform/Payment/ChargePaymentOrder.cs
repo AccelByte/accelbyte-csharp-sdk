@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string PaymentOrderNo { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public PaymentOrderChargeRequest? Body { get; set; }
+        public PaymentOrderChargeRequest Body { get; set; } = new PaymentOrderChargeRequest();
                 
         public ChargePaymentOrderCommand(AccelByteSDK sdk)
         {

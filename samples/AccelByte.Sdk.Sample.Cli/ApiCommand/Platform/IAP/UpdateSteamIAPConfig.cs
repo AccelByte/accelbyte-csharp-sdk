@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public SteamIAPConfigRequest? Body { get; set; }
+        public SteamIAPConfigRequest Body { get; set; } = new SteamIAPConfigRequest();
                 
         public UpdateSteamIAPConfigCommand(AccelByteSDK sdk)
         {

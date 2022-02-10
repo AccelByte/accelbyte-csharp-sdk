@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string? StoreId { get; set; }
 
         [SdkCommandArgument("sku")]
-        public string Sku { get; set; }
+        public string Sku { get; set; } = String.Empty;
 
         public GetLocaleItemBySkuCommand(AccelByteSDK sdk)
         {

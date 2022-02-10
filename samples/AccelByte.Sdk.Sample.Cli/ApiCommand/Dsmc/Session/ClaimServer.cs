@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsClaimSessionRequest? Body { get; set; }
+        public ModelsClaimSessionRequest Body { get; set; } = new ModelsClaimSessionRequest();
                 
         public ClaimServerCommand(AccelByteSDK sdk)
         {

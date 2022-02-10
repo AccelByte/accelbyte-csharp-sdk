@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string PlatformId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelPlatformUserIDRequest? Body { get; set; }
+        public ModelPlatformUserIDRequest Body { get; set; } = new ModelPlatformUserIDRequest();
                 
         public PublicListUserIDByPlatformUserIDsV3Command(AccelByteSDK sdk)
         {

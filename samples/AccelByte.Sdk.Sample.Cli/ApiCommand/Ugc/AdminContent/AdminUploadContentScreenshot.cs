@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsCreateScreenshotRequest? Body { get; set; }
+        public ModelsCreateScreenshotRequest Body { get; set; } = new ModelsCreateScreenshotRequest();
                 
         public AdminUploadContentScreenshotCommand(AccelByteSDK sdk)
         {

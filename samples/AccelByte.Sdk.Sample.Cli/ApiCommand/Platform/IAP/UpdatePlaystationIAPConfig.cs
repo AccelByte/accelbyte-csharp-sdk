@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public PlaystationIAPConfigRequest? Body { get; set; }
+        public PlaystationIAPConfigRequest Body { get; set; } = new PlaystationIAPConfigRequest();
                 
         public UpdatePlaystationIAPConfigCommand(AccelByteSDK sdk)
         {

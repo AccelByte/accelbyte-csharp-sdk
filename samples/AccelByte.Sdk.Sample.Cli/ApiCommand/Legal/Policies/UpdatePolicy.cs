@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         public string PolicyId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public UpdatePolicyRequest? Body { get; set; }
+        public UpdatePolicyRequest Body { get; set; } = new UpdatePolicyRequest();
                 
         public UpdatePolicyCommand(AccelByteSDK sdk)
         {

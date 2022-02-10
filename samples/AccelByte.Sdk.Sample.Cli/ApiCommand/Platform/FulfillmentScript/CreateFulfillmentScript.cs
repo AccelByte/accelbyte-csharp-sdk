@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Id { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public FulfillmentScriptCreate? Body { get; set; }
+        public FulfillmentScriptCreate Body { get; set; } = new FulfillmentScriptCreate();
                 
         public CreateFulfillmentScriptCommand(AccelByteSDK sdk)
         {

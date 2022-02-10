@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelCreateTopicRequestV1? Body { get; set; }
+        public ModelCreateTopicRequestV1 Body { get; set; } = new ModelCreateTopicRequestV1();
                 
         public CreateNotificationTopicV1AdminCommand(AccelByteSDK sdk)
         {

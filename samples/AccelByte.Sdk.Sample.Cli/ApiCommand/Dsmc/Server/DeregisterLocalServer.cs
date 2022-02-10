@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsDeregisterLocalServerRequest? Body { get; set; }
+        public ModelsDeregisterLocalServerRequest Body { get; set; } = new ModelsDeregisterLocalServerRequest();
                 
         public DeregisterLocalServerCommand(AccelByteSDK sdk)
         {

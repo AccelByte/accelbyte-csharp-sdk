@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public List<string>? Body { get; set; }
+        public List<string> Body { get; set; } = new List<string>();
                 
         public AdminPutUserRolesV2Command(AccelByteSDK sdk)
         {

@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsConcurrentRecordRequest? Body { get; set; }
+        public ModelsConcurrentRecordRequest Body { get; set; } = new ModelsConcurrentRecordRequest();
                 
         public PutPlayerPublicRecordConcurrentHandlerV1Command(AccelByteSDK sdk)
         {

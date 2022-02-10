@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         public string OperationName{ get { return "CreatePolicy"; } }
 
         [SdkCommandData("body")]
-        public CreateBasePolicyRequest? Body { get; set; }
+        public CreateBasePolicyRequest Body { get; set; } = new CreateBasePolicyRequest();
                 
         public CreatePolicyCommand(AccelByteSDK sdk)
         {

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? Sandbox { get; set; }
 
         [SdkCommandData("body")]
-        public StripeConfig? Body { get; set; }
+        public StripeConfig Body { get; set; } = new StripeConfig();
                 
         public TestStripeConfigCommand(AccelByteSDK sdk)
         {

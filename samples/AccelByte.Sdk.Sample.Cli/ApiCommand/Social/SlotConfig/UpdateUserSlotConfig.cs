@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public SlotConfigUpdate? Body { get; set; }
+        public SlotConfigUpdate Body { get; set; } = new SlotConfigUpdate();
                 
         public UpdateUserSlotConfigCommand(AccelByteSDK sdk)
         {

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public StatCreate? Body { get; set; }
+        public StatCreate Body { get; set; } = new StatCreate();
                 
         public CreateStatCommand(AccelByteSDK sdk)
         {

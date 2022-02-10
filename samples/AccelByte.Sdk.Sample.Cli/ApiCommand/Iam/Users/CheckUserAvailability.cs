@@ -24,10 +24,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("field")]
-        public string Field { get; set; }
+        public string Field { get; set; } = String.Empty;
 
         [SdkCommandArgument("query")]
-        public string Query { get; set; }
+        public string Query { get; set; } = String.Empty;
 
         public CheckUserAvailabilityCommand(AccelByteSDK sdk)
         {

@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         public int? Offset { get; set; }
 
         [SdkCommandArgument("keyword")]
-        public string Keyword { get; set; }
+        public string Keyword { get; set; } = String.Empty;
 
         public QueryStatsCommand(AccelByteSDK sdk)
         {

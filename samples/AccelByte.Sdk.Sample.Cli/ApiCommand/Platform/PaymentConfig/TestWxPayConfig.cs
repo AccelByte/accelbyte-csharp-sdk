@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string OperationName{ get { return "TestWxPayConfig"; } }
 
         [SdkCommandData("body")]
-        public WxPayConfigRequest? Body { get; set; }
+        public WxPayConfigRequest Body { get; set; } = new WxPayConfigRequest();
                 
         public TestWxPayConfigCommand(AccelByteSDK sdk)
         {

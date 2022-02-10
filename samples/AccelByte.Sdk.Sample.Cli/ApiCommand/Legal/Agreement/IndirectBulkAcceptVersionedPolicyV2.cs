@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public List<AcceptAgreementRequest>? Body { get; set; }
+        public List<AcceptAgreementRequest> Body { get; set; } = new List<AcceptAgreementRequest>();
                 
         public IndirectBulkAcceptVersionedPolicyV2Command(AccelByteSDK sdk)
         {

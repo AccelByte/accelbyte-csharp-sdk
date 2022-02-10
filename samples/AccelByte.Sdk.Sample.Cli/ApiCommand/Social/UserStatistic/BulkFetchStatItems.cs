@@ -24,10 +24,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("statCode")]
-        public string StatCode { get; set; }
+        public string StatCode { get; set; } = String.Empty;
 
         [SdkCommandArgument("userIds")]
-        public string UserIds { get; set; }
+        public string UserIds { get; set; } = String.Empty;
 
         public BulkFetchStatItemsCommand(AccelByteSDK sdk)
         {

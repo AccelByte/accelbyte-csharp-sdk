@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Id { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public XsollaPaywallConfigRequest? Body { get; set; }
+        public XsollaPaywallConfigRequest Body { get; set; } = new XsollaPaywallConfigRequest();
                 
         public UpdateXsollaUIConfigCommand(AccelByteSDK sdk)
         {

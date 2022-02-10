@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdateGroupPredefinedRuleRequestV1? Body { get; set; }
+        public ModelsUpdateGroupPredefinedRuleRequestV1 Body { get; set; } = new ModelsUpdateGroupPredefinedRuleRequestV1();
                 
         public UpdateGroupPredefinedRulePublicV1Command(AccelByteSDK sdk)
         {

@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string OperationName{ get { return "AdminUpdateMyUserV4"; } }
 
         [SdkCommandData("body")]
-        public ModelUserUpdateRequestV3? Body { get; set; }
+        public ModelUserUpdateRequestV3 Body { get; set; } = new ModelUserUpdateRequestV3();
                 
         public AdminUpdateMyUserV4Command(AccelByteSDK sdk)
         {

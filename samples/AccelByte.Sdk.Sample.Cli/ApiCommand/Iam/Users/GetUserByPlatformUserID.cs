@@ -24,10 +24,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("platformID")]
-        public string PlatformID { get; set; }
+        public string PlatformID { get; set; } = String.Empty;
 
         [SdkCommandArgument("platformUserID")]
-        public string PlatformUserID { get; set; }
+        public string PlatformUserID { get; set; } = String.Empty;
 
         public GetUserByPlatformUserIDCommand(AccelByteSDK sdk)
         {

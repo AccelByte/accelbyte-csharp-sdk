@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public CurrencyCreate? Body { get; set; }
+        public CurrencyCreate Body { get; set; } = new CurrencyCreate();
                 
         public CreateCurrencyCommand(AccelByteSDK sdk)
         {

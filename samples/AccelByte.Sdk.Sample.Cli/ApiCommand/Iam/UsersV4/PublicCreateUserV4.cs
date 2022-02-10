@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public AccountCreateUserRequestV4? Body { get; set; }
+        public AccountCreateUserRequestV4 Body { get; set; } = new AccountCreateUserRequestV4();
                 
         public PublicCreateUserV4Command(AccelByteSDK sdk)
         {

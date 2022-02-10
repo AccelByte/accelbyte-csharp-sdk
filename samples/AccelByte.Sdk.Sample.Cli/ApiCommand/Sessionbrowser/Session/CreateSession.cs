@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsCreateSessionRequest? Body { get; set; }
+        public ModelsCreateSessionRequest Body { get; set; } = new ModelsCreateSessionRequest();
                 
         public CreateSessionCommand(AccelByteSDK sdk)
         {

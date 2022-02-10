@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUpdatePermissionScheduleRequest? Body { get; set; }
+        public ModelUpdatePermissionScheduleRequest Body { get; set; } = new ModelUpdatePermissionScheduleRequest();
                 
         public AddUserPermissionCommand(AccelByteSDK sdk)
         {

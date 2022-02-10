@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
         public string SeasonId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public TierInput? Body { get; set; }
+        public TierInput Body { get; set; } = new TierInput();
                 
         public UpdateTierCommand(AccelByteSDK sdk)
         {

@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("storeId")]
-        public string StoreId { get; set; }
+        public string StoreId { get; set; } = String.Empty;
 
         public DisableItemCommand(AccelByteSDK sdk)
         {

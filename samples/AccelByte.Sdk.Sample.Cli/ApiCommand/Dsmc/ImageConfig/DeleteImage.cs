@@ -24,10 +24,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("imageURI")]
-        public string ImageURI { get; set; }
+        public string ImageURI { get; set; } = String.Empty;
 
         [SdkCommandArgument("version")]
-        public string Version { get; set; }
+        public string Version { get; set; } = String.Empty;
 
         public DeleteImageCommand(AccelByteSDK sdk)
         {

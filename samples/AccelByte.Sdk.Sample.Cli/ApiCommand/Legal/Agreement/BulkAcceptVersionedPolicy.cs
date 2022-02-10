@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         public string OperationName{ get { return "BulkAcceptVersionedPolicy"; } }
 
         [SdkCommandData("body")]
-        public List<AcceptAgreementRequest>? Body { get; set; }
+        public List<AcceptAgreementRequest> Body { get; set; } = new List<AcceptAgreementRequest>();
                 
         public BulkAcceptVersionedPolicyCommand(AccelByteSDK sdk)
         {

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("extTxId")]
-        public string ExtTxId { get; set; }
+        public string ExtTxId { get; set; } = String.Empty;
 
         public ListExtOrderNoByExtTxIdCommand(AccelByteSDK sdk)
         {

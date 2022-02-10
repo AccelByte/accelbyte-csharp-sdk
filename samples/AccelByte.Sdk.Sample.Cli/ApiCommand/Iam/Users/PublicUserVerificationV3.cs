@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUserVerificationRequestV3? Body { get; set; }
+        public ModelUserVerificationRequestV3 Body { get; set; } = new ModelUserVerificationRequestV3();
                 
         public PublicUserVerificationV3Command(AccelByteSDK sdk)
         {

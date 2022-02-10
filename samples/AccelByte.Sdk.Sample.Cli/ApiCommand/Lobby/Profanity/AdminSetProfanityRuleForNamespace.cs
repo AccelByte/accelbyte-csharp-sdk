@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsAdminSetProfanityRuleForNamespaceRequest? Body { get; set; }
+        public ModelsAdminSetProfanityRuleForNamespaceRequest Body { get; set; } = new ModelsAdminSetProfanityRuleForNamespaceRequest();
                 
         public AdminSetProfanityRuleForNamespaceCommand(AccelByteSDK sdk)
         {

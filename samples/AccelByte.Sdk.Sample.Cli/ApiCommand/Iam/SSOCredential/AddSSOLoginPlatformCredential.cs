@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string PlatformId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelSSOPlatformCredentialRequest? Body { get; set; }
+        public ModelSSOPlatformCredentialRequest Body { get; set; } = new ModelSSOPlatformCredentialRequest();
                 
         public AddSSOLoginPlatformCredentialCommand(AccelByteSDK sdk)
         {

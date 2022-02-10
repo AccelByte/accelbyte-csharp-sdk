@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
         public string OperationName{ get { return "ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost"; } }
 
         [SdkCommandData("body")]
-        public List<TelemetryBody>? Body { get; set; }
+        public List<TelemetryBody> Body { get; set; } = new List<TelemetryBody>();
                 
         public ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostCommand(AccelByteSDK sdk)
         {

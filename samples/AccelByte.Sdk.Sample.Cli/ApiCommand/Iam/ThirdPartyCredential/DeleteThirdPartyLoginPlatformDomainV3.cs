@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string PlatformId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelPlatformDomainDeleteRequest? Body { get; set; }
+        public ModelPlatformDomainDeleteRequest Body { get; set; } = new ModelPlatformDomainDeleteRequest();
                 
         public DeleteThirdPartyLoginPlatformDomainV3Command(AccelByteSDK sdk)
         {

@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string OperationName{ get { return "AdminInviteUserV4"; } }
 
         [SdkCommandData("body")]
-        public ModelInviteUserRequestV4? Body { get; set; }
+        public ModelInviteUserRequestV4 Body { get; set; } = new ModelInviteUserRequestV4();
                 
         public AdminInviteUserV4Command(AccelByteSDK sdk)
         {

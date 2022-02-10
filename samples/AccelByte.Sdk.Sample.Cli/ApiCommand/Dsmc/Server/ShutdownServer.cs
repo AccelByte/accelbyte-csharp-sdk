@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsShutdownServerRequest? Body { get; set; }
+        public ModelsShutdownServerRequest Body { get; set; } = new ModelsShutdownServerRequest();
                 
         public ShutdownServerCommand(AccelByteSDK sdk)
         {

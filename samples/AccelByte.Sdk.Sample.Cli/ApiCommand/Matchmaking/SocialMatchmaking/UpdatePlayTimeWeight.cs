@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdatePlayTimeWeightRequest? Body { get; set; }
+        public ModelsUpdatePlayTimeWeightRequest Body { get; set; } = new ModelsUpdatePlayTimeWeightRequest();
                 
         public UpdatePlayTimeWeightCommand(AccelByteSDK sdk)
         {

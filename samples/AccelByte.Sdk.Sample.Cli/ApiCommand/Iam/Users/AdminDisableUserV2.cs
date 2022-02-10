@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelDisableUserRequest? Body { get; set; }
+        public ModelDisableUserRequest Body { get; set; } = new ModelDisableUserRequest();
                 
         public AdminDisableUserV2Command(AccelByteSDK sdk)
         {

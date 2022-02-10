@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("fileType")]
-        public string FileType { get; set; }
+        public string FileType { get; set; } = String.Empty;
 
         public PublicGeneratedUploadUrlCommand(AccelByteSDK sdk)
         {

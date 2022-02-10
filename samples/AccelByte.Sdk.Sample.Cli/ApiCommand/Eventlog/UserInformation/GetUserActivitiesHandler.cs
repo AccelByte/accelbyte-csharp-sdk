@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         public double? Offset { get; set; }
 
         [SdkCommandArgument("pageSize")]
-        public double PageSize { get; set; }
+        public double PageSize { get; set; } = 0.0;
 
         public GetUserActivitiesHandlerCommand(AccelByteSDK sdk)
         {

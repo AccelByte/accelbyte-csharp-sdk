@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? Validate { get; set; }
 
         [SdkCommandData("body")]
-        public WxPayConfigRequest? Body { get; set; }
+        public WxPayConfigRequest Body { get; set; } = new WxPayConfigRequest();
                 
         public UpdateWxPayConfigCommand(AccelByteSDK sdk)
         {

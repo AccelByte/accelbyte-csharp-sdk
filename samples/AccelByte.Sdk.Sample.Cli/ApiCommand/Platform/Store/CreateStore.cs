@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public StoreCreate? Body { get; set; }
+        public StoreCreate Body { get; set; } = new StoreCreate();
                 
         public CreateStoreCommand(AccelByteSDK sdk)
         {

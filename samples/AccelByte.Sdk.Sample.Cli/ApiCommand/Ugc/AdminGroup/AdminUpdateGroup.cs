@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsCreateGroupRequest? Body { get; set; }
+        public ModelsCreateGroupRequest Body { get; set; } = new ModelsCreateGroupRequest();
                 
         public AdminUpdateGroupCommand(AccelByteSDK sdk)
         {

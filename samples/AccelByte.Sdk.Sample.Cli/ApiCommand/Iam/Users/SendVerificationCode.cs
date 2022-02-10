@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelSendVerificationCodeRequest? Body { get; set; }
+        public ModelSendVerificationCodeRequest Body { get; set; } = new ModelSendVerificationCodeRequest();
                 
         public SendVerificationCodeCommand(AccelByteSDK sdk)
         {

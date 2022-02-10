@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
         public string OperationName{ get { return "Heartbeat"; } }
 
         [SdkCommandData("body")]
-        public ModelsHeartbeatRequest? Body { get; set; }
+        public ModelsHeartbeatRequest Body { get; set; } = new ModelsHeartbeatRequest();
                 
         public HeartbeatCommand(AccelByteSDK sdk)
         {

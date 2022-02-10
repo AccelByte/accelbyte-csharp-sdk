@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string Version { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdateDeploymentOverrideRequest? Body { get; set; }
+        public ModelsUpdateDeploymentOverrideRequest Body { get; set; } = new ModelsUpdateDeploymentOverrideRequest();
                 
         public UpdateDeploymentOverrideCommand(AccelByteSDK sdk)
         {

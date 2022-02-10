@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsSetUserVisibilityRequest? Body { get; set; }
+        public ModelsSetUserVisibilityRequest Body { get; set; } = new ModelsSetUserVisibilityRequest();
                 
         public SetUserLeaderboardVisibilityStatusV2Command(AccelByteSDK sdk)
         {

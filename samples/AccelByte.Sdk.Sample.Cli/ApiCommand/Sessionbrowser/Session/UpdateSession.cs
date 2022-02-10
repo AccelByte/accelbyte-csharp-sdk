@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         public string SessionID { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdateSessionRequest? Body { get; set; }
+        public ModelsUpdateSessionRequest Body { get; set; } = new ModelsUpdateSessionRequest();
                 
         public UpdateSessionCommand(AccelByteSDK sdk)
         {

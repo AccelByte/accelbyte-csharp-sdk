@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string PaymentOrderNo { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public PaymentOrderNotifySimulation? Body { get; set; }
+        public PaymentOrderNotifySimulation Body { get; set; } = new PaymentOrderNotifySimulation();
                 
         public SimulatePaymentOrderNotificationCommand(AccelByteSDK sdk)
         {

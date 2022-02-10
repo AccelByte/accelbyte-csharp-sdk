@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsEvent? Body { get; set; }
+        public ModelsEvent Body { get; set; } = new ModelsEvent();
                 
         public PostEventHandlerCommand(AccelByteSDK sdk)
         {

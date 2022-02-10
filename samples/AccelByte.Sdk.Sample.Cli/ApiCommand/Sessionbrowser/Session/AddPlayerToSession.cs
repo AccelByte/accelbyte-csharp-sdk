@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         public string SessionID { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsAddPlayerRequest? Body { get; set; }
+        public ModelsAddPlayerRequest Body { get; set; } = new ModelsAddPlayerRequest();
                 
         public AddPlayerToSessionCommand(AccelByteSDK sdk)
         {

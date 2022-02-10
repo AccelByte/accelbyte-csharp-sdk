@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string? EntitlementClazz { get; set; }
 
         [SdkCommandArgument("itemId")]
-        public string ItemId { get; set; }
+        public string ItemId { get; set; } = String.Empty;
 
         public PublicGetUserEntitlementOwnershipByItemIdCommand(AccelByteSDK sdk)
         {

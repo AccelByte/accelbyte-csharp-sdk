@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUserPasswordUpdateRequest? Body { get; set; }
+        public ModelUserPasswordUpdateRequest Body { get; set; } = new ModelUserPasswordUpdateRequest();
                 
         public AdminResetPasswordV2Command(AccelByteSDK sdk)
         {

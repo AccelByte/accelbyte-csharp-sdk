@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public PlatformSubscribeRequest? Body { get; set; }
+        public PlatformSubscribeRequest Body { get; set; } = new PlatformSubscribeRequest();
                 
         public PlatformSubscribeSubscriptionCommand(AccelByteSDK sdk)
         {

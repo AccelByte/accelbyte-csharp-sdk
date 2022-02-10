@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsAchievementUpdateRequest? Body { get; set; }
+        public ModelsAchievementUpdateRequest Body { get; set; } = new ModelsAchievementUpdateRequest();
                 
         public AdminUpdateAchievementCommand(AccelByteSDK sdk)
         {

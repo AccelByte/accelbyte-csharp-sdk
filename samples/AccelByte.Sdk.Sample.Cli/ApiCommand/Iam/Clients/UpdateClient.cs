@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string ClientId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ClientmodelClientUpdateRequest? Body { get; set; }
+        public ClientmodelClientUpdateRequest Body { get; set; } = new ClientmodelClientUpdateRequest();
                 
         public UpdateClientCommand(AccelByteSDK sdk)
         {

@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string TemplateSlug { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUpdateTemplateRequest? Body { get; set; }
+        public ModelUpdateTemplateRequest Body { get; set; } = new ModelUpdateTemplateRequest();
                 
         public UpdateTemplateLocalizationV1AdminCommand(AccelByteSDK sdk)
         {

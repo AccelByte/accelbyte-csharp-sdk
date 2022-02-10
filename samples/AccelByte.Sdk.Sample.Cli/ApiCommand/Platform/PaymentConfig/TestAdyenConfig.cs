@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? Sandbox { get; set; }
 
         [SdkCommandData("body")]
-        public AdyenConfig? Body { get; set; }
+        public AdyenConfig Body { get; set; } = new AdyenConfig();
                 
         public TestAdyenConfigCommand(AccelByteSDK sdk)
         {

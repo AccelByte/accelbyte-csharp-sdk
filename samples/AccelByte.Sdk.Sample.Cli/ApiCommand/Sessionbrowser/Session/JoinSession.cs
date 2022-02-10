@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         public string SessionID { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsJoinGameSessionRequest? Body { get; set; }
+        public ModelsJoinGameSessionRequest Body { get; set; } = new ModelsJoinGameSessionRequest();
                 
         public JoinSessionCommand(AccelByteSDK sdk)
         {

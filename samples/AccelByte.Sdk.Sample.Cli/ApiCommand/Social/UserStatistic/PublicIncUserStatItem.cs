@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public StatItemInc? Body { get; set; }
+        public StatItemInc Body { get; set; } = new StatItemInc();
                 
         public PublicIncUserStatItemCommand(AccelByteSDK sdk)
         {

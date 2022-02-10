@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsRemoveRoleFromMemberRequestV1? Body { get; set; }
+        public ModelsRemoveRoleFromMemberRequestV1 Body { get; set; } = new ModelsRemoveRoleFromMemberRequestV1();
                 
         public DeleteMemberRolePublicV1Command(AccelByteSDK sdk)
         {

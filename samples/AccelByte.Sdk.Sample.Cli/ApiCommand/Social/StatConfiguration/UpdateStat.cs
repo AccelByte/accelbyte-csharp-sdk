@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         public string StatCode { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public StatUpdate? Body { get; set; }
+        public StatUpdate Body { get; set; } = new StatUpdate();
                 
         public UpdateStatCommand(AccelByteSDK sdk)
         {

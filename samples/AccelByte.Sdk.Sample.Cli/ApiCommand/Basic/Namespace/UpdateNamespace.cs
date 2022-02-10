@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public NamespaceUpdate? Body { get; set; }
+        public NamespaceUpdate Body { get; set; } = new NamespaceUpdate();
                 
         public UpdateNamespaceCommand(AccelByteSDK sdk)
         {

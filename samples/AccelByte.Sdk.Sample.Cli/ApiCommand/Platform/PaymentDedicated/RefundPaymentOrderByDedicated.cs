@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string PaymentOrderNo { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public PaymentOrderRefund? Body { get; set; }
+        public PaymentOrderRefund Body { get; set; } = new PaymentOrderRefund();
                 
         public RefundPaymentOrderByDedicatedCommand(AccelByteSDK sdk)
         {

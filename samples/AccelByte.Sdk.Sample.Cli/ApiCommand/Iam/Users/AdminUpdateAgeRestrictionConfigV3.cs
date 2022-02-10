@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelAgeRestrictionRequestV3? Body { get; set; }
+        public ModelAgeRestrictionRequestV3 Body { get; set; } = new ModelAgeRestrictionRequestV3();
                 
         public AdminUpdateAgeRestrictionConfigV3Command(AccelByteSDK sdk)
         {

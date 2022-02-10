@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string TypeId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsCreateTypeRequest? Body { get; set; }
+        public ModelsCreateTypeRequest Body { get; set; } = new ModelsCreateTypeRequest();
                 
         public AdminUpdateTypeCommand(AccelByteSDK sdk)
         {

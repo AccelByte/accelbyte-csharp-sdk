@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
         public string SeasonId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public PassCreate? Body { get; set; }
+        public PassCreate Body { get; set; } = new PassCreate();
                 
         public CreatePassCommand(AccelByteSDK sdk)
         {

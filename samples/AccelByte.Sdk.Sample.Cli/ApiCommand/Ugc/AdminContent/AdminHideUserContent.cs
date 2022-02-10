@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsHideContentRequest? Body { get; set; }
+        public ModelsHideContentRequest Body { get; set; } = new ModelsHideContentRequest();
                 
         public AdminHideUserContentCommand(AccelByteSDK sdk)
         {

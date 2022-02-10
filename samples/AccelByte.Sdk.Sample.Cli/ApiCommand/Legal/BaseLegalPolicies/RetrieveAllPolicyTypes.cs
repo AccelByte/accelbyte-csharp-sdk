@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         public int? Offset { get; set; }
 
         [SdkCommandArgument("limit")]
-        public int Limit { get; set; }
+        public int Limit { get; set; } = 0;
 
         public RetrieveAllPolicyTypesCommand(AccelByteSDK sdk)
         {

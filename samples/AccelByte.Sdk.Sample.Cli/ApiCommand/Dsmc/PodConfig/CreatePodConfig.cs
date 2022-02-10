@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsCreatePodConfigRequest? Body { get; set; }
+        public ModelsCreatePodConfigRequest Body { get; set; } = new ModelsCreatePodConfigRequest();
                 
         public CreatePodConfigCommand(AccelByteSDK sdk)
         {

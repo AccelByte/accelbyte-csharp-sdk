@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsAdminCreateProfanityListRequest? Body { get; set; }
+        public ModelsAdminCreateProfanityListRequest Body { get; set; } = new ModelsAdminCreateProfanityListRequest();
                 
         public AdminCreateProfanityListCommand(AccelByteSDK sdk)
         {

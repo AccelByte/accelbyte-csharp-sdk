@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public List<BulkStatItemReset>? Body { get; set; }
+        public List<BulkStatItemReset> Body { get; set; } = new List<BulkStatItemReset>();
                 
         public BulkResetUserStatItem3Command(AccelByteSDK sdk)
         {

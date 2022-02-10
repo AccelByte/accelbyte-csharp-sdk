@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
         public string OperationName{ get { return "BatchDownloadServerLogs"; } }
 
         [SdkCommandData("body")]
-        public ModelsBatchDownloadLogsRequest? Body { get; set; }
+        public ModelsBatchDownloadLogsRequest Body { get; set; } = new ModelsBatchDownloadLogsRequest();
                 
         public BatchDownloadServerLogsCommand(AccelByteSDK sdk)
         {

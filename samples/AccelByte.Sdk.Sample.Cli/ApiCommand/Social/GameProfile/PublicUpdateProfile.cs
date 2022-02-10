@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public GameProfileRequest? Body { get; set; }
+        public GameProfileRequest Body { get; set; } = new GameProfileRequest();
                 
         public PublicUpdateProfileCommand(AccelByteSDK sdk)
         {

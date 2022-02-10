@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         public string? StartDate { get; set; }
 
         [SdkCommandData("body")]
-        public ModelsGenericQueryPayload? Body { get; set; }
+        public ModelsGenericQueryPayload Body { get; set; } = new ModelsGenericQueryPayload();
                 
         public QueryEventStreamHandlerCommand(AccelByteSDK sdk)
         {

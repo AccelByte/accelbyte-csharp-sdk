@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelBanCreateRequest? Body { get; set; }
+        public ModelBanCreateRequest Body { get; set; } = new ModelBanCreateRequest();
                 
         public AdminBanUserV2Command(AccelByteSDK sdk)
         {

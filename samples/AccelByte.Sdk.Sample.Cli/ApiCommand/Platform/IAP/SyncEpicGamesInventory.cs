@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public EpicGamesReconcileRequest? Body { get; set; }
+        public EpicGamesReconcileRequest Body { get; set; } = new EpicGamesReconcileRequest();
                 
         public SyncEpicGamesInventoryCommand(AccelByteSDK sdk)
         {

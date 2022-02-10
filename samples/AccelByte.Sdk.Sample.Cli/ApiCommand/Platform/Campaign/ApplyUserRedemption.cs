@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public RedeemRequest? Body { get; set; }
+        public RedeemRequest Body { get; set; } = new RedeemRequest();
                 
         public ApplyUserRedemptionCommand(AccelByteSDK sdk)
         {

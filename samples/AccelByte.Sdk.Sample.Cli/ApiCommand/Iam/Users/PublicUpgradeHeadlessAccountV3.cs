@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUpgradeHeadlessAccountWithVerificationCodeRequestV3? Body { get; set; }
+        public ModelUpgradeHeadlessAccountWithVerificationCodeRequestV3 Body { get; set; } = new ModelUpgradeHeadlessAccountWithVerificationCodeRequestV3();
                 
         public PublicUpgradeHeadlessAccountV3Command(AccelByteSDK sdk)
         {

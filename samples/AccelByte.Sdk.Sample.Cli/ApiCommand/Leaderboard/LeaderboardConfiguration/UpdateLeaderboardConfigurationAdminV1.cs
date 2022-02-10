@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdateLeaderboardConfigReq? Body { get; set; }
+        public ModelsUpdateLeaderboardConfigReq Body { get; set; } = new ModelsUpdateLeaderboardConfigReq();
                 
         public UpdateLeaderboardConfigurationAdminV1Command(AccelByteSDK sdk)
         {

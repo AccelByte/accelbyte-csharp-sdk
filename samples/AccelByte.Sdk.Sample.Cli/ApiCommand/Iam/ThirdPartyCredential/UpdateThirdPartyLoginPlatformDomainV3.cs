@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string PlatformId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelPlatformDomainUpdateRequest? Body { get; set; }
+        public ModelPlatformDomainUpdateRequest Body { get; set; } = new ModelPlatformDomainUpdateRequest();
                 
         public UpdateThirdPartyLoginPlatformDomainV3Command(AccelByteSDK sdk)
         {

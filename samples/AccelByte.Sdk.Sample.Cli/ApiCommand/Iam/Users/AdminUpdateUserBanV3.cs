@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelBanUpdateRequest? Body { get; set; }
+        public ModelBanUpdateRequest Body { get; set; } = new ModelBanUpdateRequest();
                 
         public AdminUpdateUserBanV3Command(AccelByteSDK sdk)
         {

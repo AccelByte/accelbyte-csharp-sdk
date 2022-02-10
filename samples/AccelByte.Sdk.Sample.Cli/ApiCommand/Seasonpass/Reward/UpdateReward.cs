@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
         public string SeasonId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public RewardUpdate? Body { get; set; }
+        public RewardUpdate Body { get; set; } = new RewardUpdate();
                 
         public UpdateRewardCommand(AccelByteSDK sdk)
         {

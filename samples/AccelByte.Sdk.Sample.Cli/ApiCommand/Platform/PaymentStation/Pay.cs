@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string? ZipCode { get; set; }
 
         [SdkCommandData("body")]
-        public PaymentToken? Body { get; set; }
+        public PaymentToken Body { get; set; } = new PaymentToken();
                 
         public PayCommand(AccelByteSDK sdk)
         {

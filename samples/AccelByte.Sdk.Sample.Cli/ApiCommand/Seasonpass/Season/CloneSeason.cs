@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
         public string SeasonId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public SeasonCloneRequest? Body { get; set; }
+        public SeasonCloneRequest Body { get; set; } = new SeasonCloneRequest();
                 
         public CloneSeasonCommand(AccelByteSDK sdk)
         {

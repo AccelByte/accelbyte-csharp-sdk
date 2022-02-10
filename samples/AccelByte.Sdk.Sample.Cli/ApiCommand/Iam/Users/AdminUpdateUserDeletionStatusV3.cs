@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUpdateUserDeletionStatusRequest? Body { get; set; }
+        public ModelUpdateUserDeletionStatusRequest Body { get; set; } = new ModelUpdateUserDeletionStatusRequest();
                 
         public AdminUpdateUserDeletionStatusV3Command(AccelByteSDK sdk)
         {

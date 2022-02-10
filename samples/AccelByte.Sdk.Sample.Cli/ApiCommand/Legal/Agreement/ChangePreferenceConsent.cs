@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         public string OperationName{ get { return "ChangePreferenceConsent"; } }
 
         [SdkCommandData("body")]
-        public List<AcceptAgreementRequest>? Body { get; set; }
+        public List<AcceptAgreementRequest> Body { get; set; } = new List<AcceptAgreementRequest>();
                 
         public ChangePreferenceConsentCommand(AccelByteSDK sdk)
         {

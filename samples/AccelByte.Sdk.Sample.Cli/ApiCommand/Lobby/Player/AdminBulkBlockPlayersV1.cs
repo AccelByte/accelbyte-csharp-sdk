@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsListBlockedPlayerRequest? Body { get; set; }
+        public ModelsListBlockedPlayerRequest Body { get; set; } = new ModelsListBlockedPlayerRequest();
                 
         public AdminBulkBlockPlayersV1Command(AccelByteSDK sdk)
         {

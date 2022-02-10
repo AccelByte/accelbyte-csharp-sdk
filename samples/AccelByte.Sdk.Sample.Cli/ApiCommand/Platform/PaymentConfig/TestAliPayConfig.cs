@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? Sandbox { get; set; }
 
         [SdkCommandData("body")]
-        public AliPayConfig? Body { get; set; }
+        public AliPayConfig Body { get; set; } = new AliPayConfig();
                 
         public TestAliPayConfigCommand(AccelByteSDK sdk)
         {

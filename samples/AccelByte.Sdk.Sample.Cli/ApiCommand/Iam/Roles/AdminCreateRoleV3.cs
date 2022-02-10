@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string OperationName{ get { return "AdminCreateRoleV3"; } }
 
         [SdkCommandData("body")]
-        public ModelRoleCreateV3Request? Body { get; set; }
+        public ModelRoleCreateV3Request Body { get; set; } = new ModelRoleCreateV3Request();
                 
         public AdminCreateRoleV3Command(AccelByteSDK sdk)
         {

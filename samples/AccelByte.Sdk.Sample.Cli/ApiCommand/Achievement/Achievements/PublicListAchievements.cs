@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
         public string? SortBy { get; set; }
 
         [SdkCommandArgument("language")]
-        public string Language { get; set; }
+        public string Language { get; set; } = String.Empty;
 
         public PublicListAchievementsCommand(AccelByteSDK sdk)
         {

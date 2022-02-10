@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public bool? CountOnly { get; set; }
 
         [SdkCommandArgument("userIds")]
-        public string UserIds { get; set; }
+        public string UserIds { get; set; } = String.Empty;
 
         public UsersPresenceHandlerV1Command(AccelByteSDK sdk)
         {

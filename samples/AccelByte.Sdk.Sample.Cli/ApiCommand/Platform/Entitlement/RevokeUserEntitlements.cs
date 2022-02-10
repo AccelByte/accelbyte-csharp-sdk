@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandArgument("entitlementIds")]
-        public string EntitlementIds { get; set; }
+        public string EntitlementIds { get; set; } = String.Empty;
 
         public RevokeUserEntitlementsCommand(AccelByteSDK sdk)
         {

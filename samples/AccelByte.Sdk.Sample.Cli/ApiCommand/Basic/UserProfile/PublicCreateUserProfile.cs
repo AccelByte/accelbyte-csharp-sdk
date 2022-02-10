@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public UserProfileCreate? Body { get; set; }
+        public UserProfileCreate Body { get; set; } = new UserProfileCreate();
                 
         public PublicCreateUserProfileCommand(AccelByteSDK sdk)
         {

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("rewardCode")]
-        public string RewardCode { get; set; }
+        public string RewardCode { get; set; } = String.Empty;
 
         public GetRewardByCodeCommand(AccelByteSDK sdk)
         {

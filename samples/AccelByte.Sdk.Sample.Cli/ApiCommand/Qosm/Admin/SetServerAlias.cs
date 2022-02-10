@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
         public string Region { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsSetAliasRequest? Body { get; set; }
+        public ModelsSetAliasRequest Body { get; set; } = new ModelsSetAliasRequest();
                 
         public SetServerAliasCommand(AccelByteSDK sdk)
         {

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public GoogleIAPConfigRequest? Body { get; set; }
+        public GoogleIAPConfigRequest Body { get; set; } = new GoogleIAPConfigRequest();
                 
         public UpdateGoogleIAPConfigCommand(AccelByteSDK sdk)
         {

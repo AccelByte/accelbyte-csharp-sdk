@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsChannelRequest? Body { get; set; }
+        public ModelsChannelRequest Body { get; set; } = new ModelsChannelRequest();
                 
         public CreateChannelCommand(AccelByteSDK sdk)
         {

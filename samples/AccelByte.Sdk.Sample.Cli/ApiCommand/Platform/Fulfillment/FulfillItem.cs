@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public FulfillmentRequest? Body { get; set; }
+        public FulfillmentRequest Body { get; set; } = new FulfillmentRequest();
                 
         public FulfillItemCommand(AccelByteSDK sdk)
         {

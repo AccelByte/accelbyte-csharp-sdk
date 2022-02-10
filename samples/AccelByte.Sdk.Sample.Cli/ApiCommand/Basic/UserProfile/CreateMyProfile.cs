@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public UserProfilePrivateCreate? Body { get; set; }
+        public UserProfilePrivateCreate Body { get; set; } = new UserProfilePrivateCreate();
                 
         public CreateMyProfileCommand(AccelByteSDK sdk)
         {

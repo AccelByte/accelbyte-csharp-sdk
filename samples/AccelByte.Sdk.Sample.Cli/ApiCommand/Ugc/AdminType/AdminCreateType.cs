@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsCreateTypeRequest? Body { get; set; }
+        public ModelsCreateTypeRequest Body { get; set; } = new ModelsCreateTypeRequest();
                 
         public AdminCreateTypeCommand(AccelByteSDK sdk)
         {

@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string OrderNo { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public OrderRefundCreate? Body { get; set; }
+        public OrderRefundCreate Body { get; set; } = new OrderRefundCreate();
                 
         public RefundOrderCommand(AccelByteSDK sdk)
         {

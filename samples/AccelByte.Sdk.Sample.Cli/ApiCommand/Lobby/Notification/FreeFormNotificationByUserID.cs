@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelFreeFormNotificationRequest? Body { get; set; }
+        public ModelFreeFormNotificationRequest Body { get; set; } = new ModelFreeFormNotificationRequest();
                 
         public FreeFormNotificationByUserIDCommand(AccelByteSDK sdk)
         {

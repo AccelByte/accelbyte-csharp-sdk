@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string Topic { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUpdateTopicRequest? Body { get; set; }
+        public ModelUpdateTopicRequest Body { get; set; } = new ModelUpdateTopicRequest();
                 
         public UpdateTopicByTopicNameCommand(AccelByteSDK sdk)
         {

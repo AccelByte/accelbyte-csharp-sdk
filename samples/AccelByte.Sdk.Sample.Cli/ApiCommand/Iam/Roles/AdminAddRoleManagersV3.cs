@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string RoleId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelRoleManagersRequestV3? Body { get; set; }
+        public ModelRoleManagersRequestV3 Body { get; set; } = new ModelRoleManagersRequestV3();
                 
         public AdminAddRoleManagersV3Command(AccelByteSDK sdk)
         {

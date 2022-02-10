@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string OperationName{ get { return "CreatePaymentProviderConfig"; } }
 
         [SdkCommandData("body")]
-        public PaymentProviderConfigEdit? Body { get; set; }
+        public PaymentProviderConfigEdit Body { get; set; } = new PaymentProviderConfigEdit();
                 
         public CreatePaymentProviderConfigCommand(AccelByteSDK sdk)
         {

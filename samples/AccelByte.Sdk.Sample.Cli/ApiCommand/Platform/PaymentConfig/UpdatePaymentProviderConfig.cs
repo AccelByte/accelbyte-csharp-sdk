@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Id { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public PaymentProviderConfigEdit? Body { get; set; }
+        public PaymentProviderConfigEdit Body { get; set; } = new PaymentProviderConfigEdit();
                 
         public UpdatePaymentProviderConfigCommand(AccelByteSDK sdk)
         {

@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string OperationName{ get { return "CreateClient"; } }
 
         [SdkCommandData("body")]
-        public ClientmodelClientCreateRequest? Body { get; set; }
+        public ClientmodelClientCreateRequest Body { get; set; } = new ClientmodelClientCreateRequest();
                 
         public CreateClientCommand(AccelByteSDK sdk)
         {

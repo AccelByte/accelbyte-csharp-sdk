@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsBulkUserIDsRequest? Body { get; set; }
+        public ModelsBulkUserIDsRequest Body { get; set; } = new ModelsBulkUserIDsRequest();
                 
         public BulkGetPlayerPublicRecordHandlerV1Command(AccelByteSDK sdk)
         {

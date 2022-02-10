@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public EntitlementDecrement? Body { get; set; }
+        public EntitlementDecrement Body { get; set; } = new EntitlementDecrement();
                 
         public PublicConsumeUserEntitlementCommand(AccelByteSDK sdk)
         {

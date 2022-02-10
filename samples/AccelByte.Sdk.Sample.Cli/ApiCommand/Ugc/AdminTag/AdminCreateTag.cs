@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsCreateTagRequest? Body { get; set; }
+        public ModelsCreateTagRequest Body { get; set; } = new ModelsCreateTagRequest();
                 
         public AdminCreateTagCommand(AccelByteSDK sdk)
         {

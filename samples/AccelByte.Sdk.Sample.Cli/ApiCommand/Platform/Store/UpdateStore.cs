@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string StoreId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public StoreUpdate? Body { get; set; }
+        public StoreUpdate Body { get; set; } = new StoreUpdate();
                 
         public UpdateStoreCommand(AccelByteSDK sdk)
         {

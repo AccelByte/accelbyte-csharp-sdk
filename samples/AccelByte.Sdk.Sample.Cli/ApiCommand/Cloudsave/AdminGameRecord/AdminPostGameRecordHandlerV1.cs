@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsGameRecordRequest? Body { get; set; }
+        public ModelsGameRecordRequest Body { get; set; } = new ModelsGameRecordRequest();
                 
         public AdminPostGameRecordHandlerV1Command(AccelByteSDK sdk)
         {

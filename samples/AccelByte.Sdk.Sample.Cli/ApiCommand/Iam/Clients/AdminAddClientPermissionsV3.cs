@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public AccountcommonClientPermissionsV3? Body { get; set; }
+        public AccountcommonClientPermissionsV3 Body { get; set; } = new AccountcommonClientPermissionsV3();
                 
         public AdminAddClientPermissionsV3Command(AccelByteSDK sdk)
         {

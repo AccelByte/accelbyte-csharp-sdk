@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public AppleIAPReceipt? Body { get; set; }
+        public AppleIAPReceipt Body { get; set; } = new AppleIAPReceipt();
                 
         public PublicFulfillAppleIAPItemCommand(AccelByteSDK sdk)
         {

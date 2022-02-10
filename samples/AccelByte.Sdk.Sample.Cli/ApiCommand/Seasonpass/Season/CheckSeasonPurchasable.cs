@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public UserPurchasable? Body { get; set; }
+        public UserPurchasable Body { get; set; } = new UserPurchasable();
                 
         public CheckSeasonPurchasableCommand(AccelByteSDK sdk)
         {

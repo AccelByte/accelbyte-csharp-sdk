@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsPlayerRecordRequest? Body { get; set; }
+        public ModelsPlayerRecordRequest Body { get; set; } = new ModelsPlayerRecordRequest();
                 
         public PutPlayerRecordHandlerV1Command(AccelByteSDK sdk)
         {

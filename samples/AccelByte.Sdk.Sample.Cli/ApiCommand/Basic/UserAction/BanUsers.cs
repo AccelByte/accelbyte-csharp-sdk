@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public UserBanRequest? Body { get; set; }
+        public UserBanRequest Body { get; set; } = new UserBanRequest();
                 
         public BanUsersCommand(AccelByteSDK sdk)
         {

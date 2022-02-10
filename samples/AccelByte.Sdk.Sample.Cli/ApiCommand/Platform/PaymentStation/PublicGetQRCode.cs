@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("code")]
-        public string Code { get; set; }
+        public string Code { get; set; } = String.Empty;
 
         public PublicGetQRCodeCommand(AccelByteSDK sdk)
         {

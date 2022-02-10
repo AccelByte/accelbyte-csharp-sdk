@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? Sandbox { get; set; }
 
         [SdkCommandData("body")]
-        public PayPalConfig? Body { get; set; }
+        public PayPalConfig Body { get; set; } = new PayPalConfig();
                 
         public TestPayPalConfigCommand(AccelByteSDK sdk)
         {

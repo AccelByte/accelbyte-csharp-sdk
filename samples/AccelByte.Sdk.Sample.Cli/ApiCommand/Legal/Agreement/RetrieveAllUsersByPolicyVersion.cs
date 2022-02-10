@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         public int? Offset { get; set; }
 
         [SdkCommandArgument("policyVersionId")]
-        public string PolicyVersionId { get; set; }
+        public string PolicyVersionId { get; set; } = String.Empty;
 
         public RetrieveAllUsersByPolicyVersionCommand(AccelByteSDK sdk)
         {

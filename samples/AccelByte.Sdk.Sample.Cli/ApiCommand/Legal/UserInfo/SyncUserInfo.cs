@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         public string OperationName{ get { return "SyncUserInfo"; } }
 
         [SdkCommandArgument("namespace_")]
-        public string Namespace { get; set; }
+        public string Namespace { get; set; } = String.Empty;
 
         public SyncUserInfoCommand(AccelByteSDK sdk)
         {

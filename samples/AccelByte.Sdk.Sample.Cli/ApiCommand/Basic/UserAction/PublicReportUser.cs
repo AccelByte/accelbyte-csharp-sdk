@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public UserReportRequest? Body { get; set; }
+        public UserReportRequest Body { get; set; } = new UserReportRequest();
                 
         public PublicReportUserCommand(AccelByteSDK sdk)
         {

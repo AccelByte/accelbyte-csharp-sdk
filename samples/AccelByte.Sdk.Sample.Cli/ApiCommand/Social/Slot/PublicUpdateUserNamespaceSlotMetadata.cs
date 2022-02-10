@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public SlotMetadataUpdate? Body { get; set; }
+        public SlotMetadataUpdate Body { get; set; } = new SlotMetadataUpdate();
                 
         public PublicUpdateUserNamespaceSlotMetadataCommand(AccelByteSDK sdk)
         {

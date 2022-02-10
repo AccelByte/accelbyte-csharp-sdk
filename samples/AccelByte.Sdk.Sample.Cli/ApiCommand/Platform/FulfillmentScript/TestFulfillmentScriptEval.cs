@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string OperationName{ get { return "TestFulfillmentScriptEval"; } }
 
         [SdkCommandData("body")]
-        public FulfillmentScriptEvalTestRequest? Body { get; set; }
+        public FulfillmentScriptEvalTestRequest Body { get; set; } = new FulfillmentScriptEvalTestRequest();
                 
         public TestFulfillmentScriptEvalCommand(AccelByteSDK sdk)
         {

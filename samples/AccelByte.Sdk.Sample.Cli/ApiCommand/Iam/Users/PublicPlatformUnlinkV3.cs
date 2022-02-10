@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string PlatformId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUnlinkUserPlatformRequest? Body { get; set; }
+        public ModelUnlinkUserPlatformRequest Body { get; set; } = new ModelUnlinkUserPlatformRequest();
                 
         public PublicPlatformUnlinkV3Command(AccelByteSDK sdk)
         {

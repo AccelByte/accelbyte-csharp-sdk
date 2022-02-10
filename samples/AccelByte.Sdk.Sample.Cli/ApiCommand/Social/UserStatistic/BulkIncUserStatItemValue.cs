@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public List<BulkUserStatItemInc>? Body { get; set; }
+        public List<BulkUserStatItemInc> Body { get; set; } = new List<BulkUserStatItemInc>();
                 
         public BulkIncUserStatItemValueCommand(AccelByteSDK sdk)
         {

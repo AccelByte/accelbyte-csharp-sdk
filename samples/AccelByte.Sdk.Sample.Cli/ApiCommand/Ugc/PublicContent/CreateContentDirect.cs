@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsCreateContentRequest? Body { get; set; }
+        public ModelsCreateContentRequest Body { get; set; } = new ModelsCreateContentRequest();
                 
         public CreateContentDirectCommand(AccelByteSDK sdk)
         {

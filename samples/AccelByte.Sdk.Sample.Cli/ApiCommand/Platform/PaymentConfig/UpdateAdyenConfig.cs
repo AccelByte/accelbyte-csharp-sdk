@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public bool? Validate { get; set; }
 
         [SdkCommandData("body")]
-        public AdyenConfig? Body { get; set; }
+        public AdyenConfig Body { get; set; } = new AdyenConfig();
                 
         public UpdateAdyenConfigCommand(AccelByteSDK sdk)
         {

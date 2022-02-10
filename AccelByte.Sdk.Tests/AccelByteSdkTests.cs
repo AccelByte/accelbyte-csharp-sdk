@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Tests
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
             var sdk = new AccelByteSDK(config);
 
-            var op = new HttpbinOperation(new HttpMethod(method), "/anything", null, null, null, "", null);
+            var op = new HttpbinOperation(new HttpMethod(method), "/anything", null!, null!, null, "", null!);
 
             var response = sdk.RunRequest(op);
 

@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandArgument("appId")]
-        public string AppId { get; set; }
+        public string AppId { get; set; } = String.Empty;
 
         public GetUserAppEntitlementOwnershipByAppIdCommand(AccelByteSDK sdk)
         {

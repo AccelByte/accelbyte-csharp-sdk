@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string? StoreId { get; set; }
 
         [SdkCommandArgument("itemIds")]
-        public string ItemIds { get; set; }
+        public string ItemIds { get; set; } = String.Empty;
 
         public PublicBulkGetItemsCommand(AccelByteSDK sdk)
         {

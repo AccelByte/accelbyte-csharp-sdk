@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdatePortRequest? Body { get; set; }
+        public ModelsUpdatePortRequest Body { get; set; } = new ModelsUpdatePortRequest();
                 
         public UpdatePortCommand(AccelByteSDK sdk)
         {

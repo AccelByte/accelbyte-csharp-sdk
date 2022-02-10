@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelResetPasswordRequest? Body { get; set; }
+        public ModelResetPasswordRequest Body { get; set; } = new ModelResetPasswordRequest();
                 
         public ResetPasswordCommand(AccelByteSDK sdk)
         {

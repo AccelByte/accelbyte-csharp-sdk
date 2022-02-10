@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("userZipCodeUpdate")]
-        public UserZipCodeUpdate? UserZipCodeUpdate { get; set; }
+        public UserZipCodeUpdate UserZipCodeUpdate { get; set; } = new UserZipCodeUpdate();
                 
         public UpdateMyZipCodeCommand(AccelByteSDK sdk)
         {

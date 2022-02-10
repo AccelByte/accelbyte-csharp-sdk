@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdateChannelRequest? Body { get; set; }
+        public ModelsUpdateChannelRequest Body { get; set; } = new ModelsUpdateChannelRequest();
                 
         public UpdateMatchmakingChannelCommand(AccelByteSDK sdk)
         {

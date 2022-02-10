@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ItemReturnRequest? Body { get; set; }
+        public ItemReturnRequest Body { get; set; } = new ItemReturnRequest();
                 
         public ReturnItemCommand(AccelByteSDK sdk)
         {

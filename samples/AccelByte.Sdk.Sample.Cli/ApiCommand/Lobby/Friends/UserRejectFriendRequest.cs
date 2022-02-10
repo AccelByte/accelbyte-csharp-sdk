@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUserRejectFriendRequest? Body { get; set; }
+        public ModelUserRejectFriendRequest Body { get; set; } = new ModelUserRejectFriendRequest();
                 
         public UserRejectFriendRequestCommand(AccelByteSDK sdk)
         {

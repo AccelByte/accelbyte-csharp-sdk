@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelRemoveUserRoleV4Request? Body { get; set; }
+        public ModelRemoveUserRoleV4Request Body { get; set; } = new ModelRemoveUserRoleV4Request();
                 
         public AdminRemoveUserRoleV4Command(AccelByteSDK sdk)
         {

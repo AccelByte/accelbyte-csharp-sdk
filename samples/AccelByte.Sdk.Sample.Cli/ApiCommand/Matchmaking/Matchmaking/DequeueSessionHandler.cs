@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsDequeueRequest? Body { get; set; }
+        public ModelsDequeueRequest Body { get; set; } = new ModelsDequeueRequest();
                 
         public DequeueSessionHandlerCommand(AccelByteSDK sdk)
         {

@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string OperationName{ get { return "UpdatePaymentTaxConfig"; } }
 
         [SdkCommandData("body")]
-        public PaymentTaxConfigEdit? Body { get; set; }
+        public PaymentTaxConfigEdit Body { get; set; } = new PaymentTaxConfigEdit();
                 
         public UpdatePaymentTaxConfigCommand(AccelByteSDK sdk)
         {

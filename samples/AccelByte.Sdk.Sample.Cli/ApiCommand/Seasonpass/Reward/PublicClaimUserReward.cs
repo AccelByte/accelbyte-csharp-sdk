@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public UserRewardClaim? Body { get; set; }
+        public UserRewardClaim Body { get; set; } = new UserRewardClaim();
                 
         public PublicClaimUserRewardCommand(AccelByteSDK sdk)
         {

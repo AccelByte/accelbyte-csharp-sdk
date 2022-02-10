@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsMatchmakingResult? Body { get; set; }
+        public ModelsMatchmakingResult Body { get; set; } = new ModelsMatchmakingResult();
                 
         public QueueSessionHandlerCommand(AccelByteSDK sdk)
         {

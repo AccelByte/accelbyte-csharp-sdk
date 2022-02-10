@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public UserProfileAdmin? Body { get; set; }
+        public UserProfileAdmin Body { get; set; } = new UserProfileAdmin();
                 
         public UpdateUserProfileCommand(AccelByteSDK sdk)
         {

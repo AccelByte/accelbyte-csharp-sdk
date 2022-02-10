@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public PaymentCallbackConfigUpdate? Body { get; set; }
+        public PaymentCallbackConfigUpdate Body { get; set; } = new PaymentCallbackConfigUpdate();
                 
         public UpdatePaymentCallbackConfigCommand(AccelByteSDK sdk)
         {

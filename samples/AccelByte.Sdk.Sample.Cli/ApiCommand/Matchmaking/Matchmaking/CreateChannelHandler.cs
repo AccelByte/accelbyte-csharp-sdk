@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsChannelRequest? Body { get; set; }
+        public ModelsChannelRequest Body { get; set; } = new ModelsChannelRequest();
                 
         public CreateChannelHandlerCommand(AccelByteSDK sdk)
         {
