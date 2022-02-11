@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// DeleteGroup
+    ///
+    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [DELETE]
+    /// </summary>
     public class DeleteGroup : AccelByte.Sdk.Core.Operation
     {
         public DeleteGroup(

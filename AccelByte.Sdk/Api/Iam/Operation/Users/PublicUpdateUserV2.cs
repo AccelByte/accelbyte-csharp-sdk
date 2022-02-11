@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicUpdateUserV2
+    ///
+    /// 
+    /// 
+    /// This Endpoint support update user based on given data. Single request can
+    /// update single field or multi fields.
+    /// 
+    /// This endpoint require valid user access token to accessed.
+    /// 
+    /// Supported field {Country, DisplayName, LanguageTag}
+    /// </summary>
     public class PublicUpdateUserV2 : AccelByte.Sdk.Core.Operation
     {
         public PublicUpdateUserV2(

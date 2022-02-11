@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// deletePlayerRecordHandlerV1
+    ///
+    /// Required Permission | `NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD
+    /// [DELETE]`
+    /// ---|---
+    /// Required Scope | `social`
+    /// 
+    /// Delete player record by its key
+    /// </summary>
     public class DeletePlayerRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public DeletePlayerRecordHandlerV1(

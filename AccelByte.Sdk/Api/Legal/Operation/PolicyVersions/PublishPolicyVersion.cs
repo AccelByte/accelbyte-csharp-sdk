@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// publishPolicyVersion
+    ///
+    /// Manually publish a version of a particular country-specific policy.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+    /// </summary>
     public class PublishPolicyVersion : AccelByte.Sdk.Core.Operation
     {
         public PublishPolicyVersion(

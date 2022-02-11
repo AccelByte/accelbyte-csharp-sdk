@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// getSlugTemplate
+    ///
+    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [READ]` with scope
+    /// `social`
+    /// Get all templates in a namespace
+    /// </summary>
     public class GetSlugTemplate : AccelByte.Sdk.Core.Operation
     {
         public GetSlugTemplate(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Eventlog.Operation
 {
+    /// <summary>
+    /// UpdateEventRegistryHandler
+    ///
+    /// Required permission `ADMIN:NAMESPACE:{namespace}:EVENT [UPDATE]`and scope
+    /// `analytics`
+    /// </summary>
     public class UpdateEventRegistryHandler : AccelByte.Sdk.Core.Operation
     {
         public UpdateEventRegistryHandler(

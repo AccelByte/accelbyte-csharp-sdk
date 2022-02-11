@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// adminUpdateProfanityList
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PROFANITY [UPDATE]` with
+    /// scope `social`
+    /// update the list
+    /// </summary>
     public class AdminUpdateProfanityList : AccelByte.Sdk.Core.Operation
     {
         public AdminUpdateProfanityList(

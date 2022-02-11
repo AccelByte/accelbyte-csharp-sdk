@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicQueryUserOrders
+    ///
+    /// Query user orders.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ORDER", action=2 (READ)
+    ///   *  Returns : get order
+    /// </summary>
     public class PublicQueryUserOrders : AccelByte.Sdk.Core.Operation
     {
         public PublicQueryUserOrders(

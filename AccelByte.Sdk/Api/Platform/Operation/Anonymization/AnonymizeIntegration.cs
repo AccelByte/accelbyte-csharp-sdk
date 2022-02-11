@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// anonymizeIntegration
+    ///
+    /// Anonymize integrations. At current it will only anonymize iap histories.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ANONYMIZATION", action=8 (DELETE)
+    /// </summary>
     public class AnonymizeIntegration : AccelByte.Sdk.Core.Operation
     {
         public AnonymizeIntegration(

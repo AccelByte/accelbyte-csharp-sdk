@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Qosm.Operation
 {
+    /// <summary>
+    /// DeleteServer
+    ///
+    /// ``` Required permission: ADMIN:QOS:SERVER [DELETE] Required scope: social This
+    /// endpoint delete a registered QoS service record. ```
+    /// </summary>
     public class DeleteServer : AccelByte.Sdk.Core.Operation
     {
         public DeleteServer(

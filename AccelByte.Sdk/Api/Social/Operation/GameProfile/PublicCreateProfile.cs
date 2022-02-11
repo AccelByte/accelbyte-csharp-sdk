@@ -7,6 +7,19 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// publicCreateProfile
+    ///
+    /// Create new profile for user.
+    /// Other detail info:
+    /// 
+    ///         *  Required permission
+    /// : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=1
+    /// (CREATE)
+    /// 
+    ///         *  Returns
+    /// : created game profile
+    /// </summary>
     public class PublicCreateProfile : AccelByte.Sdk.Core.Operation
     {
         public PublicCreateProfile(

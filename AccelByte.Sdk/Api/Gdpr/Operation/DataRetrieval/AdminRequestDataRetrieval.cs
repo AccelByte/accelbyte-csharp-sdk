@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Gdpr.Operation
 {
+    /// <summary>
+    /// AdminRequestDataRetrieval
+    ///
+    /// 
+    /// 
+    /// Required permission `ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId}
+    /// [CREATE]` and scope `account`
+    /// 
+    /// If admin request data for themselves, password is need to be set
+    /// </summary>
     public class AdminRequestDataRetrieval : AccelByte.Sdk.Core.Operation
     {
         public AdminRequestDataRetrieval(

@@ -7,6 +7,30 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminUpdateUserV4
+    ///
+    /// 
+    /// 
+    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]
+    /// permission
+    /// 
+    /// 
+    /// 
+    /// This Endpoint support update user based on given data. Single request can
+    /// update single field or multi fields.
+    /// 
+    /// Supported field {country, displayName, languageTag, dateOfBirth}
+    /// 
+    /// Country use ISO3166-1 alpha-2 two letter, e.g. US.
+    /// 
+    /// Date of Birth format : YYYY-MM-DD, e.g. 2019-04-29.
+    /// 
+    /// 
+    /// Several case of updating email address
+    /// 
+    /// action code : 10103
+    /// </summary>
     public class AdminUpdateUserV4 : AccelByte.Sdk.Core.Operation
     {
         public AdminUpdateUserV4(

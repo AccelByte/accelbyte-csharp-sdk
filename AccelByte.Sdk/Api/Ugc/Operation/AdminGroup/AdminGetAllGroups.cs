@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminGetAllGroups
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP
+    /// [READ].
+    /// </summary>
     public class AdminGetAllGroups : AccelByte.Sdk.Core.Operation
     {
         public AdminGetAllGroups(

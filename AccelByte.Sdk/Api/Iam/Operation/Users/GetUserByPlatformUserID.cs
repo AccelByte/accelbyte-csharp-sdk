@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// GetUserByPlatformUserID
+    ///
+    /// Required permission 'NAMESPACE:{namespace}:USER [READ]'
+    /// </summary>
     public class GetUserByPlatformUserID : AccelByte.Sdk.Core.Operation
     {
         public GetUserByPlatformUserID(

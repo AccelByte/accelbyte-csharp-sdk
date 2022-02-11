@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Leaderboard.Operation
 {
+    /// <summary>
+    /// getLeaderboardConfigurationAdminV1
+    ///
+    /// 
+    /// 
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [READ]'
+    /// 
+    /// This endpoint returns a leaderboard configuration
+    /// </summary>
     public class GetLeaderboardConfigurationAdminV1 : AccelByte.Sdk.Core.Operation
     {
         public GetLeaderboardConfigurationAdminV1(

@@ -7,6 +7,20 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// RevokeToken
+    ///
+    /// 
+    /// 
+    /// # Deprecated at August 30, 2019. Please use the /v3/oauth/revoke endpoint
+    /// instead
+    /// 
+    /// Revokes a token.
+    /// 
+    /// This endpoint requires all requests to have Authorization header set with
+    /// Basic access authentication constructed from client id and client secret or
+    /// Bearer access authentication with valid access token.
+    /// </summary>
     public class RevokeToken : AccelByte.Sdk.Core.Operation
     {
         public RevokeToken(

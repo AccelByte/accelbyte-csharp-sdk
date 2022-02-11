@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// deleteMemberRoleAdminV1
+    ///
+    /// 
+    /// 
+    /// Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [DELETE]
+    /// 
+    /// This endpoint is used to delete member role. Any member role can't be deleted
+    /// if the specific role is applied to the configuration (admin and member role)
+    /// 
+    /// Action Code: 73207
+    /// </summary>
     public class DeleteMemberRoleAdminV1 : AccelByte.Sdk.Core.Operation
     {
         public DeleteMemberRoleAdminV1(

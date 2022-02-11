@@ -7,6 +7,20 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// publicGeneratedUserUploadContentUrl
+    ///
+    /// Generate an upload URL for user content. It's valid for 10 minutes.
+    /// There are 2 kinds of storage limitation per user : maximum file count and
+    /// maximum file size.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource = "NAMESPACE:{namespace}:USER:{userId}:FILEUPLOAD" , action=1 (CREATE)
+    ///   *  Action code : 11102
+    ///   *  Default maximum file count per user : 10 files
+    ///   *  Default maximum file size per user : 104857600 bytes
+    ///   *  Returns : URL data
+    /// </summary>
     public class PublicGeneratedUserUploadContentUrl : AccelByte.Sdk.Core.Operation
     {
         public PublicGeneratedUserUploadContentUrl(

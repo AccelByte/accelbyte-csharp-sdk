@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dslogmanager.Operation
 {
+    /// <summary>
+    /// listTerminatedServers
+    ///
+    /// ``` Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ] This
+    /// endpoint used to retrieve terminated servers in a namespace ```
+    /// </summary>
     public class ListTerminatedServers : AccelByte.Sdk.Core.Operation
     {
         public ListTerminatedServers(

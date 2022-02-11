@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// syncEpicGamesInventory
+    ///
+    /// Sync epic games inventory's items.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
+    ///   *  Returns :
+    /// </summary>
     public class SyncEpicGamesInventory : AccelByte.Sdk.Core.Operation
     {
         public SyncEpicGamesInventory(

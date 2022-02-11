@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicGetUnpaidPaymentOrder
+    ///
+    /// Get payment order info.
+    /// Other detail info:
+    /// 
+    ///   * Returns : Payment order details
+    /// </summary>
     public class PublicGetUnpaidPaymentOrder : AccelByte.Sdk.Core.Operation
     {
         public PublicGetUnpaidPaymentOrder(

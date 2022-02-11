@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminCreateTag
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:UGCCONFIG [CREATE] creates a
+    /// new tag
+    /// </summary>
     public class AdminCreateTag : AccelByte.Sdk.Core.Operation
     {
         public AdminCreateTag(

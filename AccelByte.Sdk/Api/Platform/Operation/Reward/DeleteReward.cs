@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// deleteReward
+    ///
+    /// This API is used to delete a reward by reward Id.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:REWARD", action=8 (DELETE)
+    ///   *  Returns : the deleted reward data
+    /// </summary>
     public class DeleteReward : AccelByte.Sdk.Core.Operation
     {
         public DeleteReward(

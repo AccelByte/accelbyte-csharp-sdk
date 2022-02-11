@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// DeleteRootRegionOverride
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE] Required
+    /// scope: social This endpoint delete a dedicated server deployment override in a
+    /// namespace in a region for root deployment
+    /// </summary>
     public class DeleteRootRegionOverride : AccelByte.Sdk.Core.Operation
     {
         public DeleteRootRegionOverride(

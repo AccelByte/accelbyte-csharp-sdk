@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Eventlog.Operation
 {
+    /// <summary>
+    /// SpecificUXDescriptionHandler
+    /// </summary>
     public class SpecificUXDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
         public SpecificUXDescriptionHandler(

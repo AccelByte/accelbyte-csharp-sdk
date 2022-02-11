@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// publicGetPlayerBlockedByPlayersV1
+    ///
+    /// Required valid user authorization
+    /// 
+    /// load get players who blocked this player in a namespace based on user id
+    /// Action Code: 50101
+    /// </summary>
     public class PublicGetPlayerBlockedByPlayersV1 : AccelByte.Sdk.Core.Operation
     {
         public PublicGetPlayerBlockedByPlayersV1(

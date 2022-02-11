@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// ImportConfig
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:LOBBY:CONFIG [UPDATE] Required
+    /// Scope: social Import config configuration from file. The existing
+    /// configuration will be replaced. The json file to import can be obtained from
+    /// the /export endpoint.
+    /// </summary>
     public class ImportConfig : AccelByte.Sdk.Core.Operation
     {
         public ImportConfig(

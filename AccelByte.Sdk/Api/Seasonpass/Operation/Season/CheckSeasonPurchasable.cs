@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// checkSeasonPurchasable
+    ///
+    /// This API is used to check pass or tier purchasable, season only located in
+    /// non-publisher namespace.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS", action=2 (READ)
+    /// </summary>
     public class CheckSeasonPurchasable : AccelByte.Sdk.Core.Operation
     {
         public CheckSeasonPurchasable(

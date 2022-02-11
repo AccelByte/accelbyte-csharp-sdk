@@ -187,6 +187,30 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.TwitchIAPConfigInfo? GetTwitchIAPConfig(GetTwitchIAPConfig input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.TwitchIAPConfigInfo? UpdateTwitchIAPConfig(UpdateTwitchIAPConfig input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeleteTwitchIAPConfig(DeleteTwitchIAPConfig input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.XblIAPConfigInfo? GetXblIAPConfig(GetXblIAPConfig input) {
             var response = _sdk.RunRequest(input);
 
@@ -284,6 +308,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public void SyncSteamInventory(SyncSteamInventory input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void SyncTwitchDropsEntitlement(SyncTwitchDropsEntitlement input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(

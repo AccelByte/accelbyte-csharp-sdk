@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// CreateClientByNamespace
+    ///
+    /// 
+    /// 
+    /// ## The endpoint is going to be deprecated. Please use this instead:
+    /// /v3/admin/namespaces/{namespace}/clients
+    /// 
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:CLIENT [CREATE]'
+    /// </summary>
     public class CreateClientByNamespace : AccelByte.Sdk.Core.Operation
     {
         public CreateClientByNamespace(

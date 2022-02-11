@@ -7,6 +7,22 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminUpdateUserEmailAddressV4
+    ///
+    /// 
+    /// 
+    /// Required permission
+    /// 
+    /// 
+    ///                                                                                                 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
+    /// 
+    /// 
+    /// 
+    /// This is the endpoint for an admin to update a user email address. This
+    /// endpoint need a valid user token from an admin to verify its identity (email)
+    /// before updating a user.
+    /// </summary>
     public class AdminUpdateUserEmailAddressV4 : AccelByte.Sdk.Core.Operation
     {
         public AdminUpdateUserEmailAddressV4(

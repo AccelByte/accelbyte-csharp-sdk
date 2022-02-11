@@ -7,6 +7,21 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// testCheckoutConfig
+    ///
+    /// Test checkout.com configuration.
+    /// 
+    /// #### Check List:
+    /// 
+    ///   * publicKey
+    ///   * secretKey
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : test result
+    /// </summary>
     public class TestCheckoutConfig : AccelByte.Sdk.Core.Operation
     {
         public TestCheckoutConfig(

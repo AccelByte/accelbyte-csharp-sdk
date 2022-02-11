@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminCreateGroup
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP
+    /// [CREATE]
+    /// </summary>
     public class AdminCreateGroup : AccelByte.Sdk.Core.Operation
     {
         public AdminCreateGroup(

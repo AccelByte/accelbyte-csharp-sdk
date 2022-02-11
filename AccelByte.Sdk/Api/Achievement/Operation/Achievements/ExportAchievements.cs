@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Achievement.Operation
 {
+    /// <summary>
+    /// ExportAchievements
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [READ] Required
+    /// Scope: social
+    /// </summary>
     public class ExportAchievements : AccelByte.Sdk.Core.Operation
     {
         public ExportAchievements(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminEnableUserV2
+    ///
+    /// Required permissions 'ADMIN:NAMESPACE:{namespace}:USERSTATUS:USER:{userId}
+    /// [UPDATE]'
+    /// </summary>
     public class AdminEnableUserV2 : AccelByte.Sdk.Core.Operation
     {
         public AdminEnableUserV2(

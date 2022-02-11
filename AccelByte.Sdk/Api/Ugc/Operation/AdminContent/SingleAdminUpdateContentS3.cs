@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// SingleAdminUpdateContentS3
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT
+    /// [UPDATE]. All request body are required except payload, preview, tags, and
+    /// contentType. contentType values is used to enforce the Content-Type header
+    /// needed by the client to upload the content using the S3 presigned URL. If not
+    /// specified, it will use fileExtension value.
+    /// </summary>
     public class SingleAdminUpdateContentS3 : AccelByte.Sdk.Core.Operation
     {
         public SingleAdminUpdateContentS3(

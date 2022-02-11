@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// defeatureItem
+    ///
+    /// Remove a feature from an item.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
+    ///   *  Returns : updated item
+    /// </summary>
     public class DefeatureItem : AccelByte.Sdk.Core.Operation
     {
         public DefeatureItem(

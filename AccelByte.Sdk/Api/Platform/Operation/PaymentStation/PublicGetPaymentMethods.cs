@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicGetPaymentMethods
+    ///
+    /// Get payment methods.
+    /// Other detail info:
+    /// 
+    ///   * Returns : Payment method list
+    /// </summary>
     public class PublicGetPaymentMethods : AccelByte.Sdk.Core.Operation
     {
         public PublicGetPaymentMethods(

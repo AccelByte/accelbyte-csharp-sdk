@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// getActions
+    ///
+    /// Get configured actions.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:ACTION" , action=2 (READ)
+    /// </summary>
     public class GetActions : AccelByte.Sdk.Core.Operation
     {
         public GetActions(

@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicCancelUserOrder
+    ///
+    /// Cancel user order.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ORDER", action=4 (UPDATE)
+    ///   *  Returns : cancelled order
+    /// </summary>
     public class PublicCancelUserOrder : AccelByte.Sdk.Core.Operation
     {
         public PublicCancelUserOrder(

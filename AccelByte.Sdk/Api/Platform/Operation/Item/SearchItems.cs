@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// searchItems
+    ///
+    /// This API is used to search items by keyword in title, description and long
+    /// description within a store.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
+    ///   *  Returns : the list of items
+    /// </summary>
     public class SearchItems : AccelByte.Sdk.Core.Operation
     {
         public SearchItems(

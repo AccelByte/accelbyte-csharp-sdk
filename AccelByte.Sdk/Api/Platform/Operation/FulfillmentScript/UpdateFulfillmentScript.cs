@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateFulfillmentScript
+    ///
+    /// Update fulfillment script.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:FULFILLMENT", action=4 (UPDATE)
+    /// </summary>
     public class UpdateFulfillmentScript : AccelByte.Sdk.Core.Operation
     {
         public UpdateFulfillmentScript(

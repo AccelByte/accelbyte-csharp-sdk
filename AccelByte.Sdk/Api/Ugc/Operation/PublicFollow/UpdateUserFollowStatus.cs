@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// UpdateUserFollowStatus
+    ///
+    /// Requires valid user token
+    /// </summary>
     public class UpdateUserFollowStatus : AccelByte.Sdk.Core.Operation
     {
         public UpdateUserFollowStatus(

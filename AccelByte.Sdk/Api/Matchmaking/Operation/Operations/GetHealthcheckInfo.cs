@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Operation
 {
+    /// <summary>
+    /// GetHealthcheckInfo
+    /// </summary>
     public class GetHealthcheckInfo : AccelByte.Sdk.Core.Operation
     {
         public GetHealthcheckInfo(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// ListProviders
+    ///
+    /// This endpoints returns list of supported providers. Armada is the default
+    /// provider.
+    /// </summary>
     public class ListProviders : AccelByte.Sdk.Core.Operation
     {
         public ListProviders(

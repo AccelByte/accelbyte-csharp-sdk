@@ -15,7 +15,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 TEST_NAMESPACE="test"
 
-OPERATIONS_COUNT=68
+OPERATIONS_COUNT=69
 
 FINISHED_COUNT=0
 SUCCESS_COUNT=0
@@ -957,30 +957,46 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 64 DeleteUserStatItems2
+#- 64 BulkResetUserStatItemValues
+# body param: body
+echo '[{"additionalData": {"kncKPmri": {}}, "statCode": "36MY2aVC"}]' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn social \
+    --op BulkResetUserStatItemValues \
+    --namespace $TEST_NAMESPACE \
+    --userId 'NUJgcpAY' \
+    --additionalKey 'bj0fidlW' \
+    --reqfile $TEMP_JSON_INPUT \
+    >$TEMP_FILE 2>&1
+update_status $? 'BulkResetUserStatItemValues'
+delete_file $TEMP_FILE
+rm -f $TEMP_JSON_INPUT
+rm -f $TEMP_FILE_UPLOAD
+
+#- 65 DeleteUserStatItems2
 $CLI_EXE \
     --sn social \
     --op DeleteUserStatItems2 \
     --namespace $TEST_NAMESPACE \
-    --statCode 'kncKPmri' \
-    --userId '36MY2aVC' \
-    --additionalKey 'NUJgcpAY' \
+    --statCode 'PSAIjaw5' \
+    --userId 'HSyDsQqM' \
+    --additionalKey 'UPrAxUd1' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteUserStatItems2'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 65 UpdateUserStatItemValue
+#- 66 UpdateUserStatItemValue
 # body param: body
-echo '{"additionalData": {"bj0fidlW": {}}, "updateStrategy": "MIN", "value": 0.5449884544395301}' > $TEMP_JSON_INPUT
+echo '{"additionalData": {"bmVSM44s": {}}, "updateStrategy": "OVERRIDE", "value": 0.10258285420378233}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op UpdateUserStatItemValue \
     --namespace $TEST_NAMESPACE \
-    --statCode 'aw5HSyDs' \
-    --userId 'QqMUPrAx' \
-    --additionalKey 'Ud1bmVSM' \
+    --statCode 'AZf7a3R9' \
+    --userId 'rIVTDDXZ' \
+    --additionalKey '1fahMp68' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateUserStatItemValue'
@@ -988,9 +1004,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 66 BulkUpdateUserStatItem1
+#- 67 BulkUpdateUserStatItem1
 # body param: body
-echo '[{"additionalData": {"44scgNAZ": {}}, "additionalKey": "f7a3R9rI", "statCode": "VTDDXZ1f", "updateStrategy": "OVERRIDE", "userId": "hMp688Jv", "value": 0.8988485437152824}]' > $TEMP_JSON_INPUT
+echo '[{"additionalData": {"8Jv5wQ3h": {}}, "additionalKey": "bDlcGRx2", "statCode": "aExmVbXD", "updateStrategy": "INCREMENT", "userId": "mWyrFZZd", "value": 0.6090126843195359}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkUpdateUserStatItem1 \
@@ -1002,15 +1018,15 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 67 BulkUpdateUserStatItem2
+#- 68 BulkUpdateUserStatItem2
 # body param: body
-echo '[{"additionalData": {"Q3hbDlcG": {}}, "statCode": "Rx2aExmV", "updateStrategy": "OVERRIDE", "value": 0.7799687494605654}]' > $TEMP_JSON_INPUT
+echo '[{"additionalData": {"0sSdUypO": {}}, "statCode": "voMvIN7c", "updateStrategy": "MIN", "value": 0.6750061762714327}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkUpdateUserStatItem2 \
     --namespace $TEST_NAMESPACE \
-    --userId 'omWyrFZZ' \
-    --additionalKey 'dM00sSdU' \
+    --userId 'FsCUQz0k' \
+    --additionalKey 'oUsUcGfj' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'BulkUpdateUserStatItem2'
@@ -1018,16 +1034,16 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 68 UpdateUserStatItemValue1
+#- 69 UpdateUserStatItemValue1
 # body param: body
-echo '{"additionalData": {"ypOvoMvI": {}}, "updateStrategy": "OVERRIDE", "value": 0.6786082046185243}' > $TEMP_JSON_INPUT
+echo '{"additionalData": {"tfyuPNb5": {}}, "updateStrategy": "OVERRIDE", "value": 0.3703090782219526}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op UpdateUserStatItemValue1 \
     --namespace $TEST_NAMESPACE \
-    --statCode 'RxFsCUQz' \
-    --userId '0koUsUcG' \
-    --additionalKey 'fjtfyuPN' \
+    --statCode 'RtR1Qe0m' \
+    --userId 'xLnvZEG2' \
+    --additionalKey 'biyKS8vf' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateUserStatItemValue1'

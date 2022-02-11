@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminUploadContentDirect
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT
+    /// [CREATE]. All request body are required except preview and tags.
+    /// </summary>
     public class AdminUploadContentDirect : AccelByte.Sdk.Core.Operation
     {
         public AdminUploadContentDirect(

@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// queryTiers
+    ///
+    /// This API is used to query paginated tiers for a season.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=2 (READ)
+    ///   *  Returns : the list of passes
+    /// </summary>
     public class QueryTiers : AccelByte.Sdk.Core.Operation
     {
         public QueryTiers(

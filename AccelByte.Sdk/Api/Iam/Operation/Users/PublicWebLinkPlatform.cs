@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicWebLinkPlatform
+    ///
+    /// This endpoint is used to generate third party login page which will redirected
+    /// to establish endpoint.
+    /// </summary>
     public class PublicWebLinkPlatform : AccelByte.Sdk.Core.Operation
     {
         public PublicWebLinkPlatform(

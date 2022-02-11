@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getPaymentOrderChargeStatus
+    ///
+    /// Get payment order charge status.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT", action=2 (READ)
+    ///   *  Returns : payment order charge status
+    /// </summary>
     public class GetPaymentOrderChargeStatus : AccelByte.Sdk.Core.Operation
     {
         public GetPaymentOrderChargeStatus(

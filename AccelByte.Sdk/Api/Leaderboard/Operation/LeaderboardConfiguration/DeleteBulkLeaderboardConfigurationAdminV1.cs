@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Leaderboard.Operation
 {
+    /// <summary>
+    /// deleteBulkLeaderboardConfigurationAdminV1
+    ///
+    /// 
+    /// 
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [DELETE]'
+    /// 
+    /// This endpoint delete multiple leaderboards configuration in one request
+    /// </summary>
     public class DeleteBulkLeaderboardConfigurationAdminV1 : AccelByte.Sdk.Core.Operation
     {
         public DeleteBulkLeaderboardConfigurationAdminV1(

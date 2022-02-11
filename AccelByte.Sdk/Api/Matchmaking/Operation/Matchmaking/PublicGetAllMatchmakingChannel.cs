@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Operation
 {
+    /// <summary>
+    /// PublicGetAllMatchmakingChannel
+    ///
+    /// Reads all available channels in a namespace
+    /// </summary>
     public class PublicGetAllMatchmakingChannel : AccelByte.Sdk.Core.Operation
     {
         public PublicGetAllMatchmakingChannel(

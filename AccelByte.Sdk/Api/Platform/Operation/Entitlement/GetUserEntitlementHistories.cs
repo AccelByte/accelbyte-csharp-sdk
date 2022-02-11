@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getUserEntitlementHistories
+    ///
+    /// Get user entitlement histories.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
+    ///   *  Returns : list of entitlement history
+    /// </summary>
     public class GetUserEntitlementHistories : AccelByte.Sdk.Core.Operation
     {
         public GetUserEntitlementHistories(

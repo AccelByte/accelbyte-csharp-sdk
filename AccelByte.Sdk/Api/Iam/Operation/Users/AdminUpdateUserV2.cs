@@ -7,6 +7,29 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminUpdateUserV2
+    ///
+    /// 
+    /// 
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
+    /// 
+    /// 
+    /// 
+    /// This Endpoint support update user based on given data. Single request can
+    /// update single field or multi fields.
+    /// 
+    /// Supported field {Country, DisplayName, LanguageTag}
+    /// 
+    /// Country use ISO3166-1 alpha-2 two letter, e.g. US.
+    /// 
+    /// 
+    ///  Several case of updating email address
+    /// 
+    ///         * User want to update email address of which have been verified, NewEmailAddress response field will be filled with new email address.
+    ///         * User want to update email address of which have not been verified, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with new email address.
+    ///         * User want to update email address of which have been verified and updated before, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with verified email before. NewEmailAddress response field will be filled with newest email address.
+    /// </summary>
     public class AdminUpdateUserV2 : AccelByte.Sdk.Core.Operation
     {
         public AdminUpdateUserV2(

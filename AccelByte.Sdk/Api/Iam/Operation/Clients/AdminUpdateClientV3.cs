@@ -7,6 +7,24 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminUpdateClientV3
+    ///
+    /// Updates an OAuth 2.0 client. Protected by the permission:
+    /// ADMIN:NAMESPACE:{namespace}:CLIENT [UPDATE]. Specify only the fields you want
+    /// to update in the request payload, e.g. {"ClientName":"E-commerce",
+    /// "BaseUri":"https://example.net"}
+    /// action code: 10302
+    /// 
+    /// Fields Description:
+    /// 
+    ///           * clientName : The client name. It should not be empty if the field exists in the body. e.g E-commerce
+    ///           * namespace : The namespace where the client lives. e.g sample-game
+    ///           * redirectUri : Contains the redirect URI used in OAuth callback. It should not be empty if the field exists in the body. e.g https://example.net/platform
+    ///           * audiences : List of target client IDs who is intended to receive the token. e.g ["eaaa65618fe24293b00a61454182b435", "40073ee9bc3446d3a051a71b48509a5d"]
+    ///           * baseUri : A base URI of the application. It is used in the audience checking for making sure the token is used by the right resource server. Required if the application type is a server. e.g https://example.net/platform
+    ///           * clientPermissions : Contains the client's permissions
+    /// </summary>
     public class AdminUpdateClientV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminUpdateClientV3(

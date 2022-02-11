@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getItemIdBySku
+    ///
+    ///  [SERVICE COMMUNICATION ONLY] This API is used to get the itemId by sku.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
+    ///   *  Returns : the itemId with sku
+    /// </summary>
     public class GetItemIdBySku : AccelByte.Sdk.Core.Operation
     {
         public GetItemIdBySku(

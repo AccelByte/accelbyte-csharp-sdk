@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// queryPaymentOrders
+    ///
+    /// Query payment orders.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT", action=2 (READ)
+    ///   *  Returns : query payment orders
+    /// </summary>
     public class QueryPaymentOrders : AccelByte.Sdk.Core.Operation
     {
         public QueryPaymentOrders(

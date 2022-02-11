@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// GetFollowedUsers
+    ///
+    /// Requires valid user token
+    /// </summary>
     public class GetFollowedUsers : AccelByte.Sdk.Core.Operation
     {
         public GetFollowedUsers(

@@ -22,6 +22,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonPropertyName("concurrentUsersLimit")]
         public int? ConcurrentUsersLimit { get; set; }
         
+        [JsonPropertyName("disablePartyInvitationToken")]
+        public bool? DisablePartyInvitationToken { get; set; }
+        
         [JsonPropertyName("enableChat")]
         public bool? EnableChat { get; set; }
         

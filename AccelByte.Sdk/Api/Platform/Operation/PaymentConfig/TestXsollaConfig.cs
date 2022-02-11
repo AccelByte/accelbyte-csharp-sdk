@@ -7,6 +7,27 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// testXsollaConfig
+    ///
+    /// Check xsolla configuration, Reference: [Xsolla
+    /// Document](https://developers.xsolla.com/?#simple-checkout).
+    /// 
+    /// #### Check List:
+    /// 
+    ///   * merchantId
+    ///   * projectId
+    ///   * apiKey
+    /// 
+    /// #### Non-check list:
+    /// 
+    ///   * projectSecretKey
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : test result
+    /// </summary>
     public class TestXsollaConfig : AccelByte.Sdk.Core.Operation
     {
         public TestXsollaConfig(

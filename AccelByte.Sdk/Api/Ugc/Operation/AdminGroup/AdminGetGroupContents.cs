@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminGetGroupContents
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ].
+    /// </summary>
     public class AdminGetGroupContents : AccelByte.Sdk.Core.Operation
     {
         public AdminGetGroupContents(

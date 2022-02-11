@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// getMyZipCode
+    ///
+    /// Get my zip code.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "NAMESPACE:{namespace}:PROFILE" , action=2 (READ)
+    ///   *  Action code : 11407
+    ///   *  Returns : user zip code
+    /// </summary>
     public class GetMyZipCode : AccelByte.Sdk.Core.Operation
     {
         public GetMyZipCode(

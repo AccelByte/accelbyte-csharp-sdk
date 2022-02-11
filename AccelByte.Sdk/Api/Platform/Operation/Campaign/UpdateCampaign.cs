@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateCampaign
+    ///
+    /// Update campaign.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=4 (UPDATE)
+    ///   *  Returns : updated campaign
+    /// </summary>
     public class UpdateCampaign : AccelByte.Sdk.Core.Operation
     {
         public UpdateCampaign(

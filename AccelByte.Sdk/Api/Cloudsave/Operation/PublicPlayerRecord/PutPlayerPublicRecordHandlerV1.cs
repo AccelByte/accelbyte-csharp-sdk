@@ -7,6 +7,35 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// putPlayerPublicRecordHandlerV1
+    ///
+    /// Required Permission |
+    /// `NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [UPDATE]`
+    /// ---|---
+    /// Required Scope | `social`
+    /// 
+    /// If the record is not exist, it will create. If the record already exist, it
+    /// will replace the record instead. And this operation can only be applied to
+    /// record with `isPublic=true`. Example Replace record
+    /// 
+    /// 
+    /// 
+    ///     // existed record
+    ///     {
+    ///         "foo": "bar"
+    ///     }
+    /// 
+    ///     // new record (request body)
+    ///     {
+    ///         "foo_new": "bar_new"
+    ///     }
+    /// 
+    ///     // result
+    ///     {
+    ///         "foo_new": "bar_new"
+    ///     }
+    /// </summary>
     public class PutPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public PutPlayerPublicRecordHandlerV1(

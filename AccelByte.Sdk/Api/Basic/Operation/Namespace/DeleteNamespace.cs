@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// deleteNamespace
+    ///
+    /// Delete a namespace.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:NAMESPACE" , action=8 (DELETE)
+    ///   *  Action code : 11307
+    ///   *  Returns : deleted namespace
+    /// </summary>
     public class DeleteNamespace : AccelByte.Sdk.Core.Operation
     {
         public DeleteNamespace(

@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// queryRedeemHistory
+    ///
+    /// Query redeem history.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=2 (READ)
+    ///   *  Returns : slice of redeem history
+    /// </summary>
     public class QueryRedeemHistory : AccelByte.Sdk.Core.Operation
     {
         public QueryRedeemHistory(

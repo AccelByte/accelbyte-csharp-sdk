@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updatePlaystationIAPConfig
+    ///
+    /// Update playstation iap config. Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : updated playstation iap config
+    /// </summary>
     public class UpdatePlaystationIAPConfig : AccelByte.Sdk.Core.Operation
     {
         public UpdatePlaystationIAPConfig(

@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// redeemCode
+    ///
+    /// Redeem campaign code.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
+    ///   *  Returns : fulfillment result
+    /// </summary>
     public class RedeemCode : AccelByte.Sdk.Core.Operation
     {
         public RedeemCode(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// DeleteThirdPartyLoginPlatformCredentialV3
+    ///
+    /// This is the API to Delete 3rd Platform Credential. It needs
+    /// ADMIN:NAMESPACE:{namespace}:PLATFORM:{platformId}:CLIENT [DELETE] resource
+    /// </summary>
     public class DeleteThirdPartyLoginPlatformCredentialV3 : AccelByte.Sdk.Core.Operation
     {
         public DeleteThirdPartyLoginPlatformCredentialV3(

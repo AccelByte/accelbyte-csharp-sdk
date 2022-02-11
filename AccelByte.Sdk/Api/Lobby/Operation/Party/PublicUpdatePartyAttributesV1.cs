@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// publicUpdatePartyAttributesV1
+    ///
+    /// Required valid user authorization
+    /// 
+    /// update party attributes in a namespace.
+    /// </summary>
     public class PublicUpdatePartyAttributesV1 : AccelByte.Sdk.Core.Operation
     {
         public PublicUpdatePartyAttributesV1(

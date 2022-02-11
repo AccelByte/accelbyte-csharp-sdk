@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Operation
 {
+    /// <summary>
+    /// GetAllChannelsHandler
+    ///
+    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [READ] Required
+    /// Scope: social Reads all available channels in a namespace
+    /// </summary>
     public class GetAllChannelsHandler : AccelByte.Sdk.Core.Operation
     {
         public GetAllChannelsHandler(

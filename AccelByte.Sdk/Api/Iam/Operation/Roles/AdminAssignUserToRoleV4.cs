@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminAssignUserToRoleV4
+    ///
+    /// Required permission ADMIN:ROLE [UPDATE] Parameters: - userId: string
+    /// (required) - namespace: string (userâs namespace) (required) -
+    /// assignedNamespaces: array of string (namespaces to be assigned on role)
+    /// (required) action code: 10410
+    /// </summary>
     public class AdminAssignUserToRoleV4 : AccelByte.Sdk.Core.Operation
     {
         public AdminAssignUserToRoleV4(

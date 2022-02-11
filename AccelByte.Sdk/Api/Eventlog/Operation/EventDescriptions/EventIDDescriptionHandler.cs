@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Eventlog.Operation
 {
+    /// <summary>
+    /// EventIDDescriptionHandler
+    /// </summary>
     public class EventIDDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
         public EventIDDescriptionHandler(

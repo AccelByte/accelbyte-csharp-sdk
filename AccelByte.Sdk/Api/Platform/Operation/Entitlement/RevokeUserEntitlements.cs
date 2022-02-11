@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// revokeUserEntitlements
+    ///
+    /// Revoke user's entitlements by ids.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
+    ///   *  Returns : revoke entitlements count
+    /// </summary>
     public class RevokeUserEntitlements : AccelByte.Sdk.Core.Operation
     {
         public RevokeUserEntitlements(

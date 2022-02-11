@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// decreaseTicketSale
+    ///
+    ///  [SERVICE COMMUNICATION ONLY] Decrease ticket(code/key) sale if requested
+    /// orderNo is already increased.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:TICKET", action=4 (UPDATE)
+    /// </summary>
     public class DecreaseTicketSale : AccelByte.Sdk.Core.Operation
     {
         public DecreaseTicketSale(

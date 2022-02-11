@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getAggregatePaymentProviders
+    ///
+    /// Get aggregate payment providers, such as XSOLLA, ADYEN.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
+    ///   *  Returns : payment provider list
+    /// </summary>
     public class GetAggregatePaymentProviders : AccelByte.Sdk.Core.Operation
     {
         public GetAggregatePaymentProviders(

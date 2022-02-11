@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// userCancelFriendRequest
+    /// </summary>
     public class UserCancelFriendRequest : AccelByte.Sdk.Core.Operation
     {
         public UserCancelFriendRequest(

@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// adminSetProfanityRuleForNamespace
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PROFANITY [UPDATE]` with
+    /// scope `social`
+    /// set current profanity rule
+    /// </summary>
     public class AdminSetProfanityRuleForNamespace : AccelByte.Sdk.Core.Operation
     {
         public AdminSetProfanityRuleForNamespace(

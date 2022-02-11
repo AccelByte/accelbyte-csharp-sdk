@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// anonymizeSubscription
+    ///
+    /// Anonymize subscription. At current it will anonymize subscription, billing
+    /// history and subscription activity.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ANONYMIZATION", action=8 (DELETE)
+    /// </summary>
     public class AnonymizeSubscription : AccelByte.Sdk.Core.Operation
     {
         public AnonymizeSubscription(

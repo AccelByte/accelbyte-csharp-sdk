@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicUpdatePasswordV2
+    ///
+    /// This endpoint need a valid user access token
+    /// </summary>
     public class PublicUpdatePasswordV2 : AccelByte.Sdk.Core.Operation
     {
         public PublicUpdatePasswordV2(

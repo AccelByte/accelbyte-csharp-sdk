@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// updateMemberRolePublicV1
+    ///
+    /// Required Member Role Permission: "GROUP:ROLE [UPDATE]
+    /// 
+    /// This endpoint is used to assign role to group member
+    /// 
+    /// Action Code: 73204
+    /// </summary>
     public class UpdateMemberRolePublicV1 : AccelByte.Sdk.Core.Operation
     {
         public UpdateMemberRolePublicV1(

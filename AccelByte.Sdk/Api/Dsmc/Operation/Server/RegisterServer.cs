@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// RegisterServer
+    ///
+    /// ``` Required permission: NAMESPACE:{namespace}:DSM:SERVER [UPDATE] Required
+    /// scope: social This endpoint is intended to be called by dedicated server to
+    /// let DSM know that it is ready for use. This MUST be called by DS after it is
+    /// ready to accept match data and incoming client connections. Upon successfully
+    /// calling this endpoint, the dedicated server is listed under READY servers.```
+    /// </summary>
     public class RegisterServer : AccelByte.Sdk.Core.Operation
     {
         public RegisterServer(

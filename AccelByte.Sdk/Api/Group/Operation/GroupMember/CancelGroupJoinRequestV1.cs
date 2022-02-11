@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// CancelGroupJoinRequestV1
+    ///
+    /// 
+    /// 
+    /// Requires valid user authentication
+    /// 
+    /// This endpoint allows user to cancel request to join specific group.
+    /// 
+    /// Action Code: 73411
+    /// </summary>
     public class CancelGroupJoinRequestV1 : AccelByte.Sdk.Core.Operation
     {
         public CancelGroupJoinRequestV1(

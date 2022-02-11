@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// updateConfig
+    ///
+    /// Update equ8 config, create if not exists.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:EQU8CONFIG" , action=4 (UPDATE)
+    /// </summary>
     public class UpdateConfig : AccelByte.Sdk.Core.Operation
     {
         public UpdateConfig(

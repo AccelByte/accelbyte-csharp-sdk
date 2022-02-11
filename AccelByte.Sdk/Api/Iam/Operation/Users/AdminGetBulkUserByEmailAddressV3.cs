@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminGetBulkUserByEmailAddressV3
+    ///
+    /// 
+    /// 
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER [READ]'
+    /// 
+    /// This endpoint search user by the list of email addresses
+    /// 
+    /// 
+    /// action code : 10132
+    /// </summary>
     public class AdminGetBulkUserByEmailAddressV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminGetBulkUserByEmailAddressV3(

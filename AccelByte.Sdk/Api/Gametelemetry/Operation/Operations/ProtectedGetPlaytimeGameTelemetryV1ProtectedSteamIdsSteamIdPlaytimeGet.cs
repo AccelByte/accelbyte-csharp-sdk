@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 {
+    /// <summary>
+    /// protected_get_playtime_game_telemetry_v1_protected_steamIds__steamId__playtime_get
+    ///
+    /// This endpoint requires valid JWT token. This endpoint does not require
+    /// permission. This endpoint retrieves player's total playtime in Steam for a
+    /// specific game (AppId) and store them in service's cache. Players' Steam
+    /// account must be set into public to enable the service fetch their total
+    /// playtime data.
+    /// </summary>
     public class ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet : AccelByte.Sdk.Core.Operation
     {
         public ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(

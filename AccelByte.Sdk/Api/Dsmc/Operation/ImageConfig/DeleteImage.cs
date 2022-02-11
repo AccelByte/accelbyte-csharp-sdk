@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// DeleteImage
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE] Required
+    /// scope: social This endpoint will delete an image that specified in the request
+    /// parameter
+    /// </summary>
     public class DeleteImage : AccelByte.Sdk.Core.Operation
     {
         public DeleteImage(

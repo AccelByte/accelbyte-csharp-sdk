@@ -11,22 +11,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             _sdk = sdk;
         }
         
-        public Model.Tier? UpdateTier(UpdateTier input) {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code, 
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void DeleteTier(DeleteTier input) {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code, 
-                    response.ContentType,
-                    response.Payload);
-        }
         public Model.TierPagingSlicedResult? QueryTiers(QueryTiers input) {
             var response = _sdk.RunRequest(input);
 
@@ -43,7 +27,23 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserSeasonSummary? GrantUserTier(GrantUserTier input) {
+        public Model.Tier? UpdateTier(UpdateTier input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeleteTier(DeleteTier input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.Tier? ReorderTier(ReorderTier input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -52,6 +52,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public Model.UserSeasonSummary? GrantUserExp(GrantUserExp input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserSeasonSummary? GrantUserTier(GrantUserTier input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

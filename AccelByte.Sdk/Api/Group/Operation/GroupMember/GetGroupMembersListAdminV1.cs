@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// getGroupMembersListAdminV1
+    ///
+    /// 
+    /// 
+    /// Required permission ADMIN:NAMESPACE:{namespace}:GROUP:MEMBER [READ]
+    /// 
+    /// This endpoint is used to get list of group members.
+    /// 
+    /// Action Code: 73410
+    /// </summary>
     public class GetGroupMembersListAdminV1 : AccelByte.Sdk.Core.Operation
     {
         public GetGroupMembersListAdminV1(

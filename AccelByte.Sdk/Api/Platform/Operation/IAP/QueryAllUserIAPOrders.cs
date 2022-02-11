@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// queryAllUserIAPOrders
+    ///
+    /// Query all user IAP orders.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP", action=2 (READ)
+    ///   *  Returns : list of iap orders
+    /// </summary>
     public class QueryAllUserIAPOrders : AccelByte.Sdk.Core.Operation
     {
         public QueryAllUserIAPOrders(

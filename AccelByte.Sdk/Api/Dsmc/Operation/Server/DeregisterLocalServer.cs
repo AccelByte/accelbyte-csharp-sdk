@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// DeregisterLocalServer
+    ///
+    /// ``` Required permission: NAMESPACE:{namespace}:DSM:SERVER [UPDATE] Required
+    /// scope: social This endpoint is intended to be called by local dedicated server
+    /// to let DSM know that it is shutting down. Calling this will remove the server
+    /// records from DB.```
+    /// </summary>
     public class DeregisterLocalServer : AccelByte.Sdk.Core.Operation
     {
         public DeregisterLocalServer(

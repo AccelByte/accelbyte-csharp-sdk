@@ -7,6 +7,25 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// updateMyProfile
+    ///
+    /// Update my profile.
+    /// Updates user profile in the target namespace (namespace in the path). If
+    /// token's namespace doesn't match the target namespace, the service
+    /// automatically maps the token's user ID into the user ID in the target
+    /// namespace. The endpoint returns the updated user profile on a successful call.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "NAMESPACE:{namespace}:PROFILE" , action=4 (UPDATE)
+    ///   *  Action code : 11402
+    ///   *  Returns : user profile
+    ///   *  Path's namespace :
+    ///     * can be filled with publisher namespace in order to update publisher user profile
+    ///     * can be filled with game namespace in order to update game user profile
+    ///   *  Language : allowed format: en, en-US
+    ///   *  Timezone : IANA time zone, e.g. Asia/Shanghai
+    /// </summary>
     public class UpdateMyProfile : AccelByte.Sdk.Core.Operation
     {
         public UpdateMyProfile(

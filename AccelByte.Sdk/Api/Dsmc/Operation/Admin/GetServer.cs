@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// GetServer
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ] Required
+    /// scope: social This endpoint queries a specified dedicated server from DB.
+    /// </summary>
     public class GetServer : AccelByte.Sdk.Core.Operation
     {
         public GetServer(

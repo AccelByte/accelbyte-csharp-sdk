@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// listFulfillmentScripts
+    ///
+    /// List all fulfillment scripts.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:FULFILLMENT", action=2 (READ)
+    /// </summary>
     public class ListFulfillmentScripts : AccelByte.Sdk.Core.Operation
     {
         public ListFulfillmentScripts(

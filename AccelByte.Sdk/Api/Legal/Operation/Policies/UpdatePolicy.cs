@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// updatePolicy
+    ///
+    /// Update country-specific policy.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+    /// </summary>
     public class UpdatePolicy : AccelByte.Sdk.Core.Operation
     {
         public UpdatePolicy(

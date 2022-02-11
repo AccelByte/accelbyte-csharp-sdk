@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// RemoveRoleAdmin
+    ///
+    /// 
+    /// 
+    /// Required permission 'ROLE:ADMIN [UPDATE]' or 'ADMIN:ROLE [UPDATE]'
+    /// 
+    /// Required Permission 'ROLE:ADMIN [UPDATE]' is going to be DEPRECATED for
+    /// security purpose. It is going to be deprecated on 31 JANUARY 2019 , please use
+    /// permission 'ADMIN:ROLE [UPDATE]' instead.
+    /// </summary>
     public class RemoveRoleAdmin : AccelByte.Sdk.Core.Operation
     {
         public RemoveRoleAdmin(

@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateXsollaConfig
+    ///
+    /// Update xsolla configuration. Reference: [Xsolla
+    /// Document](https://developers.xsolla.com/?#simple-checkout).
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : updated payment merchant config
+    /// </summary>
     public class UpdateXsollaConfig : AccelByte.Sdk.Core.Operation
     {
         public UpdateXsollaConfig(

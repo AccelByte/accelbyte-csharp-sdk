@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// queryItems
+    ///
+    /// This API is used to query items by criteria within a store.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
+    ///   *  Returns : the list of items
+    /// </summary>
     public class QueryItems : AccelByte.Sdk.Core.Operation
     {
         public QueryItems(

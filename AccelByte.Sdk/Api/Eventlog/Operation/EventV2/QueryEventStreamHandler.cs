@@ -7,6 +7,20 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Eventlog.Operation
 {
+    /// <summary>
+    /// QueryEventStreamHandler
+    ///
+    /// 
+    /// 
+    /// This endpoint is using POST which is somewhat unfamiliar, but it's logical
+    /// that we have to send/post a filter (search term) in order to get the data.
+    /// 
+    /// This endpoint will not return anything if you give it an empty filters in the
+    /// request body.
+    /// 
+    /// Required permission `ADMIN:NAMESPACE:{namespace}:EVENT [READ]` and scope
+    /// `"+scope+"`
+    /// </summary>
     public class QueryEventStreamHandler : AccelByte.Sdk.Core.Operation
     {
         public QueryEventStreamHandler(

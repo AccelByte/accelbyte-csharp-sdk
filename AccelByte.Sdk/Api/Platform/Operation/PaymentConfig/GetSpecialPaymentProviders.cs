@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getSpecialPaymentProviders
+    ///
+    /// Get special payment providers, such as ALIPAY, WXPAY.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
+    ///   *  Returns : payment provider list
+    /// </summary>
     public class GetSpecialPaymentProviders : AccelByte.Sdk.Core.Operation
     {
         public GetSpecialPaymentProviders(

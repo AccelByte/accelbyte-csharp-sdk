@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// getPersonalChatHistoryV1Public
+    ///
+    /// Required valid user authorization
+    /// 
+    /// load personal chat history in a namespace based on Friend User ID
+    /// Action Code: 50101
+    /// </summary>
     public class GetPersonalChatHistoryV1Public : AccelByte.Sdk.Core.Operation
     {
         public GetPersonalChatHistoryV1Public(

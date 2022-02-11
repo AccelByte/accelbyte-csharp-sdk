@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Gdpr.Operation
 {
+    /// <summary>
+    /// DeleteAdminEmailConfiguration
+    ///
+    /// Delete a list of admin email addresses to stop receiving personal data request
+    /// notification.
+    /// 
+    /// Required permission `ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [DELETE]`
+    /// and scope `account`
+    /// </summary>
     public class DeleteAdminEmailConfiguration : AccelByte.Sdk.Core.Operation
     {
         public DeleteAdminEmailConfiguration(

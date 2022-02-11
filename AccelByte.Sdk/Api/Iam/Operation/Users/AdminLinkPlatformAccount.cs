@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminLinkPlatformAccount
+    ///
+    /// 
+    /// 
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
+    /// 
+    /// Force linking platform account to user User Account. This endpoint intended
+    /// for admin to forcefully link account to user.
+    /// </summary>
     public class AdminLinkPlatformAccount : AccelByte.Sdk.Core.Operation
     {
         public AdminLinkPlatformAccount(

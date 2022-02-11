@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// SingleAdminGetChannel
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]
+    /// </summary>
     public class SingleAdminGetChannel : AccelByte.Sdk.Core.Operation
     {
         public SingleAdminGetChannel(

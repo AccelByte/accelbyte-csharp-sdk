@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// getSingleGroupPublicV1
+    ///
+    /// 
+    /// 
+    /// Required valid user authentication
+    /// 
+    /// Get single group information. This endpoint will show the group information by
+    /// the groupId
+    /// 
+    /// Action Code: 73306
+    /// </summary>
     public class GetSingleGroupPublicV1 : AccelByte.Sdk.Core.Operation
     {
         public GetSingleGroupPublicV1(

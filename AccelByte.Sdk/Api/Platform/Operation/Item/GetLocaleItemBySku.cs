@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getLocaleItemBySku
+    ///
+    /// This API is used to get an item by sku in specific locale. If item not exist
+    /// in specific region, default region item will return.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
+    ///   *  Returns : item data
+    /// </summary>
     public class GetLocaleItemBySku : AccelByte.Sdk.Core.Operation
     {
         public GetLocaleItemBySku(

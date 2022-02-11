@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// publicGetProfile
+    ///
+    /// Returns profile for a user.
+    /// Other detail info:
+    /// 
+    ///         *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
+    ///         *  Returns : game profile info
+    /// </summary>
     public class PublicGetProfile : AccelByte.Sdk.Core.Operation
     {
         public PublicGetProfile(

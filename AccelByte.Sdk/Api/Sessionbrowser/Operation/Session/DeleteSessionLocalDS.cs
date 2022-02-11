@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 {
+    /// <summary>
+    /// DeleteSessionLocalDS
+    ///
+    /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [DELETE]
+    /// Required scope: social Only use for local DS entry, will error when calling
+    /// non local DS entry
+    /// </summary>
     public class DeleteSessionLocalDS : AccelByte.Sdk.Core.Operation
     {
         public DeleteSessionLocalDS(

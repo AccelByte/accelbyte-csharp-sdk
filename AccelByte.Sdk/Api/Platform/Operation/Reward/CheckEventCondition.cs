@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// checkEventCondition
+    ///
+    ///  [TEST FACILITY ONLY] Forbidden in live environment. Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:REWARD", action=2 (READ)
+    ///   *  Returns : match result
+    /// </summary>
     public class CheckEventCondition : AccelByte.Sdk.Core.Operation
     {
         public CheckEventCondition(

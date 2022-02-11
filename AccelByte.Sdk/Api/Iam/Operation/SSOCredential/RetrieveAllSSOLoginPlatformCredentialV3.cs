@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// RetrieveAllSSOLoginPlatformCredentialV3
+    ///
+    /// This is the API to Get All Active SSO Platform Credential. It needs
+    /// ADMIN:NAMESPACE:{namespace}:PLATFORM:*:SSO [READ] resource
+    /// </summary>
     public class RetrieveAllSSOLoginPlatformCredentialV3 : AccelByte.Sdk.Core.Operation
     {
         public RetrieveAllSSOLoginPlatformCredentialV3(

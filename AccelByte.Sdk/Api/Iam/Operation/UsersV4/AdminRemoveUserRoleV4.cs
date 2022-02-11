@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminRemoveUserRoleV4
+    ///
+    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:ROLE:USER:* [Delete]
+    /// permission. Remove a role from user's roles.
+    /// </summary>
     public class AdminRemoveUserRoleV4 : AccelByte.Sdk.Core.Operation
     {
         public AdminRemoveUserRoleV4(

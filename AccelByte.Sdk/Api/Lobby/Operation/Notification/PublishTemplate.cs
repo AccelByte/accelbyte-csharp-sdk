@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// publishTemplate
+    ///
+    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [CREATE]` with scope
+    /// `social`
+    /// Publish notification template draft. Empty draft can not be published.
+    /// </summary>
     public class PublishTemplate : AccelByte.Sdk.Core.Operation
     {
         public PublishTemplate(

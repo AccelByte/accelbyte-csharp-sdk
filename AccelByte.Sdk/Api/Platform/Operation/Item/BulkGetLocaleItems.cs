@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// bulkGetLocaleItems
+    ///
+    /// This API is used to bulk get locale items. If item not exist in specific
+    /// region, default region item will return.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
+    ///   *  Returns : the list of items info
+    /// </summary>
     public class BulkGetLocaleItems : AccelByte.Sdk.Core.Operation
     {
         public BulkGetLocaleItems(

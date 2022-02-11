@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AddDownloadCount
+    ///
+    /// Requires valid user token
+    /// </summary>
     public class AddDownloadCount : AccelByte.Sdk.Core.Operation
     {
         public AddDownloadCount(

@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// updateUserProfileStatus
+    ///
+    /// Update user profile status.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=4 (UPDATE)
+    ///   *  Action code : 11406
+    ///   *  Returns : user profile
+    /// </summary>
     public class UpdateUserProfileStatus : AccelByte.Sdk.Core.Operation
     {
         public UpdateUserProfileStatus(

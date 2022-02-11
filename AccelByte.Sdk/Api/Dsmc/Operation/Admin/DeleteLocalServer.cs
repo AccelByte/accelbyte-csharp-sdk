@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// DeleteLocalServer
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [DELETE] Required
+    /// scope: social This endpoint deletes a specified local dedicated server from
+    /// DB. Note that DSM has no ability to shutdown local DS.
+    /// </summary>
     public class DeleteLocalServer : AccelByte.Sdk.Core.Operation
     {
         public DeleteLocalServer(

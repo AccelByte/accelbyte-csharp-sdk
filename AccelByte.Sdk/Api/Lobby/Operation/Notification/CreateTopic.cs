@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// createTopic
+    ///
+    /// Required permission : `NAMESPACE:{namespace}:TOPIC [CREATE]` with scope
+    /// `social`
+    /// Create new notification topic.
+    /// topic should be alphabets, no special char except underscore, uppercase and no
+    /// spacing. for example: TOPIC_TEST. Already existing topic can not be created
+    /// </summary>
     public class CreateTopic : AccelByte.Sdk.Core.Operation
     {
         public CreateTopic(

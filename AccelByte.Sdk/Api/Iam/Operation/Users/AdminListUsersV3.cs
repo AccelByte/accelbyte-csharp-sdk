@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminListUsersV3
+    ///
+    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:USER [READ] permission.
+    /// Returns list of users ID and namespace with their Justice platform account,
+    /// under a namespace. If user doesn't have Justice platform account, the
+    /// linkedPlatforms will be empty array.'
+    /// </summary>
     public class AdminListUsersV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminListUsersV3(

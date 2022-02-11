@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminDeleteUserInformationV3
+    ///
+    /// Required permissions 'ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId}
+    /// [DELETE]'.
+    /// </summary>
     public class AdminDeleteUserInformationV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminDeleteUserInformationV3(

@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicGetUserEntitlement
+    ///
+    /// Get user entitlement.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
+    ///   *  Returns : entitlement
+    /// </summary>
     public class PublicGetUserEntitlement : AccelByte.Sdk.Core.Operation
     {
         public PublicGetUserEntitlement(

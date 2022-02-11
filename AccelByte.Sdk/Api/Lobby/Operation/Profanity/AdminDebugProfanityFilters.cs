@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// adminDebugProfanityFilters
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PROFANITY [READ]` with
+    /// scope `social`
+    /// get the list of filters that would modify the phrase
+    /// </summary>
     public class AdminDebugProfanityFilters : AccelByte.Sdk.Core.Operation
     {
         public AdminDebugProfanityFilters(

@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// updateNamespaceSlotConfig
+    ///
+    /// Update a slot namespace configuration.
+    /// Other detail info:
+    /// 
+    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=4 (UPDATE)
+    ///   *  Returns : updated namespace slot config
+    /// </summary>
     public class UpdateNamespaceSlotConfig : AccelByte.Sdk.Core.Operation
     {
         public UpdateNamespaceSlotConfig(

@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// deleteFulfillmentScript
+    ///
+    /// Delete fulfillment script.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:FULFILLMENT", action=8 (DELETE)
+    /// </summary>
     public class DeleteFulfillmentScript : AccelByte.Sdk.Core.Operation
     {
         public DeleteFulfillmentScript(

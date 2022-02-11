@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicBulkGetUsers
+    ///
+    /// 
+    /// 
+    /// Notes:
+    /// 
+    ///                   * This endpoint bulk get users' basic info by userId, max allowed 20 at a time
+    ///                   * If namespace is game, will search by game user Id, other wise will search by publisher namespace
+    ///                   * Result will include displayName(if it exists)
+    /// </summary>
     public class PublicBulkGetUsers : AccelByte.Sdk.Core.Operation
     {
         public PublicBulkGetUsers(

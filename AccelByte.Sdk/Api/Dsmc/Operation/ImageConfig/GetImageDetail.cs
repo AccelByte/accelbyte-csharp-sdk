@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// GetImageDetail
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ] Required
+    /// scope: social This endpoint get specific version of dedicated servers images.
+    /// </summary>
     public class GetImageDetail : AccelByte.Sdk.Core.Operation
     {
         public GetImageDetail(

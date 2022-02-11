@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// publicGetLanguages
+    ///
+    /// List languages.
+    /// Other detail info:
+    /// 
+    ///   * Returns : language list
+    /// </summary>
     public class PublicGetLanguages : AccelByte.Sdk.Core.Operation
     {
         public PublicGetLanguages(

@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// deleteTemplateLocalization
+    ///
+    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [DELETE]` with scope
+    /// `social`
+    /// Delete all template in a slug
+    /// </summary>
     public class DeleteTemplateLocalization : AccelByte.Sdk.Core.Operation
     {
         public DeleteTemplateLocalization(

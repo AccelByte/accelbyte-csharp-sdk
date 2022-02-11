@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getPlayStationIAPConfig
+    ///
+    /// Get playstation iap config.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=2 (READ)
+    ///   *  Returns : playstation iap config
+    /// </summary>
     public class GetPlayStationIAPConfig : AccelByte.Sdk.Core.Operation
     {
         public GetPlayStationIAPConfig(

@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// enableItem
+    ///
+    /// Enable an item.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
+    ///   *  Returns : updated item
+    /// </summary>
     public class EnableItem : AccelByte.Sdk.Core.Operation
     {
         public EnableItem(

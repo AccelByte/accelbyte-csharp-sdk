@@ -7,6 +7,19 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicSearchItems
+    ///
+    /// This API is used to search items by keyword in title, description and long
+    /// description, It's language constrained, also if item not exist in specific
+    /// region, default region item will return.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Optional permission : resource="PREVIEW", action=1(CREATE) (user with this permission can view draft store item)
+    ///   *  Optional permission : resource="SANDBOX", action=1(CREATE) (user with this permission can view draft store item)
+    ///   *  Returns : the list of items
+    /// </summary>
     public class PublicSearchItems : AccelByte.Sdk.Core.Operation
     {
         public PublicSearchItems(

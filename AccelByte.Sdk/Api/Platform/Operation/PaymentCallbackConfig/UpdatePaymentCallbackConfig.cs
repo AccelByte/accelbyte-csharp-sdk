@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updatePaymentCallbackConfig
+    ///
+    /// Update payment callback configuration.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : Payment callback config
+    /// </summary>
     public class UpdatePaymentCallbackConfig : AccelByte.Sdk.Core.Operation
     {
         public UpdatePaymentCallbackConfig(

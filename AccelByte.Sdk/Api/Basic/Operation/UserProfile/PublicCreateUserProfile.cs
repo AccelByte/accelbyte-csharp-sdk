@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// publicCreateUserProfile
+    ///
+    /// Create user profile.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=1 (CREATE)
+    ///   *  Action code : 11401
+    ///   *  Language : allowed format: en, en-US
+    ///   *  Timezone : IANA time zone, e.g. Asia/Shanghai
+    ///   *  Returns : Created user profile
+    /// </summary>
     public class PublicCreateUserProfile : AccelByte.Sdk.Core.Operation
     {
         public PublicCreateUserProfile(

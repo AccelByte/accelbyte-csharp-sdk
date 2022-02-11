@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// listGameRecordsHandlerV1
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [READ]
+    /// Required scope: social Retrieve list of records key by namespace
+    /// </summary>
     public class ListGameRecordsHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public ListGameRecordsHandlerV1(

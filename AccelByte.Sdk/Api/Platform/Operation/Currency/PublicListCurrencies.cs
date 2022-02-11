@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicListCurrencies
+    ///
+    /// List currencies of a namespace.
+    /// Other detail info:
+    /// 
+    ///   * Returns : Currency List
+    /// </summary>
     public class PublicListCurrencies : AccelByte.Sdk.Core.Operation
     {
         public PublicListCurrencies(

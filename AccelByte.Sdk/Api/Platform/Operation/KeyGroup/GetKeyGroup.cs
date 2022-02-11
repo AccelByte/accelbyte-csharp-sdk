@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getKeyGroup
+    ///
+    /// Get key group.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
+    ///   *  Returns : key group info
+    /// </summary>
     public class GetKeyGroup : AccelByte.Sdk.Core.Operation
     {
         public GetKeyGroup(

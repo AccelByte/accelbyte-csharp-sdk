@@ -7,6 +7,22 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// deleteGroupPredefinedRulePublicV1
+    ///
+    /// 
+    /// 
+    /// Required valid user authentication
+    /// 
+    /// Required Member Role Permission: "GROUP [UPDATE]"
+    /// 
+    /// Delete group predefined rule based on the allowed action. This endpoint will
+    /// check the group ID of the user based on the access token and compare it with
+    /// the group ID in path parameter. It will also check the member role of the user
+    /// based on the access token
+    /// 
+    /// Action Code: 73309
+    /// </summary>
     public class DeleteGroupPredefinedRulePublicV1 : AccelByte.Sdk.Core.Operation
     {
         public DeleteGroupPredefinedRulePublicV1(

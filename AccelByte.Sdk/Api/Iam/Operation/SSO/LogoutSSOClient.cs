@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// LogoutSSOClient
+    ///
+    /// Logout user's session on platform that logged in using SSO. Supported
+    /// platforms: - discourse
+    /// </summary>
     public class LogoutSSOClient : AccelByte.Sdk.Core.Operation
     {
         public LogoutSSOClient(

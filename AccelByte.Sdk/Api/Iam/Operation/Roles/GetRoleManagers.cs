@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// GetRoleManagers
+    ///
+    /// 
+    /// 
+    /// Required permission 'ROLE [READ]'
+    /// 
+    /// Role can only be assigned to other users by the role's manager.
+    /// </summary>
     public class GetRoleManagers : AccelByte.Sdk.Core.Operation
     {
         public GetRoleManagers(

@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// deleteNamespaceSlotConfig
+    ///
+    /// Deletes a namespace slot configuration, the configuration will be default
+    /// after delete.
+    /// Other detail info:
+    /// 
+    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=8 (DELETE)
+    /// </summary>
     public class DeleteNamespaceSlotConfig : AccelByte.Sdk.Core.Operation
     {
         public DeleteNamespaceSlotConfig(

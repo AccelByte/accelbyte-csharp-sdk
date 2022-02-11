@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// DeletePort
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE] Required
+    /// scope: social This endpoint delete a dedicated server port config in a
+    /// namespace
+    /// </summary>
     public class DeletePort : AccelByte.Sdk.Core.Operation
     {
         public DeletePort(

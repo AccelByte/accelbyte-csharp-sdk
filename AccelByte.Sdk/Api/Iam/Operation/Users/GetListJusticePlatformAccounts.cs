@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// GetListJusticePlatformAccounts
+    ///
+    /// This endpoint gets list justice platform account by providing publisher
+    /// namespace and publisher userID.
+    /// </summary>
     public class GetListJusticePlatformAccounts : AccelByte.Sdk.Core.Operation
     {
         public GetListJusticePlatformAccounts(

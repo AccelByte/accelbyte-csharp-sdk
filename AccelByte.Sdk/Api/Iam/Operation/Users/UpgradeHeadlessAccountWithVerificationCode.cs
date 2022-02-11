@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// UpgradeHeadlessAccountWithVerificationCode
+    ///
+    /// Required permission 'NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
+    /// 
+    /// The endpoint upgrades a headless account by linking the headless account with
+    /// the email address and the password. By upgrading the headless account into a
+    /// full account, the user could use the email address and password for using
+    /// Justice IAM. The endpoint is a shortcut for upgrading a headless account and
+    /// verifying the email address in one call. In order to get a verification code
+    /// for the endpoint, please check the send verification code endpoint.
+    /// </summary>
     public class UpgradeHeadlessAccountWithVerificationCode : AccelByte.Sdk.Core.Operation
     {
         public UpgradeHeadlessAccountWithVerificationCode(

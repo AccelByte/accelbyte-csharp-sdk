@@ -7,6 +7,29 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 {
+    /// <summary>
+    /// protected_save_events_game_telemetry_v1_protected_events_post
+    ///
+    /// This endpoint requires valid JWT token. This endpoint does not require
+    /// permission. This endpoint send events into designated streaming pipeline and
+    /// each request can contain single or multiple events.
+    /// 
+    /// Format of the event: - **EventNamespace (required)**: namespace of the
+    /// relevant game with domain name format.
+    /// 
+    /// Only accept input with valid characters. Allowed characters: Aa-Zz0-9_.-
+    /// 
+    /// Example: io.accelbyte.justice.dev.samplegame
+    /// 
+    /// - **EventName (required)**: name of the event.
+    /// 
+    /// Only accept input with valid characters. Allowed characters: Aa-Zz0-9_.-
+    /// 
+    /// Example: player_killed, mission_accomplished
+    /// 
+    /// - **Payload (required)**: an arbitrary json with the payload of the said
+    /// event
+    /// </summary>
     public class ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost : AccelByte.Sdk.Core.Operation
     {
         public ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(

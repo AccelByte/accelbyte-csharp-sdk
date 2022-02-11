@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getWallet
+    ///
+    /// get a wallet by wallet id.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=2 (READ)
+    ///   *  Returns : wallet info
+    /// </summary>
     public class GetWallet : AccelByte.Sdk.Core.Operation
     {
         public GetWallet(

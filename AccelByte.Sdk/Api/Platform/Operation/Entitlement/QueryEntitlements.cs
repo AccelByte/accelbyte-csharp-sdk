@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// queryEntitlements
+    ///
+    /// Query entitlements.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
+    ///   *  Returns : entitlement list
+    /// </summary>
     public class QueryEntitlements : AccelByte.Sdk.Core.Operation
     {
         public QueryEntitlements(

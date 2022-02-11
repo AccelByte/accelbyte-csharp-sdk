@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// existsAnyPassByPassCodes
+    ///
+    /// [SERVICE COMMUNICATION ONLY]This API is used to get ownership for any pass
+    /// codes, season only located in non-publisher namespace.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS", action=2 (READ)
+    ///   *  Returns : ownership
+    /// </summary>
     public class ExistsAnyPassByPassCodes : AccelByte.Sdk.Core.Operation
     {
         public ExistsAnyPassByPassCodes(

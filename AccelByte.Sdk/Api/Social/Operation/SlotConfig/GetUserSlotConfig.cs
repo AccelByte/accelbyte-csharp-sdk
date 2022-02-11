@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// getUserSlotConfig
+    ///
+    /// GetÂ a user slot configuration in given namespace. In case the user slot
+    /// configuration is not set, the namespace configuration will be returned.
+    /// Other detail info:
+    /// 
+    ///   * Required permission: resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=2 (READ)
+    ///   * Returns: slot config info
+    /// </summary>
     public class GetUserSlotConfig : AccelByte.Sdk.Core.Operation
     {
         public GetUserSlotConfig(

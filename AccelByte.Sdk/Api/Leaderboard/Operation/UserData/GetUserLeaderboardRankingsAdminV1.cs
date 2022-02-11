@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Leaderboard.Operation
 {
+    /// <summary>
+    /// getUserLeaderboardRankingsAdminV1
+    ///
+    /// 
+    /// 
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [READ]'
+    /// 
+    /// Get user leaderboard rankings
+    /// </summary>
     public class GetUserLeaderboardRankingsAdminV1 : AccelByte.Sdk.Core.Operation
     {
         public GetUserLeaderboardRankingsAdminV1(

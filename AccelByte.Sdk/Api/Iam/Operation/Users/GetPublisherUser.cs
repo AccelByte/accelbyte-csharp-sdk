@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// GetPublisherUser
+    ///
+    /// 
+    /// 
+    /// Required permissions 'NAMESPACE:{namespace}:PUBLISHER:USER:{userId} [READ].
+    /// 
+    /// Restriction: Path Parameter namespace can be provided only with game namespace
+    /// </summary>
     public class GetPublisherUser : AccelByte.Sdk.Core.Operation
     {
         public GetPublisherUser(

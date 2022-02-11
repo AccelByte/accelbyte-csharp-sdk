@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// publicDeleteProfile
+    ///
+    /// Deletes game profile.
+    /// Other detail info:
+    /// 
+    ///         *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=8 (DELETE)
+    /// </summary>
     public class PublicDeleteProfile : AccelByte.Sdk.Core.Operation
     {
         public PublicDeleteProfile(

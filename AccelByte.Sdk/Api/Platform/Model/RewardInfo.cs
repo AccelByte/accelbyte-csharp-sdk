@@ -22,6 +22,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
         
+        [JsonPropertyName("namespaceExpression")]
+        public string? NamespaceExpression { get; set; }
+        
         [JsonPropertyName("rewardCode")]
         public string? RewardCode { get; set; }
         
@@ -33,6 +36,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
+        
+        [JsonPropertyName("userIdExpression")]
+        public string? UserIdExpression { get; set; }
         
     }
 }

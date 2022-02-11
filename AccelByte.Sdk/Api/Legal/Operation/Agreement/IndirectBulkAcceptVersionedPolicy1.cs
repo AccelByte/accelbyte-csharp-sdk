@@ -7,6 +7,21 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// indirectBulkAcceptVersionedPolicy_1
+    ///
+    /// Accepts many legal policy versions all at once. Supply with localized version
+    /// policy id and userId to accept an agreement. This endpoint used by
+    /// Authentication Service during new user registration.
+    /// 
+    /// Available Extra Information to return:
+    /// 
+    ///   * userIds : List of userId mapping ( IMPORTANT: GOING TO DEPRECATE )
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : login user
+    /// </summary>
     public class IndirectBulkAcceptVersionedPolicy1 : AccelByte.Sdk.Core.Operation
     {
         public IndirectBulkAcceptVersionedPolicy1(

@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Leaderboard.Operation
 {
+    /// <summary>
+    /// updateUserPointAdminV1
+    ///
+    /// 
+    /// 
+    /// Update user point in a leaderboard. This endpoint uses for test utility only.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission: resource="ADMIN:NAMESPACE:{namespace}:USER:(userId):LEADERBOARD", action=4 (UPDATE)
+    ///   * Returns: user ranking
+    /// </summary>
     public class UpdateUserPointAdminV1 : AccelByte.Sdk.Core.Operation
     {
         public UpdateUserPointAdminV1(

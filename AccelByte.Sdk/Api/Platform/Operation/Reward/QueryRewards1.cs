@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// queryRewards_1
+    ///
+    /// This API is used to query rewards by criteria.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:REWARD", action=2 (READ)
+    ///   *  Returns : the list of rewards
+    /// </summary>
     public class QueryRewards1 : AccelByte.Sdk.Core.Operation
     {
         public QueryRewards1(

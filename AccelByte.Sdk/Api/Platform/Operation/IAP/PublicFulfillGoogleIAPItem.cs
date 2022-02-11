@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicFulfillGoogleIAPItem
+    ///
+    /// Verify google iap receipt and fulfill item.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
+    ///   *  Returns :
+    /// </summary>
     public class PublicFulfillGoogleIAPItem : AccelByte.Sdk.Core.Operation
     {
         public PublicFulfillGoogleIAPItem(

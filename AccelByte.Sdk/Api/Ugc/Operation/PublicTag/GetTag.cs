@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// GetTag
+    ///
+    /// Requires valid user token
+    /// </summary>
     public class GetTag : AccelByte.Sdk.Core.Operation
     {
         public GetTag(

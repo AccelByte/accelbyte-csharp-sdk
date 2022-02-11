@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// DeleteRole
+    ///
+    /// Required permission 'ROLE:ADMIN [DELETE]' or 'ADMIN:ROLE [DELETE]'
+    /// 
+    /// Required Permission 'ROLE:ADMIN [DELETE]' is going to be DEPRECATED for
+    /// security purpose. It is going to be deprecated on 31 JANUARY 2019 , please use
+    /// permission 'ADMIN:ROLE [DELETE]' instead.
+    /// </summary>
     public class DeleteRole : AccelByte.Sdk.Core.Operation
     {
         public DeleteRole(

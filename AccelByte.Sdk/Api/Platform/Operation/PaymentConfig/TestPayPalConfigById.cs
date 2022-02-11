@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// testPayPalConfigById
+    ///
+    /// Test PayPal configuration in payment merchant config. Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
+    ///   *  Returns : test result
+    /// </summary>
     public class TestPayPalConfigById : AccelByte.Sdk.Core.Operation
     {
         public TestPayPalConfigById(

@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// deleteConfig
+    ///
+    /// Delete equ8 config.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:EQU8CONFIG" , action=8 (DELETE)
+    /// </summary>
     public class DeleteConfig : AccelByte.Sdk.Core.Operation
     {
         public DeleteConfig(

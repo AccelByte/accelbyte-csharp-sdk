@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// ExportImages
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ] Required
+    /// scope: social This endpoint export a dedicated servers images in a namespace.
+    /// </summary>
     public class ExportImages : AccelByte.Sdk.Core.Operation
     {
         public ExportImages(

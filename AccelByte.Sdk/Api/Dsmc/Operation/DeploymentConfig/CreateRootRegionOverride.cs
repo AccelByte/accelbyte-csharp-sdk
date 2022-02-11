@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// CreateRootRegionOverride
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE] Required
+    /// scope: social This endpoint creates a dedicated servers deployment override in
+    /// a namespace in a region for root deployment.
+    /// </summary>
     public class CreateRootRegionOverride : AccelByte.Sdk.Core.Operation
     {
         public CreateRootRegionOverride(

@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// createPolicyVersion
+    ///
+    /// Create a version of a particular country-specific policy.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=1 (CREATE)
+    /// </summary>
     public class CreatePolicyVersion : AccelByte.Sdk.Core.Operation
     {
         public CreatePolicyVersion(

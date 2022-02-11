@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateXsollaUIConfig
+    ///
+    /// Update xsolla UI configuration.Reference: [Xsolla
+    /// Document](https://developers.xsolla.com/api.html#ui-integrations).
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : updated payment merchant config
+    /// </summary>
     public class UpdateXsollaUIConfig : AccelByte.Sdk.Core.Operation
     {
         public UpdateXsollaUIConfig(

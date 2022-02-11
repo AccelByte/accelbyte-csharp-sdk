@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dslogmanager.Operation
 {
+    /// <summary>
+    /// downloadServerLogs
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ] Required
+    /// scope: social This endpoint will download dedicated server's log file (.log).
+    /// </summary>
     public class DownloadServerLogs : AccelByte.Sdk.Core.Operation
     {
         public DownloadServerLogs(

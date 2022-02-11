@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// ForgotPassword
+    ///
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:PASSWORD:USER [UPDATE]' or
+    /// valid basic auth header
+    /// 
+    ///  Special note for publisher-game scenario: Game Client should provide game
+    /// namespace path parameter and Publisher Client should provide publisher
+    /// namespace path parameter.
+    /// 
+    /// The password reset code will be sent to the publisher account's email address.
+    /// </summary>
     public class ForgotPassword : AccelByte.Sdk.Core.Operation
     {
         public ForgotPassword(

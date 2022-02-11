@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Operation
 {
+    /// <summary>
+    /// GetSessionHistoryDetailed
+    ///
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
+    /// Required Scope: social Get session history detailed.
+    /// </summary>
     public class GetSessionHistoryDetailed : AccelByte.Sdk.Core.Operation
     {
         public GetSessionHistoryDetailed(

@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// syncStadiaEntitlement
+    ///
+    /// Sync stadia entitlements.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
+    ///   *  Returns :
+    /// </summary>
     public class SyncStadiaEntitlement : AccelByte.Sdk.Core.Operation
     {
         public SyncStadiaEntitlement(

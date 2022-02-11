@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// adminGetUserProfilePublicInfoByIds
+    ///
+    /// Admin get user public profile by ids.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:PROFILE" , action=2 (GET)
+    ///   *  Action code : 11405
+    ///   *  Returns : user public profiles
+    /// </summary>
     public class AdminGetUserProfilePublicInfoByIds : AccelByte.Sdk.Core.Operation
     {
         public AdminGetUserProfilePublicInfoByIds(

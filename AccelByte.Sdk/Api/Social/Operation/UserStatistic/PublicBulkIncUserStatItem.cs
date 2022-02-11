@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// publicBulkIncUserStatItem
+    ///
+    /// Public bulk update multiple user's statitems value.
+    /// Other detail info:
+    /// 
+    ///               *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
+    ///               *  Returns : bulk updated result
+    /// </summary>
     public class PublicBulkIncUserStatItem : AccelByte.Sdk.Core.Operation
     {
         public PublicBulkIncUserStatItem(

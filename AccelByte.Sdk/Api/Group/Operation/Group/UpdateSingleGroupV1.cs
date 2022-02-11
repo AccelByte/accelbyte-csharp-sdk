@@ -7,6 +7,22 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// updateSingleGroupV1
+    ///
+    /// 
+    /// 
+    /// Required valid user authentication
+    /// 
+    /// Required Member Role Permission: "GROUP [UPDATE]"
+    /// 
+    /// Update existing group. This endpoint supports partial update. This endpoint
+    /// will check the group ID of the user based on the access token and compare it
+    /// with the group ID in path parameter. It will also check the member role of the
+    /// user based on the access token
+    /// 
+    /// Action Code: 73307
+    /// </summary>
     public class UpdateSingleGroupV1 : AccelByte.Sdk.Core.Operation
     {
         public UpdateSingleGroupV1(

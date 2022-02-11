@@ -7,6 +7,20 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicUserVerificationV3
+    ///
+    /// 
+    /// 
+    /// Required valid user authorization
+    /// 
+    /// Redeems a verification code sent to a user to verify the user's contact
+    /// address is correct
+    /// 
+    /// Available ContactType : email
+    /// 
+    /// action code: 10107
+    /// </summary>
     public class PublicUserVerificationV3 : AccelByte.Sdk.Core.Operation
     {
         public PublicUserVerificationV3(

@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// getCurrentSeason
+    ///
+    /// [SERVICE COMMUNICATION ONLY]This API is used to get current published season
+    /// summary which includes previous published season summary if exists, season
+    /// only located in non-publisher namespace.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Returns : season summary data
+    /// </summary>
     public class GetCurrentSeason : AccelByte.Sdk.Core.Operation
     {
         public GetCurrentSeason(

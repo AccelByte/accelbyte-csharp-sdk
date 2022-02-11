@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// grantUserEntitlement
+    ///
+    /// Grant user entitlement.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=1 (CREATE)
+    ///   *  Returns : granted entitlement
+    /// </summary>
     public class GrantUserEntitlement : AccelByte.Sdk.Core.Operation
     {
         public GrantUserEntitlement(

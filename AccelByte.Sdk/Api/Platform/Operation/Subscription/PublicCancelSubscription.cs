@@ -7,6 +7,19 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicCancelSubscription
+    ///
+    /// Cancel a subscription, only ACTIVE subscription can be cancelled. Ensure
+    /// successfully cancel, recommend at least 1 day before current period ends,
+    /// otherwise it may be charging or charged.
+    /// Set immediate true, the subscription will be terminated immediately, otherwise
+    /// till the end of current billing cycle.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=4 (UPDATE)
+    ///   *  Returns : cancelled subscription
+    /// </summary>
     public class PublicCancelSubscription : AccelByte.Sdk.Core.Operation
     {
         public PublicCancelSubscription(

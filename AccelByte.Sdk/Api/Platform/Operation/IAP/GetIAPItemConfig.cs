@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getIAPItemConfig
+    ///
+    /// Get iap item config.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:IAP:CONFIG" , action=2 (READ)
+    /// </summary>
     public class GetIAPItemConfig : AccelByte.Sdk.Core.Operation
     {
         public GetIAPItemConfig(

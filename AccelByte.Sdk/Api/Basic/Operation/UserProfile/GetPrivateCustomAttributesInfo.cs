@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// getPrivateCustomAttributesInfo
+    ///
+    /// Get user private custom attributes.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=2 (READ)
+    ///   *  Returns : custom attributes
+    ///   *  Action code : 11403
+    /// </summary>
     public class GetPrivateCustomAttributesInfo : AccelByte.Sdk.Core.Operation
     {
         public GetPrivateCustomAttributesInfo(

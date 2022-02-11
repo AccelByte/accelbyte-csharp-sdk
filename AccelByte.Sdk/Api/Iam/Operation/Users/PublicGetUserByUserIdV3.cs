@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicGetUserByUserIdV3
+    ///
+    /// 
+    /// 
+    /// This endpoint retrieve user attributes. action code: 10129
+    /// </summary>
     public class PublicGetUserByUserIdV3 : AccelByte.Sdk.Core.Operation
     {
         public PublicGetUserByUserIdV3(

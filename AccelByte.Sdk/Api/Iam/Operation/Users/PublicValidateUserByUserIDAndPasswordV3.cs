@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicValidateUserByUserIDAndPasswordV3
+    ///
+    /// This endpoint is used to validate the user password. Required valid user
+    /// authorization and valid user ID.
+    /// 
+    /// Notes:
+    /// 
+    ///                           * This endpoint validate the user password by specifying the userId and password
+    /// </summary>
     public class PublicValidateUserByUserIDAndPasswordV3 : AccelByte.Sdk.Core.Operation
     {
         public PublicValidateUserByUserIDAndPasswordV3(

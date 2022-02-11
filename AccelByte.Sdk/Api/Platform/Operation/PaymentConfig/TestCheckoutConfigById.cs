@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// testCheckoutConfigById
+    ///
+    /// Test checkout.com configuration in payment merchant config. Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
+    ///   *  Returns : test result
+    /// </summary>
     public class TestCheckoutConfigById : AccelByte.Sdk.Core.Operation
     {
         public TestCheckoutConfigById(

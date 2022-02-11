@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// UpdateSSOPlatformCredential
+    ///
+    /// This is the API to Delete SSO Platform Credential. It needs
+    /// ADMIN:NAMESPACE:{namespace}:PLATFORM:{platformId}:SSO [UPDATE] resource
+    /// </summary>
     public class UpdateSSOPlatformCredential : AccelByte.Sdk.Core.Operation
     {
         public UpdateSSOPlatformCredential(

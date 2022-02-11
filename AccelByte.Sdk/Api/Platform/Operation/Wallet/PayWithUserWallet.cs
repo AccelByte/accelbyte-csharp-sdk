@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// payWithUserWallet
+    ///
+    /// Pay with user wallet by currency code.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
+    /// </summary>
     public class PayWithUserWallet : AccelByte.Sdk.Core.Operation
     {
         public PayWithUserWallet(

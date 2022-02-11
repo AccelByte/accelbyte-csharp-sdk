@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// listExtOrderNoByExtTxId
+    ///
+    /// List external order No by external transaction id.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT", action=2 (READ)
+    ///   *  Returns : payment orders
+    /// </summary>
     public class ListExtOrderNoByExtTxId : AccelByte.Sdk.Core.Operation
     {
         public ListExtOrderNoByExtTxId(

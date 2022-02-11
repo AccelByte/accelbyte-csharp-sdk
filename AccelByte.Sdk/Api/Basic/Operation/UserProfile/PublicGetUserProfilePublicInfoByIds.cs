@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// publicGetUserProfilePublicInfoByIds
+    ///
+    /// Get user public profile by ids.
+    /// Other detail info:
+    /// 
+    ///   * Action code : 11405
+    ///   *  Returns : user public profiles
+    /// </summary>
     public class PublicGetUserProfilePublicInfoByIds : AccelByte.Sdk.Core.Operation
     {
         public PublicGetUserProfilePublicInfoByIds(

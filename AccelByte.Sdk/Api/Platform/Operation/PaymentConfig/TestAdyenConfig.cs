@@ -7,6 +7,31 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// testAdyenConfig
+    ///
+    /// Test adyen configuration.
+    /// 
+    /// #### Check List:
+    /// 
+    ///   * apiKey
+    ///   * merchantAccount
+    /// 
+    /// #### Non-check list:
+    /// 
+    ///   * notificationHmacKey
+    ///   * notificationUsername
+    ///   * notificationPassword
+    ///   * liveEndpointUrlPrefix
+    ///   * allowedPaymentMethods
+    ///   * blockedPaymentMethods
+    ///   * settings
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : test adyen config
+    /// </summary>
     public class TestAdyenConfig : AccelByte.Sdk.Core.Operation
     {
         public TestAdyenConfig(

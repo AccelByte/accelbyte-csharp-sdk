@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// ClearCache
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE] Required
+    /// scope: social This endpoint clears config cache in a namespace
+    /// </summary>
     public class ClearCache : AccelByte.Sdk.Core.Operation
     {
         public ClearCache(

@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// getCurrentUserSeasonProgression
+    ///
+    /// This API is used to get current user season progression, season only located
+    /// in non-publisher namespace.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS", action=2 (READ)
+    ///   *  Returns : user season progression
+    /// </summary>
     public class GetCurrentUserSeasonProgression : AccelByte.Sdk.Core.Operation
     {
         public GetCurrentUserSeasonProgression(

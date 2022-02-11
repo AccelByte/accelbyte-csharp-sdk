@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getDLCItemConfig
+    ///
+    /// Get DLC item config.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:DLC:CONFIG" , action=2 (READ)
+    /// </summary>
     public class GetDLCItemConfig : AccelByte.Sdk.Core.Operation
     {
         public GetDLCItemConfig(

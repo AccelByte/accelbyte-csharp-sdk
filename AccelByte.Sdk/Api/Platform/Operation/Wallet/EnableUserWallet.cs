@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// enableUserWallet
+    ///
+    /// enable a user wallet.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
+    /// </summary>
     public class EnableUserWallet : AccelByte.Sdk.Core.Operation
     {
         public EnableUserWallet(

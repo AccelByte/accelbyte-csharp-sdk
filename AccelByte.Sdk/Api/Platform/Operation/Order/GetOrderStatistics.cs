@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getOrderStatistics
+    ///
+    /// Get Order Statistics.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ORDER", action=2 (READ)
+    ///   *  Returns : order statistics
+    /// </summary>
     public class GetOrderStatistics : AccelByte.Sdk.Core.Operation
     {
         public GetOrderStatistics(

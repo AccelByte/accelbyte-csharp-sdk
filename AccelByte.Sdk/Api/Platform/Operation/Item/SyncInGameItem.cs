@@ -7,6 +7,20 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// syncInGameItem
+    ///
+    /// This API is used to sync an in game item in game namespace to publisher
+    /// namespace, at current BUNDLE can't be synced.
+    /// 
+    /// The synced item has an additional field targetItemId besides targetNamespace,
+    /// mostly this item should not modified manually again.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
+    ///   *  Returns : item data
+    /// </summary>
     public class SyncInGameItem : AccelByte.Sdk.Core.Operation
     {
         public SyncInGameItem(

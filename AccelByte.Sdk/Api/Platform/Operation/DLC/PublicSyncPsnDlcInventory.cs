@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicSyncPsnDlcInventory
+    ///
+    /// Synchronize with dlc entitlements in PSN Store.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource=NAMESPACE:{namespace}:USER:{userId}:DLC, action=4 (UPDATE)
+    ///   *  Returns : result of synchronization
+    /// </summary>
     public class PublicSyncPsnDlcInventory : AccelByte.Sdk.Core.Operation
     {
         public PublicSyncPsnDlcInventory(

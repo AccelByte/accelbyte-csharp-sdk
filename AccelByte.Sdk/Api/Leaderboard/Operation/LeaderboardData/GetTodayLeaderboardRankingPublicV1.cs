@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Leaderboard.Operation
 {
+    /// <summary>
+    /// GetTodayLeaderboardRankingPublicV1
+    ///
+    /// 
+    /// 
+    /// Get rankings in today leaderboard.
+    /// </summary>
     public class GetTodayLeaderboardRankingPublicV1 : AccelByte.Sdk.Core.Operation
     {
         public GetTodayLeaderboardRankingPublicV1(

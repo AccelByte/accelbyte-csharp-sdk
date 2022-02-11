@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// getStat
+    ///
+    /// Get stat by statCode.
+    /// Other detail info:
+    /// 
+    ///           *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+    ///           *  Returns : stat info
+    /// </summary>
     public class GetStat : AccelByte.Sdk.Core.Operation
     {
         public GetStat(

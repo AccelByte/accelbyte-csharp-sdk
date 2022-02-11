@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// queryUncategorizedItems
+    ///
+    /// This API is used to query uncategorized items within a store.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
+    ///   *  Returns : the list of uncategorized items
+    /// </summary>
     public class QueryUncategorizedItems : AccelByte.Sdk.Core.Operation
     {
         public QueryUncategorizedItems(

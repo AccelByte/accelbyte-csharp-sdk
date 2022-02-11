@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// publicGetUserProfilePublicInfo
+    ///
+    /// Get user profile public info.
+    /// Other detail info:
+    /// 
+    ///   * Action code : 11404
+    ///   *  Returns : user public profile
+    /// </summary>
     public class PublicGetUserProfilePublicInfo : AccelByte.Sdk.Core.Operation
     {
         public PublicGetUserProfilePublicInfo(

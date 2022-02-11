@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// listKeys
+    ///
+    /// This API is used to list keys of a key group.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
+    ///   *  Returns : keys
+    /// </summary>
     public class ListKeys : AccelByte.Sdk.Core.Operation
     {
         public ListKeys(

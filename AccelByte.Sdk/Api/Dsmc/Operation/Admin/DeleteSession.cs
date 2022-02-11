@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// DeleteSession
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SESSION [DELETE] Required
+    /// scope: social This endpoint deletes a specified session and its corresponding
+    /// match result from DB.
+    /// </summary>
     public class DeleteSession : AccelByte.Sdk.Core.Operation
     {
         public DeleteSession(

@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getRootCategories
+    ///
+    /// This API is used to get root categories.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CATEGORY", action=2 (READ)
+    ///   *  Returns : root category data
+    /// </summary>
     public class GetRootCategories : AccelByte.Sdk.Core.Operation
     {
         public GetRootCategories(

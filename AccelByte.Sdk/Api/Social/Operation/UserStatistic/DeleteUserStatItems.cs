@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// deleteUserStatItems
+    ///
+    /// This endpoint is for testing purpose. Use this endpoint for cleaning up after
+    /// testing.
+    /// Delete user's statItems given stat code.
+    /// Other detail info:
+    /// 
+    ///             *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
+    ///             *  Returns : no content
+    /// </summary>
     public class DeleteUserStatItems : AccelByte.Sdk.Core.Operation
     {
         public DeleteUserStatItems(

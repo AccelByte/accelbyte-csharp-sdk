@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicGetMyAppEntitlementOwnershipByAppId
+    ///
+    /// Get my app entitlement ownership by appId.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
+    ///   *  Path's namespace :
+    ///     * can be filled with publisher namespace in order to get publisher namespace app entitlement ownership
+    /// </summary>
     public class PublicGetMyAppEntitlementOwnershipByAppId : AccelByte.Sdk.Core.Operation
     {
         public PublicGetMyAppEntitlementOwnershipByAppId(

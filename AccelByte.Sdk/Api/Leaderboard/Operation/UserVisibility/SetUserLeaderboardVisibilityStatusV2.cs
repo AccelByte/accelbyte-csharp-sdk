@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Leaderboard.Operation
 {
+    /// <summary>
+    /// SetUserLeaderboardVisibilityStatusV2
+    ///
+    /// User with false visibility status will have hidden attribute set to true on
+    /// it's leaderboard entry
+    /// </summary>
     public class SetUserLeaderboardVisibilityStatusV2 : AccelByte.Sdk.Core.Operation
     {
         public SetUserLeaderboardVisibilityStatusV2(

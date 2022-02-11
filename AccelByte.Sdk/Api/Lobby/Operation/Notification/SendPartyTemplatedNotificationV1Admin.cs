@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// sendPartyTemplatedNotificationV1Admin
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with
+    /// scope `social`
+    /// Sends templated notification to a party.
+    /// In the request body, specify which template slug (template identifier) to use
+    /// and the template language.
+    /// NotificationTemplate context is the key-value pair defining the value of each
+    /// handlebar specified in the template content. Template need to be published
+    /// before it can be use to send notifications
+    /// </summary>
     public class SendPartyTemplatedNotificationV1Admin : AccelByte.Sdk.Core.Operation
     {
         public SendPartyTemplatedNotificationV1Admin(

@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminGetBannedUsersV3
+    ///
+    /// Required permission 'ADMIN:BAN [READ]'
+    /// Ban type is the code available for ban assignment. It is applicable globally
+    /// for any namespace.
+    /// action code : 10201
+    /// </summary>
     public class AdminGetBannedUsersV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminGetBannedUsersV3(

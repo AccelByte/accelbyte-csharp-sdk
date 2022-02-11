@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Operation
 {
+    /// <summary>
+    /// BulkGetSessions
+    ///
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
+    /// Required Scope: social Bulk get sessions.
+    /// </summary>
     public class BulkGetSessions : AccelByte.Sdk.Core.Operation
     {
         public BulkGetSessions(

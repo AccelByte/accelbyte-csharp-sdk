@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminSearchContent
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [CREATE]
+    /// </summary>
     public class AdminSearchContent : AccelByte.Sdk.Core.Operation
     {
         public AdminSearchContent(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminListUserRolesV4
+    ///
+    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:ROLE:USER:* [READ]
+    /// permission. List roles assigned to a user
+    /// </summary>
     public class AdminListUserRolesV4 : AccelByte.Sdk.Core.Operation
     {
         public AdminListUserRolesV4(

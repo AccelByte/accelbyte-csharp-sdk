@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// querySubscriptions
+    ///
+    /// Query subscriptions.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SUBSCRIPTION", action=2 (READ)
+    ///   *  Returns : paginated subscriptions
+    /// </summary>
     public class QuerySubscriptions : AccelByte.Sdk.Core.Operation
     {
         public QuerySubscriptions(

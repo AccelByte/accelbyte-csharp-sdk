@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getPaymentMerchantConfig
+    ///
+    /// Get payment merchant config by id.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
+    ///   *  Returns : payment merchant config info
+    /// </summary>
     public class GetPaymentMerchantConfig : AccelByte.Sdk.Core.Operation
     {
         public GetPaymentMerchantConfig(

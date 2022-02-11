@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// queryCampaigns
+    ///
+    /// Query campaigns, if name is presented, it's fuzzy match.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=2 (READ) (READ)
+    ///   *  Returns : slice of campaigns
+    /// </summary>
     public class QueryCampaigns : AccelByte.Sdk.Core.Operation
     {
         public QueryCampaigns(

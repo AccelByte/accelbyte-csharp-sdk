@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// listCategoriesBasic
+    ///
+    /// This API is used to list all categories' basic info of a store ordered by
+    /// category path.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CATEGORY", action=2 (READ)
+    ///   *  Returns : list of categories' paths
+    /// </summary>
     public class ListCategoriesBasic : AccelByte.Sdk.Core.Operation
     {
         public ListCategoriesBasic(

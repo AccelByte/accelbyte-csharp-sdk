@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// getSlotData
+    ///
+    /// Get slot data.
+    /// Other detail info:
+    /// 
+    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=2 (READ)
+    ///         *  Returns : slot data
+    /// </summary>
     public class GetSlotData : AccelByte.Sdk.Core.Operation
     {
         public GetSlotData(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 {
+    /// <summary>
+    /// GetActiveMatchmakingGameSessions
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
+    /// Required scope: social
+    /// </summary>
     public class GetActiveMatchmakingGameSessions : AccelByte.Sdk.Core.Operation
     {
         public GetActiveMatchmakingGameSessions(

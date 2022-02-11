@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminUpdateRoleV3
+    ///
+    /// Required permission 'ADMIN:ROLE [UPDATE]'
+    /// action code: 10402
+    /// </summary>
     public class AdminUpdateRoleV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminUpdateRoleV3(

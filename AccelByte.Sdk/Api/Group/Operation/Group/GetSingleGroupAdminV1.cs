@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// getSingleGroupAdminV1
+    ///
+    /// 
+    /// 
+    /// Required Permission: "ADMIN:NAMESPACE:{namespace}:GROUP [READ]"
+    /// 
+    /// Get single group information. This endpoint will show the group information by
+    /// the groupId
+    /// 
+    /// Action Code: 73306
+    /// </summary>
     public class GetSingleGroupAdminV1 : AccelByte.Sdk.Core.Operation
     {
         public GetSingleGroupAdminV1(

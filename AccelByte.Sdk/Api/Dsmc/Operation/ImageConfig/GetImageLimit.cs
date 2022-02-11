@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// GetImageLimit
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ] Required
+    /// scope: social This endpoint get ds image limit for specific namespace
+    /// </summary>
     public class GetImageLimit : AccelByte.Sdk.Core.Operation
     {
         public GetImageLimit(

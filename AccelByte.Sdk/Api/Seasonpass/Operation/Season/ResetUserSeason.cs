@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// resetUserSeason
+    ///
+    ///  [TEST FACILITY ONLY] Forbidden in live environment. This API is used to reset
+    /// user data in current season, it will not revoke the rewarded entitlements.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS", action=8 (DELETE)
+    /// </summary>
     public class ResetUserSeason : AccelByte.Sdk.Core.Operation
     {
         public ResetUserSeason(

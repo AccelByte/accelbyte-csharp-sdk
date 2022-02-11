@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Eventlog.Operation
 {
+    /// <summary>
+    /// LastUserActivityTimeHandler
+    ///
+    /// Required permission `NAMESPACE:{namespace}:EVENT [UPDATE]`and scope
+    /// `analytics`
+    /// </summary>
     public class LastUserActivityTimeHandler : AccelByte.Sdk.Core.Operation
     {
         public LastUserActivityTimeHandler(

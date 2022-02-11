@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getStore
+    ///
+    /// This API is used to get a store.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
+    ///   *  Returns : store data
+    /// </summary>
     public class GetStore : AccelByte.Sdk.Core.Operation
     {
         public GetStore(

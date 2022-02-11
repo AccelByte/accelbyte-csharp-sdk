@@ -7,6 +7,19 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Operation
 {
+    /// <summary>
+    /// CreateChannelHandler
+    ///
+    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [CREATE]
+    /// Required Scope: social Creates a new matchmaking channel. Matchmaking channels
+    /// is a list of pool name that is eligible for matchmaking processes. GameMode
+    /// isolates each matchmaking pools. If match timeout is set to 0, by default,
+    /// incoming matchmaking requests will be timed out after 1 hour. If max worker
+    /// delay is set to 0, by default, it will wait for at max ~8 seconds during low
+    /// volume. Rule Set Matching Rule used to classify the player. Player that has
+    /// matched criteria will be grouped together within an ally. Valid value for
+    /// criteria is "distance"
+    /// </summary>
     public class CreateChannelHandler : AccelByte.Sdk.Core.Operation
     {
         public CreateChannelHandler(

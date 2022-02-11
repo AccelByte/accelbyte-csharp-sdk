@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Leaderboard.Operation
 {
+    /// <summary>
+    /// GetAllTimeLeaderboardRankingPublicV2
+    ///
+    /// Get rankings in an all time leaderboard.
+    /// </summary>
     public class GetAllTimeLeaderboardRankingPublicV2 : AccelByte.Sdk.Core.Operation
     {
         public GetAllTimeLeaderboardRankingPublicV2(

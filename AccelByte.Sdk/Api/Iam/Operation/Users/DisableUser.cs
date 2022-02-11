@@ -7,6 +7,24 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// DisableUser
+    ///
+    /// 
+    /// 
+    /// ## The endpoint is going to be deprecated. Please use this instead:
+    /// iam/v2/admin/namespaces/{namespace}/users/{userId}/disable
+    /// 
+    /// +
+    /// 
+    /// Required permissions 'ADMIN:NAMESPACE:{namespace}:USERSTATUS:USER:{userId}
+    /// [UPDATE]'
+    /// 
+    /// For Deletion Account purpose fill the reason with:
+    /// 
+    ///     * DeactivateAccount : if your deletion request comes from user
+    ///     * AdminDeactivateAccount : if your deletion request comes from admin
+    /// </summary>
     public class DisableUser : AccelByte.Sdk.Core.Operation
     {
         public DisableUser(

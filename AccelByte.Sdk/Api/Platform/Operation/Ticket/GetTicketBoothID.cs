@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getTicketBoothID
+    ///
+    /// Get ticket(code/key) booth ID.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:TICKET", action=2 (READ)
+    ///   *  Returns : ticket booth id
+    /// </summary>
     public class GetTicketBoothID : AccelByte.Sdk.Core.Operation
     {
         public GetTicketBoothID(

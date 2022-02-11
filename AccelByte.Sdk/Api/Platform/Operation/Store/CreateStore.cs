@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// createStore
+    ///
+    /// This API is used to create a non published store in a namespace.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
+    ///   *  Returns : created store data
+    /// </summary>
     public class CreateStore : AccelByte.Sdk.Core.Operation
     {
         public CreateStore(

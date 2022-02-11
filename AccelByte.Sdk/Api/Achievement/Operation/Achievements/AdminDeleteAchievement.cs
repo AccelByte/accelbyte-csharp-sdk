@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Achievement.Operation
 {
+    /// <summary>
+    /// AdminDeleteAchievement
+    ///
+    /// 
+    /// 
+    /// Required permission `ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [DELETE]` and
+    /// scope `social`
+    /// </summary>
     public class AdminDeleteAchievement : AccelByte.Sdk.Core.Operation
     {
         public AdminDeleteAchievement(

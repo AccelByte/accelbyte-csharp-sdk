@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Operation
 {
+    /// <summary>
+    /// handlerV3Healthz
+    /// </summary>
     public class HandlerV3Healthz : AccelByte.Sdk.Core.Operation
     {
         public HandlerV3Healthz(

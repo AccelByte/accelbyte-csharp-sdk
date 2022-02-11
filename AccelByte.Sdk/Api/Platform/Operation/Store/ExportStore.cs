@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// exportStore
+    ///
+    /// This API is used to export a store.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
+    /// </summary>
     public class ExportStore : AccelByte.Sdk.Core.Operation
     {
         public ExportStore(

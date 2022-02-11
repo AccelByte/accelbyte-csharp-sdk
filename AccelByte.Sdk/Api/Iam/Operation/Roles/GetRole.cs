@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// GetRole
+    ///
+    /// Required permission 'ROLE [READ]'
+    /// </summary>
     public class GetRole : AccelByte.Sdk.Core.Operation
     {
         public GetRole(

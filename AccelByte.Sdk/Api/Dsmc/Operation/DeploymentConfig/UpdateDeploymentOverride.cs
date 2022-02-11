@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// UpdateDeploymentOverride
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE] Required
+    /// scope: social This endpoint update a dedicated servers deployment override in
+    /// a namespace.
+    /// </summary>
     public class UpdateDeploymentOverride : AccelByte.Sdk.Core.Operation
     {
         public UpdateDeploymentOverride(

@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// getBannedUsers
+    ///
+    /// Get banned status.
+    /// Unbanned users will not return, for example: request has 8 userIds, only 5 of
+    /// then were banned, then the api will these 5 user status.Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:ACTION" , action=2 (READ)
+    /// </summary>
     public class GetBannedUsers : AccelByte.Sdk.Core.Operation
     {
         public GetBannedUsers(

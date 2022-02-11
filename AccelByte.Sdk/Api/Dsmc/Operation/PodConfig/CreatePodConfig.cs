@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// CreatePodConfig
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE] Required
+    /// scope: social This endpoint create a dedicated servers pod config in a
+    /// namespace.
+    /// </summary>
     public class CreatePodConfig : AccelByte.Sdk.Core.Operation
     {
         public CreatePodConfig(

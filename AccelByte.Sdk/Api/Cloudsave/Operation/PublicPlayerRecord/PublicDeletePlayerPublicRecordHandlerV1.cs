@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// publicDeletePlayerPublicRecordHandlerV1
+    ///
+    /// Required scope: social Required valid user authorization Delete player public
+    /// record (arbitrary JSON data) in user-level with given key.
+    /// </summary>
     public class PublicDeletePlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public PublicDeletePlayerPublicRecordHandlerV1(

@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// checkWallet
+    ///
+    ///  [SERVICE COMMUNICATION ONLY] Check wallet whether it's inactive.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
+    /// </summary>
     public class CheckWallet : AccelByte.Sdk.Core.Operation
     {
         public CheckWallet(

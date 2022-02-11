@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// UpdateContentLikeStatus
+    ///
+    /// Requires valid user token
+    /// </summary>
     public class UpdateContentLikeStatus : AccelByte.Sdk.Core.Operation
     {
         public UpdateContentLikeStatus(

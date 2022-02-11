@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// updateTemplateLocalizationV1Admin
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [UPDATE]` with
+    /// scope `social`
+    /// update template localization
+    /// Action Code: 50208
+    /// </summary>
     public class UpdateTemplateLocalizationV1Admin : AccelByte.Sdk.Core.Operation
     {
         public UpdateTemplateLocalizationV1Admin(

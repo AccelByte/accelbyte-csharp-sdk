@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// publicReportUser
+    ///
+    /// This API is used to report a game user.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ACTION", action=1 (CREATE)
+    /// </summary>
     public class PublicReportUser : AccelByte.Sdk.Core.Operation
     {
         public PublicReportUser(

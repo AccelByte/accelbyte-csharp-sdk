@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// retrievePolicyVersions
+    ///
+    /// [TODO] Retrieve one or more legal policies with its versions.
+    /// If the basePolicyId not supplied, then retrieve only all latest policies
+    /// version with localeId matched.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
+    /// </summary>
     public class RetrievePolicyVersions : AccelByte.Sdk.Core.Operation
     {
         public RetrievePolicyVersions(

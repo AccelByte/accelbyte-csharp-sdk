@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getPublishedStore
+    ///
+    /// This API is used to get a published store basic info, exclude category and
+    /// item information.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
+    ///   *  Returns : store data
+    /// </summary>
     public class GetPublishedStore : AccelByte.Sdk.Core.Operation
     {
         public GetPublishedStore(

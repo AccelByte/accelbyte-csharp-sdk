@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminUpdateUserDeletionStatusV3
+    ///
+    /// Required permissions 'ADMIN:NAMESPACE:{namespace}:DELETIONSTATUS:USER:{userId}
+    /// [UPDATE]'
+    /// action code : 10144
+    /// </summary>
     public class AdminUpdateUserDeletionStatusV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminUpdateUserDeletionStatusV3(

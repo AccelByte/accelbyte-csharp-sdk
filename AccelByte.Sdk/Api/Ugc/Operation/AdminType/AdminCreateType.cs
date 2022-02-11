@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminCreateType
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:UGCCONFIG [CREATE] creates a
+    /// new type and subtype
+    /// </summary>
     public class AdminCreateType : AccelByte.Sdk.Core.Operation
     {
         public AdminCreateType(

@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getPaymentOrder
+    ///
+    /// Get payment order by paymentOrderNo.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT", action=2 (READ)
+    ///   *  Returns : payment order instance
+    /// </summary>
     public class GetPaymentOrder : AccelByte.Sdk.Core.Operation
     {
         public GetPaymentOrder(

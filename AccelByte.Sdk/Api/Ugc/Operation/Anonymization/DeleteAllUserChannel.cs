@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// DeleteAllUserChannel
+    ///
+    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]
+    /// </summary>
     public class DeleteAllUserChannel : AccelByte.Sdk.Core.Operation
     {
         public DeleteAllUserChannel(

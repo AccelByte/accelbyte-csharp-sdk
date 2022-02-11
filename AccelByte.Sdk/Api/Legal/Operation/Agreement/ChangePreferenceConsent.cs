@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// changePreferenceConsent
+    ///
+    /// Change marketing preference consent.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : login user
+    /// </summary>
     public class ChangePreferenceConsent : AccelByte.Sdk.Core.Operation
     {
         public ChangePreferenceConsent(

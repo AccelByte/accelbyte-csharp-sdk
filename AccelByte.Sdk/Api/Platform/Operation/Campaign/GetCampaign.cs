@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getCampaign
+    ///
+    /// Get campaign info.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=2 (READ)
+    ///   *  Returns : campaign info
+    /// </summary>
     public class GetCampaign : AccelByte.Sdk.Core.Operation
     {
         public GetCampaign(

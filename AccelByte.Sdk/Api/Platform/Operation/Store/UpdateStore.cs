@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateStore
+    ///
+    /// This API is used to Update a store basic info.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
+    ///   *  Returns : updated store data
+    /// </summary>
     public class UpdateStore : AccelByte.Sdk.Core.Operation
     {
         public UpdateStore(

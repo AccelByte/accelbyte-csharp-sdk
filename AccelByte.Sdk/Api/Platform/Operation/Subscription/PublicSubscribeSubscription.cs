@@ -7,6 +7,23 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicSubscribeSubscription
+    ///
+    /// Subscribe a subscription. Support both real and virtual payment. Need go
+    /// through payment flow using the paymentOrderNo if paymentFlowRequired true.
+    ///  ACTIVE USER subscription can't do subscribe again.
+    ///  The next billing date will be X(default 4) hours before the current period
+    /// ends if correctly subscribed.
+    /// User with permission SANDBOX will create sandbox subscription that not real
+    /// paid.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=1 (CREATE)
+    ///   *  Optional permission(user with this permission will create sandbox subscription) : resource="SANDBOX", action=1 (CREATE)
+    ///   * It will be forbidden while the user is banned: ORDER_INITIATE or ORDER_AND_PAYMENT
+    ///   *  Returns : created subscription
+    /// </summary>
     public class PublicSubscribeSubscription : AccelByte.Sdk.Core.Operation
     {
         public PublicSubscribeSubscription(

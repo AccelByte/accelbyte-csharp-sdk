@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Gdpr.Operation
 {
+    /// <summary>
+    /// AdminGeneratePersonalDataURL
+    ///
+    /// 
+    /// 
+    /// Required permission `ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId}
+    /// [READ]` and scope `account`
+    /// </summary>
     public class AdminGeneratePersonalDataURL : AccelByte.Sdk.Core.Operation
     {
         public AdminGeneratePersonalDataURL(

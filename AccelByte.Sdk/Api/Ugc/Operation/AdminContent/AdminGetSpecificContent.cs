@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminGetSpecificContent
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ].
+    /// </summary>
     public class AdminGetSpecificContent : AccelByte.Sdk.Core.Operation
     {
         public AdminGetSpecificContent(

@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3
+    ///
+    /// This is the Public API to Get All Active 3rd Platform Credential.
+    /// </summary>
     public class RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3 : AccelByte.Sdk.Core.Operation
     {
         public RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3(

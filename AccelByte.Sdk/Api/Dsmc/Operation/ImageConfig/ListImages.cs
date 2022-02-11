@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// ListImages
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ] Required
+    /// scope: social This endpoint lists all of dedicated servers images.
+    /// </summary>
     public class ListImages : AccelByte.Sdk.Core.Operation
     {
         public ListImages(

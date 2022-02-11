@@ -7,6 +7,19 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicForgotPasswordV3
+    ///
+    /// 
+    /// 
+    /// Special note for publisher-game scenario: Game Client should provide game
+    /// namespace path parameter and Publisher Client should provide publisher
+    /// namespace path parameter.
+    /// 
+    /// The password reset code will be sent to the publisher account's email address.
+    /// 
+    /// action code : 10104
+    /// </summary>
     public class PublicForgotPasswordV3 : AccelByte.Sdk.Core.Operation
     {
         public PublicForgotPasswordV3(

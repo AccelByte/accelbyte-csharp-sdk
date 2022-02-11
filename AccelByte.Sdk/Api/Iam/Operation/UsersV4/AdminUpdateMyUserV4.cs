@@ -7,6 +7,26 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminUpdateMyUserV4
+    ///
+    /// 
+    /// 
+    /// Requires valid user access token
+    /// 
+    /// 
+    /// 
+    /// This Endpoint support update user based on given data. Single request can
+    /// update single field or multi fields.
+    /// 
+    /// Supported field {country, displayName, languageTag, dateOfBirth, userName}
+    /// 
+    /// Country use ISO3166-1 alpha-2 two letter, e.g. US.
+    /// 
+    /// Date of Birth format : YYYY-MM-DD, e.g. 2019-04-29.
+    /// 
+    /// action code : 10103
+    /// </summary>
     public class AdminUpdateMyUserV4 : AccelByte.Sdk.Core.Operation
     {
         public AdminUpdateMyUserV4(

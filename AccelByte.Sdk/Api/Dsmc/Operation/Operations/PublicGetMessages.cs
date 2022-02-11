@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// publicGetMessages
+    ///
+    /// get the list of messages.
+    /// </summary>
     public class PublicGetMessages : AccelByte.Sdk.Core.Operation
     {
         public PublicGetMessages(

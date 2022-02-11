@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// UpdatePort
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE] Required
+    /// scope: social This endpoint update a dedicated servers port config in a
+    /// namespace.
+    /// </summary>
     public class UpdatePort : AccelByte.Sdk.Core.Operation
     {
         public UpdatePort(

@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// LoginSSOClient
+    /// </summary>
     public class LoginSSOClient : AccelByte.Sdk.Core.Operation
     {
         public LoginSSOClient(

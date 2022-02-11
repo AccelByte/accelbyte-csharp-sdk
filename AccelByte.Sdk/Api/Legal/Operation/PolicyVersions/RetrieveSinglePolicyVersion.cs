@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// retrieveSinglePolicyVersion
+    ///
+    /// Retrieve a version of a particular country specific policy. If version is not
+    /// provided, the Legal Service will assume caller requesting all versions from
+    /// country-specific policy.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
+    /// </summary>
     public class RetrieveSinglePolicyVersion : AccelByte.Sdk.Core.Operation
     {
         public RetrieveSinglePolicyVersion(

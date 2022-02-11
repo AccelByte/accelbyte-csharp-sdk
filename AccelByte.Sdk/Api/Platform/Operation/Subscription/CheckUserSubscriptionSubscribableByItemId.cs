@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// checkUserSubscriptionSubscribableByItemId
+    ///
+    /// Check user subscription subscribable by itemId, ACTIVE USER subscription can't
+    /// do subscribe again.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=2 (READ)
+    ///   *  Returns : subscribable info
+    /// </summary>
     public class CheckUserSubscriptionSubscribableByItemId : AccelByte.Sdk.Core.Operation
     {
         public CheckUserSubscriptionSubscribableByItemId(

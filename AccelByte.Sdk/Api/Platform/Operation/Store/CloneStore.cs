@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// cloneStore
+    ///
+    /// This API is used to clone a store. Usually clone a draft store to published
+    /// store because published store can't directly edit content.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
+    ///   *  Returns : clone store info
+    /// </summary>
     public class CloneStore : AccelByte.Sdk.Core.Operation
     {
         public CloneStore(

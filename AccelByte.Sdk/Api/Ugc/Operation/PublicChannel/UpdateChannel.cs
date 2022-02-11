@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// UpdateChannel
+    ///
+    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CHANNEL [UPDATE]
+    /// </summary>
     public class UpdateChannel : AccelByte.Sdk.Core.Operation
     {
         public UpdateChannel(

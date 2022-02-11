@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// createMemberRoleAdminV1
+    ///
+    /// 
+    /// 
+    /// Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [CREATE]
+    /// 
+    /// This endpoint is used to create new member role
+    /// 
+    /// Action Code: 73202
+    /// </summary>
     public class CreateMemberRoleAdminV1 : AccelByte.Sdk.Core.Operation
     {
         public CreateMemberRoleAdminV1(

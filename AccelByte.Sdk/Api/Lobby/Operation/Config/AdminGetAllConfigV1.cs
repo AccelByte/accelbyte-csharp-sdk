@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// adminGetAllConfigV1
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:*:LOBBY:CONFIG [READ]` with scope
+    /// `social`
+    /// get lobby config of all namespaces.
+    /// </summary>
     public class AdminGetAllConfigV1 : AccelByte.Sdk.Core.Operation
     {
         public AdminGetAllConfigV1(

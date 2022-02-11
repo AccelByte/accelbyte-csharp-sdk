@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicDownloadUserOrderReceipt
+    ///
+    /// Download user order receipt by orderNo.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ORDER", action=2 (READ)
+    ///   *  Returns : order receipt pdf
+    /// </summary>
     public class PublicDownloadUserOrderReceipt : AccelByte.Sdk.Core.Operation
     {
         public PublicDownloadUserOrderReceipt(

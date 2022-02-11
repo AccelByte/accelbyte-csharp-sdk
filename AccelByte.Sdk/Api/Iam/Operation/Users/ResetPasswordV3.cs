@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// ResetPasswordV3
+    ///
+    /// 
+    /// 
+    /// action code: 10105
+    /// </summary>
     public class ResetPasswordV3 : AccelByte.Sdk.Core.Operation
     {
         public ResetPasswordV3(

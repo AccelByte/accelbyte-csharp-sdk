@@ -7,6 +7,26 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// testStripeConfig
+    ///
+    /// Test stripe configuration.
+    /// 
+    /// #### Check List:
+    /// 
+    ///   * secretKey
+    ///   * allowedPaymentMethodTypes
+    /// 
+    /// #### Non-check list:
+    /// 
+    ///   * publishableKey
+    ///   * webhookSecret
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : test adyen config
+    /// </summary>
     public class TestStripeConfig : AccelByte.Sdk.Core.Operation
     {
         public TestStripeConfig(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// ListConfig
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ] Required
+    /// scope: social This endpoint lists all of dedicated servers configs.
+    /// </summary>
     public class ListConfig : AccelByte.Sdk.Core.Operation
     {
         public ListConfig(

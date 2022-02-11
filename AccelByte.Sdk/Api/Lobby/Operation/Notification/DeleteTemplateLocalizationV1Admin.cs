@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// deleteTemplateLocalizationV1Admin
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [DELETE]` with
+    /// scope `social`
+    /// delete template localization
+    /// Action Code: 50209
+    /// </summary>
     public class DeleteTemplateLocalizationV1Admin : AccelByte.Sdk.Core.Operation
     {
         public DeleteTemplateLocalizationV1Admin(

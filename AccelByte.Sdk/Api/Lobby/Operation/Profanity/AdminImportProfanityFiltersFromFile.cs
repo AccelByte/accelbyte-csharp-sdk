@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// adminImportProfanityFiltersFromFile
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PROFANITY [CREATE]` with
+    /// scope `social`
+    /// import a file with filters
+    /// </summary>
     public class AdminImportProfanityFiltersFromFile : AccelByte.Sdk.Core.Operation
     {
         public AdminImportProfanityFiltersFromFile(

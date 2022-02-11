@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicGetUserSubscription
+    ///
+    /// Get user subscription.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=2 (READ)
+    ///   *  Returns : subscription
+    /// </summary>
     public class PublicGetUserSubscription : AccelByte.Sdk.Core.Operation
     {
         public PublicGetUserSubscription(

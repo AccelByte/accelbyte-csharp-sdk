@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// DeleteConfig
+    ///
+    /// ``` Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]
+    /// Required scope: social This endpoint removes config. When there are ready
+    /// servers, those servers will be removed. ```
+    /// </summary>
     public class DeleteConfig : AccelByte.Sdk.Core.Operation
     {
         public DeleteConfig(

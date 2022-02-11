@@ -16,11 +16,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("maxAwardedPerUser")]
         public int? MaxAwardedPerUser { get; set; }
         
+        [JsonPropertyName("namespaceExpression")]
+        public string? NamespaceExpression { get; set; }
+        
         [JsonPropertyName("rewardCode")]
         public string? RewardCode { get; set; }
         
         [JsonPropertyName("rewardConditions")]
         public List<RewardCondition>? RewardConditions { get; set; }
+        
+        [JsonPropertyName("userIdExpression")]
+        public string? UserIdExpression { get; set; }
         
     }
 }

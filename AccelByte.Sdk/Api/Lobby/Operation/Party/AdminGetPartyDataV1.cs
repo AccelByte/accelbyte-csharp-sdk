@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// adminGetPartyDataV1
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PARTY:STORAGE [READ]` with
+    /// scope `social`
+    /// get party data in a namespace.
+    /// </summary>
     public class AdminGetPartyDataV1 : AccelByte.Sdk.Core.Operation
     {
         public AdminGetPartyDataV1(

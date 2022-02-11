@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicVerifyHeadlessAccountV3
+    ///
+    /// 
+    /// 
+    /// Require valid user authorization
+    /// action code : 10124
+    /// </summary>
     public class PublicVerifyHeadlessAccountV3 : AccelByte.Sdk.Core.Operation
     {
         public PublicVerifyHeadlessAccountV3(

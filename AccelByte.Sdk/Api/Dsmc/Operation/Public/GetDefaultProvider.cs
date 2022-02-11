@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// GetDefaultProvider
+    ///
+    /// This endpoints returns the default provider.
+    /// </summary>
     public class GetDefaultProvider : AccelByte.Sdk.Core.Operation
     {
         public GetDefaultProvider(

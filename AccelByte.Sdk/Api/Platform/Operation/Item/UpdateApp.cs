@@ -7,6 +7,63 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateApp
+    ///
+    /// This API is used to update an app.
+    /// 
+    /// An app update example:
+    /// 
+    /// 
+    /// 
+    ///     {
+    ///       "developer": "accelbyte",
+    ///       "publisher": "accelbyte",
+    ///       "websiteUrl": "http://accelbyte.io",
+    ///       "forumUrl": "http://accelbyte.io",
+    ///       "platforms": ["Windows(allowed values: Windows, MacOS, Linux, IOS, Android)"],
+    ///       "platformRequirements": {
+    ///         "Windows": [
+    ///           {
+    ///             "label":"minimum(can be minimum or recommended)",
+    ///             "osVersion":"os version",
+    ///             "processor":"processor",
+    ///             "ram":"RAM",
+    ///             "graphics":"graphics",
+    ///             "directXVersion":"directXVersion",
+    ///             "diskSpace":"diskSpace",
+    ///             "soundCard":"soundCard",
+    ///             "additionals":"additionals"
+    ///           }
+    ///          ]
+    ///       },
+    ///       "carousel": [
+    ///         {
+    ///           "type":"image(allowed values: image, video)",
+    ///           "videoSource":"generic(allowed values:generic, youtube, viemo)",
+    ///           "url":"url",
+    ///           "alt":"alternative url or text",
+    ///           "thumbnailUrl":"thumbnail url",
+    ///           "previewUrl":"preview url",
+    ///         }
+    ///       ],
+    ///       "localizations": {
+    ///         "en": {
+    ///           "slogan":"slogan",
+    ///           "announcement":"announcement",
+    ///         }
+    ///       },
+    ///       "primaryGenre": "Action",
+    ///       "genres": ["Action", "Adventure"],
+    ///       "players": ["Single"],
+    ///       "releaseDate": "optional yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    ///     }
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
+    ///   *  Returns : updated app data
+    /// </summary>
     public class UpdateApp : AccelByte.Sdk.Core.Operation
     {
         public UpdateApp(

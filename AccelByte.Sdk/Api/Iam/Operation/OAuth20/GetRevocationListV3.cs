@@ -7,6 +7,20 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// GetRevocationListV3
+    ///
+    /// 
+    /// 
+    /// This endpoint will return a list of revoked users and revoked tokens. List of
+    /// revoked tokens in bloom filter format.
+    /// 
+    /// This endpoint requires authorized requests header with valid access token.
+    /// 
+    /// The bloom filter uses MurmurHash3 algorithm for hashing the values
+    /// 
+    /// action code : 10708
+    /// </summary>
     public class GetRevocationListV3 : AccelByte.Sdk.Core.Operation
     {
         public GetRevocationListV3(

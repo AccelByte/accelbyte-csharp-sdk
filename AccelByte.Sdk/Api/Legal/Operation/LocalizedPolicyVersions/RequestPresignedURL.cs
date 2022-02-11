@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// requestPresignedURL
+    ///
+    /// Request presigned URL for upload attachment for a particular localized version
+    /// of base policy.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=1 (CREATE)
+    /// </summary>
     public class RequestPresignedURL : AccelByte.Sdk.Core.Operation
     {
         public RequestPresignedURL(

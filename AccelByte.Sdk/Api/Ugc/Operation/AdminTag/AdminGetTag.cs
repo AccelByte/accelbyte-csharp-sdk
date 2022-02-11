@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminGetTag
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:UGCCONFIG [READ]
+    /// </summary>
     public class AdminGetTag : AccelByte.Sdk.Core.Operation
     {
         public AdminGetTag(

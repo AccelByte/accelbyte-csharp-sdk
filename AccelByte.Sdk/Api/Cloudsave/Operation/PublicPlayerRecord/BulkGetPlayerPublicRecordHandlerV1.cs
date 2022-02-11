@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// bulkGetPlayerPublicRecordHandlerV1
+    ///
+    /// Required Permission | `NAMESPACE:{namespace}:PUBLIC:CLOUDSAVE:RECORD [READ]`
+    /// ---|---
+    /// Required Scope | `social`
+    /// 
+    /// Bulk get other player's record that is public by userIds, max allowed 20 at a
+    /// time. Only record with `isPublic=true` that can be retrieved using this
+    /// endpoint.
+    /// </summary>
     public class BulkGetPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public BulkGetPlayerPublicRecordHandlerV1(

@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// listStores
+    ///
+    /// This API is used to list stores in a namespace.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
+    ///   *  Returns : the list of stores
+    /// </summary>
     public class ListStores : AccelByte.Sdk.Core.Operation
     {
         public ListStores(

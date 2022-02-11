@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getCampaignDynamic
+    ///
+    /// Get campaign dynamic.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=2 (READ)
+    ///   *  Returns : campaign dynamic
+    /// </summary>
     public class GetCampaignDynamic : AccelByte.Sdk.Core.Operation
     {
         public GetCampaignDynamic(

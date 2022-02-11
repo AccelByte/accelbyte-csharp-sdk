@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// personalChatHistory
+    ///
+    /// Required permission : `NAMESPACE:{namespace}:USER:{userId}:CHAT [READ]` with
+    /// scope `social`
+    /// load personal chat history in a namespace.
+    /// </summary>
     public class PersonalChatHistory : AccelByte.Sdk.Core.Operation
     {
         public PersonalChatHistory(

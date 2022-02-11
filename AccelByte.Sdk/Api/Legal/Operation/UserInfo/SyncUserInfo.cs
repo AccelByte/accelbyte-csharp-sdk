@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// syncUserInfo
+    ///
+    ///  Important: GOING TO DEPRECATE
+    /// 
+    /// Sync user info cache in agreement service with iam service.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+    /// </summary>
     public class SyncUserInfo : AccelByte.Sdk.Core.Operation
     {
         public SyncUserInfo(

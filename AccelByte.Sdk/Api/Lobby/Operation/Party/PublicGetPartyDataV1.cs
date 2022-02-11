@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// publicGetPartyDataV1
+    ///
+    /// Required valid user authorization
+    /// 
+    /// load personal party data in a namespace based on Party ID
+    /// Action Code: 50101
+    /// </summary>
     public class PublicGetPartyDataV1 : AccelByte.Sdk.Core.Operation
     {
         public PublicGetPartyDataV1(

@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// GetRoleMembers
+    ///
+    /// 
+    /// 
+    /// Required permission 'ROLE [READ]'
+    /// 
+    /// Admin roles has its members listed in the role.
+    /// </summary>
     public class GetRoleMembers : AccelByte.Sdk.Core.Operation
     {
         public GetRoleMembers(

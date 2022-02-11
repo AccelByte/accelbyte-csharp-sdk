@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// retireSeason
+    ///
+    /// This API is used to retire a published season, if the season has not ended it
+    /// will report error except with force.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=4 (UPDATE)
+    ///   *  Returns : season info
+    /// </summary>
     public class RetireSeason : AccelByte.Sdk.Core.Operation
     {
         public RetireSeason(

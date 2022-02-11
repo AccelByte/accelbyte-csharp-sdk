@@ -7,6 +7,25 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// testPayPalConfig
+    ///
+    /// Test PayPal configuration.
+    /// 
+    /// #### Check List:
+    /// 
+    ///   * clientID
+    ///   * clientSecret
+    /// 
+    /// #### Non-check list:
+    /// 
+    ///   * webHookId
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : test result
+    /// </summary>
     public class TestPayPalConfig : AccelByte.Sdk.Core.Operation
     {
         public TestPayPalConfig(

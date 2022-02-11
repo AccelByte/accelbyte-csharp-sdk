@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Eventlog.Operation
 {
+    /// <summary>
+    /// SpecificEventLevelDescriptionHandler
+    /// </summary>
     public class SpecificEventLevelDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
         public SpecificEventLevelDescriptionHandler(

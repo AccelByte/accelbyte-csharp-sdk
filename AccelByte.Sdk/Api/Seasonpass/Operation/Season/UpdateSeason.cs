@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// updateSeason
+    ///
+    /// This API is used to update a season. Only draft season can be updated.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=4 (UPDATE)
+    ///   *  Returns : updated season
+    /// </summary>
     public class UpdateSeason : AccelByte.Sdk.Core.Operation
     {
         public UpdateSeason(

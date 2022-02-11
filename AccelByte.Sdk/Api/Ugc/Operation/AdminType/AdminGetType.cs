@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminGetType
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:UGCCONFIG [READ]
+    /// </summary>
     public class AdminGetType : AccelByte.Sdk.Core.Operation
     {
         public AdminGetType(

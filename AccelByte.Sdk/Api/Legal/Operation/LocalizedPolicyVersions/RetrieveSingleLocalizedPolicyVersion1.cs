@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// retrieveSingleLocalizedPolicyVersion_1
+    ///
+    /// Retrieve specific localized policy version including the policy version and
+    /// base policy version where the localized policy version located.
+    /// Other detail info:
+    /// </summary>
     public class RetrieveSingleLocalizedPolicyVersion1 : AccelByte.Sdk.Core.Operation
     {
         public RetrieveSingleLocalizedPolicyVersion1(

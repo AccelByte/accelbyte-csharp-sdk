@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminListAssignedUsersV4
+    ///
+    /// Required permission ADMIN:ROLE [READ] Query all users that has the specified
+    /// role. action code: 10416
+    /// </summary>
     public class AdminListAssignedUsersV4 : AccelByte.Sdk.Core.Operation
     {
         public AdminListAssignedUsersV4(

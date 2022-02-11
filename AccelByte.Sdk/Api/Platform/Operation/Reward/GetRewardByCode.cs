@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getRewardByCode
+    ///
+    /// This API is used to get reward by reward code.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:REWARD", action=2 (READ)
+    ///   *  Returns : reward instance
+    /// </summary>
     public class GetRewardByCode : AccelByte.Sdk.Core.Operation
     {
         public GetRewardByCode(

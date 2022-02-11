@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// getGlobalStatItems
+    ///
+    /// List global statItems by pagination.
+    /// Other detail info:
+    /// 
+    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=2 (READ)
+    ///         *  Returns : stat items
+    /// ul
+    /// </summary>
     public class GetGlobalStatItems : AccelByte.Sdk.Core.Operation
     {
         public GetGlobalStatItems(

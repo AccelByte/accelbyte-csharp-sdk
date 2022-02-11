@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// adminDeleteProfanityList
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PROFANITY [DELETE]` with
+    /// scope `social`
+    /// delete a list include all filters inside of it
+    /// </summary>
     public class AdminDeleteProfanityList : AccelByte.Sdk.Core.Operation
     {
         public AdminDeleteProfanityList(

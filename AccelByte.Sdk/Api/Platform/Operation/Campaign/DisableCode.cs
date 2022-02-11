@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// disableCode
+    ///
+    /// Disable code.
+    /// 
+    /// Disable an active code, the code can't be disabled if it has already been
+    /// redeemed.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=4 (UPDATE)
+    ///   *  Returns : disabled code
+    /// </summary>
     public class DisableCode : AccelByte.Sdk.Core.Operation
     {
         public DisableCode(

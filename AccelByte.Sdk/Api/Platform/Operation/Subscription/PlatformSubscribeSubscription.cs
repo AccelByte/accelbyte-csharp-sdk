@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// platformSubscribeSubscription
+    ///
+    /// Free subscribe by platform, can used by other justice service to redeem/reward
+    /// the subscription.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=1 (CREATE)
+    ///   *  Returns : result subscription
+    /// </summary>
     public class PlatformSubscribeSubscription : AccelByte.Sdk.Core.Operation
     {
         public PlatformSubscribeSubscription(

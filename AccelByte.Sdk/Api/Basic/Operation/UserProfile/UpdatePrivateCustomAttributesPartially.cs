@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// updatePrivateCustomAttributesPartially
+    ///
+    /// Update partially private custom attributes tied to the user id.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=4 (UPDATE)
+    ///   *  Action code : 11402
+    ///   *  Request body : allowed format: JSON object
+    ///   *  Returns : Updated custom attributes
+    /// </summary>
     public class UpdatePrivateCustomAttributesPartially : AccelByte.Sdk.Core.Operation
     {
         public UpdatePrivateCustomAttributesPartially(

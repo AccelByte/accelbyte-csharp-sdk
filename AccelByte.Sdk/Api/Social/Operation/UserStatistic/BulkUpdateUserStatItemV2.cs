@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// bulkUpdateUserStatItemV2
+    ///
+    /// Bulk update multiple user's statitems value with specific update strategy.
+    /// There are four supported update strategies: + *OVERRIDE*: update user
+    /// statitem with the new value + *INCREMENT*: increment user statitem with the
+    /// specified value + *MAX*: update user statitem with the specified value if
+    /// it's larger than the existing value + *MIN*: update user statitem with the
+    /// specified value if it's lower than the existing value Other detail info: +
+    /// *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STATITEM",
+    /// action=4 (UPDATE) + *Returns*: bulk updated result
+    /// </summary>
     public class BulkUpdateUserStatItemV2 : AccelByte.Sdk.Core.Operation
     {
         public BulkUpdateUserStatItemV2(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// VerifyToken
+    ///
+    /// This endpoint requires all requests to have Authorization header set with
+    /// Basic access authentication constructed from client id and client secret.
+    /// </summary>
     public class VerifyToken : AccelByte.Sdk.Core.Operation
     {
         public VerifyToken(

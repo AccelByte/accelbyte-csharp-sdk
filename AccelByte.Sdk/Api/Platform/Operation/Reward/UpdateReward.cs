@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateReward
+    ///
+    /// This API is used to update a reward.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:REWARD", action=4 (UPDATE)
+    ///   *  Returns : reward instance
+    /// </summary>
     public class UpdateReward : AccelByte.Sdk.Core.Operation
     {
         public UpdateReward(

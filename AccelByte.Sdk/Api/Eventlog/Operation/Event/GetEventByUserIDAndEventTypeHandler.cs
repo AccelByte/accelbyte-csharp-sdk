@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Eventlog.Operation
 {
+    /// <summary>
+    /// GetEventByUserIDAndEventTypeHandler
+    ///
+    /// Required permission `NAMESPACE:{namespace}:EVENT [UPDATE]and scope `analytics`
+    /// </summary>
     public class GetEventByUserIDAndEventTypeHandler : AccelByte.Sdk.Core.Operation
     {
         public GetEventByUserIDAndEventTypeHandler(

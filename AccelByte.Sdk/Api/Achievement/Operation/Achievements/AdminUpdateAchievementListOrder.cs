@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Achievement.Operation
 {
+    /// <summary>
+    /// AdminUpdateAchievementListOrder
+    ///
+    /// 
+    /// 
+    /// Required permission `ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [UPDATE]` and
+    /// scope `social`
+    /// </summary>
     public class AdminUpdateAchievementListOrder : AccelByte.Sdk.Core.Operation
     {
         public AdminUpdateAchievementListOrder(

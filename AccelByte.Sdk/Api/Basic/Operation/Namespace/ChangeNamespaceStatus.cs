@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// changeNamespaceStatus
+    ///
+    /// Change a namespace status.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:NAMESPACE" , action=4 (UPDATE)
+    ///   * Action code : 11306
+    ///   *  Returns : updated namespace
+    /// </summary>
     public class ChangeNamespaceStatus : AccelByte.Sdk.Core.Operation
     {
         public ChangeNamespaceStatus(

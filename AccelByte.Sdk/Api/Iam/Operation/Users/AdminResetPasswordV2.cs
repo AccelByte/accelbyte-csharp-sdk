@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminResetPasswordV2
+    ///
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:PASSWORD:USER:{userId}
+    /// [UPDATE]'
+    /// </summary>
     public class AdminResetPasswordV2 : AccelByte.Sdk.Core.Operation
     {
         public AdminResetPasswordV2(

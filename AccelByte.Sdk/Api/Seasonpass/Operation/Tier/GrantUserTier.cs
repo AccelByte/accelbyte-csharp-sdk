@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// grantUserTier
+    ///
+    /// This API is used to grant tier to user, it will auto enroll if there's no user
+    /// season but active published season exist, season only located in non-publisher
+    /// namespace, otherwise ignore.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS", action=4 (UPDATE)
+    ///   *  Returns : user season data
+    /// </summary>
     public class GrantUserTier : AccelByte.Sdk.Core.Operation
     {
         public GrantUserTier(

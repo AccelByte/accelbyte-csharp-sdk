@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// UpdatePassword
+    ///
+    /// 
+    /// 
+    /// ## The endpoint is going to be deprecated. Admin user please use this instead:
+    /// iam/v2/admin/namespaces/{namespace}/users/{userId}/password
+    /// 
+    /// +
+    /// 
+    /// Required permission 'NAMESPACE:{namespace}:PASSWORD:USER:{userId} [UPDATE]'
+    /// </summary>
     public class UpdatePassword : AccelByte.Sdk.Core.Operation
     {
         public UpdatePassword(

@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// syncXboxDLC
+    ///
+    /// Sync Xbox inventory's dlc items.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource=NAMESPACE:{namespace}:USER:{userId}:DLC, action=4 (UPDATE)
+    ///   *  Returns :
+    /// </summary>
     public class SyncXboxDLC : AccelByte.Sdk.Core.Operation
     {
         public SyncXboxDLC(

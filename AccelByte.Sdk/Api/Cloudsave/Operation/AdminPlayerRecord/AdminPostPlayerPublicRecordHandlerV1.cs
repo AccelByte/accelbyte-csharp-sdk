@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// adminPostPlayerPublicRecordHandlerV1
+    ///
+    /// Required permission:
+    /// ADMIN:NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [CREATE]
+    /// Required scope: social Save a record (arbitrary JSON data) in user-level. If a
+    /// record already exist with given record key, this endpoint will try to merge.
+    /// Same top level key inside body will be replaced, different top level key will
+    /// be appended. Record saved will be a public record. If existing record is not
+    /// public (is_public false) then this endpoint won't make it public.
+    /// </summary>
     public class AdminPostPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public AdminPostPlayerPublicRecordHandlerV1(

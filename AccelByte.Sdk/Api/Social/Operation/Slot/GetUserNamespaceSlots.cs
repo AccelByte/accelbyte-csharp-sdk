@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// getUserNamespaceSlots
+    ///
+    /// GetÂ slots for a given user.
+    /// Other detail info:
+    /// 
+    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=2 (READ)
+    ///         *  Returns : list of slots
+    /// </summary>
     public class GetUserNamespaceSlots : AccelByte.Sdk.Core.Operation
     {
         public GetUserNamespaceSlots(

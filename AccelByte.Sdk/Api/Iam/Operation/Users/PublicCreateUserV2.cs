@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicCreateUserV2
+    ///
+    /// 
+    /// 
+    /// Available Authentication Types:
+    /// 
+    ///           1. EMAILPASSWD : an authentication type used for new user registration through email.
+    /// 
+    /// Country use ISO3166-1 alpha-2 two letter, e.g. US.
+    /// </summary>
     public class PublicCreateUserV2 : AccelByte.Sdk.Core.Operation
     {
         public PublicCreateUserV2(

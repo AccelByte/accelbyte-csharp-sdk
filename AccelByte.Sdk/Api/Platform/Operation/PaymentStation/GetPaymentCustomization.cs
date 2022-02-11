@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getPaymentCustomization
+    ///
+    /// Get payment provider customization, at current only Adyen provide
+    /// customization.
+    /// Other detail info:
+    /// 
+    ///   * Returns : customization
+    /// </summary>
     public class GetPaymentCustomization : AccelByte.Sdk.Core.Operation
     {
         public GetPaymentCustomization(

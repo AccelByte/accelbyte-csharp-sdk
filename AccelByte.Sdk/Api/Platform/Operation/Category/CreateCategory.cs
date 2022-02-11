@@ -7,6 +7,26 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// createCategory
+    ///
+    /// This API is used to create category.
+    /// 
+    /// A category is a path separated by "/". A category also has localized display
+    /// names. Example:
+    /// 
+    /// 
+    /// 
+    ///     {
+    ///         "categoryPath": "/games",
+    ///         "localizationDisplayNames": {"en" : "Games"}
+    ///     }
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CATEGORY", action=1 (CREATE)
+    ///   *  Returns : created category data
+    /// </summary>
     public class CreateCategory : AccelByte.Sdk.Core.Operation
     {
         public CreateCategory(

@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// adminUpdateConfigV1
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:LOBBY:CONFIG [UPDATE]` with
+    /// scope `social`
+    /// update lobby config of a namespace.
+    /// </summary>
     public class AdminUpdateConfigV1 : AccelByte.Sdk.Core.Operation
     {
         public AdminUpdateConfigV1(

@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// deletePass
+    ///
+    /// This API is used to delete a pass permanently, only draft season pass can be
+    /// deleted.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=8 (DELETE)
+    /// </summary>
     public class DeletePass : AccelByte.Sdk.Core.Operation
     {
         public DeletePass(

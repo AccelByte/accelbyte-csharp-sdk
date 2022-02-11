@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getEpicGamesIAPConfig
+    ///
+    /// Get epic games iap config.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=2 (READ)
+    ///   *  Returns : epic games iap config
+    /// </summary>
     public class GetEpicGamesIAPConfig : AccelByte.Sdk.Core.Operation
     {
         public GetEpicGamesIAPConfig(

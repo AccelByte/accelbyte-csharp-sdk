@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// DeleteClientByNamespace
+    ///
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:CLIENT:{clientId} [DELETE]'
+    /// </summary>
     public class DeleteClientByNamespace : AccelByte.Sdk.Core.Operation
     {
         public DeleteClientByNamespace(

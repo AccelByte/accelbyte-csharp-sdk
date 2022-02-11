@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicGetPaymentAccounts
+    ///
+    /// Get payment accounts.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:PAYMENT:ACCOUNT", action=2 (READ)
+    ///   *  Returns : Payment account list
+    /// </summary>
     public class PublicGetPaymentAccounts : AccelByte.Sdk.Core.Operation
     {
         public PublicGetPaymentAccounts(

@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// bulkFetchStatItems
+    ///
+    /// Bulk fetch multiple user's statitem value for a given namespace and statCode.
+    /// Other detail info: + *Required permission*:
+    /// resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=2 (READ) + *Returns*:
+    /// list of user's statItem
+    /// </summary>
     public class BulkFetchStatItems : AccelByte.Sdk.Core.Operation
     {
         public BulkFetchStatItems(

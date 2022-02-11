@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateXblIAPConfig
+    ///
+    /// Update xbl iap config. Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : updated xbl iap config
+    /// </summary>
     public class UpdateXblIAPConfig : AccelByte.Sdk.Core.Operation
     {
         public UpdateXblIAPConfig(

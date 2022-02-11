@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicGetUserByUserIDV2
+    /// </summary>
     public class PublicGetUserByUserIDV2 : AccelByte.Sdk.Core.Operation
     {
         public PublicGetUserByUserIDV2(

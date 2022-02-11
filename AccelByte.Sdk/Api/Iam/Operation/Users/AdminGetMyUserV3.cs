@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminGetMyUserV3
+    ///
+    /// 
+    /// 
+    /// Require valid user authorization
+    /// Get my user data
+    /// action code : 10147
+    /// </summary>
     public class AdminGetMyUserV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminGetMyUserV3(

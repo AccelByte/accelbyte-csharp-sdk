@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// createTier
+    ///
+    /// This API is used to create tier for a draft season, can create multiple tiers
+    /// at same time.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=1 (CREATE)
+    /// </summary>
     public class CreateTier : AccelByte.Sdk.Core.Operation
     {
         public CreateTier(

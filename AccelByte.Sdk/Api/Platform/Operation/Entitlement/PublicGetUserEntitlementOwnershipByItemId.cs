@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicGetUserEntitlementOwnershipByItemId
+    ///
+    /// Get user entitlement ownership by itemId.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
+    /// </summary>
     public class PublicGetUserEntitlementOwnershipByItemId : AccelByte.Sdk.Core.Operation
     {
         public PublicGetUserEntitlementOwnershipByItemId(

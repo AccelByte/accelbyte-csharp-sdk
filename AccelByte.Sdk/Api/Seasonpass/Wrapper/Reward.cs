@@ -11,6 +11,22 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             _sdk = sdk;
         }
         
+        public List<Model.RewardInfo>? QueryRewards(QueryRewards input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.RewardInfo? CreateReward(CreateReward input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.RewardInfo? GetReward(GetReward input) {
             var response = _sdk.RunRequest(input);
 
@@ -28,22 +44,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public Model.RewardInfo? UpdateReward(UpdateReward input) {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code, 
-                    response.ContentType,
-                    response.Payload);
-        }
-        public List<Model.RewardInfo>? QueryRewards(QueryRewards input) {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code, 
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.RewardInfo? CreateReward(CreateReward input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

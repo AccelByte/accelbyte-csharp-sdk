@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminSearchUsersV2
+    ///
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER [READ]'.
+    /// </summary>
     public class AdminSearchUsersV2 : AccelByte.Sdk.Core.Operation
     {
         public AdminSearchUsersV2(

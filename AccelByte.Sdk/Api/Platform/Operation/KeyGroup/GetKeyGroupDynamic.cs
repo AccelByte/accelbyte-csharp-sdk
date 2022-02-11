@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getKeyGroupDynamic
+    ///
+    /// Get key group dynamic.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
+    ///   *  Returns : key group info
+    /// </summary>
     public class GetKeyGroupDynamic : AccelByte.Sdk.Core.Operation
     {
         public GetKeyGroupDynamic(

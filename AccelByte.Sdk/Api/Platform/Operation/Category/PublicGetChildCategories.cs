@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicGetChildCategories
+    ///
+    /// This API is used to get child categories by category path.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Optional permission : resource="PREVIEW", action=1(CREATE) (user with this permission can view draft store category)
+    ///   *  Optional permission : resource="SANDBOX", action=1(CREATE) (user with this permission can view draft store category)
+    ///   *  Returns : list of child categories data
+    /// </summary>
     public class PublicGetChildCategories : AccelByte.Sdk.Core.Operation
     {
         public PublicGetChildCategories(

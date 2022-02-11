@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// CountServer
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ] Required
+    /// scope: social This endpoint counts all of dedicated servers in a namespace
+    /// managed by this service.
+    /// </summary>
     public class CountServer : AccelByte.Sdk.Core.Operation
     {
         public CountServer(

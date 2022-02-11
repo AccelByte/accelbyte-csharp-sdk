@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// DeleteServer
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [DELETE] Required
+    /// scope: social This endpoint deletes a specified dedicated server from DB and
+    /// terminates the DS pod.
+    /// </summary>
     public class DeleteServer : AccelByte.Sdk.Core.Operation
     {
         public DeleteServer(

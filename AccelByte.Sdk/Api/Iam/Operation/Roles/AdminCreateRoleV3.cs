@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminCreateRoleV3
+    ///
+    /// Required permission 'ADMIN:ROLE [CREATE]'
+    /// action code: 10401
+    /// </summary>
     public class AdminCreateRoleV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminCreateRoleV3(

@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateDLCItemConfig
+    ///
+    /// Update DLC item config. Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:DLC:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : updated DLC item config
+    /// </summary>
     public class UpdateDLCItemConfig : AccelByte.Sdk.Core.Operation
     {
         public UpdateDLCItemConfig(

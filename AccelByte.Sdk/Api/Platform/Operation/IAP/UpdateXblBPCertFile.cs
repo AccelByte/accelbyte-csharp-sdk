@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateXblBPCertFile
+    ///
+    /// Upload xbl business partner cert file.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : updated xbl iap config
+    /// </summary>
     public class UpdateXblBPCertFile : AccelByte.Sdk.Core.Operation
     {
         public UpdateXblBPCertFile(

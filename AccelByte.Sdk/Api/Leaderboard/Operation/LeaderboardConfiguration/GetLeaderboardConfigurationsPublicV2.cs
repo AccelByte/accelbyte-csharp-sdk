@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Leaderboard.Operation
 {
+    /// <summary>
+    /// GetLeaderboardConfigurationsPublicV2
+    ///
+    /// This endpoint return all leaderboard configurations
+    /// </summary>
     public class GetLeaderboardConfigurationsPublicV2 : AccelByte.Sdk.Core.Operation
     {
         public GetLeaderboardConfigurationsPublicV2(

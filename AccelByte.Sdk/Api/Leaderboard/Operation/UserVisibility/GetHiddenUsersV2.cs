@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Leaderboard.Operation
 {
+    /// <summary>
+    /// GetHiddenUsersV2
+    ///
+    /// Return hidden users on a leaderboard
+    /// </summary>
     public class GetHiddenUsersV2 : AccelByte.Sdk.Core.Operation
     {
         public GetHiddenUsersV2(

@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// bulkResetUserStatItem_1
+    ///
+    /// Bulk reset user's statitems value for given namespace and user. Other detail
+    /// info: + *Required permission*:
+    /// resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4
+    /// (UPDATE) + *Returns*: bulk updated result
+    /// </summary>
     public class BulkResetUserStatItem1 : AccelByte.Sdk.Core.Operation
     {
         public BulkResetUserStatItem1(

@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 {
+    /// <summary>
+    /// JoinSession
+    ///
+    /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
+    /// Required scope: social Join the specified session by session ID. Possible the
+    /// game required a password to join
+    /// </summary>
     public class JoinSession : AccelByte.Sdk.Core.Operation
     {
         public JoinSession(

@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// deleteUserSubscription
+    ///
+    ///  [TEST FACILITY ONLY] Forbidden in live environment. Delete user subscription.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=8 (DELETE)
+    /// </summary>
     public class DeleteUserSubscription : AccelByte.Sdk.Core.Operation
     {
         public DeleteUserSubscription(

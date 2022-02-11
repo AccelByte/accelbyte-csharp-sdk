@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// debugMatchedPaymentProviderConfig
+    ///
+    /// Debug matched payment provider config.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
+    ///   *  Returns : payment provider config
+    /// </summary>
     public class DebugMatchedPaymentProviderConfig : AccelByte.Sdk.Core.Operation
     {
         public DebugMatchedPaymentProviderConfig(

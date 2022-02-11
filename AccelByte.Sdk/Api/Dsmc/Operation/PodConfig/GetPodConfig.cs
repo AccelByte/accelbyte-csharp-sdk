@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// GetPodConfig
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ] Required
+    /// scope: social This endpoint get a dedicated server pod config in a namespace
+    /// </summary>
     public class GetPodConfig : AccelByte.Sdk.Core.Operation
     {
         public GetPodConfig(

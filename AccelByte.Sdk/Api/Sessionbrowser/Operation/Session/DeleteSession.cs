@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 {
+    /// <summary>
+    /// DeleteSession
+    ///
+    /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [DELETE]
+    /// Required scope: social Delete the session by session ID
+    /// </summary>
     public class DeleteSession : AccelByte.Sdk.Core.Operation
     {
         public DeleteSession(

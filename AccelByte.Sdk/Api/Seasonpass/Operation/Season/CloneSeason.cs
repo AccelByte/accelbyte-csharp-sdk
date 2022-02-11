@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// cloneSeason
+    ///
+    /// This API is used to clone a season.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=1 (CREATE)
+    ///   *  Returns : cloned season info
+    /// </summary>
     public class CloneSeason : AccelByte.Sdk.Core.Operation
     {
         public CloneSeason(

@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getStadiaIAPConfig
+    ///
+    /// Get stadia iap config.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=2 (READ)
+    ///   *  Returns : stadia iap config
+    /// </summary>
     public class GetStadiaIAPConfig : AccelByte.Sdk.Core.Operation
     {
         public GetStadiaIAPConfig(

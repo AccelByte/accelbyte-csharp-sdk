@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// userGetFriendshipStatus
+    /// </summary>
     public class UserGetFriendshipStatus : AccelByte.Sdk.Core.Operation
     {
         public UserGetFriendshipStatus(

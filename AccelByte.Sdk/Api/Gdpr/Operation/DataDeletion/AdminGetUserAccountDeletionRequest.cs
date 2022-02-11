@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Gdpr.Operation
 {
+    /// <summary>
+    /// AdminGetUserAccountDeletionRequest
+    ///
+    /// 
+    /// 
+    /// Required permission
+    /// `ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId}[READ]` and scope
+    /// `account`
+    /// </summary>
     public class AdminGetUserAccountDeletionRequest : AccelByte.Sdk.Core.Operation
     {
         public AdminGetUserAccountDeletionRequest(

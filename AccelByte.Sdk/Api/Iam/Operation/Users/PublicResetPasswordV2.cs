@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicResetPasswordV2
+    /// </summary>
     public class PublicResetPasswordV2 : AccelByte.Sdk.Core.Operation
     {
         public PublicResetPasswordV2(

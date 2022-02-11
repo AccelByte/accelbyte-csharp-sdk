@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// publicIncUserStatItemValue
+    ///
+    /// Public update user's statitem value.
+    /// Other detail info:
+    /// 
+    ///                   *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+    ///                   *  Returns : updated user's statItem
+    /// </summary>
     public class PublicIncUserStatItemValue : AccelByte.Sdk.Core.Operation
     {
         public PublicIncUserStatItemValue(

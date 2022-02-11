@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// updateTopicByTopicName
+    ///
+    /// Required permission : `NAMESPACE:{namespace}:TOPIC [UPDATE]` with scope
+    /// `social`
+    /// update topic information by topic name.
+    /// topic should be alphabets, no special char except underscore, uppercase and no
+    /// spacing. for example: TOPIC_TEST. Already existing topic can not be created
+    /// </summary>
     public class UpdateTopicByTopicName : AccelByte.Sdk.Core.Operation
     {
         public UpdateTopicByTopicName(

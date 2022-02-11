@@ -10,11 +10,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         [JsonPropertyName("errorField")]
         public string? ErrorField { get; set; }
         
-        [JsonPropertyName("errorValue")]
-        public string? ErrorValue { get; set; }
-        
         [JsonPropertyName("errorMessage")]
         public string? ErrorMessage { get; set; }
+        
+        [JsonPropertyName("errorValue")]
+        public string? ErrorValue { get; set; }
         
         [JsonPropertyName("messageVariables")]
         public Dictionary<string, string>? MessageVariables { get; set; }

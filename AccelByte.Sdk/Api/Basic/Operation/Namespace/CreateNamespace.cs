@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// createNamespace
+    ///
+    /// Create a namespace.
+    /// By default the namespace is enabled.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE" , action=1 (CREATE)
+    ///   *  Action code : 11301
+    ///   *  Returns : created namespace
+    /// </summary>
     public class CreateNamespace : AccelByte.Sdk.Core.Operation
     {
         public CreateNamespace(

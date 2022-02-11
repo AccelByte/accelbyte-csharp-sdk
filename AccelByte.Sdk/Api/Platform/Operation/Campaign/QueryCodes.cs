@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// queryCodes
+    ///
+    /// Query campaign codes.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=2 (READ) (READ)
+    ///   *  Returns : list of codes
+    /// </summary>
     public class QueryCodes : AccelByte.Sdk.Core.Operation
     {
         public QueryCodes(

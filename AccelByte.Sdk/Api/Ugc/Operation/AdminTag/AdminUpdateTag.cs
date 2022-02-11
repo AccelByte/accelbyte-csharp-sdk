@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminUpdateTag
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:UGCCONFIG [UPDATE] updates a
+    /// tag
+    /// </summary>
     public class AdminUpdateTag : AccelByte.Sdk.Core.Operation
     {
         public AdminUpdateTag(

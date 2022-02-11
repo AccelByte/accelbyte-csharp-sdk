@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// CheckUserAvailability
+    ///
+    /// Check user's account availability. Available field : - displayName If request
+    /// include access token with user ID data, that user ID will be excluded from
+    /// availability check. For example, in case user update his emailAddress, he can
+    /// use his own emailAddress to update his account. Response Code : - Account
+    /// Available : 404 (not found) - Account Not Available : 204 (no content)
+    /// </summary>
     public class CheckUserAvailability : AccelByte.Sdk.Core.Operation
     {
         public CheckUserAvailability(

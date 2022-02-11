@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// querySeasons
+    ///
+    /// This API is used to query seasons, seasons only located in non-publisher
+    /// namespace.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=2 (READ)
+    ///   *  Returns : the list of season basic info
+    /// </summary>
     public class QuerySeasons : AccelByte.Sdk.Core.Operation
     {
         public QuerySeasons(

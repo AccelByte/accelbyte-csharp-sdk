@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicCreateJusticeUser
+    ///
+    /// Create Justice User from Publisher User information. It will check first if
+    /// Justice User on target namespace already exist.
+    /// </summary>
     public class PublicCreateJusticeUser : AccelByte.Sdk.Core.Operation
     {
         public PublicCreateJusticeUser(

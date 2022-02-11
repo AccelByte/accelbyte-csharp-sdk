@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// getSeason
+    ///
+    /// This API is used to get a season, season only located in non-publisher
+    /// namespace.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=2 (READ)
+    ///   *  Returns : season data
+    /// </summary>
     public class GetSeason : AccelByte.Sdk.Core.Operation
     {
         public GetSeason(

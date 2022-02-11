@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// GetAllDeployment
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ] Required
+    /// scope: social This endpoint get a all deployments in a namespace
+    /// </summary>
     public class GetAllDeployment : AccelByte.Sdk.Core.Operation
     {
         public GetAllDeployment(

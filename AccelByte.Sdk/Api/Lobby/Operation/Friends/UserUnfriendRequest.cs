@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// userUnfriendRequest
+    /// </summary>
     public class UserUnfriendRequest : AccelByte.Sdk.Core.Operation
     {
         public UserUnfriendRequest(

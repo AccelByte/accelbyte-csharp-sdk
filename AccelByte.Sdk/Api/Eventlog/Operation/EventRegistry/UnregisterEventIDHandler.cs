@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Eventlog.Operation
 {
+    /// <summary>
+    /// UnregisterEventIDHandler
+    ///
+    /// Required permission `ADMIN:NAMESPACE:{namespace}:EVENT [DELETE]`and scope
+    /// `analytics`
+    /// </summary>
     public class UnregisterEventIDHandler : AccelByte.Sdk.Core.Operation
     {
         public UnregisterEventIDHandler(

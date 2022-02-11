@@ -7,6 +7,21 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// DisableUserBan
+    ///
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:BAN:USER:{userId} [UPDATE]'.
+    /// 
+    ///  Notes for using IAM in publisher - game studio scenarios
+    /// 
+    /// The endpoint allows:
+    /// 
+    ///     * The admin user in publisher namespace disables userâs ban in publisher namespace.
+    ///     * The admin user in game namespace disables userâs ban in game namespace.
+    ///     * The admin user in publisher namespace disables userâs ban in publisher namespace.
+    /// 
+    /// Other scenarios are not supported and will return 403: Forbidden.
+    /// </summary>
     public class DisableUserBan : AccelByte.Sdk.Core.Operation
     {
         public DisableUserBan(

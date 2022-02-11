@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// adminGetPlayerBlockedByPlayersV1
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:USER:{userId}:PLAYER:BLOCK
+    /// [READ]` with scope `social`
+    /// load get players who blocked this player in a namespace based on user id
+    /// </summary>
     public class AdminGetPlayerBlockedByPlayersV1 : AccelByte.Sdk.Core.Operation
     {
         public AdminGetPlayerBlockedByPlayersV1(

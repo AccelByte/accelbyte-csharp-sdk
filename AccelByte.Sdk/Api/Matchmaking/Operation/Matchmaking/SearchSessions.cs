@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Operation
 {
+    /// <summary>
+    /// SearchSessions
+    ///
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
+    /// Required Scope: social Search sessions.
+    /// </summary>
     public class SearchSessions : AccelByte.Sdk.Core.Operation
     {
         public SearchSessions(

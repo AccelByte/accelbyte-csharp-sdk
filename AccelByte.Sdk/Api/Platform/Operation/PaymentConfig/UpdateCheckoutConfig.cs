@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateCheckoutConfig
+    ///
+    /// Update checkout.com config.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : updated payment merchant config
+    /// </summary>
     public class UpdateCheckoutConfig : AccelByte.Sdk.Core.Operation
     {
         public UpdateCheckoutConfig(

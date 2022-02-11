@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// deleteMemberRolePublicV1
+    ///
+    /// Required Member Role Permission: "GROUP:ROLE [UPDATE]"
+    /// 
+    /// This endpoint is used to remove role from group member
+    /// 
+    /// Action Code: 73204
+    /// </summary>
     public class DeleteMemberRolePublicV1 : AccelByte.Sdk.Core.Operation
     {
         public DeleteMemberRolePublicV1(

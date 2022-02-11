@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// getGameRecordHandlerV1
+    ///
+    /// Required Permission | `NAMESPACE:{namespace}:CLOUDSAVE:RECORD [READ]`
+    /// ---|---
+    /// Required Scope | `social`
+    /// 
+    /// Get game record by its key.
+    /// </summary>
     public class GetGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public GetGameRecordHandlerV1(

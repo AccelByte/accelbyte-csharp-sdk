@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// bulkCreateUserStatItems
+    ///
+    /// Bulk create user's statItems.
+    /// Other detail info:
+    /// 
+    ///           *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
+    ///           *  Returns : bulk created result
+    /// </summary>
     public class BulkCreateUserStatItems : AccelByte.Sdk.Core.Operation
     {
         public BulkCreateUserStatItems(

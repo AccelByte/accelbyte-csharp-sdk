@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminGetUserByUserIdV3
+    ///
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [READ]'
+    /// </summary>
     public class AdminGetUserByUserIdV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminGetUserByUserIdV3(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 {
+    /// <summary>
+    /// QuerySession
+    ///
+    /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
+    /// Required scope: social Query available game session
+    /// </summary>
     public class QuerySession : AccelByte.Sdk.Core.Operation
     {
         public QuerySession(

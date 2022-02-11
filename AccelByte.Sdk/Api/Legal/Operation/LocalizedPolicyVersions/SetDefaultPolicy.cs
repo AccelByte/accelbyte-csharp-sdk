@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// setDefaultPolicy
+    ///
+    /// Update a localized version policy to be the default.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
+    /// </summary>
     public class SetDefaultPolicy : AccelByte.Sdk.Core.Operation
     {
         public SetDefaultPolicy(

@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// GetUserPlatformAccounts
+    ///
+    /// 
+    /// 
+    /// Required permission 'NAMESPACE:{namespace}:USER:{userId} [READ]'.
+    /// 
+    /// ## Justice Platform Account
+    /// 
+    /// The permission âADMIN:NAMESPACE:{namespace}:JUSTICE:USER:{userId}â [READ]
+    /// is required in order to read the UserID who linked with the user.
+    /// </summary>
     public class GetUserPlatformAccounts : AccelByte.Sdk.Core.Operation
     {
         public GetUserPlatformAccounts(

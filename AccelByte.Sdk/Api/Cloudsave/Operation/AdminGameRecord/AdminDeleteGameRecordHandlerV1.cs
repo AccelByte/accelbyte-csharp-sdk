@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// adminDeleteGameRecordHandlerV1
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [DELETE]
+    /// Required scope: social This endpoints delete game record in namespace-level
+    /// </summary>
     public class AdminDeleteGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public AdminDeleteGameRecordHandlerV1(

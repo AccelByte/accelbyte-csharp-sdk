@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateUserEntitlement
+    ///
+    /// Update user entitlement. If update CONSUMABLE entitlement useCount to 0, the
+    /// status will be CONSUMED.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
+    ///   *  Returns : updated entitlement
+    /// </summary>
     public class UpdateUserEntitlement : AccelByte.Sdk.Core.Operation
     {
         public UpdateUserEntitlement(

@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// unpublishSeason
+    ///
+    /// This API is used to unpublish a published season, if the season already
+    /// started it will report error except with force.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=4 (UPDATE)
+    ///   *  Returns : season info
+    /// </summary>
     public class UnpublishSeason : AccelByte.Sdk.Core.Operation
     {
         public UnpublishSeason(

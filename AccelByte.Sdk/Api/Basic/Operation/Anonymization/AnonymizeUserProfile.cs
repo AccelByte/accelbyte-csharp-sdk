@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// anonymizeUserProfile
+    ///
+    /// Anonymize user profile.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ANONYMIZATION" , action=8 (DELETE)
+    ///   *  Action code : 11501
+    /// </summary>
     public class AnonymizeUserProfile : AccelByte.Sdk.Core.Operation
     {
         public AnonymizeUserProfile(

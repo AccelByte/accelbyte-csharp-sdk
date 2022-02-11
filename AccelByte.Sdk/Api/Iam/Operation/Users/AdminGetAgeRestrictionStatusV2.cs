@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminGetAgeRestrictionStatusV2
+    ///
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:AGERESTRICTION [READ]'
+    /// </summary>
     public class AdminGetAgeRestrictionStatusV2 : AccelByte.Sdk.Core.Operation
     {
         public AdminGetAgeRestrictionStatusV2(

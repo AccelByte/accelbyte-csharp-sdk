@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// UsersPresenceHandlerV1
+    ///
+    /// Query users presence with given namespace and userIds.
+    /// </summary>
     public class UsersPresenceHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public UsersPresenceHandlerV1(

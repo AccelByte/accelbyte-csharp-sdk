@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminGetClientsbyNamespacebyIDV3
+    ///
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:CLIENT [READ]'
+    /// action code: 10309
+    /// </summary>
     public class AdminGetClientsbyNamespacebyIDV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminGetClientsbyNamespacebyIDV3(

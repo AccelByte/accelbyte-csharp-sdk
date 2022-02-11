@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Operation
 {
+    /// <summary>
+    /// GetAllPartyInAllChannel
+    ///
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
+    /// Required Scope: social Get all parties queueing in all channels.
+    /// </summary>
     public class GetAllPartyInAllChannel : AccelByte.Sdk.Core.Operation
     {
         public GetAllPartyInAllChannel(

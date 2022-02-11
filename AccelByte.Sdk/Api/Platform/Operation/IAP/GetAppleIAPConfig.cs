@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getAppleIAPConfig
+    ///
+    /// Get apple iap config.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=2 (READ)
+    ///   *  Returns : apple iap config
+    /// </summary>
     public class GetAppleIAPConfig : AccelByte.Sdk.Core.Operation
     {
         public GetAppleIAPConfig(

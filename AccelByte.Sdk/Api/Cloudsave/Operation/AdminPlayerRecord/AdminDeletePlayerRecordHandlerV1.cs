@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// adminDeletePlayerRecordHandlerV1
+    ///
+    /// Required permission:
+    /// ADMIN:NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [DELETE] Required
+    /// scope: social Delete a record (arbitrary JSON data) in user-level with given
+    /// key. It will delete the record whether it's private or public record.
+    /// </summary>
     public class AdminDeletePlayerRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public AdminDeletePlayerRecordHandlerV1(

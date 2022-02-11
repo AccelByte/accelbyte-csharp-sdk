@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// adminPostGameRecordHandlerV1
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [WRITE]
+    /// Required scope: social This endpoints is to create new game record in
+    /// namespace-level.
+    /// </summary>
     public class AdminPostGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public AdminPostGameRecordHandlerV1(

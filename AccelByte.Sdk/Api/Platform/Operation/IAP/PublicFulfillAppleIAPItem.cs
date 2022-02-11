@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicFulfillAppleIAPItem
+    ///
+    /// Verify apple iap receipt and fulfill item.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
+    ///   *  Returns :
+    /// </summary>
     public class PublicFulfillAppleIAPItem : AccelByte.Sdk.Core.Operation
     {
         public PublicFulfillAppleIAPItem(

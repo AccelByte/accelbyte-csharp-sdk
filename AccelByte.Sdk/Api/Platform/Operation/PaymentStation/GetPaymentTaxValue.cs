@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getPaymentTaxValue
+    ///
+    /// Check and get a payment order's should pay tax.
+    /// Other detail info:
+    /// 
+    ///   * Returns : tax result
+    /// </summary>
     public class GetPaymentTaxValue : AccelByte.Sdk.Core.Operation
     {
         public GetPaymentTaxValue(

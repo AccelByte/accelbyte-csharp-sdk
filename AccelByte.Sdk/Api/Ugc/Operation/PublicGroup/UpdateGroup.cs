@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// UpdateGroup
+    ///
+    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [UPDATE]
+    /// replace group name and contents with new ones
+    /// </summary>
     public class UpdateGroup : AccelByte.Sdk.Core.Operation
     {
         public UpdateGroup(

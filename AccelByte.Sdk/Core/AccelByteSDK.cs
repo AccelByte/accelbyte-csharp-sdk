@@ -80,6 +80,9 @@ namespace AccelByte.Sdk.Core
                     codeVerifier,
                     null,
                     null,
+                    null,
+                    null,
+                    null,
                     "authorization_code");
                     
             tokenGrantV3.Security = null;
@@ -96,6 +99,9 @@ namespace AccelByte.Sdk.Core
         public bool LoginClient()
         {
             var tokenGrantV3 = new TokenGrantV3(
+                         null,
+                         null,
+                         null,
                          null,
                          null,
                          null,

@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// deleteCategory
+    ///
+    /// This API is used to delete category by category path.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CATEGORY", action=8 (DELETE)
+    ///   *  Returns : the deleted category data
+    /// </summary>
     public class DeleteCategory : AccelByte.Sdk.Core.Operation
     {
         public DeleteCategory(

@@ -7,6 +7,25 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateCategory
+    ///
+    /// This API is used to update category.
+    /// 
+    /// The category update data is a category object, example as:
+    /// 
+    /// 
+    /// 
+    ///     {
+    ///         "storeId": "store-id",
+    ///         "localizationDisplayNames": {"en" : "Games"}
+    ///     }
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CATEGORY", action=4 (UPDATE)
+    ///   *  Returns : the updated category data
+    /// </summary>
     public class UpdateCategory : AccelByte.Sdk.Core.Operation
     {
         public UpdateCategory(

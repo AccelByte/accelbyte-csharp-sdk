@@ -7,6 +7,19 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// adminRetrieveEligibilities
+    ///
+    /// Retrieve the active policies and its conformance status by userThis process
+    /// only supports cross-namespace checking between game namespace and publisher
+    /// namespace , that means if the active policy already accepted by the same user
+    /// in publisher namespace, then it will also be considered as eligible in non-
+    /// publisher namespace.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:LEGAL", action=2 (READ)
+    /// </summary>
     public class AdminRetrieveEligibilities : AccelByte.Sdk.Core.Operation
     {
         public AdminRetrieveEligibilities(

@@ -7,6 +7,33 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicUpdateUserV3
+    ///
+    /// 
+    /// 
+    /// Requires valid user access token
+    /// 
+    /// 
+    /// 
+    /// This Endpoint support update user based on given data. Single request can
+    /// update single field or multi fields.
+    /// 
+    /// Supported field {country, displayName, languageTag, dateOfBirth}
+    /// 
+    /// Country use ISO3166-1 alpha-2 two letter, e.g. US.
+    /// 
+    /// Date of Birth format : YYYY-MM-DD, e.g. 2019-04-29.
+    /// 
+    /// 
+    /// Several case of updating email address
+    /// 
+    ///                     * User want to update email address of which have been verified, newEmailAddress response field will be filled with new email address.
+    ///                     * User want to update email address of which have not been verified, { oldEmailAddress, emailAddress} response field will be filled with new email address.
+    ///                     * User want to update email address of which have been verified and updated before, { oldEmailAddress, emailAddress} response field will be filled with verified email before. newEmailAddress response field will be filled with newest email address.
+    /// 
+    /// action code : 10103
+    /// </summary>
     public class PublicUpdateUserV3 : AccelByte.Sdk.Core.Operation
     {
         public PublicUpdateUserV3(

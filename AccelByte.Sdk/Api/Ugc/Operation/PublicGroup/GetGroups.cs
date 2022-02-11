@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// GetGroups
+    ///
+    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ].
+    /// </summary>
     public class GetGroups : AccelByte.Sdk.Core.Operation
     {
         public GetGroups(

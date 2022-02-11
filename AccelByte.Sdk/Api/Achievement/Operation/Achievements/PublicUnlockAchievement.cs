@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Achievement.Operation
 {
+    /// <summary>
+    /// PublicUnlockAchievement
+    ///
+    /// 
+    /// 
+    /// Required permission `NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]`
+    /// and scope `social`
+    /// </summary>
     public class PublicUnlockAchievement : AccelByte.Sdk.Core.Operation
     {
         public PublicUnlockAchievement(

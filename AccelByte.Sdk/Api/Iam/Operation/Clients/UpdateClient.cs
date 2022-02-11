@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// UpdateClient
+    ///
+    /// Required permission 'CLIENT:ADMIN [UPDATE]'
+    /// </summary>
     public class UpdateClient : AccelByte.Sdk.Core.Operation
     {
         public UpdateClient(

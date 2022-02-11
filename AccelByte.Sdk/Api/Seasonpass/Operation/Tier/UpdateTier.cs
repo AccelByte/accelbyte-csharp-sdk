@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// updateTier
+    ///
+    /// This API is used to update a tier. Only draft season pass can be updated.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=4 (UPDATE)
+    /// </summary>
     public class UpdateTier : AccelByte.Sdk.Core.Operation
     {
         public UpdateTier(

@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// userAcceptFriendRequest
+    /// </summary>
     public class UserAcceptFriendRequest : AccelByte.Sdk.Core.Operation
     {
         public UserAcceptFriendRequest(

@@ -7,6 +7,21 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// SetRoleAsAdmin
+    ///
+    /// 
+    /// 
+    /// Required permission 'ROLE:ADMIN [UPDATE]' or 'ADMIN:ROLE [UPDATE]'
+    /// 
+    /// Required Permission 'ROLE:ADMIN [UPDATE]' is going to be DEPRECATED for
+    /// security purpose. It is going to be deprecated on 31 JANUARY 2019 , please use
+    /// permission 'ADMIN:ROLE [UPDATE]' instead.
+    /// 
+    /// Admin roles has its members listed in the role.
+    /// 
+    /// Role can be set as admin role only when it has at least 1 manager.
+    /// </summary>
     public class SetRoleAsAdmin : AccelByte.Sdk.Core.Operation
     {
         public SetRoleAsAdmin(

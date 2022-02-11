@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// ImportImages
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE] Required
+    /// scope: social This endpoint import a dedicated servers images in a namespace.
+    /// The image will be upsert. Existing version will be replaced with imported
+    /// image, will create new one if not found. Example data inside imported file [ {
+    /// "namespace": "dewa", "image": "123456789.dkr.ecr.us-west-2.amazonaws.com/ds-
+    /// dewa:0.0.1-alpha", "version": "0.0.1", "persistent": true } ]
+    /// </summary>
     public class ImportImages : AccelByte.Sdk.Core.Operation
     {
         public ImportImages(

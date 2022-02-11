@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// updateStadiaJsonConfigFile
+    ///
+    /// Upload stadia json config file.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
+    ///   *  Returns : updated stadia iap config
+    /// </summary>
     public class UpdateStadiaJsonConfigFile : AccelByte.Sdk.Core.Operation
     {
         public UpdateStadiaJsonConfigFile(

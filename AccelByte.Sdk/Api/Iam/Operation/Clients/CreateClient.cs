@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// CreateClient
+    ///
+    /// 
+    /// 
+    /// ## The endpoint is going to be deprecated at 16 August, 2018. Please use this
+    /// instead: namespaces/{namespace}/clients
+    /// 
+    /// Required permission 'CLIENT:ADMIN [CREATE]'
+    /// </summary>
     public class CreateClient : AccelByte.Sdk.Core.Operation
     {
         public CreateClient(

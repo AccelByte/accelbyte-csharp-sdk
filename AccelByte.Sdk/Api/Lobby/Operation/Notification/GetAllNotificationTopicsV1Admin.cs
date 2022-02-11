@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// getAllNotificationTopicsV1Admin
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [READ]` with
+    /// scope `social`
+    /// get topic by namespace.
+    /// Action Code: 50213
+    /// </summary>
     public class GetAllNotificationTopicsV1Admin : AccelByte.Sdk.Core.Operation
     {
         public GetAllNotificationTopicsV1Admin(

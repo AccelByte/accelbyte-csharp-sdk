@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminAddUserRoleV4
+    ///
+    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:ROLE:USER:* [UPDATE]
+    /// permission. New role will be appended to user's current roles. Request body
+    /// need to specify allowed namespace for given role to support new role
+    /// restriction. Skipped the check whether the user performing the request is a
+    /// role manager / assigner since there is a plan to discard the role manager /
+    /// assigner.
+    /// </summary>
     public class AdminAddUserRoleV4 : AccelByte.Sdk.Core.Operation
     {
         public AdminAddUserRoleV4(

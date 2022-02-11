@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Qosm.Operation
 {
+    /// <summary>
+    /// Heartbeat
+    ///
+    /// ``` Required permission: QOS:SERVER [CREATE][UPDATE] Required scope: social
+    /// This endpoint is intended to be called by QoS service to register and
+    /// periodically let QoS Manager know that it is still alive. ```
+    /// </summary>
     public class Heartbeat : AccelByte.Sdk.Core.Operation
     {
         public Heartbeat(

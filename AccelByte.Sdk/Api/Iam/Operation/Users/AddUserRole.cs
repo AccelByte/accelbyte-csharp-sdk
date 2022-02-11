@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AddUserRole
+    ///
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:ROLE:USER:{userId} [UPDATE]'
+    /// </summary>
     public class AddUserRole : AccelByte.Sdk.Core.Operation
     {
         public AddUserRole(

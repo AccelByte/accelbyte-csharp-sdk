@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// CountSession
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SESSION [READ] Required
+    /// scope: social This endpoint count all of sessions in a namespace managed by
+    /// this service.
+    /// </summary>
     public class CountSession : AccelByte.Sdk.Core.Operation
     {
         public CountSession(

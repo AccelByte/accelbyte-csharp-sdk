@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// DownloadContentByShareCode
+    ///
+    /// Requires valid user token
+    /// </summary>
     public class DownloadContentByShareCode : AccelByte.Sdk.Core.Operation
     {
         public DownloadContentByShareCode(

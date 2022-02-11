@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// DeleteThirdPartyLoginPlatformDomainV3
+    ///
+    /// 
+    /// 
+    /// This is the API to unregister 3rd Platform domain.
+    /// 
+    /// It needs ADMIN:NAMESPACE:{namespace}:CLIENTDOMAIN [DELETE] resource.
+    /// </summary>
     public class DeleteThirdPartyLoginPlatformDomainV3 : AccelByte.Sdk.Core.Operation
     {
         public DeleteThirdPartyLoginPlatformDomainV3(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminGetListCountryAgeRestrictionV3
+    ///
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:AGERESTRICTION [READ]
+    /// action code : 10139
+    /// </summary>
     public class AdminGetListCountryAgeRestrictionV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminGetListCountryAgeRestrictionV3(

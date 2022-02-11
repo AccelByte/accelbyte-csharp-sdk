@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Leaderboard.Operation
 {
+    /// <summary>
+    /// deleteUserRankingPublicV1
+    ///
+    /// Delete user ranking Required permission:
+    /// NAMESPACE:{namespace}:LEADERBOARD:USER:{userId} [DELETE] Remove entry with
+    /// provided userId from leaderboard. If leaderboard with given leaderboard code
+    /// not found, it will return http status not found (404). If the leaderboard is
+    /// found and no entry found in it, it will still return success (204)
+    /// </summary>
     public class DeleteUserRankingPublicV1 : AccelByte.Sdk.Core.Operation
     {
         public DeleteUserRankingPublicV1(

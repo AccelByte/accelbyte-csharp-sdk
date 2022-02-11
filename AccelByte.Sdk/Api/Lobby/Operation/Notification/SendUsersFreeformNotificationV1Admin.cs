@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// sendUsersFreeformNotificationV1Admin
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with
+    /// scope `social`
+    /// Sends notification to all connected users in a namespace.
+    /// Action Code: 50201
+    /// </summary>
     public class SendUsersFreeformNotificationV1Admin : AccelByte.Sdk.Core.Operation
     {
         public SendUsersFreeformNotificationV1Admin(

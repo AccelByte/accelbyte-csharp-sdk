@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// EnableUserBan
+    ///
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:BAN:USER:{userId} [UPDATE]'.
+    /// </summary>
     public class EnableUserBan : AccelByte.Sdk.Core.Operation
     {
         public EnableUserBan(

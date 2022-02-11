@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// publicUpdateProfile
+    ///
+    /// Updates user game profile, returns updated profile.
+    /// Other detail info:
+    /// 
+    ///         *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=4 (UPDATE)
+    ///         *  Returns : updated game profile
+    /// </summary>
     public class PublicUpdateProfile : AccelByte.Sdk.Core.Operation
     {
         public PublicUpdateProfile(

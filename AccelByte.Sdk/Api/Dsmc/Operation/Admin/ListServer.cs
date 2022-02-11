@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// ListServer
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ] Required
+    /// scope: social This endpoint lists all of dedicated servers in a namespace
+    /// managed by this service.
+    /// </summary>
     public class ListServer : AccelByte.Sdk.Core.Operation
     {
         public ListServer(

@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicGetUserBan
+    /// </summary>
     public class PublicGetUserBan : AccelByte.Sdk.Core.Operation
     {
         public PublicGetUserBan(

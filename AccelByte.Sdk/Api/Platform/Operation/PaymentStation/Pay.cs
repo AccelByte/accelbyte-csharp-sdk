@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// pay
+    ///
+    /// Do payment(For now, this only support checkout.com).
+    /// Other detail info:
+    /// 
+    ///   * Returns : Payment process result
+    /// </summary>
     public class Pay : AccelByte.Sdk.Core.Operation
     {
         public Pay(

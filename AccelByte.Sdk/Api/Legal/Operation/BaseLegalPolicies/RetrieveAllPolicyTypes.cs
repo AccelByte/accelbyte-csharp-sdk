@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// retrieveAllPolicyTypes
+    ///
+    /// Retrieve all supported policy types.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
+    /// </summary>
     public class RetrieveAllPolicyTypes : AccelByte.Sdk.Core.Operation
     {
         public RetrieveAllPolicyTypes(

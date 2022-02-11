@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// publicQueryUserStatItems
+    ///
+    /// Public list all statItems by pagination.
+    /// Other detail info:
+    /// 
+    ///               *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+    ///               *  Returns : stat items
+    /// </summary>
     public class PublicQueryUserStatItems : AccelByte.Sdk.Core.Operation
     {
         public PublicQueryUserStatItems(

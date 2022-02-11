@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminVerifyAccountV3
+    ///
+    /// 
+    /// 
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
+    /// 
+    /// Redeems a verification code sent to a user to verify the user's contact
+    /// address is correct
+    /// 
+    /// Available ContactType : email or phone
+    /// </summary>
     public class AdminVerifyAccountV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminVerifyAccountV3(

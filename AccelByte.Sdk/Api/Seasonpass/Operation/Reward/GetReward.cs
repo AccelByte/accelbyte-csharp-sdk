@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// getReward
+    ///
+    /// This API is used to get a reward for a season.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=2 (READ)
+    ///   *  Returns : reward data
+    /// </summary>
     public class GetReward : AccelByte.Sdk.Core.Operation
     {
         public GetReward(

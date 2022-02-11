@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// createSeason
+    ///
+    /// This API is used to create a season, season only allowed in non-publisher
+    /// namespace.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=1 (CREATE)
+    ///   *  Returns : created season
+    /// </summary>
     public class CreateSeason : AccelByte.Sdk.Core.Operation
     {
         public CreateSeason(

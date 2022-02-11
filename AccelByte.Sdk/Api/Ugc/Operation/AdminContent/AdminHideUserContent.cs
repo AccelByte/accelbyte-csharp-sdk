@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminHideUserContent
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT
+    /// [UPDATE].
+    /// </summary>
     public class AdminHideUserContent : AccelByte.Sdk.Core.Operation
     {
         public AdminHideUserContent(

@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// getUserOutgoingFriends
+    /// </summary>
     public class GetUserOutgoingFriends : AccelByte.Sdk.Core.Operation
     {
         public GetUserOutgoingFriends(

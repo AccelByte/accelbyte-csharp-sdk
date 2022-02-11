@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// importStats
+    ///
+    /// Import stat configurations for a given namespace from file. At current, only
+    /// JSON file is supported.
+    /// 
+    /// Other detail info:
+    /// 
+    ///           *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+    /// </summary>
     public class ImportStats : AccelByte.Sdk.Core.Operation
     {
         public ImportStats(

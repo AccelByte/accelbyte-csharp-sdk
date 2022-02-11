@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// unBanUsers
+    ///
+    /// Unban user.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:ACTION" , action=4 (UPDATE)
+    /// </summary>
     public class UnBanUsers : AccelByte.Sdk.Core.Operation
     {
         public UnBanUsers(

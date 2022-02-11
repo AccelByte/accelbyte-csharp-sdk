@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminDisableUserV2
+    ///
+    /// Required permissions 'ADMIN:NAMESPACE:{namespace}:USERSTATUS:USER:{userId}
+    /// [UPDATE]'
+    /// 
+    /// For Deletion Account purpose fill the reason with:
+    /// 
+    ///           * DeactivateAccount : if your deletion request comes from user
+    ///           * AdminDeactivateAccount : if your deletion request comes from admin
+    /// </summary>
     public class AdminDisableUserV2 : AccelByte.Sdk.Core.Operation
     {
         public AdminDisableUserV2(

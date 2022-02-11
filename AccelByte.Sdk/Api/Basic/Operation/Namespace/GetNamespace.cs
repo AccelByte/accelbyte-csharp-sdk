@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// getNamespace
+    ///
+    /// Get a namespace.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:NAMESPACE" , action=2 (READ)
+    ///   *  Action code : 11304
+    ///   *  Returns : namespace
+    /// </summary>
     public class GetNamespace : AccelByte.Sdk.Core.Operation
     {
         public GetNamespace(

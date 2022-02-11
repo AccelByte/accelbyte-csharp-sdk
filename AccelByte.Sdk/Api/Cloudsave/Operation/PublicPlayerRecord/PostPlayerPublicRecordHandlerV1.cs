@@ -7,6 +7,59 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// postPlayerPublicRecordHandlerV1
+    ///
+    /// Required Permission |
+    /// `NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [WRITE]`
+    /// ---|---
+    /// Required Scope | `social`
+    /// 
+    /// This endpoint will create or update player record with `isPublic=true` meaning
+    /// that the record will be available for other player to be retrieved. Other
+    /// player can only retrieve the record and not create, update or even delete.
+    /// This endpoint will create public player record if it is not exists otherwise
+    /// merge with these criteria: - If field name is already exists, replace the
+    /// value - If field name is not exists, append it Example Replace value:
+    /// 
+    /// 
+    /// 
+    ///         // existed record
+    ///         {
+    ///             "foo": "bar"
+    ///         }
+    /// 
+    ///         // new record (request body)
+    ///         {
+    ///             "foo": "bar_updated"
+    ///         }
+    /// 
+    ///         // result
+    ///         {
+    ///             "foo": "bar_updated"
+    ///         }
+    /// 
+    /// 
+    /// Append value:
+    /// 
+    /// 
+    /// 
+    ///         // existed record
+    ///         {
+    ///             "foo": "bar"
+    ///         }
+    /// 
+    ///         // new record (request body)
+    ///         {
+    ///             "foo_new": "bar_new"
+    ///         }
+    /// 
+    ///         // result
+    ///         {
+    ///             "foo": "bar",
+    ///             "foo_new": "bar_new"
+    ///         }
+    /// </summary>
     public class PostPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public PostPlayerPublicRecordHandlerV1(

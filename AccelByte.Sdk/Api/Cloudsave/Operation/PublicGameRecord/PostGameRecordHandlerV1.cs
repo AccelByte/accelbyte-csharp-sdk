@@ -7,6 +7,56 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// postGameRecordHandlerV1
+    ///
+    /// Required Permission | `NAMESPACE:{namespace}:CLOUDSAVE:RECORD [CREATE]`
+    /// ---|---
+    /// Required Scope | `social`
+    /// 
+    /// If there's already record, the record will be merged with conditions: - If
+    /// field name is already exist, the value will be replaced - If field name is
+    /// not exists it will append the field and its value Example: Replace value in a
+    /// specific JSON key
+    /// 
+    /// 
+    /// 
+    ///     // existed record
+    ///     {
+    ///         "foo": "bar"
+    ///     }
+    /// 
+    ///     // new update (request body)
+    ///     {
+    ///         "foo": "barUpdated"
+    ///     }
+    /// 
+    ///     // result
+    ///     {
+    ///         "foo": "barUpdated"
+    ///     }
+    /// 
+    /// 
+    /// Append new json item
+    /// 
+    /// 
+    /// 
+    ///     // existed record
+    ///     {
+    ///         "foo": "bar"
+    ///     }
+    /// 
+    ///     // new update (request body)
+    ///     {
+    ///         "foo_new": "bar_new"
+    ///     }
+    /// 
+    ///     // result
+    ///     {
+    ///         "foo": "bar",
+    ///         "foo_new": "bar_new"
+    ///     }
+    /// </summary>
     public class PostGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public PostGameRecordHandlerV1(

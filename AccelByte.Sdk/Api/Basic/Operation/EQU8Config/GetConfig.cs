@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// getConfig
+    ///
+    /// Get equ8 config.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:EQU8CONFIG" , action=2 (READ)
+    /// </summary>
     public class GetConfig : AccelByte.Sdk.Core.Operation
     {
         public GetConfig(

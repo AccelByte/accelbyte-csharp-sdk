@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicWebLinkPlatformEstablish
+    ///
+    /// This endpoint is used by third party to redirect the code for the purpose of
+    /// linking the account third party to IAM account.
+    /// </summary>
     public class PublicWebLinkPlatformEstablish : AccelByte.Sdk.Core.Operation
     {
         public PublicWebLinkPlatformEstablish(

@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminUpdateClientPermissionV3
+    ///
+    /// 
+    /// 
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:CLIENT [UPDATE]'
+    /// 
+    /// action code: 10307
+    /// </summary>
     public class AdminUpdateClientPermissionV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminUpdateClientPermissionV3(

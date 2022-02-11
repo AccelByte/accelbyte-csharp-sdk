@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Gdpr.Operation
 {
+    /// <summary>
+    /// GetAdminEmailConfiguration
+    ///
+    /// Get list of admin email address configuration.
+    /// 
+    /// Required permission `ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [READ]`
+    /// and scope `account`
+    /// </summary>
     public class GetAdminEmailConfiguration : AccelByte.Sdk.Core.Operation
     {
         public GetAdminEmailConfiguration(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminUpdateContentDirect
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT
+    /// [UPDATE]. All request body are required except preview and tags.
+    /// </summary>
     public class AdminUpdateContentDirect : AccelByte.Sdk.Core.Operation
     {
         public AdminUpdateContentDirect(

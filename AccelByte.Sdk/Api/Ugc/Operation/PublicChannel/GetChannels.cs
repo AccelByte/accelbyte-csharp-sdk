@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// GetChannels
+    ///
+    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]
+    /// </summary>
     public class GetChannels : AccelByte.Sdk.Core.Operation
     {
         public GetChannels(

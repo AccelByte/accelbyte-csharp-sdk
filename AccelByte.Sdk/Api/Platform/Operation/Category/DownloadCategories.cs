@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// downloadCategories
+    ///
+    /// This API is used to download store's structured categories.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Optional permission : resource="PREVIEW", action=1(CREATE) (user with this permission can view draft store content)
+    ///   *  Optional permission : resource="SANDBOX", action=1(CREATE) (user with this permission can view draft store content)
+    ///   *  Returns : structured categories
+    /// </summary>
     public class DownloadCategories : AccelByte.Sdk.Core.Operation
     {
         public DownloadCategories(

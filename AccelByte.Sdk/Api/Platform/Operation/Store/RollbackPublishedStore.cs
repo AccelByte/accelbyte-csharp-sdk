@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// rollbackPublishedStore
+    ///
+    /// This API is used to rollback a published store.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
+    ///   *  Returns : updated store info
+    /// </summary>
     public class RollbackPublishedStore : AccelByte.Sdk.Core.Operation
     {
         public RollbackPublishedStore(

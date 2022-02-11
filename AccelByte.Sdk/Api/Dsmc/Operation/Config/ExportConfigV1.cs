@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// exportConfigV1
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ] Required
+    /// scope: social This endpoint export a dedicated servers config in a namespace.
+    /// </summary>
     public class ExportConfigV1 : AccelByte.Sdk.Core.Operation
     {
         public ExportConfigV1(

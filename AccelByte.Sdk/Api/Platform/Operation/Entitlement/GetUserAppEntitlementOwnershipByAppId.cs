@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getUserAppEntitlementOwnershipByAppId
+    ///
+    /// Get user app entitlement ownership by appId.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
+    /// </summary>
     public class GetUserAppEntitlementOwnershipByAppId : AccelByte.Sdk.Core.Operation
     {
         public GetUserAppEntitlementOwnershipByAppId(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// getTopicByTopicName
+    ///
+    /// Required permission : `NAMESPACE:{namespace}:TOPIC [READ]` with scope `social`
+    /// get topic information by topic name.
+    /// </summary>
     public class GetTopicByTopicName : AccelByte.Sdk.Core.Operation
     {
         public GetTopicByTopicName(

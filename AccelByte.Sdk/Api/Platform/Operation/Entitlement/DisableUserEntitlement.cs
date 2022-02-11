@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// disableUserEntitlement
+    ///
+    /// Disable user entitlement if entitlement, only active entitlement can be
+    /// disable, disabled entitlement can't consume.
+    ///  Like revoke, it will lose the entitlement ownership, except disabled
+    /// entitlement can enable.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
+    ///   *  Returns : disable entitlement
+    /// </summary>
     public class DisableUserEntitlement : AccelByte.Sdk.Core.Operation
     {
         public DisableUserEntitlement(

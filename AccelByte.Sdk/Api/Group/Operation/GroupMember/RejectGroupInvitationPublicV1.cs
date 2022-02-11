@@ -7,6 +7,20 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// rejectGroupInvitationPublicV1
+    ///
+    /// 
+    /// 
+    /// Required valid user authentication
+    /// 
+    /// This endpoint is used to reject group invitation.
+    /// 
+    /// Reject group invitation. If specific user is not invited in the specific group
+    /// ID, it will show the the error to show if the user is not invited yet.
+    /// 
+    /// Action Code: 73402
+    /// </summary>
     public class RejectGroupInvitationPublicV1 : AccelByte.Sdk.Core.Operation
     {
         public RejectGroupInvitationPublicV1(

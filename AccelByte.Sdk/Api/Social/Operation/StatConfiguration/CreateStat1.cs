@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Social.Operation
 {
+    /// <summary>
+    /// createStat_1
+    ///
+    /// Create stat.
+    /// Other detail info:
+    /// 
+    ///               *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+    ///               *  Returns : created stat template
+    /// </summary>
     public class CreateStat1 : AccelByte.Sdk.Core.Operation
     {
         public CreateStat1(

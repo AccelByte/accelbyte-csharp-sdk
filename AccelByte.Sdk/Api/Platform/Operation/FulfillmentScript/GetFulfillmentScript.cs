@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getFulfillmentScript
+    ///
+    /// Get fulfillment script by id.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:FULFILLMENT", action=2 (READ)
+    ///   *  Returns : get fulfillment script
+    /// </summary>
     public class GetFulfillmentScript : AccelByte.Sdk.Core.Operation
     {
         public GetFulfillmentScript(

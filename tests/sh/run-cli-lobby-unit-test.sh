@@ -15,7 +15,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 TEST_NAMESPACE="test"
 
-OPERATIONS_COUNT=89
+OPERATIONS_COUNT=90
 
 FINISHED_COUNT=0
 SUCCESS_COUNT=0
@@ -253,7 +253,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 15 AdminUpdateConfigV1
 # body param: body
-echo '{"autoKickOnDisconnect": false, "autoKickOnDisconnectDelay": 47, "cancelTicketOnDisconnect": false, "chatRateLimitBurst": 24, "chatRateLimitDuration": 10, "concurrentUsersLimit": 37, "enableChat": true, "entitlementCheck": true, "entitlementItemID": "4s5ppGR9", "generalRateLimitBurst": 99, "generalRateLimitDuration": 4, "maxPartyMember": 29, "profanityFilter": true, "readyConsentTimeout": 90}' > $TEMP_JSON_INPUT
+echo '{"autoKickOnDisconnect": false, "autoKickOnDisconnectDelay": 47, "cancelTicketOnDisconnect": false, "chatRateLimitBurst": 24, "chatRateLimitDuration": 10, "concurrentUsersLimit": 37, "disablePartyInvitationToken": true, "enableChat": true, "entitlementCheck": true, "entitlementItemID": "5ppGR9Xc", "generalRateLimitBurst": 29, "generalRateLimitDuration": 46, "maxPartyMember": 90, "profanityFilter": false, "readyConsentTimeout": 8}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminUpdateConfigV1 \
@@ -292,9 +292,9 @@ $CLI_EXE \
     --sn lobby \
     --op GetListOfFriends \
     --namespace $TEST_NAMESPACE \
-    --userId 'GgewrLfw' \
-    --limit 'vzJF4Tpb' \
-    --offset 'NhKq2xdm' \
+    --userId 'wrLfwvzJ' \
+    --limit 'F4TpbNhK' \
+    --offset 'q2xdmgEB' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetListOfFriends'
 delete_file $TEMP_FILE
@@ -303,7 +303,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 19 SendMultipleUsersFreeformNotificationV1Admin
 # body param: body
-echo '{"message": "gEBepFHt", "topicName": "f6Ziegqd", "userIds": ["EL4fsM6n"]}' > $TEMP_JSON_INPUT
+echo '{"message": "epFHtf6Z", "topicName": "iegqdEL4", "userIds": ["fsM6nBzR"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op SendMultipleUsersFreeformNotificationV1Admin \
@@ -317,7 +317,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 20 SendUsersFreeformNotificationV1Admin
 # body param: body
-echo '{"message": "BzRVuC1r", "topicName": "7UH1Liu7"}' > $TEMP_JSON_INPUT
+echo '{"message": "VuC1r7UH", "topicName": "1Liu7UQ0"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op SendUsersFreeformNotificationV1Admin \
@@ -331,12 +331,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 21 SendPartyFreeformNotificationV1Admin
 # body param: body
-echo '{"message": "UQ0304Mc", "topicName": "K873tRtr"}' > $TEMP_JSON_INPUT
+echo '{"message": "304McK87", "topicName": "3tRtr5cf"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op SendPartyFreeformNotificationV1Admin \
     --namespace $TEST_NAMESPACE \
-    --partyId '5cfWO5JJ' \
+    --partyId 'WO5JJ2c6' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SendPartyFreeformNotificationV1Admin'
@@ -346,12 +346,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 22 SendPartyTemplatedNotificationV1Admin
 # body param: body
-echo '{"templateContext": {"2c6vsOns": "4jNWGc7C"}, "templateLanguage": "iUa4wM5E", "templateSlug": "u3VqymsF", "topicName": "XporMqED"}' > $TEMP_JSON_INPUT
+echo '{"templateContext": {"vsOns4jN": "WGc7CiUa"}, "templateLanguage": "4wM5Eu3V", "templateSlug": "qymsFXpo", "topicName": "rMqEDR8E"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op SendPartyTemplatedNotificationV1Admin \
     --namespace $TEST_NAMESPACE \
-    --partyId 'R8E72XMK' \
+    --partyId '72XMKfhl' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SendPartyTemplatedNotificationV1Admin'
@@ -372,7 +372,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 24 CreateNotificationTemplateV1Admin
 # body param: body
-echo '{"templateContent": "fhl6eq2F", "templateLanguage": "zU3VL3LN", "templateSlug": "mPLeZdoC"}' > $TEMP_JSON_INPUT
+echo '{"templateContent": "6eq2FzU3", "templateLanguage": "VL3LNmPL", "templateSlug": "eZdoCXfa"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op CreateNotificationTemplateV1Admin \
@@ -386,7 +386,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 25 SendUsersTemplatedNotificationV1Admin
 # body param: body
-echo '{"templateContext": {"XfabFXzv": "jLmai7fP"}, "templateLanguage": "KvE2Z4a6", "templateSlug": "3UVtLbQS", "topicName": "Wtsyz0mG"}' > $TEMP_JSON_INPUT
+echo '{"templateContext": {"bFXzvjLm": "ai7fPKvE"}, "templateLanguage": "2Z4a63UV", "templateSlug": "tLbQSWts", "topicName": "yz0mGGyH"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op SendUsersTemplatedNotificationV1Admin \
@@ -403,10 +403,10 @@ $CLI_EXE \
     --sn lobby \
     --op GetTemplateSlugLocalizationsTemplateV1Admin \
     --namespace $TEST_NAMESPACE \
-    --templateSlug 'GyHHFIlI' \
-    --after 'KsXgvSrk' \
-    --before 'EgTYVk5i' \
-    --limit '86' \
+    --templateSlug 'HFIlIKsX' \
+    --after 'gvSrkEgT' \
+    --before 'YVk5iRBE' \
+    --limit '51' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetTemplateSlugLocalizationsTemplateV1Admin'
 delete_file $TEMP_FILE
@@ -418,7 +418,7 @@ $CLI_EXE \
     --sn lobby \
     --op DeleteNotificationTemplateSlugV1Admin \
     --namespace $TEST_NAMESPACE \
-    --templateSlug 'BE6zJJ1B' \
+    --templateSlug 'JJ1BRHrf' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteNotificationTemplateSlugV1Admin'
 delete_file $TEMP_FILE
@@ -430,8 +430,8 @@ $CLI_EXE \
     --sn lobby \
     --op GetSingleTemplateLocalizationV1Admin \
     --namespace $TEST_NAMESPACE \
-    --templateLanguage 'RHrfCHqq' \
-    --templateSlug 'p2GwPcmz' \
+    --templateLanguage 'CHqqp2Gw' \
+    --templateSlug 'PcmzSuY8' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetSingleTemplateLocalizationV1Admin'
 delete_file $TEMP_FILE
@@ -440,13 +440,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 29 UpdateTemplateLocalizationV1Admin
 # body param: body
-echo '{"templateContent": "SuY8w9VY"}' > $TEMP_JSON_INPUT
+echo '{"templateContent": "w9VYwBEf"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op UpdateTemplateLocalizationV1Admin \
     --namespace $TEST_NAMESPACE \
-    --templateLanguage 'wBEfRXoZ' \
-    --templateSlug 'LfpVFfDw' \
+    --templateLanguage 'RXoZLfpV' \
+    --templateSlug 'FfDwjHHC' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateTemplateLocalizationV1Admin'
@@ -459,8 +459,8 @@ $CLI_EXE \
     --sn lobby \
     --op DeleteTemplateLocalizationV1Admin \
     --namespace $TEST_NAMESPACE \
-    --templateLanguage 'jHHCW2g5' \
-    --templateSlug 'u8z9yrpJ' \
+    --templateLanguage 'W2g5u8z9' \
+    --templateSlug 'yrpJdIx5' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteTemplateLocalizationV1Admin'
 delete_file $TEMP_FILE
@@ -472,8 +472,8 @@ $CLI_EXE \
     --sn lobby \
     --op PublishTemplateLocalizationV1Admin \
     --namespace $TEST_NAMESPACE \
-    --templateLanguage 'dIx5vvHS' \
-    --templateSlug '3d6PKPE2' \
+    --templateLanguage 'vvHS3d6P' \
+    --templateSlug 'KPE27mI6' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublishTemplateLocalizationV1Admin'
 delete_file $TEMP_FILE
@@ -485,9 +485,9 @@ $CLI_EXE \
     --sn lobby \
     --op GetAllNotificationTopicsV1Admin \
     --namespace $TEST_NAMESPACE \
-    --after '7mI6Px8j' \
-    --before 't8Lq4x0F' \
-    --limit '79' \
+    --after 'Px8jt8Lq' \
+    --before '4x0F7Nco' \
+    --limit '5' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetAllNotificationTopicsV1Admin'
 delete_file $TEMP_FILE
@@ -496,7 +496,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 33 CreateNotificationTopicV1Admin
 # body param: body
-echo '{"description": "cocelJjt", "topicName": "lKYu8iCP"}' > $TEMP_JSON_INPUT
+echo '{"description": "elJjtlKY", "topicName": "u8iCPznx"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op CreateNotificationTopicV1Admin \
@@ -513,7 +513,7 @@ $CLI_EXE \
     --sn lobby \
     --op GetNotificationTopicV1Admin \
     --namespace $TEST_NAMESPACE \
-    --topicName 'znx0s5Tz' \
+    --topicName '0s5TzT51' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetNotificationTopicV1Admin'
 delete_file $TEMP_FILE
@@ -522,12 +522,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 35 UpdateNotificationTopicV1Admin
 # body param: body
-echo '{"description": "T51oV4HT"}' > $TEMP_JSON_INPUT
+echo '{"description": "oV4HTmiv"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op UpdateNotificationTopicV1Admin \
     --namespace $TEST_NAMESPACE \
-    --topicName 'mivmb6tP' \
+    --topicName 'mb6tPmCi' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateNotificationTopicV1Admin'
@@ -540,7 +540,7 @@ $CLI_EXE \
     --sn lobby \
     --op DeleteNotificationTopicV1Admin \
     --namespace $TEST_NAMESPACE \
-    --topicName 'mCirkhYv' \
+    --topicName 'rkhYvcOU' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteNotificationTopicV1Admin'
 delete_file $TEMP_FILE
@@ -549,12 +549,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 37 SendSpecificUserFreeformNotificationV1Admin
 # body param: body
-echo '{"message": "cOUucjPW", "topicName": "GwPsvjLK"}' > $TEMP_JSON_INPUT
+echo '{"message": "ucjPWGwP", "topicName": "svjLK1Cj"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op SendSpecificUserFreeformNotificationV1Admin \
     --namespace $TEST_NAMESPACE \
-    --userId '1CjPt93u' \
+    --userId 'Pt93utbM' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SendSpecificUserFreeformNotificationV1Admin'
@@ -564,12 +564,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 38 SendSpecificUserTemplatedNotificationV1Admin
 # body param: body
-echo '{"templateContext": {"tbMkpUFH": "T0fL9q9S"}, "templateLanguage": "MNAUQVoi", "templateSlug": "QtSQC2kN", "topicName": "SsmT0d2a"}' > $TEMP_JSON_INPUT
+echo '{"templateContext": {"kpUFHT0f": "L9q9SMNA"}, "templateLanguage": "UQVoiQtS", "templateSlug": "QC2kNSsm", "topicName": "T0d2aBG4"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op SendSpecificUserTemplatedNotificationV1Admin \
     --namespace $TEST_NAMESPACE \
-    --userId 'BG4zA2zp' \
+    --userId 'zA2zp1Ls' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SendSpecificUserTemplatedNotificationV1Admin'
@@ -582,7 +582,7 @@ $CLI_EXE \
     --sn lobby \
     --op AdminGetPartyDataV1 \
     --namespace $TEST_NAMESPACE \
-    --partyId '1Ls0bD6d' \
+    --partyId '0bD6dGgw' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetPartyDataV1'
 delete_file $TEMP_FILE
@@ -591,12 +591,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 40 AdminUpdatePartyAttributesV1
 # body param: body
-echo '{"custom_attribute": {"GgwkYgHz": {}}, "updatedAt": 72}' > $TEMP_JSON_INPUT
+echo '{"custom_attribute": {"kYgHzKuI": {}}, "updatedAt": 86}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminUpdatePartyAttributesV1 \
     --namespace $TEST_NAMESPACE \
-    --partyId 'uI2RJrbo' \
+    --partyId 'JrboP7kf' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdatePartyAttributesV1'
@@ -604,19 +604,32 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 41 AdminGetUserPartyV1
+#- 41 AdminJoinPartyV1
+$CLI_EXE \
+    --sn lobby \
+    --op AdminJoinPartyV1 \
+    --namespace $TEST_NAMESPACE \
+    --partyId 'pIletXrC' \
+    --userId 'K1UVO0jc' \
+    >$TEMP_FILE 2>&1
+update_status $? 'AdminJoinPartyV1'
+delete_file $TEMP_FILE
+rm -f $TEMP_JSON_INPUT
+rm -f $TEMP_FILE_UPLOAD
+
+#- 42 AdminGetUserPartyV1
 $CLI_EXE \
     --sn lobby \
     --op AdminGetUserPartyV1 \
     --namespace $TEST_NAMESPACE \
-    --userId 'P7kfpIle' \
+    --userId 's7nCqsod' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetUserPartyV1'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 42 AdminGetLobbyCCU
+#- 43 AdminGetLobbyCCU
 $CLI_EXE \
     --sn lobby \
     --op AdminGetLobbyCCU \
@@ -627,26 +640,26 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 43 AdminGetAllPlayerSessionAttribute
+#- 44 AdminGetAllPlayerSessionAttribute
 $CLI_EXE \
     --sn lobby \
     --op AdminGetAllPlayerSessionAttribute \
     --namespace $TEST_NAMESPACE \
-    --userId 'tXrCK1UV' \
+    --userId 'oTFTcWla' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetAllPlayerSessionAttribute'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 44 AdminSetPlayerSessionAttribute
+#- 45 AdminSetPlayerSessionAttribute
 # body param: body
-echo '{"attributes": {"O0jcs7nC": "qsodoTFT"}}' > $TEMP_JSON_INPUT
+echo '{"attributes": {"IBJAAknU": "6HobZgWl"}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminSetPlayerSessionAttribute \
     --namespace $TEST_NAMESPACE \
-    --userId 'cWlaIBJA' \
+    --userId 'aLnedDfa' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminSetPlayerSessionAttribute'
@@ -654,51 +667,51 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 45 AdminGetPlayerSessionAttribute
+#- 46 AdminGetPlayerSessionAttribute
 $CLI_EXE \
     --sn lobby \
     --op AdminGetPlayerSessionAttribute \
-    --attribute 'AknU6Hob' \
+    --attribute 'sTc8gr2z' \
     --namespace $TEST_NAMESPACE \
-    --userId 'ZgWlaLne' \
+    --userId 'nWqD6tIc' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetPlayerSessionAttribute'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 46 AdminGetPlayerBlockedPlayersV1
+#- 47 AdminGetPlayerBlockedPlayersV1
 $CLI_EXE \
     --sn lobby \
     --op AdminGetPlayerBlockedPlayersV1 \
     --namespace $TEST_NAMESPACE \
-    --userId 'dDfasTc8' \
+    --userId 'fI5Z4tUN' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetPlayerBlockedPlayersV1'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 47 AdminGetPlayerBlockedByPlayersV1
+#- 48 AdminGetPlayerBlockedByPlayersV1
 $CLI_EXE \
     --sn lobby \
     --op AdminGetPlayerBlockedByPlayersV1 \
     --namespace $TEST_NAMESPACE \
-    --userId 'gr2znWqD' \
+    --userId 'Q7mQPjCa' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetPlayerBlockedByPlayersV1'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 48 AdminBulkBlockPlayersV1
+#- 49 AdminBulkBlockPlayersV1
 # body param: body
-echo '{"listBlockedUserId": ["6tIcfI5Z"]}' > $TEMP_JSON_INPUT
+echo '{"listBlockedUserId": ["lZgFVEQy"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminBulkBlockPlayersV1 \
     --namespace $TEST_NAMESPACE \
-    --userId '4tUNQ7mQ' \
+    --userId 'qav09OYm' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminBulkBlockPlayersV1'
@@ -706,9 +719,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 49 AdminDebugProfanityFilters
+#- 50 AdminDebugProfanityFilters
 # body param: body
-echo '{"text": "PjCalZgF"}' > $TEMP_JSON_INPUT
+echo '{"text": "xCvMqVcX"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminDebugProfanityFilters \
@@ -720,11 +733,11 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 50 AdminGetProfanityListFiltersV1
+#- 51 AdminGetProfanityListFiltersV1
 $CLI_EXE \
     --sn lobby \
     --op AdminGetProfanityListFiltersV1 \
-    --list 'VEQyqav0' \
+    --list 's2OqNz8Z' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetProfanityListFiltersV1'
@@ -732,13 +745,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 51 AdminAddProfanityFilterIntoList
+#- 52 AdminAddProfanityFilterIntoList
 # body param: body
-echo '{"filter": "9OYmxCvM", "note": "qVcXs2Oq"}' > $TEMP_JSON_INPUT
+echo '{"filter": "LBsncbRr", "note": "f6uEdjUn"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminAddProfanityFilterIntoList \
-    --list 'Nz8ZLBsn' \
+    --list 'r04WZNhg' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -747,13 +760,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 52 AdminAddProfanityFilters
+#- 53 AdminAddProfanityFilters
 # body param: body
-echo '{"filters": [{"filter": "cbRrf6uE", "note": "djUnr04W"}]}' > $TEMP_JSON_INPUT
+echo '{"filters": [{"filter": "EGvqKWQT", "note": "kE65j618"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminAddProfanityFilters \
-    --list 'ZNhgEGvq' \
+    --list '6p0WfsnW' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -762,13 +775,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 53 AdminImportProfanityFiltersFromFile
+#- 54 AdminImportProfanityFiltersFromFile
 # body param: body
-echo '[73]' > $TEMP_JSON_INPUT
+echo '[40]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminImportProfanityFiltersFromFile \
-    --list 'WQTkE65j' \
+    --list 'UPsaRnVd' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -777,13 +790,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 54 AdminDeleteProfanityFilter
+#- 55 AdminDeleteProfanityFilter
 # body param: body
-echo '{"filter": "6186p0Wf"}' > $TEMP_JSON_INPUT
+echo '{"filter": "rdBA2hXw"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminDeleteProfanityFilter \
-    --list 'snWZuUPs' \
+    --list 'YyzZMdlR' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -792,7 +805,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 55 AdminGetProfanityLists
+#- 56 AdminGetProfanityLists
 $CLI_EXE \
     --sn lobby \
     --op AdminGetProfanityLists \
@@ -803,9 +816,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 56 AdminCreateProfanityList
+#- 57 AdminCreateProfanityList
 # body param: body
-echo '{"isEnabled": false, "isMandatory": false, "name": "VdrdBA2h"}' > $TEMP_JSON_INPUT
+echo '{"isEnabled": false, "isMandatory": false, "name": "nFDgTfof"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminCreateProfanityList \
@@ -817,13 +830,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 57 AdminUpdateProfanityList
+#- 58 AdminUpdateProfanityList
 # body param: body
-echo '{"isEnabled": true, "isMandatory": true, "newName": "zZMdlR4c"}' > $TEMP_JSON_INPUT
+echo '{"isEnabled": false, "isMandatory": false, "newName": "oSqDcaFh"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminUpdateProfanityList \
-    --list 'L76hnFDg' \
+    --list 'Oc1oKxI8' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -832,11 +845,11 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 58 AdminDeleteProfanityList
+#- 59 AdminDeleteProfanityList
 $CLI_EXE \
     --sn lobby \
     --op AdminDeleteProfanityList \
-    --list 'TfofHdfo' \
+    --list 'f5ocfy4E' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminDeleteProfanityList'
@@ -844,7 +857,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 59 AdminGetProfanityRule
+#- 60 AdminGetProfanityRule
 $CLI_EXE \
     --sn lobby \
     --op AdminGetProfanityRule \
@@ -855,9 +868,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 60 AdminSetProfanityRuleForNamespace
+#- 61 AdminSetProfanityRuleForNamespace
 # body param: body
-echo '{"rule": "SqDcaFhO"}' > $TEMP_JSON_INPUT
+echo '{"rule": "IxwBiB90"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminSetProfanityRuleForNamespace \
@@ -869,9 +882,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 61 AdminVerifyMessageProfanityResponse
+#- 62 AdminVerifyMessageProfanityResponse
 # body param: body
-echo '{"message": "c1oKxI8f", "profanityLevel": "5ocfy4EI"}' > $TEMP_JSON_INPUT
+echo '{"message": "vdgS5YpK", "profanityLevel": "sdbpiU2U"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminVerifyMessageProfanityResponse \
@@ -883,7 +896,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 62 AdminGetThirdPartyConfig
+#- 63 AdminGetThirdPartyConfig
 $CLI_EXE \
     --sn lobby \
     --op AdminGetThirdPartyConfig \
@@ -894,9 +907,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 63 AdminUpdateThirdPartyConfig
+#- 64 AdminUpdateThirdPartyConfig
 # body param: body
-echo '{"apiKey": "xwBiB90v"}' > $TEMP_JSON_INPUT
+echo '{"apiKey": "fyMO4DhL"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminUpdateThirdPartyConfig \
@@ -908,9 +921,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 64 AdminCreateThirdPartyConfig
+#- 65 AdminCreateThirdPartyConfig
 # body param: body
-echo '{"apiKey": "dgS5YpKs"}' > $TEMP_JSON_INPUT
+echo '{"apiKey": "9fBKJvjB"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminCreateThirdPartyConfig \
@@ -922,7 +935,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 65 AdminDeleteThirdPartyConfig
+#- 66 AdminDeleteThirdPartyConfig
 $CLI_EXE \
     --sn lobby \
     --op AdminDeleteThirdPartyConfig \
@@ -933,7 +946,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 66 PublicGetMessages
+#- 67 PublicGetMessages
 $CLI_EXE \
     --sn lobby \
     --op PublicGetMessages \
@@ -943,11 +956,11 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 67 GetPersonalChatHistoryV1Public
+#- 68 GetPersonalChatHistoryV1Public
 $CLI_EXE \
     --sn lobby \
     --op GetPersonalChatHistoryV1Public \
-    --friendId 'dbpiU2Uf' \
+    --friendId 'OUn3bYf5' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'GetPersonalChatHistoryV1Public'
@@ -955,26 +968,26 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 68 PublicGetPartyDataV1
+#- 69 PublicGetPartyDataV1
 $CLI_EXE \
     --sn lobby \
     --op PublicGetPartyDataV1 \
     --namespace $TEST_NAMESPACE \
-    --partyId 'yMO4DhL9' \
+    --partyId 'ouXqkbiE' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetPartyDataV1'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 69 PublicUpdatePartyAttributesV1
+#- 70 PublicUpdatePartyAttributesV1
 # body param: body
-echo '{"custom_attribute": {"fBKJvjBO": {}}, "updatedAt": 92}' > $TEMP_JSON_INPUT
+echo '{"custom_attribute": {"xqT6Dk9Q": {}}, "updatedAt": 63}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op PublicUpdatePartyAttributesV1 \
     --namespace $TEST_NAMESPACE \
-    --partyId 'n3bYf5ou' \
+    --partyId 'qaAjhwOI' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicUpdatePartyAttributesV1'
@@ -982,7 +995,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 70 PublicGetPlayerBlockedPlayersV1
+#- 71 PublicGetPlayerBlockedPlayersV1
 $CLI_EXE \
     --sn lobby \
     --op PublicGetPlayerBlockedPlayersV1 \
@@ -993,7 +1006,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 71 PublicGetPlayerBlockedByPlayersV1
+#- 72 PublicGetPlayerBlockedByPlayersV1
 $CLI_EXE \
     --sn lobby \
     --op PublicGetPlayerBlockedByPlayersV1 \
@@ -1004,22 +1017,22 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 72 UsersPresenceHandlerV1
+#- 73 UsersPresenceHandlerV1
 $CLI_EXE \
     --sn lobby \
     --op UsersPresenceHandlerV1 \
     --namespace $TEST_NAMESPACE \
-    --countOnly 'True' \
-    --userIds 'kbiExqT6' \
+    --countOnly 'False' \
+    --userIds 'MHfTwrxB' \
     >$TEMP_FILE 2>&1
 update_status $? 'UsersPresenceHandlerV1'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 73 FreeFormNotification
+#- 74 FreeFormNotification
 # body param: body
-echo '{"message": "Dk9QFqaA", "topic": "jhwOI1P0"}' > $TEMP_JSON_INPUT
+echo '{"message": "RfMxZrSf", "topic": "x3V8OXkM"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op FreeFormNotification \
@@ -1031,9 +1044,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 74 NotificationWithTemplate
+#- 75 NotificationWithTemplate
 # body param: body
-echo '{"templateContext": {"4dMHfTwr": "xBRfMxZr"}, "templateLanguage": "Sfx3V8OX", "templateSlug": "kMng7p2S", "topic": "yFDEnmYQ"}' > $TEMP_JSON_INPUT
+echo '{"templateContext": {"ng7p2SyF": "DEnmYQze"}, "templateLanguage": "hPBqD12D", "templateSlug": "vvzNNZSu", "topic": "5zZVgY3Z"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op NotificationWithTemplate \
@@ -1045,7 +1058,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 75 GetGameTemplate
+#- 76 GetGameTemplate
 $CLI_EXE \
     --sn lobby \
     --op GetGameTemplate \
@@ -1056,9 +1069,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 76 CreateTemplate
+#- 77 CreateTemplate
 # body param: body
-echo '{"templateContent": "zehPBqD1", "templateLanguage": "2DvvzNNZ", "templateSlug": "Su5zZVgY"}' > $TEMP_JSON_INPUT
+echo '{"templateContent": "osfd01va", "templateLanguage": "OGweHacv", "templateSlug": "HRV345xB"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op CreateTemplate \
@@ -1070,55 +1083,55 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 77 GetSlugTemplate
+#- 78 GetSlugTemplate
 $CLI_EXE \
     --sn lobby \
     --op GetSlugTemplate \
     --namespace $TEST_NAMESPACE \
-    --templateSlug '3Zosfd01' \
-    --after 'vaOGweHa' \
-    --before 'cvHRV345' \
-    --limit '47' \
+    --templateSlug '8hos4yaO' \
+    --after 'BjMxizCx' \
+    --before 'x9qTOIKl' \
+    --limit '30' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetSlugTemplate'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 78 DeleteTemplateSlug
+#- 79 DeleteTemplateSlug
 $CLI_EXE \
     --sn lobby \
     --op DeleteTemplateSlug \
     --namespace $TEST_NAMESPACE \
-    --templateSlug 'B8hos4ya' \
+    --templateSlug 'drqo2smD' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteTemplateSlug'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 79 GetLocalizationTemplate
+#- 80 GetLocalizationTemplate
 $CLI_EXE \
     --sn lobby \
     --op GetLocalizationTemplate \
     --namespace $TEST_NAMESPACE \
-    --templateLanguage 'OBjMxizC' \
-    --templateSlug 'xx9qTOIK' \
+    --templateLanguage '9RPpjOWK' \
+    --templateSlug '0k76i1g7' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetLocalizationTemplate'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 80 UpdateLocalizationTemplate
+#- 81 UpdateLocalizationTemplate
 # body param: body
-echo '{"templateContent": "lpdrqo2s"}' > $TEMP_JSON_INPUT
+echo '{"templateContent": "rYaEuNCy"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op UpdateLocalizationTemplate \
     --namespace $TEST_NAMESPACE \
-    --templateLanguage 'mD9RPpjO' \
-    --templateSlug 'WK0k76i1' \
+    --templateLanguage 'PoQ0oHYX' \
+    --templateSlug 'UQdtIkAk' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateLocalizationTemplate'
@@ -1126,49 +1139,49 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 81 DeleteTemplateLocalization
+#- 82 DeleteTemplateLocalization
 $CLI_EXE \
     --sn lobby \
     --op DeleteTemplateLocalization \
     --namespace $TEST_NAMESPACE \
-    --templateLanguage 'g7rYaEuN' \
-    --templateSlug 'CyPoQ0oH' \
+    --templateLanguage 'ltd1zQBz' \
+    --templateSlug 'zC6ldKri' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteTemplateLocalization'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 82 PublishTemplate
+#- 83 PublishTemplate
 $CLI_EXE \
     --sn lobby \
     --op PublishTemplate \
     --namespace $TEST_NAMESPACE \
-    --templateLanguage 'YXUQdtIk' \
-    --templateSlug 'Akltd1zQ' \
+    --templateLanguage 'I6lTRbc1' \
+    --templateSlug 'Z1HJHzl3' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublishTemplate'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 83 GetTopicByNamespace
+#- 84 GetTopicByNamespace
 $CLI_EXE \
     --sn lobby \
     --op GetTopicByNamespace \
     --namespace $TEST_NAMESPACE \
-    --after 'BzzC6ldK' \
-    --before 'riI6lTRb' \
-    --limit '5' \
+    --after '23Ynwf5P' \
+    --before 'vGejCDgA' \
+    --limit '35' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetTopicByNamespace'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 84 CreateTopic
+#- 85 CreateTopic
 # body param: body
-echo '{"description": "1Z1HJHzl", "topic": "323Ynwf5"}' > $TEMP_JSON_INPUT
+echo '{"description": "1pXDcsHn", "topic": "obnaYxGh"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op CreateTopic \
@@ -1180,26 +1193,26 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 85 GetTopicByTopicName
+#- 86 GetTopicByTopicName
 $CLI_EXE \
     --sn lobby \
     --op GetTopicByTopicName \
     --namespace $TEST_NAMESPACE \
-    --topic 'PvGejCDg' \
+    --topic '3FovBnr5' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetTopicByTopicName'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 86 UpdateTopicByTopicName
+#- 87 UpdateTopicByTopicName
 # body param: body
-echo '{"description": "Ar1pXDcs"}' > $TEMP_JSON_INPUT
+echo '{"description": "VUOHGqEc"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op UpdateTopicByTopicName \
     --namespace $TEST_NAMESPACE \
-    --topic 'HnobnaYx' \
+    --topic 'uJYo3YfM' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateTopicByTopicName'
@@ -1207,26 +1220,26 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 87 DeleteTopicByTopicName
+#- 88 DeleteTopicByTopicName
 $CLI_EXE \
     --sn lobby \
     --op DeleteTopicByTopicName \
     --namespace $TEST_NAMESPACE \
-    --topic 'Gh3FovBn' \
+    --topic 'Dw4PaBKs' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteTopicByTopicName'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 88 FreeFormNotificationByUserID
+#- 89 FreeFormNotificationByUserID
 # body param: body
-echo '{"message": "r5VUOHGq", "topic": "EcuJYo3Y"}' > $TEMP_JSON_INPUT
+echo '{"message": "FXorxY0a", "topic": "hG5AgHrE"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op FreeFormNotificationByUserID \
     --namespace $TEST_NAMESPACE \
-    --userId 'fMDw4PaB' \
+    --userId '98qQTSXh' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'FreeFormNotificationByUserID'
@@ -1234,14 +1247,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 89 NotificationWithTemplateByUserID
+#- 90 NotificationWithTemplateByUserID
 # body param: body
-echo '{"templateContext": {"KsFXorxY": "0ahG5AgH"}, "templateLanguage": "rE98qQTS", "templateSlug": "Xh1W7MnK", "topic": "2i8Ely25"}' > $TEMP_JSON_INPUT
+echo '{"templateContext": {"1W7MnK2i": "8Ely255a"}, "templateLanguage": "wvulbNGS", "templateSlug": "AjeiiANE", "topic": "TlkncKPm"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op NotificationWithTemplateByUserID \
     --namespace $TEST_NAMESPACE \
-    --userId '5awvulbN' \
+    --userId 'ri36MY2a' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'NotificationWithTemplateByUserID'

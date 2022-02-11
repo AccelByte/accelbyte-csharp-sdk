@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getOrder
+    ///
+    /// Get order by orderNo.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ORDER", action=2 (READ)
+    ///   *  Returns : order instance
+    /// </summary>
     public class GetOrder : AccelByte.Sdk.Core.Operation
     {
         public GetOrder(

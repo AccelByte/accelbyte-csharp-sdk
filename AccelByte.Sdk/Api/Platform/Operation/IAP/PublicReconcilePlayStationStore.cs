@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicReconcilePlayStationStore
+    ///
+    /// Synchronize with entitlements in PSN Store.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
+    ///   *  Returns : result of synchronization
+    /// </summary>
     public class PublicReconcilePlayStationStore : AccelByte.Sdk.Core.Operation
     {
         public PublicReconcilePlayStationStore(

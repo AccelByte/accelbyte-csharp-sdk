@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicGetMyEntitlementOwnershipByItemId
+    ///
+    /// Get my entitlement ownership by itemId.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
+    ///   *  Path's namespace :
+    ///     * can be filled with publisher namespace in order to get publisher namespace entitlement ownership by sku
+    ///     * can be filled with game namespace in order to get game namespace entitlement ownership by sku
+    /// </summary>
     public class PublicGetMyEntitlementOwnershipByItemId : AccelByte.Sdk.Core.Operation
     {
         public PublicGetMyEntitlementOwnershipByItemId(

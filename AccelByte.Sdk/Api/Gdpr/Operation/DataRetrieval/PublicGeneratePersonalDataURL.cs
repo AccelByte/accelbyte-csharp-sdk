@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Gdpr.Operation
 {
+    /// <summary>
+    /// PublicGeneratePersonalDataURL
+    ///
+    /// 
+    /// 
+    /// Requires valid user access token
+    /// </summary>
     public class PublicGeneratePersonalDataURL : AccelByte.Sdk.Core.Operation
     {
         public PublicGeneratePersonalDataURL(

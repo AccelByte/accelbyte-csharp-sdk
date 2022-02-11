@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicConsumeUserEntitlement
+    ///
+    /// Consume user entitlement. If the entitlement useCount is 0, the status will be
+    /// CONSUMED.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
+    ///   *  Returns : consumed entitlement
+    /// </summary>
     public class PublicConsumeUserEntitlement : AccelByte.Sdk.Core.Operation
     {
         public PublicConsumeUserEntitlement(

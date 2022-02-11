@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// testAdyenConfigById
+    ///
+    /// Test adyen configuration in payment merchant config. Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
+    ///   *  Returns : test adyen config
+    /// </summary>
     public class TestAdyenConfigById : AccelByte.Sdk.Core.Operation
     {
         public TestAdyenConfigById(

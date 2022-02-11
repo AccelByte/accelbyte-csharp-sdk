@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dslogmanager.Operation
 {
+    /// <summary>
+    /// checkServerLogs
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ] Required
+    /// scope: social This endpoint will check log file existence before download
+    /// file.
+    /// </summary>
     public class CheckServerLogs : AccelByte.Sdk.Core.Operation
     {
         public CheckServerLogs(

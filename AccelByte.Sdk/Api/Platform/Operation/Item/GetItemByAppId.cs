@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getItemByAppId
+    ///
+    /// This API is used to get the item by appId.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
+    ///   *  Returns : the item with that appId
+    /// </summary>
     public class GetItemByAppId : AccelByte.Sdk.Core.Operation
     {
         public GetItemByAppId(

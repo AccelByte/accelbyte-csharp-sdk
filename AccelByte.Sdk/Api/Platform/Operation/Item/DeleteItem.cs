@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// deleteItem
+    ///
+    /// This API is used to delete an item permanently, usually for test purpose. DO
+    /// NOT delete already published item.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=8 (DELETE)
+    /// </summary>
     public class DeleteItem : AccelByte.Sdk.Core.Operation
     {
         public DeleteItem(

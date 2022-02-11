@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 {
+    /// <summary>
+    /// CreateSession
+    ///
+    /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [CREATE]
+    /// Required scope: social This end point intended to be called directly by P2P
+    /// game client host or by DSMC
+    /// </summary>
     public class CreateSession : AccelByte.Sdk.Core.Operation
     {
         public CreateSession(

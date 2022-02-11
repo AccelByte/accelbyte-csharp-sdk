@@ -7,6 +7,19 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicCreateUserOrder
+    ///
+    /// Create an order. The result contains the checkout link and payment token. User
+    /// with permission SANDBOX will create sandbox order that not real paid for
+    /// xsolla/alipay and not validate price for wxpay.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ORDER", action=1 (CREATE)
+    ///   *  Optional permission(user with this permission will create sandbox order) : resource="SANDBOX", action=1 (CREATE)
+    ///   * It will be forbidden while the user is banned: ORDER_INITIATE or ORDER_AND_PAYMENT
+    ///   *  Returns : created order
+    /// </summary>
     public class PublicCreateUserOrder : AccelByte.Sdk.Core.Operation
     {
         public PublicCreateUserOrder(

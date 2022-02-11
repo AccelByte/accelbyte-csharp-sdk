@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 {
+    /// <summary>
+    /// GetRecentPlayer
+    ///
+    /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:RECENTPLAYER [READ]
+    /// Required scope: social Query recent player by user ID
+    /// </summary>
     public class GetRecentPlayer : AccelByte.Sdk.Core.Operation
     {
         public GetRecentPlayer(

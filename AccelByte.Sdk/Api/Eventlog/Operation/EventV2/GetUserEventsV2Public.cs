@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Eventlog.Operation
 {
+    /// <summary>
+    /// GetUserEventsV2Public
+    ///
+    /// 
+    /// 
+    /// Requires valid user access token
+    /// </summary>
     public class GetUserEventsV2Public : AccelByte.Sdk.Core.Operation
     {
         public GetUserEventsV2Public(

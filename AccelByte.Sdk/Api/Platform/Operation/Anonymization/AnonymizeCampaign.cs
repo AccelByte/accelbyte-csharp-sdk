@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// anonymizeCampaign
+    ///
+    /// Anonymize campaign. At current it will only anonymize redeem history.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ANONYMIZATION", action=8 (DELETE)
+    /// </summary>
     public class AnonymizeCampaign : AccelByte.Sdk.Core.Operation
     {
         public AnonymizeCampaign(

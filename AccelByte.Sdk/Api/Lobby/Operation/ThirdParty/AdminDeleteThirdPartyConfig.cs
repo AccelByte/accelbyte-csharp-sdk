@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// adminDeleteThirdPartyConfig
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:THIRDPARTY:CONFIG [DELETE]`
+    /// with scope `social`
+    /// delete third party config in a namespace.
+    /// </summary>
     public class AdminDeleteThirdPartyConfig : AccelByte.Sdk.Core.Operation
     {
         public AdminDeleteThirdPartyConfig(

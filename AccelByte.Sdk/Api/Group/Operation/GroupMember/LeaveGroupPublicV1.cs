@@ -7,6 +7,20 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// leaveGroupPublicV1
+    ///
+    /// 
+    /// 
+    /// Required valid user authentication
+    /// 
+    /// This endpoint is used to leave from group.
+    /// 
+    /// leave from group. Admin is not allowed to leave the group. This endpoint will
+    /// also give response if the user is not belong to any group.
+    /// 
+    /// Action Code: 73404
+    /// </summary>
     public class LeaveGroupPublicV1 : AccelByte.Sdk.Core.Operation
     {
         public LeaveGroupPublicV1(

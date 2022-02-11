@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// createPass
+    ///
+    /// This API is used to create a pass for a draft season.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=1 (CREATE)
+    ///   *  Returns : created pass
+    /// </summary>
     public class CreatePass : AccelByte.Sdk.Core.Operation
     {
         public CreatePass(

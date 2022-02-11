@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminGetInputValidations
+    ///
+    /// 
+    /// 
+    /// Required permission 'ADMIN:CONFIGURATION'[READ]
+    /// 
+    /// This endpoint is to get list of input validation configuration.
+    /// 
+    /// `regex` parameter will be returned if `isCustomRegex` is true. Otherwise, it
+    /// will be empty.
+    /// </summary>
     public class AdminGetInputValidations : AccelByte.Sdk.Core.Operation
     {
         public AdminGetInputValidations(

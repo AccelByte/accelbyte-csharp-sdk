@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicGetUserSubscriptionBillingHistories
+    ///
+    /// Get user subscription billing histories.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=2 (READ)
+    ///   *  Returns : paginated subscription history
+    /// </summary>
     public class PublicGetUserSubscriptionBillingHistories : AccelByte.Sdk.Core.Operation
     {
         public PublicGetUserSubscriptionBillingHistories(

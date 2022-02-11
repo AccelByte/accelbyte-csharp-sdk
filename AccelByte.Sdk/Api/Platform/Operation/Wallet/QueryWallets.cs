@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// queryWallets
+    ///
+    /// Query wallets.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=2 (READ)
+    ///   *  Returns : paginated wallets info
+    /// </summary>
     public class QueryWallets : AccelByte.Sdk.Core.Operation
     {
         public QueryWallets(

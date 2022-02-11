@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// GetClientsbyNamespace
+    ///
+    /// Required permission 'NAMESPACE:{namespace}:CLIENT [READ]'
+    /// </summary>
     public class GetClientsbyNamespace : AccelByte.Sdk.Core.Operation
     {
         public GetClientsbyNamespace(

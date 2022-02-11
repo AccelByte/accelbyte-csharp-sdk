@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// publicGetTimeZones
+    ///
+    /// List time zones.
+    /// Other detail info:
+    /// 
+    ///   * Returns : time zones
+    /// </summary>
     public class PublicGetTimeZones : AccelByte.Sdk.Core.Operation
     {
         public PublicGetTimeZones(

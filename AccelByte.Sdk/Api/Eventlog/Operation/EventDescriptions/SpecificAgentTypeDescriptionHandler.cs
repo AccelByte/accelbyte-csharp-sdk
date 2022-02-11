@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Eventlog.Operation
 {
+    /// <summary>
+    /// SpecificAgentTypeDescriptionHandler
+    /// </summary>
     public class SpecificAgentTypeDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
         public SpecificAgentTypeDescriptionHandler(

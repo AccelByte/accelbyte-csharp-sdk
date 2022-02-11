@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// SearchChannelSpecificContent
+    ///
+    /// Requires valid user token
+    /// </summary>
     public class SearchChannelSpecificContent : AccelByte.Sdk.Core.Operation
     {
         public SearchChannelSpecificContent(

@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicCheckPaymentOrderPaidStatus
+    ///
+    /// Check payment order paid status.
+    /// Other detail info:
+    /// 
+    ///   * Returns : Payment order paid result
+    /// </summary>
     public class PublicCheckPaymentOrderPaidStatus : AccelByte.Sdk.Core.Operation
     {
         public PublicCheckPaymentOrderPaidStatus(

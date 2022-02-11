@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// fulfillRewards
+    ///
+    ///  [SERVICE COMMUNICATION ONLY] Fulfill rewards.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
+    ///   *  Returns : fulfillment result
+    /// </summary>
     public class FulfillRewards : AccelByte.Sdk.Core.Operation
     {
         public FulfillRewards(

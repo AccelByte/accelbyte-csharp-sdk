@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// adminPutPlayerRecordHandlerV1
+    ///
+    /// Required permission:
+    /// ADMIN:NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [UPDATE] Required
+    /// scope: social Save a record (arbitrary JSON data) in user-level. If a record
+    /// already exist with given key, this endpoint will replace the record, else will
+    /// create new Record. Record saved will be a private record.
+    /// </summary>
     public class AdminPutPlayerRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public AdminPutPlayerRecordHandlerV1(

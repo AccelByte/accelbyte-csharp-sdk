@@ -7,6 +7,47 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AuthCodeRequestV3
+    ///
+    /// Generate url to request auth code from third party platform
+    /// 
+    /// ## Supported platforms:
+    /// 
+    ///                 * steamopenid
+    /// This endpoint redirects to steam login page, then redirect back to platform
+    /// authenticate endpoint after successfully authenticating user steam.
+    /// 
+    ///                 * xblweb
+    /// This endpoint redirects to xbox login page, then redirect back to platform
+    /// authenticate endpoint after successfully authenticating xbox user.
+    /// 
+    ///                 * ps4web
+    /// This endpoint redirects to psn login page, then redirect back to platform
+    /// authenticate endpoint after successfully authenticating psn user.
+    /// 
+    ///                 * epicgames
+    /// This endpoint redirects to Epicgames OAuth login page. then redirect to
+    /// platform authenticate endpoint after successfully authenticating an Epicgames
+    /// credential
+    /// 
+    ///                 * twitch
+    /// This endpoint redirects to twitch login page, then redirect back to platform
+    /// authenticate endpoint after successfully authenticating twitch user.
+    /// 
+    ///                 * azure
+    /// This endpoint redirects to azure login page, then redirect back to platform
+    /// authenticate(saml) endpoint after successfully authenticating azure user.
+    /// 
+    ///                 * facebook
+    /// This endpoint redirects to facebook login page, then redirect back to platform
+    /// authenticate endpoint after successfully authenticating facebook user.
+    /// 
+    ///                 * google
+    /// This endpoint redirects to google login page, then redirect back to platform
+    /// authenticate endpoint after successfully authenticating google user.  action
+    /// code : 10702'
+    /// </summary>
     public class AuthCodeRequestV3 : AccelByte.Sdk.Core.Operation
     {
         public AuthCodeRequestV3(

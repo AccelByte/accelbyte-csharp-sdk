@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// publicGetUserProfileInfo
+    ///
+    /// Get user profile.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=2 (READ)
+    ///   *  Action code : 11403
+    ///   *  Returns : user profile
+    /// </summary>
     public class PublicGetUserProfileInfo : AccelByte.Sdk.Core.Operation
     {
         public PublicGetUserProfileInfo(

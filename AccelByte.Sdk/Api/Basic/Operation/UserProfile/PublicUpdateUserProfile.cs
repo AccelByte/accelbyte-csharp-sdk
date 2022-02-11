@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// publicUpdateUserProfile
+    ///
+    /// Update user profile.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource= "NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=4 (UPDATE)
+    ///   *  Action code : 11402
+    ///   *  Language : allowed format: en, en-US
+    ///   *  Timezone : IANA time zone, e.g. Asia/Shanghai
+    ///   *  Returns : Updated user profile
+    /// </summary>
     public class PublicUpdateUserProfile : AccelByte.Sdk.Core.Operation
     {
         public PublicUpdateUserProfile(

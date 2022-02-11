@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// AdminRemoveRoleManagersV3
+    ///
+    /// 
+    /// 
+    /// Required permission 'ADMIN:ROLE [UPDATE]'
+    /// 
+    /// Role can only be assigned to other users by the role's manager.
+    /// 
+    /// 
+    /// action code: 10409
+    /// </summary>
     public class AdminRemoveRoleManagersV3 : AccelByte.Sdk.Core.Operation
     {
         public AdminRemoveRoleManagersV3(

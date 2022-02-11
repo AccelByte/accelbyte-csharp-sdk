@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Operation
 {
+    /// <summary>
+    /// UpdateMatchmakingChannel
+    ///
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Update]
+    /// Required Scope: social Update channel based on namespace and channel name
+    /// Action Code: 510111
+    /// </summary>
     public class UpdateMatchmakingChannel : AccelByte.Sdk.Core.Operation
     {
         public UpdateMatchmakingChannel(

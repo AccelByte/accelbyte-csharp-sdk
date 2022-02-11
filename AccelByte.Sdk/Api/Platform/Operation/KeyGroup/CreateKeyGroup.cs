@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// createKeyGroup
+    ///
+    /// Create key group.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=1 (CREATE)
+    ///   *  Returns : created key group
+    /// </summary>
     public class CreateKeyGroup : AccelByte.Sdk.Core.Operation
     {
         public CreateKeyGroup(

@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// sendPartyFreeformNotificationV1Admin
+    ///
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with
+    /// scope `social`
+    /// Sends notification to a party.
+    /// </summary>
     public class SendPartyFreeformNotificationV1Admin : AccelByte.Sdk.Core.Operation
     {
         public SendPartyFreeformNotificationV1Admin(

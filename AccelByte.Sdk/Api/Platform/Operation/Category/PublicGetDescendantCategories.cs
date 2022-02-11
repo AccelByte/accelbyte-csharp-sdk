@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicGetDescendantCategories
+    ///
+    /// This API is used to get descendant categories by category path.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Optional permission : resource="PREVIEW", action=1(CREATE) (user with this permission can view draft store category)
+    ///   *  Optional permission : resource="SANDBOX", action=1(CREATE) (user with this permission can view draft store category)
+    ///   *  Returns : list of descendant categories data
+    /// </summary>
     public class PublicGetDescendantCategories : AccelByte.Sdk.Core.Operation
     {
         public PublicGetDescendantCategories(

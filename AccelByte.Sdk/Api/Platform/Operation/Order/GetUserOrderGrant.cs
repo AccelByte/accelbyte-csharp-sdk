@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getUserOrderGrant
+    ///
+    /// Get user order grant that fulfilled by this order.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ORDER", action=2 (READ)
+    ///   *  Returns : get order grant
+    /// </summary>
     public class GetUserOrderGrant : AccelByte.Sdk.Core.Operation
     {
         public GetUserOrderGrant(

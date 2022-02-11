@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// publicGetCountries
+    ///
+    /// List countries.
+    /// Other detail info:
+    /// 
+    ///   * Returns : country code list
+    /// </summary>
     public class PublicGetCountries : AccelByte.Sdk.Core.Operation
     {
         public PublicGetCountries(

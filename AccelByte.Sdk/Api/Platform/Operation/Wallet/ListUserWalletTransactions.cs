@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// listUserWalletTransactions
+    ///
+    /// List user wallet transactions ordered by create time desc.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
+    ///   *  Returns : wallet transaction info
+    /// </summary>
     public class ListUserWalletTransactions : AccelByte.Sdk.Core.Operation
     {
         public ListUserWalletTransactions(

@@ -7,6 +7,20 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicSearchUserV3
+    ///
+    /// 
+    /// 
+    /// Requires valid user access token
+    /// 
+    /// This endpoint search all users on the specified namespace that match the query
+    /// on these fields: display name, and username. The query length should greater
+    /// than 1ï¼otherwise will not query the database. The default limit value is 100
+    /// 
+    /// 
+    /// action code : 10132
+    /// </summary>
     public class PublicSearchUserV3 : AccelByte.Sdk.Core.Operation
     {
         public PublicSearchUserV3(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Eventlog.Operation
 {
+    /// <summary>
+    /// PostEventHandler
+    ///
+    /// Required permission `NAMESPACE:{namespace}:EVENT [CREATE]`and scope
+    /// `analytics`
+    /// </summary>
     public class PostEventHandler : AccelByte.Sdk.Core.Operation
     {
         public PostEventHandler(

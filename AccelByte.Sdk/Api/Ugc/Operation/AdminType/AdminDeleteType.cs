@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// AdminDeleteType
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:UGCCONFIG [DELETE]
+    /// </summary>
     public class AdminDeleteType : AccelByte.Sdk.Core.Operation
     {
         public AdminDeleteType(

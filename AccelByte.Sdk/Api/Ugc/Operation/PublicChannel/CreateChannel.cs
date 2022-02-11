@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
+    /// <summary>
+    /// CreateChannel
+    ///
+    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CHANNEL [CREATE]
+    /// </summary>
     public class CreateChannel : AccelByte.Sdk.Core.Operation
     {
         public CreateChannel(

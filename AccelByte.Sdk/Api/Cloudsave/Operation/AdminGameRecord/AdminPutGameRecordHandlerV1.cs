@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// adminPutGameRecordHandlerV1
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [UPDATE]
+    /// Required scope: social This endpoints is to replace game record data if exists
+    /// or insert new data in namespace-level
+    /// </summary>
     public class AdminPutGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public AdminPutGameRecordHandlerV1(

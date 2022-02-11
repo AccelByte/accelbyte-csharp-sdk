@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// publicBulkClaimUserRewards
+    ///
+    /// This API is used to bulk claim all remained rewards, season only located in
+    /// non-publisher namespace.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SEASONPASS", action=4 (UPDATE)
+    ///   *  Returns : user season data
+    /// </summary>
     public class PublicBulkClaimUserRewards : AccelByte.Sdk.Core.Operation
     {
         public PublicBulkClaimUserRewards(

@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
+    /// <summary>
+    /// getUserParticipatedSeasons
+    ///
+    /// This API is used to get user participated season data, season only located in
+    /// non-publisher namespace.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS", action=2 (READ)
+    ///   *  Returns : user participated season data
+    /// </summary>
     public class GetUserParticipatedSeasons : AccelByte.Sdk.Core.Operation
     {
         public GetUserParticipatedSeasons(

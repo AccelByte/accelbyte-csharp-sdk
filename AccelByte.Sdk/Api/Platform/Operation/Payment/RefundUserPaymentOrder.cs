@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// refundUserPaymentOrder
+    ///
+    ///  [SERVICE COMMUNICATION ONLY] This API is used to refund order by
+    /// paymentOrderNo from justice service.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:PAYMENT", action=4 (UPDATE)
+    /// </summary>
     public class RefundUserPaymentOrder : AccelByte.Sdk.Core.Operation
     {
         public RefundUserPaymentOrder(

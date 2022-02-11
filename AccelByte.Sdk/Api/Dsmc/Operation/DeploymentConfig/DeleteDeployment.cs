@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// DeleteDeployment
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ] Required
+    /// scope: social This endpoint delete a dedicated server deployment in a
+    /// namespace
+    /// </summary>
     public class DeleteDeployment : AccelByte.Sdk.Core.Operation
     {
         public DeleteDeployment(

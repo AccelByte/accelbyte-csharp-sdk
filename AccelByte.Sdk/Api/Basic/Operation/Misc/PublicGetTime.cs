@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// publicGetTime
+    ///
+    /// Get server time
+    /// </summary>
     public class PublicGetTime : AccelByte.Sdk.Core.Operation
     {
         public PublicGetTime(

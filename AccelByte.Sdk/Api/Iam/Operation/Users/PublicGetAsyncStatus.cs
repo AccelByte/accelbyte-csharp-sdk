@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// PublicGetAsyncStatus
+    ///
+    /// This endpoint is used to get linking status.
+    /// </summary>
     public class PublicGetAsyncStatus : AccelByte.Sdk.Core.Operation
     {
         public PublicGetAsyncStatus(

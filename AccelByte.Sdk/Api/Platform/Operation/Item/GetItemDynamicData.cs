@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// getItemDynamicData
+    ///
+    /// Get item dynamic data for published item.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
+    ///   *  Returns : item dynamic data
+    /// </summary>
     public class GetItemDynamicData : AccelByte.Sdk.Core.Operation
     {
         public GetItemDynamicData(

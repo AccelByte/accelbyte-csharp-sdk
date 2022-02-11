@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicQueryUserEntitlementsByAppType
+    ///
+    /// Query app entitlements by appType.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
+    ///   *  Returns : app entitlement pagination
+    /// </summary>
     public class PublicQueryUserEntitlementsByAppType : AccelByte.Sdk.Core.Operation
     {
         public PublicQueryUserEntitlementsByAppType(

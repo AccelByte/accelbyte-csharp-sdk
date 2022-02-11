@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// GetUserInformation
+    ///
+    /// Required permissions 'NAMESPACE:{namespace}:INFORMATION:USER:{userId} [READ]'.
+    /// </summary>
     public class GetUserInformation : AccelByte.Sdk.Core.Operation
     {
         public GetUserInformation(

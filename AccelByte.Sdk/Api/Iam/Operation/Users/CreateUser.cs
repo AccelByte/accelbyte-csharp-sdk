@@ -7,6 +7,20 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// CreateUser
+    ///
+    /// 
+    /// 
+    /// Required permission 'NAMESPACE:{namespace}:USER [CREATE]'.
+    /// 
+    /// Available Authentication Types:
+    /// 
+    ///   1. EMAILPASSWD : an authentication type used for new user registration through email.
+    ///   2. PHONEPASSWD : an authentication type used for new user registration through phone number.
+    /// 
+    /// Country use ISO3166-1 alpha-2 two letter, e.g. US.
+    /// </summary>
     public class CreateUser : AccelByte.Sdk.Core.Operation
     {
         public CreateUser(

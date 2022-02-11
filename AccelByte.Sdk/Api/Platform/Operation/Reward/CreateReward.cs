@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// createReward
+    ///
+    /// This API is used to create a reward.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:REWARD", action=1 (CREATE)
+    ///   *  Returns : created reward data
+    /// </summary>
     public class CreateReward : AccelByte.Sdk.Core.Operation
     {
         public CreateReward(

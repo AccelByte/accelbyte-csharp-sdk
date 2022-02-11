@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicDeletePaymentAccount
+    ///
+    /// Delete payment account.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:PAYMENT:ACCOUNT", action=8 (DELETE)
+    ///   *  Returns :
+    /// </summary>
     public class PublicDeletePaymentAccount : AccelByte.Sdk.Core.Operation
     {
         public PublicDeletePaymentAccount(

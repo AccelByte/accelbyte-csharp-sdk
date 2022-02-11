@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// publicQueryUserSubscriptions
+    ///
+    /// Query user subscriptions.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=2 (READ)
+    ///   *  Returns : paginated subscription
+    /// </summary>
     public class PublicQueryUserSubscriptions : AccelByte.Sdk.Core.Operation
     {
         public PublicQueryUserSubscriptions(

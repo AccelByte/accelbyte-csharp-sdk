@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Legal.Operation
 {
+    /// <summary>
+    /// retrieveAgreementsPublic
+    ///
+    /// Retrieve accepted Legal Agreements.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : login user
+    /// </summary>
     public class RetrieveAgreementsPublic : AccelByte.Sdk.Core.Operation
     {
         public RetrieveAgreementsPublic(

@@ -29,11 +29,20 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("code_verifier")]
         public string CodeVerifier { get; set; } = String.Empty;
                     
+        [SdkCommandArgument("extend_exp")]
+        public bool ExtendExp { get; set; } = false;
+                    
+        [SdkCommandArgument("password")]
+        public string Password { get; set; } = String.Empty;
+                    
         [SdkCommandArgument("redirect_uri")]
         public string RedirectUri { get; set; } = String.Empty;
                     
         [SdkCommandArgument("refresh_token")]
         public string RefreshToken { get; set; } = String.Empty;
+                    
+        [SdkCommandArgument("username")]
+        public string Username { get; set; } = String.Empty;
                     
         [SdkCommandArgument("grant_type")]
         public string GrantType { get; set; } = String.Empty;
@@ -51,8 +60,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 ClientId,                
                 Code,                
                 CodeVerifier,                
+                ExtendExp,                
+                Password,                
                 RedirectUri,                
                 RefreshToken,                
+                Username,                
                 GrantType                
             );            
 

@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// freeFormNotificationByUserID
+    ///
+    /// Required permission : `NAMESPACE:{namespace}:USER:{userId}:NOTIFICATION
+    /// [CREATE]` with scope `social`
+    /// Sends notification to a user.
+    /// </summary>
     public class FreeFormNotificationByUserID : AccelByte.Sdk.Core.Operation
     {
         public FreeFormNotificationByUserID(

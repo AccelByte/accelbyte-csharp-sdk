@@ -7,6 +7,9 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Operation
 {
+    /// <summary>
+    /// versionCheckHandler
+    /// </summary>
     public class VersionCheckHandler : AccelByte.Sdk.Core.Operation
     {
         public VersionCheckHandler(

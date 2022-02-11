@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// existsAnyUserActiveEntitlement
+    ///
+    /// Exists any user active entitlement of specified itemIds, skus and appIds
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
+    /// </summary>
     public class ExistsAnyUserActiveEntitlement : AccelByte.Sdk.Core.Operation
     {
         public ExistsAnyUserActiveEntitlement(

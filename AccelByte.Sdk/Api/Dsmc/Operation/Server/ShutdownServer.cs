@@ -7,6 +7,15 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// ShutdownServer
+    ///
+    /// Required permission: NAMESPACE:{namespace}:DSM:SERVER [UPDATE] Required scope:
+    /// social This endpoint is intended to be called by dedicated server to let DSM
+    /// know that it is shutting down. Calling this will remove the server and session
+    /// records from DB.Set 'kill_me' in request to 'true' if the DS cannot shut
+    /// itself down.
+    /// </summary>
     public class ShutdownServer : AccelByte.Sdk.Core.Operation
     {
         public ShutdownServer(

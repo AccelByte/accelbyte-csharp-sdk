@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// updateMemberRoleAdminV1
+    ///
+    /// 
+    /// 
+    /// Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [UPDATE]
+    /// 
+    /// This endpoint is used to get member role
+    /// 
+    /// Action Code: 73204
+    /// </summary>
     public class UpdateMemberRoleAdminV1 : AccelByte.Sdk.Core.Operation
     {
         public UpdateMemberRoleAdminV1(

@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// deleteAppleIAPConfig
+    ///
+    /// Delete apple iap config.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=8 (DELETE)
+    /// </summary>
     public class DeleteAppleIAPConfig : AccelByte.Sdk.Core.Operation
     {
         public DeleteAppleIAPConfig(

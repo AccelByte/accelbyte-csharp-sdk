@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// ExportConfig
+    ///
+    /// Required permission ADMIN:NAMESPACE:{namespace}:LOBBY:CONFIG [READ] Required
+    /// Scope: social Export lobby configuration to a json file. The file can then be
+    /// imported from the /import endpoint.
+    /// </summary>
     public class ExportConfig : AccelByte.Sdk.Core.Operation
     {
         public ExportConfig(

@@ -7,6 +7,11 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
+    /// <summary>
+    /// DeleteClientPermission
+    ///
+    /// Required permission 'CLIENT:ADMIN [UPDATE]'
+    /// </summary>
     public class DeleteClientPermission : AccelByte.Sdk.Core.Operation
     {
         public DeleteClientPermission(

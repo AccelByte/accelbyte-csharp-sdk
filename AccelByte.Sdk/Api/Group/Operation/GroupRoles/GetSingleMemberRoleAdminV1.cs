@@ -7,6 +7,17 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Group.Operation
 {
+    /// <summary>
+    /// getSingleMemberRoleAdminV1
+    ///
+    /// 
+    /// 
+    /// Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [READ]
+    /// 
+    /// This endpoint is used to get member role based on the role ID
+    /// 
+    /// Action Code: 73203
+    /// </summary>
     public class GetSingleMemberRoleAdminV1 : AccelByte.Sdk.Core.Operation
     {
         public GetSingleMemberRoleAdminV1(

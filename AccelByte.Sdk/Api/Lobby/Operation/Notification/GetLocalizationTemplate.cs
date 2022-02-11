@@ -7,6 +7,13 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
+    /// <summary>
+    /// getLocalizationTemplate
+    ///
+    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [READ]` with scope
+    /// `social`
+    /// Get a template localization
+    /// </summary>
     public class GetLocalizationTemplate : AccelByte.Sdk.Core.Operation
     {
         public GetLocalizationTemplate(

@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Operation
 {
+    /// <summary>
+    /// GetAllSessionsInChannel
+    ///
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
+    /// Required Scope: social Get all sessions in a channel.
+    /// </summary>
     public class GetAllSessionsInChannel : AccelByte.Sdk.Core.Operation
     {
         public GetAllSessionsInChannel(

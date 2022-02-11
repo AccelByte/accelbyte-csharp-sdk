@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// testWxPayConfigById
+    ///
+    /// Test WxPay configuration in payment merchant config. Reference: [WxPay
+    /// Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1).
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
+    ///   *  Returns : test WxPay config
+    /// </summary>
     public class TestWxPayConfigById : AccelByte.Sdk.Core.Operation
     {
         public TestWxPayConfigById(

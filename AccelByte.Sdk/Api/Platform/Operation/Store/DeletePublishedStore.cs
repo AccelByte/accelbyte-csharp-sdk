@@ -7,6 +7,18 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
+    /// <summary>
+    /// deletePublishedStore
+    ///
+    /// This API is used to delete published store including category and items before
+    /// release to public.
+    /// 
+    ///  Warning: Please do not use this API once published to public user.
+    /// 
+    /// Other detail info:
+    /// 
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=8 (DELETE)
+    /// </summary>
     public class DeletePublishedStore : AccelByte.Sdk.Core.Operation
     {
         public DeletePublishedStore(

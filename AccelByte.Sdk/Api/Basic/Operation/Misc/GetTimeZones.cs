@@ -7,6 +7,16 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Operation
 {
+    /// <summary>
+    /// getTimeZones
+    ///
+    /// List time zones.
+    /// Other detail info:
+    /// 
+    ///   * Required permission : login user
+    ///   *  Action code : 11205
+    ///   *  Returns : time zones
+    /// </summary>
     public class GetTimeZones : AccelByte.Sdk.Core.Operation
     {
         public GetTimeZones(

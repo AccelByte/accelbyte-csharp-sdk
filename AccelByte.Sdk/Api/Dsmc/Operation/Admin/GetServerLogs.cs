@@ -7,6 +7,12 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
+    /// <summary>
+    /// getServerLogs
+    ///
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ] Required
+    /// scope: social This endpoint queries a specified dedicated server's logs.
+    /// </summary>
     public class GetServerLogs : AccelByte.Sdk.Core.Operation
     {
         public GetServerLogs(

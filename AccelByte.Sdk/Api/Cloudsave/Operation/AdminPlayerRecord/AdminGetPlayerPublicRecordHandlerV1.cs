@@ -7,6 +7,14 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
+    /// <summary>
+    /// adminGetPlayerPublicRecordHandlerV1
+    ///
+    /// Required permission:
+    /// ADMIN:NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [READ]
+    /// Required scope: social Get a record in user-level (arbitrary JSON data) by its
+    /// key.
+    /// </summary>
     public class AdminGetPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public AdminGetPlayerPublicRecordHandlerV1(
