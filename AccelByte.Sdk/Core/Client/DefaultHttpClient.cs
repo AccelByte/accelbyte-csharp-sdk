@@ -7,6 +7,7 @@ using System.Text.Json;
 
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
+using AccelByte.Sdk.Core.Repository;
 
 namespace AccelByte.Sdk.Core.Client
 {
@@ -18,6 +19,13 @@ namespace AccelByte.Sdk.Core.Client
         };
         private static readonly System.Net.Http.HttpClient Http = new System.Net.Http.HttpClient(Handler);
         private static object HttpLock = new object();
+
+        private IConfigRepository? _Config = null;
+
+        public void SetConfigRepository(IConfigRepository cRepository)
+        {
+            _Config = cRepository;
+        }
 
         public HttpResponse SendRequest(Operation operation, string baseURL, Dictionary<string, string> headers)
         {
@@ -130,6 +138,9 @@ namespace AccelByte.Sdk.Core.Client
                     }
                 }
 
+                Version asVer = this.GetType().Assembly.GetName().Version!;
+                string userAgent = String.Format("AccelByteCSharpSDK/{0}.{1}.{2} ({3})", asVer.Major, asVer.Minor, asVer.Revision, _Config?.AppName);
+                request.Headers.UserAgent.ParseAdd(userAgent);
                 var response = Http.Send(request);
 
                 Stream? payload = null;

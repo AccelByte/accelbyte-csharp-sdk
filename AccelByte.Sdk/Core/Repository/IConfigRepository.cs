@@ -7,5 +7,7 @@ namespace AccelByte.Sdk.Core.Repository
         string ClientId { get; }
 
         string ClientSecret { get; }
+
+        string AppName{ get; }
     }
 }
