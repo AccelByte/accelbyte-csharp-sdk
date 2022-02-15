@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// west"], "configuration": "50players", "min_count": 0, "max_count": 0,
     /// "buffer_count": 5 }, }, } ```
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class SaveConfig : AccelByte.Sdk.Core.Operation
     {
         public SaveConfig(

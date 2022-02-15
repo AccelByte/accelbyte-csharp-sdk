@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT
     /// [UPDATE]. All request body are required except preview and tags.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class SingleAdminUpdateContentDirect : AccelByte.Sdk.Core.Operation
     {
         public SingleAdminUpdateContentDirect(

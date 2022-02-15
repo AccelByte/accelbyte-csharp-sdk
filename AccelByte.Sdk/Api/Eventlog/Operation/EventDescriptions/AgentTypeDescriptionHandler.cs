@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     /// <summary>
     /// AgentTypeDescriptionHandler
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class AgentTypeDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
         public AgentTypeDescriptionHandler(

@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]. All
     /// request body are required except preview and tags.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class CreateContentDirect : AccelByte.Sdk.Core.Operation
     {
         public CreateContentDirect(

@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Basic access authentication constructed from client id and client secret or
     /// Bearer access authentication with valid access token.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class RevokeToken : AccelByte.Sdk.Core.Operation
     {
         public RevokeToken(

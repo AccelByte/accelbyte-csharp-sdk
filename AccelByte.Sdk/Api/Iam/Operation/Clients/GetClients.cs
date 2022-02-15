@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission 'CLIENT [READ]'
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetClients : AccelByte.Sdk.Core.Operation
     {
         public GetClients(

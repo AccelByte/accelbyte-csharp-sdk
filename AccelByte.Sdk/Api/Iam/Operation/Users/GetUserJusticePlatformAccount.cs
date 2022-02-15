@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// the permission: NAMESPACE:{namespace}:JUSTICE:USER:{userId} [READ] , otherwise
     /// the UserID is going to be censored and replaced with âRedactedâ text.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetUserJusticePlatformAccount : AccelByte.Sdk.Core.Operation
     {
         public GetUserJusticePlatformAccount(

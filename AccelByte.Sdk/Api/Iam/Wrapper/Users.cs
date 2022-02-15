@@ -67,6 +67,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelSearchUsersResponse? SearchUser(SearchUser input) {
             var response = _sdk.RunRequest(input);
 
@@ -75,6 +77,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public Model.ModelUserResponse? GetUserByUserID(GetUserByUserID input) {
             var response = _sdk.RunRequest(input);
 
@@ -131,6 +134,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void ListCrossNamespaceAccountLink(ListCrossNamespaceAccountLink input) {
             var response = _sdk.RunRequest(input);
 
@@ -139,6 +144,9 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void DisableUser(DisableUser input) {
             var response = _sdk.RunRequest(input);
 
@@ -147,6 +155,9 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void EnableUser(EnableUser input) {
             var response = _sdk.RunRequest(input);
 
@@ -155,6 +166,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public Model.ModelUserInformation? GetUserInformation(GetUserInformation input) {
             var response = _sdk.RunRequest(input);
 
@@ -179,6 +191,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void UpdatePassword(UpdatePassword input) {
             var response = _sdk.RunRequest(input);
 
@@ -187,6 +201,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public void SaveUserPermission(SaveUserPermission input) {
             var response = _sdk.RunRequest(input);
 
@@ -227,6 +242,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelGetUserJusticePlatformAccountResponse? GetUserJusticePlatformAccount(GetUserJusticePlatformAccount input) {
             var response = _sdk.RunRequest(input);
 
@@ -235,6 +252,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public void PlatformLink(PlatformLink input) {
             var response = _sdk.RunRequest(input);
 

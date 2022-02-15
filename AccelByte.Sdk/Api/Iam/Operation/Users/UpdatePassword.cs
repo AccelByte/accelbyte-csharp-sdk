@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission 'NAMESPACE:{namespace}:PASSWORD:USER:{userId} [UPDATE]'
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class UpdatePassword : AccelByte.Sdk.Core.Operation
     {
         public UpdatePassword(

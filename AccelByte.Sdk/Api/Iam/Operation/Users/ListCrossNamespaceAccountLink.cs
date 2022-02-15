@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// login method for that specific platform ID is removed. This means to protect
     /// account from second hand device usage.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class ListCrossNamespaceAccountLink : AccelByte.Sdk.Core.Operation
     {
         public ListCrossNamespaceAccountLink(

@@ -11,6 +11,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
             _sdk = sdk;
         }
         
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelsEventResponse? GetUserActivitiesHandler(GetUserActivitiesHandler input) {
             var response = _sdk.RunRequest(input);
 
@@ -19,6 +21,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void DeleteUserActivitiesHandler(DeleteUserActivitiesHandler input) {
             var response = _sdk.RunRequest(input);
 
@@ -27,6 +32,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelsUserLastActivity? LastUserActivityTimeHandler(LastUserActivityTimeHandler input) {
             var response = _sdk.RunRequest(input);
 
@@ -35,5 +43,6 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
     }
 }

@@ -19,6 +19,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void SaveConfig(SaveConfig input) {
             var response = _sdk.RunRequest(input);
 
@@ -27,6 +29,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public Model.ModelsDSMConfigRecord? GetConfig(GetConfig input) {
             var response = _sdk.RunRequest(input);
 

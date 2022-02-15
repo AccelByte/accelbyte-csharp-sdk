@@ -27,6 +27,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.OauthmodelTokenResponse? PlatformTokenRequestHandler(PlatformTokenRequestHandler input) {
             var response = _sdk.RunRequest(input);
 
@@ -35,6 +37,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public void RevokeUser(RevokeUser input) {
             var response = _sdk.RunRequest(input);
 
@@ -51,6 +54,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void RevokeToken(RevokeToken input) {
             var response = _sdk.RunRequest(input);
 
@@ -59,6 +64,9 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void RevokeAUser(RevokeAUser input) {
             var response = _sdk.RunRequest(input);
 
@@ -67,6 +75,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public Model.OauthmodelTokenResponse? TokenGrant(TokenGrant input) {
             var response = _sdk.RunRequest(input);
 

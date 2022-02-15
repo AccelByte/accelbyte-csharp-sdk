@@ -11,6 +11,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
             _sdk = sdk;
         }
         
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelsEventRegistry? GetRegisteredEventsHandler(GetRegisteredEventsHandler input) {
             var response = _sdk.RunRequest(input);
 
@@ -19,6 +21,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void RegisterEventHandler(RegisterEventHandler input) {
             var response = _sdk.RunRequest(input);
 
@@ -27,6 +32,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelsEventRegistry? GetRegisteredEventIDHandler(GetRegisteredEventIDHandler input) {
             var response = _sdk.RunRequest(input);
 
@@ -35,6 +43,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void UpdateEventRegistryHandler(UpdateEventRegistryHandler input) {
             var response = _sdk.RunRequest(input);
 
@@ -43,6 +54,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void UnregisterEventIDHandler(UnregisterEventIDHandler input) {
             var response = _sdk.RunRequest(input);
 
@@ -51,6 +65,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelsEventRegistry? GetRegisteredEventsByEventTypeHandler(GetRegisteredEventsByEventTypeHandler input) {
             var response = _sdk.RunRequest(input);
 
@@ -59,5 +76,6 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
     }
 }

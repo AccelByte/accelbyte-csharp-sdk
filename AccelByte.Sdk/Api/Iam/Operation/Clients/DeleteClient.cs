@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission 'CLIENT:ADMIN [DELETE]'
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class DeleteClient : AccelByte.Sdk.Core.Operation
     {
         public DeleteClient(

@@ -11,6 +11,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             _sdk = sdk;
         }
         
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public List<Model.ClientmodelClientResponse>? GetClients(GetClients input) {
             var response = _sdk.RunRequest(input);
 
@@ -19,6 +21,9 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ClientmodelClientCreationResponse? CreateClient(CreateClient input) {
             var response = _sdk.RunRequest(input);
 
@@ -27,6 +32,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public Model.ClientmodelClientResponse? GetClient(GetClient input) {
             var response = _sdk.RunRequest(input);
 
@@ -43,6 +49,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void DeleteClient(DeleteClient input) {
             var response = _sdk.RunRequest(input);
 
@@ -51,6 +59,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public void UpdateClientPermission(UpdateClientPermission input) {
             var response = _sdk.RunRequest(input);
 

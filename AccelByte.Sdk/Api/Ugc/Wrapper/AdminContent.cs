@@ -11,6 +11,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
             _sdk = sdk;
         }
         
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelsCreateContentResponse? AdminUploadContentDirect(AdminUploadContentDirect input) {
             var response = _sdk.RunRequest(input);
 
@@ -19,6 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public Model.ModelsCreateContentResponse? AdminUploadContentS3(AdminUploadContentS3 input) {
             var response = _sdk.RunRequest(input);
 
@@ -43,6 +46,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelsCreateContentResponse? SingleAdminUpdateContentDirect(SingleAdminUpdateContentDirect input) {
             var response = _sdk.RunRequest(input);
 
@@ -51,6 +56,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public void SingleAdminDeleteContent(SingleAdminDeleteContent input) {
             var response = _sdk.RunRequest(input);
 
@@ -123,6 +129,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelsCreateContentResponse? AdminUpdateContentDirect(AdminUpdateContentDirect input) {
             var response = _sdk.RunRequest(input);
 
@@ -131,6 +139,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public void AdminDeleteContent(AdminDeleteContent input) {
             var response = _sdk.RunRequest(input);
 

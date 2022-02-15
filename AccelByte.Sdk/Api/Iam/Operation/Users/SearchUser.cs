@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// on the specified namespace. Required permission
     /// 'ADMIN:NAMESPACE:{namespace}:USER:* [READ]'
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class SearchUser : AccelByte.Sdk.Core.Operation
     {
         public SearchUser(

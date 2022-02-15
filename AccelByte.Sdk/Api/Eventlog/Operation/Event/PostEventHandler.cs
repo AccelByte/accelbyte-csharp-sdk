@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     /// Required permission `NAMESPACE:{namespace}:EVENT [CREATE]`and scope
     /// `analytics`
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class PostEventHandler : AccelByte.Sdk.Core.Operation
     {
         public PostEventHandler(

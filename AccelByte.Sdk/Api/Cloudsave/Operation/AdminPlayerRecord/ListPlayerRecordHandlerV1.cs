@@ -14,6 +14,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// Required scope: social Retrieve list of player records key and userID under
     /// given namespace.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class ListPlayerRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         public ListPlayerRecordHandlerV1(

@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///     * DeactivateAccount : if your deletion request comes from user
     ///     * AdminDeactivateAccount : if your deletion request comes from admin
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class DisableUser : AccelByte.Sdk.Core.Operation
     {
         public DisableUser(

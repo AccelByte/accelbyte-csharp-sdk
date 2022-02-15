@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Required permissions 'ADMIN:NAMESPACE:{namespace}:USERSTATUS:USER:{userId}
     /// [UPDATE]'
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class EnableUser : AccelByte.Sdk.Core.Operation
     {
         public EnableUser(

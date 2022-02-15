@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// The JWT contains user's active bans with its expiry date. List of ban types
     /// can be obtained from /iam/bans.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class PlatformTokenRequestHandler : AccelByte.Sdk.Core.Operation
     {
         public PlatformTokenRequestHandler(

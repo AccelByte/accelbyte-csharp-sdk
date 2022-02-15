@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// issued before the revocation, forcing a new token will contain banned
     /// permissions.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class RevokeAUser : AccelByte.Sdk.Core.Operation
     {
         public RevokeAUser(

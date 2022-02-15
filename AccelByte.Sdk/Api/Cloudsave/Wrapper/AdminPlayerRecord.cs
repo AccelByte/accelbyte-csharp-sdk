@@ -11,6 +11,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             _sdk = sdk;
         }
         
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelsListPlayerRecordKeys? ListPlayerRecordHandlerV1(ListPlayerRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
@@ -19,6 +21,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public Model.ModelsListPlayerRecordKeys? AdminRetrievePlayerRecords(AdminRetrievePlayerRecords input) {
             var response = _sdk.RunRequest(input);
 

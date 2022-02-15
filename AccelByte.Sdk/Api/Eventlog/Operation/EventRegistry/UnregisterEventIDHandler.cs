@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     /// Required permission `ADMIN:NAMESPACE:{namespace}:EVENT [DELETE]`and scope
     /// `analytics`
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class UnregisterEventIDHandler : AccelByte.Sdk.Core.Operation
     {
         public UnregisterEventIDHandler(

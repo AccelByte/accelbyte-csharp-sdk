@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission 'CLIENT:ADMIN [CREATE]'
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class CreateClient : AccelByte.Sdk.Core.Operation
     {
         public CreateClient(

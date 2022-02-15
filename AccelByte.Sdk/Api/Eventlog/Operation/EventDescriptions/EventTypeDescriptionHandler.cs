@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     /// <summary>
     /// EventTypeDescriptionHandler
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class EventTypeDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
         public EventTypeDescriptionHandler(

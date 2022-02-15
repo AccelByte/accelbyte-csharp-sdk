@@ -51,6 +51,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelsCreateContentResponse? CreateContentDirect(CreateContentDirect input) {
             var response = _sdk.RunRequest(input);
 
@@ -59,6 +61,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public Model.ModelsCreateContentResponse? CreateContentS3(CreateContentS3 input) {
             var response = _sdk.RunRequest(input);
 
@@ -75,6 +78,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelsCreateContentResponse? UpdateContentDirect(UpdateContentDirect input) {
             var response = _sdk.RunRequest(input);
 
@@ -83,6 +88,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public void DeleteContent(DeleteContent input) {
             var response = _sdk.RunRequest(input);
 
