@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
             Heartbeat operation = new Heartbeat(
                 Body                
             );            
-
+            
             wrapper.Heartbeat(operation);
             return String.Empty;
         }

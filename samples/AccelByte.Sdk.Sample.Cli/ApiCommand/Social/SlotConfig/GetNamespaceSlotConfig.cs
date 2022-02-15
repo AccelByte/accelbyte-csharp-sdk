@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             GetNamespaceSlotConfig operation = new GetNamespaceSlotConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Social.Model.NamespaceSlotConfigInfo? response = wrapper.GetNamespaceSlotConfig(operation);
             if (response == null)
                 return "No response from server.";

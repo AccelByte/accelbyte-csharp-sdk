@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 SlotId,                
                 UserId                
             );            
-
+            
             wrapper.PublicDeleteUserNamespaceSlot(operation);
             return String.Empty;
         }

@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Namespace,                
                 UserId                
             );            
-
+            
             wrapper.DeleteContent(operation);
             return String.Empty;
         }

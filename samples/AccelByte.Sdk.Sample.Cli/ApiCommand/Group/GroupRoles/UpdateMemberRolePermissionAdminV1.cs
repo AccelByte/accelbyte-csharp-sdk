@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Group.Model.ModelsUpdateMemberRoleResponseV1? response = wrapper.UpdateMemberRolePermissionAdminV1(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
             DeleteServer operation = new DeleteServer(
                 Region                
             );            
-
+            
             wrapper.DeleteServer(operation);
             return String.Empty;
         }

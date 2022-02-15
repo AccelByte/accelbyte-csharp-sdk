@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 AchievementCode,                
                 Namespace                
             );            
-
+            
             wrapper.AdminDeleteAchievement(operation);
             return String.Empty;
         }

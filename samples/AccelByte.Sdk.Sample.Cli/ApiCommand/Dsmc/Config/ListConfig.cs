@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
             ListConfig operation = new ListConfig(
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListConfigResponse? response = wrapper.ListConfig(operation);
             if (response == null)
                 return "No response from server.";

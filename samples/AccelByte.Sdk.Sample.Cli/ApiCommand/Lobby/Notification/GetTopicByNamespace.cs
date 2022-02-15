@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 Before,                
                 Limit                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelTopicByNamespacesResponse? response = wrapper.GetTopicByNamespace(operation);
             if (response == null)
                 return "No response from server.";

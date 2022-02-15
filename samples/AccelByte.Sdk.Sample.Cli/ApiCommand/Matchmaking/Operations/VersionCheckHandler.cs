@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 
             VersionCheckHandler operation = new VersionCheckHandler(
             );            
-
+            
             wrapper.VersionCheckHandler(operation);
             return String.Empty;
         }

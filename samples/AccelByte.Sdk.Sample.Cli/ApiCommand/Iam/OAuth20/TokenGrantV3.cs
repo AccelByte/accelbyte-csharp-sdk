@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Username,                
                 GrantType                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenResponseV3? response = wrapper.TokenGrantV3(operation);
             if (response == null)
                 return "No response from server.";

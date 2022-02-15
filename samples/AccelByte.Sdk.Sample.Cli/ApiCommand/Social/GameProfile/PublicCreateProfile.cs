@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 UserId,                
                 Body                
             );            
-
+            
             wrapper.PublicCreateProfile(operation);
             return String.Empty;
         }

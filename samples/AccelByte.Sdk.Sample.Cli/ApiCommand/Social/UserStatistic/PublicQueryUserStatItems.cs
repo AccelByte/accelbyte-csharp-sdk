@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 StatCodes,                
                 Tags                
             );            
-
+            
             AccelByte.Sdk.Api.Social.Model.UserStatItemPagingSlicedResult? response = wrapper.PublicQueryUserStatItems(operation);
             if (response == null)
                 return "No response from server.";

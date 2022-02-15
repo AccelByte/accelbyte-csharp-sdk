@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Namespace,                
                 TagId                
             );            
-
+            
             wrapper.AdminDeleteTag(operation);
             return String.Empty;
         }

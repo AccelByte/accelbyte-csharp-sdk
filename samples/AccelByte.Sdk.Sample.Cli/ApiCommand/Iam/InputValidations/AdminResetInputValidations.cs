@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AdminResetInputValidations operation = new AdminResetInputValidations(
                 Field                
             );            
-
+            
             wrapper.AdminResetInputValidations(operation);
             return String.Empty;
         }

@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
                 Namespace,                
                 SeasonId                
             );            
-
+            
             wrapper.DeletePass(operation);
             return String.Empty;
         }

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 WalletId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.WalletInfo? response = wrapper.GetWallet(operation);
             if (response == null)
                 return "No response from server.";

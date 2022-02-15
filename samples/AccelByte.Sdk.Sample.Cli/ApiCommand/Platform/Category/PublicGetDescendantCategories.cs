@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Language,                
                 StoreId                
             );            
-
+            
             List<AccelByte.Sdk.Api.Platform.Model.CategoryInfo>? response = wrapper.PublicGetDescendantCategories(operation);
             if (response == null)
                 return "No response from server.";

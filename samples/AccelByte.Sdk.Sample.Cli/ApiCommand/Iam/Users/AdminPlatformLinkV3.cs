@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 UserId,                
                 Ticket                
             );            
-
+            
             wrapper.AdminPlatformLinkV3(operation);
             return String.Empty;
         }

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
                 Namespace,                
                 SessionID                
             );            
-
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsSessionResponse? response = wrapper.DeleteSession(operation);
             if (response == null)
                 return "No response from server.";

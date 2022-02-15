@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
                 Offset,                
                 RequestDate                
             );            
-
+            
             AccelByte.Sdk.Api.Gdpr.Model.ModelsListPersonalDataResponse? response = wrapper.AdminGetListPersonalDataRequest(operation);
             if (response == null)
                 return "No response from server.";

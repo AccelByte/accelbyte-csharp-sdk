@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 Namespace,                
                 UserZipCodeUpdate                
             );            
-
+            
             AccelByte.Sdk.Api.Basic.Model.UserZipCode? response = wrapper.UpdateMyZipCode(operation);
             if (response == null)
                 return "No response from server.";

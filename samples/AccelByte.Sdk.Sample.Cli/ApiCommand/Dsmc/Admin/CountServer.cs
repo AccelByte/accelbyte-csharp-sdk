@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             CountServer operation = new CountServer(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsCountServerResponse? response = wrapper.CountServer(operation);
             if (response == null)
                 return "No response from server.";

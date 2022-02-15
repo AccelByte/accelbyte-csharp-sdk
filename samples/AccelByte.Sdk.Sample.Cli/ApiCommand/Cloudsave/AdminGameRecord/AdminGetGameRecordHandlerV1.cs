@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
                 Key,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Cloudsave.Model.ModelsGameRecord? response = wrapper.AdminGetGameRecordHandlerV1(operation);
             if (response == null)
                 return "No response from server.";

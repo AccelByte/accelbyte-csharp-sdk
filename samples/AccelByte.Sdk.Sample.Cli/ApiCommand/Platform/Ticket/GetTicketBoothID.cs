@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 BoothName,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.TicketBoothID? response = wrapper.GetTicketBoothID(operation);
             if (response == null)
                 return "No response from server.";

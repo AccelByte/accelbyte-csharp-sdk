@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 CurrencyCode,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.CurrencyInfo? response = wrapper.DeleteCurrency(operation);
             if (response == null)
                 return "No response from server.";

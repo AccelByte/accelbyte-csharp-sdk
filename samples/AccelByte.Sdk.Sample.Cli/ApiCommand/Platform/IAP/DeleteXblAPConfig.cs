@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             DeleteXblAPConfig operation = new DeleteXblAPConfig(
                 Namespace                
             );            
-
+            
             wrapper.DeleteXblAPConfig(operation);
             return String.Empty;
         }

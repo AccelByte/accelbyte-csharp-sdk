@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelGetPublisherUserResponse? response = wrapper.GetPublisherUser(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             GetAllNotificationTemplatesV1Admin operation = new GetAllNotificationTemplatesV1Admin(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Lobby.Model.ModelNotificationTemplateResponse>? response = wrapper.GetAllNotificationTemplatesV1Admin(operation);
             if (response == null)
                 return "No response from server.";

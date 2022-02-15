@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 Offset,                
                 PolicyVersionId                
             );            
-
+            
             List<AccelByte.Sdk.Api.Legal.Model.PagedRetrieveUserAcceptedAgreementResponse>? response = wrapper.RetrieveAllUsersByPolicyVersion(operation);
             if (response == null)
                 return "No response from server.";

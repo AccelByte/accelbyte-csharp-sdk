@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             CreatePaymentProviderConfig operation = new CreatePaymentProviderConfig(
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentProviderConfigInfo? response = wrapper.CreatePaymentProviderConfig(operation);
             if (response == null)
                 return "No response from server.";

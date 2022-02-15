@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 
             GetHealthcheckInfo operation = new GetHealthcheckInfo(
             );            
-
+            
             wrapper.GetHealthcheckInfo(operation);
             return String.Empty;
         }

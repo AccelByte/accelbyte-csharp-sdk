@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
                 ServerRegion,                
                 SessionId                
             );            
-
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsActiveCustomGameResponse? response = wrapper.GetActiveCustomGameSessions(operation);
             if (response == null)
                 return "No response from server.";

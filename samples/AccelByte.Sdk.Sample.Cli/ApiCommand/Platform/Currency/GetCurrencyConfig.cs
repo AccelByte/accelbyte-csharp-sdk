@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 CurrencyCode,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.CurrencyConfig? response = wrapper.GetCurrencyConfig(operation);
             if (response == null)
                 return "No response from server.";

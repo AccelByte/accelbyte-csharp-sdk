@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 Namespace,                
                 Body                
             );            
-
+            
             wrapper.UpdateMatchmakingChannel(operation);
             return String.Empty;
         }

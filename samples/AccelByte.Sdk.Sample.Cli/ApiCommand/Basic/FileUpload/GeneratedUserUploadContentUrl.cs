@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 UserId,                
                 FileType                
             );            
-
+            
             AccelByte.Sdk.Api.Basic.Model.FileUploadUrlInfo? response = wrapper.GeneratedUserUploadContentUrl(operation);
             if (response == null)
                 return "No response from server.";

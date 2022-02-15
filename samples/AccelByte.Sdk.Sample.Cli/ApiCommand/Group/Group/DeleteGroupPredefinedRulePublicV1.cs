@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 GroupId,                
                 Namespace                
             );            
-
+            
             wrapper.DeleteGroupPredefinedRulePublicV1(operation);
             return String.Empty;
         }

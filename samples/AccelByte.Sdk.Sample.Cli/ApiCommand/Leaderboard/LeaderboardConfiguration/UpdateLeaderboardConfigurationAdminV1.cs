@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsGetLeaderboardConfigResp? response = wrapper.UpdateLeaderboardConfigurationAdminV1(operation);
             if (response == null)
                 return "No response from server.";

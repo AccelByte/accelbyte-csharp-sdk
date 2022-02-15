@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 
             PublicGetTime operation = new PublicGetTime(
             );            
-
+            
             AccelByte.Sdk.Api.Basic.Model.RetrieveTimeResponse? response = wrapper.PublicGetTime(operation);
             if (response == null)
                 return "No response from server.";

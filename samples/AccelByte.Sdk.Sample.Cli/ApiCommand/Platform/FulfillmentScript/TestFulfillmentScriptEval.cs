@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             TestFulfillmentScriptEval operation = new TestFulfillmentScriptEval(
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.FulfillmentScriptEvalTestResult? response = wrapper.TestFulfillmentScriptEval(operation);
             if (response == null)
                 return "No response from server.";

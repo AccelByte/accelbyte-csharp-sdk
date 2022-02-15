@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             GetRoleMembers operation = new GetRoleMembers(
                 RoleId                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelRoleMembersResponse? response = wrapper.GetRoleMembers(operation);
             if (response == null)
                 return "No response from server.";

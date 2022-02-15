@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             RetrieveSinglePolicy operation = new RetrieveSinglePolicy(
                 BasePolicyId                
             );            
-
+            
             AccelByte.Sdk.Api.Legal.Model.RetrieveBasePolicyResponse? response = wrapper.RetrieveSinglePolicy(operation);
             if (response == null)
                 return "No response from server.";

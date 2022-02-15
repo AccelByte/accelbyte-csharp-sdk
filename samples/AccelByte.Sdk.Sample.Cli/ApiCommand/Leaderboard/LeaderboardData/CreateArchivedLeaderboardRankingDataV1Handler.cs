@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
                 Namespace,                
                 Body                
             );            
-
+            
             wrapper.CreateArchivedLeaderboardRankingDataV1Handler(operation);
             return String.Empty;
         }

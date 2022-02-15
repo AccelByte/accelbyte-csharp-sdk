@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Namespace,                
                 UserId                
             );            
-
+            
             wrapper.DeleteGroup(operation);
             return String.Empty;
         }

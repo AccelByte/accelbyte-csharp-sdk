@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 ZipCode,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentProcessResult? response = wrapper.Pay(operation);
             if (response == null)
                 return "No response from server.";

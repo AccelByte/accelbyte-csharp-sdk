@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 Namespace,                
                 UserId                
             );            
-
+            
             wrapper.AdminUnlockAchievement(operation);
             return String.Empty;
         }

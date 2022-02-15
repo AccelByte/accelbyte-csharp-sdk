@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 StoreId                
             );            
-
+            
             wrapper.ExportStore(operation);
             return String.Empty;
         }

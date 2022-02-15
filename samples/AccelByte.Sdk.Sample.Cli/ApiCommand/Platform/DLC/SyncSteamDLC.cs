@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId,                
                 Body                
             );            
-
+            
             wrapper.SyncSteamDLC(operation);
             return String.Empty;
         }

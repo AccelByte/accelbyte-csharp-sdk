@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             UpdateImage operation = new UpdateImage(
                 Body                
             );            
-
+            
             wrapper.UpdateImage(operation);
             return String.Empty;
         }

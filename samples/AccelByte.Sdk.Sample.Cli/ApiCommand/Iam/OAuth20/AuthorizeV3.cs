@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 ClientId,                
                 ResponseType                
             );            
-
+            
             string? response = wrapper.AuthorizeV3(operation);
             if (response == null)
                 return "No response from server.";

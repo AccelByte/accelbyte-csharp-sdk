@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Offset,                
                 SortBy                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.RewardPagingSlicedResult? response = wrapper.QueryRewards(operation);
             if (response == null)
                 return "No response from server.";

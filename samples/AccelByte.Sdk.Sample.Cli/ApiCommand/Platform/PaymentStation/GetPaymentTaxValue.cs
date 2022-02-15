@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 PaymentOrderNo,                
                 PaymentProvider                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.TaxResult? response = wrapper.GetPaymentTaxValue(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AdminUpdateInputValidations operation = new AdminUpdateInputValidations(
                 Body                
             );            
-
+            
             wrapper.AdminUpdateInputValidations(operation);
             return String.Empty;
         }

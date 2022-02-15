@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 ClientId,                
                 Namespace                
             );            
-
+            
             wrapper.AdminDeleteClientV3(operation);
             return String.Empty;
         }

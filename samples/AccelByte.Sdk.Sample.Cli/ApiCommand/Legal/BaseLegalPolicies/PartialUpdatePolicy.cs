@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 BasePolicyId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Legal.Model.UpdateBasePolicyResponse? response = wrapper.PartialUpdatePolicy(operation);
             if (response == null)
                 return "No response from server.";

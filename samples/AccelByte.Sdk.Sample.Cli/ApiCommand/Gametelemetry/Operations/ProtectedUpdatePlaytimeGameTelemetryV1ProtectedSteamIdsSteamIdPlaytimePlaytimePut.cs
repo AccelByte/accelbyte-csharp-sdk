@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
                 Playtime,                
                 SteamId                
             );            
-
+            
             wrapper.ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(operation);
             return String.Empty;
         }

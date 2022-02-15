@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Error,                
                 State                
             );            
-
+            
             string? response = wrapper.PlatformAuthenticateSAMLV3Handler(operation);
             if (response == null)
                 return "No response from server.";

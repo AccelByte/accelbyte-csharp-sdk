@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 Namespace,                
                 Body                
             );            
-
+            
             wrapper.UserRequestFriend(operation);
             return String.Empty;
         }

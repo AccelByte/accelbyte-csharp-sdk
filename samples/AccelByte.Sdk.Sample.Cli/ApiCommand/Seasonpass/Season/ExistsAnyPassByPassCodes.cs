@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
                 UserId,                
                 PassCodes                
             );            
-
+            
             AccelByte.Sdk.Api.Seasonpass.Model.Ownership? response = wrapper.ExistsAnyPassByPassCodes(operation);
             if (response == null)
                 return "No response from server.";

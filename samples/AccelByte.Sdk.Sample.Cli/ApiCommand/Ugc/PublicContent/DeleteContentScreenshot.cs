@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 ScreenshotId,                
                 UserId                
             );            
-
+            
             wrapper.DeleteContentScreenshot(operation);
             return String.Empty;
         }

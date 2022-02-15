@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Offset,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.RedeemHistoryPagingSlicedResult? response = wrapper.QueryRedeemHistory(operation);
             if (response == null)
                 return "No response from server.";

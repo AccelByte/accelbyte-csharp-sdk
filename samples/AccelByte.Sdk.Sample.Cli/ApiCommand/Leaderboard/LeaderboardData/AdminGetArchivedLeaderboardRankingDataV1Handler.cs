@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
                 Slug,                
                 LeaderboardCodes                
             );            
-
+            
             List<AccelByte.Sdk.Api.Leaderboard.Model.ModelsArchiveLeaderboardSignedURLResponse>? response = wrapper.AdminGetArchivedLeaderboardRankingDataV1Handler(operation);
             if (response == null)
                 return "No response from server.";

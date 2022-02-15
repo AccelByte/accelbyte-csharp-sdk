@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
 
             ListServer operation = new ListServer(
             );            
-
+            
             AccelByte.Sdk.Api.Qosm.Model.ModelsListServerResponse? response = wrapper.ListServer(operation);
             if (response == null)
                 return "No response from server.";

@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 ItemIds,                
                 Skus                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.OwnershipToken? response = wrapper.PublicGetEntitlementOwnershipToken(operation);
             if (response == null)
                 return "No response from server.";

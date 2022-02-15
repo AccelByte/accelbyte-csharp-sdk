@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             SyncUserInfo operation = new SyncUserInfo(
                 Namespace                
             );            
-
+            
             wrapper.SyncUserInfo(operation);
             return String.Empty;
         }

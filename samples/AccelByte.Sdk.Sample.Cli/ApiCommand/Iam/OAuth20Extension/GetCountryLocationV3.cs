@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             GetCountryLocationV3 operation = new GetCountryLocationV3(
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.OauthmodelCountryLocationResponse? response = wrapper.GetCountryLocationV3(operation);
             if (response == null)
                 return "No response from server.";

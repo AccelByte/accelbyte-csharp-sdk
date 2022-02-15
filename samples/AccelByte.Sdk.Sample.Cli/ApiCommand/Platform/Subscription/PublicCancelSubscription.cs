@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.SubscriptionInfo? response = wrapper.PublicCancelSubscription(operation);
             if (response == null)
                 return "No response from server.";

@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
             GetDefaultProvider operation = new GetDefaultProvider(
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDefaultProvider? response = wrapper.GetDefaultProvider(operation);
             if (response == null)
                 return "No response from server.";

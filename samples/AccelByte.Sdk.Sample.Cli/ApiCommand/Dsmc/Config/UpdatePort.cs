@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDSMConfigRecord? response = wrapper.UpdatePort(operation);
             if (response == null)
                 return "No response from server.";

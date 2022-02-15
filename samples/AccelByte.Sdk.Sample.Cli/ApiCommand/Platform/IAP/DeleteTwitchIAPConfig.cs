@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             DeleteTwitchIAPConfig operation = new DeleteTwitchIAPConfig(
                 Namespace                
             );            
-
+            
             wrapper.DeleteTwitchIAPConfig(operation);
             return String.Empty;
         }

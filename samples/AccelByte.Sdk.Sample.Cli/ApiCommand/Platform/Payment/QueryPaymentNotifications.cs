@@ -71,7 +71,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 StartDate,                
                 Status                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentNotificationPagingSlicedResult? response = wrapper.QueryPaymentNotifications(operation);
             if (response == null)
                 return "No response from server.";

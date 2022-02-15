@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Namespace,                
                 SessionID                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsSessionResponse? response = wrapper.GetSession(operation);
             if (response == null)
                 return "No response from server.";

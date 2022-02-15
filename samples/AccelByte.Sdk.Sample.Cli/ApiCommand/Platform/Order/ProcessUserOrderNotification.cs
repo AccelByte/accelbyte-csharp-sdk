@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId,                
                 Body                
             );            
-
+            
             wrapper.ProcessUserOrderNotification(operation);
             return String.Empty;
         }

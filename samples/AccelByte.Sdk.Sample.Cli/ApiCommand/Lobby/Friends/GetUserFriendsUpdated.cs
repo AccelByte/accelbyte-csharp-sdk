@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 Limit,                
                 Offset                
             );            
-
+            
             List<AccelByte.Sdk.Api.Lobby.Model.ModelGetUserFriendsResponse>? response = wrapper.GetUserFriendsUpdated(operation);
             if (response == null)
                 return "No response from server.";

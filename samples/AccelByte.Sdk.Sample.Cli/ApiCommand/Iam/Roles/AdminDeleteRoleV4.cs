@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AdminDeleteRoleV4 operation = new AdminDeleteRoleV4(
                 RoleId                
             );            
-
+            
             wrapper.AdminDeleteRoleV4(operation);
             return String.Empty;
         }

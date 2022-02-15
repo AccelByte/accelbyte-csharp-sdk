@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
                 SessionID,                
                 UserID                
             );            
-
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsAddPlayerResponse? response = wrapper.RemovePlayerFromSession(operation);
             if (response == null)
                 return "No response from server.";

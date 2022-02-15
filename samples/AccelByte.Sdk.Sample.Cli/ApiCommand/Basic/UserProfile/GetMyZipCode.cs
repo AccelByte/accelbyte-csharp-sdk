@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             GetMyZipCode operation = new GetMyZipCode(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Basic.Model.UserZipCode? response = wrapper.GetMyZipCode(operation);
             if (response == null)
                 return "No response from server.";

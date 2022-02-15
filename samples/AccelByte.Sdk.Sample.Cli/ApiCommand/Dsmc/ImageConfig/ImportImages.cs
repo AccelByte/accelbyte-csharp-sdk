@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             ImportImages operation = new ImportImages(
                 File                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsImportResponse? response = wrapper.ImportImages(operation);
             if (response == null)
                 return "No response from server.";

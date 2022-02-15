@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 File,                
                 Password                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.XblIAPConfigInfo? response = wrapper.UpdateXblBPCertFile(operation);
             if (response == null)
                 return "No response from server.";

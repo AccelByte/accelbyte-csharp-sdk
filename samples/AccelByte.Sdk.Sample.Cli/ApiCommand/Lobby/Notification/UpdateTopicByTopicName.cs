@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 Topic,                
                 Body                
             );            
-
+            
             wrapper.UpdateTopicByTopicName(operation);
             return String.Empty;
         }

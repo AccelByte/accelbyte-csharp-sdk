@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AdminGetListCountryAgeRestrictionV3 operation = new AdminGetListCountryAgeRestrictionV3(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Iam.Model.ModelCountryV3Response>? response = wrapper.AdminGetListCountryAgeRestrictionV3(operation);
             if (response == null)
                 return "No response from server.";

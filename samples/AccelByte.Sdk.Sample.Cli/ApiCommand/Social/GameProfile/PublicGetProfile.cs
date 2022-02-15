@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 ProfileId,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Social.Model.GameProfileInfo? response = wrapper.PublicGetProfile(operation);
             if (response == null)
                 return "No response from server.";

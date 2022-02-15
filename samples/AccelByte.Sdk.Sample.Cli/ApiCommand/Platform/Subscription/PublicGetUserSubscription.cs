@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 SubscriptionId,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.SubscriptionInfo? response = wrapper.PublicGetUserSubscription(operation);
             if (response == null)
                 return "No response from server.";

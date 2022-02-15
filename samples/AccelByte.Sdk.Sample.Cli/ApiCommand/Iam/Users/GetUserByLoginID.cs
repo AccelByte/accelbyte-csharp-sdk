@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 LoginId                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelPublicUserResponse? response = wrapper.GetUserByLoginID(operation);
             if (response == null)
                 return "No response from server.";

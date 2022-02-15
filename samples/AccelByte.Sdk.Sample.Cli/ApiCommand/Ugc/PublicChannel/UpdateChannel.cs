@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 UserId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsChannelResponse? response = wrapper.UpdateChannel(operation);
             if (response == null)
                 return "No response from server.";

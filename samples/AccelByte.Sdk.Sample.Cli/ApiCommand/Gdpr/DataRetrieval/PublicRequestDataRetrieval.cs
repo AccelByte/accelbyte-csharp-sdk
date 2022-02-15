@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
                 UserId,                
                 Password                
             );            
-
+            
             AccelByte.Sdk.Api.Gdpr.Model.ModelsDataRetrievalResponse? response = wrapper.PublicRequestDataRetrieval(operation);
             if (response == null)
                 return "No response from server.";

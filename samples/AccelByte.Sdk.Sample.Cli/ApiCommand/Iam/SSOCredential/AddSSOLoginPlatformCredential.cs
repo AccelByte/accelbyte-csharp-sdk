@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 PlatformId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelSSOPlatformCredentialResponse? response = wrapper.AddSSOLoginPlatformCredential(operation);
             if (response == null)
                 return "No response from server.";

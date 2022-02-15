@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 Redeemable                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.CodeInfo? response = wrapper.GetCode(operation);
             if (response == null)
                 return "No response from server.";

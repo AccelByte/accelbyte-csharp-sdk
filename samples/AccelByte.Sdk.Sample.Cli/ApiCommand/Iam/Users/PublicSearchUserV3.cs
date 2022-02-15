@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 By,                
                 Query                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelPublicUserInformationResponseV3? response = wrapper.PublicSearchUserV3(operation);
             if (response == null)
                 return "No response from server.";

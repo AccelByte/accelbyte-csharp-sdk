@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 OrderNo,                
                 UserId                
             );            
-
+            
             wrapper.DownloadUserOrderReceipt(operation);
             return String.Empty;
         }

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AdminInviteUserV4 operation = new AdminInviteUserV4(
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelInviteUserResponseV3? response = wrapper.AdminInviteUserV4(operation);
             if (response == null)
                 return "No response from server.";

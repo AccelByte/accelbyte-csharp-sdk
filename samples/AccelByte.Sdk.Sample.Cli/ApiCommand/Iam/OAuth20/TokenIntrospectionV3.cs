@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             TokenIntrospectionV3 operation = new TokenIntrospectionV3(
                 Token                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenIntrospectResponse? response = wrapper.TokenIntrospectionV3(operation);
             if (response == null)
                 return "No response from server.";

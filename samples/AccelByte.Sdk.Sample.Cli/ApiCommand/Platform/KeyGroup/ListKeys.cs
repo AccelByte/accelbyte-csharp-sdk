@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Offset,                
                 Status                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.KeyPagingSliceResult? response = wrapper.ListKeys(operation);
             if (response == null)
                 return "No response from server.";

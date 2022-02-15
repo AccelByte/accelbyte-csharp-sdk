@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Validate,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentMerchantConfigInfo? response = wrapper.UpdateAliPayConfig(operation);
             if (response == null)
                 return "No response from server.";

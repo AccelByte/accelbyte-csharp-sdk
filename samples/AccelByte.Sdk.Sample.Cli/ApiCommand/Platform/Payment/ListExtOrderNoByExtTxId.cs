@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 ExtTxId                
             );            
-
+            
             List<string>? response = wrapper.ListExtOrderNoByExtTxId(operation);
             if (response == null)
                 return "No response from server.";

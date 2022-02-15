@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId,                
                 ItemIds                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.Ownership? response = wrapper.ExistsAnyUserActiveEntitlementByItemIds(operation);
             if (response == null)
                 return "No response from server.";

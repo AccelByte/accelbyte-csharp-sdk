@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 File,                
                 Strategy                
             );            
-
+            
             AccelByte.Sdk.Api.Matchmaking.Model.ModelsImportConfigResponse? response = wrapper.ImportChannels(operation);
             if (response == null)
                 return "No response from server.";

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 List,                
                 Namespace                
             );            
-
+            
             wrapper.AdminDeleteProfanityList(operation);
             return String.Empty;
         }

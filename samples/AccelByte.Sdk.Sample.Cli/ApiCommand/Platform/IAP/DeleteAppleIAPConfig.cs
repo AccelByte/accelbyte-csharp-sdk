@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             DeleteAppleIAPConfig operation = new DeleteAppleIAPConfig(
                 Namespace                
             );            
-
+            
             wrapper.DeleteAppleIAPConfig(operation);
             return String.Empty;
         }

@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
                 StartDate,                
                 Type                
             );            
-
+            
             AccelByte.Sdk.Api.Eventlog.Model.ModelsEventResponseV2? response = wrapper.GetPublicEditHistory(operation);
             if (response == null)
                 return "No response from server.";

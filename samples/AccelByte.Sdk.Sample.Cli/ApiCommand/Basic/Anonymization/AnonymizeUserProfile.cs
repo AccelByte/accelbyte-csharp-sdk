@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 Namespace,                
                 UserId                
             );            
-
+            
             wrapper.AnonymizeUserProfile(operation);
             return String.Empty;
         }

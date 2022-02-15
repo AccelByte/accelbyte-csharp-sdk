@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Limit,                
                 Offset                
             );            
-
+            
             List<AccelByte.Sdk.Api.Iam.Model.ModelSSOPlatformCredentialResponse>? response = wrapper.RetrieveAllSSOLoginPlatformCredentialV3(operation);
             if (response == null)
                 return "No response from server.";

@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.AccountCreateUserResponseV4? response = wrapper.CreateUserFromInvitationV4(operation);
             if (response == null)
                 return "No response from server.";

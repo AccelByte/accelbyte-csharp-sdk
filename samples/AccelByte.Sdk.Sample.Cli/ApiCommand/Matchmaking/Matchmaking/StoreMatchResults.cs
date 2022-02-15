@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Matchmaking.Model.ModelsMatchResultResponse? response = wrapper.StoreMatchResults(operation);
             if (response == null)
                 return "No response from server.";

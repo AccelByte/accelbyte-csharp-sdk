@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 GroupId,                
                 Namespace                
             );            
-
+            
             wrapper.SingleAdminDeleteGroup(operation);
             return String.Empty;
         }

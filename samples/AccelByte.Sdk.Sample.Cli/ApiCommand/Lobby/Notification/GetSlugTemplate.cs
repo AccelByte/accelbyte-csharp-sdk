@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 Before,                
                 Limit                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelTemplateLocalizationResponse? response = wrapper.GetSlugTemplate(operation);
             if (response == null)
                 return "No response from server.";

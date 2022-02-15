@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             ChangePreferenceConsent operation = new ChangePreferenceConsent(
                 Body                
             );            
-
+            
             wrapper.ChangePreferenceConsent(operation);
             return String.Empty;
         }

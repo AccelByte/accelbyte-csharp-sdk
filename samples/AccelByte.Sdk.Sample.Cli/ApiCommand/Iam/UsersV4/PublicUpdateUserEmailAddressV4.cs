@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 Body                
             );            
-
+            
             wrapper.PublicUpdateUserEmailAddressV4(operation);
             return String.Empty;
         }

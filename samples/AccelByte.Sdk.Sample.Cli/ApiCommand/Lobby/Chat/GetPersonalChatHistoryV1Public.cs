@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 FriendId,                
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Lobby.Model.ModelChatMessageResponse>? response = wrapper.GetPersonalChatHistoryV1Public(operation);
             if (response == null)
                 return "No response from server.";

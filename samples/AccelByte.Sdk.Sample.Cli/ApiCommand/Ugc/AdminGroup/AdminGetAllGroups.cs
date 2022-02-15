@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedGroupResponse? response = wrapper.AdminGetAllGroups(operation);
             if (response == null)
                 return "No response from server.";

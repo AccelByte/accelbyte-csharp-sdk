@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             GetImageLimit operation = new GetImageLimit(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsGetImageLimitResponse? response = wrapper.GetImageLimit(operation);
             if (response == null)
                 return "No response from server.";

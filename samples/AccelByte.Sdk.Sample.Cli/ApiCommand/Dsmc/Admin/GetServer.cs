@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Namespace,                
                 PodName                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsServer? response = wrapper.GetServer(operation);
             if (response == null)
                 return "No response from server.";

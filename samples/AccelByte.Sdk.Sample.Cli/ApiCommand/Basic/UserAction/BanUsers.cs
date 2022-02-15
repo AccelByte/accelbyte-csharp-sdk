@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 Namespace,                
                 Body                
             );            
-
+            
             wrapper.BanUsers(operation);
             return String.Empty;
         }

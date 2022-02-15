@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Basic.Model.Equ8Config? response = wrapper.UpdateConfig(operation);
             if (response == null)
                 return "No response from server.";

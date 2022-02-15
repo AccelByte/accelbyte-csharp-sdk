@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             SetRoleAsAdmin operation = new SetRoleAsAdmin(
                 RoleId                
             );            
-
+            
             wrapper.SetRoleAsAdmin(operation);
             return String.Empty;
         }

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             SetDefaultPolicy1 operation = new SetDefaultPolicy1(
                 PolicyId                
             );            
-
+            
             wrapper.SetDefaultPolicy1(operation);
             return String.Empty;
         }

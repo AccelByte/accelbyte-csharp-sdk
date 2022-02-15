@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             GetSpecialPaymentProviders operation = new GetSpecialPaymentProviders(
             );            
-
+            
             List<string>? response = wrapper.GetSpecialPaymentProviders(operation);
             if (response == null)
                 return "No response from server.";

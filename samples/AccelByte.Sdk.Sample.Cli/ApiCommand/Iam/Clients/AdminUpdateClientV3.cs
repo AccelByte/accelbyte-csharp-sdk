@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ClientmodelClientV3Response? response = wrapper.AdminUpdateClientV3(operation);
             if (response == null)
                 return "No response from server.";

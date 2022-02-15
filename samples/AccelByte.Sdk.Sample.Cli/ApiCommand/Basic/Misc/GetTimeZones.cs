@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             GetTimeZones operation = new GetTimeZones(
                 Namespace                
             );            
-
+            
             List<string>? response = wrapper.GetTimeZones(operation);
             if (response == null)
                 return "No response from server.";

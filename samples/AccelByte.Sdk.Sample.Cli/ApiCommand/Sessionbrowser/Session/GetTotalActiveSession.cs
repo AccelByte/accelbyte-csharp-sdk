@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
                 Namespace,                
                 SessionType                
             );            
-
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsCountActiveSessionResponse? response = wrapper.GetTotalActiveSession(operation);
             if (response == null)
                 return "No response from server.";

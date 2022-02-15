@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
                 RequestDate,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Gdpr.Model.ModelsListPersonalDataResponse? response = wrapper.PublicCancelUserPersonalDataRequest(operation);
             if (response == null)
                 return "No response from server.";

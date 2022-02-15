@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 ProfileId,                
                 UserId                
             );            
-
+            
             wrapper.PublicDeleteProfile(operation);
             return String.Empty;
         }

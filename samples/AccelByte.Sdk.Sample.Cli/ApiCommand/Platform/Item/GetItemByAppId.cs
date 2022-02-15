@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 StoreId,                
                 AppId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.FullItemInfo? response = wrapper.GetItemByAppId(operation);
             if (response == null)
                 return "No response from server.";

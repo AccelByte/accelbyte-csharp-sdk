@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 FriendId,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelUserGetFriendshipStatusResponse? response = wrapper.UserGetFriendshipStatus(operation);
             if (response == null)
                 return "No response from server.";

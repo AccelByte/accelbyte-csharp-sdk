@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             ExportConfigV1 operation = new ExportConfigV1(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDSMConfigExport? response = wrapper.ExportConfigV1(operation);
             if (response == null)
                 return "No response from server.";

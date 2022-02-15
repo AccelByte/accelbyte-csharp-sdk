@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             GetAggregatePaymentProviders operation = new GetAggregatePaymentProviders(
             );            
-
+            
             List<string>? response = wrapper.GetAggregatePaymentProviders(operation);
             if (response == null)
                 return "No response from server.";

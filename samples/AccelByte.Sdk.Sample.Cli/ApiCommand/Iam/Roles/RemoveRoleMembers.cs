@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 RoleId,                
                 Body                
             );            
-
+            
             wrapper.RemoveRoleMembers(operation);
             return String.Empty;
         }

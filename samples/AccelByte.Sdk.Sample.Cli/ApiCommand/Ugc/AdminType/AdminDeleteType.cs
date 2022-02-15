@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Namespace,                
                 TypeId                
             );            
-
+            
             wrapper.AdminDeleteType(operation);
             return String.Empty;
         }

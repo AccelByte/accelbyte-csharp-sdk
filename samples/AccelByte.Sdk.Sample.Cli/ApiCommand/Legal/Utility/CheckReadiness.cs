@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 
             CheckReadiness operation = new CheckReadiness(
             );            
-
+            
             AccelByte.Sdk.Api.Legal.Model.LegalReadinessStatusResponse? response = wrapper.CheckReadiness(operation);
             if (response == null)
                 return "No response from server.";

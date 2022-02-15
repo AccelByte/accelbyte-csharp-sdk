@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 UserId,                
                 Body                
             );            
-
+            
             List<AccelByte.Sdk.Api.Iam.Model.ModelUserResponse>? response = wrapper.PublicUpdateUserV2(operation);
             if (response == null)
                 return "No response from server.";

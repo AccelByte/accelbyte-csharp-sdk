@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Offset,                
                 AppType                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.AppEntitlementPagingSlicedResult? response = wrapper.QueryUserEntitlementsByAppType(operation);
             if (response == null)
                 return "No response from server.";

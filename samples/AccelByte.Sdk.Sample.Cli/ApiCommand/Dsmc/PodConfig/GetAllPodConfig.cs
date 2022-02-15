@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Count,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListPodConfigResponse? response = wrapper.GetAllPodConfig(operation);
             if (response == null)
                 return "No response from server.";

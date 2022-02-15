@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 Offset,                
                 Keyword                
             );            
-
+            
             AccelByte.Sdk.Api.Social.Model.StatPagingSlicedResult? response = wrapper.QueryStats(operation);
             if (response == null)
                 return "No response from server.";

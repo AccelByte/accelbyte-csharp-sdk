@@ -79,7 +79,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Type,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedContentDownloadResponse? response = wrapper.AdminSearchContent(operation);
             if (response == null)
                 return "No response from server.";

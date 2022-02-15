@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             GetCurrentSeason operation = new GetCurrentSeason(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Seasonpass.Model.SeasonSummary? response = wrapper.GetCurrentSeason(operation);
             if (response == null)
                 return "No response from server.";

@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 UserId,                
                 PlatformNamespace                
             );            
-
+            
             wrapper.PlatformUnlink(operation);
             return String.Empty;
         }

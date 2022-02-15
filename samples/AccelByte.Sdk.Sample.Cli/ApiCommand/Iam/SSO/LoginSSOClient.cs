@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 PlatformId,                
                 Payload                
             );            
-
+            
             wrapper.LoginSSOClient(operation);
             return String.Empty;
         }

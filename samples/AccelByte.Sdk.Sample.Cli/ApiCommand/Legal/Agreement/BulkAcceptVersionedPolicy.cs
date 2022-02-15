@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             BulkAcceptVersionedPolicy operation = new BulkAcceptVersionedPolicy(
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Legal.Model.AcceptAgreementResponse? response = wrapper.BulkAcceptVersionedPolicy(operation);
             if (response == null)
                 return "No response from server.";

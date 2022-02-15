@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetPlatformDLCConfig operation = new GetPlatformDLCConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PlatformDLCConfigInfo? response = wrapper.GetPlatformDLCConfig(operation);
             if (response == null)
                 return "No response from server.";

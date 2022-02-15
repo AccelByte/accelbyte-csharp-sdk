@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedGetChannelResponse? response = wrapper.AdminGetChannel(operation);
             if (response == null)
                 return "No response from server.";

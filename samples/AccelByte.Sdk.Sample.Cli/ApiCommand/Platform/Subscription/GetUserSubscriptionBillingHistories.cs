@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.BillingHistoryPagingSlicedResult? response = wrapper.GetUserSubscriptionBillingHistories(operation);
             if (response == null)
                 return "No response from server.";

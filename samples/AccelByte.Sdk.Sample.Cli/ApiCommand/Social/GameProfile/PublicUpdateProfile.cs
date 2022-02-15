@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 UserId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Social.Model.GameProfileInfo? response = wrapper.PublicUpdateProfile(operation);
             if (response == null)
                 return "No response from server.";

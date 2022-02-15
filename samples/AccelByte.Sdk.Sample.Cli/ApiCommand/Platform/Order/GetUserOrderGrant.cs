@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 OrderNo,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.OrderGrantInfo? response = wrapper.GetUserOrderGrant(operation);
             if (response == null)
                 return "No response from server.";

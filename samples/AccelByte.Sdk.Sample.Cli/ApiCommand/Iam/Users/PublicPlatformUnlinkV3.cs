@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 PlatformId,                
                 Body                
             );            
-
+            
             wrapper.PublicPlatformUnlinkV3(operation);
             return String.Empty;
         }

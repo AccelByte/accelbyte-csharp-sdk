@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             GetNamespaces operation = new GetNamespaces(
                 ActiveOnly                
             );            
-
+            
             List<AccelByte.Sdk.Api.Basic.Model.NamespaceInfo>? response = wrapper.GetNamespaces(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             ExportAchievements operation = new ExportAchievements(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Achievement.Model.ModelsAchievement>? response = wrapper.ExportAchievements(operation);
             if (response == null)
                 return "No response from server.";

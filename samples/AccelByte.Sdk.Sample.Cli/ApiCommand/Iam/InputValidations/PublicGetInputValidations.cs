@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 DefaultOnEmpty,                
                 LanguageCode                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelInputValidationsPublicResponse? response = wrapper.PublicGetInputValidations(operation);
             if (response == null)
                 return "No response from server.";

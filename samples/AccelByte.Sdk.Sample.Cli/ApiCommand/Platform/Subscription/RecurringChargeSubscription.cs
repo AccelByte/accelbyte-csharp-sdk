@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 SubscriptionId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.RecurringChargeResult? response = wrapper.RecurringChargeSubscription(operation);
             if (response == null)
                 return "No response from server.";

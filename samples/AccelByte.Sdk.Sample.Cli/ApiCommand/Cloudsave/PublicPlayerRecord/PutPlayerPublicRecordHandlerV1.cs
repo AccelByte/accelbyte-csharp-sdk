@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
                 UserId,                
                 Body                
             );            
-
+            
             wrapper.PutPlayerPublicRecordHandlerV1(operation);
             return String.Empty;
         }

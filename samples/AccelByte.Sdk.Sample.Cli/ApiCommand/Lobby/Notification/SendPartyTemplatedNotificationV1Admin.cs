@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 PartyId,                
                 Body                
             );            
-
+            
             wrapper.SendPartyTemplatedNotificationV1Admin(operation);
             return String.Empty;
         }

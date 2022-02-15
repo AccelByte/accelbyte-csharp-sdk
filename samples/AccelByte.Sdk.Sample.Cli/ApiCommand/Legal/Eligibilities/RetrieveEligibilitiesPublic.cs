@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             RetrieveEligibilitiesPublic operation = new RetrieveEligibilitiesPublic(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Legal.Model.RetrieveUserEligibilitiesResponse>? response = wrapper.RetrieveEligibilitiesPublic(operation);
             if (response == null)
                 return "No response from server.";

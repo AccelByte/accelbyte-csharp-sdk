@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 PlatformId,                
                 PlatformUserId                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelUserResponseV3? response = wrapper.AdminGetUserByPlatformUserIDV3(operation);
             if (response == null)
                 return "No response from server.";

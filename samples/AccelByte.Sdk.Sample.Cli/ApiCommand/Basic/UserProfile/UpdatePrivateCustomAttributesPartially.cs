@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 UserId,                
                 Body                
             );            
-
+            
             Dictionary<string, object>? response = wrapper.UpdatePrivateCustomAttributesPartially(operation);
             if (response == null)
                 return "No response from server.";

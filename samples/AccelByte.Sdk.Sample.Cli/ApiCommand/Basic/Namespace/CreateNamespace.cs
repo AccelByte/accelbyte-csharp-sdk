@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             CreateNamespace operation = new CreateNamespace(
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Basic.Model.NamespaceInfo? response = wrapper.CreateNamespace(operation);
             if (response == null)
                 return "No response from server.";

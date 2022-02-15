@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Offset,                
                 Region                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListServerResponse? response = wrapper.ListServer(operation);
             if (response == null)
                 return "No response from server.";

@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Region,                
                 StoreId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PopulatedItemInfo? response = wrapper.PublicGetItem(operation);
             if (response == null)
                 return "No response from server.";

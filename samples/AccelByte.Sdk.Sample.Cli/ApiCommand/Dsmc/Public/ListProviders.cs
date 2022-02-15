@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
             ListProviders operation = new ListProviders(
             );            
-
+            
             List<string>? response = wrapper.ListProviders(operation);
             if (response == null)
                 return "No response from server.";

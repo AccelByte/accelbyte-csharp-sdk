@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 StoreId                
             );            
-
+            
             wrapper.DeleteItem(operation);
             return String.Empty;
         }

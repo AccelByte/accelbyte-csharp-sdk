@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 PlatformId,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenThirdPartyResponse? response = wrapper.AdminRetrieveUserThirdPartyPlatformTokenV3(operation);
             if (response == null)
                 return "No response from server.";

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 Namespace,                
                 Body                
             );            
-
+            
             wrapper.QueueSessionHandler(operation);
             return String.Empty;
         }

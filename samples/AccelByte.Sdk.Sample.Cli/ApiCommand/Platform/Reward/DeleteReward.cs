@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 RewardId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.RewardInfo? response = wrapper.DeleteReward(operation);
             if (response == null)
                 return "No response from server.";

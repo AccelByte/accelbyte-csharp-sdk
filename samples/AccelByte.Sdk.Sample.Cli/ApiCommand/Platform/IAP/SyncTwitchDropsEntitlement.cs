@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId,                
                 Body                
             );            
-
+            
             wrapper.SyncTwitchDropsEntitlement(operation);
             return String.Empty;
         }

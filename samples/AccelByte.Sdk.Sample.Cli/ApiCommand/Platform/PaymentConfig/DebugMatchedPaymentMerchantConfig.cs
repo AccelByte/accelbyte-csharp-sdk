@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 Region                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentMerchantConfigInfo? response = wrapper.DebugMatchedPaymentMerchantConfig(operation);
             if (response == null)
                 return "No response from server.";

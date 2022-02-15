@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 RequestId,                
                 UserName                
             );            
-
+            
             string? response = wrapper.UserAuthenticationV3(operation);
             if (response == null)
                 return "No response from server.";

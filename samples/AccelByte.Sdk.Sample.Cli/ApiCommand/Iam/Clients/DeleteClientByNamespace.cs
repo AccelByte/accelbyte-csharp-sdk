@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 ClientId,                
                 Namespace                
             );            
-
+            
             wrapper.DeleteClientByNamespace(operation);
             return String.Empty;
         }

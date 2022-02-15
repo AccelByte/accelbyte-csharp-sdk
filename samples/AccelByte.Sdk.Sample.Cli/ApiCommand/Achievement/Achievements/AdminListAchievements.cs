@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 Offset,                
                 SortBy                
             );            
-
+            
             AccelByte.Sdk.Api.Achievement.Model.ModelsPaginatedAchievementResponse? response = wrapper.AdminListAchievements(operation);
             if (response == null)
                 return "No response from server.";

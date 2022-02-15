@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 Namespace,                
                 UserIds                
             );            
-
+            
             List<AccelByte.Sdk.Api.Social.Model.UserGameProfiles>? response = wrapper.PublicGetUserGameProfiles(operation);
             if (response == null)
                 return "No response from server.";

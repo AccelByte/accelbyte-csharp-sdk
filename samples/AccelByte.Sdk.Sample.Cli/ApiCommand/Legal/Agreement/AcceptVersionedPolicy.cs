@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AcceptVersionedPolicy operation = new AcceptVersionedPolicy(
                 LocalizedPolicyVersionId                
             );            
-
+            
             wrapper.AcceptVersionedPolicy(operation);
             return String.Empty;
         }

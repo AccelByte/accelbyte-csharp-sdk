@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 UserId,                
                 Body                
             );            
-
+            
             wrapper.AdminBulkBlockPlayersV1(operation);
             return String.Empty;
         }

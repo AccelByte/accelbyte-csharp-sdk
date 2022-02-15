@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             ListFulfillmentScripts operation = new ListFulfillmentScripts(
             );            
-
+            
             List<AccelByte.Sdk.Api.Platform.Model.FulfillmentScriptInfo>? response = wrapper.ListFulfillmentScripts(operation);
             if (response == null)
                 return "No response from server.";

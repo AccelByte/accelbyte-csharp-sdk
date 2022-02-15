@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateContentResponse? response = wrapper.SingleAdminUpdateContentS3(operation);
             if (response == null)
                 return "No response from server.";

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 ChannelName,                
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Matchmaking.Model.ModelsMatchingParty>? response = wrapper.GetAllPartyInChannel(operation);
             if (response == null)
                 return "No response from server.";

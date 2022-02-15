@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 RewardId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.ConditionMatchResult? response = wrapper.CheckEventCondition(operation);
             if (response == null)
                 return "No response from server.";

@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
                 UserId,                
                 Password                
             );            
-
+            
             AccelByte.Sdk.Api.Gdpr.Model.ModelsRequestDeleteResponse? response = wrapper.PublicSubmitUserAccountDeletionRequest(operation);
             if (response == null)
                 return "No response from server.";

@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.FulfillmentResult? response = wrapper.PublicRedeemCode(operation);
             if (response == null)
                 return "No response from server.";

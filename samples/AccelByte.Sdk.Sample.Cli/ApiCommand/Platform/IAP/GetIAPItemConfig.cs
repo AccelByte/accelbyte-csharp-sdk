@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetIAPItemConfig operation = new GetIAPItemConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.IAPItemConfigInfo? response = wrapper.GetIAPItemConfig(operation);
             if (response == null)
                 return "No response from server.";

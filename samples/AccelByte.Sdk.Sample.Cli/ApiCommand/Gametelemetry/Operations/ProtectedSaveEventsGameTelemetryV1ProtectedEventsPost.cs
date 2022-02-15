@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
             ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost operation = new ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(
                 Body                
             );            
-
+            
             wrapper.ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(operation);
             return String.Empty;
         }

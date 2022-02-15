@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
                 PageSize,                
                 StartDate                
             );            
-
+            
             AccelByte.Sdk.Api.Eventlog.Model.ModelsEventResponseV2? response = wrapper.GetUserEventsV2Public(operation);
             if (response == null)
                 return "No response from server.";

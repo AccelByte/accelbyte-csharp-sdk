@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 Namespace,                
                 UserId                
             );            
-
+            
             Dictionary<string, object>? response = wrapper.GetPrivateCustomAttributesInfo(operation);
             if (response == null)
                 return "No response from server.";

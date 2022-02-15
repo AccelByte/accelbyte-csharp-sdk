@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 Namespace,                
                 TopicName                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelNotificationTopicResponseV1? response = wrapper.GetNotificationTopicV1Admin(operation);
             if (response == null)
                 return "No response from server.";

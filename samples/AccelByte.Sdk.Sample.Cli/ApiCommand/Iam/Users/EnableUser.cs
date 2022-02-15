@@ -35,13 +35,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             EnableUser operation = new EnableUser(
                 Namespace,                
                 UserId                
             );            
-
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             wrapper.EnableUser(operation);
             return String.Empty;
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

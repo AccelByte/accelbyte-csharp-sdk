@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 UserId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateContentResponse? response = wrapper.UpdateContentS3(operation);
             if (response == null)
                 return "No response from server.";

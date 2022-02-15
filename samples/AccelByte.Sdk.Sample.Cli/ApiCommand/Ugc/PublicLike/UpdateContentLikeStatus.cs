@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsContentLikeResponse? response = wrapper.UpdateContentLikeStatus(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             GetActions operation = new GetActions(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Basic.Model.Action>? response = wrapper.GetActions(operation);
             if (response == null)
                 return "No response from server.";

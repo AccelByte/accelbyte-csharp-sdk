@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 UserId,                
                 AdditionalKey                
             );            
-
+            
             wrapper.DeleteUserStatItems2(operation);
             return String.Empty;
         }

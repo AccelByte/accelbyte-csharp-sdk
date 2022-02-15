@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             ExportImages operation = new ExportImages(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Dsmc.Model.ModelsImageRecord>? response = wrapper.ExportImages(operation);
             if (response == null)
                 return "No response from server.";

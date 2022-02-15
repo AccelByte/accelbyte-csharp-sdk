@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 UserId                
             );            
-
+            
             List<AccelByte.Sdk.Api.Iam.Model.ModelGetUserMapping>? response = wrapper.GetListJusticePlatformAccounts(operation);
             if (response == null)
                 return "No response from server.";

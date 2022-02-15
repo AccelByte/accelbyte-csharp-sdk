@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 
             PublicGetMessages operation = new PublicGetMessages(
             );            
-
+            
             List<AccelByte.Sdk.Api.Matchmaking.Model.LogAppMessageDeclaration>? response = wrapper.PublicGetMessages(operation);
             if (response == null)
                 return "No response from server.";

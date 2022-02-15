@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             ImportConfig operation = new ImportConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsImportConfigResponse? response = wrapper.ImportConfig(operation);
             if (response == null)
                 return "No response from server.";

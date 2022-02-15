@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             CreateRole operation = new CreateRole(
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.AccountcommonRole? response = wrapper.CreateRole(operation);
             if (response == null)
                 return "No response from server.";

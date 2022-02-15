@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 ContentId,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsContentDownloadResponse? response = wrapper.PublicDownloadContentByContentID(operation);
             if (response == null)
                 return "No response from server.";

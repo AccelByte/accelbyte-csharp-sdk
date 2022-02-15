@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ClientmodelClientsV3Response? response = wrapper.AdminGetClientsByNamespaceV3(operation);
             if (response == null)
                 return "No response from server.";

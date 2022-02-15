@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             DeleteFulfillmentScript operation = new DeleteFulfillmentScript(
                 Id                
             );            
-
+            
             wrapper.DeleteFulfillmentScript(operation);
             return String.Empty;
         }

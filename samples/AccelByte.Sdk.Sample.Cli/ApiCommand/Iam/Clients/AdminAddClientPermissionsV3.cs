@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 Body                
             );            
-
+            
             wrapper.AdminAddClientPermissionsV3(operation);
             return String.Empty;
         }

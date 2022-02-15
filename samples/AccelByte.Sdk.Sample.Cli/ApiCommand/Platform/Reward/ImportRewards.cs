@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 ReplaceExisting,                
                 File                
             );            
-
+            
             wrapper.ImportRewards(operation);
             return String.Empty;
         }

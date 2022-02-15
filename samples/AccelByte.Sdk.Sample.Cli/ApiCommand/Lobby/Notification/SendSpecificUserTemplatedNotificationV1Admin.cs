@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 UserId,                
                 Body                
             );            
-
+            
             wrapper.SendSpecificUserTemplatedNotificationV1Admin(operation);
             return String.Empty;
         }

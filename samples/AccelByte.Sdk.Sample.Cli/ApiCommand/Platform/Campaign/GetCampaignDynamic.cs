@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 CampaignId,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.CampaignDynamicInfo? response = wrapper.GetCampaignDynamic(operation);
             if (response == null)
                 return "No response from server.";

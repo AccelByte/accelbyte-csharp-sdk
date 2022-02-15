@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 GroupId,                
                 Namespace                
             );            
-
+            
             wrapper.DeleteGroupPublicV1(operation);
             return String.Empty;
         }

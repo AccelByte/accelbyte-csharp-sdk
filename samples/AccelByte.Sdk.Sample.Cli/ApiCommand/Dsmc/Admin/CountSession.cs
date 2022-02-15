@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Namespace,                
                 Region                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsCountSessionResponse? response = wrapper.CountSession(operation);
             if (response == null)
                 return "No response from server.";

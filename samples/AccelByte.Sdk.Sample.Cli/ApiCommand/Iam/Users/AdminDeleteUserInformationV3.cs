@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 UserId                
             );            
-
+            
             wrapper.AdminDeleteUserInformationV3(operation);
             return String.Empty;
         }

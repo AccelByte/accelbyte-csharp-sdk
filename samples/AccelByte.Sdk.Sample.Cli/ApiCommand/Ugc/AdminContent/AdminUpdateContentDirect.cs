@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         {
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             AdminUpdateContentDirect operation = new AdminUpdateContentDirect(
                 ChannelId,                
                 ContentId,                
@@ -51,12 +52,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 UserId,                
                 Body                
             );            
-
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateContentResponse? response = wrapper.AdminUpdateContentDirect(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

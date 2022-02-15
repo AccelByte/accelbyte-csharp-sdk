@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetEpicGamesIAPConfig operation = new GetEpicGamesIAPConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.EpicGamesIAPConfigInfo? response = wrapper.GetEpicGamesIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelUserResponseV3? response = wrapper.PublicUpgradeHeadlessAccountV3(operation);
             if (response == null)
                 return "No response from server.";

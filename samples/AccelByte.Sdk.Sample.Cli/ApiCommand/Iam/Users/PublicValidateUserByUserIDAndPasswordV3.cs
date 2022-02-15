@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 UserId,                
                 Password                
             );            
-
+            
             wrapper.PublicValidateUserByUserIDAndPasswordV3(operation);
             return String.Empty;
         }

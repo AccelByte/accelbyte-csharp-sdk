@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 AdditionalKey,                
                 Body                
             );            
-
+            
             List<AccelByte.Sdk.Api.Social.Model.BulkStatItemOperationResult>? response = wrapper.BulkUpdateUserStatItem2(operation);
             if (response == null)
                 return "No response from server.";

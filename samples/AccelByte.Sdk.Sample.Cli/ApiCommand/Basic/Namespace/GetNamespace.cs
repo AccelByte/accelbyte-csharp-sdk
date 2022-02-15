@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 Namespace,                
                 ActiveOnly                
             );            
-
+            
             AccelByte.Sdk.Api.Basic.Model.NamespaceInfo? response = wrapper.GetNamespace(operation);
             if (response == null)
                 return "No response from server.";

@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 RedirectUri,                
                 Ticket                
             );            
-
+            
             wrapper.PublicPlatformLinkV3(operation);
             return String.Empty;
         }

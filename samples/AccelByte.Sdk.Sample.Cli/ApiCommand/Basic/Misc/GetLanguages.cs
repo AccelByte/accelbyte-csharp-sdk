@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             GetLanguages operation = new GetLanguages(
                 Namespace                
             );            
-
+            
             Dictionary<string, object>? response = wrapper.GetLanguages(operation);
             if (response == null)
                 return "No response from server.";

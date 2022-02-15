@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 TypeId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateTypeResponse? response = wrapper.AdminUpdateType(operation);
             if (response == null)
                 return "No response from server.";

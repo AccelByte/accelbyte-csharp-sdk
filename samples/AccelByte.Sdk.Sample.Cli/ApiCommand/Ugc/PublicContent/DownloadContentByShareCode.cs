@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Namespace,                
                 ShareCode                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsContentDownloadResponse? response = wrapper.DownloadContentByShareCode(operation);
             if (response == null)
                 return "No response from server.";

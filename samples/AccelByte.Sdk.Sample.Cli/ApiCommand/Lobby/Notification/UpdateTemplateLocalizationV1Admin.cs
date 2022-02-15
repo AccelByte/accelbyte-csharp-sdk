@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 TemplateSlug,                
                 Body                
             );            
-
+            
             wrapper.UpdateTemplateLocalizationV1Admin(operation);
             return String.Empty;
         }

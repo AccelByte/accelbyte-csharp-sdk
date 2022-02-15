@@ -32,12 +32,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         {
             AccelByte.Sdk.Api.Eventlog.Wrapper.EventRegistry wrapper = new AccelByte.Sdk.Api.Eventlog.Wrapper.EventRegistry(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             UnregisterEventIDHandler operation = new UnregisterEventIDHandler(
                 EventId                
             );            
-
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             wrapper.UnregisterEventIDHandler(operation);
             return String.Empty;
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 Namespace,                
                 UserID                
             );            
-
+            
             wrapper.DeleteUserFromSessionInChannel(operation);
             return String.Empty;
         }

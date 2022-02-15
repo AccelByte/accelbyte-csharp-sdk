@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 File,                
                 Strategy                
             );            
-
+            
             AccelByte.Sdk.Api.Achievement.Model.ServiceImportConfigResponse? response = wrapper.ImportAchievements(operation);
             if (response == null)
                 return "No response from server.";

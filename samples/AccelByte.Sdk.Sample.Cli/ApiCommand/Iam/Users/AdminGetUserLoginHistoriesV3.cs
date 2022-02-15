@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Before,                
                 Limit                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelLoginHistoriesResponse? response = wrapper.AdminGetUserLoginHistoriesV3(operation);
             if (response == null)
                 return "No response from server.";

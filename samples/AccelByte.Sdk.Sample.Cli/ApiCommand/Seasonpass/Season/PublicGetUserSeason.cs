@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
                 SeasonId,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Seasonpass.Model.ClaimableUserSeasonInfo? response = wrapper.PublicGetUserSeason(operation);
             if (response == null)
                 return "No response from server.";

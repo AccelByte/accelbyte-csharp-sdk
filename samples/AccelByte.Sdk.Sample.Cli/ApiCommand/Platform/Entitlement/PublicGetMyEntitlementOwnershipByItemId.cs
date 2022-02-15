@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 EntitlementClazz,                
                 ItemId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.TimedOwnership? response = wrapper.PublicGetMyEntitlementOwnershipByItemId(operation);
             if (response == null)
                 return "No response from server.";

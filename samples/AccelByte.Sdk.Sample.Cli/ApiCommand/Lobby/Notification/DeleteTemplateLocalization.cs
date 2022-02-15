@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 TemplateLanguage,                
                 TemplateSlug                
             );            
-
+            
             wrapper.DeleteTemplateLocalization(operation);
             return String.Empty;
         }

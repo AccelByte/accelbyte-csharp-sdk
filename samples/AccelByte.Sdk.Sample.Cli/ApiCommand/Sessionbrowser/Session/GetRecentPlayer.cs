@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
                 Namespace,                
                 UserID                
             );            
-
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsRecentPlayerQueryResponse? response = wrapper.GetRecentPlayer(operation);
             if (response == null)
                 return "No response from server.";

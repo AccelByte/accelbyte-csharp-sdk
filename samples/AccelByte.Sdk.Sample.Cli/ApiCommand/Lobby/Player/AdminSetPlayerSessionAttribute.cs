@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 UserId,                
                 Body                
             );            
-
+            
             wrapper.AdminSetPlayerSessionAttribute(operation);
             return String.Empty;
         }

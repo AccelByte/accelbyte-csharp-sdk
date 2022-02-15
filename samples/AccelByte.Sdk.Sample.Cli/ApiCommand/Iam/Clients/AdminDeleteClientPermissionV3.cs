@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 Resource                
             );            
-
+            
             wrapper.AdminDeleteClientPermissionV3(operation);
             return String.Empty;
         }

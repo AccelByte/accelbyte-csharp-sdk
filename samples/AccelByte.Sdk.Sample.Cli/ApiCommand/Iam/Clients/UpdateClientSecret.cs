@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 ClientId,                
                 Body                
             );            
-
+            
             wrapper.UpdateClientSecret(operation);
             return String.Empty;
         }

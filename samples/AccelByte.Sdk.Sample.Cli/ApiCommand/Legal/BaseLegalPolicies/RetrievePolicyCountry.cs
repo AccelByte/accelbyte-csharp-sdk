@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 BasePolicyId,                
                 CountryCode                
             );            
-
+            
             AccelByte.Sdk.Api.Legal.Model.RetrievePolicyResponse? response = wrapper.RetrievePolicyCountry(operation);
             if (response == null)
                 return "No response from server.";

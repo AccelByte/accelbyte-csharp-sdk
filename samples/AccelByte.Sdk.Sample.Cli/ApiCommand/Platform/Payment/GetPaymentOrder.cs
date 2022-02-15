@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 PaymentOrderNo                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentOrderInfo? response = wrapper.GetPaymentOrder(operation);
             if (response == null)
                 return "No response from server.";

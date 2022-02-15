@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 Namespace,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Basic.Model.UserProfilePublicInfo? response = wrapper.PublicGetUserProfilePublicInfo(operation);
             if (response == null)
                 return "No response from server.";

@@ -41,18 +41,22 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
         {
             AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminPlayerRecord wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminPlayerRecord(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             ListPlayerRecordHandlerV1 operation = new ListPlayerRecordHandlerV1(
                 Namespace,                
                 Limit,                
                 Offset,                
                 Query                
             );            
-
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Cloudsave.Model.ModelsListPlayerRecordKeys? response = wrapper.ListPlayerRecordHandlerV1(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Matchmaking.Model.ModelsGetChannelsResponse? response = wrapper.GetAllChannelsHandler(operation);
             if (response == null)
                 return "No response from server.";

@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 ContentId,                
                 Namespace                
             );            
-
+            
             wrapper.SingleAdminDeleteContent(operation);
             return String.Empty;
         }

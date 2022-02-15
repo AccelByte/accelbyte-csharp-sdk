@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateTagResponse? response = wrapper.AdminCreateTag(operation);
             if (response == null)
                 return "No response from server.";

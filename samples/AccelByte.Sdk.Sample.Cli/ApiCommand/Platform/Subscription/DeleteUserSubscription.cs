@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 SubscriptionId,                
                 UserId                
             );            
-
+            
             wrapper.DeleteUserSubscription(operation);
             return String.Empty;
         }

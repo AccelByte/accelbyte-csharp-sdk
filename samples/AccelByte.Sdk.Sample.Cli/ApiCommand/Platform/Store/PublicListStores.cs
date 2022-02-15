@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             PublicListStores operation = new PublicListStores(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Platform.Model.StoreInfo>? response = wrapper.PublicListStores(operation);
             if (response == null)
                 return "No response from server.";

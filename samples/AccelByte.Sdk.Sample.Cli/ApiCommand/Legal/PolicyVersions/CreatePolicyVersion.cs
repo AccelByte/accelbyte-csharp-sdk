@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 PolicyId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Legal.Model.CreatePolicyVersionResponse? response = wrapper.CreatePolicyVersion(operation);
             if (response == null)
                 return "No response from server.";

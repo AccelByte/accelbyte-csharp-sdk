@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetDLCItemConfig operation = new GetDLCItemConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.DLCItemConfigInfo? response = wrapper.GetDLCItemConfig(operation);
             if (response == null)
                 return "No response from server.";

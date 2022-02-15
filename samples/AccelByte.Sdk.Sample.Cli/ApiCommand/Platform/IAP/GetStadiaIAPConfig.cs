@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetStadiaIAPConfig operation = new GetStadiaIAPConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.StadiaIAPConfigInfo? response = wrapper.GetStadiaIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

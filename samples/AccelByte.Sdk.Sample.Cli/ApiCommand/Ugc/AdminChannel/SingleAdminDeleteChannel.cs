@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 ChannelId,                
                 Namespace                
             );            
-
+            
             wrapper.SingleAdminDeleteChannel(operation);
             return String.Empty;
         }

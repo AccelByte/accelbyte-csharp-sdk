@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelListRoleV4Response? response = wrapper.AdminGetRolesV4(operation);
             if (response == null)
                 return "No response from server.";

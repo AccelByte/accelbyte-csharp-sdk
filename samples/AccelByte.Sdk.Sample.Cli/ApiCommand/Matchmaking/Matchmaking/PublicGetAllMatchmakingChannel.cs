@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             PublicGetAllMatchmakingChannel operation = new PublicGetAllMatchmakingChannel(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Matchmaking.Model.ModelsChannelV1>? response = wrapper.PublicGetAllMatchmakingChannel(operation);
             if (response == null)
                 return "No response from server.";

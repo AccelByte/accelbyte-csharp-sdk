@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Namespace,                
                 Body                
             );            
-
+            
             wrapper.ClaimServer(operation);
             return String.Empty;
         }

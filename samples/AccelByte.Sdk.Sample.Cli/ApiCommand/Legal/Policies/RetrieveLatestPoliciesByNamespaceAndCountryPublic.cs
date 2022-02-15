@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 PolicyType,                
                 Tags                
             );            
-
+            
             List<AccelByte.Sdk.Api.Legal.Model.RetrievePolicyPublicResponse>? response = wrapper.RetrieveLatestPoliciesByNamespaceAndCountryPublic(operation);
             if (response == null)
                 return "No response from server.";

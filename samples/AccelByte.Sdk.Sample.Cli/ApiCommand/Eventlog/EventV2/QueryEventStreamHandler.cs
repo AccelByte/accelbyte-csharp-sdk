@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
                 StartDate,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Eventlog.Model.ModelsEventResponseV2? response = wrapper.QueryEventStreamHandler(operation);
             if (response == null)
                 return "No response from server.";

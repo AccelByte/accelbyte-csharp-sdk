@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 Namespace,                
                 Topic                
             );            
-
+            
             wrapper.DeleteTopicByTopicName(operation);
             return String.Empty;
         }

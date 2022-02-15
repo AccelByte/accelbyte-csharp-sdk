@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
                 UserId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsGetUserVisibilityResponse? response = wrapper.SetUserVisibilityStatusV2(operation);
             if (response == null)
                 return "No response from server.";

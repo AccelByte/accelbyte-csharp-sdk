@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             GetConfig operation = new GetConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDSMConfigRecord? response = wrapper.GetConfig(operation);
             if (response == null)
                 return "No response from server.";

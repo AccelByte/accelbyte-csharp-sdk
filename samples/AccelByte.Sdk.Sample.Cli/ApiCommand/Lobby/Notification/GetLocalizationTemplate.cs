@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 TemplateLanguage,                
                 TemplateSlug                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelTemplateLocalization? response = wrapper.GetLocalizationTemplate(operation);
             if (response == null)
                 return "No response from server.";

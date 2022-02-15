@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 Namespace,                
                 StatCode                
             );            
-
+            
             AccelByte.Sdk.Api.Social.Model.StatInfo? response = wrapper.GetStat(operation);
             if (response == null)
                 return "No response from server.";

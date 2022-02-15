@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
                 Namespace,                
                 UserId                
             );            
-
+            
             wrapper.AdminCancelUserAccountDeletionRequest(operation);
             return String.Empty;
         }

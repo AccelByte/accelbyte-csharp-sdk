@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             GetUserInfoStatus operation = new GetUserInfoStatus(
                 Namespaces                
             );            
-
+            
             List<AccelByte.Sdk.Api.Legal.Model.RetrieveUserInfoCacheStatusResponse>? response = wrapper.GetUserInfoStatus(operation);
             if (response == null)
                 return "No response from server.";

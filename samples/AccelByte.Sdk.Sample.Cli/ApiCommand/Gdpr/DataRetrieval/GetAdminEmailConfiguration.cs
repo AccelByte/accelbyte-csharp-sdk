@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
             GetAdminEmailConfiguration operation = new GetAdminEmailConfiguration(
                 Namespace                
             );            
-
+            
             List<string>? response = wrapper.GetAdminEmailConfiguration(operation);
             if (response == null)
                 return "No response from server.";

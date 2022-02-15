@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             RetrievePolicies operation = new RetrievePolicies(
                 CountryCode                
             );            
-
+            
             List<AccelByte.Sdk.Api.Legal.Model.RetrievePolicyResponse>? response = wrapper.RetrievePolicies(operation);
             if (response == null)
                 return "No response from server.";

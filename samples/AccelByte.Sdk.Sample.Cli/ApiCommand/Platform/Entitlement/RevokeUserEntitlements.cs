@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId,                
                 EntitlementIds                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.BulkOperationResult? response = wrapper.RevokeUserEntitlements(operation);
             if (response == null)
                 return "No response from server.";

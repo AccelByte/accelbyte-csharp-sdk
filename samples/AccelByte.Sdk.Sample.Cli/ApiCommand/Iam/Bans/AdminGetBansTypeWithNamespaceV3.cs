@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AdminGetBansTypeWithNamespaceV3 operation = new AdminGetBansTypeWithNamespaceV3(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.AccountcommonBansV3? response = wrapper.AdminGetBansTypeWithNamespaceV3(operation);
             if (response == null)
                 return "No response from server.";

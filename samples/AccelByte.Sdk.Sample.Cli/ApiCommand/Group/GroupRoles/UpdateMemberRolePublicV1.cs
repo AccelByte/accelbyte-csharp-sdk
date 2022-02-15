@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Group.Model.ModelsGetUserGroupInformationResponseV1? response = wrapper.UpdateMemberRolePublicV1(operation);
             if (response == null)
                 return "No response from server.";

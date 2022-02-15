@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
                 Namespace,                
                 PodName                
             );            
-
+            
             AccelByte.Sdk.Api.Dslogmanager.Model.ModelsLogFileStatus? response = wrapper.CheckServerLogs(operation);
             if (response == null)
                 return "No response from server.";

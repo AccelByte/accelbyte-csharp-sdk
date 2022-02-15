@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             DeleteIAPItemConfig operation = new DeleteIAPItemConfig(
                 Namespace                
             );            
-
+            
             wrapper.DeleteIAPItemConfig(operation);
             return String.Empty;
         }

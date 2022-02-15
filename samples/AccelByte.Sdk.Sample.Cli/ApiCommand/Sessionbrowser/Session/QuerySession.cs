@@ -75,7 +75,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
                 UserId,                
                 SessionType                
             );            
-
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsSessionQueryResponse? response = wrapper.QuerySession(operation);
             if (response == null)
                 return "No response from server.";

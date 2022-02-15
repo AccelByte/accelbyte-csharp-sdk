@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 RedirectUri,                
                 RequestId                
             );            
-
+            
             string? response = wrapper.AuthCodeRequestV3(operation);
             if (response == null)
                 return "No response from server.";

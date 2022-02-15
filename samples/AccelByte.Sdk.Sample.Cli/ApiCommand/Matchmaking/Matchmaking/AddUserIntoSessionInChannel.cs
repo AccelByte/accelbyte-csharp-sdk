@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 Namespace,                
                 Body                
             );            
-
+            
             wrapper.AddUserIntoSessionInChannel(operation);
             return String.Empty;
         }

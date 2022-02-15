@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 ProfileId,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Social.Model.Attribute? response = wrapper.PublicGetProfileAttribute(operation);
             if (response == null)
                 return "No response from server.";

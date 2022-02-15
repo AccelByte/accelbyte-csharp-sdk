@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 RedirectUri,                
                 ResponseType                
             );            
-
+            
             string? response = wrapper.Authorization(operation);
             if (response == null)
                 return "No response from server.";

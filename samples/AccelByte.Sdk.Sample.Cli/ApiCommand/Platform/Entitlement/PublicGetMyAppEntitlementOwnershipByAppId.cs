@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 AppId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.Ownership? response = wrapper.PublicGetMyAppEntitlementOwnershipByAppId(operation);
             if (response == null)
                 return "No response from server.";

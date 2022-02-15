@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.CurrencyInfo? response = wrapper.UpdateCurrency(operation);
             if (response == null)
                 return "No response from server.";

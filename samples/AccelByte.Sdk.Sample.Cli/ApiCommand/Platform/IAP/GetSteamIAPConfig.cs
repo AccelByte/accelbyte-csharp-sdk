@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetSteamIAPConfig operation = new GetSteamIAPConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.SteamIAPConfig? response = wrapper.GetSteamIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

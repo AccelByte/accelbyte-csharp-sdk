@@ -87,7 +87,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 OpenidSigned,                
                 State                
             );            
-
+            
             string? response = wrapper.PlatformAuthenticationV3(operation);
             if (response == null)
                 return "No response from server.";

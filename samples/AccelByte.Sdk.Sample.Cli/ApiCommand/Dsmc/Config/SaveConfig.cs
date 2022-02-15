@@ -32,12 +32,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         {
             AccelByte.Sdk.Api.Dsmc.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Config(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             SaveConfig operation = new SaveConfig(
                 Body                
             );            
-
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             wrapper.SaveConfig(operation);
             return String.Empty;
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

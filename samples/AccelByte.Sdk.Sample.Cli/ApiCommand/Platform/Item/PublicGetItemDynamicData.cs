@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 ItemId,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.ItemDynamicDataInfo? response = wrapper.PublicGetItemDynamicData(operation);
             if (response == null)
                 return "No response from server.";

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Namespace,                
                 SessionID                
             );            
-
+            
             wrapper.DeleteSession(operation);
             return String.Empty;
         }

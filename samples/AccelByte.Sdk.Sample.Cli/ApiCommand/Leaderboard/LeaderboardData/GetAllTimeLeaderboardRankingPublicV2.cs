@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Leaderboard.Model.V2GetPublicLeaderboardRankingResponse? response = wrapper.GetAllTimeLeaderboardRankingPublicV2(operation);
             if (response == null)
                 return "No response from server.";

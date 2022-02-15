@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetTwitchIAPConfig operation = new GetTwitchIAPConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.TwitchIAPConfigInfo? response = wrapper.GetTwitchIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

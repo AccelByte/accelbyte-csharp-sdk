@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             TestXsollaConfig operation = new TestXsollaConfig(
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.TestResult? response = wrapper.TestXsollaConfig(operation);
             if (response == null)
                 return "No response from server.";

@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Before,                
                 Limit                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.AccountcommonUserLinkedPlatformsResponseV3? response = wrapper.AdminGetUserPlatformAccountsV3(operation);
             if (response == null)
                 return "No response from server.";

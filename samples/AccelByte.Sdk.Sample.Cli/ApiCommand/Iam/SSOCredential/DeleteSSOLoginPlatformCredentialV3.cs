@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 PlatformId                
             );            
-
+            
             wrapper.DeleteSSOLoginPlatformCredentialV3(operation);
             return String.Empty;
         }

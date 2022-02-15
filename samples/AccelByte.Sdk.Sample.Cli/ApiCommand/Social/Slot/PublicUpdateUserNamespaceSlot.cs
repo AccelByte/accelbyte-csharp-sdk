@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 CustomAttribute,                
                 File                
             );            
-
+            
             AccelByte.Sdk.Api.Social.Model.SlotInfo? response = wrapper.PublicUpdateUserNamespaceSlot(operation);
             if (response == null)
                 return "No response from server.";

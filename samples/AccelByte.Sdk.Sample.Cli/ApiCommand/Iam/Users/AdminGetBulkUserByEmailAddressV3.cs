@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelListUserResponseV3? response = wrapper.AdminGetBulkUserByEmailAddressV3(operation);
             if (response == null)
                 return "No response from server.";

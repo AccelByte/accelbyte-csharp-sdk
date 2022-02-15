@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Type,                
                 UserId                
             );            
-
+            
             wrapper.PublicDeletePaymentAccount(operation);
             return String.Empty;
         }

@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 StoreId,                
                 ItemIds                
             );            
-
+            
             List<AccelByte.Sdk.Api.Platform.Model.ItemInfo>? response = wrapper.PublicBulkGetItems(operation);
             if (response == null)
                 return "No response from server.";

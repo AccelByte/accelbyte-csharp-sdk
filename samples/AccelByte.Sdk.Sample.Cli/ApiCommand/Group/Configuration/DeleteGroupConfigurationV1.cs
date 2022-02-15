@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 ConfigurationCode,                
                 Namespace                
             );            
-
+            
             wrapper.DeleteGroupConfigurationV1(operation);
             return String.Empty;
         }

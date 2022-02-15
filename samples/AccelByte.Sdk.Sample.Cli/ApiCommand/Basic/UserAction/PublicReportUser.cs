@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 UserId,                
                 Body                
             );            
-
+            
             wrapper.PublicReportUser(operation);
             return String.Empty;
         }

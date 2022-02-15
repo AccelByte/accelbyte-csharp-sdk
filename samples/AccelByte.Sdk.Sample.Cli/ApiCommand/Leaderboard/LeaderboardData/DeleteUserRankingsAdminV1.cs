@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
                 UserId,                
                 LeaderboardCode                
             );            
-
+            
             wrapper.DeleteUserRankingsAdminV1(operation);
             return String.Empty;
         }

@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 Offset,                
                 PreferUnlocked                
             );            
-
+            
             AccelByte.Sdk.Api.Achievement.Model.ModelsPaginatedUserAchievementResponse? response = wrapper.PublicListUserAchievements(operation);
             if (response == null)
                 return "No response from server.";

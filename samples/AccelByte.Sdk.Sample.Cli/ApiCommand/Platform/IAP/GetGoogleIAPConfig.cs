@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetGoogleIAPConfig operation = new GetGoogleIAPConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.GoogleIAPConfigInfo? response = wrapper.GetGoogleIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             DeleteConfig operation = new DeleteConfig(
                 Namespace                
             );            
-
+            
             wrapper.DeleteConfig(operation);
             return String.Empty;
         }

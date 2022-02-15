@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             ListStores operation = new ListStores(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Platform.Model.StoreInfo>? response = wrapper.ListStores(operation);
             if (response == null)
                 return "No response from server.";

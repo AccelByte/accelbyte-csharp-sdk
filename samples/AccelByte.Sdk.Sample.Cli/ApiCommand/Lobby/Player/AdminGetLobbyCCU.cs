@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AdminGetLobbyCCU operation = new AdminGetLobbyCCU(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsGetLobbyCcuResponse? response = wrapper.AdminGetLobbyCCU(operation);
             if (response == null)
                 return "No response from server.";

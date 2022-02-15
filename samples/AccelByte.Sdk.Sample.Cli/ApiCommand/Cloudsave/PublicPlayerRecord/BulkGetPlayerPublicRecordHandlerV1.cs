@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Cloudsave.Model.ModelsBulkGetPlayerRecordResponse? response = wrapper.BulkGetPlayerPublicRecordHandlerV1(operation);
             if (response == null)
                 return "No response from server.";

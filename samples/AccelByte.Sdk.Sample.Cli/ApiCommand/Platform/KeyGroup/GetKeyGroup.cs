@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 KeyGroupId,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.KeyGroupInfo? response = wrapper.GetKeyGroup(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AdminUpdateAdminRoleStatusV3 operation = new AdminUpdateAdminRoleStatusV3(
                 RoleId                
             );            
-
+            
             wrapper.AdminUpdateAdminRoleStatusV3(operation);
             return String.Empty;
         }

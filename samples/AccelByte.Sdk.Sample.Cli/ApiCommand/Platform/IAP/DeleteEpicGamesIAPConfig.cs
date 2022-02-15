@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             DeleteEpicGamesIAPConfig operation = new DeleteEpicGamesIAPConfig(
                 Namespace                
             );            
-
+            
             wrapper.DeleteEpicGamesIAPConfig(operation);
             return String.Empty;
         }

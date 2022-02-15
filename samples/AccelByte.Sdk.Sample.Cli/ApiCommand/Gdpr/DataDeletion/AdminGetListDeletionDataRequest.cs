@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
                 Offset,                
                 RequestDate                
             );            
-
+            
             AccelByte.Sdk.Api.Gdpr.Model.ModelsListDeletionDataResponse? response = wrapper.AdminGetListDeletionDataRequest(operation);
             if (response == null)
                 return "No response from server.";

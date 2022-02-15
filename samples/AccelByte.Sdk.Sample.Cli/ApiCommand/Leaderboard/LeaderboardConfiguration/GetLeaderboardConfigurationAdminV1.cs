@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
                 LeaderboardCode,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsGetLeaderboardConfigResp? response = wrapper.GetLeaderboardConfigurationAdminV1(operation);
             if (response == null)
                 return "No response from server.";

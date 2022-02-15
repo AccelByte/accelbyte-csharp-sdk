@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Keyword,                
                 Language                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.ItemPagingSlicedResult? response = wrapper.PublicSearchItems(operation);
             if (response == null)
                 return "No response from server.";

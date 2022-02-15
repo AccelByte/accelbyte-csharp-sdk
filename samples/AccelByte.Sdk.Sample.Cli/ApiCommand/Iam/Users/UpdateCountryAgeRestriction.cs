@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelCountry? response = wrapper.UpdateCountryAgeRestriction(operation);
             if (response == null)
                 return "No response from server.";

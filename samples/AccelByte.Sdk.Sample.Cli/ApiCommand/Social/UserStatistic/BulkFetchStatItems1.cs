@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 StatCode,                
                 UserIds                
             );            
-
+            
             List<AccelByte.Sdk.Api.Social.Model.UserStatItemInfo>? response = wrapper.BulkFetchStatItems1(operation);
             if (response == null)
                 return "No response from server.";

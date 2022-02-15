@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
                 LeaderboardCode,                
                 Namespace                
             );            
-
+            
             wrapper.DeleteLeaderboardConfigurationAdminV1(operation);
             return String.Empty;
         }

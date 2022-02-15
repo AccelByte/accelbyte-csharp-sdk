@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Sandbox,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.TestResult? response = wrapper.TestAdyenConfig(operation);
             if (response == null)
                 return "No response from server.";

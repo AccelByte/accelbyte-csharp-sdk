@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetPaymentMerchantConfig operation = new GetPaymentMerchantConfig(
                 Id                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentMerchantConfigInfo? response = wrapper.GetPaymentMerchantConfig(operation);
             if (response == null)
                 return "No response from server.";

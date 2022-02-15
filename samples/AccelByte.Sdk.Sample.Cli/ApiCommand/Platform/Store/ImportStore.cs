@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 StoreId,                
                 File                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.StoreInfo? response = wrapper.ImportStore(operation);
             if (response == null)
                 return "No response from server.";

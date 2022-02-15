@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 StoreId,                
                 Sku                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PopulatedItemInfo? response = wrapper.GetLocaleItemBySku(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             GetRoles operation = new GetRoles(
                 IsWildcard                
             );            
-
+            
             List<AccelByte.Sdk.Api.Iam.Model.ModelRoleResponseWithManagers>? response = wrapper.GetRoles(operation);
             if (response == null)
                 return "No response from server.";

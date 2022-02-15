@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 ConfigurationCode,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Group.Model.ModelsUpdateGroupConfigurationResponseV1? response = wrapper.DeleteGroupConfigurationGlobalRuleAdminV1(operation);
             if (response == null)
                 return "No response from server.";

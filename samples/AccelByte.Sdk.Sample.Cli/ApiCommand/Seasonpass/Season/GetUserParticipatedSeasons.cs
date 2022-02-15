@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Seasonpass.Model.ListUserSeasonInfoPagingSlicedResult? response = wrapper.GetUserParticipatedSeasons(operation);
             if (response == null)
                 return "No response from server.";

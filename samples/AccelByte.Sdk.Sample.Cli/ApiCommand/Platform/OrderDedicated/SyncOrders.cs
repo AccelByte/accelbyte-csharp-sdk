@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 End,                
                 Start                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.OrderSyncResult? response = wrapper.SyncOrders(operation);
             if (response == null)
                 return "No response from server.";

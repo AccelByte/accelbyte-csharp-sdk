@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 Namespace,                
                 StatCode                
             );            
-
+            
             wrapper.DeleteStat(operation);
             return String.Empty;
         }

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetPublishedStoreBackup operation = new GetPublishedStoreBackup(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.StoreBackupInfo? response = wrapper.GetPublishedStoreBackup(operation);
             if (response == null)
                 return "No response from server.";

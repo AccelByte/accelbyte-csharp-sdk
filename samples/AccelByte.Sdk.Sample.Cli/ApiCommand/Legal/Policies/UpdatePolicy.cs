@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 PolicyId,                
                 Body                
             );            
-
+            
             wrapper.UpdatePolicy(operation);
             return String.Empty;
         }

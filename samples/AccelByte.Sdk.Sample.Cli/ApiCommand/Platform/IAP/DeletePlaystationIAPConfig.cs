@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             DeletePlaystationIAPConfig operation = new DeletePlaystationIAPConfig(
                 Namespace                
             );            
-
+            
             wrapper.DeletePlaystationIAPConfig(operation);
             return String.Empty;
         }

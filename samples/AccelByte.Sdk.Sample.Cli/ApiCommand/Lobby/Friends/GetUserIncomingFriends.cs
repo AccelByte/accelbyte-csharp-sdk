@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             GetUserIncomingFriends operation = new GetUserIncomingFriends(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Lobby.Model.ModelGetUserIncomingFriendsResponse>? response = wrapper.GetUserIncomingFriends(operation);
             if (response == null)
                 return "No response from server.";

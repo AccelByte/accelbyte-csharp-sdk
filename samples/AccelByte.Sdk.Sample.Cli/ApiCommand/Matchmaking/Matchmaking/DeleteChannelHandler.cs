@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 Channel,                
                 Namespace                
             );            
-
+            
             wrapper.DeleteChannelHandler(operation);
             return String.Empty;
         }

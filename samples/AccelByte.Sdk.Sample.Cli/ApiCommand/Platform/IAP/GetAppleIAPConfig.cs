@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetAppleIAPConfig operation = new GetAppleIAPConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.AppleIAPConfigInfo? response = wrapper.GetAppleIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

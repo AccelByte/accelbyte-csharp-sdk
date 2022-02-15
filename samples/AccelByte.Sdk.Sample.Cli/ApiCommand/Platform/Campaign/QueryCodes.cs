@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.CodeInfoPagingSlicedResult? response = wrapper.QueryCodes(operation);
             if (response == null)
                 return "No response from server.";

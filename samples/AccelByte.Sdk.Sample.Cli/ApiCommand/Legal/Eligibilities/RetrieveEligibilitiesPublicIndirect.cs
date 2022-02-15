@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 Namespace,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Legal.Model.RetrieveUserEligibilitiesIndirectResponse? response = wrapper.RetrieveEligibilitiesPublicIndirect(operation);
             if (response == null)
                 return "No response from server.";

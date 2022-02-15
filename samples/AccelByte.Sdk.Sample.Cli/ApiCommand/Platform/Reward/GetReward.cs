@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 RewardId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.RewardInfo? response = wrapper.GetReward(operation);
             if (response == null)
                 return "No response from server.";

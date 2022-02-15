@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Status,                
                 SubscribedBy                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.SubscriptionPagingSlicedResult? response = wrapper.QueryUserSubscriptions(operation);
             if (response == null)
                 return "No response from server.";

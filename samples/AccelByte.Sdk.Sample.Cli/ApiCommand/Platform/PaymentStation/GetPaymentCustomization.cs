@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 PaymentProvider,                
                 Region                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.Customization? response = wrapper.GetPaymentCustomization(operation);
             if (response == null)
                 return "No response from server.";

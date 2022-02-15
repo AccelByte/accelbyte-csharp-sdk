@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             RetrieveAllThirdPartyLoginPlatformCredentialV3 operation = new RetrieveAllThirdPartyLoginPlatformCredentialV3(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse>? response = wrapper.RetrieveAllThirdPartyLoginPlatformCredentialV3(operation);
             if (response == null)
                 return "No response from server.";

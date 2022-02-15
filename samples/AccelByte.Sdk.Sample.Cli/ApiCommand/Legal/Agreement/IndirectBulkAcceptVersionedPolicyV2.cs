@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 UserId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Legal.Model.AcceptAgreementResponse? response = wrapper.IndirectBulkAcceptVersionedPolicyV2(operation);
             if (response == null)
                 return "No response from server.";

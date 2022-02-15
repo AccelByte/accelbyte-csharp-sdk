@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 BatchNo                
             );            
-
+            
             wrapper.Download(operation);
             return String.Empty;
         }

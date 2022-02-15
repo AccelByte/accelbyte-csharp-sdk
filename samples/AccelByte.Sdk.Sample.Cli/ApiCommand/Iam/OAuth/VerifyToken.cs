@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             VerifyToken operation = new VerifyToken(
                 Token                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenResponse? response = wrapper.VerifyToken(operation);
             if (response == null)
                 return "No response from server.";

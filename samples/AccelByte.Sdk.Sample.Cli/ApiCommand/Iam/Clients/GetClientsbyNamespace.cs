@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             GetClientsbyNamespace operation = new GetClientsbyNamespace(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Iam.Model.ClientmodelClientResponse>? response = wrapper.GetClientsbyNamespace(operation);
             if (response == null)
                 return "No response from server.";

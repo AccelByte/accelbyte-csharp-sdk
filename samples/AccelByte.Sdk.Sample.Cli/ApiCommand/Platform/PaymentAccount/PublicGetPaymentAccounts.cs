@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 UserId                
             );            
-
+            
             List<AccelByte.Sdk.Api.Platform.Model.PaymentAccount>? response = wrapper.PublicGetPaymentAccounts(operation);
             if (response == null)
                 return "No response from server.";

@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Cloudsave.Model.ModelsListPlayerRecordKeys? response = wrapper.AdminRetrievePlayerRecords(operation);
             if (response == null)
                 return "No response from server.";

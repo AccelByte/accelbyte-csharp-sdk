@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             LeaveGroupPublicV1 operation = new LeaveGroupPublicV1(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Group.Model.ModelsLeaveGroupResponseV1? response = wrapper.LeaveGroupPublicV1(operation);
             if (response == null)
                 return "No response from server.";

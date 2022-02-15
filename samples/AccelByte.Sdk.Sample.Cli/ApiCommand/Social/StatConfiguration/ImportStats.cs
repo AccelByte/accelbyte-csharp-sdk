@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 ReplaceExisting,                
                 File                
             );            
-
+            
             AccelByte.Sdk.Api.Social.Model.StatImportInfo? response = wrapper.ImportStats(operation);
             if (response == null)
                 return "No response from server.";

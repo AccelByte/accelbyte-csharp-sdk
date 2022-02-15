@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetPaymentCallbackConfig operation = new GetPaymentCallbackConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentCallbackConfigInfo? response = wrapper.GetPaymentCallbackConfig(operation);
             if (response == null)
                 return "No response from server.";

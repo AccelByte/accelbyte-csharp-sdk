@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 Namespace,                
                 Body                
             );            
-
+            
             wrapper.AdminUpdateAchievementListOrder(operation);
             return String.Empty;
         }

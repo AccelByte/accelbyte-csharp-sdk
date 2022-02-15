@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 StoreId,                
                 TargetStoreId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.StoreInfo? response = wrapper.CloneStore(operation);
             if (response == null)
                 return "No response from server.";

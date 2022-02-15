@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Offset,                
                 Tag                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.CampaignPagingSlicedResult? response = wrapper.QueryCampaigns(operation);
             if (response == null)
                 return "No response from server.";

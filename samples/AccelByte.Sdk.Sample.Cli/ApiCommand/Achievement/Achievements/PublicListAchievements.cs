@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 SortBy,                
                 Language                
             );            
-
+            
             AccelByte.Sdk.Api.Achievement.Model.ModelsPublicAchievementsResponse? response = wrapper.PublicListAchievements(operation);
             if (response == null)
                 return "No response from server.";

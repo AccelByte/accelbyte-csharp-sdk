@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             DeleteGoogleIAPConfig operation = new DeleteGoogleIAPConfig(
                 Namespace                
             );            
-
+            
             wrapper.DeleteGoogleIAPConfig(operation);
             return String.Empty;
         }

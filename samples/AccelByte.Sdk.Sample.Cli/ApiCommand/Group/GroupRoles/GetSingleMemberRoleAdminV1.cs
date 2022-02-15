@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 MemberRoleId,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Group.Model.ModelsGetMemberRoleResponseV1? response = wrapper.GetSingleMemberRoleAdminV1(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             RetrieveAcceptedAgreements operation = new RetrieveAcceptedAgreements(
                 UserId                
             );            
-
+            
             List<AccelByte.Sdk.Api.Legal.Model.RetrieveAcceptedAgreementResponse>? response = wrapper.RetrieveAcceptedAgreements(operation);
             if (response == null)
                 return "No response from server.";

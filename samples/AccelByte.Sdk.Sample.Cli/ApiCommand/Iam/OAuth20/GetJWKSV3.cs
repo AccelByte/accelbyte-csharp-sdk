@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             GetJWKSV3 operation = new GetJWKSV3(
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.OauthcommonJWKSet? response = wrapper.GetJWKSV3(operation);
             if (response == null)
                 return "No response from server.";

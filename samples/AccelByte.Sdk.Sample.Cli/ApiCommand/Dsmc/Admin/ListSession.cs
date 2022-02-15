@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Region,                
                 WithServer                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListSessionResponse? response = wrapper.ListSession(operation);
             if (response == null)
                 return "No response from server.";

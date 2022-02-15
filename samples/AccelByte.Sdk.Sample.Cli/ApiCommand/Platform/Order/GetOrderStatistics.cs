@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetOrderStatistics operation = new GetOrderStatistics(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.OrderStatistics? response = wrapper.GetOrderStatistics(operation);
             if (response == null)
                 return "No response from server.";

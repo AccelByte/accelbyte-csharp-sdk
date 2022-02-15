@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 EntitlementId,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.EntitlementInfo? response = wrapper.GetEntitlement(operation);
             if (response == null)
                 return "No response from server.";

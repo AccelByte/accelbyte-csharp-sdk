@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Query,                
                 StartDate                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelSearchUsersResponseWithPaginationV3? response = wrapper.AdminSearchUserV3(operation);
             if (response == null)
                 return "No response from server.";

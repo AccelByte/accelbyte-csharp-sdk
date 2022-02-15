@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Resource,                
                 RoleId                
             );            
-
+            
             wrapper.AdminDeleteRolePermissionV3(operation);
             return String.Empty;
         }

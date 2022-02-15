@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 StoreId,                
                 Tags                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.ItemPagingSlicedResult? response = wrapper.PublicQueryItems(operation);
             if (response == null)
                 return "No response from server.";

@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Before,                
                 Limit                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelGetUserBanV3Response? response = wrapper.AdminGetUserBanV3(operation);
             if (response == null)
                 return "No response from server.";

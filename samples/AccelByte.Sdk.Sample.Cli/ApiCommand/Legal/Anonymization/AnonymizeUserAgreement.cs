@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AnonymizeUserAgreement operation = new AnonymizeUserAgreement(
                 UserId                
             );            
-
+            
             wrapper.AnonymizeUserAgreement(operation);
             return String.Empty;
         }

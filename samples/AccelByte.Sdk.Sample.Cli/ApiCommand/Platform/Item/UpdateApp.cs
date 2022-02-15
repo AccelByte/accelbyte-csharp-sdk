@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 StoreId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.FullAppInfo? response = wrapper.UpdateApp(operation);
             if (response == null)
                 return "No response from server.";

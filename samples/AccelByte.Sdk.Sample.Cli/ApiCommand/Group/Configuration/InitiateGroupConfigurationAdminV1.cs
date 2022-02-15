@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             InitiateGroupConfigurationAdminV1 operation = new InitiateGroupConfigurationAdminV1(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Group.Model.ModelsCreateGroupConfigurationResponseV1? response = wrapper.InitiateGroupConfigurationAdminV1(operation);
             if (response == null)
                 return "No response from server.";

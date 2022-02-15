@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.AppleIAPConfigInfo? response = wrapper.UpdateAppleIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

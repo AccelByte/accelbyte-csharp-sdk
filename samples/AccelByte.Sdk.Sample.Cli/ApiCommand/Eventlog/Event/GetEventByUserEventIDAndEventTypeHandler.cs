@@ -53,6 +53,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         {
             AccelByte.Sdk.Api.Eventlog.Wrapper.Event wrapper = new AccelByte.Sdk.Api.Eventlog.Wrapper.Event(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             GetEventByUserEventIDAndEventTypeHandler operation = new GetEventByUserEventIDAndEventTypeHandler(
                 EventId,                
                 EventType,                
@@ -63,12 +64,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
                 PageSize,                
                 StartDate                
             );            
-
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Eventlog.Model.ModelsEventResponse? response = wrapper.GetEventByUserEventIDAndEventTypeHandler(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

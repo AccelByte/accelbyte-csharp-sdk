@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 ClientId,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ClientmodelClientV3Response? response = wrapper.AdminGetClientsbyNamespacebyIDV3(operation);
             if (response == null)
                 return "No response from server.";

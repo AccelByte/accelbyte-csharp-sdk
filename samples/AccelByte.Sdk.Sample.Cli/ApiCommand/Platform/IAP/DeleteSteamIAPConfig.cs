@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             DeleteSteamIAPConfig operation = new DeleteSteamIAPConfig(
                 Namespace                
             );            
-
+            
             wrapper.DeleteSteamIAPConfig(operation);
             return String.Empty;
         }

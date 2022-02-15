@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 UserId,                
                 PlatformNamespace                
             );            
-
+            
             wrapper.PublicDeletePlatformLinkV2(operation);
             return String.Empty;
         }

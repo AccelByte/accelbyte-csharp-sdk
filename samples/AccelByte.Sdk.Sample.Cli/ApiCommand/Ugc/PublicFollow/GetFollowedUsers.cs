@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedCreatorOverviewResponse? response = wrapper.GetFollowedUsers(operation);
             if (response == null)
                 return "No response from server.";

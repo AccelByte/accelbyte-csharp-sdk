@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
                 Namespace,                
                 SessionID                
             );            
-
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsAdminSessionResponse? response = wrapper.AdminGetSession(operation);
             if (response == null)
                 return "No response from server.";

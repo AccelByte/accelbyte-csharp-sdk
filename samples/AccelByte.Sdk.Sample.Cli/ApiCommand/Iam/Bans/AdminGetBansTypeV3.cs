@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             AdminGetBansTypeV3 operation = new AdminGetBansTypeV3(
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.AccountcommonBansV3? response = wrapper.AdminGetBansTypeV3(operation);
             if (response == null)
                 return "No response from server.";

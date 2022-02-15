@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 StoreId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.FullItemInfo? response = wrapper.EnableItem(operation);
             if (response == null)
                 return "No response from server.";

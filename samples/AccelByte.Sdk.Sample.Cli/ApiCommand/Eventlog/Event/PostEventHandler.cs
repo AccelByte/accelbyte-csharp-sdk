@@ -35,13 +35,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         {
             AccelByte.Sdk.Api.Eventlog.Wrapper.Event wrapper = new AccelByte.Sdk.Api.Eventlog.Wrapper.Event(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             PostEventHandler operation = new PostEventHandler(
                 Namespace,                
                 Body                
             );            
-
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             wrapper.PostEventHandler(operation);
             return String.Empty;
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

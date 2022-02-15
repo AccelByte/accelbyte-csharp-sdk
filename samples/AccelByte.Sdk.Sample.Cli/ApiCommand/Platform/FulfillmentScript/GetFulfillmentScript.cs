@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetFulfillmentScript operation = new GetFulfillmentScript(
                 Id                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.FulfillmentScriptInfo? response = wrapper.GetFulfillmentScript(operation);
             if (response == null)
                 return "No response from server.";

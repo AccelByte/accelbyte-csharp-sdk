@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Offset,                
                 Status                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentOrderPagingSlicedResult? response = wrapper.QueryPaymentOrders(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             InvalidateUserInfoCache operation = new InvalidateUserInfoCache(
                 Namespace                
             );            
-
+            
             wrapper.InvalidateUserInfoCache(operation);
             return String.Empty;
         }

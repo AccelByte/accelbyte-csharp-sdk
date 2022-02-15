@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 Namespace,                
                 UserIds                
             );            
-
+            
             List<AccelByte.Sdk.Api.Basic.Model.ADTOObjectForEqu8UserBanStatus>? response = wrapper.GetBannedUsers(operation);
             if (response == null)
                 return "No response from server.";

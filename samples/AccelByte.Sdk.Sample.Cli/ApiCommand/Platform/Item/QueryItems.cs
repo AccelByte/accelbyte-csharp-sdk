@@ -91,7 +91,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Tags,                
                 TargetNamespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.FullItemPagingSlicedResult? response = wrapper.QueryItems(operation);
             if (response == null)
                 return "No response from server.";

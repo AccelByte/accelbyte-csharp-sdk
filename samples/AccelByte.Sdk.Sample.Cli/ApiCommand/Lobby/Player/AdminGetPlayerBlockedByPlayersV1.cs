@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 Namespace,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsGetAllPlayerBlockedByUsersResponse? response = wrapper.AdminGetPlayerBlockedByPlayersV1(operation);
             if (response == null)
                 return "No response from server.";

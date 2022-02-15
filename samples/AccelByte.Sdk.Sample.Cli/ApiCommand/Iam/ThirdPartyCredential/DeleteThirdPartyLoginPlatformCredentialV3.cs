@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 PlatformId                
             );            
-
+            
             wrapper.DeleteThirdPartyLoginPlatformCredentialV3(operation);
             return String.Empty;
         }

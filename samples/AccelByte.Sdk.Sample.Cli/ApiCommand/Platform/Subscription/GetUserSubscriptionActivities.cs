@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Offset,                
                 SubscriptionId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.SubscriptionActivityPagingSlicedResult? response = wrapper.GetUserSubscriptionActivities(operation);
             if (response == null)
                 return "No response from server.";

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 CountryGroupCode,                
                 Namespace                
             );            
-
+            
             wrapper.DeleteCountryGroup(operation);
             return String.Empty;
         }

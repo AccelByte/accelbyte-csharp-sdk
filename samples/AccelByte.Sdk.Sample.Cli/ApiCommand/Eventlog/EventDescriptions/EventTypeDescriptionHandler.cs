@@ -29,14 +29,18 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         {
             AccelByte.Sdk.Api.Eventlog.Wrapper.EventDescriptions wrapper = new AccelByte.Sdk.Api.Eventlog.Wrapper.EventDescriptions(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             EventTypeDescriptionHandler operation = new EventTypeDescriptionHandler(
             );            
-
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Eventlog.Model.ModelsMultipleEventType? response = wrapper.EventTypeDescriptionHandler(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId,                
                 ItemId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PurchasedItemCount? response = wrapper.CountOfPurchasedItem(operation);
             if (response == null)
                 return "No response from server.";

@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId,                
                 AppId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.AppEntitlementInfo? response = wrapper.PublicGetUserAppEntitlementByAppId(operation);
             if (response == null)
                 return "No response from server.";

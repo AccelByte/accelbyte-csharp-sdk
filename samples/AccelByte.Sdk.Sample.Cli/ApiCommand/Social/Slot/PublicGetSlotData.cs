@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 SlotId,                
                 UserId                
             );            
-
+            
             byte[]? response = wrapper.PublicGetSlotData(operation);
             if (response == null)
                 return "No response from server.";

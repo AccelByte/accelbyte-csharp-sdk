@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Basic.Model.AddCountryGroupResponse? response = wrapper.AddCountryGroup(operation);
             if (response == null)
                 return "No response from server.";

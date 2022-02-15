@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 Namespace,                
                 UserId                
             );            
-
+            
             List<AccelByte.Sdk.Api.Lobby.Model.ModelChatMessageResponse>? response = wrapper.AdminChatHistory(operation);
             if (response == null)
                 return "No response from server.";

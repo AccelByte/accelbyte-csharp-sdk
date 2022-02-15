@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             ExportRewards operation = new ExportRewards(
                 Namespace                
             );            
-
+            
             wrapper.ExportRewards(operation);
             return String.Empty;
         }

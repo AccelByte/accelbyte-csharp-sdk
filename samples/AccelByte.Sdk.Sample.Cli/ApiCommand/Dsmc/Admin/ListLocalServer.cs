@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             ListLocalServer operation = new ListLocalServer(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListServerResponse? response = wrapper.ListLocalServer(operation);
             if (response == null)
                 return "No response from server.";

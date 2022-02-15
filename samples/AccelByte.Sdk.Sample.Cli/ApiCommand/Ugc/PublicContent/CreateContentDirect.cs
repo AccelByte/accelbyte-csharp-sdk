@@ -41,18 +41,22 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         {
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicContent(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             CreateContentDirect operation = new CreateContentDirect(
                 ChannelId,                
                 Namespace,                
                 UserId,                
                 Body                
             );            
-
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateContentResponse? response = wrapper.CreateContentDirect(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

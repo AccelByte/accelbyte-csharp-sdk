@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             AdminGetMyUserV3 operation = new AdminGetMyUserV3(
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelUserResponseV3? response = wrapper.AdminGetMyUserV3(operation);
             if (response == null)
                 return "No response from server.";

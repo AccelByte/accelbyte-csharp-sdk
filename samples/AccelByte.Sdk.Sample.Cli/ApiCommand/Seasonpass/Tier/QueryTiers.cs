@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Seasonpass.Model.TierPagingSlicedResult? response = wrapper.QueryTiers(operation);
             if (response == null)
                 return "No response from server.";

@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 
             HandlerV3Healthz operation = new HandlerV3Healthz(
             );            
-
+            
             wrapper.HandlerV3Healthz(operation);
             return String.Empty;
         }

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 RequestId                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelLinkRequest? response = wrapper.PublicGetAsyncStatus(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AdminDeleteThirdPartyConfig operation = new AdminDeleteThirdPartyConfig(
                 Namespace                
             );            
-
+            
             string? response = wrapper.AdminDeleteThirdPartyConfig(operation);
             if (response == null)
                 return "No response from server.";

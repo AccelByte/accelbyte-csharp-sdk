@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             AdminGetInputValidations operation = new AdminGetInputValidations(
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelInputValidationsResponse? response = wrapper.AdminGetInputValidations(operation);
             if (response == null)
                 return "No response from server.";

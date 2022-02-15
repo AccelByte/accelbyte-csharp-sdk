@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 UserId                
             );            
-
+            
             List<AccelByte.Sdk.Api.Iam.Model.AccountcommonUserLinkedPlatform>? response = wrapper.GetUserPlatformAccounts(operation);
             if (response == null)
                 return "No response from server.";

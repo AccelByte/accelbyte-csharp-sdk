@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 RoleId,                
                 UserId                
             );            
-
+            
             wrapper.AddUserRole(operation);
             return String.Empty;
         }

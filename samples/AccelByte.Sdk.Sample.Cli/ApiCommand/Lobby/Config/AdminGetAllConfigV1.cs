@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
             AdminGetAllConfigV1 operation = new AdminGetAllConfigV1(
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsConfigList? response = wrapper.AdminGetAllConfigV1(operation);
             if (response == null)
                 return "No response from server.";

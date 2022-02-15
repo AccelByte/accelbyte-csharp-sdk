@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Region,                
                 StoreId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.AppInfo? response = wrapper.PublicGetApp(operation);
             if (response == null)
                 return "No response from server.";

@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
                 ServerRegion,                
                 SessionId                
             );            
-
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsActiveMatchmakingGameResponse? response = wrapper.GetActiveMatchmakingGameSessions(operation);
             if (response == null)
                 return "No response from server.";

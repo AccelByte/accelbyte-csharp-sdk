@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Status,                
                 Type                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.IAPOrderPagingSlicedResult? response = wrapper.QueryUserIAPOrders(operation);
             if (response == null)
                 return "No response from server.";

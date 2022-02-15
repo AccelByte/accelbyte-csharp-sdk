@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
                 Namespace,                
                 UserId                
             );            
-
+            
             wrapper.AdminDeletePlayerRecordHandlerV1(operation);
             return String.Empty;
         }

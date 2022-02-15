@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             ListProvidersByRegion operation = new ListProvidersByRegion(
                 Region                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDefaultProvider? response = wrapper.ListProvidersByRegion(operation);
             if (response == null)
                 return "No response from server.";

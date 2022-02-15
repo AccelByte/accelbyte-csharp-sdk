@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 File                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.GoogleIAPConfigInfo? response = wrapper.UpdateGoogleP12File(operation);
             if (response == null)
                 return "No response from server.";

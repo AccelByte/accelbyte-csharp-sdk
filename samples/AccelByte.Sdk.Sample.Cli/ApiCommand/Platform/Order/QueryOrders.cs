@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Status,                
                 WithTotal                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.OrderPagingResult? response = wrapper.QueryOrders(operation);
             if (response == null)
                 return "No response from server.";

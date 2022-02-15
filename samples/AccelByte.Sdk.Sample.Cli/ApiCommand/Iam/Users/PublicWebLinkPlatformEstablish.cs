@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 PlatformId,                
                 State                
             );            
-
+            
             string? response = wrapper.PublicWebLinkPlatformEstablish(operation);
             if (response == null)
                 return "No response from server.";

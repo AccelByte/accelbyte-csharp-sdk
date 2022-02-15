@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             GetRevocationList operation = new GetRevocationList(
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.OauthapiRevocationList? response = wrapper.GetRevocationList(operation);
             if (response == null)
                 return "No response from server.";

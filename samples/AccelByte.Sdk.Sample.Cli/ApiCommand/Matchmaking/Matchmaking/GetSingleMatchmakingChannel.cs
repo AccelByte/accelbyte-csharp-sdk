@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 ChannelName,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Matchmaking.Model.ModelsChannelV1? response = wrapper.GetSingleMatchmakingChannel(operation);
             if (response == null)
                 return "No response from server.";

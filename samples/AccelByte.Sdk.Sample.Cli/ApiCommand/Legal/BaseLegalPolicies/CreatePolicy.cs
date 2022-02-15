@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             CreatePolicy operation = new CreatePolicy(
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Legal.Model.CreateBasePolicyResponse? response = wrapper.CreatePolicy(operation);
             if (response == null)
                 return "No response from server.";

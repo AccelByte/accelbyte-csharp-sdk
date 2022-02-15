@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AdminGetProfanityRule operation = new AdminGetProfanityRule(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsProfanityRule? response = wrapper.AdminGetProfanityRule(operation);
             if (response == null)
                 return "No response from server.";

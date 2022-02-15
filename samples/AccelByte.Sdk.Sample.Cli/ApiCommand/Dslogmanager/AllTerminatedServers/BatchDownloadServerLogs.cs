@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
             BatchDownloadServerLogs operation = new BatchDownloadServerLogs(
                 Body                
             );            
-
+            
             wrapper.BatchDownloadServerLogs(operation);
             return String.Empty;
         }

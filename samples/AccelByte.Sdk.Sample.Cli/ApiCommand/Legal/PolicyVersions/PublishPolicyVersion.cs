@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 PolicyVersionId,                
                 ShouldNotify                
             );            
-
+            
             wrapper.PublishPolicyVersion(operation);
             return String.Empty;
         }

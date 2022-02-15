@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Validate,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentMerchantConfigInfo? response = wrapper.UpdateWxPayConfig(operation);
             if (response == null)
                 return "No response from server.";

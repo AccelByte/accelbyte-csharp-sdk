@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 AchievementCode,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Achievement.Model.ModelsAchievementResponse? response = wrapper.AdminGetAchievement(operation);
             if (response == null)
                 return "No response from server.";

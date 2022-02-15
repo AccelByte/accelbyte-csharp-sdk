@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Namespace,                
                 Body                
             );            
-
+            
             wrapper.ShutdownServer(operation);
             return String.Empty;
         }

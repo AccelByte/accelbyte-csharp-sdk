@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 CampaignId,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.CampaignInfo? response = wrapper.GetCampaign(operation);
             if (response == null)
                 return "No response from server.";

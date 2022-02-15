@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Status,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.FulfillmentHistoryPagingSlicedResult? response = wrapper.QueryFulfillmentHistories(operation);
             if (response == null)
                 return "No response from server.";

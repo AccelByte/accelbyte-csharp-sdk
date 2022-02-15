@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Name,                
                 Namespace                
             );            
-
+            
             wrapper.DeleteLocalServer(operation);
             return String.Empty;
         }

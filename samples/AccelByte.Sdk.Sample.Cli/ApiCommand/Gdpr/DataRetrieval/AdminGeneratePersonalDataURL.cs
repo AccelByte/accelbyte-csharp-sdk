@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
                 UserId,                
                 Password                
             );            
-
+            
             AccelByte.Sdk.Api.Gdpr.Model.ModelsUserDataURL? response = wrapper.AdminGeneratePersonalDataURL(operation);
             if (response == null)
                 return "No response from server.";

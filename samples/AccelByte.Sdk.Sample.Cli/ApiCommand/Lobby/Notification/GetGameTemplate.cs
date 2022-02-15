@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             GetGameTemplate operation = new GetGameTemplate(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Lobby.Model.ModelTemplateResponse>? response = wrapper.GetGameTemplate(operation);
             if (response == null)
                 return "No response from server.";

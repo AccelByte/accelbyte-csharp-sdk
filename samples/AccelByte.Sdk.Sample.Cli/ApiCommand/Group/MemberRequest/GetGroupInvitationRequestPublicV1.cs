@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Group.Model.ModelsGetMemberRequestsListResponseV1? response = wrapper.GetGroupInvitationRequestPublicV1(operation);
             if (response == null)
                 return "No response from server.";

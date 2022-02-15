@@ -35,16 +35,20 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         {
             AccelByte.Sdk.Api.Eventlog.Wrapper.UserInformation wrapper = new AccelByte.Sdk.Api.Eventlog.Wrapper.UserInformation(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             LastUserActivityTimeHandler operation = new LastUserActivityTimeHandler(
                 Namespace,                
                 UserId                
             );            
-
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Eventlog.Model.ModelsUserLastActivity? response = wrapper.LastUserActivityTimeHandler(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

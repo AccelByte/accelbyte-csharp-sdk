@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
                 SeasonId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Seasonpass.Model.Tier? response = wrapper.UpdateTier(operation);
             if (response == null)
                 return "No response from server.";

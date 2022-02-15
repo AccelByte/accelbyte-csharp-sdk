@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
                 Region,                
                 Body                
             );            
-
+            
             wrapper.SetServerAlias(operation);
             return String.Empty;
         }

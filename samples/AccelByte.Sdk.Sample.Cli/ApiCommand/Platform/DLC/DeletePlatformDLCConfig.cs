@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             DeletePlatformDLCConfig operation = new DeletePlatformDLCConfig(
                 Namespace                
             );            
-
+            
             wrapper.DeletePlatformDLCConfig(operation);
             return String.Empty;
         }

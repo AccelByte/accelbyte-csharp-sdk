@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetXblIAPConfig operation = new GetXblIAPConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.XblIAPConfigInfo? response = wrapper.GetXblIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

@@ -29,14 +29,18 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Clients wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Clients(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             GetClients operation = new GetClients(
             );            
-
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             List<AccelByte.Sdk.Api.Iam.Model.ClientmodelClientResponse>? response = wrapper.GetClients(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

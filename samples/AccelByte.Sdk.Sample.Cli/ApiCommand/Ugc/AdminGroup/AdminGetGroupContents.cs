@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedContentDownloadResponse? response = wrapper.AdminGetGroupContents(operation);
             if (response == null)
                 return "No response from server.";

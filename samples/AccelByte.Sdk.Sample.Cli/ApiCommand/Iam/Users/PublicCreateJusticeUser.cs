@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 TargetNamespace                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelCreateJusticeUserResponse? response = wrapper.PublicCreateJusticeUser(operation);
             if (response == null)
                 return "No response from server.";

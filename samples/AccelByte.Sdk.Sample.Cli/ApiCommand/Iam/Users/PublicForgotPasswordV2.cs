@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace,                
                 Body                
             );            
-
+            
             wrapper.PublicForgotPasswordV2(operation);
             return String.Empty;
         }

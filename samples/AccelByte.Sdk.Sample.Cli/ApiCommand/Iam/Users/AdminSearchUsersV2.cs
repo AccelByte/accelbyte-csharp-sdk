@@ -71,7 +71,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 UserId,                
                 PlatformId                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelSearchUsersByPlatformIDResponse? response = wrapper.AdminSearchUsersV2(operation);
             if (response == null)
                 return "No response from server.";

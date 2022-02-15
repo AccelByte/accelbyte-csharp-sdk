@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
                 SeasonId,                
                 Force                
             );            
-
+            
             AccelByte.Sdk.Api.Seasonpass.Model.SeasonInfo? response = wrapper.UnpublishSeason(operation);
             if (response == null)
                 return "No response from server.";

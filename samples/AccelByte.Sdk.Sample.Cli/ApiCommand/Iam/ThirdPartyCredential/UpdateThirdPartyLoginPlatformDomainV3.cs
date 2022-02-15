@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 PlatformId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelPlatformDomainResponse? response = wrapper.UpdateThirdPartyLoginPlatformDomainV3(operation);
             if (response == null)
                 return "No response from server.";

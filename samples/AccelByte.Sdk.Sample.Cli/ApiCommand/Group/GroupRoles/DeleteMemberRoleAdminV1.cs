@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 MemberRoleId,                
                 Namespace                
             );            
-
+            
             wrapper.DeleteMemberRoleAdminV1(operation);
             return String.Empty;
         }

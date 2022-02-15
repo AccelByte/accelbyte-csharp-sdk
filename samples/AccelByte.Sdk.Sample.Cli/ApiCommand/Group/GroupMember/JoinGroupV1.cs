@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 GroupId,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Group.Model.ModelsJoinGroupResponseV1? response = wrapper.JoinGroupV1(operation);
             if (response == null)
                 return "No response from server.";

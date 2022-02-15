@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             GetMyProfileInfo operation = new GetMyProfileInfo(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Basic.Model.UserProfilePrivateInfo? response = wrapper.GetMyProfileInfo(operation);
             if (response == null)
                 return "No response from server.";

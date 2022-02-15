@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             GetConfig operation = new GetConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Basic.Model.Equ8Config? response = wrapper.GetConfig(operation);
             if (response == null)
                 return "No response from server.";

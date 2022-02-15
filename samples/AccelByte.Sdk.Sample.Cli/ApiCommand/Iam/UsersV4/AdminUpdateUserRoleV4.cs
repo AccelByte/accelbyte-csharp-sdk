@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 UserId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelListUserRolesV4Response? response = wrapper.AdminUpdateUserRoleV4(operation);
             if (response == null)
                 return "No response from server.";

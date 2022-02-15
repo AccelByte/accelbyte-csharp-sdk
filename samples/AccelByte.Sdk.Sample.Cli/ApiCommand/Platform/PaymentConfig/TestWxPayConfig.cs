@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             TestWxPayConfig operation = new TestWxPayConfig(
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.TestResult? response = wrapper.TestWxPayConfig(operation);
             if (response == null)
                 return "No response from server.";

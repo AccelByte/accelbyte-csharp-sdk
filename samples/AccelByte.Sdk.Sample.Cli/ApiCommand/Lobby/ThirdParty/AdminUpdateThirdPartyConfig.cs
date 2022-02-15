@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsUpdateConfigResponse? response = wrapper.AdminUpdateThirdPartyConfig(operation);
             if (response == null)
                 return "No response from server.";

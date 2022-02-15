@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 ClientId,                
                 CountryCode                
             );            
-
+            
             AccelByte.Sdk.Api.Legal.Model.RetrieveUserEligibilitiesIndirectResponse? response = wrapper.AdminRetrieveEligibilities(operation);
             if (response == null)
                 return "No response from server.";

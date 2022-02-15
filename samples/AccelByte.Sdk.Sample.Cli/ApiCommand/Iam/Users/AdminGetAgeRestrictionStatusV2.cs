@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AdminGetAgeRestrictionStatusV2 operation = new AdminGetAgeRestrictionStatusV2(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelAgeRestrictionResponse? response = wrapper.AdminGetAgeRestrictionStatusV2(operation);
             if (response == null)
                 return "No response from server.";

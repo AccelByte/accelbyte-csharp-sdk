@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Offset,                
                 Tag                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.KeyGroupPagingSlicedResult? response = wrapper.QueryKeyGroups(operation);
             if (response == null)
                 return "No response from server.";

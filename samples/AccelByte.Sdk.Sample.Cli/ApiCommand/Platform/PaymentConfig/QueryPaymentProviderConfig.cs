@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Offset,                
                 Region                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentProviderConfigPagingSlicedResult? response = wrapper.QueryPaymentProviderConfig(operation);
             if (response == null)
                 return "No response from server.";

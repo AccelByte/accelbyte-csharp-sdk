@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 DeviceId,                
                 PlatformToken                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenResponse? response = wrapper.PlatformTokenGrantV3(operation);
             if (response == null)
                 return "No response from server.";

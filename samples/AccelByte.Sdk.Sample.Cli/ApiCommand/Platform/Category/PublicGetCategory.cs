@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Language,                
                 StoreId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.CategoryInfo? response = wrapper.PublicGetCategory(operation);
             if (response == null)
                 return "No response from server.";

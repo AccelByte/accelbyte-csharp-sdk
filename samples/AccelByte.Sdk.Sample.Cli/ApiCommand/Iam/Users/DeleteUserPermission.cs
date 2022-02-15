@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Resource,                
                 UserId                
             );            
-
+            
             wrapper.DeleteUserPermission(operation);
             return String.Empty;
         }

@@ -87,7 +87,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 PaymentProvider,                
                 ReturnUrl                
             );            
-
+            
             wrapper.PublicNormalizePaymentReturnUrl(operation);
             return String.Empty;
         }

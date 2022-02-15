@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId,                
                 Body                
             );            
-
+            
             List<AccelByte.Sdk.Api.Platform.Model.PlayStationReconcileResult>? response = wrapper.PublicReconcilePlayStationStore(operation);
             if (response == null)
                 return "No response from server.";

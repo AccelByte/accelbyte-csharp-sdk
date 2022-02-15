@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 StoreId                
             );            
-
+            
             List<AccelByte.Sdk.Api.Platform.Model.BasicCategoryInfo>? response = wrapper.ListCategoriesBasic(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             ExportStats operation = new ExportStats(
                 Namespace                
             );            
-
+            
             wrapper.ExportStats(operation);
             return String.Empty;
         }

@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 ClientId,                
                 RedirectUri                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelWebLinkingResponse? response = wrapper.PublicWebLinkPlatform(operation);
             if (response == null)
                 return "No response from server.";

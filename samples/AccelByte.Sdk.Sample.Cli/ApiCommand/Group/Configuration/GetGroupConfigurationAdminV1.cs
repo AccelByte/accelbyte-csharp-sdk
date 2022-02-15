@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 ConfigurationCode,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Group.Model.ModelsGetGroupConfigurationResponseV1? response = wrapper.GetGroupConfigurationAdminV1(operation);
             if (response == null)
                 return "No response from server.";

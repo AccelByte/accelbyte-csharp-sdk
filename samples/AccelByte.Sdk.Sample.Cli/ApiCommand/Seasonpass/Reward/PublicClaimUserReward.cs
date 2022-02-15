@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
                 UserId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Seasonpass.Model.ClaimableRewards? response = wrapper.PublicClaimUserReward(operation);
             if (response == null)
                 return "No response from server.";

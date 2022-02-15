@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Namespace,                
                 PodName                
             );            
-
+            
             wrapper.DeleteServer(operation);
             return String.Empty;
         }

@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 ActiveOnly,                
                 Features                
             );            
-
+            
             List<AccelByte.Sdk.Api.Platform.Model.BasicItem>? response = wrapper.ListBasicItemsByFeatures(operation);
             if (response == null)
                 return "No response from server.";

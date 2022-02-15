@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Name,                
                 Namespace                
             );            
-
+            
             wrapper.DeletePodConfig(operation);
             return String.Empty;
         }

@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 Namespace,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsGetPlayerSessionAttributeResponse? response = wrapper.AdminGetPlayerSessionAttribute(operation);
             if (response == null)
                 return "No response from server.";

@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 UserId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Social.Model.StatItemIncResult? response = wrapper.PublicIncUserStatItemValue(operation);
             if (response == null)
                 return "No response from server.";

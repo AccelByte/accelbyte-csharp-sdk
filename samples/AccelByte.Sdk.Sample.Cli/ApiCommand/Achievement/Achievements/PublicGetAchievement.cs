@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 Namespace,                
                 Language                
             );            
-
+            
             AccelByte.Sdk.Api.Achievement.Model.ModelsPublicAchievementResponse? response = wrapper.PublicGetAchievement(operation);
             if (response == null)
                 return "No response from server.";

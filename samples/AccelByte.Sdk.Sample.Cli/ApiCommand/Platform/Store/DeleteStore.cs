@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 StoreId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.StoreInfo? response = wrapper.DeleteStore(operation);
             if (response == null)
                 return "No response from server.";

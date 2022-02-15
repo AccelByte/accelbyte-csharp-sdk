@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentOrderInfo? response = wrapper.RefundUserPaymentOrder(operation);
             if (response == null)
                 return "No response from server.";

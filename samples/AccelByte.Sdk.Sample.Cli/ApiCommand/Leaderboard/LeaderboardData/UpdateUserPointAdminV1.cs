@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
                 UserId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsUpdateUserPointAdminV1Response? response = wrapper.UpdateUserPointAdminV1(operation);
             if (response == null)
                 return "No response from server.";

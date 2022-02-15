@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 CustomAttribute,                
                 File                
             );            
-
+            
             wrapper.PublicCreateUserNamespaceSlot(operation);
             return String.Empty;
         }

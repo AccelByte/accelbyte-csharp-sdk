@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Id,                
                 Sandbox                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.TestResult? response = wrapper.TestCheckoutConfigById(operation);
             if (response == null)
                 return "No response from server.";

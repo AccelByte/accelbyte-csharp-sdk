@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 SortBy,                
                 StoreId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.FullItemPagingSlicedResult? response = wrapper.QueryUncategorizedItems(operation);
             if (response == null)
                 return "No response from server.";

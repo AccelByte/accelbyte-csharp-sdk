@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 Namespace,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Group.Model.ModelsKickGroupMemberResponseV1? response = wrapper.KickGroupMemberPublicV1(operation);
             if (response == null)
                 return "No response from server.";

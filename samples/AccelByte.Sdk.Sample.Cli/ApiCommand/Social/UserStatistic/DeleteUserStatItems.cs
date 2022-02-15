@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 StatCode,                
                 UserId                
             );            
-
+            
             wrapper.DeleteUserStatItems(operation);
             return String.Empty;
         }

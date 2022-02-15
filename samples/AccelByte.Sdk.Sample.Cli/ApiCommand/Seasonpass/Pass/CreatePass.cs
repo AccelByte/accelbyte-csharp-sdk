@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
                 SeasonId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Seasonpass.Model.PassInfo? response = wrapper.CreatePass(operation);
             if (response == null)
                 return "No response from server.";

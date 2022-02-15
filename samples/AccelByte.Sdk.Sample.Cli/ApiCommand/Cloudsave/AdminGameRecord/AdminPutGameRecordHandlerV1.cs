@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
                 Namespace,                
                 Body                
             );            
-
+            
             wrapper.AdminPutGameRecordHandlerV1(operation);
             return String.Empty;
         }

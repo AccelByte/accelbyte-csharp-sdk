@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Namespace,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateGroupResponse? response = wrapper.AdminGetGroup(operation);
             if (response == null)
                 return "No response from server.";

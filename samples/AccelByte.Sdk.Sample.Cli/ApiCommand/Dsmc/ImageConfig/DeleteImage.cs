@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 ImageURI,                
                 Version                
             );            
-
+            
             wrapper.DeleteImage(operation);
             return String.Empty;
         }

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
                 Namespace,                
                 PodName                
             );            
-
+            
             wrapper.DownloadServerLogs(operation);
             return String.Empty;
         }

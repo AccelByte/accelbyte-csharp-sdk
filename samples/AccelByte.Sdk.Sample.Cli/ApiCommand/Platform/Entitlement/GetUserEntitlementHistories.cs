@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 UserId                
             );            
-
+            
             List<AccelByte.Sdk.Api.Platform.Model.EntitlementHistoryInfo>? response = wrapper.GetUserEntitlementHistories(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AdminGetProfanityLists operation = new AdminGetProfanityLists(
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Lobby.Model.ModelsAdminGetProfanityListsListResponse>? response = wrapper.AdminGetProfanityLists(operation);
             if (response == null)
                 return "No response from server.";

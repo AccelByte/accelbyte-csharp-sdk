@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Deployment,                
                 Namespace                
             );            
-
+            
             wrapper.DeleteDeployment(operation);
             return String.Empty;
         }

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             ClearCache operation = new ClearCache(
                 Namespace                
             );            
-
+            
             wrapper.ClearCache(operation);
             return String.Empty;
         }

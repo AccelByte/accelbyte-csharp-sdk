@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             DeletePaymentProviderConfig operation = new DeletePaymentProviderConfig(
                 Id                
             );            
-
+            
             wrapper.DeletePaymentProviderConfig(operation);
             return String.Empty;
         }

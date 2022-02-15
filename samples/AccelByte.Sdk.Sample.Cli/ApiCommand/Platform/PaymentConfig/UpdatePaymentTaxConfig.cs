@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             UpdatePaymentTaxConfig operation = new UpdatePaymentTaxConfig(
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentTaxConfigInfo? response = wrapper.UpdatePaymentTaxConfig(operation);
             if (response == null)
                 return "No response from server.";

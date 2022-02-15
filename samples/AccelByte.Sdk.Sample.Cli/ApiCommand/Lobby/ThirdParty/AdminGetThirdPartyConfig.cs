@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AdminGetThirdPartyConfig operation = new AdminGetThirdPartyConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsGetConfigResponse? response = wrapper.AdminGetThirdPartyConfig(operation);
             if (response == null)
                 return "No response from server.";

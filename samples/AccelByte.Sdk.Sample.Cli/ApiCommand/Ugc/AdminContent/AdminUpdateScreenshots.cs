@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 Namespace,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsUpdateScreenshotResponse? response = wrapper.AdminUpdateScreenshots(operation);
             if (response == null)
                 return "No response from server.";

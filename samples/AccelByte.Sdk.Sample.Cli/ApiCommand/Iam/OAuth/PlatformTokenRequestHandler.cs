@@ -41,18 +41,22 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             PlatformTokenRequestHandler operation = new PlatformTokenRequestHandler(
                 Namespace,                
                 PlatformId,                
                 DeviceId,                
                 PlatformToken                
             );            
-
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenResponse? response = wrapper.PlatformTokenRequestHandler(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

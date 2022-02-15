@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 SortBy,                
                 SortDirection                
             );            
-
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListImageResponse? response = wrapper.ListImages(operation);
             if (response == null)
                 return "No response from server.";

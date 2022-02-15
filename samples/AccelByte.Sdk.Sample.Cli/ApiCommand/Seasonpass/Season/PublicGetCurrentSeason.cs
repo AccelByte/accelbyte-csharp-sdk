@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
                 Namespace,                
                 Language                
             );            
-
+            
             AccelByte.Sdk.Api.Seasonpass.Model.LocalizedSeasonInfo? response = wrapper.PublicGetCurrentSeason(operation);
             if (response == null)
                 return "No response from server.";

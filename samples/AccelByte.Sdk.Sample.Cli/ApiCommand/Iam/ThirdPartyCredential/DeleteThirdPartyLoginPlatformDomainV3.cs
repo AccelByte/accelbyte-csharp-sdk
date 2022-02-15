@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 PlatformId,                
                 Body                
             );            
-
+            
             wrapper.DeleteThirdPartyLoginPlatformDomainV3(operation);
             return String.Empty;
         }

@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Offset,                
                 Status                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.OrderPagingSlicedResult? response = wrapper.PublicQueryUserOrders(operation);
             if (response == null)
                 return "No response from server.";

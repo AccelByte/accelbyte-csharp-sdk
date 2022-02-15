@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             GetClient operation = new GetClient(
                 ClientId                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ClientmodelClientResponse? response = wrapper.GetClient(operation);
             if (response == null)
                 return "No response from server.";

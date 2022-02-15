@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AdminUpdateMyUserV4 operation = new AdminUpdateMyUserV4(
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelUserResponseV3? response = wrapper.AdminUpdateMyUserV4(operation);
             if (response == null)
                 return "No response from server.";

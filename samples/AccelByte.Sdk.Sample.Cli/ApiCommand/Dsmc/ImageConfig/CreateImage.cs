@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             CreateImage operation = new CreateImage(
                 Body                
             );            
-
+            
             wrapper.CreateImage(operation);
             return String.Empty;
         }

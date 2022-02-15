@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             DeleteNamespace operation = new DeleteNamespace(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Basic.Model.NamespaceInfo? response = wrapper.DeleteNamespace(operation);
             if (response == null)
                 return "No response from server.";

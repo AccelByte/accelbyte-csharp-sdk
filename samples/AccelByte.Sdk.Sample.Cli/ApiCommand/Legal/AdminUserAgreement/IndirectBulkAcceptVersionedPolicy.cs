@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 CountryCode,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Legal.Model.AcceptAgreementResponse? response = wrapper.IndirectBulkAcceptVersionedPolicy(operation);
             if (response == null)
                 return "No response from server.";

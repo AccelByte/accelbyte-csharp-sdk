@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 Namespace,                
                 TemplateSlug                
             );            
-
+            
             wrapper.DeleteTemplateSlug(operation);
             return String.Empty;
         }

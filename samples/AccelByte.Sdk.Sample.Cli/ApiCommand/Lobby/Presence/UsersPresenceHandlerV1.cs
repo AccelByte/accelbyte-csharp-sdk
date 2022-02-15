@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 CountOnly,                
                 UserIds                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.HandlersGetUsersPresenceResponse? response = wrapper.UsersPresenceHandlerV1(operation);
             if (response == null)
                 return "No response from server.";

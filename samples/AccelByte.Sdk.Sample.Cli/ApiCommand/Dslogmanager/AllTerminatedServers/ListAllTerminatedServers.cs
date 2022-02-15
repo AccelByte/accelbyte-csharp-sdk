@@ -87,7 +87,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
                 StartDate,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Dslogmanager.Model.ModelsListTerminatedServersResponse? response = wrapper.ListAllTerminatedServers(operation);
             if (response == null)
                 return "No response from server.";

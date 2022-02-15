@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 TagId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateTagResponse? response = wrapper.AdminUpdateTag(operation);
             if (response == null)
                 return "No response from server.";

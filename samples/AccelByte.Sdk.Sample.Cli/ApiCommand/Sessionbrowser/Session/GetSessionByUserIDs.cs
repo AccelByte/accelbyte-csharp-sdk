@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
                 Namespace,                
                 UserIds                
             );            
-
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsSessionByUserIDsResponse? response = wrapper.GetSessionByUserIDs(operation);
             if (response == null)
                 return "No response from server.";

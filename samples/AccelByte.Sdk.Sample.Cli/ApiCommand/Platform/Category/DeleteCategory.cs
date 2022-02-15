@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 StoreId                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.FullCategoryInfo? response = wrapper.DeleteCategory(operation);
             if (response == null)
                 return "No response from server.";

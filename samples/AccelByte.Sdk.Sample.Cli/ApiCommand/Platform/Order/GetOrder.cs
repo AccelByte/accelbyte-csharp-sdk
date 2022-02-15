@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 OrderNo                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.OrderInfo? response = wrapper.GetOrder(operation);
             if (response == null)
                 return "No response from server.";

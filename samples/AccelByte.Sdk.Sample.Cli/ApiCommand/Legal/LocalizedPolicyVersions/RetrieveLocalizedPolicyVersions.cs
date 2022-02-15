@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             RetrieveLocalizedPolicyVersions operation = new RetrieveLocalizedPolicyVersions(
                 PolicyVersionId                
             );            
-
+            
             List<AccelByte.Sdk.Api.Legal.Model.RetrieveLocalizedPolicyVersionResponse>? response = wrapper.RetrieveLocalizedPolicyVersions(operation);
             if (response == null)
                 return "No response from server.";

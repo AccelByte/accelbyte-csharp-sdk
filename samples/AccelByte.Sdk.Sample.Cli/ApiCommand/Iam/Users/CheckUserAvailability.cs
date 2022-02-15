@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Field,                
                 Query                
             );            
-
+            
             wrapper.CheckUserAvailability(operation);
             return String.Empty;
         }

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             LogoutSSOClient operation = new LogoutSSOClient(
                 PlatformId                
             );            
-
+            
             wrapper.LogoutSSOClient(operation);
             return String.Empty;
         }

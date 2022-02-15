@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 IsWildcard,                
                 Limit                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelRoleNamesResponseV3? response = wrapper.PublicGetRolesV3(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             DeleteNamespaceSlotConfig operation = new DeleteNamespaceSlotConfig(
                 Namespace                
             );            
-
+            
             wrapper.DeleteNamespaceSlotConfig(operation);
             return String.Empty;
         }

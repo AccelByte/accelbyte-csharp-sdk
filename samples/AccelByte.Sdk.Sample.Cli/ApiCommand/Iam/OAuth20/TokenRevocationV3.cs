@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             TokenRevocationV3 operation = new TokenRevocationV3(
                 Token                
             );            
-
+            
             wrapper.TokenRevocationV3(operation);
             return String.Empty;
         }

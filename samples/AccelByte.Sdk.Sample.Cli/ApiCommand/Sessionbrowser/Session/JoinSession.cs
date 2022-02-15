@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
                 SessionID,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsSessionResponse? response = wrapper.JoinSession(operation);
             if (response == null)
                 return "No response from server.";

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 Namespace,                
                 UserId                
             );            
-
+            
             AccelByte.Sdk.Api.Group.Model.ModelsGetUserGroupInformationResponseV1? response = wrapper.GetUserGroupInformationPublicV1(operation);
             if (response == null)
                 return "No response from server.";

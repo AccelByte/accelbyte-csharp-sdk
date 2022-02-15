@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 UserId,                
                 Body                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelUserBanResponseV3? response = wrapper.AdminUpdateUserBanV3(operation);
             if (response == null)
                 return "No response from server.";

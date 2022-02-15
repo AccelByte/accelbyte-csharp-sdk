@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
                 Namespace,                
                 Emails                
             );            
-
+            
             wrapper.DeleteAdminEmailConfiguration(operation);
             return String.Empty;
         }

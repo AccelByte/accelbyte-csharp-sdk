@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 StoreId,                
                 Sku                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.ItemInfo? response = wrapper.PublicGetItemBySku(operation);
             if (response == null)
                 return "No response from server.";

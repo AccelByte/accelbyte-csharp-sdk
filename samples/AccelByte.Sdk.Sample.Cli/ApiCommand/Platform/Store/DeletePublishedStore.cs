@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             DeletePublishedStore operation = new DeletePublishedStore(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.StoreInfo? response = wrapper.DeletePublishedStore(operation);
             if (response == null)
                 return "No response from server.";

@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 Limit,                
                 Offset                
             );            
-
+            
             AccelByte.Sdk.Api.Matchmaking.Model.ServiceGetSessionHistorySearchResponse? response = wrapper.SearchSessions(operation);
             if (response == null)
                 return "No response from server.";

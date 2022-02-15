@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
                 RequestDate,                
                 UserId                
             );            
-
+            
             wrapper.AdminCancelUserPersonalDataRequest(operation);
             return String.Empty;
         }

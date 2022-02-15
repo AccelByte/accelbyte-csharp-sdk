@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             PublicGetNamespacePublisher operation = new PublicGetNamespacePublisher(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Basic.Model.NamespacePublisherInfo? response = wrapper.PublicGetNamespacePublisher(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetPlayStationIAPConfig operation = new GetPlayStationIAPConfig(
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Platform.Model.PlayStationIAPConfigInfo? response = wrapper.GetPlayStationIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

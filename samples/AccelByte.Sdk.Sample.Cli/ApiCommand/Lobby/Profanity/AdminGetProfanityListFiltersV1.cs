@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 List,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsAdminGetProfanityListFiltersV1Response? response = wrapper.AdminGetProfanityListFiltersV1(operation);
             if (response == null)
                 return "No response from server.";

@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             AdminGetListBanReasonV3 operation = new AdminGetListBanReasonV3(
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.AccountcommonBanReasonsV3? response = wrapper.AdminGetListBanReasonV3(operation);
             if (response == null)
                 return "No response from server.";

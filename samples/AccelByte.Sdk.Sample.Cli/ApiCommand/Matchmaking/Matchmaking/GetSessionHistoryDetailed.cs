@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 MatchID,                
                 Namespace                
             );            
-
+            
             List<AccelByte.Sdk.Api.Matchmaking.Model.ServiceGetSessionHistoryDetailedResponseItem>? response = wrapper.GetSessionHistoryDetailed(operation);
             if (response == null)
                 return "No response from server.";

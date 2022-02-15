@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 Namespace,                
                 PartyId                
             );            
-
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsPartyData? response = wrapper.AdminGetPartyDataV1(operation);
             if (response == null)
                 return "No response from server.";

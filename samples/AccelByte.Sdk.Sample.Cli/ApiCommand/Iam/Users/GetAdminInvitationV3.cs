@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 InvitationId,                
                 Namespace                
             );            
-
+            
             AccelByte.Sdk.Api.Iam.Model.ModelUserInvitationV3? response = wrapper.GetAdminInvitationV3(operation);
             if (response == null)
                 return "No response from server.";

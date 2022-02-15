@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 Namespace,                
                 UserId                
             );            
-
+            
             List<AccelByte.Sdk.Api.Social.Model.SlotInfo>? response = wrapper.GetUserNamespaceSlots(operation);
             if (response == null)
                 return "No response from server.";
