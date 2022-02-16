@@ -24,6 +24,7 @@ FAILED_COUNT=0
 export AB_BASE_URL="http://127.0.0.1:8080"
 export AB_CLIENT_ID="admin"
 export AB_CLIENT_SECRET="admin"
+export AB_APP_NAME="UnitTest"
 export AB_NAMESPACE=$TEST_NAMESPACE
 
 get_current_year() { echo $(date +'%Y'); }
