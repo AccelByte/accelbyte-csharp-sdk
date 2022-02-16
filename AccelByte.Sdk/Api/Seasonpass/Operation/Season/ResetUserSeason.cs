@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// <summary>
     /// resetUserSeason
     ///
-    ///  [TEST FACILITY ONLY] Forbidden in live environment. This API is used to reset
-    /// user data in current season, it will not revoke the rewarded entitlements.
+    ///  [TEST FACILITY ONLY] Forbidden in live environment. This API is used to reset user data in current season, it will not revoke the rewarded entitlements.
     /// 
     /// Other detail info:
     /// 

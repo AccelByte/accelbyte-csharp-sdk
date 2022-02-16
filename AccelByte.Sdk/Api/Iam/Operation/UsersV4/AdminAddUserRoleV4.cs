@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,12 +14,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminAddUserRoleV4
     ///
-    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:ROLE:USER:* [UPDATE]
-    /// permission. New role will be appended to user's current roles. Request body
-    /// need to specify allowed namespace for given role to support new role
-    /// restriction. Skipped the check whether the user performing the request is a
-    /// role manager / assigner since there is a plan to discard the role manager /
-    /// assigner.
+    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:ROLE:USER:* [UPDATE] permission.
+    /// 
+    /// New role will be appended to user's current roles. Request body need to specify allowed namespace for given role to support new role restriction.
+    /// Skipped the check whether the user performing the request is a role manager / assigner since there is a plan to discard the role manager / assigner.
     /// </summary>
     public class AdminAddUserRoleV4 : AccelByte.Sdk.Core.Operation
     {

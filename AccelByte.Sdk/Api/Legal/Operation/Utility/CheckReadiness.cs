@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,10 +14,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// checkReadiness
     ///
-    /// Readiness status defined as at least one legal basePolicy is present and
-    /// having active basePolicy.
+    /// Readiness status defined as at least one legal basePolicy is present and having active basePolicy.
     /// Other detail info:
-    /// 
     ///     * Required permission : resource="NAMESPACE:{namespace}:LEGAL", action=2 (READ)
     /// </summary>
     public class CheckReadiness : AccelByte.Sdk.Core.Operation

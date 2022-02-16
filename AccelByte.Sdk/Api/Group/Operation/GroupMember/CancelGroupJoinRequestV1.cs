@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,7 +18,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// Requires valid user authentication
     /// 
+    /// 
+    /// 
+    /// 
     /// This endpoint allows user to cancel request to join specific group.
+    /// 
+    /// 
+    /// 
     /// 
     /// Action Code: 73411
     /// </summary>

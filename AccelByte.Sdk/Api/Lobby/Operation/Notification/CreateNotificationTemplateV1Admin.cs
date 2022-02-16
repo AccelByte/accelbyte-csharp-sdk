@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,13 +14,14 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// createNotificationTemplateV1Admin
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with
-    /// scope `social`
-    /// Create new notification template. Include handlebars {{key}} for replaceable
-    /// contexts. The key inside handlebars will be the key to be replaced when
-    /// sending notification. Already existing template with the same slug and
-    /// language can not be created.
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with scope `social`
+    /// 
+    /// Create new notification template. Include handlebars {{key}} for replaceable contexts. The key inside
+    /// handlebars will be the key to be replaced when sending notification. Already existing template with the same
+    /// slug and language can not be created.
+    /// 
     /// Check model description for detailed input restrictions.
+    /// 
     /// Action Code: 50204
     /// </summary>
     public class CreateNotificationTemplateV1Admin : AccelByte.Sdk.Core.Operation

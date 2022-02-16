@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,11 +16,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
-    /// This endpoint returns information about an access token intended to be used by
-    /// resource servers or other internal servers.
+    /// This endpoint returns information about an access token intended to be used by resource servers or other internal servers.
     /// 
-    /// This endpoint requires authorized requests header with valid basic or bearer
-    /// token.
+    /// 
+    /// 
+    /// 
+    /// This endpoint requires authorized requests header with valid basic or bearer token.
+    /// 
+    /// 
+    /// 
     /// 
     /// action code : 10705
     /// </summary>

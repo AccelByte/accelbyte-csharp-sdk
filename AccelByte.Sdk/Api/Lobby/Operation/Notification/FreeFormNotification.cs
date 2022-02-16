@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// freeFormNotification
     ///
-    /// Required permission : `NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with scope
-    /// `social`
+    /// Required permission : `NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with scope `social`
+    /// 
     /// Sends notification to all connected users in a namespace.
     /// </summary>
     public class FreeFormNotification : AccelByte.Sdk.Core.Operation

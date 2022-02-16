@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,12 +18,23 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// Required valid user authentication
     /// 
+    /// 
+    /// 
+    /// 
     /// Required Member Role Permission: "GROUP:KICK [CREATE]"
+    /// 
+    /// 
+    /// 
     /// 
     /// This endpoint is used to kick group member.
     /// 
-    /// Kick group member. This endpoint will check the member and group information,
-    /// and also the role permission of the the user who accesses this endpoint
+    /// 
+    /// 
+    /// 
+    /// Kick group member. This endpoint will check the member and group information, and also the role permission of the the user who accesses this endpoint
+    /// 
+    /// 
+    /// 
     /// 
     /// Action Code: 73409
     /// </summary>

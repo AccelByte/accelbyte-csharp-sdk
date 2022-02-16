@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,12 +18,23 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// Required valid user authentication
     /// 
+    /// 
+    /// 
+    /// 
     /// Required Member Role Permission: "GROUP:JOIN [READ]"
+    /// 
+    /// 
+    /// 
     /// 
     /// This endpoint is used to Get Group Join Request List
     /// 
-    /// Get Group Join Request List for specific group. Group members needs to have
-    /// permission and also belong to the group to access this endpoint
+    /// 
+    /// 
+    /// 
+    /// Get Group Join Request List for specific group. Group members needs to have permission and also belong to the group to access this endpoint
+    /// 
+    /// 
+    /// 
     /// 
     /// Action Code: 73501
     /// </summary>

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,9 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// Required permission 'ROLE:ADMIN [DELETE]' or 'ADMIN:ROLE [DELETE]'
     /// 
-    /// Required Permission 'ROLE:ADMIN [DELETE]' is going to be DEPRECATED for
-    /// security purpose. It is going to be deprecated on 31 JANUARY 2019 , please use
-    /// permission 'ADMIN:ROLE [DELETE]' instead.
+    /// 
+    /// Required Permission 'ROLE:ADMIN [DELETE]' is going to be DEPRECATED for security purpose.
+    /// It is going to be deprecated on 31 JANUARY 2019 , please use permission 'ADMIN:ROLE [DELETE]' instead.
     /// </summary>
     public class DeleteRole : AccelByte.Sdk.Core.Operation
     {

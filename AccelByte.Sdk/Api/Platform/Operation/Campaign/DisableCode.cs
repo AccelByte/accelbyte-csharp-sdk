@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,8 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///
     /// Disable code.
     /// 
-    /// Disable an active code, the code can't be disabled if it has already been
-    /// redeemed.
+    /// Disable an active code, the code can't be disabled if it has already been redeemed.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=4 (UPDATE)

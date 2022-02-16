@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getPublishedStore
     ///
-    /// This API is used to get a published store basic info, exclude category and
-    /// item information.
+    /// This API is used to get a published store basic info, exclude category and item information.
     /// 
     /// Other detail info:
     /// 

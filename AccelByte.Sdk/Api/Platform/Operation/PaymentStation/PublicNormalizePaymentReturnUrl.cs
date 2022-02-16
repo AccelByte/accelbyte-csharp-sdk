@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,20 +15,23 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// publicNormalizePaymentReturnUrl
     ///
     /// Normalize payment return url for payment provider
-    /// Payment response: Field| Type| Required| Description
-    /// ---|---|---|---
-    /// orderNo| String| Yes| order no
-    /// paymentStatus| String| Yes|
+    /// Field                                                                                                                                                        | Type   | Required | Description
+    /// -------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|----------|-----------------------
+    /// orderNo                                                                                                                                                      | String | Yes      | order no
+    /// paymentStatus                                                                                                                                                | String | Yes      |
     /// 
     ///   * DONE: The payment was successfully completed.
     ///   * CANCELLED: The payment was cancelled by the shopper before completion, or the shopper returned to the merchant's site before completing the transaction.
-    ///   * PENDING: Inform the shopper that you've received their order, and are waiting for the payment to be completed. When the shopper has completed the payment you will receive a successful AUTHORISATION.
+    ///   * PENDING: Inform the shopper that you've received their order, and are waiting for the payment to be completed.
+    /// 
+    /// When the shopper has completed the payment you will receive a successful AUTHORISATION.
     ///   * RECEIVED: Inform the shopper that you've received their order, and are waiting for the payment to clear.
     ///   * UNKNOWN: An error occurred during the payment processing.
     ///   * FAILED: Shopper paid failed because of various reasons.
     /// 
     /// 
-    /// reason| String| No| payment status reason
+    /// reason                                                                                                                                                       | String | No       | payment status reason
+    /// 
     /// Other detail info:
     /// 
     ///   * xsolla : parameters 'user_id', 'foreinginvoice', 'invoice_id' and 'status' will be automatically added to the link

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,9 +18,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// Required valid user authentication
     /// 
-    /// Get list of groups. This endpoint will only show OPEN and PUBLIC group type.
-    /// This endpoint can search based on the group name by filling the "groupName"
-    /// query parameter
+    /// 
+    /// 
+    /// 
+    /// Get list of groups. This endpoint will only show OPEN and PUBLIC group type. This endpoint can search based on the group name by filling the "groupName" query parameter
+    /// 
+    /// 
+    /// 
     /// 
     /// Action Code: 73303
     /// </summary>

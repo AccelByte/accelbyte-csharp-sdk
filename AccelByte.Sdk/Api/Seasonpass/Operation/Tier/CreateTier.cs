@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// <summary>
     /// createTier
     ///
-    /// This API is used to create tier for a draft season, can create multiple tiers
-    /// at same time.
+    /// This API is used to create tier for a draft season, can create multiple tiers at same time.
     /// 
     /// Other detail info:
     /// 

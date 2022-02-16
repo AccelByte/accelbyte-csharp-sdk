@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// DeleteImage
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE] Required
-    /// scope: social This endpoint will delete an image that specified in the request
-    /// parameter
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]
+    /// 
+    /// Required scope: social
+    /// 
+    /// This endpoint will delete an image that specified in the request parameter
     /// </summary>
     public class DeleteImage : AccelByte.Sdk.Core.Operation
     {

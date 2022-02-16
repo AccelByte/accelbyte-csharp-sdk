@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,10 +18,18 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// Required valid user authentication
     /// 
+    /// 
+    /// 
+    /// 
     /// This endpoint is used to reject group invitation.
     /// 
-    /// Reject group invitation. If specific user is not invited in the specific group
-    /// ID, it will show the the error to show if the user is not invited yet.
+    /// 
+    /// 
+    /// 
+    /// Reject group invitation. If specific user is not invited in the specific group ID, it will show the the error to show if the user is not invited yet.
+    /// 
+    /// 
+    /// 
     /// 
     /// Action Code: 73402
     /// </summary>

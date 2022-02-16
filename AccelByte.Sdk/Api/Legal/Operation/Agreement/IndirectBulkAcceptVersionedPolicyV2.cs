@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,10 +16,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     ///
     ///  IMPORTANT: GOING TO DEPRECATE
     /// 
-    /// Accepts many legal policy versions all at once. Supply with localized version
-    /// policy id, version policy id, policy id, userId, namespace, country code and
-    /// client id to accept an agreement. This endpoint used by APIGateway during new
-    /// user registration.
+    /// Accepts many legal policy versions all at once. Supply with localized version policy id, version policy id, policy id, userId, namespace, country code and client id to accept an agreement. This endpoint used by APIGateway during new user registration.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="NAMESPACE:{namespace}:LEGAL", action=1 (CREATE)

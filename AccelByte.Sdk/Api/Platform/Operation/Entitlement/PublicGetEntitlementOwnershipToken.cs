@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -15,51 +19,76 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// The decoded ownership token header like below:
     /// 
     /// 
-    /// 
     ///     {
+    /// 
     ///       "kid": "9fd4cd5f991cebe3323605cd12d3b8bfdfc73fa4",
+    /// 
     ///       "typ": "JWT",
+    /// 
     ///       "alg": "RS256"
+    /// 
     ///     }
     /// 
     /// 
-    /// That you can get the jwks by api /platform/jwks, if the configured private key
-    /// is same as IAM,
+    /// 
+    /// That you can get the jwks by api /platform/jwks, if the configured private key is same as IAM,
     /// 
     /// you can also get jwks from IAM endpoint.
     /// 
     /// The decoded ownership token payload like below:
     /// 
     /// 
-    /// 
     ///     {
+    /// 
     ///      "namespace": "accelbyte",
+    /// 
     ///      "entitlements": [
+    /// 
     ///       {
+    /// 
     ///         "itemId": "4c1296291f604c199f7bb7f0ee02e5f8",
+    /// 
     ///         "appType": null,
+    /// 
     ///         "appId": null,
+    /// 
     ///         "namespace": "accelbyte",
+    /// 
     ///         "itemNamespace": "accelbyte",
+    /// 
     ///         "sku": "prime-plus"
+    /// 
     ///       },
+    /// 
     ///       {
+    /// 
     ///         "itemId": "e8f4974cf45c4e1f8d4f0c6990c518bd",
+    /// 
     ///         "appType": "GAME",
+    /// 
     ///         "appId": "omeganebula",
+    /// 
     ///         "namespace": "accelbyte",
+    /// 
     ///         "itemNamespace": "accelbyte",
+    /// 
     ///         "sku": "APPG005ON"
+    /// 
     ///       }
+    /// 
     ///      ],
+    /// 
     ///     "sub": "66459eb6a4e44e6fb0040bd20c1079a5",
+    /// 
     ///     "exp": 1619624360,
+    /// 
     ///     "iat": 1619624060
+    /// 
     ///     }
     /// 
     /// 
-    /// if there's no active entitlement for the specific params, the entitlements
-    /// section will be omitted.
+    /// 
+    /// if there's no active entitlement for the specific params, the entitlements section will be omitted.
     /// 
     /// Other detail info:
     /// 

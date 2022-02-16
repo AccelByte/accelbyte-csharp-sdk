@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// simulatePaymentOrderNotification
     ///
-    ///  [TEST FACILITY ONLY] Forbidden in live environment. Simulate payment
-    /// notification on sandbox payment order, usually for test usage to simulate real
-    /// currency payment notification.
+    ///  [TEST FACILITY ONLY] Forbidden in live environment. Simulate payment notification on sandbox payment order, usually for test usage to simulate real currency payment notification.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT", action=4 (UPDATE)

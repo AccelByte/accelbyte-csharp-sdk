@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// <summary>
     /// getNamespaceSlotConfig
     ///
-    /// Get slot configuration for a given namespace. In case slot configuration is
-    /// not set, the default will be returned.
+    /// Get slot configuration for a given namespace. In case slot configuration is not set, the default will be returned.
     /// Other detail info:
     /// 
     ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=2 (READ)

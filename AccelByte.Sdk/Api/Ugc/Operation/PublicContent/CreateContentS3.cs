@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,11 +14,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// CreateContentS3
     ///
-    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]. All
-    /// request body are required except payload, preview, tags, and contentType.
-    /// contentType values is used to enforce the Content-Type header needed by the
-    /// client to upload the content using the S3 presigned URL. If not specified, it
-    /// will use fileExtension value.
+    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE].
+    /// 
+    /// All request body are required except payload, preview, tags, and contentType.
+    /// contentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
+    /// If not specified, it will use fileExtension value.
     /// </summary>
     public class CreateContentS3 : AccelByte.Sdk.Core.Operation
     {

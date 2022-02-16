@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,19 +18,42 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// Required valid user authentication
     /// 
+    /// 
+    /// 
+    /// 
     /// This endpoint is used to join as group member
     /// 
-    /// Join to the group. This endpoint will check the the the type of the group
-    /// based on the groupID.
+    /// 
+    /// 
+    /// 
+    /// Join to the group. This endpoint will check the the the type of the group based on the groupID.
+    /// 
+    /// 
+    /// 
     /// 
     /// Additional Information:
     /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     ///   * User cannot join to the group with PRIVATE type
+    /// 
+    /// 
     ///   * Joining PUBLIC group type will create join request and need approval from the privileged group member to accept the request to become the member
+    /// 
+    /// 
     ///   * Joining OPEN group type will make this user become member of that group immediately
     /// 
-    /// This endpoint will return status field to give information whether the user is
-    /// JOINED or REQUESTED to join to the specific group
+    /// 
+    /// 
+    /// 
+    /// 
+    /// This endpoint will return status field to give information whether the user is JOINED or REQUESTED to join to the specific group
+    /// 
+    /// 
+    /// 
     /// 
     /// Action Code: 73403
     /// </summary>

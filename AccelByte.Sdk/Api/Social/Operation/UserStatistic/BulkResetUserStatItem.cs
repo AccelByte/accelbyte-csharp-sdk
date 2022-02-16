@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,11 +14,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// <summary>
     /// bulkResetUserStatItem
     ///
-    /// Bulk reset multiple user's statitems value. User's statitem value will be
-    /// reset to the default value defined in the statistic configuration. Other
-    /// detail info: + *Required permission*:
-    /// resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE) +
-    /// *Returns*: bulk updated result
+    /// Bulk reset multiple user's statitems value.
+    /// User's statitem value will be reset to the default value defined in the statistic configuration.
+    /// 
+    /// Other detail info:
+    /// + *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
+    /// + *Returns*: bulk updated result
     /// </summary>
     public class BulkResetUserStatItem : AccelByte.Sdk.Core.Operation
     {

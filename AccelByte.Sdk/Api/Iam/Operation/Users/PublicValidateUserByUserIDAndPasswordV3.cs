@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,10 +14,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicValidateUserByUserIDAndPasswordV3
     ///
-    /// This endpoint is used to validate the user password. Required valid user
-    /// authorization and valid user ID.
+    /// This endpoint is used to validate the user password. Required valid user authorization and valid user ID.
+    /// 
     /// 
     /// Notes:
+    /// 
+    /// 
+    /// 
     /// 
     ///                           * This endpoint validate the user password by specifying the userId and password
     /// </summary>

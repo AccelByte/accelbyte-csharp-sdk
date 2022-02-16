@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,9 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// Required permission 'BAN:ADMIN [READ]' or 'ADMIN:BAN [READ]'
     /// 
-    /// Required Permission 'BAN:ADMIN [READ]' is going to be DEPRECATED for security
-    /// purpose. It is going to be deprecated on 31 JANUARY 2019 , please use
-    /// permission 'ADMIN:BAN [READ]' instead.
+    /// 
+    /// 
+    /// 
+    /// Required Permission 'BAN:ADMIN [READ]' is going to be DEPRECATED for security purpose.
+    /// It is going to be deprecated on 31 JANUARY 2019 , please use permission 'ADMIN:BAN [READ]' instead.
     /// </summary>
     public class GetBansType : AccelByte.Sdk.Core.Operation
     {

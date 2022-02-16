@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,11 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// publicDeletePlayerPublicRecordHandlerV1
     ///
-    /// Required scope: social Required valid user authorization Delete player public
-    /// record (arbitrary JSON data) in user-level with given key.
+    /// Required scope: social
+    /// 
+    /// Required valid user authorization
+    /// 
+    /// Delete player public record (arbitrary JSON data) in user-level with given key.
     /// </summary>
     public class PublicDeletePlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

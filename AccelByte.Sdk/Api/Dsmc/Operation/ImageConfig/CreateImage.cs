@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,10 +14,20 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// CreateImage
     ///
-    /// ``` Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]
-    /// Required scope: social This endpoint will create image. Sample image: {
-    /// "namespace":"dewa", "version":"1.0.0", "image":"144436415367.dkr.ecr.us-
-    /// west-2.amazonaws.com/dewa:1.0.0", "persistent":false } ```
+    /// ```
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]
+    /// Required scope: social
+    /// 
+    /// This endpoint will create image.
+    /// 
+    /// Sample image:
+    /// {
+    /// "namespace":"dewa",
+    /// "version":"1.0.0",
+    /// "image":"144436415367.dkr.ecr.us-west-2.amazonaws.com/dewa:1.0.0",
+    /// "persistent":false
+    /// }
+    /// ```
     /// </summary>
     public class CreateImage : AccelByte.Sdk.Core.Operation
     {

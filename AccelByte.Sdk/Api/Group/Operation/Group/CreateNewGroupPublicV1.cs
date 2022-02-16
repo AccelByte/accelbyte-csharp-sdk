@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,20 +18,53 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// Required valid user authentication
     /// 
+    /// 
+    /// 
+    /// 
     /// This endpoint is used to create new group
+    /// 
+    /// 
+    /// 
     /// 
     /// There are some fields that needs to be fulfilled
     /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     ///   * groupDescription : the description of the group (optional)
+    /// 
+    /// 
     ///   * groupIcon : group icon URL link (optional)
+    /// 
+    /// 
     ///   * groupName : name of the group
+    /// 
+    /// 
     ///   * groupRegion : region of the group
+    /// 
+    /// 
     ///   * groupRules : rules for specific group. It consists of groupCustomRule that can be used to save custom rule, and groupPredefinedRules that has similar usage with configuration, but this rule only works in specific group
+    /// 
+    /// 
     ///   * allowedAction : available action in group service. It consist of joinGroup and inviteGroup
+    /// 
+    /// 
     ///   * ruleAttribute : attribute of the player that needs to be checked
+    /// 
+    /// 
     ///   * ruleCriteria : criteria of the value. The value will be in enum of EQUAL, MINIMUM, MAXIMUM
+    /// 
+    /// 
     ///   * ruleValue : value that needs to be checked
+    /// 
+    /// 
     ///   * customAttributes : additional custom group attributes (optional)
+    /// 
+    /// 
+    /// 
+    /// 
     /// 
     /// Action Code: 73304
     /// </summary>

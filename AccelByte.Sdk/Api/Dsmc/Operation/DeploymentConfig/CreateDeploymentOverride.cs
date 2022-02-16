@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// CreateDeploymentOverride
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE] Required
-    /// scope: social This endpoint create a dedicated servers deployment override in
-    /// a namespace.
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]
+    /// 
+    /// Required scope: social
+    /// 
+    /// This endpoint create a dedicated servers deployment override in a namespace.
     /// </summary>
     public class CreateDeploymentOverride : AccelByte.Sdk.Core.Operation
     {

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,11 +14,13 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// updateNotificationTopicV1Admin
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [UPDATE]` with
-    /// scope `social`
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [UPDATE]` with scope `social`
+    /// 
     /// update topic information by topic name.
-    /// topic should be alphabets, no special char except underscore, uppercase and no
-    /// spacing. for example: TOPIC_TEST. Already existing topic can not be created
+    /// 
+    /// topic should be alphabets, no special char except underscore, uppercase and no spacing. for example: TOPIC_TEST.
+    /// Already existing topic can not be created
+    /// 
     /// Action Code: 50216
     /// </summary>
     public class UpdateNotificationTopicV1Admin : AccelByte.Sdk.Core.Operation

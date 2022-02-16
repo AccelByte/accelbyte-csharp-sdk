@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminListAssignedUsersV4
     ///
-    /// Required permission ADMIN:ROLE [READ] Query all users that has the specified
-    /// role. action code: 10416
+    /// Required permission ADMIN:ROLE [READ]
+    /// Query all users that has the specified role.
+    /// action code: 10416
     /// </summary>
     public class AdminListAssignedUsersV4 : AccelByte.Sdk.Core.Operation
     {

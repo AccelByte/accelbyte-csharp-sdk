@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,12 +15,20 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// putGameRecordConcurrentHandlerV1
     ///
     /// Required Permission | `NAMESPACE:{namespace}:CLOUDSAVE:RECORD [UPDATE]`
-    /// ---|---
-    /// Required Scope | `social`
+    /// --------------------|---------------------------------------------------
+    /// Required Scope      | `social`
     /// 
-    /// If record already exists, it will be replaced with the one from request body
-    /// (all fields will be deleted). If record is not exists, it will create a new
-    /// one with value from request body. Example: Replace all records
+    /// 
+    /// 
+    /// 
+    /// 
+    /// If record already exists, it will be replaced with the one from request body (all fields will be
+    /// deleted). If record is not exists, it will create a new one with value from request body.
+    /// 
+    /// Example:
+    /// 
+    /// Replace all records
+    /// 
     /// 
     /// 
     /// 
@@ -36,12 +48,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     ///         }
     /// 
     /// 
-    /// Optimistic Concurrency Control
-    /// This endpoint implement optimistic concurrency control to avoid race
-    /// condition. If the record has been updated since the client fetch it, the
-    /// server will return HTTP status code 412 (precondition failed) and client need
-    /// to redo the operation (fetch data and do update). Otherwise, the server will
-    /// process the request.
+    /// 
+    /// 
+    ///  Optimistic Concurrency Control
+    /// 
+    /// This endpoint implement optimistic concurrency control to avoid race condition.
+    /// If the record has been updated since the client fetch it, the server will return HTTP status code 412 (precondition failed)
+    /// and client need to redo the operation (fetch data and do update).
+    /// Otherwise, the server will process the request.
     /// </summary>
     public class PutGameRecordConcurrentHandlerV1 : AccelByte.Sdk.Core.Operation
     {

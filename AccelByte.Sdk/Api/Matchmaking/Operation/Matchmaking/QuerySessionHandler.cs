@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,11 +14,15 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// QuerySessionHandler
     ///
-    /// Required Permission: NAMESPACE:{namespace}:SESSION [READ] Required Scope:
-    /// social Queries the specified session's status. Game servers are expected to
-    /// call this periodically as long as it has a session in queue to see if there
-    /// are new players being matched to the session. Possible session statuses are
-    /// "sessionInQueue", "sessionFull", and "sessionTimeout".
+    /// Required Permission: NAMESPACE:{namespace}:SESSION [READ]
+    /// 
+    /// Required Scope: social
+    /// 
+    /// Queries the specified session's status. Game servers are expected to
+    /// call this periodically as long as it has a session in queue to see
+    /// if there are new players being matched to the session.
+    /// 
+    /// Possible session statuses are "sessionInQueue", "sessionFull", and "sessionTimeout".
     /// </summary>
     public class QuerySessionHandler : AccelByte.Sdk.Core.Operation
     {

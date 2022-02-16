@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,7 +15,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// listGameRecordsHandlerV1
     ///
     /// Required permission: ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [READ]
-    /// Required scope: social Retrieve list of records key by namespace
+    /// 
+    /// Required scope: social
+    /// 
+    /// Retrieve list of records key by namespace
     /// </summary>
     public class ListGameRecordsHandlerV1 : AccelByte.Sdk.Core.Operation
     {

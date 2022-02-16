@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,14 +14,21 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// putPlayerPublicRecordHandlerV1
     ///
-    /// Required Permission |
-    /// `NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [UPDATE]`
-    /// ---|---
-    /// Required Scope | `social`
+    /// Required Permission | `NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [UPDATE]`
+    /// --------------------|------------------------------------------------------------------------
+    /// Required Scope      | `social`
     /// 
-    /// If the record is not exist, it will create. If the record already exist, it
-    /// will replace the record instead. And this operation can only be applied to
-    /// record with `isPublic=true`. Example Replace record
+    /// 
+    /// 
+    /// 
+    /// 
+    /// If the record is not exist, it will create. If the record already exist, it will replace the record
+    /// instead. And this operation can only be applied to record with `isPublic=true`.
+    /// 
+    /// Example
+    /// 
+    /// Replace record
+    /// 
     /// 
     /// 
     /// 

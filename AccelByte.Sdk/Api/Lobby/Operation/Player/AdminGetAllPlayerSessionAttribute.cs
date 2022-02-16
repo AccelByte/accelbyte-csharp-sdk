@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminGetAllPlayerSessionAttribute
     ///
-    /// Required permission :
-    /// `ADMIN:NAMESPACE:{namespace}:USER:{userId}:PLAYER:ATTRIBUTES [READ]` with
-    /// scope `social`
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:USER:{userId}:PLAYER:ATTRIBUTES [READ]` with scope `social`
+    /// 
     /// get all player's session attribute by user id in a namespace.
     /// </summary>
     public class AdminGetAllPlayerSessionAttribute : AccelByte.Sdk.Core.Operation

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,11 +15,15 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// ImportChannels
     ///
     /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Update]
-    /// Required Scope: social Import channels configuration from file. It will merge
-    /// with existing channels. Available import strategy: - leaveOut: if channel
-    /// with same key exist, the existing will be used and imported one will be
-    /// ignored (default) - replace: if channel with same key exist, the imported
-    /// channel will be used and existing one will be removed Action Code: 510113
+    /// 
+    /// Required Scope: social
+    /// 
+    /// Import channels configuration from file. It will merge with existing channels.
+    /// Available import strategy:
+    /// - leaveOut: if channel with same key exist, the existing will be used and imported one will be ignored (default)
+    /// - replace: if channel with same key exist, the imported channel will be used and existing one will be removed
+    /// 
+    /// Action Code: 510113
     /// </summary>
     public class ImportChannels : AccelByte.Sdk.Core.Operation
     {

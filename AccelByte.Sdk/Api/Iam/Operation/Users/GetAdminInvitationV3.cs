@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetAdminInvitationV3
     ///
-    /// Endpoint to validate user invitation. When not found, it could also means the
-    /// invitation has expired.
+    /// Endpoint to validate user invitation. When not found, it could also means the invitation has expired.
     /// </summary>
     public class GetAdminInvitationV3 : AccelByte.Sdk.Core.Operation
     {

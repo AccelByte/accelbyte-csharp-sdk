@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,11 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
     /// <summary>
     /// checkServerLogs
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ] Required
-    /// scope: social This endpoint will check log file existence before download
-    /// file.
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]
+    /// 
+    /// Required scope: social
+    /// 
+    /// This endpoint will check log file existence before download file.
     /// </summary>
     public class CheckServerLogs : AccelByte.Sdk.Core.Operation
     {

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,10 +14,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// ClaimServer
     ///
-    /// Required permission: NAMESPACE:{namespace}:DSM:SESSION [UPDATE] Required
-    /// scope: social This endpoint is intended to be called by game session manager
-    /// (matchmaker, lobby, etc.) to claim a dedicated server. The dedicated server
-    /// cannot be claimed unless the status is READY
+    /// Required permission: NAMESPACE:{namespace}:DSM:SESSION [UPDATE]
+    /// 
+    /// Required scope: social
+    /// 
+    /// This endpoint is intended to be called by game session manager (matchmaker, lobby, etc.) to claim a dedicated server. The dedicated server cannot be claimed unless the status is READY
     /// </summary>
     public class ClaimServer : AccelByte.Sdk.Core.Operation
     {

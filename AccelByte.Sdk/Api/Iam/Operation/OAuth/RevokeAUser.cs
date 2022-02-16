@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,19 +16,27 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
-    /// ## The endpoint is going to be deprecated at 21 August, 2018. Please use this
-    /// instead: oauth/namespaces/{namespace}/users/{userId}/revoke
+    /// ## The endpoint is going to be deprecated at 21 August, 2018. Please use this instead: oauth/namespaces/{namespace}/users/{userId}/revoke
+    /// 
+    /// 
+    /// 
     /// 
     /// This endpoint revokes a user.
     /// 
-    /// This endpoint requires all requests to have Authorization header set with
-    /// Bearer access authentication with valid access token.
+    /// 
+    /// 
+    /// 
+    /// This endpoint requires all requests to have Authorization header set with Bearer access authentication with valid access token.
+    /// 
+    /// 
+    /// 
     /// 
     /// Required permission 'NAMESPACE:{namespace}:USER:{userID}:ADMIN [UPDATE]'
     /// 
-    /// When other clients know that the userID has been revoked and the token is
-    /// issued before the revocation, forcing a new token will contain banned
-    /// permissions.
+    /// 
+    /// 
+    /// 
+    /// When other clients know that the userID has been revoked and the token is issued before the revocation, forcing a new token will contain banned permissions.
     /// </summary>
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class RevokeAUser : AccelByte.Sdk.Core.Operation

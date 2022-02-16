@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminUploadContentDirect
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT
-    /// [CREATE]. All request body are required except preview and tags.
+    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE].
+    /// 
+    /// All request body are required except preview and tags.
     /// </summary>
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class AdminUploadContentDirect : AccelByte.Sdk.Core.Operation

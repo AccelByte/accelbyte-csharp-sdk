@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,11 +14,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicCancelSubscription
     ///
-    /// Cancel a subscription, only ACTIVE subscription can be cancelled. Ensure
-    /// successfully cancel, recommend at least 1 day before current period ends,
-    /// otherwise it may be charging or charged.
-    /// Set immediate true, the subscription will be terminated immediately, otherwise
-    /// till the end of current billing cycle.
+    /// Cancel a subscription, only ACTIVE subscription can be cancelled. Ensure successfully cancel, recommend at least 1 day before current period ends, otherwise it may be charging or charged.
+    /// Set immediate true, the subscription will be terminated immediately, otherwise till the end of current billing cycle.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=4 (UPDATE)

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,64 +18,199 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// This endpoint supports grant type:
     /// 
+    /// 
+    /// 
     ///                   1. Grant Type == `authorization_code`:
-    ///     It generates the user token by given the authorization code which generated in "/v3/oauth/auth" API response. It should also pass in the redirect_uri, which should be the same as generating the authorization code request.
+    /// 
+    ///     It generates the user token by given the authorization
+    /// code which generated in "/v3/oauth/auth" API response. It should also pass
+    /// in the redirect_uri, which should be the same as generating the
+    /// authorization code request.
+    /// 
+    /// 
+    /// 
     ///                   2. Grant Type == `password`:
-    ///     The grant type to use for authenticating a user, whether it's by email / username and password combination or through platform.
+    /// 
+    ///     The grant type to use for authenticating a user, whether it's by email / username and password combination
+    /// or through platform.
+    /// 
+    /// 
+    /// 
     ///                   3. Grant Type == `refresh_token`:
+    /// 
     ///     Used to get a new access token for a valid refresh token.
+    /// 
+    /// 
+    /// 
     ///                   4. Grant Type == `client_credentials`:
+    /// 
     ///     It generates a token by checking the client credentials provided through Authorization header.
+    /// 
+    /// 
+    /// 
     /// 
     /// ## Access Token Content
     /// 
+    /// 
+    /// 
+    /// 
     /// Following is the access tokenâs content:
     /// 
-    ///                   * namespace. It is the namespace the token was generated from.
     /// 
-    ///                   * display_name. The display name of the sub. It is empty if the token is generated from the client credential
     /// 
-    ///                   * roles. The subâs roles. It is empty if the token is generated from the client credential
     /// 
-    ///                   * namespace_roles. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
+    ///                   *
     /// 
-    ///                   * permissions. The sub or audâ permissions
     /// 
-    ///                   * bans. The subâs list of bans. It is used by the IAM client for validating the token.
+    /// namespace. It is the namespace the token was generated from.
     /// 
-    ///                   * jflgs. It stands for Justice Flags. It is a special flag used for storing additional status information regarding the sub. It is implemented as a bit mask. Following explains what each bit represents:
+    /// 
+    /// 
+    /// 
+    /// 
+    ///                   *
+    /// 
+    /// 
+    /// display_name. The display name of the sub. It is empty if the token is generated from the client credential
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    ///                   *
+    /// 
+    /// 
+    /// roles. The subâs roles. It is empty if the token is generated from the client credential
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    ///                   *
+    /// 
+    /// 
+    /// namespace_roles. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    ///                   *
+    /// 
+    /// 
+    /// permissions. The sub or audâ permissions
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    ///                   *
+    /// 
+    /// 
+    /// bans. The subâs list of bans. It is used by the IAM client for validating the token.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    ///                   *
+    /// 
+    /// 
+    /// jflgs. It stands for Justice Flags. It is a special flag used for storing additional status information regarding the sub. It is implemented as a bit mask. Following explains what each bit represents:
+    /// 
+    /// 
+    /// 
     /// 
     ///                     * 1: Email Address Verified
     /// 
+    /// 
+    /// 
     ///                     * 2: Phone Number Verified
+    /// 
+    /// 
     /// 
     ///                     * 4: Anonymous
     /// 
+    /// 
+    /// 
     ///                     * 8: Suspicious Login
     /// 
-    ///                   * aud. The aud is the targeted resource server.
     /// 
-    ///                   * iat. The time the token issues at. It is in Epoch time format
     /// 
-    ///                   * exp. The time the token expires. It is in Epoch time format
     /// 
-    ///                   * client_id. The UserID. The sub is omitted if the token is generated from client credential
     /// 
-    ///                   * scope. The scope of the access request, expressed as a list of space-delimited, case-sensitive strings
+    /// 
+    ///                   *
+    /// 
+    /// 
+    /// aud. The aud is the targeted resource server.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    ///                   *
+    /// 
+    /// 
+    /// iat. The time the token issues at. It is in Epoch time format
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    ///                   *
+    /// 
+    /// 
+    /// exp. The time the token expires. It is in Epoch time format
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    ///                   *
+    /// 
+    /// 
+    /// client_id. The UserID. The sub is omitted if the token is generated from client credential
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    ///                   *
+    /// 
+    /// 
+    /// scope. The scope of the access request, expressed as a list of space-delimited, case-sensitive strings
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// 
     /// ## Bans
     /// 
-    /// The JWT contains user's active bans with its expiry date. List of ban types
-    /// can be obtained from /bans.
+    /// 
+    /// 
+    /// 
+    /// The JWT contains user's active bans with its expiry date. List of ban types can be obtained from /bans.
+    /// 
+    /// 
+    /// 
     /// 
     /// ## Track Login History
     /// 
-    /// This endpoint will track login history to detect suspicious login activity,
-    /// please provide "device_id" (alphanumeric) in request header parameter
-    /// otherwise we will set to "unknown".
     /// 
-    /// Align with General Data Protection Regulation in Europe, user login history
-    /// will be kept within 28 days by default"
+    /// 
+    /// 
+    /// This endpoint will track login history to detect suspicious login activity, please provide "device_id" (alphanumeric) in request header parameter otherwise we will set to "unknown".
+    /// 
+    /// 
+    /// 
+    /// 
+    /// Align with General Data Protection Regulation in Europe, user login history will be kept within 28 days by default"
+    /// 
+    /// 
+    /// 
     /// 
     /// action code: 10703
     /// </summary>

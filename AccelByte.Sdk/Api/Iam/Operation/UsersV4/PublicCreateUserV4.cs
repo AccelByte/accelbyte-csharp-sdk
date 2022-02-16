@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,18 +16,25 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// Create a new user with unique email address and username.
     /// 
-    /// Required attributes: - authType: possible value is EMAILPASSWD -
-    /// emailAddress: 5 to 254 characters - username: 3 to 48 characters, case
-    /// insensitive, alphanumeric with allowed symbols underscore (_) and dot (.) -
-    /// password: 8 to 32 characters, satisfy at least 3 out of 4
-    /// conditions(uppercase, lowercase letters, numbers and special characters) and
-    /// should not have more than 2 equal characters in a row. - country: ISO3166-1
-    /// alpha-2 two letter, e.g. US. - dateOfBirth: YYYY-MM-DD, e.g. 1990-01-01.
-    /// valid values are between 1905-01-01 until current date.
-    /// Not required attributes: - displayName: 1 to 48 characters
     /// 
-    /// This endpoint support accepting agreements for the created user. Supply the
-    /// accepted agreements in acceptedPolicies attribute.
+    /// 
+    /// Required attributes:
+    /// - authType: possible value is EMAILPASSWD
+    /// - emailAddress: 5 to 254 characters
+    /// - username: 3 to 48 characters, case insensitive, alphanumeric with allowed symbols underscore (_) and dot (.)
+    /// - password: 8 to 32 characters, satisfy at least 3 out of 4 conditions(uppercase, lowercase letters, numbers and special characters) and should not have more than 2 equal characters in a row.
+    /// - country: ISO3166-1 alpha-2 two letter, e.g. US.
+    /// - dateOfBirth: YYYY-MM-DD, e.g. 1990-01-01. valid values are between 1905-01-01 until current date.
+    /// 
+    /// 
+    /// Not required attributes:
+    /// - displayName: 1 to 48 characters
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// This endpoint support accepting agreements for the created user. Supply the accepted agreements in acceptedPolicies attribute.
     /// </summary>
     public class PublicCreateUserV4 : AccelByte.Sdk.Core.Operation
     {

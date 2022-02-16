@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,7 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// Generate url to request auth code from third party platform
     /// 
+    /// 
+    /// 
     /// ## Supported platforms:
+    /// 
+    /// 
     /// 
     ///                 * steamopenid
     /// This endpoint redirects to steam login page, then redirect back to platform
@@ -27,9 +35,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// authenticate endpoint after successfully authenticating psn user.
     /// 
     ///                 * epicgames
-    /// This endpoint redirects to Epicgames OAuth login page. then redirect to
-    /// platform authenticate endpoint after successfully authenticating an Epicgames
-    /// credential
+    /// This endpoint redirects to Epicgames OAuth login page. then redirect to platform
+    /// authenticate endpoint after successfully authenticating an Epicgames credential
     /// 
     ///                 * twitch
     /// This endpoint redirects to twitch login page, then redirect back to platform
@@ -45,8 +52,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     ///                 * google
     /// This endpoint redirects to google login page, then redirect back to platform
-    /// authenticate endpoint after successfully authenticating google user.  action
-    /// code : 10702'
+    /// authenticate endpoint after successfully authenticating google user.
+    /// action code : 10702'
     /// </summary>
     public class AuthCodeRequestV3 : AccelByte.Sdk.Core.Operation
     {

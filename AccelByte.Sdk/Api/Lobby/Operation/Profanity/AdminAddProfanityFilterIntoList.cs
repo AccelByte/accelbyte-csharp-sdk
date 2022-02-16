@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminAddProfanityFilterIntoList
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PROFANITY [CREATE]` with
-    /// scope `social`
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PROFANITY [CREATE]` with scope `social`
+    /// 
     /// add a single filter into the list
     /// </summary>
     public class AdminAddProfanityFilterIntoList : AccelByte.Sdk.Core.Operation

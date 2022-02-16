@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,11 +15,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// SearchSessionsV2
     ///
     /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
-    /// Required Scope: social Search sessions. Optimize the query by differentiating
-    /// query with filter namespace only and filter with namespace & other filter
-    /// (partyID, userID, matchID). Query with filter namespace only will not group
-    /// whole session data while query with filter namespace & other filter will
-    /// include session data.
+    /// 
+    /// Required Scope: social
+    /// 
+    /// Search sessions. Optimize the query by differentiating query with filter namespace only and filter with namespace & other filter (partyID, userID, matchID).
+    /// Query with filter namespace only will not group whole session data while query with filter namespace & other filter will include session data.
     /// </summary>
     public class SearchSessionsV2 : AccelByte.Sdk.Core.Operation
     {

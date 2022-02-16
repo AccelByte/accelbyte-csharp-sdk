@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// DeleteSession
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SESSION [DELETE] Required
-    /// scope: social This endpoint deletes a specified session and its corresponding
-    /// match result from DB.
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SESSION [DELETE]
+    /// 
+    /// Required scope: social
+    /// 
+    /// This endpoint deletes a specified session and its corresponding match result from DB.
     /// </summary>
     public class DeleteSession : AccelByte.Sdk.Core.Operation
     {

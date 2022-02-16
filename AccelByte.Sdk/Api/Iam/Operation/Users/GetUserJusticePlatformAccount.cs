@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,23 +16,28 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
-    /// This endpoint requires the client access token as the bearer token. Required
-    /// permission 'ADMIN:NAMESPACE:{namespace}:JUSTICE:USER:{userId} [UPDATE]'
+    /// This endpoint requires the client access token as the bearer token. Required permission 'ADMIN:NAMESPACE:{namespace}:JUSTICE:USER:{userId} [UPDATE]'
     /// 
-    /// It is going to be removed on November 26th, 2018
     /// 
-    /// The endpoint returns user Justice platform account linked with the given user.
-    /// If the user Justice platform account doesn't exist in the designated
-    /// namespace, the endpoint is going toÂ create and return the new Justice
-    /// platform account. The newly user Justice platform account is going to be
-    /// forced to perform token grant through the given user and can't perform
-    /// password update
+    /// 
+    /// 
+    ///  It is going to be removed on November 26th, 2018
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The endpoint returns user Justice platform account linked with the given user. If the user Justice platform account doesn't exist in the designated namespace, the endpoint is going toÂ create and return the new Justice platform account.
+    /// The newly user Justice platform account is going to be forced to perform token grant through the given user and can't perform password update
+    /// 
+    /// 
+    /// 
     /// 
     /// ### Read Justice Platform Account UserID
     /// 
-    /// In order to read the Justice platform account UserID, it is required to have
-    /// the permission: NAMESPACE:{namespace}:JUSTICE:USER:{userId} [READ] , otherwise
-    /// the UserID is going to be censored and replaced with âRedactedâ text.
+    /// 
+    /// 
+    /// 
+    /// In order to read the Justice platform account UserID, it is required to have the permission: NAMESPACE:{namespace}:JUSTICE:USER:{userId} [READ] , otherwise the UserID is going to be censored and replaced with âRedactedâ text.
     /// </summary>
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetUserJusticePlatformAccount : AccelByte.Sdk.Core.Operation

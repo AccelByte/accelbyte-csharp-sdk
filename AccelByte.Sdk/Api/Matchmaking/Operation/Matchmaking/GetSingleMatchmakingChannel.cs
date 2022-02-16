@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,8 +15,12 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// GetSingleMatchmakingChannel
     ///
     /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [READ]
-    /// Required Scope: social Reads single channel based on namespace and channel
-    /// name Action Code: 510112
+    /// 
+    /// Required Scope: social
+    /// 
+    /// Reads single channel based on namespace and channel name
+    /// 
+    /// Action Code: 510112
     /// </summary>
     public class GetSingleMatchmakingChannel : AccelByte.Sdk.Core.Operation
     {

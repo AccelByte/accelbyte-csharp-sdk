@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,12 +15,15 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// bulkGetPlayerPublicRecordHandlerV1
     ///
     /// Required Permission | `NAMESPACE:{namespace}:PUBLIC:CLOUDSAVE:RECORD [READ]`
-    /// ---|---
-    /// Required Scope | `social`
+    /// --------------------|--------------------------------------------------------
+    /// Required Scope      | `social`
     /// 
-    /// Bulk get other player's record that is public by userIds, max allowed 20 at a
-    /// time. Only record with `isPublic=true` that can be retrieved using this
-    /// endpoint.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// Bulk get other player's record that is public by userIds, max allowed 20 at a time. Only record with `isPublic=true` that can be
+    /// retrieved using this endpoint.
     /// </summary>
     public class BulkGetPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

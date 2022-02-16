@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// <summary>
     /// deleteCountryGroup
     ///
-    /// Delete a country groups by its country group code. This endpoint usually used
-    /// for testing purpose to cleanup test data.
+    /// Delete a country groups by its country group code. This endpoint usually used for testing purpose to cleanup test data.
     /// Other detail info:
     /// 
     ///   * Required permission : resource = "ADMIN:NAMESPACE:{namespace}:MISC" , action=8 (DELETE)

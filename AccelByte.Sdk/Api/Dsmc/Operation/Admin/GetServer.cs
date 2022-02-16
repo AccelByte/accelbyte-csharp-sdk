@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// GetServer
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ] Required
-    /// scope: social This endpoint queries a specified dedicated server from DB.
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]
+    /// 
+    /// Required scope: social
+    /// 
+    /// This endpoint queries a specified dedicated server from DB.
     /// </summary>
     public class GetServer : AccelByte.Sdk.Core.Operation
     {

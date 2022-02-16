@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,10 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// <summary>
     /// ExportAchievements
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [READ] Required
-    /// Scope: social
+    /// 
+    /// Required permission ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [READ]
+    /// 
+    /// Required Scope: social
     /// </summary>
     public class ExportAchievements : AccelByte.Sdk.Core.Operation
     {

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,8 +15,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// listPlayerRecordHandlerV1
     ///
     /// Required permission: ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [READ]
-    /// Required scope: social Retrieve list of player records key and userID under
-    /// given namespace.
+    /// 
+    /// Required scope: social
+    /// 
+    /// Retrieve list of player records key and userID under given namespace.
     /// </summary>
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class ListPlayerRecordHandlerV1 : AccelByte.Sdk.Core.Operation

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,8 +16,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     ///
     /// Get list of admin email address configuration.
     /// 
-    /// Required permission `ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [READ]`
-    /// and scope `account`
+    /// 
+    /// Required permission `ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [READ]` and scope `account`
     /// </summary>
     public class GetAdminEmailConfiguration : AccelByte.Sdk.Core.Operation
     {

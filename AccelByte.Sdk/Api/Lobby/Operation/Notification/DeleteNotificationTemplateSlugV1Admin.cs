@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,10 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// deleteNotificationTemplateSlugV1Admin
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [DELETE]` with
-    /// scope `social`
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [DELETE]` with scope `social`
+    /// 
     /// Delete template slug in notification template
+    /// 
     /// Action Code: 50206
     /// </summary>
     public class DeleteNotificationTemplateSlugV1Admin : AccelByte.Sdk.Core.Operation

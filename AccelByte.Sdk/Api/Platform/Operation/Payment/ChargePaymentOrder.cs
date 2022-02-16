@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// chargePaymentOrder
     ///
-    ///  [TEST FACILITY ONLY] Forbidden in live environment. Charge payment order
-    /// without payment flow for unpaid payment order, usually for test usage to
-    /// simulate real currency payment process.
+    ///  [TEST FACILITY ONLY] Forbidden in live environment. Charge payment order without payment flow for unpaid payment order, usually for test usage to simulate real currency payment process.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT", action=4 (UPDATE)

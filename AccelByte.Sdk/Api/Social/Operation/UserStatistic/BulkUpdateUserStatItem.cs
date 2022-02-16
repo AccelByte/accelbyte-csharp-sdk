@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,18 +14,19 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// <summary>
     /// bulkUpdateUserStatItem
     ///
-    /// Bulk update user's statitems value for given namespace and user with specific
-    /// update strategy. There are four supported update strategies: + *OVERRIDE*:
-    /// update user statitem with the new value + *INCREMENT*: increment user
-    /// statitem with the specified value + *MAX*: update user statitem with the
-    /// specified value if it's larger than the existing value + *MIN*: update user
-    /// statitem with the specified value if it's lower than the existing value The
-    /// *additionalKey* parameter will be suffixed to *userId* and is used to support
-    /// multi level user's statitems, such as character's statitems. If provided,
-    /// user's statitems will be saved with key: *userId_additionalKey* Other detail
-    /// info: + *Required permission*:
-    /// resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4
-    /// (UPDATE) + *Returns*: bulk updated result
+    /// Bulk update user's statitems value for given namespace and user with specific update strategy.
+    /// There are four supported update strategies:
+    /// + *OVERRIDE*: update user statitem with the new value
+    /// + *INCREMENT*: increment user statitem with the specified value
+    /// + *MAX*: update user statitem with the specified value if it's larger than the existing value
+    /// + *MIN*: update user statitem with the specified value if it's lower than the existing value
+    /// 
+    /// The *additionalKey* parameter will be suffixed to *userId* and is used to support multi level user's statitems, such as character's statitems.
+    /// If provided, user's statitems will be saved with key: *userId_additionalKey*
+    /// 
+    /// Other detail info:
+    /// + *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+    /// + *Returns*: bulk updated result
     /// </summary>
     public class BulkUpdateUserStatItem : AccelByte.Sdk.Core.Operation
     {

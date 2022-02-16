@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,10 +14,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// GetServerSession
     ///
-    /// ``` Required permission: NAMESPACE:{namespace}:DSM:SERVER [UPDATE] Required
-    /// scope: social This endpoint is intended to be called by dedicated server to
-    /// query its session ID. DS should call this when it first receive player
-    /// connection, to see if it is actually claimed```
+    /// ```
+    /// Required permission: NAMESPACE:{namespace}:DSM:SERVER [UPDATE]
+    /// Required scope: social
+    /// 
+    /// This endpoint is intended to be called by dedicated server
+    /// to query its session ID.
+    /// DS should call this when it first receive player connection,
+    /// to see if it is actually claimed```
     /// </summary>
     public class GetServerSession : AccelByte.Sdk.Core.Operation
     {

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,11 +14,14 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// DequeueSessionHandler
     ///
-    /// Required Permission: NAMESPACE:{namespace}:SESSION [UPDATE] Required Scope:
-    /// social Dequeues joinable session so that it will not be matched with player's
-    /// match request tickets. This endpoint is intended to be called by game server
-    /// to let matchmaker know that the game server does not want more players to its
-    /// session, even though it is not full.
+    /// Required Permission: NAMESPACE:{namespace}:SESSION [UPDATE]
+    /// 
+    /// Required Scope: social
+    /// 
+    /// Dequeues joinable session so that it will not be matched with player's match request tickets.
+    /// 
+    /// This endpoint is intended to be called by game server to let matchmaker know that
+    /// the game server does not want more players to its session, even though it is not full.
     /// </summary>
     public class DequeueSessionHandler : AccelByte.Sdk.Core.Operation
     {

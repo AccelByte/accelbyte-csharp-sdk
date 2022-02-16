@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,14 +14,21 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// putPlayerPublicRecordConcurrentHandlerV1
     ///
-    /// Required Permission |
-    /// `NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [UPDATE]`
-    /// ---|---
-    /// Required Scope | `social`
+    /// Required Permission | `NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [UPDATE]`
+    /// --------------------|------------------------------------------------------------------------
+    /// Required Scope      | `social`
     /// 
-    /// If the record is not exist, it will create. If the record already exist, it
-    /// will replace the record instead. And this operation can only be applied to
-    /// record with `isPublic=true`. Example Replace record
+    /// 
+    /// 
+    /// 
+    /// 
+    /// If the record is not exist, it will create. If the record already exist, it will replace the record
+    /// instead. And this operation can only be applied to record with `isPublic=true`.
+    /// 
+    /// Example
+    /// 
+    /// Replace record
+    /// 
     /// 
     /// 
     /// 
@@ -37,12 +48,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     ///     }
     /// 
     /// 
+    /// 
+    /// 
     /// Optimistic Concurrency Control
-    /// This endpoint implement optimistic concurrency control to avoid race
-    /// condition. If the record has been updated since the client fetch it, the
-    /// server will return HTTP status code 412 (precondition failed) and client need
-    /// to redo the operation (fetch data and do update). Otherwise, the server will
-    /// process the request.
+    /// 
+    /// This endpoint implement optimistic concurrency control to avoid race condition.
+    /// If the record has been updated since the client fetch it, the server will return HTTP status code 412 (precondition failed)
+    /// and client need to redo the operation (fetch data and do update).
+    /// Otherwise, the server will process the request.
     /// </summary>
     public class PutPlayerPublicRecordConcurrentHandlerV1 : AccelByte.Sdk.Core.Operation
     {

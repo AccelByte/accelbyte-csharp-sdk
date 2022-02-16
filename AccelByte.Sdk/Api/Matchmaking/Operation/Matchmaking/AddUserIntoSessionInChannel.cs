@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,7 +15,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// AddUserIntoSessionInChannel
     ///
     /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Create]
-    /// Required Scope: social Add user into the session in a channel.
+    /// 
+    /// Required Scope: social
+    /// 
+    /// Add user into the session in a channel.
     /// </summary>
     public class AddUserIntoSessionInChannel : AccelByte.Sdk.Core.Operation
     {

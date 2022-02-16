@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,7 +15,10 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// RemovePlayerFromSession
     ///
     /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [UPDATE]
-    /// Required scope: social Remove player from game session
+    /// 
+    /// Required scope: social
+    /// 
+    /// Remove player from game session
     /// </summary>
     public class RemovePlayerFromSession : AccelByte.Sdk.Core.Operation
     {

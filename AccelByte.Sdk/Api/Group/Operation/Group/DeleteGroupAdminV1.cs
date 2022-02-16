@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,8 +18,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// Required Permission: "ADMIN:NAMESPACE:{namespace}:GROUP:{groupId} [DELETE]"
     /// 
-    /// Delete existing group. It will check whether the groupID is exist before doing
-    /// the process to delete the group.
+    /// 
+    /// 
+    /// 
+    /// Delete existing group. It will check whether the groupID is exist before doing the process to delete the group.
+    /// 
+    /// 
+    /// 
     /// 
     /// Action Code: 73302
     /// </summary>

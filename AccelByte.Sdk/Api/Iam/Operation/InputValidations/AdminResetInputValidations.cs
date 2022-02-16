@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,8 +18,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission 'ADMIN:CONFIGURATION' [DELETE]
     /// 
-    /// This endpoint is used to reset input validation to the default input
-    /// validation configurations
+    /// This endpoint is used to reset input validation to the default input validation configurations
     /// </summary>
     public class AdminResetInputValidations : AccelByte.Sdk.Core.Operation
     {

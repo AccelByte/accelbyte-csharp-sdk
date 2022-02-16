@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,10 +14,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// <summary>
     /// deleteUserSlotConfig
     ///
-    /// Deletes a user slot configuration in given namespace, the namespace slot
-    /// configuration will be returned after delete.
+    /// Deletes a user slot configuration in given namespace, the namespace slot configuration will be returned after delete.
     /// Other detail info:
-    /// 
     ///       *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=8 (DELETE)
     /// </summary>
     public class DeleteUserSlotConfig : AccelByte.Sdk.Core.Operation

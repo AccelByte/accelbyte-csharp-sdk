@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminListUserIDByUserIDsV3
     ///
-    /// List User By User ID This endpoint requires ADMIN:NAMESPACE:{namespace}:USER
-    /// [READ] permission. This endpoint intended to list user information from the
-    /// given list of userID and namespace
+    /// List User By User ID
+    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:USER [READ] permission.
+    /// This endpoint intended to list user information from the given list of userID and namespace
     /// </summary>
     public class AdminListUserIDByUserIDsV3 : AccelByte.Sdk.Core.Operation
     {

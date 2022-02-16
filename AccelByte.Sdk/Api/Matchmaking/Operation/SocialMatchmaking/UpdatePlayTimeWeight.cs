@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,9 +15,12 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// UpdatePlayTimeWeight
     ///
     /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [UPDATE]
-    /// Required Scope: social Update a connection weight between player and playtime.
-    /// This endpoint is intended to be called by admin for debugging purpose on
-    /// social matchmaking rule.
+    /// 
+    /// Required Scope: social
+    /// 
+    /// Update a connection weight between player and playtime.
+    /// 
+    /// This endpoint is intended to be called by admin for debugging purpose on social matchmaking rule.
     /// </summary>
     public class UpdatePlayTimeWeight : AccelByte.Sdk.Core.Operation
     {

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicGetItem
     ///
-    /// This API is used to get an item in locale. If item not exist in specific
-    /// region, default region item will return.
+    /// This API is used to get an item in locale. If item not exist in specific region, default region item will return.
     /// 
     /// Other detail info:
     /// 

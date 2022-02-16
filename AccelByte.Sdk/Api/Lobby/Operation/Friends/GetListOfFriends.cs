@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// get list of friends
     ///
-    /// Required permission : `NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]`
-    /// with scope `social`
+    /// Required permission : `NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]` with scope `social`
+    /// 
     /// get list of friends in a namespace.
     /// </summary>
     public class GetListOfFriends : AccelByte.Sdk.Core.Operation

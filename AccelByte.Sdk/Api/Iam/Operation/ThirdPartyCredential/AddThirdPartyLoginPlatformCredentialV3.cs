@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,8 +18,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// This is the API to Add 3rd Platform Credential.
     /// 
-    /// It needs ADMIN:NAMESPACE:{namespace}:PLATFORM:{platformId}:CLIENT [CREATE]
-    /// resource.
+    /// 
+    /// 
+    /// 
+    /// It needs ADMIN:NAMESPACE:{namespace}:PLATFORM:{platformId}:CLIENT [CREATE] resource.
+    /// 
+    /// 
+    /// 
     /// 
     /// The secret for apple is base64 encoded private key.
     /// </summary>

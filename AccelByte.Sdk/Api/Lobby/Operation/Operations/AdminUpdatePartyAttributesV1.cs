@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminUpdatePartyAttributesV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PARTY:STORAGE [UPDATE]`
-    /// with scope `social`
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PARTY:STORAGE [UPDATE]` with scope `social`
+    /// 
     /// update party attributes in a namespace.
     /// </summary>
     public class AdminUpdatePartyAttributesV1 : AccelByte.Sdk.Core.Operation

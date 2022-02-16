@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicUpgradeHeadlessAccountV4
     ///
-    /// Require valid user authorization Upgrade headless account to full account
-    /// without verifying email address. Client does not need to provide verification
-    /// code which sent to email address.
+    /// Require valid user authorization
+    /// Upgrade headless account to full account without verifying email address. Client does not need to provide verification code which sent to email address.
+    /// 
     /// action code : 10124
     /// </summary>
     public class PublicUpgradeHeadlessAccountV4 : AccelByte.Sdk.Core.Operation

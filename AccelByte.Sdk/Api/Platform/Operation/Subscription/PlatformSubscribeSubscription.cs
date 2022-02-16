@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// platformSubscribeSubscription
     ///
-    /// Free subscribe by platform, can used by other justice service to redeem/reward
-    /// the subscription.
+    /// Free subscribe by platform, can used by other justice service to redeem/reward the subscription.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=1 (CREATE)

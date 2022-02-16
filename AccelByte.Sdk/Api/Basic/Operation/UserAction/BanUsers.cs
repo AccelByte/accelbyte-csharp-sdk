@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,8 +15,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// banUsers
     ///
     /// Ban user.
-    /// actionId: 1 means permanent ban, actionId: 10 means Temporary ban.Other detail
-    /// info:
+    /// actionId: 1 means permanent ban, actionId: 10 means Temporary ban.Other detail info:
     /// 
     ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:ACTION" , action=4 (UPDATE)
     /// </summary>

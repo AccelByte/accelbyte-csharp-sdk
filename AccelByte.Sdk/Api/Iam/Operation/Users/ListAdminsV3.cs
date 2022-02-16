@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,8 +15,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// ListAdminsV3
     ///
     /// This endpoint requires ADMIN:NAMESPACE:{namespace}:USER [READ] permission.
-    /// List all users that has admin role (role that has admin_role attribute set to
-    /// true).
+    /// 
+    /// List all users that has admin role (role that has admin_role attribute set to true).
     /// </summary>
     public class ListAdminsV3 : AccelByte.Sdk.Core.Operation
     {

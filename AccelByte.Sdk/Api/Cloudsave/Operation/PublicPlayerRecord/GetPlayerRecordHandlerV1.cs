@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,10 +14,13 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// getPlayerRecordHandlerV1
     ///
-    /// Required Permission | `NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD
-    /// [READ]`
-    /// ---|---
-    /// Required Scope | `social`
+    /// Required Permission | `NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [READ]`
+    /// --------------------|---------------------------------------------------------------
+    /// Required Scope      | `social`
+    /// 
+    /// 
+    /// 
+    /// 
     /// 
     /// Get player record by its key
     /// </summary>

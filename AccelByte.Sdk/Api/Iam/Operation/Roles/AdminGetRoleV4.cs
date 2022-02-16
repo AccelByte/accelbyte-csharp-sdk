@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,7 +14,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetRoleV4
     ///
-    /// Required permission ADMIN:ROLE [READ] action code: 10419
+    /// Required permission ADMIN:ROLE [READ]
+    /// 
+    /// action code: 10419
     /// </summary>
     public class AdminGetRoleV4 : AccelByte.Sdk.Core.Operation
     {

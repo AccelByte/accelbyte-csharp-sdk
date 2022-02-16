@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,17 +18,39 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission ADMIN:NAMESPACE:{namespace}:USER [READ]
     /// 
+    /// 
+    /// 
+    /// 
     /// Endpoint behavior :
     /// 
     ///           * by default this endpoint searches all users on the specified namespace
+    /// 
+    /// 
     ///           * if query parameter is defined, endpoint will search users whose email address, display name, username, or third party partially match with the query
+    /// 
+    /// 
     ///           * if startDate and endDate parameters is defined, endpoint will search users which created on the certain date range
+    /// 
+    /// 
     ///           * if query, startDate and endDate parameters are defined, endpoint will search users whose email address and display name match and created on the certain date range
+    /// 
+    /// 
     ///           * if startDate parameter is defined, endpoint will search users that created start from the defined date
+    /// 
+    /// 
     ///           * if endDate parameter is defined, endpoint will search users that created until the defined date
+    /// 
+    /// 
     ///           * if platformId parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformId they have linked to
+    /// 
+    /// 
     ///           * if platformBy parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformUserId or platformDisplayName they have linked to, example value: platformUserId or platformDisplayName
+    /// 
+    /// 
     ///           * if limit is not defined, The default limit is 100
+    /// 
+    /// 
+    /// 
     /// 
     /// 
     /// action code : 10133

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,7 +15,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// DeleteUserFromSessionInChannel
     ///
     /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Delete]
-    /// Required Scope: social Delete a user from a session in the channel.
+    /// 
+    /// Required Scope: social
+    /// 
+    /// Delete a user from a session in the channel.
     /// </summary>
     public class DeleteUserFromSessionInChannel : AccelByte.Sdk.Core.Operation
     {

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,8 +18,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// This endpoint revokes a token.
     /// 
-    /// This endpoint requires authorized requests header with Basic Authentication
-    /// from client that establish the token.
+    /// 
+    /// 
+    /// 
+    /// This endpoint requires authorized requests header with Basic Authentication from client that establish the token.
     /// 
     /// 
     /// action code: 10706

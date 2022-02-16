@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,7 +16,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// GetÂ slots for a given user.
     /// Other detail info:
-    /// 
     ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=2 (READ)
     ///         *  Returns : list of slots
     /// </summary>

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// syncOrders
     ///
-    /// Sync orders. If response contains nextEvaluatedKey, please use it as query
-    /// param in the next call to fetch the next batch, a batch has 1000 elements or
-    /// less.
+    /// Sync orders. If response contains nextEvaluatedKey, please use it as query param in the next call to fetch the next batch, a batch has 1000 elements or less.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:ORDER", action=2 (READ)

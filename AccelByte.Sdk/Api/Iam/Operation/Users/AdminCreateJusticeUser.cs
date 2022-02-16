@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminCreateJusticeUser
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId} [CREATE] Create
-    /// Justice User from Publisher User information. It will check first if Justice
-    /// User on target namespace already exist.
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId} [CREATE]
+    /// 
+    /// Create Justice User from Publisher User information. It will check first if Justice User on target namespace already exist.
     /// </summary>
     public class AdminCreateJusticeUser : AccelByte.Sdk.Core.Operation
     {

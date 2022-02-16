@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,9 +16,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Returns all profiles for specified users.
     /// Other detail info:
-    /// 
     ///         *  Required permission : resource="NAMESPACE:{namespace}:GAMEPROFILE", action=2 (READ)
-    ///         * Returns : list of profiles
+    /// 
+    ///         *  Returns : list of profiles
     /// </summary>
     public class PublicGetUserGameProfiles : AccelByte.Sdk.Core.Operation
     {

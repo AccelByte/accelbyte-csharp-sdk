@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// <summary>
     /// unpublishSeason
     ///
-    /// This API is used to unpublish a published season, if the season already
-    /// started it will report error except with force.
+    /// This API is used to unpublish a published season, if the season already started it will report error except with force.
     /// 
     /// Other detail info:
     /// 

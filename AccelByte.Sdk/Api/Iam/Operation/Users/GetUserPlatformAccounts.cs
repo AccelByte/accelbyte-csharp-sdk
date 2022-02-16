@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,12 +16,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
+    /// 
     /// Required permission 'NAMESPACE:{namespace}:USER:{userId} [READ]'.
+    /// 
+    /// 
+    /// 
     /// 
     /// ## Justice Platform Account
     /// 
-    /// The permission âADMIN:NAMESPACE:{namespace}:JUSTICE:USER:{userId}â [READ]
-    /// is required in order to read the UserID who linked with the user.
+    /// 
+    /// 
+    /// 
+    /// The permission âADMIN:NAMESPACE:{namespace}:JUSTICE:USER:{userId}â [READ] is required in order to read the UserID who linked with the user.
     /// </summary>
     public class GetUserPlatformAccounts : AccelByte.Sdk.Core.Operation
     {

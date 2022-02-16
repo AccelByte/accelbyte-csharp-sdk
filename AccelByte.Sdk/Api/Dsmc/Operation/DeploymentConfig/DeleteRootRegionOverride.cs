@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// DeleteRootRegionOverride
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE] Required
-    /// scope: social This endpoint delete a dedicated server deployment override in a
-    /// namespace in a region for root deployment
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]
+    /// 
+    /// Required scope: social
+    /// 
+    /// This endpoint delete a dedicated server deployment override in a namespace in a region for root deployment
     /// </summary>
     public class DeleteRootRegionOverride : AccelByte.Sdk.Core.Operation
     {

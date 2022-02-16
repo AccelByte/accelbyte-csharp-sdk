@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// retrieveLatestPoliciesPublic
     ///
-    /// Retrieve all active latest policies based on a namespace and country. The
-    /// country will be read from user token.
+    /// Retrieve all active latest policies based on a namespace and country. The country will be read from user token.
     /// Other detail info:
     /// 
     ///   * Leave the policyType empty if you want to be responded with all policy type

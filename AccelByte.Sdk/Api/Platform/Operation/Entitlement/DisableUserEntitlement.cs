@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,10 +14,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// disableUserEntitlement
     ///
-    /// Disable user entitlement if entitlement, only active entitlement can be
-    /// disable, disabled entitlement can't consume.
-    ///  Like revoke, it will lose the entitlement ownership, except disabled
-    /// entitlement can enable.
+    /// Disable user entitlement if entitlement, only active entitlement can be disable, disabled entitlement can't consume.
+    ///  Like revoke, it will lose the entitlement ownership, except disabled entitlement can enable.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,14 +14,22 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// postPlayerRecordHandlerV1
     ///
-    /// Required Permission | `NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD
-    /// [WRITE]`
-    /// ---|---
-    /// Required Scope | `social`
+    /// Required Permission | `NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [WRITE]`
+    /// --------------------|----------------------------------------------------------------
+    /// Required Scope      | `social`
+    /// 
+    /// 
+    /// 
+    /// 
     /// 
     /// Create player record if it is not exists otherwise merge with these criteria:
-    /// - If field name is already exists, replace the value - If field name is not
-    /// exists, append it Example Replace value:
+    /// - If field name is already exists, replace the value
+    /// - If field name is not exists, append it
+    /// 
+    /// Example
+    /// 
+    /// Replace value:
+    /// 
     /// 
     /// 
     /// 
@@ -37,7 +49,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     ///         }
     /// 
     /// 
+    /// 
+    /// 
     /// Append value:
+    /// 
     /// 
     /// 
     /// 

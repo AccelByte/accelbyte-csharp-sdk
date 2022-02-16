@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,8 +18,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// Required valid user authentication
     /// 
-    /// Get single group information. This endpoint will show the group information by
-    /// the groupId
+    /// 
+    /// 
+    /// 
+    /// Get single group information. This endpoint will show the group information by the groupId
+    /// 
+    /// 
+    /// 
     /// 
     /// Action Code: 73306
     /// </summary>

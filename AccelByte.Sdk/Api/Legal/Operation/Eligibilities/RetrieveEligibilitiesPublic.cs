@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,9 +15,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// retrieveEligibilitiesPublic
     ///
     /// Retrieve the active policies and its conformance status by user.
-    /// This process supports cross-namespace checking, that means if the active
-    /// policy already accepted by the same user in other namespace, then it will be
-    /// considered as eligible.
+    /// This process supports cross-namespace checking, that means if the active policy already accepted by the same user in other namespace, then it will be considered as eligible.
     /// 
     /// Other detail info:
     /// 

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,20 +16,22 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     ///
     /// 
     /// 
-    /// Required permission `ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [CREATE]` and
-    /// scope `social`
+    /// Required permission
+    /// `ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [CREATE]` and scope `social`
     /// 
-    /// Other detail info: - achievementCode: Human readable unique code to indentify
-    /// the achievement. Must be lowercase and maximum length is 32 - incremental: If
-    /// the achievement is not incremental, it does not need to store a goal value of
-    /// a stat to be unlocked. If the achievement is incremental, it needs to set
-    /// statCode and goalValue - statCode: Selected statistic code, from the
-    /// published statistic code event.Human readable unique code to indentify the
-    /// achievement. Must be lowercase and maximum length is 32 - goalValue:
-    /// Statistics value required to unlock the achievement. - defaultLanguage:
-    /// localozation for achievement name and achievement description. Allowed format
-    /// : en, en-US - slug: specify the image they want to use, it can be file image
-    /// name or something to define the achievement icon.
+    /// 
+    /// Other detail info:
+    /// - achievementCode: Human readable unique code to indentify the achievement. Must be lowercase
+    /// and maximum length is 32
+    /// - incremental: If the achievement is not incremental, it does not need to store a goal value
+    /// of a stat to be unlocked.
+    /// If the achievement is incremental, it needs to set statCode and goalValue
+    /// - statCode: Selected statistic code, from the published statistic code event.Human readable unique
+    /// code to indentify the achievement. Must be lowercase and maximum length is 32
+    /// - goalValue: Statistics value required to unlock the achievement.
+    /// - defaultLanguage: localozation for achievement name and achievement description. Allowed format : en, en-US
+    /// - slug: specify the image they want to use, it can be file image name or something
+    /// to define the achievement icon.
     /// </summary>
     public class AdminCreateNewAchievement : AccelByte.Sdk.Core.Operation
     {

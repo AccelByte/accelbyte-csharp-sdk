@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,11 +14,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicListUserIDByPlatformUserIDsV3
     ///
-    /// List User ID By Platform User ID This endpoint intended to list game user ID
-    /// from the given namespace This endpoint return list of user ID by given
-    /// platform ID and list of platform user ID nintendo platform user ID : NSA ID
-    /// need to be appended with Environment ID using colon as separator. e.g
-    /// kmzwa8awaa:dd1
+    /// List User ID By Platform User ID
+    /// This endpoint intended to list game user ID from the given namespace
+    /// This endpoint return list of user ID by given platform ID and list of platform user ID
+    /// 
+    /// nintendo platform user ID : NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
     /// </summary>
     public class PublicListUserIDByPlatformUserIDsV3 : AccelByte.Sdk.Core.Operation
     {

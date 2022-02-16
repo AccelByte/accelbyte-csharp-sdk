@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -15,12 +19,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///   * Required permission : resource="ADMIN:FULFILLMENT", action=1 (CREATE)
     /// 
-    /// Fulfillment scripts are used for adding custom fulfillment logic based on
-    /// ITEM_TYPE : [MEDIA,INGAMEITEM] for now, and the custom scripts only cover
-    /// grantDays.
+    /// Fulfillment scripts are used for adding custom fulfillment logic based on ITEM_TYPE : [MEDIA,INGAMEITEM] for now, and the custom scripts only cover grantDays.
     /// Example for grantDays:
-    /// `order && ((order.currency && order.currency.currencyCode) == 'LP' ||
-    /// order.isFree) ? 30 : -1`
+    /// `order && ((order.currency && order.currency.currencyCode) == 'LP' || order.isFree) ? 30 : -1`
     /// </summary>
     public class CreateFulfillmentScript : AccelByte.Sdk.Core.Operation
     {

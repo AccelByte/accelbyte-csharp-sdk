@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,39 +16,89 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// The endpoint supports two response types:
     /// 
+    /// 
+    /// 
     /// 1. Response Type == "code":
     /// 
-    /// The endpoint returns an authorization code that will be used by the IAM client
-    /// to exchange for an access token. It supports two different headers, the basic
-    /// and the bearer header. Each behaves differently.
     /// 
-    ///         * The basic header
     /// 
-    /// The basic headerâs value is the base64 of the client ID and client secret.
-    /// It is used by the developer whenever the developer authorizes a user on a same
-    /// namespace.
     /// 
-    ///         * The bearer header
+    /// The endpoint returns an authorization code that will be used by the IAM client to exchange for an access token. It supports two different headers, the basic and the bearer header. Each behaves differently.
     /// 
-    /// The bearer headerâs value is an access token. It is used by the developer
-    /// whenever the developer authorizes a user on a different namespace. The
-    /// endpoint validates userâs entitlement on the designated namespace for making
-    /// sure the user is authorized for a designated namespace.
+    /// 
+    /// 
+    /// 
+    ///         *
+    /// 
+    /// 
+    /// The basic header
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The basic headerâs value is the base64 of the client ID and client secret. It is used by the developer whenever the developer authorizes a user on a same namespace.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    ///         *
+    /// 
+    /// 
+    /// The bearer header
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The bearer headerâs value is an access token. It is used by the developer whenever the developer authorizes a user on a different namespace. The endpoint validates userâs entitlement on the designated namespace for making sure the user is authorized for a designated namespace.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// 
     /// Following are the responses returned by the endpoint:
     /// 
-    ///         * Authorize success : redirects to the given URL with the following information: ?code={authorization code}&state;={state}
     /// 
-    ///         * Authorize failure : redirects to the given URL with the following information:?error=access_denied&error;_description=...
+    /// 
+    /// 
+    ///         *  Authorize success : redirects to the given URL with the following information: ?code={authorization code}&state;={state}
+    /// 
+    /// 
+    /// 
+    ///         *  Authorize failure : redirects to the given URL with the following information:?error=access_denied&error;_description=...
+    /// 
+    /// 
+    /// 
+    /// 
     /// 
     /// 2. Response Type == "token":
     /// 
-    ///         * Authorize success : redirects to the given URL with the following information:
     /// 
-    /// #access_token={accesstoken}&expires;_in={expiration duration in
-    /// seconds}&token;_type=Bearer
     /// 
-    ///         * Authorize failure : redirects to the given URL with the following information:
+    /// 
+    ///         *
+    /// 
+    /// 
+    /// Authorize success : redirects to the given URL with the following information:
+    /// 
+    /// 
+    /// 
+    /// 
+    /// #access_token={accesstoken}&expires;_in={expiration duration in seconds}&token;_type=Bearer
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    ///         *
+    /// 
+    /// 
+    /// Authorize failure : redirects to the given URL with the following information:
+    /// 
+    /// 
+    /// 
     /// 
     /// ?error=access_denied&error;_description=...
     /// </summary>

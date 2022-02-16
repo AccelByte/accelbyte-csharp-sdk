@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,9 +18,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission 'ADMIN:ROLE [UPDATE]'
     /// 
+    /// 
+    /// 
+    /// 
     /// Admin roles has its members listed in the role.
     /// 
+    /// 
+    /// 
+    /// 
     /// Role can be set as admin role only when it has at least 1 manager.
+    /// 
     /// 
     /// 
     /// action code: 10412

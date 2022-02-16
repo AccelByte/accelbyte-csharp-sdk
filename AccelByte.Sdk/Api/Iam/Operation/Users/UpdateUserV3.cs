@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -16,28 +20,47 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    /// This Endpoint support update user based on given data. Single request can
-    /// update single field or multi fields.
+    /// 
+    /// 
+    /// This Endpoint support update user based on given data. Single request can update single field or multi fields.
+    /// 
+    /// 
+    /// 
     /// 
     /// Supported field {country, displayName, languageTag, dateOfBirth}
     /// 
+    /// 
+    /// 
+    /// 
     /// Country use ISO3166-1 alpha-2 two letter, e.g. US.
+    /// 
+    /// 
+    /// 
     /// 
     /// Date of Birth format : YYYY-MM-DD, e.g. 2019-04-29.
     /// 
     /// 
-    /// Several case of updating email address
+    /// 
+    ///  Several case of updating email address
     /// 
     ///                   * User want to update email address of which have been verified, newEmailAddress response field will be filled with new email address.
+    /// 
+    /// 
     ///                   * User want to update email address of which have not been verified, { oldEmailAddress, emailAddress} response field will be filled with new email address.
+    /// 
+    /// 
     ///                   * User want to update email address of which have been verified and updated before, { oldEmailAddress, emailAddress} response field will be filled with verified email before. newEmailAddress response field will be filled with newest email address.
+    /// 
     /// 
     /// Important notes:
     /// 
-    /// This endpoint provides support for client that doesn't have PATCH support,
-    /// i.e. UE4 before v4.23 released.
-    /// If the client support PATCH method, use [PATCH]
-    /// /iam/v3/public/namespaces/{namespace}/users/me instead
+    /// 
+    /// 
+    /// This endpoint provides support for client that doesn't have PATCH support, i.e. UE4 before v4.23 released.
+    /// 
+    /// If the client support PATCH method, use [PATCH] /iam/v3/public/namespaces/{namespace}/users/me instead
+    /// 
+    /// 
     /// 
     /// 
     /// 

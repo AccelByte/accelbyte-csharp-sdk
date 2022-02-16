@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,12 +14,13 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// GetSession
     ///
-    /// Required permission: NAMESPACE:{namespace}:DSM:SESSION [READ] Required scope:
-    /// social This endpoint is intended to be called by game session manager
-    /// (matchmaker, lobby, etc.) to query the status of dedicated server that is
-    /// created for the session. The server is ready to use when the status is READY.
-    /// At which point, the game session manager can claim the server using the GET
-    /// /namespaces/{namespace}/sessions/{sessionID}/claim endpoint
+    /// Required permission: NAMESPACE:{namespace}:DSM:SESSION [READ]
+    /// 
+    /// Required scope: social
+    /// 
+    /// This endpoint is intended to be called by game session manager (matchmaker, lobby, etc.) to query the status of dedicated server that is created for the session.
+    /// 
+    /// The server is ready to use when the status is READY. At which point, the game session manager can claim the server using the GET /namespaces/{namespace}/sessions/{sessionID}/claim endpoint
     /// </summary>
     public class GetSession : AccelByte.Sdk.Core.Operation
     {

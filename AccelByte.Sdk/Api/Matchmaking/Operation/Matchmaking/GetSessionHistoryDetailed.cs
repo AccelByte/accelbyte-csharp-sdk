@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,7 +15,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// GetSessionHistoryDetailed
     ///
     /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
-    /// Required Scope: social Get session history detailed.
+    /// 
+    /// Required Scope: social
+    /// 
+    /// Get session history detailed.
     /// </summary>
     public class GetSessionHistoryDetailed : AccelByte.Sdk.Core.Operation
     {

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// CountServer
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ] Required
-    /// scope: social This endpoint counts all of dedicated servers in a namespace
-    /// managed by this service.
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]
+    /// 
+    /// Required scope: social
+    /// 
+    /// This endpoint counts all of dedicated servers in a namespace managed by this service.
     /// </summary>
     public class CountServer : AccelByte.Sdk.Core.Operation
     {

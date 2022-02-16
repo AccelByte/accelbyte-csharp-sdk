@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,11 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
     /// <summary>
     /// listAllTerminatedServers
     ///
-    /// ``` Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ] This
-    /// endpoint used to retrieve terminated servers in all namespace ```
+    /// ```
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ]
+    /// 
+    /// This endpoint used to retrieve terminated servers in all namespace
+    /// ```
     /// </summary>
     public class ListAllTerminatedServers : AccelByte.Sdk.Core.Operation
     {

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,8 +15,10 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// DeleteSessionLocalDS
     ///
     /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [DELETE]
-    /// Required scope: social Only use for local DS entry, will error when calling
-    /// non local DS entry
+    /// 
+    /// Required scope: social
+    /// 
+    /// Only use for local DS entry, will error when calling non local DS entry
     /// </summary>
     public class DeleteSessionLocalDS : AccelByte.Sdk.Core.Operation
     {

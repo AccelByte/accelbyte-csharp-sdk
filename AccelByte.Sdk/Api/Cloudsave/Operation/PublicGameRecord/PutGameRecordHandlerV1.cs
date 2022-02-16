@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,12 +15,20 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// putGameRecordHandlerV1
     ///
     /// Required Permission | `NAMESPACE:{namespace}:CLOUDSAVE:RECORD [UPDATE]`
-    /// ---|---
-    /// Required Scope | `social`
+    /// --------------------|---------------------------------------------------
+    /// Required Scope      | `social`
     /// 
-    /// If record already exists, it will be replaced with the one from request body
-    /// (all fields will be deleted). If record is not exists, it will create a new
-    /// one with value from request body. Example: Replace all records
+    /// 
+    /// 
+    /// 
+    /// 
+    /// If record already exists, it will be replaced with the one from request body (all fields will be
+    /// deleted). If record is not exists, it will create a new one with value from request body.
+    /// 
+    /// Example:
+    /// 
+    /// Replace all records
+    /// 
     /// 
     /// 
     /// 

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,8 +18,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Notes:
     /// 
+    /// 
+    /// 
+    /// 
     ///                   * This endpoint bulk get users' basic info by userId, max allowed 20 at a time
+    /// 
+    /// 
     ///                   * If namespace is game, will search by game user Id, other wise will search by publisher namespace
+    /// 
+    /// 
     ///                   * Result will include displayName(if it exists)
     /// </summary>
     public class PublicBulkGetUsers : AccelByte.Sdk.Core.Operation

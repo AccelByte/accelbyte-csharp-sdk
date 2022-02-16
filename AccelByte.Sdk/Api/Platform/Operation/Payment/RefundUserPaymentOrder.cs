@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// refundUserPaymentOrder
     ///
-    ///  [SERVICE COMMUNICATION ONLY] This API is used to refund order by
-    /// paymentOrderNo from justice service.
+    ///  [SERVICE COMMUNICATION ONLY] This API is used to refund order by paymentOrderNo from justice service.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:PAYMENT", action=4 (UPDATE)

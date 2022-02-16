@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminListUserRolesV4
     ///
-    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:ROLE:USER:* [READ]
-    /// permission. List roles assigned to a user
+    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:ROLE:USER:* [READ] permission.
+    /// 
+    /// List roles assigned to a user
     /// </summary>
     public class AdminListUserRolesV4 : AccelByte.Sdk.Core.Operation
     {

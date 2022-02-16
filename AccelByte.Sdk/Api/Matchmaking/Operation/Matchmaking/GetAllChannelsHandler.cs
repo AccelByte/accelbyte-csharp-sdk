@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// GetAllChannelsHandler
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [READ] Required
-    /// Scope: social Reads all available channels in a namespace
+    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [READ]
+    /// 
+    /// Required Scope: social
+    /// 
+    /// Reads all available channels in a namespace
     /// </summary>
     public class GetAllChannelsHandler : AccelByte.Sdk.Core.Operation
     {

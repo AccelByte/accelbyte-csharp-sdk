@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,10 +15,13 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// DeleteChannelHandler
     ///
     /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Delete]
-    /// Required Scope: social Deletes a matchmaking channel. Matchmaking channels is
-    /// a list of pool name that is eligible for matchmaking processes. GameMode
-    /// isolates each matchmaking pools. Trying to delete non-existent channel will
-    /// result deletion success
+    /// 
+    /// Required Scope: social
+    /// 
+    /// Deletes a matchmaking channel. Matchmaking channels is a list of
+    /// pool name that is eligible for matchmaking processes. GameMode isolates each matchmaking pools.
+    /// 
+    /// Trying to delete non-existent channel will result deletion success
     /// </summary>
     public class DeleteChannelHandler : AccelByte.Sdk.Core.Operation
     {

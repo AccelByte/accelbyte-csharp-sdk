@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     /// <summary>
     /// GetEventByNamespaceHandler
     ///
-    /// Required permission `NAMESPACE:{namespace}:EVENT [UPDATE]` and scope
-    /// `analytics`
+    /// Required permission `NAMESPACE:{namespace}:EVENT [UPDATE]` and scope `analytics`
     /// </summary>
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetEventByNamespaceHandler : AccelByte.Sdk.Core.Operation

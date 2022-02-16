@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,8 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///
     /// Bulk disable codes.
     /// 
-    /// Bulk disable campaign codes, all matched codes will be disabled except those
-    /// have already been redeemed.
+    /// Bulk disable campaign codes, all matched codes will be disabled except those have already been redeemed.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=4 (UPDATE)

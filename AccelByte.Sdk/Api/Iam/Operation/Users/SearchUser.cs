@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,14 +16,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
-    /// ## The endpoint is deprecated. Please use this instead:
-    /// iam/v3/admin/namespaces/{namespace}/users/search
+    /// ## The endpoint is deprecated. Please use this instead: iam/v3/admin/namespaces/{namespace}/users/search
     /// 
-    /// Search all users that match the query on these fields: all login IDs (email
-    /// address, phone number, and platform user id), userID, display name, and on the
-    /// specified namespace. If the query is not defined, then it searches all users
-    /// on the specified namespace. Required permission
-    /// 'ADMIN:NAMESPACE:{namespace}:USER:* [READ]'
+    /// 
+    /// 
+    /// 
+    /// Search all users that match the query on these fields: all login IDs (email address, phone number, and platform user id),
+    /// userID, display name, and on the specified namespace. If the query is not defined, then it searches all users on the specified namespace.
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:* [READ]'
     /// </summary>
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class SearchUser : AccelByte.Sdk.Core.Operation

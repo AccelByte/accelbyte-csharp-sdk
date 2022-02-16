@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,10 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// sendSpecificUserFreeformNotificationV1Admin
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with
-    /// scope `social`
-    /// Sends notification to a user. Action Code: 50211
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with scope `social`
+    /// 
+    /// Sends notification to a user.
+    /// Action Code: 50211
     /// </summary>
     public class SendSpecificUserFreeformNotificationV1Admin : AccelByte.Sdk.Core.Operation
     {

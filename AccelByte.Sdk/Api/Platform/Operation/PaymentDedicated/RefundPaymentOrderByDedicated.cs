@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,59 +16,62 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///
     /// 
     /// 
-    /// This API is used to refund payment order by paymentOrderNo from non justice
-    /// service. e.g. dedicated server.
+    /// This API is used to refund payment order by paymentOrderNo from non justice service. e.g. dedicated server.
     /// 
     ///   * if the status field of response json is "REFUNDED", usually wallet paid, it indicates payment order already refunded
     ///   * if the status field of response json is "REFUNDING", usually real money paid, platform will send notification to registered notify url once refund successfully
     /// 
+    /// 
+    /// 
     /// Path Parameter:
     /// 
     /// 
+    ///      Parameter     | Type   | Required | Description
+    ///     ---------------|--------|----------|-----------------------------------------
+    ///     namespace      | String | Yes      | Namespace that payment order resides in
+    ///     paymentOrderNo | String | Yes      | Payment order number
     /// 
-    ///      Parameter| Type| Required| Description
-    ///     ---|---|---|---
-    ///     namespace| String| Yes| Namespace that payment order resides in
-    ///     paymentOrderNo| String| Yes| Payment order number
+    /// 
     /// 
     ///  Request Body Parameters:
     /// 
     /// 
+    ///      Parameter  | Type   | Required | Description
+    ///     ------------|--------|----------|--------------------
+    ///     description | String | Yes      | Refund description
     /// 
-    ///      Parameter| Type| Required| Description
-    ///     ---|---|---|---
-    ///     description| String| Yes| Refund description
+    /// 
     /// 
     ///  Request Body Example:
     /// 
     /// 
-    /// 
     ///     {
+    /// 
     ///                "description": "Repeated item."
+    /// 
     ///     }
     /// 
     /// `
     /// 
     /// #### Refund Notification:
     /// 
-    /// It will send notification to configured web hook after refund successfully,
-    /// http status code should return 200 or 204 once you resolve notification
-    /// successfully, otherwise payment system will retry notification in interval
+    /// It will send notification to configured web hook after refund successfully, http status code should return 200 or 204 once you resolve notification successfully, otherwise payment system will retry notification in interval
     /// 
     ///  Refund notification parameter:
     /// 
     /// 
+    ///      Parameter | Type   | Required | Description
+    ///     -----------|--------|----------|------------------------------------------------
+    ///     payload    | String | Yes      | Refund notification payload in json string
+    ///     sign       | String | Yes      | sha1 hex signature for payload and private key
     /// 
-    ///      Parameter| Type| Required| Description
-    ///     ---|---|---|---
-    ///     payload| String| Yes| Refund notification payload in json string
-    ///     sign| String| Yes| sha1 hex signature for payload and private key
+    /// 
     /// 
     ///  Refund notification Example:
     /// 
     /// 
-    /// 
     ///     {
+    /// 
     ///            "payload": "{
     ///                "type": "payment",
     ///                "nonceStr": "34c1dcf3eb58455eb161465bbfc0b590",
@@ -93,7 +100,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///                "chargedTime": "2018-07-28T00:39:16.274Z",
     ///                "refundedTime": "2018-07-28T00:39:16.274Z"
     ///            }",
+    /// 
     ///            "sign":"e31fb92516cc9faaf50ad70343e1293acec6f3d5"
+    /// 
     ///     }
     /// 
     /// `
@@ -101,43 +110,45 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  Refund notification payload parameter list:
     /// 
     /// 
+    ///      Parameter         | Type     | Required | Description
+    ///     -------------------|----------|----------|--------------------------------------------------------------------------------------
+    ///     type               | String   | Yes      | Notification type: 'payment'
+    ///     paymentOrderNo     | String   | Yes      | Payment system generated order number
+    ///     extOrderNo         | String   | No       | External order number that passed by invoker
+    ///     namespace          | String   | Yes      | Namespace that related payment order resides in
+    ///     targetNamespace    | String   | Yes      | The game namespace
+    ///     targetUserId       | String   | Yes      | The user id in game namespace
+    ///     sku                | String   | No       | Item identify, it will return if pass it when create payment
+    ///     extUserId          | String   | No       | External user id, can be character id, it will return if pass it when create payment
+    ///     price              | int      | Yes      | Price of item
+    ///     paymentProvider    | String   | Yes      | Payment provider: xsolla/alipay/wxpay/wallet
+    ///     vat                | int      | Yes      | Payment order VAT
+    ///     salesTax           | int      | Yes      | Payment order sales tax
+    ///     paymentProviderFee | int      | Yes      | Payment provider fee
+    ///     paymentMethodFee   | int      | Yes      | Payment method fee
+    ///     currency           | Map      | Yes      | Payment order currency info
+    ///     status             | String   | Yes      | Payment order status
+    ///     statusReason       | String   | No       | Payment order refund status reason
+    ///     createdTime        | Datetime | No       | The time of the order created
+    ///     chargedTime        | Datetime | No       | The time of the order charged
+    ///     refundedTime       | Datetime | No       | The time of the order refunded
+    ///     customParameters   | Map      | No       | custom parameters, will return if pass it when create payment
+    ///     nonceStr           | String   | Yes      | Random string, max length is 32,
     /// 
-    ///      Parameter| Type| Required| Description
-    ///     ---|---|---|---
-    ///     type| String| Yes| Notification type: 'payment'
-    ///     paymentOrderNo| String| Yes| Payment system generated order number
-    ///     extOrderNo| String| No| External order number that passed by invoker
-    ///     namespace| String| Yes| Namespace that related payment order resides in
-    ///     targetNamespace| String| Yes| The game namespace
-    ///     targetUserId| String| Yes| The user id in game namespace
-    ///     sku| String| No| Item identify, it will return if pass it when create payment
-    ///     extUserId| String| No| External user id, can be character id, it will return if pass it when create payment
-    ///     price| int| Yes| Price of item
-    ///     paymentProvider| String| Yes| Payment provider: xsolla/alipay/wxpay/wallet
-    ///     vat| int| Yes| Payment order VAT
-    ///     salesTax| int| Yes| Payment order sales tax
-    ///     paymentProviderFee| int| Yes| Payment provider fee
-    ///     paymentMethodFee| int| Yes| Payment method fee
-    ///     currency| Map| Yes| Payment order currency info
-    ///     status| String| Yes| Payment order status
-    ///     statusReason| String| No| Payment order refund status reason
-    ///     createdTime| Datetime| No| The time of the order created
-    ///     chargedTime| Datetime| No| The time of the order charged
-    ///     refundedTime| Datetime| No| The time of the order refunded
-    ///     customParameters| Map| No| custom parameters, will return if pass it when create payment
-    ///     nonceStr| String| Yes| Random string, max length is 32,
+    /// 
     /// 
     /// Currency info parameter list:
     /// 
     /// 
+    ///      Parameter     | Type   | Required | Description
+    ///     ---------------|--------|----------|-----------------------------
+    ///     currencyCode   | String | Yes      | Currency Code
+    ///     currencySymbol | String | Yes      | Currency Symbol
+    ///     currencyType   | String | Yes      | Currency type(REAL/VIRTUAL)
+    ///     namespace      | String | Yes      | Currency namespace
+    ///     decimals       | int    | Yes      | Currency decimals
     /// 
-    ///      Parameter| Type| Required| Description
-    ///     ---|---|---|---
-    ///     currencyCode| String| Yes| Currency Code
-    ///     currencySymbol| String| Yes| Currency Symbol
-    ///     currencyType| String| Yes| Currency type(REAL/VIRTUAL)
-    ///     namespace| String| Yes| Currency namespace
-    ///     decimals| int| Yes| Currency decimals
+    /// 
     /// 
     /// #### Encryption Rule:
     /// 

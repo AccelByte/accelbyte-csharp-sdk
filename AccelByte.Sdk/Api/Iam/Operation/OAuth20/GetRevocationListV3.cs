@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,12 +16,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
-    /// This endpoint will return a list of revoked users and revoked tokens. List of
-    /// revoked tokens in bloom filter format.
+    /// This endpoint will return a list of revoked users and revoked tokens. List of revoked tokens in bloom filter format.
+    /// 
+    /// 
+    /// 
     /// 
     /// This endpoint requires authorized requests header with valid access token.
     /// 
+    /// 
+    /// 
+    /// 
     /// The bloom filter uses MurmurHash3 algorithm for hashing the values
+    /// 
+    /// 
+    /// 
     /// 
     /// action code : 10708
     /// </summary>

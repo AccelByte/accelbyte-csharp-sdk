@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,12 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
     /// <summary>
     /// SetServerAlias
     ///
-    /// ``` Required permission: ADMIN:QOS:SERVER [UDPATE] Required scope: social This
-    /// endpoint modifies a registered QoS service's region alias. ```
+    /// ```
+    /// Required permission: ADMIN:QOS:SERVER [UDPATE]
+    /// Required scope: social
+    /// 
+    /// This endpoint modifies a registered QoS service's region alias.
+    /// ```
     /// </summary>
     public class SetServerAlias : AccelByte.Sdk.Core.Operation
     {

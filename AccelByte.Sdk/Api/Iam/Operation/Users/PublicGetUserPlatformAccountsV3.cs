@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,8 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
-    /// This endpoint retrieves platform accounts linked to user. Required valid user
-    /// authorization.
+    /// This endpoint retrieves platform accounts linked to user. Required valid user authorization.
+    /// 
     /// action code: 10128
     /// </summary>
     public class PublicGetUserPlatformAccountsV3 : AccelByte.Sdk.Core.Operation

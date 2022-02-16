@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,7 +15,10 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// GetSessionByUserIDs
     ///
     /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
-    /// Required scope: social Query game sessions by comma separated user ids
+    /// 
+    /// Required scope: social
+    /// 
+    /// Query game sessions by comma separated user ids
     /// </summary>
     public class GetSessionByUserIDs : AccelByte.Sdk.Core.Operation
     {

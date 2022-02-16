@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,7 +16,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
     ///
     /// Required Member Role Permission: "GROUP:ROLE [UPDATE]"
     /// 
+    /// 
+    /// 
+    /// 
     /// This endpoint is used to remove role from group member
+    /// 
+    /// 
+    /// 
     /// 
     /// Action Code: 73204
     /// </summary>

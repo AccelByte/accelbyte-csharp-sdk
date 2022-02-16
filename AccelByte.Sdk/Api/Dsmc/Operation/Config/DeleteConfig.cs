@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,13 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// DeleteConfig
     ///
-    /// ``` Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]
-    /// Required scope: social This endpoint removes config. When there are ready
-    /// servers, those servers will be removed. ```
+    /// ```
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]
+    /// Required scope: social
+    /// 
+    /// This endpoint removes config. When there are ready servers,
+    /// those servers will be removed.
+    /// ```
     /// </summary>
     public class DeleteConfig : AccelByte.Sdk.Core.Operation
     {

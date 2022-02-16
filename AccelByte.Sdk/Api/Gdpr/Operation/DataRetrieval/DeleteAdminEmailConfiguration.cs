@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,11 +14,10 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// DeleteAdminEmailConfiguration
     ///
-    /// Delete a list of admin email addresses to stop receiving personal data request
-    /// notification.
+    /// Delete a list of admin email addresses to stop receiving personal data request notification.
     /// 
-    /// Required permission `ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [DELETE]`
-    /// and scope `account`
+    /// 
+    /// Required permission `ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [DELETE]` and scope `account`
     /// </summary>
     public class DeleteAdminEmailConfiguration : AccelByte.Sdk.Core.Operation
     {

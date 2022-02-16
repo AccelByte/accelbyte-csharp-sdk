@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// getLocalizationTemplate
     ///
-    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [READ]` with scope
-    /// `social`
+    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [READ]` with scope `social`
+    /// 
     /// Get a template localization
     /// </summary>
     public class GetLocalizationTemplate : AccelByte.Sdk.Core.Operation

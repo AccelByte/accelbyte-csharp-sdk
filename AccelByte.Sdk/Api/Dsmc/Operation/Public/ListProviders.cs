@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// ListProviders
     ///
-    /// This endpoints returns list of supported providers. Armada is the default
-    /// provider.
+    /// This endpoints returns list of supported providers. Armada is the default provider.
     /// </summary>
     public class ListProviders : AccelByte.Sdk.Core.Operation
     {

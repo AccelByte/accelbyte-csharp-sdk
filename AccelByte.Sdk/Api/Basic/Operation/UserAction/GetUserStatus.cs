@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,9 +15,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// getUserStatus
     ///
     /// Get user status.
-    /// If actionId does not exist, then the user is not banned.If actionId and
-    /// expires exist, then the user is temporarily banned, if expires does not exist,
-    /// then the user is permanently banned.Other detail info:
+    /// If actionId does not exist, then the user is not banned.If actionId and expires exist, then the user is temporarily banned, if expires does not exist, then the user is permanently banned.Other detail info:
     /// 
     ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:ACTION" , action=2 (READ)
     /// </summary>

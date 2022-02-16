@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,8 +15,10 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// CreateSession
     ///
     /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [CREATE]
-    /// Required scope: social This end point intended to be called directly by P2P
-    /// game client host or by DSMC
+    /// 
+    /// Required scope: social
+    /// 
+    /// This end point intended to be called directly by P2P game client host or by DSMC
     /// </summary>
     public class CreateSession : AccelByte.Sdk.Core.Operation
     {

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,7 +15,10 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// AdminGetSession
     ///
     /// Required permission: ADMIN:NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
-    /// Required scope: social Get the session by session ID for admin user
+    /// 
+    /// Required scope: social
+    /// 
+    /// Get the session by session ID for admin user
     /// </summary>
     public class AdminGetSession : AccelByte.Sdk.Core.Operation
     {

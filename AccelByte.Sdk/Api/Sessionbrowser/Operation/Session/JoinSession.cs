@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,8 +15,10 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// JoinSession
     ///
     /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
-    /// Required scope: social Join the specified session by session ID. Possible the
-    /// game required a password to join
+    /// 
+    /// Required scope: social
+    /// 
+    /// Join the specified session by session ID. Possible the game required a password to join
     /// </summary>
     public class JoinSession : AccelByte.Sdk.Core.Operation
     {

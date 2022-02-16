@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,8 +15,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// publicGeneratedUserUploadContentUrl
     ///
     /// Generate an upload URL for user content. It's valid for 10 minutes.
-    /// There are 2 kinds of storage limitation per user : maximum file count and
-    /// maximum file size.
+    /// There are 2 kinds of storage limitation per user : maximum file count and maximum file size.
     /// Other detail info:
     /// 
     ///   * Required permission : resource = "NAMESPACE:{namespace}:USER:{userId}:FILEUPLOAD" , action=1 (CREATE)

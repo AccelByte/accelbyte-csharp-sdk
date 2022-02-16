@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminGetConfigV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:LOBBY:CONFIG [READ]` with
-    /// scope `social`
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:LOBBY:CONFIG [READ]` with scope `social`
+    /// 
     /// get lobby config of a namespace.
     /// </summary>
     public class AdminGetConfigV1 : AccelByte.Sdk.Core.Operation

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,11 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
     /// <summary>
     /// downloadServerLogs
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ] Required
-    /// scope: social This endpoint will download dedicated server's log file (.log).
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]
+    /// 
+    /// Required scope: social
+    /// 
+    /// This endpoint will download dedicated server's log file (.log).
     /// </summary>
     public class DownloadServerLogs : AccelByte.Sdk.Core.Operation
     {

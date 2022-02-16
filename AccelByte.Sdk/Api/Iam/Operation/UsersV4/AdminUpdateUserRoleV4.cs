@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateUserRoleV4
     ///
-    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:ROLE:USER:* [UPDATE]
-    /// permission. User's roles will be replaced with roles from request body.
+    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:ROLE:USER:* [UPDATE] permission.
+    /// 
+    /// User's roles will be replaced with roles from request body.
     /// </summary>
     public class AdminUpdateUserRoleV4 : AccelByte.Sdk.Core.Operation
     {

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,8 +15,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// adminPutGameRecordHandlerV1
     ///
     /// Required permission: ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [UPDATE]
-    /// Required scope: social This endpoints is to replace game record data if exists
-    /// or insert new data in namespace-level
+    /// 
+    /// Required scope: social
+    /// 
+    /// This endpoints is to replace game record data if exists or insert new data in namespace-level
     /// </summary>
     public class AdminPutGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,13 +15,21 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// postGameRecordHandlerV1
     ///
     /// Required Permission | `NAMESPACE:{namespace}:CLOUDSAVE:RECORD [CREATE]`
-    /// ---|---
-    /// Required Scope | `social`
+    /// --------------------|---------------------------------------------------
+    /// Required Scope      | `social`
     /// 
-    /// If there's already record, the record will be merged with conditions: - If
-    /// field name is already exist, the value will be replaced - If field name is
-    /// not exists it will append the field and its value Example: Replace value in a
-    /// specific JSON key
+    /// 
+    /// 
+    /// 
+    /// 
+    /// If there's already record, the record will be merged with conditions:
+    /// - If field name is already exist, the value will be replaced
+    /// - If field name is not exists it will append the field and its value
+    /// 
+    /// Example:
+    /// 
+    /// Replace value in a specific JSON key
+    /// 
     /// 
     /// 
     /// 
@@ -37,7 +49,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     ///     }
     /// 
     /// 
+    /// 
+    /// 
     /// Append new json item
+    /// 
     /// 
     /// 
     /// 

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -15,48 +19,88 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// An app update example:
     /// 
     /// 
-    /// 
     ///     {
+    /// 
     ///       "developer": "accelbyte",
+    /// 
     ///       "publisher": "accelbyte",
+    /// 
     ///       "websiteUrl": "http://accelbyte.io",
+    /// 
     ///       "forumUrl": "http://accelbyte.io",
+    /// 
     ///       "platforms": ["Windows(allowed values: Windows, MacOS, Linux, IOS, Android)"],
+    /// 
     ///       "platformRequirements": {
+    /// 
     ///         "Windows": [
+    /// 
     ///           {
+    /// 
     ///             "label":"minimum(can be minimum or recommended)",
+    /// 
     ///             "osVersion":"os version",
+    /// 
     ///             "processor":"processor",
+    /// 
     ///             "ram":"RAM",
+    /// 
     ///             "graphics":"graphics",
+    /// 
     ///             "directXVersion":"directXVersion",
+    /// 
     ///             "diskSpace":"diskSpace",
+    /// 
     ///             "soundCard":"soundCard",
+    /// 
     ///             "additionals":"additionals"
+    /// 
     ///           }
+    /// 
     ///          ]
+    /// 
     ///       },
+    /// 
     ///       "carousel": [
+    /// 
     ///         {
+    /// 
     ///           "type":"image(allowed values: image, video)",
+    /// 
     ///           "videoSource":"generic(allowed values:generic, youtube, viemo)",
+    /// 
     ///           "url":"url",
+    /// 
     ///           "alt":"alternative url or text",
+    /// 
     ///           "thumbnailUrl":"thumbnail url",
+    /// 
     ///           "previewUrl":"preview url",
+    /// 
     ///         }
+    /// 
     ///       ],
+    /// 
     ///       "localizations": {
+    /// 
     ///         "en": {
+    /// 
     ///           "slogan":"slogan",
+    /// 
     ///           "announcement":"announcement",
+    /// 
     ///         }
+    /// 
     ///       },
+    /// 
     ///       "primaryGenre": "Action",
+    /// 
     ///       "genres": ["Action", "Adventure"],
+    /// 
     ///       "players": ["Single"],
+    /// 
     ///       "releaseDate": "optional yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    /// 
     ///     }
     /// 
     /// Other detail info:

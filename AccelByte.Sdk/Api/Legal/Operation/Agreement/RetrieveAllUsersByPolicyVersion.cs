@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// retrieveAllUsersByPolicyVersion
     ///
-    /// This API will return all users who has accepted a specific policy
-    /// version.Other detail info:
-    /// 
+    /// This API will return all users who has accepted a specific policy version.Other detail info:
     ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
     /// </summary>
     public class RetrieveAllUsersByPolicyVersion : AccelByte.Sdk.Core.Operation

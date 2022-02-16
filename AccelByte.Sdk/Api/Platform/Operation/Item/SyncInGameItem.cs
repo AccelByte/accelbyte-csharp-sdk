@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,11 +14,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// syncInGameItem
     ///
-    /// This API is used to sync an in game item in game namespace to publisher
-    /// namespace, at current BUNDLE can't be synced.
+    /// This API is used to sync an in game item in game namespace to publisher namespace, at current BUNDLE can't be synced.
     /// 
-    /// The synced item has an additional field targetItemId besides targetNamespace,
-    /// mostly this item should not modified manually again.
+    /// The synced item has an additional field targetItemId besides targetNamespace, mostly this item should not modified manually again.
     /// 
     /// Other detail info:
     /// 

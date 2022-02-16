@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,11 +14,15 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// RegisterServer
     ///
-    /// ``` Required permission: NAMESPACE:{namespace}:DSM:SERVER [UPDATE] Required
-    /// scope: social This endpoint is intended to be called by dedicated server to
-    /// let DSM know that it is ready for use. This MUST be called by DS after it is
-    /// ready to accept match data and incoming client connections. Upon successfully
-    /// calling this endpoint, the dedicated server is listed under READY servers.```
+    /// ```
+    /// Required permission: NAMESPACE:{namespace}:DSM:SERVER [UPDATE]
+    /// Required scope: social
+    /// 
+    /// This endpoint is intended to be called by dedicated server to let DSM know that it is ready for use.
+    /// This MUST be called by DS after it is ready to accept match data and incoming client connections.
+    /// 
+    /// Upon successfully calling this endpoint, the dedicated
+    /// server is listed under READY servers.```
     /// </summary>
     public class RegisterServer : AccelByte.Sdk.Core.Operation
     {

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,7 +18,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER [READ]'
     /// 
+    /// 
+    /// 
+    /// 
     /// This endpoint search user who owns the given email address
+    /// 
     /// 
     /// 
     /// action code : 10132

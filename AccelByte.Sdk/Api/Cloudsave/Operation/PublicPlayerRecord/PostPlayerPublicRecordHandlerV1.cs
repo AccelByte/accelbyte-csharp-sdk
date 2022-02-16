@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,17 +14,26 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// postPlayerPublicRecordHandlerV1
     ///
-    /// Required Permission |
-    /// `NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [WRITE]`
-    /// ---|---
-    /// Required Scope | `social`
+    /// Required Permission | `NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [WRITE]`
+    /// --------------------|-----------------------------------------------------------------------
+    /// Required Scope      | `social`
     /// 
-    /// This endpoint will create or update player record with `isPublic=true` meaning
-    /// that the record will be available for other player to be retrieved. Other
-    /// player can only retrieve the record and not create, update or even delete.
-    /// This endpoint will create public player record if it is not exists otherwise
-    /// merge with these criteria: - If field name is already exists, replace the
-    /// value - If field name is not exists, append it Example Replace value:
+    /// 
+    /// 
+    /// 
+    /// 
+    /// This endpoint will create or update player record with `isPublic=true` meaning that the
+    /// record will be available for other player to be retrieved. Other player can only retrieve the record
+    /// and not create, update or even delete.
+    /// 
+    /// This endpoint will create public player record if it is not exists otherwise merge with these criteria:
+    /// - If field name is already exists, replace the value
+    /// - If field name is not exists, append it
+    /// 
+    /// Example
+    /// 
+    /// Replace value:
+    /// 
     /// 
     /// 
     /// 
@@ -40,7 +53,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     ///         }
     /// 
     /// 
+    /// 
+    /// 
     /// Append value:
+    /// 
     /// 
     /// 
     /// 

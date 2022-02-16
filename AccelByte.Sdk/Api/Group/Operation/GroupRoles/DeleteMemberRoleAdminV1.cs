@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,8 +18,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [DELETE]
     /// 
-    /// This endpoint is used to delete member role. Any member role can't be deleted
-    /// if the specific role is applied to the configuration (admin and member role)
+    /// 
+    /// 
+    /// 
+    /// This endpoint is used to delete member role. Any member role can't be deleted if the specific role is applied to the configuration (admin and member role)
+    /// 
+    /// 
+    /// 
     /// 
     /// Action Code: 73207
     /// </summary>

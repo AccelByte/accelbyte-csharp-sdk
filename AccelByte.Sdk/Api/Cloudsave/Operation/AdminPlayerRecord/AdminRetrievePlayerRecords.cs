@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,8 +15,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// AdminRetrievePlayerRecords
     ///
     /// Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:RECORD [READ]
-    /// Required scope: social Retrieve list of player records key and userID under
-    /// given namespace.
+    /// 
+    /// Required scope: social
+    /// 
+    /// Retrieve list of player records key and userID under given namespace.
     /// </summary>
     public class AdminRetrievePlayerRecords : AccelByte.Sdk.Core.Operation
     {

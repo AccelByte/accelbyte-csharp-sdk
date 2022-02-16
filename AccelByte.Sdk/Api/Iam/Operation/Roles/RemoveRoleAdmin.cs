@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,9 +18,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission 'ROLE:ADMIN [UPDATE]' or 'ADMIN:ROLE [UPDATE]'
     /// 
-    /// Required Permission 'ROLE:ADMIN [UPDATE]' is going to be DEPRECATED for
-    /// security purpose. It is going to be deprecated on 31 JANUARY 2019 , please use
-    /// permission 'ADMIN:ROLE [UPDATE]' instead.
+    /// 
+    /// 
+    /// 
+    /// Required Permission 'ROLE:ADMIN [UPDATE]' is going to be DEPRECATED for security purpose.
+    /// It is going to be deprecated on 31 JANUARY 2019 , please use permission 'ADMIN:ROLE [UPDATE]' instead.
     /// </summary>
     public class RemoveRoleAdmin : AccelByte.Sdk.Core.Operation
     {

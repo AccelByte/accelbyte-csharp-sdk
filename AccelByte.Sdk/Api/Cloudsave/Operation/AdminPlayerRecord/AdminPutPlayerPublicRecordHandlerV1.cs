@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,11 +14,13 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminPutPlayerPublicRecordHandlerV1
     ///
-    /// Required permission:
-    /// ADMIN:NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [UPDATE]
-    /// Required scope: social Save a record (arbitrary JSON data) in user-level. If a
-    /// record already exist with given key, this endpoint will replace the record,
-    /// else it will create new Record. Record saved will be a public record.
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [UPDATE]
+    /// 
+    /// Required scope: social
+    /// 
+    /// Save a record (arbitrary JSON data) in user-level.
+    /// If a record already exist with given key, this endpoint will replace the record, else it will create new Record.
+    /// Record saved will be a public record.
     /// </summary>
     public class AdminPutPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

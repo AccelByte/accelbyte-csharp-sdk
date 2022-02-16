@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,11 +14,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// <summary>
     /// deleteUserStatItems
     ///
-    /// This endpoint is for testing purpose. Use this endpoint for cleaning up after
-    /// testing.
+    /// This endpoint is for testing purpose. Use this endpoint for cleaning up after testing.
     /// Delete user's statItems given stat code.
     /// Other detail info:
-    /// 
     ///             *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
     ///             *  Returns : no content
     /// </summary>

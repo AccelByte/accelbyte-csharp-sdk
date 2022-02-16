@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testXsollaConfig
     ///
-    /// Check xsolla configuration, Reference: [Xsolla
-    /// Document](https://developers.xsolla.com/?#simple-checkout).
+    /// Check xsolla configuration, Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
     /// 
     /// #### Check List:
     /// 
@@ -19,12 +22,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   * projectId
     ///   * apiKey
     /// 
+    /// 
+    /// 
     /// #### Non-check list:
     /// 
     ///   * projectSecretKey
     /// 
     /// Other detail info:
-    /// 
     ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
     ///   *  Returns : test result
     /// </summary>

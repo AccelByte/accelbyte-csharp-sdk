@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,16 +16,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
-    /// ## The endpoint is going to be deprecated at 9 July, 2018. Please use this
-    /// instead: /users/{userId}/platforms/{platformId}/link
+    /// ## The endpoint is going to be deprecated at 9 July, 2018. Please use this instead: /users/{userId}/platforms/{platformId}/link
+    /// 
+    /// 
+    /// 
     /// 
     /// Required permission 'NAMESPACE:{namespace}:USER:{userId} [UPDATE]'.
     /// 
-    /// Access token from original namespace is needed as authorization header. Access
-    /// token from designated account needed as form parameter to verify the ownership
-    /// of that account. When platformID (device platfom ID) is specified, platform
-    /// login method for that specific platform ID is removed. This means to protect
-    /// account from second hand device usage.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// Access token from original namespace is needed as authorization header. Access token from designated account needed as form parameter to verify the ownership of that account.
+    /// When platformID (device platfom ID) is specified, platform login method for that specific platform ID is removed.
+    /// This means to protect account from second hand device usage.
     /// </summary>
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class ListCrossNamespaceAccountLink : AccelByte.Sdk.Core.Operation

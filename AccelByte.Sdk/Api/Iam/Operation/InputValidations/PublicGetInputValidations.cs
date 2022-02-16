@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -14,10 +18,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// No role required
     /// 
+    /// 
+    /// 
+    /// 
     /// This endpoint is to get list of input validation configuration.
     /// 
-    /// `regex` parameter will be returned if `isCustomRegex` is true. Otherwise, it
-    /// will be empty.
+    /// 
+    /// 
+    /// 
+    /// `regex` parameter will be returned if `isCustomRegex` is true. Otherwise, it will be empty.
     /// </summary>
     public class PublicGetInputValidations : AccelByte.Sdk.Core.Operation
     {

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,10 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// deleteTemplateLocalizationV1Admin
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [DELETE]` with
-    /// scope `social`
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [DELETE]` with scope `social`
+    /// 
     /// delete template localization
+    /// 
     /// Action Code: 50209
     /// </summary>
     public class DeleteTemplateLocalizationV1Admin : AccelByte.Sdk.Core.Operation

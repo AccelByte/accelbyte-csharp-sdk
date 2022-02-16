@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,11 +14,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// grantDaysToSubscription
     ///
-    /// Grant days to a subscription, if grantDays is positive, it will add free days
-    /// and push the next billing date by the amount of day.
-    /// if the grantDays is negative or zero, it only apply to active/cancelled
-    /// subscription, remove days will decrease current period end, and move the next
-    /// billing date closer.
+    /// Grant days to a subscription, if grantDays is positive, it will add free days and push the next billing date by the amount of day.
+    /// if the grantDays is negative or zero, it only apply to active/cancelled subscription, remove days will decrease current period end, and move the next billing date closer.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=4 (UPDATE)

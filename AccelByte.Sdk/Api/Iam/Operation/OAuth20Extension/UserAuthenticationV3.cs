@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,11 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
-    /// This endpoint is being used to authenticate a user account. It validates
-    /// user's email / username and password. Deactivated or login-banned users are
-    /// unable to login Redirect URI and Client ID must be specified as a pair and
-    /// only used to redirect to the specified redirect URI in case the requestId is
-    /// no longer valid.
+    /// This endpoint is being used to authenticate a user account.
+    /// It validates user's email / username and password. Deactivated or login-banned users are unable to login
+    /// Redirect URI and Client ID must be specified as a pair and only used to redirect to the specified
+    /// redirect URI in case the requestId is no longer valid.
+    /// 
     /// 
     /// 
     /// action code: 10801

@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,9 +15,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminListUsersV3
     ///
     /// This endpoint requires ADMIN:NAMESPACE:{namespace}:USER [READ] permission.
-    /// Returns list of users ID and namespace with their Justice platform account,
-    /// under a namespace. If user doesn't have Justice platform account, the
-    /// linkedPlatforms will be empty array.'
+    /// 
+    /// Returns list of users ID and namespace with their Justice platform account, under a namespace. If user
+    /// doesn't have Justice platform account, the linkedPlatforms will be empty array.'
     /// </summary>
     public class AdminListUsersV3 : AccelByte.Sdk.Core.Operation
     {

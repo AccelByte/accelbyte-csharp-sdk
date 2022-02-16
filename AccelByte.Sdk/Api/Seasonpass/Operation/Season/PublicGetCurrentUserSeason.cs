@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// <summary>
     /// publicGetCurrentUserSeason
     ///
-    /// This API is used to get current user season data, it will auto enroll if
-    /// there's no user season but active published season exist, season only located
-    /// in non-publisher namespace.
+    /// This API is used to get current user season data, it will auto enroll if there's no user season but active published season exist, season only located in non-publisher namespace.
     /// 
     /// Other detail info:
     /// 

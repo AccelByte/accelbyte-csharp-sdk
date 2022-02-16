@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminVerifyMessageProfanityResponse
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PROFANITY [READ]` with
-    /// scope `social`
+    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PROFANITY [READ]` with scope `social`
+    /// 
     /// verify a message directly from the UI or other services
     /// </summary>
     public class AdminVerifyMessageProfanityResponse : AccelByte.Sdk.Core.Operation

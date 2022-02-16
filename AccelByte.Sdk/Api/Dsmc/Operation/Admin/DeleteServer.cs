@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// DeleteServer
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [DELETE] Required
-    /// scope: social This endpoint deletes a specified dedicated server from DB and
-    /// terminates the DS pod.
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [DELETE]
+    /// 
+    /// Required scope: social
+    /// 
+    /// This endpoint deletes a specified dedicated server from DB and terminates the DS pod.
     /// </summary>
     public class DeleteServer : AccelByte.Sdk.Core.Operation
     {

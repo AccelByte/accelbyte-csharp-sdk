@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// UpdateContentDirect
     ///
-    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]. All
-    /// request body are required except preview and tags.
+    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
+    /// 
+    /// All request body are required except preview and tags.
     /// </summary>
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class UpdateContentDirect : AccelByte.Sdk.Core.Operation

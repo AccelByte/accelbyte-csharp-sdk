@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,9 +14,10 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
     /// <summary>
     /// protected_update_playtime_game_telemetry_v1_protected_steamIds__steamId__playtime__playtime__put
     ///
-    /// This endpoint requires valid JWT token. This endpoint does not require
-    /// permission. This endpoint update player's total playtime in a specific game
-    /// (AppId) from service's cache.
+    /// This endpoint requires valid JWT token.
+    /// This endpoint does not require permission.
+    /// 
+    /// This endpoint update player's total playtime in a specific game (AppId) from service's cache.
     /// </summary>
     public class ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut : AccelByte.Sdk.Core.Operation
     {

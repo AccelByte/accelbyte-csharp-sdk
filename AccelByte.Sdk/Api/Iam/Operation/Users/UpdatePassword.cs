@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -12,8 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
-    /// ## The endpoint is going to be deprecated. Admin user please use this instead:
-    /// iam/v2/admin/namespaces/{namespace}/users/{userId}/password
+    /// ## The endpoint is going to be deprecated. Admin user please use this instead: iam/v2/admin/namespaces/{namespace}/users/{userId}/password
+    /// 
     /// 
     /// +
     /// 

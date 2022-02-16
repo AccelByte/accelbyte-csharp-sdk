@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -10,8 +14,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// publishTemplate
     ///
-    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [CREATE]` with scope
-    /// `social`
+    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [CREATE]` with scope `social`
+    /// 
     /// Publish notification template draft. Empty draft can not be published.
     /// </summary>
     public class PublishTemplate : AccelByte.Sdk.Core.Operation

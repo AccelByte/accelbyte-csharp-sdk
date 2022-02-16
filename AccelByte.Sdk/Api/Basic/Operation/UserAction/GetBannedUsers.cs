@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,8 +15,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// getBannedUsers
     ///
     /// Get banned status.
-    /// Unbanned users will not return, for example: request has 8 userIds, only 5 of
-    /// then were banned, then the api will these 5 user status.Other detail info:
+    /// Unbanned users will not return, for example: request has 8 userIds, only 5 of then were banned, then the api will these 5 user status.Other detail info:
     /// 
     ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:ACTION" , action=2 (READ)
     /// </summary>

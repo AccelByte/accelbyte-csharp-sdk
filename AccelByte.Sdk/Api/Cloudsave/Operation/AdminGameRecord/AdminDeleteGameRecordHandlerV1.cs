@@ -1,3 +1,7 @@
+// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// This is licensed software from AccelByte Inc, for limitations
+// and restrictions contact your company contract manager.
+
 using System.Net;
 using System.IO;
 using System.Text.Json;
@@ -11,7 +15,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// adminDeleteGameRecordHandlerV1
     ///
     /// Required permission: ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [DELETE]
-    /// Required scope: social This endpoints delete game record in namespace-level
+    /// 
+    /// Required scope: social
+    /// 
+    /// This endpoints delete game record in namespace-level
     /// </summary>
     public class AdminDeleteGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
