@@ -141,6 +141,10 @@ namespace AccelByte.Sdk.Core.Client
                 Version asVer = this.GetType().Assembly.GetName().Version!;
                 string userAgent = String.Format("AccelByteCSharpSDK/{0}.{1}.{2} ({3})", asVer.Major, asVer.Minor, asVer.Revision, _Config?.AppName);
                 request.Headers.UserAgent.ParseAdd(userAgent);
+
+                string amazonTraceId = Guid.NewGuid().ToString().Replace("-", "");
+                request.Headers.TryAddWithoutValidation("X-Amzn-Trace-Id", amazonTraceId);
+
                 var response = Http.Send(request);
 
                 Stream? payload = null;
