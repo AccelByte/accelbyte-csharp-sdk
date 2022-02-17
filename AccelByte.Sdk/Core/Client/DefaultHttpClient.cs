@@ -146,8 +146,17 @@ namespace AccelByte.Sdk.Core.Client
                 string userAgent = String.Format("AccelByteCSharpSDK/{0}.{1}.{2} ({3})", asVer.Major, asVer.Minor, asVer.Revision, _Config?.AppName);
                 request.Headers.UserAgent.ParseAdd(userAgent);
 
-                string amazonTraceId = Guid.NewGuid().ToString().Replace("-", "");
-                request.Headers.TryAddWithoutValidation("X-Amzn-Trace-Id", amazonTraceId);
+                if (_Config != null ? _Config.EnableTraceId : true)
+                {
+                    string uTime = DateTimeOffset.Now.ToUnixTimeSeconds().ToString("X").PadLeft(8, '0').ToLowerInvariant();
+                    string rGuid = Guid.NewGuid().ToString().Replace("-", "");
+                    string guid = String.Empty;
+                    for (int i = 0; i < rGuid.Length; i += 4)
+                        guid += rGuid.Substring(i, 3);
+
+                    string amazonTraceId = String.Format("{0}-{1}-{2}", _Config?.TraceIdVersion, uTime, guid);
+                    request.Headers.TryAddWithoutValidation("X-Amzn-Trace-Id", amazonTraceId);
+                }
 
                 var response = Http.Send(request);
 

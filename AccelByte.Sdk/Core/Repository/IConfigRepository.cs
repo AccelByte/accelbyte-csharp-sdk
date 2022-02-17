@@ -13,5 +13,9 @@ namespace AccelByte.Sdk.Core.Repository
         string ClientSecret { get; }
 
         string AppName{ get; }
+
+        string TraceIdVersion{ get; }
+
+        bool EnableTraceId { get; }
     }
 }

@@ -14,6 +14,10 @@ namespace AccelByte.Sdk.Core.Repository
 
         private const string CLIENT_APPNAME = "AB_APP_NAME";
 
+        private const string CLIENT_TRACEID_VERSION = "AB_TRACEID_VERSION";
+
+        private const string CLIENT_ENABLE_TRACEID = "AB_ENABLE_TRACEID";
+
         public string BaseUrl
         {
             get => Environment.GetEnvironmentVariable(BASE_URL) ?? 
@@ -36,6 +40,30 @@ namespace AccelByte.Sdk.Core.Repository
         {
             get => Environment.GetEnvironmentVariable(CLIENT_APPNAME) ??
                      throw new Exception($"Environment variable not found (variable: {CLIENT_APPNAME})");
+        }
+
+        public string TraceIdVersion
+        {
+            get
+            {
+                string? aVersion = Environment.GetEnvironmentVariable(CLIENT_TRACEID_VERSION);
+                if (aVersion == null)
+                    return "1";
+                else
+                    return aVersion;
+            }
+        }
+
+        public bool EnableTraceId
+        {
+            get
+            {
+                string? aEnable = Environment.GetEnvironmentVariable(CLIENT_ENABLE_TRACEID);
+                if (aEnable == null)
+                    return true;
+                else
+                    return (aEnable.Trim() == "1");
+            }
         }
     }
 }

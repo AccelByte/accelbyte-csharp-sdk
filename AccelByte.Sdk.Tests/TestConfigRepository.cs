@@ -20,5 +20,9 @@ namespace AccelByte.Sdk.Tests
         public string ClientId { get; init; }
         public string ClientSecret { get; init; }
         public string AppName { get; init; }
+
+        public string TraceIdVersion{ get; } = "1";
+
+        public bool EnableTraceId { get; } = true;
     }
 }
