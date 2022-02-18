@@ -2,7 +2,7 @@
 
 ## Setup
 
-### 1. Add AcceByte C# Server SDK to your solution and project
+### 1. Add AccelByte C# Server SDK to your solution and project
 
 ```
 cd /path/to/your_solution
