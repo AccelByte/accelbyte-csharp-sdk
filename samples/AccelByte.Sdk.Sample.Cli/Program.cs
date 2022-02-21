@@ -22,7 +22,22 @@ namespace AccelByte.Sdk.Sample.Cli
                     "AccelByte.Sdk.Sample.Cli.ApiCommand",
                     Assembly.GetExecutingAssembly());
 
-                if (cArgs.OperationName == "")
+                if (cArgs.IsWebService)
+                {
+                    if (cArgs.ServiceName == String.Empty)
+                        throw new Exception("Unspecified service name for websocket service.");
+
+                    AccelByteSDK sdk = SdkHelper.CreateSdkAndLogin(cArgs);
+                    WebSocketCommand wsCmd = new WebSocketCommand(sdk.Configuration);
+                    if (cArgs.IsWebServiceListenMode)
+                        wsCmd.Listen(cArgs.ServiceName);
+                    else
+                    {
+                        string response = wsCmd.Execute(cArgs.ServiceName, cArgs.WebServicePayload);
+                        Console.Write("Response:\n{0}", response);
+                    }                    
+                }
+                else if (cArgs.OperationName == "")
                 {
                     if (cArgs.IsListAllAsked)
                     {
@@ -45,7 +60,7 @@ namespace AccelByte.Sdk.Sample.Cli
                 else if (cArgs.OperationName == "login")
                 {
                     AccelByteSDK sdk = SdkHelper.CreateSdkAndLogin(cArgs);
-                }
+                }                
                 else
                 {
                     AccelByteSDK sdk = SdkHelper.CreateSdkAndLogin(cArgs);

@@ -304,7 +304,10 @@ namespace AccelByte.Sdk.Core.Awesome
             StringBuilder sb = new StringBuilder();
             WriteHeader(sb);
             foreach (KeyValuePair<string, string> pair in Data)
-                sb.AppendFormat("\n{0}: {1}", pair.Key, pair.Value);
+            {
+                if ((pair.Key != "type") && (pair.Key != "id") && (pair.Key != "code"))
+                    sb.AppendFormat("\n{0}: {1}", pair.Key, pair.Value);
+            }   
             return sb.ToString();
         }
 

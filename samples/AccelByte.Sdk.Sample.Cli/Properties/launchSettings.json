@@ -9,6 +9,7 @@
       "commandName": "Project",
       "commandLineArgs": "--op login --user user --pass user",
       "environmentVariables": {
+        "AB_APP_NAME": "cli_debug",
         "AB_CLIENT_SECRET": "foo",
         "AB_CLIENT_ID": "bar",
         "AB_BASE_URL": "http://localhost:8080"
@@ -18,6 +19,7 @@
       "commandName": "Project",
       "commandLineArgs": "--sn iam --op AdminGetBannedUsersV3 --namespace test",
       "environmentVariables": {
+        "AB_APP_NAME": "cli_debug",
         "AB_CLIENT_SECRET": "foo",
         "AB_CLIENT_ID": "bar",
         "AB_BASE_URL": "http://localhost:8080"
@@ -27,6 +29,7 @@
       "commandName": "Project",
       "commandLineArgs": "--sn iam --op AdminCreateClientV3 --namespace test_ns --reqfile \"D:\\\\Test\\\\create_client_test.json\"",
       "environmentVariables": {
+        "AB_APP_NAME": "cli_debug",
         "AB_CLIENT_SECRET": "foo",
         "AB_CLIENT_ID": "bar",
         "AB_BASE_URL": "http://localhost:8080"
@@ -36,6 +39,7 @@
       "commandName": "Project",
       "commandLineArgs": "--sn achievement --op importachievements --namespace test_ns --upload \"D:\\\\Test\\\\csv-example.csv\" --strategy test_strategy",
       "environmentVariables": {
+        "AB_APP_NAME": "cli_debug",
         "AB_CLIENT_SECRET": "foo",
         "AB_CLIENT_ID": "bar",
         "AB_BASE_URL": "http://localhost:8080"
@@ -44,6 +48,7 @@
     "Usage Help": {
       "commandName": "Project",
       "environmentVariables": {
+        "AB_APP_NAME": "cli_debug",
         "AB_CLIENT_SECRET": "foo",
         "AB_CLIENT_ID": "bar",
         "AB_BASE_URL": "http://localhost:8080"
@@ -53,6 +58,7 @@
       "commandName": "Project",
       "commandLineArgs": "--sn iam --op AdminGetBannedUsersV3 --help",
       "environmentVariables": {
+        "AB_APP_NAME": "cli_debug",
         "AB_CLIENT_SECRET": "foo",
         "AB_CLIENT_ID": "bar",
         "AB_BASE_URL": "http://localhost:8080"
@@ -62,6 +68,7 @@
       "commandName": "Project",
       "commandLineArgs": "--sn iam --op AdminCreateClientV3 --help",
       "environmentVariables": {
+        "AB_APP_NAME": "cli_debug",
         "AB_CLIENT_SECRET": "foo",
         "AB_CLIENT_ID": "bar",
         "AB_BASE_URL": "http://localhost:8080"
@@ -71,6 +78,7 @@
       "commandName": "Project",
       "commandLineArgs": "--sn achievement --op importachievements --help",
       "environmentVariables": {
+        "AB_APP_NAME": "cli_debug",
         "AB_CLIENT_SECRET": "foo",
         "AB_CLIENT_ID": "bar",
         "AB_BASE_URL": "http://localhost:8080"
@@ -80,6 +88,7 @@
       "commandName": "Project",
       "commandLineArgs": "--list",
       "environmentVariables": {
+        "AB_APP_NAME": "cli_debug",
         "AB_CLIENT_SECRET": "foo",
         "AB_CLIENT_ID": "bar",
         "AB_BASE_URL": "http://localhost:8080"
@@ -89,6 +98,7 @@
       "commandName": "Project",
       "commandLineArgs": "--sn iam --list",
       "environmentVariables": {
+        "AB_APP_NAME": "cli_debug",
         "AB_CLIENT_SECRET": "foo",
         "AB_CLIENT_ID": "bar",
         "AB_BASE_URL": "http://localhost:8080"
@@ -98,6 +108,17 @@
       "commandName": "Project",
       "commandLineArgs": "--list-all",
       "environmentVariables": {
+        "AB_APP_NAME": "cli_debug",
+        "AB_CLIENT_SECRET": "foo",
+        "AB_CLIENT_ID": "bar",
+        "AB_BASE_URL": "http://localhost:8080"
+      }
+    },
+    "WebSocket Test 1": {
+      "commandName": "Project",
+      "commandLineArgs": "--ws --sn lobby --ws-payload \"type: listIncomingFriendsRequest\\nid: 1234567890\"",
+      "environmentVariables": {
+        "AB_APP_NAME": "cli_debug",
         "AB_CLIENT_SECRET": "foo",
         "AB_CLIENT_ID": "bar",
         "AB_BASE_URL": "http://localhost:8080"

@@ -44,6 +44,12 @@ namespace AccelByte.Sdk.Sample.Cli
 
         public bool IsListAllAsked { get; private set; } = false;
 
+        public bool IsWebService { get; private set; } = false;
+
+        public bool IsWebServiceListenMode { get; private set; } = false;
+
+        public string WebServicePayload { get; private set; } = String.Empty;
+
         public CommandArguments(string[] args)
         {
             _Parameters = new Dictionary<string, string>();
@@ -169,6 +175,20 @@ namespace AccelByte.Sdk.Sample.Cli
                         {
                             IsListAllAsked = true;
                         }
+                        else if (aKey == "ws")
+                        {
+                            IsWebService = true;
+                        }
+                        else if (aKey == "ws-payload")
+                        {
+                            if (aValue == String.Empty)
+                                throw new CommandArgumentException("WebSocket payload is specified but has empty value.");
+                            WebServicePayload = aValue.Replace("\\n", "\n");
+                        }
+                        else if (aKey == "ws-listen")
+                        {
+                            IsWebServiceListenMode = true;
+                        }
                         else
                             _Parameters.Add(aKey, aValue);
                     }
@@ -181,15 +201,22 @@ namespace AccelByte.Sdk.Sample.Cli
         public void EchoUsage()
         {
             Console.WriteLine("usage: AccelByte.Sdk.Sample.CLI.exe [options]");
-            string opts = "\t--sn\tSpecify API service name\n"
+            string opts =
+                "\t--help\tShow this help\n"
+                + "\t--list-ops\tList all available services or operations if '--sn' option is specified\n"
+                + "\t--list-all\tList all operations within all services\n"
+                + "\t--sn\tSpecify API service name\n"
                 + "\t--op\tSpecify which operation to execute\n"
                 + "\t--lt\tSpecify login type, default to 'user'\n"
                 + "\t--user\tSpecify username for login operation\n"
                 + "\t--pass\tSpecify password for login operation\n"
                 + "\t--reqfile\tSpecify json file to be used as request body\n"
                 + "\t--reqbody\tSpecify json string to be used as request body\n"
-                + "\t--upload\tSpecify a file to be uploaded\n\n"
-                + "User Login:\n"
+                + "\t--upload\tSpecify a file to be uploaded\n"
+                + "\t--ws\tEnable web socket service. Specify which service using '--sn' option\n"
+                + "\t--ws-payload\tSet web socket data payload to send\n"
+                + "\t--ws-listen\tStart listening mode for web socket service\n"
+                + "\nUser Login:\n"
                 + "\tAccelByte.Sdk.Sample.CLI.exe --op login --user <username> --password <password>\n\n"
                 + "Client Login:\n"
                 + "\tAccelByte.Sdk.Sample.CLI.exe --op login --lt client\n\n"

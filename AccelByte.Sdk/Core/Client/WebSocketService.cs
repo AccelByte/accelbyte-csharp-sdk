@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Core
 
         public WebSocketService(AccelByteConfig abConfig)
         {
-            _BaseUrl = abConfig.ConfigRepository.BaseUrl;
+            _BaseUrl = abConfig.ConfigRepository.BaseUrl.Replace("http://", "ws://").Replace("https://", "wss://");
             _Socket = new ClientWebSocket();
             _MapEventActions();
         }
