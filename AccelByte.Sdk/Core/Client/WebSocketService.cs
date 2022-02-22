@@ -20,6 +20,8 @@ namespace AccelByte.Sdk.Core
     {
         private ClientWebSocket _Socket;
 
+        private AccelByteConfig? _Config = null;
+
         private string _BaseUrl;
 
         private CancellationTokenSource _ListenCts = new CancellationTokenSource();
@@ -36,6 +38,7 @@ namespace AccelByte.Sdk.Core
 
         public WebSocketService(AccelByteConfig abConfig)
         {
+            _Config = abConfig;
             _BaseUrl = abConfig.ConfigRepository.BaseUrl.Replace("http://", "ws://").Replace("https://", "wss://");
             _Socket = new ClientWebSocket();
             _MapEventActions();
@@ -118,6 +121,15 @@ namespace AccelByte.Sdk.Core
         public async Task Connect(bool startListen)
         {
             string url = (_BaseUrl + ServiceEndpoint);
+            if (_Config != null)
+            {
+                if (!string.IsNullOrEmpty(_Config.TokenRepository.GetToken()))
+                {
+                    string token = _Config.TokenRepository.GetToken();
+                    _Socket.Options.SetRequestHeader("Authorization", String.Format("{0} {1}", Operation.SECURITY_BEARER, token));
+                }
+            }
+
             await _Socket.ConnectAsync(new Uri(url), CancellationToken.None);
             if (startListen)
                 await _ReceiveWebSocket(_ListenCts.Token);
