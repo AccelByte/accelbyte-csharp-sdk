@@ -22,6 +22,59 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateWxPayConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateWxPayConfigBuilder Builder = new UpdateWxPayConfigBuilder();
+
+        public class UpdateWxPayConfigBuilder
+        {
+            
+            public bool? Validate { get; set; }
+            
+            public Model.WxPayConfigRequest? Body { get; set; }
+            
+            internal UpdateWxPayConfigBuilder() { }
+
+
+            public UpdateWxPayConfigBuilder SetValidate(bool _validate)
+            {
+                Validate = _validate;
+                return this;
+            }
+
+
+            public UpdateWxPayConfigBuilder SetBody(Model.WxPayConfigRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateWxPayConfig Build(
+                string id
+            )
+            {
+                return new UpdateWxPayConfig(this,
+                    id                    
+                );
+            }
+        }
+
+        private UpdateWxPayConfig(UpdateWxPayConfigBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            if (builder.Validate != null) QueryParams["validate"] = Convert.ToString(builder.Validate)!;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateWxPayConfig(
             string id,            
             bool? validate,            

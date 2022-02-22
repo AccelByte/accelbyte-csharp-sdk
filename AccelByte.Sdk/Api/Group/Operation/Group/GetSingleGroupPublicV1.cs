@@ -30,6 +30,46 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class GetSingleGroupPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetSingleGroupPublicV1Builder Builder = new GetSingleGroupPublicV1Builder();
+
+        public class GetSingleGroupPublicV1Builder
+        {
+            
+            
+            internal GetSingleGroupPublicV1Builder() { }
+
+
+
+
+
+            public GetSingleGroupPublicV1 Build(
+                string groupId,
+                string namespace_
+            )
+            {
+                return new GetSingleGroupPublicV1(this,
+                    groupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetSingleGroupPublicV1(GetSingleGroupPublicV1Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetSingleGroupPublicV1(
             string groupId,            
             string namespace_            

@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UploadKeys : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UploadKeysBuilder Builder = new UploadKeysBuilder();
+
+        public class UploadKeysBuilder
+        {
+            
+            
+            public Stream? File { get; set; }
+            
+            internal UploadKeysBuilder() { }
+
+
+
+
+            public UploadKeysBuilder SetFile(Stream _file)
+            {
+                File = _file;
+                return this;
+            }
+
+
+            public UploadKeys Build(
+                string keyGroupId,
+                string namespace_
+            )
+            {
+                return new UploadKeys(this,
+                    keyGroupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UploadKeys(UploadKeysBuilder builder,
+            string keyGroupId,
+            string namespace_
+        )
+        {
+            PathParams["keyGroupId"] = keyGroupId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            if (builder.File != null) FormParams["file"] = builder.File;
+            
+            
+            
+        }
+        #endregion
+
         public UploadKeys(
             string keyGroupId,            
             string namespace_,            

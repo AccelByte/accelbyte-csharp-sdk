@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ImportRewards : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ImportRewardsBuilder Builder = new ImportRewardsBuilder();
+
+        public class ImportRewardsBuilder
+        {
+            
+            
+            public Stream? File { get; set; }
+            
+            internal ImportRewardsBuilder() { }
+
+
+
+
+            public ImportRewardsBuilder SetFile(Stream _file)
+            {
+                File = _file;
+                return this;
+            }
+
+
+            public ImportRewards Build(
+                string namespace_,
+                bool replaceExisting
+            )
+            {
+                return new ImportRewards(this,
+                    namespace_,                    
+                    replaceExisting                    
+                );
+            }
+        }
+
+        private ImportRewards(ImportRewardsBuilder builder,
+            string namespace_,
+            bool replaceExisting
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            QueryParams["replaceExisting"] = Convert.ToString(replaceExisting)!;
+            
+            if (builder.File != null) FormParams["file"] = builder.File;
+            
+            
+            
+        }
+        #endregion
+
         public ImportRewards(
             string namespace_,            
             bool replaceExisting,            

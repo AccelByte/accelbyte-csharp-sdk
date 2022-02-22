@@ -30,6 +30,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class TokenIntrospectionV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static TokenIntrospectionV3Builder Builder = new TokenIntrospectionV3Builder();
+
+        public class TokenIntrospectionV3Builder
+        {
+            
+            internal TokenIntrospectionV3Builder() { }
+
+
+
+
+
+            public TokenIntrospectionV3 Build(
+                string token
+            )
+            {
+                return new TokenIntrospectionV3(this,
+                    token                    
+                );
+            }
+        }
+
+        private TokenIntrospectionV3(TokenIntrospectionV3Builder builder,
+            string token
+        )
+        {
+            
+            
+            if (token != null) FormParams["token"] = token;
+            
+            
+            
+        }
+        #endregion
+
         public TokenIntrospectionV3(
             string token            
         )

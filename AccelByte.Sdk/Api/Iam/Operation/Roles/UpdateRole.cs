@@ -26,6 +26,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class UpdateRole : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateRoleBuilder Builder = new UpdateRoleBuilder();
+
+        public class UpdateRoleBuilder
+        {
+            
+            
+            internal UpdateRoleBuilder() { }
+
+
+
+
+
+            public UpdateRole Build(
+                ModelRoleUpdateRequest body,
+                string roleId
+            )
+            {
+                return new UpdateRole(this,
+                    body,                    
+                    roleId                    
+                );
+            }
+        }
+
+        private UpdateRole(UpdateRoleBuilder builder,
+            ModelRoleUpdateRequest body,
+            string roleId
+        )
+        {
+            PathParams["roleId"] = roleId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateRole(
             string roleId,            
             Model.ModelRoleUpdateRequest body            

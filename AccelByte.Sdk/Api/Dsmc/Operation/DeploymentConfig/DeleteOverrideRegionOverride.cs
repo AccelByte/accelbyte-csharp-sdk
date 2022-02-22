@@ -22,6 +22,56 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class DeleteOverrideRegionOverride : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteOverrideRegionOverrideBuilder Builder = new DeleteOverrideRegionOverrideBuilder();
+
+        public class DeleteOverrideRegionOverrideBuilder
+        {
+            
+            
+            
+            
+            internal DeleteOverrideRegionOverrideBuilder() { }
+
+
+
+
+
+            public DeleteOverrideRegionOverride Build(
+                string deployment,
+                string namespace_,
+                string region,
+                string version
+            )
+            {
+                return new DeleteOverrideRegionOverride(this,
+                    deployment,                    
+                    namespace_,                    
+                    region,                    
+                    version                    
+                );
+            }
+        }
+
+        private DeleteOverrideRegionOverride(DeleteOverrideRegionOverrideBuilder builder,
+            string deployment,
+            string namespace_,
+            string region,
+            string version
+        )
+        {
+            PathParams["deployment"] = deployment;
+            PathParams["namespace"] = namespace_;
+            PathParams["region"] = region;
+            PathParams["version"] = version;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteOverrideRegionOverride(
             string deployment,            
             string namespace_,            

@@ -26,6 +26,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class CreateUserFromInvitationV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateUserFromInvitationV3Builder Builder = new CreateUserFromInvitationV3Builder();
+
+        public class CreateUserFromInvitationV3Builder
+        {
+            
+            
+            
+            internal CreateUserFromInvitationV3Builder() { }
+
+
+
+
+
+            public CreateUserFromInvitationV3 Build(
+                ModelUserCreateFromInvitationRequestV3 body,
+                string invitationId,
+                string namespace_
+            )
+            {
+                return new CreateUserFromInvitationV3(this,
+                    body,                    
+                    invitationId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateUserFromInvitationV3(CreateUserFromInvitationV3Builder builder,
+            ModelUserCreateFromInvitationRequestV3 body,
+            string invitationId,
+            string namespace_
+        )
+        {
+            PathParams["invitationId"] = invitationId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateUserFromInvitationV3(
             string invitationId,            
             string namespace_,            

@@ -22,6 +22,109 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicQueryUserSubscriptions : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicQueryUserSubscriptionsBuilder Builder = new PublicQueryUserSubscriptionsBuilder();
+
+        public class PublicQueryUserSubscriptionsBuilder
+        {
+            
+            
+            public string? ChargeStatus { get; set; }
+            
+            public string? ItemId { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? Sku { get; set; }
+            
+            public string? Status { get; set; }
+            
+            public string? SubscribedBy { get; set; }
+            
+            internal PublicQueryUserSubscriptionsBuilder() { }
+
+
+            public PublicQueryUserSubscriptionsBuilder SetChargeStatus(string _chargeStatus)
+            {
+                ChargeStatus = _chargeStatus;
+                return this;
+            }
+
+            public PublicQueryUserSubscriptionsBuilder SetItemId(string _itemId)
+            {
+                ItemId = _itemId;
+                return this;
+            }
+
+            public PublicQueryUserSubscriptionsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicQueryUserSubscriptionsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public PublicQueryUserSubscriptionsBuilder SetSku(string _sku)
+            {
+                Sku = _sku;
+                return this;
+            }
+
+            public PublicQueryUserSubscriptionsBuilder SetStatus(string _status)
+            {
+                Status = _status;
+                return this;
+            }
+
+            public PublicQueryUserSubscriptionsBuilder SetSubscribedBy(string _subscribedBy)
+            {
+                SubscribedBy = _subscribedBy;
+                return this;
+            }
+
+
+
+
+            public PublicQueryUserSubscriptions Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicQueryUserSubscriptions(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicQueryUserSubscriptions(PublicQueryUserSubscriptionsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.ChargeStatus != null) QueryParams["chargeStatus"] = builder.ChargeStatus;
+            if (builder.ItemId != null) QueryParams["itemId"] = builder.ItemId;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Sku != null) QueryParams["sku"] = builder.Sku;
+            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            if (builder.SubscribedBy != null) QueryParams["subscribedBy"] = builder.SubscribedBy;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicQueryUserSubscriptions(
             string namespace_,            
             string userId,            

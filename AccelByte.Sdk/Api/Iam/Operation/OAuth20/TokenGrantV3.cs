@@ -216,6 +216,113 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class TokenGrantV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static TokenGrantV3Builder Builder = new TokenGrantV3Builder();
+
+        public class TokenGrantV3Builder
+        {
+            public string? ClientId { get; set; }
+            
+            public string? Code { get; set; }
+            
+            public string? CodeVerifier { get; set; }
+            
+            public bool? ExtendExp { get; set; }
+            
+            public string? Password { get; set; }
+            
+            public string? RedirectUri { get; set; }
+            
+            public string? RefreshToken { get; set; }
+            
+            public string? Username { get; set; }
+            
+            
+            internal TokenGrantV3Builder() { }
+
+
+
+
+            public TokenGrantV3Builder SetClientId(string _clientId)
+            {
+                ClientId = _clientId;
+                return this;
+            }
+
+            public TokenGrantV3Builder SetCode(string _code)
+            {
+                Code = _code;
+                return this;
+            }
+
+            public TokenGrantV3Builder SetCodeVerifier(string _codeVerifier)
+            {
+                CodeVerifier = _codeVerifier;
+                return this;
+            }
+
+            public TokenGrantV3Builder SetExtendExp(bool _extendExp)
+            {
+                ExtendExp = _extendExp;
+                return this;
+            }
+
+            public TokenGrantV3Builder SetPassword(string _password)
+            {
+                Password = _password;
+                return this;
+            }
+
+            public TokenGrantV3Builder SetRedirectUri(string _redirectUri)
+            {
+                RedirectUri = _redirectUri;
+                return this;
+            }
+
+            public TokenGrantV3Builder SetRefreshToken(string _refreshToken)
+            {
+                RefreshToken = _refreshToken;
+                return this;
+            }
+
+            public TokenGrantV3Builder SetUsername(string _username)
+            {
+                Username = _username;
+                return this;
+            }
+
+
+            public TokenGrantV3 Build(
+                string grantType
+            )
+            {
+                return new TokenGrantV3(this,
+                    grantType                    
+                );
+            }
+        }
+
+        private TokenGrantV3(TokenGrantV3Builder builder,
+            string grantType
+        )
+        {
+            
+            
+            if (builder.ClientId != null) FormParams["client_id"] = builder.ClientId;
+            if (builder.Code != null) FormParams["code"] = builder.Code;
+            if (builder.CodeVerifier != null) FormParams["code_verifier"] = builder.CodeVerifier;
+            if (builder.ExtendExp != null) FormParams["extend_exp"] = Convert.ToString(builder.ExtendExp)!;
+            if (builder.Password != null) FormParams["password"] = builder.Password;
+            if (builder.RedirectUri != null) FormParams["redirect_uri"] = builder.RedirectUri;
+            if (builder.RefreshToken != null) FormParams["refresh_token"] = builder.RefreshToken;
+            if (builder.Username != null) FormParams["username"] = builder.Username;
+            if (grantType != null) FormParams["grant_type"] = grantType;
+            
+            
+            
+        }
+        #endregion
+
         public TokenGrantV3(
             string? clientId,            
             string? code,            

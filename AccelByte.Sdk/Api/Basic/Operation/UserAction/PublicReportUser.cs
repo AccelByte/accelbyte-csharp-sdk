@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class PublicReportUser : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicReportUserBuilder Builder = new PublicReportUserBuilder();
+
+        public class PublicReportUserBuilder
+        {
+            
+            
+            public Model.UserReportRequest? Body { get; set; }
+            
+            internal PublicReportUserBuilder() { }
+
+
+
+            public PublicReportUserBuilder SetBody(Model.UserReportRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicReportUser Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicReportUser(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicReportUser(PublicReportUserBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicReportUser(
             string namespace_,            
             string userId,            

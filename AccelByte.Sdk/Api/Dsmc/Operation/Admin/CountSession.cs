@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class CountSession : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CountSessionBuilder Builder = new CountSessionBuilder();
+
+        public class CountSessionBuilder
+        {
+            
+            public string? Region { get; set; }
+            
+            internal CountSessionBuilder() { }
+
+
+            public CountSessionBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+
+
+
+            public CountSession Build(
+                string namespace_
+            )
+            {
+                return new CountSession(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private CountSession(CountSessionBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            
+            
+            
+            
+        }
+        #endregion
+
         public CountSession(
             string namespace_,            
             string? region            

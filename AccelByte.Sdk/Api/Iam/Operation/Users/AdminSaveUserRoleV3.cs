@@ -21,6 +21,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminSaveUserRoleV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminSaveUserRoleV3Builder Builder = new AdminSaveUserRoleV3Builder();
+
+        public class AdminSaveUserRoleV3Builder
+        {
+            
+            
+            
+            internal AdminSaveUserRoleV3Builder() { }
+
+
+
+
+
+            public AdminSaveUserRoleV3 Build(
+                List<ModelNamespaceRoleRequest> body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminSaveUserRoleV3(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminSaveUserRoleV3(AdminSaveUserRoleV3Builder builder,
+            List<ModelNamespaceRoleRequest> body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminSaveUserRoleV3(
             string namespace_,            
             string userId,            

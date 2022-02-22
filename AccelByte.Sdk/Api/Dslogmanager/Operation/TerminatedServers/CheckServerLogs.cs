@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
     /// </summary>
     public class CheckServerLogs : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CheckServerLogsBuilder Builder = new CheckServerLogsBuilder();
+
+        public class CheckServerLogsBuilder
+        {
+            
+            
+            internal CheckServerLogsBuilder() { }
+
+
+
+
+
+            public CheckServerLogs Build(
+                string namespace_,
+                string podName
+            )
+            {
+                return new CheckServerLogs(this,
+                    namespace_,                    
+                    podName                    
+                );
+            }
+        }
+
+        private CheckServerLogs(CheckServerLogsBuilder builder,
+            string namespace_,
+            string podName
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["podName"] = podName;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public CheckServerLogs(
             string namespace_,            
             string podName            

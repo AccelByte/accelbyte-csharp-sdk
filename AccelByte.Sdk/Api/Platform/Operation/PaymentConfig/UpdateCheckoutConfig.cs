@@ -22,6 +22,68 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateCheckoutConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateCheckoutConfigBuilder Builder = new UpdateCheckoutConfigBuilder();
+
+        public class UpdateCheckoutConfigBuilder
+        {
+            
+            public bool? Sandbox { get; set; }
+            
+            public bool? Validate { get; set; }
+            
+            public Model.CheckoutConfig? Body { get; set; }
+            
+            internal UpdateCheckoutConfigBuilder() { }
+
+
+            public UpdateCheckoutConfigBuilder SetSandbox(bool _sandbox)
+            {
+                Sandbox = _sandbox;
+                return this;
+            }
+
+            public UpdateCheckoutConfigBuilder SetValidate(bool _validate)
+            {
+                Validate = _validate;
+                return this;
+            }
+
+
+            public UpdateCheckoutConfigBuilder SetBody(Model.CheckoutConfig _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateCheckoutConfig Build(
+                string id
+            )
+            {
+                return new UpdateCheckoutConfig(this,
+                    id                    
+                );
+            }
+        }
+
+        private UpdateCheckoutConfig(UpdateCheckoutConfigBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+            if (builder.Validate != null) QueryParams["validate"] = Convert.ToString(builder.Validate)!;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateCheckoutConfig(
             string id,            
             bool? sandbox,            

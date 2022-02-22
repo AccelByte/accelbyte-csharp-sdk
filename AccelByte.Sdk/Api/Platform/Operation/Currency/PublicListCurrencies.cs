@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicListCurrencies : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicListCurrenciesBuilder Builder = new PublicListCurrenciesBuilder();
+
+        public class PublicListCurrenciesBuilder
+        {
+            
+            internal PublicListCurrenciesBuilder() { }
+
+
+
+
+
+            public PublicListCurrencies Build(
+                string namespace_
+            )
+            {
+                return new PublicListCurrencies(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicListCurrencies(PublicListCurrenciesBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicListCurrencies(
             string namespace_            
         )

@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class GetActions : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetActionsBuilder Builder = new GetActionsBuilder();
+
+        public class GetActionsBuilder
+        {
+            
+            internal GetActionsBuilder() { }
+
+
+
+
+
+            public GetActions Build(
+                string namespace_
+            )
+            {
+                return new GetActions(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetActions(GetActionsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetActions(
             string namespace_            
         )

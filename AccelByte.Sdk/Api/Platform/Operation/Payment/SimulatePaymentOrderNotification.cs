@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class SimulatePaymentOrderNotification : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SimulatePaymentOrderNotificationBuilder Builder = new SimulatePaymentOrderNotificationBuilder();
+
+        public class SimulatePaymentOrderNotificationBuilder
+        {
+            
+            
+            public Model.PaymentOrderNotifySimulation? Body { get; set; }
+            
+            internal SimulatePaymentOrderNotificationBuilder() { }
+
+
+
+            public SimulatePaymentOrderNotificationBuilder SetBody(Model.PaymentOrderNotifySimulation _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public SimulatePaymentOrderNotification Build(
+                string namespace_,
+                string paymentOrderNo
+            )
+            {
+                return new SimulatePaymentOrderNotification(this,
+                    namespace_,                    
+                    paymentOrderNo                    
+                );
+            }
+        }
+
+        private SimulatePaymentOrderNotification(SimulatePaymentOrderNotificationBuilder builder,
+            string namespace_,
+            string paymentOrderNo
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["paymentOrderNo"] = paymentOrderNo;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public SimulatePaymentOrderNotification(
             string namespace_,            
             string paymentOrderNo,            

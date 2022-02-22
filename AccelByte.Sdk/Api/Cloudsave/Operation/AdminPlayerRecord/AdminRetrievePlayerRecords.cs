@@ -22,6 +22,64 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// </summary>
     public class AdminRetrievePlayerRecords : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminRetrievePlayerRecordsBuilder Builder = new AdminRetrievePlayerRecordsBuilder();
+
+        public class AdminRetrievePlayerRecordsBuilder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal AdminRetrievePlayerRecordsBuilder() { }
+
+
+            public AdminRetrievePlayerRecordsBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminRetrievePlayerRecordsBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public AdminRetrievePlayerRecords Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminRetrievePlayerRecords(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminRetrievePlayerRecords(AdminRetrievePlayerRecordsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminRetrievePlayerRecords(
             string namespace_,            
             string userId,            

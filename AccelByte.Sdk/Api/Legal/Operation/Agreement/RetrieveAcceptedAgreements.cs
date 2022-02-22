@@ -20,6 +20,41 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RetrieveAcceptedAgreements : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveAcceptedAgreementsBuilder Builder = new RetrieveAcceptedAgreementsBuilder();
+
+        public class RetrieveAcceptedAgreementsBuilder
+        {
+            
+            internal RetrieveAcceptedAgreementsBuilder() { }
+
+
+
+
+
+            public RetrieveAcceptedAgreements Build(
+                string userId
+            )
+            {
+                return new RetrieveAcceptedAgreements(this,
+                    userId                    
+                );
+            }
+        }
+
+        private RetrieveAcceptedAgreements(RetrieveAcceptedAgreementsBuilder builder,
+            string userId
+        )
+        {
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveAcceptedAgreements(
             string userId            
         )

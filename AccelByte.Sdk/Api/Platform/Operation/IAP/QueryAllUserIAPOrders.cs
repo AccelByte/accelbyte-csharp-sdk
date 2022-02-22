@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryAllUserIAPOrders : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryAllUserIAPOrdersBuilder Builder = new QueryAllUserIAPOrdersBuilder();
+
+        public class QueryAllUserIAPOrdersBuilder
+        {
+            
+            
+            internal QueryAllUserIAPOrdersBuilder() { }
+
+
+
+
+
+            public QueryAllUserIAPOrders Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new QueryAllUserIAPOrders(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private QueryAllUserIAPOrders(QueryAllUserIAPOrdersBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryAllUserIAPOrders(
             string namespace_,            
             string userId            

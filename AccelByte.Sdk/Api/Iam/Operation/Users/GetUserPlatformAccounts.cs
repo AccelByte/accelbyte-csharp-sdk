@@ -31,6 +31,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetUserPlatformAccounts : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserPlatformAccountsBuilder Builder = new GetUserPlatformAccountsBuilder();
+
+        public class GetUserPlatformAccountsBuilder
+        {
+            
+            
+            internal GetUserPlatformAccountsBuilder() { }
+
+
+
+
+
+            public GetUserPlatformAccounts Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetUserPlatformAccounts(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserPlatformAccounts(GetUserPlatformAccountsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserPlatformAccounts(
             string namespace_,            
             string userId            

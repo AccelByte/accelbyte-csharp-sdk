@@ -23,6 +23,41 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class GetTimeZones : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetTimeZonesBuilder Builder = new GetTimeZonesBuilder();
+
+        public class GetTimeZonesBuilder
+        {
+            
+            internal GetTimeZonesBuilder() { }
+
+
+
+
+
+            public GetTimeZones Build(
+                string namespace_
+            )
+            {
+                return new GetTimeZones(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetTimeZones(GetTimeZonesBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetTimeZones(
             string namespace_            
         )

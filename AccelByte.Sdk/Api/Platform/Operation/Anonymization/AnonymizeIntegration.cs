@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class AnonymizeIntegration : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AnonymizeIntegrationBuilder Builder = new AnonymizeIntegrationBuilder();
+
+        public class AnonymizeIntegrationBuilder
+        {
+            
+            
+            internal AnonymizeIntegrationBuilder() { }
+
+
+
+
+
+            public AnonymizeIntegration Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AnonymizeIntegration(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AnonymizeIntegration(AnonymizeIntegrationBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AnonymizeIntegration(
             string namespace_,            
             string userId            

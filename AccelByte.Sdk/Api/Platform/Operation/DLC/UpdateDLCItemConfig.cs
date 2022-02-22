@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateDLCItemConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateDLCItemConfigBuilder Builder = new UpdateDLCItemConfigBuilder();
+
+        public class UpdateDLCItemConfigBuilder
+        {
+            
+            public Model.DLCItemConfigUpdate? Body { get; set; }
+            
+            internal UpdateDLCItemConfigBuilder() { }
+
+
+
+            public UpdateDLCItemConfigBuilder SetBody(Model.DLCItemConfigUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateDLCItemConfig Build(
+                string namespace_
+            )
+            {
+                return new UpdateDLCItemConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateDLCItemConfig(UpdateDLCItemConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateDLCItemConfig(
             string namespace_,            
             Model.DLCItemConfigUpdate body            

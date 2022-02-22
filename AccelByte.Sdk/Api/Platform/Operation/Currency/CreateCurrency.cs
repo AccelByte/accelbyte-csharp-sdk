@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CreateCurrency : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateCurrencyBuilder Builder = new CreateCurrencyBuilder();
+
+        public class CreateCurrencyBuilder
+        {
+            
+            public Model.CurrencyCreate? Body { get; set; }
+            
+            internal CreateCurrencyBuilder() { }
+
+
+
+            public CreateCurrencyBuilder SetBody(Model.CurrencyCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateCurrency Build(
+                string namespace_
+            )
+            {
+                return new CreateCurrency(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateCurrency(CreateCurrencyBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateCurrency(
             string namespace_,            
             Model.CurrencyCreate body            

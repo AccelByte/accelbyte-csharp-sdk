@@ -20,6 +20,56 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// </summary>
     public class AdminGeneratePersonalDataURL : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGeneratePersonalDataURLBuilder Builder = new AdminGeneratePersonalDataURLBuilder();
+
+        public class AdminGeneratePersonalDataURLBuilder
+        {
+            
+            
+            
+            
+            internal AdminGeneratePersonalDataURLBuilder() { }
+
+
+
+
+
+            public AdminGeneratePersonalDataURL Build(
+                string password,
+                string namespace_,
+                string requestDate,
+                string userId
+            )
+            {
+                return new AdminGeneratePersonalDataURL(this,
+                    password,                    
+                    namespace_,                    
+                    requestDate,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminGeneratePersonalDataURL(AdminGeneratePersonalDataURLBuilder builder,
+            string password,
+            string namespace_,
+            string requestDate,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["requestDate"] = requestDate;
+            PathParams["userId"] = userId;
+            
+            
+            if (password != null) FormParams["password"] = password;
+            
+            
+            
+        }
+        #endregion
+
         public AdminGeneratePersonalDataURL(
             string namespace_,            
             string requestDate,            

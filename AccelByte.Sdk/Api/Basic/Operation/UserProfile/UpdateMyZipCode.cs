@@ -23,6 +23,46 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class UpdateMyZipCode : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateMyZipCodeBuilder Builder = new UpdateMyZipCodeBuilder();
+
+        public class UpdateMyZipCodeBuilder
+        {
+            
+            
+            internal UpdateMyZipCodeBuilder() { }
+
+
+
+
+
+            public UpdateMyZipCode Build(
+                UserZipCodeUpdate userZipCodeUpdate,
+                string namespace_
+            )
+            {
+                return new UpdateMyZipCode(this,
+                    userZipCodeUpdate,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateMyZipCode(UpdateMyZipCodeBuilder builder,
+            UserZipCodeUpdate userZipCodeUpdate,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = userZipCodeUpdate;
+            
+        }
+        #endregion
+
         public UpdateMyZipCode(
             string namespace_,            
             Model.UserZipCodeUpdate userZipCodeUpdate            

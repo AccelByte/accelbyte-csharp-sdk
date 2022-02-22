@@ -23,6 +23,56 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class ExistsAnyPassByPassCodes : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ExistsAnyPassByPassCodesBuilder Builder = new ExistsAnyPassByPassCodesBuilder();
+
+        public class ExistsAnyPassByPassCodesBuilder
+        {
+            
+            
+            public List<string>? PassCodes { get; set; }
+            
+            internal ExistsAnyPassByPassCodesBuilder() { }
+
+
+            public ExistsAnyPassByPassCodesBuilder SetPassCodes(List<string> _passCodes)
+            {
+                PassCodes = _passCodes;
+                return this;
+            }
+
+
+
+
+            public ExistsAnyPassByPassCodes Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new ExistsAnyPassByPassCodes(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private ExistsAnyPassByPassCodes(ExistsAnyPassByPassCodesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.PassCodes != null) QueryParams["passCodes"] = builder.PassCodes;
+            
+            
+            CollectionFormatMap["passCodes"] = "multi";
+            
+            
+        }
+        #endregion
+
         public ExistsAnyPassByPassCodes(
             string namespace_,            
             string userId,            

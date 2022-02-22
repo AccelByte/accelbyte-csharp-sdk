@@ -21,6 +21,47 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class GetBannedUsers : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetBannedUsersBuilder Builder = new GetBannedUsersBuilder();
+
+        public class GetBannedUsersBuilder
+        {
+            
+            
+            internal GetBannedUsersBuilder() { }
+
+
+
+
+
+            public GetBannedUsers Build(
+                string namespace_,
+                List<string> userIds
+            )
+            {
+                return new GetBannedUsers(this,
+                    namespace_,                    
+                    userIds                    
+                );
+            }
+        }
+
+        private GetBannedUsers(GetBannedUsersBuilder builder,
+            string namespace_,
+            List<string> userIds
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (userIds != null) QueryParams["userIds"] = userIds;
+            
+            
+            CollectionFormatMap["userIds"] = "multi";
+            
+            
+        }
+        #endregion
+
         public GetBannedUsers(
             string namespace_,            
             List<string> userIds            

@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class CreateGroup : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateGroupBuilder Builder = new CreateGroupBuilder();
+
+        public class CreateGroupBuilder
+        {
+            
+            
+            
+            internal CreateGroupBuilder() { }
+
+
+
+
+
+            public CreateGroup Build(
+                ModelsCreateGroupRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new CreateGroup(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private CreateGroup(CreateGroupBuilder builder,
+            ModelsCreateGroupRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateGroup(
             string namespace_,            
             string userId,            

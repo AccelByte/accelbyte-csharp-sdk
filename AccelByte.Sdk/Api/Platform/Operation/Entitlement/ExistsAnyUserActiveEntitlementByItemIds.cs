@@ -22,6 +22,52 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ExistsAnyUserActiveEntitlementByItemIds : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ExistsAnyUserActiveEntitlementByItemIdsBuilder Builder = new ExistsAnyUserActiveEntitlementByItemIdsBuilder();
+
+        public class ExistsAnyUserActiveEntitlementByItemIdsBuilder
+        {
+            
+            
+            
+            internal ExistsAnyUserActiveEntitlementByItemIdsBuilder() { }
+
+
+
+
+
+            public ExistsAnyUserActiveEntitlementByItemIds Build(
+                string namespace_,
+                string userId,
+                List<string> itemIds
+            )
+            {
+                return new ExistsAnyUserActiveEntitlementByItemIds(this,
+                    namespace_,                    
+                    userId,                    
+                    itemIds                    
+                );
+            }
+        }
+
+        private ExistsAnyUserActiveEntitlementByItemIds(ExistsAnyUserActiveEntitlementByItemIdsBuilder builder,
+            string namespace_,
+            string userId,
+            List<string> itemIds
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (itemIds != null) QueryParams["itemIds"] = itemIds;
+            
+            
+            CollectionFormatMap["itemIds"] = "multi";
+            
+            
+        }
+        #endregion
+
         public ExistsAnyUserActiveEntitlementByItemIds(
             string namespace_,            
             string userId,            

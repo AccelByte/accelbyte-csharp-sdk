@@ -23,6 +23,82 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class BulkGetLocaleItems : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static BulkGetLocaleItemsBuilder Builder = new BulkGetLocaleItemsBuilder();
+
+        public class BulkGetLocaleItemsBuilder
+        {
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public string? Language { get; set; }
+            
+            public string? Region { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            
+            internal BulkGetLocaleItemsBuilder() { }
+
+
+            public BulkGetLocaleItemsBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public BulkGetLocaleItemsBuilder SetLanguage(string _language)
+            {
+                Language = _language;
+                return this;
+            }
+
+            public BulkGetLocaleItemsBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+            public BulkGetLocaleItemsBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public BulkGetLocaleItems Build(
+                string namespace_,
+                string itemIds
+            )
+            {
+                return new BulkGetLocaleItems(this,
+                    namespace_,                    
+                    itemIds                    
+                );
+            }
+        }
+
+        private BulkGetLocaleItems(BulkGetLocaleItemsBuilder builder,
+            string namespace_,
+            string itemIds
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (itemIds != null) QueryParams["itemIds"] = itemIds;
+            
+            
+            
+            
+        }
+        #endregion
+
         public BulkGetLocaleItems(
             string namespace_,            
             bool? activeOnly,            

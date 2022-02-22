@@ -21,6 +21,55 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class UpdateUserSlotConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateUserSlotConfigBuilder Builder = new UpdateUserSlotConfigBuilder();
+
+        public class UpdateUserSlotConfigBuilder
+        {
+            
+            
+            public Model.SlotConfigUpdate? Body { get; set; }
+            
+            internal UpdateUserSlotConfigBuilder() { }
+
+
+
+            public UpdateUserSlotConfigBuilder SetBody(Model.SlotConfigUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateUserSlotConfig Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new UpdateUserSlotConfig(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private UpdateUserSlotConfig(UpdateUserSlotConfigBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateUserSlotConfig(
             string namespace_,            
             string userId,            

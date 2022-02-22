@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class FulfillUserOrder : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static FulfillUserOrderBuilder Builder = new FulfillUserOrderBuilder();
+
+        public class FulfillUserOrderBuilder
+        {
+            
+            
+            
+            internal FulfillUserOrderBuilder() { }
+
+
+
+
+
+            public FulfillUserOrder Build(
+                string namespace_,
+                string orderNo,
+                string userId
+            )
+            {
+                return new FulfillUserOrder(this,
+                    namespace_,                    
+                    orderNo,                    
+                    userId                    
+                );
+            }
+        }
+
+        private FulfillUserOrder(FulfillUserOrderBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["orderNo"] = orderNo;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public FulfillUserOrder(
             string namespace_,            
             string orderNo,            

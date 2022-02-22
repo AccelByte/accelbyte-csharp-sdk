@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class TestAdyenConfigById : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static TestAdyenConfigByIdBuilder Builder = new TestAdyenConfigByIdBuilder();
+
+        public class TestAdyenConfigByIdBuilder
+        {
+            
+            public bool? Sandbox { get; set; }
+            
+            internal TestAdyenConfigByIdBuilder() { }
+
+
+            public TestAdyenConfigByIdBuilder SetSandbox(bool _sandbox)
+            {
+                Sandbox = _sandbox;
+                return this;
+            }
+
+
+
+
+            public TestAdyenConfigById Build(
+                string id
+            )
+            {
+                return new TestAdyenConfigById(this,
+                    id                    
+                );
+            }
+        }
+
+        private TestAdyenConfigById(TestAdyenConfigByIdBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public TestAdyenConfigById(
             string id,            
             bool? sandbox            

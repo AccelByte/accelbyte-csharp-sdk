@@ -22,6 +22,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class AcquireUserTicket : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AcquireUserTicketBuilder Builder = new AcquireUserTicketBuilder();
+
+        public class AcquireUserTicketBuilder
+        {
+            
+            
+            
+            public Model.TicketAcquireRequest? Body { get; set; }
+            
+            internal AcquireUserTicketBuilder() { }
+
+
+
+            public AcquireUserTicketBuilder SetBody(Model.TicketAcquireRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public AcquireUserTicket Build(
+                string boothName,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AcquireUserTicket(this,
+                    boothName,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AcquireUserTicket(AcquireUserTicketBuilder builder,
+            string boothName,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["boothName"] = boothName;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public AcquireUserTicket(
             string boothName,            
             string namespace_,            

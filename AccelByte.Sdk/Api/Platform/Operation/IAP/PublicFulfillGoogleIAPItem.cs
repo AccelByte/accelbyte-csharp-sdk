@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicFulfillGoogleIAPItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicFulfillGoogleIAPItemBuilder Builder = new PublicFulfillGoogleIAPItemBuilder();
+
+        public class PublicFulfillGoogleIAPItemBuilder
+        {
+            
+            
+            public Model.GoogleIAPReceipt? Body { get; set; }
+            
+            internal PublicFulfillGoogleIAPItemBuilder() { }
+
+
+
+            public PublicFulfillGoogleIAPItemBuilder SetBody(Model.GoogleIAPReceipt _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicFulfillGoogleIAPItem Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicFulfillGoogleIAPItem(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicFulfillGoogleIAPItem(PublicFulfillGoogleIAPItemBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicFulfillGoogleIAPItem(
             string namespace_,            
             string userId,            

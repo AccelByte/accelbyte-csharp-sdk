@@ -38,6 +38,36 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetJWKS : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetJWKSBuilder Builder = new GetJWKSBuilder();
+
+        public class GetJWKSBuilder
+        {
+            internal GetJWKSBuilder() { }
+
+
+
+
+
+            public GetJWKS Build(
+            )
+            {
+                return new GetJWKS(this
+                );
+            }
+        }
+
+        private GetJWKS(GetJWKSBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetJWKS(
         )
         {

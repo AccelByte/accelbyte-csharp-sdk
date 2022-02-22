@@ -64,6 +64,60 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PlatformUnlink : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PlatformUnlinkBuilder Builder = new PlatformUnlinkBuilder();
+
+        public class PlatformUnlinkBuilder
+        {
+            
+            
+            
+            public string? PlatformNamespace { get; set; }
+            
+            internal PlatformUnlinkBuilder() { }
+
+
+
+
+            public PlatformUnlinkBuilder SetPlatformNamespace(string _platformNamespace)
+            {
+                PlatformNamespace = _platformNamespace;
+                return this;
+            }
+
+
+            public PlatformUnlink Build(
+                string namespace_,
+                string platformId,
+                string userId
+            )
+            {
+                return new PlatformUnlink(this,
+                    namespace_,                    
+                    platformId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PlatformUnlink(PlatformUnlinkBuilder builder,
+            string namespace_,
+            string platformId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            PathParams["userId"] = userId;
+            
+            
+            if (builder.PlatformNamespace != null) FormParams["platform_namespace"] = builder.PlatformNamespace;
+            
+            
+            
+        }
+        #endregion
+
         public PlatformUnlink(
             string namespace_,            
             string platformId,            

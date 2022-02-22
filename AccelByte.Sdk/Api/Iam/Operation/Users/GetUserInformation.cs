@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetUserInformation : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserInformationBuilder Builder = new GetUserInformationBuilder();
+
+        public class GetUserInformationBuilder
+        {
+            
+            
+            internal GetUserInformationBuilder() { }
+
+
+
+
+
+            public GetUserInformation Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetUserInformation(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserInformation(GetUserInformationBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserInformation(
             string namespace_,            
             string userId            

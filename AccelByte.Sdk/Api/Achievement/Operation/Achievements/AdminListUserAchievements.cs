@@ -21,6 +21,73 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// </summary>
     public class AdminListUserAchievements : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminListUserAchievementsBuilder Builder = new AdminListUserAchievementsBuilder();
+
+        public class AdminListUserAchievementsBuilder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            public bool? PreferUnlocked { get; set; }
+            
+            internal AdminListUserAchievementsBuilder() { }
+
+
+            public AdminListUserAchievementsBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminListUserAchievementsBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public AdminListUserAchievementsBuilder SetPreferUnlocked(bool _preferUnlocked)
+            {
+                PreferUnlocked = _preferUnlocked;
+                return this;
+            }
+
+
+
+
+            public AdminListUserAchievements Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminListUserAchievements(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminListUserAchievements(AdminListUserAchievementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.PreferUnlocked != null) QueryParams["preferUnlocked"] = Convert.ToString(builder.PreferUnlocked)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminListUserAchievements(
             string namespace_,            
             string userId,            

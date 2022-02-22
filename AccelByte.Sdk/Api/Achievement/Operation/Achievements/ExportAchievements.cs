@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// </summary>
     public class ExportAchievements : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ExportAchievementsBuilder Builder = new ExportAchievementsBuilder();
+
+        public class ExportAchievementsBuilder
+        {
+            
+            internal ExportAchievementsBuilder() { }
+
+
+
+
+
+            public ExportAchievements Build(
+                string namespace_
+            )
+            {
+                return new ExportAchievements(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ExportAchievements(ExportAchievementsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ExportAchievements(
             string namespace_            
         )

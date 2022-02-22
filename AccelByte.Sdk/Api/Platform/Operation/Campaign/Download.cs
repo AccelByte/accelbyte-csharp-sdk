@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class Download : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DownloadBuilder Builder = new DownloadBuilder();
+
+        public class DownloadBuilder
+        {
+            
+            
+            public int? BatchNo { get; set; }
+            
+            internal DownloadBuilder() { }
+
+
+            public DownloadBuilder SetBatchNo(int _batchNo)
+            {
+                BatchNo = _batchNo;
+                return this;
+            }
+
+
+
+
+            public Download Build(
+                string campaignId,
+                string namespace_
+            )
+            {
+                return new Download(this,
+                    campaignId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private Download(DownloadBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            PathParams["campaignId"] = campaignId;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.BatchNo != null) QueryParams["batchNo"] = Convert.ToString(builder.BatchNo)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public Download(
             string campaignId,            
             string namespace_,            

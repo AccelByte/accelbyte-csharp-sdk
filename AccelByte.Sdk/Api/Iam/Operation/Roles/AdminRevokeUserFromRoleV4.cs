@@ -26,6 +26,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminRevokeUserFromRoleV4 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminRevokeUserFromRoleV4Builder Builder = new AdminRevokeUserFromRoleV4Builder();
+
+        public class AdminRevokeUserFromRoleV4Builder
+        {
+            
+            
+            internal AdminRevokeUserFromRoleV4Builder() { }
+
+
+
+
+
+            public AdminRevokeUserFromRoleV4 Build(
+                ModelRevokeUserV4Request body,
+                string roleId
+            )
+            {
+                return new AdminRevokeUserFromRoleV4(this,
+                    body,                    
+                    roleId                    
+                );
+            }
+        }
+
+        private AdminRevokeUserFromRoleV4(AdminRevokeUserFromRoleV4Builder builder,
+            ModelRevokeUserV4Request body,
+            string roleId
+        )
+        {
+            PathParams["roleId"] = roleId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminRevokeUserFromRoleV4(
             string roleId,            
             Model.ModelRevokeUserV4Request body            

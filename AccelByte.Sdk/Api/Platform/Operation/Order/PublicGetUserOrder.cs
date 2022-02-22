@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetUserOrder : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetUserOrderBuilder Builder = new PublicGetUserOrderBuilder();
+
+        public class PublicGetUserOrderBuilder
+        {
+            
+            
+            
+            internal PublicGetUserOrderBuilder() { }
+
+
+
+
+
+            public PublicGetUserOrder Build(
+                string namespace_,
+                string orderNo,
+                string userId
+            )
+            {
+                return new PublicGetUserOrder(this,
+                    namespace_,                    
+                    orderNo,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicGetUserOrder(PublicGetUserOrderBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["orderNo"] = orderNo;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetUserOrder(
             string namespace_,            
             string orderNo,            

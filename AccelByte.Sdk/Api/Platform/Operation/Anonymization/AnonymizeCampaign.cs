@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class AnonymizeCampaign : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AnonymizeCampaignBuilder Builder = new AnonymizeCampaignBuilder();
+
+        public class AnonymizeCampaignBuilder
+        {
+            
+            
+            internal AnonymizeCampaignBuilder() { }
+
+
+
+
+
+            public AnonymizeCampaign Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AnonymizeCampaign(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AnonymizeCampaign(AnonymizeCampaignBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AnonymizeCampaign(
             string namespace_,            
             string userId            

@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminDeleteGroup : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminDeleteGroupBuilder Builder = new AdminDeleteGroupBuilder();
+
+        public class AdminDeleteGroupBuilder
+        {
+            
+            
+            
+            internal AdminDeleteGroupBuilder() { }
+
+
+
+
+
+            public AdminDeleteGroup Build(
+                string groupId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminDeleteGroup(this,
+                    groupId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminDeleteGroup(AdminDeleteGroupBuilder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminDeleteGroup(
             string groupId,            
             string namespace_,            

@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateCurrency : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateCurrencyBuilder Builder = new UpdateCurrencyBuilder();
+
+        public class UpdateCurrencyBuilder
+        {
+            
+            
+            public Model.CurrencyUpdate? Body { get; set; }
+            
+            internal UpdateCurrencyBuilder() { }
+
+
+
+            public UpdateCurrencyBuilder SetBody(Model.CurrencyUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateCurrency Build(
+                string currencyCode,
+                string namespace_
+            )
+            {
+                return new UpdateCurrency(this,
+                    currencyCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateCurrency(UpdateCurrencyBuilder builder,
+            string currencyCode,
+            string namespace_
+        )
+        {
+            PathParams["currencyCode"] = currencyCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateCurrency(
             string currencyCode,            
             string namespace_,            

@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class SyncStadiaEntitlement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SyncStadiaEntitlementBuilder Builder = new SyncStadiaEntitlementBuilder();
+
+        public class SyncStadiaEntitlementBuilder
+        {
+            
+            
+            public Model.StadiaSyncRequest? Body { get; set; }
+            
+            internal SyncStadiaEntitlementBuilder() { }
+
+
+
+            public SyncStadiaEntitlementBuilder SetBody(Model.StadiaSyncRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public SyncStadiaEntitlement Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new SyncStadiaEntitlement(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private SyncStadiaEntitlement(SyncStadiaEntitlementBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public SyncStadiaEntitlement(
             string namespace_,            
             string userId,            

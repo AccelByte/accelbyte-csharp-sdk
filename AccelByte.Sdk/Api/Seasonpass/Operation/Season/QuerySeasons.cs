@@ -23,6 +23,69 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class QuerySeasons : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QuerySeasonsBuilder Builder = new QuerySeasonsBuilder();
+
+        public class QuerySeasonsBuilder
+        {
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public List<string>? Status { get; set; }
+            
+            internal QuerySeasonsBuilder() { }
+
+
+            public QuerySeasonsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QuerySeasonsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QuerySeasonsBuilder SetStatus(List<string> _status)
+            {
+                Status = _status;
+                return this;
+            }
+
+
+
+
+            public QuerySeasons Build(
+                string namespace_
+            )
+            {
+                return new QuerySeasons(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private QuerySeasons(QuerySeasonsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            
+            
+            CollectionFormatMap["status"] = "multi";
+            
+            
+        }
+        #endregion
+
         public QuerySeasons(
             string namespace_,            
             int? limit,            

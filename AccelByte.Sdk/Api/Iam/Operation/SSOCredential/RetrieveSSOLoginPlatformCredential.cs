@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class RetrieveSSOLoginPlatformCredential : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveSSOLoginPlatformCredentialBuilder Builder = new RetrieveSSOLoginPlatformCredentialBuilder();
+
+        public class RetrieveSSOLoginPlatformCredentialBuilder
+        {
+            
+            
+            internal RetrieveSSOLoginPlatformCredentialBuilder() { }
+
+
+
+
+
+            public RetrieveSSOLoginPlatformCredential Build(
+                string namespace_,
+                string platformId
+            )
+            {
+                return new RetrieveSSOLoginPlatformCredential(this,
+                    namespace_,                    
+                    platformId                    
+                );
+            }
+        }
+
+        private RetrieveSSOLoginPlatformCredential(RetrieveSSOLoginPlatformCredentialBuilder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveSSOLoginPlatformCredential(
             string namespace_,            
             string platformId            

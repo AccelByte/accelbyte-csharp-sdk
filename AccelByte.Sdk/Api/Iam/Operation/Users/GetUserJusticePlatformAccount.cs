@@ -42,6 +42,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetUserJusticePlatformAccount : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserJusticePlatformAccountBuilder Builder = new GetUserJusticePlatformAccountBuilder();
+
+        public class GetUserJusticePlatformAccountBuilder
+        {
+            
+            
+            
+            internal GetUserJusticePlatformAccountBuilder() { }
+
+
+
+
+
+            public GetUserJusticePlatformAccount Build(
+                string namespace_,
+                string targetNamespace,
+                string userId
+            )
+            {
+                return new GetUserJusticePlatformAccount(this,
+                    namespace_,                    
+                    targetNamespace,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserJusticePlatformAccount(GetUserJusticePlatformAccountBuilder builder,
+            string namespace_,
+            string targetNamespace,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["targetNamespace"] = targetNamespace;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserJusticePlatformAccount(
             string namespace_,            
             string targetNamespace,            

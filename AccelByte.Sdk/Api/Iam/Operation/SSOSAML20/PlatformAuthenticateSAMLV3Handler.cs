@@ -29,6 +29,65 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PlatformAuthenticateSAMLV3Handler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PlatformAuthenticateSAMLV3HandlerBuilder Builder = new PlatformAuthenticateSAMLV3HandlerBuilder();
+
+        public class PlatformAuthenticateSAMLV3HandlerBuilder
+        {
+            
+            public string? Code { get; set; }
+            
+            public string? Error { get; set; }
+            
+            
+            internal PlatformAuthenticateSAMLV3HandlerBuilder() { }
+
+
+            public PlatformAuthenticateSAMLV3HandlerBuilder SetCode(string _code)
+            {
+                Code = _code;
+                return this;
+            }
+
+            public PlatformAuthenticateSAMLV3HandlerBuilder SetError(string _error)
+            {
+                Error = _error;
+                return this;
+            }
+
+
+
+
+            public PlatformAuthenticateSAMLV3Handler Build(
+                string platformId,
+                string state
+            )
+            {
+                return new PlatformAuthenticateSAMLV3Handler(this,
+                    platformId,                    
+                    state                    
+                );
+            }
+        }
+
+        private PlatformAuthenticateSAMLV3Handler(PlatformAuthenticateSAMLV3HandlerBuilder builder,
+            string platformId,
+            string state
+        )
+        {
+            PathParams["platformId"] = platformId;
+            
+            if (builder.Code != null) QueryParams["code"] = builder.Code;
+            if (builder.Error != null) QueryParams["error"] = builder.Error;
+            if (state != null) QueryParams["state"] = state;
+            
+            
+            
+            
+            LocationQuery = "PLACEHOLDER";
+        }
+        #endregion
+
         public PlatformAuthenticateSAMLV3Handler(
             string platformId,            
             string? code,            

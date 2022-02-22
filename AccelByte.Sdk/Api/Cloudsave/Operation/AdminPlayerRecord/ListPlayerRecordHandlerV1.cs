@@ -23,6 +23,68 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class ListPlayerRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListPlayerRecordHandlerV1Builder Builder = new ListPlayerRecordHandlerV1Builder();
+
+        public class ListPlayerRecordHandlerV1Builder
+        {
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            public string? Query { get; set; }
+            
+            internal ListPlayerRecordHandlerV1Builder() { }
+
+
+            public ListPlayerRecordHandlerV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public ListPlayerRecordHandlerV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public ListPlayerRecordHandlerV1Builder SetQuery(string _query)
+            {
+                Query = _query;
+                return this;
+            }
+
+
+
+
+            public ListPlayerRecordHandlerV1 Build(
+                string namespace_
+            )
+            {
+                return new ListPlayerRecordHandlerV1(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ListPlayerRecordHandlerV1(ListPlayerRecordHandlerV1Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Query != null) QueryParams["query"] = builder.Query;
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListPlayerRecordHandlerV1(
             string namespace_,            
             long? limit,            

@@ -21,6 +21,51 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// </summary>
     public class PublicGetAchievement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetAchievementBuilder Builder = new PublicGetAchievementBuilder();
+
+        public class PublicGetAchievementBuilder
+        {
+            
+            
+            
+            internal PublicGetAchievementBuilder() { }
+
+
+
+
+
+            public PublicGetAchievement Build(
+                string achievementCode,
+                string namespace_,
+                string language
+            )
+            {
+                return new PublicGetAchievement(this,
+                    achievementCode,                    
+                    namespace_,                    
+                    language                    
+                );
+            }
+        }
+
+        private PublicGetAchievement(PublicGetAchievementBuilder builder,
+            string achievementCode,
+            string namespace_,
+            string language
+        )
+        {
+            PathParams["achievementCode"] = achievementCode;
+            PathParams["namespace"] = namespace_;
+            
+            if (language != null) QueryParams["language"] = language;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetAchievement(
             string achievementCode,            
             string namespace_,            

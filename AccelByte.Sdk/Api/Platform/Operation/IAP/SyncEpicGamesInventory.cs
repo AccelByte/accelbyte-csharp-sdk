@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class SyncEpicGamesInventory : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SyncEpicGamesInventoryBuilder Builder = new SyncEpicGamesInventoryBuilder();
+
+        public class SyncEpicGamesInventoryBuilder
+        {
+            
+            
+            public Model.EpicGamesReconcileRequest? Body { get; set; }
+            
+            internal SyncEpicGamesInventoryBuilder() { }
+
+
+
+            public SyncEpicGamesInventoryBuilder SetBody(Model.EpicGamesReconcileRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public SyncEpicGamesInventory Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new SyncEpicGamesInventory(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private SyncEpicGamesInventory(SyncEpicGamesInventoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public SyncEpicGamesInventory(
             string namespace_,            
             string userId,            

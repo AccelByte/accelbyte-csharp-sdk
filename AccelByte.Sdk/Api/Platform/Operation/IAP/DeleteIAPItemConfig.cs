@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DeleteIAPItemConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteIAPItemConfigBuilder Builder = new DeleteIAPItemConfigBuilder();
+
+        public class DeleteIAPItemConfigBuilder
+        {
+            
+            internal DeleteIAPItemConfigBuilder() { }
+
+
+
+
+
+            public DeleteIAPItemConfig Build(
+                string namespace_
+            )
+            {
+                return new DeleteIAPItemConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteIAPItemConfig(DeleteIAPItemConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteIAPItemConfig(
             string namespace_            
         )

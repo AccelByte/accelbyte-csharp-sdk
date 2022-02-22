@@ -34,6 +34,54 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class TestStripeConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static TestStripeConfigBuilder Builder = new TestStripeConfigBuilder();
+
+        public class TestStripeConfigBuilder
+        {
+            public bool? Sandbox { get; set; }
+            
+            public Model.StripeConfig? Body { get; set; }
+            
+            internal TestStripeConfigBuilder() { }
+
+
+            public TestStripeConfigBuilder SetSandbox(bool _sandbox)
+            {
+                Sandbox = _sandbox;
+                return this;
+            }
+
+
+            public TestStripeConfigBuilder SetBody(Model.StripeConfig _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public TestStripeConfig Build(
+            )
+            {
+                return new TestStripeConfig(this
+                );
+            }
+        }
+
+        private TestStripeConfig(TestStripeConfigBuilder builder
+        )
+        {
+            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public TestStripeConfig(
             bool? sandbox,            
             Model.StripeConfig body            

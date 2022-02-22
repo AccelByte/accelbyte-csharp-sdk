@@ -20,6 +20,36 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class Logout : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static LogoutBuilder Builder = new LogoutBuilder();
+
+        public class LogoutBuilder
+        {
+            internal LogoutBuilder() { }
+
+
+
+
+
+            public Logout Build(
+            )
+            {
+                return new Logout(this
+                );
+            }
+        }
+
+        private Logout(LogoutBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public Logout(
         )
         {

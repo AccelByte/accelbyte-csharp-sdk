@@ -21,6 +21,73 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class Pay : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PayBuilder Builder = new PayBuilder();
+
+        public class PayBuilder
+        {
+            
+            
+            public string? PaymentProvider { get; set; }
+            
+            public string? ZipCode { get; set; }
+            
+            public Model.PaymentToken? Body { get; set; }
+            
+            internal PayBuilder() { }
+
+
+            public PayBuilder SetPaymentProvider(string _paymentProvider)
+            {
+                PaymentProvider = _paymentProvider;
+                return this;
+            }
+
+            public PayBuilder SetZipCode(string _zipCode)
+            {
+                ZipCode = _zipCode;
+                return this;
+            }
+
+
+            public PayBuilder SetBody(Model.PaymentToken _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public Pay Build(
+                string namespace_,
+                string paymentOrderNo
+            )
+            {
+                return new Pay(this,
+                    namespace_,                    
+                    paymentOrderNo                    
+                );
+            }
+        }
+
+        private Pay(PayBuilder builder,
+            string namespace_,
+            string paymentOrderNo
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["paymentOrderNo"] = paymentOrderNo;
+            
+            if (builder.PaymentProvider != null) QueryParams["paymentProvider"] = builder.PaymentProvider;
+            if (builder.ZipCode != null) QueryParams["zipCode"] = builder.ZipCode;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public Pay(
             string namespace_,            
             string paymentOrderNo,            

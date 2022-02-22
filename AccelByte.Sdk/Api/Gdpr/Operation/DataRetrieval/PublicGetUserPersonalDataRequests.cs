@@ -20,6 +20,64 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// </summary>
     public class PublicGetUserPersonalDataRequests : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetUserPersonalDataRequestsBuilder Builder = new PublicGetUserPersonalDataRequestsBuilder();
+
+        public class PublicGetUserPersonalDataRequestsBuilder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal PublicGetUserPersonalDataRequestsBuilder() { }
+
+
+            public PublicGetUserPersonalDataRequestsBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicGetUserPersonalDataRequestsBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public PublicGetUserPersonalDataRequests Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicGetUserPersonalDataRequests(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicGetUserPersonalDataRequests(PublicGetUserPersonalDataRequestsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetUserPersonalDataRequests(
             string namespace_,            
             string userId,            

@@ -22,6 +22,68 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateAdyenConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateAdyenConfigBuilder Builder = new UpdateAdyenConfigBuilder();
+
+        public class UpdateAdyenConfigBuilder
+        {
+            
+            public bool? Sandbox { get; set; }
+            
+            public bool? Validate { get; set; }
+            
+            public Model.AdyenConfig? Body { get; set; }
+            
+            internal UpdateAdyenConfigBuilder() { }
+
+
+            public UpdateAdyenConfigBuilder SetSandbox(bool _sandbox)
+            {
+                Sandbox = _sandbox;
+                return this;
+            }
+
+            public UpdateAdyenConfigBuilder SetValidate(bool _validate)
+            {
+                Validate = _validate;
+                return this;
+            }
+
+
+            public UpdateAdyenConfigBuilder SetBody(Model.AdyenConfig _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateAdyenConfig Build(
+                string id
+            )
+            {
+                return new UpdateAdyenConfig(this,
+                    id                    
+                );
+            }
+        }
+
+        private UpdateAdyenConfig(UpdateAdyenConfigBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+            if (builder.Validate != null) QueryParams["validate"] = Convert.ToString(builder.Validate)!;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateAdyenConfig(
             string id,            
             bool? sandbox,            

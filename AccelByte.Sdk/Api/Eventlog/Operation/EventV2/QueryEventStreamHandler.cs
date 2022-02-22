@@ -31,6 +31,82 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     /// </summary>
     public class QueryEventStreamHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryEventStreamHandlerBuilder Builder = new QueryEventStreamHandlerBuilder();
+
+        public class QueryEventStreamHandlerBuilder
+        {
+            
+            public string? EndDate { get; set; }
+            
+            public double? Offset { get; set; }
+            
+            public double? PageSize { get; set; }
+            
+            public string? StartDate { get; set; }
+            
+            
+            internal QueryEventStreamHandlerBuilder() { }
+
+
+            public QueryEventStreamHandlerBuilder SetEndDate(string _endDate)
+            {
+                EndDate = _endDate;
+                return this;
+            }
+
+            public QueryEventStreamHandlerBuilder SetOffset(double _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryEventStreamHandlerBuilder SetPageSize(double _pageSize)
+            {
+                PageSize = _pageSize;
+                return this;
+            }
+
+            public QueryEventStreamHandlerBuilder SetStartDate(string _startDate)
+            {
+                StartDate = _startDate;
+                return this;
+            }
+
+
+
+
+            public QueryEventStreamHandler Build(
+                ModelsGenericQueryPayload body,
+                string namespace_
+            )
+            {
+                return new QueryEventStreamHandler(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private QueryEventStreamHandler(QueryEventStreamHandlerBuilder builder,
+            ModelsGenericQueryPayload body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.EndDate != null) QueryParams["endDate"] = builder.EndDate;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.PageSize != null) QueryParams["pageSize"] = Convert.ToString(builder.PageSize)!;
+            if (builder.StartDate != null) QueryParams["startDate"] = builder.StartDate;
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public QueryEventStreamHandler(
             string namespace_,            
             string? endDate,            

@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DeleteSteamIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteSteamIAPConfigBuilder Builder = new DeleteSteamIAPConfigBuilder();
+
+        public class DeleteSteamIAPConfigBuilder
+        {
+            
+            internal DeleteSteamIAPConfigBuilder() { }
+
+
+
+
+
+            public DeleteSteamIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new DeleteSteamIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteSteamIAPConfig(DeleteSteamIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteSteamIAPConfig(
             string namespace_            
         )

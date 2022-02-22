@@ -16,6 +16,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class UserGetFriendshipStatus : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UserGetFriendshipStatusBuilder Builder = new UserGetFriendshipStatusBuilder();
+
+        public class UserGetFriendshipStatusBuilder
+        {
+            
+            
+            internal UserGetFriendshipStatusBuilder() { }
+
+
+
+
+
+            public UserGetFriendshipStatus Build(
+                string friendId,
+                string namespace_
+            )
+            {
+                return new UserGetFriendshipStatus(this,
+                    friendId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UserGetFriendshipStatus(UserGetFriendshipStatusBuilder builder,
+            string friendId,
+            string namespace_
+        )
+        {
+            PathParams["friendId"] = friendId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public UserGetFriendshipStatus(
             string friendId,            
             string namespace_            

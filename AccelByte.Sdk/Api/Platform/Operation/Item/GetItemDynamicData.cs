@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetItemDynamicData : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetItemDynamicDataBuilder Builder = new GetItemDynamicDataBuilder();
+
+        public class GetItemDynamicDataBuilder
+        {
+            
+            
+            internal GetItemDynamicDataBuilder() { }
+
+
+
+
+
+            public GetItemDynamicData Build(
+                string itemId,
+                string namespace_
+            )
+            {
+                return new GetItemDynamicData(this,
+                    itemId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetItemDynamicData(GetItemDynamicDataBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            PathParams["itemId"] = itemId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetItemDynamicData(
             string itemId,            
             string namespace_            

@@ -22,6 +22,65 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class AdminRetrieveEligibilities : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminRetrieveEligibilitiesBuilder Builder = new AdminRetrieveEligibilitiesBuilder();
+
+        public class AdminRetrieveEligibilitiesBuilder
+        {
+            
+            
+            public string? PublisherUserId { get; set; }
+            
+            
+            
+            internal AdminRetrieveEligibilitiesBuilder() { }
+
+
+            public AdminRetrieveEligibilitiesBuilder SetPublisherUserId(string _publisherUserId)
+            {
+                PublisherUserId = _publisherUserId;
+                return this;
+            }
+
+
+
+
+            public AdminRetrieveEligibilities Build(
+                string namespace_,
+                string userId,
+                string clientId,
+                string countryCode
+            )
+            {
+                return new AdminRetrieveEligibilities(this,
+                    namespace_,                    
+                    userId,                    
+                    clientId,                    
+                    countryCode                    
+                );
+            }
+        }
+
+        private AdminRetrieveEligibilities(AdminRetrieveEligibilitiesBuilder builder,
+            string namespace_,
+            string userId,
+            string clientId,
+            string countryCode
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.PublisherUserId != null) QueryParams["publisherUserId"] = builder.PublisherUserId;
+            if (clientId != null) QueryParams["clientId"] = clientId;
+            if (countryCode != null) QueryParams["countryCode"] = countryCode;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminRetrieveEligibilities(
             string namespace_,            
             string userId,            

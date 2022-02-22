@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class GetNotificationTopicV1Admin : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetNotificationTopicV1AdminBuilder Builder = new GetNotificationTopicV1AdminBuilder();
+
+        public class GetNotificationTopicV1AdminBuilder
+        {
+            
+            
+            internal GetNotificationTopicV1AdminBuilder() { }
+
+
+
+
+
+            public GetNotificationTopicV1Admin Build(
+                string namespace_,
+                string topicName
+            )
+            {
+                return new GetNotificationTopicV1Admin(this,
+                    namespace_,                    
+                    topicName                    
+                );
+            }
+        }
+
+        private GetNotificationTopicV1Admin(GetNotificationTopicV1AdminBuilder builder,
+            string namespace_,
+            string topicName
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["topicName"] = topicName;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetNotificationTopicV1Admin(
             string namespace_,            
             string topicName            

@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class AnonymizeOrder : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AnonymizeOrderBuilder Builder = new AnonymizeOrderBuilder();
+
+        public class AnonymizeOrderBuilder
+        {
+            
+            
+            internal AnonymizeOrderBuilder() { }
+
+
+
+
+
+            public AnonymizeOrder Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AnonymizeOrder(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AnonymizeOrder(AnonymizeOrderBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AnonymizeOrder(
             string namespace_,            
             string userId            

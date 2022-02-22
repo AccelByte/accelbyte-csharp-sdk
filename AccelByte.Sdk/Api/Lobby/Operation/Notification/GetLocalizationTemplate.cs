@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class GetLocalizationTemplate : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetLocalizationTemplateBuilder Builder = new GetLocalizationTemplateBuilder();
+
+        public class GetLocalizationTemplateBuilder
+        {
+            
+            
+            
+            internal GetLocalizationTemplateBuilder() { }
+
+
+
+
+
+            public GetLocalizationTemplate Build(
+                string namespace_,
+                string templateLanguage,
+                string templateSlug
+            )
+            {
+                return new GetLocalizationTemplate(this,
+                    namespace_,                    
+                    templateLanguage,                    
+                    templateSlug                    
+                );
+            }
+        }
+
+        private GetLocalizationTemplate(GetLocalizationTemplateBuilder builder,
+            string namespace_,
+            string templateLanguage,
+            string templateSlug
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["templateLanguage"] = templateLanguage;
+            PathParams["templateSlug"] = templateSlug;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetLocalizationTemplate(
             string namespace_,            
             string templateLanguage,            

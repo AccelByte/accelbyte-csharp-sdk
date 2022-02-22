@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// </summary>
     public class AdminCancelUserPersonalDataRequest : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminCancelUserPersonalDataRequestBuilder Builder = new AdminCancelUserPersonalDataRequestBuilder();
+
+        public class AdminCancelUserPersonalDataRequestBuilder
+        {
+            
+            
+            
+            internal AdminCancelUserPersonalDataRequestBuilder() { }
+
+
+
+
+
+            public AdminCancelUserPersonalDataRequest Build(
+                string namespace_,
+                string requestDate,
+                string userId
+            )
+            {
+                return new AdminCancelUserPersonalDataRequest(this,
+                    namespace_,                    
+                    requestDate,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminCancelUserPersonalDataRequest(AdminCancelUserPersonalDataRequestBuilder builder,
+            string namespace_,
+            string requestDate,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["requestDate"] = requestDate;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminCancelUserPersonalDataRequest(
             string namespace_,            
             string requestDate,            

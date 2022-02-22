@@ -19,6 +19,46 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class UpdateEventRegistryHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateEventRegistryHandlerBuilder Builder = new UpdateEventRegistryHandlerBuilder();
+
+        public class UpdateEventRegistryHandlerBuilder
+        {
+            
+            
+            internal UpdateEventRegistryHandlerBuilder() { }
+
+
+
+
+
+            public UpdateEventRegistryHandler Build(
+                ModelsEventRegistry body,
+                string eventId
+            )
+            {
+                return new UpdateEventRegistryHandler(this,
+                    body,                    
+                    eventId                    
+                );
+            }
+        }
+
+        private UpdateEventRegistryHandler(UpdateEventRegistryHandlerBuilder builder,
+            ModelsEventRegistry body,
+            string eventId
+        )
+        {
+            PathParams["eventId"] = eventId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateEventRegistryHandler(
             string eventId,            
             Model.ModelsEventRegistry body            

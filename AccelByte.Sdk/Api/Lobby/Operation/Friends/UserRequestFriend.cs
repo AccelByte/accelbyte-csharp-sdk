@@ -16,6 +16,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class UserRequestFriend : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UserRequestFriendBuilder Builder = new UserRequestFriendBuilder();
+
+        public class UserRequestFriendBuilder
+        {
+            
+            
+            internal UserRequestFriendBuilder() { }
+
+
+
+
+
+            public UserRequestFriend Build(
+                ModelRequestFriendsRequest body,
+                string namespace_
+            )
+            {
+                return new UserRequestFriend(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UserRequestFriend(UserRequestFriendBuilder builder,
+            ModelRequestFriendsRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UserRequestFriend(
             string namespace_,            
             Model.ModelRequestFriendsRequest body            

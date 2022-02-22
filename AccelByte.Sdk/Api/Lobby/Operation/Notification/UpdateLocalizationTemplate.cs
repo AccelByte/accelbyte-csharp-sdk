@@ -20,6 +20,56 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class UpdateLocalizationTemplate : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateLocalizationTemplateBuilder Builder = new UpdateLocalizationTemplateBuilder();
+
+        public class UpdateLocalizationTemplateBuilder
+        {
+            
+            
+            
+            
+            internal UpdateLocalizationTemplateBuilder() { }
+
+
+
+
+
+            public UpdateLocalizationTemplate Build(
+                ModelUpdateTemplateRequest body,
+                string namespace_,
+                string templateLanguage,
+                string templateSlug
+            )
+            {
+                return new UpdateLocalizationTemplate(this,
+                    body,                    
+                    namespace_,                    
+                    templateLanguage,                    
+                    templateSlug                    
+                );
+            }
+        }
+
+        private UpdateLocalizationTemplate(UpdateLocalizationTemplateBuilder builder,
+            ModelUpdateTemplateRequest body,
+            string namespace_,
+            string templateLanguage,
+            string templateSlug
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["templateLanguage"] = templateLanguage;
+            PathParams["templateSlug"] = templateSlug;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateLocalizationTemplate(
             string namespace_,            
             string templateLanguage,            

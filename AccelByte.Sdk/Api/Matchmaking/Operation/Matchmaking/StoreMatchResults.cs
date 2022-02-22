@@ -24,6 +24,46 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class StoreMatchResults : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static StoreMatchResultsBuilder Builder = new StoreMatchResultsBuilder();
+
+        public class StoreMatchResultsBuilder
+        {
+            
+            
+            internal StoreMatchResultsBuilder() { }
+
+
+
+
+
+            public StoreMatchResults Build(
+                ModelsMatchResultRequest body,
+                string namespace_
+            )
+            {
+                return new StoreMatchResults(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private StoreMatchResults(StoreMatchResultsBuilder builder,
+            ModelsMatchResultRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public StoreMatchResults(
             string namespace_,            
             Model.ModelsMatchResultRequest body            

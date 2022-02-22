@@ -23,6 +23,46 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class QueryPasses : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryPassesBuilder Builder = new QueryPassesBuilder();
+
+        public class QueryPassesBuilder
+        {
+            
+            
+            internal QueryPassesBuilder() { }
+
+
+
+
+
+            public QueryPasses Build(
+                string namespace_,
+                string seasonId
+            )
+            {
+                return new QueryPasses(this,
+                    namespace_,                    
+                    seasonId                    
+                );
+            }
+        }
+
+        private QueryPasses(QueryPassesBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["seasonId"] = seasonId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryPasses(
             string namespace_,            
             string seasonId            

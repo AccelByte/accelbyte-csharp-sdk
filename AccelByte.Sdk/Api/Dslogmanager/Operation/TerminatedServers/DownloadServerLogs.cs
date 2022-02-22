@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
     /// </summary>
     public class DownloadServerLogs : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DownloadServerLogsBuilder Builder = new DownloadServerLogsBuilder();
+
+        public class DownloadServerLogsBuilder
+        {
+            
+            
+            internal DownloadServerLogsBuilder() { }
+
+
+
+
+
+            public DownloadServerLogs Build(
+                string namespace_,
+                string podName
+            )
+            {
+                return new DownloadServerLogs(this,
+                    namespace_,                    
+                    podName                    
+                );
+            }
+        }
+
+        private DownloadServerLogs(DownloadServerLogsBuilder builder,
+            string namespace_,
+            string podName
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["podName"] = podName;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DownloadServerLogs(
             string namespace_,            
             string podName            

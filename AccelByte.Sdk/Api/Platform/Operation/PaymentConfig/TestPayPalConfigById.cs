@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class TestPayPalConfigById : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static TestPayPalConfigByIdBuilder Builder = new TestPayPalConfigByIdBuilder();
+
+        public class TestPayPalConfigByIdBuilder
+        {
+            
+            public bool? Sandbox { get; set; }
+            
+            internal TestPayPalConfigByIdBuilder() { }
+
+
+            public TestPayPalConfigByIdBuilder SetSandbox(bool _sandbox)
+            {
+                Sandbox = _sandbox;
+                return this;
+            }
+
+
+
+
+            public TestPayPalConfigById Build(
+                string id
+            )
+            {
+                return new TestPayPalConfigById(this,
+                    id                    
+                );
+            }
+        }
+
+        private TestPayPalConfigById(TestPayPalConfigByIdBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public TestPayPalConfigById(
             string id,            
             bool? sandbox            

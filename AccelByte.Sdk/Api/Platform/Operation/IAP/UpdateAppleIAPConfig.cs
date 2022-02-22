@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateAppleIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateAppleIAPConfigBuilder Builder = new UpdateAppleIAPConfigBuilder();
+
+        public class UpdateAppleIAPConfigBuilder
+        {
+            
+            public Model.AppleIAPConfigRequest? Body { get; set; }
+            
+            internal UpdateAppleIAPConfigBuilder() { }
+
+
+
+            public UpdateAppleIAPConfigBuilder SetBody(Model.AppleIAPConfigRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateAppleIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new UpdateAppleIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateAppleIAPConfig(UpdateAppleIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateAppleIAPConfig(
             string namespace_,            
             Model.AppleIAPConfigRequest body            

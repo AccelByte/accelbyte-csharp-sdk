@@ -23,6 +23,41 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class DeleteNamespace : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteNamespaceBuilder Builder = new DeleteNamespaceBuilder();
+
+        public class DeleteNamespaceBuilder
+        {
+            
+            internal DeleteNamespaceBuilder() { }
+
+
+
+
+
+            public DeleteNamespace Build(
+                string namespace_
+            )
+            {
+                return new DeleteNamespace(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteNamespace(DeleteNamespaceBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteNamespace(
             string namespace_            
         )

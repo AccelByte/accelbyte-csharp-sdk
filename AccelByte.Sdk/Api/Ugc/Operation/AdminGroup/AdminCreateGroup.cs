@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminCreateGroup : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminCreateGroupBuilder Builder = new AdminCreateGroupBuilder();
+
+        public class AdminCreateGroupBuilder
+        {
+            
+            
+            internal AdminCreateGroupBuilder() { }
+
+
+
+
+
+            public AdminCreateGroup Build(
+                ModelsCreateGroupRequest body,
+                string namespace_
+            )
+            {
+                return new AdminCreateGroup(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminCreateGroup(AdminCreateGroupBuilder builder,
+            ModelsCreateGroupRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminCreateGroup(
             string namespace_,            
             Model.ModelsCreateGroupRequest body            

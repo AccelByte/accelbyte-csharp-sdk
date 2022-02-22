@@ -17,6 +17,45 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class SpecificAgentTypeDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SpecificAgentTypeDescriptionHandlerBuilder Builder = new SpecificAgentTypeDescriptionHandlerBuilder();
+
+        public class SpecificAgentTypeDescriptionHandlerBuilder
+        {
+            public string? AgentTypes { get; set; }
+            
+            internal SpecificAgentTypeDescriptionHandlerBuilder() { }
+
+
+            public SpecificAgentTypeDescriptionHandlerBuilder SetAgentTypes(string _agentTypes)
+            {
+                AgentTypes = _agentTypes;
+                return this;
+            }
+
+
+
+
+            public SpecificAgentTypeDescriptionHandler Build(
+            )
+            {
+                return new SpecificAgentTypeDescriptionHandler(this
+                );
+            }
+        }
+
+        private SpecificAgentTypeDescriptionHandler(SpecificAgentTypeDescriptionHandlerBuilder builder
+        )
+        {
+            
+            if (builder.AgentTypes != null) QueryParams["agentTypes"] = builder.AgentTypes;
+            
+            
+            
+            
+        }
+        #endregion
+
         public SpecificAgentTypeDescriptionHandler(
             string? agentTypes            
         )

@@ -25,6 +25,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class UpdateThirdPartyLoginPlatformDomainV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateThirdPartyLoginPlatformDomainV3Builder Builder = new UpdateThirdPartyLoginPlatformDomainV3Builder();
+
+        public class UpdateThirdPartyLoginPlatformDomainV3Builder
+        {
+            
+            
+            
+            internal UpdateThirdPartyLoginPlatformDomainV3Builder() { }
+
+
+
+
+
+            public UpdateThirdPartyLoginPlatformDomainV3 Build(
+                ModelPlatformDomainUpdateRequest body,
+                string namespace_,
+                string platformId
+            )
+            {
+                return new UpdateThirdPartyLoginPlatformDomainV3(this,
+                    body,                    
+                    namespace_,                    
+                    platformId                    
+                );
+            }
+        }
+
+        private UpdateThirdPartyLoginPlatformDomainV3(UpdateThirdPartyLoginPlatformDomainV3Builder builder,
+            ModelPlatformDomainUpdateRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateThirdPartyLoginPlatformDomainV3(
             string namespace_,            
             string platformId,            

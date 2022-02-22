@@ -22,6 +22,73 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ListKeys : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListKeysBuilder Builder = new ListKeysBuilder();
+
+        public class ListKeysBuilder
+        {
+            
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? Status { get; set; }
+            
+            internal ListKeysBuilder() { }
+
+
+            public ListKeysBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public ListKeysBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public ListKeysBuilder SetStatus(string _status)
+            {
+                Status = _status;
+                return this;
+            }
+
+
+
+
+            public ListKeys Build(
+                string keyGroupId,
+                string namespace_
+            )
+            {
+                return new ListKeys(this,
+                    keyGroupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private ListKeys(ListKeysBuilder builder,
+            string keyGroupId,
+            string namespace_
+        )
+        {
+            PathParams["keyGroupId"] = keyGroupId;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListKeys(
             string keyGroupId,            
             string namespace_,            

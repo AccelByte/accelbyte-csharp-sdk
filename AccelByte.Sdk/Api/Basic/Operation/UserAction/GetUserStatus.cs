@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class GetUserStatus : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserStatusBuilder Builder = new GetUserStatusBuilder();
+
+        public class GetUserStatusBuilder
+        {
+            
+            
+            internal GetUserStatusBuilder() { }
+
+
+
+
+
+            public GetUserStatus Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetUserStatus(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserStatus(GetUserStatusBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (userId != null) QueryParams["userId"] = userId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserStatus(
             string namespace_,            
             string userId            

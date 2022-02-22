@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class PublicGetCurrentSeason : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetCurrentSeasonBuilder Builder = new PublicGetCurrentSeasonBuilder();
+
+        public class PublicGetCurrentSeasonBuilder
+        {
+            
+            public string? Language { get; set; }
+            
+            internal PublicGetCurrentSeasonBuilder() { }
+
+
+            public PublicGetCurrentSeasonBuilder SetLanguage(string _language)
+            {
+                Language = _language;
+                return this;
+            }
+
+
+
+
+            public PublicGetCurrentSeason Build(
+                string namespace_
+            )
+            {
+                return new PublicGetCurrentSeason(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicGetCurrentSeason(PublicGetCurrentSeasonBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetCurrentSeason(
             string namespace_,            
             string? language            

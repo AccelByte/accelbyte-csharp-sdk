@@ -25,6 +25,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class UpdateNotificationTopicV1Admin : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateNotificationTopicV1AdminBuilder Builder = new UpdateNotificationTopicV1AdminBuilder();
+
+        public class UpdateNotificationTopicV1AdminBuilder
+        {
+            
+            
+            
+            internal UpdateNotificationTopicV1AdminBuilder() { }
+
+
+
+
+
+            public UpdateNotificationTopicV1Admin Build(
+                ModelUpdateTopicRequest body,
+                string namespace_,
+                string topicName
+            )
+            {
+                return new UpdateNotificationTopicV1Admin(this,
+                    body,                    
+                    namespace_,                    
+                    topicName                    
+                );
+            }
+        }
+
+        private UpdateNotificationTopicV1Admin(UpdateNotificationTopicV1AdminBuilder builder,
+            ModelUpdateTopicRequest body,
+            string namespace_,
+            string topicName
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["topicName"] = topicName;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateNotificationTopicV1Admin(
             string namespace_,            
             string topicName,            

@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminUpdateUserRoleV4 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateUserRoleV4Builder Builder = new AdminUpdateUserRoleV4Builder();
+
+        public class AdminUpdateUserRoleV4Builder
+        {
+            
+            
+            
+            internal AdminUpdateUserRoleV4Builder() { }
+
+
+
+
+
+            public AdminUpdateUserRoleV4 Build(
+                ModelAddUserRoleV4Request body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminUpdateUserRoleV4(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminUpdateUserRoleV4(AdminUpdateUserRoleV4Builder builder,
+            ModelAddUserRoleV4Request body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateUserRoleV4(
             string namespace_,            
             string userId,            

@@ -18,6 +18,36 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ListProviders : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListProvidersBuilder Builder = new ListProvidersBuilder();
+
+        public class ListProvidersBuilder
+        {
+            internal ListProvidersBuilder() { }
+
+
+
+
+
+            public ListProviders Build(
+            )
+            {
+                return new ListProviders(this
+                );
+            }
+        }
+
+        private ListProviders(ListProvidersBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListProviders(
         )
         {

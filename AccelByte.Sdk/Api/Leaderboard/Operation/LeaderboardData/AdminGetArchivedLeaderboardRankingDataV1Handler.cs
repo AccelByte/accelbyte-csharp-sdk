@@ -20,6 +20,55 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class AdminGetArchivedLeaderboardRankingDataV1Handler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder Builder = new AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder();
+
+        public class AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder
+        {
+            
+            public string? Slug { get; set; }
+            
+            
+            internal AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder() { }
+
+
+            public AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder SetSlug(string _slug)
+            {
+                Slug = _slug;
+                return this;
+            }
+
+
+
+
+            public AdminGetArchivedLeaderboardRankingDataV1Handler Build(
+                string namespace_,
+                string leaderboardCodes
+            )
+            {
+                return new AdminGetArchivedLeaderboardRankingDataV1Handler(this,
+                    namespace_,                    
+                    leaderboardCodes                    
+                );
+            }
+        }
+
+        private AdminGetArchivedLeaderboardRankingDataV1Handler(AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder builder,
+            string namespace_,
+            string leaderboardCodes
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Slug != null) QueryParams["slug"] = builder.Slug;
+            if (leaderboardCodes != null) QueryParams["leaderboardCodes"] = leaderboardCodes;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetArchivedLeaderboardRankingDataV1Handler(
             string namespace_,            
             string? slug,            

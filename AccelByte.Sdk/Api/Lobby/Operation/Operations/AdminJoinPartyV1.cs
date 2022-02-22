@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminJoinPartyV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminJoinPartyV1Builder Builder = new AdminJoinPartyV1Builder();
+
+        public class AdminJoinPartyV1Builder
+        {
+            
+            
+            
+            internal AdminJoinPartyV1Builder() { }
+
+
+
+
+
+            public AdminJoinPartyV1 Build(
+                string namespace_,
+                string partyId,
+                string userId
+            )
+            {
+                return new AdminJoinPartyV1(this,
+                    namespace_,                    
+                    partyId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminJoinPartyV1(AdminJoinPartyV1Builder builder,
+            string namespace_,
+            string partyId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["partyId"] = partyId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminJoinPartyV1(
             string namespace_,            
             string partyId,            

@@ -21,6 +21,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DisableUserWallet : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DisableUserWalletBuilder Builder = new DisableUserWalletBuilder();
+
+        public class DisableUserWalletBuilder
+        {
+            
+            
+            
+            internal DisableUserWalletBuilder() { }
+
+
+
+
+
+            public DisableUserWallet Build(
+                string namespace_,
+                string userId,
+                string walletId
+            )
+            {
+                return new DisableUserWallet(this,
+                    namespace_,                    
+                    userId,                    
+                    walletId                    
+                );
+            }
+        }
+
+        private DisableUserWallet(DisableUserWalletBuilder builder,
+            string namespace_,
+            string userId,
+            string walletId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            PathParams["walletId"] = walletId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DisableUserWallet(
             string namespace_,            
             string userId,            

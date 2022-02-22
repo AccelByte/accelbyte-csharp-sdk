@@ -70,6 +70,46 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class CreateNewGroupPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateNewGroupPublicV1Builder Builder = new CreateNewGroupPublicV1Builder();
+
+        public class CreateNewGroupPublicV1Builder
+        {
+            
+            
+            internal CreateNewGroupPublicV1Builder() { }
+
+
+
+
+
+            public CreateNewGroupPublicV1 Build(
+                ModelsPublicCreateNewGroupRequestV1 body,
+                string namespace_
+            )
+            {
+                return new CreateNewGroupPublicV1(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateNewGroupPublicV1(CreateNewGroupPublicV1Builder builder,
+            ModelsPublicCreateNewGroupRequestV1 body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateNewGroupPublicV1(
             string namespace_,            
             Model.ModelsPublicCreateNewGroupRequestV1 body            

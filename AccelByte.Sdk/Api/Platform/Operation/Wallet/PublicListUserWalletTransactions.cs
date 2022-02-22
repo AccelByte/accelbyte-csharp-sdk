@@ -22,6 +22,69 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicListUserWalletTransactions : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicListUserWalletTransactionsBuilder Builder = new PublicListUserWalletTransactionsBuilder();
+
+        public class PublicListUserWalletTransactionsBuilder
+        {
+            
+            
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            internal PublicListUserWalletTransactionsBuilder() { }
+
+
+            public PublicListUserWalletTransactionsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicListUserWalletTransactionsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public PublicListUserWalletTransactions Build(
+                string currencyCode,
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicListUserWalletTransactions(this,
+                    currencyCode,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicListUserWalletTransactions(PublicListUserWalletTransactionsBuilder builder,
+            string currencyCode,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["currencyCode"] = currencyCode;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicListUserWalletTransactions(
             string currencyCode,            
             string namespace_,            

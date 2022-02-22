@@ -106,6 +106,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminUpdateUserPermissionV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateUserPermissionV3Builder Builder = new AdminUpdateUserPermissionV3Builder();
+
+        public class AdminUpdateUserPermissionV3Builder
+        {
+            
+            
+            
+            internal AdminUpdateUserPermissionV3Builder() { }
+
+
+
+
+
+            public AdminUpdateUserPermissionV3 Build(
+                AccountcommonPermissions body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminUpdateUserPermissionV3(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminUpdateUserPermissionV3(AdminUpdateUserPermissionV3Builder builder,
+            AccountcommonPermissions body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateUserPermissionV3(
             string namespace_,            
             string userId,            

@@ -19,6 +19,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetUserDeletionStatusV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetUserDeletionStatusV3Builder Builder = new AdminGetUserDeletionStatusV3Builder();
+
+        public class AdminGetUserDeletionStatusV3Builder
+        {
+            
+            
+            internal AdminGetUserDeletionStatusV3Builder() { }
+
+
+
+
+
+            public AdminGetUserDeletionStatusV3 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminGetUserDeletionStatusV3(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminGetUserDeletionStatusV3(AdminGetUserDeletionStatusV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetUserDeletionStatusV3(
             string namespace_,            
             string userId            

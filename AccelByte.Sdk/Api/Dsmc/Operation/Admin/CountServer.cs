@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class CountServer : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CountServerBuilder Builder = new CountServerBuilder();
+
+        public class CountServerBuilder
+        {
+            
+            internal CountServerBuilder() { }
+
+
+
+
+
+            public CountServer Build(
+                string namespace_
+            )
+            {
+                return new CountServer(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private CountServer(CountServerBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public CountServer(
             string namespace_            
         )

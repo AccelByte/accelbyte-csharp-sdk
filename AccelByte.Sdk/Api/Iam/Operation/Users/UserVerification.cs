@@ -26,6 +26,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class UserVerification : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UserVerificationBuilder Builder = new UserVerificationBuilder();
+
+        public class UserVerificationBuilder
+        {
+            
+            
+            
+            internal UserVerificationBuilder() { }
+
+
+
+
+
+            public UserVerification Build(
+                ModelUserVerificationRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new UserVerification(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private UserVerification(UserVerificationBuilder builder,
+            ModelUserVerificationRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UserVerification(
             string namespace_,            
             string userId,            

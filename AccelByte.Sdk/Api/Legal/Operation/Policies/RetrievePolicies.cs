@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RetrievePolicies : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrievePoliciesBuilder Builder = new RetrievePoliciesBuilder();
+
+        public class RetrievePoliciesBuilder
+        {
+            
+            internal RetrievePoliciesBuilder() { }
+
+
+
+
+
+            public RetrievePolicies Build(
+                string countryCode
+            )
+            {
+                return new RetrievePolicies(this,
+                    countryCode                    
+                );
+            }
+        }
+
+        private RetrievePolicies(RetrievePoliciesBuilder builder,
+            string countryCode
+        )
+        {
+            PathParams["countryCode"] = countryCode;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrievePolicies(
             string countryCode            
         )

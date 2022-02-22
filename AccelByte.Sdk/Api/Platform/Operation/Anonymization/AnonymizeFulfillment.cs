@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class AnonymizeFulfillment : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AnonymizeFulfillmentBuilder Builder = new AnonymizeFulfillmentBuilder();
+
+        public class AnonymizeFulfillmentBuilder
+        {
+            
+            
+            internal AnonymizeFulfillmentBuilder() { }
+
+
+
+
+
+            public AnonymizeFulfillment Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AnonymizeFulfillment(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AnonymizeFulfillment(AnonymizeFulfillmentBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AnonymizeFulfillment(
             string namespace_,            
             string userId            

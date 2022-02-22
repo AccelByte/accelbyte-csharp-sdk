@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class UpdateCountryAgeRestriction : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateCountryAgeRestrictionBuilder Builder = new UpdateCountryAgeRestrictionBuilder();
+
+        public class UpdateCountryAgeRestrictionBuilder
+        {
+            
+            
+            
+            internal UpdateCountryAgeRestrictionBuilder() { }
+
+
+
+
+
+            public UpdateCountryAgeRestriction Build(
+                ModelCountryAgeRestrictionRequest body,
+                string countryCode,
+                string namespace_
+            )
+            {
+                return new UpdateCountryAgeRestriction(this,
+                    body,                    
+                    countryCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateCountryAgeRestriction(UpdateCountryAgeRestrictionBuilder builder,
+            ModelCountryAgeRestrictionRequest body,
+            string countryCode,
+            string namespace_
+        )
+        {
+            PathParams["countryCode"] = countryCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateCountryAgeRestriction(
             string countryCode,            
             string namespace_,            

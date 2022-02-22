@@ -54,6 +54,46 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class GetUserGroupInformationPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserGroupInformationPublicV1Builder Builder = new GetUserGroupInformationPublicV1Builder();
+
+        public class GetUserGroupInformationPublicV1Builder
+        {
+            
+            
+            internal GetUserGroupInformationPublicV1Builder() { }
+
+
+
+
+
+            public GetUserGroupInformationPublicV1 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetUserGroupInformationPublicV1(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserGroupInformationPublicV1(GetUserGroupInformationPublicV1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserGroupInformationPublicV1(
             string namespace_,            
             string userId            

@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DeleteFulfillmentScript : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteFulfillmentScriptBuilder Builder = new DeleteFulfillmentScriptBuilder();
+
+        public class DeleteFulfillmentScriptBuilder
+        {
+            
+            internal DeleteFulfillmentScriptBuilder() { }
+
+
+
+
+
+            public DeleteFulfillmentScript Build(
+                string id
+            )
+            {
+                return new DeleteFulfillmentScript(this,
+                    id                    
+                );
+            }
+        }
+
+        private DeleteFulfillmentScript(DeleteFulfillmentScriptBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteFulfillmentScript(
             string id            
         )

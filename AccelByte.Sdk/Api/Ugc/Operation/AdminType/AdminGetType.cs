@@ -18,6 +18,59 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminGetType : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetTypeBuilder Builder = new AdminGetTypeBuilder();
+
+        public class AdminGetTypeBuilder
+        {
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal AdminGetTypeBuilder() { }
+
+
+            public AdminGetTypeBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminGetTypeBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public AdminGetType Build(
+                string namespace_
+            )
+            {
+                return new AdminGetType(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetType(AdminGetTypeBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetType(
             string namespace_,            
             string? limit,            

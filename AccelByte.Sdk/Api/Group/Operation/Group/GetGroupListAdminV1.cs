@@ -30,6 +30,86 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class GetGroupListAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetGroupListAdminV1Builder Builder = new GetGroupListAdminV1Builder();
+
+        public class GetGroupListAdminV1Builder
+        {
+            
+            public string? ConfigurationCode { get; set; }
+            
+            public string? GroupName { get; set; }
+            
+            public string? GroupRegion { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetGroupListAdminV1Builder() { }
+
+
+            public GetGroupListAdminV1Builder SetConfigurationCode(string _configurationCode)
+            {
+                ConfigurationCode = _configurationCode;
+                return this;
+            }
+
+            public GetGroupListAdminV1Builder SetGroupName(string _groupName)
+            {
+                GroupName = _groupName;
+                return this;
+            }
+
+            public GetGroupListAdminV1Builder SetGroupRegion(string _groupRegion)
+            {
+                GroupRegion = _groupRegion;
+                return this;
+            }
+
+            public GetGroupListAdminV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetGroupListAdminV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetGroupListAdminV1 Build(
+                string namespace_
+            )
+            {
+                return new GetGroupListAdminV1(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetGroupListAdminV1(GetGroupListAdminV1Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ConfigurationCode != null) QueryParams["configurationCode"] = builder.ConfigurationCode;
+            if (builder.GroupName != null) QueryParams["groupName"] = builder.GroupName;
+            if (builder.GroupRegion != null) QueryParams["groupRegion"] = builder.GroupRegion;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetGroupListAdminV1(
             string namespace_,            
             string? configurationCode,            

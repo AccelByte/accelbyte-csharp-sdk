@@ -18,6 +18,69 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminGetGroupContents : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetGroupContentsBuilder Builder = new AdminGetGroupContentsBuilder();
+
+        public class AdminGetGroupContentsBuilder
+        {
+            
+            
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal AdminGetGroupContentsBuilder() { }
+
+
+            public AdminGetGroupContentsBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminGetGroupContentsBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public AdminGetGroupContents Build(
+                string groupId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminGetGroupContents(this,
+                    groupId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminGetGroupContents(AdminGetGroupContentsBuilder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetGroupContents(
             string groupId,            
             string namespace_,            

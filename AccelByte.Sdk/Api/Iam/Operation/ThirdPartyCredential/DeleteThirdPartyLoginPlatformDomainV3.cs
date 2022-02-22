@@ -25,6 +25,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class DeleteThirdPartyLoginPlatformDomainV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteThirdPartyLoginPlatformDomainV3Builder Builder = new DeleteThirdPartyLoginPlatformDomainV3Builder();
+
+        public class DeleteThirdPartyLoginPlatformDomainV3Builder
+        {
+            
+            
+            
+            internal DeleteThirdPartyLoginPlatformDomainV3Builder() { }
+
+
+
+
+
+            public DeleteThirdPartyLoginPlatformDomainV3 Build(
+                ModelPlatformDomainDeleteRequest body,
+                string namespace_,
+                string platformId
+            )
+            {
+                return new DeleteThirdPartyLoginPlatformDomainV3(this,
+                    body,                    
+                    namespace_,                    
+                    platformId                    
+                );
+            }
+        }
+
+        private DeleteThirdPartyLoginPlatformDomainV3(DeleteThirdPartyLoginPlatformDomainV3Builder builder,
+            ModelPlatformDomainDeleteRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public DeleteThirdPartyLoginPlatformDomainV3(
             string namespace_,            
             string platformId,            

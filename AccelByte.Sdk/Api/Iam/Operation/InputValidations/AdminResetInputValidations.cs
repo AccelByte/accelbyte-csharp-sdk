@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminResetInputValidations : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminResetInputValidationsBuilder Builder = new AdminResetInputValidationsBuilder();
+
+        public class AdminResetInputValidationsBuilder
+        {
+            
+            internal AdminResetInputValidationsBuilder() { }
+
+
+
+
+
+            public AdminResetInputValidations Build(
+                string field
+            )
+            {
+                return new AdminResetInputValidations(this,
+                    field                    
+                );
+            }
+        }
+
+        private AdminResetInputValidations(AdminResetInputValidationsBuilder builder,
+            string field
+        )
+        {
+            PathParams["field"] = field;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminResetInputValidations(
             string field            
         )

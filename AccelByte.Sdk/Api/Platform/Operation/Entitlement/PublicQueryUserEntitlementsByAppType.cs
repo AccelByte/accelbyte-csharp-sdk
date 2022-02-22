@@ -23,6 +23,69 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicQueryUserEntitlementsByAppType : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicQueryUserEntitlementsByAppTypeBuilder Builder = new PublicQueryUserEntitlementsByAppTypeBuilder();
+
+        public class PublicQueryUserEntitlementsByAppTypeBuilder
+        {
+            
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            
+            internal PublicQueryUserEntitlementsByAppTypeBuilder() { }
+
+
+            public PublicQueryUserEntitlementsByAppTypeBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicQueryUserEntitlementsByAppTypeBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public PublicQueryUserEntitlementsByAppType Build(
+                string namespace_,
+                string userId,
+                string appType
+            )
+            {
+                return new PublicQueryUserEntitlementsByAppType(this,
+                    namespace_,                    
+                    userId,                    
+                    appType                    
+                );
+            }
+        }
+
+        private PublicQueryUserEntitlementsByAppType(PublicQueryUserEntitlementsByAppTypeBuilder builder,
+            string namespace_,
+            string userId,
+            string appType
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (appType != null) QueryParams["appType"] = appType;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicQueryUserEntitlementsByAppType(
             string namespace_,            
             string userId,            

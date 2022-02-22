@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdatePaymentCallbackConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdatePaymentCallbackConfigBuilder Builder = new UpdatePaymentCallbackConfigBuilder();
+
+        public class UpdatePaymentCallbackConfigBuilder
+        {
+            
+            public Model.PaymentCallbackConfigUpdate? Body { get; set; }
+            
+            internal UpdatePaymentCallbackConfigBuilder() { }
+
+
+
+            public UpdatePaymentCallbackConfigBuilder SetBody(Model.PaymentCallbackConfigUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdatePaymentCallbackConfig Build(
+                string namespace_
+            )
+            {
+                return new UpdatePaymentCallbackConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdatePaymentCallbackConfig(UpdatePaymentCallbackConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdatePaymentCallbackConfig(
             string namespace_,            
             Model.PaymentCallbackConfigUpdate body            

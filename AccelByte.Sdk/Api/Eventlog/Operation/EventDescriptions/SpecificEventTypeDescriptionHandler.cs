@@ -17,6 +17,45 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class SpecificEventTypeDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SpecificEventTypeDescriptionHandlerBuilder Builder = new SpecificEventTypeDescriptionHandlerBuilder();
+
+        public class SpecificEventTypeDescriptionHandlerBuilder
+        {
+            public string? EventTypes { get; set; }
+            
+            internal SpecificEventTypeDescriptionHandlerBuilder() { }
+
+
+            public SpecificEventTypeDescriptionHandlerBuilder SetEventTypes(string _eventTypes)
+            {
+                EventTypes = _eventTypes;
+                return this;
+            }
+
+
+
+
+            public SpecificEventTypeDescriptionHandler Build(
+            )
+            {
+                return new SpecificEventTypeDescriptionHandler(this
+                );
+            }
+        }
+
+        private SpecificEventTypeDescriptionHandler(SpecificEventTypeDescriptionHandlerBuilder builder
+        )
+        {
+            
+            if (builder.EventTypes != null) QueryParams["eventTypes"] = builder.EventTypes;
+            
+            
+            
+            
+        }
+        #endregion
+
         public SpecificEventTypeDescriptionHandler(
             string? eventTypes            
         )

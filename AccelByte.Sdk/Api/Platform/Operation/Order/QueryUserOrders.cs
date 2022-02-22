@@ -22,6 +22,82 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryUserOrders : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryUserOrdersBuilder Builder = new QueryUserOrdersBuilder();
+
+        public class QueryUserOrdersBuilder
+        {
+            
+            
+            public string? ItemId { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? Status { get; set; }
+            
+            internal QueryUserOrdersBuilder() { }
+
+
+            public QueryUserOrdersBuilder SetItemId(string _itemId)
+            {
+                ItemId = _itemId;
+                return this;
+            }
+
+            public QueryUserOrdersBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryUserOrdersBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryUserOrdersBuilder SetStatus(string _status)
+            {
+                Status = _status;
+                return this;
+            }
+
+
+
+
+            public QueryUserOrders Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new QueryUserOrders(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private QueryUserOrders(QueryUserOrdersBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.ItemId != null) QueryParams["itemId"] = builder.ItemId;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryUserOrders(
             string namespace_,            
             string userId,            

@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetUserRankingPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserRankingPublicV1Builder Builder = new GetUserRankingPublicV1Builder();
+
+        public class GetUserRankingPublicV1Builder
+        {
+            
+            
+            
+            internal GetUserRankingPublicV1Builder() { }
+
+
+
+
+
+            public GetUserRankingPublicV1 Build(
+                string leaderboardCode,
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetUserRankingPublicV1(this,
+                    leaderboardCode,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserRankingPublicV1(GetUserRankingPublicV1Builder builder,
+            string leaderboardCode,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserRankingPublicV1(
             string leaderboardCode,            
             string namespace_,            

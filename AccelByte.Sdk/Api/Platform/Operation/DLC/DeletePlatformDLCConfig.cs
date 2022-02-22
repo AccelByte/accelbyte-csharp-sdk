@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DeletePlatformDLCConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeletePlatformDLCConfigBuilder Builder = new DeletePlatformDLCConfigBuilder();
+
+        public class DeletePlatformDLCConfigBuilder
+        {
+            
+            internal DeletePlatformDLCConfigBuilder() { }
+
+
+
+
+
+            public DeletePlatformDLCConfig Build(
+                string namespace_
+            )
+            {
+                return new DeletePlatformDLCConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeletePlatformDLCConfig(DeletePlatformDLCConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeletePlatformDLCConfig(
             string namespace_            
         )

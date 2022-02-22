@@ -22,6 +22,91 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryCodes : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryCodesBuilder Builder = new QueryCodesBuilder();
+
+        public class QueryCodesBuilder
+        {
+            
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public int? BatchNo { get; set; }
+            
+            public string? Code { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            internal QueryCodesBuilder() { }
+
+
+            public QueryCodesBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public QueryCodesBuilder SetBatchNo(int _batchNo)
+            {
+                BatchNo = _batchNo;
+                return this;
+            }
+
+            public QueryCodesBuilder SetCode(string _code)
+            {
+                Code = _code;
+                return this;
+            }
+
+            public QueryCodesBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryCodesBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public QueryCodes Build(
+                string campaignId,
+                string namespace_
+            )
+            {
+                return new QueryCodes(this,
+                    campaignId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private QueryCodes(QueryCodesBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            PathParams["campaignId"] = campaignId;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.BatchNo != null) QueryParams["batchNo"] = Convert.ToString(builder.BatchNo)!;
+            if (builder.Code != null) QueryParams["code"] = builder.Code;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryCodes(
             string campaignId,            
             string namespace_,            

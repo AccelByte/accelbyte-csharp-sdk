@@ -21,6 +21,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CheckEventCondition : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CheckEventConditionBuilder Builder = new CheckEventConditionBuilder();
+
+        public class CheckEventConditionBuilder
+        {
+            
+            
+            public Model.EventPayload? Body { get; set; }
+            
+            internal CheckEventConditionBuilder() { }
+
+
+
+            public CheckEventConditionBuilder SetBody(Model.EventPayload _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CheckEventCondition Build(
+                string namespace_,
+                string rewardId
+            )
+            {
+                return new CheckEventCondition(this,
+                    namespace_,                    
+                    rewardId                    
+                );
+            }
+        }
+
+        private CheckEventCondition(CheckEventConditionBuilder builder,
+            string namespace_,
+            string rewardId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["rewardId"] = rewardId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CheckEventCondition(
             string namespace_,            
             string rewardId,            

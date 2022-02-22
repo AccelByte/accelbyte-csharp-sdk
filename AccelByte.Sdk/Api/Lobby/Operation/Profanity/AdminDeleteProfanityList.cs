@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminDeleteProfanityList : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminDeleteProfanityListBuilder Builder = new AdminDeleteProfanityListBuilder();
+
+        public class AdminDeleteProfanityListBuilder
+        {
+            
+            
+            internal AdminDeleteProfanityListBuilder() { }
+
+
+
+
+
+            public AdminDeleteProfanityList Build(
+                string list,
+                string namespace_
+            )
+            {
+                return new AdminDeleteProfanityList(this,
+                    list,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminDeleteProfanityList(AdminDeleteProfanityListBuilder builder,
+            string list,
+            string namespace_
+        )
+        {
+            PathParams["list"] = list;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminDeleteProfanityList(
             string list,            
             string namespace_            

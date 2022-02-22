@@ -16,6 +16,59 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class GetUserFriendsUpdated : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserFriendsUpdatedBuilder Builder = new GetUserFriendsUpdatedBuilder();
+
+        public class GetUserFriendsUpdatedBuilder
+        {
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal GetUserFriendsUpdatedBuilder() { }
+
+
+            public GetUserFriendsUpdatedBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetUserFriendsUpdatedBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetUserFriendsUpdated Build(
+                string namespace_
+            )
+            {
+                return new GetUserFriendsUpdated(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetUserFriendsUpdated(GetUserFriendsUpdatedBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserFriendsUpdated(
             string namespace_,            
             string? limit,            

@@ -22,6 +22,72 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryPaymentProviderConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryPaymentProviderConfigBuilder Builder = new QueryPaymentProviderConfigBuilder();
+
+        public class QueryPaymentProviderConfigBuilder
+        {
+            public int? Limit { get; set; }
+            
+            public string? Namespace { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? Region { get; set; }
+            
+            internal QueryPaymentProviderConfigBuilder() { }
+
+
+            public QueryPaymentProviderConfigBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryPaymentProviderConfigBuilder SetNamespace(string _namespace_)
+            {
+                Namespace = _namespace_;
+                return this;
+            }
+
+            public QueryPaymentProviderConfigBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryPaymentProviderConfigBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+
+
+
+            public QueryPaymentProviderConfig Build(
+            )
+            {
+                return new QueryPaymentProviderConfig(this
+                );
+            }
+        }
+
+        private QueryPaymentProviderConfig(QueryPaymentProviderConfigBuilder builder
+        )
+        {
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Namespace != null) QueryParams["namespace"] = builder.Namespace;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryPaymentProviderConfig(
             int? limit,            
             string? namespace_,            

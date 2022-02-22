@@ -22,6 +22,59 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class GetGlobalStatItems : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetGlobalStatItemsBuilder Builder = new GetGlobalStatItemsBuilder();
+
+        public class GetGlobalStatItemsBuilder
+        {
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            internal GetGlobalStatItemsBuilder() { }
+
+
+            public GetGlobalStatItemsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetGlobalStatItemsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetGlobalStatItems Build(
+                string namespace_
+            )
+            {
+                return new GetGlobalStatItems(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetGlobalStatItems(GetGlobalStatItemsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetGlobalStatItems(
             string namespace_,            
             int? limit,            

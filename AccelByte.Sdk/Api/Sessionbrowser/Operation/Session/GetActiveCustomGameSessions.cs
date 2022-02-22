@@ -20,6 +20,59 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// </summary>
     public class GetActiveCustomGameSessions : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetActiveCustomGameSessionsBuilder Builder = new GetActiveCustomGameSessionsBuilder();
+
+        public class GetActiveCustomGameSessionsBuilder
+        {
+            
+            public string? ServerRegion { get; set; }
+            
+            public string? SessionId { get; set; }
+            
+            internal GetActiveCustomGameSessionsBuilder() { }
+
+
+            public GetActiveCustomGameSessionsBuilder SetServerRegion(string _serverRegion)
+            {
+                ServerRegion = _serverRegion;
+                return this;
+            }
+
+            public GetActiveCustomGameSessionsBuilder SetSessionId(string _sessionId)
+            {
+                SessionId = _sessionId;
+                return this;
+            }
+
+
+
+
+            public GetActiveCustomGameSessions Build(
+                string namespace_
+            )
+            {
+                return new GetActiveCustomGameSessions(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetActiveCustomGameSessions(GetActiveCustomGameSessionsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ServerRegion != null) QueryParams["server_region"] = builder.ServerRegion;
+            if (builder.SessionId != null) QueryParams["session_id"] = builder.SessionId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetActiveCustomGameSessions(
             string namespace_,            
             string? serverRegion,            

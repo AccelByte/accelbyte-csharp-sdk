@@ -23,6 +23,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetRootCategories : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetRootCategoriesBuilder Builder = new GetRootCategoriesBuilder();
+
+        public class GetRootCategoriesBuilder
+        {
+            
+            public string? StoreId { get; set; }
+            
+            internal GetRootCategoriesBuilder() { }
+
+
+            public GetRootCategoriesBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public GetRootCategories Build(
+                string namespace_
+            )
+            {
+                return new GetRootCategories(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetRootCategories(GetRootCategoriesBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetRootCategories(
             string namespace_,            
             string? storeId            

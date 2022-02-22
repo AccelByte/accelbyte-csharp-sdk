@@ -18,6 +18,64 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicWebLinkPlatform : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicWebLinkPlatformBuilder Builder = new PublicWebLinkPlatformBuilder();
+
+        public class PublicWebLinkPlatformBuilder
+        {
+            
+            
+            public string? ClientId { get; set; }
+            
+            public string? RedirectUri { get; set; }
+            
+            internal PublicWebLinkPlatformBuilder() { }
+
+
+            public PublicWebLinkPlatformBuilder SetClientId(string _clientId)
+            {
+                ClientId = _clientId;
+                return this;
+            }
+
+            public PublicWebLinkPlatformBuilder SetRedirectUri(string _redirectUri)
+            {
+                RedirectUri = _redirectUri;
+                return this;
+            }
+
+
+
+
+            public PublicWebLinkPlatform Build(
+                string namespace_,
+                string platformId
+            )
+            {
+                return new PublicWebLinkPlatform(this,
+                    namespace_,                    
+                    platformId                    
+                );
+            }
+        }
+
+        private PublicWebLinkPlatform(PublicWebLinkPlatformBuilder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            
+            if (builder.ClientId != null) QueryParams["clientId"] = builder.ClientId;
+            if (builder.RedirectUri != null) QueryParams["redirectUri"] = builder.RedirectUri;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicWebLinkPlatform(
             string namespace_,            
             string platformId,            

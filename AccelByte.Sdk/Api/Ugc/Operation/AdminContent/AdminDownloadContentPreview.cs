@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminDownloadContentPreview : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminDownloadContentPreviewBuilder Builder = new AdminDownloadContentPreviewBuilder();
+
+        public class AdminDownloadContentPreviewBuilder
+        {
+            
+            
+            internal AdminDownloadContentPreviewBuilder() { }
+
+
+
+
+
+            public AdminDownloadContentPreview Build(
+                string contentId,
+                string namespace_
+            )
+            {
+                return new AdminDownloadContentPreview(this,
+                    contentId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminDownloadContentPreview(AdminDownloadContentPreviewBuilder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            PathParams["contentId"] = contentId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminDownloadContentPreview(
             string contentId,            
             string namespace_            

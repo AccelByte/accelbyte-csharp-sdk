@@ -28,6 +28,50 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class SearchUser : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SearchUserBuilder Builder = new SearchUserBuilder();
+
+        public class SearchUserBuilder
+        {
+            
+            public string? Query { get; set; }
+            
+            internal SearchUserBuilder() { }
+
+
+            public SearchUserBuilder SetQuery(string _query)
+            {
+                Query = _query;
+                return this;
+            }
+
+
+
+
+            public SearchUser Build(
+                string namespace_
+            )
+            {
+                return new SearchUser(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private SearchUser(SearchUserBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Query != null) QueryParams["query"] = builder.Query;
+            
+            
+            
+            
+        }
+        #endregion
+
         public SearchUser(
             string namespace_,            
             string? query            

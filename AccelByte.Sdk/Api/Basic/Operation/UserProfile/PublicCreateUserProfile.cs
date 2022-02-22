@@ -25,6 +25,55 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class PublicCreateUserProfile : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicCreateUserProfileBuilder Builder = new PublicCreateUserProfileBuilder();
+
+        public class PublicCreateUserProfileBuilder
+        {
+            
+            
+            public Model.UserProfileCreate? Body { get; set; }
+            
+            internal PublicCreateUserProfileBuilder() { }
+
+
+
+            public PublicCreateUserProfileBuilder SetBody(Model.UserProfileCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicCreateUserProfile Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicCreateUserProfile(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicCreateUserProfile(PublicCreateUserProfileBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicCreateUserProfile(
             string namespace_,            
             string userId,            

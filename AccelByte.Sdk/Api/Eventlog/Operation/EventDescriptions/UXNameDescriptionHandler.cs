@@ -17,6 +17,36 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class UXNameDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UXNameDescriptionHandlerBuilder Builder = new UXNameDescriptionHandlerBuilder();
+
+        public class UXNameDescriptionHandlerBuilder
+        {
+            internal UXNameDescriptionHandlerBuilder() { }
+
+
+
+
+
+            public UXNameDescriptionHandler Build(
+            )
+            {
+                return new UXNameDescriptionHandler(this
+                );
+            }
+        }
+
+        private UXNameDescriptionHandler(UXNameDescriptionHandlerBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public UXNameDescriptionHandler(
         )
         {

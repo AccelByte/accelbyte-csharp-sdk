@@ -18,6 +18,64 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminGetContent : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetContentBuilder Builder = new AdminGetContentBuilder();
+
+        public class AdminGetContentBuilder
+        {
+            
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal AdminGetContentBuilder() { }
+
+
+            public AdminGetContentBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminGetContentBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public AdminGetContent Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminGetContent(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminGetContent(AdminGetContentBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetContent(
             string namespace_,            
             string userId,            

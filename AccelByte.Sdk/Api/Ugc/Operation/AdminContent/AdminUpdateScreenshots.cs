@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminUpdateScreenshots : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateScreenshotsBuilder Builder = new AdminUpdateScreenshotsBuilder();
+
+        public class AdminUpdateScreenshotsBuilder
+        {
+            
+            
+            
+            internal AdminUpdateScreenshotsBuilder() { }
+
+
+
+
+
+            public AdminUpdateScreenshots Build(
+                ModelsUpdateScreenshotRequest body,
+                string contentId,
+                string namespace_
+            )
+            {
+                return new AdminUpdateScreenshots(this,
+                    body,                    
+                    contentId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminUpdateScreenshots(AdminUpdateScreenshotsBuilder builder,
+            ModelsUpdateScreenshotRequest body,
+            string contentId,
+            string namespace_
+        )
+        {
+            PathParams["contentId"] = contentId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateScreenshots(
             string contentId,            
             string namespace_,            

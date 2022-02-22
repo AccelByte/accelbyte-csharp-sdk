@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminGetGroup : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetGroupBuilder Builder = new AdminGetGroupBuilder();
+
+        public class AdminGetGroupBuilder
+        {
+            
+            
+            
+            internal AdminGetGroupBuilder() { }
+
+
+
+
+
+            public AdminGetGroup Build(
+                string groupId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminGetGroup(this,
+                    groupId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminGetGroup(AdminGetGroupBuilder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetGroup(
             string groupId,            
             string namespace_,            

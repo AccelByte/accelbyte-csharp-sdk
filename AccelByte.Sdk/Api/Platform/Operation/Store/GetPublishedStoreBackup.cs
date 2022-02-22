@@ -23,6 +23,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetPublishedStoreBackup : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPublishedStoreBackupBuilder Builder = new GetPublishedStoreBackupBuilder();
+
+        public class GetPublishedStoreBackupBuilder
+        {
+            
+            internal GetPublishedStoreBackupBuilder() { }
+
+
+
+
+
+            public GetPublishedStoreBackup Build(
+                string namespace_
+            )
+            {
+                return new GetPublishedStoreBackup(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetPublishedStoreBackup(GetPublishedStoreBackupBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPublishedStoreBackup(
             string namespace_            
         )

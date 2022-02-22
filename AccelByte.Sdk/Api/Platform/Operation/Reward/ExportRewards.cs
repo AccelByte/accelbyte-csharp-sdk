@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ExportRewards : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ExportRewardsBuilder Builder = new ExportRewardsBuilder();
+
+        public class ExportRewardsBuilder
+        {
+            
+            internal ExportRewardsBuilder() { }
+
+
+
+
+
+            public ExportRewards Build(
+                string namespace_
+            )
+            {
+                return new ExportRewards(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ExportRewards(ExportRewardsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ExportRewards(
             string namespace_            
         )

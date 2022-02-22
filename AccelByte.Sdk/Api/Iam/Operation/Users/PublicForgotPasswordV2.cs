@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicForgotPasswordV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicForgotPasswordV2Builder Builder = new PublicForgotPasswordV2Builder();
+
+        public class PublicForgotPasswordV2Builder
+        {
+            
+            
+            internal PublicForgotPasswordV2Builder() { }
+
+
+
+
+
+            public PublicForgotPasswordV2 Build(
+                ModelSendVerificationCodeRequest body,
+                string namespace_
+            )
+            {
+                return new PublicForgotPasswordV2(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicForgotPasswordV2(PublicForgotPasswordV2Builder builder,
+            ModelSendVerificationCodeRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PublicForgotPasswordV2(
             string namespace_,            
             Model.ModelSendVerificationCodeRequest body            

@@ -18,6 +18,59 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class GetFollowedContent : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetFollowedContentBuilder Builder = new GetFollowedContentBuilder();
+
+        public class GetFollowedContentBuilder
+        {
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal GetFollowedContentBuilder() { }
+
+
+            public GetFollowedContentBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetFollowedContentBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetFollowedContent Build(
+                string namespace_
+            )
+            {
+                return new GetFollowedContent(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetFollowedContent(GetFollowedContentBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetFollowedContent(
             string namespace_,            
             string? limit,            

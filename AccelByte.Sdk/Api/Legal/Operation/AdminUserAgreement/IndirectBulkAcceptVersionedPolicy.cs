@@ -19,6 +19,74 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class IndirectBulkAcceptVersionedPolicy : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static IndirectBulkAcceptVersionedPolicyBuilder Builder = new IndirectBulkAcceptVersionedPolicyBuilder();
+
+        public class IndirectBulkAcceptVersionedPolicyBuilder
+        {
+            
+            
+            public string? PublisherUserId { get; set; }
+            
+            
+            
+            public List<Model.AcceptAgreementRequest>? Body { get; set; }
+            
+            internal IndirectBulkAcceptVersionedPolicyBuilder() { }
+
+
+            public IndirectBulkAcceptVersionedPolicyBuilder SetPublisherUserId(string _publisherUserId)
+            {
+                PublisherUserId = _publisherUserId;
+                return this;
+            }
+
+
+            public IndirectBulkAcceptVersionedPolicyBuilder SetBody(List<Model.AcceptAgreementRequest> _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public IndirectBulkAcceptVersionedPolicy Build(
+                string namespace_,
+                string userId,
+                string clientId,
+                string countryCode
+            )
+            {
+                return new IndirectBulkAcceptVersionedPolicy(this,
+                    namespace_,                    
+                    userId,                    
+                    clientId,                    
+                    countryCode                    
+                );
+            }
+        }
+
+        private IndirectBulkAcceptVersionedPolicy(IndirectBulkAcceptVersionedPolicyBuilder builder,
+            string namespace_,
+            string userId,
+            string clientId,
+            string countryCode
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.PublisherUserId != null) QueryParams["publisherUserId"] = builder.PublisherUserId;
+            if (clientId != null) QueryParams["clientId"] = clientId;
+            if (countryCode != null) QueryParams["countryCode"] = countryCode;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public IndirectBulkAcceptVersionedPolicy(
             string namespace_,            
             string userId,            

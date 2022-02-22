@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetIAPItemConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetIAPItemConfigBuilder Builder = new GetIAPItemConfigBuilder();
+
+        public class GetIAPItemConfigBuilder
+        {
+            
+            internal GetIAPItemConfigBuilder() { }
+
+
+
+
+
+            public GetIAPItemConfig Build(
+                string namespace_
+            )
+            {
+                return new GetIAPItemConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetIAPItemConfig(GetIAPItemConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetIAPItemConfig(
             string namespace_            
         )

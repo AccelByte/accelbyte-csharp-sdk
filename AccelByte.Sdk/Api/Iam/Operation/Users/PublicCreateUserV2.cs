@@ -31,6 +31,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicCreateUserV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicCreateUserV2Builder Builder = new PublicCreateUserV2Builder();
+
+        public class PublicCreateUserV2Builder
+        {
+            
+            
+            internal PublicCreateUserV2Builder() { }
+
+
+
+
+
+            public PublicCreateUserV2 Build(
+                ModelUserCreateRequest body,
+                string namespace_
+            )
+            {
+                return new PublicCreateUserV2(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicCreateUserV2(PublicCreateUserV2Builder builder,
+            ModelUserCreateRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PublicCreateUserV2(
             string namespace_,            
             Model.ModelUserCreateRequest body            

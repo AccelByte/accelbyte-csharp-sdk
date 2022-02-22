@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ListLocalServer : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListLocalServerBuilder Builder = new ListLocalServerBuilder();
+
+        public class ListLocalServerBuilder
+        {
+            
+            internal ListLocalServerBuilder() { }
+
+
+
+
+
+            public ListLocalServer Build(
+                string namespace_
+            )
+            {
+                return new ListLocalServer(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ListLocalServer(ListLocalServerBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListLocalServer(
             string namespace_            
         )

@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class CreateTier : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateTierBuilder Builder = new CreateTierBuilder();
+
+        public class CreateTierBuilder
+        {
+            
+            
+            public Model.TierCreate? Body { get; set; }
+            
+            internal CreateTierBuilder() { }
+
+
+
+            public CreateTierBuilder SetBody(Model.TierCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateTier Build(
+                string namespace_,
+                string seasonId
+            )
+            {
+                return new CreateTier(this,
+                    namespace_,                    
+                    seasonId                    
+                );
+            }
+        }
+
+        private CreateTier(CreateTierBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["seasonId"] = seasonId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateTier(
             string namespace_,            
             string seasonId,            

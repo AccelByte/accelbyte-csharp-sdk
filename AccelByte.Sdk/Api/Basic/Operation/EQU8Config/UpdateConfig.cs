@@ -21,6 +21,50 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class UpdateConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateConfigBuilder Builder = new UpdateConfigBuilder();
+
+        public class UpdateConfigBuilder
+        {
+            
+            public Model.ADTOForUpdateEqu8ConfigAPICall? Body { get; set; }
+            
+            internal UpdateConfigBuilder() { }
+
+
+
+            public UpdateConfigBuilder SetBody(Model.ADTOForUpdateEqu8ConfigAPICall _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateConfig Build(
+                string namespace_
+            )
+            {
+                return new UpdateConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateConfig(UpdateConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateConfig(
             string namespace_,            
             Model.ADTOForUpdateEqu8ConfigAPICall body            

@@ -19,6 +19,46 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminCreateType : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminCreateTypeBuilder Builder = new AdminCreateTypeBuilder();
+
+        public class AdminCreateTypeBuilder
+        {
+            
+            
+            internal AdminCreateTypeBuilder() { }
+
+
+
+
+
+            public AdminCreateType Build(
+                ModelsCreateTypeRequest body,
+                string namespace_
+            )
+            {
+                return new AdminCreateType(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminCreateType(AdminCreateTypeBuilder builder,
+            ModelsCreateTypeRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminCreateType(
             string namespace_,            
             Model.ModelsCreateTypeRequest body            

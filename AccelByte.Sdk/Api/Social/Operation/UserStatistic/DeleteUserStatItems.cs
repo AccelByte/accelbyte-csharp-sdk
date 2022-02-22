@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class DeleteUserStatItems : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteUserStatItemsBuilder Builder = new DeleteUserStatItemsBuilder();
+
+        public class DeleteUserStatItemsBuilder
+        {
+            
+            
+            
+            internal DeleteUserStatItemsBuilder() { }
+
+
+
+
+
+            public DeleteUserStatItems Build(
+                string namespace_,
+                string statCode,
+                string userId
+            )
+            {
+                return new DeleteUserStatItems(this,
+                    namespace_,                    
+                    statCode,                    
+                    userId                    
+                );
+            }
+        }
+
+        private DeleteUserStatItems(DeleteUserStatItemsBuilder builder,
+            string namespace_,
+            string statCode,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["statCode"] = statCode;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteUserStatItems(
             string namespace_,            
             string statCode,            

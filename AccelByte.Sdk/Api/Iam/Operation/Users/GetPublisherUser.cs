@@ -26,6 +26,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetPublisherUser : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPublisherUserBuilder Builder = new GetPublisherUserBuilder();
+
+        public class GetPublisherUserBuilder
+        {
+            
+            
+            internal GetPublisherUserBuilder() { }
+
+
+
+
+
+            public GetPublisherUser Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetPublisherUser(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetPublisherUser(GetPublisherUserBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPublisherUser(
             string namespace_,            
             string userId            

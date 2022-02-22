@@ -22,6 +22,68 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateStripeConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateStripeConfigBuilder Builder = new UpdateStripeConfigBuilder();
+
+        public class UpdateStripeConfigBuilder
+        {
+            
+            public bool? Sandbox { get; set; }
+            
+            public bool? Validate { get; set; }
+            
+            public Model.StripeConfig? Body { get; set; }
+            
+            internal UpdateStripeConfigBuilder() { }
+
+
+            public UpdateStripeConfigBuilder SetSandbox(bool _sandbox)
+            {
+                Sandbox = _sandbox;
+                return this;
+            }
+
+            public UpdateStripeConfigBuilder SetValidate(bool _validate)
+            {
+                Validate = _validate;
+                return this;
+            }
+
+
+            public UpdateStripeConfigBuilder SetBody(Model.StripeConfig _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateStripeConfig Build(
+                string id
+            )
+            {
+                return new UpdateStripeConfig(this,
+                    id                    
+                );
+            }
+        }
+
+        private UpdateStripeConfig(UpdateStripeConfigBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+            if (builder.Validate != null) QueryParams["validate"] = Convert.ToString(builder.Validate)!;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateStripeConfig(
             string id,            
             bool? sandbox,            

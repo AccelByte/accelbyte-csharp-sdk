@@ -30,6 +30,46 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class GetSingleMemberRoleAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetSingleMemberRoleAdminV1Builder Builder = new GetSingleMemberRoleAdminV1Builder();
+
+        public class GetSingleMemberRoleAdminV1Builder
+        {
+            
+            
+            internal GetSingleMemberRoleAdminV1Builder() { }
+
+
+
+
+
+            public GetSingleMemberRoleAdminV1 Build(
+                string memberRoleId,
+                string namespace_
+            )
+            {
+                return new GetSingleMemberRoleAdminV1(this,
+                    memberRoleId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetSingleMemberRoleAdminV1(GetSingleMemberRoleAdminV1Builder builder,
+            string memberRoleId,
+            string namespace_
+        )
+        {
+            PathParams["memberRoleId"] = memberRoleId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetSingleMemberRoleAdminV1(
             string memberRoleId,            
             string namespace_            

@@ -30,6 +30,51 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class UpdateMemberRolePermissionAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateMemberRolePermissionAdminV1Builder Builder = new UpdateMemberRolePermissionAdminV1Builder();
+
+        public class UpdateMemberRolePermissionAdminV1Builder
+        {
+            
+            
+            
+            internal UpdateMemberRolePermissionAdminV1Builder() { }
+
+
+
+
+
+            public UpdateMemberRolePermissionAdminV1 Build(
+                ModelsUpdateMemberRolePermissionsRequestV1 body,
+                string memberRoleId,
+                string namespace_
+            )
+            {
+                return new UpdateMemberRolePermissionAdminV1(this,
+                    body,                    
+                    memberRoleId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateMemberRolePermissionAdminV1(UpdateMemberRolePermissionAdminV1Builder builder,
+            ModelsUpdateMemberRolePermissionsRequestV1 body,
+            string memberRoleId,
+            string namespace_
+        )
+        {
+            PathParams["memberRoleId"] = memberRoleId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateMemberRolePermissionAdminV1(
             string memberRoleId,            
             string namespace_,            

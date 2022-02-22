@@ -25,6 +25,46 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class DeleteBulkLeaderboardConfigurationAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteBulkLeaderboardConfigurationAdminV1Builder Builder = new DeleteBulkLeaderboardConfigurationAdminV1Builder();
+
+        public class DeleteBulkLeaderboardConfigurationAdminV1Builder
+        {
+            
+            
+            internal DeleteBulkLeaderboardConfigurationAdminV1Builder() { }
+
+
+
+
+
+            public DeleteBulkLeaderboardConfigurationAdminV1 Build(
+                ModelsDeleteBulkLeaderboardsReq body,
+                string namespace_
+            )
+            {
+                return new DeleteBulkLeaderboardConfigurationAdminV1(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteBulkLeaderboardConfigurationAdminV1(DeleteBulkLeaderboardConfigurationAdminV1Builder builder,
+            ModelsDeleteBulkLeaderboardsReq body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public DeleteBulkLeaderboardConfigurationAdminV1(
             string namespace_,            
             Model.ModelsDeleteBulkLeaderboardsReq body            

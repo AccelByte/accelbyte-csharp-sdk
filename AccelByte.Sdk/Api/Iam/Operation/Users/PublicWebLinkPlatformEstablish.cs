@@ -18,6 +18,52 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicWebLinkPlatformEstablish : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicWebLinkPlatformEstablishBuilder Builder = new PublicWebLinkPlatformEstablishBuilder();
+
+        public class PublicWebLinkPlatformEstablishBuilder
+        {
+            
+            
+            
+            internal PublicWebLinkPlatformEstablishBuilder() { }
+
+
+
+
+
+            public PublicWebLinkPlatformEstablish Build(
+                string namespace_,
+                string platformId,
+                string state
+            )
+            {
+                return new PublicWebLinkPlatformEstablish(this,
+                    namespace_,                    
+                    platformId,                    
+                    state                    
+                );
+            }
+        }
+
+        private PublicWebLinkPlatformEstablish(PublicWebLinkPlatformEstablishBuilder builder,
+            string namespace_,
+            string platformId,
+            string state
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            
+            if (state != null) QueryParams["state"] = state;
+            
+            
+            
+            
+            LocationQuery = "PLACEHOLDER";
+        }
+        #endregion
+
         public PublicWebLinkPlatformEstablish(
             string namespace_,            
             string platformId,            

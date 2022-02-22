@@ -22,6 +22,59 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ImportStore : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ImportStoreBuilder Builder = new ImportStoreBuilder();
+
+        public class ImportStoreBuilder
+        {
+            
+            public string? StoreId { get; set; }
+            
+            public Stream? File { get; set; }
+            
+            internal ImportStoreBuilder() { }
+
+
+            public ImportStoreBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+            public ImportStoreBuilder SetFile(Stream _file)
+            {
+                File = _file;
+                return this;
+            }
+
+
+            public ImportStore Build(
+                string namespace_
+            )
+            {
+                return new ImportStore(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ImportStore(ImportStoreBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            
+            if (builder.File != null) FormParams["file"] = builder.File;
+            
+            
+            
+        }
+        #endregion
+
         public ImportStore(
             string namespace_,            
             string? storeId,            

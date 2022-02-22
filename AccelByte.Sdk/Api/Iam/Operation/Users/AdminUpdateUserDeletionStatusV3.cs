@@ -19,6 +19,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminUpdateUserDeletionStatusV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateUserDeletionStatusV3Builder Builder = new AdminUpdateUserDeletionStatusV3Builder();
+
+        public class AdminUpdateUserDeletionStatusV3Builder
+        {
+            
+            
+            
+            internal AdminUpdateUserDeletionStatusV3Builder() { }
+
+
+
+
+
+            public AdminUpdateUserDeletionStatusV3 Build(
+                ModelUpdateUserDeletionStatusRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminUpdateUserDeletionStatusV3(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminUpdateUserDeletionStatusV3(AdminUpdateUserDeletionStatusV3Builder builder,
+            ModelUpdateUserDeletionStatusRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateUserDeletionStatusV3(
             string namespace_,            
             string userId,            

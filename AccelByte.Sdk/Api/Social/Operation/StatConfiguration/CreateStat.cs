@@ -21,6 +21,50 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class CreateStat : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateStatBuilder Builder = new CreateStatBuilder();
+
+        public class CreateStatBuilder
+        {
+            
+            public Model.StatCreate? Body { get; set; }
+            
+            internal CreateStatBuilder() { }
+
+
+
+            public CreateStatBuilder SetBody(Model.StatCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateStat Build(
+                string namespace_
+            )
+            {
+                return new CreateStat(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateStat(CreateStatBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateStat(
             string namespace_,            
             Model.StatCreate body            

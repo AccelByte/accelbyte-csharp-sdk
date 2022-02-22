@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DownloadUserOrderReceipt : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DownloadUserOrderReceiptBuilder Builder = new DownloadUserOrderReceiptBuilder();
+
+        public class DownloadUserOrderReceiptBuilder
+        {
+            
+            
+            
+            internal DownloadUserOrderReceiptBuilder() { }
+
+
+
+
+
+            public DownloadUserOrderReceipt Build(
+                string namespace_,
+                string orderNo,
+                string userId
+            )
+            {
+                return new DownloadUserOrderReceipt(this,
+                    namespace_,                    
+                    orderNo,                    
+                    userId                    
+                );
+            }
+        }
+
+        private DownloadUserOrderReceipt(DownloadUserOrderReceiptBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["orderNo"] = orderNo;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DownloadUserOrderReceipt(
             string namespace_,            
             string orderNo,            

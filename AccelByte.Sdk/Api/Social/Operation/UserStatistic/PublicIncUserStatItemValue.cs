@@ -21,6 +21,60 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class PublicIncUserStatItemValue : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicIncUserStatItemValueBuilder Builder = new PublicIncUserStatItemValueBuilder();
+
+        public class PublicIncUserStatItemValueBuilder
+        {
+            
+            
+            
+            public Model.StatItemInc? Body { get; set; }
+            
+            internal PublicIncUserStatItemValueBuilder() { }
+
+
+
+            public PublicIncUserStatItemValueBuilder SetBody(Model.StatItemInc _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicIncUserStatItemValue Build(
+                string namespace_,
+                string statCode,
+                string userId
+            )
+            {
+                return new PublicIncUserStatItemValue(this,
+                    namespace_,                    
+                    statCode,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicIncUserStatItemValue(PublicIncUserStatItemValueBuilder builder,
+            string namespace_,
+            string statCode,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["statCode"] = statCode;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicIncUserStatItemValue(
             string namespace_,            
             string statCode,            

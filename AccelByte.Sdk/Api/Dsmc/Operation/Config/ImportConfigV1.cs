@@ -24,6 +24,50 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ImportConfigV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ImportConfigV1Builder Builder = new ImportConfigV1Builder();
+
+        public class ImportConfigV1Builder
+        {
+            
+            public Stream? File { get; set; }
+            
+            internal ImportConfigV1Builder() { }
+
+
+
+
+            public ImportConfigV1Builder SetFile(Stream _file)
+            {
+                File = _file;
+                return this;
+            }
+
+
+            public ImportConfigV1 Build(
+                string namespace_
+            )
+            {
+                return new ImportConfigV1(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ImportConfigV1(ImportConfigV1Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            if (builder.File != null) FormParams["file"] = builder.File;
+            
+            
+            
+        }
+        #endregion
+
         public ImportConfigV1(
             string namespace_,            
             Stream? file            

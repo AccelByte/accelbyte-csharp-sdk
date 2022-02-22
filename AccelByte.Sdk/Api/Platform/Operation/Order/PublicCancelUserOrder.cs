@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicCancelUserOrder : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicCancelUserOrderBuilder Builder = new PublicCancelUserOrderBuilder();
+
+        public class PublicCancelUserOrderBuilder
+        {
+            
+            
+            
+            internal PublicCancelUserOrderBuilder() { }
+
+
+
+
+
+            public PublicCancelUserOrder Build(
+                string namespace_,
+                string orderNo,
+                string userId
+            )
+            {
+                return new PublicCancelUserOrder(this,
+                    namespace_,                    
+                    orderNo,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicCancelUserOrder(PublicCancelUserOrderBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["orderNo"] = orderNo;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicCancelUserOrder(
             string namespace_,            
             string orderNo,            

@@ -25,6 +25,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetRoleManagers : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetRoleManagersBuilder Builder = new GetRoleManagersBuilder();
+
+        public class GetRoleManagersBuilder
+        {
+            
+            internal GetRoleManagersBuilder() { }
+
+
+
+
+
+            public GetRoleManagers Build(
+                string roleId
+            )
+            {
+                return new GetRoleManagers(this,
+                    roleId                    
+                );
+            }
+        }
+
+        private GetRoleManagers(GetRoleManagersBuilder builder,
+            string roleId
+        )
+        {
+            PathParams["roleId"] = roleId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetRoleManagers(
             string roleId            
         )

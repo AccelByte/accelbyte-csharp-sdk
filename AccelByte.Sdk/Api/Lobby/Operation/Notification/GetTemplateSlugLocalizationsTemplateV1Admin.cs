@@ -22,6 +22,73 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class GetTemplateSlugLocalizationsTemplateV1Admin : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetTemplateSlugLocalizationsTemplateV1AdminBuilder Builder = new GetTemplateSlugLocalizationsTemplateV1AdminBuilder();
+
+        public class GetTemplateSlugLocalizationsTemplateV1AdminBuilder
+        {
+            
+            
+            public string? After { get; set; }
+            
+            public string? Before { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            internal GetTemplateSlugLocalizationsTemplateV1AdminBuilder() { }
+
+
+            public GetTemplateSlugLocalizationsTemplateV1AdminBuilder SetAfter(string _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public GetTemplateSlugLocalizationsTemplateV1AdminBuilder SetBefore(string _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public GetTemplateSlugLocalizationsTemplateV1AdminBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+
+
+
+            public GetTemplateSlugLocalizationsTemplateV1Admin Build(
+                string namespace_,
+                string templateSlug
+            )
+            {
+                return new GetTemplateSlugLocalizationsTemplateV1Admin(this,
+                    namespace_,                    
+                    templateSlug                    
+                );
+            }
+        }
+
+        private GetTemplateSlugLocalizationsTemplateV1Admin(GetTemplateSlugLocalizationsTemplateV1AdminBuilder builder,
+            string namespace_,
+            string templateSlug
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["templateSlug"] = templateSlug;
+            
+            if (builder.After != null) QueryParams["after"] = builder.After;
+            if (builder.Before != null) QueryParams["before"] = builder.Before;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetTemplateSlugLocalizationsTemplateV1Admin(
             string namespace_,            
             string templateSlug,            

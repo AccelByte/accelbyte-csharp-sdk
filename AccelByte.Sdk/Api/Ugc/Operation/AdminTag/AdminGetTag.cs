@@ -18,6 +18,59 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminGetTag : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetTagBuilder Builder = new AdminGetTagBuilder();
+
+        public class AdminGetTagBuilder
+        {
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal AdminGetTagBuilder() { }
+
+
+            public AdminGetTagBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminGetTagBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public AdminGetTag Build(
+                string namespace_
+            )
+            {
+                return new AdminGetTag(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetTag(AdminGetTagBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetTag(
             string namespace_,            
             string? limit,            

@@ -22,6 +22,61 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class UpdateOverrideRegionOverride : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateOverrideRegionOverrideBuilder Builder = new UpdateOverrideRegionOverrideBuilder();
+
+        public class UpdateOverrideRegionOverrideBuilder
+        {
+            
+            
+            
+            
+            
+            internal UpdateOverrideRegionOverrideBuilder() { }
+
+
+
+
+
+            public UpdateOverrideRegionOverride Build(
+                ModelsUpdateRegionOverrideRequest body,
+                string deployment,
+                string namespace_,
+                string region,
+                string version
+            )
+            {
+                return new UpdateOverrideRegionOverride(this,
+                    body,                    
+                    deployment,                    
+                    namespace_,                    
+                    region,                    
+                    version                    
+                );
+            }
+        }
+
+        private UpdateOverrideRegionOverride(UpdateOverrideRegionOverrideBuilder builder,
+            ModelsUpdateRegionOverrideRequest body,
+            string deployment,
+            string namespace_,
+            string region,
+            string version
+        )
+        {
+            PathParams["deployment"] = deployment;
+            PathParams["namespace"] = namespace_;
+            PathParams["region"] = region;
+            PathParams["version"] = version;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateOverrideRegionOverride(
             string deployment,            
             string namespace_,            

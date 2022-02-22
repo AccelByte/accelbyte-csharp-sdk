@@ -23,6 +23,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetStore : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetStoreBuilder Builder = new GetStoreBuilder();
+
+        public class GetStoreBuilder
+        {
+            
+            
+            internal GetStoreBuilder() { }
+
+
+
+
+
+            public GetStore Build(
+                string namespace_,
+                string storeId
+            )
+            {
+                return new GetStore(this,
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private GetStore(GetStoreBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["storeId"] = storeId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetStore(
             string namespace_,            
             string storeId            

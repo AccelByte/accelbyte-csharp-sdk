@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
     /// </summary>
     public class ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder Builder = new ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder();
+
+        public class ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder
+        {
+            
+            
+            internal ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder() { }
+
+
+
+
+
+            public ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut Build(
+                string playtime,
+                string steamId
+            )
+            {
+                return new ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(this,
+                    playtime,                    
+                    steamId                    
+                );
+            }
+        }
+
+        private ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder builder,
+            string playtime,
+            string steamId
+        )
+        {
+            PathParams["playtime"] = playtime;
+            PathParams["steamId"] = steamId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(
             string playtime,            
             string steamId            

@@ -21,6 +21,51 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class GetSlotData : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetSlotDataBuilder Builder = new GetSlotDataBuilder();
+
+        public class GetSlotDataBuilder
+        {
+            
+            
+            
+            internal GetSlotDataBuilder() { }
+
+
+
+
+
+            public GetSlotData Build(
+                string namespace_,
+                string slotId,
+                string userId
+            )
+            {
+                return new GetSlotData(this,
+                    namespace_,                    
+                    slotId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetSlotData(GetSlotDataBuilder builder,
+            string namespace_,
+            string slotId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["slotId"] = slotId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetSlotData(
             string namespace_,            
             string slotId,            

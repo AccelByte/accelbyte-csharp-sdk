@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AddUserRole : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AddUserRoleBuilder Builder = new AddUserRoleBuilder();
+
+        public class AddUserRoleBuilder
+        {
+            
+            
+            
+            internal AddUserRoleBuilder() { }
+
+
+
+
+
+            public AddUserRole Build(
+                string namespace_,
+                string roleId,
+                string userId
+            )
+            {
+                return new AddUserRole(this,
+                    namespace_,                    
+                    roleId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AddUserRole(AddUserRoleBuilder builder,
+            string namespace_,
+            string roleId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["roleId"] = roleId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AddUserRole(
             string namespace_,            
             string roleId,            

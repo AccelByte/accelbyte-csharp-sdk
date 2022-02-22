@@ -16,6 +16,36 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class VersionCheckHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static VersionCheckHandlerBuilder Builder = new VersionCheckHandlerBuilder();
+
+        public class VersionCheckHandlerBuilder
+        {
+            internal VersionCheckHandlerBuilder() { }
+
+
+
+
+
+            public VersionCheckHandler Build(
+            )
+            {
+                return new VersionCheckHandler(this
+                );
+            }
+        }
+
+        private VersionCheckHandler(VersionCheckHandlerBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public VersionCheckHandler(
         )
         {

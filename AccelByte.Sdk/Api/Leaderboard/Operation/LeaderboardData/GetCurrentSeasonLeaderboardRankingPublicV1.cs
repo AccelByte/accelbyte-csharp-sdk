@@ -20,6 +20,64 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetCurrentSeasonLeaderboardRankingPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetCurrentSeasonLeaderboardRankingPublicV1Builder Builder = new GetCurrentSeasonLeaderboardRankingPublicV1Builder();
+
+        public class GetCurrentSeasonLeaderboardRankingPublicV1Builder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetCurrentSeasonLeaderboardRankingPublicV1Builder() { }
+
+
+            public GetCurrentSeasonLeaderboardRankingPublicV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetCurrentSeasonLeaderboardRankingPublicV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetCurrentSeasonLeaderboardRankingPublicV1 Build(
+                string leaderboardCode,
+                string namespace_
+            )
+            {
+                return new GetCurrentSeasonLeaderboardRankingPublicV1(this,
+                    leaderboardCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetCurrentSeasonLeaderboardRankingPublicV1(GetCurrentSeasonLeaderboardRankingPublicV1Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetCurrentSeasonLeaderboardRankingPublicV1(
             string leaderboardCode,            
             string namespace_,            

@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetCurrencyConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetCurrencyConfigBuilder Builder = new GetCurrencyConfigBuilder();
+
+        public class GetCurrencyConfigBuilder
+        {
+            
+            
+            internal GetCurrencyConfigBuilder() { }
+
+
+
+
+
+            public GetCurrencyConfig Build(
+                string currencyCode,
+                string namespace_
+            )
+            {
+                return new GetCurrencyConfig(this,
+                    currencyCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetCurrencyConfig(GetCurrencyConfigBuilder builder,
+            string currencyCode,
+            string namespace_
+        )
+        {
+            PathParams["currencyCode"] = currencyCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetCurrencyConfig(
             string currencyCode,            
             string namespace_            

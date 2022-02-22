@@ -19,6 +19,41 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetRegisteredEventIDHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetRegisteredEventIDHandlerBuilder Builder = new GetRegisteredEventIDHandlerBuilder();
+
+        public class GetRegisteredEventIDHandlerBuilder
+        {
+            
+            internal GetRegisteredEventIDHandlerBuilder() { }
+
+
+
+
+
+            public GetRegisteredEventIDHandler Build(
+                string eventId
+            )
+            {
+                return new GetRegisteredEventIDHandler(this,
+                    eventId                    
+                );
+            }
+        }
+
+        private GetRegisteredEventIDHandler(GetRegisteredEventIDHandlerBuilder builder,
+            string eventId
+        )
+        {
+            PathParams["eventId"] = eventId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetRegisteredEventIDHandler(
             string eventId            
         )

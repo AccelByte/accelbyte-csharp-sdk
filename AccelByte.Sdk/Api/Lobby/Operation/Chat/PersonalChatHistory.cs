@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class PersonalChatHistory : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PersonalChatHistoryBuilder Builder = new PersonalChatHistoryBuilder();
+
+        public class PersonalChatHistoryBuilder
+        {
+            
+            
+            
+            internal PersonalChatHistoryBuilder() { }
+
+
+
+
+
+            public PersonalChatHistory Build(
+                string friendId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new PersonalChatHistory(this,
+                    friendId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PersonalChatHistory(PersonalChatHistoryBuilder builder,
+            string friendId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["friendId"] = friendId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PersonalChatHistory(
             string friendId,            
             string namespace_,            

@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicSyncPsnDlcInventory : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicSyncPsnDlcInventoryBuilder Builder = new PublicSyncPsnDlcInventoryBuilder();
+
+        public class PublicSyncPsnDlcInventoryBuilder
+        {
+            
+            
+            public Model.PlayStationDLCSyncRequest? Body { get; set; }
+            
+            internal PublicSyncPsnDlcInventoryBuilder() { }
+
+
+
+            public PublicSyncPsnDlcInventoryBuilder SetBody(Model.PlayStationDLCSyncRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicSyncPsnDlcInventory Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicSyncPsnDlcInventory(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicSyncPsnDlcInventory(PublicSyncPsnDlcInventoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicSyncPsnDlcInventory(
             string namespace_,            
             string userId,            

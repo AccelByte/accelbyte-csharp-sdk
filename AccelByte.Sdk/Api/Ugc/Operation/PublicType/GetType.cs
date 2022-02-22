@@ -18,6 +18,59 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class GetType : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetTypeBuilder Builder = new GetTypeBuilder();
+
+        public class GetTypeBuilder
+        {
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal GetTypeBuilder() { }
+
+
+            public GetTypeBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetTypeBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetType Build(
+                string namespace_
+            )
+            {
+                return new GetType(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetType(GetTypeBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetType(
             string namespace_,            
             string? limit,            

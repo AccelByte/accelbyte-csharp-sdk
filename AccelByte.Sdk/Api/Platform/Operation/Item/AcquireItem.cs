@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class AcquireItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AcquireItemBuilder Builder = new AcquireItemBuilder();
+
+        public class AcquireItemBuilder
+        {
+            
+            
+            public Model.ItemAcquireRequest? Body { get; set; }
+            
+            internal AcquireItemBuilder() { }
+
+
+
+            public AcquireItemBuilder SetBody(Model.ItemAcquireRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public AcquireItem Build(
+                string itemId,
+                string namespace_
+            )
+            {
+                return new AcquireItem(this,
+                    itemId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AcquireItem(AcquireItemBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            PathParams["itemId"] = itemId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public AcquireItem(
             string itemId,            
             string namespace_,            

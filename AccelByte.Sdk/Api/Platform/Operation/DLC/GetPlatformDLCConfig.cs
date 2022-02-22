@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetPlatformDLCConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPlatformDLCConfigBuilder Builder = new GetPlatformDLCConfigBuilder();
+
+        public class GetPlatformDLCConfigBuilder
+        {
+            
+            internal GetPlatformDLCConfigBuilder() { }
+
+
+
+
+
+            public GetPlatformDLCConfig Build(
+                string namespace_
+            )
+            {
+                return new GetPlatformDLCConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetPlatformDLCConfig(GetPlatformDLCConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPlatformDLCConfig(
             string namespace_            
         )

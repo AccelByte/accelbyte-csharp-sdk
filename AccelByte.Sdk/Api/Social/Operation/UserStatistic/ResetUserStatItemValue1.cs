@@ -23,6 +23,51 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class ResetUserStatItemValue1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ResetUserStatItemValue1Builder Builder = new ResetUserStatItemValue1Builder();
+
+        public class ResetUserStatItemValue1Builder
+        {
+            
+            
+            
+            internal ResetUserStatItemValue1Builder() { }
+
+
+
+
+
+            public ResetUserStatItemValue1 Build(
+                string namespace_,
+                string statCode,
+                string userId
+            )
+            {
+                return new ResetUserStatItemValue1(this,
+                    namespace_,                    
+                    statCode,                    
+                    userId                    
+                );
+            }
+        }
+
+        private ResetUserStatItemValue1(ResetUserStatItemValue1Builder builder,
+            string namespace_,
+            string statCode,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["statCode"] = statCode;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ResetUserStatItemValue1(
             string namespace_,            
             string statCode,            

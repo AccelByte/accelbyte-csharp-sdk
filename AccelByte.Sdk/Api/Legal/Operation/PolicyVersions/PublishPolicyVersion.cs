@@ -21,6 +21,50 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class PublishPolicyVersion : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublishPolicyVersionBuilder Builder = new PublishPolicyVersionBuilder();
+
+        public class PublishPolicyVersionBuilder
+        {
+            
+            public bool? ShouldNotify { get; set; }
+            
+            internal PublishPolicyVersionBuilder() { }
+
+
+            public PublishPolicyVersionBuilder SetShouldNotify(bool _shouldNotify)
+            {
+                ShouldNotify = _shouldNotify;
+                return this;
+            }
+
+
+
+
+            public PublishPolicyVersion Build(
+                string policyVersionId
+            )
+            {
+                return new PublishPolicyVersion(this,
+                    policyVersionId                    
+                );
+            }
+        }
+
+        private PublishPolicyVersion(PublishPolicyVersionBuilder builder,
+            string policyVersionId
+        )
+        {
+            PathParams["policyVersionId"] = policyVersionId;
+            
+            if (builder.ShouldNotify != null) QueryParams["shouldNotify"] = Convert.ToString(builder.ShouldNotify)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublishPolicyVersion(
             string policyVersionId,            
             bool? shouldNotify            

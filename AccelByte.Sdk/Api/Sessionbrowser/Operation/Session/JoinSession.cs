@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// </summary>
     public class JoinSession : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static JoinSessionBuilder Builder = new JoinSessionBuilder();
+
+        public class JoinSessionBuilder
+        {
+            
+            
+            
+            internal JoinSessionBuilder() { }
+
+
+
+
+
+            public JoinSession Build(
+                ModelsJoinGameSessionRequest body,
+                string namespace_,
+                string sessionID
+            )
+            {
+                return new JoinSession(this,
+                    body,                    
+                    namespace_,                    
+                    sessionID                    
+                );
+            }
+        }
+
+        private JoinSession(JoinSessionBuilder builder,
+            ModelsJoinGameSessionRequest body,
+            string namespace_,
+            string sessionID
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["sessionID"] = sessionID;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public JoinSession(
             string namespace_,            
             string sessionID,            

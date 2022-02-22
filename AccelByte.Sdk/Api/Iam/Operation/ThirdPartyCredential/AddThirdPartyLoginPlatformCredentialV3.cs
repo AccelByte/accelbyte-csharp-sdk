@@ -30,6 +30,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AddThirdPartyLoginPlatformCredentialV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AddThirdPartyLoginPlatformCredentialV3Builder Builder = new AddThirdPartyLoginPlatformCredentialV3Builder();
+
+        public class AddThirdPartyLoginPlatformCredentialV3Builder
+        {
+            
+            
+            
+            internal AddThirdPartyLoginPlatformCredentialV3Builder() { }
+
+
+
+
+
+            public AddThirdPartyLoginPlatformCredentialV3 Build(
+                ModelThirdPartyLoginPlatformCredentialRequest body,
+                string namespace_,
+                string platformId
+            )
+            {
+                return new AddThirdPartyLoginPlatformCredentialV3(this,
+                    body,                    
+                    namespace_,                    
+                    platformId                    
+                );
+            }
+        }
+
+        private AddThirdPartyLoginPlatformCredentialV3(AddThirdPartyLoginPlatformCredentialV3Builder builder,
+            ModelThirdPartyLoginPlatformCredentialRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AddThirdPartyLoginPlatformCredentialV3(
             string namespace_,            
             string platformId,            

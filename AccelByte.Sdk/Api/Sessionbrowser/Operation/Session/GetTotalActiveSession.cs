@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// </summary>
     public class GetTotalActiveSession : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetTotalActiveSessionBuilder Builder = new GetTotalActiveSessionBuilder();
+
+        public class GetTotalActiveSessionBuilder
+        {
+            
+            public string? SessionType { get; set; }
+            
+            internal GetTotalActiveSessionBuilder() { }
+
+
+            public GetTotalActiveSessionBuilder SetSessionType(string _sessionType)
+            {
+                SessionType = _sessionType;
+                return this;
+            }
+
+
+
+
+            public GetTotalActiveSession Build(
+                string namespace_
+            )
+            {
+                return new GetTotalActiveSession(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetTotalActiveSession(GetTotalActiveSessionBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.SessionType != null) QueryParams["session_type"] = builder.SessionType;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetTotalActiveSession(
             string namespace_,            
             string? sessionType            

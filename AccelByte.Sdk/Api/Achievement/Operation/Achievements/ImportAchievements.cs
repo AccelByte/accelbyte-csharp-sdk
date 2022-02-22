@@ -26,6 +26,59 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// </summary>
     public class ImportAchievements : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ImportAchievementsBuilder Builder = new ImportAchievementsBuilder();
+
+        public class ImportAchievementsBuilder
+        {
+            
+            public Stream? File { get; set; }
+            
+            public string? Strategy { get; set; }
+            
+            internal ImportAchievementsBuilder() { }
+
+
+
+
+            public ImportAchievementsBuilder SetFile(Stream _file)
+            {
+                File = _file;
+                return this;
+            }
+
+            public ImportAchievementsBuilder SetStrategy(string _strategy)
+            {
+                Strategy = _strategy;
+                return this;
+            }
+
+
+            public ImportAchievements Build(
+                string namespace_
+            )
+            {
+                return new ImportAchievements(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ImportAchievements(ImportAchievementsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            if (builder.File != null) FormParams["file"] = builder.File;
+            if (builder.Strategy != null) FormParams["strategy"] = builder.Strategy;
+            
+            
+            
+        }
+        #endregion
+
         public ImportAchievements(
             string namespace_,            
             Stream? file,            

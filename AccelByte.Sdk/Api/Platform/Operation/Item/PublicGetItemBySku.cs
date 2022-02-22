@@ -24,6 +24,73 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetItemBySku : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetItemBySkuBuilder Builder = new PublicGetItemBySkuBuilder();
+
+        public class PublicGetItemBySkuBuilder
+        {
+            
+            public string? Language { get; set; }
+            
+            public string? Region { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            
+            internal PublicGetItemBySkuBuilder() { }
+
+
+            public PublicGetItemBySkuBuilder SetLanguage(string _language)
+            {
+                Language = _language;
+                return this;
+            }
+
+            public PublicGetItemBySkuBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+            public PublicGetItemBySkuBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public PublicGetItemBySku Build(
+                string namespace_,
+                string sku
+            )
+            {
+                return new PublicGetItemBySku(this,
+                    namespace_,                    
+                    sku                    
+                );
+            }
+        }
+
+        private PublicGetItemBySku(PublicGetItemBySkuBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (sku != null) QueryParams["sku"] = sku;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetItemBySku(
             string namespace_,            
             string? language,            

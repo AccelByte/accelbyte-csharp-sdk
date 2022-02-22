@@ -22,6 +22,77 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryFulfillmentHistories : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryFulfillmentHistoriesBuilder Builder = new QueryFulfillmentHistoriesBuilder();
+
+        public class QueryFulfillmentHistoriesBuilder
+        {
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? Status { get; set; }
+            
+            public string? UserId { get; set; }
+            
+            internal QueryFulfillmentHistoriesBuilder() { }
+
+
+            public QueryFulfillmentHistoriesBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryFulfillmentHistoriesBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryFulfillmentHistoriesBuilder SetStatus(string _status)
+            {
+                Status = _status;
+                return this;
+            }
+
+            public QueryFulfillmentHistoriesBuilder SetUserId(string _userId)
+            {
+                UserId = _userId;
+                return this;
+            }
+
+
+
+
+            public QueryFulfillmentHistories Build(
+                string namespace_
+            )
+            {
+                return new QueryFulfillmentHistories(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private QueryFulfillmentHistories(QueryFulfillmentHistoriesBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryFulfillmentHistories(
             string namespace_,            
             int? limit,            

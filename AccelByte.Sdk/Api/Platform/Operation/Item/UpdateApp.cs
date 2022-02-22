@@ -110,6 +110,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateApp : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateAppBuilder Builder = new UpdateAppBuilder();
+
+        public class UpdateAppBuilder
+        {
+            
+            
+            
+            public Model.AppUpdate? Body { get; set; }
+            
+            internal UpdateAppBuilder() { }
+
+
+
+            public UpdateAppBuilder SetBody(Model.AppUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateApp Build(
+                string itemId,
+                string namespace_,
+                string storeId
+            )
+            {
+                return new UpdateApp(this,
+                    itemId,                    
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private UpdateApp(UpdateAppBuilder builder,
+            string itemId,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["itemId"] = itemId;
+            PathParams["namespace"] = namespace_;
+            
+            if (storeId != null) QueryParams["storeId"] = storeId;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateApp(
             string itemId,            
             string namespace_,            

@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetPaymentCallbackConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPaymentCallbackConfigBuilder Builder = new GetPaymentCallbackConfigBuilder();
+
+        public class GetPaymentCallbackConfigBuilder
+        {
+            
+            internal GetPaymentCallbackConfigBuilder() { }
+
+
+
+
+
+            public GetPaymentCallbackConfig Build(
+                string namespace_
+            )
+            {
+                return new GetPaymentCallbackConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetPaymentCallbackConfig(GetPaymentCallbackConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPaymentCallbackConfig(
             string namespace_            
         )

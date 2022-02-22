@@ -22,6 +22,71 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicExistsAnyMyActiveEntitlement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicExistsAnyMyActiveEntitlementBuilder Builder = new PublicExistsAnyMyActiveEntitlementBuilder();
+
+        public class PublicExistsAnyMyActiveEntitlementBuilder
+        {
+            
+            public List<string>? AppIds { get; set; }
+            
+            public List<string>? ItemIds { get; set; }
+            
+            public List<string>? Skus { get; set; }
+            
+            internal PublicExistsAnyMyActiveEntitlementBuilder() { }
+
+
+            public PublicExistsAnyMyActiveEntitlementBuilder SetAppIds(List<string> _appIds)
+            {
+                AppIds = _appIds;
+                return this;
+            }
+
+            public PublicExistsAnyMyActiveEntitlementBuilder SetItemIds(List<string> _itemIds)
+            {
+                ItemIds = _itemIds;
+                return this;
+            }
+
+            public PublicExistsAnyMyActiveEntitlementBuilder SetSkus(List<string> _skus)
+            {
+                Skus = _skus;
+                return this;
+            }
+
+
+
+
+            public PublicExistsAnyMyActiveEntitlement Build(
+                string namespace_
+            )
+            {
+                return new PublicExistsAnyMyActiveEntitlement(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicExistsAnyMyActiveEntitlement(PublicExistsAnyMyActiveEntitlementBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.AppIds != null) QueryParams["appIds"] = builder.AppIds;
+            if (builder.ItemIds != null) QueryParams["itemIds"] = builder.ItemIds;
+            if (builder.Skus != null) QueryParams["skus"] = builder.Skus;
+            
+            
+            CollectionFormatMap["appIds"] = "multi";
+            CollectionFormatMap["itemIds"] = "multi";
+            CollectionFormatMap["skus"] = "multi";
+            
+            
+        }
+        #endregion
+
         public PublicExistsAnyMyActiveEntitlement(
             string namespace_,            
             List<string>? appIds,            

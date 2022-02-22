@@ -21,6 +21,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DebitUserWallet : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DebitUserWalletBuilder Builder = new DebitUserWalletBuilder();
+
+        public class DebitUserWalletBuilder
+        {
+            
+            
+            
+            public Model.DebitRequest? Body { get; set; }
+            
+            internal DebitUserWalletBuilder() { }
+
+
+
+            public DebitUserWalletBuilder SetBody(Model.DebitRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public DebitUserWallet Build(
+                string namespace_,
+                string userId,
+                string walletId
+            )
+            {
+                return new DebitUserWallet(this,
+                    namespace_,                    
+                    userId,                    
+                    walletId                    
+                );
+            }
+        }
+
+        private DebitUserWallet(DebitUserWalletBuilder builder,
+            string namespace_,
+            string userId,
+            string walletId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            PathParams["walletId"] = walletId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public DebitUserWallet(
             string namespace_,            
             string userId,            

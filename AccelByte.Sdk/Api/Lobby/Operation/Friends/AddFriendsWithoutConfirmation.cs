@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AddFriendsWithoutConfirmation : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AddFriendsWithoutConfirmationBuilder Builder = new AddFriendsWithoutConfirmationBuilder();
+
+        public class AddFriendsWithoutConfirmationBuilder
+        {
+            
+            
+            
+            internal AddFriendsWithoutConfirmationBuilder() { }
+
+
+
+
+
+            public AddFriendsWithoutConfirmation Build(
+                ModelBulkAddFriendsRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AddFriendsWithoutConfirmation(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AddFriendsWithoutConfirmation(AddFriendsWithoutConfirmationBuilder builder,
+            ModelBulkAddFriendsRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AddFriendsWithoutConfirmation(
             string namespace_,            
             string userId,            

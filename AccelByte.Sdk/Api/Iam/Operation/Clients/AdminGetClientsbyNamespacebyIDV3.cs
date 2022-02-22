@@ -19,6 +19,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetClientsbyNamespacebyIDV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetClientsbyNamespacebyIDV3Builder Builder = new AdminGetClientsbyNamespacebyIDV3Builder();
+
+        public class AdminGetClientsbyNamespacebyIDV3Builder
+        {
+            
+            
+            internal AdminGetClientsbyNamespacebyIDV3Builder() { }
+
+
+
+
+
+            public AdminGetClientsbyNamespacebyIDV3 Build(
+                string clientId,
+                string namespace_
+            )
+            {
+                return new AdminGetClientsbyNamespacebyIDV3(this,
+                    clientId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetClientsbyNamespacebyIDV3(AdminGetClientsbyNamespacebyIDV3Builder builder,
+            string clientId,
+            string namespace_
+        )
+        {
+            PathParams["clientId"] = clientId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetClientsbyNamespacebyIDV3(
             string clientId,            
             string namespace_            

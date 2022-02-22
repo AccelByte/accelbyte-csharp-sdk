@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class DeleteCountryGroup : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteCountryGroupBuilder Builder = new DeleteCountryGroupBuilder();
+
+        public class DeleteCountryGroupBuilder
+        {
+            
+            
+            internal DeleteCountryGroupBuilder() { }
+
+
+
+
+
+            public DeleteCountryGroup Build(
+                string countryGroupCode,
+                string namespace_
+            )
+            {
+                return new DeleteCountryGroup(this,
+                    countryGroupCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteCountryGroup(DeleteCountryGroupBuilder builder,
+            string countryGroupCode,
+            string namespace_
+        )
+        {
+            PathParams["countryGroupCode"] = countryGroupCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteCountryGroup(
             string countryGroupCode,            
             string namespace_            

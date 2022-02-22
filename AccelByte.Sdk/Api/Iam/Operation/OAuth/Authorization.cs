@@ -104,6 +104,88 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class Authorization : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AuthorizationBuilder Builder = new AuthorizationBuilder();
+
+        public class AuthorizationBuilder
+        {
+            public string? Login { get; set; }
+            
+            public string? Password { get; set; }
+            
+            public string? Scope { get; set; }
+            
+            public string? State { get; set; }
+            
+            
+            
+            
+            internal AuthorizationBuilder() { }
+
+
+
+
+            public AuthorizationBuilder SetLogin(string _login)
+            {
+                Login = _login;
+                return this;
+            }
+
+            public AuthorizationBuilder SetPassword(string _password)
+            {
+                Password = _password;
+                return this;
+            }
+
+            public AuthorizationBuilder SetScope(string _scope)
+            {
+                Scope = _scope;
+                return this;
+            }
+
+            public AuthorizationBuilder SetState(string _state)
+            {
+                State = _state;
+                return this;
+            }
+
+
+            public Authorization Build(
+                string clientId,
+                string redirectUri,
+                string responseType
+            )
+            {
+                return new Authorization(this,
+                    clientId,                    
+                    redirectUri,                    
+                    responseType                    
+                );
+            }
+        }
+
+        private Authorization(AuthorizationBuilder builder,
+            string clientId,
+            string redirectUri,
+            string responseType
+        )
+        {
+            
+            
+            if (builder.Login != null) FormParams["login"] = builder.Login;
+            if (builder.Password != null) FormParams["password"] = builder.Password;
+            if (builder.Scope != null) FormParams["scope"] = builder.Scope;
+            if (builder.State != null) FormParams["state"] = builder.State;
+            if (clientId != null) FormParams["client_id"] = clientId;
+            if (redirectUri != null) FormParams["redirect_uri"] = redirectUri;
+            if (responseType != null) FormParams["response_type"] = responseType;
+            
+            
+            
+            LocationQuery = "PLACEHOLDER";
+        }
+        #endregion
+
         public Authorization(
             string? login,            
             string? password,            

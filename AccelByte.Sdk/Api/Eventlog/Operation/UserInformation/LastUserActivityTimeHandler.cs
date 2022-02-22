@@ -19,6 +19,46 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class LastUserActivityTimeHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static LastUserActivityTimeHandlerBuilder Builder = new LastUserActivityTimeHandlerBuilder();
+
+        public class LastUserActivityTimeHandlerBuilder
+        {
+            
+            
+            internal LastUserActivityTimeHandlerBuilder() { }
+
+
+
+
+
+            public LastUserActivityTimeHandler Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new LastUserActivityTimeHandler(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private LastUserActivityTimeHandler(LastUserActivityTimeHandlerBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public LastUserActivityTimeHandler(
             string namespace_,            
             string userId            

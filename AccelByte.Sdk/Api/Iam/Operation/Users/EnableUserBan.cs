@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class EnableUserBan : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static EnableUserBanBuilder Builder = new EnableUserBanBuilder();
+
+        public class EnableUserBanBuilder
+        {
+            
+            
+            
+            internal EnableUserBanBuilder() { }
+
+
+
+
+
+            public EnableUserBan Build(
+                string banId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new EnableUserBan(this,
+                    banId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private EnableUserBan(EnableUserBanBuilder builder,
+            string banId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["banId"] = banId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public EnableUserBan(
             string banId,            
             string namespace_,            

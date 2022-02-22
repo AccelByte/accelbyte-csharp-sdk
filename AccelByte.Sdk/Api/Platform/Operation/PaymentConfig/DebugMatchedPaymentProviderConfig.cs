@@ -22,6 +22,54 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DebugMatchedPaymentProviderConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DebugMatchedPaymentProviderConfigBuilder Builder = new DebugMatchedPaymentProviderConfigBuilder();
+
+        public class DebugMatchedPaymentProviderConfigBuilder
+        {
+            public string? Namespace { get; set; }
+            
+            public string? Region { get; set; }
+            
+            internal DebugMatchedPaymentProviderConfigBuilder() { }
+
+
+            public DebugMatchedPaymentProviderConfigBuilder SetNamespace(string _namespace_)
+            {
+                Namespace = _namespace_;
+                return this;
+            }
+
+            public DebugMatchedPaymentProviderConfigBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+
+
+
+            public DebugMatchedPaymentProviderConfig Build(
+            )
+            {
+                return new DebugMatchedPaymentProviderConfig(this
+                );
+            }
+        }
+
+        private DebugMatchedPaymentProviderConfig(DebugMatchedPaymentProviderConfigBuilder builder
+        )
+        {
+            
+            if (builder.Namespace != null) QueryParams["namespace"] = builder.Namespace;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            
+            
+            
+            
+        }
+        #endregion
+
         public DebugMatchedPaymentProviderConfig(
             string? namespace_,            
             string? region            

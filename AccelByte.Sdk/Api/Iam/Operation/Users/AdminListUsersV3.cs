@@ -21,6 +21,59 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminListUsersV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminListUsersV3Builder Builder = new AdminListUsersV3Builder();
+
+        public class AdminListUsersV3Builder
+        {
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal AdminListUsersV3Builder() { }
+
+
+            public AdminListUsersV3Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminListUsersV3Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public AdminListUsersV3 Build(
+                string namespace_
+            )
+            {
+                return new AdminListUsersV3(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminListUsersV3(AdminListUsersV3Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminListUsersV3(
             string namespace_,            
             long? limit,            

@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminDeleteChannel : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminDeleteChannelBuilder Builder = new AdminDeleteChannelBuilder();
+
+        public class AdminDeleteChannelBuilder
+        {
+            
+            
+            
+            internal AdminDeleteChannelBuilder() { }
+
+
+
+
+
+            public AdminDeleteChannel Build(
+                string channelId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminDeleteChannel(this,
+                    channelId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminDeleteChannel(AdminDeleteChannelBuilder builder,
+            string channelId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["channelId"] = channelId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminDeleteChannel(
             string channelId,            
             string namespace_,            

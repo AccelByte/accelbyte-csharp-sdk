@@ -40,6 +40,46 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class KickGroupMemberPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static KickGroupMemberPublicV1Builder Builder = new KickGroupMemberPublicV1Builder();
+
+        public class KickGroupMemberPublicV1Builder
+        {
+            
+            
+            internal KickGroupMemberPublicV1Builder() { }
+
+
+
+
+
+            public KickGroupMemberPublicV1 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new KickGroupMemberPublicV1(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private KickGroupMemberPublicV1(KickGroupMemberPublicV1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public KickGroupMemberPublicV1(
             string namespace_,            
             string userId            

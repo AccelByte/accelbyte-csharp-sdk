@@ -21,6 +21,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DeleteUserSubscription : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteUserSubscriptionBuilder Builder = new DeleteUserSubscriptionBuilder();
+
+        public class DeleteUserSubscriptionBuilder
+        {
+            
+            
+            
+            internal DeleteUserSubscriptionBuilder() { }
+
+
+
+
+
+            public DeleteUserSubscription Build(
+                string namespace_,
+                string subscriptionId,
+                string userId
+            )
+            {
+                return new DeleteUserSubscription(this,
+                    namespace_,                    
+                    subscriptionId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private DeleteUserSubscription(DeleteUserSubscriptionBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["subscriptionId"] = subscriptionId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteUserSubscription(
             string namespace_,            
             string subscriptionId,            

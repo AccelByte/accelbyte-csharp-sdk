@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminDeleteRolePermissionsV4 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminDeleteRolePermissionsV4Builder Builder = new AdminDeleteRolePermissionsV4Builder();
+
+        public class AdminDeleteRolePermissionsV4Builder
+        {
+            
+            
+            internal AdminDeleteRolePermissionsV4Builder() { }
+
+
+
+
+
+            public AdminDeleteRolePermissionsV4 Build(
+                List<string> body,
+                string roleId
+            )
+            {
+                return new AdminDeleteRolePermissionsV4(this,
+                    body,                    
+                    roleId                    
+                );
+            }
+        }
+
+        private AdminDeleteRolePermissionsV4(AdminDeleteRolePermissionsV4Builder builder,
+            List<string> body,
+            string roleId
+        )
+        {
+            PathParams["roleId"] = roleId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminDeleteRolePermissionsV4(
             string roleId,            
             List<string> body            

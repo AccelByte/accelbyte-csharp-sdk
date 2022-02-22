@@ -34,6 +34,36 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
     /// </summary>
     public class ListServer : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListServerBuilder Builder = new ListServerBuilder();
+
+        public class ListServerBuilder
+        {
+            internal ListServerBuilder() { }
+
+
+
+
+
+            public ListServer Build(
+            )
+            {
+                return new ListServer(this
+                );
+            }
+        }
+
+        private ListServer(ListServerBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListServer(
         )
         {

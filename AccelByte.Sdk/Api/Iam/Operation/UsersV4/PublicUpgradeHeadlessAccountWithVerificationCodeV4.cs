@@ -40,6 +40,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicUpgradeHeadlessAccountWithVerificationCodeV4 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicUpgradeHeadlessAccountWithVerificationCodeV4Builder Builder = new PublicUpgradeHeadlessAccountWithVerificationCodeV4Builder();
+
+        public class PublicUpgradeHeadlessAccountWithVerificationCodeV4Builder
+        {
+            
+            
+            internal PublicUpgradeHeadlessAccountWithVerificationCodeV4Builder() { }
+
+
+
+
+
+            public PublicUpgradeHeadlessAccountWithVerificationCodeV4 Build(
+                AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4 body,
+                string namespace_
+            )
+            {
+                return new PublicUpgradeHeadlessAccountWithVerificationCodeV4(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicUpgradeHeadlessAccountWithVerificationCodeV4(PublicUpgradeHeadlessAccountWithVerificationCodeV4Builder builder,
+            AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4 body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PublicUpgradeHeadlessAccountWithVerificationCodeV4(
             string namespace_,            
             Model.AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4 body            

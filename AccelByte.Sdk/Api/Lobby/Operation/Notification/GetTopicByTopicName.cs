@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class GetTopicByTopicName : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetTopicByTopicNameBuilder Builder = new GetTopicByTopicNameBuilder();
+
+        public class GetTopicByTopicNameBuilder
+        {
+            
+            
+            internal GetTopicByTopicNameBuilder() { }
+
+
+
+
+
+            public GetTopicByTopicName Build(
+                string namespace_,
+                string topic
+            )
+            {
+                return new GetTopicByTopicName(this,
+                    namespace_,                    
+                    topic                    
+                );
+            }
+        }
+
+        private GetTopicByTopicName(GetTopicByTopicNameBuilder builder,
+            string namespace_,
+            string topic
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["topic"] = topic;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetTopicByTopicName(
             string namespace_,            
             string topic            

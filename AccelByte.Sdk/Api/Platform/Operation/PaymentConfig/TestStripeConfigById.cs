@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class TestStripeConfigById : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static TestStripeConfigByIdBuilder Builder = new TestStripeConfigByIdBuilder();
+
+        public class TestStripeConfigByIdBuilder
+        {
+            
+            public bool? Sandbox { get; set; }
+            
+            internal TestStripeConfigByIdBuilder() { }
+
+
+            public TestStripeConfigByIdBuilder SetSandbox(bool _sandbox)
+            {
+                Sandbox = _sandbox;
+                return this;
+            }
+
+
+
+
+            public TestStripeConfigById Build(
+                string id
+            )
+            {
+                return new TestStripeConfigById(this,
+                    id                    
+                );
+            }
+        }
+
+        private TestStripeConfigById(TestStripeConfigByIdBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public TestStripeConfigById(
             string id,            
             bool? sandbox            

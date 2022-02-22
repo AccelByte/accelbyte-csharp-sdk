@@ -20,6 +20,72 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetRolesV4 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetRolesV4Builder Builder = new AdminGetRolesV4Builder();
+
+        public class AdminGetRolesV4Builder
+        {
+            public bool? AdminRole { get; set; }
+            
+            public bool? IsWildcard { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal AdminGetRolesV4Builder() { }
+
+
+            public AdminGetRolesV4Builder SetAdminRole(bool _adminRole)
+            {
+                AdminRole = _adminRole;
+                return this;
+            }
+
+            public AdminGetRolesV4Builder SetIsWildcard(bool _isWildcard)
+            {
+                IsWildcard = _isWildcard;
+                return this;
+            }
+
+            public AdminGetRolesV4Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminGetRolesV4Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public AdminGetRolesV4 Build(
+            )
+            {
+                return new AdminGetRolesV4(this
+                );
+            }
+        }
+
+        private AdminGetRolesV4(AdminGetRolesV4Builder builder
+        )
+        {
+            
+            if (builder.AdminRole != null) QueryParams["adminRole"] = Convert.ToString(builder.AdminRole)!;
+            if (builder.IsWildcard != null) QueryParams["isWildcard"] = Convert.ToString(builder.IsWildcard)!;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetRolesV4(
             bool? adminRole,            
             bool? isWildcard,            

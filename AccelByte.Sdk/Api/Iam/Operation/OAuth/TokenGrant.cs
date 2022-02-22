@@ -235,6 +235,104 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class TokenGrant : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static TokenGrantBuilder Builder = new TokenGrantBuilder();
+
+        public class TokenGrantBuilder
+        {
+            public string? Code { get; set; }
+            
+            public bool? ExtendExp { get; set; }
+            
+            public string? Namespace { get; set; }
+            
+            public string? Password { get; set; }
+            
+            public string? RedirectUri { get; set; }
+            
+            public string? RefreshToken { get; set; }
+            
+            public string? Username { get; set; }
+            
+            
+            internal TokenGrantBuilder() { }
+
+
+
+
+            public TokenGrantBuilder SetCode(string _code)
+            {
+                Code = _code;
+                return this;
+            }
+
+            public TokenGrantBuilder SetExtendExp(bool _extendExp)
+            {
+                ExtendExp = _extendExp;
+                return this;
+            }
+
+            public TokenGrantBuilder SetNamespace(string _namespace_)
+            {
+                Namespace = _namespace_;
+                return this;
+            }
+
+            public TokenGrantBuilder SetPassword(string _password)
+            {
+                Password = _password;
+                return this;
+            }
+
+            public TokenGrantBuilder SetRedirectUri(string _redirectUri)
+            {
+                RedirectUri = _redirectUri;
+                return this;
+            }
+
+            public TokenGrantBuilder SetRefreshToken(string _refreshToken)
+            {
+                RefreshToken = _refreshToken;
+                return this;
+            }
+
+            public TokenGrantBuilder SetUsername(string _username)
+            {
+                Username = _username;
+                return this;
+            }
+
+
+            public TokenGrant Build(
+                string grantType
+            )
+            {
+                return new TokenGrant(this,
+                    grantType                    
+                );
+            }
+        }
+
+        private TokenGrant(TokenGrantBuilder builder,
+            string grantType
+        )
+        {
+            
+            
+            if (builder.Code != null) FormParams["code"] = builder.Code;
+            if (builder.ExtendExp != null) FormParams["extend_exp"] = Convert.ToString(builder.ExtendExp)!;
+            if (builder.Namespace != null) FormParams["namespace"] = builder.Namespace;
+            if (builder.Password != null) FormParams["password"] = builder.Password;
+            if (builder.RedirectUri != null) FormParams["redirect_uri"] = builder.RedirectUri;
+            if (builder.RefreshToken != null) FormParams["refresh_token"] = builder.RefreshToken;
+            if (builder.Username != null) FormParams["username"] = builder.Username;
+            if (grantType != null) FormParams["grant_type"] = grantType;
+            
+            
+            
+        }
+        #endregion
+
         public TokenGrant(
             string? code,            
             bool? extendExp,            

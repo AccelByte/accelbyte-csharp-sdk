@@ -25,6 +25,64 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetAllTimeLeaderboardRankingAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetAllTimeLeaderboardRankingAdminV1Builder Builder = new GetAllTimeLeaderboardRankingAdminV1Builder();
+
+        public class GetAllTimeLeaderboardRankingAdminV1Builder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetAllTimeLeaderboardRankingAdminV1Builder() { }
+
+
+            public GetAllTimeLeaderboardRankingAdminV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetAllTimeLeaderboardRankingAdminV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetAllTimeLeaderboardRankingAdminV1 Build(
+                string leaderboardCode,
+                string namespace_
+            )
+            {
+                return new GetAllTimeLeaderboardRankingAdminV1(this,
+                    leaderboardCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetAllTimeLeaderboardRankingAdminV1(GetAllTimeLeaderboardRankingAdminV1Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetAllTimeLeaderboardRankingAdminV1(
             string leaderboardCode,            
             string namespace_,            

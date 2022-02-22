@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class RevokeUserEntitlements : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RevokeUserEntitlementsBuilder Builder = new RevokeUserEntitlementsBuilder();
+
+        public class RevokeUserEntitlementsBuilder
+        {
+            
+            
+            
+            internal RevokeUserEntitlementsBuilder() { }
+
+
+
+
+
+            public RevokeUserEntitlements Build(
+                string namespace_,
+                string userId,
+                string entitlementIds
+            )
+            {
+                return new RevokeUserEntitlements(this,
+                    namespace_,                    
+                    userId,                    
+                    entitlementIds                    
+                );
+            }
+        }
+
+        private RevokeUserEntitlements(RevokeUserEntitlementsBuilder builder,
+            string namespace_,
+            string userId,
+            string entitlementIds
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (entitlementIds != null) QueryParams["entitlementIds"] = entitlementIds;
+            
+            
+            
+            
+        }
+        #endregion
+
         public RevokeUserEntitlements(
             string namespace_,            
             string userId,            

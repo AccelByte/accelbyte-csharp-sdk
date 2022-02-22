@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class DeleteClientByNamespace : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteClientByNamespaceBuilder Builder = new DeleteClientByNamespaceBuilder();
+
+        public class DeleteClientByNamespaceBuilder
+        {
+            
+            
+            internal DeleteClientByNamespaceBuilder() { }
+
+
+
+
+
+            public DeleteClientByNamespace Build(
+                string clientId,
+                string namespace_
+            )
+            {
+                return new DeleteClientByNamespace(this,
+                    clientId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteClientByNamespace(DeleteClientByNamespaceBuilder builder,
+            string clientId,
+            string namespace_
+        )
+        {
+            PathParams["clientId"] = clientId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteClientByNamespace(
             string clientId,            
             string namespace_            

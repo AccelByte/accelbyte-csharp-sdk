@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class DeleteDeployment : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteDeploymentBuilder Builder = new DeleteDeploymentBuilder();
+
+        public class DeleteDeploymentBuilder
+        {
+            
+            
+            internal DeleteDeploymentBuilder() { }
+
+
+
+
+
+            public DeleteDeployment Build(
+                string deployment,
+                string namespace_
+            )
+            {
+                return new DeleteDeployment(this,
+                    deployment,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteDeployment(DeleteDeploymentBuilder builder,
+            string deployment,
+            string namespace_
+        )
+        {
+            PathParams["deployment"] = deployment;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteDeployment(
             string deployment,            
             string namespace_            

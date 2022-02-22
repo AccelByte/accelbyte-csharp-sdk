@@ -22,6 +22,109 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryUserIAPOrders : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryUserIAPOrdersBuilder Builder = new QueryUserIAPOrdersBuilder();
+
+        public class QueryUserIAPOrdersBuilder
+        {
+            
+            
+            public string? EndTime { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? ProductId { get; set; }
+            
+            public string? StartTime { get; set; }
+            
+            public string? Status { get; set; }
+            
+            public string? Type { get; set; }
+            
+            internal QueryUserIAPOrdersBuilder() { }
+
+
+            public QueryUserIAPOrdersBuilder SetEndTime(string _endTime)
+            {
+                EndTime = _endTime;
+                return this;
+            }
+
+            public QueryUserIAPOrdersBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryUserIAPOrdersBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryUserIAPOrdersBuilder SetProductId(string _productId)
+            {
+                ProductId = _productId;
+                return this;
+            }
+
+            public QueryUserIAPOrdersBuilder SetStartTime(string _startTime)
+            {
+                StartTime = _startTime;
+                return this;
+            }
+
+            public QueryUserIAPOrdersBuilder SetStatus(string _status)
+            {
+                Status = _status;
+                return this;
+            }
+
+            public QueryUserIAPOrdersBuilder SetType(string _type)
+            {
+                Type = _type;
+                return this;
+            }
+
+
+
+
+            public QueryUserIAPOrders Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new QueryUserIAPOrders(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private QueryUserIAPOrders(QueryUserIAPOrdersBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.EndTime != null) QueryParams["endTime"] = builder.EndTime;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.ProductId != null) QueryParams["productId"] = builder.ProductId;
+            if (builder.StartTime != null) QueryParams["startTime"] = builder.StartTime;
+            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            if (builder.Type != null) QueryParams["type"] = builder.Type;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryUserIAPOrders(
             string namespace_,            
             string userId,            

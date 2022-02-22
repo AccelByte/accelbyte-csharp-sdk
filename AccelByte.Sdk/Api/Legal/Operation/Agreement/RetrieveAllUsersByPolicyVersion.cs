@@ -19,6 +19,68 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RetrieveAllUsersByPolicyVersion : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveAllUsersByPolicyVersionBuilder Builder = new RetrieveAllUsersByPolicyVersionBuilder();
+
+        public class RetrieveAllUsersByPolicyVersionBuilder
+        {
+            public string? Keyword { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            
+            internal RetrieveAllUsersByPolicyVersionBuilder() { }
+
+
+            public RetrieveAllUsersByPolicyVersionBuilder SetKeyword(string _keyword)
+            {
+                Keyword = _keyword;
+                return this;
+            }
+
+            public RetrieveAllUsersByPolicyVersionBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public RetrieveAllUsersByPolicyVersionBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public RetrieveAllUsersByPolicyVersion Build(
+                string policyVersionId
+            )
+            {
+                return new RetrieveAllUsersByPolicyVersion(this,
+                    policyVersionId                    
+                );
+            }
+        }
+
+        private RetrieveAllUsersByPolicyVersion(RetrieveAllUsersByPolicyVersionBuilder builder,
+            string policyVersionId
+        )
+        {
+            
+            if (builder.Keyword != null) QueryParams["keyword"] = builder.Keyword;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (policyVersionId != null) QueryParams["policyVersionId"] = policyVersionId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveAllUsersByPolicyVersion(
             string? keyword,            
             int? limit,            

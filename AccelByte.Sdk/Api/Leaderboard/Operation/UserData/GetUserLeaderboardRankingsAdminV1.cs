@@ -25,6 +25,64 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetUserLeaderboardRankingsAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserLeaderboardRankingsAdminV1Builder Builder = new GetUserLeaderboardRankingsAdminV1Builder();
+
+        public class GetUserLeaderboardRankingsAdminV1Builder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetUserLeaderboardRankingsAdminV1Builder() { }
+
+
+            public GetUserLeaderboardRankingsAdminV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetUserLeaderboardRankingsAdminV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetUserLeaderboardRankingsAdminV1 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetUserLeaderboardRankingsAdminV1(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserLeaderboardRankingsAdminV1(GetUserLeaderboardRankingsAdminV1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserLeaderboardRankingsAdminV1(
             string namespace_,            
             string userId,            

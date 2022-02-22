@@ -28,6 +28,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class CreateSession : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateSessionBuilder Builder = new CreateSessionBuilder();
+
+        public class CreateSessionBuilder
+        {
+            
+            
+            internal CreateSessionBuilder() { }
+
+
+
+
+
+            public CreateSession Build(
+                ModelsCreateSessionRequest body,
+                string namespace_
+            )
+            {
+                return new CreateSession(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateSession(CreateSessionBuilder builder,
+            ModelsCreateSessionRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateSession(
             string namespace_,            
             Model.ModelsCreateSessionRequest body            

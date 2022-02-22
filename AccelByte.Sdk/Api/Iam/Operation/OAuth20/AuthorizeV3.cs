@@ -100,6 +100,101 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AuthorizeV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AuthorizeV3Builder Builder = new AuthorizeV3Builder();
+
+        public class AuthorizeV3Builder
+        {
+            public string? CodeChallenge { get; set; }
+            
+            public string? CodeChallengeMethod { get; set; }
+            
+            public string? RedirectUri { get; set; }
+            
+            public string? Scope { get; set; }
+            
+            public string? State { get; set; }
+            
+            public string? TargetAuthPage { get; set; }
+            
+            
+            
+            internal AuthorizeV3Builder() { }
+
+
+            public AuthorizeV3Builder SetCodeChallenge(string _codeChallenge)
+            {
+                CodeChallenge = _codeChallenge;
+                return this;
+            }
+
+            public AuthorizeV3Builder SetCodeChallengeMethod(string _codeChallengeMethod)
+            {
+                CodeChallengeMethod = _codeChallengeMethod;
+                return this;
+            }
+
+            public AuthorizeV3Builder SetRedirectUri(string _redirectUri)
+            {
+                RedirectUri = _redirectUri;
+                return this;
+            }
+
+            public AuthorizeV3Builder SetScope(string _scope)
+            {
+                Scope = _scope;
+                return this;
+            }
+
+            public AuthorizeV3Builder SetState(string _state)
+            {
+                State = _state;
+                return this;
+            }
+
+            public AuthorizeV3Builder SetTargetAuthPage(string _targetAuthPage)
+            {
+                TargetAuthPage = _targetAuthPage;
+                return this;
+            }
+
+
+
+
+            public AuthorizeV3 Build(
+                string clientId,
+                string responseType
+            )
+            {
+                return new AuthorizeV3(this,
+                    clientId,                    
+                    responseType                    
+                );
+            }
+        }
+
+        private AuthorizeV3(AuthorizeV3Builder builder,
+            string clientId,
+            string responseType
+        )
+        {
+            
+            if (builder.CodeChallenge != null) QueryParams["code_challenge"] = builder.CodeChallenge;
+            if (builder.CodeChallengeMethod != null) QueryParams["code_challenge_method"] = builder.CodeChallengeMethod;
+            if (builder.RedirectUri != null) QueryParams["redirect_uri"] = builder.RedirectUri;
+            if (builder.Scope != null) QueryParams["scope"] = builder.Scope;
+            if (builder.State != null) QueryParams["state"] = builder.State;
+            if (builder.TargetAuthPage != null) QueryParams["target_auth_page"] = builder.TargetAuthPage;
+            if (clientId != null) QueryParams["client_id"] = clientId;
+            if (responseType != null) QueryParams["response_type"] = responseType;
+            
+            
+            
+            
+            LocationQuery = "request_id";
+        }
+        #endregion
+
         public AuthorizeV3(
             string? codeChallenge,            
             string? codeChallengeMethod,            

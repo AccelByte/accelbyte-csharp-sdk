@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetCode : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetCodeBuilder Builder = new GetCodeBuilder();
+
+        public class GetCodeBuilder
+        {
+            
+            
+            public bool? Redeemable { get; set; }
+            
+            internal GetCodeBuilder() { }
+
+
+            public GetCodeBuilder SetRedeemable(bool _redeemable)
+            {
+                Redeemable = _redeemable;
+                return this;
+            }
+
+
+
+
+            public GetCode Build(
+                string code,
+                string namespace_
+            )
+            {
+                return new GetCode(this,
+                    code,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetCode(GetCodeBuilder builder,
+            string code,
+            string namespace_
+        )
+        {
+            PathParams["code"] = code;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Redeemable != null) QueryParams["redeemable"] = Convert.ToString(builder.Redeemable)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetCode(
             string code,            
             string namespace_,            

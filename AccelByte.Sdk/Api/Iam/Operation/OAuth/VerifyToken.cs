@@ -18,6 +18,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class VerifyToken : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static VerifyTokenBuilder Builder = new VerifyTokenBuilder();
+
+        public class VerifyTokenBuilder
+        {
+            
+            internal VerifyTokenBuilder() { }
+
+
+
+
+
+            public VerifyToken Build(
+                string token
+            )
+            {
+                return new VerifyToken(this,
+                    token                    
+                );
+            }
+        }
+
+        private VerifyToken(VerifyTokenBuilder builder,
+            string token
+        )
+        {
+            
+            
+            if (token != null) FormParams["token"] = token;
+            
+            
+            
+        }
+        #endregion
+
         public VerifyToken(
             string token            
         )

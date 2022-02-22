@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicCreateJusticeUser : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicCreateJusticeUserBuilder Builder = new PublicCreateJusticeUserBuilder();
+
+        public class PublicCreateJusticeUserBuilder
+        {
+            
+            
+            internal PublicCreateJusticeUserBuilder() { }
+
+
+
+
+
+            public PublicCreateJusticeUser Build(
+                string namespace_,
+                string targetNamespace
+            )
+            {
+                return new PublicCreateJusticeUser(this,
+                    namespace_,                    
+                    targetNamespace                    
+                );
+            }
+        }
+
+        private PublicCreateJusticeUser(PublicCreateJusticeUserBuilder builder,
+            string namespace_,
+            string targetNamespace
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["targetNamespace"] = targetNamespace;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicCreateJusticeUser(
             string namespace_,            
             string targetNamespace            

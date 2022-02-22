@@ -21,6 +21,50 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class BanUsers : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static BanUsersBuilder Builder = new BanUsersBuilder();
+
+        public class BanUsersBuilder
+        {
+            
+            public Model.UserBanRequest? Body { get; set; }
+            
+            internal BanUsersBuilder() { }
+
+
+
+            public BanUsersBuilder SetBody(Model.UserBanRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public BanUsers Build(
+                string namespace_
+            )
+            {
+                return new BanUsers(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private BanUsers(BanUsersBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public BanUsers(
             string namespace_,            
             Model.UserBanRequest body            

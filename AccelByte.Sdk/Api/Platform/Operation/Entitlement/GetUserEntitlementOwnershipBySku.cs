@@ -22,6 +22,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetUserEntitlementOwnershipBySku : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserEntitlementOwnershipBySkuBuilder Builder = new GetUserEntitlementOwnershipBySkuBuilder();
+
+        public class GetUserEntitlementOwnershipBySkuBuilder
+        {
+            
+            
+            public string? EntitlementClazz { get; set; }
+            
+            
+            internal GetUserEntitlementOwnershipBySkuBuilder() { }
+
+
+            public GetUserEntitlementOwnershipBySkuBuilder SetEntitlementClazz(string _entitlementClazz)
+            {
+                EntitlementClazz = _entitlementClazz;
+                return this;
+            }
+
+
+
+
+            public GetUserEntitlementOwnershipBySku Build(
+                string namespace_,
+                string userId,
+                string sku
+            )
+            {
+                return new GetUserEntitlementOwnershipBySku(this,
+                    namespace_,                    
+                    userId,                    
+                    sku                    
+                );
+            }
+        }
+
+        private GetUserEntitlementOwnershipBySku(GetUserEntitlementOwnershipBySkuBuilder builder,
+            string namespace_,
+            string userId,
+            string sku
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.EntitlementClazz != null) QueryParams["entitlementClazz"] = builder.EntitlementClazz;
+            if (sku != null) QueryParams["sku"] = sku;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserEntitlementOwnershipBySku(
             string namespace_,            
             string userId,            

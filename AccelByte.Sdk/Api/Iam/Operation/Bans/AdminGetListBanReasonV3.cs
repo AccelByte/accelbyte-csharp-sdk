@@ -26,6 +26,36 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetListBanReasonV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetListBanReasonV3Builder Builder = new AdminGetListBanReasonV3Builder();
+
+        public class AdminGetListBanReasonV3Builder
+        {
+            internal AdminGetListBanReasonV3Builder() { }
+
+
+
+
+
+            public AdminGetListBanReasonV3 Build(
+            )
+            {
+                return new AdminGetListBanReasonV3(this
+                );
+            }
+        }
+
+        private AdminGetListBanReasonV3(AdminGetListBanReasonV3Builder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetListBanReasonV3(
         )
         {

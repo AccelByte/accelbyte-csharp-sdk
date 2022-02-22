@@ -45,6 +45,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class SendVerificationCode : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SendVerificationCodeBuilder Builder = new SendVerificationCodeBuilder();
+
+        public class SendVerificationCodeBuilder
+        {
+            
+            
+            
+            internal SendVerificationCodeBuilder() { }
+
+
+
+
+
+            public SendVerificationCode Build(
+                ModelSendVerificationCodeRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new SendVerificationCode(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private SendVerificationCode(SendVerificationCodeBuilder builder,
+            ModelSendVerificationCodeRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public SendVerificationCode(
             string namespace_,            
             string userId,            

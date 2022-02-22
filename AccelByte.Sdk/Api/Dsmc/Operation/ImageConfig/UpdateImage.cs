@@ -31,6 +31,41 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class UpdateImage : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateImageBuilder Builder = new UpdateImageBuilder();
+
+        public class UpdateImageBuilder
+        {
+            
+            internal UpdateImageBuilder() { }
+
+
+
+
+
+            public UpdateImage Build(
+                ModelsImageRecordUpdate body
+            )
+            {
+                return new UpdateImage(this,
+                    body                    
+                );
+            }
+        }
+
+        private UpdateImage(UpdateImageBuilder builder,
+            ModelsImageRecordUpdate body
+        )
+        {
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateImage(
             Model.ModelsImageRecordUpdate body            
         )

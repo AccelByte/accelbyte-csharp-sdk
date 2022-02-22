@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetUserVisibilityStatusV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserVisibilityStatusV2Builder Builder = new GetUserVisibilityStatusV2Builder();
+
+        public class GetUserVisibilityStatusV2Builder
+        {
+            
+            
+            
+            internal GetUserVisibilityStatusV2Builder() { }
+
+
+
+
+
+            public GetUserVisibilityStatusV2 Build(
+                string leaderboardCode,
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetUserVisibilityStatusV2(this,
+                    leaderboardCode,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserVisibilityStatusV2(GetUserVisibilityStatusV2Builder builder,
+            string leaderboardCode,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserVisibilityStatusV2(
             string leaderboardCode,            
             string namespace_,            

@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DeleteStore : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteStoreBuilder Builder = new DeleteStoreBuilder();
+
+        public class DeleteStoreBuilder
+        {
+            
+            
+            internal DeleteStoreBuilder() { }
+
+
+
+
+
+            public DeleteStore Build(
+                string namespace_,
+                string storeId
+            )
+            {
+                return new DeleteStore(this,
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private DeleteStore(DeleteStoreBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["storeId"] = storeId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteStore(
             string namespace_,            
             string storeId            

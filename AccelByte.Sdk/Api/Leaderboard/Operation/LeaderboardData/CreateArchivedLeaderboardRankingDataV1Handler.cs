@@ -26,6 +26,46 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class CreateArchivedLeaderboardRankingDataV1Handler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateArchivedLeaderboardRankingDataV1HandlerBuilder Builder = new CreateArchivedLeaderboardRankingDataV1HandlerBuilder();
+
+        public class CreateArchivedLeaderboardRankingDataV1HandlerBuilder
+        {
+            
+            
+            internal CreateArchivedLeaderboardRankingDataV1HandlerBuilder() { }
+
+
+
+
+
+            public CreateArchivedLeaderboardRankingDataV1Handler Build(
+                ModelsArchiveLeaderboardReq body,
+                string namespace_
+            )
+            {
+                return new CreateArchivedLeaderboardRankingDataV1Handler(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateArchivedLeaderboardRankingDataV1Handler(CreateArchivedLeaderboardRankingDataV1HandlerBuilder builder,
+            ModelsArchiveLeaderboardReq body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateArchivedLeaderboardRankingDataV1Handler(
             string namespace_,            
             Model.ModelsArchiveLeaderboardReq body            

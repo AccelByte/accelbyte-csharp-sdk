@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetUserOrderHistories : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserOrderHistoriesBuilder Builder = new GetUserOrderHistoriesBuilder();
+
+        public class GetUserOrderHistoriesBuilder
+        {
+            
+            
+            
+            internal GetUserOrderHistoriesBuilder() { }
+
+
+
+
+
+            public GetUserOrderHistories Build(
+                string namespace_,
+                string orderNo,
+                string userId
+            )
+            {
+                return new GetUserOrderHistories(this,
+                    namespace_,                    
+                    orderNo,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserOrderHistories(GetUserOrderHistoriesBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["orderNo"] = orderNo;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserOrderHistories(
             string namespace_,            
             string orderNo,            

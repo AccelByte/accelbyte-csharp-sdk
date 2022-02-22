@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class PublicDownloadContentByContentID : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicDownloadContentByContentIDBuilder Builder = new PublicDownloadContentByContentIDBuilder();
+
+        public class PublicDownloadContentByContentIDBuilder
+        {
+            
+            
+            internal PublicDownloadContentByContentIDBuilder() { }
+
+
+
+
+
+            public PublicDownloadContentByContentID Build(
+                string contentId,
+                string namespace_
+            )
+            {
+                return new PublicDownloadContentByContentID(this,
+                    contentId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicDownloadContentByContentID(PublicDownloadContentByContentIDBuilder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            PathParams["contentId"] = contentId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicDownloadContentByContentID(
             string contentId,            
             string namespace_            

@@ -19,6 +19,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminDeleteClientV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminDeleteClientV3Builder Builder = new AdminDeleteClientV3Builder();
+
+        public class AdminDeleteClientV3Builder
+        {
+            
+            
+            internal AdminDeleteClientV3Builder() { }
+
+
+
+
+
+            public AdminDeleteClientV3 Build(
+                string clientId,
+                string namespace_
+            )
+            {
+                return new AdminDeleteClientV3(this,
+                    clientId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminDeleteClientV3(AdminDeleteClientV3Builder builder,
+            string clientId,
+            string namespace_
+        )
+        {
+            PathParams["clientId"] = clientId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminDeleteClientV3(
             string clientId,            
             string namespace_            

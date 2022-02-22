@@ -21,6 +21,50 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RequestPresignedURL : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RequestPresignedURLBuilder Builder = new RequestPresignedURLBuilder();
+
+        public class RequestPresignedURLBuilder
+        {
+            
+            public Model.UploadPolicyVersionAttachmentRequest? Body { get; set; }
+            
+            internal RequestPresignedURLBuilder() { }
+
+
+
+            public RequestPresignedURLBuilder SetBody(Model.UploadPolicyVersionAttachmentRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public RequestPresignedURL Build(
+                string localizedPolicyVersionId
+            )
+            {
+                return new RequestPresignedURL(this,
+                    localizedPolicyVersionId                    
+                );
+            }
+        }
+
+        private RequestPresignedURL(RequestPresignedURLBuilder builder,
+            string localizedPolicyVersionId
+        )
+        {
+            PathParams["localizedPolicyVersionId"] = localizedPolicyVersionId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public RequestPresignedURL(
             string localizedPolicyVersionId,            
             Model.UploadPolicyVersionAttachmentRequest body            

@@ -46,6 +46,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminUpdateMyUserV4 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateMyUserV4Builder Builder = new AdminUpdateMyUserV4Builder();
+
+        public class AdminUpdateMyUserV4Builder
+        {
+            
+            internal AdminUpdateMyUserV4Builder() { }
+
+
+
+
+
+            public AdminUpdateMyUserV4 Build(
+                ModelUserUpdateRequestV3 body
+            )
+            {
+                return new AdminUpdateMyUserV4(this,
+                    body                    
+                );
+            }
+        }
+
+        private AdminUpdateMyUserV4(AdminUpdateMyUserV4Builder builder,
+            ModelUserUpdateRequestV3 body
+        )
+        {
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateMyUserV4(
             Model.ModelUserUpdateRequestV3 body            
         )

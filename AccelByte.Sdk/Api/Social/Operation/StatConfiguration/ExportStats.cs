@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class ExportStats : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ExportStatsBuilder Builder = new ExportStatsBuilder();
+
+        public class ExportStatsBuilder
+        {
+            
+            internal ExportStatsBuilder() { }
+
+
+
+
+
+            public ExportStats Build(
+                string namespace_
+            )
+            {
+                return new ExportStats(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ExportStats(ExportStatsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ExportStats(
             string namespace_            
         )

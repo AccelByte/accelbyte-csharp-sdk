@@ -18,6 +18,64 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetHiddenUsersV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetHiddenUsersV2Builder Builder = new GetHiddenUsersV2Builder();
+
+        public class GetHiddenUsersV2Builder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetHiddenUsersV2Builder() { }
+
+
+            public GetHiddenUsersV2Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetHiddenUsersV2Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetHiddenUsersV2 Build(
+                string leaderboardCode,
+                string namespace_
+            )
+            {
+                return new GetHiddenUsersV2(this,
+                    leaderboardCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetHiddenUsersV2(GetHiddenUsersV2Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetHiddenUsersV2(
             string leaderboardCode,            
             string namespace_,            

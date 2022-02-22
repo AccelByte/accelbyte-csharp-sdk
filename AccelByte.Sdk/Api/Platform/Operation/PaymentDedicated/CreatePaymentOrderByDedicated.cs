@@ -186,6 +186,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CreatePaymentOrderByDedicated : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreatePaymentOrderByDedicatedBuilder Builder = new CreatePaymentOrderByDedicatedBuilder();
+
+        public class CreatePaymentOrderByDedicatedBuilder
+        {
+            
+            public Model.ExternalPaymentOrderCreate? Body { get; set; }
+            
+            internal CreatePaymentOrderByDedicatedBuilder() { }
+
+
+
+            public CreatePaymentOrderByDedicatedBuilder SetBody(Model.ExternalPaymentOrderCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreatePaymentOrderByDedicated Build(
+                string namespace_
+            )
+            {
+                return new CreatePaymentOrderByDedicated(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreatePaymentOrderByDedicated(CreatePaymentOrderByDedicatedBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreatePaymentOrderByDedicated(
             string namespace_,            
             Model.ExternalPaymentOrderCreate body            

@@ -25,6 +25,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminAssignUserToRoleV4 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminAssignUserToRoleV4Builder Builder = new AdminAssignUserToRoleV4Builder();
+
+        public class AdminAssignUserToRoleV4Builder
+        {
+            
+            
+            internal AdminAssignUserToRoleV4Builder() { }
+
+
+
+
+
+            public AdminAssignUserToRoleV4 Build(
+                ModelAssignUserV4Request body,
+                string roleId
+            )
+            {
+                return new AdminAssignUserToRoleV4(this,
+                    body,                    
+                    roleId                    
+                );
+            }
+        }
+
+        private AdminAssignUserToRoleV4(AdminAssignUserToRoleV4Builder builder,
+            ModelAssignUserV4Request body,
+            string roleId
+        )
+        {
+            PathParams["roleId"] = roleId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminAssignUserToRoleV4(
             string roleId,            
             Model.ModelAssignUserV4Request body            

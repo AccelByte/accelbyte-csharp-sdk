@@ -22,6 +22,60 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class ReorderTier : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ReorderTierBuilder Builder = new ReorderTierBuilder();
+
+        public class ReorderTierBuilder
+        {
+            
+            
+            
+            public Model.TierReorder? Body { get; set; }
+            
+            internal ReorderTierBuilder() { }
+
+
+
+            public ReorderTierBuilder SetBody(Model.TierReorder _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public ReorderTier Build(
+                string id,
+                string namespace_,
+                string seasonId
+            )
+            {
+                return new ReorderTier(this,
+                    id,                    
+                    namespace_,                    
+                    seasonId                    
+                );
+            }
+        }
+
+        private ReorderTier(ReorderTierBuilder builder,
+            string id,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PathParams["id"] = id;
+            PathParams["namespace"] = namespace_;
+            PathParams["seasonId"] = seasonId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public ReorderTier(
             string id,            
             string namespace_,            

@@ -22,6 +22,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ProcessUserOrderNotification : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ProcessUserOrderNotificationBuilder Builder = new ProcessUserOrderNotificationBuilder();
+
+        public class ProcessUserOrderNotificationBuilder
+        {
+            
+            
+            
+            public Model.TradeNotification? Body { get; set; }
+            
+            internal ProcessUserOrderNotificationBuilder() { }
+
+
+
+            public ProcessUserOrderNotificationBuilder SetBody(Model.TradeNotification _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public ProcessUserOrderNotification Build(
+                string namespace_,
+                string orderNo,
+                string userId
+            )
+            {
+                return new ProcessUserOrderNotification(this,
+                    namespace_,                    
+                    orderNo,                    
+                    userId                    
+                );
+            }
+        }
+
+        private ProcessUserOrderNotification(ProcessUserOrderNotificationBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["orderNo"] = orderNo;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public ProcessUserOrderNotification(
             string namespace_,            
             string orderNo,            

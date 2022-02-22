@@ -43,6 +43,45 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CreatePaymentProviderConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreatePaymentProviderConfigBuilder Builder = new CreatePaymentProviderConfigBuilder();
+
+        public class CreatePaymentProviderConfigBuilder
+        {
+            public Model.PaymentProviderConfigEdit? Body { get; set; }
+            
+            internal CreatePaymentProviderConfigBuilder() { }
+
+
+
+            public CreatePaymentProviderConfigBuilder SetBody(Model.PaymentProviderConfigEdit _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreatePaymentProviderConfig Build(
+            )
+            {
+                return new CreatePaymentProviderConfig(this
+                );
+            }
+        }
+
+        private CreatePaymentProviderConfig(CreatePaymentProviderConfigBuilder builder
+        )
+        {
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreatePaymentProviderConfig(
             Model.PaymentProviderConfigEdit body            
         )

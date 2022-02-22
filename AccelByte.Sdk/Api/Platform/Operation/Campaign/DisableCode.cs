@@ -24,6 +24,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DisableCode : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DisableCodeBuilder Builder = new DisableCodeBuilder();
+
+        public class DisableCodeBuilder
+        {
+            
+            
+            internal DisableCodeBuilder() { }
+
+
+
+
+
+            public DisableCode Build(
+                string code,
+                string namespace_
+            )
+            {
+                return new DisableCode(this,
+                    code,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DisableCode(DisableCodeBuilder builder,
+            string code,
+            string namespace_
+        )
+        {
+            PathParams["code"] = code;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DisableCode(
             string code,            
             string namespace_            

@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// </summary>
     public class AdminGetSession : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetSessionBuilder Builder = new AdminGetSessionBuilder();
+
+        public class AdminGetSessionBuilder
+        {
+            
+            
+            internal AdminGetSessionBuilder() { }
+
+
+
+
+
+            public AdminGetSession Build(
+                string namespace_,
+                string sessionID
+            )
+            {
+                return new AdminGetSession(this,
+                    namespace_,                    
+                    sessionID                    
+                );
+            }
+        }
+
+        private AdminGetSession(AdminGetSessionBuilder builder,
+            string namespace_,
+            string sessionID
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["sessionID"] = sessionID;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetSession(
             string namespace_,            
             string sessionID            

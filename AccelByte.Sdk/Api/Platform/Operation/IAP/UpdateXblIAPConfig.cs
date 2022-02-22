@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateXblIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateXblIAPConfigBuilder Builder = new UpdateXblIAPConfigBuilder();
+
+        public class UpdateXblIAPConfigBuilder
+        {
+            
+            public Model.XblIAPConfigRequest? Body { get; set; }
+            
+            internal UpdateXblIAPConfigBuilder() { }
+
+
+
+            public UpdateXblIAPConfigBuilder SetBody(Model.XblIAPConfigRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateXblIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new UpdateXblIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateXblIAPConfig(UpdateXblIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateXblIAPConfig(
             string namespace_,            
             Model.XblIAPConfigRequest body            

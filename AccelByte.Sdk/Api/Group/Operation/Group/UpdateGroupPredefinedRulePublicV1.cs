@@ -42,6 +42,56 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class UpdateGroupPredefinedRulePublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateGroupPredefinedRulePublicV1Builder Builder = new UpdateGroupPredefinedRulePublicV1Builder();
+
+        public class UpdateGroupPredefinedRulePublicV1Builder
+        {
+            
+            
+            
+            
+            internal UpdateGroupPredefinedRulePublicV1Builder() { }
+
+
+
+
+
+            public UpdateGroupPredefinedRulePublicV1 Build(
+                ModelsUpdateGroupPredefinedRuleRequestV1 body,
+                string allowedAction,
+                string groupId,
+                string namespace_
+            )
+            {
+                return new UpdateGroupPredefinedRulePublicV1(this,
+                    body,                    
+                    allowedAction,                    
+                    groupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateGroupPredefinedRulePublicV1(UpdateGroupPredefinedRulePublicV1Builder builder,
+            ModelsUpdateGroupPredefinedRuleRequestV1 body,
+            string allowedAction,
+            string groupId,
+            string namespace_
+        )
+        {
+            PathParams["allowedAction"] = allowedAction;
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateGroupPredefinedRulePublicV1(
             string allowedAction,            
             string groupId,            

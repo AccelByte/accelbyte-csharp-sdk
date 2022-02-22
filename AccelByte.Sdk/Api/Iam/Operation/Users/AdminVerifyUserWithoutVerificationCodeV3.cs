@@ -25,6 +25,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminVerifyUserWithoutVerificationCodeV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminVerifyUserWithoutVerificationCodeV3Builder Builder = new AdminVerifyUserWithoutVerificationCodeV3Builder();
+
+        public class AdminVerifyUserWithoutVerificationCodeV3Builder
+        {
+            
+            
+            internal AdminVerifyUserWithoutVerificationCodeV3Builder() { }
+
+
+
+
+
+            public AdminVerifyUserWithoutVerificationCodeV3 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminVerifyUserWithoutVerificationCodeV3(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminVerifyUserWithoutVerificationCodeV3(AdminVerifyUserWithoutVerificationCodeV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminVerifyUserWithoutVerificationCodeV3(
             string namespace_,            
             string userId            

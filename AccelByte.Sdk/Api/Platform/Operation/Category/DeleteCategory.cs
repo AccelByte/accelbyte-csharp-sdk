@@ -23,6 +23,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DeleteCategory : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteCategoryBuilder Builder = new DeleteCategoryBuilder();
+
+        public class DeleteCategoryBuilder
+        {
+            
+            
+            
+            internal DeleteCategoryBuilder() { }
+
+
+
+
+
+            public DeleteCategory Build(
+                string categoryPath,
+                string namespace_,
+                string storeId
+            )
+            {
+                return new DeleteCategory(this,
+                    categoryPath,                    
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private DeleteCategory(DeleteCategoryBuilder builder,
+            string categoryPath,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["categoryPath"] = categoryPath;
+            PathParams["namespace"] = namespace_;
+            
+            if (storeId != null) QueryParams["storeId"] = storeId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteCategory(
             string categoryPath,            
             string namespace_,            

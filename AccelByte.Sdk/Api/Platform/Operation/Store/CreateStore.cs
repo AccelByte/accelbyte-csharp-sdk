@@ -23,6 +23,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CreateStore : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateStoreBuilder Builder = new CreateStoreBuilder();
+
+        public class CreateStoreBuilder
+        {
+            
+            public Model.StoreCreate? Body { get; set; }
+            
+            internal CreateStoreBuilder() { }
+
+
+
+            public CreateStoreBuilder SetBody(Model.StoreCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateStore Build(
+                string namespace_
+            )
+            {
+                return new CreateStore(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateStore(CreateStoreBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateStore(
             string namespace_,            
             Model.StoreCreate body            

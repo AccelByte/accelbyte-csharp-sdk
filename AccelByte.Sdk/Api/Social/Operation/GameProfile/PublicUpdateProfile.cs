@@ -21,6 +21,60 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class PublicUpdateProfile : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicUpdateProfileBuilder Builder = new PublicUpdateProfileBuilder();
+
+        public class PublicUpdateProfileBuilder
+        {
+            
+            
+            
+            public Model.GameProfileRequest? Body { get; set; }
+            
+            internal PublicUpdateProfileBuilder() { }
+
+
+
+            public PublicUpdateProfileBuilder SetBody(Model.GameProfileRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicUpdateProfile Build(
+                string namespace_,
+                string profileId,
+                string userId
+            )
+            {
+                return new PublicUpdateProfile(this,
+                    namespace_,                    
+                    profileId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicUpdateProfile(PublicUpdateProfileBuilder builder,
+            string namespace_,
+            string profileId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["profileId"] = profileId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicUpdateProfile(
             string namespace_,            
             string profileId,            

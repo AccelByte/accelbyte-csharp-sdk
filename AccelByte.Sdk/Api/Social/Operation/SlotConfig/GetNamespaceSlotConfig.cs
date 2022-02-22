@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class GetNamespaceSlotConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetNamespaceSlotConfigBuilder Builder = new GetNamespaceSlotConfigBuilder();
+
+        public class GetNamespaceSlotConfigBuilder
+        {
+            
+            internal GetNamespaceSlotConfigBuilder() { }
+
+
+
+
+
+            public GetNamespaceSlotConfig Build(
+                string namespace_
+            )
+            {
+                return new GetNamespaceSlotConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetNamespaceSlotConfig(GetNamespaceSlotConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetNamespaceSlotConfig(
             string namespace_            
         )

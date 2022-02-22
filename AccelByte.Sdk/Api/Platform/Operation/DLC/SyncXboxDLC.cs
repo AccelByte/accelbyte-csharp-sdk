@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class SyncXboxDLC : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SyncXboxDLCBuilder Builder = new SyncXboxDLCBuilder();
+
+        public class SyncXboxDLCBuilder
+        {
+            
+            
+            public Model.XblDLCSyncRequest? Body { get; set; }
+            
+            internal SyncXboxDLCBuilder() { }
+
+
+
+            public SyncXboxDLCBuilder SetBody(Model.XblDLCSyncRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public SyncXboxDLC Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new SyncXboxDLC(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private SyncXboxDLC(SyncXboxDLCBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public SyncXboxDLC(
             string namespace_,            
             string userId,            

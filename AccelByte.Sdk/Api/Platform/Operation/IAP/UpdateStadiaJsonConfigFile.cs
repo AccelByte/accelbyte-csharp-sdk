@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateStadiaJsonConfigFile : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateStadiaJsonConfigFileBuilder Builder = new UpdateStadiaJsonConfigFileBuilder();
+
+        public class UpdateStadiaJsonConfigFileBuilder
+        {
+            
+            public Stream? File { get; set; }
+            
+            internal UpdateStadiaJsonConfigFileBuilder() { }
+
+
+
+
+            public UpdateStadiaJsonConfigFileBuilder SetFile(Stream _file)
+            {
+                File = _file;
+                return this;
+            }
+
+
+            public UpdateStadiaJsonConfigFile Build(
+                string namespace_
+            )
+            {
+                return new UpdateStadiaJsonConfigFile(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateStadiaJsonConfigFile(UpdateStadiaJsonConfigFileBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            if (builder.File != null) FormParams["file"] = builder.File;
+            
+            
+            
+        }
+        #endregion
+
         public UpdateStadiaJsonConfigFile(
             string namespace_,            
             Stream? file            

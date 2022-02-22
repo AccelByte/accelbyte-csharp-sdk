@@ -22,6 +22,60 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// </summary>
     public class ListGameRecordsHandlerV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListGameRecordsHandlerV1Builder Builder = new ListGameRecordsHandlerV1Builder();
+
+        public class ListGameRecordsHandlerV1Builder
+        {
+            
+            public string? Query { get; set; }
+            
+            
+            
+            internal ListGameRecordsHandlerV1Builder() { }
+
+
+            public ListGameRecordsHandlerV1Builder SetQuery(string _query)
+            {
+                Query = _query;
+                return this;
+            }
+
+
+
+
+            public ListGameRecordsHandlerV1 Build(
+                string namespace_,
+                long limit,
+                long offset
+            )
+            {
+                return new ListGameRecordsHandlerV1(this,
+                    namespace_,                    
+                    limit,                    
+                    offset                    
+                );
+            }
+        }
+
+        private ListGameRecordsHandlerV1(ListGameRecordsHandlerV1Builder builder,
+            string namespace_,
+            long limit,
+            long offset
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Query != null) QueryParams["query"] = builder.Query;
+            QueryParams["limit"] = Convert.ToString(limit)!;
+            QueryParams["offset"] = Convert.ToString(offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListGameRecordsHandlerV1(
             string namespace_,            
             string? query,            

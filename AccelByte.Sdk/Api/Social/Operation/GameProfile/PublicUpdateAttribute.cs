@@ -21,6 +21,65 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class PublicUpdateAttribute : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicUpdateAttributeBuilder Builder = new PublicUpdateAttributeBuilder();
+
+        public class PublicUpdateAttributeBuilder
+        {
+            
+            
+            
+            
+            public Model.Attribute? Body { get; set; }
+            
+            internal PublicUpdateAttributeBuilder() { }
+
+
+
+            public PublicUpdateAttributeBuilder SetBody(Model.Attribute _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicUpdateAttribute Build(
+                string attributeName,
+                string namespace_,
+                string profileId,
+                string userId
+            )
+            {
+                return new PublicUpdateAttribute(this,
+                    attributeName,                    
+                    namespace_,                    
+                    profileId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicUpdateAttribute(PublicUpdateAttributeBuilder builder,
+            string attributeName,
+            string namespace_,
+            string profileId,
+            string userId
+        )
+        {
+            PathParams["attributeName"] = attributeName;
+            PathParams["namespace"] = namespace_;
+            PathParams["profileId"] = profileId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicUpdateAttribute(
             string attributeName,            
             string namespace_,            

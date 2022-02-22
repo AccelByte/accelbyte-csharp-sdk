@@ -26,6 +26,51 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class GeneratedUserUploadContentUrl : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GeneratedUserUploadContentUrlBuilder Builder = new GeneratedUserUploadContentUrlBuilder();
+
+        public class GeneratedUserUploadContentUrlBuilder
+        {
+            
+            
+            
+            internal GeneratedUserUploadContentUrlBuilder() { }
+
+
+
+
+
+            public GeneratedUserUploadContentUrl Build(
+                string namespace_,
+                string userId,
+                string fileType
+            )
+            {
+                return new GeneratedUserUploadContentUrl(this,
+                    namespace_,                    
+                    userId,                    
+                    fileType                    
+                );
+            }
+        }
+
+        private GeneratedUserUploadContentUrl(GeneratedUserUploadContentUrlBuilder builder,
+            string namespace_,
+            string userId,
+            string fileType
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (fileType != null) QueryParams["fileType"] = fileType;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GeneratedUserUploadContentUrl(
             string namespace_,            
             string userId,            

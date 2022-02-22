@@ -27,6 +27,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class CheckUserAvailability : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CheckUserAvailabilityBuilder Builder = new CheckUserAvailabilityBuilder();
+
+        public class CheckUserAvailabilityBuilder
+        {
+            
+            
+            
+            internal CheckUserAvailabilityBuilder() { }
+
+
+
+
+
+            public CheckUserAvailability Build(
+                string namespace_,
+                string field,
+                string query
+            )
+            {
+                return new CheckUserAvailability(this,
+                    namespace_,                    
+                    field,                    
+                    query                    
+                );
+            }
+        }
+
+        private CheckUserAvailability(CheckUserAvailabilityBuilder builder,
+            string namespace_,
+            string field,
+            string query
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (field != null) QueryParams["field"] = field;
+            if (query != null) QueryParams["query"] = query;
+            
+            
+            
+            
+        }
+        #endregion
+
         public CheckUserAvailability(
             string namespace_,            
             string field,            

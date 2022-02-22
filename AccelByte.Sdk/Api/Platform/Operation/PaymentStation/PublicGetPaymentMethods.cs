@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetPaymentMethods : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetPaymentMethodsBuilder Builder = new PublicGetPaymentMethodsBuilder();
+
+        public class PublicGetPaymentMethodsBuilder
+        {
+            
+            
+            internal PublicGetPaymentMethodsBuilder() { }
+
+
+
+
+
+            public PublicGetPaymentMethods Build(
+                string namespace_,
+                string paymentOrderNo
+            )
+            {
+                return new PublicGetPaymentMethods(this,
+                    namespace_,                    
+                    paymentOrderNo                    
+                );
+            }
+        }
+
+        private PublicGetPaymentMethods(PublicGetPaymentMethodsBuilder builder,
+            string namespace_,
+            string paymentOrderNo
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (paymentOrderNo != null) QueryParams["paymentOrderNo"] = paymentOrderNo;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetPaymentMethods(
             string namespace_,            
             string paymentOrderNo            

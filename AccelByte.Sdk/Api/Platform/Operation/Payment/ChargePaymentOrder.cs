@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ChargePaymentOrder : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ChargePaymentOrderBuilder Builder = new ChargePaymentOrderBuilder();
+
+        public class ChargePaymentOrderBuilder
+        {
+            
+            
+            public Model.PaymentOrderChargeRequest? Body { get; set; }
+            
+            internal ChargePaymentOrderBuilder() { }
+
+
+
+            public ChargePaymentOrderBuilder SetBody(Model.PaymentOrderChargeRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public ChargePaymentOrder Build(
+                string namespace_,
+                string paymentOrderNo
+            )
+            {
+                return new ChargePaymentOrder(this,
+                    namespace_,                    
+                    paymentOrderNo                    
+                );
+            }
+        }
+
+        private ChargePaymentOrder(ChargePaymentOrderBuilder builder,
+            string namespace_,
+            string paymentOrderNo
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["paymentOrderNo"] = paymentOrderNo;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public ChargePaymentOrder(
             string namespace_,            
             string paymentOrderNo,            

@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminSetProfanityRuleForNamespace : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminSetProfanityRuleForNamespaceBuilder Builder = new AdminSetProfanityRuleForNamespaceBuilder();
+
+        public class AdminSetProfanityRuleForNamespaceBuilder
+        {
+            
+            
+            internal AdminSetProfanityRuleForNamespaceBuilder() { }
+
+
+
+
+
+            public AdminSetProfanityRuleForNamespace Build(
+                ModelsAdminSetProfanityRuleForNamespaceRequest body,
+                string namespace_
+            )
+            {
+                return new AdminSetProfanityRuleForNamespace(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminSetProfanityRuleForNamespace(AdminSetProfanityRuleForNamespaceBuilder builder,
+            ModelsAdminSetProfanityRuleForNamespaceRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminSetProfanityRuleForNamespace(
             string namespace_,            
             Model.ModelsAdminSetProfanityRuleForNamespaceRequest body            

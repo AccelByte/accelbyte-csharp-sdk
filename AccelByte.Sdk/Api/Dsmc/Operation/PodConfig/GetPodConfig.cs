@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class GetPodConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPodConfigBuilder Builder = new GetPodConfigBuilder();
+
+        public class GetPodConfigBuilder
+        {
+            
+            
+            internal GetPodConfigBuilder() { }
+
+
+
+
+
+            public GetPodConfig Build(
+                string name,
+                string namespace_
+            )
+            {
+                return new GetPodConfig(this,
+                    name,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetPodConfig(GetPodConfigBuilder builder,
+            string name,
+            string namespace_
+        )
+        {
+            PathParams["name"] = name;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPodConfig(
             string name,            
             string namespace_            

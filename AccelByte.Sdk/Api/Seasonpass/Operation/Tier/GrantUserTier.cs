@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class GrantUserTier : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GrantUserTierBuilder Builder = new GrantUserTierBuilder();
+
+        public class GrantUserTierBuilder
+        {
+            
+            
+            public Model.UserTierGrant? Body { get; set; }
+            
+            internal GrantUserTierBuilder() { }
+
+
+
+            public GrantUserTierBuilder SetBody(Model.UserTierGrant _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public GrantUserTier Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GrantUserTier(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GrantUserTier(GrantUserTierBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public GrantUserTier(
             string namespace_,            
             string userId,            

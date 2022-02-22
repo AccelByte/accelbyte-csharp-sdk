@@ -25,6 +25,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminUpdateClientPermissionV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateClientPermissionV3Builder Builder = new AdminUpdateClientPermissionV3Builder();
+
+        public class AdminUpdateClientPermissionV3Builder
+        {
+            
+            
+            
+            internal AdminUpdateClientPermissionV3Builder() { }
+
+
+
+
+
+            public AdminUpdateClientPermissionV3 Build(
+                AccountcommonClientPermissionsV3 body,
+                string clientId,
+                string namespace_
+            )
+            {
+                return new AdminUpdateClientPermissionV3(this,
+                    body,                    
+                    clientId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminUpdateClientPermissionV3(AdminUpdateClientPermissionV3Builder builder,
+            AccountcommonClientPermissionsV3 body,
+            string clientId,
+            string namespace_
+        )
+        {
+            PathParams["clientId"] = clientId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateClientPermissionV3(
             string clientId,            
             string namespace_,            

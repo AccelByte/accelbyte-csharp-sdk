@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicFulfillAppleIAPItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicFulfillAppleIAPItemBuilder Builder = new PublicFulfillAppleIAPItemBuilder();
+
+        public class PublicFulfillAppleIAPItemBuilder
+        {
+            
+            
+            public Model.AppleIAPReceipt? Body { get; set; }
+            
+            internal PublicFulfillAppleIAPItemBuilder() { }
+
+
+
+            public PublicFulfillAppleIAPItemBuilder SetBody(Model.AppleIAPReceipt _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicFulfillAppleIAPItem Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicFulfillAppleIAPItem(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicFulfillAppleIAPItem(PublicFulfillAppleIAPItemBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicFulfillAppleIAPItem(
             string namespace_,            
             string userId,            

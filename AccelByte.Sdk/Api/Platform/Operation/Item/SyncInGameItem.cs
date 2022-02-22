@@ -25,6 +25,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class SyncInGameItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SyncInGameItemBuilder Builder = new SyncInGameItemBuilder();
+
+        public class SyncInGameItemBuilder
+        {
+            
+            
+            public Model.InGameItemSync? Body { get; set; }
+            
+            internal SyncInGameItemBuilder() { }
+
+
+
+            public SyncInGameItemBuilder SetBody(Model.InGameItemSync _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public SyncInGameItem Build(
+                string namespace_,
+                string storeId
+            )
+            {
+                return new SyncInGameItem(this,
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private SyncInGameItem(SyncInGameItemBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (storeId != null) QueryParams["storeId"] = storeId;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public SyncInGameItem(
             string namespace_,            
             string storeId,            

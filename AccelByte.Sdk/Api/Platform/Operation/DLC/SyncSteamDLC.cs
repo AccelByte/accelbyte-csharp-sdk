@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class SyncSteamDLC : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SyncSteamDLCBuilder Builder = new SyncSteamDLCBuilder();
+
+        public class SyncSteamDLCBuilder
+        {
+            
+            
+            public Model.SteamDLCSyncRequest? Body { get; set; }
+            
+            internal SyncSteamDLCBuilder() { }
+
+
+
+            public SyncSteamDLCBuilder SetBody(Model.SteamDLCSyncRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public SyncSteamDLC Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new SyncSteamDLC(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private SyncSteamDLC(SyncSteamDLCBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public SyncSteamDLC(
             string namespace_,            
             string userId,            

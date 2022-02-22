@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class UpdateDeployment : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateDeploymentBuilder Builder = new UpdateDeploymentBuilder();
+
+        public class UpdateDeploymentBuilder
+        {
+            
+            
+            
+            internal UpdateDeploymentBuilder() { }
+
+
+
+
+
+            public UpdateDeployment Build(
+                ModelsUpdateDeploymentRequest body,
+                string deployment,
+                string namespace_
+            )
+            {
+                return new UpdateDeployment(this,
+                    body,                    
+                    deployment,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateDeployment(UpdateDeploymentBuilder builder,
+            ModelsUpdateDeploymentRequest body,
+            string deployment,
+            string namespace_
+        )
+        {
+            PathParams["deployment"] = deployment;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateDeployment(
             string deployment,            
             string namespace_,            

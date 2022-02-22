@@ -35,6 +35,73 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetAdminUsersByRoleIdV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetAdminUsersByRoleIdV3Builder Builder = new GetAdminUsersByRoleIdV3Builder();
+
+        public class GetAdminUsersByRoleIdV3Builder
+        {
+            
+            
+            public long? After { get; set; }
+            
+            public long? Before { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            internal GetAdminUsersByRoleIdV3Builder() { }
+
+
+            public GetAdminUsersByRoleIdV3Builder SetAfter(long _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public GetAdminUsersByRoleIdV3Builder SetBefore(long _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public GetAdminUsersByRoleIdV3Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+
+
+
+            public GetAdminUsersByRoleIdV3 Build(
+                string namespace_,
+                string roleId
+            )
+            {
+                return new GetAdminUsersByRoleIdV3(this,
+                    namespace_,                    
+                    roleId                    
+                );
+            }
+        }
+
+        private GetAdminUsersByRoleIdV3(GetAdminUsersByRoleIdV3Builder builder,
+            string namespace_,
+            string roleId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["roleId"] = roleId;
+            
+            if (builder.After != null) QueryParams["after"] = Convert.ToString(builder.After)!;
+            if (builder.Before != null) QueryParams["before"] = Convert.ToString(builder.Before)!;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetAdminUsersByRoleIdV3(
             string namespace_,            
             string roleId,            

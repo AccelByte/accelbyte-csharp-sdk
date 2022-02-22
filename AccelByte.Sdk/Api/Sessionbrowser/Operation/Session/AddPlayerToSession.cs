@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// </summary>
     public class AddPlayerToSession : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AddPlayerToSessionBuilder Builder = new AddPlayerToSessionBuilder();
+
+        public class AddPlayerToSessionBuilder
+        {
+            
+            
+            
+            internal AddPlayerToSessionBuilder() { }
+
+
+
+
+
+            public AddPlayerToSession Build(
+                ModelsAddPlayerRequest body,
+                string namespace_,
+                string sessionID
+            )
+            {
+                return new AddPlayerToSession(this,
+                    body,                    
+                    namespace_,                    
+                    sessionID                    
+                );
+            }
+        }
+
+        private AddPlayerToSession(AddPlayerToSessionBuilder builder,
+            ModelsAddPlayerRequest body,
+            string namespace_,
+            string sessionID
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["sessionID"] = sessionID;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AddPlayerToSession(
             string namespace_,            
             string sessionID,            

@@ -22,6 +22,68 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class GetAllNotificationTopicsV1Admin : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetAllNotificationTopicsV1AdminBuilder Builder = new GetAllNotificationTopicsV1AdminBuilder();
+
+        public class GetAllNotificationTopicsV1AdminBuilder
+        {
+            
+            public string? After { get; set; }
+            
+            public string? Before { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            internal GetAllNotificationTopicsV1AdminBuilder() { }
+
+
+            public GetAllNotificationTopicsV1AdminBuilder SetAfter(string _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public GetAllNotificationTopicsV1AdminBuilder SetBefore(string _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public GetAllNotificationTopicsV1AdminBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+
+
+
+            public GetAllNotificationTopicsV1Admin Build(
+                string namespace_
+            )
+            {
+                return new GetAllNotificationTopicsV1Admin(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetAllNotificationTopicsV1Admin(GetAllNotificationTopicsV1AdminBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.After != null) QueryParams["after"] = builder.After;
+            if (builder.Before != null) QueryParams["before"] = builder.Before;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetAllNotificationTopicsV1Admin(
             string namespace_,            
             string? after,            

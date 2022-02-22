@@ -27,6 +27,54 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class TestCheckoutConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static TestCheckoutConfigBuilder Builder = new TestCheckoutConfigBuilder();
+
+        public class TestCheckoutConfigBuilder
+        {
+            public bool? Sandbox { get; set; }
+            
+            public Model.CheckoutConfig? Body { get; set; }
+            
+            internal TestCheckoutConfigBuilder() { }
+
+
+            public TestCheckoutConfigBuilder SetSandbox(bool _sandbox)
+            {
+                Sandbox = _sandbox;
+                return this;
+            }
+
+
+            public TestCheckoutConfigBuilder SetBody(Model.CheckoutConfig _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public TestCheckoutConfig Build(
+            )
+            {
+                return new TestCheckoutConfig(this
+                );
+            }
+        }
+
+        private TestCheckoutConfig(TestCheckoutConfigBuilder builder
+        )
+        {
+            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public TestCheckoutConfig(
             bool? sandbox,            
             Model.CheckoutConfig body            

@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class GetImageDetail : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetImageDetailBuilder Builder = new GetImageDetailBuilder();
+
+        public class GetImageDetailBuilder
+        {
+            
+            
+            internal GetImageDetailBuilder() { }
+
+
+
+
+
+            public GetImageDetail Build(
+                string namespace_,
+                string version
+            )
+            {
+                return new GetImageDetail(this,
+                    namespace_,                    
+                    version                    
+                );
+            }
+        }
+
+        private GetImageDetail(GetImageDetailBuilder builder,
+            string namespace_,
+            string version
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["version"] = version;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetImageDetail(
             string namespace_,            
             string version            

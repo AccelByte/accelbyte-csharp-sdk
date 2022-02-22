@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DeletePaymentProviderConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeletePaymentProviderConfigBuilder Builder = new DeletePaymentProviderConfigBuilder();
+
+        public class DeletePaymentProviderConfigBuilder
+        {
+            
+            internal DeletePaymentProviderConfigBuilder() { }
+
+
+
+
+
+            public DeletePaymentProviderConfig Build(
+                string id
+            )
+            {
+                return new DeletePaymentProviderConfig(this,
+                    id                    
+                );
+            }
+        }
+
+        private DeletePaymentProviderConfig(DeletePaymentProviderConfigBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeletePaymentProviderConfig(
             string id            
         )

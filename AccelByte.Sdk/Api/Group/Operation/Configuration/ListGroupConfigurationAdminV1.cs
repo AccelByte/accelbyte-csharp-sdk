@@ -28,6 +28,59 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class ListGroupConfigurationAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListGroupConfigurationAdminV1Builder Builder = new ListGroupConfigurationAdminV1Builder();
+
+        public class ListGroupConfigurationAdminV1Builder
+        {
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal ListGroupConfigurationAdminV1Builder() { }
+
+
+            public ListGroupConfigurationAdminV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public ListGroupConfigurationAdminV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public ListGroupConfigurationAdminV1 Build(
+                string namespace_
+            )
+            {
+                return new ListGroupConfigurationAdminV1(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ListGroupConfigurationAdminV1(ListGroupConfigurationAdminV1Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListGroupConfigurationAdminV1(
             string namespace_,            
             long? limit,            

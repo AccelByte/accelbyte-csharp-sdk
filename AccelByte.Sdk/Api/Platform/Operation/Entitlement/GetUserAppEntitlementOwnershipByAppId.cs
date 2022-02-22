@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetUserAppEntitlementOwnershipByAppId : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserAppEntitlementOwnershipByAppIdBuilder Builder = new GetUserAppEntitlementOwnershipByAppIdBuilder();
+
+        public class GetUserAppEntitlementOwnershipByAppIdBuilder
+        {
+            
+            
+            
+            internal GetUserAppEntitlementOwnershipByAppIdBuilder() { }
+
+
+
+
+
+            public GetUserAppEntitlementOwnershipByAppId Build(
+                string namespace_,
+                string userId,
+                string appId
+            )
+            {
+                return new GetUserAppEntitlementOwnershipByAppId(this,
+                    namespace_,                    
+                    userId,                    
+                    appId                    
+                );
+            }
+        }
+
+        private GetUserAppEntitlementOwnershipByAppId(GetUserAppEntitlementOwnershipByAppIdBuilder builder,
+            string namespace_,
+            string userId,
+            string appId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (appId != null) QueryParams["appId"] = appId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserAppEntitlementOwnershipByAppId(
             string namespace_,            
             string userId,            

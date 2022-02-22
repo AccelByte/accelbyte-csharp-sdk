@@ -106,6 +106,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class SaveUserPermission : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SaveUserPermissionBuilder Builder = new SaveUserPermissionBuilder();
+
+        public class SaveUserPermissionBuilder
+        {
+            
+            
+            
+            internal SaveUserPermissionBuilder() { }
+
+
+
+
+
+            public SaveUserPermission Build(
+                AccountcommonPermissions body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new SaveUserPermission(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private SaveUserPermission(SaveUserPermissionBuilder builder,
+            AccountcommonPermissions body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public SaveUserPermission(
             string namespace_,            
             string userId,            

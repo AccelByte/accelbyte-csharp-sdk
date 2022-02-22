@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
     /// </summary>
     public class BatchDownloadServerLogs : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static BatchDownloadServerLogsBuilder Builder = new BatchDownloadServerLogsBuilder();
+
+        public class BatchDownloadServerLogsBuilder
+        {
+            
+            internal BatchDownloadServerLogsBuilder() { }
+
+
+
+
+
+            public BatchDownloadServerLogs Build(
+                ModelsBatchDownloadLogsRequest body
+            )
+            {
+                return new BatchDownloadServerLogs(this,
+                    body                    
+                );
+            }
+        }
+
+        private BatchDownloadServerLogs(BatchDownloadServerLogsBuilder builder,
+            ModelsBatchDownloadLogsRequest body
+        )
+        {
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public BatchDownloadServerLogs(
             Model.ModelsBatchDownloadLogsRequest body            
         )

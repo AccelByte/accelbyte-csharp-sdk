@@ -24,6 +24,55 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class UpdatePrivateCustomAttributesPartially : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdatePrivateCustomAttributesPartiallyBuilder Builder = new UpdatePrivateCustomAttributesPartiallyBuilder();
+
+        public class UpdatePrivateCustomAttributesPartiallyBuilder
+        {
+            
+            
+            public Dictionary<string, object>? Body { get; set; }
+            
+            internal UpdatePrivateCustomAttributesPartiallyBuilder() { }
+
+
+
+            public UpdatePrivateCustomAttributesPartiallyBuilder SetBody(Dictionary<string, object> _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdatePrivateCustomAttributesPartially Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new UpdatePrivateCustomAttributesPartially(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private UpdatePrivateCustomAttributesPartially(UpdatePrivateCustomAttributesPartiallyBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdatePrivateCustomAttributesPartially(
             string namespace_,            
             string userId,            

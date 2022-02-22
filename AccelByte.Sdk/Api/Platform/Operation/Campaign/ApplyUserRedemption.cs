@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ApplyUserRedemption : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ApplyUserRedemptionBuilder Builder = new ApplyUserRedemptionBuilder();
+
+        public class ApplyUserRedemptionBuilder
+        {
+            
+            
+            public Model.RedeemRequest? Body { get; set; }
+            
+            internal ApplyUserRedemptionBuilder() { }
+
+
+
+            public ApplyUserRedemptionBuilder SetBody(Model.RedeemRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public ApplyUserRedemption Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new ApplyUserRedemption(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private ApplyUserRedemption(ApplyUserRedemptionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public ApplyUserRedemption(
             string namespace_,            
             string userId,            

@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminGetProfanityListFiltersV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetProfanityListFiltersV1Builder Builder = new AdminGetProfanityListFiltersV1Builder();
+
+        public class AdminGetProfanityListFiltersV1Builder
+        {
+            
+            
+            internal AdminGetProfanityListFiltersV1Builder() { }
+
+
+
+
+
+            public AdminGetProfanityListFiltersV1 Build(
+                string list,
+                string namespace_
+            )
+            {
+                return new AdminGetProfanityListFiltersV1(this,
+                    list,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetProfanityListFiltersV1(AdminGetProfanityListFiltersV1Builder builder,
+            string list,
+            string namespace_
+        )
+        {
+            PathParams["list"] = list;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetProfanityListFiltersV1(
             string list,            
             string namespace_            

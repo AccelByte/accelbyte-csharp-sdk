@@ -23,6 +23,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ListBasicItemsByFeatures : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListBasicItemsByFeaturesBuilder Builder = new ListBasicItemsByFeaturesBuilder();
+
+        public class ListBasicItemsByFeaturesBuilder
+        {
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public List<string>? Features { get; set; }
+            
+            internal ListBasicItemsByFeaturesBuilder() { }
+
+
+            public ListBasicItemsByFeaturesBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public ListBasicItemsByFeaturesBuilder SetFeatures(List<string> _features)
+            {
+                Features = _features;
+                return this;
+            }
+
+
+
+
+            public ListBasicItemsByFeatures Build(
+                string namespace_
+            )
+            {
+                return new ListBasicItemsByFeatures(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ListBasicItemsByFeatures(ListBasicItemsByFeaturesBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.Features != null) QueryParams["features"] = builder.Features;
+            
+            
+            CollectionFormatMap["features"] = "multi";
+            
+            
+        }
+        #endregion
+
         public ListBasicItemsByFeatures(
             string namespace_,            
             bool? activeOnly,            

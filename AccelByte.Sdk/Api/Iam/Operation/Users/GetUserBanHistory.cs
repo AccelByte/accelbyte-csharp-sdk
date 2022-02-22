@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetUserBanHistory : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserBanHistoryBuilder Builder = new GetUserBanHistoryBuilder();
+
+        public class GetUserBanHistoryBuilder
+        {
+            
+            
+            internal GetUserBanHistoryBuilder() { }
+
+
+
+
+
+            public GetUserBanHistory Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetUserBanHistory(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserBanHistory(GetUserBanHistoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserBanHistory(
             string namespace_,            
             string userId            

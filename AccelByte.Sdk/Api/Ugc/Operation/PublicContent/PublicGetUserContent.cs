@@ -18,6 +18,64 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class PublicGetUserContent : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetUserContentBuilder Builder = new PublicGetUserContentBuilder();
+
+        public class PublicGetUserContentBuilder
+        {
+            
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal PublicGetUserContentBuilder() { }
+
+
+            public PublicGetUserContentBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicGetUserContentBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public PublicGetUserContent Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicGetUserContent(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicGetUserContent(PublicGetUserContentBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetUserContent(
             string namespace_,            
             string userId,            

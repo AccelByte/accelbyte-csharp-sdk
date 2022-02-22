@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class GetServerLogs : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetServerLogsBuilder Builder = new GetServerLogsBuilder();
+
+        public class GetServerLogsBuilder
+        {
+            
+            
+            internal GetServerLogsBuilder() { }
+
+
+
+
+
+            public GetServerLogs Build(
+                string namespace_,
+                string podName
+            )
+            {
+                return new GetServerLogs(this,
+                    namespace_,                    
+                    podName                    
+                );
+            }
+        }
+
+        private GetServerLogs(GetServerLogsBuilder builder,
+            string namespace_,
+            string podName
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["podName"] = podName;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetServerLogs(
             string namespace_,            
             string podName            

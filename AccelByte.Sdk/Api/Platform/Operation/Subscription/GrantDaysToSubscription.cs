@@ -23,6 +23,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GrantDaysToSubscription : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GrantDaysToSubscriptionBuilder Builder = new GrantDaysToSubscriptionBuilder();
+
+        public class GrantDaysToSubscriptionBuilder
+        {
+            
+            
+            
+            public Model.GrantSubscriptionDaysRequest? Body { get; set; }
+            
+            internal GrantDaysToSubscriptionBuilder() { }
+
+
+
+            public GrantDaysToSubscriptionBuilder SetBody(Model.GrantSubscriptionDaysRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public GrantDaysToSubscription Build(
+                string namespace_,
+                string subscriptionId,
+                string userId
+            )
+            {
+                return new GrantDaysToSubscription(this,
+                    namespace_,                    
+                    subscriptionId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GrantDaysToSubscription(GrantDaysToSubscriptionBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["subscriptionId"] = subscriptionId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public GrantDaysToSubscription(
             string namespace_,            
             string subscriptionId,            

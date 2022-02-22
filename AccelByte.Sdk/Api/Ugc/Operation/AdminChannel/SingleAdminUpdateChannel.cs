@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class SingleAdminUpdateChannel : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SingleAdminUpdateChannelBuilder Builder = new SingleAdminUpdateChannelBuilder();
+
+        public class SingleAdminUpdateChannelBuilder
+        {
+            
+            
+            
+            internal SingleAdminUpdateChannelBuilder() { }
+
+
+
+
+
+            public SingleAdminUpdateChannel Build(
+                ModelsChannelRequest body,
+                string channelId,
+                string namespace_
+            )
+            {
+                return new SingleAdminUpdateChannel(this,
+                    body,                    
+                    channelId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private SingleAdminUpdateChannel(SingleAdminUpdateChannelBuilder builder,
+            ModelsChannelRequest body,
+            string channelId,
+            string namespace_
+        )
+        {
+            PathParams["channelId"] = channelId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public SingleAdminUpdateChannel(
             string channelId,            
             string namespace_,            

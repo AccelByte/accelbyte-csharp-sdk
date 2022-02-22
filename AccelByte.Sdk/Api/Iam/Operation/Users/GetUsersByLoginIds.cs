@@ -18,6 +18,50 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetUsersByLoginIds : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUsersByLoginIdsBuilder Builder = new GetUsersByLoginIdsBuilder();
+
+        public class GetUsersByLoginIdsBuilder
+        {
+            
+            public string? LoginIds { get; set; }
+            
+            internal GetUsersByLoginIdsBuilder() { }
+
+
+            public GetUsersByLoginIdsBuilder SetLoginIds(string _loginIds)
+            {
+                LoginIds = _loginIds;
+                return this;
+            }
+
+
+
+
+            public GetUsersByLoginIds Build(
+                string namespace_
+            )
+            {
+                return new GetUsersByLoginIds(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetUsersByLoginIds(GetUsersByLoginIdsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.LoginIds != null) QueryParams["loginIds"] = builder.LoginIds;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUsersByLoginIds(
             string namespace_,            
             string? loginIds            

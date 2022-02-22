@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class UnpublishSeason : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UnpublishSeasonBuilder Builder = new UnpublishSeasonBuilder();
+
+        public class UnpublishSeasonBuilder
+        {
+            
+            
+            public bool? Force { get; set; }
+            
+            internal UnpublishSeasonBuilder() { }
+
+
+            public UnpublishSeasonBuilder SetForce(bool _force)
+            {
+                Force = _force;
+                return this;
+            }
+
+
+
+
+            public UnpublishSeason Build(
+                string namespace_,
+                string seasonId
+            )
+            {
+                return new UnpublishSeason(this,
+                    namespace_,                    
+                    seasonId                    
+                );
+            }
+        }
+
+        private UnpublishSeason(UnpublishSeasonBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["seasonId"] = seasonId;
+            
+            if (builder.Force != null) QueryParams["force"] = Convert.ToString(builder.Force)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public UnpublishSeason(
             string namespace_,            
             string seasonId,            

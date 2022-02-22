@@ -21,6 +21,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ReturnItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ReturnItemBuilder Builder = new ReturnItemBuilder();
+
+        public class ReturnItemBuilder
+        {
+            
+            
+            public Model.ItemReturnRequest? Body { get; set; }
+            
+            internal ReturnItemBuilder() { }
+
+
+
+            public ReturnItemBuilder SetBody(Model.ItemReturnRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public ReturnItem Build(
+                string itemId,
+                string namespace_
+            )
+            {
+                return new ReturnItem(this,
+                    itemId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private ReturnItem(ReturnItemBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            PathParams["itemId"] = itemId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public ReturnItem(
             string itemId,            
             string namespace_,            

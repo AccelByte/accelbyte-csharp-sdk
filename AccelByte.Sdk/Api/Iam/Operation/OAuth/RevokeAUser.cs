@@ -41,6 +41,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class RevokeAUser : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RevokeAUserBuilder Builder = new RevokeAUserBuilder();
+
+        public class RevokeAUserBuilder
+        {
+            
+            internal RevokeAUserBuilder() { }
+
+
+
+
+
+            public RevokeAUser Build(
+                string userID
+            )
+            {
+                return new RevokeAUser(this,
+                    userID                    
+                );
+            }
+        }
+
+        private RevokeAUser(RevokeAUserBuilder builder,
+            string userID
+        )
+        {
+            
+            
+            if (userID != null) FormParams["userID"] = userID;
+            
+            
+            
+        }
+        #endregion
+
         public RevokeAUser(
             string userID            
         )

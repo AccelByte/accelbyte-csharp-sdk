@@ -22,6 +22,76 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicExistsAnyUserActiveEntitlement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicExistsAnyUserActiveEntitlementBuilder Builder = new PublicExistsAnyUserActiveEntitlementBuilder();
+
+        public class PublicExistsAnyUserActiveEntitlementBuilder
+        {
+            
+            
+            public List<string>? AppIds { get; set; }
+            
+            public List<string>? ItemIds { get; set; }
+            
+            public List<string>? Skus { get; set; }
+            
+            internal PublicExistsAnyUserActiveEntitlementBuilder() { }
+
+
+            public PublicExistsAnyUserActiveEntitlementBuilder SetAppIds(List<string> _appIds)
+            {
+                AppIds = _appIds;
+                return this;
+            }
+
+            public PublicExistsAnyUserActiveEntitlementBuilder SetItemIds(List<string> _itemIds)
+            {
+                ItemIds = _itemIds;
+                return this;
+            }
+
+            public PublicExistsAnyUserActiveEntitlementBuilder SetSkus(List<string> _skus)
+            {
+                Skus = _skus;
+                return this;
+            }
+
+
+
+
+            public PublicExistsAnyUserActiveEntitlement Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicExistsAnyUserActiveEntitlement(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicExistsAnyUserActiveEntitlement(PublicExistsAnyUserActiveEntitlementBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.AppIds != null) QueryParams["appIds"] = builder.AppIds;
+            if (builder.ItemIds != null) QueryParams["itemIds"] = builder.ItemIds;
+            if (builder.Skus != null) QueryParams["skus"] = builder.Skus;
+            
+            
+            CollectionFormatMap["appIds"] = "multi";
+            CollectionFormatMap["itemIds"] = "multi";
+            CollectionFormatMap["skus"] = "multi";
+            
+            
+        }
+        #endregion
+
         public PublicExistsAnyUserActiveEntitlement(
             string namespace_,            
             string userId,            

@@ -16,6 +16,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class UserUnfriendRequest : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UserUnfriendRequestBuilder Builder = new UserUnfriendRequestBuilder();
+
+        public class UserUnfriendRequestBuilder
+        {
+            
+            
+            internal UserUnfriendRequestBuilder() { }
+
+
+
+
+
+            public UserUnfriendRequest Build(
+                ModelUserUnfriendRequest body,
+                string namespace_
+            )
+            {
+                return new UserUnfriendRequest(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UserUnfriendRequest(UserUnfriendRequestBuilder builder,
+            ModelUserUnfriendRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UserUnfriendRequest(
             string namespace_,            
             Model.ModelUserUnfriendRequest body            

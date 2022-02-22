@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminCreateUserRolesV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminCreateUserRolesV2Builder Builder = new AdminCreateUserRolesV2Builder();
+
+        public class AdminCreateUserRolesV2Builder
+        {
+            
+            
+            
+            internal AdminCreateUserRolesV2Builder() { }
+
+
+
+
+
+            public AdminCreateUserRolesV2 Build(
+                List<string> body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminCreateUserRolesV2(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminCreateUserRolesV2(AdminCreateUserRolesV2Builder builder,
+            List<string> body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminCreateUserRolesV2(
             string namespace_,            
             string userId,            

@@ -35,6 +35,46 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class CreateChannelHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateChannelHandlerBuilder Builder = new CreateChannelHandlerBuilder();
+
+        public class CreateChannelHandlerBuilder
+        {
+            
+            
+            internal CreateChannelHandlerBuilder() { }
+
+
+
+
+
+            public CreateChannelHandler Build(
+                ModelsChannelRequest body,
+                string namespace_
+            )
+            {
+                return new CreateChannelHandler(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateChannelHandler(CreateChannelHandlerBuilder builder,
+            ModelsChannelRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateChannelHandler(
             string namespace_,            
             Model.ModelsChannelRequest body            

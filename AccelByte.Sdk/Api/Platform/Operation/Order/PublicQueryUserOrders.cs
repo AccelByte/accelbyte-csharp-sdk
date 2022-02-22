@@ -22,6 +22,82 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicQueryUserOrders : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicQueryUserOrdersBuilder Builder = new PublicQueryUserOrdersBuilder();
+
+        public class PublicQueryUserOrdersBuilder
+        {
+            
+            
+            public string? ItemId { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? Status { get; set; }
+            
+            internal PublicQueryUserOrdersBuilder() { }
+
+
+            public PublicQueryUserOrdersBuilder SetItemId(string _itemId)
+            {
+                ItemId = _itemId;
+                return this;
+            }
+
+            public PublicQueryUserOrdersBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicQueryUserOrdersBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public PublicQueryUserOrdersBuilder SetStatus(string _status)
+            {
+                Status = _status;
+                return this;
+            }
+
+
+
+
+            public PublicQueryUserOrders Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicQueryUserOrders(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicQueryUserOrders(PublicQueryUserOrdersBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.ItemId != null) QueryParams["itemId"] = builder.ItemId;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicQueryUserOrders(
             string namespace_,            
             string userId,            

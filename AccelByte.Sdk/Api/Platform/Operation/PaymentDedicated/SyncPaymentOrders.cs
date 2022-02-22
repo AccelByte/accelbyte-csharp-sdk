@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class SyncPaymentOrders : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SyncPaymentOrdersBuilder Builder = new SyncPaymentOrdersBuilder();
+
+        public class SyncPaymentOrdersBuilder
+        {
+            public string? NextEvaluatedKey { get; set; }
+            
+            
+            
+            internal SyncPaymentOrdersBuilder() { }
+
+
+            public SyncPaymentOrdersBuilder SetNextEvaluatedKey(string _nextEvaluatedKey)
+            {
+                NextEvaluatedKey = _nextEvaluatedKey;
+                return this;
+            }
+
+
+
+
+            public SyncPaymentOrders Build(
+                string end,
+                string start
+            )
+            {
+                return new SyncPaymentOrders(this,
+                    end,                    
+                    start                    
+                );
+            }
+        }
+
+        private SyncPaymentOrders(SyncPaymentOrdersBuilder builder,
+            string end,
+            string start
+        )
+        {
+            
+            if (builder.NextEvaluatedKey != null) QueryParams["nextEvaluatedKey"] = builder.NextEvaluatedKey;
+            if (end != null) QueryParams["end"] = end;
+            if (start != null) QueryParams["start"] = start;
+            
+            
+            
+            
+        }
+        #endregion
+
         public SyncPaymentOrders(
             string? nextEvaluatedKey,            
             string end,            

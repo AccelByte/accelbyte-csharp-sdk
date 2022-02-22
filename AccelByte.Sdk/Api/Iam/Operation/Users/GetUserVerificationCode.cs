@@ -23,6 +23,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetUserVerificationCode : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserVerificationCodeBuilder Builder = new GetUserVerificationCodeBuilder();
+
+        public class GetUserVerificationCodeBuilder
+        {
+            
+            
+            internal GetUserVerificationCodeBuilder() { }
+
+
+
+
+
+            public GetUserVerificationCode Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetUserVerificationCode(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserVerificationCode(GetUserVerificationCodeBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserVerificationCode(
             string namespace_,            
             string userId            

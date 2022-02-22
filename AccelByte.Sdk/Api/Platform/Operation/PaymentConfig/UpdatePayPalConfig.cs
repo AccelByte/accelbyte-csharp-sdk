@@ -22,6 +22,68 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdatePayPalConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdatePayPalConfigBuilder Builder = new UpdatePayPalConfigBuilder();
+
+        public class UpdatePayPalConfigBuilder
+        {
+            
+            public bool? Sandbox { get; set; }
+            
+            public bool? Validate { get; set; }
+            
+            public Model.PayPalConfig? Body { get; set; }
+            
+            internal UpdatePayPalConfigBuilder() { }
+
+
+            public UpdatePayPalConfigBuilder SetSandbox(bool _sandbox)
+            {
+                Sandbox = _sandbox;
+                return this;
+            }
+
+            public UpdatePayPalConfigBuilder SetValidate(bool _validate)
+            {
+                Validate = _validate;
+                return this;
+            }
+
+
+            public UpdatePayPalConfigBuilder SetBody(Model.PayPalConfig _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdatePayPalConfig Build(
+                string id
+            )
+            {
+                return new UpdatePayPalConfig(this,
+                    id                    
+                );
+            }
+        }
+
+        private UpdatePayPalConfig(UpdatePayPalConfigBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+            if (builder.Validate != null) QueryParams["validate"] = Convert.ToString(builder.Validate)!;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdatePayPalConfig(
             string id,            
             bool? sandbox,            

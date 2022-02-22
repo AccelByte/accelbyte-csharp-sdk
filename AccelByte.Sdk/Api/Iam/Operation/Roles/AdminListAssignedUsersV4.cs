@@ -20,6 +20,68 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminListAssignedUsersV4 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminListAssignedUsersV4Builder Builder = new AdminListAssignedUsersV4Builder();
+
+        public class AdminListAssignedUsersV4Builder
+        {
+            
+            public string? After { get; set; }
+            
+            public string? Before { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            internal AdminListAssignedUsersV4Builder() { }
+
+
+            public AdminListAssignedUsersV4Builder SetAfter(string _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public AdminListAssignedUsersV4Builder SetBefore(string _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public AdminListAssignedUsersV4Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+
+
+
+            public AdminListAssignedUsersV4 Build(
+                string roleId
+            )
+            {
+                return new AdminListAssignedUsersV4(this,
+                    roleId                    
+                );
+            }
+        }
+
+        private AdminListAssignedUsersV4(AdminListAssignedUsersV4Builder builder,
+            string roleId
+        )
+        {
+            PathParams["roleId"] = roleId;
+            
+            if (builder.After != null) QueryParams["after"] = builder.After;
+            if (builder.Before != null) QueryParams["before"] = builder.Before;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminListAssignedUsersV4(
             string roleId,            
             string? after,            

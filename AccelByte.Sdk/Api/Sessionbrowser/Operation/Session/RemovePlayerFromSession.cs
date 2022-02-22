@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// </summary>
     public class RemovePlayerFromSession : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RemovePlayerFromSessionBuilder Builder = new RemovePlayerFromSessionBuilder();
+
+        public class RemovePlayerFromSessionBuilder
+        {
+            
+            
+            
+            internal RemovePlayerFromSessionBuilder() { }
+
+
+
+
+
+            public RemovePlayerFromSession Build(
+                string namespace_,
+                string sessionID,
+                string userID
+            )
+            {
+                return new RemovePlayerFromSession(this,
+                    namespace_,                    
+                    sessionID,                    
+                    userID                    
+                );
+            }
+        }
+
+        private RemovePlayerFromSession(RemovePlayerFromSessionBuilder builder,
+            string namespace_,
+            string sessionID,
+            string userID
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["sessionID"] = sessionID;
+            PathParams["userID"] = userID;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RemovePlayerFromSession(
             string namespace_,            
             string sessionID,            

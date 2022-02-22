@@ -20,6 +20,41 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminGetLobbyCCU : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetLobbyCCUBuilder Builder = new AdminGetLobbyCCUBuilder();
+
+        public class AdminGetLobbyCCUBuilder
+        {
+            
+            internal AdminGetLobbyCCUBuilder() { }
+
+
+
+
+
+            public AdminGetLobbyCCU Build(
+                string namespace_
+            )
+            {
+                return new AdminGetLobbyCCU(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetLobbyCCU(AdminGetLobbyCCUBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetLobbyCCU(
             string namespace_            
         )

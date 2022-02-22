@@ -22,6 +22,82 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryRedeemHistory : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryRedeemHistoryBuilder Builder = new QueryRedeemHistoryBuilder();
+
+        public class QueryRedeemHistoryBuilder
+        {
+            
+            
+            public string? Code { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? UserId { get; set; }
+            
+            internal QueryRedeemHistoryBuilder() { }
+
+
+            public QueryRedeemHistoryBuilder SetCode(string _code)
+            {
+                Code = _code;
+                return this;
+            }
+
+            public QueryRedeemHistoryBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryRedeemHistoryBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryRedeemHistoryBuilder SetUserId(string _userId)
+            {
+                UserId = _userId;
+                return this;
+            }
+
+
+
+
+            public QueryRedeemHistory Build(
+                string campaignId,
+                string namespace_
+            )
+            {
+                return new QueryRedeemHistory(this,
+                    campaignId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private QueryRedeemHistory(QueryRedeemHistoryBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            PathParams["campaignId"] = campaignId;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Code != null) QueryParams["code"] = builder.Code;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryRedeemHistory(
             string campaignId,            
             string namespace_,            

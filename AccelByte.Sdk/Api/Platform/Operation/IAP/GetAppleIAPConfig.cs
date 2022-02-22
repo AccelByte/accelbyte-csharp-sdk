@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetAppleIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetAppleIAPConfigBuilder Builder = new GetAppleIAPConfigBuilder();
+
+        public class GetAppleIAPConfigBuilder
+        {
+            
+            internal GetAppleIAPConfigBuilder() { }
+
+
+
+
+
+            public GetAppleIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new GetAppleIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetAppleIAPConfig(GetAppleIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetAppleIAPConfig(
             string namespace_            
         )

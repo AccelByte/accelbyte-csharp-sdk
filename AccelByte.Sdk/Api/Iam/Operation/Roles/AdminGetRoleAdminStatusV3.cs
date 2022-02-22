@@ -30,6 +30,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetRoleAdminStatusV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetRoleAdminStatusV3Builder Builder = new AdminGetRoleAdminStatusV3Builder();
+
+        public class AdminGetRoleAdminStatusV3Builder
+        {
+            
+            internal AdminGetRoleAdminStatusV3Builder() { }
+
+
+
+
+
+            public AdminGetRoleAdminStatusV3 Build(
+                string roleId
+            )
+            {
+                return new AdminGetRoleAdminStatusV3(this,
+                    roleId                    
+                );
+            }
+        }
+
+        private AdminGetRoleAdminStatusV3(AdminGetRoleAdminStatusV3Builder builder,
+            string roleId
+        )
+        {
+            PathParams["roleId"] = roleId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetRoleAdminStatusV3(
             string roleId            
         )

@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminUploadContentS3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUploadContentS3Builder Builder = new AdminUploadContentS3Builder();
+
+        public class AdminUploadContentS3Builder
+        {
+            
+            
+            
+            internal AdminUploadContentS3Builder() { }
+
+
+
+
+
+            public AdminUploadContentS3 Build(
+                ModelsCreateContentRequestS3 body,
+                string channelId,
+                string namespace_
+            )
+            {
+                return new AdminUploadContentS3(this,
+                    body,                    
+                    channelId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminUploadContentS3(AdminUploadContentS3Builder builder,
+            ModelsCreateContentRequestS3 body,
+            string channelId,
+            string namespace_
+        )
+        {
+            PathParams["channelId"] = channelId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUploadContentS3(
             string channelId,            
             string namespace_,            

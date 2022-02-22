@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetPaymentAccounts : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetPaymentAccountsBuilder Builder = new PublicGetPaymentAccountsBuilder();
+
+        public class PublicGetPaymentAccountsBuilder
+        {
+            
+            
+            internal PublicGetPaymentAccountsBuilder() { }
+
+
+
+
+
+            public PublicGetPaymentAccounts Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicGetPaymentAccounts(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicGetPaymentAccounts(PublicGetPaymentAccountsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetPaymentAccounts(
             string namespace_,            
             string userId            

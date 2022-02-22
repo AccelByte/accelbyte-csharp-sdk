@@ -23,6 +23,50 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class AdminGetUserProfilePublicInfoByIds : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetUserProfilePublicInfoByIdsBuilder Builder = new AdminGetUserProfilePublicInfoByIdsBuilder();
+
+        public class AdminGetUserProfilePublicInfoByIdsBuilder
+        {
+            
+            public Model.UserProfileBulkRequest? Body { get; set; }
+            
+            internal AdminGetUserProfilePublicInfoByIdsBuilder() { }
+
+
+
+            public AdminGetUserProfilePublicInfoByIdsBuilder SetBody(Model.UserProfileBulkRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public AdminGetUserProfilePublicInfoByIds Build(
+                string namespace_
+            )
+            {
+                return new AdminGetUserProfilePublicInfoByIds(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetUserProfilePublicInfoByIds(AdminGetUserProfilePublicInfoByIdsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public AdminGetUserProfilePublicInfoByIds(
             string namespace_,            
             Model.UserProfileBulkRequest body            

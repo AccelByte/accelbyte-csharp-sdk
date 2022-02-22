@@ -30,6 +30,77 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class GetGroupListPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetGroupListPublicV1Builder Builder = new GetGroupListPublicV1Builder();
+
+        public class GetGroupListPublicV1Builder
+        {
+            
+            public string? GroupName { get; set; }
+            
+            public string? GroupRegion { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetGroupListPublicV1Builder() { }
+
+
+            public GetGroupListPublicV1Builder SetGroupName(string _groupName)
+            {
+                GroupName = _groupName;
+                return this;
+            }
+
+            public GetGroupListPublicV1Builder SetGroupRegion(string _groupRegion)
+            {
+                GroupRegion = _groupRegion;
+                return this;
+            }
+
+            public GetGroupListPublicV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetGroupListPublicV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetGroupListPublicV1 Build(
+                string namespace_
+            )
+            {
+                return new GetGroupListPublicV1(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetGroupListPublicV1(GetGroupListPublicV1Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.GroupName != null) QueryParams["groupName"] = builder.GroupName;
+            if (builder.GroupRegion != null) QueryParams["groupRegion"] = builder.GroupRegion;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetGroupListPublicV1(
             string namespace_,            
             string? groupName,            

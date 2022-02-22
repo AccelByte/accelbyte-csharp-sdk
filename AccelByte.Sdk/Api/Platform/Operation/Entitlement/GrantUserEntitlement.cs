@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GrantUserEntitlement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GrantUserEntitlementBuilder Builder = new GrantUserEntitlementBuilder();
+
+        public class GrantUserEntitlementBuilder
+        {
+            
+            
+            public List<Model.EntitlementGrant>? Body { get; set; }
+            
+            internal GrantUserEntitlementBuilder() { }
+
+
+
+            public GrantUserEntitlementBuilder SetBody(List<Model.EntitlementGrant> _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public GrantUserEntitlement Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GrantUserEntitlement(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GrantUserEntitlement(GrantUserEntitlementBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public GrantUserEntitlement(
             string namespace_,            
             string userId,            

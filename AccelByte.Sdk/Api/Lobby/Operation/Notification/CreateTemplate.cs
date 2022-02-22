@@ -24,6 +24,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class CreateTemplate : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateTemplateBuilder Builder = new CreateTemplateBuilder();
+
+        public class CreateTemplateBuilder
+        {
+            
+            
+            internal CreateTemplateBuilder() { }
+
+
+
+
+
+            public CreateTemplate Build(
+                ModelCreateTemplateRequest body,
+                string namespace_
+            )
+            {
+                return new CreateTemplate(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateTemplate(CreateTemplateBuilder builder,
+            ModelCreateTemplateRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateTemplate(
             string namespace_,            
             Model.ModelCreateTemplateRequest body            

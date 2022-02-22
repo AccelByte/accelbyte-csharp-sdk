@@ -106,6 +106,61 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AddUserPermission : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AddUserPermissionBuilder Builder = new AddUserPermissionBuilder();
+
+        public class AddUserPermissionBuilder
+        {
+            
+            
+            
+            
+            
+            internal AddUserPermissionBuilder() { }
+
+
+
+
+
+            public AddUserPermission Build(
+                ModelUpdatePermissionScheduleRequest body,
+                long action,
+                string namespace_,
+                string resource,
+                string userId
+            )
+            {
+                return new AddUserPermission(this,
+                    body,                    
+                    action,                    
+                    namespace_,                    
+                    resource,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AddUserPermission(AddUserPermissionBuilder builder,
+            ModelUpdatePermissionScheduleRequest body,
+            long action,
+            string namespace_,
+            string resource,
+            string userId
+        )
+        {
+            PathParams["action"] = Convert.ToString(action);
+            PathParams["namespace"] = namespace_;
+            PathParams["resource"] = resource;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AddUserPermission(
             long action,            
             string namespace_,            

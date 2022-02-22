@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class EnableItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static EnableItemBuilder Builder = new EnableItemBuilder();
+
+        public class EnableItemBuilder
+        {
+            
+            
+            
+            internal EnableItemBuilder() { }
+
+
+
+
+
+            public EnableItem Build(
+                string itemId,
+                string namespace_,
+                string storeId
+            )
+            {
+                return new EnableItem(this,
+                    itemId,                    
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private EnableItem(EnableItemBuilder builder,
+            string itemId,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["itemId"] = itemId;
+            PathParams["namespace"] = namespace_;
+            
+            if (storeId != null) QueryParams["storeId"] = storeId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public EnableItem(
             string itemId,            
             string namespace_,            

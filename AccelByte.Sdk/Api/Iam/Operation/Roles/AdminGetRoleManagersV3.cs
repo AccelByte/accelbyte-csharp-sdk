@@ -29,6 +29,68 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetRoleManagersV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetRoleManagersV3Builder Builder = new AdminGetRoleManagersV3Builder();
+
+        public class AdminGetRoleManagersV3Builder
+        {
+            
+            public string? After { get; set; }
+            
+            public string? Before { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            internal AdminGetRoleManagersV3Builder() { }
+
+
+            public AdminGetRoleManagersV3Builder SetAfter(string _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public AdminGetRoleManagersV3Builder SetBefore(string _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public AdminGetRoleManagersV3Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+
+
+
+            public AdminGetRoleManagersV3 Build(
+                string roleId
+            )
+            {
+                return new AdminGetRoleManagersV3(this,
+                    roleId                    
+                );
+            }
+        }
+
+        private AdminGetRoleManagersV3(AdminGetRoleManagersV3Builder builder,
+            string roleId
+        )
+        {
+            PathParams["roleId"] = roleId;
+            
+            if (builder.After != null) QueryParams["after"] = builder.After;
+            if (builder.Before != null) QueryParams["before"] = builder.Before;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetRoleManagersV3(
             string roleId,            
             string? after,            

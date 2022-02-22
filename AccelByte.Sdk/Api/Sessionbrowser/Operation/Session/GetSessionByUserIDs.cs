@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// </summary>
     public class GetSessionByUserIDs : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetSessionByUserIDsBuilder Builder = new GetSessionByUserIDsBuilder();
+
+        public class GetSessionByUserIDsBuilder
+        {
+            
+            
+            internal GetSessionByUserIDsBuilder() { }
+
+
+
+
+
+            public GetSessionByUserIDs Build(
+                string namespace_,
+                string userIds
+            )
+            {
+                return new GetSessionByUserIDs(this,
+                    namespace_,                    
+                    userIds                    
+                );
+            }
+        }
+
+        private GetSessionByUserIDs(GetSessionByUserIDsBuilder builder,
+            string namespace_,
+            string userIds
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (userIds != null) QueryParams["user_ids"] = userIds;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetSessionByUserIDs(
             string namespace_,            
             string userIds            

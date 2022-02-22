@@ -39,6 +39,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class DisableUser : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DisableUserBuilder Builder = new DisableUserBuilder();
+
+        public class DisableUserBuilder
+        {
+            
+            
+            
+            internal DisableUserBuilder() { }
+
+
+
+
+
+            public DisableUser Build(
+                ModelDisableUserRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new DisableUser(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private DisableUser(DisableUserBuilder builder,
+            ModelDisableUserRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public DisableUser(
             string namespace_,            
             string userId,            

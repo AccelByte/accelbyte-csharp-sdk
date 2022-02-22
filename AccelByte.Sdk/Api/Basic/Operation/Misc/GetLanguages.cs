@@ -23,6 +23,41 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class GetLanguages : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetLanguagesBuilder Builder = new GetLanguagesBuilder();
+
+        public class GetLanguagesBuilder
+        {
+            
+            internal GetLanguagesBuilder() { }
+
+
+
+
+
+            public GetLanguages Build(
+                string namespace_
+            )
+            {
+                return new GetLanguages(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetLanguages(GetLanguagesBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetLanguages(
             string namespace_            
         )

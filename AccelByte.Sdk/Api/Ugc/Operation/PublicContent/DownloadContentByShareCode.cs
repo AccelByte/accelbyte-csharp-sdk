@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class DownloadContentByShareCode : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DownloadContentByShareCodeBuilder Builder = new DownloadContentByShareCodeBuilder();
+
+        public class DownloadContentByShareCodeBuilder
+        {
+            
+            
+            internal DownloadContentByShareCodeBuilder() { }
+
+
+
+
+
+            public DownloadContentByShareCode Build(
+                string namespace_,
+                string shareCode
+            )
+            {
+                return new DownloadContentByShareCode(this,
+                    namespace_,                    
+                    shareCode                    
+                );
+            }
+        }
+
+        private DownloadContentByShareCode(DownloadContentByShareCodeBuilder builder,
+            string namespace_,
+            string shareCode
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["shareCode"] = shareCode;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DownloadContentByShareCode(
             string namespace_,            
             string shareCode            

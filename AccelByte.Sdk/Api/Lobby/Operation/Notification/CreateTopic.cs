@@ -23,6 +23,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class CreateTopic : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateTopicBuilder Builder = new CreateTopicBuilder();
+
+        public class CreateTopicBuilder
+        {
+            
+            
+            internal CreateTopicBuilder() { }
+
+
+
+
+
+            public CreateTopic Build(
+                ModelCreateTopicRequest body,
+                string namespace_
+            )
+            {
+                return new CreateTopic(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateTopic(CreateTopicBuilder builder,
+            ModelCreateTopicRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateTopic(
             string namespace_,            
             Model.ModelCreateTopicRequest body            

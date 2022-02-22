@@ -30,6 +30,46 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class CancelGroupJoinRequestV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CancelGroupJoinRequestV1Builder Builder = new CancelGroupJoinRequestV1Builder();
+
+        public class CancelGroupJoinRequestV1Builder
+        {
+            
+            
+            internal CancelGroupJoinRequestV1Builder() { }
+
+
+
+
+
+            public CancelGroupJoinRequestV1 Build(
+                string groupId,
+                string namespace_
+            )
+            {
+                return new CancelGroupJoinRequestV1(this,
+                    groupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CancelGroupJoinRequestV1(CancelGroupJoinRequestV1Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public CancelGroupJoinRequestV1(
             string groupId,            
             string namespace_            

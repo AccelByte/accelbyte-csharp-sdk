@@ -238,6 +238,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateItemBuilder Builder = new UpdateItemBuilder();
+
+        public class UpdateItemBuilder
+        {
+            
+            
+            
+            public Model.ItemUpdate? Body { get; set; }
+            
+            internal UpdateItemBuilder() { }
+
+
+
+            public UpdateItemBuilder SetBody(Model.ItemUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateItem Build(
+                string itemId,
+                string namespace_,
+                string storeId
+            )
+            {
+                return new UpdateItem(this,
+                    itemId,                    
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private UpdateItem(UpdateItemBuilder builder,
+            string itemId,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["itemId"] = itemId;
+            PathParams["namespace"] = namespace_;
+            
+            if (storeId != null) QueryParams["storeId"] = storeId;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateItem(
             string itemId,            
             string namespace_,            

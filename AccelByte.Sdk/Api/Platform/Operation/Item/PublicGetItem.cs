@@ -24,6 +24,82 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetItemBuilder Builder = new PublicGetItemBuilder();
+
+        public class PublicGetItemBuilder
+        {
+            
+            
+            public string? Language { get; set; }
+            
+            public bool? PopulateBundle { get; set; }
+            
+            public string? Region { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            internal PublicGetItemBuilder() { }
+
+
+            public PublicGetItemBuilder SetLanguage(string _language)
+            {
+                Language = _language;
+                return this;
+            }
+
+            public PublicGetItemBuilder SetPopulateBundle(bool _populateBundle)
+            {
+                PopulateBundle = _populateBundle;
+                return this;
+            }
+
+            public PublicGetItemBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+            public PublicGetItemBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public PublicGetItem Build(
+                string itemId,
+                string namespace_
+            )
+            {
+                return new PublicGetItem(this,
+                    itemId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicGetItem(PublicGetItemBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            PathParams["itemId"] = itemId;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.PopulateBundle != null) QueryParams["populateBundle"] = Convert.ToString(builder.PopulateBundle)!;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetItem(
             string itemId,            
             string namespace_,            

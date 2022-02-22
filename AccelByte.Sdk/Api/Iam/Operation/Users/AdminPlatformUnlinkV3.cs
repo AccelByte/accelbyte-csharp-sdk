@@ -89,6 +89,56 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminPlatformUnlinkV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminPlatformUnlinkV3Builder Builder = new AdminPlatformUnlinkV3Builder();
+
+        public class AdminPlatformUnlinkV3Builder
+        {
+            
+            
+            
+            
+            internal AdminPlatformUnlinkV3Builder() { }
+
+
+
+
+
+            public AdminPlatformUnlinkV3 Build(
+                ModelUnlinkUserPlatformRequest body,
+                string namespace_,
+                string platformId,
+                string userId
+            )
+            {
+                return new AdminPlatformUnlinkV3(this,
+                    body,                    
+                    namespace_,                    
+                    platformId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminPlatformUnlinkV3(AdminPlatformUnlinkV3Builder builder,
+            ModelUnlinkUserPlatformRequest body,
+            string namespace_,
+            string platformId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminPlatformUnlinkV3(
             string namespace_,            
             string platformId,            

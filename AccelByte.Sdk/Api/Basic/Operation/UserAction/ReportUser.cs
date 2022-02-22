@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class ReportUser : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ReportUserBuilder Builder = new ReportUserBuilder();
+
+        public class ReportUserBuilder
+        {
+            
+            public Model.UserReportRequest? Body { get; set; }
+            
+            internal ReportUserBuilder() { }
+
+
+
+            public ReportUserBuilder SetBody(Model.UserReportRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public ReportUser Build(
+                string namespace_
+            )
+            {
+                return new ReportUser(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ReportUser(ReportUserBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public ReportUser(
             string namespace_,            
             Model.UserReportRequest body            

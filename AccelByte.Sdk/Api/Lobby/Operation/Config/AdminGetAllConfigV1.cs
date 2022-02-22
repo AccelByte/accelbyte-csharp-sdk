@@ -20,6 +20,36 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminGetAllConfigV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetAllConfigV1Builder Builder = new AdminGetAllConfigV1Builder();
+
+        public class AdminGetAllConfigV1Builder
+        {
+            internal AdminGetAllConfigV1Builder() { }
+
+
+
+
+
+            public AdminGetAllConfigV1 Build(
+            )
+            {
+                return new AdminGetAllConfigV1(this
+                );
+            }
+        }
+
+        private AdminGetAllConfigV1(AdminGetAllConfigV1Builder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetAllConfigV1(
         )
         {

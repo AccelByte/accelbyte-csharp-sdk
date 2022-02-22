@@ -21,6 +21,64 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class BulkResetUserStatItemValues : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static BulkResetUserStatItemValuesBuilder Builder = new BulkResetUserStatItemValuesBuilder();
+
+        public class BulkResetUserStatItemValuesBuilder
+        {
+            
+            
+            public string? AdditionalKey { get; set; }
+            
+            public List<Model.ADTOObjectForResettingUserStatItems>? Body { get; set; }
+            
+            internal BulkResetUserStatItemValuesBuilder() { }
+
+
+            public BulkResetUserStatItemValuesBuilder SetAdditionalKey(string _additionalKey)
+            {
+                AdditionalKey = _additionalKey;
+                return this;
+            }
+
+
+            public BulkResetUserStatItemValuesBuilder SetBody(List<Model.ADTOObjectForResettingUserStatItems> _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public BulkResetUserStatItemValues Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new BulkResetUserStatItemValues(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private BulkResetUserStatItemValues(BulkResetUserStatItemValuesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.AdditionalKey != null) QueryParams["additionalKey"] = builder.AdditionalKey;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public BulkResetUserStatItemValues(
             string namespace_,            
             string userId,            

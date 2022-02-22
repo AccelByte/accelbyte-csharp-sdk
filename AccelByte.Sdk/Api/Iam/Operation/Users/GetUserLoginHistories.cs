@@ -25,6 +25,73 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetUserLoginHistories : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserLoginHistoriesBuilder Builder = new GetUserLoginHistoriesBuilder();
+
+        public class GetUserLoginHistoriesBuilder
+        {
+            
+            
+            public double? After { get; set; }
+            
+            public double? Before { get; set; }
+            
+            public double? Limit { get; set; }
+            
+            internal GetUserLoginHistoriesBuilder() { }
+
+
+            public GetUserLoginHistoriesBuilder SetAfter(double _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public GetUserLoginHistoriesBuilder SetBefore(double _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public GetUserLoginHistoriesBuilder SetLimit(double _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+
+
+
+            public GetUserLoginHistories Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetUserLoginHistories(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserLoginHistories(GetUserLoginHistoriesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.After != null) QueryParams["after"] = Convert.ToString(builder.After)!;
+            if (builder.Before != null) QueryParams["before"] = Convert.ToString(builder.Before)!;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserLoginHistories(
             string namespace_,            
             string userId,            

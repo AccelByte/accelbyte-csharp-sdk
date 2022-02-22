@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class GetAllPartyInChannel : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetAllPartyInChannelBuilder Builder = new GetAllPartyInChannelBuilder();
+
+        public class GetAllPartyInChannelBuilder
+        {
+            
+            
+            internal GetAllPartyInChannelBuilder() { }
+
+
+
+
+
+            public GetAllPartyInChannel Build(
+                string channelName,
+                string namespace_
+            )
+            {
+                return new GetAllPartyInChannel(this,
+                    channelName,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetAllPartyInChannel(GetAllPartyInChannelBuilder builder,
+            string channelName,
+            string namespace_
+        )
+        {
+            PathParams["channelName"] = channelName;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetAllPartyInChannel(
             string channelName,            
             string namespace_            

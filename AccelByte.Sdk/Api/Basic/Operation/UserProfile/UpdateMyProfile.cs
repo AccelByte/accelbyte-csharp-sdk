@@ -29,6 +29,50 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class UpdateMyProfile : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateMyProfileBuilder Builder = new UpdateMyProfileBuilder();
+
+        public class UpdateMyProfileBuilder
+        {
+            
+            public Model.UserProfilePrivateUpdate? Body { get; set; }
+            
+            internal UpdateMyProfileBuilder() { }
+
+
+
+            public UpdateMyProfileBuilder SetBody(Model.UserProfilePrivateUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateMyProfile Build(
+                string namespace_
+            )
+            {
+                return new UpdateMyProfile(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateMyProfile(UpdateMyProfileBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateMyProfile(
             string namespace_,            
             Model.UserProfilePrivateUpdate body            

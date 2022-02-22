@@ -19,6 +19,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class SingleAdminUpdateGroup : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SingleAdminUpdateGroupBuilder Builder = new SingleAdminUpdateGroupBuilder();
+
+        public class SingleAdminUpdateGroupBuilder
+        {
+            
+            
+            
+            internal SingleAdminUpdateGroupBuilder() { }
+
+
+
+
+
+            public SingleAdminUpdateGroup Build(
+                ModelsCreateGroupRequest body,
+                string groupId,
+                string namespace_
+            )
+            {
+                return new SingleAdminUpdateGroup(this,
+                    body,                    
+                    groupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private SingleAdminUpdateGroup(SingleAdminUpdateGroupBuilder builder,
+            ModelsCreateGroupRequest body,
+            string groupId,
+            string namespace_
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public SingleAdminUpdateGroup(
             string groupId,            
             string namespace_,            

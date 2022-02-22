@@ -24,6 +24,46 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class UpdatePlayTimeWeight : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdatePlayTimeWeightBuilder Builder = new UpdatePlayTimeWeightBuilder();
+
+        public class UpdatePlayTimeWeightBuilder
+        {
+            
+            
+            internal UpdatePlayTimeWeightBuilder() { }
+
+
+
+
+
+            public UpdatePlayTimeWeight Build(
+                ModelsUpdatePlayTimeWeightRequest body,
+                string namespace_
+            )
+            {
+                return new UpdatePlayTimeWeight(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdatePlayTimeWeight(UpdatePlayTimeWeightBuilder builder,
+            ModelsUpdatePlayTimeWeightRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdatePlayTimeWeight(
             string namespace_,            
             Model.ModelsUpdatePlayTimeWeightRequest body            

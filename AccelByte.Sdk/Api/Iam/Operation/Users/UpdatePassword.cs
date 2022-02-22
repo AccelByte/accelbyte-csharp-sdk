@@ -26,6 +26,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class UpdatePassword : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdatePasswordBuilder Builder = new UpdatePasswordBuilder();
+
+        public class UpdatePasswordBuilder
+        {
+            
+            
+            
+            internal UpdatePasswordBuilder() { }
+
+
+
+
+
+            public UpdatePassword Build(
+                ModelUserPasswordUpdateRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new UpdatePassword(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private UpdatePassword(UpdatePasswordBuilder builder,
+            ModelUserPasswordUpdateRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdatePassword(
             string namespace_,            
             string userId,            

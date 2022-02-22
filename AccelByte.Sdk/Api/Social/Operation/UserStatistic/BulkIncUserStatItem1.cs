@@ -21,6 +21,55 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class BulkIncUserStatItem1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static BulkIncUserStatItem1Builder Builder = new BulkIncUserStatItem1Builder();
+
+        public class BulkIncUserStatItem1Builder
+        {
+            
+            
+            public List<Model.BulkStatItemInc>? Body { get; set; }
+            
+            internal BulkIncUserStatItem1Builder() { }
+
+
+
+            public BulkIncUserStatItem1Builder SetBody(List<Model.BulkStatItemInc> _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public BulkIncUserStatItem1 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new BulkIncUserStatItem1(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private BulkIncUserStatItem1(BulkIncUserStatItem1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public BulkIncUserStatItem1(
             string namespace_,            
             string userId,            

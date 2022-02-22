@@ -23,6 +23,45 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class GetNamespaces : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetNamespacesBuilder Builder = new GetNamespacesBuilder();
+
+        public class GetNamespacesBuilder
+        {
+            public bool? ActiveOnly { get; set; }
+            
+            internal GetNamespacesBuilder() { }
+
+
+            public GetNamespacesBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+
+
+
+            public GetNamespaces Build(
+            )
+            {
+                return new GetNamespaces(this
+                );
+            }
+        }
+
+        private GetNamespaces(GetNamespacesBuilder builder
+        )
+        {
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetNamespaces(
             bool? activeOnly            
         )

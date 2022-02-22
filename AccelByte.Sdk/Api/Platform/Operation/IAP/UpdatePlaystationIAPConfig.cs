@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdatePlaystationIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdatePlaystationIAPConfigBuilder Builder = new UpdatePlaystationIAPConfigBuilder();
+
+        public class UpdatePlaystationIAPConfigBuilder
+        {
+            
+            public Model.PlaystationIAPConfigRequest? Body { get; set; }
+            
+            internal UpdatePlaystationIAPConfigBuilder() { }
+
+
+
+            public UpdatePlaystationIAPConfigBuilder SetBody(Model.PlaystationIAPConfigRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdatePlaystationIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new UpdatePlaystationIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdatePlaystationIAPConfig(UpdatePlaystationIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdatePlaystationIAPConfig(
             string namespace_,            
             Model.PlaystationIAPConfigRequest body            

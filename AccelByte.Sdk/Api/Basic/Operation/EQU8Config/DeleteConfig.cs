@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class DeleteConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteConfigBuilder Builder = new DeleteConfigBuilder();
+
+        public class DeleteConfigBuilder
+        {
+            
+            internal DeleteConfigBuilder() { }
+
+
+
+
+
+            public DeleteConfig Build(
+                string namespace_
+            )
+            {
+                return new DeleteConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteConfig(DeleteConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteConfig(
             string namespace_            
         )

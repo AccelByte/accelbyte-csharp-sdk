@@ -21,6 +21,51 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// </summary>
     public class AdminUnlockAchievement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUnlockAchievementBuilder Builder = new AdminUnlockAchievementBuilder();
+
+        public class AdminUnlockAchievementBuilder
+        {
+            
+            
+            
+            internal AdminUnlockAchievementBuilder() { }
+
+
+
+
+
+            public AdminUnlockAchievement Build(
+                string achievementCode,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminUnlockAchievement(this,
+                    achievementCode,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminUnlockAchievement(AdminUnlockAchievementBuilder builder,
+            string achievementCode,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["achievementCode"] = achievementCode;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminUnlockAchievement(
             string achievementCode,            
             string namespace_,            

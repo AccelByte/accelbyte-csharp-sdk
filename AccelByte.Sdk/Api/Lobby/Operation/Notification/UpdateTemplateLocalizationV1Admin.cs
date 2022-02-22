@@ -22,6 +22,56 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class UpdateTemplateLocalizationV1Admin : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateTemplateLocalizationV1AdminBuilder Builder = new UpdateTemplateLocalizationV1AdminBuilder();
+
+        public class UpdateTemplateLocalizationV1AdminBuilder
+        {
+            
+            
+            
+            
+            internal UpdateTemplateLocalizationV1AdminBuilder() { }
+
+
+
+
+
+            public UpdateTemplateLocalizationV1Admin Build(
+                ModelUpdateTemplateRequest body,
+                string namespace_,
+                string templateLanguage,
+                string templateSlug
+            )
+            {
+                return new UpdateTemplateLocalizationV1Admin(this,
+                    body,                    
+                    namespace_,                    
+                    templateLanguage,                    
+                    templateSlug                    
+                );
+            }
+        }
+
+        private UpdateTemplateLocalizationV1Admin(UpdateTemplateLocalizationV1AdminBuilder builder,
+            ModelUpdateTemplateRequest body,
+            string namespace_,
+            string templateLanguage,
+            string templateSlug
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["templateLanguage"] = templateLanguage;
+            PathParams["templateSlug"] = templateSlug;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateTemplateLocalizationV1Admin(
             string namespace_,            
             string templateLanguage,            

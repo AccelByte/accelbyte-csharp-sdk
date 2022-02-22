@@ -30,6 +30,59 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicSearchUserV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicSearchUserV3Builder Builder = new PublicSearchUserV3Builder();
+
+        public class PublicSearchUserV3Builder
+        {
+            
+            public string? By { get; set; }
+            
+            public string? Query { get; set; }
+            
+            internal PublicSearchUserV3Builder() { }
+
+
+            public PublicSearchUserV3Builder SetBy(string _by)
+            {
+                By = _by;
+                return this;
+            }
+
+            public PublicSearchUserV3Builder SetQuery(string _query)
+            {
+                Query = _query;
+                return this;
+            }
+
+
+
+
+            public PublicSearchUserV3 Build(
+                string namespace_
+            )
+            {
+                return new PublicSearchUserV3(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicSearchUserV3(PublicSearchUserV3Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.By != null) QueryParams["by"] = builder.By;
+            if (builder.Query != null) QueryParams["query"] = builder.Query;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicSearchUserV3(
             string namespace_,            
             string? by,            

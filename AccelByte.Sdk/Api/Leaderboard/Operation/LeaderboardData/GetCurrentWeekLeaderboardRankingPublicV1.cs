@@ -20,6 +20,64 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetCurrentWeekLeaderboardRankingPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetCurrentWeekLeaderboardRankingPublicV1Builder Builder = new GetCurrentWeekLeaderboardRankingPublicV1Builder();
+
+        public class GetCurrentWeekLeaderboardRankingPublicV1Builder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetCurrentWeekLeaderboardRankingPublicV1Builder() { }
+
+
+            public GetCurrentWeekLeaderboardRankingPublicV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetCurrentWeekLeaderboardRankingPublicV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetCurrentWeekLeaderboardRankingPublicV1 Build(
+                string leaderboardCode,
+                string namespace_
+            )
+            {
+                return new GetCurrentWeekLeaderboardRankingPublicV1(this,
+                    leaderboardCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetCurrentWeekLeaderboardRankingPublicV1(GetCurrentWeekLeaderboardRankingPublicV1Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetCurrentWeekLeaderboardRankingPublicV1(
             string leaderboardCode,            
             string namespace_,            

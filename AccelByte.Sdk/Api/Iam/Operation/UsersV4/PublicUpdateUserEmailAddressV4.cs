@@ -29,6 +29,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicUpdateUserEmailAddressV4 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicUpdateUserEmailAddressV4Builder Builder = new PublicUpdateUserEmailAddressV4Builder();
+
+        public class PublicUpdateUserEmailAddressV4Builder
+        {
+            
+            
+            internal PublicUpdateUserEmailAddressV4Builder() { }
+
+
+
+
+
+            public PublicUpdateUserEmailAddressV4 Build(
+                ModelEmailUpdateRequestV4 body,
+                string namespace_
+            )
+            {
+                return new PublicUpdateUserEmailAddressV4(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicUpdateUserEmailAddressV4(PublicUpdateUserEmailAddressV4Builder builder,
+            ModelEmailUpdateRequestV4 body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PublicUpdateUserEmailAddressV4(
             string namespace_,            
             Model.ModelEmailUpdateRequestV4 body            

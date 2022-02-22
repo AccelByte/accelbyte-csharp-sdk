@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetAdminInvitationV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetAdminInvitationV3Builder Builder = new GetAdminInvitationV3Builder();
+
+        public class GetAdminInvitationV3Builder
+        {
+            
+            
+            internal GetAdminInvitationV3Builder() { }
+
+
+
+
+
+            public GetAdminInvitationV3 Build(
+                string invitationId,
+                string namespace_
+            )
+            {
+                return new GetAdminInvitationV3(this,
+                    invitationId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetAdminInvitationV3(GetAdminInvitationV3Builder builder,
+            string invitationId,
+            string namespace_
+        )
+        {
+            PathParams["invitationId"] = invitationId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetAdminInvitationV3(
             string invitationId,            
             string namespace_            

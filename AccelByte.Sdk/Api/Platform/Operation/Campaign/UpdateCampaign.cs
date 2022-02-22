@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateCampaign : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateCampaignBuilder Builder = new UpdateCampaignBuilder();
+
+        public class UpdateCampaignBuilder
+        {
+            
+            
+            public Model.CampaignUpdate? Body { get; set; }
+            
+            internal UpdateCampaignBuilder() { }
+
+
+
+            public UpdateCampaignBuilder SetBody(Model.CampaignUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateCampaign Build(
+                string campaignId,
+                string namespace_
+            )
+            {
+                return new UpdateCampaign(this,
+                    campaignId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateCampaign(UpdateCampaignBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            PathParams["campaignId"] = campaignId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateCampaign(
             string campaignId,            
             string namespace_,            

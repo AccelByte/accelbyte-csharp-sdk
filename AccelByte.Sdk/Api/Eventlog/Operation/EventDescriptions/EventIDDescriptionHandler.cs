@@ -17,6 +17,36 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class EventIDDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static EventIDDescriptionHandlerBuilder Builder = new EventIDDescriptionHandlerBuilder();
+
+        public class EventIDDescriptionHandlerBuilder
+        {
+            internal EventIDDescriptionHandlerBuilder() { }
+
+
+
+
+
+            public EventIDDescriptionHandler Build(
+            )
+            {
+                return new EventIDDescriptionHandler(this
+                );
+            }
+        }
+
+        private EventIDDescriptionHandler(EventIDDescriptionHandlerBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public EventIDDescriptionHandler(
         )
         {

@@ -23,6 +23,46 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class GetPrivateCustomAttributesInfo : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPrivateCustomAttributesInfoBuilder Builder = new GetPrivateCustomAttributesInfoBuilder();
+
+        public class GetPrivateCustomAttributesInfoBuilder
+        {
+            
+            
+            internal GetPrivateCustomAttributesInfoBuilder() { }
+
+
+
+
+
+            public GetPrivateCustomAttributesInfo Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetPrivateCustomAttributesInfo(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetPrivateCustomAttributesInfo(GetPrivateCustomAttributesInfoBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPrivateCustomAttributesInfo(
             string namespace_,            
             string userId            

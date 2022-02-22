@@ -22,6 +22,77 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryKeyGroups : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryKeyGroupsBuilder Builder = new QueryKeyGroupsBuilder();
+
+        public class QueryKeyGroupsBuilder
+        {
+            
+            public int? Limit { get; set; }
+            
+            public string? Name { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? Tag { get; set; }
+            
+            internal QueryKeyGroupsBuilder() { }
+
+
+            public QueryKeyGroupsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryKeyGroupsBuilder SetName(string _name)
+            {
+                Name = _name;
+                return this;
+            }
+
+            public QueryKeyGroupsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryKeyGroupsBuilder SetTag(string _tag)
+            {
+                Tag = _tag;
+                return this;
+            }
+
+
+
+
+            public QueryKeyGroups Build(
+                string namespace_
+            )
+            {
+                return new QueryKeyGroups(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private QueryKeyGroups(QueryKeyGroupsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Name != null) QueryParams["name"] = builder.Name;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Tag != null) QueryParams["tag"] = builder.Tag;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryKeyGroups(
             string namespace_,            
             int? limit,            

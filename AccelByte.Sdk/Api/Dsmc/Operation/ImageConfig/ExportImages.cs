@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ExportImages : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ExportImagesBuilder Builder = new ExportImagesBuilder();
+
+        public class ExportImagesBuilder
+        {
+            
+            internal ExportImagesBuilder() { }
+
+
+
+
+
+            public ExportImages Build(
+                string namespace_
+            )
+            {
+                return new ExportImages(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ExportImages(ExportImagesBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ExportImages(
             string namespace_            
         )

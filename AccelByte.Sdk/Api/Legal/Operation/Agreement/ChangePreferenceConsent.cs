@@ -21,6 +21,45 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class ChangePreferenceConsent : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ChangePreferenceConsentBuilder Builder = new ChangePreferenceConsentBuilder();
+
+        public class ChangePreferenceConsentBuilder
+        {
+            public List<Model.AcceptAgreementRequest>? Body { get; set; }
+            
+            internal ChangePreferenceConsentBuilder() { }
+
+
+
+            public ChangePreferenceConsentBuilder SetBody(List<Model.AcceptAgreementRequest> _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public ChangePreferenceConsent Build(
+            )
+            {
+                return new ChangePreferenceConsent(this
+                );
+            }
+        }
+
+        private ChangePreferenceConsent(ChangePreferenceConsentBuilder builder
+        )
+        {
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public ChangePreferenceConsent(
             List<Model.AcceptAgreementRequest> body            
         )

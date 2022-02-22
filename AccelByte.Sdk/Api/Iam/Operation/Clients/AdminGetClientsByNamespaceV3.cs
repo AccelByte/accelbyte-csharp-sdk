@@ -25,6 +25,59 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetClientsByNamespaceV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetClientsByNamespaceV3Builder Builder = new AdminGetClientsByNamespaceV3Builder();
+
+        public class AdminGetClientsByNamespaceV3Builder
+        {
+            
+            public long? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal AdminGetClientsByNamespaceV3Builder() { }
+
+
+            public AdminGetClientsByNamespaceV3Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminGetClientsByNamespaceV3Builder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public AdminGetClientsByNamespaceV3 Build(
+                string namespace_
+            )
+            {
+                return new AdminGetClientsByNamespaceV3(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetClientsByNamespaceV3(AdminGetClientsByNamespaceV3Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetClientsByNamespaceV3(
             string namespace_,            
             long? limit,            

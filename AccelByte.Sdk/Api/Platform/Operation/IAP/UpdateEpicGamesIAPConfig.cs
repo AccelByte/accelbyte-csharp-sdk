@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateEpicGamesIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateEpicGamesIAPConfigBuilder Builder = new UpdateEpicGamesIAPConfigBuilder();
+
+        public class UpdateEpicGamesIAPConfigBuilder
+        {
+            
+            public Model.EpicGamesIAPConfigRequest? Body { get; set; }
+            
+            internal UpdateEpicGamesIAPConfigBuilder() { }
+
+
+
+            public UpdateEpicGamesIAPConfigBuilder SetBody(Model.EpicGamesIAPConfigRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateEpicGamesIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new UpdateEpicGamesIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateEpicGamesIAPConfig(UpdateEpicGamesIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateEpicGamesIAPConfig(
             string namespace_,            
             Model.EpicGamesIAPConfigRequest body            

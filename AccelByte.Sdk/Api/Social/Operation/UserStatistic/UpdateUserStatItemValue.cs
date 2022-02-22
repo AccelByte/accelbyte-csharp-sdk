@@ -30,6 +30,69 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class UpdateUserStatItemValue : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateUserStatItemValueBuilder Builder = new UpdateUserStatItemValueBuilder();
+
+        public class UpdateUserStatItemValueBuilder
+        {
+            
+            
+            
+            public string? AdditionalKey { get; set; }
+            
+            public Model.StatItemUpdate? Body { get; set; }
+            
+            internal UpdateUserStatItemValueBuilder() { }
+
+
+            public UpdateUserStatItemValueBuilder SetAdditionalKey(string _additionalKey)
+            {
+                AdditionalKey = _additionalKey;
+                return this;
+            }
+
+
+            public UpdateUserStatItemValueBuilder SetBody(Model.StatItemUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateUserStatItemValue Build(
+                string namespace_,
+                string statCode,
+                string userId
+            )
+            {
+                return new UpdateUserStatItemValue(this,
+                    namespace_,                    
+                    statCode,                    
+                    userId                    
+                );
+            }
+        }
+
+        private UpdateUserStatItemValue(UpdateUserStatItemValueBuilder builder,
+            string namespace_,
+            string statCode,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["statCode"] = statCode;
+            PathParams["userId"] = userId;
+            
+            if (builder.AdditionalKey != null) QueryParams["additionalKey"] = builder.AdditionalKey;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateUserStatItemValue(
             string namespace_,            
             string statCode,            

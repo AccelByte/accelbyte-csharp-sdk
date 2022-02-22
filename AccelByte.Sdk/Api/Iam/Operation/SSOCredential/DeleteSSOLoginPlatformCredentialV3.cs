@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class DeleteSSOLoginPlatformCredentialV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteSSOLoginPlatformCredentialV3Builder Builder = new DeleteSSOLoginPlatformCredentialV3Builder();
+
+        public class DeleteSSOLoginPlatformCredentialV3Builder
+        {
+            
+            
+            internal DeleteSSOLoginPlatformCredentialV3Builder() { }
+
+
+
+
+
+            public DeleteSSOLoginPlatformCredentialV3 Build(
+                string namespace_,
+                string platformId
+            )
+            {
+                return new DeleteSSOLoginPlatformCredentialV3(this,
+                    namespace_,                    
+                    platformId                    
+                );
+            }
+        }
+
+        private DeleteSSOLoginPlatformCredentialV3(DeleteSSOLoginPlatformCredentialV3Builder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteSSOLoginPlatformCredentialV3(
             string namespace_,            
             string platformId            

@@ -21,6 +21,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class RefundUserPaymentOrder : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RefundUserPaymentOrderBuilder Builder = new RefundUserPaymentOrderBuilder();
+
+        public class RefundUserPaymentOrderBuilder
+        {
+            
+            
+            
+            public Model.PaymentOrderRefund? Body { get; set; }
+            
+            internal RefundUserPaymentOrderBuilder() { }
+
+
+
+            public RefundUserPaymentOrderBuilder SetBody(Model.PaymentOrderRefund _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public RefundUserPaymentOrder Build(
+                string namespace_,
+                string paymentOrderNo,
+                string userId
+            )
+            {
+                return new RefundUserPaymentOrder(this,
+                    namespace_,                    
+                    paymentOrderNo,                    
+                    userId                    
+                );
+            }
+        }
+
+        private RefundUserPaymentOrder(RefundUserPaymentOrderBuilder builder,
+            string namespace_,
+            string paymentOrderNo,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["paymentOrderNo"] = paymentOrderNo;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public RefundUserPaymentOrder(
             string namespace_,            
             string paymentOrderNo,            

@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateGoogleIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateGoogleIAPConfigBuilder Builder = new UpdateGoogleIAPConfigBuilder();
+
+        public class UpdateGoogleIAPConfigBuilder
+        {
+            
+            public Model.GoogleIAPConfigRequest? Body { get; set; }
+            
+            internal UpdateGoogleIAPConfigBuilder() { }
+
+
+
+            public UpdateGoogleIAPConfigBuilder SetBody(Model.GoogleIAPConfigRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateGoogleIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new UpdateGoogleIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateGoogleIAPConfig(UpdateGoogleIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateGoogleIAPConfig(
             string namespace_,            
             Model.GoogleIAPConfigRequest body            

@@ -22,6 +22,86 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryPaymentOrders : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryPaymentOrdersBuilder Builder = new QueryPaymentOrdersBuilder();
+
+        public class QueryPaymentOrdersBuilder
+        {
+            
+            public string? Channel { get; set; }
+            
+            public string? ExtTxId { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? Status { get; set; }
+            
+            internal QueryPaymentOrdersBuilder() { }
+
+
+            public QueryPaymentOrdersBuilder SetChannel(string _channel)
+            {
+                Channel = _channel;
+                return this;
+            }
+
+            public QueryPaymentOrdersBuilder SetExtTxId(string _extTxId)
+            {
+                ExtTxId = _extTxId;
+                return this;
+            }
+
+            public QueryPaymentOrdersBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryPaymentOrdersBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryPaymentOrdersBuilder SetStatus(string _status)
+            {
+                Status = _status;
+                return this;
+            }
+
+
+
+
+            public QueryPaymentOrders Build(
+                string namespace_
+            )
+            {
+                return new QueryPaymentOrders(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private QueryPaymentOrders(QueryPaymentOrdersBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Channel != null) QueryParams["channel"] = builder.Channel;
+            if (builder.ExtTxId != null) QueryParams["extTxId"] = builder.ExtTxId;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryPaymentOrders(
             string namespace_,            
             string? channel,            

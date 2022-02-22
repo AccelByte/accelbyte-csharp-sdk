@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class GetImageLimit : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetImageLimitBuilder Builder = new GetImageLimitBuilder();
+
+        public class GetImageLimitBuilder
+        {
+            
+            internal GetImageLimitBuilder() { }
+
+
+
+
+
+            public GetImageLimit Build(
+                string namespace_
+            )
+            {
+                return new GetImageLimit(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetImageLimit(GetImageLimitBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetImageLimit(
             string namespace_            
         )

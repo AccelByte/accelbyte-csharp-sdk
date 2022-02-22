@@ -23,6 +23,41 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RetrieveEligibilitiesPublic : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveEligibilitiesPublicBuilder Builder = new RetrieveEligibilitiesPublicBuilder();
+
+        public class RetrieveEligibilitiesPublicBuilder
+        {
+            
+            internal RetrieveEligibilitiesPublicBuilder() { }
+
+
+
+
+
+            public RetrieveEligibilitiesPublic Build(
+                string namespace_
+            )
+            {
+                return new RetrieveEligibilitiesPublic(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private RetrieveEligibilitiesPublic(RetrieveEligibilitiesPublicBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveEligibilitiesPublic(
             string namespace_            
         )

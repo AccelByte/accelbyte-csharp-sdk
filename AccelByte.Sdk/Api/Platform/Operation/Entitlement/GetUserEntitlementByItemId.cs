@@ -22,6 +22,69 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetUserEntitlementByItemId : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserEntitlementByItemIdBuilder Builder = new GetUserEntitlementByItemIdBuilder();
+
+        public class GetUserEntitlementByItemIdBuilder
+        {
+            
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public string? EntitlementClazz { get; set; }
+            
+            
+            internal GetUserEntitlementByItemIdBuilder() { }
+
+
+            public GetUserEntitlementByItemIdBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public GetUserEntitlementByItemIdBuilder SetEntitlementClazz(string _entitlementClazz)
+            {
+                EntitlementClazz = _entitlementClazz;
+                return this;
+            }
+
+
+
+
+            public GetUserEntitlementByItemId Build(
+                string namespace_,
+                string userId,
+                string itemId
+            )
+            {
+                return new GetUserEntitlementByItemId(this,
+                    namespace_,                    
+                    userId,                    
+                    itemId                    
+                );
+            }
+        }
+
+        private GetUserEntitlementByItemId(GetUserEntitlementByItemIdBuilder builder,
+            string namespace_,
+            string userId,
+            string itemId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.EntitlementClazz != null) QueryParams["entitlementClazz"] = builder.EntitlementClazz;
+            if (itemId != null) QueryParams["itemId"] = itemId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserEntitlementByItemId(
             string namespace_,            
             string userId,            

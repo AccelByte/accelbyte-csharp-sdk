@@ -59,6 +59,60 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicDeletePlatformLinkV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicDeletePlatformLinkV2Builder Builder = new PublicDeletePlatformLinkV2Builder();
+
+        public class PublicDeletePlatformLinkV2Builder
+        {
+            
+            
+            
+            public string? PlatformNamespace { get; set; }
+            
+            internal PublicDeletePlatformLinkV2Builder() { }
+
+
+
+
+            public PublicDeletePlatformLinkV2Builder SetPlatformNamespace(string _platformNamespace)
+            {
+                PlatformNamespace = _platformNamespace;
+                return this;
+            }
+
+
+            public PublicDeletePlatformLinkV2 Build(
+                string namespace_,
+                string platformId,
+                string userId
+            )
+            {
+                return new PublicDeletePlatformLinkV2(this,
+                    namespace_,                    
+                    platformId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicDeletePlatformLinkV2(PublicDeletePlatformLinkV2Builder builder,
+            string namespace_,
+            string platformId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            PathParams["userId"] = userId;
+            
+            
+            if (builder.PlatformNamespace != null) FormParams["platform_namespace"] = builder.PlatformNamespace;
+            
+            
+            
+        }
+        #endregion
+
         public PublicDeletePlatformLinkV2(
             string namespace_,            
             string platformId,            

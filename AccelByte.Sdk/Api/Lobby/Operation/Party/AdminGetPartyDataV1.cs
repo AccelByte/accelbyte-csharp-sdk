@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminGetPartyDataV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetPartyDataV1Builder Builder = new AdminGetPartyDataV1Builder();
+
+        public class AdminGetPartyDataV1Builder
+        {
+            
+            
+            internal AdminGetPartyDataV1Builder() { }
+
+
+
+
+
+            public AdminGetPartyDataV1 Build(
+                string namespace_,
+                string partyId
+            )
+            {
+                return new AdminGetPartyDataV1(this,
+                    namespace_,                    
+                    partyId                    
+                );
+            }
+        }
+
+        private AdminGetPartyDataV1(AdminGetPartyDataV1Builder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["partyId"] = partyId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetPartyDataV1(
             string namespace_,            
             string partyId            

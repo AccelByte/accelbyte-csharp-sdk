@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class DeleteAllUserGroup : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteAllUserGroupBuilder Builder = new DeleteAllUserGroupBuilder();
+
+        public class DeleteAllUserGroupBuilder
+        {
+            
+            
+            internal DeleteAllUserGroupBuilder() { }
+
+
+
+
+
+            public DeleteAllUserGroup Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new DeleteAllUserGroup(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private DeleteAllUserGroup(DeleteAllUserGroupBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteAllUserGroup(
             string namespace_,            
             string userId            

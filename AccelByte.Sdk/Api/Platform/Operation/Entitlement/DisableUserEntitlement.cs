@@ -23,6 +23,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DisableUserEntitlement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DisableUserEntitlementBuilder Builder = new DisableUserEntitlementBuilder();
+
+        public class DisableUserEntitlementBuilder
+        {
+            
+            
+            
+            internal DisableUserEntitlementBuilder() { }
+
+
+
+
+
+            public DisableUserEntitlement Build(
+                string entitlementId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new DisableUserEntitlement(this,
+                    entitlementId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private DisableUserEntitlement(DisableUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["entitlementId"] = entitlementId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DisableUserEntitlement(
             string entitlementId,            
             string namespace_,            

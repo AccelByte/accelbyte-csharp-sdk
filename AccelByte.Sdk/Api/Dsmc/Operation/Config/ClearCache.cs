@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ClearCache : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ClearCacheBuilder Builder = new ClearCacheBuilder();
+
+        public class ClearCacheBuilder
+        {
+            
+            internal ClearCacheBuilder() { }
+
+
+
+
+
+            public ClearCache Build(
+                string namespace_
+            )
+            {
+                return new ClearCache(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ClearCache(ClearCacheBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ClearCache(
             string namespace_            
         )

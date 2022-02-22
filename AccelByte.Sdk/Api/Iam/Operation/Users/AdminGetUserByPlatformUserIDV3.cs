@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetUserByPlatformUserIDV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetUserByPlatformUserIDV3Builder Builder = new AdminGetUserByPlatformUserIDV3Builder();
+
+        public class AdminGetUserByPlatformUserIDV3Builder
+        {
+            
+            
+            
+            internal AdminGetUserByPlatformUserIDV3Builder() { }
+
+
+
+
+
+            public AdminGetUserByPlatformUserIDV3 Build(
+                string namespace_,
+                string platformId,
+                string platformUserId
+            )
+            {
+                return new AdminGetUserByPlatformUserIDV3(this,
+                    namespace_,                    
+                    platformId,                    
+                    platformUserId                    
+                );
+            }
+        }
+
+        private AdminGetUserByPlatformUserIDV3(AdminGetUserByPlatformUserIDV3Builder builder,
+            string namespace_,
+            string platformId,
+            string platformUserId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            PathParams["platformUserId"] = platformUserId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetUserByPlatformUserIDV3(
             string namespace_,            
             string platformId,            

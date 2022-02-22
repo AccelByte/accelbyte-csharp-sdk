@@ -22,6 +22,56 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RetrieveEligibilitiesPublicIndirect : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveEligibilitiesPublicIndirectBuilder Builder = new RetrieveEligibilitiesPublicIndirectBuilder();
+
+        public class RetrieveEligibilitiesPublicIndirectBuilder
+        {
+            
+            
+            
+            
+            internal RetrieveEligibilitiesPublicIndirectBuilder() { }
+
+
+
+
+
+            public RetrieveEligibilitiesPublicIndirect Build(
+                string clientId,
+                string countryCode,
+                string namespace_,
+                string userId
+            )
+            {
+                return new RetrieveEligibilitiesPublicIndirect(this,
+                    clientId,                    
+                    countryCode,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private RetrieveEligibilitiesPublicIndirect(RetrieveEligibilitiesPublicIndirectBuilder builder,
+            string clientId,
+            string countryCode,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["clientId"] = clientId;
+            PathParams["countryCode"] = countryCode;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveEligibilitiesPublicIndirect(
             string clientId,            
             string countryCode,            

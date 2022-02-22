@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetTicketBoothID : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetTicketBoothIDBuilder Builder = new GetTicketBoothIDBuilder();
+
+        public class GetTicketBoothIDBuilder
+        {
+            
+            
+            internal GetTicketBoothIDBuilder() { }
+
+
+
+
+
+            public GetTicketBoothID Build(
+                string boothName,
+                string namespace_
+            )
+            {
+                return new GetTicketBoothID(this,
+                    boothName,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetTicketBoothID(GetTicketBoothIDBuilder builder,
+            string boothName,
+            string namespace_
+        )
+        {
+            PathParams["boothName"] = boothName;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetTicketBoothID(
             string boothName,            
             string namespace_            

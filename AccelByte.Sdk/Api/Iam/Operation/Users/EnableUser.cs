@@ -26,6 +26,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class EnableUser : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static EnableUserBuilder Builder = new EnableUserBuilder();
+
+        public class EnableUserBuilder
+        {
+            
+            
+            internal EnableUserBuilder() { }
+
+
+
+
+
+            public EnableUser Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new EnableUser(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private EnableUser(EnableUserBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public EnableUser(
             string namespace_,            
             string userId            

@@ -31,6 +31,77 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RetrieveLatestPoliciesPublic : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveLatestPoliciesPublicBuilder Builder = new RetrieveLatestPoliciesPublicBuilder();
+
+        public class RetrieveLatestPoliciesPublicBuilder
+        {
+            
+            public bool? AlwaysIncludeDefault { get; set; }
+            
+            public bool? DefaultOnEmpty { get; set; }
+            
+            public string? PolicyType { get; set; }
+            
+            public string? Tags { get; set; }
+            
+            internal RetrieveLatestPoliciesPublicBuilder() { }
+
+
+            public RetrieveLatestPoliciesPublicBuilder SetAlwaysIncludeDefault(bool _alwaysIncludeDefault)
+            {
+                AlwaysIncludeDefault = _alwaysIncludeDefault;
+                return this;
+            }
+
+            public RetrieveLatestPoliciesPublicBuilder SetDefaultOnEmpty(bool _defaultOnEmpty)
+            {
+                DefaultOnEmpty = _defaultOnEmpty;
+                return this;
+            }
+
+            public RetrieveLatestPoliciesPublicBuilder SetPolicyType(string _policyType)
+            {
+                PolicyType = _policyType;
+                return this;
+            }
+
+            public RetrieveLatestPoliciesPublicBuilder SetTags(string _tags)
+            {
+                Tags = _tags;
+                return this;
+            }
+
+
+
+
+            public RetrieveLatestPoliciesPublic Build(
+                string namespace_
+            )
+            {
+                return new RetrieveLatestPoliciesPublic(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private RetrieveLatestPoliciesPublic(RetrieveLatestPoliciesPublicBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.AlwaysIncludeDefault != null) QueryParams["alwaysIncludeDefault"] = Convert.ToString(builder.AlwaysIncludeDefault)!;
+            if (builder.DefaultOnEmpty != null) QueryParams["defaultOnEmpty"] = Convert.ToString(builder.DefaultOnEmpty)!;
+            if (builder.PolicyType != null) QueryParams["policyType"] = builder.PolicyType;
+            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveLatestPoliciesPublic(
             string namespace_,            
             bool? alwaysIncludeDefault,            

@@ -22,6 +22,59 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class GetAllDeployment : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetAllDeploymentBuilder Builder = new GetAllDeploymentBuilder();
+
+        public class GetAllDeploymentBuilder
+        {
+            
+            public long? Count { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetAllDeploymentBuilder() { }
+
+
+            public GetAllDeploymentBuilder SetCount(long _count)
+            {
+                Count = _count;
+                return this;
+            }
+
+            public GetAllDeploymentBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetAllDeployment Build(
+                string namespace_
+            )
+            {
+                return new GetAllDeployment(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetAllDeployment(GetAllDeploymentBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetAllDeployment(
             string namespace_,            
             long? count,            

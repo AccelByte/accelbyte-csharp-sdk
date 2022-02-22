@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class FulfillItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static FulfillItemBuilder Builder = new FulfillItemBuilder();
+
+        public class FulfillItemBuilder
+        {
+            
+            
+            public Model.FulfillmentRequest? Body { get; set; }
+            
+            internal FulfillItemBuilder() { }
+
+
+
+            public FulfillItemBuilder SetBody(Model.FulfillmentRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public FulfillItem Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new FulfillItem(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private FulfillItem(FulfillItemBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public FulfillItem(
             string namespace_,            
             string userId,            

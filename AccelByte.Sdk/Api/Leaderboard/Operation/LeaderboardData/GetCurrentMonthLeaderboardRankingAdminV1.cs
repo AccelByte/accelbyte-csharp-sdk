@@ -25,6 +25,64 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetCurrentMonthLeaderboardRankingAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetCurrentMonthLeaderboardRankingAdminV1Builder Builder = new GetCurrentMonthLeaderboardRankingAdminV1Builder();
+
+        public class GetCurrentMonthLeaderboardRankingAdminV1Builder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetCurrentMonthLeaderboardRankingAdminV1Builder() { }
+
+
+            public GetCurrentMonthLeaderboardRankingAdminV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetCurrentMonthLeaderboardRankingAdminV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetCurrentMonthLeaderboardRankingAdminV1 Build(
+                string leaderboardCode,
+                string namespace_
+            )
+            {
+                return new GetCurrentMonthLeaderboardRankingAdminV1(this,
+                    leaderboardCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetCurrentMonthLeaderboardRankingAdminV1(GetCurrentMonthLeaderboardRankingAdminV1Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetCurrentMonthLeaderboardRankingAdminV1(
             string leaderboardCode,            
             string namespace_,            

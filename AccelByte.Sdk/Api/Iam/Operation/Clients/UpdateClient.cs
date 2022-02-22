@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class UpdateClient : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateClientBuilder Builder = new UpdateClientBuilder();
+
+        public class UpdateClientBuilder
+        {
+            
+            
+            internal UpdateClientBuilder() { }
+
+
+
+
+
+            public UpdateClient Build(
+                ClientmodelClientUpdateRequest body,
+                string clientId
+            )
+            {
+                return new UpdateClient(this,
+                    body,                    
+                    clientId                    
+                );
+            }
+        }
+
+        private UpdateClient(UpdateClientBuilder builder,
+            ClientmodelClientUpdateRequest body,
+            string clientId
+        )
+        {
+            PathParams["clientId"] = clientId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateClient(
             string clientId,            
             Model.ClientmodelClientUpdateRequest body            

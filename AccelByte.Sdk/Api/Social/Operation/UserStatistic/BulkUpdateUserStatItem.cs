@@ -30,6 +30,64 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class BulkUpdateUserStatItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static BulkUpdateUserStatItemBuilder Builder = new BulkUpdateUserStatItemBuilder();
+
+        public class BulkUpdateUserStatItemBuilder
+        {
+            
+            
+            public string? AdditionalKey { get; set; }
+            
+            public List<Model.BulkStatItemUpdate>? Body { get; set; }
+            
+            internal BulkUpdateUserStatItemBuilder() { }
+
+
+            public BulkUpdateUserStatItemBuilder SetAdditionalKey(string _additionalKey)
+            {
+                AdditionalKey = _additionalKey;
+                return this;
+            }
+
+
+            public BulkUpdateUserStatItemBuilder SetBody(List<Model.BulkStatItemUpdate> _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public BulkUpdateUserStatItem Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new BulkUpdateUserStatItem(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private BulkUpdateUserStatItem(BulkUpdateUserStatItemBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.AdditionalKey != null) QueryParams["additionalKey"] = builder.AdditionalKey;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public BulkUpdateUserStatItem(
             string namespace_,            
             string userId,            

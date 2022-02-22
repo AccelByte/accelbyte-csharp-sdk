@@ -50,6 +50,51 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class UpdateLeaderboardConfigurationAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateLeaderboardConfigurationAdminV1Builder Builder = new UpdateLeaderboardConfigurationAdminV1Builder();
+
+        public class UpdateLeaderboardConfigurationAdminV1Builder
+        {
+            
+            
+            
+            internal UpdateLeaderboardConfigurationAdminV1Builder() { }
+
+
+
+
+
+            public UpdateLeaderboardConfigurationAdminV1 Build(
+                ModelsUpdateLeaderboardConfigReq body,
+                string leaderboardCode,
+                string namespace_
+            )
+            {
+                return new UpdateLeaderboardConfigurationAdminV1(this,
+                    body,                    
+                    leaderboardCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateLeaderboardConfigurationAdminV1(UpdateLeaderboardConfigurationAdminV1Builder builder,
+            ModelsUpdateLeaderboardConfigReq body,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateLeaderboardConfigurationAdminV1(
             string leaderboardCode,            
             string namespace_,            

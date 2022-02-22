@@ -22,6 +22,68 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateAliPayConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateAliPayConfigBuilder Builder = new UpdateAliPayConfigBuilder();
+
+        public class UpdateAliPayConfigBuilder
+        {
+            
+            public bool? Sandbox { get; set; }
+            
+            public bool? Validate { get; set; }
+            
+            public Model.AliPayConfig? Body { get; set; }
+            
+            internal UpdateAliPayConfigBuilder() { }
+
+
+            public UpdateAliPayConfigBuilder SetSandbox(bool _sandbox)
+            {
+                Sandbox = _sandbox;
+                return this;
+            }
+
+            public UpdateAliPayConfigBuilder SetValidate(bool _validate)
+            {
+                Validate = _validate;
+                return this;
+            }
+
+
+            public UpdateAliPayConfigBuilder SetBody(Model.AliPayConfig _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateAliPayConfig Build(
+                string id
+            )
+            {
+                return new UpdateAliPayConfig(this,
+                    id                    
+                );
+            }
+        }
+
+        private UpdateAliPayConfig(UpdateAliPayConfigBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+            if (builder.Validate != null) QueryParams["validate"] = Convert.ToString(builder.Validate)!;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateAliPayConfig(
             string id,            
             bool? sandbox,            

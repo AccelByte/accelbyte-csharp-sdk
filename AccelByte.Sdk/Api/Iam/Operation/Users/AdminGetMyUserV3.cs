@@ -22,6 +22,36 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetMyUserV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetMyUserV3Builder Builder = new AdminGetMyUserV3Builder();
+
+        public class AdminGetMyUserV3Builder
+        {
+            internal AdminGetMyUserV3Builder() { }
+
+
+
+
+
+            public AdminGetMyUserV3 Build(
+            )
+            {
+                return new AdminGetMyUserV3(this
+                );
+            }
+        }
+
+        private AdminGetMyUserV3(AdminGetMyUserV3Builder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetMyUserV3(
         )
         {

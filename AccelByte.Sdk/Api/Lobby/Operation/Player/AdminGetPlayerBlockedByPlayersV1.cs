@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminGetPlayerBlockedByPlayersV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetPlayerBlockedByPlayersV1Builder Builder = new AdminGetPlayerBlockedByPlayersV1Builder();
+
+        public class AdminGetPlayerBlockedByPlayersV1Builder
+        {
+            
+            
+            internal AdminGetPlayerBlockedByPlayersV1Builder() { }
+
+
+
+
+
+            public AdminGetPlayerBlockedByPlayersV1 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminGetPlayerBlockedByPlayersV1(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminGetPlayerBlockedByPlayersV1(AdminGetPlayerBlockedByPlayersV1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetPlayerBlockedByPlayersV1(
             string namespace_,            
             string userId            

@@ -27,6 +27,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class SendUsersTemplatedNotificationV1Admin : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SendUsersTemplatedNotificationV1AdminBuilder Builder = new SendUsersTemplatedNotificationV1AdminBuilder();
+
+        public class SendUsersTemplatedNotificationV1AdminBuilder
+        {
+            
+            
+            internal SendUsersTemplatedNotificationV1AdminBuilder() { }
+
+
+
+
+
+            public SendUsersTemplatedNotificationV1Admin Build(
+                ModelNotificationWithTemplateRequestV1 body,
+                string namespace_
+            )
+            {
+                return new SendUsersTemplatedNotificationV1Admin(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private SendUsersTemplatedNotificationV1Admin(SendUsersTemplatedNotificationV1AdminBuilder builder,
+            ModelNotificationWithTemplateRequestV1 body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public SendUsersTemplatedNotificationV1Admin(
             string namespace_,            
             Model.ModelNotificationWithTemplateRequestV1 body            

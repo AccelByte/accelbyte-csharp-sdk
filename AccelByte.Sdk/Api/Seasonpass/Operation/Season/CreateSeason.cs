@@ -23,6 +23,50 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class CreateSeason : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateSeasonBuilder Builder = new CreateSeasonBuilder();
+
+        public class CreateSeasonBuilder
+        {
+            
+            public Model.SeasonCreate? Body { get; set; }
+            
+            internal CreateSeasonBuilder() { }
+
+
+
+            public CreateSeasonBuilder SetBody(Model.SeasonCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateSeason Build(
+                string namespace_
+            )
+            {
+                return new CreateSeason(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateSeason(CreateSeasonBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateSeason(
             string namespace_,            
             Model.SeasonCreate body            

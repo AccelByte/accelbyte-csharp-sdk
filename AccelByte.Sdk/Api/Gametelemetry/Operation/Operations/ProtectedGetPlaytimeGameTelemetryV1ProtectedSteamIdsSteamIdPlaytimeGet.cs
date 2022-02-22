@@ -23,6 +23,41 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
     /// </summary>
     public class ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetBuilder Builder = new ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetBuilder();
+
+        public class ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetBuilder
+        {
+            
+            internal ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetBuilder() { }
+
+
+
+
+
+            public ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet Build(
+                string steamId
+            )
+            {
+                return new ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(this,
+                    steamId                    
+                );
+            }
+        }
+
+        private ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetBuilder builder,
+            string steamId
+        )
+        {
+            PathParams["steamId"] = steamId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(
             string steamId            
         )

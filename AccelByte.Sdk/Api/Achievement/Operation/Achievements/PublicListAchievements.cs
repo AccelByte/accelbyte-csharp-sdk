@@ -21,6 +21,73 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// </summary>
     public class PublicListAchievements : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicListAchievementsBuilder Builder = new PublicListAchievementsBuilder();
+
+        public class PublicListAchievementsBuilder
+        {
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            public string? SortBy { get; set; }
+            
+            
+            internal PublicListAchievementsBuilder() { }
+
+
+            public PublicListAchievementsBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicListAchievementsBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public PublicListAchievementsBuilder SetSortBy(string _sortBy)
+            {
+                SortBy = _sortBy;
+                return this;
+            }
+
+
+
+
+            public PublicListAchievements Build(
+                string namespace_,
+                string language
+            )
+            {
+                return new PublicListAchievements(this,
+                    namespace_,                    
+                    language                    
+                );
+            }
+        }
+
+        private PublicListAchievements(PublicListAchievementsBuilder builder,
+            string namespace_,
+            string language
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
+            if (language != null) QueryParams["language"] = language;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicListAchievements(
             string namespace_,            
             long? limit,            

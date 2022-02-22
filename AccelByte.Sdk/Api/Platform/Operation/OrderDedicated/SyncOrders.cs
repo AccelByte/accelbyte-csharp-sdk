@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class SyncOrders : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SyncOrdersBuilder Builder = new SyncOrdersBuilder();
+
+        public class SyncOrdersBuilder
+        {
+            public string? NextEvaluatedKey { get; set; }
+            
+            
+            
+            internal SyncOrdersBuilder() { }
+
+
+            public SyncOrdersBuilder SetNextEvaluatedKey(string _nextEvaluatedKey)
+            {
+                NextEvaluatedKey = _nextEvaluatedKey;
+                return this;
+            }
+
+
+
+
+            public SyncOrders Build(
+                string end,
+                string start
+            )
+            {
+                return new SyncOrders(this,
+                    end,                    
+                    start                    
+                );
+            }
+        }
+
+        private SyncOrders(SyncOrdersBuilder builder,
+            string end,
+            string start
+        )
+        {
+            
+            if (builder.NextEvaluatedKey != null) QueryParams["nextEvaluatedKey"] = builder.NextEvaluatedKey;
+            if (end != null) QueryParams["end"] = end;
+            if (start != null) QueryParams["start"] = start;
+            
+            
+            
+            
+        }
+        #endregion
+
         public SyncOrders(
             string? nextEvaluatedKey,            
             string end,            

@@ -18,6 +18,56 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminHideUserContent : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminHideUserContentBuilder Builder = new AdminHideUserContentBuilder();
+
+        public class AdminHideUserContentBuilder
+        {
+            
+            
+            
+            
+            internal AdminHideUserContentBuilder() { }
+
+
+
+
+
+            public AdminHideUserContent Build(
+                ModelsHideContentRequest body,
+                string contentId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminHideUserContent(this,
+                    body,                    
+                    contentId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminHideUserContent(AdminHideUserContentBuilder builder,
+            ModelsHideContentRequest body,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["contentId"] = contentId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminHideUserContent(
             string contentId,            
             string namespace_,            

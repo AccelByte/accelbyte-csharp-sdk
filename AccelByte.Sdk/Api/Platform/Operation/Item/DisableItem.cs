@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DisableItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DisableItemBuilder Builder = new DisableItemBuilder();
+
+        public class DisableItemBuilder
+        {
+            
+            
+            
+            internal DisableItemBuilder() { }
+
+
+
+
+
+            public DisableItem Build(
+                string itemId,
+                string namespace_,
+                string storeId
+            )
+            {
+                return new DisableItem(this,
+                    itemId,                    
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private DisableItem(DisableItemBuilder builder,
+            string itemId,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["itemId"] = itemId;
+            PathParams["namespace"] = namespace_;
+            
+            if (storeId != null) QueryParams["storeId"] = storeId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public DisableItem(
             string itemId,            
             string namespace_,            

@@ -30,6 +30,50 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class CreateMyProfile : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateMyProfileBuilder Builder = new CreateMyProfileBuilder();
+
+        public class CreateMyProfileBuilder
+        {
+            
+            public Model.UserProfilePrivateCreate? Body { get; set; }
+            
+            internal CreateMyProfileBuilder() { }
+
+
+
+            public CreateMyProfileBuilder SetBody(Model.UserProfilePrivateCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateMyProfile Build(
+                string namespace_
+            )
+            {
+                return new CreateMyProfile(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateMyProfile(CreateMyProfileBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateMyProfile(
             string namespace_,            
             Model.UserProfilePrivateCreate body            

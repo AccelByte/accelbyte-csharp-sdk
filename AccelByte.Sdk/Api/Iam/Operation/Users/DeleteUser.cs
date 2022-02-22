@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class DeleteUser : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteUserBuilder Builder = new DeleteUserBuilder();
+
+        public class DeleteUserBuilder
+        {
+            
+            
+            internal DeleteUserBuilder() { }
+
+
+
+
+
+            public DeleteUser Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new DeleteUser(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private DeleteUser(DeleteUserBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteUser(
             string namespace_,            
             string userId            

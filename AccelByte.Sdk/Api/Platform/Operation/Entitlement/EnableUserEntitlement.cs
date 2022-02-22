@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class EnableUserEntitlement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static EnableUserEntitlementBuilder Builder = new EnableUserEntitlementBuilder();
+
+        public class EnableUserEntitlementBuilder
+        {
+            
+            
+            
+            internal EnableUserEntitlementBuilder() { }
+
+
+
+
+
+            public EnableUserEntitlement Build(
+                string entitlementId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new EnableUserEntitlement(this,
+                    entitlementId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private EnableUserEntitlement(EnableUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["entitlementId"] = entitlementId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public EnableUserEntitlement(
             string entitlementId,            
             string namespace_,            

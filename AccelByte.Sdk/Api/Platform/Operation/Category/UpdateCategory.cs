@@ -34,6 +34,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateCategory : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateCategoryBuilder Builder = new UpdateCategoryBuilder();
+
+        public class UpdateCategoryBuilder
+        {
+            
+            
+            
+            public Model.CategoryUpdate? Body { get; set; }
+            
+            internal UpdateCategoryBuilder() { }
+
+
+
+            public UpdateCategoryBuilder SetBody(Model.CategoryUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateCategory Build(
+                string categoryPath,
+                string namespace_,
+                string storeId
+            )
+            {
+                return new UpdateCategory(this,
+                    categoryPath,                    
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private UpdateCategory(UpdateCategoryBuilder builder,
+            string categoryPath,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["categoryPath"] = categoryPath;
+            PathParams["namespace"] = namespace_;
+            
+            if (storeId != null) QueryParams["storeId"] = storeId;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateCategory(
             string categoryPath,            
             string namespace_,            

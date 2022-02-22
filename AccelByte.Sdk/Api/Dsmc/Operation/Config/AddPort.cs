@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class AddPort : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AddPortBuilder Builder = new AddPortBuilder();
+
+        public class AddPortBuilder
+        {
+            
+            
+            
+            internal AddPortBuilder() { }
+
+
+
+
+
+            public AddPort Build(
+                ModelsCreatePortRequest body,
+                string name,
+                string namespace_
+            )
+            {
+                return new AddPort(this,
+                    body,                    
+                    name,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AddPort(AddPortBuilder builder,
+            ModelsCreatePortRequest body,
+            string name,
+            string namespace_
+        )
+        {
+            PathParams["name"] = name;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AddPort(
             string name,            
             string namespace_,            

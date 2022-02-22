@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class PublicUpdateUserProfileStatus : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicUpdateUserProfileStatusBuilder Builder = new PublicUpdateUserProfileStatusBuilder();
+
+        public class PublicUpdateUserProfileStatusBuilder
+        {
+            
+            
+            public Model.UserProfileStatusUpdate? Body { get; set; }
+            
+            internal PublicUpdateUserProfileStatusBuilder() { }
+
+
+
+            public PublicUpdateUserProfileStatusBuilder SetBody(Model.UserProfileStatusUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicUpdateUserProfileStatus Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicUpdateUserProfileStatus(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicUpdateUserProfileStatus(PublicUpdateUserProfileStatusBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicUpdateUserProfileStatus(
             string namespace_,            
             string userId,            

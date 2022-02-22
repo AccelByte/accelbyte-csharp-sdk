@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ImageDetailClient : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ImageDetailClientBuilder Builder = new ImageDetailClientBuilder();
+
+        public class ImageDetailClientBuilder
+        {
+            
+            
+            internal ImageDetailClientBuilder() { }
+
+
+
+
+
+            public ImageDetailClient Build(
+                string namespace_,
+                string version
+            )
+            {
+                return new ImageDetailClient(this,
+                    namespace_,                    
+                    version                    
+                );
+            }
+        }
+
+        private ImageDetailClient(ImageDetailClientBuilder builder,
+            string namespace_,
+            string version
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["version"] = version;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ImageDetailClient(
             string namespace_,            
             string version            

@@ -18,6 +18,64 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class GetChannels : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetChannelsBuilder Builder = new GetChannelsBuilder();
+
+        public class GetChannelsBuilder
+        {
+            
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal GetChannelsBuilder() { }
+
+
+            public GetChannelsBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetChannelsBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetChannels Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetChannels(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetChannels(GetChannelsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetChannels(
             string namespace_,            
             string userId,            

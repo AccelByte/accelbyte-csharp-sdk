@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DeleteItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteItemBuilder Builder = new DeleteItemBuilder();
+
+        public class DeleteItemBuilder
+        {
+            
+            
+            public string? StoreId { get; set; }
+            
+            internal DeleteItemBuilder() { }
+
+
+            public DeleteItemBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public DeleteItem Build(
+                string itemId,
+                string namespace_
+            )
+            {
+                return new DeleteItem(this,
+                    itemId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteItem(DeleteItemBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            PathParams["itemId"] = itemId;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteItem(
             string itemId,            
             string namespace_,            

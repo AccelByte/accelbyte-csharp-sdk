@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class DeleteRolePermission : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteRolePermissionBuilder Builder = new DeleteRolePermissionBuilder();
+
+        public class DeleteRolePermissionBuilder
+        {
+            
+            
+            
+            internal DeleteRolePermissionBuilder() { }
+
+
+
+
+
+            public DeleteRolePermission Build(
+                long action,
+                string resource,
+                string roleId
+            )
+            {
+                return new DeleteRolePermission(this,
+                    action,                    
+                    resource,                    
+                    roleId                    
+                );
+            }
+        }
+
+        private DeleteRolePermission(DeleteRolePermissionBuilder builder,
+            long action,
+            string resource,
+            string roleId
+        )
+        {
+            PathParams["action"] = Convert.ToString(action);
+            PathParams["resource"] = resource;
+            PathParams["roleId"] = roleId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteRolePermission(
             long action,            
             string resource,            

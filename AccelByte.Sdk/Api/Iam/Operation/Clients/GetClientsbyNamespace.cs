@@ -18,6 +18,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetClientsbyNamespace : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetClientsbyNamespaceBuilder Builder = new GetClientsbyNamespaceBuilder();
+
+        public class GetClientsbyNamespaceBuilder
+        {
+            
+            internal GetClientsbyNamespaceBuilder() { }
+
+
+
+
+
+            public GetClientsbyNamespace Build(
+                string namespace_
+            )
+            {
+                return new GetClientsbyNamespace(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetClientsbyNamespace(GetClientsbyNamespaceBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetClientsbyNamespace(
             string namespace_            
         )

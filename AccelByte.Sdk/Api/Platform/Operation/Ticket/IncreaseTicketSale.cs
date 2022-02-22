@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class IncreaseTicketSale : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static IncreaseTicketSaleBuilder Builder = new IncreaseTicketSaleBuilder();
+
+        public class IncreaseTicketSaleBuilder
+        {
+            
+            
+            public Model.TicketSaleIncrementRequest? Body { get; set; }
+            
+            internal IncreaseTicketSaleBuilder() { }
+
+
+
+            public IncreaseTicketSaleBuilder SetBody(Model.TicketSaleIncrementRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public IncreaseTicketSale Build(
+                string boothName,
+                string namespace_
+            )
+            {
+                return new IncreaseTicketSale(this,
+                    boothName,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private IncreaseTicketSale(IncreaseTicketSaleBuilder builder,
+            string boothName,
+            string namespace_
+        )
+        {
+            PathParams["boothName"] = boothName;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public IncreaseTicketSale(
             string boothName,            
             string namespace_,            

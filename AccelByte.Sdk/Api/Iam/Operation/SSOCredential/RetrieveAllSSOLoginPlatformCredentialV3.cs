@@ -18,6 +18,59 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class RetrieveAllSSOLoginPlatformCredentialV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveAllSSOLoginPlatformCredentialV3Builder Builder = new RetrieveAllSSOLoginPlatformCredentialV3Builder();
+
+        public class RetrieveAllSSOLoginPlatformCredentialV3Builder
+        {
+            
+            public long? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal RetrieveAllSSOLoginPlatformCredentialV3Builder() { }
+
+
+            public RetrieveAllSSOLoginPlatformCredentialV3Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public RetrieveAllSSOLoginPlatformCredentialV3Builder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public RetrieveAllSSOLoginPlatformCredentialV3 Build(
+                string namespace_
+            )
+            {
+                return new RetrieveAllSSOLoginPlatformCredentialV3(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private RetrieveAllSSOLoginPlatformCredentialV3(RetrieveAllSSOLoginPlatformCredentialV3Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveAllSSOLoginPlatformCredentialV3(
             string namespace_,            
             long? limit,            

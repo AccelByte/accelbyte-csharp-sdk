@@ -236,6 +236,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CreateItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateItemBuilder Builder = new CreateItemBuilder();
+
+        public class CreateItemBuilder
+        {
+            
+            
+            public Model.ItemCreate? Body { get; set; }
+            
+            internal CreateItemBuilder() { }
+
+
+
+            public CreateItemBuilder SetBody(Model.ItemCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateItem Build(
+                string namespace_,
+                string storeId
+            )
+            {
+                return new CreateItem(this,
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private CreateItem(CreateItemBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (storeId != null) QueryParams["storeId"] = storeId;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateItem(
             string namespace_,            
             string storeId,            

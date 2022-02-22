@@ -20,6 +20,64 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// </summary>
     public class AdminGetUserPersonalDataRequests : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetUserPersonalDataRequestsBuilder Builder = new AdminGetUserPersonalDataRequestsBuilder();
+
+        public class AdminGetUserPersonalDataRequestsBuilder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal AdminGetUserPersonalDataRequestsBuilder() { }
+
+
+            public AdminGetUserPersonalDataRequestsBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminGetUserPersonalDataRequestsBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public AdminGetUserPersonalDataRequests Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminGetUserPersonalDataRequests(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminGetUserPersonalDataRequests(AdminGetUserPersonalDataRequestsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetUserPersonalDataRequests(
             string namespace_,            
             string userId,            

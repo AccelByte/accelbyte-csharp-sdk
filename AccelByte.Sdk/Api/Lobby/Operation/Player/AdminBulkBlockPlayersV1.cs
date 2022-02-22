@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminBulkBlockPlayersV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminBulkBlockPlayersV1Builder Builder = new AdminBulkBlockPlayersV1Builder();
+
+        public class AdminBulkBlockPlayersV1Builder
+        {
+            
+            
+            
+            internal AdminBulkBlockPlayersV1Builder() { }
+
+
+
+
+
+            public AdminBulkBlockPlayersV1 Build(
+                ModelsListBlockedPlayerRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminBulkBlockPlayersV1(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminBulkBlockPlayersV1(AdminBulkBlockPlayersV1Builder builder,
+            ModelsListBlockedPlayerRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminBulkBlockPlayersV1(
             string namespace_,            
             string userId,            

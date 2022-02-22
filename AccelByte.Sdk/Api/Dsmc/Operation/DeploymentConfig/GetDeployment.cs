@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class GetDeployment : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetDeploymentBuilder Builder = new GetDeploymentBuilder();
+
+        public class GetDeploymentBuilder
+        {
+            
+            
+            internal GetDeploymentBuilder() { }
+
+
+
+
+
+            public GetDeployment Build(
+                string deployment,
+                string namespace_
+            )
+            {
+                return new GetDeployment(this,
+                    deployment,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetDeployment(GetDeploymentBuilder builder,
+            string deployment,
+            string namespace_
+        )
+        {
+            PathParams["deployment"] = deployment;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetDeployment(
             string deployment,            
             string namespace_            

@@ -24,6 +24,149 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicQueryItems : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicQueryItemsBuilder Builder = new PublicQueryItemsBuilder();
+
+        public class PublicQueryItemsBuilder
+        {
+            
+            public string? AppType { get; set; }
+            
+            public string? BaseAppId { get; set; }
+            
+            public string? CategoryPath { get; set; }
+            
+            public string? Features { get; set; }
+            
+            public string? ItemType { get; set; }
+            
+            public string? Language { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? Region { get; set; }
+            
+            public string? SortBy { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            public string? Tags { get; set; }
+            
+            internal PublicQueryItemsBuilder() { }
+
+
+            public PublicQueryItemsBuilder SetAppType(string _appType)
+            {
+                AppType = _appType;
+                return this;
+            }
+
+            public PublicQueryItemsBuilder SetBaseAppId(string _baseAppId)
+            {
+                BaseAppId = _baseAppId;
+                return this;
+            }
+
+            public PublicQueryItemsBuilder SetCategoryPath(string _categoryPath)
+            {
+                CategoryPath = _categoryPath;
+                return this;
+            }
+
+            public PublicQueryItemsBuilder SetFeatures(string _features)
+            {
+                Features = _features;
+                return this;
+            }
+
+            public PublicQueryItemsBuilder SetItemType(string _itemType)
+            {
+                ItemType = _itemType;
+                return this;
+            }
+
+            public PublicQueryItemsBuilder SetLanguage(string _language)
+            {
+                Language = _language;
+                return this;
+            }
+
+            public PublicQueryItemsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicQueryItemsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public PublicQueryItemsBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+            public PublicQueryItemsBuilder SetSortBy(string _sortBy)
+            {
+                SortBy = _sortBy;
+                return this;
+            }
+
+            public PublicQueryItemsBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+            public PublicQueryItemsBuilder SetTags(string _tags)
+            {
+                Tags = _tags;
+                return this;
+            }
+
+
+
+
+            public PublicQueryItems Build(
+                string namespace_
+            )
+            {
+                return new PublicQueryItems(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicQueryItems(PublicQueryItemsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.AppType != null) QueryParams["appType"] = builder.AppType;
+            if (builder.BaseAppId != null) QueryParams["baseAppId"] = builder.BaseAppId;
+            if (builder.CategoryPath != null) QueryParams["categoryPath"] = builder.CategoryPath;
+            if (builder.Features != null) QueryParams["features"] = builder.Features;
+            if (builder.ItemType != null) QueryParams["itemType"] = builder.ItemType;
+            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicQueryItems(
             string namespace_,            
             string? appType,            

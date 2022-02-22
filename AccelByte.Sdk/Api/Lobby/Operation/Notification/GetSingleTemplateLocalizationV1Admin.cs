@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class GetSingleTemplateLocalizationV1Admin : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetSingleTemplateLocalizationV1AdminBuilder Builder = new GetSingleTemplateLocalizationV1AdminBuilder();
+
+        public class GetSingleTemplateLocalizationV1AdminBuilder
+        {
+            
+            
+            
+            internal GetSingleTemplateLocalizationV1AdminBuilder() { }
+
+
+
+
+
+            public GetSingleTemplateLocalizationV1Admin Build(
+                string namespace_,
+                string templateLanguage,
+                string templateSlug
+            )
+            {
+                return new GetSingleTemplateLocalizationV1Admin(this,
+                    namespace_,                    
+                    templateLanguage,                    
+                    templateSlug                    
+                );
+            }
+        }
+
+        private GetSingleTemplateLocalizationV1Admin(GetSingleTemplateLocalizationV1AdminBuilder builder,
+            string namespace_,
+            string templateLanguage,
+            string templateSlug
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["templateLanguage"] = templateLanguage;
+            PathParams["templateSlug"] = templateSlug;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetSingleTemplateLocalizationV1Admin(
             string namespace_,            
             string templateLanguage,            

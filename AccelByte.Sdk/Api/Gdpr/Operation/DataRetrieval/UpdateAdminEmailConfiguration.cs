@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// </summary>
     public class UpdateAdminEmailConfiguration : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateAdminEmailConfigurationBuilder Builder = new UpdateAdminEmailConfigurationBuilder();
+
+        public class UpdateAdminEmailConfigurationBuilder
+        {
+            
+            
+            internal UpdateAdminEmailConfigurationBuilder() { }
+
+
+
+
+
+            public UpdateAdminEmailConfiguration Build(
+                List<string> body,
+                string namespace_
+            )
+            {
+                return new UpdateAdminEmailConfiguration(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateAdminEmailConfiguration(UpdateAdminEmailConfigurationBuilder builder,
+            List<string> body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateAdminEmailConfiguration(
             string namespace_,            
             List<string> body            

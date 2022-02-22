@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// </summary>
     public class AdminDeleteAchievement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminDeleteAchievementBuilder Builder = new AdminDeleteAchievementBuilder();
+
+        public class AdminDeleteAchievementBuilder
+        {
+            
+            
+            internal AdminDeleteAchievementBuilder() { }
+
+
+
+
+
+            public AdminDeleteAchievement Build(
+                string achievementCode,
+                string namespace_
+            )
+            {
+                return new AdminDeleteAchievement(this,
+                    achievementCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminDeleteAchievement(AdminDeleteAchievementBuilder builder,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            PathParams["achievementCode"] = achievementCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminDeleteAchievement(
             string achievementCode,            
             string namespace_            

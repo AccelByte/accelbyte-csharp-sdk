@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class CreateChannel : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateChannelBuilder Builder = new CreateChannelBuilder();
+
+        public class CreateChannelBuilder
+        {
+            
+            
+            
+            internal CreateChannelBuilder() { }
+
+
+
+
+
+            public CreateChannel Build(
+                ModelsChannelRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new CreateChannel(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private CreateChannel(CreateChannelBuilder builder,
+            ModelsChannelRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateChannel(
             string namespace_,            
             string userId,            

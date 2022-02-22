@@ -23,6 +23,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class RollbackPublishedStore : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RollbackPublishedStoreBuilder Builder = new RollbackPublishedStoreBuilder();
+
+        public class RollbackPublishedStoreBuilder
+        {
+            
+            internal RollbackPublishedStoreBuilder() { }
+
+
+
+
+
+            public RollbackPublishedStore Build(
+                string namespace_
+            )
+            {
+                return new RollbackPublishedStore(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private RollbackPublishedStore(RollbackPublishedStoreBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RollbackPublishedStore(
             string namespace_            
         )

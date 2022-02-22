@@ -26,6 +26,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class DeleteClient : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteClientBuilder Builder = new DeleteClientBuilder();
+
+        public class DeleteClientBuilder
+        {
+            
+            internal DeleteClientBuilder() { }
+
+
+
+
+
+            public DeleteClient Build(
+                string clientId
+            )
+            {
+                return new DeleteClient(this,
+                    clientId                    
+                );
+            }
+        }
+
+        private DeleteClient(DeleteClientBuilder builder,
+            string clientId
+        )
+        {
+            PathParams["clientId"] = clientId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteClient(
             string clientId            
         )

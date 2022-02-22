@@ -25,6 +25,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class DeregisterLocalServer : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeregisterLocalServerBuilder Builder = new DeregisterLocalServerBuilder();
+
+        public class DeregisterLocalServerBuilder
+        {
+            
+            
+            internal DeregisterLocalServerBuilder() { }
+
+
+
+
+
+            public DeregisterLocalServer Build(
+                ModelsDeregisterLocalServerRequest body,
+                string namespace_
+            )
+            {
+                return new DeregisterLocalServer(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeregisterLocalServer(DeregisterLocalServerBuilder builder,
+            ModelsDeregisterLocalServerRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public DeregisterLocalServer(
             string namespace_,            
             Model.ModelsDeregisterLocalServerRequest body            

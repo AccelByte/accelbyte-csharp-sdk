@@ -23,6 +23,46 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class PublicBulkClaimUserRewards : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicBulkClaimUserRewardsBuilder Builder = new PublicBulkClaimUserRewardsBuilder();
+
+        public class PublicBulkClaimUserRewardsBuilder
+        {
+            
+            
+            internal PublicBulkClaimUserRewardsBuilder() { }
+
+
+
+
+
+            public PublicBulkClaimUserRewards Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicBulkClaimUserRewards(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicBulkClaimUserRewards(PublicBulkClaimUserRewardsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicBulkClaimUserRewards(
             string namespace_,            
             string userId            

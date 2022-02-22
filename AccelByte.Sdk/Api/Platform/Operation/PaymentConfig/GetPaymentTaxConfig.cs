@@ -22,6 +22,36 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetPaymentTaxConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPaymentTaxConfigBuilder Builder = new GetPaymentTaxConfigBuilder();
+
+        public class GetPaymentTaxConfigBuilder
+        {
+            internal GetPaymentTaxConfigBuilder() { }
+
+
+
+
+
+            public GetPaymentTaxConfig Build(
+            )
+            {
+                return new GetPaymentTaxConfig(this
+                );
+            }
+        }
+
+        private GetPaymentTaxConfig(GetPaymentTaxConfigBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPaymentTaxConfig(
         )
         {

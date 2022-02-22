@@ -18,6 +18,64 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetAllTimeLeaderboardRankingPublicV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetAllTimeLeaderboardRankingPublicV2Builder Builder = new GetAllTimeLeaderboardRankingPublicV2Builder();
+
+        public class GetAllTimeLeaderboardRankingPublicV2Builder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetAllTimeLeaderboardRankingPublicV2Builder() { }
+
+
+            public GetAllTimeLeaderboardRankingPublicV2Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetAllTimeLeaderboardRankingPublicV2Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetAllTimeLeaderboardRankingPublicV2 Build(
+                string leaderboardCode,
+                string namespace_
+            )
+            {
+                return new GetAllTimeLeaderboardRankingPublicV2(this,
+                    leaderboardCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetAllTimeLeaderboardRankingPublicV2(GetAllTimeLeaderboardRankingPublicV2Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetAllTimeLeaderboardRankingPublicV2(
             string leaderboardCode,            
             string namespace_,            

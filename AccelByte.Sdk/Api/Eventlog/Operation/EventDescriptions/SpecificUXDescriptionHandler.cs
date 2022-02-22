@@ -17,6 +17,45 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class SpecificUXDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SpecificUXDescriptionHandlerBuilder Builder = new SpecificUXDescriptionHandlerBuilder();
+
+        public class SpecificUXDescriptionHandlerBuilder
+        {
+            public string? Ux { get; set; }
+            
+            internal SpecificUXDescriptionHandlerBuilder() { }
+
+
+            public SpecificUXDescriptionHandlerBuilder SetUx(string _ux)
+            {
+                Ux = _ux;
+                return this;
+            }
+
+
+
+
+            public SpecificUXDescriptionHandler Build(
+            )
+            {
+                return new SpecificUXDescriptionHandler(this
+                );
+            }
+        }
+
+        private SpecificUXDescriptionHandler(SpecificUXDescriptionHandlerBuilder builder
+        )
+        {
+            
+            if (builder.Ux != null) QueryParams["ux"] = builder.Ux;
+            
+            
+            
+            
+        }
+        #endregion
+
         public SpecificUXDescriptionHandler(
             string? ux            
         )

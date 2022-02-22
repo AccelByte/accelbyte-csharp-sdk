@@ -24,6 +24,41 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class ImportConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ImportConfigBuilder Builder = new ImportConfigBuilder();
+
+        public class ImportConfigBuilder
+        {
+            
+            internal ImportConfigBuilder() { }
+
+
+
+
+
+            public ImportConfig Build(
+                string namespace_
+            )
+            {
+                return new ImportConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ImportConfig(ImportConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ImportConfig(
             string namespace_            
         )

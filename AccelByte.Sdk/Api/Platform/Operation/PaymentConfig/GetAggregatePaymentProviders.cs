@@ -22,6 +22,36 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetAggregatePaymentProviders : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetAggregatePaymentProvidersBuilder Builder = new GetAggregatePaymentProvidersBuilder();
+
+        public class GetAggregatePaymentProvidersBuilder
+        {
+            internal GetAggregatePaymentProvidersBuilder() { }
+
+
+
+
+
+            public GetAggregatePaymentProviders Build(
+            )
+            {
+                return new GetAggregatePaymentProviders(this
+                );
+            }
+        }
+
+        private GetAggregatePaymentProviders(GetAggregatePaymentProvidersBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetAggregatePaymentProviders(
         )
         {

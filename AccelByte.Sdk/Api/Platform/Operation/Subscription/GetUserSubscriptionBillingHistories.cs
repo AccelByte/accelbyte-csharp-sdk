@@ -22,6 +22,78 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetUserSubscriptionBillingHistories : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserSubscriptionBillingHistoriesBuilder Builder = new GetUserSubscriptionBillingHistoriesBuilder();
+
+        public class GetUserSubscriptionBillingHistoriesBuilder
+        {
+            
+            
+            
+            public bool? ExcludeFree { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            internal GetUserSubscriptionBillingHistoriesBuilder() { }
+
+
+            public GetUserSubscriptionBillingHistoriesBuilder SetExcludeFree(bool _excludeFree)
+            {
+                ExcludeFree = _excludeFree;
+                return this;
+            }
+
+            public GetUserSubscriptionBillingHistoriesBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetUserSubscriptionBillingHistoriesBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetUserSubscriptionBillingHistories Build(
+                string namespace_,
+                string subscriptionId,
+                string userId
+            )
+            {
+                return new GetUserSubscriptionBillingHistories(this,
+                    namespace_,                    
+                    subscriptionId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserSubscriptionBillingHistories(GetUserSubscriptionBillingHistoriesBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["subscriptionId"] = subscriptionId;
+            PathParams["userId"] = userId;
+            
+            if (builder.ExcludeFree != null) QueryParams["excludeFree"] = Convert.ToString(builder.ExcludeFree)!;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserSubscriptionBillingHistories(
             string namespace_,            
             string subscriptionId,            

@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class BulkGetSessions : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static BulkGetSessionsBuilder Builder = new BulkGetSessionsBuilder();
+
+        public class BulkGetSessionsBuilder
+        {
+            
+            public string? MatchIDs { get; set; }
+            
+            internal BulkGetSessionsBuilder() { }
+
+
+            public BulkGetSessionsBuilder SetMatchIDs(string _matchIDs)
+            {
+                MatchIDs = _matchIDs;
+                return this;
+            }
+
+
+
+
+            public BulkGetSessions Build(
+                string namespace_
+            )
+            {
+                return new BulkGetSessions(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private BulkGetSessions(BulkGetSessionsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.MatchIDs != null) QueryParams["matchIDs"] = builder.MatchIDs;
+            
+            
+            
+            
+        }
+        #endregion
+
         public BulkGetSessions(
             string namespace_,            
             string? matchIDs            

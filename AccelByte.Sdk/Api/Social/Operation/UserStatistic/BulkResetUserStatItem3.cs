@@ -21,6 +21,55 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class BulkResetUserStatItem3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static BulkResetUserStatItem3Builder Builder = new BulkResetUserStatItem3Builder();
+
+        public class BulkResetUserStatItem3Builder
+        {
+            
+            
+            public List<Model.BulkStatItemReset>? Body { get; set; }
+            
+            internal BulkResetUserStatItem3Builder() { }
+
+
+
+            public BulkResetUserStatItem3Builder SetBody(List<Model.BulkStatItemReset> _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public BulkResetUserStatItem3 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new BulkResetUserStatItem3(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private BulkResetUserStatItem3(BulkResetUserStatItem3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public BulkResetUserStatItem3(
             string namespace_,            
             string userId,            

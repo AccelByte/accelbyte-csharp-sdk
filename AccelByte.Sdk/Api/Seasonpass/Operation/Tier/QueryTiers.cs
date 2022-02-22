@@ -23,6 +23,64 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class QueryTiers : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryTiersBuilder Builder = new QueryTiersBuilder();
+
+        public class QueryTiersBuilder
+        {
+            
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            internal QueryTiersBuilder() { }
+
+
+            public QueryTiersBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryTiersBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public QueryTiers Build(
+                string namespace_,
+                string seasonId
+            )
+            {
+                return new QueryTiers(this,
+                    namespace_,                    
+                    seasonId                    
+                );
+            }
+        }
+
+        private QueryTiers(QueryTiersBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["seasonId"] = seasonId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryTiers(
             string namespace_,            
             string seasonId,            

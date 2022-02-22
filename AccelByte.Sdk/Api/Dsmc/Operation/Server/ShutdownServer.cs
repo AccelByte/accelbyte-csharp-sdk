@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ShutdownServer : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ShutdownServerBuilder Builder = new ShutdownServerBuilder();
+
+        public class ShutdownServerBuilder
+        {
+            
+            
+            internal ShutdownServerBuilder() { }
+
+
+
+
+
+            public ShutdownServer Build(
+                ModelsShutdownServerRequest body,
+                string namespace_
+            )
+            {
+                return new ShutdownServer(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private ShutdownServer(ShutdownServerBuilder builder,
+            ModelsShutdownServerRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public ShutdownServer(
             string namespace_,            
             Model.ModelsShutdownServerRequest body            

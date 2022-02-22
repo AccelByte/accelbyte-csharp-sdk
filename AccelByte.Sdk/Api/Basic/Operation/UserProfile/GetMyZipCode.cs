@@ -23,6 +23,41 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class GetMyZipCode : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetMyZipCodeBuilder Builder = new GetMyZipCodeBuilder();
+
+        public class GetMyZipCodeBuilder
+        {
+            
+            internal GetMyZipCodeBuilder() { }
+
+
+
+
+
+            public GetMyZipCode Build(
+                string namespace_
+            )
+            {
+                return new GetMyZipCode(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetMyZipCode(GetMyZipCodeBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetMyZipCode(
             string namespace_            
         )

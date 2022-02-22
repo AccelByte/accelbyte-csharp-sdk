@@ -64,6 +64,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicSendVerificationCodeV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicSendVerificationCodeV3Builder Builder = new PublicSendVerificationCodeV3Builder();
+
+        public class PublicSendVerificationCodeV3Builder
+        {
+            
+            
+            internal PublicSendVerificationCodeV3Builder() { }
+
+
+
+
+
+            public PublicSendVerificationCodeV3 Build(
+                ModelSendVerificationCodeRequestV3 body,
+                string namespace_
+            )
+            {
+                return new PublicSendVerificationCodeV3(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicSendVerificationCodeV3(PublicSendVerificationCodeV3Builder builder,
+            ModelSendVerificationCodeRequestV3 body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PublicSendVerificationCodeV3(
             string namespace_,            
             Model.ModelSendVerificationCodeRequestV3 body            

@@ -21,6 +21,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetPaymentUrl : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetPaymentUrlBuilder Builder = new PublicGetPaymentUrlBuilder();
+
+        public class PublicGetPaymentUrlBuilder
+        {
+            
+            public Model.PaymentUrlCreate? Body { get; set; }
+            
+            internal PublicGetPaymentUrlBuilder() { }
+
+
+
+            public PublicGetPaymentUrlBuilder SetBody(Model.PaymentUrlCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicGetPaymentUrl Build(
+                string namespace_
+            )
+            {
+                return new PublicGetPaymentUrl(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicGetPaymentUrl(PublicGetPaymentUrlBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicGetPaymentUrl(
             string namespace_,            
             Model.PaymentUrlCreate body            

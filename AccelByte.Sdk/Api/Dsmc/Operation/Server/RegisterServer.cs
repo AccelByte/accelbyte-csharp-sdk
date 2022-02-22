@@ -26,6 +26,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class RegisterServer : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RegisterServerBuilder Builder = new RegisterServerBuilder();
+
+        public class RegisterServerBuilder
+        {
+            
+            
+            internal RegisterServerBuilder() { }
+
+
+
+
+
+            public RegisterServer Build(
+                ModelsRegisterServerRequest body,
+                string namespace_
+            )
+            {
+                return new RegisterServer(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private RegisterServer(RegisterServerBuilder builder,
+            ModelsRegisterServerRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public RegisterServer(
             string namespace_,            
             Model.ModelsRegisterServerRequest body            

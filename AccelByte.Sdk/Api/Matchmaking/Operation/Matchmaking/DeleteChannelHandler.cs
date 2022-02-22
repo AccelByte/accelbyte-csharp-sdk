@@ -25,6 +25,46 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class DeleteChannelHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteChannelHandlerBuilder Builder = new DeleteChannelHandlerBuilder();
+
+        public class DeleteChannelHandlerBuilder
+        {
+            
+            
+            internal DeleteChannelHandlerBuilder() { }
+
+
+
+
+
+            public DeleteChannelHandler Build(
+                string channel,
+                string namespace_
+            )
+            {
+                return new DeleteChannelHandler(this,
+                    channel,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteChannelHandler(DeleteChannelHandlerBuilder builder,
+            string channel,
+            string namespace_
+        )
+        {
+            PathParams["channel"] = channel;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteChannelHandler(
             string channel,            
             string namespace_            

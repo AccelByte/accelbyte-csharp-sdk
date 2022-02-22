@@ -22,6 +22,59 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class GetAllPodConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetAllPodConfigBuilder Builder = new GetAllPodConfigBuilder();
+
+        public class GetAllPodConfigBuilder
+        {
+            
+            public long? Count { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetAllPodConfigBuilder() { }
+
+
+            public GetAllPodConfigBuilder SetCount(long _count)
+            {
+                Count = _count;
+                return this;
+            }
+
+            public GetAllPodConfigBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetAllPodConfig Build(
+                string namespace_
+            )
+            {
+                return new GetAllPodConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetAllPodConfig(GetAllPodConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetAllPodConfig(
             string namespace_,            
             long? count,            

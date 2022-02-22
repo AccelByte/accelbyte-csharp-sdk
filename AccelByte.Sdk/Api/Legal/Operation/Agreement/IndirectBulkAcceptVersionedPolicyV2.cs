@@ -23,6 +23,65 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class IndirectBulkAcceptVersionedPolicyV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static IndirectBulkAcceptVersionedPolicyV2Builder Builder = new IndirectBulkAcceptVersionedPolicyV2Builder();
+
+        public class IndirectBulkAcceptVersionedPolicyV2Builder
+        {
+            
+            
+            
+            
+            public List<Model.AcceptAgreementRequest>? Body { get; set; }
+            
+            internal IndirectBulkAcceptVersionedPolicyV2Builder() { }
+
+
+
+            public IndirectBulkAcceptVersionedPolicyV2Builder SetBody(List<Model.AcceptAgreementRequest> _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public IndirectBulkAcceptVersionedPolicyV2 Build(
+                string clientId,
+                string countryCode,
+                string namespace_,
+                string userId
+            )
+            {
+                return new IndirectBulkAcceptVersionedPolicyV2(this,
+                    clientId,                    
+                    countryCode,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private IndirectBulkAcceptVersionedPolicyV2(IndirectBulkAcceptVersionedPolicyV2Builder builder,
+            string clientId,
+            string countryCode,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["clientId"] = clientId;
+            PathParams["countryCode"] = countryCode;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public IndirectBulkAcceptVersionedPolicyV2(
             string clientId,            
             string countryCode,            

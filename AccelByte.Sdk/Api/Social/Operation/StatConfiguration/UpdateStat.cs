@@ -21,6 +21,55 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class UpdateStat : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateStatBuilder Builder = new UpdateStatBuilder();
+
+        public class UpdateStatBuilder
+        {
+            
+            
+            public Model.StatUpdate? Body { get; set; }
+            
+            internal UpdateStatBuilder() { }
+
+
+
+            public UpdateStatBuilder SetBody(Model.StatUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateStat Build(
+                string namespace_,
+                string statCode
+            )
+            {
+                return new UpdateStat(this,
+                    namespace_,                    
+                    statCode                    
+                );
+            }
+        }
+
+        private UpdateStat(UpdateStatBuilder builder,
+            string namespace_,
+            string statCode
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["statCode"] = statCode;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateStat(
             string namespace_,            
             string statCode,            

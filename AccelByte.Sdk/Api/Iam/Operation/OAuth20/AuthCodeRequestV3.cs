@@ -57,6 +57,65 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AuthCodeRequestV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AuthCodeRequestV3Builder Builder = new AuthCodeRequestV3Builder();
+
+        public class AuthCodeRequestV3Builder
+        {
+            
+            public string? ClientId { get; set; }
+            
+            public string? RedirectUri { get; set; }
+            
+            
+            internal AuthCodeRequestV3Builder() { }
+
+
+            public AuthCodeRequestV3Builder SetClientId(string _clientId)
+            {
+                ClientId = _clientId;
+                return this;
+            }
+
+            public AuthCodeRequestV3Builder SetRedirectUri(string _redirectUri)
+            {
+                RedirectUri = _redirectUri;
+                return this;
+            }
+
+
+
+
+            public AuthCodeRequestV3 Build(
+                string platformId,
+                string requestId
+            )
+            {
+                return new AuthCodeRequestV3(this,
+                    platformId,                    
+                    requestId                    
+                );
+            }
+        }
+
+        private AuthCodeRequestV3(AuthCodeRequestV3Builder builder,
+            string platformId,
+            string requestId
+        )
+        {
+            PathParams["platformId"] = platformId;
+            
+            if (builder.ClientId != null) QueryParams["client_id"] = builder.ClientId;
+            if (builder.RedirectUri != null) QueryParams["redirect_uri"] = builder.RedirectUri;
+            if (requestId != null) QueryParams["request_id"] = requestId;
+            
+            
+            
+            
+            LocationQuery = "code";
+        }
+        #endregion
+
         public AuthCodeRequestV3(
             string platformId,            
             string? clientId,            

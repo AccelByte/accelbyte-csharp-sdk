@@ -18,6 +18,59 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class SingleAdminGetChannel : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SingleAdminGetChannelBuilder Builder = new SingleAdminGetChannelBuilder();
+
+        public class SingleAdminGetChannelBuilder
+        {
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal SingleAdminGetChannelBuilder() { }
+
+
+            public SingleAdminGetChannelBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public SingleAdminGetChannelBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public SingleAdminGetChannel Build(
+                string namespace_
+            )
+            {
+                return new SingleAdminGetChannel(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private SingleAdminGetChannel(SingleAdminGetChannelBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public SingleAdminGetChannel(
             string namespace_,            
             string? limit,            

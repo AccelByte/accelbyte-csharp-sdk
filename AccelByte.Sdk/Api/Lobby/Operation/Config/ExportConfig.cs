@@ -23,6 +23,41 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class ExportConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ExportConfigBuilder Builder = new ExportConfigBuilder();
+
+        public class ExportConfigBuilder
+        {
+            
+            internal ExportConfigBuilder() { }
+
+
+
+
+
+            public ExportConfig Build(
+                string namespace_
+            )
+            {
+                return new ExportConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ExportConfig(ExportConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ExportConfig(
             string namespace_            
         )

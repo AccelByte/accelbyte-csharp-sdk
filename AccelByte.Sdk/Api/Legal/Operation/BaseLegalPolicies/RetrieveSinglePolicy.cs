@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RetrieveSinglePolicy : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveSinglePolicyBuilder Builder = new RetrieveSinglePolicyBuilder();
+
+        public class RetrieveSinglePolicyBuilder
+        {
+            
+            internal RetrieveSinglePolicyBuilder() { }
+
+
+
+
+
+            public RetrieveSinglePolicy Build(
+                string basePolicyId
+            )
+            {
+                return new RetrieveSinglePolicy(this,
+                    basePolicyId                    
+                );
+            }
+        }
+
+        private RetrieveSinglePolicy(RetrieveSinglePolicyBuilder builder,
+            string basePolicyId
+        )
+        {
+            PathParams["basePolicyId"] = basePolicyId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveSinglePolicy(
             string basePolicyId            
         )

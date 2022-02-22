@@ -23,6 +23,78 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryUserEntitlementsByAppType : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryUserEntitlementsByAppTypeBuilder Builder = new QueryUserEntitlementsByAppTypeBuilder();
+
+        public class QueryUserEntitlementsByAppTypeBuilder
+        {
+            
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            
+            internal QueryUserEntitlementsByAppTypeBuilder() { }
+
+
+            public QueryUserEntitlementsByAppTypeBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public QueryUserEntitlementsByAppTypeBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryUserEntitlementsByAppTypeBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public QueryUserEntitlementsByAppType Build(
+                string namespace_,
+                string userId,
+                string appType
+            )
+            {
+                return new QueryUserEntitlementsByAppType(this,
+                    namespace_,                    
+                    userId,                    
+                    appType                    
+                );
+            }
+        }
+
+        private QueryUserEntitlementsByAppType(QueryUserEntitlementsByAppTypeBuilder builder,
+            string namespace_,
+            string userId,
+            string appType
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (appType != null) QueryParams["appType"] = appType;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryUserEntitlementsByAppType(
             string namespace_,            
             string userId,            

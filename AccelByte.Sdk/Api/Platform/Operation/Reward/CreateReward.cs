@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CreateReward : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateRewardBuilder Builder = new CreateRewardBuilder();
+
+        public class CreateRewardBuilder
+        {
+            
+            public Model.RewardCreate? Body { get; set; }
+            
+            internal CreateRewardBuilder() { }
+
+
+
+            public CreateRewardBuilder SetBody(Model.RewardCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateReward Build(
+                string namespace_
+            )
+            {
+                return new CreateReward(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateReward(CreateRewardBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateReward(
             string namespace_,            
             Model.RewardCreate body            

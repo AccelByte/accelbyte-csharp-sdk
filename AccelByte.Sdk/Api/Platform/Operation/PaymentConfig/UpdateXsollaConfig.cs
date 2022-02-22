@@ -22,6 +22,59 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateXsollaConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateXsollaConfigBuilder Builder = new UpdateXsollaConfigBuilder();
+
+        public class UpdateXsollaConfigBuilder
+        {
+            
+            public bool? Validate { get; set; }
+            
+            public Model.XsollaConfig? Body { get; set; }
+            
+            internal UpdateXsollaConfigBuilder() { }
+
+
+            public UpdateXsollaConfigBuilder SetValidate(bool _validate)
+            {
+                Validate = _validate;
+                return this;
+            }
+
+
+            public UpdateXsollaConfigBuilder SetBody(Model.XsollaConfig _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateXsollaConfig Build(
+                string id
+            )
+            {
+                return new UpdateXsollaConfig(this,
+                    id                    
+                );
+            }
+        }
+
+        private UpdateXsollaConfig(UpdateXsollaConfigBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            if (builder.Validate != null) QueryParams["validate"] = Convert.ToString(builder.Validate)!;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateXsollaConfig(
             string id,            
             bool? validate,            

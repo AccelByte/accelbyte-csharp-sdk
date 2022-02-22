@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetUserSubscription : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserSubscriptionBuilder Builder = new GetUserSubscriptionBuilder();
+
+        public class GetUserSubscriptionBuilder
+        {
+            
+            
+            
+            internal GetUserSubscriptionBuilder() { }
+
+
+
+
+
+            public GetUserSubscription Build(
+                string namespace_,
+                string subscriptionId,
+                string userId
+            )
+            {
+                return new GetUserSubscription(this,
+                    namespace_,                    
+                    subscriptionId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserSubscription(GetUserSubscriptionBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["subscriptionId"] = subscriptionId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserSubscription(
             string namespace_,            
             string subscriptionId,            

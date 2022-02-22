@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CreateUserPaymentOrder : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateUserPaymentOrderBuilder Builder = new CreateUserPaymentOrderBuilder();
+
+        public class CreateUserPaymentOrderBuilder
+        {
+            
+            
+            public Model.PaymentOrderCreate? Body { get; set; }
+            
+            internal CreateUserPaymentOrderBuilder() { }
+
+
+
+            public CreateUserPaymentOrderBuilder SetBody(Model.PaymentOrderCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateUserPaymentOrder Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new CreateUserPaymentOrder(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private CreateUserPaymentOrder(CreateUserPaymentOrderBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateUserPaymentOrder(
             string namespace_,            
             string userId,            

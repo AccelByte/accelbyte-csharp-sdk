@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class DeleteImage : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteImageBuilder Builder = new DeleteImageBuilder();
+
+        public class DeleteImageBuilder
+        {
+            
+            
+            
+            internal DeleteImageBuilder() { }
+
+
+
+
+
+            public DeleteImage Build(
+                string namespace_,
+                string imageURI,
+                string version
+            )
+            {
+                return new DeleteImage(this,
+                    namespace_,                    
+                    imageURI,                    
+                    version                    
+                );
+            }
+        }
+
+        private DeleteImage(DeleteImageBuilder builder,
+            string namespace_,
+            string imageURI,
+            string version
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (imageURI != null) QueryParams["imageURI"] = imageURI;
+            if (version != null) QueryParams["version"] = version;
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteImage(
             string namespace_,            
             string imageURI,            

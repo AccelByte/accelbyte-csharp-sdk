@@ -35,6 +35,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetUserMapping : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserMappingBuilder Builder = new GetUserMappingBuilder();
+
+        public class GetUserMappingBuilder
+        {
+            
+            
+            
+            internal GetUserMappingBuilder() { }
+
+
+
+
+
+            public GetUserMapping Build(
+                string namespace_,
+                string targetNamespace,
+                string userId
+            )
+            {
+                return new GetUserMapping(this,
+                    namespace_,                    
+                    targetNamespace,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserMapping(GetUserMappingBuilder builder,
+            string namespace_,
+            string targetNamespace,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["targetNamespace"] = targetNamespace;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserMapping(
             string namespace_,            
             string targetNamespace,            

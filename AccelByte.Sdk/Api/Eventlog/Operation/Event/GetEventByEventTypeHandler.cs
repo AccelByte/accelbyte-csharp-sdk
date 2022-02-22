@@ -19,6 +19,70 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetEventByEventTypeHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetEventByEventTypeHandlerBuilder Builder = new GetEventByEventTypeHandlerBuilder();
+
+        public class GetEventByEventTypeHandlerBuilder
+        {
+            
+            
+            public double? Offset { get; set; }
+            
+            
+            
+            
+            internal GetEventByEventTypeHandlerBuilder() { }
+
+
+            public GetEventByEventTypeHandlerBuilder SetOffset(double _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetEventByEventTypeHandler Build(
+                double eventType,
+                string namespace_,
+                string endDate,
+                double pageSize,
+                string startDate
+            )
+            {
+                return new GetEventByEventTypeHandler(this,
+                    eventType,                    
+                    namespace_,                    
+                    endDate,                    
+                    pageSize,                    
+                    startDate                    
+                );
+            }
+        }
+
+        private GetEventByEventTypeHandler(GetEventByEventTypeHandlerBuilder builder,
+            double eventType,
+            string namespace_,
+            string endDate,
+            double pageSize,
+            string startDate
+        )
+        {
+            PathParams["eventType"] = Convert.ToString(eventType);
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (endDate != null) QueryParams["endDate"] = endDate;
+            QueryParams["pageSize"] = Convert.ToString(pageSize)!;
+            if (startDate != null) QueryParams["startDate"] = startDate;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetEventByEventTypeHandler(
             double eventType,            
             string namespace_,            

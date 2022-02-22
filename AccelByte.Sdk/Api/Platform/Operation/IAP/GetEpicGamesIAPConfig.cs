@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetEpicGamesIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetEpicGamesIAPConfigBuilder Builder = new GetEpicGamesIAPConfigBuilder();
+
+        public class GetEpicGamesIAPConfigBuilder
+        {
+            
+            internal GetEpicGamesIAPConfigBuilder() { }
+
+
+
+
+
+            public GetEpicGamesIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new GetEpicGamesIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetEpicGamesIAPConfig(GetEpicGamesIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetEpicGamesIAPConfig(
             string namespace_            
         )

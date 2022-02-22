@@ -18,6 +18,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetClient : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetClientBuilder Builder = new GetClientBuilder();
+
+        public class GetClientBuilder
+        {
+            
+            internal GetClientBuilder() { }
+
+
+
+
+
+            public GetClient Build(
+                string clientId
+            )
+            {
+                return new GetClient(this,
+                    clientId                    
+                );
+            }
+        }
+
+        private GetClient(GetClientBuilder builder,
+            string clientId
+        )
+        {
+            PathParams["clientId"] = clientId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetClient(
             string clientId            
         )

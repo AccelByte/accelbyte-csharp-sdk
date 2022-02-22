@@ -23,6 +23,46 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class PublishSeason : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublishSeasonBuilder Builder = new PublishSeasonBuilder();
+
+        public class PublishSeasonBuilder
+        {
+            
+            
+            internal PublishSeasonBuilder() { }
+
+
+
+
+
+            public PublishSeason Build(
+                string namespace_,
+                string seasonId
+            )
+            {
+                return new PublishSeason(this,
+                    namespace_,                    
+                    seasonId                    
+                );
+            }
+        }
+
+        private PublishSeason(PublishSeasonBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["seasonId"] = seasonId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublishSeason(
             string namespace_,            
             string seasonId            

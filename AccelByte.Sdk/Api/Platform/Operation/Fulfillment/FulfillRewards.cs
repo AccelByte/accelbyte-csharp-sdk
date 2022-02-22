@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class FulfillRewards : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static FulfillRewardsBuilder Builder = new FulfillRewardsBuilder();
+
+        public class FulfillRewardsBuilder
+        {
+            
+            
+            public Model.RewardsRequest? Body { get; set; }
+            
+            internal FulfillRewardsBuilder() { }
+
+
+
+            public FulfillRewardsBuilder SetBody(Model.RewardsRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public FulfillRewards Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new FulfillRewards(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private FulfillRewards(FulfillRewardsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public FulfillRewards(
             string namespace_,            
             string userId,            

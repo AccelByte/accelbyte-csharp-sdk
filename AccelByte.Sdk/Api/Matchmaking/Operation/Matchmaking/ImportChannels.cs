@@ -27,6 +27,59 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class ImportChannels : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ImportChannelsBuilder Builder = new ImportChannelsBuilder();
+
+        public class ImportChannelsBuilder
+        {
+            
+            public Stream? File { get; set; }
+            
+            public string? Strategy { get; set; }
+            
+            internal ImportChannelsBuilder() { }
+
+
+
+
+            public ImportChannelsBuilder SetFile(Stream _file)
+            {
+                File = _file;
+                return this;
+            }
+
+            public ImportChannelsBuilder SetStrategy(string _strategy)
+            {
+                Strategy = _strategy;
+                return this;
+            }
+
+
+            public ImportChannels Build(
+                string namespace_
+            )
+            {
+                return new ImportChannels(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ImportChannels(ImportChannelsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            if (builder.File != null) FormParams["file"] = builder.File;
+            if (builder.Strategy != null) FormParams["strategy"] = builder.Strategy;
+            
+            
+            
+        }
+        #endregion
+
         public ImportChannels(
             string namespace_,            
             Stream? file,            

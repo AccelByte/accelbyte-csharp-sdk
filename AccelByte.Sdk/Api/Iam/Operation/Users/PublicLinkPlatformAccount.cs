@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicLinkPlatformAccount : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicLinkPlatformAccountBuilder Builder = new PublicLinkPlatformAccountBuilder();
+
+        public class PublicLinkPlatformAccountBuilder
+        {
+            
+            
+            
+            internal PublicLinkPlatformAccountBuilder() { }
+
+
+
+
+
+            public PublicLinkPlatformAccount Build(
+                ModelLinkPlatformAccountRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicLinkPlatformAccount(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicLinkPlatformAccount(PublicLinkPlatformAccountBuilder builder,
+            ModelLinkPlatformAccountRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PublicLinkPlatformAccount(
             string namespace_,            
             string userId,            

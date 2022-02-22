@@ -22,6 +22,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ConsumeUserEntitlement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ConsumeUserEntitlementBuilder Builder = new ConsumeUserEntitlementBuilder();
+
+        public class ConsumeUserEntitlementBuilder
+        {
+            
+            
+            
+            public Model.EntitlementDecrement? Body { get; set; }
+            
+            internal ConsumeUserEntitlementBuilder() { }
+
+
+
+            public ConsumeUserEntitlementBuilder SetBody(Model.EntitlementDecrement _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public ConsumeUserEntitlement Build(
+                string entitlementId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new ConsumeUserEntitlement(this,
+                    entitlementId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private ConsumeUserEntitlement(ConsumeUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["entitlementId"] = entitlementId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public ConsumeUserEntitlement(
             string entitlementId,            
             string namespace_,            

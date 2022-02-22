@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicReconcilePlayStationStore : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicReconcilePlayStationStoreBuilder Builder = new PublicReconcilePlayStationStoreBuilder();
+
+        public class PublicReconcilePlayStationStoreBuilder
+        {
+            
+            
+            public Model.PlayStationReconcileRequest? Body { get; set; }
+            
+            internal PublicReconcilePlayStationStoreBuilder() { }
+
+
+
+            public PublicReconcilePlayStationStoreBuilder SetBody(Model.PlayStationReconcileRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicReconcilePlayStationStore Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicReconcilePlayStationStore(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicReconcilePlayStationStore(PublicReconcilePlayStationStoreBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicReconcilePlayStationStore(
             string namespace_,            
             string userId,            

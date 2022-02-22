@@ -20,6 +20,68 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class GetTopicByNamespace : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetTopicByNamespaceBuilder Builder = new GetTopicByNamespaceBuilder();
+
+        public class GetTopicByNamespaceBuilder
+        {
+            
+            public string? After { get; set; }
+            
+            public string? Before { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            internal GetTopicByNamespaceBuilder() { }
+
+
+            public GetTopicByNamespaceBuilder SetAfter(string _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public GetTopicByNamespaceBuilder SetBefore(string _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public GetTopicByNamespaceBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+
+
+
+            public GetTopicByNamespace Build(
+                string namespace_
+            )
+            {
+                return new GetTopicByNamespace(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetTopicByNamespace(GetTopicByNamespaceBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.After != null) QueryParams["after"] = builder.After;
+            if (builder.Before != null) QueryParams["before"] = builder.Before;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetTopicByNamespace(
             string namespace_,            
             string? after,            

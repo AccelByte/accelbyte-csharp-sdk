@@ -19,6 +19,46 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminCreateTag : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminCreateTagBuilder Builder = new AdminCreateTagBuilder();
+
+        public class AdminCreateTagBuilder
+        {
+            
+            
+            internal AdminCreateTagBuilder() { }
+
+
+
+
+
+            public AdminCreateTag Build(
+                ModelsCreateTagRequest body,
+                string namespace_
+            )
+            {
+                return new AdminCreateTag(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminCreateTag(AdminCreateTagBuilder builder,
+            ModelsCreateTagRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminCreateTag(
             string namespace_,            
             Model.ModelsCreateTagRequest body            

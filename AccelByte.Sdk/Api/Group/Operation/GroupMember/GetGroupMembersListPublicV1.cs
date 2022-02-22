@@ -30,6 +30,73 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class GetGroupMembersListPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetGroupMembersListPublicV1Builder Builder = new GetGroupMembersListPublicV1Builder();
+
+        public class GetGroupMembersListPublicV1Builder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            public string? Order { get; set; }
+            
+            internal GetGroupMembersListPublicV1Builder() { }
+
+
+            public GetGroupMembersListPublicV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetGroupMembersListPublicV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public GetGroupMembersListPublicV1Builder SetOrder(string _order)
+            {
+                Order = _order;
+                return this;
+            }
+
+
+
+
+            public GetGroupMembersListPublicV1 Build(
+                string groupId,
+                string namespace_
+            )
+            {
+                return new GetGroupMembersListPublicV1(this,
+                    groupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetGroupMembersListPublicV1(GetGroupMembersListPublicV1Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Order != null) QueryParams["order"] = builder.Order;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetGroupMembersListPublicV1(
             string groupId,            
             string namespace_,            

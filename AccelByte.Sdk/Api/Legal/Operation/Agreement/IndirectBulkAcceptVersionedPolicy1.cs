@@ -26,6 +26,50 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class IndirectBulkAcceptVersionedPolicy1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static IndirectBulkAcceptVersionedPolicy1Builder Builder = new IndirectBulkAcceptVersionedPolicy1Builder();
+
+        public class IndirectBulkAcceptVersionedPolicy1Builder
+        {
+            
+            public List<Model.AcceptAgreementRequest>? Body { get; set; }
+            
+            internal IndirectBulkAcceptVersionedPolicy1Builder() { }
+
+
+
+            public IndirectBulkAcceptVersionedPolicy1Builder SetBody(List<Model.AcceptAgreementRequest> _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public IndirectBulkAcceptVersionedPolicy1 Build(
+                string userId
+            )
+            {
+                return new IndirectBulkAcceptVersionedPolicy1(this,
+                    userId                    
+                );
+            }
+        }
+
+        private IndirectBulkAcceptVersionedPolicy1(IndirectBulkAcceptVersionedPolicy1Builder builder,
+            string userId
+        )
+        {
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public IndirectBulkAcceptVersionedPolicy1(
             string userId,            
             List<Model.AcceptAgreementRequest> body            

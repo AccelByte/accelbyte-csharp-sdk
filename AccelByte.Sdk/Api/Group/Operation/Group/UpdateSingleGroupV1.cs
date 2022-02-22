@@ -36,6 +36,51 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class UpdateSingleGroupV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateSingleGroupV1Builder Builder = new UpdateSingleGroupV1Builder();
+
+        public class UpdateSingleGroupV1Builder
+        {
+            
+            
+            
+            internal UpdateSingleGroupV1Builder() { }
+
+
+
+
+
+            public UpdateSingleGroupV1 Build(
+                ModelsUpdateGroupRequestV1 body,
+                string groupId,
+                string namespace_
+            )
+            {
+                return new UpdateSingleGroupV1(this,
+                    body,                    
+                    groupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateSingleGroupV1(UpdateSingleGroupV1Builder builder,
+            ModelsUpdateGroupRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateSingleGroupV1(
             string groupId,            
             string namespace_,            

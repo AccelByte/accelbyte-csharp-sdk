@@ -23,6 +23,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicChangeSubscriptionBillingAccount : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicChangeSubscriptionBillingAccountBuilder Builder = new PublicChangeSubscriptionBillingAccountBuilder();
+
+        public class PublicChangeSubscriptionBillingAccountBuilder
+        {
+            
+            
+            
+            internal PublicChangeSubscriptionBillingAccountBuilder() { }
+
+
+
+
+
+            public PublicChangeSubscriptionBillingAccount Build(
+                string namespace_,
+                string subscriptionId,
+                string userId
+            )
+            {
+                return new PublicChangeSubscriptionBillingAccount(this,
+                    namespace_,                    
+                    subscriptionId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicChangeSubscriptionBillingAccount(PublicChangeSubscriptionBillingAccountBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["subscriptionId"] = subscriptionId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicChangeSubscriptionBillingAccount(
             string namespace_,            
             string subscriptionId,            

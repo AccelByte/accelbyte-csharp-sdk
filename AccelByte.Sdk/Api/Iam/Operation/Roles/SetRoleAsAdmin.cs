@@ -36,6 +36,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class SetRoleAsAdmin : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SetRoleAsAdminBuilder Builder = new SetRoleAsAdminBuilder();
+
+        public class SetRoleAsAdminBuilder
+        {
+            
+            internal SetRoleAsAdminBuilder() { }
+
+
+
+
+
+            public SetRoleAsAdmin Build(
+                string roleId
+            )
+            {
+                return new SetRoleAsAdmin(this,
+                    roleId                    
+                );
+            }
+        }
+
+        private SetRoleAsAdmin(SetRoleAsAdminBuilder builder,
+            string roleId
+        )
+        {
+            PathParams["roleId"] = roleId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public SetRoleAsAdmin(
             string roleId            
         )

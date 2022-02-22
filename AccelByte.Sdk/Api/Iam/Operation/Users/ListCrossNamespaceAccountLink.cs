@@ -34,6 +34,60 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class ListCrossNamespaceAccountLink : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListCrossNamespaceAccountLinkBuilder Builder = new ListCrossNamespaceAccountLinkBuilder();
+
+        public class ListCrossNamespaceAccountLinkBuilder
+        {
+            
+            
+            public string? PlatformId { get; set; }
+            
+            
+            internal ListCrossNamespaceAccountLinkBuilder() { }
+
+
+
+
+            public ListCrossNamespaceAccountLinkBuilder SetPlatformId(string _platformId)
+            {
+                PlatformId = _platformId;
+                return this;
+            }
+
+
+            public ListCrossNamespaceAccountLink Build(
+                string linkingToken,
+                string namespace_,
+                string userId
+            )
+            {
+                return new ListCrossNamespaceAccountLink(this,
+                    linkingToken,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private ListCrossNamespaceAccountLink(ListCrossNamespaceAccountLinkBuilder builder,
+            string linkingToken,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            if (builder.PlatformId != null) FormParams["platformId"] = builder.PlatformId;
+            if (linkingToken != null) FormParams["linkingToken"] = linkingToken;
+            
+            
+            
+        }
+        #endregion
+
         public ListCrossNamespaceAccountLink(
             string namespace_,            
             string userId,            

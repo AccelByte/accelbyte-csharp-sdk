@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminSetPlayerSessionAttribute : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminSetPlayerSessionAttributeBuilder Builder = new AdminSetPlayerSessionAttributeBuilder();
+
+        public class AdminSetPlayerSessionAttributeBuilder
+        {
+            
+            
+            
+            internal AdminSetPlayerSessionAttributeBuilder() { }
+
+
+
+
+
+            public AdminSetPlayerSessionAttribute Build(
+                ModelsSetPlayerSessionAttributeRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminSetPlayerSessionAttribute(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminSetPlayerSessionAttribute(AdminSetPlayerSessionAttributeBuilder builder,
+            ModelsSetPlayerSessionAttributeRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminSetPlayerSessionAttribute(
             string namespace_,            
             string userId,            

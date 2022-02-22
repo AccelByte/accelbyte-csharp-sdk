@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetQRCode : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetQRCodeBuilder Builder = new PublicGetQRCodeBuilder();
+
+        public class PublicGetQRCodeBuilder
+        {
+            
+            
+            internal PublicGetQRCodeBuilder() { }
+
+
+
+
+
+            public PublicGetQRCode Build(
+                string namespace_,
+                string code
+            )
+            {
+                return new PublicGetQRCode(this,
+                    namespace_,                    
+                    code                    
+                );
+            }
+        }
+
+        private PublicGetQRCode(PublicGetQRCodeBuilder builder,
+            string namespace_,
+            string code
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (code != null) QueryParams["code"] = code;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetQRCode(
             string namespace_,            
             string code            

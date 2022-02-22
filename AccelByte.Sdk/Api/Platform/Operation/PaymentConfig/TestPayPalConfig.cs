@@ -33,6 +33,54 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class TestPayPalConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static TestPayPalConfigBuilder Builder = new TestPayPalConfigBuilder();
+
+        public class TestPayPalConfigBuilder
+        {
+            public bool? Sandbox { get; set; }
+            
+            public Model.PayPalConfig? Body { get; set; }
+            
+            internal TestPayPalConfigBuilder() { }
+
+
+            public TestPayPalConfigBuilder SetSandbox(bool _sandbox)
+            {
+                Sandbox = _sandbox;
+                return this;
+            }
+
+
+            public TestPayPalConfigBuilder SetBody(Model.PayPalConfig _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public TestPayPalConfig Build(
+            )
+            {
+                return new TestPayPalConfig(this
+                );
+            }
+        }
+
+        private TestPayPalConfig(TestPayPalConfigBuilder builder
+        )
+        {
+            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public TestPayPalConfig(
             bool? sandbox,            
             Model.PayPalConfig body            

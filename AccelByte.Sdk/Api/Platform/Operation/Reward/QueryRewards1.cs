@@ -23,6 +23,77 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryRewards1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryRewards1Builder Builder = new QueryRewards1Builder();
+
+        public class QueryRewards1Builder
+        {
+            
+            public string? EventTopic { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? SortBy { get; set; }
+            
+            internal QueryRewards1Builder() { }
+
+
+            public QueryRewards1Builder SetEventTopic(string _eventTopic)
+            {
+                EventTopic = _eventTopic;
+                return this;
+            }
+
+            public QueryRewards1Builder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryRewards1Builder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryRewards1Builder SetSortBy(string _sortBy)
+            {
+                SortBy = _sortBy;
+                return this;
+            }
+
+
+
+
+            public QueryRewards1 Build(
+                string namespace_
+            )
+            {
+                return new QueryRewards1(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private QueryRewards1(QueryRewards1Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.EventTopic != null) QueryParams["eventTopic"] = builder.EventTopic;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryRewards1(
             string namespace_,            
             string? eventTopic,            

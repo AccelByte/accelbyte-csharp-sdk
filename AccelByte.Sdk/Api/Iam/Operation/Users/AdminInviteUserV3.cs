@@ -25,6 +25,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminInviteUserV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminInviteUserV3Builder Builder = new AdminInviteUserV3Builder();
+
+        public class AdminInviteUserV3Builder
+        {
+            
+            
+            internal AdminInviteUserV3Builder() { }
+
+
+
+
+
+            public AdminInviteUserV3 Build(
+                ModelInviteUserRequestV3 body,
+                string namespace_
+            )
+            {
+                return new AdminInviteUserV3(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminInviteUserV3(AdminInviteUserV3Builder builder,
+            ModelInviteUserRequestV3 body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminInviteUserV3(
             string namespace_,            
             Model.ModelInviteUserRequestV3 body            

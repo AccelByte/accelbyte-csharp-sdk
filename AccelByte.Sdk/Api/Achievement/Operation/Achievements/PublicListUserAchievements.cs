@@ -21,6 +21,73 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// </summary>
     public class PublicListUserAchievements : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicListUserAchievementsBuilder Builder = new PublicListUserAchievementsBuilder();
+
+        public class PublicListUserAchievementsBuilder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            public bool? PreferUnlocked { get; set; }
+            
+            internal PublicListUserAchievementsBuilder() { }
+
+
+            public PublicListUserAchievementsBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicListUserAchievementsBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public PublicListUserAchievementsBuilder SetPreferUnlocked(bool _preferUnlocked)
+            {
+                PreferUnlocked = _preferUnlocked;
+                return this;
+            }
+
+
+
+
+            public PublicListUserAchievements Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicListUserAchievements(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicListUserAchievements(PublicListUserAchievementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.PreferUnlocked != null) QueryParams["preferUnlocked"] = Convert.ToString(builder.PreferUnlocked)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicListUserAchievements(
             string namespace_,            
             string userId,            

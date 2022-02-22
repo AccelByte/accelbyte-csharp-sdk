@@ -18,6 +18,64 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class GetGroups : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetGroupsBuilder Builder = new GetGroupsBuilder();
+
+        public class GetGroupsBuilder
+        {
+            
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal GetGroupsBuilder() { }
+
+
+            public GetGroupsBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetGroupsBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetGroups Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetGroups(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetGroups(GetGroupsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetGroups(
             string namespace_,            
             string userId,            

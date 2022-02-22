@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DeleteCurrency : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteCurrencyBuilder Builder = new DeleteCurrencyBuilder();
+
+        public class DeleteCurrencyBuilder
+        {
+            
+            
+            internal DeleteCurrencyBuilder() { }
+
+
+
+
+
+            public DeleteCurrency Build(
+                string currencyCode,
+                string namespace_
+            )
+            {
+                return new DeleteCurrency(this,
+                    currencyCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteCurrency(DeleteCurrencyBuilder builder,
+            string currencyCode,
+            string namespace_
+        )
+        {
+            PathParams["currencyCode"] = currencyCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteCurrency(
             string currencyCode,            
             string namespace_            

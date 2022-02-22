@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateGoogleP12File : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateGoogleP12FileBuilder Builder = new UpdateGoogleP12FileBuilder();
+
+        public class UpdateGoogleP12FileBuilder
+        {
+            
+            public Stream? File { get; set; }
+            
+            internal UpdateGoogleP12FileBuilder() { }
+
+
+
+
+            public UpdateGoogleP12FileBuilder SetFile(Stream _file)
+            {
+                File = _file;
+                return this;
+            }
+
+
+            public UpdateGoogleP12File Build(
+                string namespace_
+            )
+            {
+                return new UpdateGoogleP12File(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateGoogleP12File(UpdateGoogleP12FileBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            if (builder.File != null) FormParams["file"] = builder.File;
+            
+            
+            
+        }
+        #endregion
+
         public UpdateGoogleP12File(
             string namespace_,            
             Stream? file            

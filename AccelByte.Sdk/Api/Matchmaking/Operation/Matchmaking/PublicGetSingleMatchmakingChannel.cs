@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class PublicGetSingleMatchmakingChannel : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetSingleMatchmakingChannelBuilder Builder = new PublicGetSingleMatchmakingChannelBuilder();
+
+        public class PublicGetSingleMatchmakingChannelBuilder
+        {
+            
+            
+            internal PublicGetSingleMatchmakingChannelBuilder() { }
+
+
+
+
+
+            public PublicGetSingleMatchmakingChannel Build(
+                string channelName,
+                string namespace_
+            )
+            {
+                return new PublicGetSingleMatchmakingChannel(this,
+                    channelName,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicGetSingleMatchmakingChannel(PublicGetSingleMatchmakingChannelBuilder builder,
+            string channelName,
+            string namespace_
+        )
+        {
+            PathParams["channelName"] = channelName;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetSingleMatchmakingChannel(
             string channelName,            
             string namespace_            

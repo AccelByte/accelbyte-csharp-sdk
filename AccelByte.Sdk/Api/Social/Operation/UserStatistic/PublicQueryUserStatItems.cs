@@ -21,6 +21,82 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class PublicQueryUserStatItems : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicQueryUserStatItemsBuilder Builder = new PublicQueryUserStatItemsBuilder();
+
+        public class PublicQueryUserStatItemsBuilder
+        {
+            
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? StatCodes { get; set; }
+            
+            public string? Tags { get; set; }
+            
+            internal PublicQueryUserStatItemsBuilder() { }
+
+
+            public PublicQueryUserStatItemsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicQueryUserStatItemsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public PublicQueryUserStatItemsBuilder SetStatCodes(string _statCodes)
+            {
+                StatCodes = _statCodes;
+                return this;
+            }
+
+            public PublicQueryUserStatItemsBuilder SetTags(string _tags)
+            {
+                Tags = _tags;
+                return this;
+            }
+
+
+
+
+            public PublicQueryUserStatItems Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicQueryUserStatItems(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicQueryUserStatItems(PublicQueryUserStatItemsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.StatCodes != null) QueryParams["statCodes"] = builder.StatCodes;
+            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicQueryUserStatItems(
             string namespace_,            
             string userId,            

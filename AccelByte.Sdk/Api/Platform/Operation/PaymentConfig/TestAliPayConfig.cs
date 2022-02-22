@@ -22,6 +22,54 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class TestAliPayConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static TestAliPayConfigBuilder Builder = new TestAliPayConfigBuilder();
+
+        public class TestAliPayConfigBuilder
+        {
+            public bool? Sandbox { get; set; }
+            
+            public Model.AliPayConfig? Body { get; set; }
+            
+            internal TestAliPayConfigBuilder() { }
+
+
+            public TestAliPayConfigBuilder SetSandbox(bool _sandbox)
+            {
+                Sandbox = _sandbox;
+                return this;
+            }
+
+
+            public TestAliPayConfigBuilder SetBody(Model.AliPayConfig _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public TestAliPayConfig Build(
+            )
+            {
+                return new TestAliPayConfig(this
+                );
+            }
+        }
+
+        private TestAliPayConfig(TestAliPayConfigBuilder builder
+        )
+        {
+            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public TestAliPayConfig(
             bool? sandbox,            
             Model.AliPayConfig body            

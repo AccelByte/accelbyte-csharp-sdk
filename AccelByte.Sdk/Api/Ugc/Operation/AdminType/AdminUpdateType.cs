@@ -19,6 +19,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminUpdateType : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateTypeBuilder Builder = new AdminUpdateTypeBuilder();
+
+        public class AdminUpdateTypeBuilder
+        {
+            
+            
+            
+            internal AdminUpdateTypeBuilder() { }
+
+
+
+
+
+            public AdminUpdateType Build(
+                ModelsCreateTypeRequest body,
+                string namespace_,
+                string typeId
+            )
+            {
+                return new AdminUpdateType(this,
+                    body,                    
+                    namespace_,                    
+                    typeId                    
+                );
+            }
+        }
+
+        private AdminUpdateType(AdminUpdateTypeBuilder builder,
+            ModelsCreateTypeRequest body,
+            string namespace_,
+            string typeId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["typeId"] = typeId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateType(
             string namespace_,            
             string typeId,            

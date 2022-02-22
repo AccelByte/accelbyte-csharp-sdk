@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// </summary>
     public class AdminGetAchievement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetAchievementBuilder Builder = new AdminGetAchievementBuilder();
+
+        public class AdminGetAchievementBuilder
+        {
+            
+            
+            internal AdminGetAchievementBuilder() { }
+
+
+
+
+
+            public AdminGetAchievement Build(
+                string achievementCode,
+                string namespace_
+            )
+            {
+                return new AdminGetAchievement(this,
+                    achievementCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetAchievement(AdminGetAchievementBuilder builder,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            PathParams["achievementCode"] = achievementCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetAchievement(
             string achievementCode,            
             string namespace_            

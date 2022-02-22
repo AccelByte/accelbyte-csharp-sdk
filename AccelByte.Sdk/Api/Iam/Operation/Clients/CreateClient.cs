@@ -26,6 +26,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class CreateClient : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateClientBuilder Builder = new CreateClientBuilder();
+
+        public class CreateClientBuilder
+        {
+            
+            internal CreateClientBuilder() { }
+
+
+
+
+
+            public CreateClient Build(
+                ClientmodelClientCreateRequest body
+            )
+            {
+                return new CreateClient(this,
+                    body                    
+                );
+            }
+        }
+
+        private CreateClient(CreateClientBuilder builder,
+            ClientmodelClientCreateRequest body
+        )
+        {
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateClient(
             Model.ClientmodelClientCreateRequest body            
         )

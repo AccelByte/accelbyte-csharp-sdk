@@ -22,6 +22,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateUserEntitlement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateUserEntitlementBuilder Builder = new UpdateUserEntitlementBuilder();
+
+        public class UpdateUserEntitlementBuilder
+        {
+            
+            
+            
+            public Model.EntitlementUpdate? Body { get; set; }
+            
+            internal UpdateUserEntitlementBuilder() { }
+
+
+
+            public UpdateUserEntitlementBuilder SetBody(Model.EntitlementUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateUserEntitlement Build(
+                string entitlementId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new UpdateUserEntitlement(this,
+                    entitlementId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private UpdateUserEntitlement(UpdateUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["entitlementId"] = entitlementId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateUserEntitlement(
             string entitlementId,            
             string namespace_,            

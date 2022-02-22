@@ -22,6 +22,96 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class SearchSessions : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SearchSessionsBuilder Builder = new SearchSessionsBuilder();
+
+        public class SearchSessionsBuilder
+        {
+            
+            public string? Channel { get; set; }
+            
+            public bool? Deleted { get; set; }
+            
+            public string? MatchID { get; set; }
+            
+            public string? PartyID { get; set; }
+            
+            public string? UserID { get; set; }
+            
+            
+            
+            internal SearchSessionsBuilder() { }
+
+
+            public SearchSessionsBuilder SetChannel(string _channel)
+            {
+                Channel = _channel;
+                return this;
+            }
+
+            public SearchSessionsBuilder SetDeleted(bool _deleted)
+            {
+                Deleted = _deleted;
+                return this;
+            }
+
+            public SearchSessionsBuilder SetMatchID(string _matchID)
+            {
+                MatchID = _matchID;
+                return this;
+            }
+
+            public SearchSessionsBuilder SetPartyID(string _partyID)
+            {
+                PartyID = _partyID;
+                return this;
+            }
+
+            public SearchSessionsBuilder SetUserID(string _userID)
+            {
+                UserID = _userID;
+                return this;
+            }
+
+
+
+
+            public SearchSessions Build(
+                string namespace_,
+                double limit,
+                double offset
+            )
+            {
+                return new SearchSessions(this,
+                    namespace_,                    
+                    limit,                    
+                    offset                    
+                );
+            }
+        }
+
+        private SearchSessions(SearchSessionsBuilder builder,
+            string namespace_,
+            double limit,
+            double offset
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Channel != null) QueryParams["channel"] = builder.Channel;
+            if (builder.Deleted != null) QueryParams["deleted"] = Convert.ToString(builder.Deleted)!;
+            if (builder.MatchID != null) QueryParams["matchID"] = builder.MatchID;
+            if (builder.PartyID != null) QueryParams["partyID"] = builder.PartyID;
+            if (builder.UserID != null) QueryParams["userID"] = builder.UserID;
+            QueryParams["limit"] = Convert.ToString(limit)!;
+            QueryParams["offset"] = Convert.ToString(offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public SearchSessions(
             string namespace_,            
             string? channel,            

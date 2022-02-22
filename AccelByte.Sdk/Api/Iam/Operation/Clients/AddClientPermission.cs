@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AddClientPermission : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AddClientPermissionBuilder Builder = new AddClientPermissionBuilder();
+
+        public class AddClientPermissionBuilder
+        {
+            
+            
+            
+            internal AddClientPermissionBuilder() { }
+
+
+
+
+
+            public AddClientPermission Build(
+                long action,
+                string clientId,
+                string resource
+            )
+            {
+                return new AddClientPermission(this,
+                    action,                    
+                    clientId,                    
+                    resource                    
+                );
+            }
+        }
+
+        private AddClientPermission(AddClientPermissionBuilder builder,
+            long action,
+            string clientId,
+            string resource
+        )
+        {
+            PathParams["action"] = Convert.ToString(action);
+            PathParams["clientId"] = clientId;
+            PathParams["resource"] = resource;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AddClientPermission(
             long action,            
             string clientId,            

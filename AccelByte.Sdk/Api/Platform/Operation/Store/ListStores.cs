@@ -23,6 +23,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ListStores : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListStoresBuilder Builder = new ListStoresBuilder();
+
+        public class ListStoresBuilder
+        {
+            
+            internal ListStoresBuilder() { }
+
+
+
+
+
+            public ListStores Build(
+                string namespace_
+            )
+            {
+                return new ListStores(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ListStores(ListStoresBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListStores(
             string namespace_            
         )

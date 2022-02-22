@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class RecurringChargeSubscription : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RecurringChargeSubscriptionBuilder Builder = new RecurringChargeSubscriptionBuilder();
+
+        public class RecurringChargeSubscriptionBuilder
+        {
+            
+            
+            internal RecurringChargeSubscriptionBuilder() { }
+
+
+
+
+
+            public RecurringChargeSubscription Build(
+                string namespace_,
+                string subscriptionId
+            )
+            {
+                return new RecurringChargeSubscription(this,
+                    namespace_,                    
+                    subscriptionId                    
+                );
+            }
+        }
+
+        private RecurringChargeSubscription(RecurringChargeSubscriptionBuilder builder,
+            string namespace_,
+            string subscriptionId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["subscriptionId"] = subscriptionId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RecurringChargeSubscription(
             string namespace_,            
             string subscriptionId            

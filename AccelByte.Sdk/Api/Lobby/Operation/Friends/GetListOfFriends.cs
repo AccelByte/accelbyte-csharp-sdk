@@ -20,6 +20,64 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class GetListOfFriends : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetListOfFriendsBuilder Builder = new GetListOfFriendsBuilder();
+
+        public class GetListOfFriendsBuilder
+        {
+            
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal GetListOfFriendsBuilder() { }
+
+
+            public GetListOfFriendsBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetListOfFriendsBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetListOfFriends Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetListOfFriends(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetListOfFriends(GetListOfFriendsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetListOfFriends(
             string namespace_,            
             string userId,            

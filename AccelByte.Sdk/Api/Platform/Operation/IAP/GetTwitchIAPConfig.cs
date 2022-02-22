@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetTwitchIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetTwitchIAPConfigBuilder Builder = new GetTwitchIAPConfigBuilder();
+
+        public class GetTwitchIAPConfigBuilder
+        {
+            
+            internal GetTwitchIAPConfigBuilder() { }
+
+
+
+
+
+            public GetTwitchIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new GetTwitchIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetTwitchIAPConfig(GetTwitchIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetTwitchIAPConfig(
             string namespace_            
         )

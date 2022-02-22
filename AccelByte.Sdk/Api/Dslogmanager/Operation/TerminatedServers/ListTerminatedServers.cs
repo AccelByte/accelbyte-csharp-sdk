@@ -22,6 +22,158 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
     /// </summary>
     public class ListTerminatedServers : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListTerminatedServersBuilder Builder = new ListTerminatedServersBuilder();
+
+        public class ListTerminatedServersBuilder
+        {
+            
+            public string? Deployment { get; set; }
+            
+            public string? EndDate { get; set; }
+            
+            public string? GameMode { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            public string? Next { get; set; }
+            
+            public string? PartyId { get; set; }
+            
+            public string? PodName { get; set; }
+            
+            public string? Previous { get; set; }
+            
+            public string? Provider { get; set; }
+            
+            public string? Region { get; set; }
+            
+            public string? SessionId { get; set; }
+            
+            public string? StartDate { get; set; }
+            
+            public string? UserId { get; set; }
+            
+            internal ListTerminatedServersBuilder() { }
+
+
+            public ListTerminatedServersBuilder SetDeployment(string _deployment)
+            {
+                Deployment = _deployment;
+                return this;
+            }
+
+            public ListTerminatedServersBuilder SetEndDate(string _endDate)
+            {
+                EndDate = _endDate;
+                return this;
+            }
+
+            public ListTerminatedServersBuilder SetGameMode(string _gameMode)
+            {
+                GameMode = _gameMode;
+                return this;
+            }
+
+            public ListTerminatedServersBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public ListTerminatedServersBuilder SetNext(string _next)
+            {
+                Next = _next;
+                return this;
+            }
+
+            public ListTerminatedServersBuilder SetPartyId(string _partyId)
+            {
+                PartyId = _partyId;
+                return this;
+            }
+
+            public ListTerminatedServersBuilder SetPodName(string _podName)
+            {
+                PodName = _podName;
+                return this;
+            }
+
+            public ListTerminatedServersBuilder SetPrevious(string _previous)
+            {
+                Previous = _previous;
+                return this;
+            }
+
+            public ListTerminatedServersBuilder SetProvider(string _provider)
+            {
+                Provider = _provider;
+                return this;
+            }
+
+            public ListTerminatedServersBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+            public ListTerminatedServersBuilder SetSessionId(string _sessionId)
+            {
+                SessionId = _sessionId;
+                return this;
+            }
+
+            public ListTerminatedServersBuilder SetStartDate(string _startDate)
+            {
+                StartDate = _startDate;
+                return this;
+            }
+
+            public ListTerminatedServersBuilder SetUserId(string _userId)
+            {
+                UserId = _userId;
+                return this;
+            }
+
+
+
+
+            public ListTerminatedServers Build(
+                string namespace_
+            )
+            {
+                return new ListTerminatedServers(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ListTerminatedServers(ListTerminatedServersBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Deployment != null) QueryParams["deployment"] = builder.Deployment;
+            if (builder.EndDate != null) QueryParams["end_date"] = builder.EndDate;
+            if (builder.GameMode != null) QueryParams["game_mode"] = builder.GameMode;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Next != null) QueryParams["next"] = builder.Next;
+            if (builder.PartyId != null) QueryParams["party_id"] = builder.PartyId;
+            if (builder.PodName != null) QueryParams["pod_name"] = builder.PodName;
+            if (builder.Previous != null) QueryParams["previous"] = builder.Previous;
+            if (builder.Provider != null) QueryParams["provider"] = builder.Provider;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.SessionId != null) QueryParams["session_id"] = builder.SessionId;
+            if (builder.StartDate != null) QueryParams["start_date"] = builder.StartDate;
+            if (builder.UserId != null) QueryParams["user_id"] = builder.UserId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListTerminatedServers(
             string namespace_,            
             string? deployment,            

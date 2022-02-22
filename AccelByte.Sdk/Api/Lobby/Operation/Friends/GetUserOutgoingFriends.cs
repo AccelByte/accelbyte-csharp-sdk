@@ -16,6 +16,41 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class GetUserOutgoingFriends : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserOutgoingFriendsBuilder Builder = new GetUserOutgoingFriendsBuilder();
+
+        public class GetUserOutgoingFriendsBuilder
+        {
+            
+            internal GetUserOutgoingFriendsBuilder() { }
+
+
+
+
+
+            public GetUserOutgoingFriends Build(
+                string namespace_
+            )
+            {
+                return new GetUserOutgoingFriends(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetUserOutgoingFriends(GetUserOutgoingFriendsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserOutgoingFriends(
             string namespace_            
         )

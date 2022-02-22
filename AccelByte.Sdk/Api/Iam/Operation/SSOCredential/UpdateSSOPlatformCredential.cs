@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class UpdateSSOPlatformCredential : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateSSOPlatformCredentialBuilder Builder = new UpdateSSOPlatformCredentialBuilder();
+
+        public class UpdateSSOPlatformCredentialBuilder
+        {
+            
+            
+            
+            internal UpdateSSOPlatformCredentialBuilder() { }
+
+
+
+
+
+            public UpdateSSOPlatformCredential Build(
+                ModelSSOPlatformCredentialRequest body,
+                string namespace_,
+                string platformId
+            )
+            {
+                return new UpdateSSOPlatformCredential(this,
+                    body,                    
+                    namespace_,                    
+                    platformId                    
+                );
+            }
+        }
+
+        private UpdateSSOPlatformCredential(UpdateSSOPlatformCredentialBuilder builder,
+            ModelSSOPlatformCredentialRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateSSOPlatformCredential(
             string namespace_,            
             string platformId,            

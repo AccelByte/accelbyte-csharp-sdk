@@ -39,6 +39,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicCreateTestUserV4 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicCreateTestUserV4Builder Builder = new PublicCreateTestUserV4Builder();
+
+        public class PublicCreateTestUserV4Builder
+        {
+            
+            
+            internal PublicCreateTestUserV4Builder() { }
+
+
+
+
+
+            public PublicCreateTestUserV4 Build(
+                AccountCreateTestUserRequestV4 body,
+                string namespace_
+            )
+            {
+                return new PublicCreateTestUserV4(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicCreateTestUserV4(PublicCreateTestUserV4Builder builder,
+            AccountCreateTestUserRequestV4 body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PublicCreateTestUserV4(
             string namespace_,            
             Model.AccountCreateTestUserRequestV4 body            

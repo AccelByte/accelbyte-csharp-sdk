@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateWxPayConfigCert : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateWxPayConfigCertBuilder Builder = new UpdateWxPayConfigCertBuilder();
+
+        public class UpdateWxPayConfigCertBuilder
+        {
+            
+            public Stream? File { get; set; }
+            
+            internal UpdateWxPayConfigCertBuilder() { }
+
+
+
+
+            public UpdateWxPayConfigCertBuilder SetFile(Stream _file)
+            {
+                File = _file;
+                return this;
+            }
+
+
+            public UpdateWxPayConfigCert Build(
+                string id
+            )
+            {
+                return new UpdateWxPayConfigCert(this,
+                    id                    
+                );
+            }
+        }
+
+        private UpdateWxPayConfigCert(UpdateWxPayConfigCertBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            
+            if (builder.File != null) FormParams["file"] = builder.File;
+            
+            
+            
+        }
+        #endregion
+
         public UpdateWxPayConfigCert(
             string id,            
             Stream? file            

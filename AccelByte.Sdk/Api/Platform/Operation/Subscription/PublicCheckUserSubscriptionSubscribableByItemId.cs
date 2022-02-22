@@ -23,6 +23,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicCheckUserSubscriptionSubscribableByItemId : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicCheckUserSubscriptionSubscribableByItemIdBuilder Builder = new PublicCheckUserSubscriptionSubscribableByItemIdBuilder();
+
+        public class PublicCheckUserSubscriptionSubscribableByItemIdBuilder
+        {
+            
+            
+            
+            internal PublicCheckUserSubscriptionSubscribableByItemIdBuilder() { }
+
+
+
+
+
+            public PublicCheckUserSubscriptionSubscribableByItemId Build(
+                string namespace_,
+                string userId,
+                string itemId
+            )
+            {
+                return new PublicCheckUserSubscriptionSubscribableByItemId(this,
+                    namespace_,                    
+                    userId,                    
+                    itemId                    
+                );
+            }
+        }
+
+        private PublicCheckUserSubscriptionSubscribableByItemId(PublicCheckUserSubscriptionSubscribableByItemIdBuilder builder,
+            string namespace_,
+            string userId,
+            string itemId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (itemId != null) QueryParams["itemId"] = itemId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicCheckUserSubscriptionSubscribableByItemId(
             string namespace_,            
             string userId,            

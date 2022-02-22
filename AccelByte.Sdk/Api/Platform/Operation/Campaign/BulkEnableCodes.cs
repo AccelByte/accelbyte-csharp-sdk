@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class BulkEnableCodes : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static BulkEnableCodesBuilder Builder = new BulkEnableCodesBuilder();
+
+        public class BulkEnableCodesBuilder
+        {
+            
+            
+            public int? BatchNo { get; set; }
+            
+            internal BulkEnableCodesBuilder() { }
+
+
+            public BulkEnableCodesBuilder SetBatchNo(int _batchNo)
+            {
+                BatchNo = _batchNo;
+                return this;
+            }
+
+
+
+
+            public BulkEnableCodes Build(
+                string campaignId,
+                string namespace_
+            )
+            {
+                return new BulkEnableCodes(this,
+                    campaignId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private BulkEnableCodes(BulkEnableCodesBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            PathParams["campaignId"] = campaignId;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.BatchNo != null) QueryParams["batchNo"] = Convert.ToString(builder.BatchNo)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public BulkEnableCodes(
             string campaignId,            
             string namespace_,            

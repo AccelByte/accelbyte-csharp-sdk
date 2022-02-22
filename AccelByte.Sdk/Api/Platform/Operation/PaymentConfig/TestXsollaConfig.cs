@@ -34,6 +34,45 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class TestXsollaConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static TestXsollaConfigBuilder Builder = new TestXsollaConfigBuilder();
+
+        public class TestXsollaConfigBuilder
+        {
+            public Model.XsollaConfig? Body { get; set; }
+            
+            internal TestXsollaConfigBuilder() { }
+
+
+
+            public TestXsollaConfigBuilder SetBody(Model.XsollaConfig _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public TestXsollaConfig Build(
+            )
+            {
+                return new TestXsollaConfig(this
+                );
+            }
+        }
+
+        private TestXsollaConfig(TestXsollaConfigBuilder builder
+        )
+        {
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public TestXsollaConfig(
             Model.XsollaConfig body            
         )

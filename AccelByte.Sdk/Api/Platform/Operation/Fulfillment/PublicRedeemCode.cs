@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicRedeemCode : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicRedeemCodeBuilder Builder = new PublicRedeemCodeBuilder();
+
+        public class PublicRedeemCodeBuilder
+        {
+            
+            
+            public Model.FulfillCodeRequest? Body { get; set; }
+            
+            internal PublicRedeemCodeBuilder() { }
+
+
+
+            public PublicRedeemCodeBuilder SetBody(Model.FulfillCodeRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicRedeemCode Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicRedeemCode(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicRedeemCode(PublicRedeemCodeBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicRedeemCode(
             string namespace_,            
             string userId,            

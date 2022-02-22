@@ -24,6 +24,73 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicBulkGetItems : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicBulkGetItemsBuilder Builder = new PublicBulkGetItemsBuilder();
+
+        public class PublicBulkGetItemsBuilder
+        {
+            
+            public string? Language { get; set; }
+            
+            public string? Region { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            
+            internal PublicBulkGetItemsBuilder() { }
+
+
+            public PublicBulkGetItemsBuilder SetLanguage(string _language)
+            {
+                Language = _language;
+                return this;
+            }
+
+            public PublicBulkGetItemsBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+            public PublicBulkGetItemsBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public PublicBulkGetItems Build(
+                string namespace_,
+                string itemIds
+            )
+            {
+                return new PublicBulkGetItems(this,
+                    namespace_,                    
+                    itemIds                    
+                );
+            }
+        }
+
+        private PublicBulkGetItems(PublicBulkGetItemsBuilder builder,
+            string namespace_,
+            string itemIds
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (itemIds != null) QueryParams["itemIds"] = itemIds;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicBulkGetItems(
             string namespace_,            
             string? language,            

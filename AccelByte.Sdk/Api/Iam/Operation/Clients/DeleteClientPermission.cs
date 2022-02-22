@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class DeleteClientPermission : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteClientPermissionBuilder Builder = new DeleteClientPermissionBuilder();
+
+        public class DeleteClientPermissionBuilder
+        {
+            
+            
+            
+            internal DeleteClientPermissionBuilder() { }
+
+
+
+
+
+            public DeleteClientPermission Build(
+                long action,
+                string clientId,
+                string resource
+            )
+            {
+                return new DeleteClientPermission(this,
+                    action,                    
+                    clientId,                    
+                    resource                    
+                );
+            }
+        }
+
+        private DeleteClientPermission(DeleteClientPermissionBuilder builder,
+            long action,
+            string clientId,
+            string resource
+        )
+        {
+            PathParams["action"] = Convert.ToString(action);
+            PathParams["clientId"] = clientId;
+            PathParams["resource"] = resource;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteClientPermission(
             long action,            
             string clientId,            

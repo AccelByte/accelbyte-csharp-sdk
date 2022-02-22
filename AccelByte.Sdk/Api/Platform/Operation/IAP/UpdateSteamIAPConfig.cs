@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateSteamIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateSteamIAPConfigBuilder Builder = new UpdateSteamIAPConfigBuilder();
+
+        public class UpdateSteamIAPConfigBuilder
+        {
+            
+            public Model.SteamIAPConfigRequest? Body { get; set; }
+            
+            internal UpdateSteamIAPConfigBuilder() { }
+
+
+
+            public UpdateSteamIAPConfigBuilder SetBody(Model.SteamIAPConfigRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateSteamIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new UpdateSteamIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateSteamIAPConfig(UpdateSteamIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateSteamIAPConfig(
             string namespace_,            
             Model.SteamIAPConfigRequest body            

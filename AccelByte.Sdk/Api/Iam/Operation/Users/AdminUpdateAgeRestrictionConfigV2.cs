@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminUpdateAgeRestrictionConfigV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateAgeRestrictionConfigV2Builder Builder = new AdminUpdateAgeRestrictionConfigV2Builder();
+
+        public class AdminUpdateAgeRestrictionConfigV2Builder
+        {
+            
+            
+            internal AdminUpdateAgeRestrictionConfigV2Builder() { }
+
+
+
+
+
+            public AdminUpdateAgeRestrictionConfigV2 Build(
+                ModelAgeRestrictionRequest body,
+                string namespace_
+            )
+            {
+                return new AdminUpdateAgeRestrictionConfigV2(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminUpdateAgeRestrictionConfigV2(AdminUpdateAgeRestrictionConfigV2Builder builder,
+            ModelAgeRestrictionRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateAgeRestrictionConfigV2(
             string namespace_,            
             Model.ModelAgeRestrictionRequest body            

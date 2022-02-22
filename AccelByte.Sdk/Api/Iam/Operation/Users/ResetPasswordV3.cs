@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class ResetPasswordV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ResetPasswordV3Builder Builder = new ResetPasswordV3Builder();
+
+        public class ResetPasswordV3Builder
+        {
+            
+            
+            internal ResetPasswordV3Builder() { }
+
+
+
+
+
+            public ResetPasswordV3 Build(
+                ModelResetPasswordRequestV3 body,
+                string namespace_
+            )
+            {
+                return new ResetPasswordV3(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private ResetPasswordV3(ResetPasswordV3Builder builder,
+            ModelResetPasswordRequestV3 body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public ResetPasswordV3(
             string namespace_,            
             Model.ModelResetPasswordRequestV3 body            

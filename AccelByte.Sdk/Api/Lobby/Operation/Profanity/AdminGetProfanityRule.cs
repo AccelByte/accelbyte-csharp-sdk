@@ -20,6 +20,41 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminGetProfanityRule : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetProfanityRuleBuilder Builder = new AdminGetProfanityRuleBuilder();
+
+        public class AdminGetProfanityRuleBuilder
+        {
+            
+            internal AdminGetProfanityRuleBuilder() { }
+
+
+
+
+
+            public AdminGetProfanityRule Build(
+                string namespace_
+            )
+            {
+                return new AdminGetProfanityRule(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetProfanityRule(AdminGetProfanityRuleBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetProfanityRule(
             string namespace_            
         )

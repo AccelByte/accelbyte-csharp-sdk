@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class CreateClientByNamespace : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateClientByNamespaceBuilder Builder = new CreateClientByNamespaceBuilder();
+
+        public class CreateClientByNamespaceBuilder
+        {
+            
+            
+            internal CreateClientByNamespaceBuilder() { }
+
+
+
+
+
+            public CreateClientByNamespace Build(
+                ClientmodelClientCreateRequest body,
+                string namespace_
+            )
+            {
+                return new CreateClientByNamespace(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateClientByNamespace(CreateClientByNamespaceBuilder builder,
+            ClientmodelClientCreateRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateClientByNamespace(
             string namespace_,            
             Model.ClientmodelClientCreateRequest body            

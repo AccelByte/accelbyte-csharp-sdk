@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class PublicDeleteProfile : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicDeleteProfileBuilder Builder = new PublicDeleteProfileBuilder();
+
+        public class PublicDeleteProfileBuilder
+        {
+            
+            
+            
+            internal PublicDeleteProfileBuilder() { }
+
+
+
+
+
+            public PublicDeleteProfile Build(
+                string namespace_,
+                string profileId,
+                string userId
+            )
+            {
+                return new PublicDeleteProfile(this,
+                    namespace_,                    
+                    profileId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicDeleteProfile(PublicDeleteProfileBuilder builder,
+            string namespace_,
+            string profileId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["profileId"] = profileId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicDeleteProfile(
             string namespace_,            
             string profileId,            

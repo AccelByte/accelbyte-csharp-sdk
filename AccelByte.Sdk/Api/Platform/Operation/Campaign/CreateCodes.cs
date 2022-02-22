@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CreateCodes : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateCodesBuilder Builder = new CreateCodesBuilder();
+
+        public class CreateCodesBuilder
+        {
+            
+            
+            public Model.CodeCreate? Body { get; set; }
+            
+            internal CreateCodesBuilder() { }
+
+
+
+            public CreateCodesBuilder SetBody(Model.CodeCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateCodes Build(
+                string campaignId,
+                string namespace_
+            )
+            {
+                return new CreateCodes(this,
+                    campaignId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateCodes(CreateCodesBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            PathParams["campaignId"] = campaignId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateCodes(
             string campaignId,            
             string namespace_,            

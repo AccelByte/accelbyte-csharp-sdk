@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicVerifyHeadlessAccountV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicVerifyHeadlessAccountV3Builder Builder = new PublicVerifyHeadlessAccountV3Builder();
+
+        public class PublicVerifyHeadlessAccountV3Builder
+        {
+            
+            
+            internal PublicVerifyHeadlessAccountV3Builder() { }
+
+
+
+
+
+            public PublicVerifyHeadlessAccountV3 Build(
+                ModelUpgradeHeadlessAccountV3Request body,
+                string namespace_
+            )
+            {
+                return new PublicVerifyHeadlessAccountV3(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicVerifyHeadlessAccountV3(PublicVerifyHeadlessAccountV3Builder builder,
+            ModelUpgradeHeadlessAccountV3Request body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PublicVerifyHeadlessAccountV3(
             string namespace_,            
             Model.ModelUpgradeHeadlessAccountV3Request body            

@@ -24,6 +24,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class GetSession : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetSessionBuilder Builder = new GetSessionBuilder();
+
+        public class GetSessionBuilder
+        {
+            
+            
+            internal GetSessionBuilder() { }
+
+
+
+
+
+            public GetSession Build(
+                string namespace_,
+                string sessionID
+            )
+            {
+                return new GetSession(this,
+                    namespace_,                    
+                    sessionID                    
+                );
+            }
+        }
+
+        private GetSession(GetSessionBuilder builder,
+            string namespace_,
+            string sessionID
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["sessionID"] = sessionID;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetSession(
             string namespace_,            
             string sessionID            

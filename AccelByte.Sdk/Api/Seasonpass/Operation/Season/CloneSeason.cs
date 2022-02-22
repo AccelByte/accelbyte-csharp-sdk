@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class CloneSeason : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CloneSeasonBuilder Builder = new CloneSeasonBuilder();
+
+        public class CloneSeasonBuilder
+        {
+            
+            
+            public Model.SeasonCloneRequest? Body { get; set; }
+            
+            internal CloneSeasonBuilder() { }
+
+
+
+            public CloneSeasonBuilder SetBody(Model.SeasonCloneRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CloneSeason Build(
+                string namespace_,
+                string seasonId
+            )
+            {
+                return new CloneSeason(this,
+                    namespace_,                    
+                    seasonId                    
+                );
+            }
+        }
+
+        private CloneSeason(CloneSeasonBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["seasonId"] = seasonId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CloneSeason(
             string namespace_,            
             string seasonId,            

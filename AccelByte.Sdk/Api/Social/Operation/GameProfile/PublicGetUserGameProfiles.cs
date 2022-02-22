@@ -22,6 +22,47 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class PublicGetUserGameProfiles : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetUserGameProfilesBuilder Builder = new PublicGetUserGameProfilesBuilder();
+
+        public class PublicGetUserGameProfilesBuilder
+        {
+            
+            
+            internal PublicGetUserGameProfilesBuilder() { }
+
+
+
+
+
+            public PublicGetUserGameProfiles Build(
+                string namespace_,
+                List<string> userIds
+            )
+            {
+                return new PublicGetUserGameProfiles(this,
+                    namespace_,                    
+                    userIds                    
+                );
+            }
+        }
+
+        private PublicGetUserGameProfiles(PublicGetUserGameProfilesBuilder builder,
+            string namespace_,
+            List<string> userIds
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (userIds != null) QueryParams["userIds"] = userIds;
+            
+            
+            CollectionFormatMap["userIds"] = "multi";
+            
+            
+        }
+        #endregion
+
         public PublicGetUserGameProfiles(
             string namespace_,            
             List<string> userIds            

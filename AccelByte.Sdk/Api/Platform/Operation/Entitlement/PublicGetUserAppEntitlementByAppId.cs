@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetUserAppEntitlementByAppId : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetUserAppEntitlementByAppIdBuilder Builder = new PublicGetUserAppEntitlementByAppIdBuilder();
+
+        public class PublicGetUserAppEntitlementByAppIdBuilder
+        {
+            
+            
+            
+            internal PublicGetUserAppEntitlementByAppIdBuilder() { }
+
+
+
+
+
+            public PublicGetUserAppEntitlementByAppId Build(
+                string namespace_,
+                string userId,
+                string appId
+            )
+            {
+                return new PublicGetUserAppEntitlementByAppId(this,
+                    namespace_,                    
+                    userId,                    
+                    appId                    
+                );
+            }
+        }
+
+        private PublicGetUserAppEntitlementByAppId(PublicGetUserAppEntitlementByAppIdBuilder builder,
+            string namespace_,
+            string userId,
+            string appId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (appId != null) QueryParams["appId"] = appId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetUserAppEntitlementByAppId(
             string namespace_,            
             string userId,            

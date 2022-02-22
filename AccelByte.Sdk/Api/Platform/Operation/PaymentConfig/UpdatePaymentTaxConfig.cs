@@ -36,6 +36,45 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdatePaymentTaxConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdatePaymentTaxConfigBuilder Builder = new UpdatePaymentTaxConfigBuilder();
+
+        public class UpdatePaymentTaxConfigBuilder
+        {
+            public Model.PaymentTaxConfigEdit? Body { get; set; }
+            
+            internal UpdatePaymentTaxConfigBuilder() { }
+
+
+
+            public UpdatePaymentTaxConfigBuilder SetBody(Model.PaymentTaxConfigEdit _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdatePaymentTaxConfig Build(
+            )
+            {
+                return new UpdatePaymentTaxConfig(this
+                );
+            }
+        }
+
+        private UpdatePaymentTaxConfig(UpdatePaymentTaxConfigBuilder builder
+        )
+        {
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdatePaymentTaxConfig(
             Model.PaymentTaxConfigEdit body            
         )

@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class DeleteServer : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteServerBuilder Builder = new DeleteServerBuilder();
+
+        public class DeleteServerBuilder
+        {
+            
+            
+            internal DeleteServerBuilder() { }
+
+
+
+
+
+            public DeleteServer Build(
+                string namespace_,
+                string podName
+            )
+            {
+                return new DeleteServer(this,
+                    namespace_,                    
+                    podName                    
+                );
+            }
+        }
+
+        private DeleteServer(DeleteServerBuilder builder,
+            string namespace_,
+            string podName
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["podName"] = podName;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteServer(
             string namespace_,            
             string podName            

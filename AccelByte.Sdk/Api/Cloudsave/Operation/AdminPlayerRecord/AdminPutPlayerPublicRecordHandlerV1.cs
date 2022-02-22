@@ -24,6 +24,56 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// </summary>
     public class AdminPutPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminPutPlayerPublicRecordHandlerV1Builder Builder = new AdminPutPlayerPublicRecordHandlerV1Builder();
+
+        public class AdminPutPlayerPublicRecordHandlerV1Builder
+        {
+            
+            
+            
+            
+            internal AdminPutPlayerPublicRecordHandlerV1Builder() { }
+
+
+
+
+
+            public AdminPutPlayerPublicRecordHandlerV1 Build(
+                ModelsPlayerRecordRequest body,
+                string key,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminPutPlayerPublicRecordHandlerV1(this,
+                    body,                    
+                    key,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminPutPlayerPublicRecordHandlerV1(AdminPutPlayerPublicRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["key"] = key;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminPutPlayerPublicRecordHandlerV1(
             string key,            
             string namespace_,            

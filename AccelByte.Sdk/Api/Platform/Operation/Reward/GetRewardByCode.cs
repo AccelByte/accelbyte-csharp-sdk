@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetRewardByCode : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetRewardByCodeBuilder Builder = new GetRewardByCodeBuilder();
+
+        public class GetRewardByCodeBuilder
+        {
+            
+            
+            internal GetRewardByCodeBuilder() { }
+
+
+
+
+
+            public GetRewardByCode Build(
+                string namespace_,
+                string rewardCode
+            )
+            {
+                return new GetRewardByCode(this,
+                    namespace_,                    
+                    rewardCode                    
+                );
+            }
+        }
+
+        private GetRewardByCode(GetRewardByCodeBuilder builder,
+            string namespace_,
+            string rewardCode
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (rewardCode != null) QueryParams["rewardCode"] = rewardCode;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetRewardByCode(
             string namespace_,            
             string rewardCode            

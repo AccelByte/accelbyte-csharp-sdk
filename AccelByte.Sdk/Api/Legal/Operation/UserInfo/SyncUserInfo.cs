@@ -23,6 +23,41 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class SyncUserInfo : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SyncUserInfoBuilder Builder = new SyncUserInfoBuilder();
+
+        public class SyncUserInfoBuilder
+        {
+            
+            internal SyncUserInfoBuilder() { }
+
+
+
+
+
+            public SyncUserInfo Build(
+                string namespace_
+            )
+            {
+                return new SyncUserInfo(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private SyncUserInfo(SyncUserInfoBuilder builder,
+            string namespace_
+        )
+        {
+            
+            if (namespace_ != null) QueryParams["namespace"] = namespace_;
+            
+            
+            
+            
+        }
+        #endregion
+
         public SyncUserInfo(
             string namespace_            
         )

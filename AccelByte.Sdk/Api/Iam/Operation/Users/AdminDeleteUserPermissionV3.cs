@@ -18,6 +18,56 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminDeleteUserPermissionV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminDeleteUserPermissionV3Builder Builder = new AdminDeleteUserPermissionV3Builder();
+
+        public class AdminDeleteUserPermissionV3Builder
+        {
+            
+            
+            
+            
+            internal AdminDeleteUserPermissionV3Builder() { }
+
+
+
+
+
+            public AdminDeleteUserPermissionV3 Build(
+                long action,
+                string namespace_,
+                string resource,
+                string userId
+            )
+            {
+                return new AdminDeleteUserPermissionV3(this,
+                    action,                    
+                    namespace_,                    
+                    resource,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminDeleteUserPermissionV3(AdminDeleteUserPermissionV3Builder builder,
+            long action,
+            string namespace_,
+            string resource,
+            string userId
+        )
+        {
+            PathParams["action"] = Convert.ToString(action);
+            PathParams["namespace"] = namespace_;
+            PathParams["resource"] = resource;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminDeleteUserPermissionV3(
             long action,            
             string namespace_,            

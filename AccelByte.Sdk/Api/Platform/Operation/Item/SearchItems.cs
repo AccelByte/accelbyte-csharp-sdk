@@ -23,6 +23,87 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class SearchItems : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SearchItemsBuilder Builder = new SearchItemsBuilder();
+
+        public class SearchItemsBuilder
+        {
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            
+            
+            internal SearchItemsBuilder() { }
+
+
+            public SearchItemsBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public SearchItemsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public SearchItemsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public SearchItemsBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public SearchItems Build(
+                string namespace_,
+                string keyword,
+                string language
+            )
+            {
+                return new SearchItems(this,
+                    namespace_,                    
+                    keyword,                    
+                    language                    
+                );
+            }
+        }
+
+        private SearchItems(SearchItemsBuilder builder,
+            string namespace_,
+            string keyword,
+            string language
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (keyword != null) QueryParams["keyword"] = keyword;
+            if (language != null) QueryParams["language"] = language;
+            
+            
+            
+            
+        }
+        #endregion
+
         public SearchItems(
             string namespace_,            
             bool? activeOnly,            

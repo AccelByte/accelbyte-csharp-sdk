@@ -23,6 +23,114 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryEntitlements : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryEntitlementsBuilder Builder = new QueryEntitlementsBuilder();
+
+        public class QueryEntitlementsBuilder
+        {
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public string? AppType { get; set; }
+            
+            public string? EntitlementClazz { get; set; }
+            
+            public string? EntitlementName { get; set; }
+            
+            public List<string>? ItemId { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? UserId { get; set; }
+            
+            internal QueryEntitlementsBuilder() { }
+
+
+            public QueryEntitlementsBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public QueryEntitlementsBuilder SetAppType(string _appType)
+            {
+                AppType = _appType;
+                return this;
+            }
+
+            public QueryEntitlementsBuilder SetEntitlementClazz(string _entitlementClazz)
+            {
+                EntitlementClazz = _entitlementClazz;
+                return this;
+            }
+
+            public QueryEntitlementsBuilder SetEntitlementName(string _entitlementName)
+            {
+                EntitlementName = _entitlementName;
+                return this;
+            }
+
+            public QueryEntitlementsBuilder SetItemId(List<string> _itemId)
+            {
+                ItemId = _itemId;
+                return this;
+            }
+
+            public QueryEntitlementsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryEntitlementsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryEntitlementsBuilder SetUserId(string _userId)
+            {
+                UserId = _userId;
+                return this;
+            }
+
+
+
+
+            public QueryEntitlements Build(
+                string namespace_
+            )
+            {
+                return new QueryEntitlements(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private QueryEntitlements(QueryEntitlementsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.AppType != null) QueryParams["appType"] = builder.AppType;
+            if (builder.EntitlementClazz != null) QueryParams["entitlementClazz"] = builder.EntitlementClazz;
+            if (builder.EntitlementName != null) QueryParams["entitlementName"] = builder.EntitlementName;
+            if (builder.ItemId != null) QueryParams["itemId"] = builder.ItemId;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
+            
+            
+            CollectionFormatMap["itemId"] = "multi";
+            
+            
+        }
+        #endregion
+
         public QueryEntitlements(
             string namespace_,            
             bool? activeOnly,            

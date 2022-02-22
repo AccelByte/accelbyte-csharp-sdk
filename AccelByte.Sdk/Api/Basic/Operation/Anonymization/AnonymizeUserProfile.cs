@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class AnonymizeUserProfile : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AnonymizeUserProfileBuilder Builder = new AnonymizeUserProfileBuilder();
+
+        public class AnonymizeUserProfileBuilder
+        {
+            
+            
+            internal AnonymizeUserProfileBuilder() { }
+
+
+
+
+
+            public AnonymizeUserProfile Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AnonymizeUserProfile(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AnonymizeUserProfile(AnonymizeUserProfileBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AnonymizeUserProfile(
             string namespace_,            
             string userId            

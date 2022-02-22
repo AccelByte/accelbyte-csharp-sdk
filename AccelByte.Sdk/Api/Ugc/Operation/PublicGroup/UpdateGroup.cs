@@ -19,6 +19,56 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class UpdateGroup : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateGroupBuilder Builder = new UpdateGroupBuilder();
+
+        public class UpdateGroupBuilder
+        {
+            
+            
+            
+            
+            internal UpdateGroupBuilder() { }
+
+
+
+
+
+            public UpdateGroup Build(
+                ModelsCreateGroupRequest body,
+                string groupId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new UpdateGroup(this,
+                    body,                    
+                    groupId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private UpdateGroup(UpdateGroupBuilder builder,
+            ModelsCreateGroupRequest body,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateGroup(
             string groupId,            
             string namespace_,            

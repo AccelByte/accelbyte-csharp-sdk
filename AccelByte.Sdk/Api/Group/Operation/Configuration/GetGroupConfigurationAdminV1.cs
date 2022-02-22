@@ -30,6 +30,46 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class GetGroupConfigurationAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetGroupConfigurationAdminV1Builder Builder = new GetGroupConfigurationAdminV1Builder();
+
+        public class GetGroupConfigurationAdminV1Builder
+        {
+            
+            
+            internal GetGroupConfigurationAdminV1Builder() { }
+
+
+
+
+
+            public GetGroupConfigurationAdminV1 Build(
+                string configurationCode,
+                string namespace_
+            )
+            {
+                return new GetGroupConfigurationAdminV1(this,
+                    configurationCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetGroupConfigurationAdminV1(GetGroupConfigurationAdminV1Builder builder,
+            string configurationCode,
+            string namespace_
+        )
+        {
+            PathParams["configurationCode"] = configurationCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetGroupConfigurationAdminV1(
             string configurationCode,            
             string namespace_            

@@ -30,6 +30,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AddSSOLoginPlatformCredential : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AddSSOLoginPlatformCredentialBuilder Builder = new AddSSOLoginPlatformCredentialBuilder();
+
+        public class AddSSOLoginPlatformCredentialBuilder
+        {
+            
+            
+            
+            internal AddSSOLoginPlatformCredentialBuilder() { }
+
+
+
+
+
+            public AddSSOLoginPlatformCredential Build(
+                ModelSSOPlatformCredentialRequest body,
+                string namespace_,
+                string platformId
+            )
+            {
+                return new AddSSOLoginPlatformCredential(this,
+                    body,                    
+                    namespace_,                    
+                    platformId                    
+                );
+            }
+        }
+
+        private AddSSOLoginPlatformCredential(AddSSOLoginPlatformCredentialBuilder builder,
+            ModelSSOPlatformCredentialRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AddSSOLoginPlatformCredential(
             string namespace_,            
             string platformId,            

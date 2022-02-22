@@ -18,6 +18,64 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminGetChannel : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetChannelBuilder Builder = new AdminGetChannelBuilder();
+
+        public class AdminGetChannelBuilder
+        {
+            
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal AdminGetChannelBuilder() { }
+
+
+            public AdminGetChannelBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminGetChannelBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public AdminGetChannel Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminGetChannel(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminGetChannel(AdminGetChannelBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetChannel(
             string namespace_,            
             string userId,            

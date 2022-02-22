@@ -19,6 +19,46 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class PostEventHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PostEventHandlerBuilder Builder = new PostEventHandlerBuilder();
+
+        public class PostEventHandlerBuilder
+        {
+            
+            
+            internal PostEventHandlerBuilder() { }
+
+
+
+
+
+            public PostEventHandler Build(
+                ModelsEvent body,
+                string namespace_
+            )
+            {
+                return new PostEventHandler(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PostEventHandler(PostEventHandlerBuilder builder,
+            ModelsEvent body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PostEventHandler(
             string namespace_,            
             Model.ModelsEvent body            

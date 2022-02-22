@@ -21,6 +21,50 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RetrieveAllPolicyTypes : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveAllPolicyTypesBuilder Builder = new RetrieveAllPolicyTypesBuilder();
+
+        public class RetrieveAllPolicyTypesBuilder
+        {
+            public int? Offset { get; set; }
+            
+            
+            internal RetrieveAllPolicyTypesBuilder() { }
+
+
+            public RetrieveAllPolicyTypesBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public RetrieveAllPolicyTypes Build(
+                int limit
+            )
+            {
+                return new RetrieveAllPolicyTypes(this,
+                    limit                    
+                );
+            }
+        }
+
+        private RetrieveAllPolicyTypes(RetrieveAllPolicyTypesBuilder builder,
+            int limit
+        )
+        {
+            
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            QueryParams["limit"] = Convert.ToString(limit)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveAllPolicyTypes(
             int? offset,            
             int limit            

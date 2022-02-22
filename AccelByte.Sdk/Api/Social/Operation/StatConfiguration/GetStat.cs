@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class GetStat : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetStatBuilder Builder = new GetStatBuilder();
+
+        public class GetStatBuilder
+        {
+            
+            
+            internal GetStatBuilder() { }
+
+
+
+
+
+            public GetStat Build(
+                string namespace_,
+                string statCode
+            )
+            {
+                return new GetStat(this,
+                    namespace_,                    
+                    statCode                    
+                );
+            }
+        }
+
+        private GetStat(GetStatBuilder builder,
+            string namespace_,
+            string statCode
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["statCode"] = statCode;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetStat(
             string namespace_,            
             string statCode            

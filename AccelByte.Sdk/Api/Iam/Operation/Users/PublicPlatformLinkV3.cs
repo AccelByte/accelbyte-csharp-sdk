@@ -83,6 +83,60 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicPlatformLinkV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicPlatformLinkV3Builder Builder = new PublicPlatformLinkV3Builder();
+
+        public class PublicPlatformLinkV3Builder
+        {
+            
+            
+            public string? RedirectUri { get; set; }
+            
+            
+            internal PublicPlatformLinkV3Builder() { }
+
+
+
+
+            public PublicPlatformLinkV3Builder SetRedirectUri(string _redirectUri)
+            {
+                RedirectUri = _redirectUri;
+                return this;
+            }
+
+
+            public PublicPlatformLinkV3 Build(
+                string ticket,
+                string namespace_,
+                string platformId
+            )
+            {
+                return new PublicPlatformLinkV3(this,
+                    ticket,                    
+                    namespace_,                    
+                    platformId                    
+                );
+            }
+        }
+
+        private PublicPlatformLinkV3(PublicPlatformLinkV3Builder builder,
+            string ticket,
+            string namespace_,
+            string platformId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            
+            
+            if (builder.RedirectUri != null) FormParams["redirectUri"] = builder.RedirectUri;
+            if (ticket != null) FormParams["ticket"] = ticket;
+            
+            
+            
+        }
+        #endregion
+
         public PublicPlatformLinkV3(
             string namespace_,            
             string platformId,            

@@ -19,6 +19,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminUpdateRoleV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateRoleV3Builder Builder = new AdminUpdateRoleV3Builder();
+
+        public class AdminUpdateRoleV3Builder
+        {
+            
+            
+            internal AdminUpdateRoleV3Builder() { }
+
+
+
+
+
+            public AdminUpdateRoleV3 Build(
+                ModelRoleUpdateRequestV3 body,
+                string roleId
+            )
+            {
+                return new AdminUpdateRoleV3(this,
+                    body,                    
+                    roleId                    
+                );
+            }
+        }
+
+        private AdminUpdateRoleV3(AdminUpdateRoleV3Builder builder,
+            ModelRoleUpdateRequestV3 body,
+            string roleId
+        )
+        {
+            PathParams["roleId"] = roleId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateRoleV3(
             string roleId,            
             Model.ModelRoleUpdateRequestV3 body            

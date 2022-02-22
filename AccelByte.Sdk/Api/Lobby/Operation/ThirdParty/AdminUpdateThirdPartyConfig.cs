@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminUpdateThirdPartyConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateThirdPartyConfigBuilder Builder = new AdminUpdateThirdPartyConfigBuilder();
+
+        public class AdminUpdateThirdPartyConfigBuilder
+        {
+            
+            
+            internal AdminUpdateThirdPartyConfigBuilder() { }
+
+
+
+
+
+            public AdminUpdateThirdPartyConfig Build(
+                ModelsUpdateConfigRequest body,
+                string namespace_
+            )
+            {
+                return new AdminUpdateThirdPartyConfig(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminUpdateThirdPartyConfig(AdminUpdateThirdPartyConfigBuilder builder,
+            ModelsUpdateConfigRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateThirdPartyConfig(
             string namespace_,            
             Model.ModelsUpdateConfigRequest body            

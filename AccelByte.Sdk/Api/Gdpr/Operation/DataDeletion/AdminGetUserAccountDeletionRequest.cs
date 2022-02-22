@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// </summary>
     public class AdminGetUserAccountDeletionRequest : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetUserAccountDeletionRequestBuilder Builder = new AdminGetUserAccountDeletionRequestBuilder();
+
+        public class AdminGetUserAccountDeletionRequestBuilder
+        {
+            
+            
+            internal AdminGetUserAccountDeletionRequestBuilder() { }
+
+
+
+
+
+            public AdminGetUserAccountDeletionRequest Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminGetUserAccountDeletionRequest(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminGetUserAccountDeletionRequest(AdminGetUserAccountDeletionRequestBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetUserAccountDeletionRequest(
             string namespace_,            
             string userId            

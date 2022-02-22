@@ -22,6 +22,68 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ListServer : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListServerBuilder Builder = new ListServerBuilder();
+
+        public class ListServerBuilder
+        {
+            
+            public long? Count { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            public string? Region { get; set; }
+            
+            internal ListServerBuilder() { }
+
+
+            public ListServerBuilder SetCount(long _count)
+            {
+                Count = _count;
+                return this;
+            }
+
+            public ListServerBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public ListServerBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+
+
+
+            public ListServer Build(
+                string namespace_
+            )
+            {
+                return new ListServer(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ListServer(ListServerBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListServer(
             string namespace_,            
             long? count,            

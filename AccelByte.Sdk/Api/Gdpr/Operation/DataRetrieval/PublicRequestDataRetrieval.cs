@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// </summary>
     public class PublicRequestDataRetrieval : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicRequestDataRetrievalBuilder Builder = new PublicRequestDataRetrievalBuilder();
+
+        public class PublicRequestDataRetrievalBuilder
+        {
+            
+            
+            
+            internal PublicRequestDataRetrievalBuilder() { }
+
+
+
+
+
+            public PublicRequestDataRetrieval Build(
+                string password,
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicRequestDataRetrieval(this,
+                    password,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicRequestDataRetrieval(PublicRequestDataRetrievalBuilder builder,
+            string password,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            if (password != null) FormParams["password"] = password;
+            
+            
+            
+        }
+        #endregion
+
         public PublicRequestDataRetrieval(
             string namespace_,            
             string userId,            

@@ -18,6 +18,59 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class GetFollowedUsers : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetFollowedUsersBuilder Builder = new GetFollowedUsersBuilder();
+
+        public class GetFollowedUsersBuilder
+        {
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal GetFollowedUsersBuilder() { }
+
+
+            public GetFollowedUsersBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetFollowedUsersBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetFollowedUsers Build(
+                string namespace_
+            )
+            {
+                return new GetFollowedUsers(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetFollowedUsers(GetFollowedUsersBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetFollowedUsers(
             string namespace_,            
             string? limit,            

@@ -22,6 +22,56 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class FeatureItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static FeatureItemBuilder Builder = new FeatureItemBuilder();
+
+        public class FeatureItemBuilder
+        {
+            
+            
+            
+            
+            internal FeatureItemBuilder() { }
+
+
+
+
+
+            public FeatureItem Build(
+                string feature,
+                string itemId,
+                string namespace_,
+                string storeId
+            )
+            {
+                return new FeatureItem(this,
+                    feature,                    
+                    itemId,                    
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private FeatureItem(FeatureItemBuilder builder,
+            string feature,
+            string itemId,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["feature"] = feature;
+            PathParams["itemId"] = itemId;
+            PathParams["namespace"] = namespace_;
+            
+            if (storeId != null) QueryParams["storeId"] = storeId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public FeatureItem(
             string feature,            
             string itemId,            

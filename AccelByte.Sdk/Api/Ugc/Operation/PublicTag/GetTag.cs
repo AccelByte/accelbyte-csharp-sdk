@@ -18,6 +18,59 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class GetTag : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetTagBuilder Builder = new GetTagBuilder();
+
+        public class GetTagBuilder
+        {
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal GetTagBuilder() { }
+
+
+            public GetTagBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetTagBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetTag Build(
+                string namespace_
+            )
+            {
+                return new GetTag(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetTag(GetTagBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetTag(
             string namespace_,            
             string? limit,            

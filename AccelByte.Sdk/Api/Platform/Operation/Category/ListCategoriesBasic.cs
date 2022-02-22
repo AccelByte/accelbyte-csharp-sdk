@@ -23,6 +23,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ListCategoriesBasic : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListCategoriesBasicBuilder Builder = new ListCategoriesBasicBuilder();
+
+        public class ListCategoriesBasicBuilder
+        {
+            
+            public string? StoreId { get; set; }
+            
+            internal ListCategoriesBasicBuilder() { }
+
+
+            public ListCategoriesBasicBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public ListCategoriesBasic Build(
+                string namespace_
+            )
+            {
+                return new ListCategoriesBasic(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ListCategoriesBasic(ListCategoriesBasicBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListCategoriesBasic(
             string namespace_,            
             string? storeId            

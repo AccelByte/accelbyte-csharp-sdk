@@ -59,6 +59,51 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// </summary>
     public class PutGameRecordConcurrentHandlerV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PutGameRecordConcurrentHandlerV1Builder Builder = new PutGameRecordConcurrentHandlerV1Builder();
+
+        public class PutGameRecordConcurrentHandlerV1Builder
+        {
+            
+            
+            
+            internal PutGameRecordConcurrentHandlerV1Builder() { }
+
+
+
+
+
+            public PutGameRecordConcurrentHandlerV1 Build(
+                ModelsConcurrentRecordRequest body,
+                string key,
+                string namespace_
+            )
+            {
+                return new PutGameRecordConcurrentHandlerV1(this,
+                    body,                    
+                    key,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PutGameRecordConcurrentHandlerV1(PutGameRecordConcurrentHandlerV1Builder builder,
+            ModelsConcurrentRecordRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            PathParams["key"] = key;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PutGameRecordConcurrentHandlerV1(
             string key,            
             string namespace_,            

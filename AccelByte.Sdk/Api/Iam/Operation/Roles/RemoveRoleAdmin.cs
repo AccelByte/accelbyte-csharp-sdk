@@ -26,6 +26,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class RemoveRoleAdmin : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RemoveRoleAdminBuilder Builder = new RemoveRoleAdminBuilder();
+
+        public class RemoveRoleAdminBuilder
+        {
+            
+            internal RemoveRoleAdminBuilder() { }
+
+
+
+
+
+            public RemoveRoleAdmin Build(
+                string roleId
+            )
+            {
+                return new RemoveRoleAdmin(this,
+                    roleId                    
+                );
+            }
+        }
+
+        private RemoveRoleAdmin(RemoveRoleAdminBuilder builder,
+            string roleId
+        )
+        {
+            PathParams["roleId"] = roleId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RemoveRoleAdmin(
             string roleId            
         )

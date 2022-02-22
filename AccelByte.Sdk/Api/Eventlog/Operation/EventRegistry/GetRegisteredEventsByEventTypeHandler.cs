@@ -19,6 +19,41 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetRegisteredEventsByEventTypeHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetRegisteredEventsByEventTypeHandlerBuilder Builder = new GetRegisteredEventsByEventTypeHandlerBuilder();
+
+        public class GetRegisteredEventsByEventTypeHandlerBuilder
+        {
+            
+            internal GetRegisteredEventsByEventTypeHandlerBuilder() { }
+
+
+
+
+
+            public GetRegisteredEventsByEventTypeHandler Build(
+                string eventType
+            )
+            {
+                return new GetRegisteredEventsByEventTypeHandler(this,
+                    eventType                    
+                );
+            }
+        }
+
+        private GetRegisteredEventsByEventTypeHandler(GetRegisteredEventsByEventTypeHandlerBuilder builder,
+            string eventType
+        )
+        {
+            PathParams["eventType"] = eventType;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetRegisteredEventsByEventTypeHandler(
             string eventType            
         )

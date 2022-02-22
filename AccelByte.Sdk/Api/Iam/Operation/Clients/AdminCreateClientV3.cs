@@ -61,6 +61,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminCreateClientV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminCreateClientV3Builder Builder = new AdminCreateClientV3Builder();
+
+        public class AdminCreateClientV3Builder
+        {
+            
+            
+            internal AdminCreateClientV3Builder() { }
+
+
+
+
+
+            public AdminCreateClientV3 Build(
+                ClientmodelClientCreationV3Request body,
+                string namespace_
+            )
+            {
+                return new AdminCreateClientV3(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminCreateClientV3(AdminCreateClientV3Builder builder,
+            ClientmodelClientCreationV3Request body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminCreateClientV3(
             string namespace_,            
             Model.ClientmodelClientCreationV3Request body            

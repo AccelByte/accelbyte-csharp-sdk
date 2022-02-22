@@ -22,6 +22,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ProcessUserSubscriptionNotification : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ProcessUserSubscriptionNotificationBuilder Builder = new ProcessUserSubscriptionNotificationBuilder();
+
+        public class ProcessUserSubscriptionNotificationBuilder
+        {
+            
+            
+            
+            public Model.TradeNotification? Body { get; set; }
+            
+            internal ProcessUserSubscriptionNotificationBuilder() { }
+
+
+
+            public ProcessUserSubscriptionNotificationBuilder SetBody(Model.TradeNotification _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public ProcessUserSubscriptionNotification Build(
+                string namespace_,
+                string subscriptionId,
+                string userId
+            )
+            {
+                return new ProcessUserSubscriptionNotification(this,
+                    namespace_,                    
+                    subscriptionId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private ProcessUserSubscriptionNotification(ProcessUserSubscriptionNotificationBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["subscriptionId"] = subscriptionId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public ProcessUserSubscriptionNotification(
             string namespace_,            
             string subscriptionId,            

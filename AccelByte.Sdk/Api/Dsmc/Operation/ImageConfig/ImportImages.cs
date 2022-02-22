@@ -34,6 +34,41 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ImportImages : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ImportImagesBuilder Builder = new ImportImagesBuilder();
+
+        public class ImportImagesBuilder
+        {
+            
+            internal ImportImagesBuilder() { }
+
+
+
+
+
+            public ImportImages Build(
+                Stream file
+            )
+            {
+                return new ImportImages(this,
+                    file                    
+                );
+            }
+        }
+
+        private ImportImages(ImportImagesBuilder builder,
+            Stream file
+        )
+        {
+            
+            
+            if (file != null) FormParams["file"] = file;
+            
+            
+            
+        }
+        #endregion
+
         public ImportImages(
             Stream file            
         )

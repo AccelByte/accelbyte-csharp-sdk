@@ -16,6 +16,50 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class LoginSSOClient : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static LoginSSOClientBuilder Builder = new LoginSSOClientBuilder();
+
+        public class LoginSSOClientBuilder
+        {
+            
+            public string? Payload { get; set; }
+            
+            internal LoginSSOClientBuilder() { }
+
+
+            public LoginSSOClientBuilder SetPayload(string _payload)
+            {
+                Payload = _payload;
+                return this;
+            }
+
+
+
+
+            public LoginSSOClient Build(
+                string platformId
+            )
+            {
+                return new LoginSSOClient(this,
+                    platformId                    
+                );
+            }
+        }
+
+        private LoginSSOClient(LoginSSOClientBuilder builder,
+            string platformId
+        )
+        {
+            PathParams["platformId"] = platformId;
+            
+            if (builder.Payload != null) QueryParams["payload"] = builder.Payload;
+            
+            
+            
+            
+        }
+        #endregion
+
         public LoginSSOClient(
             string platformId,            
             string? payload            

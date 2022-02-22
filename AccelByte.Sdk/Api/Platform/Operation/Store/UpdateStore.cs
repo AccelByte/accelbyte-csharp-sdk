@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateStore : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateStoreBuilder Builder = new UpdateStoreBuilder();
+
+        public class UpdateStoreBuilder
+        {
+            
+            
+            public Model.StoreUpdate? Body { get; set; }
+            
+            internal UpdateStoreBuilder() { }
+
+
+
+            public UpdateStoreBuilder SetBody(Model.StoreUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateStore Build(
+                string namespace_,
+                string storeId
+            )
+            {
+                return new UpdateStore(this,
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private UpdateStore(UpdateStoreBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["storeId"] = storeId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateStore(
             string namespace_,            
             string storeId,            

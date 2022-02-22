@@ -18,6 +18,36 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class PublicGetTime : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetTimeBuilder Builder = new PublicGetTimeBuilder();
+
+        public class PublicGetTimeBuilder
+        {
+            internal PublicGetTimeBuilder() { }
+
+
+
+
+
+            public PublicGetTime Build(
+            )
+            {
+                return new PublicGetTime(this
+                );
+            }
+        }
+
+        private PublicGetTime(PublicGetTimeBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetTime(
         )
         {

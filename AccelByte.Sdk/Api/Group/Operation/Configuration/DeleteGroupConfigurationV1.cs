@@ -30,6 +30,46 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class DeleteGroupConfigurationV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteGroupConfigurationV1Builder Builder = new DeleteGroupConfigurationV1Builder();
+
+        public class DeleteGroupConfigurationV1Builder
+        {
+            
+            
+            internal DeleteGroupConfigurationV1Builder() { }
+
+
+
+
+
+            public DeleteGroupConfigurationV1 Build(
+                string configurationCode,
+                string namespace_
+            )
+            {
+                return new DeleteGroupConfigurationV1(this,
+                    configurationCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteGroupConfigurationV1(DeleteGroupConfigurationV1Builder builder,
+            string configurationCode,
+            string namespace_
+        )
+        {
+            PathParams["configurationCode"] = configurationCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteGroupConfigurationV1(
             string configurationCode,            
             string namespace_            

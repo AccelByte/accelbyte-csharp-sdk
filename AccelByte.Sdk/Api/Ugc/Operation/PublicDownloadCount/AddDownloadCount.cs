@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AddDownloadCount : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AddDownloadCountBuilder Builder = new AddDownloadCountBuilder();
+
+        public class AddDownloadCountBuilder
+        {
+            
+            
+            internal AddDownloadCountBuilder() { }
+
+
+
+
+
+            public AddDownloadCount Build(
+                string contentId,
+                string namespace_
+            )
+            {
+                return new AddDownloadCount(this,
+                    contentId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AddDownloadCount(AddDownloadCountBuilder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            PathParams["contentId"] = contentId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AddDownloadCount(
             string contentId,            
             string namespace_            

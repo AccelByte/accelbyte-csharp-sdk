@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminListUserIDByUserIDsV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminListUserIDByUserIDsV3Builder Builder = new AdminListUserIDByUserIDsV3Builder();
+
+        public class AdminListUserIDByUserIDsV3Builder
+        {
+            
+            
+            internal AdminListUserIDByUserIDsV3Builder() { }
+
+
+
+
+
+            public AdminListUserIDByUserIDsV3 Build(
+                ModelUserIDsRequest body,
+                string namespace_
+            )
+            {
+                return new AdminListUserIDByUserIDsV3(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminListUserIDByUserIDsV3(AdminListUserIDByUserIDsV3Builder builder,
+            ModelUserIDsRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminListUserIDByUserIDsV3(
             string namespace_,            
             Model.ModelUserIDsRequest body            

@@ -24,6 +24,41 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class ExportChannels : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ExportChannelsBuilder Builder = new ExportChannelsBuilder();
+
+        public class ExportChannelsBuilder
+        {
+            
+            internal ExportChannelsBuilder() { }
+
+
+
+
+
+            public ExportChannels Build(
+                string namespace_
+            )
+            {
+                return new ExportChannels(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ExportChannels(ExportChannelsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ExportChannels(
             string namespace_            
         )

@@ -21,6 +21,77 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetBannedUsersV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetBannedUsersV3Builder Builder = new AdminGetBannedUsersV3Builder();
+
+        public class AdminGetBannedUsersV3Builder
+        {
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public string? BanType { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal AdminGetBannedUsersV3Builder() { }
+
+
+            public AdminGetBannedUsersV3Builder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public AdminGetBannedUsersV3Builder SetBanType(string _banType)
+            {
+                BanType = _banType;
+                return this;
+            }
+
+            public AdminGetBannedUsersV3Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminGetBannedUsersV3Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public AdminGetBannedUsersV3 Build(
+                string namespace_
+            )
+            {
+                return new AdminGetBannedUsersV3(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetBannedUsersV3(AdminGetBannedUsersV3Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.BanType != null) QueryParams["banType"] = builder.BanType;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetBannedUsersV3(
             string namespace_,            
             bool? activeOnly,            

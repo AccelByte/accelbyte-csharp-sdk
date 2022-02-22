@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class UpdatePodConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdatePodConfigBuilder Builder = new UpdatePodConfigBuilder();
+
+        public class UpdatePodConfigBuilder
+        {
+            
+            
+            
+            internal UpdatePodConfigBuilder() { }
+
+
+
+
+
+            public UpdatePodConfig Build(
+                ModelsUpdatePodConfigRequest body,
+                string name,
+                string namespace_
+            )
+            {
+                return new UpdatePodConfig(this,
+                    body,                    
+                    name,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdatePodConfig(UpdatePodConfigBuilder builder,
+            ModelsUpdatePodConfigRequest body,
+            string name,
+            string namespace_
+        )
+        {
+            PathParams["name"] = name;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdatePodConfig(
             string name,            
             string namespace_,            

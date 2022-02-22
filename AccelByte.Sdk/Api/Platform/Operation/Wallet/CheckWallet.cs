@@ -21,6 +21,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CheckWallet : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CheckWalletBuilder Builder = new CheckWalletBuilder();
+
+        public class CheckWalletBuilder
+        {
+            
+            
+            
+            internal CheckWalletBuilder() { }
+
+
+
+
+
+            public CheckWallet Build(
+                string currencyCode,
+                string namespace_,
+                string userId
+            )
+            {
+                return new CheckWallet(this,
+                    currencyCode,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private CheckWallet(CheckWalletBuilder builder,
+            string currencyCode,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["currencyCode"] = currencyCode;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public CheckWallet(
             string currencyCode,            
             string namespace_,            

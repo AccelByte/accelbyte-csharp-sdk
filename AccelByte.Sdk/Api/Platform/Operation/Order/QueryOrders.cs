@@ -22,6 +22,114 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryOrders : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryOrdersBuilder Builder = new QueryOrdersBuilder();
+
+        public class QueryOrdersBuilder
+        {
+            
+            public string? EndTime { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public List<string>? OrderNos { get; set; }
+            
+            public string? SortBy { get; set; }
+            
+            public string? StartTime { get; set; }
+            
+            public string? Status { get; set; }
+            
+            public bool? WithTotal { get; set; }
+            
+            internal QueryOrdersBuilder() { }
+
+
+            public QueryOrdersBuilder SetEndTime(string _endTime)
+            {
+                EndTime = _endTime;
+                return this;
+            }
+
+            public QueryOrdersBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryOrdersBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryOrdersBuilder SetOrderNos(List<string> _orderNos)
+            {
+                OrderNos = _orderNos;
+                return this;
+            }
+
+            public QueryOrdersBuilder SetSortBy(string _sortBy)
+            {
+                SortBy = _sortBy;
+                return this;
+            }
+
+            public QueryOrdersBuilder SetStartTime(string _startTime)
+            {
+                StartTime = _startTime;
+                return this;
+            }
+
+            public QueryOrdersBuilder SetStatus(string _status)
+            {
+                Status = _status;
+                return this;
+            }
+
+            public QueryOrdersBuilder SetWithTotal(bool _withTotal)
+            {
+                WithTotal = _withTotal;
+                return this;
+            }
+
+
+
+
+            public QueryOrders Build(
+                string namespace_
+            )
+            {
+                return new QueryOrders(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private QueryOrders(QueryOrdersBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.EndTime != null) QueryParams["endTime"] = builder.EndTime;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.OrderNos != null) QueryParams["orderNos"] = builder.OrderNos;
+            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.StartTime != null) QueryParams["startTime"] = builder.StartTime;
+            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            if (builder.WithTotal != null) QueryParams["withTotal"] = Convert.ToString(builder.WithTotal)!;
+            
+            
+            CollectionFormatMap["orderNos"] = "multi";
+            
+            
+        }
+        #endregion
+
         public QueryOrders(
             string namespace_,            
             string? endTime,            

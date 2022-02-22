@@ -21,6 +21,45 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class BulkAcceptVersionedPolicy : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static BulkAcceptVersionedPolicyBuilder Builder = new BulkAcceptVersionedPolicyBuilder();
+
+        public class BulkAcceptVersionedPolicyBuilder
+        {
+            public List<Model.AcceptAgreementRequest>? Body { get; set; }
+            
+            internal BulkAcceptVersionedPolicyBuilder() { }
+
+
+
+            public BulkAcceptVersionedPolicyBuilder SetBody(List<Model.AcceptAgreementRequest> _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public BulkAcceptVersionedPolicy Build(
+            )
+            {
+                return new BulkAcceptVersionedPolicy(this
+                );
+            }
+        }
+
+        private BulkAcceptVersionedPolicy(BulkAcceptVersionedPolicyBuilder builder
+        )
+        {
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public BulkAcceptVersionedPolicy(
             List<Model.AcceptAgreementRequest> body            
         )

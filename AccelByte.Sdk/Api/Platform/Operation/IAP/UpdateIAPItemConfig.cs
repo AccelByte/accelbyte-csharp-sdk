@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateIAPItemConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateIAPItemConfigBuilder Builder = new UpdateIAPItemConfigBuilder();
+
+        public class UpdateIAPItemConfigBuilder
+        {
+            
+            public Model.IAPItemConfigUpdate? Body { get; set; }
+            
+            internal UpdateIAPItemConfigBuilder() { }
+
+
+
+            public UpdateIAPItemConfigBuilder SetBody(Model.IAPItemConfigUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateIAPItemConfig Build(
+                string namespace_
+            )
+            {
+                return new UpdateIAPItemConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateIAPItemConfig(UpdateIAPItemConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateIAPItemConfig(
             string namespace_,            
             Model.IAPItemConfigUpdate body            

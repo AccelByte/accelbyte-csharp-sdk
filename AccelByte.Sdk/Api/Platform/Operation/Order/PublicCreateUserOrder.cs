@@ -24,6 +24,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicCreateUserOrder : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicCreateUserOrderBuilder Builder = new PublicCreateUserOrderBuilder();
+
+        public class PublicCreateUserOrderBuilder
+        {
+            
+            
+            public Model.OrderCreate? Body { get; set; }
+            
+            internal PublicCreateUserOrderBuilder() { }
+
+
+
+            public PublicCreateUserOrderBuilder SetBody(Model.OrderCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicCreateUserOrder Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicCreateUserOrder(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicCreateUserOrder(PublicCreateUserOrderBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicCreateUserOrder(
             string namespace_,            
             string userId,            

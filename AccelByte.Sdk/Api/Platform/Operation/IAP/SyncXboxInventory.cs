@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class SyncXboxInventory : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SyncXboxInventoryBuilder Builder = new SyncXboxInventoryBuilder();
+
+        public class SyncXboxInventoryBuilder
+        {
+            
+            
+            public Model.XblReconcileRequest? Body { get; set; }
+            
+            internal SyncXboxInventoryBuilder() { }
+
+
+
+            public SyncXboxInventoryBuilder SetBody(Model.XblReconcileRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public SyncXboxInventory Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new SyncXboxInventory(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private SyncXboxInventory(SyncXboxInventoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public SyncXboxInventory(
             string namespace_,            
             string userId,            

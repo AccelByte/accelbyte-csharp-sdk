@@ -18,6 +18,36 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class GetDefaultProvider : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetDefaultProviderBuilder Builder = new GetDefaultProviderBuilder();
+
+        public class GetDefaultProviderBuilder
+        {
+            internal GetDefaultProviderBuilder() { }
+
+
+
+
+
+            public GetDefaultProvider Build(
+            )
+            {
+                return new GetDefaultProvider(this
+                );
+            }
+        }
+
+        private GetDefaultProvider(GetDefaultProviderBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetDefaultProvider(
         )
         {

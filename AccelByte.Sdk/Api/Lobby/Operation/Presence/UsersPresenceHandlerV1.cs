@@ -18,6 +18,55 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class UsersPresenceHandlerV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UsersPresenceHandlerV1Builder Builder = new UsersPresenceHandlerV1Builder();
+
+        public class UsersPresenceHandlerV1Builder
+        {
+            
+            public bool? CountOnly { get; set; }
+            
+            
+            internal UsersPresenceHandlerV1Builder() { }
+
+
+            public UsersPresenceHandlerV1Builder SetCountOnly(bool _countOnly)
+            {
+                CountOnly = _countOnly;
+                return this;
+            }
+
+
+
+
+            public UsersPresenceHandlerV1 Build(
+                string namespace_,
+                string userIds
+            )
+            {
+                return new UsersPresenceHandlerV1(this,
+                    namespace_,                    
+                    userIds                    
+                );
+            }
+        }
+
+        private UsersPresenceHandlerV1(UsersPresenceHandlerV1Builder builder,
+            string namespace_,
+            string userIds
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.CountOnly != null) QueryParams["countOnly"] = Convert.ToString(builder.CountOnly)!;
+            if (userIds != null) QueryParams["userIds"] = userIds;
+            
+            
+            
+            
+        }
+        #endregion
+
         public UsersPresenceHandlerV1(
             string namespace_,            
             bool? countOnly,            

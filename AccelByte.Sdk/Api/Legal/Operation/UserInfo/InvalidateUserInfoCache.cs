@@ -23,6 +23,45 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class InvalidateUserInfoCache : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static InvalidateUserInfoCacheBuilder Builder = new InvalidateUserInfoCacheBuilder();
+
+        public class InvalidateUserInfoCacheBuilder
+        {
+            public string? Namespace { get; set; }
+            
+            internal InvalidateUserInfoCacheBuilder() { }
+
+
+            public InvalidateUserInfoCacheBuilder SetNamespace(string _namespace_)
+            {
+                Namespace = _namespace_;
+                return this;
+            }
+
+
+
+
+            public InvalidateUserInfoCache Build(
+            )
+            {
+                return new InvalidateUserInfoCache(this
+                );
+            }
+        }
+
+        private InvalidateUserInfoCache(InvalidateUserInfoCacheBuilder builder
+        )
+        {
+            
+            if (builder.Namespace != null) QueryParams["namespace"] = builder.Namespace;
+            
+            
+            
+            
+        }
+        #endregion
+
         public InvalidateUserInfoCache(
             string? namespace_            
         )

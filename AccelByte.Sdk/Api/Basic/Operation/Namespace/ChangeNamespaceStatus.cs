@@ -23,6 +23,50 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class ChangeNamespaceStatus : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ChangeNamespaceStatusBuilder Builder = new ChangeNamespaceStatusBuilder();
+
+        public class ChangeNamespaceStatusBuilder
+        {
+            
+            public Model.NamespaceStatusUpdate? Body { get; set; }
+            
+            internal ChangeNamespaceStatusBuilder() { }
+
+
+
+            public ChangeNamespaceStatusBuilder SetBody(Model.NamespaceStatusUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public ChangeNamespaceStatus Build(
+                string namespace_
+            )
+            {
+                return new ChangeNamespaceStatus(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ChangeNamespaceStatus(ChangeNamespaceStatusBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public ChangeNamespaceStatus(
             string namespace_,            
             Model.NamespaceStatusUpdate body            

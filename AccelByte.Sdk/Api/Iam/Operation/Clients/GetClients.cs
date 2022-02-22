@@ -26,6 +26,36 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetClients : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetClientsBuilder Builder = new GetClientsBuilder();
+
+        public class GetClientsBuilder
+        {
+            internal GetClientsBuilder() { }
+
+
+
+
+
+            public GetClients Build(
+            )
+            {
+                return new GetClients(this
+                );
+            }
+        }
+
+        private GetClients(GetClientsBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetClients(
         )
         {

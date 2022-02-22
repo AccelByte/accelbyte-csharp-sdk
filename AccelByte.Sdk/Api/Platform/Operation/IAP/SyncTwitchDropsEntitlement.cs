@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class SyncTwitchDropsEntitlement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SyncTwitchDropsEntitlementBuilder Builder = new SyncTwitchDropsEntitlementBuilder();
+
+        public class SyncTwitchDropsEntitlementBuilder
+        {
+            
+            
+            public Model.TwitchSyncRequest? Body { get; set; }
+            
+            internal SyncTwitchDropsEntitlementBuilder() { }
+
+
+
+            public SyncTwitchDropsEntitlementBuilder SetBody(Model.TwitchSyncRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public SyncTwitchDropsEntitlement Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new SyncTwitchDropsEntitlement(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private SyncTwitchDropsEntitlement(SyncTwitchDropsEntitlementBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public SyncTwitchDropsEntitlement(
             string namespace_,            
             string userId,            

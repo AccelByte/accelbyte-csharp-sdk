@@ -23,6 +23,46 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class DeleteUserProfile : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteUserProfileBuilder Builder = new DeleteUserProfileBuilder();
+
+        public class DeleteUserProfileBuilder
+        {
+            
+            
+            internal DeleteUserProfileBuilder() { }
+
+
+
+
+
+            public DeleteUserProfile Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new DeleteUserProfile(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private DeleteUserProfile(DeleteUserProfileBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteUserProfile(
             string namespace_,            
             string userId            

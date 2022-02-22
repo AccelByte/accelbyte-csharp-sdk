@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateReward : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateRewardBuilder Builder = new UpdateRewardBuilder();
+
+        public class UpdateRewardBuilder
+        {
+            
+            
+            public Model.RewardUpdate? Body { get; set; }
+            
+            internal UpdateRewardBuilder() { }
+
+
+
+            public UpdateRewardBuilder SetBody(Model.RewardUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateReward Build(
+                string namespace_,
+                string rewardId
+            )
+            {
+                return new UpdateReward(this,
+                    namespace_,                    
+                    rewardId                    
+                );
+            }
+        }
+
+        private UpdateReward(UpdateRewardBuilder builder,
+            string namespace_,
+            string rewardId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["rewardId"] = rewardId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateReward(
             string namespace_,            
             string rewardId,            

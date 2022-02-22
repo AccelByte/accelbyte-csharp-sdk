@@ -24,6 +24,64 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetCategory : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetCategoryBuilder Builder = new PublicGetCategoryBuilder();
+
+        public class PublicGetCategoryBuilder
+        {
+            
+            
+            public string? Language { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            internal PublicGetCategoryBuilder() { }
+
+
+            public PublicGetCategoryBuilder SetLanguage(string _language)
+            {
+                Language = _language;
+                return this;
+            }
+
+            public PublicGetCategoryBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public PublicGetCategory Build(
+                string categoryPath,
+                string namespace_
+            )
+            {
+                return new PublicGetCategory(this,
+                    categoryPath,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicGetCategory(PublicGetCategoryBuilder builder,
+            string categoryPath,
+            string namespace_
+        )
+        {
+            PathParams["categoryPath"] = categoryPath;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetCategory(
             string categoryPath,            
             string namespace_,            

@@ -16,6 +16,55 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicGetUserBan : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetUserBanBuilder Builder = new PublicGetUserBanBuilder();
+
+        public class PublicGetUserBanBuilder
+        {
+            
+            
+            public bool? ActiveOnly { get; set; }
+            
+            internal PublicGetUserBanBuilder() { }
+
+
+            public PublicGetUserBanBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+
+
+
+            public PublicGetUserBan Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicGetUserBan(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicGetUserBan(PublicGetUserBanBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetUserBan(
             string namespace_,            
             string userId,            

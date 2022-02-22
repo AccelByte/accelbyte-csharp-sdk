@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class AnonymizeWallet : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AnonymizeWalletBuilder Builder = new AnonymizeWalletBuilder();
+
+        public class AnonymizeWalletBuilder
+        {
+            
+            
+            internal AnonymizeWalletBuilder() { }
+
+
+
+
+
+            public AnonymizeWallet Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AnonymizeWallet(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AnonymizeWallet(AnonymizeWalletBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AnonymizeWallet(
             string namespace_,            
             string userId            

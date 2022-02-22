@@ -37,6 +37,51 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class UpdateGroupCustomAttributesPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateGroupCustomAttributesPublicV1Builder Builder = new UpdateGroupCustomAttributesPublicV1Builder();
+
+        public class UpdateGroupCustomAttributesPublicV1Builder
+        {
+            
+            
+            
+            internal UpdateGroupCustomAttributesPublicV1Builder() { }
+
+
+
+
+
+            public UpdateGroupCustomAttributesPublicV1 Build(
+                ModelsUpdateGroupCustomAttributesRequestV1 body,
+                string groupId,
+                string namespace_
+            )
+            {
+                return new UpdateGroupCustomAttributesPublicV1(this,
+                    body,                    
+                    groupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateGroupCustomAttributesPublicV1(UpdateGroupCustomAttributesPublicV1Builder builder,
+            ModelsUpdateGroupCustomAttributesRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateGroupCustomAttributesPublicV1(
             string groupId,            
             string namespace_,            

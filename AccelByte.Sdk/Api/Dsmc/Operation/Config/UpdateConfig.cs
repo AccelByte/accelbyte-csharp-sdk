@@ -51,6 +51,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class UpdateConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateConfigBuilder Builder = new UpdateConfigBuilder();
+
+        public class UpdateConfigBuilder
+        {
+            
+            
+            internal UpdateConfigBuilder() { }
+
+
+
+
+
+            public UpdateConfig Build(
+                ModelsUpdateDSMConfigRequest body,
+                string namespace_
+            )
+            {
+                return new UpdateConfig(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateConfig(UpdateConfigBuilder builder,
+            ModelsUpdateDSMConfigRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateConfig(
             string namespace_,            
             Model.ModelsUpdateDSMConfigRequest body            

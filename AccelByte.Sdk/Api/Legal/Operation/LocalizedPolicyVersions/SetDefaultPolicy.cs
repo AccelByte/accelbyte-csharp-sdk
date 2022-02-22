@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class SetDefaultPolicy : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SetDefaultPolicyBuilder Builder = new SetDefaultPolicyBuilder();
+
+        public class SetDefaultPolicyBuilder
+        {
+            
+            internal SetDefaultPolicyBuilder() { }
+
+
+
+
+
+            public SetDefaultPolicy Build(
+                string localizedPolicyVersionId
+            )
+            {
+                return new SetDefaultPolicy(this,
+                    localizedPolicyVersionId                    
+                );
+            }
+        }
+
+        private SetDefaultPolicy(SetDefaultPolicyBuilder builder,
+            string localizedPolicyVersionId
+        )
+        {
+            PathParams["localizedPolicyVersionId"] = localizedPolicyVersionId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public SetDefaultPolicy(
             string localizedPolicyVersionId            
         )

@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class GetUserProfiles : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserProfilesBuilder Builder = new GetUserProfilesBuilder();
+
+        public class GetUserProfilesBuilder
+        {
+            
+            
+            internal GetUserProfilesBuilder() { }
+
+
+
+
+
+            public GetUserProfiles Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetUserProfiles(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserProfiles(GetUserProfilesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserProfiles(
             string namespace_,            
             string userId            

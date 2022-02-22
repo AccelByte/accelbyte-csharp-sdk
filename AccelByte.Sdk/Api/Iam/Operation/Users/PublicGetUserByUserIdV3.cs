@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicGetUserByUserIdV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetUserByUserIdV3Builder Builder = new PublicGetUserByUserIdV3Builder();
+
+        public class PublicGetUserByUserIdV3Builder
+        {
+            
+            
+            internal PublicGetUserByUserIdV3Builder() { }
+
+
+
+
+
+            public PublicGetUserByUserIdV3 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicGetUserByUserIdV3(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicGetUserByUserIdV3(PublicGetUserByUserIdV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetUserByUserIdV3(
             string namespace_,            
             string userId            

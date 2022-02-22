@@ -19,6 +19,41 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class AnonymizeUserAgreement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AnonymizeUserAgreementBuilder Builder = new AnonymizeUserAgreementBuilder();
+
+        public class AnonymizeUserAgreementBuilder
+        {
+            
+            internal AnonymizeUserAgreementBuilder() { }
+
+
+
+
+
+            public AnonymizeUserAgreement Build(
+                string userId
+            )
+            {
+                return new AnonymizeUserAgreement(this,
+                    userId                    
+                );
+            }
+        }
+
+        private AnonymizeUserAgreement(AnonymizeUserAgreementBuilder builder,
+            string userId
+        )
+        {
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AnonymizeUserAgreement(
             string userId            
         )

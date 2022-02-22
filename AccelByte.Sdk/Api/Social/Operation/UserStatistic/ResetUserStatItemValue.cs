@@ -23,6 +23,69 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class ResetUserStatItemValue : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ResetUserStatItemValueBuilder Builder = new ResetUserStatItemValueBuilder();
+
+        public class ResetUserStatItemValueBuilder
+        {
+            
+            
+            
+            public string? AdditionalKey { get; set; }
+            
+            public Model.StatResetInfo? Body { get; set; }
+            
+            internal ResetUserStatItemValueBuilder() { }
+
+
+            public ResetUserStatItemValueBuilder SetAdditionalKey(string _additionalKey)
+            {
+                AdditionalKey = _additionalKey;
+                return this;
+            }
+
+
+            public ResetUserStatItemValueBuilder SetBody(Model.StatResetInfo _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public ResetUserStatItemValue Build(
+                string namespace_,
+                string statCode,
+                string userId
+            )
+            {
+                return new ResetUserStatItemValue(this,
+                    namespace_,                    
+                    statCode,                    
+                    userId                    
+                );
+            }
+        }
+
+        private ResetUserStatItemValue(ResetUserStatItemValueBuilder builder,
+            string namespace_,
+            string statCode,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["statCode"] = statCode;
+            PathParams["userId"] = userId;
+            
+            if (builder.AdditionalKey != null) QueryParams["additionalKey"] = builder.AdditionalKey;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public ResetUserStatItemValue(
             string namespace_,            
             string statCode,            

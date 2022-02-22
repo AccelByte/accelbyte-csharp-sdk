@@ -24,6 +24,59 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetRootCategories : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetRootCategoriesBuilder Builder = new PublicGetRootCategoriesBuilder();
+
+        public class PublicGetRootCategoriesBuilder
+        {
+            
+            public string? Language { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            internal PublicGetRootCategoriesBuilder() { }
+
+
+            public PublicGetRootCategoriesBuilder SetLanguage(string _language)
+            {
+                Language = _language;
+                return this;
+            }
+
+            public PublicGetRootCategoriesBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public PublicGetRootCategories Build(
+                string namespace_
+            )
+            {
+                return new PublicGetRootCategories(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicGetRootCategories(PublicGetRootCategoriesBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetRootCategories(
             string namespace_,            
             string? language,            

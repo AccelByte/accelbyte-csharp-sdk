@@ -27,6 +27,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicSubscribeSubscription : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicSubscribeSubscriptionBuilder Builder = new PublicSubscribeSubscriptionBuilder();
+
+        public class PublicSubscribeSubscriptionBuilder
+        {
+            
+            
+            public Model.SubscribeRequest? Body { get; set; }
+            
+            internal PublicSubscribeSubscriptionBuilder() { }
+
+
+
+            public PublicSubscribeSubscriptionBuilder SetBody(Model.SubscribeRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicSubscribeSubscription Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicSubscribeSubscription(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicSubscribeSubscription(PublicSubscribeSubscriptionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicSubscribeSubscription(
             string namespace_,            
             string userId,            

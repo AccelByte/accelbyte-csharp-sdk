@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateTwitchIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateTwitchIAPConfigBuilder Builder = new UpdateTwitchIAPConfigBuilder();
+
+        public class UpdateTwitchIAPConfigBuilder
+        {
+            
+            public Model.TwitchIAPConfigRequest? Body { get; set; }
+            
+            internal UpdateTwitchIAPConfigBuilder() { }
+
+
+
+            public UpdateTwitchIAPConfigBuilder SetBody(Model.TwitchIAPConfigRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateTwitchIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new UpdateTwitchIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateTwitchIAPConfig(UpdateTwitchIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateTwitchIAPConfig(
             string namespace_,            
             Model.TwitchIAPConfigRequest body            

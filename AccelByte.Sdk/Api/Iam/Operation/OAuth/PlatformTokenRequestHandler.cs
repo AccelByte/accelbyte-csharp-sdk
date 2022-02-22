@@ -46,6 +46,64 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class PlatformTokenRequestHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PlatformTokenRequestHandlerBuilder Builder = new PlatformTokenRequestHandlerBuilder();
+
+        public class PlatformTokenRequestHandlerBuilder
+        {
+            
+            
+            public string? DeviceId { get; set; }
+            
+            public string? PlatformToken { get; set; }
+            
+            internal PlatformTokenRequestHandlerBuilder() { }
+
+
+
+
+            public PlatformTokenRequestHandlerBuilder SetDeviceId(string _deviceId)
+            {
+                DeviceId = _deviceId;
+                return this;
+            }
+
+            public PlatformTokenRequestHandlerBuilder SetPlatformToken(string _platformToken)
+            {
+                PlatformToken = _platformToken;
+                return this;
+            }
+
+
+            public PlatformTokenRequestHandler Build(
+                string namespace_,
+                string platformId
+            )
+            {
+                return new PlatformTokenRequestHandler(this,
+                    namespace_,                    
+                    platformId                    
+                );
+            }
+        }
+
+        private PlatformTokenRequestHandler(PlatformTokenRequestHandlerBuilder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            
+            
+            if (builder.DeviceId != null) FormParams["device_id"] = builder.DeviceId;
+            if (builder.PlatformToken != null) FormParams["platform_token"] = builder.PlatformToken;
+            
+            
+            
+        }
+        #endregion
+
         public PlatformTokenRequestHandler(
             string namespace_,            
             string platformId,            

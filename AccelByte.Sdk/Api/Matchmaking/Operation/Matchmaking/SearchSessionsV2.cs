@@ -23,6 +23,96 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class SearchSessionsV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SearchSessionsV2Builder Builder = new SearchSessionsV2Builder();
+
+        public class SearchSessionsV2Builder
+        {
+            
+            public string? Channel { get; set; }
+            
+            public bool? Deleted { get; set; }
+            
+            public string? MatchID { get; set; }
+            
+            public string? PartyID { get; set; }
+            
+            public string? UserID { get; set; }
+            
+            
+            
+            internal SearchSessionsV2Builder() { }
+
+
+            public SearchSessionsV2Builder SetChannel(string _channel)
+            {
+                Channel = _channel;
+                return this;
+            }
+
+            public SearchSessionsV2Builder SetDeleted(bool _deleted)
+            {
+                Deleted = _deleted;
+                return this;
+            }
+
+            public SearchSessionsV2Builder SetMatchID(string _matchID)
+            {
+                MatchID = _matchID;
+                return this;
+            }
+
+            public SearchSessionsV2Builder SetPartyID(string _partyID)
+            {
+                PartyID = _partyID;
+                return this;
+            }
+
+            public SearchSessionsV2Builder SetUserID(string _userID)
+            {
+                UserID = _userID;
+                return this;
+            }
+
+
+
+
+            public SearchSessionsV2 Build(
+                string namespace_,
+                double limit,
+                double offset
+            )
+            {
+                return new SearchSessionsV2(this,
+                    namespace_,                    
+                    limit,                    
+                    offset                    
+                );
+            }
+        }
+
+        private SearchSessionsV2(SearchSessionsV2Builder builder,
+            string namespace_,
+            double limit,
+            double offset
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Channel != null) QueryParams["channel"] = builder.Channel;
+            if (builder.Deleted != null) QueryParams["deleted"] = Convert.ToString(builder.Deleted)!;
+            if (builder.MatchID != null) QueryParams["matchID"] = builder.MatchID;
+            if (builder.PartyID != null) QueryParams["partyID"] = builder.PartyID;
+            if (builder.UserID != null) QueryParams["userID"] = builder.UserID;
+            QueryParams["limit"] = Convert.ToString(limit)!;
+            QueryParams["offset"] = Convert.ToString(offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public SearchSessionsV2(
             string namespace_,            
             string? channel,            

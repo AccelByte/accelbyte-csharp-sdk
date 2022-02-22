@@ -23,6 +23,91 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetLocaleItemBySku : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetLocaleItemBySkuBuilder Builder = new GetLocaleItemBySkuBuilder();
+
+        public class GetLocaleItemBySkuBuilder
+        {
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public string? Language { get; set; }
+            
+            public bool? PopulateBundle { get; set; }
+            
+            public string? Region { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            
+            internal GetLocaleItemBySkuBuilder() { }
+
+
+            public GetLocaleItemBySkuBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public GetLocaleItemBySkuBuilder SetLanguage(string _language)
+            {
+                Language = _language;
+                return this;
+            }
+
+            public GetLocaleItemBySkuBuilder SetPopulateBundle(bool _populateBundle)
+            {
+                PopulateBundle = _populateBundle;
+                return this;
+            }
+
+            public GetLocaleItemBySkuBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+            public GetLocaleItemBySkuBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public GetLocaleItemBySku Build(
+                string namespace_,
+                string sku
+            )
+            {
+                return new GetLocaleItemBySku(this,
+                    namespace_,                    
+                    sku                    
+                );
+            }
+        }
+
+        private GetLocaleItemBySku(GetLocaleItemBySkuBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.PopulateBundle != null) QueryParams["populateBundle"] = Convert.ToString(builder.PopulateBundle)!;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (sku != null) QueryParams["sku"] = sku;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetLocaleItemBySku(
             string namespace_,            
             bool? activeOnly,            

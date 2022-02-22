@@ -23,6 +23,45 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class GetUserInfoStatus : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserInfoStatusBuilder Builder = new GetUserInfoStatusBuilder();
+
+        public class GetUserInfoStatusBuilder
+        {
+            public string? Namespaces { get; set; }
+            
+            internal GetUserInfoStatusBuilder() { }
+
+
+            public GetUserInfoStatusBuilder SetNamespaces(string _namespaces)
+            {
+                Namespaces = _namespaces;
+                return this;
+            }
+
+
+
+
+            public GetUserInfoStatus Build(
+            )
+            {
+                return new GetUserInfoStatus(this
+                );
+            }
+        }
+
+        private GetUserInfoStatus(GetUserInfoStatusBuilder builder
+        )
+        {
+            
+            if (builder.Namespaces != null) QueryParams["namespaces"] = builder.Namespaces;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserInfoStatus(
             string? namespaces            
         )

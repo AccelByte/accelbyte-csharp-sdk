@@ -25,6 +25,46 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetLeaderboardConfigurationAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetLeaderboardConfigurationAdminV1Builder Builder = new GetLeaderboardConfigurationAdminV1Builder();
+
+        public class GetLeaderboardConfigurationAdminV1Builder
+        {
+            
+            
+            internal GetLeaderboardConfigurationAdminV1Builder() { }
+
+
+
+
+
+            public GetLeaderboardConfigurationAdminV1 Build(
+                string leaderboardCode,
+                string namespace_
+            )
+            {
+                return new GetLeaderboardConfigurationAdminV1(this,
+                    leaderboardCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetLeaderboardConfigurationAdminV1(GetLeaderboardConfigurationAdminV1Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetLeaderboardConfigurationAdminV1(
             string leaderboardCode,            
             string namespace_            

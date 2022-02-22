@@ -21,6 +21,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetPaymentTaxValue : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPaymentTaxValueBuilder Builder = new GetPaymentTaxValueBuilder();
+
+        public class GetPaymentTaxValueBuilder
+        {
+            
+            public string? ZipCode { get; set; }
+            
+            
+            
+            internal GetPaymentTaxValueBuilder() { }
+
+
+            public GetPaymentTaxValueBuilder SetZipCode(string _zipCode)
+            {
+                ZipCode = _zipCode;
+                return this;
+            }
+
+
+
+
+            public GetPaymentTaxValue Build(
+                string namespace_,
+                string paymentOrderNo,
+                string paymentProvider
+            )
+            {
+                return new GetPaymentTaxValue(this,
+                    namespace_,                    
+                    paymentOrderNo,                    
+                    paymentProvider                    
+                );
+            }
+        }
+
+        private GetPaymentTaxValue(GetPaymentTaxValueBuilder builder,
+            string namespace_,
+            string paymentOrderNo,
+            string paymentProvider
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ZipCode != null) QueryParams["zipCode"] = builder.ZipCode;
+            if (paymentOrderNo != null) QueryParams["paymentOrderNo"] = paymentOrderNo;
+            if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPaymentTaxValue(
             string namespace_,            
             string? zipCode,            

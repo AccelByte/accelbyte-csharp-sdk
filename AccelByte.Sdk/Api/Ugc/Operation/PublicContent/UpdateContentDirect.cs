@@ -21,6 +21,61 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class UpdateContentDirect : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateContentDirectBuilder Builder = new UpdateContentDirectBuilder();
+
+        public class UpdateContentDirectBuilder
+        {
+            
+            
+            
+            
+            
+            internal UpdateContentDirectBuilder() { }
+
+
+
+
+
+            public UpdateContentDirect Build(
+                ModelsCreateContentRequest body,
+                string channelId,
+                string contentId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new UpdateContentDirect(this,
+                    body,                    
+                    channelId,                    
+                    contentId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private UpdateContentDirect(UpdateContentDirectBuilder builder,
+            ModelsCreateContentRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["channelId"] = channelId;
+            PathParams["contentId"] = contentId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateContentDirect(
             string channelId,            
             string contentId,            

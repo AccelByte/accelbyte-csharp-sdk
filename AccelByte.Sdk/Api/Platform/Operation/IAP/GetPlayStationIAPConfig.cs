@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetPlayStationIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPlayStationIAPConfigBuilder Builder = new GetPlayStationIAPConfigBuilder();
+
+        public class GetPlayStationIAPConfigBuilder
+        {
+            
+            internal GetPlayStationIAPConfigBuilder() { }
+
+
+
+
+
+            public GetPlayStationIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new GetPlayStationIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetPlayStationIAPConfig(GetPlayStationIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPlayStationIAPConfig(
             string namespace_            
         )

@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CloneStore : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CloneStoreBuilder Builder = new CloneStoreBuilder();
+
+        public class CloneStoreBuilder
+        {
+            
+            
+            public string? TargetStoreId { get; set; }
+            
+            internal CloneStoreBuilder() { }
+
+
+            public CloneStoreBuilder SetTargetStoreId(string _targetStoreId)
+            {
+                TargetStoreId = _targetStoreId;
+                return this;
+            }
+
+
+
+
+            public CloneStore Build(
+                string namespace_,
+                string storeId
+            )
+            {
+                return new CloneStore(this,
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private CloneStore(CloneStoreBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["storeId"] = storeId;
+            
+            if (builder.TargetStoreId != null) QueryParams["targetStoreId"] = builder.TargetStoreId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public CloneStore(
             string namespace_,            
             string storeId,            

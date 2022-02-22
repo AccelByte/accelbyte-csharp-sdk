@@ -32,6 +32,51 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class UpdateGroupCustomRulePublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateGroupCustomRulePublicV1Builder Builder = new UpdateGroupCustomRulePublicV1Builder();
+
+        public class UpdateGroupCustomRulePublicV1Builder
+        {
+            
+            
+            
+            internal UpdateGroupCustomRulePublicV1Builder() { }
+
+
+
+
+
+            public UpdateGroupCustomRulePublicV1 Build(
+                ModelsUpdateGroupCustomRuleRequestV1 body,
+                string groupId,
+                string namespace_
+            )
+            {
+                return new UpdateGroupCustomRulePublicV1(this,
+                    body,                    
+                    groupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateGroupCustomRulePublicV1(UpdateGroupCustomRulePublicV1Builder builder,
+            ModelsUpdateGroupCustomRuleRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateGroupCustomRulePublicV1(
             string groupId,            
             string namespace_,            

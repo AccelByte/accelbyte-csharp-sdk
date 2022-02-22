@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class DeleteSessionInChannel : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteSessionInChannelBuilder Builder = new DeleteSessionInChannelBuilder();
+
+        public class DeleteSessionInChannelBuilder
+        {
+            
+            
+            
+            internal DeleteSessionInChannelBuilder() { }
+
+
+
+
+
+            public DeleteSessionInChannel Build(
+                string channelName,
+                string matchID,
+                string namespace_
+            )
+            {
+                return new DeleteSessionInChannel(this,
+                    channelName,                    
+                    matchID,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteSessionInChannel(DeleteSessionInChannelBuilder builder,
+            string channelName,
+            string matchID,
+            string namespace_
+        )
+        {
+            PathParams["channelName"] = channelName;
+            PathParams["matchID"] = matchID;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteSessionInChannel(
             string channelName,            
             string matchID,            

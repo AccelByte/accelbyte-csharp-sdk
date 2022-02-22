@@ -18,6 +18,59 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetLeaderboardConfigurationsPublicV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetLeaderboardConfigurationsPublicV2Builder Builder = new GetLeaderboardConfigurationsPublicV2Builder();
+
+        public class GetLeaderboardConfigurationsPublicV2Builder
+        {
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetLeaderboardConfigurationsPublicV2Builder() { }
+
+
+            public GetLeaderboardConfigurationsPublicV2Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetLeaderboardConfigurationsPublicV2Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetLeaderboardConfigurationsPublicV2 Build(
+                string namespace_
+            )
+            {
+                return new GetLeaderboardConfigurationsPublicV2(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetLeaderboardConfigurationsPublicV2(GetLeaderboardConfigurationsPublicV2Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetLeaderboardConfigurationsPublicV2(
             string namespace_,            
             long? limit,            

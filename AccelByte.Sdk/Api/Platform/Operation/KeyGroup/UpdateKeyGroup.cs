@@ -22,6 +22,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateKeyGroup : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateKeyGroupBuilder Builder = new UpdateKeyGroupBuilder();
+
+        public class UpdateKeyGroupBuilder
+        {
+            
+            
+            public Model.KeyGroupUpdate? Body { get; set; }
+            
+            internal UpdateKeyGroupBuilder() { }
+
+
+
+            public UpdateKeyGroupBuilder SetBody(Model.KeyGroupUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateKeyGroup Build(
+                string keyGroupId,
+                string namespace_
+            )
+            {
+                return new UpdateKeyGroup(this,
+                    keyGroupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateKeyGroup(UpdateKeyGroupBuilder builder,
+            string keyGroupId,
+            string namespace_
+        )
+        {
+            PathParams["keyGroupId"] = keyGroupId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateKeyGroup(
             string keyGroupId,            
             string namespace_,            

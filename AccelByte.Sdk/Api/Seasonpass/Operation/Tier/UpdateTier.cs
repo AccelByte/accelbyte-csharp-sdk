@@ -22,6 +22,60 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class UpdateTier : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateTierBuilder Builder = new UpdateTierBuilder();
+
+        public class UpdateTierBuilder
+        {
+            
+            
+            
+            public Model.TierInput? Body { get; set; }
+            
+            internal UpdateTierBuilder() { }
+
+
+
+            public UpdateTierBuilder SetBody(Model.TierInput _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateTier Build(
+                string id,
+                string namespace_,
+                string seasonId
+            )
+            {
+                return new UpdateTier(this,
+                    id,                    
+                    namespace_,                    
+                    seasonId                    
+                );
+            }
+        }
+
+        private UpdateTier(UpdateTierBuilder builder,
+            string id,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PathParams["id"] = id;
+            PathParams["namespace"] = namespace_;
+            PathParams["seasonId"] = seasonId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateTier(
             string id,            
             string namespace_,            

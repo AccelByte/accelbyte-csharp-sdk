@@ -25,6 +25,60 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class DeleteUserStatItems2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteUserStatItems2Builder Builder = new DeleteUserStatItems2Builder();
+
+        public class DeleteUserStatItems2Builder
+        {
+            
+            
+            
+            public string? AdditionalKey { get; set; }
+            
+            internal DeleteUserStatItems2Builder() { }
+
+
+            public DeleteUserStatItems2Builder SetAdditionalKey(string _additionalKey)
+            {
+                AdditionalKey = _additionalKey;
+                return this;
+            }
+
+
+
+
+            public DeleteUserStatItems2 Build(
+                string namespace_,
+                string statCode,
+                string userId
+            )
+            {
+                return new DeleteUserStatItems2(this,
+                    namespace_,                    
+                    statCode,                    
+                    userId                    
+                );
+            }
+        }
+
+        private DeleteUserStatItems2(DeleteUserStatItems2Builder builder,
+            string namespace_,
+            string statCode,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["statCode"] = statCode;
+            PathParams["userId"] = userId;
+            
+            if (builder.AdditionalKey != null) QueryParams["additionalKey"] = builder.AdditionalKey;
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteUserStatItems2(
             string namespace_,            
             string statCode,            

@@ -41,6 +41,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class CreateRole : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateRoleBuilder Builder = new CreateRoleBuilder();
+
+        public class CreateRoleBuilder
+        {
+            
+            internal CreateRoleBuilder() { }
+
+
+
+
+
+            public CreateRole Build(
+                ModelRoleCreateRequest body
+            )
+            {
+                return new CreateRole(this,
+                    body                    
+                );
+            }
+        }
+
+        private CreateRole(CreateRoleBuilder builder,
+            ModelRoleCreateRequest body
+        )
+        {
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateRole(
             Model.ModelRoleCreateRequest body            
         )

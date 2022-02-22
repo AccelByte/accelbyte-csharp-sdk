@@ -19,6 +19,70 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetEventByUserIDHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetEventByUserIDHandlerBuilder Builder = new GetEventByUserIDHandlerBuilder();
+
+        public class GetEventByUserIDHandlerBuilder
+        {
+            
+            
+            public double? Offset { get; set; }
+            
+            
+            
+            
+            internal GetEventByUserIDHandlerBuilder() { }
+
+
+            public GetEventByUserIDHandlerBuilder SetOffset(double _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetEventByUserIDHandler Build(
+                string namespace_,
+                string userId,
+                string endDate,
+                double pageSize,
+                string startDate
+            )
+            {
+                return new GetEventByUserIDHandler(this,
+                    namespace_,                    
+                    userId,                    
+                    endDate,                    
+                    pageSize,                    
+                    startDate                    
+                );
+            }
+        }
+
+        private GetEventByUserIDHandler(GetEventByUserIDHandlerBuilder builder,
+            string namespace_,
+            string userId,
+            string endDate,
+            double pageSize,
+            string startDate
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (endDate != null) QueryParams["endDate"] = endDate;
+            QueryParams["pageSize"] = Convert.ToString(pageSize)!;
+            if (startDate != null) QueryParams["startDate"] = startDate;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetEventByUserIDHandler(
             string namespace_,            
             string userId,            

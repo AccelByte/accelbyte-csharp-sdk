@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetCampaignDynamic : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetCampaignDynamicBuilder Builder = new GetCampaignDynamicBuilder();
+
+        public class GetCampaignDynamicBuilder
+        {
+            
+            
+            internal GetCampaignDynamicBuilder() { }
+
+
+
+
+
+            public GetCampaignDynamic Build(
+                string campaignId,
+                string namespace_
+            )
+            {
+                return new GetCampaignDynamic(this,
+                    campaignId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetCampaignDynamic(GetCampaignDynamicBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            PathParams["campaignId"] = campaignId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetCampaignDynamic(
             string campaignId,            
             string namespace_            

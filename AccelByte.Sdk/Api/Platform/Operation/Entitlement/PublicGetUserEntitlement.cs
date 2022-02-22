@@ -23,6 +23,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetUserEntitlement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetUserEntitlementBuilder Builder = new PublicGetUserEntitlementBuilder();
+
+        public class PublicGetUserEntitlementBuilder
+        {
+            
+            
+            
+            internal PublicGetUserEntitlementBuilder() { }
+
+
+
+
+
+            public PublicGetUserEntitlement Build(
+                string entitlementId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicGetUserEntitlement(this,
+                    entitlementId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicGetUserEntitlement(PublicGetUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["entitlementId"] = entitlementId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetUserEntitlement(
             string entitlementId,            
             string namespace_,            

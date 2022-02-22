@@ -25,6 +25,56 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class UploadContentScreenshot : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UploadContentScreenshotBuilder Builder = new UploadContentScreenshotBuilder();
+
+        public class UploadContentScreenshotBuilder
+        {
+            
+            
+            
+            
+            internal UploadContentScreenshotBuilder() { }
+
+
+
+
+
+            public UploadContentScreenshot Build(
+                ModelsCreateScreenshotRequest body,
+                string contentId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new UploadContentScreenshot(this,
+                    body,                    
+                    contentId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private UploadContentScreenshot(UploadContentScreenshotBuilder builder,
+            ModelsCreateScreenshotRequest body,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["contentId"] = contentId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UploadContentScreenshot(
             string contentId,            
             string namespace_,            

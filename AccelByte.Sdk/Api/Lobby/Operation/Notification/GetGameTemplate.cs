@@ -20,6 +20,41 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class GetGameTemplate : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetGameTemplateBuilder Builder = new GetGameTemplateBuilder();
+
+        public class GetGameTemplateBuilder
+        {
+            
+            internal GetGameTemplateBuilder() { }
+
+
+
+
+
+            public GetGameTemplate Build(
+                string namespace_
+            )
+            {
+                return new GetGameTemplate(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetGameTemplate(GetGameTemplateBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetGameTemplate(
             string namespace_            
         )

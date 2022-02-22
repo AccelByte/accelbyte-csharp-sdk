@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// </summary>
     public class UpdateSession : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateSessionBuilder Builder = new UpdateSessionBuilder();
+
+        public class UpdateSessionBuilder
+        {
+            
+            
+            
+            internal UpdateSessionBuilder() { }
+
+
+
+
+
+            public UpdateSession Build(
+                ModelsUpdateSessionRequest body,
+                string namespace_,
+                string sessionID
+            )
+            {
+                return new UpdateSession(this,
+                    body,                    
+                    namespace_,                    
+                    sessionID                    
+                );
+            }
+        }
+
+        private UpdateSession(UpdateSessionBuilder builder,
+            ModelsUpdateSessionRequest body,
+            string namespace_,
+            string sessionID
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["sessionID"] = sessionID;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateSession(
             string namespace_,            
             string sessionID,            

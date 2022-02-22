@@ -76,6 +76,56 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminPlatformLinkV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminPlatformLinkV3Builder Builder = new AdminPlatformLinkV3Builder();
+
+        public class AdminPlatformLinkV3Builder
+        {
+            
+            
+            
+            
+            internal AdminPlatformLinkV3Builder() { }
+
+
+
+
+
+            public AdminPlatformLinkV3 Build(
+                string ticket,
+                string namespace_,
+                string platformId,
+                string userId
+            )
+            {
+                return new AdminPlatformLinkV3(this,
+                    ticket,                    
+                    namespace_,                    
+                    platformId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminPlatformLinkV3(AdminPlatformLinkV3Builder builder,
+            string ticket,
+            string namespace_,
+            string platformId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            PathParams["userId"] = userId;
+            
+            
+            if (ticket != null) FormParams["ticket"] = ticket;
+            
+            
+            
+        }
+        #endregion
+
         public AdminPlatformLinkV3(
             string namespace_,            
             string platformId,            

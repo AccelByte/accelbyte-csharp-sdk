@@ -31,6 +31,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class RevokeToken : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RevokeTokenBuilder Builder = new RevokeTokenBuilder();
+
+        public class RevokeTokenBuilder
+        {
+            
+            internal RevokeTokenBuilder() { }
+
+
+
+
+
+            public RevokeToken Build(
+                string token
+            )
+            {
+                return new RevokeToken(this,
+                    token                    
+                );
+            }
+        }
+
+        private RevokeToken(RevokeTokenBuilder builder,
+            string token
+        )
+        {
+            
+            
+            if (token != null) FormParams["token"] = token;
+            
+            
+            
+        }
+        #endregion
+
         public RevokeToken(
             string token            
         )

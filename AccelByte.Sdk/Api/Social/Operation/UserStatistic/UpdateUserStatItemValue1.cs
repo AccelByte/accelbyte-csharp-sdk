@@ -30,6 +30,69 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class UpdateUserStatItemValue1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateUserStatItemValue1Builder Builder = new UpdateUserStatItemValue1Builder();
+
+        public class UpdateUserStatItemValue1Builder
+        {
+            
+            
+            
+            public string? AdditionalKey { get; set; }
+            
+            public Model.StatItemUpdate? Body { get; set; }
+            
+            internal UpdateUserStatItemValue1Builder() { }
+
+
+            public UpdateUserStatItemValue1Builder SetAdditionalKey(string _additionalKey)
+            {
+                AdditionalKey = _additionalKey;
+                return this;
+            }
+
+
+            public UpdateUserStatItemValue1Builder SetBody(Model.StatItemUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateUserStatItemValue1 Build(
+                string namespace_,
+                string statCode,
+                string userId
+            )
+            {
+                return new UpdateUserStatItemValue1(this,
+                    namespace_,                    
+                    statCode,                    
+                    userId                    
+                );
+            }
+        }
+
+        private UpdateUserStatItemValue1(UpdateUserStatItemValue1Builder builder,
+            string namespace_,
+            string statCode,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["statCode"] = statCode;
+            PathParams["userId"] = userId;
+            
+            if (builder.AdditionalKey != null) QueryParams["additionalKey"] = builder.AdditionalKey;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateUserStatItemValue1(
             string namespace_,            
             string statCode,            

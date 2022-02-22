@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class PublishTemplate : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublishTemplateBuilder Builder = new PublishTemplateBuilder();
+
+        public class PublishTemplateBuilder
+        {
+            
+            
+            
+            internal PublishTemplateBuilder() { }
+
+
+
+
+
+            public PublishTemplate Build(
+                string namespace_,
+                string templateLanguage,
+                string templateSlug
+            )
+            {
+                return new PublishTemplate(this,
+                    namespace_,                    
+                    templateLanguage,                    
+                    templateSlug                    
+                );
+            }
+        }
+
+        private PublishTemplate(PublishTemplateBuilder builder,
+            string namespace_,
+            string templateLanguage,
+            string templateSlug
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["templateLanguage"] = templateLanguage;
+            PathParams["templateSlug"] = templateSlug;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublishTemplate(
             string namespace_,            
             string templateLanguage,            

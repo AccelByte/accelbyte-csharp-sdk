@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminPutUserRolesV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminPutUserRolesV2Builder Builder = new AdminPutUserRolesV2Builder();
+
+        public class AdminPutUserRolesV2Builder
+        {
+            
+            
+            
+            internal AdminPutUserRolesV2Builder() { }
+
+
+
+
+
+            public AdminPutUserRolesV2 Build(
+                List<string> body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminPutUserRolesV2(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminPutUserRolesV2(AdminPutUserRolesV2Builder builder,
+            List<string> body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminPutUserRolesV2(
             string namespace_,            
             string userId,            

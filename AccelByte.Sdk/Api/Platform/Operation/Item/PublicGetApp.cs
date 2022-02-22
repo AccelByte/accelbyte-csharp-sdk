@@ -24,6 +24,73 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetApp : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetAppBuilder Builder = new PublicGetAppBuilder();
+
+        public class PublicGetAppBuilder
+        {
+            
+            
+            public string? Language { get; set; }
+            
+            public string? Region { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            internal PublicGetAppBuilder() { }
+
+
+            public PublicGetAppBuilder SetLanguage(string _language)
+            {
+                Language = _language;
+                return this;
+            }
+
+            public PublicGetAppBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+            public PublicGetAppBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public PublicGetApp Build(
+                string itemId,
+                string namespace_
+            )
+            {
+                return new PublicGetApp(this,
+                    itemId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicGetApp(PublicGetAppBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            PathParams["itemId"] = itemId;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetApp(
             string itemId,            
             string namespace_,            

@@ -25,6 +25,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class NotificationWithTemplateByUserID : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static NotificationWithTemplateByUserIDBuilder Builder = new NotificationWithTemplateByUserIDBuilder();
+
+        public class NotificationWithTemplateByUserIDBuilder
+        {
+            
+            
+            
+            internal NotificationWithTemplateByUserIDBuilder() { }
+
+
+
+
+
+            public NotificationWithTemplateByUserID Build(
+                ModelNotificationWithTemplateRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new NotificationWithTemplateByUserID(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private NotificationWithTemplateByUserID(NotificationWithTemplateByUserIDBuilder builder,
+            ModelNotificationWithTemplateRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public NotificationWithTemplateByUserID(
             string namespace_,            
             string userId,            

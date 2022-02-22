@@ -18,6 +18,86 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// </summary>
     public class AdminGetListDeletionDataRequest : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetListDeletionDataRequestBuilder Builder = new AdminGetListDeletionDataRequestBuilder();
+
+        public class AdminGetListDeletionDataRequestBuilder
+        {
+            
+            public string? After { get; set; }
+            
+            public string? Before { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            public string? RequestDate { get; set; }
+            
+            internal AdminGetListDeletionDataRequestBuilder() { }
+
+
+            public AdminGetListDeletionDataRequestBuilder SetAfter(string _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public AdminGetListDeletionDataRequestBuilder SetBefore(string _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public AdminGetListDeletionDataRequestBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminGetListDeletionDataRequestBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public AdminGetListDeletionDataRequestBuilder SetRequestDate(string _requestDate)
+            {
+                RequestDate = _requestDate;
+                return this;
+            }
+
+
+
+
+            public AdminGetListDeletionDataRequest Build(
+                string namespace_
+            )
+            {
+                return new AdminGetListDeletionDataRequest(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetListDeletionDataRequest(AdminGetListDeletionDataRequestBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.After != null) QueryParams["after"] = builder.After;
+            if (builder.Before != null) QueryParams["before"] = builder.Before;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.RequestDate != null) QueryParams["requestDate"] = builder.RequestDate;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetListDeletionDataRequest(
             string namespace_,            
             string? after,            

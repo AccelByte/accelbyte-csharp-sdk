@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class AnonymizeSubscription : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AnonymizeSubscriptionBuilder Builder = new AnonymizeSubscriptionBuilder();
+
+        public class AnonymizeSubscriptionBuilder
+        {
+            
+            
+            internal AnonymizeSubscriptionBuilder() { }
+
+
+
+
+
+            public AnonymizeSubscription Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AnonymizeSubscription(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AnonymizeSubscription(AnonymizeSubscriptionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AnonymizeSubscription(
             string namespace_,            
             string userId            

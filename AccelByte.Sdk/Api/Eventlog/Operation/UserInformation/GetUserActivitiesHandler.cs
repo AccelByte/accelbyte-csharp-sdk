@@ -19,6 +19,60 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetUserActivitiesHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserActivitiesHandlerBuilder Builder = new GetUserActivitiesHandlerBuilder();
+
+        public class GetUserActivitiesHandlerBuilder
+        {
+            
+            
+            public double? Offset { get; set; }
+            
+            
+            internal GetUserActivitiesHandlerBuilder() { }
+
+
+            public GetUserActivitiesHandlerBuilder SetOffset(double _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetUserActivitiesHandler Build(
+                string namespace_,
+                string userId,
+                double pageSize
+            )
+            {
+                return new GetUserActivitiesHandler(this,
+                    namespace_,                    
+                    userId,                    
+                    pageSize                    
+                );
+            }
+        }
+
+        private GetUserActivitiesHandler(GetUserActivitiesHandlerBuilder builder,
+            string namespace_,
+            string userId,
+            double pageSize
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            QueryParams["pageSize"] = Convert.ToString(pageSize)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserActivitiesHandler(
             string namespace_,            
             string userId,            

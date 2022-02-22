@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class UpdateClientPermission : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateClientPermissionBuilder Builder = new UpdateClientPermissionBuilder();
+
+        public class UpdateClientPermissionBuilder
+        {
+            
+            
+            internal UpdateClientPermissionBuilder() { }
+
+
+
+
+
+            public UpdateClientPermission Build(
+                AccountcommonClientPermissions body,
+                string clientId
+            )
+            {
+                return new UpdateClientPermission(this,
+                    body,                    
+                    clientId                    
+                );
+            }
+        }
+
+        private UpdateClientPermission(UpdateClientPermissionBuilder builder,
+            AccountcommonClientPermissions body,
+            string clientId
+        )
+        {
+            PathParams["clientId"] = clientId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateClientPermission(
             string clientId,            
             Model.AccountcommonClientPermissions body            

@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminCreateChannel : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminCreateChannelBuilder Builder = new AdminCreateChannelBuilder();
+
+        public class AdminCreateChannelBuilder
+        {
+            
+            
+            internal AdminCreateChannelBuilder() { }
+
+
+
+
+
+            public AdminCreateChannel Build(
+                ModelsChannelRequest body,
+                string namespace_
+            )
+            {
+                return new AdminCreateChannel(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminCreateChannel(AdminCreateChannelBuilder builder,
+            ModelsChannelRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminCreateChannel(
             string namespace_,            
             Model.ModelsChannelRequest body            

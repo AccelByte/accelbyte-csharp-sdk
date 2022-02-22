@@ -37,6 +37,73 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetUserPlatformAccountsV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetUserPlatformAccountsV3Builder Builder = new AdminGetUserPlatformAccountsV3Builder();
+
+        public class AdminGetUserPlatformAccountsV3Builder
+        {
+            
+            
+            public string? After { get; set; }
+            
+            public string? Before { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            internal AdminGetUserPlatformAccountsV3Builder() { }
+
+
+            public AdminGetUserPlatformAccountsV3Builder SetAfter(string _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public AdminGetUserPlatformAccountsV3Builder SetBefore(string _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public AdminGetUserPlatformAccountsV3Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+
+
+
+            public AdminGetUserPlatformAccountsV3 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminGetUserPlatformAccountsV3(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminGetUserPlatformAccountsV3(AdminGetUserPlatformAccountsV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.After != null) QueryParams["after"] = builder.After;
+            if (builder.Before != null) QueryParams["before"] = builder.Before;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetUserPlatformAccountsV3(
             string namespace_,            
             string userId,            

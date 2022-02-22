@@ -25,6 +25,73 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicGetUserLoginHistoriesV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetUserLoginHistoriesV3Builder Builder = new PublicGetUserLoginHistoriesV3Builder();
+
+        public class PublicGetUserLoginHistoriesV3Builder
+        {
+            
+            
+            public double? After { get; set; }
+            
+            public double? Before { get; set; }
+            
+            public double? Limit { get; set; }
+            
+            internal PublicGetUserLoginHistoriesV3Builder() { }
+
+
+            public PublicGetUserLoginHistoriesV3Builder SetAfter(double _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public PublicGetUserLoginHistoriesV3Builder SetBefore(double _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public PublicGetUserLoginHistoriesV3Builder SetLimit(double _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+
+
+
+            public PublicGetUserLoginHistoriesV3 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicGetUserLoginHistoriesV3(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicGetUserLoginHistoriesV3(PublicGetUserLoginHistoriesV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.After != null) QueryParams["after"] = Convert.ToString(builder.After)!;
+            if (builder.Before != null) QueryParams["before"] = Convert.ToString(builder.Before)!;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetUserLoginHistoriesV3(
             string namespace_,            
             string userId,            

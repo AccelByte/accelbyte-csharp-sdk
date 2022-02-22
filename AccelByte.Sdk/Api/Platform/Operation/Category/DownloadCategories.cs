@@ -24,6 +24,59 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DownloadCategories : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DownloadCategoriesBuilder Builder = new DownloadCategoriesBuilder();
+
+        public class DownloadCategoriesBuilder
+        {
+            
+            public string? Language { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            internal DownloadCategoriesBuilder() { }
+
+
+            public DownloadCategoriesBuilder SetLanguage(string _language)
+            {
+                Language = _language;
+                return this;
+            }
+
+            public DownloadCategoriesBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public DownloadCategories Build(
+                string namespace_
+            )
+            {
+                return new DownloadCategories(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private DownloadCategories(DownloadCategoriesBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public DownloadCategories(
             string namespace_,            
             string? language,            

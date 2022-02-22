@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class EnableCode : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static EnableCodeBuilder Builder = new EnableCodeBuilder();
+
+        public class EnableCodeBuilder
+        {
+            
+            
+            internal EnableCodeBuilder() { }
+
+
+
+
+
+            public EnableCode Build(
+                string code,
+                string namespace_
+            )
+            {
+                return new EnableCode(this,
+                    code,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private EnableCode(EnableCodeBuilder builder,
+            string code,
+            string namespace_
+        )
+        {
+            PathParams["code"] = code;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public EnableCode(
             string code,            
             string namespace_            

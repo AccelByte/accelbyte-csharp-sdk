@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class SaveUserRoles : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SaveUserRolesBuilder Builder = new SaveUserRolesBuilder();
+
+        public class SaveUserRolesBuilder
+        {
+            
+            
+            
+            internal SaveUserRolesBuilder() { }
+
+
+
+
+
+            public SaveUserRoles Build(
+                List<string> body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new SaveUserRoles(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private SaveUserRoles(SaveUserRolesBuilder builder,
+            List<string> body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public SaveUserRoles(
             string namespace_,            
             string userId,            

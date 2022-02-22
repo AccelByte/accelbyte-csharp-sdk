@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class GetConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetConfigBuilder Builder = new GetConfigBuilder();
+
+        public class GetConfigBuilder
+        {
+            
+            internal GetConfigBuilder() { }
+
+
+
+
+
+            public GetConfig Build(
+                string namespace_
+            )
+            {
+                return new GetConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetConfig(GetConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetConfig(
             string namespace_            
         )

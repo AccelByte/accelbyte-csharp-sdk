@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CreateCampaign : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateCampaignBuilder Builder = new CreateCampaignBuilder();
+
+        public class CreateCampaignBuilder
+        {
+            
+            public Model.CampaignCreate? Body { get; set; }
+            
+            internal CreateCampaignBuilder() { }
+
+
+
+            public CreateCampaignBuilder SetBody(Model.CampaignCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateCampaign Build(
+                string namespace_
+            )
+            {
+                return new CreateCampaign(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateCampaign(CreateCampaignBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateCampaign(
             string namespace_,            
             Model.CampaignCreate body            

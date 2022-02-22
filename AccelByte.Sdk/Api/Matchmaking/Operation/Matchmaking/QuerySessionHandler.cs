@@ -26,6 +26,46 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class QuerySessionHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QuerySessionHandlerBuilder Builder = new QuerySessionHandlerBuilder();
+
+        public class QuerySessionHandlerBuilder
+        {
+            
+            
+            internal QuerySessionHandlerBuilder() { }
+
+
+
+
+
+            public QuerySessionHandler Build(
+                string matchID,
+                string namespace_
+            )
+            {
+                return new QuerySessionHandler(this,
+                    matchID,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private QuerySessionHandler(QuerySessionHandlerBuilder builder,
+            string matchID,
+            string namespace_
+        )
+        {
+            PathParams["matchID"] = matchID;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public QuerySessionHandler(
             string matchID,            
             string namespace_            

@@ -19,6 +19,65 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetEventByNamespaceHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetEventByNamespaceHandlerBuilder Builder = new GetEventByNamespaceHandlerBuilder();
+
+        public class GetEventByNamespaceHandlerBuilder
+        {
+            
+            public double? Offset { get; set; }
+            
+            
+            
+            
+            internal GetEventByNamespaceHandlerBuilder() { }
+
+
+            public GetEventByNamespaceHandlerBuilder SetOffset(double _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetEventByNamespaceHandler Build(
+                string namespace_,
+                string endDate,
+                double pageSize,
+                string startDate
+            )
+            {
+                return new GetEventByNamespaceHandler(this,
+                    namespace_,                    
+                    endDate,                    
+                    pageSize,                    
+                    startDate                    
+                );
+            }
+        }
+
+        private GetEventByNamespaceHandler(GetEventByNamespaceHandlerBuilder builder,
+            string namespace_,
+            string endDate,
+            double pageSize,
+            string startDate
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (endDate != null) QueryParams["endDate"] = endDate;
+            QueryParams["pageSize"] = Convert.ToString(pageSize)!;
+            if (startDate != null) QueryParams["startDate"] = startDate;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetEventByNamespaceHandler(
             string namespace_,            
             double? offset,            

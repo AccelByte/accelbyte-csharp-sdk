@@ -16,6 +16,36 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class GetHealthcheckInfo : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetHealthcheckInfoBuilder Builder = new GetHealthcheckInfoBuilder();
+
+        public class GetHealthcheckInfoBuilder
+        {
+            internal GetHealthcheckInfoBuilder() { }
+
+
+
+
+
+            public GetHealthcheckInfo Build(
+            )
+            {
+                return new GetHealthcheckInfo(this
+                );
+            }
+        }
+
+        private GetHealthcheckInfo(GetHealthcheckInfoBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetHealthcheckInfo(
         )
         {

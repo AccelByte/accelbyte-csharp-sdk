@@ -24,6 +24,45 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class CreateNamespace : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateNamespaceBuilder Builder = new CreateNamespaceBuilder();
+
+        public class CreateNamespaceBuilder
+        {
+            public Model.NamespaceCreate? Body { get; set; }
+            
+            internal CreateNamespaceBuilder() { }
+
+
+
+            public CreateNamespaceBuilder SetBody(Model.NamespaceCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateNamespace Build(
+            )
+            {
+                return new CreateNamespace(this
+                );
+            }
+        }
+
+        private CreateNamespace(CreateNamespaceBuilder builder
+        )
+        {
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateNamespace(
             Model.NamespaceCreate body            
         )

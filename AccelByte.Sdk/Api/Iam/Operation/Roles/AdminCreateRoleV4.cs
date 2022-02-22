@@ -25,6 +25,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminCreateRoleV4 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminCreateRoleV4Builder Builder = new AdminCreateRoleV4Builder();
+
+        public class AdminCreateRoleV4Builder
+        {
+            
+            internal AdminCreateRoleV4Builder() { }
+
+
+
+
+
+            public AdminCreateRoleV4 Build(
+                ModelRoleV4Request body
+            )
+            {
+                return new AdminCreateRoleV4(this,
+                    body                    
+                );
+            }
+        }
+
+        private AdminCreateRoleV4(AdminCreateRoleV4Builder builder,
+            ModelRoleV4Request body
+        )
+        {
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminCreateRoleV4(
             Model.ModelRoleV4Request body            
         )

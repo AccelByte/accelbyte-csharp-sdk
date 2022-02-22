@@ -23,6 +23,64 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class GetUserParticipatedSeasons : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserParticipatedSeasonsBuilder Builder = new GetUserParticipatedSeasonsBuilder();
+
+        public class GetUserParticipatedSeasonsBuilder
+        {
+            
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            internal GetUserParticipatedSeasonsBuilder() { }
+
+
+            public GetUserParticipatedSeasonsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetUserParticipatedSeasonsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetUserParticipatedSeasons Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetUserParticipatedSeasons(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserParticipatedSeasons(GetUserParticipatedSeasonsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserParticipatedSeasons(
             string namespace_,            
             string userId,            

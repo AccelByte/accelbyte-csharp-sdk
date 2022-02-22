@@ -22,6 +22,56 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class CreateDeploymentOverride : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateDeploymentOverrideBuilder Builder = new CreateDeploymentOverrideBuilder();
+
+        public class CreateDeploymentOverrideBuilder
+        {
+            
+            
+            
+            
+            internal CreateDeploymentOverrideBuilder() { }
+
+
+
+
+
+            public CreateDeploymentOverride Build(
+                ModelsCreateDeploymentOverrideRequest body,
+                string deployment,
+                string namespace_,
+                string version
+            )
+            {
+                return new CreateDeploymentOverride(this,
+                    body,                    
+                    deployment,                    
+                    namespace_,                    
+                    version                    
+                );
+            }
+        }
+
+        private CreateDeploymentOverride(CreateDeploymentOverrideBuilder builder,
+            ModelsCreateDeploymentOverrideRequest body,
+            string deployment,
+            string namespace_,
+            string version
+        )
+        {
+            PathParams["deployment"] = deployment;
+            PathParams["namespace"] = namespace_;
+            PathParams["version"] = version;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateDeploymentOverride(
             string deployment,            
             string namespace_,            

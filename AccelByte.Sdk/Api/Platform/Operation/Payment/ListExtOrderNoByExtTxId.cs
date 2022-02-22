@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ListExtOrderNoByExtTxId : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListExtOrderNoByExtTxIdBuilder Builder = new ListExtOrderNoByExtTxIdBuilder();
+
+        public class ListExtOrderNoByExtTxIdBuilder
+        {
+            
+            
+            internal ListExtOrderNoByExtTxIdBuilder() { }
+
+
+
+
+
+            public ListExtOrderNoByExtTxId Build(
+                string namespace_,
+                string extTxId
+            )
+            {
+                return new ListExtOrderNoByExtTxId(this,
+                    namespace_,                    
+                    extTxId                    
+                );
+            }
+        }
+
+        private ListExtOrderNoByExtTxId(ListExtOrderNoByExtTxIdBuilder builder,
+            string namespace_,
+            string extTxId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (extTxId != null) QueryParams["extTxId"] = extTxId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListExtOrderNoByExtTxId(
             string namespace_,            
             string extTxId            

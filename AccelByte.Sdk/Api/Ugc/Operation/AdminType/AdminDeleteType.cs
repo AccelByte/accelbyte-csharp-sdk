@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminDeleteType : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminDeleteTypeBuilder Builder = new AdminDeleteTypeBuilder();
+
+        public class AdminDeleteTypeBuilder
+        {
+            
+            
+            internal AdminDeleteTypeBuilder() { }
+
+
+
+
+
+            public AdminDeleteType Build(
+                string namespace_,
+                string typeId
+            )
+            {
+                return new AdminDeleteType(this,
+                    namespace_,                    
+                    typeId                    
+                );
+            }
+        }
+
+        private AdminDeleteType(AdminDeleteTypeBuilder builder,
+            string namespace_,
+            string typeId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["typeId"] = typeId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminDeleteType(
             string namespace_,            
             string typeId            

@@ -21,6 +21,36 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RetrieveAgreementsPublic : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveAgreementsPublicBuilder Builder = new RetrieveAgreementsPublicBuilder();
+
+        public class RetrieveAgreementsPublicBuilder
+        {
+            internal RetrieveAgreementsPublicBuilder() { }
+
+
+
+
+
+            public RetrieveAgreementsPublic Build(
+            )
+            {
+                return new RetrieveAgreementsPublic(this
+                );
+            }
+        }
+
+        private RetrieveAgreementsPublic(RetrieveAgreementsPublicBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveAgreementsPublic(
         )
         {

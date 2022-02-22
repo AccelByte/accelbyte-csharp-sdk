@@ -28,6 +28,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class TokenRevocationV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static TokenRevocationV3Builder Builder = new TokenRevocationV3Builder();
+
+        public class TokenRevocationV3Builder
+        {
+            
+            internal TokenRevocationV3Builder() { }
+
+
+
+
+
+            public TokenRevocationV3 Build(
+                string token
+            )
+            {
+                return new TokenRevocationV3(this,
+                    token                    
+                );
+            }
+        }
+
+        private TokenRevocationV3(TokenRevocationV3Builder builder,
+            string token
+        )
+        {
+            
+            
+            if (token != null) FormParams["token"] = token;
+            
+            
+            
+        }
+        #endregion
+
         public TokenRevocationV3(
             string token            
         )

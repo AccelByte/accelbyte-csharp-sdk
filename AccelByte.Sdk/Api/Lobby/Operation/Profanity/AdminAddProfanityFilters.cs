@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminAddProfanityFilters : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminAddProfanityFiltersBuilder Builder = new AdminAddProfanityFiltersBuilder();
+
+        public class AdminAddProfanityFiltersBuilder
+        {
+            
+            
+            
+            internal AdminAddProfanityFiltersBuilder() { }
+
+
+
+
+
+            public AdminAddProfanityFilters Build(
+                ModelsAdminAddProfanityFiltersRequest body,
+                string list,
+                string namespace_
+            )
+            {
+                return new AdminAddProfanityFilters(this,
+                    body,                    
+                    list,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminAddProfanityFilters(AdminAddProfanityFiltersBuilder builder,
+            ModelsAdminAddProfanityFiltersRequest body,
+            string list,
+            string namespace_
+        )
+        {
+            PathParams["list"] = list;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminAddProfanityFilters(
             string list,            
             string namespace_,            

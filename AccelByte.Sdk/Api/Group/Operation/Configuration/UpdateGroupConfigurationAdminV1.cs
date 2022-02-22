@@ -30,6 +30,51 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class UpdateGroupConfigurationAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateGroupConfigurationAdminV1Builder Builder = new UpdateGroupConfigurationAdminV1Builder();
+
+        public class UpdateGroupConfigurationAdminV1Builder
+        {
+            
+            
+            
+            internal UpdateGroupConfigurationAdminV1Builder() { }
+
+
+
+
+
+            public UpdateGroupConfigurationAdminV1 Build(
+                ModelsUpdateGroupConfigurationRequestV1 body,
+                string configurationCode,
+                string namespace_
+            )
+            {
+                return new UpdateGroupConfigurationAdminV1(this,
+                    body,                    
+                    configurationCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateGroupConfigurationAdminV1(UpdateGroupConfigurationAdminV1Builder builder,
+            ModelsUpdateGroupConfigurationRequestV1 body,
+            string configurationCode,
+            string namespace_
+        )
+        {
+            PathParams["configurationCode"] = configurationCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateGroupConfigurationAdminV1(
             string configurationCode,            
             string namespace_,            

@@ -19,6 +19,68 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// </summary>
     public class AdminListAchievements : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminListAchievementsBuilder Builder = new AdminListAchievementsBuilder();
+
+        public class AdminListAchievementsBuilder
+        {
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            public string? SortBy { get; set; }
+            
+            internal AdminListAchievementsBuilder() { }
+
+
+            public AdminListAchievementsBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminListAchievementsBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public AdminListAchievementsBuilder SetSortBy(string _sortBy)
+            {
+                SortBy = _sortBy;
+                return this;
+            }
+
+
+
+
+            public AdminListAchievements Build(
+                string namespace_
+            )
+            {
+                return new AdminListAchievements(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminListAchievements(AdminListAchievementsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminListAchievements(
             string namespace_,            
             long? limit,            

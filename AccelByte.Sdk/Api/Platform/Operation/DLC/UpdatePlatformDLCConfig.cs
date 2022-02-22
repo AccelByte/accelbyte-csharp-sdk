@@ -20,6 +20,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdatePlatformDLCConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdatePlatformDLCConfigBuilder Builder = new UpdatePlatformDLCConfigBuilder();
+
+        public class UpdatePlatformDLCConfigBuilder
+        {
+            
+            public Model.PlatformDLCConfigUpdate? Body { get; set; }
+            
+            internal UpdatePlatformDLCConfigBuilder() { }
+
+
+
+            public UpdatePlatformDLCConfigBuilder SetBody(Model.PlatformDLCConfigUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdatePlatformDLCConfig Build(
+                string namespace_
+            )
+            {
+                return new UpdatePlatformDLCConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdatePlatformDLCConfig(UpdatePlatformDLCConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdatePlatformDLCConfig(
             string namespace_,            
             Model.PlatformDLCConfigUpdate body            

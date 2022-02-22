@@ -260,6 +260,68 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PlatformTokenGrantV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PlatformTokenGrantV3Builder Builder = new PlatformTokenGrantV3Builder();
+
+        public class PlatformTokenGrantV3Builder
+        {
+            
+            public string? ClientId { get; set; }
+            
+            public string? DeviceId { get; set; }
+            
+            public string? PlatformToken { get; set; }
+            
+            internal PlatformTokenGrantV3Builder() { }
+
+
+
+
+            public PlatformTokenGrantV3Builder SetClientId(string _clientId)
+            {
+                ClientId = _clientId;
+                return this;
+            }
+
+            public PlatformTokenGrantV3Builder SetDeviceId(string _deviceId)
+            {
+                DeviceId = _deviceId;
+                return this;
+            }
+
+            public PlatformTokenGrantV3Builder SetPlatformToken(string _platformToken)
+            {
+                PlatformToken = _platformToken;
+                return this;
+            }
+
+
+            public PlatformTokenGrantV3 Build(
+                string platformId
+            )
+            {
+                return new PlatformTokenGrantV3(this,
+                    platformId                    
+                );
+            }
+        }
+
+        private PlatformTokenGrantV3(PlatformTokenGrantV3Builder builder,
+            string platformId
+        )
+        {
+            PathParams["platformId"] = platformId;
+            
+            
+            if (builder.ClientId != null) FormParams["client_id"] = builder.ClientId;
+            if (builder.DeviceId != null) FormParams["device_id"] = builder.DeviceId;
+            if (builder.PlatformToken != null) FormParams["platform_token"] = builder.PlatformToken;
+            
+            
+            
+        }
+        #endregion
+
         public PlatformTokenGrantV3(
             string platformId,            
             string? clientId,            

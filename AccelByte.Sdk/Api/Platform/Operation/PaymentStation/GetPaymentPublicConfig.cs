@@ -21,6 +21,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetPaymentPublicConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPaymentPublicConfigBuilder Builder = new GetPaymentPublicConfigBuilder();
+
+        public class GetPaymentPublicConfigBuilder
+        {
+            
+            public bool? Sandbox { get; set; }
+            
+            
+            
+            internal GetPaymentPublicConfigBuilder() { }
+
+
+            public GetPaymentPublicConfigBuilder SetSandbox(bool _sandbox)
+            {
+                Sandbox = _sandbox;
+                return this;
+            }
+
+
+
+
+            public GetPaymentPublicConfig Build(
+                string namespace_,
+                string paymentProvider,
+                string region
+            )
+            {
+                return new GetPaymentPublicConfig(this,
+                    namespace_,                    
+                    paymentProvider,                    
+                    region                    
+                );
+            }
+        }
+
+        private GetPaymentPublicConfig(GetPaymentPublicConfigBuilder builder,
+            string namespace_,
+            string paymentProvider,
+            string region
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+            if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
+            if (region != null) QueryParams["region"] = region;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPaymentPublicConfig(
             string namespace_,            
             bool? sandbox,            

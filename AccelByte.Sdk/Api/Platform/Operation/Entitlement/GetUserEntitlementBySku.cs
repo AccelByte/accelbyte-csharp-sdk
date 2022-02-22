@@ -22,6 +22,69 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetUserEntitlementBySku : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserEntitlementBySkuBuilder Builder = new GetUserEntitlementBySkuBuilder();
+
+        public class GetUserEntitlementBySkuBuilder
+        {
+            
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public string? EntitlementClazz { get; set; }
+            
+            
+            internal GetUserEntitlementBySkuBuilder() { }
+
+
+            public GetUserEntitlementBySkuBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public GetUserEntitlementBySkuBuilder SetEntitlementClazz(string _entitlementClazz)
+            {
+                EntitlementClazz = _entitlementClazz;
+                return this;
+            }
+
+
+
+
+            public GetUserEntitlementBySku Build(
+                string namespace_,
+                string userId,
+                string sku
+            )
+            {
+                return new GetUserEntitlementBySku(this,
+                    namespace_,                    
+                    userId,                    
+                    sku                    
+                );
+            }
+        }
+
+        private GetUserEntitlementBySku(GetUserEntitlementBySkuBuilder builder,
+            string namespace_,
+            string userId,
+            string sku
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.EntitlementClazz != null) QueryParams["entitlementClazz"] = builder.EntitlementClazz;
+            if (sku != null) QueryParams["sku"] = sku;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserEntitlementBySku(
             string namespace_,            
             string userId,            

@@ -35,6 +35,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminUpdateUserV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateUserV2Builder Builder = new AdminUpdateUserV2Builder();
+
+        public class AdminUpdateUserV2Builder
+        {
+            
+            
+            
+            internal AdminUpdateUserV2Builder() { }
+
+
+
+
+
+            public AdminUpdateUserV2 Build(
+                ModelUserUpdateRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminUpdateUserV2(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminUpdateUserV2(AdminUpdateUserV2Builder builder,
+            ModelUserUpdateRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateUserV2(
             string namespace_,            
             string userId,            

@@ -48,6 +48,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicUpdateUserV4 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicUpdateUserV4Builder Builder = new PublicUpdateUserV4Builder();
+
+        public class PublicUpdateUserV4Builder
+        {
+            
+            
+            internal PublicUpdateUserV4Builder() { }
+
+
+
+
+
+            public PublicUpdateUserV4 Build(
+                ModelUserUpdateRequestV3 body,
+                string namespace_
+            )
+            {
+                return new PublicUpdateUserV4(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicUpdateUserV4(PublicUpdateUserV4Builder builder,
+            ModelUserUpdateRequestV3 body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PublicUpdateUserV4(
             string namespace_,            
             Model.ModelUserUpdateRequestV3 body            

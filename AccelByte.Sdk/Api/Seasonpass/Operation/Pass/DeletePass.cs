@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class DeletePass : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeletePassBuilder Builder = new DeletePassBuilder();
+
+        public class DeletePassBuilder
+        {
+            
+            
+            
+            internal DeletePassBuilder() { }
+
+
+
+
+
+            public DeletePass Build(
+                string code,
+                string namespace_,
+                string seasonId
+            )
+            {
+                return new DeletePass(this,
+                    code,                    
+                    namespace_,                    
+                    seasonId                    
+                );
+            }
+        }
+
+        private DeletePass(DeletePassBuilder builder,
+            string code,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PathParams["code"] = code;
+            PathParams["namespace"] = namespace_;
+            PathParams["seasonId"] = seasonId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeletePass(
             string code,            
             string namespace_,            

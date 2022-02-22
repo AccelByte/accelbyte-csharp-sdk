@@ -21,6 +21,59 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class GetStats : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetStatsBuilder Builder = new GetStatsBuilder();
+
+        public class GetStatsBuilder
+        {
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            internal GetStatsBuilder() { }
+
+
+            public GetStatsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetStatsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetStats Build(
+                string namespace_
+            )
+            {
+                return new GetStats(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetStats(GetStatsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetStats(
             string namespace_,            
             int? limit,            

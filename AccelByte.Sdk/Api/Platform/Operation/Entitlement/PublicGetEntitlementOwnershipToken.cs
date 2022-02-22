@@ -96,6 +96,71 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetEntitlementOwnershipToken : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetEntitlementOwnershipTokenBuilder Builder = new PublicGetEntitlementOwnershipTokenBuilder();
+
+        public class PublicGetEntitlementOwnershipTokenBuilder
+        {
+            
+            public List<string>? AppIds { get; set; }
+            
+            public List<string>? ItemIds { get; set; }
+            
+            public List<string>? Skus { get; set; }
+            
+            internal PublicGetEntitlementOwnershipTokenBuilder() { }
+
+
+            public PublicGetEntitlementOwnershipTokenBuilder SetAppIds(List<string> _appIds)
+            {
+                AppIds = _appIds;
+                return this;
+            }
+
+            public PublicGetEntitlementOwnershipTokenBuilder SetItemIds(List<string> _itemIds)
+            {
+                ItemIds = _itemIds;
+                return this;
+            }
+
+            public PublicGetEntitlementOwnershipTokenBuilder SetSkus(List<string> _skus)
+            {
+                Skus = _skus;
+                return this;
+            }
+
+
+
+
+            public PublicGetEntitlementOwnershipToken Build(
+                string namespace_
+            )
+            {
+                return new PublicGetEntitlementOwnershipToken(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicGetEntitlementOwnershipToken(PublicGetEntitlementOwnershipTokenBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.AppIds != null) QueryParams["appIds"] = builder.AppIds;
+            if (builder.ItemIds != null) QueryParams["itemIds"] = builder.ItemIds;
+            if (builder.Skus != null) QueryParams["skus"] = builder.Skus;
+            
+            
+            CollectionFormatMap["appIds"] = "multi";
+            CollectionFormatMap["itemIds"] = "multi";
+            CollectionFormatMap["skus"] = "multi";
+            
+            
+        }
+        #endregion
+
         public PublicGetEntitlementOwnershipToken(
             string namespace_,            
             List<string>? appIds,            

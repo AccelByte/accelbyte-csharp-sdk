@@ -27,6 +27,79 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class UserAuthenticationV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UserAuthenticationV3Builder Builder = new UserAuthenticationV3Builder();
+
+        public class UserAuthenticationV3Builder
+        {
+            public string? ClientId { get; set; }
+            
+            public bool? ExtendExp { get; set; }
+            
+            public string? RedirectUri { get; set; }
+            
+            
+            
+            
+            internal UserAuthenticationV3Builder() { }
+
+
+
+
+            public UserAuthenticationV3Builder SetClientId(string _clientId)
+            {
+                ClientId = _clientId;
+                return this;
+            }
+
+            public UserAuthenticationV3Builder SetExtendExp(bool _extendExp)
+            {
+                ExtendExp = _extendExp;
+                return this;
+            }
+
+            public UserAuthenticationV3Builder SetRedirectUri(string _redirectUri)
+            {
+                RedirectUri = _redirectUri;
+                return this;
+            }
+
+
+            public UserAuthenticationV3 Build(
+                string password,
+                string requestId,
+                string userName
+            )
+            {
+                return new UserAuthenticationV3(this,
+                    password,                    
+                    requestId,                    
+                    userName                    
+                );
+            }
+        }
+
+        private UserAuthenticationV3(UserAuthenticationV3Builder builder,
+            string password,
+            string requestId,
+            string userName
+        )
+        {
+            
+            
+            if (builder.ClientId != null) FormParams["client_id"] = builder.ClientId;
+            if (builder.ExtendExp != null) FormParams["extend_exp"] = Convert.ToString(builder.ExtendExp)!;
+            if (builder.RedirectUri != null) FormParams["redirect_uri"] = builder.RedirectUri;
+            if (password != null) FormParams["password"] = password;
+            if (requestId != null) FormParams["request_id"] = requestId;
+            if (userName != null) FormParams["user_name"] = userName;
+            
+            
+            
+            LocationQuery = "code";
+        }
+        #endregion
+
         public UserAuthenticationV3(
             string? clientId,            
             bool? extendExp,            

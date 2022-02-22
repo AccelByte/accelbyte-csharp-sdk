@@ -22,6 +22,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateUserOrderStatus : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateUserOrderStatusBuilder Builder = new UpdateUserOrderStatusBuilder();
+
+        public class UpdateUserOrderStatusBuilder
+        {
+            
+            
+            
+            public Model.OrderUpdate? Body { get; set; }
+            
+            internal UpdateUserOrderStatusBuilder() { }
+
+
+
+            public UpdateUserOrderStatusBuilder SetBody(Model.OrderUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateUserOrderStatus Build(
+                string namespace_,
+                string orderNo,
+                string userId
+            )
+            {
+                return new UpdateUserOrderStatus(this,
+                    namespace_,                    
+                    orderNo,                    
+                    userId                    
+                );
+            }
+        }
+
+        private UpdateUserOrderStatus(UpdateUserOrderStatusBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["orderNo"] = orderNo;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateUserOrderStatus(
             string namespace_,            
             string orderNo,            

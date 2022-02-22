@@ -23,6 +23,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class UpdateTopicByTopicName : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateTopicByTopicNameBuilder Builder = new UpdateTopicByTopicNameBuilder();
+
+        public class UpdateTopicByTopicNameBuilder
+        {
+            
+            
+            
+            internal UpdateTopicByTopicNameBuilder() { }
+
+
+
+
+
+            public UpdateTopicByTopicName Build(
+                ModelUpdateTopicRequest body,
+                string namespace_,
+                string topic
+            )
+            {
+                return new UpdateTopicByTopicName(this,
+                    body,                    
+                    namespace_,                    
+                    topic                    
+                );
+            }
+        }
+
+        private UpdateTopicByTopicName(UpdateTopicByTopicNameBuilder builder,
+            ModelUpdateTopicRequest body,
+            string namespace_,
+            string topic
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["topic"] = topic;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateTopicByTopicName(
             string namespace_,            
             string topic,            

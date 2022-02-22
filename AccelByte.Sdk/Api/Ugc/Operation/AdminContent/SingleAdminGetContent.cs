@@ -18,6 +18,59 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class SingleAdminGetContent : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SingleAdminGetContentBuilder Builder = new SingleAdminGetContentBuilder();
+
+        public class SingleAdminGetContentBuilder
+        {
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal SingleAdminGetContentBuilder() { }
+
+
+            public SingleAdminGetContentBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public SingleAdminGetContentBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public SingleAdminGetContent Build(
+                string namespace_
+            )
+            {
+                return new SingleAdminGetContent(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private SingleAdminGetContent(SingleAdminGetContentBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public SingleAdminGetContent(
             string namespace_,            
             string? limit,            

@@ -18,6 +18,59 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class GetLikedContent : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetLikedContentBuilder Builder = new GetLikedContentBuilder();
+
+        public class GetLikedContentBuilder
+        {
+            
+            public string? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            internal GetLikedContentBuilder() { }
+
+
+            public GetLikedContentBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetLikedContentBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetLikedContent Build(
+                string namespace_
+            )
+            {
+                return new GetLikedContent(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetLikedContent(GetLikedContentBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetLikedContent(
             string namespace_,            
             string? limit,            

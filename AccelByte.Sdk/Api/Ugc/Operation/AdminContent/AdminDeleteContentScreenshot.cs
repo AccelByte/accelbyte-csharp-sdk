@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminDeleteContentScreenshot : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminDeleteContentScreenshotBuilder Builder = new AdminDeleteContentScreenshotBuilder();
+
+        public class AdminDeleteContentScreenshotBuilder
+        {
+            
+            
+            
+            internal AdminDeleteContentScreenshotBuilder() { }
+
+
+
+
+
+            public AdminDeleteContentScreenshot Build(
+                string contentId,
+                string namespace_,
+                string screenshotId
+            )
+            {
+                return new AdminDeleteContentScreenshot(this,
+                    contentId,                    
+                    namespace_,                    
+                    screenshotId                    
+                );
+            }
+        }
+
+        private AdminDeleteContentScreenshot(AdminDeleteContentScreenshotBuilder builder,
+            string contentId,
+            string namespace_,
+            string screenshotId
+        )
+        {
+            PathParams["contentId"] = contentId;
+            PathParams["namespace"] = namespace_;
+            PathParams["screenshotId"] = screenshotId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminDeleteContentScreenshot(
             string contentId,            
             string namespace_,            

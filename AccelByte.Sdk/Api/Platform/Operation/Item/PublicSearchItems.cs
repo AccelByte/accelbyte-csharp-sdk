@@ -24,6 +24,87 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicSearchItems : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicSearchItemsBuilder Builder = new PublicSearchItemsBuilder();
+
+        public class PublicSearchItemsBuilder
+        {
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? Region { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            
+            
+            internal PublicSearchItemsBuilder() { }
+
+
+            public PublicSearchItemsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicSearchItemsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public PublicSearchItemsBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+            public PublicSearchItemsBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public PublicSearchItems Build(
+                string namespace_,
+                string keyword,
+                string language
+            )
+            {
+                return new PublicSearchItems(this,
+                    namespace_,                    
+                    keyword,                    
+                    language                    
+                );
+            }
+        }
+
+        private PublicSearchItems(PublicSearchItemsBuilder builder,
+            string namespace_,
+            string keyword,
+            string language
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (keyword != null) QueryParams["keyword"] = keyword;
+            if (language != null) QueryParams["language"] = language;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicSearchItems(
             string namespace_,            
             int? limit,            

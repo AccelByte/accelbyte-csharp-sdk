@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// </summary>
     public class AdminGetPlayerRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetPlayerRecordHandlerV1Builder Builder = new AdminGetPlayerRecordHandlerV1Builder();
+
+        public class AdminGetPlayerRecordHandlerV1Builder
+        {
+            
+            
+            
+            internal AdminGetPlayerRecordHandlerV1Builder() { }
+
+
+
+
+
+            public AdminGetPlayerRecordHandlerV1 Build(
+                string key,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminGetPlayerRecordHandlerV1(this,
+                    key,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminGetPlayerRecordHandlerV1(AdminGetPlayerRecordHandlerV1Builder builder,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["key"] = key;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetPlayerRecordHandlerV1(
             string key,            
             string namespace_,            

@@ -22,6 +22,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetUserEntitlementOwnershipByItemId : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserEntitlementOwnershipByItemIdBuilder Builder = new GetUserEntitlementOwnershipByItemIdBuilder();
+
+        public class GetUserEntitlementOwnershipByItemIdBuilder
+        {
+            
+            
+            public string? EntitlementClazz { get; set; }
+            
+            
+            internal GetUserEntitlementOwnershipByItemIdBuilder() { }
+
+
+            public GetUserEntitlementOwnershipByItemIdBuilder SetEntitlementClazz(string _entitlementClazz)
+            {
+                EntitlementClazz = _entitlementClazz;
+                return this;
+            }
+
+
+
+
+            public GetUserEntitlementOwnershipByItemId Build(
+                string namespace_,
+                string userId,
+                string itemId
+            )
+            {
+                return new GetUserEntitlementOwnershipByItemId(this,
+                    namespace_,                    
+                    userId,                    
+                    itemId                    
+                );
+            }
+        }
+
+        private GetUserEntitlementOwnershipByItemId(GetUserEntitlementOwnershipByItemIdBuilder builder,
+            string namespace_,
+            string userId,
+            string itemId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.EntitlementClazz != null) QueryParams["entitlementClazz"] = builder.EntitlementClazz;
+            if (itemId != null) QueryParams["itemId"] = itemId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserEntitlementOwnershipByItemId(
             string namespace_,            
             string userId,            

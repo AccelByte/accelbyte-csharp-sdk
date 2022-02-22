@@ -109,6 +109,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminUpdateRolePermissionsV4 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateRolePermissionsV4Builder Builder = new AdminUpdateRolePermissionsV4Builder();
+
+        public class AdminUpdateRolePermissionsV4Builder
+        {
+            
+            
+            internal AdminUpdateRolePermissionsV4Builder() { }
+
+
+
+
+
+            public AdminUpdateRolePermissionsV4 Build(
+                AccountcommonPermissionsV3 body,
+                string roleId
+            )
+            {
+                return new AdminUpdateRolePermissionsV4(this,
+                    body,                    
+                    roleId                    
+                );
+            }
+        }
+
+        private AdminUpdateRolePermissionsV4(AdminUpdateRolePermissionsV4Builder builder,
+            AccountcommonPermissionsV3 body,
+            string roleId
+        )
+        {
+            PathParams["roleId"] = roleId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateRolePermissionsV4(
             string roleId,            
             Model.AccountcommonPermissionsV3 body            

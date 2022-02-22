@@ -25,6 +25,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class DeleteNotificationTopicV1Admin : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteNotificationTopicV1AdminBuilder Builder = new DeleteNotificationTopicV1AdminBuilder();
+
+        public class DeleteNotificationTopicV1AdminBuilder
+        {
+            
+            
+            internal DeleteNotificationTopicV1AdminBuilder() { }
+
+
+
+
+
+            public DeleteNotificationTopicV1Admin Build(
+                string namespace_,
+                string topicName
+            )
+            {
+                return new DeleteNotificationTopicV1Admin(this,
+                    namespace_,                    
+                    topicName                    
+                );
+            }
+        }
+
+        private DeleteNotificationTopicV1Admin(DeleteNotificationTopicV1AdminBuilder builder,
+            string namespace_,
+            string topicName
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["topicName"] = topicName;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteNotificationTopicV1Admin(
             string namespace_,            
             string topicName            

@@ -35,6 +35,59 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class GetGroupInvitationRequestPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetGroupInvitationRequestPublicV1Builder Builder = new GetGroupInvitationRequestPublicV1Builder();
+
+        public class GetGroupInvitationRequestPublicV1Builder
+        {
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetGroupInvitationRequestPublicV1Builder() { }
+
+
+            public GetGroupInvitationRequestPublicV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetGroupInvitationRequestPublicV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetGroupInvitationRequestPublicV1 Build(
+                string namespace_
+            )
+            {
+                return new GetGroupInvitationRequestPublicV1(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetGroupInvitationRequestPublicV1(GetGroupInvitationRequestPublicV1Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetGroupInvitationRequestPublicV1(
             string namespace_,            
             long? limit,            

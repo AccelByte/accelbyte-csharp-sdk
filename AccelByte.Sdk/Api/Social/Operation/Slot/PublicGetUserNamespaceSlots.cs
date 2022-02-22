@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class PublicGetUserNamespaceSlots : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetUserNamespaceSlotsBuilder Builder = new PublicGetUserNamespaceSlotsBuilder();
+
+        public class PublicGetUserNamespaceSlotsBuilder
+        {
+            
+            
+            internal PublicGetUserNamespaceSlotsBuilder() { }
+
+
+
+
+
+            public PublicGetUserNamespaceSlots Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicGetUserNamespaceSlots(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicGetUserNamespaceSlots(PublicGetUserNamespaceSlotsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetUserNamespaceSlots(
             string namespace_,            
             string userId            

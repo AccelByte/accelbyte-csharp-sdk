@@ -30,6 +30,59 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class GetMemberRolesListAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetMemberRolesListAdminV1Builder Builder = new GetMemberRolesListAdminV1Builder();
+
+        public class GetMemberRolesListAdminV1Builder
+        {
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetMemberRolesListAdminV1Builder() { }
+
+
+            public GetMemberRolesListAdminV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetMemberRolesListAdminV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetMemberRolesListAdminV1 Build(
+                string namespace_
+            )
+            {
+                return new GetMemberRolesListAdminV1(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetMemberRolesListAdminV1(GetMemberRolesListAdminV1Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetMemberRolesListAdminV1(
             string namespace_,            
             long? limit,            

@@ -23,6 +23,64 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetItemByAppId : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetItemByAppIdBuilder Builder = new GetItemByAppIdBuilder();
+
+        public class GetItemByAppIdBuilder
+        {
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            
+            internal GetItemByAppIdBuilder() { }
+
+
+            public GetItemByAppIdBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public GetItemByAppIdBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public GetItemByAppId Build(
+                string namespace_,
+                string appId
+            )
+            {
+                return new GetItemByAppId(this,
+                    namespace_,                    
+                    appId                    
+                );
+            }
+        }
+
+        private GetItemByAppId(GetItemByAppIdBuilder builder,
+            string namespace_,
+            string appId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (appId != null) QueryParams["appId"] = appId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetItemByAppId(
             string namespace_,            
             bool? activeOnly,            

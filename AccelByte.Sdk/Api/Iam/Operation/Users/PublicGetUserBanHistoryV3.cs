@@ -29,6 +29,82 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicGetUserBanHistoryV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetUserBanHistoryV3Builder Builder = new PublicGetUserBanHistoryV3Builder();
+
+        public class PublicGetUserBanHistoryV3Builder
+        {
+            
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public string? After { get; set; }
+            
+            public string? Before { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            internal PublicGetUserBanHistoryV3Builder() { }
+
+
+            public PublicGetUserBanHistoryV3Builder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public PublicGetUserBanHistoryV3Builder SetAfter(string _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public PublicGetUserBanHistoryV3Builder SetBefore(string _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public PublicGetUserBanHistoryV3Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+
+
+
+            public PublicGetUserBanHistoryV3 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicGetUserBanHistoryV3(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicGetUserBanHistoryV3(PublicGetUserBanHistoryV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.After != null) QueryParams["after"] = builder.After;
+            if (builder.Before != null) QueryParams["before"] = builder.Before;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetUserBanHistoryV3(
             string namespace_,            
             string userId,            

@@ -18,6 +18,91 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     /// </summary>
     public class GetEventSpecificUserV2Handler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetEventSpecificUserV2HandlerBuilder Builder = new GetEventSpecificUserV2HandlerBuilder();
+
+        public class GetEventSpecificUserV2HandlerBuilder
+        {
+            
+            
+            public string? EndDate { get; set; }
+            
+            public string? EventName { get; set; }
+            
+            public double? Offset { get; set; }
+            
+            public double? PageSize { get; set; }
+            
+            public string? StartDate { get; set; }
+            
+            internal GetEventSpecificUserV2HandlerBuilder() { }
+
+
+            public GetEventSpecificUserV2HandlerBuilder SetEndDate(string _endDate)
+            {
+                EndDate = _endDate;
+                return this;
+            }
+
+            public GetEventSpecificUserV2HandlerBuilder SetEventName(string _eventName)
+            {
+                EventName = _eventName;
+                return this;
+            }
+
+            public GetEventSpecificUserV2HandlerBuilder SetOffset(double _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public GetEventSpecificUserV2HandlerBuilder SetPageSize(double _pageSize)
+            {
+                PageSize = _pageSize;
+                return this;
+            }
+
+            public GetEventSpecificUserV2HandlerBuilder SetStartDate(string _startDate)
+            {
+                StartDate = _startDate;
+                return this;
+            }
+
+
+
+
+            public GetEventSpecificUserV2Handler Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetEventSpecificUserV2Handler(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetEventSpecificUserV2Handler(GetEventSpecificUserV2HandlerBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.EndDate != null) QueryParams["endDate"] = builder.EndDate;
+            if (builder.EventName != null) QueryParams["eventName"] = builder.EventName;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.PageSize != null) QueryParams["pageSize"] = Convert.ToString(builder.PageSize)!;
+            if (builder.StartDate != null) QueryParams["startDate"] = builder.StartDate;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetEventSpecificUserV2Handler(
             string namespace_,            
             string userId,            

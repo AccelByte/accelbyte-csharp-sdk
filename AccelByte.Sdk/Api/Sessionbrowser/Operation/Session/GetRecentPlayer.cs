@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// </summary>
     public class GetRecentPlayer : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetRecentPlayerBuilder Builder = new GetRecentPlayerBuilder();
+
+        public class GetRecentPlayerBuilder
+        {
+            
+            
+            internal GetRecentPlayerBuilder() { }
+
+
+
+
+
+            public GetRecentPlayer Build(
+                string namespace_,
+                string userID
+            )
+            {
+                return new GetRecentPlayer(this,
+                    namespace_,                    
+                    userID                    
+                );
+            }
+        }
+
+        private GetRecentPlayer(GetRecentPlayerBuilder builder,
+            string namespace_,
+            string userID
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userID"] = userID;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetRecentPlayer(
             string namespace_,            
             string userID            

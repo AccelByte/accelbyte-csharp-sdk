@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class ResetUserSeason : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ResetUserSeasonBuilder Builder = new ResetUserSeasonBuilder();
+
+        public class ResetUserSeasonBuilder
+        {
+            
+            
+            internal ResetUserSeasonBuilder() { }
+
+
+
+
+
+            public ResetUserSeason Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new ResetUserSeason(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private ResetUserSeason(ResetUserSeasonBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ResetUserSeason(
             string namespace_,            
             string userId            

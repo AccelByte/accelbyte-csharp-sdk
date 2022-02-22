@@ -40,6 +40,64 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class GetGroupJoinRequestPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetGroupJoinRequestPublicV1Builder Builder = new GetGroupJoinRequestPublicV1Builder();
+
+        public class GetGroupJoinRequestPublicV1Builder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetGroupJoinRequestPublicV1Builder() { }
+
+
+            public GetGroupJoinRequestPublicV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetGroupJoinRequestPublicV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetGroupJoinRequestPublicV1 Build(
+                string groupId,
+                string namespace_
+            )
+            {
+                return new GetGroupJoinRequestPublicV1(this,
+                    groupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetGroupJoinRequestPublicV1(GetGroupJoinRequestPublicV1Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetGroupJoinRequestPublicV1(
             string groupId,            
             string namespace_,            

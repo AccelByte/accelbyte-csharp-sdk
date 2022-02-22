@@ -21,6 +21,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PayWithUserWallet : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PayWithUserWalletBuilder Builder = new PayWithUserWalletBuilder();
+
+        public class PayWithUserWalletBuilder
+        {
+            
+            
+            
+            public Model.PaymentRequest? Body { get; set; }
+            
+            internal PayWithUserWalletBuilder() { }
+
+
+
+            public PayWithUserWalletBuilder SetBody(Model.PaymentRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PayWithUserWallet Build(
+                string currencyCode,
+                string namespace_,
+                string userId
+            )
+            {
+                return new PayWithUserWallet(this,
+                    currencyCode,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PayWithUserWallet(PayWithUserWalletBuilder builder,
+            string currencyCode,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["currencyCode"] = currencyCode;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PayWithUserWallet(
             string currencyCode,            
             string namespace_,            

@@ -50,6 +50,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class RetrieveUserThirdPartyPlatformTokenV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveUserThirdPartyPlatformTokenV3Builder Builder = new RetrieveUserThirdPartyPlatformTokenV3Builder();
+
+        public class RetrieveUserThirdPartyPlatformTokenV3Builder
+        {
+            
+            
+            
+            internal RetrieveUserThirdPartyPlatformTokenV3Builder() { }
+
+
+
+
+
+            public RetrieveUserThirdPartyPlatformTokenV3 Build(
+                string namespace_,
+                string platformId,
+                string userId
+            )
+            {
+                return new RetrieveUserThirdPartyPlatformTokenV3(this,
+                    namespace_,                    
+                    platformId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private RetrieveUserThirdPartyPlatformTokenV3(RetrieveUserThirdPartyPlatformTokenV3Builder builder,
+            string namespace_,
+            string platformId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveUserThirdPartyPlatformTokenV3(
             string namespace_,            
             string platformId,            

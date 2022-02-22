@@ -22,6 +22,56 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DefeatureItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DefeatureItemBuilder Builder = new DefeatureItemBuilder();
+
+        public class DefeatureItemBuilder
+        {
+            
+            
+            
+            
+            internal DefeatureItemBuilder() { }
+
+
+
+
+
+            public DefeatureItem Build(
+                string feature,
+                string itemId,
+                string namespace_,
+                string storeId
+            )
+            {
+                return new DefeatureItem(this,
+                    feature,                    
+                    itemId,                    
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private DefeatureItem(DefeatureItemBuilder builder,
+            string feature,
+            string itemId,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["feature"] = feature;
+            PathParams["itemId"] = itemId;
+            PathParams["namespace"] = namespace_;
+            
+            if (storeId != null) QueryParams["storeId"] = storeId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public DefeatureItem(
             string feature,            
             string itemId,            

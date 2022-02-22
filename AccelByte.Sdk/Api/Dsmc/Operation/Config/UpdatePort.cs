@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class UpdatePort : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdatePortBuilder Builder = new UpdatePortBuilder();
+
+        public class UpdatePortBuilder
+        {
+            
+            
+            
+            internal UpdatePortBuilder() { }
+
+
+
+
+
+            public UpdatePort Build(
+                ModelsUpdatePortRequest body,
+                string name,
+                string namespace_
+            )
+            {
+                return new UpdatePort(this,
+                    body,                    
+                    name,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdatePort(UpdatePortBuilder builder,
+            ModelsUpdatePortRequest body,
+            string name,
+            string namespace_
+        )
+        {
+            PathParams["name"] = name;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdatePort(
             string name,            
             string namespace_,            

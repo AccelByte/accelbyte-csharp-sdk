@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class GetAllSessionsInChannel : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetAllSessionsInChannelBuilder Builder = new GetAllSessionsInChannelBuilder();
+
+        public class GetAllSessionsInChannelBuilder
+        {
+            
+            
+            internal GetAllSessionsInChannelBuilder() { }
+
+
+
+
+
+            public GetAllSessionsInChannel Build(
+                string channelName,
+                string namespace_
+            )
+            {
+                return new GetAllSessionsInChannel(this,
+                    channelName,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetAllSessionsInChannel(GetAllSessionsInChannelBuilder builder,
+            string channelName,
+            string namespace_
+        )
+        {
+            PathParams["channelName"] = channelName;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetAllSessionsInChannel(
             string channelName,            
             string namespace_            

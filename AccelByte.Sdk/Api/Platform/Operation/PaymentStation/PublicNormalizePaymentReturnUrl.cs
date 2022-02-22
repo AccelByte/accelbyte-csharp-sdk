@@ -39,6 +39,142 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicNormalizePaymentReturnUrl : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicNormalizePaymentReturnUrlBuilder Builder = new PublicNormalizePaymentReturnUrlBuilder();
+
+        public class PublicNormalizePaymentReturnUrlBuilder
+        {
+            
+            public string? PayerID { get; set; }
+            
+            public string? Foreinginvoice { get; set; }
+            
+            public string? InvoiceId { get; set; }
+            
+            public string? Payload { get; set; }
+            
+            public string? ResultCode { get; set; }
+            
+            public string? Status { get; set; }
+            
+            public string? Token { get; set; }
+            
+            public string? Type { get; set; }
+            
+            public string? UserId { get; set; }
+            
+            
+            
+            
+            
+            internal PublicNormalizePaymentReturnUrlBuilder() { }
+
+
+            public PublicNormalizePaymentReturnUrlBuilder SetPayerID(string _payerID)
+            {
+                PayerID = _payerID;
+                return this;
+            }
+
+            public PublicNormalizePaymentReturnUrlBuilder SetForeinginvoice(string _foreinginvoice)
+            {
+                Foreinginvoice = _foreinginvoice;
+                return this;
+            }
+
+            public PublicNormalizePaymentReturnUrlBuilder SetInvoiceId(string _invoiceId)
+            {
+                InvoiceId = _invoiceId;
+                return this;
+            }
+
+            public PublicNormalizePaymentReturnUrlBuilder SetPayload(string _payload)
+            {
+                Payload = _payload;
+                return this;
+            }
+
+            public PublicNormalizePaymentReturnUrlBuilder SetResultCode(string _resultCode)
+            {
+                ResultCode = _resultCode;
+                return this;
+            }
+
+            public PublicNormalizePaymentReturnUrlBuilder SetStatus(string _status)
+            {
+                Status = _status;
+                return this;
+            }
+
+            public PublicNormalizePaymentReturnUrlBuilder SetToken(string _token)
+            {
+                Token = _token;
+                return this;
+            }
+
+            public PublicNormalizePaymentReturnUrlBuilder SetType(string _type)
+            {
+                Type = _type;
+                return this;
+            }
+
+            public PublicNormalizePaymentReturnUrlBuilder SetUserId(string _userId)
+            {
+                UserId = _userId;
+                return this;
+            }
+
+
+
+
+            public PublicNormalizePaymentReturnUrl Build(
+                string namespace_,
+                string orderNo,
+                string paymentOrderNo,
+                string paymentProvider,
+                string returnUrl
+            )
+            {
+                return new PublicNormalizePaymentReturnUrl(this,
+                    namespace_,                    
+                    orderNo,                    
+                    paymentOrderNo,                    
+                    paymentProvider,                    
+                    returnUrl                    
+                );
+            }
+        }
+
+        private PublicNormalizePaymentReturnUrl(PublicNormalizePaymentReturnUrlBuilder builder,
+            string namespace_,
+            string orderNo,
+            string paymentOrderNo,
+            string paymentProvider,
+            string returnUrl
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.PayerID != null) QueryParams["PayerID"] = builder.PayerID;
+            if (builder.Foreinginvoice != null) QueryParams["foreinginvoice"] = builder.Foreinginvoice;
+            if (builder.InvoiceId != null) QueryParams["invoice_id"] = builder.InvoiceId;
+            if (builder.Payload != null) QueryParams["payload"] = builder.Payload;
+            if (builder.ResultCode != null) QueryParams["resultCode"] = builder.ResultCode;
+            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            if (builder.Token != null) QueryParams["token"] = builder.Token;
+            if (builder.Type != null) QueryParams["type"] = builder.Type;
+            if (builder.UserId != null) QueryParams["user_id"] = builder.UserId;
+            if (orderNo != null) QueryParams["orderNo"] = orderNo;
+            if (paymentOrderNo != null) QueryParams["paymentOrderNo"] = paymentOrderNo;
+            if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
+            if (returnUrl != null) QueryParams["returnUrl"] = returnUrl;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicNormalizePaymentReturnUrl(
             string namespace_,            
             string? payerID,            

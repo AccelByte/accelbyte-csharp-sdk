@@ -22,6 +22,77 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryCampaigns : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryCampaignsBuilder Builder = new QueryCampaignsBuilder();
+
+        public class QueryCampaignsBuilder
+        {
+            
+            public int? Limit { get; set; }
+            
+            public string? Name { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? Tag { get; set; }
+            
+            internal QueryCampaignsBuilder() { }
+
+
+            public QueryCampaignsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryCampaignsBuilder SetName(string _name)
+            {
+                Name = _name;
+                return this;
+            }
+
+            public QueryCampaignsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryCampaignsBuilder SetTag(string _tag)
+            {
+                Tag = _tag;
+                return this;
+            }
+
+
+
+
+            public QueryCampaigns Build(
+                string namespace_
+            )
+            {
+                return new QueryCampaigns(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private QueryCampaigns(QueryCampaignsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Name != null) QueryParams["name"] = builder.Name;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Tag != null) QueryParams["tag"] = builder.Tag;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryCampaigns(
             string namespace_,            
             int? limit,            

@@ -21,6 +21,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateFulfillmentScript : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateFulfillmentScriptBuilder Builder = new UpdateFulfillmentScriptBuilder();
+
+        public class UpdateFulfillmentScriptBuilder
+        {
+            
+            public Model.FulfillmentScriptUpdate? Body { get; set; }
+            
+            internal UpdateFulfillmentScriptBuilder() { }
+
+
+
+            public UpdateFulfillmentScriptBuilder SetBody(Model.FulfillmentScriptUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateFulfillmentScript Build(
+                string id
+            )
+            {
+                return new UpdateFulfillmentScript(this,
+                    id                    
+                );
+            }
+        }
+
+        private UpdateFulfillmentScript(UpdateFulfillmentScriptBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateFulfillmentScript(
             string id,            
             Model.FulfillmentScriptUpdate body            

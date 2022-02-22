@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetUserByPlatformUserID : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserByPlatformUserIDBuilder Builder = new GetUserByPlatformUserIDBuilder();
+
+        public class GetUserByPlatformUserIDBuilder
+        {
+            
+            
+            
+            internal GetUserByPlatformUserIDBuilder() { }
+
+
+
+
+
+            public GetUserByPlatformUserID Build(
+                string namespace_,
+                string platformID,
+                string platformUserID
+            )
+            {
+                return new GetUserByPlatformUserID(this,
+                    namespace_,                    
+                    platformID,                    
+                    platformUserID                    
+                );
+            }
+        }
+
+        private GetUserByPlatformUserID(GetUserByPlatformUserIDBuilder builder,
+            string namespace_,
+            string platformID,
+            string platformUserID
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (platformID != null) QueryParams["platformID"] = platformID;
+            if (platformUserID != null) QueryParams["platformUserID"] = platformUserID;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserByPlatformUserID(
             string namespace_,            
             string platformID,            

@@ -30,6 +30,82 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RetrieveLatestPoliciesByNamespaceAndCountryPublic : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder Builder = new RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder();
+
+        public class RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder
+        {
+            
+            
+            public bool? AlwaysIncludeDefault { get; set; }
+            
+            public bool? DefaultOnEmpty { get; set; }
+            
+            public string? PolicyType { get; set; }
+            
+            public string? Tags { get; set; }
+            
+            internal RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder() { }
+
+
+            public RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder SetAlwaysIncludeDefault(bool _alwaysIncludeDefault)
+            {
+                AlwaysIncludeDefault = _alwaysIncludeDefault;
+                return this;
+            }
+
+            public RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder SetDefaultOnEmpty(bool _defaultOnEmpty)
+            {
+                DefaultOnEmpty = _defaultOnEmpty;
+                return this;
+            }
+
+            public RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder SetPolicyType(string _policyType)
+            {
+                PolicyType = _policyType;
+                return this;
+            }
+
+            public RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder SetTags(string _tags)
+            {
+                Tags = _tags;
+                return this;
+            }
+
+
+
+
+            public RetrieveLatestPoliciesByNamespaceAndCountryPublic Build(
+                string countryCode,
+                string namespace_
+            )
+            {
+                return new RetrieveLatestPoliciesByNamespaceAndCountryPublic(this,
+                    countryCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private RetrieveLatestPoliciesByNamespaceAndCountryPublic(RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder builder,
+            string countryCode,
+            string namespace_
+        )
+        {
+            PathParams["countryCode"] = countryCode;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.AlwaysIncludeDefault != null) QueryParams["alwaysIncludeDefault"] = Convert.ToString(builder.AlwaysIncludeDefault)!;
+            if (builder.DefaultOnEmpty != null) QueryParams["defaultOnEmpty"] = Convert.ToString(builder.DefaultOnEmpty)!;
+            if (builder.PolicyType != null) QueryParams["policyType"] = builder.PolicyType;
+            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveLatestPoliciesByNamespaceAndCountryPublic(
             string countryCode,            
             string namespace_,            

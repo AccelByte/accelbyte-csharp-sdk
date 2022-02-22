@@ -45,6 +45,46 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class AcceptGroupJoinRequestPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AcceptGroupJoinRequestPublicV1Builder Builder = new AcceptGroupJoinRequestPublicV1Builder();
+
+        public class AcceptGroupJoinRequestPublicV1Builder
+        {
+            
+            
+            internal AcceptGroupJoinRequestPublicV1Builder() { }
+
+
+
+
+
+            public AcceptGroupJoinRequestPublicV1 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AcceptGroupJoinRequestPublicV1(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AcceptGroupJoinRequestPublicV1(AcceptGroupJoinRequestPublicV1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AcceptGroupJoinRequestPublicV1(
             string namespace_,            
             string userId            

@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class SyncSteamInventory : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SyncSteamInventoryBuilder Builder = new SyncSteamInventoryBuilder();
+
+        public class SyncSteamInventoryBuilder
+        {
+            
+            
+            public Model.SteamSyncRequest? Body { get; set; }
+            
+            internal SyncSteamInventoryBuilder() { }
+
+
+
+            public SyncSteamInventoryBuilder SetBody(Model.SteamSyncRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public SyncSteamInventory Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new SyncSteamInventory(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private SyncSteamInventory(SyncSteamInventoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public SyncSteamInventory(
             string namespace_,            
             string userId,            

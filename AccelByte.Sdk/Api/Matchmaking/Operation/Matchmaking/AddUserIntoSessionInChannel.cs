@@ -22,6 +22,56 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class AddUserIntoSessionInChannel : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AddUserIntoSessionInChannelBuilder Builder = new AddUserIntoSessionInChannelBuilder();
+
+        public class AddUserIntoSessionInChannelBuilder
+        {
+            
+            
+            
+            
+            internal AddUserIntoSessionInChannelBuilder() { }
+
+
+
+
+
+            public AddUserIntoSessionInChannel Build(
+                ModelsMatchAddUserIntoSessionRequest body,
+                string channelName,
+                string matchID,
+                string namespace_
+            )
+            {
+                return new AddUserIntoSessionInChannel(this,
+                    body,                    
+                    channelName,                    
+                    matchID,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AddUserIntoSessionInChannel(AddUserIntoSessionInChannelBuilder builder,
+            ModelsMatchAddUserIntoSessionRequest body,
+            string channelName,
+            string matchID,
+            string namespace_
+        )
+        {
+            PathParams["channelName"] = channelName;
+            PathParams["matchID"] = matchID;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AddUserIntoSessionInChannel(
             string channelName,            
             string matchID,            

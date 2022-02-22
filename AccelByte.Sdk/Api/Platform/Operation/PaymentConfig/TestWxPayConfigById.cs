@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class TestWxPayConfigById : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static TestWxPayConfigByIdBuilder Builder = new TestWxPayConfigByIdBuilder();
+
+        public class TestWxPayConfigByIdBuilder
+        {
+            
+            internal TestWxPayConfigByIdBuilder() { }
+
+
+
+
+
+            public TestWxPayConfigById Build(
+                string id
+            )
+            {
+                return new TestWxPayConfigById(this,
+                    id                    
+                );
+            }
+        }
+
+        private TestWxPayConfigById(TestWxPayConfigByIdBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public TestWxPayConfigById(
             string id            
         )

@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminUpdatePartyAttributesV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdatePartyAttributesV1Builder Builder = new AdminUpdatePartyAttributesV1Builder();
+
+        public class AdminUpdatePartyAttributesV1Builder
+        {
+            
+            
+            
+            internal AdminUpdatePartyAttributesV1Builder() { }
+
+
+
+
+
+            public AdminUpdatePartyAttributesV1 Build(
+                ModelsPartyPUTCustomAttributesRequest body,
+                string namespace_,
+                string partyId
+            )
+            {
+                return new AdminUpdatePartyAttributesV1(this,
+                    body,                    
+                    namespace_,                    
+                    partyId                    
+                );
+            }
+        }
+
+        private AdminUpdatePartyAttributesV1(AdminUpdatePartyAttributesV1Builder builder,
+            ModelsPartyPUTCustomAttributesRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["partyId"] = partyId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdatePartyAttributesV1(
             string namespace_,            
             string partyId,            

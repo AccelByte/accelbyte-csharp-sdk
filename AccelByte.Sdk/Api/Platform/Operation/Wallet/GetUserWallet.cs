@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetUserWallet : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserWalletBuilder Builder = new GetUserWalletBuilder();
+
+        public class GetUserWalletBuilder
+        {
+            
+            
+            
+            internal GetUserWalletBuilder() { }
+
+
+
+
+
+            public GetUserWallet Build(
+                string namespace_,
+                string userId,
+                string walletId
+            )
+            {
+                return new GetUserWallet(this,
+                    namespace_,                    
+                    userId,                    
+                    walletId                    
+                );
+            }
+        }
+
+        private GetUserWallet(GetUserWalletBuilder builder,
+            string namespace_,
+            string userId,
+            string walletId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            PathParams["walletId"] = walletId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserWallet(
             string namespace_,            
             string userId,            

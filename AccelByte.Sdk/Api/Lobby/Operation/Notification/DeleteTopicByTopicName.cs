@@ -23,6 +23,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class DeleteTopicByTopicName : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteTopicByTopicNameBuilder Builder = new DeleteTopicByTopicNameBuilder();
+
+        public class DeleteTopicByTopicNameBuilder
+        {
+            
+            
+            internal DeleteTopicByTopicNameBuilder() { }
+
+
+
+
+
+            public DeleteTopicByTopicName Build(
+                string namespace_,
+                string topic
+            )
+            {
+                return new DeleteTopicByTopicName(this,
+                    namespace_,                    
+                    topic                    
+                );
+            }
+        }
+
+        private DeleteTopicByTopicName(DeleteTopicByTopicNameBuilder builder,
+            string namespace_,
+            string topic
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["topic"] = topic;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteTopicByTopicName(
             string namespace_,            
             string topic            

@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetPaymentMerchantConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPaymentMerchantConfigBuilder Builder = new GetPaymentMerchantConfigBuilder();
+
+        public class GetPaymentMerchantConfigBuilder
+        {
+            
+            internal GetPaymentMerchantConfigBuilder() { }
+
+
+
+
+
+            public GetPaymentMerchantConfig Build(
+                string id
+            )
+            {
+                return new GetPaymentMerchantConfig(this,
+                    id                    
+                );
+            }
+        }
+
+        private GetPaymentMerchantConfig(GetPaymentMerchantConfigBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPaymentMerchantConfig(
             string id            
         )

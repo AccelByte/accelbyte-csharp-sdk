@@ -23,6 +23,46 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
     /// </summary>
     public class SetServerAlias : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SetServerAliasBuilder Builder = new SetServerAliasBuilder();
+
+        public class SetServerAliasBuilder
+        {
+            
+            
+            internal SetServerAliasBuilder() { }
+
+
+
+
+
+            public SetServerAlias Build(
+                ModelsSetAliasRequest body,
+                string region
+            )
+            {
+                return new SetServerAlias(this,
+                    body,                    
+                    region                    
+                );
+            }
+        }
+
+        private SetServerAlias(SetServerAliasBuilder builder,
+            ModelsSetAliasRequest body,
+            string region
+        )
+        {
+            PathParams["region"] = region;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public SetServerAlias(
             string region,            
             Model.ModelsSetAliasRequest body            

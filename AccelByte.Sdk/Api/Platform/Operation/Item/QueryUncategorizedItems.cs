@@ -23,6 +23,86 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryUncategorizedItems : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryUncategorizedItemsBuilder Builder = new QueryUncategorizedItemsBuilder();
+
+        public class QueryUncategorizedItemsBuilder
+        {
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? SortBy { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            internal QueryUncategorizedItemsBuilder() { }
+
+
+            public QueryUncategorizedItemsBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public QueryUncategorizedItemsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryUncategorizedItemsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryUncategorizedItemsBuilder SetSortBy(string _sortBy)
+            {
+                SortBy = _sortBy;
+                return this;
+            }
+
+            public QueryUncategorizedItemsBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public QueryUncategorizedItems Build(
+                string namespace_
+            )
+            {
+                return new QueryUncategorizedItems(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private QueryUncategorizedItems(QueryUncategorizedItemsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryUncategorizedItems(
             string namespace_,            
             bool? activeOnly,            

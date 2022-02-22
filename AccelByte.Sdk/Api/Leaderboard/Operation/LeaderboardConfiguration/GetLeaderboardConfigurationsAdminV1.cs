@@ -23,6 +23,77 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetLeaderboardConfigurationsAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetLeaderboardConfigurationsAdminV1Builder Builder = new GetLeaderboardConfigurationsAdminV1Builder();
+
+        public class GetLeaderboardConfigurationsAdminV1Builder
+        {
+            
+            public bool? IsArchived { get; set; }
+            
+            public bool? IsDeleted { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetLeaderboardConfigurationsAdminV1Builder() { }
+
+
+            public GetLeaderboardConfigurationsAdminV1Builder SetIsArchived(bool _isArchived)
+            {
+                IsArchived = _isArchived;
+                return this;
+            }
+
+            public GetLeaderboardConfigurationsAdminV1Builder SetIsDeleted(bool _isDeleted)
+            {
+                IsDeleted = _isDeleted;
+                return this;
+            }
+
+            public GetLeaderboardConfigurationsAdminV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetLeaderboardConfigurationsAdminV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetLeaderboardConfigurationsAdminV1 Build(
+                string namespace_
+            )
+            {
+                return new GetLeaderboardConfigurationsAdminV1(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetLeaderboardConfigurationsAdminV1(GetLeaderboardConfigurationsAdminV1Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.IsArchived != null) QueryParams["isArchived"] = Convert.ToString(builder.IsArchived)!;
+            if (builder.IsDeleted != null) QueryParams["isDeleted"] = Convert.ToString(builder.IsDeleted)!;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetLeaderboardConfigurationsAdminV1(
             string namespace_,            
             bool? isArchived,            

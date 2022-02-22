@@ -30,6 +30,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminBanUserV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminBanUserV3Builder Builder = new AdminBanUserV3Builder();
+
+        public class AdminBanUserV3Builder
+        {
+            
+            
+            
+            internal AdminBanUserV3Builder() { }
+
+
+
+
+
+            public AdminBanUserV3 Build(
+                ModelBanCreateRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminBanUserV3(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminBanUserV3(AdminBanUserV3Builder builder,
+            ModelBanCreateRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminBanUserV3(
             string namespace_,            
             string userId,            

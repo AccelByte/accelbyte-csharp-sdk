@@ -112,6 +112,56 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AddRolePermission : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AddRolePermissionBuilder Builder = new AddRolePermissionBuilder();
+
+        public class AddRolePermissionBuilder
+        {
+            
+            
+            
+            
+            internal AddRolePermissionBuilder() { }
+
+
+
+
+
+            public AddRolePermission Build(
+                ModelUpdatePermissionScheduleRequest body,
+                long action,
+                string resource,
+                string roleId
+            )
+            {
+                return new AddRolePermission(this,
+                    body,                    
+                    action,                    
+                    resource,                    
+                    roleId                    
+                );
+            }
+        }
+
+        private AddRolePermission(AddRolePermissionBuilder builder,
+            ModelUpdatePermissionScheduleRequest body,
+            long action,
+            string resource,
+            string roleId
+        )
+        {
+            PathParams["action"] = Convert.ToString(action);
+            PathParams["resource"] = resource;
+            PathParams["roleId"] = roleId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AddRolePermission(
             long action,            
             string resource,            

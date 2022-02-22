@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class CreatePass : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreatePassBuilder Builder = new CreatePassBuilder();
+
+        public class CreatePassBuilder
+        {
+            
+            
+            public Model.PassCreate? Body { get; set; }
+            
+            internal CreatePassBuilder() { }
+
+
+
+            public CreatePassBuilder SetBody(Model.PassCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreatePass Build(
+                string namespace_,
+                string seasonId
+            )
+            {
+                return new CreatePass(this,
+                    namespace_,                    
+                    seasonId                    
+                );
+            }
+        }
+
+        private CreatePass(CreatePassBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["seasonId"] = seasonId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreatePass(
             string namespace_,            
             string seasonId,            

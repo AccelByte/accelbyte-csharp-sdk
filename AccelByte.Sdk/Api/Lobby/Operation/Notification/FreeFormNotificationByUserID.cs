@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class FreeFormNotificationByUserID : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static FreeFormNotificationByUserIDBuilder Builder = new FreeFormNotificationByUserIDBuilder();
+
+        public class FreeFormNotificationByUserIDBuilder
+        {
+            
+            
+            
+            internal FreeFormNotificationByUserIDBuilder() { }
+
+
+
+
+
+            public FreeFormNotificationByUserID Build(
+                ModelFreeFormNotificationRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new FreeFormNotificationByUserID(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private FreeFormNotificationByUserID(FreeFormNotificationByUserIDBuilder builder,
+            ModelFreeFormNotificationRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public FreeFormNotificationByUserID(
             string namespace_,            
             string userId,            

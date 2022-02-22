@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class CreateReward : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateRewardBuilder Builder = new CreateRewardBuilder();
+
+        public class CreateRewardBuilder
+        {
+            
+            
+            public Model.RewardCreate? Body { get; set; }
+            
+            internal CreateRewardBuilder() { }
+
+
+
+            public CreateRewardBuilder SetBody(Model.RewardCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateReward Build(
+                string namespace_,
+                string seasonId
+            )
+            {
+                return new CreateReward(this,
+                    namespace_,                    
+                    seasonId                    
+                );
+            }
+        }
+
+        private CreateReward(CreateRewardBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["seasonId"] = seasonId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateReward(
             string namespace_,            
             string seasonId,            

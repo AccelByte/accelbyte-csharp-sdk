@@ -25,6 +25,46 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class DequeueSessionHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DequeueSessionHandlerBuilder Builder = new DequeueSessionHandlerBuilder();
+
+        public class DequeueSessionHandlerBuilder
+        {
+            
+            
+            internal DequeueSessionHandlerBuilder() { }
+
+
+
+
+
+            public DequeueSessionHandler Build(
+                ModelsDequeueRequest body,
+                string namespace_
+            )
+            {
+                return new DequeueSessionHandler(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DequeueSessionHandler(DequeueSessionHandlerBuilder builder,
+            ModelsDequeueRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public DequeueSessionHandler(
             string namespace_,            
             Model.ModelsDequeueRequest body            

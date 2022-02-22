@@ -23,6 +23,91 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetLocaleItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetLocaleItemBuilder Builder = new GetLocaleItemBuilder();
+
+        public class GetLocaleItemBuilder
+        {
+            
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public string? Language { get; set; }
+            
+            public bool? PopulateBundle { get; set; }
+            
+            public string? Region { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            internal GetLocaleItemBuilder() { }
+
+
+            public GetLocaleItemBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public GetLocaleItemBuilder SetLanguage(string _language)
+            {
+                Language = _language;
+                return this;
+            }
+
+            public GetLocaleItemBuilder SetPopulateBundle(bool _populateBundle)
+            {
+                PopulateBundle = _populateBundle;
+                return this;
+            }
+
+            public GetLocaleItemBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+            public GetLocaleItemBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public GetLocaleItem Build(
+                string itemId,
+                string namespace_
+            )
+            {
+                return new GetLocaleItem(this,
+                    itemId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetLocaleItem(GetLocaleItemBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            PathParams["itemId"] = itemId;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.PopulateBundle != null) QueryParams["populateBundle"] = Convert.ToString(builder.PopulateBundle)!;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetLocaleItem(
             string itemId,            
             string namespace_,            

@@ -24,6 +24,64 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicGetDescendantCategories : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetDescendantCategoriesBuilder Builder = new PublicGetDescendantCategoriesBuilder();
+
+        public class PublicGetDescendantCategoriesBuilder
+        {
+            
+            
+            public string? Language { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            internal PublicGetDescendantCategoriesBuilder() { }
+
+
+            public PublicGetDescendantCategoriesBuilder SetLanguage(string _language)
+            {
+                Language = _language;
+                return this;
+            }
+
+            public PublicGetDescendantCategoriesBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public PublicGetDescendantCategories Build(
+                string categoryPath,
+                string namespace_
+            )
+            {
+                return new PublicGetDescendantCategories(this,
+                    categoryPath,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicGetDescendantCategories(PublicGetDescendantCategoriesBuilder builder,
+            string categoryPath,
+            string namespace_
+        )
+        {
+            PathParams["categoryPath"] = categoryPath;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetDescendantCategories(
             string categoryPath,            
             string namespace_,            

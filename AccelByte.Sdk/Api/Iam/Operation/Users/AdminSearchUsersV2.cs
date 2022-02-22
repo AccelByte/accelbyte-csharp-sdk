@@ -18,6 +18,118 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminSearchUsersV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminSearchUsersV2Builder Builder = new AdminSearchUsersV2Builder();
+
+        public class AdminSearchUsersV2Builder
+        {
+            
+            public string? After { get; set; }
+            
+            public string? Before { get; set; }
+            
+            public string? DisplayName { get; set; }
+            
+            public string? Limit { get; set; }
+            
+            public string? LoginId { get; set; }
+            
+            public string? PlatformUserId { get; set; }
+            
+            public string? RoleId { get; set; }
+            
+            public string? UserId { get; set; }
+            
+            
+            internal AdminSearchUsersV2Builder() { }
+
+
+            public AdminSearchUsersV2Builder SetAfter(string _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public AdminSearchUsersV2Builder SetBefore(string _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public AdminSearchUsersV2Builder SetDisplayName(string _displayName)
+            {
+                DisplayName = _displayName;
+                return this;
+            }
+
+            public AdminSearchUsersV2Builder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminSearchUsersV2Builder SetLoginId(string _loginId)
+            {
+                LoginId = _loginId;
+                return this;
+            }
+
+            public AdminSearchUsersV2Builder SetPlatformUserId(string _platformUserId)
+            {
+                PlatformUserId = _platformUserId;
+                return this;
+            }
+
+            public AdminSearchUsersV2Builder SetRoleId(string _roleId)
+            {
+                RoleId = _roleId;
+                return this;
+            }
+
+            public AdminSearchUsersV2Builder SetUserId(string _userId)
+            {
+                UserId = _userId;
+                return this;
+            }
+
+
+
+
+            public AdminSearchUsersV2 Build(
+                string namespace_,
+                string platformId
+            )
+            {
+                return new AdminSearchUsersV2(this,
+                    namespace_,                    
+                    platformId                    
+                );
+            }
+        }
+
+        private AdminSearchUsersV2(AdminSearchUsersV2Builder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.After != null) QueryParams["after"] = builder.After;
+            if (builder.Before != null) QueryParams["before"] = builder.Before;
+            if (builder.DisplayName != null) QueryParams["displayName"] = builder.DisplayName;
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.LoginId != null) QueryParams["loginId"] = builder.LoginId;
+            if (builder.PlatformUserId != null) QueryParams["platformUserId"] = builder.PlatformUserId;
+            if (builder.RoleId != null) QueryParams["roleId"] = builder.RoleId;
+            if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
+            if (platformId != null) QueryParams["platformId"] = platformId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminSearchUsersV2(
             string namespace_,            
             string? after,            

@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class UpdateNamespaceSlotConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateNamespaceSlotConfigBuilder Builder = new UpdateNamespaceSlotConfigBuilder();
+
+        public class UpdateNamespaceSlotConfigBuilder
+        {
+            
+            public Model.SlotConfigUpdate? Body { get; set; }
+            
+            internal UpdateNamespaceSlotConfigBuilder() { }
+
+
+
+            public UpdateNamespaceSlotConfigBuilder SetBody(Model.SlotConfigUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateNamespaceSlotConfig Build(
+                string namespace_
+            )
+            {
+                return new UpdateNamespaceSlotConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateNamespaceSlotConfig(UpdateNamespaceSlotConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateNamespaceSlotConfig(
             string namespace_,            
             Model.SlotConfigUpdate body            

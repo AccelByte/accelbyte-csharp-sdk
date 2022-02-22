@@ -30,6 +30,46 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class CreateMemberRoleAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateMemberRoleAdminV1Builder Builder = new CreateMemberRoleAdminV1Builder();
+
+        public class CreateMemberRoleAdminV1Builder
+        {
+            
+            
+            internal CreateMemberRoleAdminV1Builder() { }
+
+
+
+
+
+            public CreateMemberRoleAdminV1 Build(
+                ModelsCreateMemberRoleRequestV1 body,
+                string namespace_
+            )
+            {
+                return new CreateMemberRoleAdminV1(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateMemberRoleAdminV1(CreateMemberRoleAdminV1Builder builder,
+            ModelsCreateMemberRoleRequestV1 body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateMemberRoleAdminV1(
             string namespace_,            
             Model.ModelsCreateMemberRoleRequestV1 body            

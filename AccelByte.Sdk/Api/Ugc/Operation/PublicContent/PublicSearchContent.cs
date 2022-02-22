@@ -18,6 +18,140 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class PublicSearchContent : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicSearchContentBuilder Builder = new PublicSearchContentBuilder();
+
+        public class PublicSearchContentBuilder
+        {
+            
+            public string? Creator { get; set; }
+            
+            public string? Isofficial { get; set; }
+            
+            public string? Limit { get; set; }
+            
+            public string? Name { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            public string? Orderby { get; set; }
+            
+            public string? Sortby { get; set; }
+            
+            public string? Subtype { get; set; }
+            
+            public string? Tags { get; set; }
+            
+            public string? Type { get; set; }
+            
+            public string? UserId { get; set; }
+            
+            internal PublicSearchContentBuilder() { }
+
+
+            public PublicSearchContentBuilder SetCreator(string _creator)
+            {
+                Creator = _creator;
+                return this;
+            }
+
+            public PublicSearchContentBuilder SetIsofficial(string _isofficial)
+            {
+                Isofficial = _isofficial;
+                return this;
+            }
+
+            public PublicSearchContentBuilder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicSearchContentBuilder SetName(string _name)
+            {
+                Name = _name;
+                return this;
+            }
+
+            public PublicSearchContentBuilder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public PublicSearchContentBuilder SetOrderby(string _orderby)
+            {
+                Orderby = _orderby;
+                return this;
+            }
+
+            public PublicSearchContentBuilder SetSortby(string _sortby)
+            {
+                Sortby = _sortby;
+                return this;
+            }
+
+            public PublicSearchContentBuilder SetSubtype(string _subtype)
+            {
+                Subtype = _subtype;
+                return this;
+            }
+
+            public PublicSearchContentBuilder SetTags(string _tags)
+            {
+                Tags = _tags;
+                return this;
+            }
+
+            public PublicSearchContentBuilder SetType(string _type)
+            {
+                Type = _type;
+                return this;
+            }
+
+            public PublicSearchContentBuilder SetUserId(string _userId)
+            {
+                UserId = _userId;
+                return this;
+            }
+
+
+
+
+            public PublicSearchContent Build(
+                string namespace_
+            )
+            {
+                return new PublicSearchContent(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicSearchContent(PublicSearchContentBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Creator != null) QueryParams["creator"] = builder.Creator;
+            if (builder.Isofficial != null) QueryParams["isofficial"] = builder.Isofficial;
+            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Name != null) QueryParams["name"] = builder.Name;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            if (builder.Orderby != null) QueryParams["orderby"] = builder.Orderby;
+            if (builder.Sortby != null) QueryParams["sortby"] = builder.Sortby;
+            if (builder.Subtype != null) QueryParams["subtype"] = builder.Subtype;
+            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
+            if (builder.Type != null) QueryParams["type"] = builder.Type;
+            if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicSearchContent(
             string namespace_,            
             string? creator,            

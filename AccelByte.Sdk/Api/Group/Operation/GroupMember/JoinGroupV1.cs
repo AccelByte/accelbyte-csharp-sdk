@@ -59,6 +59,46 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class JoinGroupV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static JoinGroupV1Builder Builder = new JoinGroupV1Builder();
+
+        public class JoinGroupV1Builder
+        {
+            
+            
+            internal JoinGroupV1Builder() { }
+
+
+
+
+
+            public JoinGroupV1 Build(
+                string groupId,
+                string namespace_
+            )
+            {
+                return new JoinGroupV1(this,
+                    groupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private JoinGroupV1(JoinGroupV1Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public JoinGroupV1(
             string groupId,            
             string namespace_            

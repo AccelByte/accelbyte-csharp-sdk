@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetSteamIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetSteamIAPConfigBuilder Builder = new GetSteamIAPConfigBuilder();
+
+        public class GetSteamIAPConfigBuilder
+        {
+            
+            internal GetSteamIAPConfigBuilder() { }
+
+
+
+
+
+            public GetSteamIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new GetSteamIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetSteamIAPConfig(GetSteamIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetSteamIAPConfig(
             string namespace_            
         )

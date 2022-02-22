@@ -74,6 +74,56 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// </summary>
     public class PostPlayerRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PostPlayerRecordHandlerV1Builder Builder = new PostPlayerRecordHandlerV1Builder();
+
+        public class PostPlayerRecordHandlerV1Builder
+        {
+            
+            
+            
+            
+            internal PostPlayerRecordHandlerV1Builder() { }
+
+
+
+
+
+            public PostPlayerRecordHandlerV1 Build(
+                ModelsPlayerRecordRequest body,
+                string key,
+                string namespace_,
+                string userId
+            )
+            {
+                return new PostPlayerRecordHandlerV1(this,
+                    body,                    
+                    key,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PostPlayerRecordHandlerV1(PostPlayerRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["key"] = key;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PostPlayerRecordHandlerV1(
             string key,            
             string namespace_,            

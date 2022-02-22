@@ -23,6 +23,41 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
     /// </summary>
     public class DeleteServer : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteServerBuilder Builder = new DeleteServerBuilder();
+
+        public class DeleteServerBuilder
+        {
+            
+            internal DeleteServerBuilder() { }
+
+
+
+
+
+            public DeleteServer Build(
+                string region
+            )
+            {
+                return new DeleteServer(this,
+                    region                    
+                );
+            }
+        }
+
+        private DeleteServer(DeleteServerBuilder builder,
+            string region
+        )
+        {
+            PathParams["region"] = region;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteServer(
             string region            
         )

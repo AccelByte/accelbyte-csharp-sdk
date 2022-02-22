@@ -23,6 +23,101 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicQueryUserEntitlements : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicQueryUserEntitlementsBuilder Builder = new PublicQueryUserEntitlementsBuilder();
+
+        public class PublicQueryUserEntitlementsBuilder
+        {
+            
+            
+            public string? AppType { get; set; }
+            
+            public string? EntitlementClazz { get; set; }
+            
+            public string? EntitlementName { get; set; }
+            
+            public List<string>? ItemId { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            internal PublicQueryUserEntitlementsBuilder() { }
+
+
+            public PublicQueryUserEntitlementsBuilder SetAppType(string _appType)
+            {
+                AppType = _appType;
+                return this;
+            }
+
+            public PublicQueryUserEntitlementsBuilder SetEntitlementClazz(string _entitlementClazz)
+            {
+                EntitlementClazz = _entitlementClazz;
+                return this;
+            }
+
+            public PublicQueryUserEntitlementsBuilder SetEntitlementName(string _entitlementName)
+            {
+                EntitlementName = _entitlementName;
+                return this;
+            }
+
+            public PublicQueryUserEntitlementsBuilder SetItemId(List<string> _itemId)
+            {
+                ItemId = _itemId;
+                return this;
+            }
+
+            public PublicQueryUserEntitlementsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicQueryUserEntitlementsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public PublicQueryUserEntitlements Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicQueryUserEntitlements(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicQueryUserEntitlements(PublicQueryUserEntitlementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.AppType != null) QueryParams["appType"] = builder.AppType;
+            if (builder.EntitlementClazz != null) QueryParams["entitlementClazz"] = builder.EntitlementClazz;
+            if (builder.EntitlementName != null) QueryParams["entitlementName"] = builder.EntitlementName;
+            if (builder.ItemId != null) QueryParams["itemId"] = builder.ItemId;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            CollectionFormatMap["itemId"] = "multi";
+            
+            
+        }
+        #endregion
+
         public PublicQueryUserEntitlements(
             string namespace_,            
             string userId,            

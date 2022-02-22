@@ -48,6 +48,91 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     /// </summary>
     public class GetPublicEditHistory : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPublicEditHistoryBuilder Builder = new GetPublicEditHistoryBuilder();
+
+        public class GetPublicEditHistoryBuilder
+        {
+            
+            
+            public string? EndDate { get; set; }
+            
+            public double? Offset { get; set; }
+            
+            public double? PageSize { get; set; }
+            
+            public string? StartDate { get; set; }
+            
+            public string? Type { get; set; }
+            
+            internal GetPublicEditHistoryBuilder() { }
+
+
+            public GetPublicEditHistoryBuilder SetEndDate(string _endDate)
+            {
+                EndDate = _endDate;
+                return this;
+            }
+
+            public GetPublicEditHistoryBuilder SetOffset(double _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public GetPublicEditHistoryBuilder SetPageSize(double _pageSize)
+            {
+                PageSize = _pageSize;
+                return this;
+            }
+
+            public GetPublicEditHistoryBuilder SetStartDate(string _startDate)
+            {
+                StartDate = _startDate;
+                return this;
+            }
+
+            public GetPublicEditHistoryBuilder SetType(string _type)
+            {
+                Type = _type;
+                return this;
+            }
+
+
+
+
+            public GetPublicEditHistory Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetPublicEditHistory(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetPublicEditHistory(GetPublicEditHistoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.EndDate != null) QueryParams["endDate"] = builder.EndDate;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.PageSize != null) QueryParams["pageSize"] = Convert.ToString(builder.PageSize)!;
+            if (builder.StartDate != null) QueryParams["startDate"] = builder.StartDate;
+            if (builder.Type != null) QueryParams["type"] = builder.Type;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPublicEditHistory(
             string namespace_,            
             string userId,            

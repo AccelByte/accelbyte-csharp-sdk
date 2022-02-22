@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetDescendantCategories : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetDescendantCategoriesBuilder Builder = new GetDescendantCategoriesBuilder();
+
+        public class GetDescendantCategoriesBuilder
+        {
+            
+            
+            public string? StoreId { get; set; }
+            
+            internal GetDescendantCategoriesBuilder() { }
+
+
+            public GetDescendantCategoriesBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public GetDescendantCategories Build(
+                string categoryPath,
+                string namespace_
+            )
+            {
+                return new GetDescendantCategories(this,
+                    categoryPath,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetDescendantCategories(GetDescendantCategoriesBuilder builder,
+            string categoryPath,
+            string namespace_
+        )
+        {
+            PathParams["categoryPath"] = categoryPath;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetDescendantCategories(
             string categoryPath,            
             string namespace_,            

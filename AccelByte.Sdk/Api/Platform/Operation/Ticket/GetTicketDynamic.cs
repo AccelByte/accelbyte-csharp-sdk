@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetTicketDynamic : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetTicketDynamicBuilder Builder = new GetTicketDynamicBuilder();
+
+        public class GetTicketDynamicBuilder
+        {
+            
+            
+            internal GetTicketDynamicBuilder() { }
+
+
+
+
+
+            public GetTicketDynamic Build(
+                string boothName,
+                string namespace_
+            )
+            {
+                return new GetTicketDynamic(this,
+                    boothName,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetTicketDynamic(GetTicketDynamicBuilder builder,
+            string boothName,
+            string namespace_
+        )
+        {
+            PathParams["boothName"] = boothName;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetTicketDynamic(
             string boothName,            
             string namespace_            

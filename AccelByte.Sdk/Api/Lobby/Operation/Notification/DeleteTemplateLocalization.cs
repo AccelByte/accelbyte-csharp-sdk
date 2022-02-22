@@ -20,6 +20,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class DeleteTemplateLocalization : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteTemplateLocalizationBuilder Builder = new DeleteTemplateLocalizationBuilder();
+
+        public class DeleteTemplateLocalizationBuilder
+        {
+            
+            
+            
+            internal DeleteTemplateLocalizationBuilder() { }
+
+
+
+
+
+            public DeleteTemplateLocalization Build(
+                string namespace_,
+                string templateLanguage,
+                string templateSlug
+            )
+            {
+                return new DeleteTemplateLocalization(this,
+                    namespace_,                    
+                    templateLanguage,                    
+                    templateSlug                    
+                );
+            }
+        }
+
+        private DeleteTemplateLocalization(DeleteTemplateLocalizationBuilder builder,
+            string namespace_,
+            string templateLanguage,
+            string templateSlug
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["templateLanguage"] = templateLanguage;
+            PathParams["templateSlug"] = templateSlug;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteTemplateLocalization(
             string namespace_,            
             string templateLanguage,            

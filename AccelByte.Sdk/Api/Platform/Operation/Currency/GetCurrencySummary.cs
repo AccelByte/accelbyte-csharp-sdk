@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetCurrencySummary : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetCurrencySummaryBuilder Builder = new GetCurrencySummaryBuilder();
+
+        public class GetCurrencySummaryBuilder
+        {
+            
+            
+            internal GetCurrencySummaryBuilder() { }
+
+
+
+
+
+            public GetCurrencySummary Build(
+                string currencyCode,
+                string namespace_
+            )
+            {
+                return new GetCurrencySummary(this,
+                    currencyCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetCurrencySummary(GetCurrencySummaryBuilder builder,
+            string currencyCode,
+            string namespace_
+        )
+        {
+            PathParams["currencyCode"] = currencyCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetCurrencySummary(
             string currencyCode,            
             string namespace_            

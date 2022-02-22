@@ -21,6 +21,64 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class QueryStats : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryStatsBuilder Builder = new QueryStatsBuilder();
+
+        public class QueryStatsBuilder
+        {
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            
+            internal QueryStatsBuilder() { }
+
+
+            public QueryStatsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryStatsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public QueryStats Build(
+                string namespace_,
+                string keyword
+            )
+            {
+                return new QueryStats(this,
+                    namespace_,                    
+                    keyword                    
+                );
+            }
+        }
+
+        private QueryStats(QueryStatsBuilder builder,
+            string namespace_,
+            string keyword
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (keyword != null) QueryParams["keyword"] = keyword;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryStats(
             string namespace_,            
             int? limit,            

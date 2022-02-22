@@ -23,6 +23,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class DeleteLocalServer : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteLocalServerBuilder Builder = new DeleteLocalServerBuilder();
+
+        public class DeleteLocalServerBuilder
+        {
+            
+            
+            internal DeleteLocalServerBuilder() { }
+
+
+
+
+
+            public DeleteLocalServer Build(
+                string name,
+                string namespace_
+            )
+            {
+                return new DeleteLocalServer(this,
+                    name,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteLocalServer(DeleteLocalServerBuilder builder,
+            string name,
+            string namespace_
+        )
+        {
+            PathParams["name"] = name;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteLocalServer(
             string name,            
             string namespace_            

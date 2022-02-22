@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicGetAsyncStatus : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetAsyncStatusBuilder Builder = new PublicGetAsyncStatusBuilder();
+
+        public class PublicGetAsyncStatusBuilder
+        {
+            
+            
+            internal PublicGetAsyncStatusBuilder() { }
+
+
+
+
+
+            public PublicGetAsyncStatus Build(
+                string namespace_,
+                string requestId
+            )
+            {
+                return new PublicGetAsyncStatus(this,
+                    namespace_,                    
+                    requestId                    
+                );
+            }
+        }
+
+        private PublicGetAsyncStatus(PublicGetAsyncStatusBuilder builder,
+            string namespace_,
+            string requestId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["requestId"] = requestId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetAsyncStatus(
             string namespace_,            
             string requestId            

@@ -84,6 +84,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminUpdateInputValidations : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateInputValidationsBuilder Builder = new AdminUpdateInputValidationsBuilder();
+
+        public class AdminUpdateInputValidationsBuilder
+        {
+            
+            internal AdminUpdateInputValidationsBuilder() { }
+
+
+
+
+
+            public AdminUpdateInputValidations Build(
+                List<ModelInputValidationUpdatePayload> body
+            )
+            {
+                return new AdminUpdateInputValidations(this,
+                    body                    
+                );
+            }
+        }
+
+        private AdminUpdateInputValidations(AdminUpdateInputValidationsBuilder builder,
+            List<ModelInputValidationUpdatePayload> body
+        )
+        {
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateInputValidations(
             List<Model.ModelInputValidationUpdatePayload> body            
         )

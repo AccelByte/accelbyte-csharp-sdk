@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class CreateDeployment : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateDeploymentBuilder Builder = new CreateDeploymentBuilder();
+
+        public class CreateDeploymentBuilder
+        {
+            
+            
+            
+            internal CreateDeploymentBuilder() { }
+
+
+
+
+
+            public CreateDeployment Build(
+                ModelsCreateDeploymentRequest body,
+                string deployment,
+                string namespace_
+            )
+            {
+                return new CreateDeployment(this,
+                    body,                    
+                    deployment,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateDeployment(CreateDeploymentBuilder builder,
+            ModelsCreateDeploymentRequest body,
+            string deployment,
+            string namespace_
+        )
+        {
+            PathParams["deployment"] = deployment;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateDeployment(
             string deployment,            
             string namespace_,            

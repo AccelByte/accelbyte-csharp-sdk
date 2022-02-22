@@ -57,6 +57,113 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminSearchUserV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminSearchUserV3Builder Builder = new AdminSearchUserV3Builder();
+
+        public class AdminSearchUserV3Builder
+        {
+            
+            public string? By { get; set; }
+            
+            public string? EndDate { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            public string? Offset { get; set; }
+            
+            public string? PlatformBy { get; set; }
+            
+            public string? PlatformId { get; set; }
+            
+            public string? Query { get; set; }
+            
+            public string? StartDate { get; set; }
+            
+            internal AdminSearchUserV3Builder() { }
+
+
+            public AdminSearchUserV3Builder SetBy(string _by)
+            {
+                By = _by;
+                return this;
+            }
+
+            public AdminSearchUserV3Builder SetEndDate(string _endDate)
+            {
+                EndDate = _endDate;
+                return this;
+            }
+
+            public AdminSearchUserV3Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminSearchUserV3Builder SetOffset(string _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public AdminSearchUserV3Builder SetPlatformBy(string _platformBy)
+            {
+                PlatformBy = _platformBy;
+                return this;
+            }
+
+            public AdminSearchUserV3Builder SetPlatformId(string _platformId)
+            {
+                PlatformId = _platformId;
+                return this;
+            }
+
+            public AdminSearchUserV3Builder SetQuery(string _query)
+            {
+                Query = _query;
+                return this;
+            }
+
+            public AdminSearchUserV3Builder SetStartDate(string _startDate)
+            {
+                StartDate = _startDate;
+                return this;
+            }
+
+
+
+
+            public AdminSearchUserV3 Build(
+                string namespace_
+            )
+            {
+                return new AdminSearchUserV3(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminSearchUserV3(AdminSearchUserV3Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.By != null) QueryParams["by"] = builder.By;
+            if (builder.EndDate != null) QueryParams["endDate"] = builder.EndDate;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            if (builder.PlatformBy != null) QueryParams["platformBy"] = builder.PlatformBy;
+            if (builder.PlatformId != null) QueryParams["platformId"] = builder.PlatformId;
+            if (builder.Query != null) QueryParams["query"] = builder.Query;
+            if (builder.StartDate != null) QueryParams["startDate"] = builder.StartDate;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminSearchUserV3(
             string namespace_,            
             string? by,            

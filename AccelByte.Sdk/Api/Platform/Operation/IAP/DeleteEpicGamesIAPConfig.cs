@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DeleteEpicGamesIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteEpicGamesIAPConfigBuilder Builder = new DeleteEpicGamesIAPConfigBuilder();
+
+        public class DeleteEpicGamesIAPConfigBuilder
+        {
+            
+            internal DeleteEpicGamesIAPConfigBuilder() { }
+
+
+
+
+
+            public DeleteEpicGamesIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new DeleteEpicGamesIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteEpicGamesIAPConfig(DeleteEpicGamesIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteEpicGamesIAPConfig(
             string namespace_            
         )

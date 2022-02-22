@@ -24,6 +24,51 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class UpdateMatchmakingChannel : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateMatchmakingChannelBuilder Builder = new UpdateMatchmakingChannelBuilder();
+
+        public class UpdateMatchmakingChannelBuilder
+        {
+            
+            
+            
+            internal UpdateMatchmakingChannelBuilder() { }
+
+
+
+
+
+            public UpdateMatchmakingChannel Build(
+                ModelsUpdateChannelRequest body,
+                string channelName,
+                string namespace_
+            )
+            {
+                return new UpdateMatchmakingChannel(this,
+                    body,                    
+                    channelName,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateMatchmakingChannel(UpdateMatchmakingChannelBuilder builder,
+            ModelsUpdateChannelRequest body,
+            string channelName,
+            string namespace_
+        )
+        {
+            PathParams["channelName"] = channelName;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateMatchmakingChannel(
             string channelName,            
             string namespace_,            

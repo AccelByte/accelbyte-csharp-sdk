@@ -20,6 +20,68 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class ListAdminsV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListAdminsV3Builder Builder = new ListAdminsV3Builder();
+
+        public class ListAdminsV3Builder
+        {
+            
+            public string? After { get; set; }
+            
+            public string? Before { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            internal ListAdminsV3Builder() { }
+
+
+            public ListAdminsV3Builder SetAfter(string _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public ListAdminsV3Builder SetBefore(string _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public ListAdminsV3Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+
+
+
+            public ListAdminsV3 Build(
+                string namespace_
+            )
+            {
+                return new ListAdminsV3(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ListAdminsV3(ListAdminsV3Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.After != null) QueryParams["after"] = builder.After;
+            if (builder.Before != null) QueryParams["before"] = builder.Before;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListAdminsV3(
             string namespace_,            
             string? after,            

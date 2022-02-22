@@ -23,6 +23,41 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class GetNamespacePublisher : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetNamespacePublisherBuilder Builder = new GetNamespacePublisherBuilder();
+
+        public class GetNamespacePublisherBuilder
+        {
+            
+            internal GetNamespacePublisherBuilder() { }
+
+
+
+
+
+            public GetNamespacePublisher Build(
+                string namespace_
+            )
+            {
+                return new GetNamespacePublisher(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetNamespacePublisher(GetNamespacePublisherBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetNamespacePublisher(
             string namespace_            
         )

@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CreateKeyGroup : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateKeyGroupBuilder Builder = new CreateKeyGroupBuilder();
+
+        public class CreateKeyGroupBuilder
+        {
+            
+            public Model.KeyGroupCreate? Body { get; set; }
+            
+            internal CreateKeyGroupBuilder() { }
+
+
+
+            public CreateKeyGroupBuilder SetBody(Model.KeyGroupCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateKeyGroup Build(
+                string namespace_
+            )
+            {
+                return new CreateKeyGroup(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateKeyGroup(CreateKeyGroupBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateKeyGroup(
             string namespace_,            
             Model.KeyGroupCreate body            

@@ -22,6 +22,77 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryWallets : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryWalletsBuilder Builder = new QueryWalletsBuilder();
+
+        public class QueryWalletsBuilder
+        {
+            
+            public string? CurrencyCode { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? UserId { get; set; }
+            
+            internal QueryWalletsBuilder() { }
+
+
+            public QueryWalletsBuilder SetCurrencyCode(string _currencyCode)
+            {
+                CurrencyCode = _currencyCode;
+                return this;
+            }
+
+            public QueryWalletsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryWalletsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public QueryWalletsBuilder SetUserId(string _userId)
+            {
+                UserId = _userId;
+                return this;
+            }
+
+
+
+
+            public QueryWallets Build(
+                string namespace_
+            )
+            {
+                return new QueryWallets(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private QueryWallets(QueryWalletsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.CurrencyCode != null) QueryParams["currencyCode"] = builder.CurrencyCode;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryWallets(
             string namespace_,            
             string? currencyCode,            

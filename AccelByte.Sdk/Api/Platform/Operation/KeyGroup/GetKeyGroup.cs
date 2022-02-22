@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetKeyGroup : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetKeyGroupBuilder Builder = new GetKeyGroupBuilder();
+
+        public class GetKeyGroupBuilder
+        {
+            
+            
+            internal GetKeyGroupBuilder() { }
+
+
+
+
+
+            public GetKeyGroup Build(
+                string keyGroupId,
+                string namespace_
+            )
+            {
+                return new GetKeyGroup(this,
+                    keyGroupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetKeyGroup(GetKeyGroupBuilder builder,
+            string keyGroupId,
+            string namespace_
+        )
+        {
+            PathParams["keyGroupId"] = keyGroupId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetKeyGroup(
             string keyGroupId,            
             string namespace_            

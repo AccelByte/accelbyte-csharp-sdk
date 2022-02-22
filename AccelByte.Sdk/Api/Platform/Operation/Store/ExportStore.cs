@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ExportStore : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ExportStoreBuilder Builder = new ExportStoreBuilder();
+
+        public class ExportStoreBuilder
+        {
+            
+            
+            internal ExportStoreBuilder() { }
+
+
+
+
+
+            public ExportStore Build(
+                string namespace_,
+                string storeId
+            )
+            {
+                return new ExportStore(this,
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private ExportStore(ExportStoreBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["storeId"] = storeId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ExportStore(
             string namespace_,            
             string storeId            

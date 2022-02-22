@@ -19,6 +19,75 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetEventByEventTypeAndEventIDHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetEventByEventTypeAndEventIDHandlerBuilder Builder = new GetEventByEventTypeAndEventIDHandlerBuilder();
+
+        public class GetEventByEventTypeAndEventIDHandlerBuilder
+        {
+            
+            
+            
+            public double? Offset { get; set; }
+            
+            
+            
+            
+            internal GetEventByEventTypeAndEventIDHandlerBuilder() { }
+
+
+            public GetEventByEventTypeAndEventIDHandlerBuilder SetOffset(double _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetEventByEventTypeAndEventIDHandler Build(
+                double eventId,
+                double eventType,
+                string namespace_,
+                string endDate,
+                double pageSize,
+                string startDate
+            )
+            {
+                return new GetEventByEventTypeAndEventIDHandler(this,
+                    eventId,                    
+                    eventType,                    
+                    namespace_,                    
+                    endDate,                    
+                    pageSize,                    
+                    startDate                    
+                );
+            }
+        }
+
+        private GetEventByEventTypeAndEventIDHandler(GetEventByEventTypeAndEventIDHandlerBuilder builder,
+            double eventId,
+            double eventType,
+            string namespace_,
+            string endDate,
+            double pageSize,
+            string startDate
+        )
+        {
+            PathParams["eventId"] = Convert.ToString(eventId);
+            PathParams["eventType"] = Convert.ToString(eventType);
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (endDate != null) QueryParams["endDate"] = endDate;
+            QueryParams["pageSize"] = Convert.ToString(pageSize)!;
+            if (startDate != null) QueryParams["startDate"] = startDate;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetEventByEventTypeAndEventIDHandler(
             double eventId,            
             double eventType,            

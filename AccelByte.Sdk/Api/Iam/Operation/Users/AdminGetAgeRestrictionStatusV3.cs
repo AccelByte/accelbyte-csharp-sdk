@@ -19,6 +19,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetAgeRestrictionStatusV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetAgeRestrictionStatusV3Builder Builder = new AdminGetAgeRestrictionStatusV3Builder();
+
+        public class AdminGetAgeRestrictionStatusV3Builder
+        {
+            
+            internal AdminGetAgeRestrictionStatusV3Builder() { }
+
+
+
+
+
+            public AdminGetAgeRestrictionStatusV3 Build(
+                string namespace_
+            )
+            {
+                return new AdminGetAgeRestrictionStatusV3(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetAgeRestrictionStatusV3(AdminGetAgeRestrictionStatusV3Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetAgeRestrictionStatusV3(
             string namespace_            
         )

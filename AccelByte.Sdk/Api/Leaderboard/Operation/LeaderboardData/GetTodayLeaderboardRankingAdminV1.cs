@@ -25,6 +25,64 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetTodayLeaderboardRankingAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetTodayLeaderboardRankingAdminV1Builder Builder = new GetTodayLeaderboardRankingAdminV1Builder();
+
+        public class GetTodayLeaderboardRankingAdminV1Builder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetTodayLeaderboardRankingAdminV1Builder() { }
+
+
+            public GetTodayLeaderboardRankingAdminV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetTodayLeaderboardRankingAdminV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetTodayLeaderboardRankingAdminV1 Build(
+                string leaderboardCode,
+                string namespace_
+            )
+            {
+                return new GetTodayLeaderboardRankingAdminV1(this,
+                    leaderboardCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetTodayLeaderboardRankingAdminV1(GetTodayLeaderboardRankingAdminV1Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetTodayLeaderboardRankingAdminV1(
             string leaderboardCode,            
             string namespace_,            

@@ -18,6 +18,36 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
     /// </summary>
     public class PublicGetMessages : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetMessagesBuilder Builder = new PublicGetMessagesBuilder();
+
+        public class PublicGetMessagesBuilder
+        {
+            internal PublicGetMessagesBuilder() { }
+
+
+
+
+
+            public PublicGetMessages Build(
+            )
+            {
+                return new PublicGetMessages(this
+                );
+            }
+        }
+
+        private PublicGetMessages(PublicGetMessagesBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetMessages(
         )
         {

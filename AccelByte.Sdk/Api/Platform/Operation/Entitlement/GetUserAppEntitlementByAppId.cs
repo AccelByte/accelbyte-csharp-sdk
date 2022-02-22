@@ -22,6 +22,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetUserAppEntitlementByAppId : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserAppEntitlementByAppIdBuilder Builder = new GetUserAppEntitlementByAppIdBuilder();
+
+        public class GetUserAppEntitlementByAppIdBuilder
+        {
+            
+            
+            public bool? ActiveOnly { get; set; }
+            
+            
+            internal GetUserAppEntitlementByAppIdBuilder() { }
+
+
+            public GetUserAppEntitlementByAppIdBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+
+
+
+            public GetUserAppEntitlementByAppId Build(
+                string namespace_,
+                string userId,
+                string appId
+            )
+            {
+                return new GetUserAppEntitlementByAppId(this,
+                    namespace_,                    
+                    userId,                    
+                    appId                    
+                );
+            }
+        }
+
+        private GetUserAppEntitlementByAppId(GetUserAppEntitlementByAppIdBuilder builder,
+            string namespace_,
+            string userId,
+            string appId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (appId != null) QueryParams["appId"] = appId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserAppEntitlementByAppId(
             string namespace_,            
             string userId,            

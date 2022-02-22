@@ -21,6 +21,51 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class CreateUserStatItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateUserStatItemBuilder Builder = new CreateUserStatItemBuilder();
+
+        public class CreateUserStatItemBuilder
+        {
+            
+            
+            
+            internal CreateUserStatItemBuilder() { }
+
+
+
+
+
+            public CreateUserStatItem Build(
+                string namespace_,
+                string statCode,
+                string userId
+            )
+            {
+                return new CreateUserStatItem(this,
+                    namespace_,                    
+                    statCode,                    
+                    userId                    
+                );
+            }
+        }
+
+        private CreateUserStatItem(CreateUserStatItemBuilder builder,
+            string namespace_,
+            string statCode,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["statCode"] = statCode;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public CreateUserStatItem(
             string namespace_,            
             string statCode,            

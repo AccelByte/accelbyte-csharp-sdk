@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class MockFulfillIAPItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static MockFulfillIAPItemBuilder Builder = new MockFulfillIAPItemBuilder();
+
+        public class MockFulfillIAPItemBuilder
+        {
+            
+            
+            public Model.MockIAPReceipt? Body { get; set; }
+            
+            internal MockFulfillIAPItemBuilder() { }
+
+
+
+            public MockFulfillIAPItemBuilder SetBody(Model.MockIAPReceipt _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public MockFulfillIAPItem Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new MockFulfillIAPItem(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private MockFulfillIAPItem(MockFulfillIAPItemBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public MockFulfillIAPItem(
             string namespace_,            
             string userId,            

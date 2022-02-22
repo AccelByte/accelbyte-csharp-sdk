@@ -26,6 +26,46 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// </summary>
     public class DeleteGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteGameRecordHandlerV1Builder Builder = new DeleteGameRecordHandlerV1Builder();
+
+        public class DeleteGameRecordHandlerV1Builder
+        {
+            
+            
+            internal DeleteGameRecordHandlerV1Builder() { }
+
+
+
+
+
+            public DeleteGameRecordHandlerV1 Build(
+                string key,
+                string namespace_
+            )
+            {
+                return new DeleteGameRecordHandlerV1(this,
+                    key,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteGameRecordHandlerV1(DeleteGameRecordHandlerV1Builder builder,
+            string key,
+            string namespace_
+        )
+        {
+            PathParams["key"] = key;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteGameRecordHandlerV1(
             string key,            
             string namespace_            

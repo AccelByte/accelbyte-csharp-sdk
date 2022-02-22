@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DeleteAppleIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteAppleIAPConfigBuilder Builder = new DeleteAppleIAPConfigBuilder();
+
+        public class DeleteAppleIAPConfigBuilder
+        {
+            
+            internal DeleteAppleIAPConfigBuilder() { }
+
+
+
+
+
+            public DeleteAppleIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new DeleteAppleIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteAppleIAPConfig(DeleteAppleIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteAppleIAPConfig(
             string namespace_            
         )

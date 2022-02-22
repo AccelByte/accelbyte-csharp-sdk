@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetFulfillmentScript : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetFulfillmentScriptBuilder Builder = new GetFulfillmentScriptBuilder();
+
+        public class GetFulfillmentScriptBuilder
+        {
+            
+            internal GetFulfillmentScriptBuilder() { }
+
+
+
+
+
+            public GetFulfillmentScript Build(
+                string id
+            )
+            {
+                return new GetFulfillmentScript(this,
+                    id                    
+                );
+            }
+        }
+
+        private GetFulfillmentScript(GetFulfillmentScriptBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetFulfillmentScript(
             string id            
         )

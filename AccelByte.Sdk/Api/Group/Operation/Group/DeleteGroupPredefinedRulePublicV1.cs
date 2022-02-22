@@ -37,6 +37,51 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class DeleteGroupPredefinedRulePublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteGroupPredefinedRulePublicV1Builder Builder = new DeleteGroupPredefinedRulePublicV1Builder();
+
+        public class DeleteGroupPredefinedRulePublicV1Builder
+        {
+            
+            
+            
+            internal DeleteGroupPredefinedRulePublicV1Builder() { }
+
+
+
+
+
+            public DeleteGroupPredefinedRulePublicV1 Build(
+                string allowedAction,
+                string groupId,
+                string namespace_
+            )
+            {
+                return new DeleteGroupPredefinedRulePublicV1(this,
+                    allowedAction,                    
+                    groupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeleteGroupPredefinedRulePublicV1(DeleteGroupPredefinedRulePublicV1Builder builder,
+            string allowedAction,
+            string groupId,
+            string namespace_
+        )
+        {
+            PathParams["allowedAction"] = allowedAction;
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteGroupPredefinedRulePublicV1(
             string allowedAction,            
             string groupId,            

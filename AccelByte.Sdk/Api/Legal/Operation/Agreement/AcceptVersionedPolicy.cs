@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class AcceptVersionedPolicy : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AcceptVersionedPolicyBuilder Builder = new AcceptVersionedPolicyBuilder();
+
+        public class AcceptVersionedPolicyBuilder
+        {
+            
+            internal AcceptVersionedPolicyBuilder() { }
+
+
+
+
+
+            public AcceptVersionedPolicy Build(
+                string localizedPolicyVersionId
+            )
+            {
+                return new AcceptVersionedPolicy(this,
+                    localizedPolicyVersionId                    
+                );
+            }
+        }
+
+        private AcceptVersionedPolicy(AcceptVersionedPolicyBuilder builder,
+            string localizedPolicyVersionId
+        )
+        {
+            PathParams["localizedPolicyVersionId"] = localizedPolicyVersionId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AcceptVersionedPolicy(
             string localizedPolicyVersionId            
         )

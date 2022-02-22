@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CountOfPurchasedItem : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CountOfPurchasedItemBuilder Builder = new CountOfPurchasedItemBuilder();
+
+        public class CountOfPurchasedItemBuilder
+        {
+            
+            
+            
+            internal CountOfPurchasedItemBuilder() { }
+
+
+
+
+
+            public CountOfPurchasedItem Build(
+                string namespace_,
+                string userId,
+                string itemId
+            )
+            {
+                return new CountOfPurchasedItem(this,
+                    namespace_,                    
+                    userId,                    
+                    itemId                    
+                );
+            }
+        }
+
+        private CountOfPurchasedItem(CountOfPurchasedItemBuilder builder,
+            string namespace_,
+            string userId,
+            string itemId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (itemId != null) QueryParams["itemId"] = itemId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public CountOfPurchasedItem(
             string namespace_,            
             string userId,            

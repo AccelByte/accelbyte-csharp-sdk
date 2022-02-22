@@ -35,6 +35,46 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// </summary>
     public class AdminCreateNewAchievement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminCreateNewAchievementBuilder Builder = new AdminCreateNewAchievementBuilder();
+
+        public class AdminCreateNewAchievementBuilder
+        {
+            
+            
+            internal AdminCreateNewAchievementBuilder() { }
+
+
+
+
+
+            public AdminCreateNewAchievement Build(
+                ModelsAchievementRequest body,
+                string namespace_
+            )
+            {
+                return new AdminCreateNewAchievement(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminCreateNewAchievement(AdminCreateNewAchievementBuilder builder,
+            ModelsAchievementRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminCreateNewAchievement(
             string namespace_,            
             Model.ModelsAchievementRequest body            

@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class SetUserVisibilityStatusV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SetUserVisibilityStatusV2Builder Builder = new SetUserVisibilityStatusV2Builder();
+
+        public class SetUserVisibilityStatusV2Builder
+        {
+            
+            
+            
+            internal SetUserVisibilityStatusV2Builder() { }
+
+
+
+
+
+            public SetUserVisibilityStatusV2 Build(
+                ModelsSetUserVisibilityRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new SetUserVisibilityStatusV2(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private SetUserVisibilityStatusV2(SetUserVisibilityStatusV2Builder builder,
+            ModelsSetUserVisibilityRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public SetUserVisibilityStatusV2(
             string namespace_,            
             string userId,            

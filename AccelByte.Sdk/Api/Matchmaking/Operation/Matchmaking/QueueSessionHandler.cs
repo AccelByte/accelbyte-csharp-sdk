@@ -32,6 +32,46 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class QueueSessionHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueueSessionHandlerBuilder Builder = new QueueSessionHandlerBuilder();
+
+        public class QueueSessionHandlerBuilder
+        {
+            
+            
+            internal QueueSessionHandlerBuilder() { }
+
+
+
+
+
+            public QueueSessionHandler Build(
+                ModelsMatchmakingResult body,
+                string namespace_
+            )
+            {
+                return new QueueSessionHandler(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private QueueSessionHandler(QueueSessionHandlerBuilder builder,
+            ModelsMatchmakingResult body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public QueueSessionHandler(
             string namespace_,            
             Model.ModelsMatchmakingResult body            

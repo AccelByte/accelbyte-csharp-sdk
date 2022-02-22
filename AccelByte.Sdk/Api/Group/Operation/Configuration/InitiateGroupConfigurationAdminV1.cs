@@ -54,6 +54,41 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class InitiateGroupConfigurationAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static InitiateGroupConfigurationAdminV1Builder Builder = new InitiateGroupConfigurationAdminV1Builder();
+
+        public class InitiateGroupConfigurationAdminV1Builder
+        {
+            
+            internal InitiateGroupConfigurationAdminV1Builder() { }
+
+
+
+
+
+            public InitiateGroupConfigurationAdminV1 Build(
+                string namespace_
+            )
+            {
+                return new InitiateGroupConfigurationAdminV1(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private InitiateGroupConfigurationAdminV1(InitiateGroupConfigurationAdminV1Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public InitiateGroupConfigurationAdminV1(
             string namespace_            
         )

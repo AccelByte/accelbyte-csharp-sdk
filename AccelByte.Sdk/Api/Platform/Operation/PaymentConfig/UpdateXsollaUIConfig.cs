@@ -22,6 +22,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateXsollaUIConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateXsollaUIConfigBuilder Builder = new UpdateXsollaUIConfigBuilder();
+
+        public class UpdateXsollaUIConfigBuilder
+        {
+            
+            public Model.XsollaPaywallConfigRequest? Body { get; set; }
+            
+            internal UpdateXsollaUIConfigBuilder() { }
+
+
+
+            public UpdateXsollaUIConfigBuilder SetBody(Model.XsollaPaywallConfigRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UpdateXsollaUIConfig Build(
+                string id
+            )
+            {
+                return new UpdateXsollaUIConfig(this,
+                    id                    
+                );
+            }
+        }
+
+        private UpdateXsollaUIConfig(UpdateXsollaUIConfigBuilder builder,
+            string id
+        )
+        {
+            PathParams["id"] = id;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UpdateXsollaUIConfig(
             string id,            
             Model.XsollaPaywallConfigRequest body            

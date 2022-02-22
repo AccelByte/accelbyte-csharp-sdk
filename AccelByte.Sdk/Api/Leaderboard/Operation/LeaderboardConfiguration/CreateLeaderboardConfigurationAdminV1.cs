@@ -54,6 +54,46 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class CreateLeaderboardConfigurationAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateLeaderboardConfigurationAdminV1Builder Builder = new CreateLeaderboardConfigurationAdminV1Builder();
+
+        public class CreateLeaderboardConfigurationAdminV1Builder
+        {
+            
+            
+            internal CreateLeaderboardConfigurationAdminV1Builder() { }
+
+
+
+
+
+            public CreateLeaderboardConfigurationAdminV1 Build(
+                ModelsLeaderboardConfigReq body,
+                string namespace_
+            )
+            {
+                return new CreateLeaderboardConfigurationAdminV1(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateLeaderboardConfigurationAdminV1(CreateLeaderboardConfigurationAdminV1Builder builder,
+            ModelsLeaderboardConfigReq body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateLeaderboardConfigurationAdminV1(
             string namespace_,            
             Model.ModelsLeaderboardConfigReq body            

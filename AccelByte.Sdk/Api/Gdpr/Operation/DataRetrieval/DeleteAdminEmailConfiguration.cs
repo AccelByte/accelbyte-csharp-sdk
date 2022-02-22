@@ -21,6 +21,47 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// </summary>
     public class DeleteAdminEmailConfiguration : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteAdminEmailConfigurationBuilder Builder = new DeleteAdminEmailConfigurationBuilder();
+
+        public class DeleteAdminEmailConfigurationBuilder
+        {
+            
+            
+            internal DeleteAdminEmailConfigurationBuilder() { }
+
+
+
+
+
+            public DeleteAdminEmailConfiguration Build(
+                string namespace_,
+                List<string> emails
+            )
+            {
+                return new DeleteAdminEmailConfiguration(this,
+                    namespace_,                    
+                    emails                    
+                );
+            }
+        }
+
+        private DeleteAdminEmailConfiguration(DeleteAdminEmailConfigurationBuilder builder,
+            string namespace_,
+            List<string> emails
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (emails != null) QueryParams["emails"] = emails;
+            
+            
+            CollectionFormatMap["emails"] = "csv";
+            
+            
+        }
+        #endregion
+
         public DeleteAdminEmailConfiguration(
             string namespace_,            
             List<string> emails            

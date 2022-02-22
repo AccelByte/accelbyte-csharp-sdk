@@ -18,6 +18,45 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetRoles : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetRolesBuilder Builder = new GetRolesBuilder();
+
+        public class GetRolesBuilder
+        {
+            public string? IsWildcard { get; set; }
+            
+            internal GetRolesBuilder() { }
+
+
+            public GetRolesBuilder SetIsWildcard(string _isWildcard)
+            {
+                IsWildcard = _isWildcard;
+                return this;
+            }
+
+
+
+
+            public GetRoles Build(
+            )
+            {
+                return new GetRoles(this
+                );
+            }
+        }
+
+        private GetRoles(GetRolesBuilder builder
+        )
+        {
+            
+            if (builder.IsWildcard != null) QueryParams["isWildcard"] = builder.IsWildcard;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetRoles(
             string? isWildcard            
         )

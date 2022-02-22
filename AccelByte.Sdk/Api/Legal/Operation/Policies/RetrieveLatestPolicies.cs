@@ -23,6 +23,68 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RetrieveLatestPolicies : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveLatestPoliciesBuilder Builder = new RetrieveLatestPoliciesBuilder();
+
+        public class RetrieveLatestPoliciesBuilder
+        {
+            
+            public bool? DefaultOnEmpty { get; set; }
+            
+            public string? PolicyType { get; set; }
+            
+            public string? Tags { get; set; }
+            
+            internal RetrieveLatestPoliciesBuilder() { }
+
+
+            public RetrieveLatestPoliciesBuilder SetDefaultOnEmpty(bool _defaultOnEmpty)
+            {
+                DefaultOnEmpty = _defaultOnEmpty;
+                return this;
+            }
+
+            public RetrieveLatestPoliciesBuilder SetPolicyType(string _policyType)
+            {
+                PolicyType = _policyType;
+                return this;
+            }
+
+            public RetrieveLatestPoliciesBuilder SetTags(string _tags)
+            {
+                Tags = _tags;
+                return this;
+            }
+
+
+
+
+            public RetrieveLatestPolicies Build(
+                string countryCode
+            )
+            {
+                return new RetrieveLatestPolicies(this,
+                    countryCode                    
+                );
+            }
+        }
+
+        private RetrieveLatestPolicies(RetrieveLatestPoliciesBuilder builder,
+            string countryCode
+        )
+        {
+            PathParams["countryCode"] = countryCode;
+            
+            if (builder.DefaultOnEmpty != null) QueryParams["defaultOnEmpty"] = Convert.ToString(builder.DefaultOnEmpty)!;
+            if (builder.PolicyType != null) QueryParams["policyType"] = builder.PolicyType;
+            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveLatestPolicies(
             string countryCode,            
             bool? defaultOnEmpty,            

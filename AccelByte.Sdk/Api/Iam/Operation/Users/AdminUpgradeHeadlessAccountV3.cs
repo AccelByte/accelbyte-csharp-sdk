@@ -48,6 +48,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminUpgradeHeadlessAccountV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpgradeHeadlessAccountV3Builder Builder = new AdminUpgradeHeadlessAccountV3Builder();
+
+        public class AdminUpgradeHeadlessAccountV3Builder
+        {
+            
+            
+            
+            internal AdminUpgradeHeadlessAccountV3Builder() { }
+
+
+
+
+
+            public AdminUpgradeHeadlessAccountV3 Build(
+                ModelUpgradeHeadlessAccountWithVerificationCodeRequestV3 body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminUpgradeHeadlessAccountV3(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminUpgradeHeadlessAccountV3(AdminUpgradeHeadlessAccountV3Builder builder,
+            ModelUpgradeHeadlessAccountWithVerificationCodeRequestV3 body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpgradeHeadlessAccountV3(
             string namespace_,            
             string userId,            

@@ -19,6 +19,46 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class DeleteUserActivitiesHandler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteUserActivitiesHandlerBuilder Builder = new DeleteUserActivitiesHandlerBuilder();
+
+        public class DeleteUserActivitiesHandlerBuilder
+        {
+            
+            
+            internal DeleteUserActivitiesHandlerBuilder() { }
+
+
+
+
+
+            public DeleteUserActivitiesHandler Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new DeleteUserActivitiesHandler(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private DeleteUserActivitiesHandler(DeleteUserActivitiesHandlerBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteUserActivitiesHandler(
             string namespace_,            
             string userId            

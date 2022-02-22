@@ -20,6 +20,60 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetArchivedLeaderboardRankingDataV1Handler : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetArchivedLeaderboardRankingDataV1HandlerBuilder Builder = new GetArchivedLeaderboardRankingDataV1HandlerBuilder();
+
+        public class GetArchivedLeaderboardRankingDataV1HandlerBuilder
+        {
+            
+            
+            public string? Slug { get; set; }
+            
+            
+            internal GetArchivedLeaderboardRankingDataV1HandlerBuilder() { }
+
+
+            public GetArchivedLeaderboardRankingDataV1HandlerBuilder SetSlug(string _slug)
+            {
+                Slug = _slug;
+                return this;
+            }
+
+
+
+
+            public GetArchivedLeaderboardRankingDataV1Handler Build(
+                string leaderboardCode,
+                string namespace_,
+                string leaderboardCodes
+            )
+            {
+                return new GetArchivedLeaderboardRankingDataV1Handler(this,
+                    leaderboardCode,                    
+                    namespace_,                    
+                    leaderboardCodes                    
+                );
+            }
+        }
+
+        private GetArchivedLeaderboardRankingDataV1Handler(GetArchivedLeaderboardRankingDataV1HandlerBuilder builder,
+            string leaderboardCode,
+            string namespace_,
+            string leaderboardCodes
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Slug != null) QueryParams["slug"] = builder.Slug;
+            if (leaderboardCodes != null) QueryParams["leaderboardCodes"] = leaderboardCodes;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetArchivedLeaderboardRankingDataV1Handler(
             string leaderboardCode,            
             string namespace_,            

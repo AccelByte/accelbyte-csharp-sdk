@@ -20,6 +20,36 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class CheckReadiness : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CheckReadinessBuilder Builder = new CheckReadinessBuilder();
+
+        public class CheckReadinessBuilder
+        {
+            internal CheckReadinessBuilder() { }
+
+
+
+
+
+            public CheckReadiness Build(
+            )
+            {
+                return new CheckReadiness(this
+                );
+            }
+        }
+
+        private CheckReadiness(CheckReadinessBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public CheckReadiness(
         )
         {

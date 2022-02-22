@@ -29,6 +29,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetBulkUserByEmailAddressV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetBulkUserByEmailAddressV3Builder Builder = new AdminGetBulkUserByEmailAddressV3Builder();
+
+        public class AdminGetBulkUserByEmailAddressV3Builder
+        {
+            
+            
+            internal AdminGetBulkUserByEmailAddressV3Builder() { }
+
+
+
+
+
+            public AdminGetBulkUserByEmailAddressV3 Build(
+                ModelListEmailAddressRequest body,
+                string namespace_
+            )
+            {
+                return new AdminGetBulkUserByEmailAddressV3(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetBulkUserByEmailAddressV3(AdminGetBulkUserByEmailAddressV3Builder builder,
+            ModelListEmailAddressRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminGetBulkUserByEmailAddressV3(
             string namespace_,            
             Model.ModelListEmailAddressRequest body            

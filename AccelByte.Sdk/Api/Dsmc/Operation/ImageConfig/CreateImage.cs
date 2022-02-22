@@ -31,6 +31,41 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class CreateImage : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateImageBuilder Builder = new CreateImageBuilder();
+
+        public class CreateImageBuilder
+        {
+            
+            internal CreateImageBuilder() { }
+
+
+
+
+
+            public CreateImage Build(
+                ModelsCreateImageRequest body
+            )
+            {
+                return new CreateImage(this,
+                    body                    
+                );
+            }
+        }
+
+        private CreateImage(CreateImageBuilder builder,
+            ModelsCreateImageRequest body
+        )
+        {
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateImage(
             Model.ModelsCreateImageRequest body            
         )

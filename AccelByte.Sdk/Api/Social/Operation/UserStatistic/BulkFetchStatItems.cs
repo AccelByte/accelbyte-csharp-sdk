@@ -21,6 +21,51 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class BulkFetchStatItems : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static BulkFetchStatItemsBuilder Builder = new BulkFetchStatItemsBuilder();
+
+        public class BulkFetchStatItemsBuilder
+        {
+            
+            
+            
+            internal BulkFetchStatItemsBuilder() { }
+
+
+
+
+
+            public BulkFetchStatItems Build(
+                string namespace_,
+                string statCode,
+                string userIds
+            )
+            {
+                return new BulkFetchStatItems(this,
+                    namespace_,                    
+                    statCode,                    
+                    userIds                    
+                );
+            }
+        }
+
+        private BulkFetchStatItems(BulkFetchStatItemsBuilder builder,
+            string namespace_,
+            string statCode,
+            string userIds
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (statCode != null) QueryParams["statCode"] = statCode;
+            if (userIds != null) QueryParams["userIds"] = userIds;
+            
+            
+            
+            
+        }
+        #endregion
+
         public BulkFetchStatItems(
             string namespace_,            
             string statCode,            

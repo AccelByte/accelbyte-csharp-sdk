@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminGetListJusticePlatformAccounts : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetListJusticePlatformAccountsBuilder Builder = new AdminGetListJusticePlatformAccountsBuilder();
+
+        public class AdminGetListJusticePlatformAccountsBuilder
+        {
+            
+            
+            internal AdminGetListJusticePlatformAccountsBuilder() { }
+
+
+
+
+
+            public AdminGetListJusticePlatformAccounts Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminGetListJusticePlatformAccounts(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminGetListJusticePlatformAccounts(AdminGetListJusticePlatformAccountsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetListJusticePlatformAccounts(
             string namespace_,            
             string userId            

@@ -92,6 +92,41 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class SaveConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SaveConfigBuilder Builder = new SaveConfigBuilder();
+
+        public class SaveConfigBuilder
+        {
+            
+            internal SaveConfigBuilder() { }
+
+
+
+
+
+            public SaveConfig Build(
+                ModelsDSMConfigRecord body
+            )
+            {
+                return new SaveConfig(this,
+                    body                    
+                );
+            }
+        }
+
+        private SaveConfig(SaveConfigBuilder builder,
+            ModelsDSMConfigRecord body
+        )
+        {
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public SaveConfig(
             Model.ModelsDSMConfigRecord body            
         )

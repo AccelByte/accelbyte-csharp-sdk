@@ -23,6 +23,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DeleteReward : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteRewardBuilder Builder = new DeleteRewardBuilder();
+
+        public class DeleteRewardBuilder
+        {
+            
+            
+            internal DeleteRewardBuilder() { }
+
+
+
+
+
+            public DeleteReward Build(
+                string namespace_,
+                string rewardId
+            )
+            {
+                return new DeleteReward(this,
+                    namespace_,                    
+                    rewardId                    
+                );
+            }
+        }
+
+        private DeleteReward(DeleteRewardBuilder builder,
+            string namespace_,
+            string rewardId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["rewardId"] = rewardId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteReward(
             string namespace_,            
             string rewardId            

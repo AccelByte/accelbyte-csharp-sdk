@@ -22,6 +22,56 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicDeletePaymentAccount : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicDeletePaymentAccountBuilder Builder = new PublicDeletePaymentAccountBuilder();
+
+        public class PublicDeletePaymentAccountBuilder
+        {
+            
+            
+            
+            
+            internal PublicDeletePaymentAccountBuilder() { }
+
+
+
+
+
+            public PublicDeletePaymentAccount Build(
+                string id,
+                string namespace_,
+                string type,
+                string userId
+            )
+            {
+                return new PublicDeletePaymentAccount(this,
+                    id,                    
+                    namespace_,                    
+                    type,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicDeletePaymentAccount(PublicDeletePaymentAccountBuilder builder,
+            string id,
+            string namespace_,
+            string type,
+            string userId
+        )
+        {
+            PathParams["id"] = id;
+            PathParams["namespace"] = namespace_;
+            PathParams["type"] = type;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicDeletePaymentAccount(
             string id,            
             string namespace_,            

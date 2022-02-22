@@ -18,6 +18,56 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class DeleteContent : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteContentBuilder Builder = new DeleteContentBuilder();
+
+        public class DeleteContentBuilder
+        {
+            
+            
+            
+            
+            internal DeleteContentBuilder() { }
+
+
+
+
+
+            public DeleteContent Build(
+                string channelId,
+                string contentId,
+                string namespace_,
+                string userId
+            )
+            {
+                return new DeleteContent(this,
+                    channelId,                    
+                    contentId,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private DeleteContent(DeleteContentBuilder builder,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["channelId"] = channelId;
+            PathParams["contentId"] = contentId;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteContent(
             string channelId,            
             string contentId,            

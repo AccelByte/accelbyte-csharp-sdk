@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class SingleAdminDeleteContent : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SingleAdminDeleteContentBuilder Builder = new SingleAdminDeleteContentBuilder();
+
+        public class SingleAdminDeleteContentBuilder
+        {
+            
+            
+            
+            internal SingleAdminDeleteContentBuilder() { }
+
+
+
+
+
+            public SingleAdminDeleteContent Build(
+                string channelId,
+                string contentId,
+                string namespace_
+            )
+            {
+                return new SingleAdminDeleteContent(this,
+                    channelId,                    
+                    contentId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private SingleAdminDeleteContent(SingleAdminDeleteContentBuilder builder,
+            string channelId,
+            string contentId,
+            string namespace_
+        )
+        {
+            PathParams["channelId"] = channelId;
+            PathParams["contentId"] = contentId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public SingleAdminDeleteContent(
             string channelId,            
             string contentId,            

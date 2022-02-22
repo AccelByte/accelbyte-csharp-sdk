@@ -35,6 +35,41 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class LeaveGroupPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static LeaveGroupPublicV1Builder Builder = new LeaveGroupPublicV1Builder();
+
+        public class LeaveGroupPublicV1Builder
+        {
+            
+            internal LeaveGroupPublicV1Builder() { }
+
+
+
+
+
+            public LeaveGroupPublicV1 Build(
+                string namespace_
+            )
+            {
+                return new LeaveGroupPublicV1(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private LeaveGroupPublicV1(LeaveGroupPublicV1Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public LeaveGroupPublicV1(
             string namespace_            
         )

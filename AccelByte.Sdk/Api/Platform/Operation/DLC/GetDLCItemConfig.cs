@@ -21,6 +21,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetDLCItemConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetDLCItemConfigBuilder Builder = new GetDLCItemConfigBuilder();
+
+        public class GetDLCItemConfigBuilder
+        {
+            
+            internal GetDLCItemConfigBuilder() { }
+
+
+
+
+
+            public GetDLCItemConfig Build(
+                string namespace_
+            )
+            {
+                return new GetDLCItemConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetDLCItemConfig(GetDLCItemConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetDLCItemConfig(
             string namespace_            
         )

@@ -22,6 +22,63 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RetrievePolicyVersions : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrievePolicyVersionsBuilder Builder = new RetrievePolicyVersionsBuilder();
+
+        public class RetrievePolicyVersionsBuilder
+        {
+            public string? BasePolicyId { get; set; }
+            
+            public string? LocaleId { get; set; }
+            
+            public string? Namespace { get; set; }
+            
+            internal RetrievePolicyVersionsBuilder() { }
+
+
+            public RetrievePolicyVersionsBuilder SetBasePolicyId(string _basePolicyId)
+            {
+                BasePolicyId = _basePolicyId;
+                return this;
+            }
+
+            public RetrievePolicyVersionsBuilder SetLocaleId(string _localeId)
+            {
+                LocaleId = _localeId;
+                return this;
+            }
+
+            public RetrievePolicyVersionsBuilder SetNamespace(string _namespace_)
+            {
+                Namespace = _namespace_;
+                return this;
+            }
+
+
+
+
+            public RetrievePolicyVersions Build(
+            )
+            {
+                return new RetrievePolicyVersions(this
+                );
+            }
+        }
+
+        private RetrievePolicyVersions(RetrievePolicyVersionsBuilder builder
+        )
+        {
+            
+            if (builder.BasePolicyId != null) QueryParams["basePolicyId"] = builder.BasePolicyId;
+            if (builder.LocaleId != null) QueryParams["localeId"] = builder.LocaleId;
+            if (builder.Namespace != null) QueryParams["namespace"] = builder.Namespace;
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrievePolicyVersions(
             string? basePolicyId,            
             string? localeId,            

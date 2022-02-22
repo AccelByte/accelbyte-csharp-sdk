@@ -22,6 +22,82 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetUserSubscriptionActivities : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetUserSubscriptionActivitiesBuilder Builder = new GetUserSubscriptionActivitiesBuilder();
+
+        public class GetUserSubscriptionActivitiesBuilder
+        {
+            
+            
+            public bool? ExcludeSystem { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            public string? SubscriptionId { get; set; }
+            
+            internal GetUserSubscriptionActivitiesBuilder() { }
+
+
+            public GetUserSubscriptionActivitiesBuilder SetExcludeSystem(bool _excludeSystem)
+            {
+                ExcludeSystem = _excludeSystem;
+                return this;
+            }
+
+            public GetUserSubscriptionActivitiesBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetUserSubscriptionActivitiesBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public GetUserSubscriptionActivitiesBuilder SetSubscriptionId(string _subscriptionId)
+            {
+                SubscriptionId = _subscriptionId;
+                return this;
+            }
+
+
+
+
+            public GetUserSubscriptionActivities Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new GetUserSubscriptionActivities(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private GetUserSubscriptionActivities(GetUserSubscriptionActivitiesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.ExcludeSystem != null) QueryParams["excludeSystem"] = Convert.ToString(builder.ExcludeSystem)!;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.SubscriptionId != null) QueryParams["subscriptionId"] = builder.SubscriptionId;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetUserSubscriptionActivities(
             string namespace_,            
             string userId,            

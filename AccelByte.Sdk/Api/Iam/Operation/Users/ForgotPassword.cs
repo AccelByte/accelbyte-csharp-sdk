@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class ForgotPassword : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ForgotPasswordBuilder Builder = new ForgotPasswordBuilder();
+
+        public class ForgotPasswordBuilder
+        {
+            
+            
+            internal ForgotPasswordBuilder() { }
+
+
+
+
+
+            public ForgotPassword Build(
+                ModelSendVerificationCodeRequest body,
+                string namespace_
+            )
+            {
+                return new ForgotPassword(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private ForgotPassword(ForgotPasswordBuilder builder,
+            ModelSendVerificationCodeRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public ForgotPassword(
             string namespace_,            
             Model.ModelSendVerificationCodeRequest body            

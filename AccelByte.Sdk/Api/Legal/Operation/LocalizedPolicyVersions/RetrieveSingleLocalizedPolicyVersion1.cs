@@ -19,6 +19,41 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class RetrieveSingleLocalizedPolicyVersion1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveSingleLocalizedPolicyVersion1Builder Builder = new RetrieveSingleLocalizedPolicyVersion1Builder();
+
+        public class RetrieveSingleLocalizedPolicyVersion1Builder
+        {
+            
+            internal RetrieveSingleLocalizedPolicyVersion1Builder() { }
+
+
+
+
+
+            public RetrieveSingleLocalizedPolicyVersion1 Build(
+                string localizedPolicyVersionId
+            )
+            {
+                return new RetrieveSingleLocalizedPolicyVersion1(this,
+                    localizedPolicyVersionId                    
+                );
+            }
+        }
+
+        private RetrieveSingleLocalizedPolicyVersion1(RetrieveSingleLocalizedPolicyVersion1Builder builder,
+            string localizedPolicyVersionId
+        )
+        {
+            PathParams["localizedPolicyVersionId"] = localizedPolicyVersionId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveSingleLocalizedPolicyVersion1(
             string localizedPolicyVersionId            
         )

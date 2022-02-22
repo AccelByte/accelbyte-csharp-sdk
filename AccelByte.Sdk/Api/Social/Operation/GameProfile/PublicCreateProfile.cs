@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class PublicCreateProfile : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicCreateProfileBuilder Builder = new PublicCreateProfileBuilder();
+
+        public class PublicCreateProfileBuilder
+        {
+            
+            
+            public Model.GameProfileRequest? Body { get; set; }
+            
+            internal PublicCreateProfileBuilder() { }
+
+
+
+            public PublicCreateProfileBuilder SetBody(Model.GameProfileRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicCreateProfile Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicCreateProfile(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicCreateProfile(PublicCreateProfileBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicCreateProfile(
             string namespace_,            
             string userId,            

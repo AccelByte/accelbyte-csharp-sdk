@@ -22,6 +22,69 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class ListUserWalletTransactions : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListUserWalletTransactionsBuilder Builder = new ListUserWalletTransactionsBuilder();
+
+        public class ListUserWalletTransactionsBuilder
+        {
+            
+            
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            internal ListUserWalletTransactionsBuilder() { }
+
+
+            public ListUserWalletTransactionsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public ListUserWalletTransactionsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public ListUserWalletTransactions Build(
+                string namespace_,
+                string userId,
+                string walletId
+            )
+            {
+                return new ListUserWalletTransactions(this,
+                    namespace_,                    
+                    userId,                    
+                    walletId                    
+                );
+            }
+        }
+
+        private ListUserWalletTransactions(ListUserWalletTransactionsBuilder builder,
+            string namespace_,
+            string userId,
+            string walletId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            PathParams["walletId"] = walletId;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListUserWalletTransactions(
             string namespace_,            
             string userId,            

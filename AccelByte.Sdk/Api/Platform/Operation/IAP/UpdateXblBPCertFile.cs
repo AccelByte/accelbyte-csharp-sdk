@@ -22,6 +22,59 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class UpdateXblBPCertFile : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateXblBPCertFileBuilder Builder = new UpdateXblBPCertFileBuilder();
+
+        public class UpdateXblBPCertFileBuilder
+        {
+            
+            public Stream? File { get; set; }
+            
+            public string? Password { get; set; }
+            
+            internal UpdateXblBPCertFileBuilder() { }
+
+
+
+
+            public UpdateXblBPCertFileBuilder SetFile(Stream _file)
+            {
+                File = _file;
+                return this;
+            }
+
+            public UpdateXblBPCertFileBuilder SetPassword(string _password)
+            {
+                Password = _password;
+                return this;
+            }
+
+
+            public UpdateXblBPCertFile Build(
+                string namespace_
+            )
+            {
+                return new UpdateXblBPCertFile(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateXblBPCertFile(UpdateXblBPCertFileBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            if (builder.File != null) FormParams["file"] = builder.File;
+            if (builder.Password != null) FormParams["password"] = builder.Password;
+            
+            
+            
+        }
+        #endregion
+
         public UpdateXblBPCertFile(
             string namespace_,            
             Stream? file,            

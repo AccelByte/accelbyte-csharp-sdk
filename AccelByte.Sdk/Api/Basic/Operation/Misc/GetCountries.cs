@@ -23,6 +23,50 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class GetCountries : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetCountriesBuilder Builder = new GetCountriesBuilder();
+
+        public class GetCountriesBuilder
+        {
+            
+            public string? Lang { get; set; }
+            
+            internal GetCountriesBuilder() { }
+
+
+            public GetCountriesBuilder SetLang(string _lang)
+            {
+                Lang = _lang;
+                return this;
+            }
+
+
+
+
+            public GetCountries Build(
+                string namespace_
+            )
+            {
+                return new GetCountries(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetCountries(GetCountriesBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Lang != null) QueryParams["lang"] = builder.Lang;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetCountries(
             string namespace_,            
             string? lang            

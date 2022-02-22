@@ -30,6 +30,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class RevokeUser : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RevokeUserBuilder Builder = new RevokeUserBuilder();
+
+        public class RevokeUserBuilder
+        {
+            
+            
+            internal RevokeUserBuilder() { }
+
+
+
+
+
+            public RevokeUser Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new RevokeUser(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private RevokeUser(RevokeUserBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RevokeUser(
             string namespace_,            
             string userId            

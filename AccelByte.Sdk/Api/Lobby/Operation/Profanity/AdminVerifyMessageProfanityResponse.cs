@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminVerifyMessageProfanityResponse : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminVerifyMessageProfanityResponseBuilder Builder = new AdminVerifyMessageProfanityResponseBuilder();
+
+        public class AdminVerifyMessageProfanityResponseBuilder
+        {
+            
+            
+            internal AdminVerifyMessageProfanityResponseBuilder() { }
+
+
+
+
+
+            public AdminVerifyMessageProfanityResponse Build(
+                ModelsAdminVerifyMessageProfanityRequest body,
+                string namespace_
+            )
+            {
+                return new AdminVerifyMessageProfanityResponse(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminVerifyMessageProfanityResponse(AdminVerifyMessageProfanityResponseBuilder builder,
+            ModelsAdminVerifyMessageProfanityRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminVerifyMessageProfanityResponse(
             string namespace_,            
             Model.ModelsAdminVerifyMessageProfanityRequest body            

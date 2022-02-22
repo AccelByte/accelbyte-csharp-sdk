@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminUpdateConfigV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateConfigV1Builder Builder = new AdminUpdateConfigV1Builder();
+
+        public class AdminUpdateConfigV1Builder
+        {
+            
+            
+            internal AdminUpdateConfigV1Builder() { }
+
+
+
+
+
+            public AdminUpdateConfigV1 Build(
+                ModelsConfigReq body,
+                string namespace_
+            )
+            {
+                return new AdminUpdateConfigV1(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminUpdateConfigV1(AdminUpdateConfigV1Builder builder,
+            ModelsConfigReq body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateConfigV1(
             string namespace_,            
             Model.ModelsConfigReq body            

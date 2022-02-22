@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminCreateProfanityList : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminCreateProfanityListBuilder Builder = new AdminCreateProfanityListBuilder();
+
+        public class AdminCreateProfanityListBuilder
+        {
+            
+            
+            internal AdminCreateProfanityListBuilder() { }
+
+
+
+
+
+            public AdminCreateProfanityList Build(
+                ModelsAdminCreateProfanityListRequest body,
+                string namespace_
+            )
+            {
+                return new AdminCreateProfanityList(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminCreateProfanityList(AdminCreateProfanityListBuilder builder,
+            ModelsAdminCreateProfanityListRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminCreateProfanityList(
             string namespace_,            
             Model.ModelsAdminCreateProfanityListRequest body            

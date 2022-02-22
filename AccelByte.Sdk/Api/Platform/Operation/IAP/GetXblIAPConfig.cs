@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetXblIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetXblIAPConfigBuilder Builder = new GetXblIAPConfigBuilder();
+
+        public class GetXblIAPConfigBuilder
+        {
+            
+            internal GetXblIAPConfigBuilder() { }
+
+
+
+
+
+            public GetXblIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new GetXblIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetXblIAPConfig(GetXblIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetXblIAPConfig(
             string namespace_            
         )

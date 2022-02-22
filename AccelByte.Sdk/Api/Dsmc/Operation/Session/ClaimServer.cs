@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ClaimServer : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ClaimServerBuilder Builder = new ClaimServerBuilder();
+
+        public class ClaimServerBuilder
+        {
+            
+            
+            internal ClaimServerBuilder() { }
+
+
+
+
+
+            public ClaimServer Build(
+                ModelsClaimSessionRequest body,
+                string namespace_
+            )
+            {
+                return new ClaimServer(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private ClaimServer(ClaimServerBuilder builder,
+            ModelsClaimSessionRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public ClaimServer(
             string namespace_,            
             Model.ModelsClaimSessionRequest body            

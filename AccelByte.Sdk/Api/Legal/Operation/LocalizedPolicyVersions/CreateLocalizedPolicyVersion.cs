@@ -21,6 +21,50 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// </summary>
     public class CreateLocalizedPolicyVersion : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateLocalizedPolicyVersionBuilder Builder = new CreateLocalizedPolicyVersionBuilder();
+
+        public class CreateLocalizedPolicyVersionBuilder
+        {
+            
+            public Model.CreateLocalizedPolicyVersionRequest? Body { get; set; }
+            
+            internal CreateLocalizedPolicyVersionBuilder() { }
+
+
+
+            public CreateLocalizedPolicyVersionBuilder SetBody(Model.CreateLocalizedPolicyVersionRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateLocalizedPolicyVersion Build(
+                string policyVersionId
+            )
+            {
+                return new CreateLocalizedPolicyVersion(this,
+                    policyVersionId                    
+                );
+            }
+        }
+
+        private CreateLocalizedPolicyVersion(CreateLocalizedPolicyVersionBuilder builder,
+            string policyVersionId
+        )
+        {
+            PathParams["policyVersionId"] = policyVersionId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateLocalizedPolicyVersion(
             string policyVersionId,            
             Model.CreateLocalizedPolicyVersionRequest body            

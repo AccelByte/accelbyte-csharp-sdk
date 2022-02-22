@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetGoogleIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetGoogleIAPConfigBuilder Builder = new GetGoogleIAPConfigBuilder();
+
+        public class GetGoogleIAPConfigBuilder
+        {
+            
+            internal GetGoogleIAPConfigBuilder() { }
+
+
+
+
+
+            public GetGoogleIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new GetGoogleIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetGoogleIAPConfig(GetGoogleIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetGoogleIAPConfig(
             string namespace_            
         )

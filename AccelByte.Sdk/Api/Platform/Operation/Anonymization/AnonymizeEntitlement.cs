@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class AnonymizeEntitlement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AnonymizeEntitlementBuilder Builder = new AnonymizeEntitlementBuilder();
+
+        public class AnonymizeEntitlementBuilder
+        {
+            
+            
+            internal AnonymizeEntitlementBuilder() { }
+
+
+
+
+
+            public AnonymizeEntitlement Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AnonymizeEntitlement(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AnonymizeEntitlement(AnonymizeEntitlementBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AnonymizeEntitlement(
             string namespace_,            
             string userId            

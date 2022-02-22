@@ -20,6 +20,36 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetCountryLocationV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetCountryLocationV3Builder Builder = new GetCountryLocationV3Builder();
+
+        public class GetCountryLocationV3Builder
+        {
+            internal GetCountryLocationV3Builder() { }
+
+
+
+
+
+            public GetCountryLocationV3 Build(
+            )
+            {
+                return new GetCountryLocationV3(this
+                );
+            }
+        }
+
+        private GetCountryLocationV3(GetCountryLocationV3Builder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetCountryLocationV3(
         )
         {

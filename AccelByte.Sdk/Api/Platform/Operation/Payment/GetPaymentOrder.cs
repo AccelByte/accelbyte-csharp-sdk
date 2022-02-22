@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetPaymentOrder : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPaymentOrderBuilder Builder = new GetPaymentOrderBuilder();
+
+        public class GetPaymentOrderBuilder
+        {
+            
+            
+            internal GetPaymentOrderBuilder() { }
+
+
+
+
+
+            public GetPaymentOrder Build(
+                string namespace_,
+                string paymentOrderNo
+            )
+            {
+                return new GetPaymentOrder(this,
+                    namespace_,                    
+                    paymentOrderNo                    
+                );
+            }
+        }
+
+        private GetPaymentOrder(GetPaymentOrderBuilder builder,
+            string namespace_,
+            string paymentOrderNo
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["paymentOrderNo"] = paymentOrderNo;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPaymentOrder(
             string namespace_,            
             string paymentOrderNo            

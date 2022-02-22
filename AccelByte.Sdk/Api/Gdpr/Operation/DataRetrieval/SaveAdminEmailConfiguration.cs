@@ -21,6 +21,46 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// </summary>
     public class SaveAdminEmailConfiguration : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SaveAdminEmailConfigurationBuilder Builder = new SaveAdminEmailConfigurationBuilder();
+
+        public class SaveAdminEmailConfigurationBuilder
+        {
+            
+            
+            internal SaveAdminEmailConfigurationBuilder() { }
+
+
+
+
+
+            public SaveAdminEmailConfiguration Build(
+                List<string> body,
+                string namespace_
+            )
+            {
+                return new SaveAdminEmailConfiguration(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private SaveAdminEmailConfiguration(SaveAdminEmailConfigurationBuilder builder,
+            List<string> body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public SaveAdminEmailConfiguration(
             string namespace_,            
             List<string> body            

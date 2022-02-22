@@ -24,6 +24,50 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class AddCountryGroup : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AddCountryGroupBuilder Builder = new AddCountryGroupBuilder();
+
+        public class AddCountryGroupBuilder
+        {
+            
+            public Model.AddCountryGroupRequest? Body { get; set; }
+            
+            internal AddCountryGroupBuilder() { }
+
+
+
+            public AddCountryGroupBuilder SetBody(Model.AddCountryGroupRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public AddCountryGroup Build(
+                string namespace_
+            )
+            {
+                return new AddCountryGroup(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AddCountryGroup(AddCountryGroupBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public AddCountryGroup(
             string namespace_,            
             Model.AddCountryGroupRequest body            

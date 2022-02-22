@@ -34,6 +34,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CreateCategory : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateCategoryBuilder Builder = new CreateCategoryBuilder();
+
+        public class CreateCategoryBuilder
+        {
+            
+            
+            public Model.CategoryCreate? Body { get; set; }
+            
+            internal CreateCategoryBuilder() { }
+
+
+
+            public CreateCategoryBuilder SetBody(Model.CategoryCreate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CreateCategory Build(
+                string namespace_,
+                string storeId
+            )
+            {
+                return new CreateCategory(this,
+                    namespace_,                    
+                    storeId                    
+                );
+            }
+        }
+
+        private CreateCategory(CreateCategoryBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (storeId != null) QueryParams["storeId"] = storeId;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CreateCategory(
             string namespace_,            
             string storeId,            

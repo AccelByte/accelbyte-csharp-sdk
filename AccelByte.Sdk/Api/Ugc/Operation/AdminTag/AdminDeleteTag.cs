@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminDeleteTag : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminDeleteTagBuilder Builder = new AdminDeleteTagBuilder();
+
+        public class AdminDeleteTagBuilder
+        {
+            
+            
+            internal AdminDeleteTagBuilder() { }
+
+
+
+
+
+            public AdminDeleteTag Build(
+                string namespace_,
+                string tagId
+            )
+            {
+                return new AdminDeleteTag(this,
+                    namespace_,                    
+                    tagId                    
+                );
+            }
+        }
+
+        private AdminDeleteTag(AdminDeleteTagBuilder builder,
+            string namespace_,
+            string tagId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["tagId"] = tagId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminDeleteTag(
             string namespace_,            
             string tagId            

@@ -20,6 +20,68 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// </summary>
     public class AdminGetListPersonalDataRequest : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminGetListPersonalDataRequestBuilder Builder = new AdminGetListPersonalDataRequestBuilder();
+
+        public class AdminGetListPersonalDataRequestBuilder
+        {
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            public string? RequestDate { get; set; }
+            
+            internal AdminGetListPersonalDataRequestBuilder() { }
+
+
+            public AdminGetListPersonalDataRequestBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public AdminGetListPersonalDataRequestBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public AdminGetListPersonalDataRequestBuilder SetRequestDate(string _requestDate)
+            {
+                RequestDate = _requestDate;
+                return this;
+            }
+
+
+
+
+            public AdminGetListPersonalDataRequest Build(
+                string namespace_
+            )
+            {
+                return new AdminGetListPersonalDataRequest(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminGetListPersonalDataRequest(AdminGetListPersonalDataRequestBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.RequestDate != null) QueryParams["requestDate"] = builder.RequestDate;
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminGetListPersonalDataRequest(
             string namespace_,            
             long? limit,            

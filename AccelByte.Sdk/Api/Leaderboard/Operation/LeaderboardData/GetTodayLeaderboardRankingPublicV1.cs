@@ -20,6 +20,64 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class GetTodayLeaderboardRankingPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetTodayLeaderboardRankingPublicV1Builder Builder = new GetTodayLeaderboardRankingPublicV1Builder();
+
+        public class GetTodayLeaderboardRankingPublicV1Builder
+        {
+            
+            
+            public long? Limit { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            internal GetTodayLeaderboardRankingPublicV1Builder() { }
+
+
+            public GetTodayLeaderboardRankingPublicV1Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetTodayLeaderboardRankingPublicV1Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public GetTodayLeaderboardRankingPublicV1 Build(
+                string leaderboardCode,
+                string namespace_
+            )
+            {
+                return new GetTodayLeaderboardRankingPublicV1(this,
+                    leaderboardCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetTodayLeaderboardRankingPublicV1(GetTodayLeaderboardRankingPublicV1Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetTodayLeaderboardRankingPublicV1(
             string leaderboardCode,            
             string namespace_,            

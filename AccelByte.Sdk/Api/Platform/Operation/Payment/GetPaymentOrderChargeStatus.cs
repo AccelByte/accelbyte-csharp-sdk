@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetPaymentOrderChargeStatus : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetPaymentOrderChargeStatusBuilder Builder = new GetPaymentOrderChargeStatusBuilder();
+
+        public class GetPaymentOrderChargeStatusBuilder
+        {
+            
+            
+            internal GetPaymentOrderChargeStatusBuilder() { }
+
+
+
+
+
+            public GetPaymentOrderChargeStatus Build(
+                string namespace_,
+                string paymentOrderNo
+            )
+            {
+                return new GetPaymentOrderChargeStatus(this,
+                    namespace_,                    
+                    paymentOrderNo                    
+                );
+            }
+        }
+
+        private GetPaymentOrderChargeStatus(GetPaymentOrderChargeStatusBuilder builder,
+            string namespace_,
+            string paymentOrderNo
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["paymentOrderNo"] = paymentOrderNo;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetPaymentOrderChargeStatus(
             string namespace_,            
             string paymentOrderNo            

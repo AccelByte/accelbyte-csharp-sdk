@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class DeleteTemplateSlug : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteTemplateSlugBuilder Builder = new DeleteTemplateSlugBuilder();
+
+        public class DeleteTemplateSlugBuilder
+        {
+            
+            
+            internal DeleteTemplateSlugBuilder() { }
+
+
+
+
+
+            public DeleteTemplateSlug Build(
+                string namespace_,
+                string templateSlug
+            )
+            {
+                return new DeleteTemplateSlug(this,
+                    namespace_,                    
+                    templateSlug                    
+                );
+            }
+        }
+
+        private DeleteTemplateSlug(DeleteTemplateSlugBuilder builder,
+            string namespace_,
+            string templateSlug
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["templateSlug"] = templateSlug;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteTemplateSlug(
             string namespace_,            
             string templateSlug            

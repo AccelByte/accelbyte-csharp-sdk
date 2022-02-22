@@ -20,6 +20,46 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class DeleteStat : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteStatBuilder Builder = new DeleteStatBuilder();
+
+        public class DeleteStatBuilder
+        {
+            
+            
+            internal DeleteStatBuilder() { }
+
+
+
+
+
+            public DeleteStat Build(
+                string namespace_,
+                string statCode
+            )
+            {
+                return new DeleteStat(this,
+                    namespace_,                    
+                    statCode                    
+                );
+            }
+        }
+
+        private DeleteStat(DeleteStatBuilder builder,
+            string namespace_,
+            string statCode
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["statCode"] = statCode;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteStat(
             string namespace_,            
             string statCode            

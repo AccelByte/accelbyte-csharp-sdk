@@ -23,6 +23,110 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class QueryUserEntitlements : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryUserEntitlementsBuilder Builder = new QueryUserEntitlementsBuilder();
+
+        public class QueryUserEntitlementsBuilder
+        {
+            
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public string? AppType { get; set; }
+            
+            public string? EntitlementClazz { get; set; }
+            
+            public string? EntitlementName { get; set; }
+            
+            public List<string>? ItemId { get; set; }
+            
+            public int? Limit { get; set; }
+            
+            public int? Offset { get; set; }
+            
+            internal QueryUserEntitlementsBuilder() { }
+
+
+            public QueryUserEntitlementsBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public QueryUserEntitlementsBuilder SetAppType(string _appType)
+            {
+                AppType = _appType;
+                return this;
+            }
+
+            public QueryUserEntitlementsBuilder SetEntitlementClazz(string _entitlementClazz)
+            {
+                EntitlementClazz = _entitlementClazz;
+                return this;
+            }
+
+            public QueryUserEntitlementsBuilder SetEntitlementName(string _entitlementName)
+            {
+                EntitlementName = _entitlementName;
+                return this;
+            }
+
+            public QueryUserEntitlementsBuilder SetItemId(List<string> _itemId)
+            {
+                ItemId = _itemId;
+                return this;
+            }
+
+            public QueryUserEntitlementsBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public QueryUserEntitlementsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+
+
+
+            public QueryUserEntitlements Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new QueryUserEntitlements(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private QueryUserEntitlements(QueryUserEntitlementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.AppType != null) QueryParams["appType"] = builder.AppType;
+            if (builder.EntitlementClazz != null) QueryParams["entitlementClazz"] = builder.EntitlementClazz;
+            if (builder.EntitlementName != null) QueryParams["entitlementName"] = builder.EntitlementName;
+            if (builder.ItemId != null) QueryParams["itemId"] = builder.ItemId;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
+            
+            CollectionFormatMap["itemId"] = "multi";
+            
+            
+        }
+        #endregion
+
         public QueryUserEntitlements(
             string namespace_,            
             string userId,            

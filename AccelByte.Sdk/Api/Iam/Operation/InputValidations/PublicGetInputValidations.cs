@@ -30,6 +30,54 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicGetInputValidations : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetInputValidationsBuilder Builder = new PublicGetInputValidationsBuilder();
+
+        public class PublicGetInputValidationsBuilder
+        {
+            public bool? DefaultOnEmpty { get; set; }
+            
+            public string? LanguageCode { get; set; }
+            
+            internal PublicGetInputValidationsBuilder() { }
+
+
+            public PublicGetInputValidationsBuilder SetDefaultOnEmpty(bool _defaultOnEmpty)
+            {
+                DefaultOnEmpty = _defaultOnEmpty;
+                return this;
+            }
+
+            public PublicGetInputValidationsBuilder SetLanguageCode(string _languageCode)
+            {
+                LanguageCode = _languageCode;
+                return this;
+            }
+
+
+
+
+            public PublicGetInputValidations Build(
+            )
+            {
+                return new PublicGetInputValidations(this
+                );
+            }
+        }
+
+        private PublicGetInputValidations(PublicGetInputValidationsBuilder builder
+        )
+        {
+            
+            if (builder.DefaultOnEmpty != null) QueryParams["defaultOnEmpty"] = Convert.ToString(builder.DefaultOnEmpty)!;
+            if (builder.LanguageCode != null) QueryParams["languageCode"] = builder.LanguageCode;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetInputValidations(
             bool? defaultOnEmpty,            
             string? languageCode            

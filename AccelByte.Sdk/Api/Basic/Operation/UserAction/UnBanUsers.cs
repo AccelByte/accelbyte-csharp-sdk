@@ -21,6 +21,50 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// </summary>
     public class UnBanUsers : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UnBanUsersBuilder Builder = new UnBanUsersBuilder();
+
+        public class UnBanUsersBuilder
+        {
+            
+            public Model.ADTOForUnbanUserAPICall? Body { get; set; }
+            
+            internal UnBanUsersBuilder() { }
+
+
+
+            public UnBanUsersBuilder SetBody(Model.ADTOForUnbanUserAPICall _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public UnBanUsers Build(
+                string namespace_
+            )
+            {
+                return new UnBanUsers(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private UnBanUsers(UnBanUsersBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public UnBanUsers(
             string namespace_,            
             Model.ADTOForUnbanUserAPICall body            

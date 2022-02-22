@@ -30,6 +30,56 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class UpdateGroupConfigurationGlobalRuleAdminV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateGroupConfigurationGlobalRuleAdminV1Builder Builder = new UpdateGroupConfigurationGlobalRuleAdminV1Builder();
+
+        public class UpdateGroupConfigurationGlobalRuleAdminV1Builder
+        {
+            
+            
+            
+            
+            internal UpdateGroupConfigurationGlobalRuleAdminV1Builder() { }
+
+
+
+
+
+            public UpdateGroupConfigurationGlobalRuleAdminV1 Build(
+                ModelsUpdateGroupConfigurationGlobalRulesRequestV1 body,
+                string allowedAction,
+                string configurationCode,
+                string namespace_
+            )
+            {
+                return new UpdateGroupConfigurationGlobalRuleAdminV1(this,
+                    body,                    
+                    allowedAction,                    
+                    configurationCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateGroupConfigurationGlobalRuleAdminV1(UpdateGroupConfigurationGlobalRuleAdminV1Builder builder,
+            ModelsUpdateGroupConfigurationGlobalRulesRequestV1 body,
+            string allowedAction,
+            string configurationCode,
+            string namespace_
+        )
+        {
+            PathParams["allowedAction"] = allowedAction;
+            PathParams["configurationCode"] = configurationCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateGroupConfigurationGlobalRuleAdminV1(
             string allowedAction,            
             string configurationCode,            

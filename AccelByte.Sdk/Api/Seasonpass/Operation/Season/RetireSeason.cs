@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class RetireSeason : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetireSeasonBuilder Builder = new RetireSeasonBuilder();
+
+        public class RetireSeasonBuilder
+        {
+            
+            
+            public bool? Force { get; set; }
+            
+            internal RetireSeasonBuilder() { }
+
+
+            public RetireSeasonBuilder SetForce(bool _force)
+            {
+                Force = _force;
+                return this;
+            }
+
+
+
+
+            public RetireSeason Build(
+                string namespace_,
+                string seasonId
+            )
+            {
+                return new RetireSeason(this,
+                    namespace_,                    
+                    seasonId                    
+                );
+            }
+        }
+
+        private RetireSeason(RetireSeasonBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["seasonId"] = seasonId;
+            
+            if (builder.Force != null) QueryParams["force"] = Convert.ToString(builder.Force)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetireSeason(
             string namespace_,            
             string seasonId,            

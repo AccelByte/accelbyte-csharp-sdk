@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetStadiaIAPConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetStadiaIAPConfigBuilder Builder = new GetStadiaIAPConfigBuilder();
+
+        public class GetStadiaIAPConfigBuilder
+        {
+            
+            internal GetStadiaIAPConfigBuilder() { }
+
+
+
+
+
+            public GetStadiaIAPConfig Build(
+                string namespace_
+            )
+            {
+                return new GetStadiaIAPConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetStadiaIAPConfig(GetStadiaIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetStadiaIAPConfig(
             string namespace_            
         )

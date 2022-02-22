@@ -50,6 +50,46 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// </summary>
     public class AcceptGroupInvitationPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AcceptGroupInvitationPublicV1Builder Builder = new AcceptGroupInvitationPublicV1Builder();
+
+        public class AcceptGroupInvitationPublicV1Builder
+        {
+            
+            
+            internal AcceptGroupInvitationPublicV1Builder() { }
+
+
+
+
+
+            public AcceptGroupInvitationPublicV1 Build(
+                string groupId,
+                string namespace_
+            )
+            {
+                return new AcceptGroupInvitationPublicV1(this,
+                    groupId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AcceptGroupInvitationPublicV1(AcceptGroupInvitationPublicV1Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            PathParams["groupId"] = groupId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AcceptGroupInvitationPublicV1(
             string groupId,            
             string namespace_            

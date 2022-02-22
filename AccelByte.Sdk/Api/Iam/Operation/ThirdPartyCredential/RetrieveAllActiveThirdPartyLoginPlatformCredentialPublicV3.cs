@@ -18,6 +18,41 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Builder Builder = new RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Builder();
+
+        public class RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Builder
+        {
+            
+            internal RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Builder() { }
+
+
+
+
+
+            public RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3 Build(
+                string namespace_
+            )
+            {
+                return new RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3(RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3(
             string namespace_            
         )

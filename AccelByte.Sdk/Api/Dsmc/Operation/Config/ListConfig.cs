@@ -22,6 +22,36 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ListConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListConfigBuilder Builder = new ListConfigBuilder();
+
+        public class ListConfigBuilder
+        {
+            internal ListConfigBuilder() { }
+
+
+
+
+
+            public ListConfig Build(
+            )
+            {
+                return new ListConfig(this
+                );
+            }
+        }
+
+        private ListConfig(ListConfigBuilder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListConfig(
         )
         {

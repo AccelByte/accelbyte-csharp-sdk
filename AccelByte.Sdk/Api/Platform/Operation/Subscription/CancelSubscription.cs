@@ -24,6 +24,69 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class CancelSubscription : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CancelSubscriptionBuilder Builder = new CancelSubscriptionBuilder();
+
+        public class CancelSubscriptionBuilder
+        {
+            
+            
+            
+            public bool? Force { get; set; }
+            
+            public Model.CancelRequest? Body { get; set; }
+            
+            internal CancelSubscriptionBuilder() { }
+
+
+            public CancelSubscriptionBuilder SetForce(bool _force)
+            {
+                Force = _force;
+                return this;
+            }
+
+
+            public CancelSubscriptionBuilder SetBody(Model.CancelRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public CancelSubscription Build(
+                string namespace_,
+                string subscriptionId,
+                string userId
+            )
+            {
+                return new CancelSubscription(this,
+                    namespace_,                    
+                    subscriptionId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private CancelSubscription(CancelSubscriptionBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["subscriptionId"] = subscriptionId;
+            PathParams["userId"] = userId;
+            
+            if (builder.Force != null) QueryParams["force"] = Convert.ToString(builder.Force)!;
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public CancelSubscription(
             string namespace_,            
             string subscriptionId,            

@@ -22,6 +22,77 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ListSession : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListSessionBuilder Builder = new ListSessionBuilder();
+
+        public class ListSessionBuilder
+        {
+            
+            public long? Count { get; set; }
+            
+            public long? Offset { get; set; }
+            
+            public string? Region { get; set; }
+            
+            public bool? WithServer { get; set; }
+            
+            internal ListSessionBuilder() { }
+
+
+            public ListSessionBuilder SetCount(long _count)
+            {
+                Count = _count;
+                return this;
+            }
+
+            public ListSessionBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public ListSessionBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
+
+            public ListSessionBuilder SetWithServer(bool _withServer)
+            {
+                WithServer = _withServer;
+                return this;
+            }
+
+
+
+
+            public ListSession Build(
+                string namespace_
+            )
+            {
+                return new ListSession(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ListSession(ListSessionBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.WithServer != null) QueryParams["withServer"] = Convert.ToString(builder.WithServer)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListSession(
             string namespace_,            
             long? count,            

@@ -18,6 +18,41 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ListProvidersByRegion : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ListProvidersByRegionBuilder Builder = new ListProvidersByRegionBuilder();
+
+        public class ListProvidersByRegionBuilder
+        {
+            
+            internal ListProvidersByRegionBuilder() { }
+
+
+
+
+
+            public ListProvidersByRegion Build(
+                string region
+            )
+            {
+                return new ListProvidersByRegion(this,
+                    region                    
+                );
+            }
+        }
+
+        private ListProvidersByRegion(ListProvidersByRegionBuilder builder,
+            string region
+        )
+        {
+            PathParams["region"] = region;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ListProvidersByRegion(
             string region            
         )

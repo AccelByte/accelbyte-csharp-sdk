@@ -24,6 +24,41 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
     /// </summary>
     public class Heartbeat : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static HeartbeatBuilder Builder = new HeartbeatBuilder();
+
+        public class HeartbeatBuilder
+        {
+            
+            internal HeartbeatBuilder() { }
+
+
+
+
+
+            public Heartbeat Build(
+                ModelsHeartbeatRequest body
+            )
+            {
+                return new Heartbeat(this,
+                    body                    
+                );
+            }
+        }
+
+        private Heartbeat(HeartbeatBuilder builder,
+            ModelsHeartbeatRequest body
+        )
+        {
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public Heartbeat(
             Model.ModelsHeartbeatRequest body            
         )

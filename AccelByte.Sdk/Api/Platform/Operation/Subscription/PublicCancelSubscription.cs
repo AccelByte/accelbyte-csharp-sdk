@@ -23,6 +23,60 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class PublicCancelSubscription : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicCancelSubscriptionBuilder Builder = new PublicCancelSubscriptionBuilder();
+
+        public class PublicCancelSubscriptionBuilder
+        {
+            
+            
+            
+            public Model.CancelRequest? Body { get; set; }
+            
+            internal PublicCancelSubscriptionBuilder() { }
+
+
+
+            public PublicCancelSubscriptionBuilder SetBody(Model.CancelRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicCancelSubscription Build(
+                string namespace_,
+                string subscriptionId,
+                string userId
+            )
+            {
+                return new PublicCancelSubscription(this,
+                    namespace_,                    
+                    subscriptionId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicCancelSubscription(PublicCancelSubscriptionBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["subscriptionId"] = subscriptionId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicCancelSubscription(
             string namespace_,            
             string subscriptionId,            

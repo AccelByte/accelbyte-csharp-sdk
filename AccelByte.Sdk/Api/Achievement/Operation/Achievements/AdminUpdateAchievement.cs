@@ -21,6 +21,51 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// </summary>
     public class AdminUpdateAchievement : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateAchievementBuilder Builder = new AdminUpdateAchievementBuilder();
+
+        public class AdminUpdateAchievementBuilder
+        {
+            
+            
+            
+            internal AdminUpdateAchievementBuilder() { }
+
+
+
+
+
+            public AdminUpdateAchievement Build(
+                ModelsAchievementUpdateRequest body,
+                string achievementCode,
+                string namespace_
+            )
+            {
+                return new AdminUpdateAchievement(this,
+                    body,                    
+                    achievementCode,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminUpdateAchievement(AdminUpdateAchievementBuilder builder,
+            ModelsAchievementUpdateRequest body,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            PathParams["achievementCode"] = achievementCode;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateAchievement(
             string achievementCode,            
             string namespace_,            

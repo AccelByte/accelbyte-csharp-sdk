@@ -25,6 +25,46 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class NotificationWithTemplate : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static NotificationWithTemplateBuilder Builder = new NotificationWithTemplateBuilder();
+
+        public class NotificationWithTemplateBuilder
+        {
+            
+            
+            internal NotificationWithTemplateBuilder() { }
+
+
+
+
+
+            public NotificationWithTemplate Build(
+                ModelNotificationWithTemplateRequest body,
+                string namespace_
+            )
+            {
+                return new NotificationWithTemplate(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private NotificationWithTemplate(NotificationWithTemplateBuilder builder,
+            ModelNotificationWithTemplateRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public NotificationWithTemplate(
             string namespace_,            
             Model.ModelNotificationWithTemplateRequest body            

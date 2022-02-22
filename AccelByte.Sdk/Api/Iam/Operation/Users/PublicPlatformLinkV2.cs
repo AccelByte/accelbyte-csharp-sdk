@@ -57,6 +57,56 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicPlatformLinkV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicPlatformLinkV2Builder Builder = new PublicPlatformLinkV2Builder();
+
+        public class PublicPlatformLinkV2Builder
+        {
+            
+            
+            
+            
+            internal PublicPlatformLinkV2Builder() { }
+
+
+
+
+
+            public PublicPlatformLinkV2 Build(
+                string ticket,
+                string namespace_,
+                string platformId,
+                string userId
+            )
+            {
+                return new PublicPlatformLinkV2(this,
+                    ticket,                    
+                    namespace_,                    
+                    platformId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicPlatformLinkV2(PublicPlatformLinkV2Builder builder,
+            string ticket,
+            string namespace_,
+            string platformId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["platformId"] = platformId;
+            PathParams["userId"] = userId;
+            
+            
+            if (ticket != null) FormParams["ticket"] = ticket;
+            
+            
+            
+        }
+        #endregion
+
         public PublicPlatformLinkV2(
             string namespace_,            
             string platformId,            

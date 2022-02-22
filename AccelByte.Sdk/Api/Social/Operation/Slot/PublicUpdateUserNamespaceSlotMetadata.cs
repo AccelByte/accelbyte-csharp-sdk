@@ -21,6 +21,60 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class PublicUpdateUserNamespaceSlotMetadata : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicUpdateUserNamespaceSlotMetadataBuilder Builder = new PublicUpdateUserNamespaceSlotMetadataBuilder();
+
+        public class PublicUpdateUserNamespaceSlotMetadataBuilder
+        {
+            
+            
+            
+            public Model.SlotMetadataUpdate? Body { get; set; }
+            
+            internal PublicUpdateUserNamespaceSlotMetadataBuilder() { }
+
+
+
+            public PublicUpdateUserNamespaceSlotMetadataBuilder SetBody(Model.SlotMetadataUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public PublicUpdateUserNamespaceSlotMetadata Build(
+                string namespace_,
+                string slotId,
+                string userId
+            )
+            {
+                return new PublicUpdateUserNamespaceSlotMetadata(this,
+                    namespace_,                    
+                    slotId,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicUpdateUserNamespaceSlotMetadata(PublicUpdateUserNamespaceSlotMetadataBuilder builder,
+            string namespace_,
+            string slotId,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["slotId"] = slotId;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public PublicUpdateUserNamespaceSlotMetadata(
             string namespace_,            
             string slotId,            

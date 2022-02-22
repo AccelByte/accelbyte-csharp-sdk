@@ -22,6 +22,72 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicGetRolesV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicGetRolesV3Builder Builder = new PublicGetRolesV3Builder();
+
+        public class PublicGetRolesV3Builder
+        {
+            public string? After { get; set; }
+            
+            public string? Before { get; set; }
+            
+            public bool? IsWildcard { get; set; }
+            
+            public long? Limit { get; set; }
+            
+            internal PublicGetRolesV3Builder() { }
+
+
+            public PublicGetRolesV3Builder SetAfter(string _after)
+            {
+                After = _after;
+                return this;
+            }
+
+            public PublicGetRolesV3Builder SetBefore(string _before)
+            {
+                Before = _before;
+                return this;
+            }
+
+            public PublicGetRolesV3Builder SetIsWildcard(bool _isWildcard)
+            {
+                IsWildcard = _isWildcard;
+                return this;
+            }
+
+            public PublicGetRolesV3Builder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+
+
+
+            public PublicGetRolesV3 Build(
+            )
+            {
+                return new PublicGetRolesV3(this
+                );
+            }
+        }
+
+        private PublicGetRolesV3(PublicGetRolesV3Builder builder
+        )
+        {
+            
+            if (builder.After != null) QueryParams["after"] = builder.After;
+            if (builder.Before != null) QueryParams["before"] = builder.Before;
+            if (builder.IsWildcard != null) QueryParams["isWildcard"] = Convert.ToString(builder.IsWildcard)!;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            
+            
+            
+            
+        }
+        #endregion
+
         public PublicGetRolesV3(
             string? after,            
             string? before,            

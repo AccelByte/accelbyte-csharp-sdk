@@ -23,6 +23,51 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// </summary>
     public class DeleteUserRankingPublicV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeleteUserRankingPublicV1Builder Builder = new DeleteUserRankingPublicV1Builder();
+
+        public class DeleteUserRankingPublicV1Builder
+        {
+            
+            
+            
+            internal DeleteUserRankingPublicV1Builder() { }
+
+
+
+
+
+            public DeleteUserRankingPublicV1 Build(
+                string leaderboardCode,
+                string namespace_,
+                string userId
+            )
+            {
+                return new DeleteUserRankingPublicV1(this,
+                    leaderboardCode,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private DeleteUserRankingPublicV1(DeleteUserRankingPublicV1Builder builder,
+            string leaderboardCode,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["leaderboardCode"] = leaderboardCode;
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeleteUserRankingPublicV1(
             string leaderboardCode,            
             string namespace_,            

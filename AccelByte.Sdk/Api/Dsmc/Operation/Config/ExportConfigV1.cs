@@ -22,6 +22,41 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class ExportConfigV1 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ExportConfigV1Builder Builder = new ExportConfigV1Builder();
+
+        public class ExportConfigV1Builder
+        {
+            
+            internal ExportConfigV1Builder() { }
+
+
+
+
+
+            public ExportConfigV1 Build(
+                string namespace_
+            )
+            {
+                return new ExportConfigV1(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ExportConfigV1(ExportConfigV1Builder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public ExportConfigV1(
             string namespace_            
         )

@@ -22,6 +22,56 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class SingleAdminUpdateContentS3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SingleAdminUpdateContentS3Builder Builder = new SingleAdminUpdateContentS3Builder();
+
+        public class SingleAdminUpdateContentS3Builder
+        {
+            
+            
+            
+            
+            internal SingleAdminUpdateContentS3Builder() { }
+
+
+
+
+
+            public SingleAdminUpdateContentS3 Build(
+                ModelsCreateContentRequestS3 body,
+                string channelId,
+                string contentId,
+                string namespace_
+            )
+            {
+                return new SingleAdminUpdateContentS3(this,
+                    body,                    
+                    channelId,                    
+                    contentId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private SingleAdminUpdateContentS3(SingleAdminUpdateContentS3Builder builder,
+            ModelsCreateContentRequestS3 body,
+            string channelId,
+            string contentId,
+            string namespace_
+        )
+        {
+            PathParams["channelId"] = channelId;
+            PathParams["contentId"] = contentId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public SingleAdminUpdateContentS3(
             string channelId,            
             string contentId,            

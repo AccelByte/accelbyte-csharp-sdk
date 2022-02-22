@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// </summary>
     public class GetSessionHistoryDetailed : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetSessionHistoryDetailedBuilder Builder = new GetSessionHistoryDetailedBuilder();
+
+        public class GetSessionHistoryDetailedBuilder
+        {
+            
+            
+            internal GetSessionHistoryDetailedBuilder() { }
+
+
+
+
+
+            public GetSessionHistoryDetailed Build(
+                string matchID,
+                string namespace_
+            )
+            {
+                return new GetSessionHistoryDetailed(this,
+                    matchID,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private GetSessionHistoryDetailed(GetSessionHistoryDetailedBuilder builder,
+            string matchID,
+            string namespace_
+        )
+        {
+            PathParams["matchID"] = matchID;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetSessionHistoryDetailed(
             string matchID,            
             string namespace_            

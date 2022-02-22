@@ -31,6 +31,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicBulkGetUsers : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicBulkGetUsersBuilder Builder = new PublicBulkGetUsersBuilder();
+
+        public class PublicBulkGetUsersBuilder
+        {
+            
+            
+            internal PublicBulkGetUsersBuilder() { }
+
+
+
+
+
+            public PublicBulkGetUsers Build(
+                ModelUserIDsRequest body,
+                string namespace_
+            )
+            {
+                return new PublicBulkGetUsers(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private PublicBulkGetUsers(PublicBulkGetUsersBuilder builder,
+            ModelUserIDsRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PublicBulkGetUsers(
             string namespace_,            
             Model.ModelUserIDsRequest body            

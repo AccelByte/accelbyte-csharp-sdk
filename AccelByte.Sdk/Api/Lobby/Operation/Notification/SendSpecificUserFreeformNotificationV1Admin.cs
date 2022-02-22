@@ -21,6 +21,51 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class SendSpecificUserFreeformNotificationV1Admin : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static SendSpecificUserFreeformNotificationV1AdminBuilder Builder = new SendSpecificUserFreeformNotificationV1AdminBuilder();
+
+        public class SendSpecificUserFreeformNotificationV1AdminBuilder
+        {
+            
+            
+            
+            internal SendSpecificUserFreeformNotificationV1AdminBuilder() { }
+
+
+
+
+
+            public SendSpecificUserFreeformNotificationV1Admin Build(
+                ModelFreeFormNotificationRequestV1 body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new SendSpecificUserFreeformNotificationV1Admin(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private SendSpecificUserFreeformNotificationV1Admin(SendSpecificUserFreeformNotificationV1AdminBuilder builder,
+            ModelFreeFormNotificationRequestV1 body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public SendSpecificUserFreeformNotificationV1Admin(
             string namespace_,            
             string userId,            

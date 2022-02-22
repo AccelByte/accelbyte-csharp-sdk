@@ -50,6 +50,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class CreateConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static CreateConfigBuilder Builder = new CreateConfigBuilder();
+
+        public class CreateConfigBuilder
+        {
+            
+            
+            internal CreateConfigBuilder() { }
+
+
+
+
+
+            public CreateConfig Build(
+                ModelsCreateDSMConfigRequest body,
+                string namespace_
+            )
+            {
+                return new CreateConfig(this,
+                    body,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private CreateConfig(CreateConfigBuilder builder,
+            ModelsCreateDSMConfigRequest body,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public CreateConfig(
             string namespace_,            
             Model.ModelsCreateDSMConfigRequest body            

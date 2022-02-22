@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class UpdateContentLikeStatus : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpdateContentLikeStatusBuilder Builder = new UpdateContentLikeStatusBuilder();
+
+        public class UpdateContentLikeStatusBuilder
+        {
+            
+            
+            
+            internal UpdateContentLikeStatusBuilder() { }
+
+
+
+
+
+            public UpdateContentLikeStatus Build(
+                ModelsContentLikeRequest body,
+                string contentId,
+                string namespace_
+            )
+            {
+                return new UpdateContentLikeStatus(this,
+                    body,                    
+                    contentId,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private UpdateContentLikeStatus(UpdateContentLikeStatusBuilder builder,
+            ModelsContentLikeRequest body,
+            string contentId,
+            string namespace_
+        )
+        {
+            PathParams["contentId"] = contentId;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpdateContentLikeStatus(
             string contentId,            
             string namespace_,            

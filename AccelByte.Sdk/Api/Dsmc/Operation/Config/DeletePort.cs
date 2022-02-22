@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// </summary>
     public class DeletePort : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DeletePortBuilder Builder = new DeletePortBuilder();
+
+        public class DeletePortBuilder
+        {
+            
+            
+            internal DeletePortBuilder() { }
+
+
+
+
+
+            public DeletePort Build(
+                string name,
+                string namespace_
+            )
+            {
+                return new DeletePort(this,
+                    name,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DeletePort(DeletePortBuilder builder,
+            string name,
+            string namespace_
+        )
+        {
+            PathParams["name"] = name;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public DeletePort(
             string name,            
             string namespace_            

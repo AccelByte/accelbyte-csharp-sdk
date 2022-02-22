@@ -23,6 +23,64 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class GetItemBySku : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetItemBySkuBuilder Builder = new GetItemBySkuBuilder();
+
+        public class GetItemBySkuBuilder
+        {
+            
+            public bool? ActiveOnly { get; set; }
+            
+            public string? StoreId { get; set; }
+            
+            
+            internal GetItemBySkuBuilder() { }
+
+
+            public GetItemBySkuBuilder SetActiveOnly(bool _activeOnly)
+            {
+                ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public GetItemBySkuBuilder SetStoreId(string _storeId)
+            {
+                StoreId = _storeId;
+                return this;
+            }
+
+
+
+
+            public GetItemBySku Build(
+                string namespace_,
+                string sku
+            )
+            {
+                return new GetItemBySku(this,
+                    namespace_,                    
+                    sku                    
+                );
+            }
+        }
+
+        private GetItemBySku(GetItemBySkuBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (sku != null) QueryParams["sku"] = sku;
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetItemBySku(
             string namespace_,            
             bool? activeOnly,            

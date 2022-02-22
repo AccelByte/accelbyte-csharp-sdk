@@ -21,6 +21,55 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// </summary>
     public class DecreaseTicketSale : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static DecreaseTicketSaleBuilder Builder = new DecreaseTicketSaleBuilder();
+
+        public class DecreaseTicketSaleBuilder
+        {
+            
+            
+            public Model.TicketSaleDecrementRequest? Body { get; set; }
+            
+            internal DecreaseTicketSaleBuilder() { }
+
+
+
+            public DecreaseTicketSaleBuilder SetBody(Model.TicketSaleDecrementRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+            public DecreaseTicketSale Build(
+                string boothName,
+                string namespace_
+            )
+            {
+                return new DecreaseTicketSale(this,
+                    boothName,                    
+                    namespace_                    
+                );
+            }
+        }
+
+        private DecreaseTicketSale(DecreaseTicketSaleBuilder builder,
+            string boothName,
+            string namespace_
+        )
+        {
+            PathParams["boothName"] = boothName;
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            BodyParams = builder.Body;
+            
+        }
+        #endregion
+
         public DecreaseTicketSale(
             string boothName,            
             string namespace_,            

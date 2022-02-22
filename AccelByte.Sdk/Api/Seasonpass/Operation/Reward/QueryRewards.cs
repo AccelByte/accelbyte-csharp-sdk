@@ -23,6 +23,55 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// </summary>
     public class QueryRewards : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static QueryRewardsBuilder Builder = new QueryRewardsBuilder();
+
+        public class QueryRewardsBuilder
+        {
+            
+            
+            public string? Q { get; set; }
+            
+            internal QueryRewardsBuilder() { }
+
+
+            public QueryRewardsBuilder SetQ(string _q)
+            {
+                Q = _q;
+                return this;
+            }
+
+
+
+
+            public QueryRewards Build(
+                string namespace_,
+                string seasonId
+            )
+            {
+                return new QueryRewards(this,
+                    namespace_,                    
+                    seasonId                    
+                );
+            }
+        }
+
+        private QueryRewards(QueryRewardsBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["seasonId"] = seasonId;
+            
+            if (builder.Q != null) QueryParams["q"] = builder.Q;
+            
+            
+            
+            
+        }
+        #endregion
+
         public QueryRewards(
             string namespace_,            
             string seasonId,            

@@ -21,6 +21,59 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class ImportStats : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static ImportStatsBuilder Builder = new ImportStatsBuilder();
+
+        public class ImportStatsBuilder
+        {
+            
+            public bool? ReplaceExisting { get; set; }
+            
+            public Stream? File { get; set; }
+            
+            internal ImportStatsBuilder() { }
+
+
+            public ImportStatsBuilder SetReplaceExisting(bool _replaceExisting)
+            {
+                ReplaceExisting = _replaceExisting;
+                return this;
+            }
+
+
+
+            public ImportStatsBuilder SetFile(Stream _file)
+            {
+                File = _file;
+                return this;
+            }
+
+
+            public ImportStats Build(
+                string namespace_
+            )
+            {
+                return new ImportStats(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private ImportStats(ImportStatsBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            if (builder.ReplaceExisting != null) QueryParams["replaceExisting"] = Convert.ToString(builder.ReplaceExisting)!;
+            
+            if (builder.File != null) FormParams["file"] = builder.File;
+            
+            
+            
+        }
+        #endregion
+
         public ImportStats(
             string namespace_,            
             bool? replaceExisting,            

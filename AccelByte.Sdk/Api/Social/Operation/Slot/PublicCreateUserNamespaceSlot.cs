@@ -21,6 +21,92 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// </summary>
     public class PublicCreateUserNamespaceSlot : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicCreateUserNamespaceSlotBuilder Builder = new PublicCreateUserNamespaceSlotBuilder();
+
+        public class PublicCreateUserNamespaceSlotBuilder
+        {
+            
+            
+            public string? Label { get; set; }
+            
+            public List<string>? Tags { get; set; }
+            
+            public string? Checksum { get; set; }
+            
+            public string? CustomAttribute { get; set; }
+            
+            public Stream? File { get; set; }
+            
+            internal PublicCreateUserNamespaceSlotBuilder() { }
+
+
+            public PublicCreateUserNamespaceSlotBuilder SetLabel(string _label)
+            {
+                Label = _label;
+                return this;
+            }
+
+            public PublicCreateUserNamespaceSlotBuilder SetTags(List<string> _tags)
+            {
+                Tags = _tags;
+                return this;
+            }
+
+
+
+            public PublicCreateUserNamespaceSlotBuilder SetChecksum(string _checksum)
+            {
+                Checksum = _checksum;
+                return this;
+            }
+
+            public PublicCreateUserNamespaceSlotBuilder SetCustomAttribute(string _customAttribute)
+            {
+                CustomAttribute = _customAttribute;
+                return this;
+            }
+
+            public PublicCreateUserNamespaceSlotBuilder SetFile(Stream _file)
+            {
+                File = _file;
+                return this;
+            }
+
+
+            public PublicCreateUserNamespaceSlot Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicCreateUserNamespaceSlot(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicCreateUserNamespaceSlot(PublicCreateUserNamespaceSlotBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            if (builder.Label != null) QueryParams["label"] = builder.Label;
+            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
+            
+            if (builder.Checksum != null) FormParams["checksum"] = builder.Checksum;
+            if (builder.CustomAttribute != null) FormParams["customAttribute"] = builder.CustomAttribute;
+            if (builder.File != null) FormParams["file"] = builder.File;
+            
+            CollectionFormatMap["tags"] = "multi";
+            
+            
+        }
+        #endregion
+
         public PublicCreateUserNamespaceSlot(
             string namespace_,            
             string userId,            

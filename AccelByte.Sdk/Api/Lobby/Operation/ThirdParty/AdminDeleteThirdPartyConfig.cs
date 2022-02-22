@@ -20,6 +20,41 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// </summary>
     public class AdminDeleteThirdPartyConfig : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminDeleteThirdPartyConfigBuilder Builder = new AdminDeleteThirdPartyConfigBuilder();
+
+        public class AdminDeleteThirdPartyConfigBuilder
+        {
+            
+            internal AdminDeleteThirdPartyConfigBuilder() { }
+
+
+
+
+
+            public AdminDeleteThirdPartyConfig Build(
+                string namespace_
+            )
+            {
+                return new AdminDeleteThirdPartyConfig(this,
+                    namespace_                    
+                );
+            }
+        }
+
+        private AdminDeleteThirdPartyConfig(AdminDeleteThirdPartyConfigBuilder builder,
+            string namespace_
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminDeleteThirdPartyConfig(
             string namespace_            
         )

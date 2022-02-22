@@ -42,6 +42,36 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class GetJWKSV3 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static GetJWKSV3Builder Builder = new GetJWKSV3Builder();
+
+        public class GetJWKSV3Builder
+        {
+            internal GetJWKSV3Builder() { }
+
+
+
+
+
+            public GetJWKSV3 Build(
+            )
+            {
+                return new GetJWKSV3(this
+                );
+            }
+        }
+
+        private GetJWKSV3(GetJWKSV3Builder builder
+        )
+        {
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public GetJWKSV3(
         )
         {

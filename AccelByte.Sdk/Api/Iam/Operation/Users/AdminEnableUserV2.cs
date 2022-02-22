@@ -18,6 +18,46 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class AdminEnableUserV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminEnableUserV2Builder Builder = new AdminEnableUserV2Builder();
+
+        public class AdminEnableUserV2Builder
+        {
+            
+            
+            internal AdminEnableUserV2Builder() { }
+
+
+
+
+
+            public AdminEnableUserV2 Build(
+                string namespace_,
+                string userId
+            )
+            {
+                return new AdminEnableUserV2(this,
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private AdminEnableUserV2(AdminEnableUserV2Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            
+        }
+        #endregion
+
         public AdminEnableUserV2(
             string namespace_,            
             string userId            

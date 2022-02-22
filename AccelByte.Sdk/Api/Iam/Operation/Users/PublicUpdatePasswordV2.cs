@@ -18,6 +18,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class PublicUpdatePasswordV2 : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static PublicUpdatePasswordV2Builder Builder = new PublicUpdatePasswordV2Builder();
+
+        public class PublicUpdatePasswordV2Builder
+        {
+            
+            
+            
+            internal PublicUpdatePasswordV2Builder() { }
+
+
+
+
+
+            public PublicUpdatePasswordV2 Build(
+                ModelUserPasswordUpdateRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new PublicUpdatePasswordV2(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private PublicUpdatePasswordV2(PublicUpdatePasswordV2Builder builder,
+            ModelUserPasswordUpdateRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public PublicUpdatePasswordV2(
             string namespace_,            
             string userId,            

@@ -22,6 +22,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// </summary>
     public class UpgradeHeadlessAccountWithVerificationCode : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static UpgradeHeadlessAccountWithVerificationCodeBuilder Builder = new UpgradeHeadlessAccountWithVerificationCodeBuilder();
+
+        public class UpgradeHeadlessAccountWithVerificationCodeBuilder
+        {
+            
+            
+            
+            internal UpgradeHeadlessAccountWithVerificationCodeBuilder() { }
+
+
+
+
+
+            public UpgradeHeadlessAccountWithVerificationCode Build(
+                ModelUpgradeHeadlessAccountWithVerificationCodeRequest body,
+                string namespace_,
+                string userId
+            )
+            {
+                return new UpgradeHeadlessAccountWithVerificationCode(this,
+                    body,                    
+                    namespace_,                    
+                    userId                    
+                );
+            }
+        }
+
+        private UpgradeHeadlessAccountWithVerificationCode(UpgradeHeadlessAccountWithVerificationCodeBuilder builder,
+            ModelUpgradeHeadlessAccountWithVerificationCodeRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public UpgradeHeadlessAccountWithVerificationCode(
             string namespace_,            
             string userId,            

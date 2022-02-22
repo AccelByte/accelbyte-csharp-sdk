@@ -19,6 +19,51 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// </summary>
     public class AdminUpdateTag : AccelByte.Sdk.Core.Operation
     {
+        #region Builder Part
+        public static AdminUpdateTagBuilder Builder = new AdminUpdateTagBuilder();
+
+        public class AdminUpdateTagBuilder
+        {
+            
+            
+            
+            internal AdminUpdateTagBuilder() { }
+
+
+
+
+
+            public AdminUpdateTag Build(
+                ModelsCreateTagRequest body,
+                string namespace_,
+                string tagId
+            )
+            {
+                return new AdminUpdateTag(this,
+                    body,                    
+                    namespace_,                    
+                    tagId                    
+                );
+            }
+        }
+
+        private AdminUpdateTag(AdminUpdateTagBuilder builder,
+            ModelsCreateTagRequest body,
+            string namespace_,
+            string tagId
+        )
+        {
+            PathParams["namespace"] = namespace_;
+            PathParams["tagId"] = tagId;
+            
+            
+            
+            
+            BodyParams = body;
+            
+        }
+        #endregion
+
         public AdminUpdateTag(
             string namespace_,            
             string tagId,            
