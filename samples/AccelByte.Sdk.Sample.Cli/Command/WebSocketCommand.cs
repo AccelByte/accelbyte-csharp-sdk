@@ -29,6 +29,8 @@ namespace AccelByte.Sdk.Sample.Cli.Command
 
         private volatile Message? _ReceivedMessage = null;
 
+        private volatile bool _IsError = false;
+
         public WebSocketCommand(AccelByteConfig abConfig)
         {
             _Config = abConfig;
@@ -55,6 +57,11 @@ namespace AccelByte.Sdk.Sample.Cli.Command
             {
                 _ReceivedMessage = aMsg;
             };
+            wsObj.OnReceiveError = (eMsg) =>
+            {
+                _IsError = true;
+                Console.WriteLine("Error: {0}", eMsg);
+            };
 
             Task connectTak = wsObj.Connect(false);
             connectTak.Wait();
@@ -67,6 +74,9 @@ namespace AccelByte.Sdk.Sample.Cli.Command
             //Now wait for the response message...
             while (true)
             {
+                if (_IsError == true)
+                    break;
+
                 if (_ReceivedMessage == null)
                     Thread.Sleep(100);
                 else
@@ -76,7 +86,10 @@ namespace AccelByte.Sdk.Sample.Cli.Command
             Task disconnectTask = wsObj.Disconnect();
             disconnectTask.Wait();
 
-            return _ReceivedMessage.ToString();
+            if (_IsError || (_ReceivedMessage == null))
+                return String.Empty;
+            else
+                return _ReceivedMessage.ToString();
         }
 
         public void Listen(string serviceName)

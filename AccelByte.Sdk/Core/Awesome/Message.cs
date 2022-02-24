@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Core.Awesome
     {
         public string MessageType { get; set; } = String.Empty;
 
-        public long Id { get; set; } = -1;
+        public string Id { get; set; } = String.Empty;
 
         public int? Code { get; set; } = null;
 
@@ -45,10 +45,7 @@ namespace AccelByte.Sdk.Core.Awesome
             if (string.IsNullOrEmpty(strId) || !strId.StartsWith("id: "))
                 return;
 
-            long _id = -1;
-            if (!long.TryParse(strId.Substring(strId.IndexOf(": ") + 2), out _id))
-                throw new MessageException(ErrorCode.MessageFieldConversionFailed);
-            Id = _id;
+            Id = strId.Substring(strId.IndexOf(": ") + 2);
 
             string? strCode = reader.ReadLine();
             if (string.IsNullOrEmpty(strCode) || !strCode.StartsWith("code: "))
@@ -64,7 +61,7 @@ namespace AccelByte.Sdk.Core.Awesome
         {
             sb.AppendFormat("type: {0}", MessageType);
 
-            if (Id != -1)
+            if (Id != String.Empty)
                 sb.AppendFormat("\nid: {0}", Id);
 
             if (Code != null)
@@ -136,11 +133,6 @@ namespace AccelByte.Sdk.Core.Awesome
         public Message(string msgString)
         {
             ReadHeader(msgString);
-            if (Code != null)
-            {
-                if (Code.Value > 0)
-                    throw new MessageException(ErrorCode.ErrorFromMessage, Code.Value);
-            }            
             Data = ParseFields(msgString);
         }
 

@@ -22,18 +22,21 @@ namespace AccelByte.Sdk.Sample.Cli
                     "AccelByte.Sdk.Sample.Cli.ApiCommand",
                     Assembly.GetExecutingAssembly());
 
-                if (cArgs.IsWebService)
+                if (cArgs.IsWebSocket)
                 {
                     if (cArgs.ServiceName == String.Empty)
                         throw new Exception("Unspecified service name for websocket service.");
 
                     AccelByteSDK sdk = SdkHelper.CreateSdkAndLogin(cArgs);
                     WebSocketCommand wsCmd = new WebSocketCommand(sdk.Configuration);
-                    if (cArgs.IsWebServiceListenMode)
+                    if (cArgs.IsWebSocketListenMode)
                         wsCmd.Listen(cArgs.ServiceName);
                     else
                     {
-                        string response = wsCmd.Execute(cArgs.ServiceName, cArgs.WebServicePayload);
+                        string response = wsCmd.Execute(cArgs.ServiceName, cArgs.WebSocketPayload);
+                        if (response == String.Empty)
+                            return 2;
+                            
                         Console.Write("Response:\n{0}", response);
                     }                    
                 }

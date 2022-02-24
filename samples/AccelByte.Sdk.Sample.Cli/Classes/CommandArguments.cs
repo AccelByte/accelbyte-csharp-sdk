@@ -44,11 +44,11 @@ namespace AccelByte.Sdk.Sample.Cli
 
         public bool IsListAllAsked { get; private set; } = false;
 
-        public bool IsWebService { get; private set; } = false;
+        public bool IsWebSocket { get; private set; } = false;
 
-        public bool IsWebServiceListenMode { get; private set; } = false;
+        public bool IsWebSocketListenMode { get; private set; } = false;
 
-        public string WebServicePayload { get; private set; } = String.Empty;
+        public string WebSocketPayload { get; private set; } = String.Empty;
 
         public CommandArguments(string[] args)
         {
@@ -177,17 +177,25 @@ namespace AccelByte.Sdk.Sample.Cli
                         }
                         else if (aKey == "ws")
                         {
-                            IsWebService = true;
-                        }
+                            IsWebSocket = true;
+                        }                        
                         else if (aKey == "ws-payload")
                         {
                             if (aValue == String.Empty)
                                 throw new CommandArgumentException("WebSocket payload is specified but has empty value.");
-                            WebServicePayload = aValue.Replace("\\n", "\n");
+                            WebSocketPayload = aValue.Replace("\\n", "\n");
+                        }
+                        else if (aKey == "ws-payload-file")
+                        {
+                            if (aValue == String.Empty)
+                                throw new CommandArgumentException("WebSocket payload file is specified but has empty value.");
+                            if (!File.Exists(aValue))
+                                throw new CommandArgumentException("WebSocket payload file does not exists.");
+                            WebSocketPayload = File.ReadAllText(aValue);
                         }
                         else if (aKey == "ws-listen")
                         {
-                            IsWebServiceListenMode = true;
+                            IsWebSocketListenMode = true;
                         }
                         else
                             _Parameters.Add(aKey, aValue);
@@ -215,6 +223,7 @@ namespace AccelByte.Sdk.Sample.Cli
                 + "\t--upload\tSpecify a file to be uploaded\n"
                 + "\t--ws\tEnable web socket service. Specify which service using '--sn' option\n"
                 + "\t--ws-payload\tSet web socket data payload to send\n"
+                + "\t--ws-payload-file\tSpecify a file to be loaded as web socket data payload\n"
                 + "\t--ws-listen\tStart listening mode for web socket service\n"
                 + "\nUser Login:\n"
                 + "\tAccelByte.Sdk.Sample.CLI.exe --op login --user <username> --password <password>\n\n"
