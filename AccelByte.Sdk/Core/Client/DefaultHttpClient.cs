@@ -21,18 +21,15 @@ namespace AccelByte.Sdk.Core.Client
         { 
             AllowAutoRedirect = false   // Handle redirect manually
         };
+
         private static readonly System.Net.Http.HttpClient Http = new System.Net.Http.HttpClient(Handler);
+        
         private static object HttpLock = new object();
 
-        private IConfigRepository? _Config = null;
-
-        public void SetConfigRepository(IConfigRepository cRepository)
+        public HttpResponse SendRequest(Operation operation, string baseURL)
         {
-            _Config = cRepository;
-        }
+            Dictionary<string, string> headers = operation.HeaderParams;
 
-        public HttpResponse SendRequest(Operation operation, string baseURL, Dictionary<string, string> headers)
-        {
             lock (HttpLock)
             {
                 var contentType = string.Empty;
@@ -40,7 +37,6 @@ namespace AccelByte.Sdk.Core.Client
                 if (operation.Consumes.Any())
                 {
                     contentType = operation.Consumes.First();   // XXX First only
-
                     headers["Content-Type"] = contentType;
                 }
 
@@ -64,13 +60,11 @@ namespace AccelByte.Sdk.Core.Client
                     if (IsMediaTypeJson(contentType))
                     {
                         var jsonString = JsonSerializer.Serialize(operation.BodyParams);
-
                         request.Content = new StringContent(jsonString, Encoding.UTF8, contentType);
                     }
                     else
                     {
                         var bodyString = operation.BodyParams.ToString()!;
-
                         request.Content = new StringContent(bodyString, Encoding.UTF8, contentType);
                     }
                 }
@@ -122,43 +116,23 @@ namespace AccelByte.Sdk.Core.Client
                     request.Content = new StringContent(string.Empty, Encoding.UTF8, contentType);
                 }
 
-                request.Content.Headers.Clear();
-
+                //request.Content.Headers.Clear();
                 foreach (var h in headers)
                 {
-                    if (h.Key == "Authorization")
+                    if (h.Key == "User-Agent")
+                        request.Headers.UserAgent.ParseAdd(h.Value);
+                    else if (h.Key == "Accept")
+                        request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(h.Value));
+                    else if (h.Key == "Authorization")
                     {
                         var authorization = h.Value.Split(' ');
-
-                        Http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(authorization[0], authorization[1]);
-                    }
-                    else if (h.Key == "Accept")
-                    {
-                        Http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(h.Value));
+                        request.Headers.Authorization = new AuthenticationHeaderValue(authorization[0], authorization[1]);
                     }
                     else
-                    {
-                        request.Content.Headers.TryAddWithoutValidation(h.Key, h.Value);
-                    }
+                        request.Headers.TryAddWithoutValidation(h.Key, h.Value);
                 }
 
-                Version asVer = this.GetType().Assembly.GetName().Version!;
-                string userAgent = String.Format("AccelByteCSharpSDK/{0}.{1}.{2} ({3})", asVer.Major, asVer.Minor, asVer.Revision, _Config?.AppName);
-                request.Headers.UserAgent.ParseAdd(userAgent);
-
-                if (_Config != null ? _Config.EnableTraceId : true)
-                {
-                    string uTime = DateTimeOffset.Now.ToUnixTimeSeconds().ToString("X").PadLeft(8, '0').ToLowerInvariant();
-                    string rGuid = Guid.NewGuid().ToString().Replace("-", "");
-                    string guid = String.Empty;
-                    for (int i = 0; i < rGuid.Length; i += 4)
-                        guid += rGuid.Substring(i, 3);
-
-                    string amazonTraceId = String.Format("{0}-{1}-{2}", _Config?.TraceIdVersion, uTime, guid);
-                    request.Headers.TryAddWithoutValidation("X-Amzn-Trace-Id", amazonTraceId);
-                }
-
-                var response = Http.Send(request);
+                var response = Http!.Send(request);
 
                 Stream? payload = null;
 

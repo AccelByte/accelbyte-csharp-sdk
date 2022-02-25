@@ -17,12 +17,17 @@ namespace AccelByte.Sdk.Tests
         }
 
         public string BaseUrl { get; init; }
+        
         public string ClientId { get; init; }
+
         public string ClientSecret { get; init; }
+
         public string AppName { get; init; }
 
         public string TraceIdVersion{ get; } = "1";
 
         public bool EnableTraceId { get; } = true;
+
+        public bool EnableUserAgentInfo { get; } = true;
     }
 }

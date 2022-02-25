@@ -18,6 +18,8 @@ namespace AccelByte.Sdk.Core.Repository
 
         private const string CLIENT_ENABLE_TRACEID = "AB_ENABLE_TRACEID";
 
+        private const string CLIENT_ENABLE_USERAGENT = "AB_ENABLE_USERAGENT";
+
         public string BaseUrl
         {
             get => Environment.GetEnvironmentVariable(BASE_URL) ?? 
@@ -59,6 +61,18 @@ namespace AccelByte.Sdk.Core.Repository
             get
             {
                 string? aEnable = Environment.GetEnvironmentVariable(CLIENT_ENABLE_TRACEID);
+                if (aEnable == null)
+                    return true;
+                else
+                    return (aEnable.Trim() == "1");
+            }
+        }
+
+        public bool EnableUserAgentInfo
+        {
+            get
+            {
+                string? aEnable = Environment.GetEnvironmentVariable(CLIENT_ENABLE_USERAGENT);
                 if (aEnable == null)
                     return true;
                 else

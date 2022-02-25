@@ -39,7 +39,26 @@ namespace AccelByte.Sdk.Core
                     break;
             }
 
-            return Configuration.HttpClient.SendRequest(operation, baseUrl, operation.HeaderParams);
+            if (Configuration.ConfigRepository.EnableUserAgentInfo)
+            {
+                Version asVer = this.GetType().Assembly.GetName().Version!;
+                string userAgent = String.Format("AccelByteCSharpSDK/{0}.{1}.{2} ({3})", asVer.Major, asVer.Minor, asVer.Revision, Configuration.ConfigRepository.AppName);
+                operation.HeaderParams["User-Agent"] = userAgent;
+            }
+
+            if (Configuration.ConfigRepository.EnableTraceId)
+            {
+                string uTime = DateTimeOffset.Now.ToUnixTimeSeconds().ToString("X").PadLeft(8, '0').ToLowerInvariant();
+                string rGuid = Guid.NewGuid().ToString().Replace("-", "");
+                string guid = String.Empty;
+                for (int i = 0; i < rGuid.Length; i += 4)
+                    guid += rGuid.Substring(i, 3);
+
+                string amazonTraceId = String.Format("{0}-{1}-{2}", Configuration.ConfigRepository.TraceIdVersion, uTime, guid);
+                operation.HeaderParams["X-Amzn-Trace-Id"] = amazonTraceId;
+            }
+
+            return Configuration.HttpClient.SendRequest(operation, baseUrl);
         }
 
         public bool LoginUser(string username, string password)

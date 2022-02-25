@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Core
             HttpClient = httpClient;
             TokenRepository = tokenRepository;
             ConfigRepository = configRepository;
-
-            HttpClient.SetConfigRepository(ConfigRepository);
         }
 
         public IHttpClient HttpClient { get; }
