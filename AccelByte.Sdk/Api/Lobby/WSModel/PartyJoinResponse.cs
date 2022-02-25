@@ -12,17 +12,21 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("partyJoinResponse")]
     public class PartyJoinResponse : AccelByte.Sdk.Core.WSModel
     {
+        [AwesomeProperty("code")]
+        [JsonPropertyName("code")]
+        public long? Code { get; set; }
+        
         [AwesomeProperty("id")]
         [JsonPropertyName("id")]
         public string? Id { get; set; }
         
-        [AwesomeProperty("code")]
-        [JsonPropertyName("code")]
-        public string? Code { get; set; }
+        [AwesomeProperty("invitationToken")]
+        [JsonPropertyName("invitationToken")]
+        public string? InvitationToken { get; set; }
         
-        [AwesomeProperty("partyId")]
-        [JsonPropertyName("partyId")]
-        public string? PartyId { get; set; }
+        [AwesomeProperty("invitees")]
+        [JsonPropertyName("invitees")]
+        public string? Invitees { get; set; }
         
         [AwesomeProperty("leaderId")]
         [JsonPropertyName("leaderId")]
@@ -32,13 +36,9 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [JsonPropertyName("members")]
         public string? Members { get; set; }
         
-        [AwesomeProperty("invitees")]
-        [JsonPropertyName("invitees")]
-        public string? Invitees { get; set; }
-        
-        [AwesomeProperty("invitationToken")]
-        [JsonPropertyName("invitationToken")]
-        public string? InvitationToken { get; set; }
+        [AwesomeProperty("partyId")]
+        [JsonPropertyName("partyId")]
+        public string? PartyId { get; set; }
         
     }
 }

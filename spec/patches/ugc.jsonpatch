@@ -13,11 +13,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/delete/security",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1types/post/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]"
+          "ADMIN:NAMESPACE:{namespace}:UGCCONFIG [CREATE]"
         ],
         "authorization": []
       }
@@ -25,16 +25,16 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/delete/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]&lt;/b&gt;."
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1types/post/tags/0",
+    "value": "Admin Type"
   },
   {
     "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/get/security",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1types/get/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]"
+          "ADMIN:NAMESPACE:{namespace}:UGCCONFIG [READ]"
         ],
         "authorization": []
       }
@@ -42,363 +42,18 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/get/tags/0",
-    "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/get/parameters/2/default",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1types/get/parameters/1/default",
     "value": "1000"
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/get/parameters/3/default",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1types/get/parameters/2/default",
     "value": "0"
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/get/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]&lt;/b&gt;."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [UPDATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}/put/tags/0",
-    "value": "Admin Channel"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}/put/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [UPDATE]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}/delete/tags/0",
-    "value": "Admin Channel"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}/delete/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots~1{screenshotId}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots~1{screenshotId}/delete/tags/0",
-    "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots~1{screenshotId}/delete/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]&lt;/b&gt;.\n\t\t\t\t"
-  },
-  {
-    "op": "move",
-    "from": "/security",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1followed/get/security"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1followed/get/tags/0",
-    "value": "Public Follow"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1followed/get/parameters/1/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1followed/get/parameters/2/default",
-    "value": "0"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1types/get/security",
-    "value": [
-      {
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1types/get/tags/0",
-    "value": "Public Type"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1types/get/parameters/1/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1types/get/parameters/2/default",
-    "value": "0"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/put/tags/0",
-    "value": "Public Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/put/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except preview and tags.\n\t\t\t\t"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/delete/tags/0",
-    "value": "Public Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/delete/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]&lt;/b&gt;."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1s3/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1s3/post/tags/0",
-    "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1s3/post/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except preview, tags, and contentType.\n\t\t\t\tcontentType values is used to enforce the Content-Type header needed by the client when uploading the content using the S3 presigned URL.\n\t\t\t\tIf not specified, it will use fileExtension value.\n\t\t\t\t\t\t"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/tags/0",
-    "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except payload, preview, tags, and contentType.\n\t\t\t\tcontentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.\n\t\t\t\tIf not specified, it will use fileExtension value."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1hide/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1hide/put/tags/0",
-    "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1hide/put/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1search/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [CREATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1search/get/tags/0",
-    "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1search/get/parameters/9/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1search/get/parameters/10/default",
-    "value": "0"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1search/get/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [CREATE]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/tags/0",
-    "value": "Public Group"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/parameters/3/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/parameters/4/default",
-    "value": "0"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]&lt;/b&gt;."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [UPDATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/put/tags/0",
-    "value": "Admin Group"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [DELETE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/delete/tags/0",
-    "value": "Admin Group"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/get/tags/0",
-    "value": "Admin Group"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/get/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]&lt;/b&gt;."
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1types/get/tags/0",
+    "value": "Admin Type"
   },
   {
     "op": "add",
@@ -426,8 +81,8 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups/get/tags/0",
-    "value": "Admin Group"
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups/get/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]&lt;/b&gt;."
   },
   {
     "op": "replace",
@@ -441,8 +96,820 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups/get/description",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups/get/tags/0",
+    "value": "Admin Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/put/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/put/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except preview and tags.\n\t\t\t\t"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/put/tags/0",
+    "value": "Public Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/delete/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]&lt;/b&gt;."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/delete/tags/0",
+    "value": "Public Content"
+  },
+  {
+    "op": "move",
+    "from": "/security",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents/get/security"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents/get/parameters/9/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents/get/parameters/10/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents/get/tags/0",
+    "value": "Public Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/put/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/put/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\t\tAll request body are required except preview and tags.\n\t\t\t\t\t"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/put/tags/0",
+    "value": "Admin Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/delete/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]&lt;/b&gt;."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/delete/tags/0",
+    "value": "Admin Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots~1{screenshotId}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots~1{screenshotId}/delete/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]&lt;/b&gt;.\n\t\t\t\t"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots~1{screenshotId}/delete/tags/0",
+    "value": "Admin Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}~1downloadcount/post/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}~1downloadcount/post/tags/0",
+    "value": "Public Download Count"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/delete/tags/0",
+    "value": "Public Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/put/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [UPDATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/put/tags/0",
+    "value": "Public Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/get/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]&lt;/b&gt;."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/get/tags/0",
+    "value": "Public Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1tags/get/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1tags/get/parameters/1/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1tags/get/parameters/2/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1tags/get/tags/0",
+    "value": "Public Tag"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1states/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId} [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1states/delete/description",
+    "value": "Required permission NAMESPACE:{namespace}:USER:{userId}&#34; [DELETE]"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1liked/get/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1liked/get/parameters/1/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1liked/get/parameters/2/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1liked/get/tags/0",
+    "value": "Public Like"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/delete/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]&lt;/b&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/get/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]&lt;/b&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/get/parameters/2/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/get/parameters/3/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/get/tags/0",
+    "value": "Admin Channel"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\t\tAll request body are required except payload, preview, tags, and contentType.\n\t\t\t\t\tcontentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.\n\t\t\t\t\tIf not specified, it will use fileExtension value."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/tags/0",
+    "value": "Admin Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents/post/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]&lt;/b&gt;.\\n \n\t\t\tAll request body are required except preview and tags.\n\t\t\t"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents/post/tags/0",
+    "value": "Public Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]&lt;/b&gt;."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/parameters/3/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/parameters/4/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/tags/0",
+    "value": "Public Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/delete/tags/0",
+    "value": "Admin Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/put/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [UPDATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/put/tags/0",
+    "value": "Admin Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/get/description",
     "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]&lt;/b&gt;."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}/get/tags/0",
+    "value": "Admin Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/delete/tags/0",
+    "value": "Admin Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/put/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [UPDATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/put/tags/0",
+    "value": "Admin Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/get/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]&lt;/b&gt;."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/get/tags/0",
+    "value": "Admin Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1follow/put/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1follow/put/tags/0",
+    "value": "Public Follow"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1followed/get/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1followed/get/parameters/1/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1followed/get/parameters/2/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1followed/get/tags/0",
+    "value": "Public Follow"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CHANNEL [CREATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/post/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CHANNEL [CREATE]&lt;/b&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/post/tags/0",
+    "value": "Public Channel"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/delete/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]&lt;/b&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/get/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]&lt;/b&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/get/parameters/2/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/get/parameters/3/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/get/tags/0",
+    "value": "Public Channel"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [CREATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/post/tags/0",
+    "value": "Public Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/get/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]&lt;/b&gt;."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/get/parameters/1/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/get/parameters/2/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/get/tags/0",
+    "value": "Public Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1{contentId}/put/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1{contentId}/put/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\t\tAll request body are required except preview and tags.\n\t\t\t\t\t"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1{contentId}/put/tags/0",
+    "value": "Admin Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1{contentId}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1{contentId}/delete/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]&lt;/b&gt;."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1{contentId}/delete/tags/0",
+    "value": "Admin Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1preview/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1preview/get/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ]&lt;/b&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1preview/get/tags/0",
+    "value": "Admin Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1sharecodes~1{shareCode}/get/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1sharecodes~1{shareCode}/get/tags/0",
+    "value": "Public Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1search/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [CREATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1search/get/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [CREATE]&lt;/b&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1search/get/parameters/9/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1search/get/parameters/10/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1search/get/tags/0",
+    "value": "Admin Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}/get/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}/get/tags/0",
+    "value": "Public Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}~1preview/get/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}~1preview/get/tags/0",
+    "value": "Public Content"
   },
   {
     "op": "add",
@@ -475,8 +942,8 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups/get/tags/0",
-    "value": "Admin Group"
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups/get/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]&lt;/b&gt;."
   },
   {
     "op": "replace",
@@ -490,28 +957,16 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups/get/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]&lt;/b&gt;."
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups/get/tags/0",
+    "value": "Admin Group"
   },
   {
     "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/delete/security",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/post/security",
     "value": [
       {
         "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [DELETE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [CREATE]"
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [CREATE]"
         ],
         "authorization": []
       }
@@ -519,16 +974,21 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/post/tags/0",
-    "value": "Public Group"
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/post/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [CREATE]&lt;/b&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/post/tags/0",
+    "value": "Admin Channel"
   },
   {
     "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/get/security",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/get/security",
     "value": [
       {
         "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]"
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]"
         ],
         "authorization": []
       }
@@ -536,31 +996,31 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/get/tags/0",
-    "value": "Public Group"
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/get/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]&lt;/b&gt;"
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/get/parameters/1/default",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/get/parameters/1/default",
     "value": "1000"
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/get/parameters/2/default",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/get/parameters/2/default",
     "value": "0"
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups/get/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]&lt;/b&gt;."
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/get/tags/0",
+    "value": "Admin Channel"
   },
   {
     "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}/get/security",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/delete/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ]"
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]"
         ],
         "authorization": []
       }
@@ -568,13 +1028,208 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}/get/tags/0",
-    "value": "Admin Content"
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/delete/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]&lt;/b&gt;."
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]"
+        ],
+        "authorization": []
+      }
+    ]
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}/get/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ]&lt;/b&gt;."
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/get/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]&lt;/b&gt;."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/get/parameters/2/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/get/parameters/3/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents/get/tags/0",
+    "value": "Admin Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1search/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [CREATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1search/get/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [CREATE]&lt;/b&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1search/get/parameters/10/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1search/get/parameters/11/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1search/get/tags/0",
+    "value": "Admin Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1types/get/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1types/get/parameters/1/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1types/get/parameters/2/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1types/get/tags/0",
+    "value": "Public Type"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/put/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CHANNEL [UPDATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/put/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CHANNEL [UPDATE]&lt;/b&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/put/tags/0",
+    "value": "Public Channel"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/delete/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]&lt;/b&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/delete/tags/0",
+    "value": "Public Channel"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots/post/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except for contentType field. \n\t\t\t\tcontentType values is used to enforce the Content-Type header needed by the client to upload the content using the presigned URL.\n\t\t\t\tIf not specified, it will use fileExtension value.\n\t\t\t\tSupported file extensions: pjp, jpg, jpeg, jfif, bmp, png. \\n\n\t\t\t\tMaximum description length: 1024.\n\t\t\t\t"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots/post/tags/0",
+    "value": "Public Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots/put/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots/put/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\t\tMaximum description length: 1024.\n\t\t\t\t\t"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots/put/tags/0",
+    "value": "Public Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1followed/get/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1followed/get/parameters/1/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1followed/get/parameters/2/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1followed/get/tags/0",
+    "value": "Public Follow"
   },
   {
     "op": "add",
@@ -612,28 +1267,6 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1preview/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1preview/get/tags/0",
-    "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1preview/get/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
     "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1states/delete/security",
     "value": [
       {
@@ -646,518 +1279,7 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/delete/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]&lt;/b&gt;."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/get/tags/0",
-    "value": "Public Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/get/parameters/2/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/get/parameters/3/default",
-    "value": "0"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/get/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]&lt;/b&gt;."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [UPDATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/put/tags/0",
-    "value": "Admin Channel"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/put/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [UPDATE]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/delete/tags/0",
-    "value": "Admin Channel"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/delete/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1follow/put/security",
-    "value": [
-      {
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1follow/put/tags/0",
-    "value": "Public Follow"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [UPDATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/put/tags/0",
-    "value": "Admin Group"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [DELETE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/delete/tags/0",
-    "value": "Admin Group"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/get/tags/0",
-    "value": "Admin Group"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/get/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]&lt;/b&gt;."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/delete/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CHANNEL [CREATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/post/tags/0",
-    "value": "Public Channel"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/post/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CHANNEL [CREATE]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/get/tags/0",
-    "value": "Public Channel"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/get/parameters/2/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/get/parameters/3/default",
-    "value": "0"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels/get/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots/put/tags/0",
-    "value": "Public Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots/put/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\t\tMaximum description length: 1024.\n\t\t\t\t\t"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots/post/tags/0",
-    "value": "Public Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots/post/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except for contentType field. \n\t\t\t\tcontentType values is used to enforce the Content-Type header needed by the client to upload the content using the presigned URL.\n\t\t\t\tIf not specified, it will use fileExtension value.\n\t\t\t\tSupported file extensions: pjp, jpg, jpeg, jfif, bmp, png. \\n\n\t\t\t\tMaximum description length: 1024.\n\t\t\t\t"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1states/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId} [DELETE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1states/delete/description",
-    "value": "Required permission NAMESPACE:{namespace}:USER:{userId}&#34; [DELETE]"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}~1like/put/security",
-    "value": [
-      {
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}~1like/put/tags/0",
-    "value": "Public Like"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1types/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:UGCCONFIG [CREATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1types/post/tags/0",
-    "value": "Admin Type"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1types/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:UGCCONFIG [READ]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1types/get/tags/0",
-    "value": "Admin Type"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1types/get/parameters/1/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1types/get/parameters/2/default",
-    "value": "0"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1followed/get/security",
-    "value": [
-      {
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1followed/get/tags/0",
-    "value": "Public Follow"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1followed/get/parameters/1/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1followed/get/parameters/2/default",
-    "value": "0"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1liked/get/security",
-    "value": [
-      {
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1liked/get/tags/0",
-    "value": "Public Like"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1liked/get/parameters/1/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1liked/get/parameters/2/default",
-    "value": "0"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3/post/tags/0",
-    "value": "Public Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3/post/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except payload, preview, tags, and contentType.\n\t\t\t\tcontentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.\n\t\t\t\tIf not specified, it will use fileExtension value."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents/get/tags/0",
-    "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents/get/parameters/1/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents/get/parameters/2/default",
-    "value": "0"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents/get/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]&lt;/b&gt;."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1channels~1{channelId}~1contents/get/security",
-    "value": [
-      {
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1channels~1{channelId}~1contents/get/tags/0",
-    "value": "Public Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1channels~1{channelId}~1contents/get/parameters/10/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1channels~1{channelId}~1contents/get/parameters/11/default",
-    "value": "0"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1search/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [CREATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1search/get/tags/0",
-    "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1search/get/parameters/10/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1search/get/parameters/11/default",
-    "value": "0"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1search/get/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [CREATE]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents/post/security",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1s3/post/security",
     "value": [
       {
         "HasPermission": [
@@ -1169,163 +1291,13 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents/post/tags/0",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1s3/post/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except preview, tags, and contentType.\n\t\t\t\tcontentType values is used to enforce the Content-Type header needed by the client when uploading the content using the S3 presigned URL.\n\t\t\t\tIf not specified, it will use fileExtension value.\n\t\t\t\t\t\t"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1s3/post/tags/0",
     "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents/post/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except preview and tags.\n\t\t\t\t"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1tags/get/security",
-    "value": [
-      {
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1tags/get/tags/0",
-    "value": "Public Tag"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1tags/get/parameters/1/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1tags/get/parameters/2/default",
-    "value": "0"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [CREATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/post/tags/0",
-    "value": "Admin Channel"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/post/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [CREATE]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/get/tags/0",
-    "value": "Admin Channel"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/get/parameters/1/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/get/parameters/2/default",
-    "value": "0"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels/get/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/put/tags/0",
-    "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/put/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\t\tAll request body are required except preview and tags.\n\t\t\t\t\t"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/delete/tags/0",
-    "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1{contentId}/delete/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]&lt;/b&gt;."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1sharecodes~1{shareCode}/get/security",
-    "value": [
-      {
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1sharecodes~1{shareCode}/get/tags/0",
-    "value": "Public Content"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}/get/security",
-    "value": [
-      {
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}/get/tags/0",
-    "value": "Public Content"
   },
   {
     "op": "add",
@@ -1363,7 +1335,29 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/delete/security",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}/put/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [UPDATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}/put/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [UPDATE]&lt;/b&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}/put/tags/0",
+    "value": "Admin Channel"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}/delete/security",
     "value": [
       {
         "HasPermission": [
@@ -1375,108 +1369,13 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/delete/description",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}/delete/description",
     "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]&lt;/b&gt;"
   },
   {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/get/tags/0",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}/delete/tags/0",
     "value": "Admin Channel"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/get/parameters/2/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/get/parameters/3/default",
-    "value": "0"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels/get/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents/get/security",
-    "value": [
-      {
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents/get/tags/0",
-    "value": "Public Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents/get/parameters/9/default",
-    "value": "1000"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents/get/parameters/10/default",
-    "value": "0"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/tags/0",
-    "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\t\tAll request body are required except payload, preview, tags, and contentType.\n\t\t\t\t\tcontentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.\n\t\t\t\t\tIf not specified, it will use fileExtension value."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents/post/tags/0",
-    "value": "Public Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents/post/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]&lt;/b&gt;.\\n \n\t\t\tAll request body are required except preview and tags.\n\t\t\t"
   },
   {
     "op": "add",
@@ -1492,8 +1391,8 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}~1contents/get/tags/0",
-    "value": "Admin Group"
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}~1contents/get/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]&lt;/b&gt;."
   },
   {
     "op": "replace",
@@ -1507,16 +1406,16 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}~1contents/get/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]&lt;/b&gt;."
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1groups~1{groupId}~1contents/get/tags/0",
+    "value": "Admin Group"
   },
   {
     "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/security",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}/get/security",
     "value": [
       {
         "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
+          "ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ]"
         ],
         "authorization": []
       }
@@ -1524,35 +1423,57 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/tags/0",
-    "value": "Public Content"
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}/get/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ]&lt;/b&gt;."
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except payload, preview, tags, and contentType.\n\t\t\t\tcontentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.\n\t\t\t\tIf not specified, it will use fileExtension value."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots/put/tags/0",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}/get/tags/0",
     "value": "Admin Content"
   },
   {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/put/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [UPDATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots/put/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\t\tMaximum description length: 1024.\n\t\t\t\t\t"
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/put/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [UPDATE]&lt;/b&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/put/tags/0",
+    "value": "Admin Channel"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/delete/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]&lt;/b&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/delete/tags/0",
+    "value": "Admin Channel"
   },
   {
     "op": "add",
@@ -1568,21 +1489,21 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots/post/tags/0",
-    "value": "Admin Content"
-  },
-  {
-    "op": "replace",
     "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots/post/description",
     "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except for contentType field. \n\t\t\t\tcontentType values is used to enforce the Content-Type header needed by the client to upload the content using the presigned URL.\n\t\t\t\tIf not specified, it will use fileExtension value.\n\t\t\t\tSupported file extensions: pjp, jpg, jpeg, jfif, bmp, png. \\n\n\t\t\t\tMaximum description length: 1024.\n\t\t\t\t"
   },
   {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots/post/tags/0",
+    "value": "Admin Content"
+  },
+  {
     "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/security",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots/put/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]"
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
         ],
         "authorization": []
       }
@@ -1590,23 +1511,100 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/tags/0",
-    "value": "Admin Group"
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots/put/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\t\tMaximum description length: 1024.\n\t\t\t\t\t"
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/parameters/3/default",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents~1{contentId}~1screenshots/put/tags/0",
+    "value": "Admin Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1channels~1{channelId}~1contents/get/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1channels~1{channelId}~1contents/get/parameters/10/default",
     "value": "1000"
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/parameters/4/default",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1channels~1{channelId}~1contents/get/parameters/11/default",
     "value": "0"
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]&lt;/b&gt;."
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1channels~1{channelId}~1contents/get/tags/0",
+    "value": "Public Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}~1like/put/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}~1like/put/tags/0",
+    "value": "Public Like"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/delete/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]&lt;/b&gt;."
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/get/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]&lt;/b&gt;."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/get/parameters/2/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/get/parameters/3/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents/get/tags/0",
+    "value": "Public Content"
   },
   {
     "op": "add",
@@ -1622,31 +1620,61 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots~1{screenshotId}/delete/tags/0",
-    "value": "Public Content"
-  },
-  {
-    "op": "replace",
     "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots~1{screenshotId}/delete/description",
     "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]&lt;/b&gt;.\n\t\t\t\t"
   },
   {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1screenshots~1{screenshotId}/delete/tags/0",
+    "value": "Public Content"
+  },
+  {
     "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}~1preview/get/security",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/security",
     "value": [
       {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
+        ],
         "authorization": []
       }
     ]
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}~1preview/get/tags/0",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except payload, preview, tags, and contentType.\n\t\t\t\tcontentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.\n\t\t\t\tIf not specified, it will use fileExtension value."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/tags/0",
     "value": "Public Content"
   },
   {
     "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1{contentId}/put/security",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3/post/description",
+    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except payload, preview, tags, and contentType.\n\t\t\t\tcontentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.\n\t\t\t\tIf not specified, it will use fileExtension value."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3/post/tags/0",
+    "value": "Public Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1hide/put/security",
     "value": [
       {
         "HasPermission": [
@@ -1658,21 +1686,21 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1{contentId}/put/tags/0",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1hide/put/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1contents~1{contentId}~1hide/put/tags/0",
     "value": "Admin Content"
   },
   {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1{contentId}/put/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\t\tAll request body are required except preview and tags.\n\t\t\t\t\t"
-  },
-  {
     "op": "add",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1{contentId}/delete/security",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents/get/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]"
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]"
         ],
         "authorization": []
       }
@@ -1680,127 +1708,23 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1{contentId}/delete/tags/0",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents/get/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]&lt;/b&gt;."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents/get/parameters/1/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents/get/parameters/2/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1contents/get/tags/0",
     "value": "Admin Content"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents~1{contentId}/delete/description",
-    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE]&lt;/b&gt;."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CHANNEL [UPDATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/put/tags/0",
-    "value": "Public Channel"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/put/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CHANNEL [UPDATE]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/delete/tags/0",
-    "value": "Public Channel"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}/delete/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]&lt;/b&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}~1downloadcount/post/security",
-    "value": [
-      {
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1contents~1{contentId}~1downloadcount/post/tags/0",
-    "value": "Public Download Count"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [UPDATE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/put/tags/0",
-    "value": "Public Group"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [DELETE]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/delete/tags/0",
-    "value": "Public Group"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/get/tags/0",
-    "value": "Public Group"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1ugc~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}/get/description",
-    "value": "Required permission &lt;b&gt;NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ]&lt;/b&gt;."
   },
   {
     "op": "add",
@@ -1833,11 +1757,6 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1tags/get/tags/0",
-    "value": "Admin Tag"
-  },
-  {
-    "op": "replace",
     "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1tags/get/parameters/1/default",
     "value": "1000"
   },
@@ -1847,18 +1766,96 @@
     "value": "0"
   },
   {
-    "op": "remove",
-    "path": "/definitions/models.contentRequest"
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1tags/get/tags/0",
+    "value": "Admin Tag"
   },
   {
-    "op": "move",
-    "from": "/definitions/models.createScreenshotRequest",
-    "path": "/definitions/models.createScreenshotRequestItem"
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]"
+        ],
+        "authorization": []
+      }
+    ]
   },
   {
     "op": "replace",
-    "path": "/definitions/models.CreateScreenshotRequest/properties/screenshots/items/$ref",
-    "value": "#/definitions/models.createScreenshotRequestItem"
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except payload, preview, tags, and contentType.\n\t\t\t\tcontentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.\n\t\t\t\tIf not specified, it will use fileExtension value."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1channels~1{channelId}~1contents~1s3~1{contentId}/put/tags/0",
+    "value": "Admin Content"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]&lt;/b&gt;."
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/parameters/3/default",
+    "value": "1000"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/parameters/4/default",
+    "value": "0"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1groups~1{groupId}~1contents/get/tags/0",
+    "value": "Admin Group"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents/post/description",
+    "value": "Required permission &lt;b&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE]&lt;/b&gt;.\\n \n\t\t\t\tAll request body are required except preview and tags.\n\t\t\t\t"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1ugc~1v1~1admin~1namespaces~1{namespace}~1channels~1{channelId}~1contents/post/tags/0",
+    "value": "Admin Content"
+  },
+  {
+    "op": "add",
+    "path": "/securityDefinitions/HasScope",
+    "value": {
+      "authorizationUrl": "https://dummy.oauth.net/auth",
+      "flow": "accessCode",
+      "scopes": {},
+      "tokenUrl": "https://dumy.oauth.net/token",
+      "type": "oauth2"
+    }
   },
   {
     "op": "add",
@@ -1905,14 +1902,17 @@
     }
   },
   {
-    "op": "add",
-    "path": "/securityDefinitions/HasScope",
-    "value": {
-      "authorizationUrl": "https://dummy.oauth.net/auth",
-      "flow": "accessCode",
-      "scopes": {},
-      "tokenUrl": "https://dumy.oauth.net/token",
-      "type": "oauth2"
-    }
+    "op": "remove",
+    "path": "/definitions/models.contentRequest"
+  },
+  {
+    "op": "move",
+    "from": "/definitions/models.createScreenshotRequest",
+    "path": "/definitions/models.createScreenshotRequestItem"
+  },
+  {
+    "op": "replace",
+    "path": "/definitions/models.CreateScreenshotRequest/properties/screenshots/items/$ref",
+    "value": "#/definitions/models.createScreenshotRequestItem"
   }
 ]

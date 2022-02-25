@@ -14,7 +14,7 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     {
         [AwesomeProperty("banDuration")]
         [JsonPropertyName("banDuration")]
-        public int? BanDuration { get; set; }
+        public long? BanDuration { get; set; }
         
     }
 }

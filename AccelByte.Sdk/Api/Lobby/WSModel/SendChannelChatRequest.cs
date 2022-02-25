@@ -12,13 +12,13 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("sendChannelChatRequest")]
     public class SendChannelChatRequest : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("id")]
-        [JsonPropertyName("id")]
-        public string? Id { get; set; }
-        
         [AwesomeProperty("channelSlug")]
         [JsonPropertyName("channelSlug")]
         public string? ChannelSlug { get; set; }
+        
+        [AwesomeProperty("id")]
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
         
         [AwesomeProperty("payload")]
         [JsonPropertyName("payload")]

@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "Justice Platform Service",
-    "version": "4.2.0",
+    "version": "4.3.2",
     "title": "justice-platform-service",
     "contact": {
       "name": "Engineering Team at AccelByte",
@@ -11232,8 +11232,11 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "Fulfill item successfully"
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/GoogleReceiptResolveResult"
+            }
           },
           "400": {
             "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>39122</td><td>Google iap receipt is invalid with status code [{statusCode}] and error message [{message}]</td></tr><tr><td>35123</td><td>Wallet [{walletId}] is inactive</td></tr><tr><td>38121</td><td>Duplicate permanent item exists</td></tr><tr><td>38122</td><td>Subscription endDate required</td></tr></table>",
@@ -25521,6 +25524,15 @@
         }
       }
     },
+    "GoogleReceiptResolveResult": {
+      "type": "object",
+      "properties": {
+        "needConsume": {
+          "type": "boolean",
+          "description": "if client side need consume this receipt's product by invoke Google Billing client's consumeAsync"
+        }
+      }
+    },
     "GoogleIAPReceipt": {
       "type": "object",
       "required": [
@@ -25551,6 +25563,10 @@
         "purchaseToken": {
           "type": "string",
           "description": "Google play purchase token returned from google play"
+        },
+        "autoAck": {
+          "type": "boolean",
+          "description": "If invoke Google play's Acknowledge after sync an durable item"
         },
         "region": {
           "type": "string",

@@ -12,25 +12,25 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("friendsStatusResponse")]
     public class FriendsStatusResponse : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("id")]
-        [JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [AwesomeProperty("activity")]
+        [JsonPropertyName("activity")]
+        public List<string>? Activity { get; set; }
+        
+        [AwesomeProperty("availability")]
+        [JsonPropertyName("availability")]
+        public List<long>? Availability { get; set; }
         
         [AwesomeProperty("code")]
         [JsonPropertyName("code")]
-        public string? Code { get; set; }
+        public long? Code { get; set; }
         
         [AwesomeProperty("friendIds")]
         [JsonPropertyName("friendIds")]
         public List<string>? FriendIds { get; set; }
         
-        [AwesomeProperty("availability")]
-        [JsonPropertyName("availability")]
-        public List<int>? Availability { get; set; }
-        
-        [AwesomeProperty("activity")]
-        [JsonPropertyName("activity")]
-        public List<string>? Activity { get; set; }
+        [AwesomeProperty("id")]
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
         
         [AwesomeProperty("lastSeenAt")]
         [JsonPropertyName("lastSeenAt")]

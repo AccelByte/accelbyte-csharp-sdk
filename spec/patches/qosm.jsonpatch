@@ -13,23 +13,8 @@
   },
   {
     "op": "add",
-    "path": "/definitions/models.Server/properties/last_update/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1qosm~1admin~1servers~1{region}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:QOS:SERVER [DELETE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
+    "path": "/info/version",
+    "value": ""
   },
   {
     "op": "add",
@@ -65,6 +50,21 @@
     "value": "```\nRequired permission: ADMIN:QOS:SERVER [UDPATE]\nRequired scope: social\n\nThis endpoint modifies a registered QoS service&#39;s region alias.\n```"
   },
   {
+    "op": "add",
+    "path": "/paths/~1qosm~1admin~1servers~1{region}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:QOS:SERVER [DELETE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
     "op": "move",
     "from": "/security",
     "path": "/paths/~1qosm~1public~1qos/get/security"
@@ -73,6 +73,11 @@
     "op": "replace",
     "path": "/paths/~1qosm~1public~1qos/get/description",
     "value": "```\nThis endpoint lists all QoS services available in all regions.\n\nThis endpoint is intended to be called by game client to find out all available regions.\nAfter getting a list of QoS on each region, game client is expected to ping each one with UDP\nconnection as described below:\n\n1. Make UDP connection to each QoS&#39;s IP:Port\n2. Send string &#34;PING&#34; after connection established\n3. Wait for string &#34;PONG&#34; response\n4. Note the request-response latency for each QoS in each region\n\nThe game then can use ping latency information to either:\n1. Inform the player on these latencies and let player choose preferred region\n2. Send the latency list to Matchmaking Service so that player can be matched with other players\n   in nearby regions\n```"
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.Server/properties/last_update/x-nullable",
+    "value": false
   },
   {
     "op": "add",
@@ -100,10 +105,5 @@
       "tokenUrl": "https://dumy.oauth.net/token",
       "type": "oauth2"
     }
-  },
-  {
-    "op": "add",
-    "path": "/info/version",
-    "value": ""
   }
 ]

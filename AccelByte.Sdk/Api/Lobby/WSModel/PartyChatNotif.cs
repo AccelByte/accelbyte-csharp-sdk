@@ -12,17 +12,13 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("partyChatNotif")]
     public class PartyChatNotif : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("id")]
-        [JsonPropertyName("id")]
-        public string? Id { get; set; }
-        
         [AwesomeProperty("from")]
         [JsonPropertyName("from")]
         public string? From { get; set; }
         
-        [AwesomeProperty("to")]
-        [JsonPropertyName("to")]
-        public string? To { get; set; }
+        [AwesomeProperty("id")]
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
         
         [AwesomeProperty("payload")]
         [JsonPropertyName("payload")]
@@ -30,7 +26,11 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         
         [AwesomeProperty("receivedAt")]
         [JsonPropertyName("receivedAt")]
-        public int? ReceivedAt { get; set; }
+        public long? ReceivedAt { get; set; }
+        
+        [AwesomeProperty("to")]
+        [JsonPropertyName("to")]
+        public string? To { get; set; }
         
     }
 }

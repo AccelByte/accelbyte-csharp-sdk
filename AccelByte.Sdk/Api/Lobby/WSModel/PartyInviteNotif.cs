@@ -12,13 +12,13 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("partyInviteNotif")]
     public class PartyInviteNotif : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("inviterId")]
-        [JsonPropertyName("inviterId")]
-        public string? InviterId { get; set; }
-        
         [AwesomeProperty("inviteeId")]
         [JsonPropertyName("inviteeId")]
         public string? InviteeId { get; set; }
+        
+        [AwesomeProperty("inviterId")]
+        [JsonPropertyName("inviterId")]
+        public string? InviterId { get; set; }
         
     }
 }

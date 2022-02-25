@@ -12,618 +12,8 @@
     ]
   },
   {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1purchasable/post/description",
-    "value": "This API is used to check pass or tier purchasable, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
     "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1purchasable/post/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}/delete/description",
-    "value": "This API is used to delete a tier permanently, only draft season pass can be deleted. &lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}/delete/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}/put/description",
-    "value": "This API is used to update a tier. Only draft season pass can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}/put/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards~1bulk/post/description",
-    "value": "This API is used to bulk claim all remained rewards, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards~1bulk/post/security/1",
-    "value": {
-      "HasPermission": [
-        "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1unpublish/put/description",
-    "value": "This API is used to unpublish a published season, if the season already started it will report error except with force.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season info&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1unpublish/put/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons/get/description",
-    "value": "This API is used to get user participated season data, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user participated season data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons/get/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons/post/description",
-    "value": "This API is used to create a season, season only allowed in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: created season&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons/post/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons/get/description",
-    "value": "This API is used to query seasons, seasons only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of season basic info&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons/get/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1progression/get/description",
-    "value": "This API is used to get current user season progression, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season progression&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1progression/get/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1data/get/description",
-    "value": "This API is used to get current user season data, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1data/get/security/1",
-    "value": {
-      "HasPermission": [
-        "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes/post/description",
-    "value": "This API is used to grant pass to user, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace, otherwise ignore.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes/post/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data/get/description",
-    "value": "This API is used to get user season data, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data/get/security/1",
-    "value": {
-      "HasPermission": [
-        "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data/get/description",
-    "value": "This API is used to get user season data, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data/get/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes/post/description",
-    "value": "This API is used to create a pass for a draft season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: created pass&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes/post/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes/get/description",
-    "value": "This API is used to query all passes for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of passes&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes/get/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1retire/put/description",
-    "value": "This API is used to retire a published season, if the season has not ended it will report error except with force.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season info&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1retire/put/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards/post/description",
-    "value": "This API is used to claim reward, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards/post/security/1",
-    "value": {
-      "HasPermission": [
-        "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers/post/description",
-    "value": "This API is used to create tier for a draft season, can create multiple tiers at same time.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers/post/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers/get/description",
-    "value": "This API is used to query paginated tiers for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of passes&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers/get/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards/post/description",
-    "value": "This API is used to create a reward for a draft season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: created reward&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards/post/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards/get/description",
-    "value": "This API is used to query rewards for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of rewards&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards/get/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1seasons~1current/get/description",
-    "value": "This API is used to get current published season, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: localized season data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1publish/put/description",
-    "value": "This API is used to publish a draft season, only one published season allowed at same time in a namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: published season&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1publish/put/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}/delete/description",
-    "value": "This API is used to delete a reward permanently, only draft season reward can be deleted. &lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}/delete/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}/patch/description",
-    "value": "This API is used to update a reward. Only draft season reward can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: updated reward&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}/patch/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}/get/description",
-    "value": "This API is used to get a reward for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: reward data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}/get/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1tiers/post/description",
-    "value": "This API is used to grant tier to user, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace, otherwise ignore.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1tiers/post/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}/delete/description",
-    "value": "This API is used to delete a pass permanently, only draft season pass can be deleted. &lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}/delete/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}/patch/description",
-    "value": "This API is used to update a pass. Only draft season pass can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: updated pass&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}/patch/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}/get/description",
-    "value": "This API is used to get a pass for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: pass data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}/get/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}~1reorder/put/description",
-    "value": "This API is used to reorder a tier. Only draft season pass can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}~1reorder/put/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1exp/post/description",
-    "value": "This API is used to grant exp to user, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace, otherwise ignore.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1exp/post/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1reset/delete/description",
-    "value": "&lt;b&gt;[TEST FACILITY ONLY] Forbidden in live environment. &lt;/b&gt;This API is used to reset user data in current season, it will not revoke the rewarded entitlements.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1reset/delete/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [DELETE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes~1ownership~1any/get/description",
-    "value": "[SERVICE COMMUNICATION ONLY]This API is used to get ownership for any pass codes, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: ownership&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes~1ownership~1any/get/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}/delete/description",
-    "value": "This API is used to delete a season permanently, only draft season can be deleted. &lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}/delete/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}/patch/description",
-    "value": "This API is used to update a season. Only draft season can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: updated season&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}/patch/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}/get/description",
-    "value": "This API is used to get a season, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}/get/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1clone/post/description",
-    "value": "This API is used to clone a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: cloned season info&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1clone/post/security/1",
-    "value": {
-      "HasPermission": [
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
-      ],
-      "authorization": []
-    }
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1current/get/description",
-    "value": "[SERVICE COMMUNICATION ONLY]This API is used to get current published season summary which includes previous published season summary if exists, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season summary data&lt;/li&gt;&lt;/ul&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedSeasonInfo/properties/start/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedSeasonInfo/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedSeasonInfo/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedSeasonInfo/properties/end/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedSeasonInfo/properties/publishedAt/x-nullable",
-    "value": true
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonCloneRequest/properties/start/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonCloneRequest/properties/end/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonUpdate/properties/end/x-nullable",
-    "value": true
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonUpdate/properties/start/x-nullable",
-    "value": true
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonSummary/properties/end/x-nullable",
+    "path": "/definitions/SeasonSummary/properties/start/x-nullable",
     "value": false
   },
   {
@@ -633,12 +23,57 @@
   },
   {
     "op": "add",
-    "path": "/definitions/SeasonSummary/properties/start/x-nullable",
+    "path": "/definitions/SeasonSummary/properties/end/x-nullable",
     "value": false
   },
   {
     "op": "add",
-    "path": "/definitions/ClaimableUserSeasonInfo/properties/createdAt/x-nullable",
+    "path": "/definitions/LocalizedSeasonInfo/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedSeasonInfo/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedSeasonInfo/properties/start/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedSeasonInfo/properties/publishedAt/x-nullable",
+    "value": true
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedSeasonInfo/properties/end/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonInfo/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonInfo/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonInfo/properties/start/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonInfo/properties/publishedAt/x-nullable",
+    "value": true
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonInfo/properties/end/x-nullable",
     "value": false
   },
   {
@@ -653,68 +88,8 @@
   },
   {
     "op": "add",
-    "path": "/definitions/LocalizedPassInfo/properties/createdAt/x-nullable",
+    "path": "/definitions/ClaimableUserSeasonInfo/properties/createdAt/x-nullable",
     "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedPassInfo/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/PassInfo/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/PassInfo/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ListSeasonInfo/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ListSeasonInfo/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ListSeasonInfo/properties/end/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ListSeasonInfo/properties/publishedAt/x-nullable",
-    "value": true
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ListSeasonInfo/properties/start/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ListUserSeasonInfo/properties/enrolledAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonCreate/properties/end/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonCreate/properties/start/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/UserSeasonSummary/properties/createdAt/x-nullable",
-    "value": true
   },
   {
     "op": "add",
@@ -728,28 +103,653 @@
   },
   {
     "op": "add",
-    "path": "/definitions/SeasonInfo/properties/start/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonInfo/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonInfo/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonInfo/properties/end/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonInfo/properties/publishedAt/x-nullable",
+    "path": "/definitions/UserSeasonSummary/properties/createdAt/x-nullable",
     "value": true
+  },
+  {
+    "op": "add",
+    "path": "/definitions/PassInfo/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/PassInfo/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/ListUserSeasonInfo/properties/enrolledAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedPassInfo/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedPassInfo/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonUpdate/properties/start/x-nullable",
+    "value": true
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonUpdate/properties/end/x-nullable",
+    "value": true
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonCreate/properties/start/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonCreate/properties/end/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonCloneRequest/properties/end/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonCloneRequest/properties/start/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/ListSeasonInfo/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/ListSeasonInfo/properties/start/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/ListSeasonInfo/properties/publishedAt/x-nullable",
+    "value": true
+  },
+  {
+    "op": "add",
+    "path": "/definitions/ListSeasonInfo/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/ListSeasonInfo/properties/end/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards~1bulk/post/security/1",
+    "value": {
+      "HasPermission": [
+        "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards~1bulk/post/description",
+    "value": "This API is used to bulk claim all remained rewards, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1tiers/post/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1tiers/post/description",
+    "value": "This API is used to grant tier to user, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace, otherwise ignore.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes/post/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes/post/description",
+    "value": "This API is used to grant pass to user, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace, otherwise ignore.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons/get/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons/get/description",
+    "value": "This API is used to get user participated season data, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user participated season data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers/get/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers/get/description",
+    "value": "This API is used to query paginated tiers for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of passes&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers/post/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers/post/description",
+    "value": "This API is used to create tier for a draft season, can create multiple tiers at same time.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}/delete/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}/delete/description",
+    "value": "This API is used to delete a tier permanently, only draft season pass can be deleted. &lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}/put/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}/put/description",
+    "value": "This API is used to update a tier. Only draft season pass can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}~1reorder/put/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}~1reorder/put/description",
+    "value": "This API is used to reorder a tier. Only draft season pass can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}/delete/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}/delete/description",
+    "value": "This API is used to delete a season permanently, only draft season can be deleted. &lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}/get/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}/get/description",
+    "value": "This API is used to get a season, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}/patch/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}/patch/description",
+    "value": "This API is used to update a season. Only draft season can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: updated season&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1reset/delete/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [DELETE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1reset/delete/description",
+    "value": "&lt;b&gt;[TEST FACILITY ONLY] Forbidden in live environment. &lt;/b&gt;This API is used to reset user data in current season, it will not revoke the rewarded entitlements.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1purchasable/post/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1purchasable/post/description",
+    "value": "This API is used to check pass or tier purchasable, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes/get/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes/get/description",
+    "value": "This API is used to query all passes for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of passes&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes/post/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes/post/description",
+    "value": "This API is used to create a pass for a draft season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: created pass&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}/delete/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}/delete/description",
+    "value": "This API is used to delete a reward permanently, only draft season reward can be deleted. &lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}/get/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}/get/description",
+    "value": "This API is used to get a reward for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: reward data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}/patch/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}/patch/description",
+    "value": "This API is used to update a reward. Only draft season reward can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: updated reward&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1unpublish/put/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1unpublish/put/description",
+    "value": "This API is used to unpublish a published season, if the season already started it will report error except with force.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season info&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards/get/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards/get/description",
+    "value": "This API is used to query rewards for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of rewards&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards/post/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards/post/description",
+    "value": "This API is used to create a reward for a draft season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: created reward&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1publish/put/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1publish/put/description",
+    "value": "This API is used to publish a draft season, only one published season allowed at same time in a namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: published season&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1exp/post/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1exp/post/description",
+    "value": "This API is used to grant exp to user, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace, otherwise ignore.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1seasons~1current/get/description",
+    "value": "This API is used to get current published season, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: localized season data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards/post/security/1",
+    "value": {
+      "HasPermission": [
+        "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards/post/description",
+    "value": "This API is used to claim reward, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data/get/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data/get/description",
+    "value": "This API is used to get user season data, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}/delete/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}/delete/description",
+    "value": "This API is used to delete a pass permanently, only draft season pass can be deleted. &lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}/get/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}/get/description",
+    "value": "This API is used to get a pass for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: pass data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}/patch/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}/patch/description",
+    "value": "This API is used to update a pass. Only draft season pass can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: updated pass&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes~1ownership~1any/get/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes~1ownership~1any/get/description",
+    "value": "[SERVICE COMMUNICATION ONLY]This API is used to get ownership for any pass codes, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: ownership&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons/get/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons/get/description",
+    "value": "This API is used to query seasons, seasons only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of season basic info&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons/post/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons/post/description",
+    "value": "This API is used to create a season, season only allowed in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: created season&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1data/get/security/1",
+    "value": {
+      "HasPermission": [
+        "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1data/get/description",
+    "value": "This API is used to get current user season data, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1current/get/description",
+    "value": "[SERVICE COMMUNICATION ONLY]This API is used to get current published season summary which includes previous published season summary if exists, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season summary data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data/get/security/1",
+    "value": {
+      "HasPermission": [
+        "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data/get/description",
+    "value": "This API is used to get user season data, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1retire/put/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1retire/put/description",
+    "value": "This API is used to retire a published season, if the season has not ended it will report error except with force.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season info&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1clone/post/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1clone/post/description",
+    "value": "This API is used to clone a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: cloned season info&lt;/li&gt;&lt;/ul&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1progression/get/security/1",
+    "value": {
+      "HasPermission": [
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
+      ],
+      "authorization": []
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1progression/get/description",
+    "value": "This API is used to get current user season progression, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season progression&lt;/li&gt;&lt;/ul&gt;"
   },
   {
     "op": "add",

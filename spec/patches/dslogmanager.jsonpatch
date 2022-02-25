@@ -1,15 +1,28 @@
 [
   {
     "op": "add",
+    "path": "/schemes",
+    "value": [
+      "https"
+    ]
+  },
+  {
+    "op": "add",
     "path": "/host",
     "value": "demo.accelbyte.io"
   },
   {
     "op": "add",
-    "path": "/schemes",
-    "value": [
-      "https"
-    ]
+    "path": "/securityDefinitions/HasScope",
+    "value": {
+      "authorizationUrl": "https://dummy.oauth.net/auth",
+      "flow": "accessCode",
+      "scopes": {
+        "social": "social"
+      },
+      "tokenUrl": "https://dumy.oauth.net/token",
+      "type": "oauth2"
+    }
   },
   {
     "op": "add",
@@ -26,26 +39,8 @@
     }
   },
   {
-    "op": "add",
-    "path": "/securityDefinitions/HasScope",
-    "value": {
-      "authorizationUrl": "https://dummy.oauth.net/auth",
-      "flow": "accessCode",
-      "scopes": {
-        "social": "social"
-      },
-      "tokenUrl": "https://dumy.oauth.net/token",
-      "type": "oauth2"
-    }
-  },
-  {
     "op": "remove",
     "path": "/definitions/models.PodConfig"
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.Server/properties/last_update/x-nullable",
-    "value": false
   },
   {
     "op": "add",
@@ -54,7 +49,12 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dslogmanager~1servers~1logs~1download/post/security",
+    "path": "/definitions/models.Server/properties/last_update/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1{podName}~1logs~1download/get/security",
     "value": [
       {
         "HasPermission": [
@@ -69,8 +69,38 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1dslogmanager~1servers~1logs~1download/post/description",
-    "value": "Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]\n\nRequired scope: social\n\nThis endpoint will download dedicated server&#39;s log file (.zip)."
+    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1{podName}~1logs~1download/get/description",
+    "value": "Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]\n\nRequired scope: social\n\nThis endpoint will download dedicated server&#39;s log file (.log)."
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1{podName}~1logs~1exists/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "move",
+    "from": "/security",
+    "path": "/paths/~1dslogmanager~1v1~1messages/get/security"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dslogmanager~1v1~1messages/get/responses/500/description",
+    "value": ""
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dslogmanager~1v1~1messages/get/responses/200/description",
+    "value": ""
   },
   {
     "op": "add",
@@ -225,67 +255,17 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1search/get/parameters/13/type",
-    "value": "integer"
-  },
-  {
-    "op": "replace",
     "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1search/get/parameters/13/name",
     "value": "limit"
   },
   {
+    "op": "replace",
+    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1search/get/parameters/13/type",
+    "value": "integer"
+  },
+  {
     "op": "remove",
     "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1search/get/parameters/14"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1{podName}~1logs~1exists/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1{podName}~1logs~1download/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1{podName}~1logs~1download/get/description",
-    "value": "Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]\n\nRequired scope: social\n\nThis endpoint will download dedicated server&#39;s log file (.log)."
-  },
-  {
-    "op": "move",
-    "from": "/security",
-    "path": "/paths/~1dslogmanager~1v1~1messages/get/security"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dslogmanager~1v1~1messages/get/responses/500/description",
-    "value": ""
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dslogmanager~1v1~1messages/get/responses/200/description",
-    "value": ""
   },
   {
     "op": "add",
@@ -298,5 +278,25 @@
         "authorization": []
       }
     ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dslogmanager~1servers~1logs~1download/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1dslogmanager~1servers~1logs~1download/post/description",
+    "value": "Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]\n\nRequired scope: social\n\nThis endpoint will download dedicated server&#39;s log file (.zip)."
   }
 ]

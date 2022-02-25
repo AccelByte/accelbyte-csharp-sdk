@@ -15,7 +15,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 TEST_NAMESPACE="test"
 
-OPERATIONS_COUNT=63
+OPERATIONS_COUNT=67
 
 FINISHED_COUNT=0
 SUCCESS_COUNT=0
@@ -125,7 +125,20 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 6 GetConfig
+#- 6 CreateImagePatch
+# body param: body
+echo '{"artifactPath": "4eJelwO4", "dockerPath": "KPMky2h8", "image": "R2fIXoXP", "namespace": "8gd7JUab", "patchVersion": "Yc3GMbxT", "persistent": false, "version": "m1fsu6J3"}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn dsmc \
+    --op CreateImagePatch \
+    --reqfile $TEMP_JSON_INPUT \
+    >$TEMP_FILE 2>&1
+update_status $? 'CreateImagePatch'
+delete_file $TEMP_FILE
+rm -f $TEMP_JSON_INPUT
+rm -f $TEMP_FILE_UPLOAD
+
+#- 7 GetConfig
 $CLI_EXE \
     --sn dsmc \
     --op GetConfig \
@@ -136,9 +149,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 7 CreateConfig
+#- 8 CreateConfig
 # body param: body
-echo '{"claim_timeout": 9, "creation_timeout": 71, "default_version": "elwO4KPM", "port": 20, "ports": {"y2h8R2fI": 99}, "protocol": "oXP8gd7J", "providers": ["UabYc3GM"], "session_timeout": 2, "unreachable_timeout": 47}' > $TEMP_JSON_INPUT
+echo '{"claim_timeout": 57, "creation_timeout": 36, "default_version": "5ppGR9Xc", "port": 29, "ports": {"xYTGgewr": 75}, "protocol": "fwvzJF4T", "providers": ["pbNhKq2x"], "session_timeout": 6, "unreachable_timeout": 24}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op CreateConfig \
@@ -150,7 +163,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 8 DeleteConfig
+#- 9 DeleteConfig
 $CLI_EXE \
     --sn dsmc \
     --op DeleteConfig \
@@ -161,9 +174,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 9 UpdateConfig
+#- 10 UpdateConfig
 # body param: body
-echo '{"claim_timeout": 90, "creation_timeout": 22, "default_version": "m1fsu6J3", "port": 57, "protocol": "4s5ppGR9", "providers": ["XcoxYTGg"], "session_timeout": 8, "unreachable_timeout": 45}' > $TEMP_JSON_INPUT
+echo '{"claim_timeout": 13, "creation_timeout": 60, "default_version": "BepFHtf6", "port": 17, "protocol": "egqdEL4f", "providers": ["sM6nBzRV"], "session_timeout": 40, "unreachable_timeout": 56}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op UpdateConfig \
@@ -175,7 +188,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 10 ClearCache
+#- 11 ClearCache
 $CLI_EXE \
     --sn dsmc \
     --op ClearCache \
@@ -186,24 +199,24 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 11 GetAllDeployment
+#- 12 GetAllDeployment
 $CLI_EXE \
     --sn dsmc \
     --op GetAllDeployment \
     --namespace $TEST_NAMESPACE \
     --count '34' \
-    --offset '75' \
+    --offset '92' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetAllDeployment'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 12 GetDeployment
+#- 13 GetDeployment
 $CLI_EXE \
     --sn dsmc \
     --op GetDeployment \
-    --deployment 'fwvzJF4T' \
+    --deployment 'H1Liu7UQ' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'GetDeployment'
@@ -211,13 +224,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 13 CreateDeployment
+#- 14 CreateDeployment
 # body param: body
-echo '{"allow_version_override": false, "buffer_count": 3, "buffer_percent": 79, "configuration": "hKq2xdmg", "enable_region_overrides": true, "game_version": "BepFHtf6", "max_count": 17, "min_count": 8, "overrides": {"gqdEL4fs": {"buffer_count": 76, "buffer_percent": 26, "configuration": "BzRVuC1r", "enable_region_overrides": false, "game_version": "u7UQ0304", "max_count": 77, "min_count": 4, "name": "K873tRtr", "region_overrides": {"5cfWO5JJ": {"buffer_count": 5, "buffer_percent": 42, "max_count": 36, "min_count": 80, "name": "ns4jNWGc", "use_buffer_percent": true}}, "regions": ["iUa4wM5E"], "use_buffer_percent": true}}, "region_overrides": {"3VqymsFX": {"buffer_count": 30, "buffer_percent": 29, "max_count": 35, "min_count": 77, "name": "qEDR8E72", "use_buffer_percent": false}}, "regions": ["hl6eq2Fz"], "use_buffer_percent": false}' > $TEMP_JSON_INPUT
+echo '{"allow_version_override": false, "buffer_count": 73, "buffer_percent": 39, "configuration": "Rtr5cfWO", "enable_region_overrides": false, "game_version": "6vsOns4j", "max_count": 79, "min_count": 97, "overrides": {"Gc7CiUa4": {"buffer_count": 44, "buffer_percent": 76, "configuration": "5Eu3Vqym", "enable_region_overrides": true, "game_version": "FXporMqE", "max_count": 59, "min_count": 86, "name": "8E72XMKf", "region_overrides": {"hl6eq2Fz": {"buffer_count": 92, "buffer_percent": 95, "max_count": 75, "min_count": 74, "name": "NmPLeZdo", "use_buffer_percent": true}}, "regions": ["XfabFXzv"], "use_buffer_percent": false}}, "region_overrides": {"Lmai7fPK": {"buffer_count": 42, "buffer_percent": 60, "max_count": 1, "min_count": 93, "name": "VtLbQSWt", "use_buffer_percent": true}}, "regions": ["yz0mGGyH"], "use_buffer_percent": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op CreateDeployment \
-    --deployment 'PLeZdoCX' \
+    --deployment 'IlIKsXgv' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -226,11 +239,11 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 14 DeleteDeployment
+#- 15 DeleteDeployment
 $CLI_EXE \
     --sn dsmc \
     --op DeleteDeployment \
-    --deployment 'fabFXzvj' \
+    --deployment 'SrkEgTYV' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteDeployment'
@@ -238,13 +251,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 15 UpdateDeployment
+#- 16 UpdateDeployment
 # body param: body
-echo '{"allow_version_override": false, "buffer_count": 1, "buffer_percent": 16, "configuration": "7fPKvE2Z", "enable_region_overrides": false, "game_version": "63UVtLbQ", "max_count": 88, "min_count": 96, "regions": ["tsyz0mGG"], "use_buffer_percent": true}' > $TEMP_JSON_INPUT
+echo '{"allow_version_override": false, "buffer_count": 17, "buffer_percent": 86, "configuration": "BE6zJJ1B", "enable_region_overrides": true, "game_version": "fCHqqp2G", "max_count": 44, "min_count": 82, "regions": ["cmzSuY8w"], "use_buffer_percent": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op UpdateDeployment \
-    --deployment 'HHFIlIKs' \
+    --deployment 'BEfRXoZL' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -253,15 +266,15 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 16 CreateRootRegionOverride
+#- 17 CreateRootRegionOverride
 # body param: body
-echo '{"buffer_count": 98, "buffer_percent": 12, "max_count": 43, "min_count": 88, "use_buffer_percent": true}' > $TEMP_JSON_INPUT
+echo '{"buffer_count": 11, "buffer_percent": 30, "max_count": 95, "min_count": 62, "use_buffer_percent": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op CreateRootRegionOverride \
-    --deployment 'kEgTYVk5' \
+    --deployment 'DwjHHCW2' \
     --namespace $TEST_NAMESPACE \
-    --region 'iRBE6zJJ' \
+    --region 'g5u8z9yr' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'CreateRootRegionOverride'
@@ -269,28 +282,28 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 17 DeleteRootRegionOverride
+#- 18 DeleteRootRegionOverride
 $CLI_EXE \
     --sn dsmc \
     --op DeleteRootRegionOverride \
-    --deployment '1BRHrfCH' \
+    --deployment 'pJdIx5vv' \
     --namespace $TEST_NAMESPACE \
-    --region 'qqp2GwPc' \
+    --region 'HS3d6PKP' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteRootRegionOverride'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 18 UpdateRootRegionOverride
+#- 19 UpdateRootRegionOverride
 # body param: body
-echo '{"buffer_count": 25, "buffer_percent": 50, "max_count": 89, "min_count": 40, "use_buffer_percent": true}' > $TEMP_JSON_INPUT
+echo '{"buffer_count": 60, "buffer_percent": 24, "max_count": 68, "min_count": 82, "use_buffer_percent": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op UpdateRootRegionOverride \
-    --deployment '9VYwBEfR' \
+    --deployment '8jt8Lq4x' \
     --namespace $TEST_NAMESPACE \
-    --region 'XoZLfpVF' \
+    --region '0F7Ncoce' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateRootRegionOverride'
@@ -298,15 +311,15 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 19 CreateDeploymentOverride
+#- 20 CreateDeploymentOverride
 # body param: body
-echo '{"buffer_count": 11, "buffer_percent": 58, "configuration": "wjHHCW2g", "enable_region_overrides": true, "game_version": "8z9yrpJd", "max_count": 68, "min_count": 46, "region_overrides": {"5vvHS3d6": {"buffer_count": 82, "buffer_percent": 72, "max_count": 83, "min_count": 60, "name": "27mI6Px8", "use_buffer_percent": false}}, "regions": ["t8Lq4x0F"], "use_buffer_percent": false}' > $TEMP_JSON_INPUT
+echo '{"buffer_count": 22, "buffer_percent": 71, "configuration": "jtlKYu8i", "enable_region_overrides": true, "game_version": "Pznx0s5T", "max_count": 50, "min_count": 91, "region_overrides": {"51oV4HTm": {"buffer_count": 17, "buffer_percent": 42, "max_count": 25, "min_count": 2, "name": "6tPmCirk", "use_buffer_percent": false}}, "regions": ["YvcOUucj"], "use_buffer_percent": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op CreateDeploymentOverride \
-    --deployment 'ocelJjtl' \
+    --deployment 'PsvjLK1C' \
     --namespace $TEST_NAMESPACE \
-    --version 'KYu8iCPz' \
+    --version 'jPt93utb' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'CreateDeploymentOverride'
@@ -314,28 +327,28 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 20 DeleteDeploymentOverride
+#- 21 DeleteDeploymentOverride
 $CLI_EXE \
     --sn dsmc \
     --op DeleteDeploymentOverride \
-    --deployment 'nx0s5TzT' \
+    --deployment 'MkpUFHT0' \
     --namespace $TEST_NAMESPACE \
-    --version '51oV4HTm' \
+    --version 'fL9q9SMN' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteDeploymentOverride'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 21 UpdateDeploymentOverride
+#- 22 UpdateDeploymentOverride
 # body param: body
-echo '{"buffer_count": 17, "buffer_percent": 42, "configuration": "mb6tPmCi", "enable_region_overrides": true, "game_version": "khYvcOUu", "max_count": 5, "min_count": 19, "regions": ["PWGwPsvj"], "use_buffer_percent": true}' > $TEMP_JSON_INPUT
+echo '{"buffer_count": 52, "buffer_percent": 92, "configuration": "QVoiQtSQ", "enable_region_overrides": true, "game_version": "2kNSsmT0", "max_count": 6, "min_count": 0, "regions": ["BG4zA2zp"], "use_buffer_percent": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op UpdateDeploymentOverride \
-    --deployment 'jPt93utb' \
+    --deployment '0bD6dGgw' \
     --namespace $TEST_NAMESPACE \
-    --version 'MkpUFHT0' \
+    --version 'kYgHzKuI' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateDeploymentOverride'
@@ -343,16 +356,16 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 22 CreateOverrideRegionOverride
+#- 23 CreateOverrideRegionOverride
 # body param: body
-echo '{"buffer_count": 10, "buffer_percent": 75, "max_count": 33, "min_count": 89, "use_buffer_percent": true}' > $TEMP_JSON_INPUT
+echo '{"buffer_count": 86, "buffer_percent": 70, "max_count": 35, "min_count": 3, "use_buffer_percent": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op CreateOverrideRegionOverride \
-    --deployment 'UQVoiQtS' \
+    --deployment 'P7kfpIle' \
     --namespace $TEST_NAMESPACE \
-    --region 'QC2kNSsm' \
-    --version 'T0d2aBG4' \
+    --region 'tXrCK1UV' \
+    --version 'O0jcs7nC' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'CreateOverrideRegionOverride'
@@ -360,30 +373,30 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 23 DeleteOverrideRegionOverride
+#- 24 DeleteOverrideRegionOverride
 $CLI_EXE \
     --sn dsmc \
     --op DeleteOverrideRegionOverride \
-    --deployment 'zA2zp1Ls' \
+    --deployment 'qsodoTFT' \
     --namespace $TEST_NAMESPACE \
-    --region '0bD6dGgw' \
-    --version 'kYgHzKuI' \
+    --region 'cWlaIBJA' \
+    --version 'AknU6Hob' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteOverrideRegionOverride'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 24 UpdateOverrideRegionOverride
+#- 25 UpdateOverrideRegionOverride
 # body param: body
-echo '{"buffer_count": 86, "buffer_percent": 70, "max_count": 35, "min_count": 3, "use_buffer_percent": false}' > $TEMP_JSON_INPUT
+echo '{"buffer_count": 13, "buffer_percent": 97, "max_count": 22, "min_count": 0, "use_buffer_percent": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op UpdateOverrideRegionOverride \
-    --deployment 'P7kfpIle' \
+    --deployment 'edDfasTc' \
     --namespace $TEST_NAMESPACE \
-    --region 'tXrCK1UV' \
-    --version 'O0jcs7nC' \
+    --region '8gr2znWq' \
+    --version 'D6tIcfI5' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateOverrideRegionOverride'
@@ -391,24 +404,24 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 25 GetAllPodConfig
+#- 26 GetAllPodConfig
 $CLI_EXE \
     --sn dsmc \
     --op GetAllPodConfig \
     --namespace $TEST_NAMESPACE \
-    --count '32' \
-    --offset '37' \
+    --count '38' \
+    --offset '92' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetAllPodConfig'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 26 GetPodConfig
+#- 27 GetPodConfig
 $CLI_EXE \
     --sn dsmc \
     --op GetPodConfig \
-    --name 'odoTFTcW' \
+    --name 'NQ7mQPjC' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'GetPodConfig'
@@ -416,13 +429,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 27 CreatePodConfig
+#- 28 CreatePodConfig
 # body param: body
-echo '{"cpu_limit": 22, "mem_limit": 0, "params": "IBJAAknU"}' > $TEMP_JSON_INPUT
+echo '{"cpu_limit": 1, "mem_limit": 23, "params": "ZgFVEQyq"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op CreatePodConfig \
-    --name '6HobZgWl' \
+    --name 'av09OYmx' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -431,11 +444,11 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 28 DeletePodConfig
+#- 29 DeletePodConfig
 $CLI_EXE \
     --sn dsmc \
     --op DeletePodConfig \
-    --name 'aLnedDfa' \
+    --name 'CvMqVcXs' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'DeletePodConfig'
@@ -443,13 +456,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 29 UpdatePodConfig
+#- 30 UpdatePodConfig
 # body param: body
-echo '{"cpu_limit": 36, "mem_limit": 91, "name": "c8gr2znW", "params": "qD6tIcfI"}' > $TEMP_JSON_INPUT
+echo '{"cpu_limit": 81, "mem_limit": 32, "name": "Nz8ZLBsn", "params": "cbRrf6uE"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op UpdatePodConfig \
-    --name '5Z4tUNQ7' \
+    --name 'djUnr04W' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -458,13 +471,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 30 AddPort
+#- 31 AddPort
 # body param: body
-echo '{"port": 24}' > $TEMP_JSON_INPUT
+echo '{"port": 78}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op AddPort \
-    --name 'QPjCalZg' \
+    --name 'hgEGvqKW' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -473,11 +486,11 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 31 DeletePort
+#- 32 DeletePort
 $CLI_EXE \
     --sn dsmc \
     --op DeletePort \
-    --name 'FVEQyqav' \
+    --name 'QTkE65j6' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'DeletePort'
@@ -485,13 +498,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 32 UpdatePort
+#- 33 UpdatePort
 # body param: body
-echo '{"name": "09OYmxCv", "port": 76}' > $TEMP_JSON_INPUT
+echo '{"name": "186p0Wfs", "port": 27}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op UpdatePort \
-    --name 'qVcXs2Oq' \
+    --name 'WZuUPsaR' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -500,15 +513,15 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 33 ListImages
+#- 34 ListImages
 $CLI_EXE \
     --sn dsmc \
     --op ListImages \
     --namespace $TEST_NAMESPACE \
-    --count '79' \
-    --offset '51' \
-    --q '8ZLBsncb' \
-    --sortBy 'version' \
+    --count '27' \
+    --offset '95' \
+    --q 'drdBA2hX' \
+    --sortBy 'updatedAt' \
     --sortDirection 'desc' \
     >$TEMP_FILE 2>&1
 update_status $? 'ListImages'
@@ -516,20 +529,20 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 34 DeleteImage
+#- 35 DeleteImage
 $CLI_EXE \
     --sn dsmc \
     --op DeleteImage \
     --namespace $TEST_NAMESPACE \
-    --imageURI 'f6uEdjUn' \
-    --version 'r04WZNhg' \
+    --imageURI 'zZMdlR4c' \
+    --version 'L76hnFDg' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteImage'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 35 ExportImages
+#- 36 ExportImages
 $CLI_EXE \
     --sn dsmc \
     --op ExportImages \
@@ -540,7 +553,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 36 GetImageLimit
+#- 37 GetImageLimit
 $CLI_EXE \
     --sn dsmc \
     --op GetImageLimit \
@@ -551,33 +564,72 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 37 GetImageDetail
+#- 38 DeleteImagePatch
+$CLI_EXE \
+    --sn dsmc \
+    --op DeleteImagePatch \
+    --namespace $TEST_NAMESPACE \
+    --imageURI 'TfofHdfo' \
+    --version 'SqDcaFhO' \
+    --versionPatch 'c1oKxI8f' \
+    >$TEMP_FILE 2>&1
+update_status $? 'DeleteImagePatch'
+delete_file $TEMP_FILE
+rm -f $TEMP_JSON_INPUT
+rm -f $TEMP_FILE_UPLOAD
+
+#- 39 GetImageDetail
 $CLI_EXE \
     --sn dsmc \
     --op GetImageDetail \
     --namespace $TEST_NAMESPACE \
-    --version 'EGvqKWQT' \
+    --version '5ocfy4EI' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetImageDetail'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 38 ListServer
+#- 40 GetImagePatches
+$CLI_EXE \
+    --sn dsmc \
+    --op GetImagePatches \
+    --namespace $TEST_NAMESPACE \
+    --version 'xwBiB90v' \
+    >$TEMP_FILE 2>&1
+update_status $? 'GetImagePatches'
+delete_file $TEMP_FILE
+rm -f $TEMP_JSON_INPUT
+rm -f $TEMP_FILE_UPLOAD
+
+#- 41 GetImagePatchDetail
+$CLI_EXE \
+    --sn dsmc \
+    --op GetImagePatchDetail \
+    --namespace $TEST_NAMESPACE \
+    --version 'dgS5YpKs' \
+    --versionPatch 'dbpiU2Uf' \
+    >$TEMP_FILE 2>&1
+update_status $? 'GetImagePatchDetail'
+delete_file $TEMP_FILE
+rm -f $TEMP_JSON_INPUT
+rm -f $TEMP_FILE_UPLOAD
+
+#- 42 ListServer
 $CLI_EXE \
     --sn dsmc \
     --op ListServer \
     --namespace $TEST_NAMESPACE \
-    --count '21' \
-    --offset '60' \
-    --region '65j6186p' \
+    --count '48' \
+    --offset '76' \
+    --region 'O4DhL9fB' \
     >$TEMP_FILE 2>&1
 update_status $? 'ListServer'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 39 CountServer
+#- 43 CountServer
 $CLI_EXE \
     --sn dsmc \
     --op CountServer \
@@ -588,19 +640,19 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 40 CountServerDetailed
+#- 44 CountServerDetailed
 $CLI_EXE \
     --sn dsmc \
     --op CountServerDetailed \
     --namespace $TEST_NAMESPACE \
-    --region '0WfsnWZu' \
+    --region 'KJvjBOUn' \
     >$TEMP_FILE 2>&1
 update_status $? 'CountServerDetailed'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 41 ListLocalServer
+#- 45 ListLocalServer
 $CLI_EXE \
     --sn dsmc \
     --op ListLocalServer \
@@ -611,11 +663,11 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 42 DeleteLocalServer
+#- 46 DeleteLocalServer
 $CLI_EXE \
     --sn dsmc \
     --op DeleteLocalServer \
-    --name 'UPsaRnVd' \
+    --name '3bYf5ouX' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteLocalServer'
@@ -623,82 +675,82 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 43 GetServer
+#- 47 GetServer
 $CLI_EXE \
     --sn dsmc \
     --op GetServer \
     --namespace $TEST_NAMESPACE \
-    --podName 'rdBA2hXw' \
+    --podName 'qkbiExqT' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetServer'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 44 DeleteServer
+#- 48 DeleteServer
 $CLI_EXE \
     --sn dsmc \
     --op DeleteServer \
     --namespace $TEST_NAMESPACE \
-    --podName 'YyzZMdlR' \
+    --podName '6Dk9QFqa' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteServer'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 45 GetServerLogs
+#- 49 GetServerLogs
 $CLI_EXE \
     --sn dsmc \
     --op GetServerLogs \
     --namespace $TEST_NAMESPACE \
-    --podName '4cL76hnF' \
+    --podName 'AjhwOI1P' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetServerLogs'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 46 ListSession
+#- 50 ListSession
 $CLI_EXE \
     --sn dsmc \
     --op ListSession \
     --namespace $TEST_NAMESPACE \
-    --count '59' \
-    --offset '12' \
-    --region 'TfofHdfo' \
-    --withServer 'True' \
+    --count '7' \
+    --offset '77' \
+    --region 'HfTwrxBR' \
+    --withServer 'False' \
     >$TEMP_FILE 2>&1
 update_status $? 'ListSession'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 47 CountSession
+#- 51 CountSession
 $CLI_EXE \
     --sn dsmc \
     --op CountSession \
     --namespace $TEST_NAMESPACE \
-    --region 'DcaFhOc1' \
+    --region 'MxZrSfx3' \
     >$TEMP_FILE 2>&1
 update_status $? 'CountSession'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 48 DeleteSession
+#- 52 DeleteSession
 $CLI_EXE \
     --sn dsmc \
     --op DeleteSession \
     --namespace $TEST_NAMESPACE \
-    --sessionID 'oKxI8f5o' \
+    --sessionID 'V8OXkMng' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteSession'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 49 ExportConfigV1
+#- 53 ExportConfigV1
 $CLI_EXE \
     --sn dsmc \
     --op ExportConfigV1 \
@@ -709,7 +761,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 50 ImportConfigV1
+#- 54 ImportConfigV1
 # form data upload: file
 echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
@@ -723,21 +775,21 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 51 ImageDetailClient
+#- 55 ImageDetailClient
 $CLI_EXE \
     --sn dsmc \
     --op ImageDetailClient \
     --namespace $TEST_NAMESPACE \
-    --version 'cfy4EIxw' \
+    --version '7p2SyFDE' \
     >$TEMP_FILE 2>&1
 update_status $? 'ImageDetailClient'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 52 DeregisterLocalServer
+#- 56 DeregisterLocalServer
 # body param: body
-echo '{"name": "BiB90vdg"}' > $TEMP_JSON_INPUT
+echo '{"name": "nmYQzehP"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op DeregisterLocalServer \
@@ -749,9 +801,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 53 RegisterLocalServer
+#- 57 RegisterLocalServer
 # body param: body
-echo '{"custom_attribute": "S5YpKsdb", "ip": "piU2UfyM", "name": "O4DhL9fB", "port": 73}' > $TEMP_JSON_INPUT
+echo '{"custom_attribute": "BqD12Dvv", "ip": "zNNZSu5z", "name": "ZVgY3Zos", "port": 11}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op RegisterLocalServer \
@@ -763,9 +815,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 54 RegisterServer
+#- 58 RegisterServer
 # body param: body
-echo '{"custom_attribute": "JvjBOUn3", "pod_name": "bYf5ouXq"}' > $TEMP_JSON_INPUT
+echo '{"custom_attribute": "d01vaOGw", "pod_name": "eHacvHRV"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op RegisterServer \
@@ -777,9 +829,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 55 ShutdownServer
+#- 59 ShutdownServer
 # body param: body
-echo '{"kill_me": false, "pod_name": "biExqT6D"}' > $TEMP_JSON_INPUT
+echo '{"kill_me": true, "pod_name": "B8hos4ya"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op ShutdownServer \
@@ -791,21 +843,21 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 56 GetServerSession
+#- 60 GetServerSession
 $CLI_EXE \
     --sn dsmc \
     --op GetServerSession \
     --namespace $TEST_NAMESPACE \
-    --podName 'k9QFqaAj' \
+    --podName 'OBjMxizC' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetServerSession'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 57 CreateSession
+#- 61 CreateSession
 # body param: body
-echo '{"client_version": "hwOI1P04", "configuration": "dMHfTwrx", "deployment": "BRfMxZrS", "game_mode": "fx3V8OXk", "matching_allies": [{"matching_parties": [{"party_attributes": {"Mng7p2Sy": {}}, "party_id": "FDEnmYQz", "party_members": [{"user_id": "ehPBqD12"}]}]}], "namespace": "DvvzNNZS", "pod_name": "u5zZVgY3", "region": "Zosfd01v", "session_id": "aOGweHac"}' > $TEMP_JSON_INPUT
+echo '{"client_version": "xx9qTOIK", "configuration": "lpdrqo2s", "deployment": "mD9RPpjO", "game_mode": "WK0k76i1", "matching_allies": [{"matching_parties": [{"party_attributes": {"g7rYaEuN": {}}, "party_id": "CyPoQ0oH", "party_members": [{"user_id": "YXUQdtIk"}]}]}], "namespace": "Akltd1zQ", "notification_payload": {}, "pod_name": "BzzC6ldK", "region": "riI6lTRb", "session_id": "c1Z1HJHz"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op CreateSession \
@@ -817,9 +869,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 58 ClaimServer
+#- 62 ClaimServer
 # body param: body
-echo '{"session_id": "vHRV345x"}' > $TEMP_JSON_INPUT
+echo '{"session_id": "l323Ynwf"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op ClaimServer \
@@ -831,19 +883,19 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 59 GetSession
+#- 63 GetSession
 $CLI_EXE \
     --sn dsmc \
     --op GetSession \
     --namespace $TEST_NAMESPACE \
-    --sessionID 'B8hos4ya' \
+    --sessionID '5PvGejCD' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetSession'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 60 GetDefaultProvider
+#- 64 GetDefaultProvider
 $CLI_EXE \
     --sn dsmc \
     --op GetDefaultProvider \
@@ -853,7 +905,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 61 ListProviders
+#- 65 ListProviders
 $CLI_EXE \
     --sn dsmc \
     --op ListProviders \
@@ -863,18 +915,18 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 62 ListProvidersByRegion
+#- 66 ListProvidersByRegion
 $CLI_EXE \
     --sn dsmc \
     --op ListProvidersByRegion \
-    --region 'OBjMxizC' \
+    --region 'gAr1pXDc' \
     >$TEMP_FILE 2>&1
 update_status $? 'ListProvidersByRegion'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 63 PublicGetMessages
+#- 67 PublicGetMessages
 $CLI_EXE \
     --sn dsmc \
     --op PublicGetMessages \

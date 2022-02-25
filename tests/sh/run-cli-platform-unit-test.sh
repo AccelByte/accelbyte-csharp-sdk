@@ -4154,12 +4154,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 298 PublicFulfillGoogleIAPItem
 # body param: body
-echo '{"language": "2DRZfSBn", "orderId": "T2Vlyq5V", "packageName": "Wu4pLxrq", "productId": "fJr2pN0C", "purchaseTime": 17, "purchaseToken": "Q7TyPiYI", "region": "IigSnJZP"}' > $TEMP_JSON_INPUT
+echo '{"autoAck": true, "language": "RZfSBnT2", "orderId": "Vlyq5VWu", "packageName": "4pLxrqfJ", "productId": "r2pN0CiQ", "purchaseTime": 90, "purchaseToken": "yPiYIIig", "region": "SnJZPieA"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicFulfillGoogleIAPItem \
     --namespace $TEST_NAMESPACE \
-    --userId 'ieAS6Ozt' \
+    --userId 'S6Ozt9Y7' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicFulfillGoogleIAPItem'
@@ -4169,12 +4169,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 299 PublicReconcilePlayStationStore
 # body param: body
-echo '{"currencyCode": "9Y76Cmi2", "price": 0.3653036476093975, "productId": "66qCLHLy", "serviceLabel": 47}' > $TEMP_JSON_INPUT
+echo '{"currencyCode": "6Cmi2xN6", "price": 0.9110206682312885, "productId": "CLHLyxhc", "serviceLabel": 9}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicReconcilePlayStationStore \
     --namespace $TEST_NAMESPACE \
-    --userId 'hceLzV7i' \
+    --userId 'LzV7iL4m' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicReconcilePlayStationStore'
@@ -4184,12 +4184,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 300 SyncStadiaEntitlement
 # body param: body
-echo '{"appId": "L4mwueWq", "language": "EFljovji", "region": "Fds9U3Q4", "stadiaPlayerId": "FL9FKhfT"}' > $TEMP_JSON_INPUT
+echo '{"appId": "wueWqEFl", "language": "jovjiFds", "region": "9U3Q4FL9", "stadiaPlayerId": "FKhfTM3X"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SyncStadiaEntitlement \
     --namespace $TEST_NAMESPACE \
-    --userId 'M3X1GHB9' \
+    --userId '1GHB92JF' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncStadiaEntitlement'
@@ -4199,12 +4199,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 301 SyncSteamInventory
 # body param: body
-echo '{"appId": "2JFCpi6P", "currencyCode": "SpyvcTnM", "language": "qT7mELuc", "price": 0.40843844032299714, "productId": "TafjIfXC", "region": "WzatjGv4", "steamId": "UVj072ER"}' > $TEMP_JSON_INPUT
+echo '{"appId": "Cpi6PSpy", "currencyCode": "vcTnMqT7", "language": "mELucAFT", "price": 0.9798449427789325, "productId": "fjIfXCWz", "region": "atjGv4UV", "steamId": "j072ERId"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SyncSteamInventory \
     --namespace $TEST_NAMESPACE \
-    --userId 'IdIjnEdK' \
+    --userId 'IjnEdKEg' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncSteamInventory'
@@ -4214,12 +4214,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 302 SyncTwitchDropsEntitlement
 # body param: body
-echo '{"gameId": "EgYrC08a", "language": "2gefHyUL", "region": "faLdtBzf"}' > $TEMP_JSON_INPUT
+echo '{"gameId": "YrC08a2g", "language": "efHyULfa", "region": "LdtBzfi8"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SyncTwitchDropsEntitlement \
     --namespace $TEST_NAMESPACE \
-    --userId 'i8aWrMf1' \
+    --userId 'aWrMf1NW' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncTwitchDropsEntitlement'
@@ -4229,12 +4229,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 303 SyncXboxInventory
 # body param: body
-echo '{"currencyCode": "NWlgliWd", "price": 0.0942740987948607, "productId": "wepIgKh0", "xstsToken": "HKAG34nO"}' > $TEMP_JSON_INPUT
+echo '{"currencyCode": "lgliWdgw", "price": 0.9696283367131067, "productId": "epIgKh0H", "xstsToken": "KAG34nOf"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SyncXboxInventory \
     --namespace $TEST_NAMESPACE \
-    --userId 'fcgWxTfK' \
+    --userId 'cgWxTfKe' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncXboxInventory'
@@ -4247,10 +4247,10 @@ $CLI_EXE \
     --sn platform \
     --op PublicQueryUserOrders \
     --namespace $TEST_NAMESPACE \
-    --userId 'egxR0U2C' \
-    --itemId 'ExNlVZ2R' \
-    --limit '64' \
-    --offset '42' \
+    --userId 'gxR0U2CE' \
+    --itemId 'xNlVZ2RG' \
+    --limit '42' \
+    --offset '95' \
     --status 'CLOSED' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicQueryUserOrders'

@@ -12,13 +12,13 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("rejectFriendsRequest")]
     public class RejectFriendsRequest : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("id")]
-        [JsonPropertyName("id")]
-        public string? Id { get; set; }
-        
         [AwesomeProperty("friendId")]
         [JsonPropertyName("friendId")]
         public string? FriendId { get; set; }
+        
+        [AwesomeProperty("id")]
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
         
     }
 }

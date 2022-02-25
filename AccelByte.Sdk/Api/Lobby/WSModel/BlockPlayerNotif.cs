@@ -12,13 +12,13 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("blockPlayerNotif")]
     public class BlockPlayerNotif : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("userId")]
-        [JsonPropertyName("userId")]
-        public string? UserId { get; set; }
-        
         [AwesomeProperty("blockedUserId")]
         [JsonPropertyName("blockedUserId")]
         public string? BlockedUserId { get; set; }
+        
+        [AwesomeProperty("userId")]
+        [JsonPropertyName("userId")]
+        public string? UserId { get; set; }
         
     }
 }

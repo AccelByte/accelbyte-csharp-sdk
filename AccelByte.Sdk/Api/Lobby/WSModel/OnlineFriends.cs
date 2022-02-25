@@ -12,13 +12,13 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("onlineFriends")]
     public class OnlineFriends : AccelByte.Sdk.Core.WSModel
     {
+        [AwesomeProperty("code")]
+        [JsonPropertyName("code")]
+        public long? Code { get; set; }
+        
         [AwesomeProperty("id")]
         [JsonPropertyName("id")]
         public string? Id { get; set; }
-        
-        [AwesomeProperty("code")]
-        [JsonPropertyName("code")]
-        public string? Code { get; set; }
         
         [AwesomeProperty("onlineFriendIds")]
         [JsonPropertyName("onlineFriendIds")]

@@ -12,17 +12,17 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("listOutgoingFriendsResponse")]
     public class ListOutgoingFriendsResponse : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("id")]
-        [JsonPropertyName("id")]
-        public string? Id { get; set; }
-        
         [AwesomeProperty("code")]
         [JsonPropertyName("code")]
-        public string? Code { get; set; }
+        public long? Code { get; set; }
         
         [AwesomeProperty("friendIds")]
         [JsonPropertyName("friendIds")]
         public List<string>? FriendIds { get; set; }
+        
+        [AwesomeProperty("id")]
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
         
     }
 }

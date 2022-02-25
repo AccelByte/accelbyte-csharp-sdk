@@ -12,6 +12,10 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("blockPlayerRequest")]
     public class BlockPlayerRequest : AccelByte.Sdk.Core.WSModel
     {
+        [AwesomeProperty("blockUserId")]
+        [JsonPropertyName("blockUserId")]
+        public string? BlockUserId { get; set; }
+        
         [AwesomeProperty("id")]
         [JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -19,10 +23,6 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("namespace")]
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
-        [AwesomeProperty("blockUserId")]
-        [JsonPropertyName("blockUserId")]
-        public string? BlockUserId { get; set; }
         
     }
 }

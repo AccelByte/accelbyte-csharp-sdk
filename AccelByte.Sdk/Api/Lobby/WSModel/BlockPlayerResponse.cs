@@ -12,21 +12,21 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("blockPlayerResponse")]
     public class BlockPlayerResponse : AccelByte.Sdk.Core.WSModel
     {
+        [AwesomeProperty("blockUserId")]
+        [JsonPropertyName("blockUserId")]
+        public string? BlockUserId { get; set; }
+        
+        [AwesomeProperty("code")]
+        [JsonPropertyName("code")]
+        public long? Code { get; set; }
+        
         [AwesomeProperty("id")]
         [JsonPropertyName("id")]
         public string? Id { get; set; }
         
-        [AwesomeProperty("code")]
-        [JsonPropertyName("code")]
-        public string? Code { get; set; }
-        
         [AwesomeProperty("namespace")]
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
-        [AwesomeProperty("blockUserId")]
-        [JsonPropertyName("blockUserId")]
-        public string? BlockUserId { get; set; }
         
     }
 }

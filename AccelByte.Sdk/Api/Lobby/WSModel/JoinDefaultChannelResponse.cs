@@ -12,17 +12,17 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("joinDefaultChannelResponse")]
     public class JoinDefaultChannelResponse : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("id")]
-        [JsonPropertyName("id")]
-        public string? Id { get; set; }
-        
-        [AwesomeProperty("code")]
-        [JsonPropertyName("code")]
-        public string? Code { get; set; }
-        
         [AwesomeProperty("channelSlug")]
         [JsonPropertyName("channelSlug")]
         public string? ChannelSlug { get; set; }
+        
+        [AwesomeProperty("code")]
+        [JsonPropertyName("code")]
+        public long? Code { get; set; }
+        
+        [AwesomeProperty("id")]
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
         
     }
 }

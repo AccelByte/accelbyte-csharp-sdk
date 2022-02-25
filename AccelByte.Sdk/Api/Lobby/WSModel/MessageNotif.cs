@@ -12,13 +12,21 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("messageNotif")]
     public class MessageNotif : AccelByte.Sdk.Core.WSModel
     {
+        [AwesomeProperty("from")]
+        [JsonPropertyName("from")]
+        public string? From { get; set; }
+        
         [AwesomeProperty("id")]
         [JsonPropertyName("id")]
         public string? Id { get; set; }
         
-        [AwesomeProperty("from")]
-        [JsonPropertyName("from")]
-        public string? From { get; set; }
+        [AwesomeProperty("payload")]
+        [JsonPropertyName("payload")]
+        public string? Payload { get; set; }
+        
+        [AwesomeProperty("sentAt")]
+        [JsonPropertyName("sentAt")]
+        public long? SentAt { get; set; }
         
         [AwesomeProperty("to")]
         [JsonPropertyName("to")]
@@ -27,14 +35,6 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("topic")]
         [JsonPropertyName("topic")]
         public string? Topic { get; set; }
-        
-        [AwesomeProperty("payload")]
-        [JsonPropertyName("payload")]
-        public string? Payload { get; set; }
-        
-        [AwesomeProperty("sentAt")]
-        [JsonPropertyName("sentAt")]
-        public int? SentAt { get; set; }
         
     }
 }

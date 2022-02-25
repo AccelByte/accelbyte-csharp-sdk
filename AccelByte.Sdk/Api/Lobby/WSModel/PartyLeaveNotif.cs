@@ -12,13 +12,13 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("partyLeaveNotif")]
     public class PartyLeaveNotif : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("userId")]
-        [JsonPropertyName("userId")]
-        public string? UserId { get; set; }
-        
         [AwesomeProperty("leaderId")]
         [JsonPropertyName("leaderId")]
         public string? LeaderId { get; set; }
+        
+        [AwesomeProperty("userId")]
+        [JsonPropertyName("userId")]
+        public string? UserId { get; set; }
         
     }
 }

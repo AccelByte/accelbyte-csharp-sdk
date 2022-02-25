@@ -12,17 +12,17 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("userMetricResponse")]
     public class UserMetricResponse : AccelByte.Sdk.Core.WSModel
     {
+        [AwesomeProperty("code")]
+        [JsonPropertyName("code")]
+        public long? Code { get; set; }
+        
         [AwesomeProperty("id")]
         [JsonPropertyName("id")]
         public string? Id { get; set; }
         
-        [AwesomeProperty("code")]
-        [JsonPropertyName("code")]
-        public string? Code { get; set; }
-        
         [AwesomeProperty("playerCount")]
         [JsonPropertyName("playerCount")]
-        public int? PlayerCount { get; set; }
+        public long? PlayerCount { get; set; }
         
     }
 }

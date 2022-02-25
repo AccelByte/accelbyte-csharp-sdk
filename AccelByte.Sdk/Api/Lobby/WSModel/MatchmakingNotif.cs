@@ -12,29 +12,29 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("matchmakingNotif")]
     public class MatchmakingNotif : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("status")]
-        [JsonPropertyName("status")]
-        public string? Status { get; set; }
+        [AwesomeProperty("counterPartyMember")]
+        [JsonPropertyName("counterPartyMember")]
+        public List<string>? CounterPartyMember { get; set; }
         
         [AwesomeProperty("matchId")]
         [JsonPropertyName("matchId")]
         public string? MatchId { get; set; }
         
-        [AwesomeProperty("partyMember")]
-        [JsonPropertyName("partyMember")]
-        public List<string>? PartyMember { get; set; }
-        
-        [AwesomeProperty("counterPartyMember")]
-        [JsonPropertyName("counterPartyMember")]
-        public List<string>? CounterPartyMember { get; set; }
-        
         [AwesomeProperty("message")]
         [JsonPropertyName("message")]
         public string? Message { get; set; }
         
+        [AwesomeProperty("partyMember")]
+        [JsonPropertyName("partyMember")]
+        public List<string>? PartyMember { get; set; }
+        
         [AwesomeProperty("readyDuration")]
         [JsonPropertyName("readyDuration")]
-        public int? ReadyDuration { get; set; }
+        public long? ReadyDuration { get; set; }
+        
+        [AwesomeProperty("status")]
+        [JsonPropertyName("status")]
+        public string? Status { get; set; }
         
     }
 }

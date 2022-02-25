@@ -12,13 +12,13 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("cancelMatchmakingRequest")]
     public class CancelMatchmakingRequest : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("id")]
-        [JsonPropertyName("id")]
-        public string? Id { get; set; }
-        
         [AwesomeProperty("gameMode")]
         [JsonPropertyName("gameMode")]
         public string? GameMode { get; set; }
+        
+        [AwesomeProperty("id")]
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
         
         [AwesomeProperty("isTempParty")]
         [JsonPropertyName("isTempParty")]

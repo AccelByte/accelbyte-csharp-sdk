@@ -12,13 +12,13 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("channelChatNotif")]
     public class ChannelChatNotif : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("from")]
-        [JsonPropertyName("from")]
-        public string? From { get; set; }
-        
         [AwesomeProperty("channelSlug")]
         [JsonPropertyName("channelSlug")]
         public string? ChannelSlug { get; set; }
+        
+        [AwesomeProperty("from")]
+        [JsonPropertyName("from")]
+        public string? From { get; set; }
         
         [AwesomeProperty("payload")]
         [JsonPropertyName("payload")]

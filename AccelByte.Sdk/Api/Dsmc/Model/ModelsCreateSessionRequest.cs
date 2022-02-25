@@ -26,6 +26,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
         
+        [JsonPropertyName("notification_payload")]
+        public ModelsMatchResultNotificationPayload? NotificationPayload { get; set; }
+        
         [JsonPropertyName("pod_name")]
         public string? PodName { get; set; }
         

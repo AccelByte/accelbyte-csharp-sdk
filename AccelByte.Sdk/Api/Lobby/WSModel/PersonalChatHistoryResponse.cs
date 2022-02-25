@@ -12,21 +12,21 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("personalChatHistoryResponse")]
     public class PersonalChatHistoryResponse : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("id")]
-        [JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [AwesomeProperty("chat")]
+        [JsonPropertyName("chat")]
+        public string? Chat { get; set; }
         
         [AwesomeProperty("code")]
         [JsonPropertyName("code")]
-        public string? Code { get; set; }
+        public long? Code { get; set; }
         
         [AwesomeProperty("friendId")]
         [JsonPropertyName("friendId")]
         public string? FriendId { get; set; }
         
-        [AwesomeProperty("chat")]
-        [JsonPropertyName("chat")]
-        public string? Chat { get; set; }
+        [AwesomeProperty("id")]
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
         
     }
 }

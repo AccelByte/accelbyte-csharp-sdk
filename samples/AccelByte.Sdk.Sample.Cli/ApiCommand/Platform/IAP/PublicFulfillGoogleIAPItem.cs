@@ -48,8 +48,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Body                
             );            
             
-            wrapper.PublicFulfillGoogleIAPItem(operation);
-            return String.Empty;
+            AccelByte.Sdk.Api.Platform.Model.GoogleReceiptResolveResult? response = wrapper.PublicFulfillGoogleIAPItem(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

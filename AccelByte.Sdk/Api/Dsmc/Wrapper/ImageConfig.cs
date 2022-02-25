@@ -39,6 +39,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public void CreateImagePatch(CreateImagePatch input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsListImageResponse? ListImages(ListImages input) {
             var response = _sdk.RunRequest(input);
 
@@ -71,7 +79,31 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public void DeleteImagePatch(DeleteImagePatch input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsGetImageDetailResponse? GetImageDetail(GetImageDetail input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsListImagePatchesResponse? GetImagePatches(GetImagePatches input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetImagePatchDetailResponse? GetImagePatchDetail(GetImagePatchDetail input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

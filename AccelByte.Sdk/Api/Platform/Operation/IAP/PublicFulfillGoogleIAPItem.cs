@@ -98,11 +98,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string? Security {get; set;} = "Bearer";
         
-        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        public Model.GoogleReceiptResolveResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        {            
             if (code == (HttpStatusCode)204)
             {
-                return;
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                return JsonSerializer.Deserialize<Model.GoogleReceiptResolveResult>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return JsonSerializer.Deserialize<Model.GoogleReceiptResolveResult>(payload);
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

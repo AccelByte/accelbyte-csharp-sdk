@@ -16,13 +16,13 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [JsonPropertyName("id")]
         public string? Id { get; set; }
         
-        [AwesomeProperty("namespace")]
-        [JsonPropertyName("namespace")]
-        public string? Namespace { get; set; }
-        
         [AwesomeProperty("key")]
         [JsonPropertyName("key")]
         public string? Key { get; set; }
+        
+        [AwesomeProperty("namespace")]
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
         
         [AwesomeProperty("value")]
         [JsonPropertyName("value")]

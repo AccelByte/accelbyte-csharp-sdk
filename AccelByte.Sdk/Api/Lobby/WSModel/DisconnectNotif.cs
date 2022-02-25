@@ -12,13 +12,13 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("disconnectNotif")]
     public class DisconnectNotif : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("namespace")]
-        [JsonPropertyName("namespace")]
-        public string? Namespace { get; set; }
-        
         [AwesomeProperty("connectionId")]
         [JsonPropertyName("connectionId")]
         public string? ConnectionId { get; set; }
+        
+        [AwesomeProperty("namespace")]
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
         
     }
 }
