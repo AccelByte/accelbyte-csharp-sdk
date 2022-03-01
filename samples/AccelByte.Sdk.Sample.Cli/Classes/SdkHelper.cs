@@ -12,6 +12,7 @@ using System.Text.Json;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Client;
 using AccelByte.Sdk.Core.Repository;
+using AccelByte.Sdk.Core.Logging;
 
 namespace AccelByte.Sdk.Sample.Cli
 {
@@ -23,6 +24,12 @@ namespace AccelByte.Sdk.Sample.Cli
             IHttpClient httpClient = HttpClient.Default;
             ITokenRepository tokenRepo = new FileBasedTokenRepository();
 
+            if (cArgs.IsLogEnabled)
+            {
+                IHttpLogger dLogger = new DefaultHttpLogger();
+                httpClient.SetLogger(dLogger);                
+            }
+            
             AccelByteConfig config = new AccelByteConfig(httpClient, tokenRepo, cRepo);
             AccelByteSDK sdk = new AccelByteSDK(config);
 

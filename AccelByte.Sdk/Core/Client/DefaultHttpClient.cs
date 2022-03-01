@@ -12,19 +12,26 @@ using System.Text.Json;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Core.Repository;
+using AccelByte.Sdk.Core.Logging;
 
 namespace AccelByte.Sdk.Core.Client
 {
     public class DefaultHttpClient : IHttpClient
     {
-        private static readonly HttpClientHandler Handler = new HttpClientHandler() 
-        { 
+        public static readonly LoggingHandler Handler = new LoggingHandler(new HttpClientHandler()
+        {
             AllowAutoRedirect = false   // Handle redirect manually
-        };
+        });
 
         private static readonly System.Net.Http.HttpClient Http = new System.Net.Http.HttpClient(Handler);
         
         private static object HttpLock = new object();
+
+        public IHttpClient SetLogger(IHttpLogger logger)
+        {
+            Handler.Logger = logger;
+            return this;
+        }
 
         public HttpResponse SendRequest(Operation operation, string baseURL)
         {

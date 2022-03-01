@@ -50,6 +50,8 @@ namespace AccelByte.Sdk.Sample.Cli
 
         public string WebSocketPayload { get; private set; } = String.Empty;
 
+        public bool IsLogEnabled { get; private set; } = false;
+
         public CommandArguments(string[] args)
         {
             _Parameters = new Dictionary<string, string>();
@@ -196,6 +198,10 @@ namespace AccelByte.Sdk.Sample.Cli
                         else if (aKey == "ws-listen")
                         {
                             IsWebSocketListenMode = true;
+                        }
+                        else if (aKey == "enable-log")
+                        {
+                            IsLogEnabled = true;
                         }
                         else
                             _Parameters.Add(aKey, aValue);

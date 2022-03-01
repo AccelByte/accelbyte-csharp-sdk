@@ -2,6 +2,9 @@
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
+using AccelByte.Sdk.Core.Util;
+using AccelByte.Sdk.Core.Logging;
+
 namespace AccelByte.Sdk.Core.Repository
 {
     public class DefaultConfigRepository : IConfigRepository
@@ -79,5 +82,7 @@ namespace AccelByte.Sdk.Core.Repository
                     return (aEnable.Trim() == "1");
             }
         }
+
+        public IHttpLogger? Logger { get; set; } = null;
     }
 }

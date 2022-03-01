@@ -3,6 +3,7 @@
 // and restrictions contact your company contract manager.
 
 using AccelByte.Sdk.Core.Repository;
+using AccelByte.Sdk.Core.Logging;
 
 namespace AccelByte.Sdk.Tests
 {
@@ -29,5 +30,7 @@ namespace AccelByte.Sdk.Tests
         public bool EnableTraceId { get; } = true;
 
         public bool EnableUserAgentInfo { get; } = true;
+
+        public IHttpLogger? Logger { get; set; } = null;
     }
 }
