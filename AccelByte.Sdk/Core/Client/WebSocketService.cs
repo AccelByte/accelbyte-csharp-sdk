@@ -103,9 +103,12 @@ namespace AccelByte.Sdk.Core
                                 PropertyInfo pInfo = _EventActions[message.MessageType];
                                 Type modelType = pInfo.PropertyType.GetGenericArguments().First();
 
-                                Action? aEvent = (Action?)pInfo.GetValue(this);
+                                var aEvent = pInfo.GetValue(this);
                                 if (aEvent != null)
-                                    aEvent.DynamicInvoke(message.To(modelType));
+                                {
+                                    object respModelObj = message.To(modelType);
+                                    aEvent!.GetType().GetMethod("Invoke")!.Invoke(aEvent, new object[] { respModelObj });
+                                }
                             }
                         }
                         catch (Exception ex)

@@ -24,6 +24,8 @@ namespace AccelByte.Sdk.Core.Awesome
 
         public Dictionary<string, string> Data { get; set; }
 
+        public bool StrictConversion { get; private set; } = false;
+
         protected void ReadHeader(string message)
         {
             StringReader reader = new StringReader(message);
@@ -74,13 +76,12 @@ namespace AccelByte.Sdk.Core.Awesome
 
             foreach (string line in inputString.TrimEnd('\n').Split('\n'))
             {
-                int splitIndex = line.IndexOf(": ");
-
-                if (splitIndex == -1)
+                string[] parts = line.Split(':');
+                if (parts.Length <= 0)
                     throw new MessageException(ErrorCode.MessageFormatInvalid);
 
-                var key = line.Substring(0, splitIndex).Trim(' ');
-                var value = line.Substring(splitIndex + 2).Trim(' ');
+                var key = parts[0].Trim();
+                var value = (parts.Length > 1 ? parts[1].Trim() : String.Empty);
 
                 if (string.IsNullOrEmpty(key))
                     throw new MessageException(ErrorCode.MessageFormatInvalid);
@@ -158,10 +159,18 @@ namespace AccelByte.Sdk.Core.Awesome
                     continue;
 
                 if (!Data.ContainsKey(attr.Name))
-                    throw new MessageException(ErrorCode.MessageFieldConversionFailed);
+                {
+                    if (StrictConversion)
+                        throw new MessageException(ErrorCode.MessageFieldConversionFailed);
+                    else
+                        continue;
+                }
 
                 string aValue = Data[attr.Name];
-                Type valueType = prop.GetType();
+                Type valueType = prop.PropertyType;
+
+                if (valueType.IsGenericType && valueType.GetGenericTypeDefinition() == typeof(Nullable<>))
+                    valueType = valueType.GetGenericArguments()[0];
 
                 if (valueType.IsArray)
                 {
@@ -294,6 +303,10 @@ namespace AccelByte.Sdk.Core.Awesome
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
+
+            if (Data.ContainsKey("id"))
+                Id = Data["id"].Trim();
+
             WriteHeader(sb);
             foreach (KeyValuePair<string, string> pair in Data)
             {
@@ -305,7 +318,8 @@ namespace AccelByte.Sdk.Core.Awesome
 
         public byte[] ToByteArray()
         {
-            return Encoding.UTF8.GetBytes(ToString());
+            string temp = ToString();
+            return Encoding.UTF8.GetBytes(temp);
         }
     }
 }
