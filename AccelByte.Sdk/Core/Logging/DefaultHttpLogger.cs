@@ -66,7 +66,7 @@ namespace AccelByte.Sdk.Core.Logging
 
             Dictionary<string, object> logs = new Dictionary<string, object>();
             logs.Add("url", response.RequestMessage!.RequestUri!.ToString());
-            logs.Add("status_code", response.StatusCode.ToString());
+            logs.Add("status_code", ((int)response.StatusCode).ToString() + " (" + response.StatusCode.ToString() + ")");
 
             double dElapsed = ((double)(timestamp - reqTimestamp) / 1000.0);
             logs.Add("elapsed", dElapsed.ToString(System.Globalization.CultureInfo.InvariantCulture));
@@ -79,18 +79,36 @@ namespace AccelByte.Sdk.Core.Logging
 
             Dictionary<string, object> headers = new Dictionary<string, object>();
             foreach (var header in response.Headers)
-                headers.Add(header.Key, String.Join(",", header.Value));
-            logs.Add("headers", headers);
+                headers.Add(header.Key, String.Join(",", header.Value));            
 
             if (response.Content != null)
             {
                 var respHeaders = response.Content.Headers;
-                string contentType = String.Join(",", respHeaders.GetValues("Content-Type")).Trim();
+                foreach (var header in respHeaders)
+                    headers.Add(header.Key, String.Join(",", header.Value));
+                logs.Add("headers", headers);
+
+                string contentType = String.Empty;
+                IEnumerable<string>? ctValues = null;
+                if (respHeaders.TryGetValues("Content-Type",out ctValues))
+                    contentType = String.Join(",", ctValues).Trim();
+
+                if (contentType != String.Empty)
+                {
+                    string[] ctSplits = contentType.Split(';');
+                    if (ctSplits.Length > 0)
+                        contentType = ctSplits[0].Trim();
+                }
+                
                 if ((contentType == "application/json") || (contentType == "text/json")
                         || (contentType == "text/plain"))
                 {
                     string body = response.Content.ReadAsStringAsync().Result;
                     logs.Add("body", body);
+                }
+                else if (contentType == String.Empty)
+                {
+                    logs.Add("body", "");
                 }
                 else
                 {
@@ -98,6 +116,8 @@ namespace AccelByte.Sdk.Core.Logging
                     logs.Add("body", body);
                 }
             }
+            else
+                logs.Add("headers", headers);
 
             logs.Add("timestamp", DateTimeOffset.Now.ToUnixTimeSeconds().ToString());
             OutputWriter.Write("response", logs);

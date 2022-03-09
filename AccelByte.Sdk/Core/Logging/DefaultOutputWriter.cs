@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Core.Logging
                 {
                     sb.AppendFormat("{0}{1}: !!binary |\n", prefix, kvp.Key);
                     string bEncoded = Convert.ToBase64String((kvp.Value as byte[])!);
-                    sb.AppendFormat("{0}\t{1}", prefix, bEncoded);
+                    sb.AppendFormat("{0}\t{1}\n", prefix, bEncoded);
                 }                    
             }
         }
