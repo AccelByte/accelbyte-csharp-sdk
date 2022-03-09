@@ -9,6 +9,8 @@ namespace AccelByte.Sdk.Core
 {
     public class AccelByteConfig
     {
+        public ICredentialRepository? Credential { get; set; }
+
         public AccelByteConfig(IHttpClient httpClient, 
                 ITokenRepository tokenRepository, 
                 IConfigRepository configRepository)
@@ -19,7 +21,9 @@ namespace AccelByte.Sdk.Core
         }
 
         public IHttpClient HttpClient { get; }
+
         public ITokenRepository TokenRepository { get; }
+
         public IConfigRepository ConfigRepository { get; }
     }
 }

@@ -7,18 +7,133 @@ using System.Text;
 using System.Web;
 using AccelByte.Sdk.Api.Iam.Operation;
 using AccelByte.Sdk.Api.Iam.Wrapper;
+using AccelByte.Sdk.Core.Client;
+using AccelByte.Sdk.Core.Repository;
+using AccelByte.Sdk.Core.Logging;
 using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Core
 {
     public class AccelByteSDK
     {
+        public static AccelByteSdkBuilder Builder = new AccelByteSdkBuilder();
+
+        public class AccelByteSdkBuilder
+        {
+            private IHttpClient? _Client = null;
+
+            private ITokenRepository? _TokenRepository = null;
+
+            private IConfigRepository? _ConfigRepository = null;
+
+            private ICredentialRepository? _Credential = null;
+
+            private IHttpLogger? _Logger = null;
+
+            private bool _EnableLogging = false;
+
+            public AccelByteSdkBuilder SetHttpClient(IHttpClient client)
+            {
+                _Client = client;
+                return this;
+            }
+
+            public AccelByteSdkBuilder UseDefaultHttpClient()
+            {
+                _Client = AccelByte.Sdk.Core.Client.HttpClient.Default;
+                return this;
+            }
+
+            public AccelByteSdkBuilder SetTokenRepository(ITokenRepository repository)
+            {
+                _TokenRepository = repository;
+                return this;
+            }
+
+            public AccelByteSdkBuilder UseDefaultTokenRepository()
+            {
+                _TokenRepository = DefaultTokenRepository.GetInstance();
+                return this;
+            }
+
+            public AccelByteSdkBuilder UseInMemoryTokenRepository()
+            {
+                _TokenRepository = new InMemoryTokenRepository();
+                return this;
+            }
+
+            public AccelByteSdkBuilder SetConfigRepository(IConfigRepository repository)
+            {
+                _ConfigRepository = repository;
+                return this;
+            }
+
+            public AccelByteSdkBuilder UseDefaultConfigRepository()
+            {
+                _ConfigRepository = new DefaultConfigRepository();
+                return this;
+            }
+
+            public AccelByteSdkBuilder SetCredentialRepository(ICredentialRepository credential)
+            {
+                _Credential = credential;
+                return this;
+            }
+
+            public AccelByteSdkBuilder UseDefaultCredentialRepository()
+            {
+                _Credential = new DefaultCredentialRepository();
+                return this;
+            }
+
+            public AccelByteSdkBuilder EnableLog()
+            {
+                _EnableLogging = true;
+                return this;
+            }
+
+            public AccelByteSdkBuilder SetLogger(IHttpLogger logger)
+            {
+                _Logger = logger;
+                return this;
+            }
+
+            public AccelByteSDK Build()
+            {
+                if (_Client == null)
+                    throw IncompleteComponentException.NoHttpClient;
+                if (_TokenRepository == null)
+                    throw IncompleteComponentException.NoTokenRepository;
+                if (_ConfigRepository == null)
+                    throw IncompleteComponentException.NoConfigRepository;
+
+                if (_EnableLogging)
+                {
+                    if (_Logger == null)
+                    {
+                        IHttpLogger logger = new DefaultHttpLogger();
+                        _Client.SetLogger(logger);
+                    }
+                    else
+                        _Client.SetLogger(_Logger);
+                }
+
+                AccelByteConfig config = new AccelByteConfig(_Client, _TokenRepository, _ConfigRepository);
+                if (_Credential != null)
+                    config.Credential = _Credential;
+
+                return new AccelByteSDK(config);
+            }
+        }
+
+        public AccelByteConfig Configuration { get; private set; }
+
+        public string Namespace { get => Configuration.ConfigRepository.Namespace; }
+
         public AccelByteSDK(AccelByteConfig config)
         {
             Configuration = config;
         }
-
-        public AccelByteConfig Configuration { get; }
 
         public HttpResponse RunRequest(Operation operation)
         {
@@ -61,6 +176,15 @@ namespace AccelByte.Sdk.Core
             return Configuration.HttpClient.SendRequest(operation, baseUrl);
         }
 
+        public bool LoginUser()
+        {
+            if (Configuration.Credential == null)
+                throw new Exception("Null credential repository");
+
+            ICredentialRepository cred = Configuration.Credential;
+            return LoginUser(cred.Username, cred.Password);
+        }
+
         public bool LoginUser(string username, string password)
         {
             var codeVerifier = Helper.GenerateCodeVerifier();
@@ -94,8 +218,7 @@ namespace AccelByte.Sdk.Core
                 .SetClientId(clientId)
                 .SetCode(code)
                 .SetCodeVerifier(codeVerifier)
-                .Build("authorization_code");
-            tokenGrantV3.Security = null;
+                .Build("authorization_code");            
 
             var token = oAuth20.TokenGrantV3(tokenGrantV3) ??
                     throw new Exception($"TokenGrantV3 returned null");
@@ -108,16 +231,7 @@ namespace AccelByte.Sdk.Core
 
         public bool LoginClient()
         {
-            var tokenGrantV3 = new TokenGrantV3(
-                         null,
-                         null,
-                         null,
-                         null,
-                         null,
-                         null,
-                         null,
-                         null,
-                         "client_credentials");
+            var tokenGrantV3 = TokenGrantV3.Builder.Build("client_credentials");
             var oAuth20 = new OAuth20(this);
 
             var token = oAuth20.TokenGrantV3(tokenGrantV3) ??
