@@ -45,5 +45,19 @@ namespace AccelByte.Sdk.Core.Util
 
             return Convert.ToBase64String(data).TrimEnd('=').Replace('+', '-').Replace('/', '_');
         }
+
+        public static string GenerateRandomId(int length)
+        {
+            Random random = new Random();
+            string chars = "abcdefghijklmnopqrstuvw0123456789";
+            return new String(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        public static string GenerateRandomPassword(int length)
+        {
+            Random random = new Random();
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWabcdefghijklmnopqrstuvw0123456789!@#$%^&*()";
+            return new String(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
+        }
     }
 }
