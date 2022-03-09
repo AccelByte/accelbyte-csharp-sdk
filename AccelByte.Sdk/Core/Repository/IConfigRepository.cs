@@ -18,6 +18,8 @@ namespace AccelByte.Sdk.Core.Repository
 
         string TraceIdVersion{ get; }
 
+        string Namespace { get; }
+
         bool EnableTraceId { get; }
 
         bool EnableUserAgentInfo { get; }
