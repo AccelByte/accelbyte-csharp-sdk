@@ -25,6 +25,8 @@ namespace AccelByte.Sdk.Tests
 
         public string AppName { get; init; }
 
+        public string Namespace { get; set; } = "unit_test";
+
         public string TraceIdVersion{ get; } = "1";
 
         public bool EnableTraceId { get; } = true;

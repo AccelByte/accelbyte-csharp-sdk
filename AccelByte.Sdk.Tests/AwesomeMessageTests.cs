@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 using NUnit.Framework;
 using AccelByte.Sdk.Core.Awesome;
+using AccelByte.Sdk.Api.Lobby.WSModel;
 
 namespace AccelByte.Sdk.Tests
 {
@@ -60,6 +61,14 @@ namespace AccelByte.Sdk.Tests
         public void ValidFormatTestCases(string rawMessage)
         {
             Message msg = new Message(rawMessage);
+        }
+
+        [Test]
+        [TestCase("type: partyCreateResponse\nid: 4k3saqd76egh4ind0ssq93hutg09ai52l98i4duwd5qmd3ol1pqveben9il8klnf\ncode: 11232\npartyID: \nleaderID: \nmembers: []\ninvitees: []\ninvitationToken: \npartyCode: ", TestName = "Case 22")]
+        public void ValidFormatTryToSerializeTestCases(string rawMessage)
+        {
+            Message msg = new Message(rawMessage);
+            var obj = msg.To<PartyCreateResponse>();
         }
 
         [Test]
