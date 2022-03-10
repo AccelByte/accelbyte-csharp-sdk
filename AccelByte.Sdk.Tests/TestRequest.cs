@@ -3,11 +3,10 @@
 // and restrictions contact your company contract manager.
 
 using System.Collections.Generic;
-using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Tests
 {
-    public class TestRequest : Model
+    public class TestRequest : AccelByte.Sdk.Core.Model
     {
         public string? Name { get; set; }
 

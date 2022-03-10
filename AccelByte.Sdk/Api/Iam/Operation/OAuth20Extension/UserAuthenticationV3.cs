@@ -131,7 +131,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        public override string? Security {get; set;}
         
         public string ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

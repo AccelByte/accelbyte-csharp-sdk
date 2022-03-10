@@ -4,11 +4,10 @@
 
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Tests
 {
-    public class HttpbinAnythingResponse<TArgs> : Model
+    public class HttpbinAnythingResponse<TArgs> : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("method")]
         public string? Method { get; set; }

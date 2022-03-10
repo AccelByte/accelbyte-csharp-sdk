@@ -3,6 +3,7 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Api.Basic.Model
 {
@@ -21,6 +22,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public Dictionary<string, object>? CustomAttributes { get; set; }
         
         [JsonPropertyName("dateOfBirth")]
+        [JsonDateTimeConverter("yyyy-MM-dd")]
         public DateTime? DateOfBirth { get; set; }
         
         [JsonPropertyName("firstName")]
