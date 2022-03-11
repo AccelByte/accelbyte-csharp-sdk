@@ -1,0 +1,116 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Transform": "AWS::Serverless-2016-10-31",
+  "Description": "AccelByte C# Server SDK AWS Lambda Sample",
+  "Globals": {
+    "Function": {
+      "Runtime": "dotnet6",
+      "CodeUri": "bin/Release/net6.0/publish",
+      "MemorySize": 256,
+      "Timeout": 30,
+      "Environment": {
+        "Variables": {
+          "AB_BASE_URL": "",
+          "AB_CLIENT_ID": "",
+          "AB_CLIENT_SECRET": "",
+          "AB_APP_NAME": "",
+          "AB_NAMESPACE": "",
+          "AB_TRACEID_VERSION": "1",
+          "AB_ENABLE_TRACEID": "1",
+          "AB_ENABLE_USERAGENT": "1",
+          "AB_USER_STAT_CODE": ""
+        }
+      }
+    }
+  },
+  "Resources": {
+    "GetStatConfigurationsFunction": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "FunctionName": "GetStatConfigurations",
+        "Handler": "AccelByte.Sdk.Sample.Aws.Lambda::AccelByte.Sdk.Sample.Aws.Lambda.Functions::GetStatConfigurations",
+        "Events": {
+          "RootGet": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/stat/configs",
+              "Method": "GET"
+            }
+          }
+        }
+      }
+    },
+    "GetUserStatFunction": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "FunctionName": "GetUserStat",
+        "Handler": "AccelByte.Sdk.Sample.Aws.Lambda::AccelByte.Sdk.Sample.Aws.Lambda.Functions::GetUserStat",
+        "Events": {
+          "RootGet": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/stat/user/{userid}",
+              "Method": "GET"
+            }
+          }
+        }
+      }
+    },
+    "CreateUserStatFunction": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "FunctionName": "CreateUserStat",
+        "Handler": "AccelByte.Sdk.Sample.Aws.Lambda::AccelByte.Sdk.Sample.Aws.Lambda.Functions::CreateUserStat",
+        "Events": {
+          "RootGet": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/stat/user/{userid}",
+              "Method": "POST"
+            }
+          }
+        }
+      }
+    },
+    "IncrementUserStatFunction": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "FunctionName": "IncrementUserStat",
+        "Handler": "AccelByte.Sdk.Sample.Aws.Lambda::AccelByte.Sdk.Sample.Aws.Lambda.Functions::IncrementUserStat",
+        "Events": {
+          "RootGet": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/stat/user/{userid}",
+              "Method": "PUT"
+            }
+          }
+        }
+      }
+    },
+    "DeleteUserStatFunction": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "FunctionName": "DeleteUserStat",
+        "Handler": "AccelByte.Sdk.Sample.Aws.Lambda::AccelByte.Sdk.Sample.Aws.Lambda.Functions::DeleteUserStat",
+        "Events": {
+          "RootGet": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/stat/user/{userid}",
+              "Method": "DELETE"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "ApiURL": {
+      "Description": "API endpoint URL for Prod environment",
+      "Value": {
+        "Fn::Sub": "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+      }
+    }
+  }
+}
