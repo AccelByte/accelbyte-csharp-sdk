@@ -1572,7 +1572,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 112 CreatePaymentOrderByDedicated
 # body param: body
-echo '{"currencyCode": "dRQmMvxB", "currencyNamespace": "jpVFnEgs", "customParameters": {"ovZbx4UF": {}}, "description": "3pYMzeFc", "extOrderNo": "sBLCwhTS", "extUserId": "tBJZGkIS", "itemType": "APP", "language": "o6HxX79b", "metadata": {"WJClH3pX": "WCq3ysdp"}, "notifyUrl": "W3XyQQmf", "omitNotification": true, "price": 24, "recurringPaymentOrderNo": "A5HUHiox", "region": "zVhzHc1r", "returnUrl": "BqAXud4J", "sandbox": true, "sku": "zUvNkxTU", "subscriptionId": "qI2XhbYw", "targetNamespace": "TxVSXpJb", "targetUserId": "2JSuHHCR", "title": "P9xW9VeY"}' > $TEMP_JSON_INPUT
+echo '{"currencyCode": "dRQmMvxB", "currencyNamespace": "jpVFnEgs", "customParameters": {"ovZbx4UF": {}}, "description": "3pYMzeFc", "extOrderNo": "sBLCwhTS", "extUserId": "tBJZGkIS", "itemType": "APP", "language": "hX_QY", "metadata": {"sdpW3XyQ": "QmftmA5H"}, "notifyUrl": "UHioxzVh", "omitNotification": true, "price": 67, "recurringPaymentOrderNo": "c1rBqAXu", "region": "d4JQOWZB", "returnUrl": "zUvNkxTU", "sandbox": true, "sku": "I2XhbYwT", "subscriptionId": "xVSXpJb2", "targetNamespace": "JSuHHCRP", "targetUserId": "9xW9VeYJ", "title": "CDikIapu"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CreatePaymentOrderByDedicated \
@@ -1589,7 +1589,7 @@ $CLI_EXE \
     --sn platform \
     --op ListExtOrderNoByExtTxId \
     --namespace $TEST_NAMESPACE \
-    --extTxId 'JCDikIap' \
+    --extTxId 'mYwbaGfs' \
     >$TEMP_FILE 2>&1
 update_status $? 'ListExtOrderNoByExtTxId'
 delete_file $TEMP_FILE
@@ -1601,7 +1601,7 @@ $CLI_EXE \
     --sn platform \
     --op GetPaymentOrder \
     --namespace $TEST_NAMESPACE \
-    --paymentOrderNo 'umYwbaGf' \
+    --paymentOrderNo 'JTgobWG9' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetPaymentOrder'
 delete_file $TEMP_FILE
@@ -1610,12 +1610,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 115 ChargePaymentOrder
 # body param: body
-echo '{"extTxId": "sJTgobWG", "paymentMethod": "93dH2MCG", "paymentProvider": "ALIPAY"}' > $TEMP_JSON_INPUT
+echo '{"extTxId": "3dH2MCGv", "paymentMethod": "ohrdRx6l", "paymentProvider": "ADYEN"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op ChargePaymentOrder \
     --namespace $TEST_NAMESPACE \
-    --paymentOrderNo 'ohrdRx6l' \
+    --paymentOrderNo '7UcTmEwe' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'ChargePaymentOrder'
@@ -1625,12 +1625,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 116 RefundPaymentOrderByDedicated
 # body param: body
-echo '{"description": "Vi7UcTmE"}' > $TEMP_JSON_INPUT
+echo '{"description": "9mWH3XVf"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op RefundPaymentOrderByDedicated \
     --namespace $TEST_NAMESPACE \
-    --paymentOrderNo 'we9mWH3X' \
+    --paymentOrderNo 'yejgTi2E' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'RefundPaymentOrderByDedicated'
@@ -1640,12 +1640,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 117 SimulatePaymentOrderNotification
 # body param: body
-echo '{"amount": 94, "currencyCode": "fyejgTi2", "notifyType": "REFUND", "paymentProvider": "STRIPE", "salesTax": 63, "vat": 36}' > $TEMP_JSON_INPUT
+echo '{"amount": 95, "currencyCode": "nFsoXaRE", "notifyType": "CHARGE", "paymentProvider": "STRIPE", "salesTax": 36, "vat": 83}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SimulatePaymentOrderNotification \
     --namespace $TEST_NAMESPACE \
-    --paymentOrderNo 'oXaREa1W' \
+    --paymentOrderNo 'oXUApZEP' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SimulatePaymentOrderNotification'
@@ -1658,7 +1658,7 @@ $CLI_EXE \
     --sn platform \
     --op GetPaymentOrderChargeStatus \
     --namespace $TEST_NAMESPACE \
-    --paymentOrderNo 'psZ5PoXU' \
+    --paymentOrderNo 'fic39c2q' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetPaymentOrderChargeStatus'
 delete_file $TEMP_FILE
@@ -1667,7 +1667,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 119 CreateReward
 # body param: body
-echo '{"description": "ApZEPfic", "eventTopic": "39c2q3a6", "maxAwarded": 20, "maxAwardedPerUser": 87, "namespaceExpression": "uGqHcwZV", "rewardCode": "jAQCkWjE", "rewardConditions": [{"condition": "3gJ6AwW9", "conditionName": "53NlFHpD", "eventName": "CFut39Jh", "rewardItems": [{"duration": 18, "itemId": "3lmfXJxK", "quantity": 71}]}], "userIdExpression": "NRD3KumR"}' > $TEMP_JSON_INPUT
+echo '{"description": "3a6kRuGq", "eventTopic": "HcwZVjAQ", "maxAwarded": 56, "maxAwardedPerUser": 21, "namespaceExpression": "WjE3gJ6A", "rewardCode": "wW953NlF", "rewardConditions": [{"condition": "HpDCFut3", "conditionName": "9Jhj3lmf", "eventName": "XJxKJNRD", "rewardItems": [{"duration": 73, "itemId": "umRjk3wZ", "quantity": 100}]}], "userIdExpression": "Vb3SFssn"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CreateReward \
@@ -1684,10 +1684,10 @@ $CLI_EXE \
     --sn platform \
     --op QueryRewards \
     --namespace $TEST_NAMESPACE \
-    --eventTopic 'jk3wZYVb' \
-    --limit '88' \
-    --offset '63' \
-    --sortBy 'ssnx4JYy' \
+    --eventTopic 'x4JYy1kX' \
+    --limit '1' \
+    --offset '21' \
+    --sortBy 'VQoG01up' \
     >$TEMP_FILE 2>&1
 update_status $? 'QueryRewards'
 delete_file $TEMP_FILE
@@ -1712,7 +1712,7 @@ $CLI_EXE \
     --sn platform \
     --op ImportRewards \
     --namespace $TEST_NAMESPACE \
-    --replaceExisting 'False' \
+    --replaceExisting 'True' \
     --upload $TEMP_FILE_UPLOAD \
     >$TEMP_FILE 2>&1
 update_status $? 'ImportRewards'
@@ -1725,7 +1725,7 @@ $CLI_EXE \
     --sn platform \
     --op GetReward \
     --namespace $TEST_NAMESPACE \
-    --rewardId 'XakVQoG0' \
+    --rewardId 'R2PZ0E2o' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetReward'
 delete_file $TEMP_FILE
@@ -1734,12 +1734,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 124 UpdateReward
 # body param: body
-echo '{"description": "1upsR2PZ", "eventTopic": "0E2oWaCZ", "maxAwarded": 4, "maxAwardedPerUser": 57, "namespaceExpression": "X2iLiQGT", "rewardCode": "L6OYjLlX", "rewardConditions": [{"condition": "UV78i8cs", "conditionName": "QIO0DRag", "eventName": "PXzsBfUh", "rewardItems": [{"duration": 56, "itemId": "oGFgirdM", "quantity": 74}]}], "userIdExpression": "exA5zJvQ"}' > $TEMP_JSON_INPUT
+echo '{"description": "WaCZcCX2", "eventTopic": "iLiQGTL6", "maxAwarded": 81, "maxAwardedPerUser": 19, "namespaceExpression": "LlXUV78i", "rewardCode": "8csQIO0D", "rewardConditions": [{"condition": "RagPXzsB", "conditionName": "fUhCoGFg", "eventName": "irdMLexA", "rewardItems": [{"duration": 51, "itemId": "JvQd2cOV", "quantity": 98}]}], "userIdExpression": "FoiaYaSo"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateReward \
     --namespace $TEST_NAMESPACE \
-    --rewardId 'd2cOVXFo' \
+    --rewardId 'og7pSsQh' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateReward'
@@ -1752,7 +1752,7 @@ $CLI_EXE \
     --sn platform \
     --op DeleteReward \
     --namespace $TEST_NAMESPACE \
-    --rewardId 'iaYaSoog' \
+    --rewardId 'vXbGvqRV' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteReward'
 delete_file $TEMP_FILE
@@ -1761,12 +1761,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 126 CheckEventCondition
 # body param: body
-echo '{"payload": {"7pSsQhvX": {}}}' > $TEMP_JSON_INPUT
+echo '{"payload": {"SSwvlRzd": {}}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CheckEventCondition \
     --namespace $TEST_NAMESPACE \
-    --rewardId 'bGvqRVSS' \
+    --rewardId 'NXrfoKVR' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'CheckEventCondition'
@@ -1787,7 +1787,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 128 CreateStore
 # body param: body
-echo '{"defaultLanguage": "wvlRzdNX", "defaultRegion": "rfoKVR4H", "description": "hlPEfSM2", "supportedLanguages": ["K29oqfZs"], "supportedRegions": ["sibgoTFQ"], "title": "AmIZiTSs"}' > $TEMP_JSON_INPUT
+echo '{"defaultLanguage": "4HhlPEfS", "defaultRegion": "M2K29oqf", "description": "ZssibgoT", "supportedLanguages": ["FQAmIZiT"], "supportedRegions": ["SstC2yOu"], "title": "mzHMhXys"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CreateStore \
@@ -1806,7 +1806,7 @@ $CLI_EXE \
     --sn platform \
     --op ImportStore \
     --namespace $TEST_NAMESPACE \
-    --storeId 'tC2yOumz' \
+    --storeId 'ws3Fwnu7' \
     --upload $TEMP_FILE_UPLOAD \
     >$TEMP_FILE 2>&1
 update_status $? 'ImportStore'
@@ -1863,7 +1863,7 @@ $CLI_EXE \
     --sn platform \
     --op GetStore \
     --namespace $TEST_NAMESPACE \
-    --storeId 'HMhXysws' \
+    --storeId 'OX9FZvwJ' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetStore'
 delete_file $TEMP_FILE
@@ -1872,12 +1872,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 135 UpdateStore
 # body param: body
-echo '{"defaultLanguage": "3Fwnu7OX", "defaultRegion": "9FZvwJ8O", "description": "QFuCH68p", "supportedLanguages": ["TmT632j8"], "supportedRegions": ["QfhNDTHb"], "title": "8lFvBolf"}' > $TEMP_JSON_INPUT
+echo '{"defaultLanguage": "8OQFuCH6", "defaultRegion": "8pTmT632", "description": "j8QfhNDT", "supportedLanguages": ["Hb8lFvBo"], "supportedRegions": ["lf9Pdi5B"], "title": "LCsT8g72"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateStore \
     --namespace $TEST_NAMESPACE \
-    --storeId '9Pdi5BLC' \
+    --storeId 'thhduZnN' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateStore'
@@ -1890,7 +1890,7 @@ $CLI_EXE \
     --sn platform \
     --op DeleteStore \
     --namespace $TEST_NAMESPACE \
-    --storeId 'sT8g72th' \
+    --storeId 'j9cRNlTB' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteStore'
 delete_file $TEMP_FILE
@@ -1902,8 +1902,8 @@ $CLI_EXE \
     --sn platform \
     --op CloneStore \
     --namespace $TEST_NAMESPACE \
-    --storeId 'hduZnNj9' \
-    --targetStoreId 'cRNlTBxl' \
+    --storeId 'xl3nKj6B' \
+    --targetStoreId '4ffgtxiP' \
     >$TEMP_FILE 2>&1
 update_status $? 'CloneStore'
 delete_file $TEMP_FILE
@@ -1915,7 +1915,7 @@ $CLI_EXE \
     --sn platform \
     --op ExportStore \
     --namespace $TEST_NAMESPACE \
-    --storeId '3nKj6B4f' \
+    --storeId 'LdV0odbf' \
     >$TEMP_FILE 2>&1
 update_status $? 'ExportStore'
 delete_file $TEMP_FILE
@@ -1928,13 +1928,13 @@ $CLI_EXE \
     --op QuerySubscriptions \
     --namespace $TEST_NAMESPACE \
     --chargeStatus 'CHARGED' \
-    --itemId 'gtxiPLdV' \
-    --limit '29' \
-    --offset '6' \
-    --sku 'bfast4ND' \
-    --status 'INIT' \
-    --subscribedBy 'PLATFORM' \
-    --userId '3UryryOW' \
+    --itemId 'st4NDIBQ' \
+    --limit '23' \
+    --offset '92' \
+    --sku 'ryryOWzh' \
+    --status 'ACTIVE' \
+    --subscribedBy 'USER' \
+    --userId 'mSVFhAlE' \
     >$TEMP_FILE 2>&1
 update_status $? 'QuerySubscriptions'
 delete_file $TEMP_FILE
@@ -1946,7 +1946,7 @@ $CLI_EXE \
     --sn platform \
     --op RecurringChargeSubscription \
     --namespace $TEST_NAMESPACE \
-    --subscriptionId 'zhhEmSVF' \
+    --subscriptionId 'acAAoAfs' \
     >$TEMP_FILE 2>&1
 update_status $? 'RecurringChargeSubscription'
 delete_file $TEMP_FILE
@@ -1957,7 +1957,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op GetTicketDynamic \
-    --boothName 'hAlEacAA' \
+    --boothName 'uMB4W3HI' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'GetTicketDynamic'
@@ -1967,11 +1967,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 142 DecreaseTicketSale
 # body param: body
-echo '{"orderNo": "oAfsuMB4"}' > $TEMP_JSON_INPUT
+echo '{"orderNo": "cvS0AL4t"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op DecreaseTicketSale \
-    --boothName 'W3HIcvS0' \
+    --boothName 'YCwCdCig' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -1984,7 +1984,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op GetTicketBoothID \
-    --boothName 'AL4tYCwC' \
+    --boothName 'cxlbl30h' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'GetTicketBoothID'
@@ -1994,11 +1994,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 144 IncreaseTicketSale
 # body param: body
-echo '{"count": 7, "orderNo": "Cigcxlbl"}' > $TEMP_JSON_INPUT
+echo '{"count": 67, "orderNo": "HEjMI4Lc"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op IncreaseTicketSale \
-    --boothName '30hHHEjM' \
+    --boothName 'gkyDsccF' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -2012,7 +2012,7 @@ $CLI_EXE \
     --sn platform \
     --op AnonymizeCampaign \
     --namespace $TEST_NAMESPACE \
-    --userId 'I4LcgkyD' \
+    --userId 'dvzoafML' \
     >$TEMP_FILE 2>&1
 update_status $? 'AnonymizeCampaign'
 delete_file $TEMP_FILE
@@ -2024,7 +2024,7 @@ $CLI_EXE \
     --sn platform \
     --op AnonymizeEntitlement \
     --namespace $TEST_NAMESPACE \
-    --userId 'sccFdvzo' \
+    --userId 'oraVj5Ri' \
     >$TEMP_FILE 2>&1
 update_status $? 'AnonymizeEntitlement'
 delete_file $TEMP_FILE
@@ -2036,7 +2036,7 @@ $CLI_EXE \
     --sn platform \
     --op AnonymizeFulfillment \
     --namespace $TEST_NAMESPACE \
-    --userId 'afMLoraV' \
+    --userId 'DHvo7Kep' \
     >$TEMP_FILE 2>&1
 update_status $? 'AnonymizeFulfillment'
 delete_file $TEMP_FILE
@@ -2048,7 +2048,7 @@ $CLI_EXE \
     --sn platform \
     --op AnonymizeIntegration \
     --namespace $TEST_NAMESPACE \
-    --userId 'j5RiDHvo' \
+    --userId 'gBTMRiEd' \
     >$TEMP_FILE 2>&1
 update_status $? 'AnonymizeIntegration'
 delete_file $TEMP_FILE
@@ -2060,7 +2060,7 @@ $CLI_EXE \
     --sn platform \
     --op AnonymizeOrder \
     --namespace $TEST_NAMESPACE \
-    --userId '7KepgBTM' \
+    --userId 'eeQwLUW0' \
     >$TEMP_FILE 2>&1
 update_status $? 'AnonymizeOrder'
 delete_file $TEMP_FILE
@@ -2072,7 +2072,7 @@ $CLI_EXE \
     --sn platform \
     --op AnonymizePayment \
     --namespace $TEST_NAMESPACE \
-    --userId 'RiEdeeQw' \
+    --userId 'VLupH83A' \
     >$TEMP_FILE 2>&1
 update_status $? 'AnonymizePayment'
 delete_file $TEMP_FILE
@@ -2084,7 +2084,7 @@ $CLI_EXE \
     --sn platform \
     --op AnonymizeSubscription \
     --namespace $TEST_NAMESPACE \
-    --userId 'LUW0VLup' \
+    --userId 'uxFEFRDT' \
     >$TEMP_FILE 2>&1
 update_status $? 'AnonymizeSubscription'
 delete_file $TEMP_FILE
@@ -2096,7 +2096,7 @@ $CLI_EXE \
     --sn platform \
     --op AnonymizeWallet \
     --namespace $TEST_NAMESPACE \
-    --userId 'H83AuxFE' \
+    --userId 't2mauywa' \
     >$TEMP_FILE 2>&1
 update_status $? 'AnonymizeWallet'
 delete_file $TEMP_FILE
@@ -2108,14 +2108,14 @@ $CLI_EXE \
     --sn platform \
     --op QueryUserEntitlements \
     --namespace $TEST_NAMESPACE \
-    --userId 'FRDTt2ma' \
-    --activeOnly 'True' \
-    --appType 'SOFTWARE' \
-    --entitlementClazz 'ENTITLEMENT' \
-    --entitlementName 'aKEsPBAM' \
-    --itemId '["1aujNqlm"]' \
-    --limit '31' \
-    --offset '72' \
+    --userId 'KEsPBAM1' \
+    --activeOnly 'False' \
+    --appType 'GAME' \
+    --entitlementClazz 'CODE' \
+    --entitlementName 'NqlmpKGh' \
+    --itemId '["vTKiXeZe"]' \
+    --limit '30' \
+    --offset '24' \
     >$TEMP_FILE 2>&1
 update_status $? 'QueryUserEntitlements'
 delete_file $TEMP_FILE
@@ -2124,12 +2124,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 154 GrantUserEntitlement
 # body param: body
-echo '[{"endDate": "1987-02-23T00:00:00Z", "grantedCode": "vTKiXeZe", "itemId": "pm7tF1wK", "itemNamespace": "hQ4HjEca", "language": "gyjZITRu", "quantity": 29, "region": "WjICoCN3", "source": "REWARD", "startDate": "1983-07-27T00:00:00Z", "storeId": "V4niQQVj"}]' > $TEMP_JSON_INPUT
+echo '[{"endDate": "1980-09-10T00:00:00Z", "grantedCode": "1wKhQ4Hj", "itemId": "EcagyjZI", "itemNamespace": "TRuoWjIC", "language": "cn-vNIq", "quantity": 12, "region": "DJE12W5e", "source": "ACHIEVEMENT", "startDate": "1978-04-05T00:00:00Z", "storeId": "rOXwASJ1"}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op GrantUserEntitlement \
     --namespace $TEST_NAMESPACE \
-    --userId 'gDJE12W5' \
+    --userId 'PtQuxOJQ' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'GrantUserEntitlement'
@@ -2142,9 +2142,9 @@ $CLI_EXE \
     --sn platform \
     --op GetUserAppEntitlementByAppId \
     --namespace $TEST_NAMESPACE \
-    --userId 'eoplrOXw' \
+    --userId 'Kgor2UMJ' \
     --activeOnly 'True' \
-    --appId 'SJ1PtQux' \
+    --appId '4EJ9GccY' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserAppEntitlementByAppId'
 delete_file $TEMP_FILE
@@ -2156,10 +2156,10 @@ $CLI_EXE \
     --sn platform \
     --op QueryUserEntitlementsByAppType \
     --namespace $TEST_NAMESPACE \
-    --userId 'OJQKgor2' \
+    --userId 'TYxPTgpB' \
     --activeOnly 'True' \
-    --limit '61' \
-    --offset '71' \
+    --limit '93' \
+    --offset '43' \
     --appType 'DEMO' \
     >$TEMP_FILE 2>&1
 update_status $? 'QueryUserEntitlementsByAppType'
@@ -2172,10 +2172,10 @@ $CLI_EXE \
     --sn platform \
     --op GetUserEntitlementByItemId \
     --namespace $TEST_NAMESPACE \
-    --userId 'cYTYxPTg' \
+    --userId 'ANjquBEH' \
     --activeOnly 'False' \
-    --entitlementClazz 'MEDIA' \
-    --itemId 'NsUvUKhA' \
+    --entitlementClazz 'APP' \
+    --itemId 'Qpz0dfiu' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserEntitlementByItemId'
 delete_file $TEMP_FILE
@@ -2187,10 +2187,10 @@ $CLI_EXE \
     --sn platform \
     --op GetUserEntitlementBySku \
     --namespace $TEST_NAMESPACE \
-    --userId 'NjquBEHO' \
+    --userId 'v051lkPC' \
     --activeOnly 'False' \
-    --entitlementClazz 'APP' \
-    --sku 'Qpz0dfiu' \
+    --entitlementClazz 'ENTITLEMENT' \
+    --sku 'jvFvhZdw' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserEntitlementBySku'
 delete_file $TEMP_FILE
@@ -2202,10 +2202,10 @@ $CLI_EXE \
     --sn platform \
     --op ExistsAnyUserActiveEntitlement \
     --namespace $TEST_NAMESPACE \
-    --userId 'v051lkPC' \
-    --appIds '["aZsjvFvh"]' \
-    --itemIds '["Zdwi1Ti6"]' \
-    --skus '["V2uWuCsB"]' \
+    --userId 'i1Ti6V2u' \
+    --appIds '["WuCsB8Fb"]' \
+    --itemIds '["VDwhpNCL"]' \
+    --skus '["l2bgIc1y"]' \
     >$TEMP_FILE 2>&1
 update_status $? 'ExistsAnyUserActiveEntitlement'
 delete_file $TEMP_FILE
@@ -2217,8 +2217,8 @@ $CLI_EXE \
     --sn platform \
     --op ExistsAnyUserActiveEntitlementByItemIds \
     --namespace $TEST_NAMESPACE \
-    --userId '8FbVDwhp' \
-    --itemIds '["NCLl2bgI"]' \
+    --userId '49bqpbfy' \
+    --itemIds '["ytwm6jQJ"]' \
     >$TEMP_FILE 2>&1
 update_status $? 'ExistsAnyUserActiveEntitlementByItemIds'
 delete_file $TEMP_FILE
@@ -2230,8 +2230,8 @@ $CLI_EXE \
     --sn platform \
     --op GetUserAppEntitlementOwnershipByAppId \
     --namespace $TEST_NAMESPACE \
-    --userId 'c1y49bqp' \
-    --appId 'bfyytwm6' \
+    --userId 'pfOIKCeg' \
+    --appId 'UjKQRjoy' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserAppEntitlementOwnershipByAppId'
 delete_file $TEMP_FILE
@@ -2243,9 +2243,9 @@ $CLI_EXE \
     --sn platform \
     --op GetUserEntitlementOwnershipByItemId \
     --namespace $TEST_NAMESPACE \
-    --userId 'jQJpfOIK' \
-    --entitlementClazz 'MEDIA' \
-    --itemId 'egUjKQRj' \
+    --userId 'n3bGyFGw' \
+    --entitlementClazz 'APP' \
+    --itemId 'AylTi4qP' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserEntitlementOwnershipByItemId'
 delete_file $TEMP_FILE
@@ -2257,9 +2257,9 @@ $CLI_EXE \
     --sn platform \
     --op GetUserEntitlementOwnershipBySku \
     --namespace $TEST_NAMESPACE \
-    --userId 'oyn3bGyF' \
-    --entitlementClazz 'SUBSCRIPTION' \
-    --sku 'wcAylTi4' \
+    --userId 'F190sf2Z' \
+    --entitlementClazz 'ENTITLEMENT' \
+    --sku 'Pi5hI4k3' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserEntitlementOwnershipBySku'
 delete_file $TEMP_FILE
@@ -2271,8 +2271,8 @@ $CLI_EXE \
     --sn platform \
     --op RevokeUserEntitlements \
     --namespace $TEST_NAMESPACE \
-    --userId 'qPF190sf' \
-    --entitlementIds '2ZwPi5hI' \
+    --userId 'KwV7P8R9' \
+    --entitlementIds 't4dBRpBp' \
     >$TEMP_FILE 2>&1
 update_status $? 'RevokeUserEntitlements'
 delete_file $TEMP_FILE
@@ -2283,9 +2283,9 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op GetUserEntitlement \
-    --entitlementId '4k3KwV7P' \
+    --entitlementId '4noj3J79' \
     --namespace $TEST_NAMESPACE \
-    --userId '8R9t4dBR' \
+    --userId 'DD3bAZF4' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserEntitlement'
 delete_file $TEMP_FILE
@@ -2294,13 +2294,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 166 UpdateUserEntitlement
 # body param: body
-echo '{"endDate": "1978-08-04T00:00:00Z", "nullFieldList": ["p4noj3J7"], "startDate": "1985-08-23T00:00:00Z", "status": "ACTIVE", "useCount": 52}' > $TEMP_JSON_INPUT
+echo '{"endDate": "1977-08-08T00:00:00Z", "nullFieldList": ["uNxISmVG"], "startDate": "1994-07-20T00:00:00Z", "status": "CONSUMED", "useCount": 18}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateUserEntitlement \
-    --entitlementId 'ZF4nYBuN' \
+    --entitlementId '8wegrDo6' \
     --namespace $TEST_NAMESPACE \
-    --userId 'xISmVGVz' \
+    --userId 'OmeKL7GP' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateUserEntitlement'
@@ -2310,13 +2310,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 167 ConsumeUserEntitlement
 # body param: body
-echo '{"useCount": 70}' > $TEMP_JSON_INPUT
+echo '{"useCount": 29}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op ConsumeUserEntitlement \
-    --entitlementId 'xj8wegrD' \
+    --entitlementId 'I9uWOFTW' \
     --namespace $TEST_NAMESPACE \
-    --userId 'o6OmeKL7' \
+    --userId 'dRrL6yNm' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'ConsumeUserEntitlement'
@@ -2328,9 +2328,9 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op DisableUserEntitlement \
-    --entitlementId 'GPoI9uWO' \
+    --entitlementId 'v8k1w19J' \
     --namespace $TEST_NAMESPACE \
-    --userId 'FTWdRrL6' \
+    --userId 'sHSqOByh' \
     >$TEMP_FILE 2>&1
 update_status $? 'DisableUserEntitlement'
 delete_file $TEMP_FILE
@@ -2341,9 +2341,9 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op EnableUserEntitlement \
-    --entitlementId 'yNmv8k1w' \
+    --entitlementId '4hhkcO6J' \
     --namespace $TEST_NAMESPACE \
-    --userId '19JsHSqO' \
+    --userId '7jSvYd4J' \
     >$TEMP_FILE 2>&1
 update_status $? 'EnableUserEntitlement'
 delete_file $TEMP_FILE
@@ -2354,9 +2354,9 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op GetUserEntitlementHistories \
-    --entitlementId 'Byh4hhkc' \
+    --entitlementId '5c6ayFnS' \
     --namespace $TEST_NAMESPACE \
-    --userId 'O6J7jSvY' \
+    --userId 'rfmObFTU' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserEntitlementHistories'
 delete_file $TEMP_FILE
@@ -2367,9 +2367,9 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op RevokeUserEntitlement \
-    --entitlementId 'd4J5c6ay' \
+    --entitlementId 'BRRDGCRQ' \
     --namespace $TEST_NAMESPACE \
-    --userId 'FnSrfmOb' \
+    --userId 'tMc3an8Z' \
     >$TEMP_FILE 2>&1
 update_status $? 'RevokeUserEntitlement'
 delete_file $TEMP_FILE
@@ -2378,12 +2378,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 172 FulfillItem
 # body param: body
-echo '{"duration": 62, "endDate": "1993-07-31T00:00:00Z", "itemId": "RRDGCRQt", "itemSku": "Mc3an8Zo", "language": "xLwXHS1o", "order": {"currency": {"currencyCode": "UzDdDcZ0", "currencySymbol": "Rj3YM1fz", "currencyType": "VIRTUAL", "decimals": 19, "namespace": "qtqeiyDC"}, "ext": {"K7C3u5Gc": {}}, "free": false}, "orderNo": "mi5KiFDV", "quantity": 31, "region": "fvR2Wl0i", "source": "IAP", "startDate": "1971-02-22T00:00:00Z", "storeId": "pvFuZu45"}' > $TEMP_JSON_INPUT
+echo '{"duration": 28, "endDate": "1982-10-27T00:00:00Z", "itemId": "wXHS1oUz", "itemSku": "DdDcZ0Rj", "language": "3YM1fz9C", "order": {"currency": {"currencyCode": "jqtqeiyD", "currencySymbol": "CK7C3u5G", "currencyType": "REAL", "decimals": 83, "namespace": "bmi5KiFD"}, "ext": {"VpfvR2Wl": {}}, "free": false}, "orderNo": "ShagpvFu", "quantity": 41, "region": "45zsrSpv", "source": "OTHER", "startDate": "1989-06-16T00:00:00Z", "storeId": "Qw3sPxFu"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op FulfillItem \
     --namespace $TEST_NAMESPACE \
-    --userId 'zsrSpvML' \
+    --userId '8LQGQCAj' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'FulfillItem'
@@ -2393,12 +2393,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 173 RedeemCode
 # body param: body
-echo '{"code": "vQw3sPxF", "language": "u8LQGQCA", "region": "j6O7ivhN"}' > $TEMP_JSON_INPUT
+echo '{"code": "6O7ivhNI", "language": "vt_tlWz", "region": "AJ6ZBTHY"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op RedeemCode \
     --namespace $TEST_NAMESPACE \
-    --userId 'IjVT5HSR' \
+    --userId 'jGbVtzsB' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'RedeemCode'
@@ -2408,12 +2408,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 174 FulfillRewards
 # body param: body
-echo '{"rewards": [{"currency": {"currencyCode": "00UKSLWW", "namespace": "zOplTLwZ"}, "item": {"itemId": "QZUMaAJ6", "itemSku": "ZBTHYjGb", "itemType": "VtzsBTCO"}, "quantity": 97, "type": "CURRENCY"}], "source": "ACHIEVEMENT"}' > $TEMP_JSON_INPUT
+echo '{"rewards": [{"currency": {"currencyCode": "TCOWEnaL", "namespace": "zHuYKrr8"}, "item": {"itemId": "9z0RkL93", "itemSku": "2B7thDQ3", "itemType": "hfVnPK8i"}, "quantity": 72, "type": "ITEM"}], "source": "PURCHASE"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op FulfillRewards \
     --namespace $TEST_NAMESPACE \
-    --userId 'aLzHuYKr' \
+    --userId 'ZPnXwGS9' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'FulfillRewards'
@@ -2426,14 +2426,14 @@ $CLI_EXE \
     --sn platform \
     --op QueryUserIAPOrders \
     --namespace $TEST_NAMESPACE \
-    --userId 'r89z0RkL' \
-    --endTime '932B7thD' \
-    --limit '84' \
-    --offset '15' \
-    --productId 'fVnPK8iK' \
-    --startTime '8cdZPnXw' \
-    --status 'VERIFIED' \
-    --type 'EPICGAMES' \
+    --userId 'fAlxtjeZ' \
+    --endTime 'UrqmIc7E' \
+    --limit '23' \
+    --offset '77' \
+    --productId 'EAvaPTww' \
+    --startTime 'JrG06Mtc' \
+    --status 'FULFILLED' \
+    --type 'STADIA' \
     >$TEMP_FILE 2>&1
 update_status $? 'QueryUserIAPOrders'
 delete_file $TEMP_FILE
@@ -2445,7 +2445,7 @@ $CLI_EXE \
     --sn platform \
     --op QueryAllUserIAPOrders \
     --namespace $TEST_NAMESPACE \
-    --userId 'AlxtjeZU' \
+    --userId '8DQxcoQB' \
     >$TEMP_FILE 2>&1
 update_status $? 'QueryAllUserIAPOrders'
 delete_file $TEMP_FILE
@@ -2454,12 +2454,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 177 MockFulfillIAPItem
 # body param: body
-echo '{"language": "rqmIc7El", "productId": "44MEAvaP", "region": "TwwJrG06", "type": "XBOX"}' > $TEMP_JSON_INPUT
+echo '{"language": "wmCX_KxIl", "productId": "kALGxw6q", "region": "gvIJBe6r", "type": "TWITCH"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op MockFulfillIAPItem \
     --namespace $TEST_NAMESPACE \
-    --userId 'cF7t8DQx' \
+    --userId 'GbFNzsyQ' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'MockFulfillIAPItem'
@@ -2472,11 +2472,11 @@ $CLI_EXE \
     --sn platform \
     --op QueryUserOrders \
     --namespace $TEST_NAMESPACE \
-    --userId 'coQBTWMc' \
-    --itemId '41xDmUjk' \
-    --limit '98' \
-    --offset '17' \
-    --status 'REFUNDING' \
+    --userId 'VqvSgtpU' \
+    --itemId 'VddL6A1c' \
+    --limit '90' \
+    --offset '74' \
+    --status 'CLOSED' \
     >$TEMP_FILE 2>&1
 update_status $? 'QueryUserOrders'
 delete_file $TEMP_FILE
@@ -2488,8 +2488,8 @@ $CLI_EXE \
     --sn platform \
     --op CountOfPurchasedItem \
     --namespace $TEST_NAMESPACE \
-    --userId 'gkALGxw6' \
-    --itemId 'qgvIJBe6' \
+    --userId 'uKlGHZdw' \
+    --itemId 'wo66H6QO' \
     >$TEMP_FILE 2>&1
 update_status $? 'CountOfPurchasedItem'
 delete_file $TEMP_FILE
@@ -2501,8 +2501,8 @@ $CLI_EXE \
     --sn platform \
     --op GetUserOrder \
     --namespace $TEST_NAMESPACE \
-    --orderNo 'rDGbFNzs' \
-    --userId 'yQVqvSgt' \
+    --orderNo 'fYztHev8' \
+    --userId 'RX4MWRFk' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserOrder'
 delete_file $TEMP_FILE
@@ -2511,13 +2511,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 181 UpdateUserOrderStatus
 # body param: body
-echo '{"status": "CHARGEBACK_REVERSED", "statusReason": "UVddL6A1"}' > $TEMP_JSON_INPUT
+echo '{"status": "CHARGEBACK", "statusReason": "N13WW7U0"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateUserOrderStatus \
     --namespace $TEST_NAMESPACE \
-    --orderNo 'cTLmuKlG' \
-    --userId 'HZdwwo66' \
+    --orderNo 'sRVCnzRx' \
+    --userId 'ni0Kq9Zl' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateUserOrderStatus'
@@ -2530,8 +2530,8 @@ $CLI_EXE \
     --sn platform \
     --op FulfillUserOrder \
     --namespace $TEST_NAMESPACE \
-    --orderNo 'H6QOfYzt' \
-    --userId 'Hev8RX4M' \
+    --orderNo '2b7ChMCx' \
+    --userId 'b6xdzl2O' \
     >$TEMP_FILE 2>&1
 update_status $? 'FulfillUserOrder'
 delete_file $TEMP_FILE
@@ -2543,8 +2543,8 @@ $CLI_EXE \
     --sn platform \
     --op GetUserOrderGrant \
     --namespace $TEST_NAMESPACE \
-    --orderNo 'WRFklN13' \
-    --userId 'WW7U0sRV' \
+    --orderNo 'YVRJNC7E' \
+    --userId 'ruVITunb' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserOrderGrant'
 delete_file $TEMP_FILE
@@ -2556,8 +2556,8 @@ $CLI_EXE \
     --sn platform \
     --op GetUserOrderHistories \
     --namespace $TEST_NAMESPACE \
-    --orderNo 'CnzRxni0' \
-    --userId 'Kq9Zl2b7' \
+    --orderNo 'xaOWNrMk' \
+    --userId 'fALUDrR6' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserOrderHistories'
 delete_file $TEMP_FILE
@@ -2566,13 +2566,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 185 ProcessUserOrderNotification
 # body param: body
-echo '{"additionalData": {"cardSummary": "ChMCxb6x"}, "authorisedTime": "1972-07-20T00:00:00Z", "chargebackReversedTime": "1976-11-23T00:00:00Z", "chargebackTime": "1996-12-09T00:00:00Z", "chargedTime": "1988-11-12T00:00:00Z", "createdTime": "1985-08-28T00:00:00Z", "currency": {"currencyCode": "ruVITunb", "currencySymbol": "xaOWNrMk", "currencyType": "REAL", "decimals": 53, "namespace": "LUDrR6M3"}, "customParameters": {"vzu84TNQ": {}}, "extOrderNo": "YCZIpKFv", "extTxId": "pQOjjkIY", "extUserId": "AQEcxGPT", "issuedAt": "1976-04-18T00:00:00Z", "metadata": {"2NJ9gHmB": "0vflV2Vp"}, "namespace": "tGYAEziS", "nonceStr": "thhR9WLi", "paymentMethod": "VTXHhZmB", "paymentMethodFee": 49, "paymentOrderNo": "xlmWBLyh", "paymentProvider": "XSOLLA", "paymentProviderFee": 37, "paymentStationUrl": "JoonMpOQ", "price": 71, "refundedTime": "1977-02-28T00:00:00Z", "salesTax": 44, "sandbox": true, "sku": "Q28fmxMF", "status": "REFUNDING", "statusReason": "8d9fdHAH", "subscriptionId": "phhby7hG", "subtotalPrice": 2, "targetNamespace": "KeIkY4Fc", "targetUserId": "8atJ3J4g", "tax": 2, "totalPrice": 21, "totalTax": 6, "txEndTime": "1986-04-11T00:00:00Z", "type": "0o9Rjjnk", "userId": "hwq75VqZ", "vat": 66}' > $TEMP_JSON_INPUT
+echo '{"additionalData": {"cardSummary": "M3vzu84T"}, "authorisedTime": "1990-12-02T00:00:00Z", "chargebackReversedTime": "1996-08-13T00:00:00Z", "chargebackTime": "1996-09-30T00:00:00Z", "chargedTime": "1978-10-21T00:00:00Z", "createdTime": "1986-06-15T00:00:00Z", "currency": {"currencyCode": "pQOjjkIY", "currencySymbol": "AQEcxGPT", "currencyType": "REAL", "decimals": 27, "namespace": "2NJ9gHmB"}, "customParameters": {"0vflV2Vp": {}}, "extOrderNo": "tGYAEziS", "extTxId": "thhR9WLi", "extUserId": "VTXHhZmB", "issuedAt": "1983-07-03T00:00:00Z", "metadata": {"lmWBLyhg": "ZsJoonMp"}, "namespace": "OQ9Jmh8w", "nonceStr": "wQ28fmxM", "paymentMethod": "FN8d9fdH", "paymentMethodFee": 52, "paymentOrderNo": "Hphhby7h", "paymentProvider": "WALLET", "paymentProviderFee": 72, "paymentStationUrl": "eIkY4Fc8", "price": 0, "refundedTime": "1980-10-13T00:00:00Z", "salesTax": 70, "sandbox": false, "sku": "bk9YdEm0", "status": "CHARGED", "statusReason": "9Rjjnkhw", "subscriptionId": "q75VqZH8", "subtotalPrice": 67, "targetNamespace": "Uq92UFWF", "targetUserId": "C8oFuU2O", "tax": 62, "totalPrice": 70, "totalTax": 45, "txEndTime": "1997-09-17T00:00:00Z", "type": "bioiiaZ8", "userId": "Uc2rWpzX", "vat": 25}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op ProcessUserOrderNotification \
     --namespace $TEST_NAMESPACE \
-    --orderNo '8HUq92UF' \
-    --userId 'WFC8oFuU' \
+    --orderNo 'goBhruuv' \
+    --userId 'EzpyRiFs' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'ProcessUserOrderNotification'
@@ -2585,8 +2585,8 @@ $CLI_EXE \
     --sn platform \
     --op DownloadUserOrderReceipt \
     --namespace $TEST_NAMESPACE \
-    --orderNo '2OFJ6w1H' \
-    --userId 'bioiiaZ8' \
+    --orderNo '63b4Pru2' \
+    --userId 'pWiVBYjK' \
     >$TEMP_FILE 2>&1
 update_status $? 'DownloadUserOrderReceipt'
 delete_file $TEMP_FILE
@@ -2595,12 +2595,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 187 CreateUserPaymentOrder
 # body param: body
-echo '{"currencyCode": "Uc2rWpzX", "currencyNamespace": "2mgoBhru", "customParameters": {"uvEzpyRi": {}}, "description": "Fs63b4Pr", "extOrderNo": "u2pWiVBY", "extUserId": "jKI1ZlcK", "itemType": "SEASON", "language": "XcPAsjW7", "metadata": {"zBxpVc8s": "vjiFtRe8"}, "notifyUrl": "k7amplfh", "omitNotification": true, "price": 67, "recurringPaymentOrderNo": "ropVxIvB", "region": "jsYUEDp1", "returnUrl": "taP9py4F", "sandbox": false, "sku": "6UoVxgHJ", "subscriptionId": "LBm3bgRv", "title": "SUyOgyu9"}' > $TEMP_JSON_INPUT
+echo '{"currencyCode": "I1ZlcKXB", "currencyNamespace": "XcPAsjW7", "customParameters": {"zBxpVc8s": {}}, "description": "vjiFtRe8", "extOrderNo": "k7amplfh", "extUserId": "uHropVxI", "itemType": "SUBSCRIPTION", "language": "JSy-TApP-vX", "metadata": {"gHJLBm3b": "gRvSUyOg"}, "notifyUrl": "yu9dhxao", "omitNotification": false, "price": 90, "recurringPaymentOrderNo": "jMYGTMXy", "region": "4ypcIN4u", "returnUrl": "UIzvUI5b", "sandbox": true, "sku": "xS2yBTD8", "subscriptionId": "uNeauLeX", "title": "NgQBnXZk"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CreateUserPaymentOrder \
     --namespace $TEST_NAMESPACE \
-    --userId 'dhxaofTj' \
+    --userId 'Q06LUEgy' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'CreateUserPaymentOrder'
@@ -2610,13 +2610,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 188 RefundUserPaymentOrder
 # body param: body
-echo '{"description": "MYGTMXy4"}' > $TEMP_JSON_INPUT
+echo '{"description": "yiBeJARF"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op RefundUserPaymentOrder \
     --namespace $TEST_NAMESPACE \
-    --paymentOrderNo 'ypcIN4uU' \
-    --userId 'IzvUI5b1' \
+    --paymentOrderNo 'VbUvLNtD' \
+    --userId 'dAntKI6v' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'RefundUserPaymentOrder'
@@ -2626,12 +2626,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 189 ApplyUserRedemption
 # body param: body
-echo '{"code": "wxS2yBTD", "orderNo": "8uNeauLe"}' > $TEMP_JSON_INPUT
+echo '{"code": "d3QdSHH2", "orderNo": "AvosR9Nk"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op ApplyUserRedemption \
     --namespace $TEST_NAMESPACE \
-    --userId 'XNgQBnXZ' \
+    --userId '0JJYXMRc' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'ApplyUserRedemption'
@@ -2644,14 +2644,14 @@ $CLI_EXE \
     --sn platform \
     --op QueryUserSubscriptions \
     --namespace $TEST_NAMESPACE \
-    --userId 'kQ06LUEg' \
-    --chargeStatus 'RECURRING_CHARGING' \
-    --itemId 'yiBeJARF' \
-    --limit '94' \
-    --offset '3' \
-    --sku 'UvLNtDdA' \
+    --userId 'Qg1LwgzW' \
+    --chargeStatus 'NEVER' \
+    --itemId '5q2i8ntD' \
+    --limit '7' \
+    --offset '63' \
+    --sku 'SOEIqFse' \
     --status 'CANCELLED' \
-    --subscribedBy 'USER' \
+    --subscribedBy 'PLATFORM' \
     >$TEMP_FILE 2>&1
 update_status $? 'QueryUserSubscriptions'
 delete_file $TEMP_FILE
@@ -2663,11 +2663,11 @@ $CLI_EXE \
     --sn platform \
     --op GetUserSubscriptionActivities \
     --namespace $TEST_NAMESPACE \
-    --userId 'KI6vd3Qd' \
+    --userId 'rqjWTbUa' \
     --excludeSystem 'True' \
-    --limit '42' \
-    --offset '29' \
-    --subscriptionId 'sR9Nk0JJ' \
+    --limit '68' \
+    --offset '82' \
+    --subscriptionId '8oO0z1Vf' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserSubscriptionActivities'
 delete_file $TEMP_FILE
@@ -2676,12 +2676,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 192 PlatformSubscribeSubscription
 # body param: body
-echo '{"grantDays": 100, "itemId": "XMRcQg1L", "language": "wgzWRu5q", "reason": "2i8ntDdF", "region": "SOEIqFse", "source": "4ocrqjWT"}' > $TEMP_JSON_INPUT
+echo '{"grantDays": 11, "itemId": "DHyFM7T2", "language": "H6g4jbxD", "reason": "DxngEqsA", "region": "bWEfTc2n", "source": "SU2SijyS"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PlatformSubscribeSubscription \
     --namespace $TEST_NAMESPACE \
-    --userId 'bUayIP8o' \
+    --userId 'pnqX01uD' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PlatformSubscribeSubscription'
@@ -2694,8 +2694,8 @@ $CLI_EXE \
     --sn platform \
     --op CheckUserSubscriptionSubscribableByItemId \
     --namespace $TEST_NAMESPACE \
-    --userId 'O0z1VffD' \
-    --itemId 'HyFM7T2H' \
+    --userId 'kQ1tv3iM' \
+    --itemId 'MW8aqVbw' \
     >$TEMP_FILE 2>&1
 update_status $? 'CheckUserSubscriptionSubscribableByItemId'
 delete_file $TEMP_FILE
@@ -2707,8 +2707,8 @@ $CLI_EXE \
     --sn platform \
     --op GetUserSubscription \
     --namespace $TEST_NAMESPACE \
-    --subscriptionId '6g4jbxDD' \
-    --userId 'xngEqsAb' \
+    --subscriptionId 'ArhGSaFx' \
+    --userId 'yAsPnfbH' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserSubscription'
 delete_file $TEMP_FILE
@@ -2720,8 +2720,8 @@ $CLI_EXE \
     --sn platform \
     --op DeleteUserSubscription \
     --namespace $TEST_NAMESPACE \
-    --subscriptionId 'WEfTc2nS' \
-    --userId 'U2SijySp' \
+    --subscriptionId 'X5TpIV6e' \
+    --userId '7dMKaAr2' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteUserSubscription'
 delete_file $TEMP_FILE
@@ -2730,14 +2730,14 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 196 CancelSubscription
 # body param: body
-echo '{"immediate": false, "reason": "qX01uDkQ"}' > $TEMP_JSON_INPUT
+echo '{"immediate": false, "reason": "tP8qxtNo"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CancelSubscription \
     --namespace $TEST_NAMESPACE \
-    --subscriptionId '1tv3iMMW' \
-    --userId '8aqVbwAr' \
-    --force 'False' \
+    --subscriptionId '76oPRuvx' \
+    --userId 'UGNJvDRu' \
+    --force 'True' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'CancelSubscription'
@@ -2747,13 +2747,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 197 GrantDaysToSubscription
 # body param: body
-echo '{"grantDays": 65, "reason": "SaFxyAsP"}' > $TEMP_JSON_INPUT
+echo '{"grantDays": 51, "reason": "yWeusWdE"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op GrantDaysToSubscription \
     --namespace $TEST_NAMESPACE \
-    --subscriptionId 'nfbHX5Tp' \
-    --userId 'IV6e7dMK' \
+    --subscriptionId 'JnqhXgmV' \
+    --userId 'QHoZNPy0' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'GrantDaysToSubscription'
@@ -2766,11 +2766,11 @@ $CLI_EXE \
     --sn platform \
     --op GetUserSubscriptionBillingHistories \
     --namespace $TEST_NAMESPACE \
-    --subscriptionId 'aAr2VSmt' \
-    --userId 'P8qxtNo7' \
+    --subscriptionId 'Wqu4qtxT' \
+    --userId 'yrvNhypN' \
     --excludeFree 'False' \
-    --limit '83' \
-    --offset '87' \
+    --limit '28' \
+    --offset '34' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserSubscriptionBillingHistories'
 delete_file $TEMP_FILE
@@ -2779,13 +2779,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 199 ProcessUserSubscriptionNotification
 # body param: body
-echo '{"additionalData": {"cardSummary": "uvxUGNJv"}, "authorisedTime": "1985-12-08T00:00:00Z", "chargebackReversedTime": "1981-08-07T00:00:00Z", "chargebackTime": "1983-07-14T00:00:00Z", "chargedTime": "1995-02-04T00:00:00Z", "createdTime": "1981-05-25T00:00:00Z", "currency": {"currencyCode": "WdEJnqhX", "currencySymbol": "gmVQHoZN", "currencyType": "VIRTUAL", "decimals": 96, "namespace": "qu4qtxTy"}, "customParameters": {"rvNhypNL": {}}, "extOrderNo": "porjcAKS", "extTxId": "uvgVjdXM", "extUserId": "n2juyP3W", "issuedAt": "1995-06-11T00:00:00Z", "metadata": {"1OLRUrZ6": "vwIqGnoq"}, "namespace": "XXAZd7bv", "nonceStr": "O6Xg2xx5", "paymentMethod": "vZXC9YsE", "paymentMethodFee": 98, "paymentOrderNo": "Ee9iC3Hp", "paymentProvider": "WXPAY", "paymentProviderFee": 38, "paymentStationUrl": "WE8drEip", "price": 98, "refundedTime": "1996-02-12T00:00:00Z", "salesTax": 28, "sandbox": false, "sku": "CS9nGM6f", "status": "DELETED", "statusReason": "F1o77M1V", "subscriptionId": "VgHHeL0f", "subtotalPrice": 22, "targetNamespace": "EPUxHPhE", "targetUserId": "4YwCRBGA", "tax": 86, "totalPrice": 90, "totalTax": 38, "txEndTime": "1996-03-26T00:00:00Z", "type": "DIjOfYlF", "userId": "5jISj4ww", "vat": 33}' > $TEMP_JSON_INPUT
+echo '{"additionalData": {"cardSummary": "jcAKSuvg"}, "authorisedTime": "1994-03-14T00:00:00Z", "chargebackReversedTime": "1972-11-01T00:00:00Z", "chargebackTime": "1977-03-16T00:00:00Z", "chargedTime": "1981-07-12T00:00:00Z", "createdTime": "1991-06-12T00:00:00Z", "currency": {"currencyCode": "1OLRUrZ6", "currencySymbol": "vwIqGnoq", "currencyType": "VIRTUAL", "decimals": 7, "namespace": "7bvO6Xg2"}, "customParameters": {"xx5vZXC9": {}}, "extOrderNo": "YsEXEe9i", "extTxId": "C3Hp95At", "extUserId": "WE8drEip", "issuedAt": "1995-02-12T00:00:00Z", "metadata": {"ocCS9nGM": "6fYF1o77"}, "namespace": "M1VVgHHe", "nonceStr": "L0flEPUx", "paymentMethod": "HPhE4YwC", "paymentMethodFee": 87, "paymentOrderNo": "BGAR8TtZ", "paymentProvider": "ADYEN", "paymentProviderFee": 58, "paymentStationUrl": "IjOfYlF5", "price": 19, "refundedTime": "1988-12-21T00:00:00Z", "salesTax": 18, "sandbox": true, "sku": "wqLpFnnN", "status": "REQUEST_FOR_INFORMATION", "statusReason": "dTcPOtfk", "subscriptionId": "EyLh6l74", "subtotalPrice": 52, "targetNamespace": "QY5ulxH0", "targetUserId": "lioSoooP", "tax": 15, "totalPrice": 85, "totalTax": 47, "txEndTime": "1976-10-27T00:00:00Z", "type": "Me7ma8Qc", "userId": "9aGN5UJP", "vat": 75}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op ProcessUserSubscriptionNotification \
     --namespace $TEST_NAMESPACE \
-    --subscriptionId 'LpFnnNyd' \
-    --userId 'TcPOtfkE' \
+    --subscriptionId 'chiivOQd' \
+    --userId 'Byk3mWQ9' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'ProcessUserSubscriptionNotification'
@@ -2795,13 +2795,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 200 AcquireUserTicket
 # body param: body
-echo '{"count": 48, "orderNo": "Lh6l74AQ"}' > $TEMP_JSON_INPUT
+echo '{"count": 55, "orderNo": "xbP1VP8r"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op AcquireUserTicket \
-    --boothName 'Y5ulxH0l' \
+    --boothName 'KuVwTTGS' \
     --namespace $TEST_NAMESPACE \
-    --userId 'ioSoooPh' \
+    --userId 'X5rG8ymO' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AcquireUserTicket'
@@ -2813,9 +2813,9 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op CheckWallet \
-    --currencyCode 'Q9xlLMe7' \
+    --currencyCode '7ml7SCwM' \
     --namespace $TEST_NAMESPACE \
-    --userId 'ma8Qc9aG' \
+    --userId '6RZNerJQ' \
     >$TEMP_FILE 2>&1
 update_status $? 'CheckWallet'
 delete_file $TEMP_FILE
@@ -2824,13 +2824,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 202 CreditUserWallet
 # body param: body
-echo '{"amount": 78, "reason": "5UJPLchi", "source": "PROMOTION"}' > $TEMP_JSON_INPUT
+echo '{"amount": 34, "reason": "oYUkvHx2", "source": "PURCHASE"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CreditUserWallet \
-    --currencyCode 'vOQdByk3' \
+    --currencyCode 'AjFF0BBG' \
     --namespace $TEST_NAMESPACE \
-    --userId 'mWQ93Bxb' \
+    --userId 'wZ7XWhdo' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'CreditUserWallet'
@@ -2840,13 +2840,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 203 PayWithUserWallet
 # body param: body
-echo '{"amount": 82}' > $TEMP_JSON_INPUT
+echo '{"amount": 100}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PayWithUserWallet \
-    --currencyCode '1VP8rKuV' \
+    --currencyCode 'x127YYBo' \
     --namespace $TEST_NAMESPACE \
-    --userId 'wTTGSX5r' \
+    --userId 'xSCFsBbZ' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PayWithUserWallet'
@@ -2859,8 +2859,8 @@ $CLI_EXE \
     --sn platform \
     --op GetUserWallet \
     --namespace $TEST_NAMESPACE \
-    --userId 'G8ymO7ml' \
-    --walletId '7SCwM6RZ' \
+    --userId 'L16L2P8e' \
+    --walletId 'NmOi4OPQ' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserWallet'
 delete_file $TEMP_FILE
@@ -2869,13 +2869,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 205 DebitUserWallet
 # body param: body
-echo '{"amount": 79, "reason": "erJQroYU"}' > $TEMP_JSON_INPUT
+echo '{"amount": 60, "reason": "V8XzBcAn"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op DebitUserWallet \
     --namespace $TEST_NAMESPACE \
-    --userId 'kvHx2dAj' \
-    --walletId 'FF0BBGwZ' \
+    --userId 'iVuoW6wP' \
+    --walletId 'QlP1zgkx' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'DebitUserWallet'
@@ -2888,8 +2888,8 @@ $CLI_EXE \
     --sn platform \
     --op DisableUserWallet \
     --namespace $TEST_NAMESPACE \
-    --userId '7XWhdoYx' \
-    --walletId '127YYBox' \
+    --userId 'v25ZHaR8' \
+    --walletId 'vsMhIfog' \
     >$TEMP_FILE 2>&1
 update_status $? 'DisableUserWallet'
 delete_file $TEMP_FILE
@@ -2901,8 +2901,8 @@ $CLI_EXE \
     --sn platform \
     --op EnableUserWallet \
     --namespace $TEST_NAMESPACE \
-    --userId 'SCFsBbZL' \
-    --walletId '16L2P8eN' \
+    --userId 'RB8XeZhA' \
+    --walletId 'M4MAL57r' \
     >$TEMP_FILE 2>&1
 update_status $? 'EnableUserWallet'
 delete_file $TEMP_FILE
@@ -2914,10 +2914,10 @@ $CLI_EXE \
     --sn platform \
     --op ListUserWalletTransactions \
     --namespace $TEST_NAMESPACE \
-    --userId 'mOi4OPQ8' \
-    --walletId 'ZEV8XzBc' \
-    --limit '52' \
-    --offset '26' \
+    --userId 'iU2QbQFR' \
+    --walletId 'CXEWG8Sx' \
+    --limit '38' \
+    --offset '43' \
     >$TEMP_FILE 2>&1
 update_status $? 'ListUserWalletTransactions'
 delete_file $TEMP_FILE
@@ -2929,10 +2929,10 @@ $CLI_EXE \
     --sn platform \
     --op QueryWallets \
     --namespace $TEST_NAMESPACE \
-    --currencyCode 'iVuoW6wP' \
-    --limit '84' \
-    --offset '22' \
-    --userId 'P1zgkxv2' \
+    --currencyCode 'tTkIWbiH' \
+    --limit '91' \
+    --offset '93' \
+    --userId 'DDL4yzTn' \
     >$TEMP_FILE 2>&1
 update_status $? 'QueryWallets'
 delete_file $TEMP_FILE
@@ -2944,7 +2944,7 @@ $CLI_EXE \
     --sn platform \
     --op GetWallet \
     --namespace $TEST_NAMESPACE \
-    --walletId '5ZHaR8vs' \
+    --walletId 'Qv0e99zY' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetWallet'
 delete_file $TEMP_FILE
@@ -2955,9 +2955,9 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op SyncOrders \
-    --nextEvaluatedKey 'MhIfogRB' \
-    --end '8XeZhAM4' \
-    --start 'MAL57riU' \
+    --nextEvaluatedKey 'NkH6PuvE' \
+    --end 'RGP7fmyd' \
+    --start '8aJkJYGK' \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncOrders'
 delete_file $TEMP_FILE
@@ -2966,11 +2966,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 212 TestAdyenConfig
 # body param: body
-echo '{"allowedPaymentMethods": ["2QbQFRCX"], "apiKey": "EWG8Sxt5", "authoriseAsCapture": true, "blockedPaymentMethods": ["tTkIWbiH"], "liveEndpointUrlPrefix": "TUDDL4yz", "merchantAccount": "TnQv0e99", "notificationHmacKey": "zYNkH6Pu", "notificationPassword": "vERGP7fm", "notificationUsername": "yd8aJkJY", "returnUrl": "GKf4wBCs", "settings": "CLrfH6V3"}' > $TEMP_JSON_INPUT
+echo '{"allowedPaymentMethods": ["f4wBCsCL"], "apiKey": "rfH6V3fT", "authoriseAsCapture": false, "blockedPaymentMethods": ["r0UZS96w"], "clientKey": "D9rgdYvy", "dropInSettings": "fGQvBMJG", "liveEndpointUrlPrefix": "a0RWFilS", "merchantAccount": "DbJxY0YR", "notificationHmacKey": "9wXVRz5a", "notificationPassword": "yquoA8CG", "notificationUsername": "DmAN0yX8", "returnUrl": "xu01b0bU", "settings": "qDheu9id"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op TestAdyenConfig \
-    --sandbox 'False' \
+    --sandbox 'True' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'TestAdyenConfig'
@@ -2980,11 +2980,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 213 TestAliPayConfig
 # body param: body
-echo '{"appId": "TRar0UZS", "privateKey": "96wD9rgd", "publicKey": "YvyfGQvB", "returnUrl": "MJGa0RWF"}' > $TEMP_JSON_INPUT
+echo '{"appId": "Q8V1CaeT", "privateKey": "74VP6Kqp", "publicKey": "Z2JC53CG", "returnUrl": "QXzjGEvv"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op TestAliPayConfig \
-    --sandbox 'False' \
+    --sandbox 'True' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'TestAliPayConfig'
@@ -2994,11 +2994,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 214 TestCheckoutConfig
 # body param: body
-echo '{"publicKey": "lSDbJxY0", "secretKey": "YR9wXVRz"}' > $TEMP_JSON_INPUT
+echo '{"publicKey": "9VR6Qqao", "secretKey": "AupKSo0R"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op TestCheckoutConfig \
-    --sandbox 'False' \
+    --sandbox 'True' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'TestCheckoutConfig'
@@ -3010,8 +3010,8 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op DebugMatchedPaymentMerchantConfig \
-    --namespace_ 'yquoA8CG' \
-    --region 'DmAN0yX8' \
+    --namespace_ 'XML3VcaD' \
+    --region 'WEzPCi2t' \
     >$TEMP_FILE 2>&1
 update_status $? 'DebugMatchedPaymentMerchantConfig'
 delete_file $TEMP_FILE
@@ -3020,7 +3020,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 216 TestPayPalConfig
 # body param: body
-echo '{"clientID": "xu01b0bU", "clientSecret": "qDheu9id", "returnUrl": "RvQ8V1Ca", "webHookId": "eT74VP6K"}' > $TEMP_JSON_INPUT
+echo '{"clientID": "WPzhrjLF", "clientSecret": "LLuGlXIn", "returnUrl": "Vkn9ojnp", "webHookId": "piU7rYU0"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op TestPayPalConfig \
@@ -3034,7 +3034,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 217 TestStripeConfig
 # body param: body
-echo '{"allowedPaymentMethodTypes": ["pZ2JC53C"], "publishableKey": "GQXzjGEv", "secretKey": "vr9VR6Qq", "webhookSecret": "aoAupKSo"}' > $TEMP_JSON_INPUT
+echo '{"allowedPaymentMethodTypes": ["1JzPmaRk"], "publishableKey": "eYX8U71w", "secretKey": "09mTap7y", "webhookSecret": "90X88qbd"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op TestStripeConfig \
@@ -3048,7 +3048,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 218 TestWxPayConfig
 # body param: body
-echo '{"appId": "XML3VcaD", "key": "WEzPCi2t", "mchid": "WPzhrjLF", "returnUrl": "LLuGlXIn"}' > $TEMP_JSON_INPUT
+echo '{"appId": "RMUmqoGB", "key": "qBaxLbpD", "mchid": "ekuIzTOD", "returnUrl": "QZkNg9Xs"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op TestWxPayConfig \
@@ -3061,7 +3061,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 219 TestXsollaConfig
 # body param: body
-echo '{"apiKey": "Vkn9ojnp", "flowCompletionUrl": "piU7rYU0", "merchantId": 61, "projectId": 71, "projectSecretKey": "zPmaRkeY"}' > $TEMP_JSON_INPUT
+echo '{"apiKey": "cMV2DnOo", "flowCompletionUrl": "9PaoBSJJ", "merchantId": 64, "projectId": 12, "projectSecretKey": "g8epTUeh"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op TestXsollaConfig \
@@ -3076,7 +3076,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op GetPaymentMerchantConfig \
-    --id 'X8U71w09' \
+    --id 'n6IzqXst' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetPaymentMerchantConfig'
 delete_file $TEMP_FILE
@@ -3085,11 +3085,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 221 UpdateAdyenConfig
 # body param: body
-echo '{"allowedPaymentMethods": ["mTap7y90"], "apiKey": "X88qbd2v", "authoriseAsCapture": false, "blockedPaymentMethods": ["qoGBqBax"], "liveEndpointUrlPrefix": "LbpDekuI", "merchantAccount": "zTODQZkN", "notificationHmacKey": "g9XscMV2", "notificationPassword": "DnOo9Pao", "notificationUsername": "BSJJGgg8", "returnUrl": "epTUehn6", "settings": "IzqXsteu"}' > $TEMP_JSON_INPUT
+echo '{"allowedPaymentMethods": ["eu4pU694"], "apiKey": "ex0bxtkv", "authoriseAsCapture": true, "blockedPaymentMethods": ["bCB52HlT"], "clientKey": "eFVmpXnr", "dropInSettings": "WDCij8S7", "liveEndpointUrlPrefix": "3sQDNy12", "merchantAccount": "G1PiTJwx", "notificationHmacKey": "V0rwMM7H", "notificationPassword": "sMJnUBZ6", "notificationUsername": "Gyhfcrdd", "returnUrl": "eIOhxQMI", "settings": "mB13f1ob"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateAdyenConfig \
-    --id '4pU694ex' \
+    --id 'TKrwFXC2' \
     --sandbox 'False' \
     --validate 'True' \
     --reqfile $TEMP_JSON_INPUT \
@@ -3103,7 +3103,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op TestAdyenConfigById \
-    --id 'tkvXIrbC' \
+    --id 'XEIOAJh6' \
     --sandbox 'True' \
     >$TEMP_FILE 2>&1
 update_status $? 'TestAdyenConfigById'
@@ -3113,13 +3113,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 223 UpdateAliPayConfig
 # body param: body
-echo '{"appId": "52HlTeFV", "privateKey": "mpXnrWDC", "publicKey": "ij8S73sQ", "returnUrl": "DNy12G1P"}' > $TEMP_JSON_INPUT
+echo '{"appId": "HWdmibqD", "privateKey": "eNic565h", "publicKey": "vy1VY236", "returnUrl": "5rUHkxww"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateAliPayConfig \
-    --id 'iTJwxV0r' \
-    --sandbox 'True' \
-    --validate 'True' \
+    --id 'pNwFJyOB' \
+    --sandbox 'False' \
+    --validate 'False' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateAliPayConfig'
@@ -3131,7 +3131,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op TestAliPayConfigById \
-    --id 'MJnUBZ6G' \
+    --id 'glT04uRm' \
     --sandbox 'True' \
     >$TEMP_FILE 2>&1
 update_status $? 'TestAliPayConfigById'
@@ -3141,13 +3141,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 225 UpdateCheckoutConfig
 # body param: body
-echo '{"publicKey": "hfcrddeI", "secretKey": "OhxQMImB"}' > $TEMP_JSON_INPUT
+echo '{"publicKey": "eOhTeibS", "secretKey": "q4H7xDe1"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateCheckoutConfig \
-    --id '13f1obTK' \
-    --sandbox 'True' \
-    --validate 'True' \
+    --id 'jh7clQul' \
+    --sandbox 'False' \
+    --validate 'False' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateCheckoutConfig'
@@ -3159,7 +3159,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op TestCheckoutConfigById \
-    --id 'FXC2Op2y' \
+    --id 'FzOE2zPD' \
     --sandbox 'True' \
     >$TEMP_FILE 2>&1
 update_status $? 'TestCheckoutConfigById'
@@ -3169,13 +3169,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 227 UpdatePayPalConfig
 # body param: body
-echo '{"clientID": "IOAJh6XN", "clientSecret": "WtHWdmib", "returnUrl": "qDeNic56", "webHookId": "5hvy1VY2"}' > $TEMP_JSON_INPUT
+echo '{"clientID": "GsklKEj2", "clientSecret": "cImuLS8r", "returnUrl": "rBfOaAEN", "webHookId": "FCnYbIQI"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdatePayPalConfig \
-    --id '365rUHkx' \
+    --id 'DkTf41ag' \
     --sandbox 'True' \
-    --validate 'True' \
+    --validate 'False' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdatePayPalConfig'
@@ -3187,8 +3187,8 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op TestPayPalConfigById \
-    --id 'pNwFJyOB' \
-    --sandbox 'False' \
+    --id 'WPut7xra' \
+    --sandbox 'True' \
     >$TEMP_FILE 2>&1
 update_status $? 'TestPayPalConfigById'
 delete_file $TEMP_FILE
@@ -3197,13 +3197,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 229 UpdateStripeConfig
 # body param: body
-echo '{"allowedPaymentMethodTypes": ["lglT04uR"], "publishableKey": "mAeOhTei", "secretKey": "bSq4H7xD", "webhookSecret": "e1jh7clQ"}' > $TEMP_JSON_INPUT
+echo '{"allowedPaymentMethodTypes": ["aeaiep5a"], "publishableKey": "TdbjoDWO", "secretKey": "L2gmjDt1", "webhookSecret": "rOz0DT1A"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateStripeConfig \
-    --id 'ulgjFzOE' \
-    --sandbox 'True' \
-    --validate 'True' \
+    --id 'xwhim0K9' \
+    --sandbox 'False' \
+    --validate 'False' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateStripeConfig'
@@ -3215,8 +3215,8 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op TestStripeConfigById \
-    --id 'GQYK5uGs' \
-    --sandbox 'False' \
+    --id 'mBcUU86i' \
+    --sandbox 'True' \
     >$TEMP_FILE 2>&1
 update_status $? 'TestStripeConfigById'
 delete_file $TEMP_FILE
@@ -3225,11 +3225,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 231 UpdateWxPayConfig
 # body param: body
-echo '{"appId": "lKEj2cIm", "key": "uLS8rrBf", "mchid": "OaAENFCn", "returnUrl": "YbIQIDkT"}' > $TEMP_JSON_INPUT
+echo '{"appId": "JulX4aR8", "key": "w6Q4PkLk", "mchid": "wcg4w7vo", "returnUrl": "onsTuM2o"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateWxPayConfig \
-    --id 'f41ag7CX' \
+    --id 'BECnfwi6' \
     --validate 'False' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -3244,7 +3244,7 @@ echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op UpdateWxPayConfigCert \
-    --id 'WPut7xra' \
+    --id 'gqpB4WwK' \
     --upload $TEMP_FILE_UPLOAD \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateWxPayConfigCert'
@@ -3256,7 +3256,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op TestWxPayConfigById \
-    --id 'Yvaeaiep' \
+    --id 'tAnQQIfN' \
     >$TEMP_FILE 2>&1
 update_status $? 'TestWxPayConfigById'
 delete_file $TEMP_FILE
@@ -3265,12 +3265,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 234 UpdateXsollaConfig
 # body param: body
-echo '{"apiKey": "5aTdbjoD", "flowCompletionUrl": "WOL2gmjD", "merchantId": 38, "projectId": 35, "projectSecretKey": "Oz0DT1Ax"}' > $TEMP_JSON_INPUT
+echo '{"apiKey": "q8tkbUlx", "flowCompletionUrl": "AfBvJ3tw", "merchantId": 73, "projectId": 92, "projectSecretKey": "1E8SglSH"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateXsollaConfig \
-    --id 'whim0K97' \
-    --validate 'False' \
+    --id 'PDOBkao6' \
+    --validate 'True' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateXsollaConfig'
@@ -3282,7 +3282,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op TestXsollaConfigById \
-    --id 'RomBcUU8' \
+    --id '7WrSKfNZ' \
     >$TEMP_FILE 2>&1
 update_status $? 'TestXsollaConfigById'
 delete_file $TEMP_FILE
@@ -3291,11 +3291,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 236 UpdateXsollaUIConfig
 # body param: body
-echo '{"device": "DESKTOP", "showCloseButton": true, "size": "LARGE", "theme": "DARK"}' > $TEMP_JSON_INPUT
+echo '{"device": "DESKTOP", "showCloseButton": false, "size": "MEDIUM", "theme": "DEFAULT"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateXsollaUIConfig \
-    --id 'lX4aR8w6' \
+    --id '3vs48k8G' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateXsollaUIConfig'
@@ -3307,10 +3307,10 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op QueryPaymentProviderConfig \
-    --limit '85' \
-    --namespace_ '4PkLkwcg' \
-    --offset '44' \
-    --region '7voonsTu' \
+    --limit '24' \
+    --namespace_ 'WbZOgcnb' \
+    --offset '20' \
+    --region 'NsJBKfFA' \
     >$TEMP_FILE 2>&1
 update_status $? 'QueryPaymentProviderConfig'
 delete_file $TEMP_FILE
@@ -3319,7 +3319,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 238 CreatePaymentProviderConfig
 # body param: body
-echo '{"aggregate": "XSOLLA", "namespace": "BECnfwi6", "region": "1igqpB4W", "sandboxTaxJarApiToken": "wKtAnQQI", "specials": ["XSOLLA"], "taxJarApiToken": "Nq8tkbUl", "taxJarEnabled": true, "useGlobalTaxJarApiToken": true}' > $TEMP_JSON_INPUT
+echo '{"aggregate": "ADYEN", "namespace": "2oC4m8qm", "region": "GI4g3x7V", "sandboxTaxJarApiToken": "kgLXzEcg", "specials": ["STRIPE"], "taxJarApiToken": "clUWy7ZJ", "taxJarEnabled": true, "useGlobalTaxJarApiToken": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CreatePaymentProviderConfig \
@@ -3344,8 +3344,8 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op DebugMatchedPaymentProviderConfig \
-    --namespace_ 'fBvJ3twK' \
-    --region 'U1E8SglS' \
+    --namespace_ 'W2qMkZ2m' \
+    --region '9trvZisC' \
     >$TEMP_FILE 2>&1
 update_status $? 'DebugMatchedPaymentProviderConfig'
 delete_file $TEMP_FILE
@@ -3364,11 +3364,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 242 UpdatePaymentProviderConfig
 # body param: body
-echo '{"aggregate": "ADYEN", "namespace": "OBkao6x7", "region": "WrSKfNZd", "sandboxTaxJarApiToken": "IGHiCd3v", "specials": ["CHECKOUT"], "taxJarApiToken": "48k8GmWb", "taxJarEnabled": false, "useGlobalTaxJarApiToken": false}' > $TEMP_JSON_INPUT
+echo '{"aggregate": "ADYEN", "namespace": "lZ6nzcA0", "region": "5v44SCrW", "sandboxTaxJarApiToken": "kKPTz20C", "specials": ["ALIPAY"], "taxJarApiToken": "ON0qlw6d", "taxJarEnabled": true, "useGlobalTaxJarApiToken": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdatePaymentProviderConfig \
-    --id 'nbkNsJBK' \
+    --id 'v7zSESiU' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdatePaymentProviderConfig'
@@ -3380,7 +3380,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op DeletePaymentProviderConfig \
-    --id 'fFAZF2oC' \
+    --id 'AVN1CwX4' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeletePaymentProviderConfig'
 delete_file $TEMP_FILE
@@ -3399,7 +3399,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 245 UpdatePaymentTaxConfig
 # body param: body
-echo '{"sandboxTaxJarApiToken": "4m8qmGI4", "taxJarApiToken": "g3x7VkgL", "taxJarEnabled": true, "taxJarProductCodesMapping": {"EcgKnclU": "Wy7ZJN4A"}}' > $TEMP_JSON_INPUT
+echo '{"sandboxTaxJarApiToken": "ZMRG0Gf1", "taxJarApiToken": "rfLs27GU", "taxJarEnabled": false, "taxJarProductCodesMapping": {"4LXB9YV8": "FW73Yegp"}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdatePaymentTaxConfig \
@@ -3414,9 +3414,9 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op SyncPaymentOrders \
-    --nextEvaluatedKey 'VWNaW2qM' \
-    --end 'kZ2m9trv' \
-    --start 'ZisCVMql' \
+    --nextEvaluatedKey 'NcJMlA9w' \
+    --end 'UgUsQ5nj' \
+    --start 'C8VO4sgo' \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncPaymentOrders'
 delete_file $TEMP_FILE
@@ -3428,8 +3428,8 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetRootCategories \
     --namespace $TEST_NAMESPACE \
-    --language 'Z6nzcA05' \
-    --storeId 'v44SCrWk' \
+    --language 'RFcoG9Ev' \
+    --storeId 'gBLbT6LI' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetRootCategories'
 delete_file $TEMP_FILE
@@ -3441,8 +3441,8 @@ $CLI_EXE \
     --sn platform \
     --op DownloadCategories \
     --namespace $TEST_NAMESPACE \
-    --language 'KPTz20CU' \
-    --storeId 'uON0qlw6' \
+    --language 'znmery1q' \
+    --storeId '7Ru0EPX2' \
     >$TEMP_FILE 2>&1
 update_status $? 'DownloadCategories'
 delete_file $TEMP_FILE
@@ -3453,10 +3453,10 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op PublicGetCategory \
-    --categoryPath 'dAFv7zSE' \
+    --categoryPath 't5Kl8G5S' \
     --namespace $TEST_NAMESPACE \
-    --language 'SiUAVN1C' \
-    --storeId 'wX4ZMRG0' \
+    --language 'm4GZYuYJ' \
+    --storeId '1bv2f6vr' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetCategory'
 delete_file $TEMP_FILE
@@ -3467,10 +3467,10 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op PublicGetChildCategories \
-    --categoryPath 'Gf1rfLs2' \
+    --categoryPath 'f7yzKmiS' \
     --namespace $TEST_NAMESPACE \
-    --language '7GUn4LXB' \
-    --storeId '9YV8FW73' \
+    --language 'oLdcKYGi' \
+    --storeId 'j2Fob7nz' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetChildCategories'
 delete_file $TEMP_FILE
@@ -3481,10 +3481,10 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op PublicGetDescendantCategories \
-    --categoryPath 'YegpNcJM' \
+    --categoryPath '3cBYTpN9' \
     --namespace $TEST_NAMESPACE \
-    --language 'lA9wUgUs' \
-    --storeId 'Q5njC8VO' \
+    --language 'BOiieVeC' \
+    --storeId 'IJp60mv8' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetDescendantCategories'
 delete_file $TEMP_FILE
@@ -3507,10 +3507,10 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetItemByAppId \
     --namespace $TEST_NAMESPACE \
-    --language '4sgoRFco' \
-    --region 'G9EvgBLb' \
-    --storeId 'T6LIznme' \
-    --appId 'ry1q7Ru0' \
+    --language '8QYWnFYR' \
+    --region 'XnDSOYxR' \
+    --storeId '9xEcI7kt' \
+    --appId 'ZgyQ1Pcq' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetItemByAppId'
 delete_file $TEMP_FILE
@@ -3522,18 +3522,18 @@ $CLI_EXE \
     --sn platform \
     --op PublicQueryItems \
     --namespace $TEST_NAMESPACE \
-    --appType 'SOFTWARE' \
-    --baseAppId 'PX2t5Kl8' \
-    --categoryPath 'G5Sm4GZY' \
-    --features 'uYJ1bv2f' \
-    --itemType 'MEDIA' \
-    --language 'rf7yzKmi' \
-    --limit '88' \
-    --offset '29' \
-    --region 'LdcKYGij' \
-    --sortBy '2Fob7nz3' \
-    --storeId 'cBYTpN9B' \
-    --tags 'OiieVeCI' \
+    --appType 'DEMO' \
+    --baseAppId 'ZnaDTm4W' \
+    --categoryPath 'wM8q1mZu' \
+    --features '6XW6by2j' \
+    --itemType 'CODE' \
+    --language 'Xr2YyM5h' \
+    --limit '28' \
+    --offset '26' \
+    --region 'PrfkWpDz' \
+    --sortBy '1gbwdSWE' \
+    --storeId 'GD0k52Xl' \
+    --tags 'do1D8HlE' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicQueryItems'
 delete_file $TEMP_FILE
@@ -3545,10 +3545,10 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetItemBySku \
     --namespace $TEST_NAMESPACE \
-    --language 'Jp60mv88' \
-    --region 'QYWnFYRX' \
-    --storeId 'nDSOYxR9' \
-    --sku 'xEcI7ktZ' \
+    --language 'uQQfYbi9' \
+    --region 'H9dFCgRp' \
+    --storeId '7uEwOPWr' \
+    --sku 'KnASgjfb' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetItemBySku'
 delete_file $TEMP_FILE
@@ -3560,10 +3560,10 @@ $CLI_EXE \
     --sn platform \
     --op PublicBulkGetItems \
     --namespace $TEST_NAMESPACE \
-    --language 'gyQ1Pcqg' \
-    --region 'ZnaDTm4W' \
-    --storeId 'wM8q1mZu' \
-    --itemIds '6XW6by2j' \
+    --language 'B7kWEU28' \
+    --region 'xX2fI68k' \
+    --storeId 'SyNp7CBC' \
+    --itemIds 'tgT4nlpO' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicBulkGetItems'
 delete_file $TEMP_FILE
@@ -3575,12 +3575,12 @@ $CLI_EXE \
     --sn platform \
     --op PublicSearchItems \
     --namespace $TEST_NAMESPACE \
-    --limit '93' \
-    --offset '19' \
-    --region 'Xr2YyM5h' \
-    --storeId 'o1nPrfkW' \
-    --keyword 'pDz1gbwd' \
-    --language 'SWEGD0k5' \
+    --limit '1' \
+    --offset '61' \
+    --region '9RqY1zhD' \
+    --storeId '25toALOu' \
+    --keyword 'g3D6sySW' \
+    --language 'jGkmDxeI' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicSearchItems'
 delete_file $TEMP_FILE
@@ -3591,11 +3591,11 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op PublicGetApp \
-    --itemId '2Xldo1D8' \
+    --itemId 'vWSM0L1e' \
     --namespace $TEST_NAMESPACE \
-    --language 'HlEuQQfY' \
-    --region 'bi9H9dFC' \
-    --storeId 'gRp7uEwO' \
+    --language 'tOsAoob5' \
+    --region 'LsBHH7TR' \
+    --storeId 'U7DSv4Bl' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetApp'
 delete_file $TEMP_FILE
@@ -3606,7 +3606,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op PublicGetItemDynamicData \
-    --itemId 'PWrKnASg' \
+    --itemId '1JLViUnC' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetItemDynamicData'
@@ -3618,12 +3618,12 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op PublicGetItem \
-    --itemId 'jfbB7kWE' \
+    --itemId 'f9br0Awr' \
     --namespace $TEST_NAMESPACE \
-    --language 'U28xX2fI' \
+    --language 'YymvbyVt' \
     --populateBundle 'False' \
-    --region 'SyNp7CBC' \
-    --storeId 'tgT4nlpO' \
+    --region 'yXglS0dt' \
+    --storeId 'EcGJ3Vfs' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetItem'
 delete_file $TEMP_FILE
@@ -3631,22 +3631,11 @@ rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
 #- 261 GetPaymentCustomization
-$CLI_EXE \
-    --sn platform \
-    --op GetPaymentCustomization \
-    --namespace $TEST_NAMESPACE \
-    --sandbox 'False' \
-    --paymentProvider 'XSOLLA' \
-    --region '9RqY1zhD' \
-    >$TEMP_FILE 2>&1
-update_status $? 'GetPaymentCustomization'
-delete_file $TEMP_FILE
-rm -f $TEMP_JSON_INPUT
-rm -f $TEMP_FILE_UPLOAD
+update_status 0 'GetPaymentCustomization (skipped deprecated)'
 
 #- 262 PublicGetPaymentUrl
 # body param: body
-echo '{"paymentOrderNo": "25toALOu", "paymentProvider": "XSOLLA", "returnUrl": "3D6sySWj", "ui": "GkmDxeIv", "zipCode": "WSM0L1et"}' > $TEMP_JSON_INPUT
+echo '{"paymentOrderNo": "szE68nyi", "paymentProvider": "WXPAY", "returnUrl": "CylIgcjA", "ui": "QgJS7ut6", "zipCode": "fWj0bjzR"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicGetPaymentUrl \
@@ -3663,7 +3652,7 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetPaymentMethods \
     --namespace $TEST_NAMESPACE \
-    --paymentOrderNo 'OsAoob5L' \
+    --paymentOrderNo '1qk50WTJ' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetPaymentMethods'
 delete_file $TEMP_FILE
@@ -3675,7 +3664,7 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetUnpaidPaymentOrder \
     --namespace $TEST_NAMESPACE \
-    --paymentOrderNo 'sBHH7TRU' \
+    --paymentOrderNo 'SWMGCWOq' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUnpaidPaymentOrder'
 delete_file $TEMP_FILE
@@ -3684,14 +3673,14 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 265 Pay
 # body param: body
-echo '{"token": "7DSv4Bl1"}' > $TEMP_JSON_INPUT
+echo '{"token": "gPcQEu7X"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op Pay \
     --namespace $TEST_NAMESPACE \
-    --paymentOrderNo 'JLViUnCf' \
-    --paymentProvider 'ADYEN' \
-    --zipCode 'r0AwrYym' \
+    --paymentOrderNo 'P4K3h5qA' \
+    --paymentProvider 'WALLET' \
+    --zipCode 'xWIwznTW' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'Pay'
@@ -3704,7 +3693,7 @@ $CLI_EXE \
     --sn platform \
     --op PublicCheckPaymentOrderPaidStatus \
     --namespace $TEST_NAMESPACE \
-    --paymentOrderNo 'vbyVtbyX' \
+    --paymentOrderNo 'hLbxZXBh' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicCheckPaymentOrderPaidStatus'
 delete_file $TEMP_FILE
@@ -3717,8 +3706,8 @@ $CLI_EXE \
     --op GetPaymentPublicConfig \
     --namespace $TEST_NAMESPACE \
     --sandbox 'False' \
-    --paymentProvider 'CHECKOUT' \
-    --region 'S0dtEcGJ' \
+    --paymentProvider 'ADYEN' \
+    --region 'BiiMbLGc' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetPaymentPublicConfig'
 delete_file $TEMP_FILE
@@ -3730,7 +3719,7 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetQRCode \
     --namespace $TEST_NAMESPACE \
-    --code '3VfsszE6' \
+    --code 'BOF8Unez' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetQRCode'
 delete_file $TEMP_FILE
@@ -3742,19 +3731,21 @@ $CLI_EXE \
     --sn platform \
     --op PublicNormalizePaymentReturnUrl \
     --namespace $TEST_NAMESPACE \
-    --payerID '8nyiKBCy' \
-    --foreinginvoice 'lIgcjAQg' \
-    --invoiceId 'JS7ut6fW' \
-    --payload 'j0bjzR1q' \
-    --resultCode 'k50WTJSW' \
-    --status 'MGCWOqgP' \
-    --token 'cQEu7XP4' \
-    --type 'K3h5qA8v' \
-    --userId 'xWIwznTW' \
-    --orderNo 'hLbxZXBh' \
-    --paymentOrderNo 'edBiiMbL' \
-    --paymentProvider 'ADYEN' \
-    --returnUrl 'BOF8Unez' \
+    --payerID 'JG2VBYcf' \
+    --foreinginvoice '39AKgvjN' \
+    --invoiceId 'NHD855hj' \
+    --payload 'pm3ss60u' \
+    --redirectResult 'ZFamFRGi' \
+    --resultCode 'cFWBzTUo' \
+    --sessionId 'htqJUSbF' \
+    --status 'zSBVZmKw' \
+    --token 'eECuD3sZ' \
+    --type 'MCE8dESg' \
+    --userId 'loJK7nM6' \
+    --orderNo 'Je8rVsrM' \
+    --paymentOrderNo 'iXvUICpX' \
+    --paymentProvider 'WXPAY' \
+    --returnUrl 'osGv2E5U' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicNormalizePaymentReturnUrl'
 delete_file $TEMP_FILE
@@ -3766,9 +3757,9 @@ $CLI_EXE \
     --sn platform \
     --op GetPaymentTaxValue \
     --namespace $TEST_NAMESPACE \
-    --zipCode 'JG2VBYcf' \
-    --paymentOrderNo '39AKgvjN' \
-    --paymentProvider 'XSOLLA' \
+    --zipCode 'd8R40Via' \
+    --paymentOrderNo '1HQGyTJx' \
+    --paymentProvider 'ALIPAY' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetPaymentTaxValue'
 delete_file $TEMP_FILE
@@ -3780,7 +3771,7 @@ $CLI_EXE \
     --sn platform \
     --op GetRewardByCode \
     --namespace $TEST_NAMESPACE \
-    --rewardCode '855hjpm3' \
+    --rewardCode 'E61z1d23' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetRewardByCode'
 delete_file $TEMP_FILE
@@ -3792,10 +3783,10 @@ $CLI_EXE \
     --sn platform \
     --op QueryRewards1 \
     --namespace $TEST_NAMESPACE \
-    --eventTopic 'ss60uZFa' \
-    --limit '24' \
-    --offset '62' \
-    --sortBy 'RGicFWBz' \
+    --eventTopic 'WGf1zfjn' \
+    --limit '81' \
+    --offset '12' \
+    --sortBy 'bDHxFOx6' \
     >$TEMP_FILE 2>&1
 update_status $? 'QueryRewards1'
 delete_file $TEMP_FILE
@@ -3807,7 +3798,7 @@ $CLI_EXE \
     --sn platform \
     --op GetReward1 \
     --namespace $TEST_NAMESPACE \
-    --rewardId 'TUohtqJU' \
+    --rewardId '8rBOBVv5' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetReward1'
 delete_file $TEMP_FILE
@@ -3830,9 +3821,9 @@ $CLI_EXE \
     --sn platform \
     --op PublicExistsAnyMyActiveEntitlement \
     --namespace $TEST_NAMESPACE \
-    --appIds '["SbFzSBVZ"]' \
-    --itemIds '["mKweECuD"]' \
-    --skus '["3sZMCE8d"]' \
+    --appIds '["za3wZKkk"]' \
+    --itemIds '["BXOpjG8D"]' \
+    --skus '["MYI7aCPV"]' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicExistsAnyMyActiveEntitlement'
 delete_file $TEMP_FILE
@@ -3844,7 +3835,7 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetMyAppEntitlementOwnershipByAppId \
     --namespace $TEST_NAMESPACE \
-    --appId 'ESgloJK7' \
+    --appId 'OXyHlMa4' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetMyAppEntitlementOwnershipByAppId'
 delete_file $TEMP_FILE
@@ -3856,8 +3847,8 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetMyEntitlementOwnershipByItemId \
     --namespace $TEST_NAMESPACE \
-    --entitlementClazz 'CODE' \
-    --itemId 'M6Je8rVs' \
+    --entitlementClazz 'SUBSCRIPTION' \
+    --itemId 'ckktYeg9' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetMyEntitlementOwnershipByItemId'
 delete_file $TEMP_FILE
@@ -3869,8 +3860,8 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetMyEntitlementOwnershipBySku \
     --namespace $TEST_NAMESPACE \
-    --entitlementClazz 'ENTITLEMENT' \
-    --sku 'MiXvUICp' \
+    --entitlementClazz 'APP' \
+    --sku 'TKGckRJx' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetMyEntitlementOwnershipBySku'
 delete_file $TEMP_FILE
@@ -3882,9 +3873,9 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetEntitlementOwnershipToken \
     --namespace $TEST_NAMESPACE \
-    --appIds '["XJUBosGv"]' \
-    --itemIds '["2E5Ud8R4"]' \
-    --skus '["0Via1HQG"]' \
+    --appIds '["WrHhn4YO"]' \
+    --itemIds '["K6MnfeVl"]' \
+    --skus '["dbEnLYWO"]' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetEntitlementOwnershipToken'
 delete_file $TEMP_FILE
@@ -3895,7 +3886,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op PublicGetMyWallet \
-    --currencyCode 'yTJx6eE6' \
+    --currencyCode 'zyOB0kZo' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetMyWallet'
@@ -3905,12 +3896,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 281 PublicSyncPsnDlcInventory
 # body param: body
-echo '{"serviceLabel": 51}' > $TEMP_JSON_INPUT
+echo '{"serviceLabel": 9}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicSyncPsnDlcInventory \
     --namespace $TEST_NAMESPACE \
-    --userId '1d23WGf1' \
+    --userId 'JIWku1PB' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicSyncPsnDlcInventory'
@@ -3920,12 +3911,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 282 SyncSteamDLC
 # body param: body
-echo '{"appId": "zfjnOgbD", "steamId": "HxFOx68r"}' > $TEMP_JSON_INPUT
+echo '{"appId": "eZzonuQz", "steamId": "xLODS8nT"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SyncSteamDLC \
     --namespace $TEST_NAMESPACE \
-    --userId 'BOBVv5za' \
+    --userId 'AouPR62R' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncSteamDLC'
@@ -3935,12 +3926,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 283 SyncXboxDLC
 # body param: body
-echo '{"xstsToken": "3wZKkkBX"}' > $TEMP_JSON_INPUT
+echo '{"xstsToken": "XcekOPk5"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SyncXboxDLC \
     --namespace $TEST_NAMESPACE \
-    --userId 'OpjG8DMY' \
+    --userId '1sYy0IuL' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncXboxDLC'
@@ -3953,13 +3944,13 @@ $CLI_EXE \
     --sn platform \
     --op PublicQueryUserEntitlements \
     --namespace $TEST_NAMESPACE \
-    --userId 'I7aCPVOX' \
+    --userId 'JPPNclQg' \
     --appType 'SOFTWARE' \
     --entitlementClazz 'SUBSCRIPTION' \
-    --entitlementName 'lMa4Gckk' \
-    --itemId '["tYeg98gT"]' \
-    --limit '73' \
-    --offset '65' \
+    --entitlementName 'rjtMtdov' \
+    --itemId '["0qluMZwW"]' \
+    --limit '62' \
+    --offset '84' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicQueryUserEntitlements'
 delete_file $TEMP_FILE
@@ -3971,8 +3962,8 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetUserAppEntitlementByAppId \
     --namespace $TEST_NAMESPACE \
-    --userId 'ckRJxWrH' \
-    --appId 'hn4YOK6M' \
+    --userId 'cBAVMLvA' \
+    --appId 'vzLjQSHw' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserAppEntitlementByAppId'
 delete_file $TEMP_FILE
@@ -3984,10 +3975,10 @@ $CLI_EXE \
     --sn platform \
     --op PublicQueryUserEntitlementsByAppType \
     --namespace $TEST_NAMESPACE \
-    --userId 'nfeVldbE' \
-    --limit '26' \
-    --offset '75' \
-    --appType 'SOFTWARE' \
+    --userId 'PO48On3g' \
+    --limit '57' \
+    --offset '3' \
+    --appType 'DLC' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicQueryUserEntitlementsByAppType'
 delete_file $TEMP_FILE
@@ -3999,9 +3990,9 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetUserEntitlementByItemId \
     --namespace $TEST_NAMESPACE \
-    --userId 'yOB0kZoe' \
-    --entitlementClazz 'SUBSCRIPTION' \
-    --itemId 'IWku1PBe' \
+    --userId 'AwKRyMNC' \
+    --entitlementClazz 'CODE' \
+    --itemId 'YGZ9RvQU' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserEntitlementByItemId'
 delete_file $TEMP_FILE
@@ -4013,9 +4004,9 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetUserEntitlementBySku \
     --namespace $TEST_NAMESPACE \
-    --userId 'ZzonuQzx' \
+    --userId 'XcWQhh5i' \
     --entitlementClazz 'SUBSCRIPTION' \
-    --sku 'ODS8nTAo' \
+    --sku 'hyoneUWb' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserEntitlementBySku'
 delete_file $TEMP_FILE
@@ -4027,10 +4018,10 @@ $CLI_EXE \
     --sn platform \
     --op PublicExistsAnyUserActiveEntitlement \
     --namespace $TEST_NAMESPACE \
-    --userId 'uPR62RXc' \
-    --appIds '["ekOPk51s"]' \
-    --itemIds '["Yy0IuLJP"]' \
-    --skus '["PNclQgSB"]' \
+    --userId 'Dyvutndg' \
+    --appIds '["icjax7ON"]' \
+    --itemIds '["nA3dvJOo"]' \
+    --skus '["cdyisYR5"]' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicExistsAnyUserActiveEntitlement'
 delete_file $TEMP_FILE
@@ -4042,8 +4033,8 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetUserAppEntitlementOwnershipByAppId \
     --namespace $TEST_NAMESPACE \
-    --userId 'JrjtMtdo' \
-    --appId 'v0qluMZw' \
+    --userId 'yhrcsZyv' \
+    --appId 'bLMUUSwl' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserAppEntitlementOwnershipByAppId'
 delete_file $TEMP_FILE
@@ -4055,9 +4046,9 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetUserEntitlementOwnershipByItemId \
     --namespace $TEST_NAMESPACE \
-    --userId 'WFQcBAVM' \
+    --userId '9luLGR0M' \
     --entitlementClazz 'SUBSCRIPTION' \
-    --itemId 'vAvzLjQS' \
+    --itemId 'dWXP7dHv' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserEntitlementOwnershipByItemId'
 delete_file $TEMP_FILE
@@ -4069,9 +4060,9 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetUserEntitlementOwnershipBySku \
     --namespace $TEST_NAMESPACE \
-    --userId 'HwPO48On' \
-    --entitlementClazz 'APP' \
-    --sku 'CbMHOoAw' \
+    --userId 'zRSx4xnE' \
+    --entitlementClazz 'ENTITLEMENT' \
+    --sku 'seCMo1qF' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserEntitlementOwnershipBySku'
 delete_file $TEMP_FILE
@@ -4082,9 +4073,9 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op PublicGetUserEntitlement \
-    --entitlementId 'KRyMNCSp' \
+    --entitlementId 'RoqmJULD' \
     --namespace $TEST_NAMESPACE \
-    --userId 'YGZ9RvQU' \
+    --userId 'delYwV2D' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserEntitlement'
 delete_file $TEMP_FILE
@@ -4093,13 +4084,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 294 PublicConsumeUserEntitlement
 # body param: body
-echo '{"useCount": 98}' > $TEMP_JSON_INPUT
+echo '{"useCount": 87}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicConsumeUserEntitlement \
-    --entitlementId 'cWQhh5iG' \
+    --entitlementId 'ZfSBnT2V' \
     --namespace $TEST_NAMESPACE \
-    --userId 'hyoneUWb' \
+    --userId 'lyq5VWu4' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicConsumeUserEntitlement'
@@ -4109,12 +4100,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 295 PublicRedeemCode
 # body param: body
-echo '{"code": "Dyvutndg", "language": "icjax7ON", "region": "nA3dvJOo"}' > $TEMP_JSON_INPUT
+echo '{"code": "pLxrqfJr", "language": "nc_sN", "region": "JZPieAS6"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicRedeemCode \
     --namespace $TEST_NAMESPACE \
-    --userId 'cdyisYR5' \
+    --userId 'Ozt9Y76C' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicRedeemCode'
@@ -4124,12 +4115,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 296 PublicFulfillAppleIAPItem
 # body param: body
-echo '{"excludeOldTransactions": true, "language": "hrcsZyvb", "productId": "LMUUSwl9", "receiptData": "luLGR0MZ", "region": "KdWXP7dH", "transactionId": "vzRSx4xn"}' > $TEMP_JSON_INPUT
+echo '{"excludeOldTransactions": false, "language": "Xn-XHCE_UE", "productId": "WqEFljov", "receiptData": "jiFds9U3", "region": "Q4FL9FKh", "transactionId": "fTM3X1GH"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicFulfillAppleIAPItem \
     --namespace $TEST_NAMESPACE \
-    --userId 'EwseCMo1' \
+    --userId 'B92JFCpi' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicFulfillAppleIAPItem'
@@ -4139,12 +4130,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 297 SyncEpicGamesInventory
 # body param: body
-echo '{"epicGamesJwtToken": "qFRoqmJU"}' > $TEMP_JSON_INPUT
+echo '{"epicGamesJwtToken": "6PSpyvcT"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SyncEpicGamesInventory \
     --namespace $TEST_NAMESPACE \
-    --userId 'LDdelYwV' \
+    --userId 'nMqT7mEL' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncEpicGamesInventory'
@@ -4154,12 +4145,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 298 PublicFulfillGoogleIAPItem
 # body param: body
-echo '{"autoAck": true, "language": "RZfSBnT2", "orderId": "Vlyq5VWu", "packageName": "4pLxrqfJ", "productId": "r2pN0CiQ", "purchaseTime": 90, "purchaseToken": "yPiYIIig", "region": "SnJZPieA"}' > $TEMP_JSON_INPUT
+echo '{"autoAck": true, "language": "af", "orderId": "jIfXCWza", "packageName": "tjGv4UVj", "productId": "072ERIdI", "purchaseTime": 19, "purchaseToken": "nEdKEgYr", "region": "C08a2gef"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicFulfillGoogleIAPItem \
     --namespace $TEST_NAMESPACE \
-    --userId 'S6Ozt9Y7' \
+    --userId 'HyULfaLd' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicFulfillGoogleIAPItem'
@@ -4169,12 +4160,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 299 PublicReconcilePlayStationStore
 # body param: body
-echo '{"currencyCode": "6Cmi2xN6", "price": 0.9110206682312885, "productId": "CLHLyxhc", "serviceLabel": 9}' > $TEMP_JSON_INPUT
+echo '{"currencyCode": "tBzfi8aW", "price": 0.2660114810280835, "productId": "f1NWlgli", "serviceLabel": 97}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicReconcilePlayStationStore \
     --namespace $TEST_NAMESPACE \
-    --userId 'LzV7iL4m' \
+    --userId 'dgwwepIg' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicReconcilePlayStationStore'
@@ -4184,12 +4175,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 300 SyncStadiaEntitlement
 # body param: body
-echo '{"appId": "wueWqEFl", "language": "jovjiFds", "region": "9U3Q4FL9", "stadiaPlayerId": "FKhfTM3X"}' > $TEMP_JSON_INPUT
+echo '{"appId": "Kh0HKAG3", "language": "oF", "region": "WxTfKegx", "stadiaPlayerId": "R0U2CExN"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SyncStadiaEntitlement \
     --namespace $TEST_NAMESPACE \
-    --userId '1GHB92JF' \
+    --userId 'lVZ2RGvV' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncStadiaEntitlement'
@@ -4199,12 +4190,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 301 SyncSteamInventory
 # body param: body
-echo '{"appId": "Cpi6PSpy", "currencyCode": "vcTnMqT7", "language": "mELucAFT", "price": 0.9798449427789325, "productId": "fjIfXCWz", "region": "atjGv4UV", "steamId": "j072ERId"}' > $TEMP_JSON_INPUT
+echo '{"appId": "o9j2WLb2", "currencyCode": "CSAgZdAF", "language": "Ns-pzqq_898", "price": 0.9903583311660245, "productId": "4njvE58h", "region": "P4ov9Lr3", "steamId": "EkTSLIsh"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SyncSteamInventory \
     --namespace $TEST_NAMESPACE \
-    --userId 'IjnEdKEg' \
+    --userId 'qSb4fuvT' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncSteamInventory'
@@ -4214,12 +4205,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 302 SyncTwitchDropsEntitlement
 # body param: body
-echo '{"gameId": "YrC08a2g", "language": "efHyULfa", "region": "LdtBzfi8"}' > $TEMP_JSON_INPUT
+echo '{"gameId": "w4H9hubY", "language": "iVVU_fN", "region": "bsYzIcst"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SyncTwitchDropsEntitlement \
     --namespace $TEST_NAMESPACE \
-    --userId 'aWrMf1NW' \
+    --userId 'Ous7bRp1' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncTwitchDropsEntitlement'
@@ -4229,12 +4220,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 303 SyncXboxInventory
 # body param: body
-echo '{"currencyCode": "lgliWdgw", "price": 0.9696283367131067, "productId": "epIgKh0H", "xstsToken": "KAG34nOf"}' > $TEMP_JSON_INPUT
+echo '{"currencyCode": "CdG3Hblu", "price": 0.9650787558445256, "productId": "YQD4Otx1", "xstsToken": "GZEBw1Jk"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SyncXboxInventory \
     --namespace $TEST_NAMESPACE \
-    --userId 'cgWxTfKe' \
+    --userId 'hddhy686' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncXboxInventory'
@@ -4247,11 +4238,11 @@ $CLI_EXE \
     --sn platform \
     --op PublicQueryUserOrders \
     --namespace $TEST_NAMESPACE \
-    --userId 'gxR0U2CE' \
-    --itemId 'xNlVZ2RG' \
-    --limit '42' \
-    --offset '95' \
-    --status 'CLOSED' \
+    --userId '121Qm42I' \
+    --itemId '9DcReFey' \
+    --limit '74' \
+    --offset '38' \
+    --status 'REFUNDING' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicQueryUserOrders'
 delete_file $TEMP_FILE
@@ -4260,12 +4251,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 305 PublicCreateUserOrder
 # body param: body
-echo '{"currencyCode": "9j2WLb2C", "discountedPrice": 88, "ext": {"AgZdAFdn": {}}, "itemId": "SJJFXEhP", "language": "7ZQQTrpC", "price": 63, "quantity": 70, "region": "6RUKJh4n", "returnUrl": "jvE58hP4"}' > $TEMP_JSON_INPUT
+echo '{"currencyCode": "Ot0SmGDz", "discountedPrice": 28, "ext": {"1dDuZYxY": {}}, "itemId": "8RWgiwIj", "language": "GKyW-628", "price": 4, "quantity": 62, "region": "VCYsZcY5", "returnUrl": "pJfXaaUs"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicCreateUserOrder \
     --namespace $TEST_NAMESPACE \
-    --userId 'ov9Lr3Ek' \
+    --userId 'khgMZlpx' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicCreateUserOrder'
@@ -4278,8 +4269,8 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetUserOrder \
     --namespace $TEST_NAMESPACE \
-    --orderNo 'TSLIshqS' \
-    --userId 'b4fuvTw4' \
+    --orderNo 'mjm9f23L' \
+    --userId 'lr7WKchQ' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserOrder'
 delete_file $TEMP_FILE
@@ -4291,8 +4282,8 @@ $CLI_EXE \
     --sn platform \
     --op PublicCancelUserOrder \
     --namespace $TEST_NAMESPACE \
-    --orderNo 'H9hubYPI' \
-    --userId '2vvuiybj' \
+    --orderNo 'rdRvUcqA' \
+    --userId 'HelKgovo' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicCancelUserOrder'
 delete_file $TEMP_FILE
@@ -4304,8 +4295,8 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetUserOrderHistories \
     --namespace $TEST_NAMESPACE \
-    --orderNo 'U8tFnbsY' \
-    --userId 'zIcstOus' \
+    --orderNo 'wPUtF6DL' \
+    --userId 'evfnhWi0' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserOrderHistories'
 delete_file $TEMP_FILE
@@ -4317,8 +4308,8 @@ $CLI_EXE \
     --sn platform \
     --op PublicDownloadUserOrderReceipt \
     --namespace $TEST_NAMESPACE \
-    --orderNo '7bRp1CdG' \
-    --userId '3Hblu98Y' \
+    --orderNo 'LSLOvWcj' \
+    --userId 'aWpr1gk6' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicDownloadUserOrderReceipt'
 delete_file $TEMP_FILE
@@ -4330,7 +4321,7 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetPaymentAccounts \
     --namespace $TEST_NAMESPACE \
-    --userId 'QD4Otx1G' \
+    --userId 'Cb5tABJO' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetPaymentAccounts'
 delete_file $TEMP_FILE
@@ -4341,10 +4332,10 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op PublicDeletePaymentAccount \
-    --id 'ZEBw1Jkh' \
+    --id '3orPfizP' \
     --namespace $TEST_NAMESPACE \
-    --type 'card' \
-    --userId 'dhy68612' \
+    --type 'paypal' \
+    --userId 'wbyfoC6o' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicDeletePaymentAccount'
 delete_file $TEMP_FILE
@@ -4356,13 +4347,13 @@ $CLI_EXE \
     --sn platform \
     --op PublicQueryUserSubscriptions \
     --namespace $TEST_NAMESPACE \
-    --userId '1Qm42I9D' \
+    --userId 'tIQ84AwM' \
     --chargeStatus 'CHARGED' \
-    --itemId 'ReFeyLtN' \
-    --limit '81' \
-    --offset '38' \
-    --sku '0SmGDzo1' \
-    --status 'ACTIVE' \
+    --itemId 'UVBsp0Jn' \
+    --limit '55' \
+    --offset '5' \
+    --sku 'xN6VmGGp' \
+    --status 'INIT' \
     --subscribedBy 'USER' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicQueryUserSubscriptions'
@@ -4372,12 +4363,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 313 PublicSubscribeSubscription
 # body param: body
-echo '{"currencyCode": "uZYxY8RW", "itemId": "giwIjK2g", "language": "9kYwlqrD", "region": "fyjHcFVC", "returnUrl": "YsZcY5pJ", "source": "fXaaUskh"}' > $TEMP_JSON_INPUT
+echo '{"currencyCode": "MvcnJGqj", "itemId": "2G28XQmz", "language": "TtYJ_BFGk-335", "region": "1ZepOAJR", "returnUrl": "lCb7x8Bb", "source": "V5fQSmVl"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicSubscribeSubscription \
     --namespace $TEST_NAMESPACE \
-    --userId 'gMZlpxmj' \
+    --userId 'jKVLc1aV' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicSubscribeSubscription'
@@ -4390,8 +4381,8 @@ $CLI_EXE \
     --sn platform \
     --op PublicCheckUserSubscriptionSubscribableByItemId \
     --namespace $TEST_NAMESPACE \
-    --userId 'm9f23Llr' \
-    --itemId '7WKchQrd' \
+    --userId 'QNlsm8f2' \
+    --itemId 'XRjKcW95' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicCheckUserSubscriptionSubscribableByItemId'
 delete_file $TEMP_FILE
@@ -4403,8 +4394,8 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetUserSubscription \
     --namespace $TEST_NAMESPACE \
-    --subscriptionId 'RvUcqAHe' \
-    --userId 'lKgovowP' \
+    --subscriptionId 'AO0RLEUg' \
+    --userId 'kXqKmlhk' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserSubscription'
 delete_file $TEMP_FILE
@@ -4416,8 +4407,8 @@ $CLI_EXE \
     --sn platform \
     --op PublicChangeSubscriptionBillingAccount \
     --namespace $TEST_NAMESPACE \
-    --subscriptionId 'UtF6DLev' \
-    --userId 'fnhWi0LS' \
+    --subscriptionId 'XoXwCzge' \
+    --userId 'VyEsm1LK' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicChangeSubscriptionBillingAccount'
 delete_file $TEMP_FILE
@@ -4426,13 +4417,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 317 PublicCancelSubscription
 # body param: body
-echo '{"immediate": true, "reason": "WcjaWpr1"}' > $TEMP_JSON_INPUT
+echo '{"immediate": false, "reason": "HKmMU5zt"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicCancelSubscription \
     --namespace $TEST_NAMESPACE \
-    --subscriptionId 'gk6Cb5tA' \
-    --userId 'BJO3orPf' \
+    --subscriptionId '6FeqZnSr' \
+    --userId 'j4rqOPOg' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicCancelSubscription'
@@ -4445,11 +4436,11 @@ $CLI_EXE \
     --sn platform \
     --op PublicGetUserSubscriptionBillingHistories \
     --namespace $TEST_NAMESPACE \
-    --subscriptionId 'izPDwbyf' \
-    --userId 'oC6otIQ8' \
+    --subscriptionId '3FZjVLWN' \
+    --userId 'be1nKpOx' \
     --excludeFree 'True' \
-    --limit '44' \
-    --offset '77' \
+    --limit '48' \
+    --offset '93' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserSubscriptionBillingHistories'
 delete_file $TEMP_FILE
@@ -4460,9 +4451,9 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op PublicGetWallet \
-    --currencyCode '4gUVBsp0' \
+    --currencyCode 'kf4msE7d' \
     --namespace $TEST_NAMESPACE \
-    --userId 'Jn3BcxN6' \
+    --userId 'goYbfALB' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetWallet'
 delete_file $TEMP_FILE
@@ -4473,11 +4464,11 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op PublicListUserWalletTransactions \
-    --currencyCode 'VmGGpzEM' \
+    --currencyCode 'MEdRlqlv' \
     --namespace $TEST_NAMESPACE \
-    --userId 'vcnJGqj2' \
-    --limit '65' \
-    --offset '98' \
+    --userId 'MdQrXgZH' \
+    --limit '27' \
+    --offset '81' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicListUserWalletTransactions'
 delete_file $TEMP_FILE

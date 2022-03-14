@@ -8,7 +8,7 @@
       "url": "https://accelbyte.io",
       "email": "engineering@accelbyte.io"
     },
-    "version": "5.3.0"
+    "version": "5.4.0"
   },
   "paths": {
     "/iam/bans": {
@@ -4927,6 +4927,51 @@
         }
       }
     },
+    "/iam/v2/public/namespaces/{namespace}/countries/{countryCode}/agerestrictions": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Users"
+        ],
+        "summary": "Public get age restriction by country code",
+        "operationId": "PublicGetCountryAgeRestriction",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Namespace",
+            "name": "namespace",
+            "in": "path",
+            "required": true
+          },
+          {
+            "type": "string",
+            "description": "Country Code ",
+            "name": "countryCode",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/accountcommon.CountryAgeRestriction"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
+    },
     "/iam/v2/public/namespaces/{namespace}/users": {
       "post": {
         "description": "\n<p>Available Authentication Types:</p>\n<ol>\n<li><strong>EMAILPASSWD</strong>: an authentication type used for new user registration through email.</li>\n</ol>\n<p>Country use ISO3166-1 alpha-2 two letter, e.g. US.</p>\n",
@@ -6135,7 +6180,7 @@
         }
       },
       "post": {
-        "description": "Add a new OAuth 2.0 client. Protected by the permission: ADMIN:NAMESPACE:{namespace}:CLIENT [CREATE]<br>\n\t\tA new client automatically granted with these scopes: commerce, account, analytics, publishing, social.<br>\n\t\taction code: 10301<br>\n\t\t<p><strong>Fields Description:</strong>\n\t\t<ul>\n\t\t<li><strong>clientId</strong> : The client ID. e.g f815e5c44f364993961be3b3f26a7bf4</li>\n\t\t<li><strong>clientName</strong> : The client name. e.g E-commerce</li>\n\t\t<li><strong>secret</strong> : The client's secret. It's empty if the client's type is a public client. Otherwise, the client secret is required</li>\n\t\t<li><strong>namespace</strong> : The namespace where the client lives. e.g sample-game</li>\n\t\t<li><strong>redirectUri</strong> : Contains the redirect URI used in OAuth callback. e.g https://example.net/platform</li>\n\t\t<li><strong>oauthClientType</strong> : The OAuth 2.0 client type. The client type determines whether the authorization needs Proof Of Key Exchange or not. \n\t\t\t\t\tA public client type doesn't have a client secret and should use PKCE flow. \n\t\t\t\t\tA confidential client type has a client secret and don't use PKCE flow\n\t\t\t<ul>Supported oAuthClientType :\n\t\t\t\t<li><strong>Public</strong></li>\n\t\t\t\t<li><strong>Confidential</strong></li></ul></li>\n\t\t<li><strong>audiences</strong> : List of target client IDs who is intended to receive the token. e.g [\"eaaa65618fe24293b00a61454182b435\", \"40073ee9bc3446d3a051a71b48509a5d\"]</li>\n\t\t<li><strong>baseUri</strong> : A base URI of the application. It is used for making sure the token is intended to be used by the client. e.g https://example.net/platform</li>\n\t\t<li><strong>clientPermissions</strong> : Contains the client's permissions</li>\n\t\t</ul>\n\t\t</p>\n\t\t",
+        "description": "Add a new OAuth 2.0 client. Protected by the permission: ADMIN:NAMESPACE:{namespace}:CLIENT [CREATE]<br>\n\t\tA new client automatically granted with these scopes: commerce, account, analytics, publishing, social.<br>\n\t\taction code: 10301<br>\n\t\t<p><strong>Fields Description:</strong>\n\t\t<ul>\n\t\t<li><strong>clientId</strong> : The client ID. e.g f815e5c44f364993961be3b3f26a7bf4</li>\n\t\t<li><strong>clientName</strong> : The client name. e.g E-commerce</li>\n\t\t<li><strong>secret</strong> : The client's secret. It's empty if the client's type is a public client. Otherwise, the client secret is required</li>\n\t\t<li><strong>namespace</strong> : The namespace where the client lives. e.g sample-game</li>\n\t\t<li><strong>redirectUri</strong> : Contains the redirect URI used in OAuth callback. e.g https://example.net/platform</li>\n\t\t<li><strong>oauthClientType</strong> : The OAuth 2.0 client type. The client type determines whether the authorization needs Proof Of Key Exchange or not. \n\t\t\t\t\tA public client type doesn't have a client secret and should use PKCE flow. \n\t\t\t\t\tA confidential client type has a client secret and don't use PKCE flow\n\t\t\t<ul>Supported oAuthClientType :\n\t\t\t\t<li><strong>Public</strong></li>\n\t\t\t\t<li><strong>Confidential</strong></li></ul></li>\n\t\t<li><strong>audiences</strong> : List of target client IDs who is intended to receive the token. e.g [\"eaaa65618fe24293b00a61454182b435\", \"40073ee9bc3446d3a051a71b48509a5d\"]</li>\n\t\t<li><strong>baseUri</strong> : A base URI of the application. It is used for making sure the token is intended to be used by the client. e.g https://example.net/platform</li>\n\t\t<li><strong>clientPermissions</strong> : Contains the client's permissions</li>\n\t\t<li><strong>deletable</strong> : The flag to identify whether client is deletable (optional). default value: true</li>\n\t\t</ul>\n\t\t</p>\n\t\t",
         "consumes": [
           "application/json"
         ],
@@ -6311,11 +6356,17 @@
             "schema": {
               "$ref": "#/definitions/restapi.ErrorResponse"
             }
+          },
+          "409": {
+            "description": "<table><tr><td>errorCode</td><td>errorMessage</td></tr><tr><td>20009</td><td>request_conflict</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponse"
+            }
           }
         }
       },
       "patch": {
-        "description": "Updates an OAuth 2.0 client. Protected by the permission: ADMIN:NAMESPACE:{namespace}:CLIENT [UPDATE].\n\t\t\t\tSpecify only the fields you want to update in the request payload, e.g. {\"ClientName\":\"E-commerce\", \"BaseUri\":\"https://example.net\"}\n\t\t<br> action code: 10302<br>\n\t\t<p><strong>Fields Description:</strong>\n\t\t<ul>\n\t\t<li><strong>clientName</strong> : The client name. It should not be empty if the field exists in the body. e.g E-commerce</li>\n\t\t<li><strong>namespace</strong> : The namespace where the client lives. e.g sample-game</li>\n\t\t<li><strong>redirectUri</strong> : Contains the redirect URI used in OAuth callback. It should not be empty if the field exists in the body.  e.g https://example.net/platform</li>\n\t\t<li><strong>audiences</strong> : List of target client IDs who is intended to receive the token. e.g [\"eaaa65618fe24293b00a61454182b435\", \"40073ee9bc3446d3a051a71b48509a5d\"]</li>\n\t\t<li><strong>baseUri</strong> : A base URI of the application. It is used in the audience checking for making sure the token is used by the right resource server. Required if the application type is a server. e.g https://example.net/platform</li>\n\t\t<li><strong>clientPermissions</strong> : Contains the client's permissions</li>\n\t\t</ul>\n\t\t</p>",
+        "description": "Updates an OAuth 2.0 client. Protected by the permission: ADMIN:NAMESPACE:{namespace}:CLIENT [UPDATE].\n\t\t\t\tSpecify only the fields you want to update in the request payload, e.g. {\"ClientName\":\"E-commerce\", \"BaseUri\":\"https://example.net\"}\n\t\t<br> action code: 10302<br>\n\t\t<p><strong>Fields Description:</strong>\n\t\t<ul>\n\t\t<li><strong>clientName</strong> : The client name. It should not be empty if the field exists in the body. e.g E-commerce</li>\n\t\t<li><strong>namespace</strong> : The namespace where the client lives. e.g sample-game</li>\n\t\t<li><strong>redirectUri</strong> : Contains the redirect URI used in OAuth callback. It should not be empty if the field exists in the body.  e.g https://example.net/platform</li>\n\t\t<li><strong>audiences</strong> : List of target client IDs who is intended to receive the token. e.g [\"eaaa65618fe24293b00a61454182b435\", \"40073ee9bc3446d3a051a71b48509a5d\"]</li>\n\t\t<li><strong>baseUri</strong> : A base URI of the application. It is used in the audience checking for making sure the token is used by the right resource server. Required if the application type is a server. e.g https://example.net/platform</li>\n\t\t<li><strong>clientPermissions</strong> : Contains the client's permissions</li>\n\t\t<li><strong>deletable</strong> : The flag to identify whether client is deletable (optional). e.g. true</li>\n\t\t</ul>\n\t\t</p>",
         "consumes": [
           "application/json"
         ],
@@ -8432,7 +8483,7 @@
     },
     "/iam/v3/admin/namespaces/{namespace}/users/{userId}/code/verify": {
       "post": {
-        "description": "<p>Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'</p>\n\t\t\tRedeems a verification code sent to a user to verify the user's contact address is correct\n\t\t\t<p>Available ContactType : <b>email<b/> or <b>phone<b/> </p>",
+        "description": "<p>Will verify account and consume code if validateOnly is set false in request body</p>\t\n<p>Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'</p>\nRedeems a verification code sent to a user to verify the user's contact address is correct\n<p>Available ContactType : <b>email<b/> or <b>phone<b/> </p>",
         "consumes": [
           "application/json"
         ],
@@ -8442,7 +8493,7 @@
         "tags": [
           "Users"
         ],
-        "summary": "Verify account by validating verification code",
+        "summary": "Verify or consume verification code sent to user",
         "operationId": "AdminVerifyAccountV3",
         "parameters": [
           {
@@ -8675,7 +8726,7 @@
     },
     "/iam/v3/admin/namespaces/{namespace}/users/{userId}/headless/code/verify": {
       "post": {
-        "description": "Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'\n        \t<p>The endpoint upgrades a headless account by linking the headless account with the email address and the password.\n\t\t\t\tBy upgrading the headless account into a full account, the user could use the email address and password for using Justice IAM. </p>\n        \t<p>The endpoint is a shortcut for upgrading a headless account and verifying the email address in one call. \n\t\t\t\tIn order to get a verification code for the endpoint, please check the send verification code endpoint. </p>\n        \t<p>This endpoint also have an ability to update user data (if the user data field is specified) right after the upgrade account process is done.<br/>\n\t\t\t\tSupported user data fields :\n\t\t\t\t<ul>\n\t\t\t\t\t<li>displayName</li>\n\t\t\t\t\t<li>dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29</li>\n\t\t\t\t\t<li>country : format ISO3166-1 alpha-2 two letter, e.g. US</li>\n\t\t\t\t</ul>\n\t\t\t<br>action code : 10124</p>",
+        "description": "<p>If validateOnly is set false, will upgrade headless account with verification code</p> \nRequired permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'\n     \t<p>The endpoint upgrades a headless account by linking the headless account with the email address and the password.\n\tBy upgrading the headless account into a full account, the user could use the email address and password for using Justice IAM. </p>\n     \t<p>The endpoint is a shortcut for upgrading a headless account and verifying the email address in one call. \n\tIn order to get a verification code for the endpoint, please check the send verification code endpoint. </p>\n     \t<p>This endpoint also have an ability to update user data (if the user data field is specified) right after the upgrade account process is done.<br/>\n\tSupported user data fields :\n\t<ul>\n\t\t<li>displayName</li>\n\t\t<li>dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29</li>\n\t\t<li>country : format ISO3166-1 alpha-2 two letter, e.g. US</li>\n\t</ul>\n<br>action code : 10124</p>",
         "consumes": [
           "application/json"
         ],
@@ -8685,7 +8736,7 @@
         "tags": [
           "Users"
         ],
-        "summary": "Upgrade headless account with verification code",
+        "summary": "Verify or consume verification code. ",
         "operationId": "AdminUpgradeHeadlessAccountV3",
         "parameters": [
           {
@@ -9989,7 +10040,7 @@
         }
       },
       "post": {
-        "description": "Required permission 'ADMIN:ROLE [CREATE]' <br>action code: 10401",
+        "description": "Required permission 'ADMIN:ROLE [CREATE]'\n\nCreate role request body:\n\t- roleName: specify role name, alphanumeric, cannot have special character (required)\n\t- permissions: specify the permission that this role have\n\t- managers: specify list of user that will act as the managers of this role\n\t- members: specify list of user that will act as the members of this role\n\t- adminRole: specify if role is for admin user (default false)\n\t- isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)\n\t- deletable: specify if role can be deleted or not (default true)\n\n<br>action code: 10401",
         "consumes": [
           "application/json"
         ],
@@ -10139,13 +10190,19 @@
               "$ref": "#/definitions/restapi.ErrorResponse"
             }
           },
+          "409": {
+            "description": "<table><tr><td>errorCode</td><td>errorMessage</td></tr><tr><td>20009</td><td>request_conflict</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponse"
+            }
+          },
           "500": {
             "description": "Internal Server Error"
           }
         }
       },
       "patch": {
-        "description": "Required permission 'ADMIN:ROLE [UPDATE]' <br>action code: 10402",
+        "description": "Required permission 'ADMIN:ROLE [UPDATE]'\n\nUpdate role request body:\n\t- roleName: specify role name, alphanumeric, cannot have special character (required)\n\t- isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)\n\t- deletable: specify if role can be deleted or not (optional)\n\n<br>action code: 10402",
         "consumes": [
           "application/json"
         ],
@@ -12411,6 +12468,100 @@
         }
       }
     },
+    "/iam/v3/public/namespaces/{namespace}/users/code/request": {
+      "post": {
+        "description": "This endpoint will validate the request's email address.\n\nIf it already been used, will response 409.\n\nIf it is available, we will send a verification code to this email address. \nThis code can be verified by this <a href=\"#operations-Users-PublicVerifyRegistrationCode\">endpoint</a>.\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Users"
+        ],
+        "summary": "Send verification code to new unregistered account's email address",
+        "operationId": "PublicSendRegistrationCode",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Namespace, only accept alphabet and numeric",
+            "name": "namespace",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/model.SendRegisterVerificationCodeRequest"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Operation succeeded"
+          },
+          "400": {
+            "description": "<table><tr><td>errorCode</td><td>errorMessage</td></tr><tr><td>20002</td><td>validation error</td></tr><tr><td>20019</td><td>unable to parse request body</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/rest.ErrorResponse"
+            }
+          },
+          "409": {
+            "description": "<table><tr><td>errorCode</td><td>errorMessage</td></tr><tr><td>10133</td><td>email already used</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/rest.ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/iam/v3/public/namespaces/{namespace}/users/code/verify": {
+      "post": {
+        "description": "<p>Verify the registration code</p>\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Users"
+        ],
+        "summary": "Verify the registration code",
+        "operationId": "PublicVerifyRegistrationCode",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "Namespace, only accept alphabet and numeric",
+            "name": "namespace",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/model.VerifyRegistrationCode"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Code is valid"
+          },
+          "400": {
+            "description": "<table><tr><td>errorCode</td><td>errorMessage</td></tr><tr><td>20019</td><td>unable to parse request body</td></tr><tr><td>10138</td><td>code not match</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/rest.ErrorResponse"
+            }
+          }
+        }
+      }
+    },
     "/iam/v3/public/namespaces/{namespace}/users/forgot": {
       "post": {
         "description": "<p><strong>Special note for publisher-game scenario:</strong> \nGame Client should provide game namespace path parameter and Publisher \nClient should provide publisher namespace path parameter. </p>\n<p>The password reset code will be sent to the publisher account's email address. </p>\n<p>action code : 10104 </p>\n",
@@ -12775,7 +12926,7 @@
     },
     "/iam/v3/public/namespaces/{namespace}/users/me/code/verify": {
       "post": {
-        "description": "<p>Required valid user authorization</p>\n<p>Redeems a verification code sent to a user to verify the user's contact address is correct</p>\n<p>Available ContactType : <b>email</b></p>\n<p>action code: 10107</p>\n",
+        "description": "<p>Will consume code if validateOnly is set false</p>\n<p>Required valid user authorization</p>\n<p>Redeems a verification code sent to a user to verify the user's contact address is correct</p>\n<p>Available ContactType : <b>email</b></p>\n<p>action code: 10107</p>\n",
         "consumes": [
           "application/json"
         ],
@@ -12785,7 +12936,7 @@
         "tags": [
           "Users"
         ],
-        "summary": "Redeem verification code sent to user",
+        "summary": "Validate or consume verification code sent to user",
         "operationId": "PublicUserVerificationV3",
         "parameters": [
           {
@@ -12837,7 +12988,7 @@
     },
     "/iam/v3/public/namespaces/{namespace}/users/me/headless/code/verify": {
       "post": {
-        "description": "Require valid user access token.\n        \t<p>The endpoint upgrades a headless account by linking the headless account with the email address and the password. \n\t\t\tBy upgrading the headless account into a full account, the user could use the email address and password for using Justice IAM. </p>\n        \t<p>The endpoint is a shortcut for upgrading a headless account and verifying the email address in one call. \n\t\t\tIn order to get a verification code for the endpoint, please check the send verification code endpoint.</p>\n        \t<p>This endpoint also have an ability to update user data (if the user data field is specified) right after the upgrade account process is done.<br/>\n\t\t\t\tSupported user data fields :\n\t\t\t\t<ul>\n\t\t\t\t\t<li>displayName</li>\n\t\t\t\t\t<li>dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29</li>\n\t\t\t\t\t<li>country : format ISO3166-1 alpha-2 two letter, e.g. US</li>\n\t\t\t\t</ul>\n        \t<br>action code : 10124</p>",
+        "description": "<p>If validateOnly is set false, consume code and upgrade headless account and automatically verified the email address if it is succeeded</p>\nRequire valid user access token.\n     \t<p>The endpoint upgrades a headless account by linking the headless account with the email address and the password. \nBy upgrading the headless account into a full account, the user could use the email address and password for using Justice IAM. </p>\n     \t<p>The endpoint is a shortcut for upgrading a headless account and verifying the email address in one call. \nIn order to get a verification code for the endpoint, please check the send verification code endpoint.</p>\n     \t<p>This endpoint also have an ability to update user data (if the user data field is specified) right after the upgrade account process is done.<br/>\n\tSupported user data fields :\n\t<ul>\n\t\t<li>displayName</li>\n\t\t<li>dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29</li>\n\t\t<li>country : format ISO3166-1 alpha-2 two letter, e.g. US</li>\n\t</ul>\n     \t<br>action code : 10124</p>",
         "consumes": [
           "application/json"
         ],
@@ -12847,7 +12998,7 @@
         "tags": [
           "Users"
         ],
-        "summary": "Upgrade headless account and automatically verified the email address if it is succeeded",
+        "summary": "Verify or consume verification code.",
         "operationId": "PublicUpgradeHeadlessAccountV3",
         "parameters": [
           {
@@ -14554,7 +14705,7 @@
         }
       },
       "post": {
-        "description": "Required permission: ADMIN:ROLE [CREATE]\n\nCreate role request body:\n- roleName: specify role name, alphanumeric, cannot have special character (required)\n- adminRole: specify if role is for admin user (default false)\n- isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)\n\naction code: 10401",
+        "description": "Required permission: ADMIN:ROLE [CREATE]\n\nCreate role request body:\n- roleName: specify role name, alphanumeric, cannot have special character (required)\n- adminRole: specify if role is for admin user (default false)\n- isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)\n- deletable: specify if role can be deleted (default true)\n\naction code: 10401",
         "consumes": [
           "application/json"
         ],
@@ -14710,7 +14861,7 @@
         }
       },
       "patch": {
-        "description": "Required permission ADMIN:ROLE [UPDATE]\n\nUpdate role request body:\n- roleName: specify role name, alphanumeric, cannot have special character (required)\n- adminRole: specify if role is for admin user (default false)\n- isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)\n\naction code: 10402",
+        "description": "Required permission ADMIN:ROLE [UPDATE]\n\nUpdate role request body:\n- roleName: specify role name, alphanumeric, cannot have special character (required)\n- adminRole: specify if role is for admin user (default false)\n- isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)\n- deletable: specify if role can be deleted (optional)\n\naction code: 10402",
         "consumes": [
           "application/json"
         ],
@@ -16086,12 +16237,13 @@
     "account.createUserRequestV4": {
       "required": [
         "authType",
+        "code",
         "country",
-        "dateOfBirth",
         "displayName",
         "emailAddress",
         "password",
         "passwordMD5Sum",
+        "reachMinimumAge",
         "username"
       ],
       "properties": {
@@ -16104,6 +16256,9 @@
         "authType": {
           "type": "string",
           "default": "EMAILPASSWD"
+        },
+        "code": {
+          "type": "string"
         },
         "country": {
           "type": "string"
@@ -16122,6 +16277,9 @@
         },
         "passwordMD5Sum": {
           "type": "string"
+        },
+        "reachMinimumAge": {
+          "type": "boolean"
         },
         "username": {
           "type": "string"
@@ -16190,7 +16348,9 @@
         "code",
         "emailAddress",
         "password",
-        "username"
+        "reachMinimumAge",
+        "username",
+        "validateOnly"
       ],
       "properties": {
         "code": {
@@ -16211,8 +16371,14 @@
         "password": {
           "type": "string"
         },
+        "reachMinimumAge": {
+          "type": "boolean"
+        },
         "username": {
           "type": "string"
+        },
+        "validateOnly": {
+          "type": "boolean"
         }
       }
     },
@@ -16705,6 +16871,7 @@
     "accountcommon.Role": {
       "required": [
         "AdminRole",
+        "Deletable",
         "IsWildcard",
         "Managers",
         "Members",
@@ -16714,6 +16881,9 @@
       ],
       "properties": {
         "AdminRole": {
+          "type": "boolean"
+        },
+        "Deletable": {
           "type": "boolean"
         },
         "IsWildcard": {
@@ -17210,6 +17380,9 @@
             "$ref": "#/definitions/accountcommon.PermissionV3"
           }
         },
+        "deletable": {
+          "type": "boolean"
+        },
         "namespace": {
           "type": "string"
         },
@@ -17301,6 +17474,9 @@
           "items": {
             "$ref": "#/definitions/accountcommon.PermissionV3"
           }
+        },
+        "deletable": {
+          "type": "boolean"
         },
         "namespace": {
           "type": "string"
@@ -18628,6 +18804,9 @@
         "adminRole": {
           "type": "boolean"
         },
+        "deletable": {
+          "type": "boolean"
+        },
         "isWildcard": {
           "type": "boolean"
         },
@@ -18938,6 +19117,9 @@
         "roleName"
       ],
       "properties": {
+        "deletable": {
+          "type": "boolean"
+        },
         "isWildcard": {
           "type": "boolean"
         },
@@ -18956,6 +19138,9 @@
         "adminRole": {
           "type": "boolean",
           "default": false
+        },
+        "deletable": {
+          "type": "boolean"
         },
         "isWildcard": {
           "type": "boolean",
@@ -19129,6 +19314,19 @@
         "totalData": {
           "type": "integer",
           "format": "int32"
+        }
+      }
+    },
+    "model.SendRegisterVerificationCodeRequest": {
+      "required": [
+        "emailAddress"
+      ],
+      "properties": {
+        "emailAddress": {
+          "type": "string"
+        },
+        "languageTag": {
+          "type": "string"
         }
       }
     },
@@ -19398,7 +19596,8 @@
       "required": [
         "code",
         "emailAddress",
-        "password"
+        "password",
+        "validateOnly"
       ],
       "properties": {
         "code": {
@@ -19418,6 +19617,9 @@
         },
         "password": {
           "type": "string"
+        },
+        "validateOnly": {
+          "type": "boolean"
         }
       }
     },
@@ -19586,9 +19788,9 @@
       "required": [
         "authType",
         "country",
-        "dateOfBirth",
         "displayName",
-        "password"
+        "password",
+        "reachMinimumAge"
       ],
       "properties": {
         "acceptedPolicies": {
@@ -19606,14 +19808,16 @@
           "default": "ID"
         },
         "dateOfBirth": {
-          "type": "string",
-          "default": "1990-12-31"
+          "type": "string"
         },
         "displayName": {
           "type": "string"
         },
         "password": {
           "type": "string"
+        },
+        "reachMinimumAge": {
+          "type": "boolean"
         }
       }
     },
@@ -19621,9 +19825,9 @@
       "required": [
         "authType",
         "country",
-        "dateOfBirth",
         "displayName",
         "password",
+        "reachMinimumAge",
         "username"
       ],
       "properties": {
@@ -19642,14 +19846,16 @@
           "default": "ID"
         },
         "dateOfBirth": {
-          "type": "string",
-          "default": "1990-12-31"
+          "type": "string"
         },
         "displayName": {
           "type": "string"
         },
         "password": {
           "type": "string"
+        },
+        "reachMinimumAge": {
+          "type": "boolean"
         },
         "username": {
           "type": "string"
@@ -19688,11 +19894,12 @@
     "model.UserCreateRequestV3": {
       "required": [
         "authType",
+        "code",
         "country",
-        "dateOfBirth",
         "displayName",
         "emailAddress",
-        "password"
+        "password",
+        "reachMinimumAge"
       ],
       "properties": {
         "PasswordMD5Sum": {
@@ -19705,6 +19912,9 @@
           }
         },
         "authType": {
+          "type": "string"
+        },
+        "code": {
           "type": "string"
         },
         "country": {
@@ -19721,6 +19931,9 @@
         },
         "password": {
           "type": "string"
+        },
+        "reachMinimumAge": {
+          "type": "boolean"
         }
       }
     },
@@ -20300,7 +20513,8 @@
       "required": [
         "Code",
         "ContactType",
-        "LanguageTag"
+        "LanguageTag",
+        "validateOnly"
       ],
       "properties": {
         "Code": {
@@ -20311,6 +20525,9 @@
         },
         "LanguageTag": {
           "type": "string"
+        },
+        "validateOnly": {
+          "type": "boolean"
         }
       }
     },
@@ -20318,7 +20535,8 @@
       "required": [
         "code",
         "contactType",
-        "languageTag"
+        "languageTag",
+        "validateOnly"
       ],
       "properties": {
         "code": {
@@ -20329,6 +20547,9 @@
         },
         "languageTag": {
           "type": "string"
+        },
+        "validateOnly": {
+          "type": "boolean"
         }
       }
     },
@@ -20571,6 +20792,20 @@
           "type": "string"
         },
         "updateEmail": {
+          "type": "string"
+        }
+      }
+    },
+    "model.VerifyRegistrationCode": {
+      "required": [
+        "code",
+        "emailAddress"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "emailAddress": {
           "type": "string"
         }
       }

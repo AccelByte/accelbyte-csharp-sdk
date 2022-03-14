@@ -16,6 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
+    /// Will verify account and consume code if validateOnly is set false in request body
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
     /// 
     /// 

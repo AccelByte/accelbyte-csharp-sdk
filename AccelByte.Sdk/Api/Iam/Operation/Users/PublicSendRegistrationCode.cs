@@ -12,61 +12,44 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
-    /// PublicUserVerificationV3
+    /// PublicSendRegistrationCode
     ///
+    /// This endpoint will validate the request's email address.
     /// 
+    /// If it already been used, will response 409.
     /// 
-    /// Will consume code if validateOnly is set false
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required valid user authorization
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Redeems a verification code sent to a user to verify the user's contact address is correct
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Available ContactType : email
-    /// 
-    /// 
-    /// 
-    /// 
-    /// action code: 10107
+    /// If it is available, we will send a verification code to this email address.
+    /// This code can be verified by this endpoint.
     /// </summary>
-    public class PublicUserVerificationV3 : AccelByte.Sdk.Core.Operation
+    public class PublicSendRegistrationCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicUserVerificationV3Builder Builder = new PublicUserVerificationV3Builder();
+        public static PublicSendRegistrationCodeBuilder Builder = new PublicSendRegistrationCodeBuilder();
 
-        public class PublicUserVerificationV3Builder
+        public class PublicSendRegistrationCodeBuilder
         {
             
             
-            internal PublicUserVerificationV3Builder() { }
+            internal PublicSendRegistrationCodeBuilder() { }
 
 
 
 
 
-            public PublicUserVerificationV3 Build(
-                ModelUserVerificationRequestV3 body,
+            public PublicSendRegistrationCode Build(
+                ModelSendRegisterVerificationCodeRequest body,
                 string namespace_
             )
             {
-                return new PublicUserVerificationV3(this,
+                return new PublicSendRegistrationCode(this,
                     body,                    
                     namespace_                    
                 );
             }
         }
 
-        private PublicUserVerificationV3(PublicUserVerificationV3Builder builder,
-            ModelUserVerificationRequestV3 body,
+        private PublicSendRegistrationCode(PublicSendRegistrationCodeBuilder builder,
+            ModelSendRegisterVerificationCodeRequest body,
             string namespace_
         )
         {
@@ -80,9 +63,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         }
         #endregion
 
-        public PublicUserVerificationV3(
+        public PublicSendRegistrationCode(
             string namespace_,            
-            Model.ModelUserVerificationRequestV3 body            
+            Model.ModelSendRegisterVerificationCodeRequest body            
         )
         {
             PathParams["namespace"] = namespace_;
@@ -94,7 +77,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
         }
 
-        public override string Path => "/iam/v3/public/namespaces/{namespace}/users/me/code/verify";
+        public override string Path => "/iam/v3/public/namespaces/{namespace}/users/code/request";
 
         public override HttpMethod Method => HttpMethod.Post;
 

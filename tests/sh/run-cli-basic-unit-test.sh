@@ -425,12 +425,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 29 UpdateUserProfile
 # body param: body
-echo '{"avatarLargeUrl": "E72XMKfh", "avatarSmallUrl": "l6eq2FzU", "avatarUrl": "3VL3LNmP", "customAttributes": {"LeZdoCXf": {}}, "dateOfBirth": "1971-01-11", "firstName": "FXzvjLma", "language": "i7fPKvE2", "lastName": "Z4a63UVt", "status": "ACTIVE", "timeZone": "QSWtsyz0", "zipCode": "mGGyHHFI"}' > $TEMP_JSON_INPUT
+echo '{"avatarLargeUrl": "E72XMKfh", "avatarSmallUrl": "l6eq2FzU", "avatarUrl": "3VL3LNmP", "customAttributes": {"LeZdoCXf": {}}, "dateOfBirth": "0765-04-03", "firstName": "7fPKvE2Z", "language": "uv_SYZM-xG", "lastName": "vSrkEgTY", "status": "ACTIVE", "timeZone": "5iRBE6zJ", "zipCode": "J1BRHrfC"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdateUserProfile \
     --namespace $TEST_NAMESPACE \
-    --userId 'lIKsXgvS' \
+    --userId 'Hqqp2GwP' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateUserProfile'
@@ -443,7 +443,7 @@ $CLI_EXE \
     --sn basic \
     --op DeleteUserProfile \
     --namespace $TEST_NAMESPACE \
-    --userId 'rkEgTYVk' \
+    --userId 'cmzSuY8w' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteUserProfile'
 delete_file $TEMP_FILE
@@ -455,7 +455,7 @@ $CLI_EXE \
     --sn basic \
     --op GetCustomAttributesInfo \
     --namespace $TEST_NAMESPACE \
-    --userId '5iRBE6zJ' \
+    --userId '9VYwBEfR' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetCustomAttributesInfo'
 delete_file $TEMP_FILE
@@ -464,12 +464,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 32 UpdateCustomAttributesPartially
 # body param: body
-echo '{"J1BRHrfC": {}}' > $TEMP_JSON_INPUT
+echo '{"XoZLfpVF": {}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdateCustomAttributesPartially \
     --namespace $TEST_NAMESPACE \
-    --userId 'Hqqp2GwP' \
+    --userId 'fDwjHHCW' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateCustomAttributesPartially'
@@ -482,7 +482,7 @@ $CLI_EXE \
     --sn basic \
     --op GetPrivateCustomAttributesInfo \
     --namespace $TEST_NAMESPACE \
-    --userId 'cmzSuY8w' \
+    --userId '2g5u8z9y' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetPrivateCustomAttributesInfo'
 delete_file $TEMP_FILE
@@ -491,12 +491,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 34 UpdatePrivateCustomAttributesPartially
 # body param: body
-echo '{"9VYwBEfR": {}}' > $TEMP_JSON_INPUT
+echo '{"rpJdIx5v": {}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdatePrivateCustomAttributesPartially \
     --namespace $TEST_NAMESPACE \
-    --userId 'XoZLfpVF' \
+    --userId 'vHS3d6PK' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdatePrivateCustomAttributesPartially'
@@ -506,12 +506,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 35 UpdateUserProfileStatus
 # body param: body
-echo '{"status": "ACTIVE"}' > $TEMP_JSON_INPUT
+echo '{"status": "INACTIVE"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdateUserProfileStatus \
     --namespace $TEST_NAMESPACE \
-    --userId 'DwjHHCW2' \
+    --userId '27mI6Px8' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateUserProfileStatus'
@@ -544,9 +544,9 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn basic \
     --op PublicGeneratedUploadUrl \
-    --folder '5u8z9yrp' \
+    --folder 't8Lq4x0F' \
     --namespace $TEST_NAMESPACE \
-    --fileType 'JdIx5vvH' \
+    --fileType '7NcocelJ' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGeneratedUploadUrl'
 delete_file $TEMP_FILE
@@ -558,7 +558,7 @@ $CLI_EXE \
     --sn basic \
     --op PublicGetCountries \
     --namespace $TEST_NAMESPACE \
-    --lang 'S3d6PKPE' \
+    --lang 'jtlKYu8i' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetCountries'
 delete_file $TEMP_FILE
@@ -592,7 +592,7 @@ $CLI_EXE \
     --sn basic \
     --op PublicGetUserProfilePublicInfoByIds \
     --namespace $TEST_NAMESPACE \
-    --userIds '27mI6Px8' \
+    --userIds 'CPznx0s5' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserProfilePublicInfoByIds'
 delete_file $TEMP_FILE
@@ -623,7 +623,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 45 UpdateMyProfile
 # body param: body
-echo '{"avatarLargeUrl": "jt8Lq4x0", "avatarSmallUrl": "F7Ncocel", "avatarUrl": "JjtlKYu8", "customAttributes": {"iCPznx0s": {}}, "dateOfBirth": "1999-07-17", "firstName": "T51oV4HT", "language": "mivmb6tP", "lastName": "mCirkhYv", "privateCustomAttributes": {"cOUucjPW": {}}, "timeZone": "GwPsvjLK", "zipCode": "1CjPt93u"}' > $TEMP_JSON_INPUT
+echo '{"avatarLargeUrl": "TzT51oV4", "avatarSmallUrl": "HTmivmb6", "avatarUrl": "tPmCirkh", "customAttributes": {"YvcOUucj": {}}, "dateOfBirth": "4529-10-31", "firstName": "93utbMkp", "language": "fhtF-IqTs_006", "lastName": "G4zA2zp1", "privateCustomAttributes": {"Ls0bD6dG": {}}, "timeZone": "gwkYgHzK", "zipCode": "uI2RJrbo"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdateMyProfile \
@@ -637,7 +637,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 46 CreateMyProfile
 # body param: body
-echo '{"avatarLargeUrl": "tbMkpUFH", "avatarSmallUrl": "T0fL9q9S", "avatarUrl": "MNAUQVoi", "customAttributes": {"QtSQC2kN": {}}, "dateOfBirth": "1993-05-24", "firstName": "mT0d2aBG", "language": "4zA2zp1L", "lastName": "s0bD6dGg", "privateCustomAttributes": {"wkYgHzKu": {}}, "timeZone": "I2RJrboP"}' > $TEMP_JSON_INPUT
+echo '{"avatarLargeUrl": "P7kfpIle", "avatarSmallUrl": "tXrCK1UV", "avatarUrl": "O0jcs7nC", "customAttributes": {"qsodoTFT": {}}, "dateOfBirth": "2086-11-04", "firstName": "U6HobZgW", "language": "Al", "lastName": "dDfasTc8", "privateCustomAttributes": {"gr2znWqD": {}}, "timeZone": "6tIcfI5Z"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op CreateMyProfile \
@@ -662,7 +662,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 48 UpdateMyZipCode
 # body param: userZipCodeUpdate
-echo '{"zipCode": "7kfpIlet"}' > $TEMP_JSON_INPUT
+echo '{"zipCode": "4tUNQ7mQ"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdateMyZipCode \
@@ -676,12 +676,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 49 PublicReportUser
 # body param: body
-echo '{"category": "XrCK1UVO", "description": "0jcs7nCq", "gameSessionId": "sodoTFTc", "subcategory": "WlaIBJAA", "userId": "knU6HobZ"}' > $TEMP_JSON_INPUT
+echo '{"category": "PjCalZgF", "description": "VEQyqav0", "gameSessionId": "9OYmxCvM", "subcategory": "qVcXs2Oq", "userId": "Nz8ZLBsn"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op PublicReportUser \
     --namespace $TEST_NAMESPACE \
-    --userId 'gWlaLned' \
+    --userId 'cbRrf6uE' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicReportUser'
@@ -694,8 +694,8 @@ $CLI_EXE \
     --sn basic \
     --op PublicGeneratedUserUploadContentUrl \
     --namespace $TEST_NAMESPACE \
-    --userId 'DfasTc8g' \
-    --fileType 'r2znWqD6' \
+    --userId 'djUnr04W' \
+    --fileType 'ZNhgEGvq' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGeneratedUserUploadContentUrl'
 delete_file $TEMP_FILE
@@ -707,7 +707,7 @@ $CLI_EXE \
     --sn basic \
     --op PublicGetUserProfileInfo \
     --namespace $TEST_NAMESPACE \
-    --userId 'tIcfI5Z4' \
+    --userId 'KWQTkE65' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserProfileInfo'
 delete_file $TEMP_FILE
@@ -716,12 +716,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 52 PublicUpdateUserProfile
 # body param: body
-echo '{"avatarLargeUrl": "tUNQ7mQP", "avatarSmallUrl": "jCalZgFV", "avatarUrl": "EQyqav09", "customAttributes": {"OYmxCvMq": {}}, "dateOfBirth": "1994-01-16", "firstName": "Xs2OqNz8", "language": "ZLBsncbR", "lastName": "rf6uEdjU", "timeZone": "nr04WZNh", "zipCode": "gEGvqKWQ"}' > $TEMP_JSON_INPUT
+echo '{"avatarLargeUrl": "j6186p0W", "avatarSmallUrl": "fsnWZuUP", "avatarUrl": "saRnVdrd", "customAttributes": {"BA2hXwYy": {}}, "dateOfBirth": "9020-04-21", "firstName": "TfofHdfo", "language": "QdCA_OkXi", "lastName": "5ocfy4EI", "timeZone": "xwBiB90v", "zipCode": "dgS5YpKs"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op PublicUpdateUserProfile \
     --namespace $TEST_NAMESPACE \
-    --userId 'TkE65j61' \
+    --userId 'dbpiU2Uf' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicUpdateUserProfile'
@@ -731,12 +731,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 53 PublicCreateUserProfile
 # body param: body
-echo '{"avatarLargeUrl": "86p0Wfsn", "avatarSmallUrl": "WZuUPsaR", "avatarUrl": "nVdrdBA2", "customAttributes": {"hXwYyzZM": {}}, "dateOfBirth": "1972-04-05", "firstName": "R4cL76hn", "language": "FDgTfofH", "lastName": "dfoSqDca", "timeZone": "FhOc1oKx"}' > $TEMP_JSON_INPUT
+echo '{"avatarLargeUrl": "yMO4DhL9", "avatarSmallUrl": "fBKJvjBO", "avatarUrl": "Un3bYf5o", "customAttributes": {"uXqkbiEx": {}}, "dateOfBirth": "7274-07-02", "firstName": "wOI1P04d", "language": "hFtW-rFmX_931", "lastName": "7p2SyFDE", "timeZone": "nmYQzehP"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op PublicCreateUserProfile \
     --namespace $TEST_NAMESPACE \
-    --userId 'I8f5ocfy' \
+    --userId 'BqD12Dvv' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicCreateUserProfile'
@@ -749,7 +749,7 @@ $CLI_EXE \
     --sn basic \
     --op PublicGetCustomAttributesInfo \
     --namespace $TEST_NAMESPACE \
-    --userId '4EIxwBiB' \
+    --userId 'zNNZSu5z' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetCustomAttributesInfo'
 delete_file $TEMP_FILE
@@ -758,12 +758,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 55 PublicUpdateCustomAttributesPartially
 # body param: body
-echo '{"90vdgS5Y": {}}' > $TEMP_JSON_INPUT
+echo '{"ZVgY3Zos": {}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op PublicUpdateCustomAttributesPartially \
     --namespace $TEST_NAMESPACE \
-    --userId 'pKsdbpiU' \
+    --userId 'fd01vaOG' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicUpdateCustomAttributesPartially'
@@ -776,7 +776,7 @@ $CLI_EXE \
     --sn basic \
     --op PublicGetUserProfilePublicInfo \
     --namespace $TEST_NAMESPACE \
-    --userId '2UfyMO4D' \
+    --userId 'weHacvHR' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserProfilePublicInfo'
 delete_file $TEMP_FILE
@@ -785,12 +785,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 57 PublicUpdateUserProfileStatus
 # body param: body
-echo '{"status": "ACTIVE"}' > $TEMP_JSON_INPUT
+echo '{"status": "INACTIVE"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op PublicUpdateUserProfileStatus \
     --namespace $TEST_NAMESPACE \
-    --userId 'L9fBKJvj' \
+    --userId 'B8hos4ya' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicUpdateUserProfileStatus'

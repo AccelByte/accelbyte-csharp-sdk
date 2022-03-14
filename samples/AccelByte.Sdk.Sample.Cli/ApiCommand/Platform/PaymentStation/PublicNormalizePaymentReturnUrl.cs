@@ -39,8 +39,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("payload")]
         public string? Payload { get; set; }
 
+        [SdkCommandArgument("redirectResult")]
+        public string? RedirectResult { get; set; }
+
         [SdkCommandArgument("resultCode")]
         public string? ResultCode { get; set; }
+
+        [SdkCommandArgument("sessionId")]
+        public string? SessionId { get; set; }
 
         [SdkCommandArgument("status")]
         public string? Status { get; set; }
@@ -81,7 +87,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Foreinginvoice,                
                 InvoiceId,                
                 Payload,                
+                RedirectResult,                
                 ResultCode,                
+                SessionId,                
                 Status,                
                 Token,                
                 Type,                

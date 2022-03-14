@@ -26,8 +26,14 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("password")]
         public string? Password { get; set; }
         
+        [JsonPropertyName("reachMinimumAge")]
+        public bool? ReachMinimumAge { get; set; }
+        
         [JsonPropertyName("username")]
         public string? Username { get; set; }
+        
+        [JsonPropertyName("validateOnly")]
+        public bool? ValidateOnly { get; set; }
         
     }
 }

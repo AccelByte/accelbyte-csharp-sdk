@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "Justice Platform Service",
-    "version": "4.3.2",
+    "version": "4.4.2",
     "title": "justice-platform-service",
     "contact": {
       "name": "Engineering Team at AccelByte",
@@ -16007,18 +16007,7 @@
           {
             "name": "status",
             "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "resultCode",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "payload",
-            "in": "query",
+            "description": "paypal and xsolla will return this",
             "required": false,
             "type": "string"
           },
@@ -16039,6 +16028,34 @@
             "name": "PayerID",
             "in": "query",
             "description": "PayPal payer id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "resultCode",
+            "in": "query",
+            "description": "adyen redirect resultCode from checkout sdk",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "payload",
+            "in": "query",
+            "description": "adyen redirect session data for checkout sdk",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sessionId",
+            "in": "query",
+            "description": "adyen redirect session Id for drop in",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "redirectResult",
+            "in": "query",
+            "description": "adyen redirect session data for drop in",
             "required": false,
             "type": "string"
           }
@@ -16185,7 +16202,7 @@
           "PaymentStation"
         ],
         "summary": "Get payment provider customization",
-        "description": "Get payment provider customization, at current only Adyen provide customization.<br>Other detail info: <ul><li><i>Returns</i>: customization</li></ul>",
+        "description": "Get payment provider customization, at current only Adyen provide customization. This api has been deprecated, pls use /public/namespaces/{namespace}/payment/publicconfig to get adyen config<br>Other detail info: <ul><li><i>Returns</i>: customization</li></ul>",
         "operationId": "getPaymentCustomization",
         "consumes": [
           "application/json"
@@ -16237,7 +16254,8 @@
               "$ref": "#/definitions/Customization"
             }
           }
-        }
+        },
+        "deprecated": true
       }
     },
     "/public/namespaces/{namespace}/payment/link": {
@@ -26601,6 +26619,10 @@
           "type": "string",
           "description": "api key, max length is 4096"
         },
+        "clientKey": {
+          "type": "string",
+          "description": "client key, max length is 4096"
+        },
         "merchantAccount": {
           "type": "string",
           "description": "merchant account, max length is 255"
@@ -26646,7 +26668,11 @@
         "settings": {
           "type": "string",
           "example": "{\"autoFocusOnLoad\":true,\"consolidateCards\":true,\"initialPMCount\":5,\"translations\":{\"deliveryAddress\":{\"en_US\":\"Shipping Address\",\"nl_NL\":\"Verzendadres\"}},\"paymentMethods\":{\"card\":{\"sfStyles\":{\"base\":{\"color\":\"#000\",\"fontSize\":\"14px\",\"lineHeight\":\"14px\",\"fontSmoothing\":\"antialiased\"},\"error\":{\"color\":\"red\"},\"placeholder\":{\"color\":\"#d8d8d8\"},\"validated\":{\"color\":\"green\"}},\"separateDateInputs\":false,\"placeholders\":{\"encryptedCardNumber\":\"4111 1111 1111 1111\",\"encryptedExpiryDate\":\"08/18\",\"encryptedSecurityCode\":\"737\"}}}}",
-          "description": "Adyen settings json string, adyen settings docs: https://docs.adyen.com/checkout/web-sdk/customization/settings/"
+          "description": "Adyen settings json string(Deprecated, please use dropInSettings field) adyen settings docs: https://docs.adyen.com/checkout/web-sdk/customization/settings/"
+        },
+        "dropInSettings": {
+          "type": "string",
+          "description": "Adyen drop in settings json string"
         }
       },
       "description": "A DTO object for updating adyen config."
@@ -28548,8 +28574,7 @@
       "type": "object",
       "required": [
         "paymentProvider",
-        "paymentType",
-        "paymentUrl"
+        "paymentType"
       ],
       "properties": {
         "paymentProvider": {
@@ -28581,6 +28606,14 @@
             "QR_CODE",
             "LINK"
           ]
+        },
+        "sessionId": {
+          "type": "string",
+          "description": "adyen session id"
+        },
+        "sessionData": {
+          "type": "string",
+          "description": "adyen session data"
         }
       }
     },

@@ -457,6 +457,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public List<Model.AccountcommonCountryAgeRestriction>? PublicGetCountryAgeRestriction(PublicGetCountryAgeRestriction input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelUserCreateResponse? PublicCreateUserV2(PublicCreateUserV2 input) {
             var response = _sdk.RunRequest(input);
 
@@ -933,6 +941,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicSendRegistrationCode(PublicSendRegistrationCode input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicVerifyRegistrationCode(PublicVerifyRegistrationCode input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

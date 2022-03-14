@@ -8,7 +8,7 @@
     },
     "description": "Justice GDPR Service",
     "title": "justice-gdpr-service",
-    "version": "1.13.1"
+    "version": "1.14.0"
   },
   "schemes": [
     "https"
@@ -1623,7 +1623,8 @@
     "models.DeletionStatus": {
       "properties": {
         "DeletionStatus": {
-          "type": "boolean"
+          "type": "boolean",
+          "x-omitempty": false
         },
         "DisplayName": {
           "type": "string"

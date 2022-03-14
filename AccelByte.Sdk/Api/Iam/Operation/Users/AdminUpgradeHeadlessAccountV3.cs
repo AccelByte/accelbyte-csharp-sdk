@@ -14,6 +14,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpgradeHeadlessAccountV3
     ///
+    /// 
+    /// 
+    /// If validateOnly is set false, will upgrade headless account with verification code
+    /// 
+    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
     /// 
     /// 

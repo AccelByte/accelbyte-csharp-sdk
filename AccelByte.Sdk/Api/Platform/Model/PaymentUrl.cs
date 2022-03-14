@@ -20,5 +20,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("returnUrl")]
         public string? ReturnUrl { get; set; }
         
+        [JsonPropertyName("sessionData")]
+        public string? SessionData { get; set; }
+        
+        [JsonPropertyName("sessionId")]
+        public string? SessionId { get; set; }
+        
     }
 }

@@ -8,7 +8,7 @@
       "url": "https://accelbyte.io",
       "email": "engineering@accelbyte.io"
     },
-    "version": "1.13.1"
+    "version": "1.14.0"
   },
   "paths": {
     "/gdpr/admin/namespaces/{namespace}/deletions": {

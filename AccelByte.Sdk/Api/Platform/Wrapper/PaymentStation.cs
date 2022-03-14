@@ -15,6 +15,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             _sdk = sdk;
         }
         
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.Customization? GetPaymentCustomization(GetPaymentCustomization input) {
             var response = _sdk.RunRequest(input);
 
@@ -23,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         public Model.PaymentUrl? PublicGetPaymentUrl(PublicGetPaymentUrl input) {
             var response = _sdk.RunRequest(input);
 

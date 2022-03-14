@@ -17,6 +17,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("authType")]
         public string? AuthType { get; set; }
         
+        [JsonPropertyName("code")]
+        public string? Code { get; set; }
+        
         [JsonPropertyName("country")]
         public string? Country { get; set; }
         
@@ -31,6 +34,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         
         [JsonPropertyName("password")]
         public string? Password { get; set; }
+        
+        [JsonPropertyName("reachMinimumAge")]
+        public bool? ReachMinimumAge { get; set; }
         
     }
 }

@@ -23,6 +23,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("clientPermissions")]
         public List<AccountcommonPermissionV3>? ClientPermissions { get; set; }
         
+        [JsonPropertyName("deletable")]
+        public bool? Deletable { get; set; }
+        
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
         

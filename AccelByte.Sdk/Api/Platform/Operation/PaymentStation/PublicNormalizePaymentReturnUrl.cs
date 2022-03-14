@@ -53,7 +53,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             public string? Payload { get; set; }
             
+            public string? RedirectResult { get; set; }
+            
             public string? ResultCode { get; set; }
+            
+            public string? SessionId { get; set; }
             
             public string? Status { get; set; }
             
@@ -94,9 +98,21 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
+            public PublicNormalizePaymentReturnUrlBuilder SetRedirectResult(string _redirectResult)
+            {
+                RedirectResult = _redirectResult;
+                return this;
+            }
+
             public PublicNormalizePaymentReturnUrlBuilder SetResultCode(string _resultCode)
             {
                 ResultCode = _resultCode;
+                return this;
+            }
+
+            public PublicNormalizePaymentReturnUrlBuilder SetSessionId(string _sessionId)
+            {
+                SessionId = _sessionId;
                 return this;
             }
 
@@ -159,7 +175,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Foreinginvoice != null) QueryParams["foreinginvoice"] = builder.Foreinginvoice;
             if (builder.InvoiceId != null) QueryParams["invoice_id"] = builder.InvoiceId;
             if (builder.Payload != null) QueryParams["payload"] = builder.Payload;
+            if (builder.RedirectResult != null) QueryParams["redirectResult"] = builder.RedirectResult;
             if (builder.ResultCode != null) QueryParams["resultCode"] = builder.ResultCode;
+            if (builder.SessionId != null) QueryParams["sessionId"] = builder.SessionId;
             if (builder.Status != null) QueryParams["status"] = builder.Status;
             if (builder.Token != null) QueryParams["token"] = builder.Token;
             if (builder.Type != null) QueryParams["type"] = builder.Type;
@@ -181,7 +199,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string? foreinginvoice,            
             string? invoiceId,            
             string? payload,            
+            string? redirectResult,            
             string? resultCode,            
+            string? sessionId,            
             string? status,            
             string? token,            
             string? type,            
@@ -198,7 +218,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (foreinginvoice != null) QueryParams["foreinginvoice"] = foreinginvoice;
             if (invoiceId != null) QueryParams["invoice_id"] = invoiceId;
             if (payload != null) QueryParams["payload"] = payload;
+            if (redirectResult != null) QueryParams["redirectResult"] = redirectResult;
             if (resultCode != null) QueryParams["resultCode"] = resultCode;
+            if (sessionId != null) QueryParams["sessionId"] = sessionId;
             if (status != null) QueryParams["status"] = status;
             if (token != null) QueryParams["token"] = token;
             if (type != null) QueryParams["type"] = type;

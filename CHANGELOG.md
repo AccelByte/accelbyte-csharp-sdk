@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.4.0
+- Added AWS Lambda sample app. See it's README in samples/AccelByte.Sdk.Sample.Aws.Lambda
+- Added integration tests.
+- Enabled builder pattern for creating AccelByteSDK object.
+- Added optional credential repository to store credential used by client.
+- Added logging feature (disabled by default).
+- Fixed awesome message parsing.
+- Updated APIs.
+	- iam:
+		- added new endpoints.
+		- updated some endpoints.
+	- lobby: updated endpoints.
+	- platform: updated endpoints.
+
 ## v0.3.0
 - Added lobby service feature.
 - Added amazon trace id in every request.

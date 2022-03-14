@@ -14,11 +14,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getPaymentCustomization
     ///
-    /// Get payment provider customization, at current only Adyen provide customization.
+    /// Get payment provider customization, at current only Adyen provide customization. This api has been deprecated, pls use /public/namespaces/{namespace}/payment/publicconfig to get adyen config
     /// Other detail info:
     /// 
     ///   * Returns : customization
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetPaymentCustomization : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

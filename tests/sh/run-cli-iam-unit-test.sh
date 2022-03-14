@@ -15,7 +15,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 TEST_NAMESPACE="test"
 
-OPERATIONS_COUNT=270
+OPERATIONS_COUNT=273
 
 FINISHED_COUNT=0
 SUCCESS_COUNT=0
@@ -645,12 +645,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 51 UserVerification
 # body param: body
-echo '{"Code": "NhgEGvqK", "ContactType": "WQTkE65j", "LanguageTag": "6186p0Wf"}' > $TEMP_JSON_INPUT
+echo '{"Code": "NhgEGvqK", "ContactType": "WQTkE65j", "LanguageTag": "6186p0Wf", "validateOnly": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op UserVerification \
     --namespace $TEST_NAMESPACE \
-    --userId 'snWZuUPs' \
+    --userId 'nWZuUPsa' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UserVerification'
@@ -660,12 +660,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 52 SendVerificationCode
 # body param: body
-echo '{"Context": "aRnVdrdB", "LanguageTag": "A2hXwYyz", "LoginID": "ZMdlR4cL"}' > $TEMP_JSON_INPUT
+echo '{"Context": "RnVdrdBA", "LanguageTag": "2hXwYyzZ", "LoginID": "MdlR4cL7"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op SendVerificationCode \
     --namespace $TEST_NAMESPACE \
-    --userId '76hnFDgT' \
+    --userId '6hnFDgTf' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SendVerificationCode'
@@ -677,12 +677,12 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn iam \
     --op Authorization \
-    --login 'fofHdfoS' \
-    --password 'qDcaFhOc' \
-    --scope '1oKxI8f5' \
-    --state 'ocfy4EIx' \
-    --client_id 'wBiB90vd' \
-    --redirect_uri 'gS5YpKsd' \
+    --login 'ofHdfoSq' \
+    --password 'DcaFhOc1' \
+    --scope 'oKxI8f5o' \
+    --state 'cfy4EIxw' \
+    --client_id 'BiB90vdg' \
+    --redirect_uri 'S5YpKsdb' \
     --response_type 'code' \
     >$TEMP_FILE 2>&1
 update_status $? 'Authorization'
@@ -708,7 +708,7 @@ $CLI_EXE \
     --sn iam \
     --op RevokeUser \
     --namespace $TEST_NAMESPACE \
-    --userId 'piU2UfyM' \
+    --userId 'iU2UfyMO' \
     >$TEMP_FILE 2>&1
 update_status $? 'RevokeUser'
 delete_file $TEMP_FILE
@@ -735,7 +735,7 @@ update_status 0 'RevokeAUser (skipped deprecated)'
 $CLI_EXE \
     --sn iam \
     --op TokenGrant \
-    --code 'O4DhL9fB' \
+    --code '4DhL9fBK' \
     --extend_exp 'True' \
     --namespace 'jBOUn3bY' \
     --password 'f5ouXqkb' \
@@ -1186,9 +1186,21 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 94 PublicCreateUserV2
+#- 94 PublicGetCountryAgeRestriction
+$CLI_EXE \
+    --sn iam \
+    --op PublicGetCountryAgeRestriction \
+    --countryCode 'FcjRpu7w' \
+    --namespace $TEST_NAMESPACE \
+    >$TEMP_FILE 2>&1
+update_status $? 'PublicGetCountryAgeRestriction'
+delete_file $TEMP_FILE
+rm -f $TEMP_JSON_INPUT
+rm -f $TEMP_FILE_UPLOAD
+
+#- 95 PublicCreateUserV2
 # body param: body
-echo '{"AuthType": "FcjRpu7w", "Country": "VEzbwHvO", "DisplayName": "Gqwb7FAI", "LoginId": "8lxDoRtw", "Password": "KNHCncWR", "PasswordMD5Sum": "yVDPNRFI"}' > $TEMP_JSON_INPUT
+echo '{"AuthType": "VEzbwHvO", "Country": "Gqwb7FAI", "DisplayName": "8lxDoRtw", "LoginId": "KNHCncWR", "Password": "yVDPNRFI", "PasswordMD5Sum": "bOIi021v"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicCreateUserV2 \
@@ -1200,9 +1212,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 95 PublicForgotPasswordV2
+#- 96 PublicForgotPasswordV2
 # body param: body
-echo '{"Context": "bOIi021v", "LanguageTag": "VF26yEKn", "LoginID": "KL26vTDv"}' > $TEMP_JSON_INPUT
+echo '{"Context": "VF26yEKn", "LanguageTag": "KL26vTDv", "LoginID": "jjj8aEPj"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicForgotPasswordV2 \
@@ -1214,9 +1226,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 96 PublicResetPasswordV2
+#- 97 PublicResetPasswordV2
 # body param: body
-echo '{"Code": "jjj8aEPj", "LoginID": "DWSwW548", "NewPassword": "hHTuJ1jV"}' > $TEMP_JSON_INPUT
+echo '{"Code": "DWSwW548", "LoginID": "hHTuJ1jV", "NewPassword": "4EKppV4D"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicResetPasswordV2 \
@@ -1228,26 +1240,26 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 97 PublicGetUserByUserIDV2
+#- 98 PublicGetUserByUserIDV2
 $CLI_EXE \
     --sn iam \
     --op PublicGetUserByUserIDV2 \
     --namespace $TEST_NAMESPACE \
-    --userId '4EKppV4D' \
+    --userId 'fTxfj3AG' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserByUserIDV2'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 98 PublicUpdateUserV2
+#- 99 PublicUpdateUserV2
 # body param: body
-echo '{"Country": "fTxfj3AG", "DateOfBirth": "rDhoJooH", "DisplayName": "5WNF4d6D", "LanguageTag": "ELnHRwig"}' > $TEMP_JSON_INPUT
+echo '{"Country": "rDhoJooH", "DateOfBirth": "5WNF4d6D", "DisplayName": "ELnHRwig", "LanguageTag": "r039B7fw"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpdateUserV2 \
     --namespace $TEST_NAMESPACE \
-    --userId 'r039B7fw' \
+    --userId '1zHG7KQT' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicUpdateUserV2'
@@ -1255,12 +1267,12 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 99 PublicGetUserBan
+#- 100 PublicGetUserBan
 $CLI_EXE \
     --sn iam \
     --op PublicGetUserBan \
     --namespace $TEST_NAMESPACE \
-    --userId '1zHG7KQT' \
+    --userId 'rQeIv8R1' \
     --activeOnly 'True' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserBan'
@@ -1268,14 +1280,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 100 PublicUpdatePasswordV2
+#- 101 PublicUpdatePasswordV2
 # body param: body
-echo '{"LanguageTag": "QeIv8R1C", "NewPassword": "tNkXpuQ4", "OldPassword": "g9IiLxJp"}' > $TEMP_JSON_INPUT
+echo '{"LanguageTag": "tNkXpuQ4", "NewPassword": "g9IiLxJp", "OldPassword": "TlIMuKCd"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpdatePasswordV2 \
     --namespace $TEST_NAMESPACE \
-    --userId 'TlIMuKCd' \
+    --userId 'At0XTdLL' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicUpdatePasswordV2'
@@ -1283,47 +1295,47 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 101 GetListJusticePlatformAccounts
+#- 102 GetListJusticePlatformAccounts
 $CLI_EXE \
     --sn iam \
     --op GetListJusticePlatformAccounts \
     --namespace $TEST_NAMESPACE \
-    --userId 'At0XTdLL' \
+    --userId 'O1WSvdw7' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetListJusticePlatformAccounts'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 102 PublicPlatformLinkV2
+#- 103 PublicPlatformLinkV2
 $CLI_EXE \
     --sn iam \
     --op PublicPlatformLinkV2 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'O1WSvdw7' \
-    --userId 'FI8mOSB2' \
-    --ticket 'rvQkdnYl' \
+    --platformId 'FI8mOSB2' \
+    --userId 'rvQkdnYl' \
+    --ticket 'PH6J70BX' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicPlatformLinkV2'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 103 PublicDeletePlatformLinkV2
+#- 104 PublicDeletePlatformLinkV2
 $CLI_EXE \
     --sn iam \
     --op PublicDeletePlatformLinkV2 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'PH6J70BX' \
-    --userId 'WVtxOyZz' \
-    --platform_namespace 'UrVRKRtJ' \
+    --platformId 'WVtxOyZz' \
+    --userId 'UrVRKRtJ' \
+    --platform_namespace 'uZ5W7nPr' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicDeletePlatformLinkV2'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 104 AdminGetBansTypeV3
+#- 105 AdminGetBansTypeV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetBansTypeV3 \
@@ -1333,7 +1345,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 105 AdminGetListBanReasonV3
+#- 106 AdminGetListBanReasonV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetListBanReasonV3 \
@@ -1343,7 +1355,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 106 AdminGetInputValidations
+#- 107 AdminGetInputValidations
 $CLI_EXE \
     --sn iam \
     --op AdminGetInputValidations \
@@ -1353,9 +1365,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 107 AdminUpdateInputValidations
+#- 108 AdminUpdateInputValidations
 # body param: body
-echo '[{"field": "uZ5W7nPr", "validation": {"allowDigit": true, "allowLetter": false, "allowSpace": false, "allowUnicode": true, "description": [{"language": "C31jYv88", "message": ["32yIJUng"]}], "isCustomRegex": false, "letterCase": "7GSrElr5", "maxLength": 24, "maxRepeatingAlphaNum": 12, "maxRepeatingSpecialCharacter": 51, "minCharType": 86, "minLength": 48, "regex": "G8SZmnOv", "specialCharacterLocation": "u24EFzSQ", "specialCharacters": ["yIXv2yW4"]}}]' > $TEMP_JSON_INPUT
+echo '[{"field": "KtUSflKq", "validation": {"allowDigit": true, "allowLetter": false, "allowSpace": true, "allowUnicode": true, "description": [{"language": "IJUngm7G", "message": ["SrElr5mg"]}], "isCustomRegex": true, "letterCase": "0RyG8SZm", "maxLength": 26, "maxRepeatingAlphaNum": 81, "maxRepeatingSpecialCharacter": 43, "minCharType": 41, "minLength": 60, "regex": "FzSQyIXv", "specialCharacterLocation": "2yW4Uka5", "specialCharacters": ["jsUlAifn"]}}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateInputValidations \
@@ -1366,32 +1378,32 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 108 AdminResetInputValidations
+#- 109 AdminResetInputValidations
 $CLI_EXE \
     --sn iam \
     --op AdminResetInputValidations \
-    --field 'Uka5jsUl' \
+    --field 'i52mGYo0' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminResetInputValidations'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 109 ListAdminsV3
+#- 110 ListAdminsV3
 $CLI_EXE \
     --sn iam \
     --op ListAdminsV3 \
     --namespace $TEST_NAMESPACE \
-    --after 'Aifni52m' \
-    --before 'GYo0BjFU' \
-    --limit '89' \
+    --after 'BjFUSZeN' \
+    --before 'r7PeZ5Sa' \
+    --limit '93' \
     >$TEMP_FILE 2>&1
 update_status $? 'ListAdminsV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 110 AdminGetAgeRestrictionStatusV3
+#- 111 AdminGetAgeRestrictionStatusV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetAgeRestrictionStatusV3 \
@@ -1402,9 +1414,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 111 AdminUpdateAgeRestrictionConfigV3
+#- 112 AdminUpdateAgeRestrictionConfigV3
 # body param: body
-echo '{"ageRestriction": 9, "enable": true}' > $TEMP_JSON_INPUT
+echo '{"ageRestriction": 1, "enable": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateAgeRestrictionConfigV3 \
@@ -1416,7 +1428,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 112 AdminGetListCountryAgeRestrictionV3
+#- 113 AdminGetListCountryAgeRestrictionV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetListCountryAgeRestrictionV3 \
@@ -1427,13 +1439,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 113 AdminUpdateCountryAgeRestrictionV3
+#- 114 AdminUpdateCountryAgeRestrictionV3
 # body param: body
-echo '{"ageRestriction": 82}' > $TEMP_JSON_INPUT
+echo '{"ageRestriction": 0}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateCountryAgeRestrictionV3 \
-    --countryCode 'eZ5SaUa0' \
+    --countryCode 'P0Kwv68O' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -1442,22 +1454,22 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 114 AdminGetBannedUsersV3
+#- 115 AdminGetBannedUsersV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetBannedUsersV3 \
     --namespace $TEST_NAMESPACE \
     --activeOnly 'True' \
-    --banType 'aP0Kwv68' \
-    --limit '80' \
-    --offset '36' \
+    --banType 'qOUTPXze' \
+    --limit '23' \
+    --offset '49' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetBannedUsersV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 115 AdminGetBansTypeWithNamespaceV3
+#- 116 AdminGetBansTypeWithNamespaceV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetBansTypeWithNamespaceV3 \
@@ -1468,22 +1480,22 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 116 AdminGetClientsByNamespaceV3
+#- 117 AdminGetClientsByNamespaceV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetClientsByNamespaceV3 \
     --namespace $TEST_NAMESPACE \
-    --limit '33' \
-    --offset 'OUTPXzel' \
+    --limit '5' \
+    --offset 'hmgjLvnO' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetClientsByNamespaceV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 117 AdminCreateClientV3
+#- 118 AdminCreateClientV3
 # body param: body
-echo '{"audiences": ["ychmgjLv"], "baseUri": "nOWOk5Ae", "clientId": "kVVmTIEG", "clientName": "2ppf1fH3", "clientPermissions": [{"action": 78, "resource": "wfEQkdzI", "schedAction": 70, "schedCron": "QzAp0rF8", "schedRange": ["gvdnF1yM"]}], "namespace": "voXLWNoQ", "oauthClientType": "ZhvPg7VX", "redirectUri": "5rUNWJaq", "secret": "1fjgDypx"}' > $TEMP_JSON_INPUT
+echo '{"audiences": ["WOk5AekV"], "baseUri": "VmTIEG2p", "clientId": "pf1fH3Nw", "clientName": "fEQkdzI8", "clientPermissions": [{"action": 70, "resource": "QzAp0rF8", "schedAction": 12, "schedCron": "vdnF1yMv", "schedRange": ["oXLWNoQZ"]}], "deletable": false, "namespace": "vPg7VX5r", "oauthClientType": "UNWJaq1f", "redirectUri": "jgDypxO4", "secret": "ufKfU7Ou"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminCreateClientV3 \
@@ -1495,11 +1507,11 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 118 AdminGetClientsbyNamespacebyIDV3
+#- 119 AdminGetClientsbyNamespacebyIDV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetClientsbyNamespacebyIDV3 \
-    --clientId 'O4ufKfU7' \
+    --clientId 'mxSk0Ebj' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetClientsbyNamespacebyIDV3'
@@ -1507,11 +1519,11 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 119 AdminDeleteClientV3
+#- 120 AdminDeleteClientV3
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteClientV3 \
-    --clientId 'OumxSk0E' \
+    --clientId 'u4dSLx4v' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminDeleteClientV3'
@@ -1519,13 +1531,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 120 AdminUpdateClientV3
+#- 121 AdminUpdateClientV3
 # body param: body
-echo '{"audiences": ["bju4dSLx"], "baseUri": "4vsb6rx9", "clientName": "Xxsu8TJH", "clientPermissions": [{"action": 31, "resource": "dZVC6y6b", "schedAction": 11, "schedCron": "Qpa7b36m", "schedRange": ["y8LWzMOf"]}], "namespace": "njwsIxM4", "redirectUri": "s9m2qWNv"}' > $TEMP_JSON_INPUT
+echo '{"audiences": ["sb6rx9Xx"], "baseUri": "su8TJHpd", "clientName": "ZVC6y6b9", "clientPermissions": [{"action": 11, "resource": "Qpa7b36m", "schedAction": 48, "schedCron": "8LWzMOfn", "schedRange": ["jwsIxM4s"]}], "deletable": false, "namespace": "2qWNvmPP", "redirectUri": "lRULr7pP"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateClientV3 \
-    --clientId 'mPPlRULr' \
+    --clientId 'FCzbPX1w' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -1534,13 +1546,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 121 AdminUpdateClientPermissionV3
+#- 122 AdminUpdateClientPermissionV3
 # body param: body
-echo '{"permissions": [{"action": 31, "resource": "PFCzbPX1"}]}' > $TEMP_JSON_INPUT
+echo '{"permissions": [{"action": 44, "resource": "BznD7NLs"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateClientPermissionV3 \
-    --clientId 'wwBznD7N' \
+    --clientId '7fb4sqWU' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -1549,13 +1561,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 122 AdminAddClientPermissionsV3
+#- 123 AdminAddClientPermissionsV3
 # body param: body
-echo '{"permissions": [{"action": 74, "resource": "s7fb4sqW"}]}' > $TEMP_JSON_INPUT
+echo '{"permissions": [{"action": 30, "resource": "B4t2ieA8"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAddClientPermissionsV3 \
-    --clientId 'UpB4t2ie' \
+    --clientId 'XRPhVzkt' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -1564,21 +1576,21 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 123 AdminDeleteClientPermissionV3
+#- 124 AdminDeleteClientPermissionV3
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteClientPermissionV3 \
-    --action '52' \
-    --clientId '8XRPhVzk' \
+    --action '36' \
+    --clientId 'WibnpBKX' \
     --namespace $TEST_NAMESPACE \
-    --resource 'tsWibnpB' \
+    --resource 'MWuoFv0q' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminDeleteClientPermissionV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 124 RetrieveAllThirdPartyLoginPlatformCredentialV3
+#- 125 RetrieveAllThirdPartyLoginPlatformCredentialV3
 $CLI_EXE \
     --sn iam \
     --op RetrieveAllThirdPartyLoginPlatformCredentialV3 \
@@ -1589,7 +1601,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 125 RetrieveAllActiveThirdPartyLoginPlatformCredentialV3
+#- 126 RetrieveAllActiveThirdPartyLoginPlatformCredentialV3
 $CLI_EXE \
     --sn iam \
     --op RetrieveAllActiveThirdPartyLoginPlatformCredentialV3 \
@@ -1600,39 +1612,39 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 126 RetrieveAllSSOLoginPlatformCredentialV3
+#- 127 RetrieveAllSSOLoginPlatformCredentialV3
 $CLI_EXE \
     --sn iam \
     --op RetrieveAllSSOLoginPlatformCredentialV3 \
     --namespace $TEST_NAMESPACE \
-    --limit '72' \
-    --offset 'XMWuoFv0' \
+    --limit '19' \
+    --offset 'BvBzZGOh' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveAllSSOLoginPlatformCredentialV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 127 RetrieveThirdPartyLoginPlatformCredentialV3
+#- 128 RetrieveThirdPartyLoginPlatformCredentialV3
 $CLI_EXE \
     --sn iam \
     --op RetrieveThirdPartyLoginPlatformCredentialV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'qjBvBzZG' \
+    --platformId 'AwcbpybZ' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveThirdPartyLoginPlatformCredentialV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 128 AddThirdPartyLoginPlatformCredentialV3
+#- 129 AddThirdPartyLoginPlatformCredentialV3
 # body param: body
-echo '{"ACSURL": "OhAwcbpy", "AWSCognitoRegion": "bZn4ZE5O", "AWSCognitoUserPool": "mbNkHnef", "AppId": "ZWDwi6an", "ClientId": "YnQ92kVB", "Environment": "DkaMy03B", "FederationMetadataURL": "ul4GW3V0", "IsActive": true, "KeyID": "bxvTGycc", "OrganizationId": "HSkFQzgV", "RedirectUri": "R72Dhxbr", "Secret": "4HtKMGr8", "TeamID": "tnOEeip5"}' > $TEMP_JSON_INPUT
+echo '{"ACSURL": "n4ZE5Omb", "AWSCognitoRegion": "NkHnefZW", "AWSCognitoUserPool": "Dwi6anYn", "AppId": "Q92kVBDk", "ClientId": "aMy03Bul", "Environment": "4GW3V0WC", "FederationMetadataURL": "bxvTGycc", "IsActive": false, "KeyID": "FQzgVR72", "OrganizationId": "Dhxbr4Ht", "RedirectUri": "KMGr8tnO", "Secret": "Eeip505i", "TeamID": "JTzZuksb"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AddThirdPartyLoginPlatformCredentialV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId '05iJTzZu' \
+    --platformId '4hREcOx3' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AddThirdPartyLoginPlatformCredentialV3'
@@ -1640,26 +1652,26 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 129 DeleteThirdPartyLoginPlatformCredentialV3
+#- 130 DeleteThirdPartyLoginPlatformCredentialV3
 $CLI_EXE \
     --sn iam \
     --op DeleteThirdPartyLoginPlatformCredentialV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'ksb4hREc' \
+    --platformId 'mATUsOS0' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteThirdPartyLoginPlatformCredentialV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 130 UpdateThirdPartyLoginPlatformCredentialV3
+#- 131 UpdateThirdPartyLoginPlatformCredentialV3
 # body param: body
-echo '{"ACSURL": "Ox3mATUs", "AWSCognitoRegion": "OS0e5Tma", "AWSCognitoUserPool": "pkimopcl", "AppId": "vfm7fdu7", "ClientId": "isKaWRcv", "Environment": "kLtfmGyS", "FederationMetadataURL": "rACKa0mW", "IsActive": false, "KeyID": "DRcuLbIp", "OrganizationId": "VJnIAFpX", "RedirectUri": "2SKNmncD", "Secret": "RknJortw", "TeamID": "VqipgpXV"}' > $TEMP_JSON_INPUT
+echo '{"ACSURL": "e5Tmapki", "AWSCognitoRegion": "mopclvfm", "AWSCognitoUserPool": "7fdu7isK", "AppId": "aWRcvkLt", "ClientId": "fmGySrAC", "Environment": "Ka0mWWkD", "FederationMetadataURL": "RcuLbIpV", "IsActive": false, "KeyID": "IAFpX2SK", "OrganizationId": "NmncDRkn", "RedirectUri": "JortwVqi", "Secret": "pgpXVyWo", "TeamID": "DjOHrGcz"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op UpdateThirdPartyLoginPlatformCredentialV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'yWoDjOHr' \
+    --platformId 'aXWipcAH' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateThirdPartyLoginPlatformCredentialV3'
@@ -1667,14 +1679,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 131 UpdateThirdPartyLoginPlatformDomainV3
+#- 132 UpdateThirdPartyLoginPlatformDomainV3
 # body param: body
-echo '{"affectedClientIDs": ["GczaXWip"], "assignedNamespaces": ["cAHtRkBJ"], "domain": "XZwQ443F", "roleId": "fWtsTAAg"}' > $TEMP_JSON_INPUT
+echo '{"affectedClientIDs": ["tRkBJXZw"], "assignedNamespaces": ["Q443FfWt"], "domain": "sTAAgtCn", "roleId": "vDp28TMv"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op UpdateThirdPartyLoginPlatformDomainV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'tCnvDp28' \
+    --platformId 'lTcBaljk' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateThirdPartyLoginPlatformDomainV3'
@@ -1682,14 +1694,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 132 DeleteThirdPartyLoginPlatformDomainV3
+#- 133 DeleteThirdPartyLoginPlatformDomainV3
 # body param: body
-echo '{"domain": "TMvlTcBa"}' > $TEMP_JSON_INPUT
+echo '{"domain": "3sB4LS44"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op DeleteThirdPartyLoginPlatformDomainV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'ljk3sB4L' \
+    --platformId 'hWONXuXi' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteThirdPartyLoginPlatformDomainV3'
@@ -1697,26 +1709,26 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 133 RetrieveSSOLoginPlatformCredential
+#- 134 RetrieveSSOLoginPlatformCredential
 $CLI_EXE \
     --sn iam \
     --op RetrieveSSOLoginPlatformCredential \
     --namespace $TEST_NAMESPACE \
-    --platformId 'S44hWONX' \
+    --platformId 'hqBVEXSy' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveSSOLoginPlatformCredential'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 134 AddSSOLoginPlatformCredential
+#- 135 AddSSOLoginPlatformCredential
 # body param: body
-echo '{"acsUrl": "uXihqBVE", "apiKey": "XSyrZKBv", "appId": "Ga0LshfP", "federationMetadataUrl": "3LqrZcSs", "isActive": true, "redirectUri": "DDAiSjXH", "secret": "3ypQaqFP", "ssoUrl": "MAjx7edU"}' > $TEMP_JSON_INPUT
+echo '{"acsUrl": "rZKBvGa0", "apiKey": "LshfP3Lq", "appId": "rZcSsGFD", "federationMetadataUrl": "DAiSjXH3", "isActive": true, "redirectUri": "pQaqFPMA", "secret": "jx7edUxN", "ssoUrl": "5KMSLs21"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AddSSOLoginPlatformCredential \
     --namespace $TEST_NAMESPACE \
-    --platformId 'xN5KMSLs' \
+    --platformId 'gdQU0FhA' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AddSSOLoginPlatformCredential'
@@ -1724,26 +1736,26 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 135 DeleteSSOLoginPlatformCredentialV3
+#- 136 DeleteSSOLoginPlatformCredentialV3
 $CLI_EXE \
     --sn iam \
     --op DeleteSSOLoginPlatformCredentialV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId '21gdQU0F' \
+    --platformId 'QYQaHZ7W' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteSSOLoginPlatformCredentialV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 136 UpdateSSOPlatformCredential
+#- 137 UpdateSSOPlatformCredential
 # body param: body
-echo '{"acsUrl": "hAQYQaHZ", "apiKey": "7WtAApJt", "appId": "fB0Xt8Zc", "federationMetadataUrl": "puz7BY3J", "isActive": false, "redirectUri": "Mt1HRDFx", "secret": "kSaTdINJ", "ssoUrl": "TdRQmMvx"}' > $TEMP_JSON_INPUT
+echo '{"acsUrl": "tAApJtfB", "apiKey": "0Xt8Zcpu", "appId": "z7BY3JPV", "federationMetadataUrl": "nMt1HRDF", "isActive": true, "redirectUri": "kSaTdINJ", "secret": "TdRQmMvx", "ssoUrl": "BjpVFnEg"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op UpdateSSOPlatformCredential \
     --namespace $TEST_NAMESPACE \
-    --platformId 'BjpVFnEg' \
+    --platformId 'sovZbx4U' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateSSOPlatformCredential'
@@ -1751,49 +1763,49 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 137 AdminGetUserByPlatformUserIDV3
+#- 138 AdminGetUserByPlatformUserIDV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserByPlatformUserIDV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'sovZbx4U' \
-    --platformUserId 'F3pYMzeF' \
+    --platformId 'F3pYMzeF' \
+    --platformUserId 'csBLCwhT' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetUserByPlatformUserIDV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 138 GetAdminUsersByRoleIdV3
+#- 139 GetAdminUsersByRoleIdV3
 $CLI_EXE \
     --sn iam \
     --op GetAdminUsersByRoleIdV3 \
     --namespace $TEST_NAMESPACE \
-    --roleId 'csBLCwhT' \
+    --roleId 'StBJZGkI' \
     --after '89' \
-    --before '39' \
-    --limit '55' \
+    --before '74' \
+    --limit '89' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetAdminUsersByRoleIdV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 139 AdminGetUserByEmailAddressV3
+#- 140 AdminGetUserByEmailAddressV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserByEmailAddressV3 \
     --namespace $TEST_NAMESPACE \
-    --emailAddress 'JZGkISL9' \
+    --emailAddress 'co6HxX79' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetUserByEmailAddressV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 140 AdminListUserIDByUserIDsV3
+#- 141 AdminListUserIDByUserIDsV3
 # body param: body
-echo '{"userIds": ["Sco6HxX7"]}' > $TEMP_JSON_INPUT
+echo '{"userIds": ["bWJClH3p"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminListUserIDByUserIDsV3 \
@@ -1805,9 +1817,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 141 AdminInviteUserV3
+#- 142 AdminInviteUserV3
 # body param: body
-echo '{"emailAddresses": ["9bWJClH3"], "isAdmin": false, "roles": ["XWCq3ysd"]}' > $TEMP_JSON_INPUT
+echo '{"emailAddresses": ["XWCq3ysd"], "isAdmin": false, "roles": ["W3XyQQmf"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminInviteUserV3 \
@@ -1819,41 +1831,41 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 142 AdminListUsersV3
+#- 143 AdminListUsersV3
 $CLI_EXE \
     --sn iam \
     --op AdminListUsersV3 \
     --namespace $TEST_NAMESPACE \
-    --limit '31' \
-    --offset '96' \
+    --limit '38' \
+    --offset '24' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminListUsersV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 143 AdminSearchUserV3
+#- 144 AdminSearchUserV3
 $CLI_EXE \
     --sn iam \
     --op AdminSearchUserV3 \
     --namespace $TEST_NAMESPACE \
-    --by '3XyQQmft' \
-    --endDate 'mA5HUHio' \
-    --limit '46' \
-    --offset 'zVhzHc1r' \
-    --platformBy 'BqAXud4J' \
-    --platformId 'QOWZBzUv' \
-    --query 'NkxTUqI2' \
-    --startDate 'XhbYwTxV' \
+    --by 'A5HUHiox' \
+    --endDate 'zVhzHc1r' \
+    --limit '55' \
+    --offset 'qAXud4JQ' \
+    --platformBy 'OWZBzUvN' \
+    --platformId 'kxTUqI2X' \
+    --query 'hbYwTxVS' \
+    --startDate 'XpJb2JSu' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminSearchUserV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 144 AdminGetBulkUserByEmailAddressV3
+#- 145 AdminGetBulkUserByEmailAddressV3
 # body param: body
-echo '{"listEmailAddressRequest": ["SXpJb2JS"]}' > $TEMP_JSON_INPUT
+echo '{"listEmailAddressRequest": ["HHCRP9xW"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminGetBulkUserByEmailAddressV3 \
@@ -1865,26 +1877,26 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 145 AdminGetUserByUserIdV3
+#- 146 AdminGetUserByUserIdV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserByUserIdV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'uHHCRP9x' \
+    --userId '9VeYJCDi' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetUserByUserIdV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 146 AdminUpdateUserV3
+#- 147 AdminUpdateUserV3
 # body param: body
-echo '{"country": "W9VeYJCD", "dateOfBirth": "ikIapumY", "displayName": "wbaGfsJT", "languageTag": "gobWG93d", "userName": "H2MCGvoh"}' > $TEMP_JSON_INPUT
+echo '{"country": "kIapumYw", "dateOfBirth": "baGfsJTg", "displayName": "obWG93dH", "languageTag": "2MCGvohr", "userName": "dRx6lVi7"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'rdRx6lVi' \
+    --userId 'UcTmEwe9' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdateUserV3'
@@ -1892,30 +1904,30 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 147 AdminGetUserBanV3
+#- 148 AdminGetUserBanV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserBanV3 \
     --namespace $TEST_NAMESPACE \
-    --userId '7UcTmEwe' \
+    --userId 'mWH3XVfy' \
     --activeOnly 'False' \
-    --after 'WH3XVfye' \
-    --before 'jgTi2E85' \
-    --limit '95' \
+    --after 'jgTi2E85' \
+    --before 'VnFsoXaR' \
+    --limit '60' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetUserBanV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 148 AdminBanUserV3
+#- 149 AdminBanUserV3
 # body param: body
-echo '{"ban": "nFsoXaRE", "comment": "a1WpsZ5P", "endDate": "oXUApZEP", "reason": "fic39c2q", "skipNotif": false}' > $TEMP_JSON_INPUT
+echo '{"ban": "a1WpsZ5P", "comment": "oXUApZEP", "endDate": "fic39c2q", "reason": "3a6kRuGq", "skipNotif": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminBanUserV3 \
     --namespace $TEST_NAMESPACE \
-    --userId '6kRuGqHc' \
+    --userId 'wZVjAQCk' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminBanUserV3'
@@ -1923,15 +1935,15 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 149 AdminUpdateUserBanV3
+#- 150 AdminUpdateUserBanV3
 # body param: body
-echo '{"enabled": true, "skipNotif": false}' > $TEMP_JSON_INPUT
+echo '{"enabled": false, "skipNotif": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserBanV3 \
-    --banId 'AQCkWjE3' \
+    --banId '3gJ6AwW9' \
     --namespace $TEST_NAMESPACE \
-    --userId 'gJ6AwW95' \
+    --userId '53NlFHpD' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdateUserBanV3'
@@ -1939,14 +1951,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 150 AdminSendVerificationCodeV3
+#- 151 AdminSendVerificationCodeV3
 # body param: body
-echo '{"context": "3NlFHpDC", "emailAddress": "Fut39Jhj", "languageTag": "3lmfXJxK"}' > $TEMP_JSON_INPUT
+echo '{"context": "CFut39Jh", "emailAddress": "j3lmfXJx", "languageTag": "KJNRD3Ku"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminSendVerificationCodeV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'JNRD3Kum' \
+    --userId 'mRjk3wZY' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminSendVerificationCodeV3'
@@ -1954,14 +1966,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 151 AdminVerifyAccountV3
+#- 152 AdminVerifyAccountV3
 # body param: body
-echo '{"Code": "Rjk3wZYV", "ContactType": "b3SFssnx", "LanguageTag": "4JYy1kXa"}' > $TEMP_JSON_INPUT
+echo '{"Code": "Vb3SFssn", "ContactType": "x4JYy1kX", "LanguageTag": "akVQoG01", "validateOnly": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminVerifyAccountV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'kVQoG01u' \
+    --userId 'psR2PZ0E' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminVerifyAccountV3'
@@ -1969,38 +1981,38 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 152 GetUserVerificationCode
+#- 153 GetUserVerificationCode
 $CLI_EXE \
     --sn iam \
     --op GetUserVerificationCode \
     --namespace $TEST_NAMESPACE \
-    --userId 'psR2PZ0E' \
+    --userId '2oWaCZcC' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserVerificationCode'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 153 AdminGetUserDeletionStatusV3
+#- 154 AdminGetUserDeletionStatusV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserDeletionStatusV3 \
     --namespace $TEST_NAMESPACE \
-    --userId '2oWaCZcC' \
+    --userId 'X2iLiQGT' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetUserDeletionStatusV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 154 AdminUpdateUserDeletionStatusV3
+#- 155 AdminUpdateUserDeletionStatusV3
 # body param: body
 echo '{"enabled": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserDeletionStatusV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'LiQGTL6O' \
+    --userId 'LlXUV78i' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdateUserDeletionStatusV3'
@@ -2008,14 +2020,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 155 AdminUpgradeHeadlessAccountV3
+#- 156 AdminUpgradeHeadlessAccountV3
 # body param: body
-echo '{"code": "YjLlXUV7", "country": "8i8csQIO", "dateOfBirth": "0DRagPXz", "displayName": "sBfUhCoG", "emailAddress": "FgirdMLe", "password": "xA5zJvQd"}' > $TEMP_JSON_INPUT
+echo '{"code": "8csQIO0D", "country": "RagPXzsB", "dateOfBirth": "fUhCoGFg", "displayName": "irdMLexA", "emailAddress": "5zJvQd2c", "password": "OVXFoiaY", "validateOnly": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpgradeHeadlessAccountV3 \
     --namespace $TEST_NAMESPACE \
-    --userId '2cOVXFoi' \
+    --userId 'Soog7pSs' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpgradeHeadlessAccountV3'
@@ -2023,41 +2035,41 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 156 AdminDeleteUserInformationV3
+#- 157 AdminDeleteUserInformationV3
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteUserInformationV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'aYaSoog7' \
+    --userId 'QhvXbGvq' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminDeleteUserInformationV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 157 AdminGetUserLoginHistoriesV3
+#- 158 AdminGetUserLoginHistoriesV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserLoginHistoriesV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'pSsQhvXb' \
-    --after '0.5021168390637625' \
-    --before '0.25060815867870634' \
-    --limit '0.7375615216008776' \
+    --userId 'RVSSwvlR' \
+    --after '0.9924464254927992' \
+    --before '0.05247258860037207' \
+    --limit '0.7722917145549444' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetUserLoginHistoriesV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 158 AdminUpdateUserPermissionV3
+#- 159 AdminUpdateUserPermissionV3
 # body param: body
-echo '{"Permissions": [{"Action": 89, "Resource": "wvlRzdNX", "SchedAction": 35, "SchedCron": "foKVR4Hh", "SchedRange": ["lPEfSM2K"]}]}' > $TEMP_JSON_INPUT
+echo '{"Permissions": [{"Action": 11, "Resource": "oKVR4Hhl", "SchedAction": 82, "SchedCron": "EfSM2K29", "SchedRange": ["oqfZssib"]}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserPermissionV3 \
     --namespace $TEST_NAMESPACE \
-    --userId '29oqfZss' \
+    --userId 'goTFQAmI' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdateUserPermissionV3'
@@ -2065,14 +2077,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 159 AdminAddUserPermissionsV3
+#- 160 AdminAddUserPermissionsV3
 # body param: body
-echo '{"Permissions": [{"Action": 17, "Resource": "bgoTFQAm", "SchedAction": 69, "SchedCron": "ZiTSstC2", "SchedRange": ["yOumzHMh"]}]}' > $TEMP_JSON_INPUT
+echo '{"Permissions": [{"Action": 17, "Resource": "TSstC2yO", "SchedAction": 40, "SchedCron": "mzHMhXys", "SchedRange": ["ws3Fwnu7"]}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAddUserPermissionsV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'Xysws3Fw' \
+    --userId 'OX9FZvwJ' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminAddUserPermissionsV3'
@@ -2080,14 +2092,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 160 AdminDeleteUserPermissionBulkV3
+#- 161 AdminDeleteUserPermissionBulkV3
 # body param: body
-echo '[{"Action": 27, "Resource": "u7OX9FZv"}]' > $TEMP_JSON_INPUT
+echo '[{"Action": 80, "Resource": "QFuCH68p"}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteUserPermissionBulkV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'wJ8OQFuC' \
+    --userId 'TmT632j8' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminDeleteUserPermissionBulkV3'
@@ -2095,68 +2107,68 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 161 AdminDeleteUserPermissionV3
+#- 162 AdminDeleteUserPermissionV3
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteUserPermissionV3 \
-    --action '66' \
+    --action '84' \
     --namespace $TEST_NAMESPACE \
-    --resource '68pTmT63' \
-    --userId '2j8QfhND' \
+    --resource 'fhNDTHb8' \
+    --userId 'lFvBolf9' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminDeleteUserPermissionV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 162 AdminGetUserPlatformAccountsV3
+#- 163 AdminGetUserPlatformAccountsV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserPlatformAccountsV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'THb8lFvB' \
-    --after 'olf9Pdi5' \
-    --before 'BLCsT8g7' \
-    --limit '39' \
+    --userId 'Pdi5BLCs' \
+    --after 'T8g72thh' \
+    --before 'duZnNj9c' \
+    --limit '87' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetUserPlatformAccountsV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 163 AdminGetListJusticePlatformAccounts
+#- 164 AdminGetListJusticePlatformAccounts
 $CLI_EXE \
     --sn iam \
     --op AdminGetListJusticePlatformAccounts \
     --namespace $TEST_NAMESPACE \
-    --userId 'hhduZnNj' \
+    --userId 'NlTBxl3n' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetListJusticePlatformAccounts'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 164 AdminCreateJusticeUser
+#- 165 AdminCreateJusticeUser
 $CLI_EXE \
     --sn iam \
     --op AdminCreateJusticeUser \
     --namespace $TEST_NAMESPACE \
-    --targetNamespace '9cRNlTBx' \
-    --userId 'l3nKj6B4' \
+    --targetNamespace 'Kj6B4ffg' \
+    --userId 'txiPLdV0' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminCreateJusticeUser'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 165 AdminLinkPlatformAccount
+#- 166 AdminLinkPlatformAccount
 # body param: body
-echo '{"platformId": "ffgtxiPL", "platformUserId": "dV0odbfa"}' > $TEMP_JSON_INPUT
+echo '{"platformId": "odbfast4", "platformUserId": "NDIBQl3U"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminLinkPlatformAccount \
     --namespace $TEST_NAMESPACE \
-    --userId 'st4NDIBQ' \
+    --userId 'ryryOWzh' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminLinkPlatformAccount'
@@ -2164,15 +2176,15 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 166 AdminPlatformUnlinkV3
+#- 167 AdminPlatformUnlinkV3
 # body param: body
-echo '{"platformNamespace": "l3UryryO"}' > $TEMP_JSON_INPUT
+echo '{"platformNamespace": "hEmSVFhA"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminPlatformUnlinkV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'WzhhEmSV' \
-    --userId 'FhAlEacA' \
+    --platformId 'lEacAAoA' \
+    --userId 'fsuMB4W3' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminPlatformUnlinkV3'
@@ -2180,28 +2192,28 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 167 AdminPlatformLinkV3
+#- 168 AdminPlatformLinkV3
 $CLI_EXE \
     --sn iam \
     --op AdminPlatformLinkV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'AoAfsuMB' \
-    --userId '4W3HIcvS' \
-    --ticket '0AL4tYCw' \
+    --platformId 'HIcvS0AL' \
+    --userId '4tYCwCdC' \
+    --ticket 'igcxlbl3' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminPlatformLinkV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 168 AdminDeleteUserRolesV3
+#- 169 AdminDeleteUserRolesV3
 # body param: body
-echo '["CdCigcxl"]' > $TEMP_JSON_INPUT
+echo '["0hHHEjMI"]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteUserRolesV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'bl30hHHE' \
+    --userId '4LcgkyDs' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminDeleteUserRolesV3'
@@ -2209,14 +2221,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 169 AdminSaveUserRoleV3
+#- 170 AdminSaveUserRoleV3
 # body param: body
-echo '[{"namespace": "jMI4Lcgk", "roleId": "yDsccFdv"}]' > $TEMP_JSON_INPUT
+echo '[{"namespace": "ccFdvzoa", "roleId": "fMLoraVj"}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminSaveUserRoleV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'zoafMLor' \
+    --userId '5RiDHvo7' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminSaveUserRoleV3'
@@ -2224,40 +2236,40 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 170 AdminAddUserRoleV3
+#- 171 AdminAddUserRoleV3
 $CLI_EXE \
     --sn iam \
     --op AdminAddUserRoleV3 \
     --namespace $TEST_NAMESPACE \
-    --roleId 'aVj5RiDH' \
-    --userId 'vo7KepgB' \
+    --roleId 'KepgBTMR' \
+    --userId 'iEdeeQwL' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminAddUserRoleV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 171 AdminDeleteUserRoleV3
+#- 172 AdminDeleteUserRoleV3
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteUserRoleV3 \
     --namespace $TEST_NAMESPACE \
-    --roleId 'TMRiEdee' \
-    --userId 'QwLUW0VL' \
+    --roleId 'UW0VLupH' \
+    --userId '83AuxFEF' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminDeleteUserRoleV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 172 AdminUpdateUserStatusV3
+#- 173 AdminUpdateUserStatusV3
 # body param: body
-echo '{"enabled": true, "reason": "pH83AuxF"}' > $TEMP_JSON_INPUT
+echo '{"enabled": true, "reason": "Tt2mauyw"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserStatusV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'EFRDTt2m' \
+    --userId 'aKEsPBAM' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdateUserStatusV3'
@@ -2265,35 +2277,35 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 173 AdminVerifyUserWithoutVerificationCodeV3
+#- 174 AdminVerifyUserWithoutVerificationCodeV3
 $CLI_EXE \
     --sn iam \
     --op AdminVerifyUserWithoutVerificationCodeV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'auywaKEs' \
+    --userId '1aujNqlm' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminVerifyUserWithoutVerificationCodeV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 174 AdminGetRolesV3
+#- 175 AdminGetRolesV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetRolesV3 \
-    --after 'PBAM1auj' \
-    --before 'NqlmpKGh' \
+    --after 'pKGhvTKi' \
+    --before 'XeZepm7t' \
     --isWildcard 'True' \
-    --limit '90' \
+    --limit '45' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetRolesV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 175 AdminCreateRoleV3
+#- 176 AdminCreateRoleV3
 # body param: body
-echo '{"adminRole": false, "isWildcard": false, "managers": [{"displayName": "Zepm7tF1", "namespace": "wKhQ4HjE", "userId": "cagyjZIT"}], "members": [{"displayName": "RuoWjICo", "namespace": "CN3NyzAV", "userId": "4niQQVjg"}], "permissions": [{"action": 59, "resource": "JE12W5eo", "schedAction": 30, "schedCron": "lrOXwASJ", "schedRange": ["1PtQuxOJ"]}], "roleName": "QKgor2UM"}' > $TEMP_JSON_INPUT
+echo '{"adminRole": false, "deletable": false, "isWildcard": true, "managers": [{"displayName": "cagyjZIT", "namespace": "RuoWjICo", "userId": "CN3NyzAV"}], "members": [{"displayName": "4niQQVjg", "namespace": "DJE12W5e", "userId": "oplrOXwA"}], "permissions": [{"action": 89, "resource": "J1PtQuxO", "schedAction": 70, "schedCron": "QKgor2UM", "schedRange": ["Jt4EJ9Gc"]}], "roleName": "cYTYxPTg"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminCreateRoleV3 \
@@ -2304,35 +2316,35 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 176 AdminGetRoleV3
+#- 177 AdminGetRoleV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetRoleV3 \
-    --roleId 'Jt4EJ9Gc' \
+    --roleId 'pBNsUvUK' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetRoleV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 177 AdminDeleteRoleV3
+#- 178 AdminDeleteRoleV3
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteRoleV3 \
-    --roleId 'cYTYxPTg' \
+    --roleId 'hANjquBE' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminDeleteRoleV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 178 AdminUpdateRoleV3
+#- 179 AdminUpdateRoleV3
 # body param: body
-echo '{"isWildcard": false, "roleName": "BNsUvUKh"}' > $TEMP_JSON_INPUT
+echo '{"deletable": false, "isWildcard": false, "roleName": "Qpz0dfiu"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateRoleV3 \
-    --roleId 'ANjquBEH' \
+    --roleId 'v051lkPC' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdateRoleV3'
@@ -2340,60 +2352,60 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 179 AdminGetRoleAdminStatusV3
+#- 180 AdminGetRoleAdminStatusV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetRoleAdminStatusV3 \
-    --roleId 'OJbaQpz0' \
+    --roleId 'aZsjvFvh' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetRoleAdminStatusV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 180 AdminUpdateAdminRoleStatusV3
+#- 181 AdminUpdateAdminRoleStatusV3
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateAdminRoleStatusV3 \
-    --roleId 'dfiuv051' \
+    --roleId 'Zdwi1Ti6' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdateAdminRoleStatusV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 181 AdminRemoveRoleAdminV3
+#- 182 AdminRemoveRoleAdminV3
 $CLI_EXE \
     --sn iam \
     --op AdminRemoveRoleAdminV3 \
-    --roleId 'lkPCaZsj' \
+    --roleId 'V2uWuCsB' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminRemoveRoleAdminV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 182 AdminGetRoleManagersV3
+#- 183 AdminGetRoleManagersV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetRoleManagersV3 \
-    --roleId 'vFvhZdwi' \
-    --after '1Ti6V2uW' \
-    --before 'uCsB8FbV' \
-    --limit '58' \
+    --roleId '8FbVDwhp' \
+    --after 'NCLl2bgI' \
+    --before 'c1y49bqp' \
+    --limit '2' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetRoleManagersV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 183 AdminAddRoleManagersV3
+#- 184 AdminAddRoleManagersV3
 # body param: body
-echo '{"managers": [{"displayName": "whpNCLl2", "namespace": "bgIc1y49", "userId": "bqpbfyyt"}]}' > $TEMP_JSON_INPUT
+echo '{"managers": [{"displayName": "fyytwm6j", "namespace": "QJpfOIKC", "userId": "egUjKQRj"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAddRoleManagersV3 \
-    --roleId 'wm6jQJpf' \
+    --roleId 'oyn3bGyF' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminAddRoleManagersV3'
@@ -2401,13 +2413,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 184 AdminRemoveRoleManagersV3
+#- 185 AdminRemoveRoleManagersV3
 # body param: body
-echo '{"managers": [{"displayName": "OIKCegUj", "namespace": "KQRjoyn3", "userId": "bGyFGwcA"}]}' > $TEMP_JSON_INPUT
+echo '{"managers": [{"displayName": "GwcAylTi", "namespace": "4qPF190s", "userId": "f2ZwPi5h"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminRemoveRoleManagersV3 \
-    --roleId 'ylTi4qPF' \
+    --roleId 'I4k3KwV7' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminRemoveRoleManagersV3'
@@ -2415,27 +2427,27 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 185 AdminGetRoleMembersV3
+#- 186 AdminGetRoleMembersV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetRoleMembersV3 \
-    --roleId '190sf2Zw' \
-    --after 'Pi5hI4k3' \
-    --before 'KwV7P8R9' \
-    --limit '38' \
+    --roleId 'P8R9t4dB' \
+    --after 'RpBp4noj' \
+    --before '3J79DD3b' \
+    --limit '52' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetRoleMembersV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 186 AdminAddRoleMembersV3
+#- 187 AdminAddRoleMembersV3
 # body param: body
-echo '{"members": [{"displayName": "4dBRpBp4", "namespace": "noj3J79D", "userId": "D3bAZF4n"}]}' > $TEMP_JSON_INPUT
+echo '{"members": [{"displayName": "ZF4nYBuN", "namespace": "xISmVGVz", "userId": "9Jxj8weg"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAddRoleMembersV3 \
-    --roleId 'YBuNxISm' \
+    --roleId 'rDo6OmeK' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminAddRoleMembersV3'
@@ -2443,13 +2455,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 187 AdminRemoveRoleMembersV3
+#- 188 AdminRemoveRoleMembersV3
 # body param: body
-echo '{"members": [{"displayName": "VGVz9Jxj", "namespace": "8wegrDo6", "userId": "OmeKL7GP"}]}' > $TEMP_JSON_INPUT
+echo '{"members": [{"displayName": "L7GPoI9u", "namespace": "WOFTWdRr", "userId": "L6yNmv8k"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminRemoveRoleMembersV3 \
-    --roleId 'oI9uWOFT' \
+    --roleId '1w19JsHS' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminRemoveRoleMembersV3'
@@ -2457,13 +2469,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 188 AdminUpdateRolePermissionsV3
+#- 189 AdminUpdateRolePermissionsV3
 # body param: body
-echo '{"permissions": [{"action": 97, "resource": "dRrL6yNm", "schedAction": 43, "schedCron": "8k1w19Js", "schedRange": ["HSqOByh4"]}]}' > $TEMP_JSON_INPUT
+echo '{"permissions": [{"action": 33, "resource": "OByh4hhk", "schedAction": 5, "schedCron": "O6J7jSvY", "schedRange": ["d4J5c6ay"]}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateRolePermissionsV3 \
-    --roleId 'hhkcO6J7' \
+    --roleId 'FnSrfmOb' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdateRolePermissionsV3'
@@ -2471,13 +2483,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 189 AdminAddRolePermissionsV3
+#- 190 AdminAddRolePermissionsV3
 # body param: body
-echo '{"permissions": [{"action": 18, "resource": "SvYd4J5c", "schedAction": 1, "schedCron": "yFnSrfmO", "schedRange": ["bFTUBRRD"]}]}' > $TEMP_JSON_INPUT
+echo '{"permissions": [{"action": 62, "resource": "TUBRRDGC", "schedAction": 87, "schedCron": "QtMc3an8", "schedRange": ["ZoxLwXHS"]}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAddRolePermissionsV3 \
-    --roleId 'GCRQtMc3' \
+    --roleId '1oUzDdDc' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminAddRolePermissionsV3'
@@ -2485,13 +2497,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 190 AdminDeleteRolePermissionsV3
+#- 191 AdminDeleteRolePermissionsV3
 # body param: body
-echo '["an8ZoxLw"]' > $TEMP_JSON_INPUT
+echo '["Z0Rj3YM1"]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteRolePermissionsV3 \
-    --roleId 'XHS1oUzD' \
+    --roleId 'fz9Cjqtq' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminDeleteRolePermissionsV3'
@@ -2499,20 +2511,20 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 191 AdminDeleteRolePermissionV3
+#- 192 AdminDeleteRolePermissionV3
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteRolePermissionV3 \
-    --action '6' \
-    --resource 'DcZ0Rj3Y' \
-    --roleId 'M1fz9Cjq' \
+    --action '9' \
+    --resource 'iyDCK7C3' \
+    --roleId 'u5GcPbmi' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminDeleteRolePermissionV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 192 AdminGetMyUserV3
+#- 193 AdminGetMyUserV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetMyUserV3 \
@@ -2522,23 +2534,23 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 193 UserAuthenticationV3
+#- 194 UserAuthenticationV3
 $CLI_EXE \
     --sn iam \
     --op UserAuthenticationV3 \
-    --client_id 'tqeiyDCK' \
+    --client_id '5KiFDVpf' \
     --extend_exp 'True' \
-    --redirect_uri '3u5GcPbm' \
-    --password 'i5KiFDVp' \
-    --request_id 'fvR2Wl0i' \
-    --user_name 'ShagpvFu' \
+    --redirect_uri 'R2Wl0iSh' \
+    --password 'agpvFuZu' \
+    --request_id '45zsrSpv' \
+    --user_name 'MLvQw3sP' \
     >$TEMP_FILE 2>&1
 update_status $? 'UserAuthenticationV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 194 GetCountryLocationV3
+#- 195 GetCountryLocationV3
 $CLI_EXE \
     --sn iam \
     --op GetCountryLocationV3 \
@@ -2548,7 +2560,7 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 195 Logout
+#- 196 Logout
 $CLI_EXE \
     --sn iam \
     --op Logout \
@@ -2558,42 +2570,42 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 196 AdminRetrieveUserThirdPartyPlatformTokenV3
+#- 197 AdminRetrieveUserThirdPartyPlatformTokenV3
 $CLI_EXE \
     --sn iam \
     --op AdminRetrieveUserThirdPartyPlatformTokenV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'Zu45zsrS' \
-    --userId 'pvMLvQw3' \
+    --platformId 'xFu8LQGQ' \
+    --userId 'CAj6O7iv' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminRetrieveUserThirdPartyPlatformTokenV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 197 RevokeUserV3
+#- 198 RevokeUserV3
 $CLI_EXE \
     --sn iam \
     --op RevokeUserV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'sPxFu8LQ' \
+    --userId 'hNIjVT5H' \
     >$TEMP_FILE 2>&1
 update_status $? 'RevokeUserV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 198 AuthorizeV3
+#- 199 AuthorizeV3
 $CLI_EXE \
     --sn iam \
     --op AuthorizeV3 \
-    --codeChallenge 'GQCAj6O7' \
-    --codeChallengeMethod 'S256' \
-    --redirectUri 'vhNIjVT5' \
-    --scope 'HSR00UKS' \
-    --state 'LWWzOplT' \
-    --targetAuthPage 'LwZQZUMa' \
-    --clientId 'AJ6ZBTHY' \
+    --codeChallenge 'SR00UKSL' \
+    --codeChallengeMethod 'plain' \
+    --redirectUri 'OplTLwZQ' \
+    --scope 'ZUMaAJ6Z' \
+    --state 'BTHYjGbV' \
+    --targetAuthPage 'tzsBTCOW' \
+    --clientId 'EnaLzHuY' \
     --responseType 'code' \
     >$TEMP_FILE 2>&1
 update_status $? 'AuthorizeV3'
@@ -2601,18 +2613,18 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 199 TokenIntrospectionV3
+#- 200 TokenIntrospectionV3
 $CLI_EXE \
     --sn iam \
     --op TokenIntrospectionV3 \
-    --token 'GbVtzsBT' \
+    --token 'r89z0RkL' \
     >$TEMP_FILE 2>&1
 update_status $? 'TokenIntrospectionV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 200 GetJWKSV3
+#- 201 GetJWKSV3
 $CLI_EXE \
     --sn iam \
     --op GetJWKSV3 \
@@ -2622,48 +2634,48 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 201 RetrieveUserThirdPartyPlatformTokenV3
+#- 202 RetrieveUserThirdPartyPlatformTokenV3
 $CLI_EXE \
     --sn iam \
     --op RetrieveUserThirdPartyPlatformTokenV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'COWEnaLz' \
-    --userId 'HuYKrr89' \
+    --platformId '932B7thD' \
+    --userId 'Q3hfVnPK' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveUserThirdPartyPlatformTokenV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 202 AuthCodeRequestV3
+#- 203 AuthCodeRequestV3
 $CLI_EXE \
     --sn iam \
     --op AuthCodeRequestV3 \
-    --platformId 'z0RkL932' \
-    --clientId 'B7thDQ3h' \
-    --redirectUri 'fVnPK8iK' \
-    --requestId '8cdZPnXw' \
+    --platformId '8iK8cdZP' \
+    --clientId 'nXwGS9fA' \
+    --redirectUri 'lxtjeZUr' \
+    --requestId 'qmIc7El4' \
     >$TEMP_FILE 2>&1
 update_status $? 'AuthCodeRequestV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 203 PlatformTokenGrantV3
+#- 204 PlatformTokenGrantV3
 $CLI_EXE \
     --sn iam \
     --op PlatformTokenGrantV3 \
-    --platformId 'GS9fAlxt' \
-    --client_id 'jeZUrqmI' \
-    --device_id 'c7El44ME' \
-    --platform_token 'AvaPTwwJ' \
+    --platformId '4MEAvaPT' \
+    --client_id 'wwJrG06M' \
+    --device_id 'tcF7t8DQ' \
+    --platform_token 'xcoQBTWM' \
     >$TEMP_FILE 2>&1
 update_status $? 'PlatformTokenGrantV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 204 GetRevocationListV3
+#- 205 GetRevocationListV3
 $CLI_EXE \
     --sn iam \
     --op GetRevocationListV3 \
@@ -2673,73 +2685,73 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 205 TokenRevocationV3
+#- 206 TokenRevocationV3
 $CLI_EXE \
     --sn iam \
     --op TokenRevocationV3 \
-    --token 'rG06MtcF' \
+    --token 'c41xDmUj' \
     >$TEMP_FILE 2>&1
 update_status $? 'TokenRevocationV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 206 TokenGrantV3
+#- 207 TokenGrantV3
 $CLI_EXE \
     --sn iam \
     --op TokenGrantV3 \
-    --client_id '7t8DQxco' \
-    --code 'QBTWMc41' \
-    --code_verifier 'xDmUjkXi' \
+    --client_id 'kXi2LgkA' \
+    --code 'LGxw6qgv' \
+    --code_verifier 'IJBe6rDG' \
     --extend_exp 'False' \
-    --password 'kALGxw6q' \
-    --redirect_uri 'gvIJBe6r' \
-    --refresh_token 'DGbFNzsy' \
-    --username 'QVqvSgtp' \
-    --grant_type 'authorization_code' \
+    --password 'FNzsyQVq' \
+    --redirect_uri 'vSgtpUVd' \
+    --refresh_token 'dL6A1cTL' \
+    --username 'muKlGHZd' \
+    --grant_type 'password' \
     >$TEMP_FILE 2>&1
 update_status $? 'TokenGrantV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 207 PlatformAuthenticationV3
+#- 208 PlatformAuthenticationV3
 $CLI_EXE \
     --sn iam \
     --op PlatformAuthenticationV3 \
-    --platformId 'dL6A1cTL' \
-    --code 'muKlGHZd' \
-    --error 'wwo66H6Q' \
-    --openidAssocHandle 'OfYztHev' \
-    --openidClaimedId '8RX4MWRF' \
-    --openidIdentity 'klN13WW7' \
-    --openidMode 'U0sRVCnz' \
-    --openidNs 'Rxni0Kq9' \
-    --openidOpEndpoint 'Zl2b7ChM' \
-    --openidResponseNonce 'Cxb6xdzl' \
-    --openidReturnTo '2OYVRJNC' \
-    --openidSig '7EruVITu' \
-    --openidSigned 'nbxaOWNr' \
-    --state 'MkfALUDr' \
+    --platformId 'wo66H6QO' \
+    --code 'fYztHev8' \
+    --error 'RX4MWRFk' \
+    --openidAssocHandle 'lN13WW7U' \
+    --openidClaimedId '0sRVCnzR' \
+    --openidIdentity 'xni0Kq9Z' \
+    --openidMode 'l2b7ChMC' \
+    --openidNs 'xb6xdzl2' \
+    --openidOpEndpoint 'OYVRJNC7' \
+    --openidResponseNonce 'EruVITun' \
+    --openidReturnTo 'bxaOWNrM' \
+    --openidSig 'kfALUDrR' \
+    --openidSigned '6M3vzu84' \
+    --state 'TNQYCZIp' \
     >$TEMP_FILE 2>&1
 update_status $? 'PlatformAuthenticationV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 208 PublicGetInputValidations
+#- 209 PublicGetInputValidations
 $CLI_EXE \
     --sn iam \
     --op PublicGetInputValidations \
     --defaultOnEmpty 'True' \
-    --languageCode 'zu84TNQY' \
+    --languageCode 'vpQOjjkI' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetInputValidations'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 209 RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3
+#- 210 RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3
 $CLI_EXE \
     --sn iam \
     --op RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3 \
@@ -2750,14 +2762,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 210 PublicListUserIDByPlatformUserIDsV3
+#- 211 PublicListUserIDByPlatformUserIDsV3
 # body param: body
-echo '{"platformUserIds": ["CZIpKFvp"]}' > $TEMP_JSON_INPUT
+echo '{"platformUserIds": ["YAQEcxGP"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicListUserIDByPlatformUserIDsV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'QOjjkIYA' \
+    --platformId 'Tkn2NJ9g' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicListUserIDByPlatformUserIDsV3'
@@ -2765,47 +2777,47 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 211 PublicGetUserByPlatformUserIDV3
+#- 212 PublicGetUserByPlatformUserIDV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetUserByPlatformUserIDV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'QEcxGPTk' \
-    --platformUserId 'n2NJ9gHm' \
+    --platformId 'HmB0vflV' \
+    --platformUserId '2VptGYAE' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserByPlatformUserIDV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 212 PublicGetAsyncStatus
+#- 213 PublicGetAsyncStatus
 $CLI_EXE \
     --sn iam \
     --op PublicGetAsyncStatus \
     --namespace $TEST_NAMESPACE \
-    --requestId 'B0vflV2V' \
+    --requestId 'ziSthhR9' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetAsyncStatus'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 213 PublicSearchUserV3
+#- 214 PublicSearchUserV3
 $CLI_EXE \
     --sn iam \
     --op PublicSearchUserV3 \
     --namespace $TEST_NAMESPACE \
-    --by 'ptGYAEzi' \
-    --query 'SthhR9WL' \
+    --by 'WLiVTXHh' \
+    --query 'ZmByxlmW' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicSearchUserV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 214 PublicCreateUserV3
+#- 215 PublicCreateUserV3
 # body param: body
-echo '{"PasswordMD5Sum": "iVTXHhZm", "acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "yxlmWBLy", "policyId": "hgZsJoon", "policyVersionId": "MpOQ9Jmh"}], "authType": "8wwQ28fm", "country": "xMFN8d9f", "dateOfBirth": "dHAHphhb", "displayName": "y7hGbKeI", "emailAddress": "kY4Fc8at", "password": "J3J4gbk9"}' > $TEMP_JSON_INPUT
+echo '{"PasswordMD5Sum": "BLyhgZsJ", "acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "onMpOQ9J", "policyId": "mh8wwQ28", "policyVersionId": "fmxMFN8d"}], "authType": "9fdHAHph", "code": "hby7hGbK", "country": "eIkY4Fc8", "dateOfBirth": "atJ3J4gb", "displayName": "k9YdEm0o", "emailAddress": "9Rjjnkhw", "password": "q75VqZH8", "reachMinimumAge": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicCreateUserV3 \
@@ -2817,22 +2829,22 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 215 CheckUserAvailability
+#- 216 CheckUserAvailability
 $CLI_EXE \
     --sn iam \
     --op CheckUserAvailability \
     --namespace $TEST_NAMESPACE \
-    --field 'YdEm0o9R' \
-    --query 'jjnkhwq7' \
+    --field '92UFWFC8' \
+    --query 'oFuU2OFJ' \
     >$TEMP_FILE 2>&1
 update_status $? 'CheckUserAvailability'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 216 PublicBulkGetUsers
+#- 217 PublicBulkGetUsers
 # body param: body
-echo '{"userIds": ["5VqZH8HU"]}' > $TEMP_JSON_INPUT
+echo '{"userIds": ["6w1Hbioi"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicBulkGetUsers \
@@ -2844,9 +2856,37 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 217 PublicForgotPasswordV3
+#- 218 PublicSendRegistrationCode
 # body param: body
-echo '{"emailAddress": "q92UFWFC", "languageTag": "8oFuU2OF"}' > $TEMP_JSON_INPUT
+echo '{"emailAddress": "iaZ8Uc2r", "languageTag": "WpzX2mgo"}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn iam \
+    --op PublicSendRegistrationCode \
+    --namespace $TEST_NAMESPACE \
+    --reqfile $TEMP_JSON_INPUT \
+    >$TEMP_FILE 2>&1
+update_status $? 'PublicSendRegistrationCode'
+delete_file $TEMP_FILE
+rm -f $TEMP_JSON_INPUT
+rm -f $TEMP_FILE_UPLOAD
+
+#- 219 PublicVerifyRegistrationCode
+# body param: body
+echo '{"code": "BhruuvEz", "emailAddress": "pyRiFs63"}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn iam \
+    --op PublicVerifyRegistrationCode \
+    --namespace $TEST_NAMESPACE \
+    --reqfile $TEMP_JSON_INPUT \
+    >$TEMP_FILE 2>&1
+update_status $? 'PublicVerifyRegistrationCode'
+delete_file $TEMP_FILE
+rm -f $TEMP_JSON_INPUT
+rm -f $TEMP_FILE_UPLOAD
+
+#- 220 PublicForgotPasswordV3
+# body param: body
+echo '{"emailAddress": "b4Pru2pW", "languageTag": "iVBYjKI1"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicForgotPasswordV3 \
@@ -2858,11 +2898,11 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 218 GetAdminInvitationV3
+#- 221 GetAdminInvitationV3
 $CLI_EXE \
     --sn iam \
     --op GetAdminInvitationV3 \
-    --invitationId 'J6w1Hbio' \
+    --invitationId 'ZlcKXBXc' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'GetAdminInvitationV3'
@@ -2870,13 +2910,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 219 CreateUserFromInvitationV3
+#- 222 CreateUserFromInvitationV3
 # body param: body
-echo '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "iaZ8Uc2r", "policyId": "WpzX2mgo", "policyVersionId": "BhruuvEz"}], "authType": "pyRiFs63", "country": "b4Pru2pW", "dateOfBirth": "iVBYjKI1", "displayName": "ZlcKXBXc", "password": "PAsjW7zB"}' > $TEMP_JSON_INPUT
+echo '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "sjW7zBxp", "policyId": "Vc8svjiF", "policyVersionId": "tRe8k7am"}], "authType": "plfhuHro", "country": "pVxIvBjs", "dateOfBirth": "YUEDp1ta", "displayName": "P9py4Fl6", "password": "UoVxgHJL", "reachMinimumAge": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op CreateUserFromInvitationV3 \
-    --invitationId 'xpVc8svj' \
+    --invitationId 'm3bgRvSU' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -2885,9 +2925,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 220 UpdateUserV3
+#- 223 UpdateUserV3
 # body param: body
-echo '{"country": "iFtRe8k7", "dateOfBirth": "amplfhuH", "displayName": "ropVxIvB", "languageTag": "jsYUEDp1", "userName": "taP9py4F"}' > $TEMP_JSON_INPUT
+echo '{"country": "yOgyu9dh", "dateOfBirth": "xaofTjMY", "displayName": "GTMXy4yp", "languageTag": "cIN4uUIz", "userName": "vUI5b1wx"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op UpdateUserV3 \
@@ -2899,9 +2939,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 221 PublicUpdateUserV3
+#- 224 PublicUpdateUserV3
 # body param: body
-echo '{"country": "l6UoVxgH", "dateOfBirth": "JLBm3bgR", "displayName": "vSUyOgyu", "languageTag": "9dhxaofT", "userName": "jMYGTMXy"}' > $TEMP_JSON_INPUT
+echo '{"country": "S2yBTD8u", "dateOfBirth": "NeauLeXN", "displayName": "gQBnXZkQ", "languageTag": "06LUEgyy", "userName": "iBeJARFV"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpdateUserV3 \
@@ -2913,9 +2953,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 222 PublicSendVerificationCodeV3
+#- 225 PublicSendVerificationCodeV3
 # body param: body
-echo '{"context": "4ypcIN4u", "emailAddress": "UIzvUI5b", "languageTag": "1wxS2yBT"}' > $TEMP_JSON_INPUT
+echo '{"context": "bUvLNtDd", "emailAddress": "AntKI6vd", "languageTag": "3QdSHH2A"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicSendVerificationCodeV3 \
@@ -2927,9 +2967,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 223 PublicUserVerificationV3
+#- 226 PublicUserVerificationV3
 # body param: body
-echo '{"code": "D8uNeauL", "contactType": "eXNgQBnX", "languageTag": "ZkQ06LUE"}' > $TEMP_JSON_INPUT
+echo '{"code": "vosR9Nk0", "contactType": "JJYXMRcQ", "languageTag": "g1LwgzWR", "validateOnly": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUserVerificationV3 \
@@ -2941,9 +2981,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 224 PublicUpgradeHeadlessAccountV3
+#- 227 PublicUpgradeHeadlessAccountV3
 # body param: body
-echo '{"code": "gyyiBeJA", "country": "RFVbUvLN", "dateOfBirth": "tDdAntKI", "displayName": "6vd3QdSH", "emailAddress": "H2AvosR9", "password": "Nk0JJYXM"}' > $TEMP_JSON_INPUT
+echo '{"code": "5q2i8ntD", "country": "dFSOEIqF", "dateOfBirth": "se4ocrqj", "displayName": "WTbUayIP", "emailAddress": "8oO0z1Vf", "password": "fDHyFM7T", "validateOnly": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpgradeHeadlessAccountV3 \
@@ -2955,9 +2995,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 225 PublicVerifyHeadlessAccountV3
+#- 228 PublicVerifyHeadlessAccountV3
 # body param: body
-echo '{"emailAddress": "RcQg1Lwg", "password": "zWRu5q2i"}' > $TEMP_JSON_INPUT
+echo '{"emailAddress": "4jbxDDxn", "password": "gEqsAbWE"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicVerifyHeadlessAccountV3 \
@@ -2969,9 +3009,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 226 PublicUpdatePasswordV3
+#- 229 PublicUpdatePasswordV3
 # body param: body
-echo '{"languageTag": "8ntDdFSO", "newPassword": "EIqFse4o", "oldPassword": "crqjWTbU"}' > $TEMP_JSON_INPUT
+echo '{"languageTag": "fTc2nSU2", "newPassword": "SijySpnq", "oldPassword": "X01uDkQ1"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpdatePasswordV3 \
@@ -2983,40 +3023,40 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 227 PublicCreateJusticeUser
+#- 230 PublicCreateJusticeUser
 $CLI_EXE \
     --sn iam \
     --op PublicCreateJusticeUser \
     --namespace $TEST_NAMESPACE \
-    --targetNamespace 'ayIP8oO0' \
+    --targetNamespace 'tv3iMMW8' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicCreateJusticeUser'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 228 PublicPlatformLinkV3
+#- 231 PublicPlatformLinkV3
 $CLI_EXE \
     --sn iam \
     --op PublicPlatformLinkV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'z1VffDHy' \
-    --redirectUri 'FM7T2H6g' \
-    --ticket '4jbxDDxn' \
+    --platformId 'aqVbwArh' \
+    --redirectUri 'GSaFxyAs' \
+    --ticket 'PnfbHX5T' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicPlatformLinkV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 229 PublicPlatformUnlinkV3
+#- 232 PublicPlatformUnlinkV3
 # body param: body
-echo '{"platformNamespace": "gEqsAbWE"}' > $TEMP_JSON_INPUT
+echo '{"platformNamespace": "pIV6e7dM"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicPlatformUnlinkV3 \
     --namespace $TEST_NAMESPACE \
-    --platformId 'fTc2nSU2' \
+    --platformId 'KaAr2VSm' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicPlatformUnlinkV3'
@@ -3024,36 +3064,36 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 230 PublicWebLinkPlatform
+#- 233 PublicWebLinkPlatform
 $CLI_EXE \
     --sn iam \
     --op PublicWebLinkPlatform \
     --namespace $TEST_NAMESPACE \
-    --platformId 'SijySpnq' \
-    --clientId 'X01uDkQ1' \
-    --redirectUri 'tv3iMMW8' \
+    --platformId 'tP8qxtNo' \
+    --clientId '76oPRuvx' \
+    --redirectUri 'UGNJvDRu' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicWebLinkPlatform'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 231 PublicWebLinkPlatformEstablish
+#- 234 PublicWebLinkPlatformEstablish
 $CLI_EXE \
     --sn iam \
     --op PublicWebLinkPlatformEstablish \
     --namespace $TEST_NAMESPACE \
-    --platformId 'aqVbwArh' \
-    --state 'GSaFxyAs' \
+    --platformId 'WXBzyWeu' \
+    --state 'sWdEJnqh' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicWebLinkPlatformEstablish'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 232 ResetPasswordV3
+#- 235 ResetPasswordV3
 # body param: body
-echo '{"code": "PnfbHX5T", "emailAddress": "pIV6e7dM", "newPassword": "KaAr2VSm"}' > $TEMP_JSON_INPUT
+echo '{"code": "XgmVQHoZ", "emailAddress": "NPy0Wqu4", "newPassword": "qtxTyrvN"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op ResetPasswordV3 \
@@ -3065,72 +3105,72 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 233 PublicGetUserByUserIdV3
+#- 236 PublicGetUserByUserIdV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetUserByUserIdV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'tP8qxtNo' \
+    --userId 'hypNLpor' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserByUserIdV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 234 PublicGetUserBanHistoryV3
+#- 237 PublicGetUserBanHistoryV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetUserBanHistoryV3 \
     --namespace $TEST_NAMESPACE \
-    --userId '76oPRuvx' \
-    --activeOnly 'True' \
-    --after 'DRuWXBzy' \
-    --before 'WeusWdEJ' \
-    --limit '27' \
+    --userId 'jcAKSuvg' \
+    --activeOnly 'False' \
+    --after 'dXMn2juy' \
+    --before 'P3WX3u1O' \
+    --limit '74' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserBanHistoryV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 235 PublicGetUserLoginHistoriesV3
+#- 238 PublicGetUserLoginHistoriesV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetUserLoginHistoriesV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'qhXgmVQH' \
-    --after '0.23431569938570407' \
-    --before '0.6171900305766628' \
-    --limit '0.3876116348049681' \
+    --userId 'RUrZ6vwI' \
+    --after '0.9734392259505031' \
+    --before '0.5093316973323931' \
+    --limit '0.22293890458320964' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserLoginHistoriesV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 236 PublicGetUserPlatformAccountsV3
+#- 239 PublicGetUserPlatformAccountsV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetUserPlatformAccountsV3 \
     --namespace $TEST_NAMESPACE \
-    --userId '0Wqu4qtx' \
-    --after 'TyrvNhyp' \
-    --before 'NLporjcA' \
-    --limit '72' \
+    --userId 'XXAZd7bv' \
+    --after 'O6Xg2xx5' \
+    --before 'vZXC9YsE' \
+    --limit '98' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetUserPlatformAccountsV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 237 PublicLinkPlatformAccount
+#- 240 PublicLinkPlatformAccount
 # body param: body
-echo '{"platformId": "SuvgVjdX", "platformUserId": "Mn2juyP3"}' > $TEMP_JSON_INPUT
+echo '{"platformId": "Ee9iC3Hp", "platformUserId": "95AtWE8d"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicLinkPlatformAccount \
     --namespace $TEST_NAMESPACE \
-    --userId 'WX3u1OLR' \
+    --userId 'rEipXZfo' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicLinkPlatformAccount'
@@ -3138,45 +3178,45 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 238 PublicValidateUserByUserIDAndPasswordV3
+#- 241 PublicValidateUserByUserIDAndPasswordV3
 $CLI_EXE \
     --sn iam \
     --op PublicValidateUserByUserIDAndPasswordV3 \
     --namespace $TEST_NAMESPACE \
-    --userId 'UrZ6vwIq' \
-    --password 'GnoqXXAZ' \
+    --userId 'cCS9nGM6' \
+    --password 'fYF1o77M' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicValidateUserByUserIDAndPasswordV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 239 PublicGetRolesV3
+#- 242 PublicGetRolesV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetRolesV3 \
-    --after 'd7bvO6Xg' \
-    --before '2xx5vZXC' \
-    --isWildcard 'True' \
-    --limit '61' \
+    --after '1VVgHHeL' \
+    --before '0flEPUxH' \
+    --isWildcard 'False' \
+    --limit '60' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetRolesV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 240 PublicGetRoleV3
+#- 243 PublicGetRoleV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetRoleV3 \
-    --roleId 'XEe9iC3H' \
+    --roleId '4YwCRBGA' \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetRoleV3'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 241 PublicGetMyUserV3
+#- 244 PublicGetMyUserV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetMyUserV3 \
@@ -3186,51 +3226,51 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 242 PlatformAuthenticateSAMLV3Handler
+#- 245 PlatformAuthenticateSAMLV3Handler
 $CLI_EXE \
     --sn iam \
     --op PlatformAuthenticateSAMLV3Handler \
-    --platformId 'p95AtWE8' \
-    --code 'drEipXZf' \
-    --error 'ocCS9nGM' \
-    --state '6fYF1o77' \
+    --platformId 'R8TtZlDI' \
+    --code 'jOfYlF5j' \
+    --error 'ISj4wwqL' \
+    --state 'pFnnNydT' \
     >$TEMP_FILE 2>&1
 update_status $? 'PlatformAuthenticateSAMLV3Handler'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 243 LoginSSOClient
+#- 246 LoginSSOClient
 $CLI_EXE \
     --sn iam \
     --op LoginSSOClient \
-    --platformId 'M1VVgHHe' \
-    --payload 'L0flEPUx' \
+    --platformId 'cPOtfkEy' \
+    --payload 'Lh6l74AQ' \
     >$TEMP_FILE 2>&1
 update_status $? 'LoginSSOClient'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 244 LogoutSSOClient
+#- 247 LogoutSSOClient
 $CLI_EXE \
     --sn iam \
     --op LogoutSSOClient \
-    --platformId 'HPhE4YwC' \
+    --platformId 'Y5ulxH0l' \
     >$TEMP_FILE 2>&1
 update_status $? 'LogoutSSOClient'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 245 AdminUpdateUserV4
+#- 248 AdminUpdateUserV4
 # body param: body
-echo '{"country": "RBGAR8Tt", "dateOfBirth": "ZlDIjOfY", "displayName": "lF5jISj4", "languageTag": "wwqLpFnn", "userName": "NydTcPOt"}' > $TEMP_JSON_INPUT
+echo '{"country": "ioSoooPh", "dateOfBirth": "Q9xlLMe7", "displayName": "ma8Qc9aG", "languageTag": "N5UJPLch", "userName": "iivOQdBy"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserV4 \
     --namespace $TEST_NAMESPACE \
-    --userId 'fkEyLh6l' \
+    --userId 'k3mWQ93B' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdateUserV4'
@@ -3238,14 +3278,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 246 AdminUpdateUserEmailAddressV4
+#- 249 AdminUpdateUserEmailAddressV4
 # body param: body
-echo '{"code": "74AQY5ul", "emailAddress": "xH0lioSo"}' > $TEMP_JSON_INPUT
+echo '{"code": "xbP1VP8r", "emailAddress": "KuVwTTGS"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserEmailAddressV4 \
     --namespace $TEST_NAMESPACE \
-    --userId 'ooPhQ9xl' \
+    --userId 'X5rG8ymO' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdateUserEmailAddressV4'
@@ -3253,26 +3293,26 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 247 AdminListUserRolesV4
+#- 250 AdminListUserRolesV4
 $CLI_EXE \
     --sn iam \
     --op AdminListUserRolesV4 \
     --namespace $TEST_NAMESPACE \
-    --userId 'LMe7ma8Q' \
+    --userId '7ml7SCwM' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminListUserRolesV4'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 248 AdminUpdateUserRoleV4
+#- 251 AdminUpdateUserRoleV4
 # body param: body
-echo '{"assignedNamespaces": ["c9aGN5UJ"], "roleId": "PLchiivO"}' > $TEMP_JSON_INPUT
+echo '{"assignedNamespaces": ["6RZNerJQ"], "roleId": "roYUkvHx"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserRoleV4 \
     --namespace $TEST_NAMESPACE \
-    --userId 'QdByk3mW' \
+    --userId '2dAjFF0B' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdateUserRoleV4'
@@ -3280,14 +3320,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 249 AdminAddUserRoleV4
+#- 252 AdminAddUserRoleV4
 # body param: body
-echo '{"assignedNamespaces": ["Q93BxbP1"], "roleId": "VP8rKuVw"}' > $TEMP_JSON_INPUT
+echo '{"assignedNamespaces": ["BGwZ7XWh"], "roleId": "doYx127Y"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAddUserRoleV4 \
     --namespace $TEST_NAMESPACE \
-    --userId 'TTGSX5rG' \
+    --userId 'YBoxSCFs' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminAddUserRoleV4'
@@ -3295,14 +3335,14 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 250 AdminRemoveUserRoleV4
+#- 253 AdminRemoveUserRoleV4
 # body param: body
-echo '{"assignedNamespaces": ["8ymO7ml7"], "roleId": "SCwM6RZN"}' > $TEMP_JSON_INPUT
+echo '{"assignedNamespaces": ["BbZL16L2"], "roleId": "P8eNmOi4"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminRemoveUserRoleV4 \
     --namespace $TEST_NAMESPACE \
-    --userId 'erJQroYU' \
+    --userId 'OPQ8ZEV8' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminRemoveUserRoleV4'
@@ -3310,23 +3350,23 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 251 AdminGetRolesV4
+#- 254 AdminGetRolesV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetRolesV4 \
-    --adminRole 'False' \
+    --adminRole 'True' \
     --isWildcard 'True' \
-    --limit '66' \
-    --offset '47' \
+    --limit '4' \
+    --offset '52' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetRolesV4'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 252 AdminCreateRoleV4
+#- 255 AdminCreateRoleV4
 # body param: body
-echo '{"adminRole": false, "isWildcard": true, "roleName": "jFF0BBGw"}' > $TEMP_JSON_INPUT
+echo '{"adminRole": false, "deletable": false, "isWildcard": true, "roleName": "oW6wPQlP"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminCreateRoleV4 \
@@ -3337,35 +3377,35 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 253 AdminGetRoleV4
+#- 256 AdminGetRoleV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetRoleV4 \
-    --roleId 'Z7XWhdoY' \
+    --roleId '1zgkxv25' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminGetRoleV4'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 254 AdminDeleteRoleV4
+#- 257 AdminDeleteRoleV4
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteRoleV4 \
-    --roleId 'x127YYBo' \
+    --roleId 'ZHaR8vsM' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminDeleteRoleV4'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 255 AdminUpdateRoleV4
+#- 258 AdminUpdateRoleV4
 # body param: body
-echo '{"adminRole": true, "isWildcard": true, "roleName": "FsBbZL16"}' > $TEMP_JSON_INPUT
+echo '{"adminRole": false, "deletable": false, "isWildcard": false, "roleName": "gRB8XeZh"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateRoleV4 \
-    --roleId 'L2P8eNmO' \
+    --roleId 'AM4MAL57' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdateRoleV4'
@@ -3373,13 +3413,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 256 AdminUpdateRolePermissionsV4
+#- 259 AdminUpdateRolePermissionsV4
 # body param: body
-echo '{"permissions": [{"action": 16, "resource": "4OPQ8ZEV", "schedAction": 98, "schedCron": "zBcAniVu", "schedRange": ["oW6wPQlP"]}]}' > $TEMP_JSON_INPUT
+echo '{"permissions": [{"action": 34, "resource": "iU2QbQFR", "schedAction": 56, "schedCron": "XEWG8Sxt", "schedRange": ["5vtTkIWb"]}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateRolePermissionsV4 \
-    --roleId '1zgkxv25' \
+    --roleId 'iHTUDDL4' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminUpdateRolePermissionsV4'
@@ -3387,13 +3427,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 257 AdminAddRolePermissionsV4
+#- 260 AdminAddRolePermissionsV4
 # body param: body
-echo '{"permissions": [{"action": 67, "resource": "aR8vsMhI", "schedAction": 10, "schedCron": "ogRB8XeZ", "schedRange": ["hAM4MAL5"]}]}' > $TEMP_JSON_INPUT
+echo '{"permissions": [{"action": 49, "resource": "zTnQv0e9", "schedAction": 51, "schedCron": "YNkH6Puv", "schedRange": ["ERGP7fmy"]}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAddRolePermissionsV4 \
-    --roleId '7riU2QbQ' \
+    --roleId 'd8aJkJYG' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminAddRolePermissionsV4'
@@ -3401,13 +3441,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 258 AdminDeleteRolePermissionsV4
+#- 261 AdminDeleteRolePermissionsV4
 # body param: body
-echo '["FRCXEWG8"]' > $TEMP_JSON_INPUT
+echo '["Kf4wBCsC"]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteRolePermissionsV4 \
-    --roleId 'Sxt5vtTk' \
+    --roleId 'LrfH6V3f' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminDeleteRolePermissionsV4'
@@ -3415,27 +3455,27 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 259 AdminListAssignedUsersV4
+#- 262 AdminListAssignedUsersV4
 $CLI_EXE \
     --sn iam \
     --op AdminListAssignedUsersV4 \
-    --roleId 'IWbiHTUD' \
-    --after 'DL4yzTnQ' \
-    --before 'v0e99zYN' \
-    --limit '21' \
+    --roleId 'TRar0UZS' \
+    --after '96wD9rgd' \
+    --before 'YvyfGQvB' \
+    --limit '76' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminListAssignedUsersV4'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 260 AdminAssignUserToRoleV4
+#- 263 AdminAssignUserToRoleV4
 # body param: body
-echo '{"assignedNamespaces": ["H6PuvERG"], "namespace": "P7fmyd8a", "userId": "JkJYGKf4"}' > $TEMP_JSON_INPUT
+echo '{"assignedNamespaces": ["JGa0RWFi"], "namespace": "lSDbJxY0", "userId": "YR9wXVRz"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAssignUserToRoleV4 \
-    --roleId 'wBCsCLrf' \
+    --roleId '5ayquoA8' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminAssignUserToRoleV4'
@@ -3443,13 +3483,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 261 AdminRevokeUserFromRoleV4
+#- 264 AdminRevokeUserFromRoleV4
 # body param: body
-echo '{"namespace": "H6V3fTRa", "userId": "r0UZS96w"}' > $TEMP_JSON_INPUT
+echo '{"namespace": "CGDmAN0y", "userId": "X8xu01b0"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminRevokeUserFromRoleV4 \
-    --roleId 'D9rgdYvy' \
+    --roleId 'bUqDheu9' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminRevokeUserFromRoleV4'
@@ -3457,9 +3497,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 262 AdminUpdateMyUserV4
+#- 265 AdminUpdateMyUserV4
 # body param: body
-echo '{"country": "fGQvBMJG", "dateOfBirth": "a0RWFilS", "displayName": "DbJxY0YR", "languageTag": "9wXVRz5a", "userName": "yquoA8CG"}' > $TEMP_JSON_INPUT
+echo '{"country": "idRvQ8V1", "dateOfBirth": "CaeT74VP", "displayName": "6KqpZ2JC", "languageTag": "53CGQXzj", "userName": "GEvvr9VR"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateMyUserV4 \
@@ -3470,9 +3510,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 263 AdminInviteUserV4
+#- 266 AdminInviteUserV4
 # body param: body
-echo '{"assignedNamespaces": ["DmAN0yX8"], "emailAddresses": ["xu01b0bU"], "isAdmin": true, "roleId": "Dheu9idR"}' > $TEMP_JSON_INPUT
+echo '{"assignedNamespaces": ["6QqaoAup"], "emailAddresses": ["KSo0RHRz"], "isAdmin": false, "roleId": "aDWEzPCi"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminInviteUserV4 \
@@ -3483,9 +3523,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 264 PublicCreateTestUserV4
+#- 267 PublicCreateTestUserV4
 # body param: body
-echo '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "Q8V1CaeT", "policyId": "74VP6Kqp", "policyVersionId": "Z2JC53CG"}], "authType": "QXzjGEvv", "country": "r9VR6Qqa", "dateOfBirth": "oAupKSo0", "displayName": "RHRzXML3", "emailAddress": "VcaDWEzP", "password": "Ci2tWPzh", "passwordMD5Sum": "rjLFLLuG", "username": "lXInVkn9", "verified": false}' > $TEMP_JSON_INPUT
+echo '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "WPzhrjLF", "policyId": "LLuGlXIn", "policyVersionId": "Vkn9ojnp"}], "authType": "piU7rYU0", "country": "98E1JzPm", "dateOfBirth": "aRkeYX8U", "displayName": "71w09mTa", "emailAddress": "p7y90X88", "password": "qbd2vRMU", "passwordMD5Sum": "mqoGBqBa", "username": "xLbpDeku", "verified": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicCreateTestUserV4 \
@@ -3497,9 +3537,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 265 PublicCreateUserV4
+#- 268 PublicCreateUserV4
 # body param: body
-echo '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "nppiU7rY", "policyId": "U098E1Jz", "policyVersionId": "PmaRkeYX"}], "authType": "8U71w09m", "country": "Tap7y90X", "dateOfBirth": "88qbd2vR", "displayName": "MUmqoGBq", "emailAddress": "BaxLbpDe", "password": "kuIzTODQ", "passwordMD5Sum": "ZkNg9Xsc", "username": "MV2DnOo9"}' > $TEMP_JSON_INPUT
+echo '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "QZkNg9Xs", "policyId": "cMV2DnOo", "policyVersionId": "9PaoBSJJ"}], "authType": "Ggg8epTU", "code": "ehn6IzqX", "country": "steu4pU6", "dateOfBirth": "94ex0bxt", "displayName": "kvXIrbCB", "emailAddress": "52HlTeFV", "password": "mpXnrWDC", "passwordMD5Sum": "ij8S73sQ", "reachMinimumAge": true, "username": "Ny12G1Pi"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicCreateUserV4 \
@@ -3511,13 +3551,13 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 266 CreateUserFromInvitationV4
+#- 269 CreateUserFromInvitationV4
 # body param: body
-echo '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "oBSJJGgg", "policyId": "8epTUehn", "policyVersionId": "6IzqXste"}], "authType": "u4pU694e", "country": "x0bxtkvX", "dateOfBirth": "IrbCB52H", "displayName": "lTeFVmpX", "password": "nrWDCij8", "username": "S73sQDNy"}' > $TEMP_JSON_INPUT
+echo '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "xV0rwMM7", "policyId": "HsMJnUBZ", "policyVersionId": "6Gyhfcrd"}], "authType": "deIOhxQM", "country": "ImB13f1o", "dateOfBirth": "bTKrwFXC", "displayName": "2Op2yXEI", "password": "OAJh6XNW", "reachMinimumAge": true, "username": "HWdmibqD"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op CreateUserFromInvitationV4 \
-    --invitationId '12G1PiTJ' \
+    --invitationId 'eNic565h' \
     --namespace $TEST_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
@@ -3526,9 +3566,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 267 PublicUpdateUserV4
+#- 270 PublicUpdateUserV4
 # body param: body
-echo '{"country": "wxV0rwMM", "dateOfBirth": "7HsMJnUB", "displayName": "Z6Gyhfcr", "languageTag": "ddeIOhxQ", "userName": "MImB13f1"}' > $TEMP_JSON_INPUT
+echo '{"country": "vy1VY236", "dateOfBirth": "5rUHkxww", "displayName": "pNwFJyOB", "languageTag": "elglT04u", "userName": "RmAeOhTe"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpdateUserV4 \
@@ -3540,9 +3580,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 268 PublicUpdateUserEmailAddressV4
+#- 271 PublicUpdateUserEmailAddressV4
 # body param: body
-echo '{"code": "obTKrwFX", "emailAddress": "C2Op2yXE"}' > $TEMP_JSON_INPUT
+echo '{"code": "ibSq4H7x", "emailAddress": "De1jh7cl"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpdateUserEmailAddressV4 \
@@ -3554,9 +3594,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 269 PublicUpgradeHeadlessAccountWithVerificationCodeV4
+#- 272 PublicUpgradeHeadlessAccountWithVerificationCodeV4
 # body param: body
-echo '{"code": "IOAJh6XN", "country": "WtHWdmib", "dateOfBirth": "qDeNic56", "displayName": "5hvy1VY2", "emailAddress": "365rUHkx", "password": "wwpNwFJy", "username": "OBelglT0"}' > $TEMP_JSON_INPUT
+echo '{"code": "QulgjFzO", "country": "E2zPDGQY", "dateOfBirth": "K5uGsklK", "displayName": "Ej2cImuL", "emailAddress": "S8rrBfOa", "password": "AENFCnYb", "reachMinimumAge": true, "username": "kTf41ag7", "validateOnly": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpgradeHeadlessAccountWithVerificationCodeV4 \
@@ -3568,9 +3608,9 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 270 PublicUpgradeHeadlessAccountV4
+#- 273 PublicUpgradeHeadlessAccountV4
 # body param: body
-echo '{"emailAddress": "4uRmAeOh", "password": "TeibSq4H", "username": "7xDe1jh7"}' > $TEMP_JSON_INPUT
+echo '{"emailAddress": "X8oWPut7", "password": "xraYvaea", "username": "iep5aTdb"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpgradeHeadlessAccountV4 \

@@ -11,6 +11,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("AdminRole")]
         public bool? AdminRole { get; set; }
         
+        [JsonPropertyName("Deletable")]
+        public bool? Deletable { get; set; }
+        
         [JsonPropertyName("IsWildcard")]
         public bool? IsWildcard { get; set; }
         

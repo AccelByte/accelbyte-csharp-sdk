@@ -3,7 +3,7 @@
   "info": {
     "description": "Justice DSM Controller Service",
     "title": "justice-dsm-controller-service",
-    "version": "2.14.1"
+    "version": "2.15.0"
   },
   "paths": {
     "/dsmcontroller/admin/configs": {

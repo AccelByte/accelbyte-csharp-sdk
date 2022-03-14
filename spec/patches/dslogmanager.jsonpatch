@@ -44,6 +44,11 @@
   },
   {
     "op": "add",
+    "path": "/definitions/models.LogFileStatus/properties/log_existence/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
     "path": "/definitions/models.StatusHistory/properties/time_stamp/x-nullable",
     "value": false
   },
@@ -51,26 +56,6 @@
     "op": "add",
     "path": "/definitions/models.Server/properties/last_update/x-nullable",
     "value": false
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1{podName}~1logs~1download/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1{podName}~1logs~1download/get/description",
-    "value": "Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]\n\nRequired scope: social\n\nThis endpoint will download dedicated server&#39;s log file (.log)."
   },
   {
     "op": "add",
@@ -86,21 +71,6 @@
         "authorization": []
       }
     ]
-  },
-  {
-    "op": "move",
-    "from": "/security",
-    "path": "/paths/~1dslogmanager~1v1~1messages/get/security"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dslogmanager~1v1~1messages/get/responses/500/description",
-    "value": ""
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dslogmanager~1v1~1messages/get/responses/200/description",
-    "value": ""
   },
   {
     "op": "add",
@@ -250,6 +220,11 @@
   },
   {
     "op": "replace",
+    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1search/get/parameters/13/type",
+    "value": "integer"
+  },
+  {
+    "op": "replace",
     "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1search/get/parameters/13/description",
     "value": "limit"
   },
@@ -259,25 +234,8 @@
     "value": "limit"
   },
   {
-    "op": "replace",
-    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1search/get/parameters/13/type",
-    "value": "integer"
-  },
-  {
     "op": "remove",
     "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1search/get/parameters/14"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dslogmanager~1servers~1search/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ]"
-        ],
-        "authorization": []
-      }
-    ]
   },
   {
     "op": "add",
@@ -298,5 +256,52 @@
     "op": "replace",
     "path": "/paths/~1dslogmanager~1servers~1logs~1download/post/description",
     "value": "Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]\n\nRequired scope: social\n\nThis endpoint will download dedicated server&#39;s log file (.zip)."
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1{podName}~1logs~1download/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1dslogmanager~1namespaces~1{namespace}~1servers~1{podName}~1logs~1download/get/description",
+    "value": "Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:LOG [READ]\n\nRequired scope: social\n\nThis endpoint will download dedicated server&#39;s log file (.log)."
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dslogmanager~1servers~1search/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ]"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "move",
+    "from": "/security",
+    "path": "/paths/~1dslogmanager~1v1~1messages/get/security"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dslogmanager~1v1~1messages/get/responses/200/description",
+    "value": ""
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dslogmanager~1v1~1messages/get/responses/500/description",
+    "value": ""
   }
 ]

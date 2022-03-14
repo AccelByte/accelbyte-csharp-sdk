@@ -45,18 +45,22 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentStation wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentStation(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             GetPaymentCustomization operation = new GetPaymentCustomization(
                 Namespace,                
                 Sandbox,                
                 PaymentProvider,                
                 Region                
             );            
+            #pragma warning restore ab_deprecated_operation
             
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Platform.Model.Customization? response = wrapper.GetPaymentCustomization(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

@@ -14,6 +14,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicUpgradeHeadlessAccountV3
     ///
+    /// 
+    /// 
+    /// If validateOnly is set false, consume code and upgrade headless account and automatically verified the email address if it is succeeded
+    /// 
+    /// 
     /// Require valid user access token.
     /// 
     /// 

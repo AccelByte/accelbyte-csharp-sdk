@@ -8,6 +8,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
 {
     public class ModelsConfig : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("allowInviteNonConnectedUser")]
+        public bool? AllowInviteNonConnectedUser { get; set; }
+        
         [JsonPropertyName("autoKickOnDisconnect")]
         public bool? AutoKickOnDisconnect { get; set; }
         

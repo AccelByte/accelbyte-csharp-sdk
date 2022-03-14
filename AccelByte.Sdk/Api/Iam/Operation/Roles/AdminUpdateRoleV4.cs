@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// - roleName: specify role name, alphanumeric, cannot have special character (required)
     /// - adminRole: specify if role is for admin user (default false)
     /// - isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)
+    /// - deletable: specify if role can be deleted (optional)
     /// 
     /// action code: 10402
     /// </summary>

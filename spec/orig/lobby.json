@@ -6990,6 +6990,9 @@
     },
     "models.Config": {
       "properties": {
+        "allowInviteNonConnectedUser": {
+          "type": "boolean"
+        },
         "autoKickOnDisconnect": {
           "type": "boolean"
         },
@@ -7068,6 +7071,9 @@
         "readyConsentTimeout"
       ],
       "properties": {
+        "allowInviteNonConnectedUser": {
+          "type": "boolean"
+        },
         "autoKickOnDisconnect": {
           "type": "boolean"
         },
@@ -7141,6 +7147,9 @@
     },
     "models.ConfigReq": {
       "properties": {
+        "allowInviteNonConnectedUser": {
+          "type": "boolean"
+        },
         "autoKickOnDisconnect": {
           "type": "boolean"
         },

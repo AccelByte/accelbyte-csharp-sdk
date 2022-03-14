@@ -20,6 +20,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("blockedPaymentMethods")]
         public List<string>? BlockedPaymentMethods { get; set; }
         
+        [JsonPropertyName("clientKey")]
+        public string? ClientKey { get; set; }
+        
+        [JsonPropertyName("dropInSettings")]
+        public string? DropInSettings { get; set; }
+        
         [JsonPropertyName("liveEndpointUrlPrefix")]
         public string? LiveEndpointUrlPrefix { get; set; }
         
