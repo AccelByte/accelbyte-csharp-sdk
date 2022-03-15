@@ -12,17 +12,50 @@
     ]
   },
   {
-    "op": "move",
-    "from": "/security",
-    "path": "/paths/~1dsmcontroller~1v1~1messages/get/security"
+    "op": "add",
+    "path": "/securityDefinitions/HasScope",
+    "value": {
+      "authorizationUrl": "https://dummy.oauth.net/auth",
+      "flow": "accessCode",
+      "scopes": {
+        "social": "social"
+      },
+      "tokenUrl": "https://dumy.oauth.net/token",
+      "type": "oauth2"
+    }
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1{podName}~1logs/get/security",
+    "path": "/securityDefinitions/HasPermission",
+    "value": {
+      "authorizationUrl": "https://dummy.oauth.net/auth",
+      "flow": "accessCode",
+      "scopes": {
+        "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]": "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]",
+        "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]": "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]",
+        "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]": "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]",
+        "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]": "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]",
+        "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [DELETE]": "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [DELETE]",
+        "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]": "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]",
+        "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [DELETE]": "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [DELETE]",
+        "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [READ]": "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [READ]",
+        "NAMESPACE:{namespace}:DSM:CONFIG [READ]": "NAMESPACE:{namespace}:DSM:CONFIG [READ]",
+        "NAMESPACE:{namespace}:DSM:SERVER [UPDATE]": "NAMESPACE:{namespace}:DSM:SERVER [UPDATE]",
+        "NAMESPACE:{namespace}:DSM:SESSION [CREATE]": "NAMESPACE:{namespace}:DSM:SESSION [CREATE]",
+        "NAMESPACE:{namespace}:DSM:SESSION [READ]": "NAMESPACE:{namespace}:DSM:SESSION [READ]",
+        "NAMESPACE:{namespace}:DSM:SESSION [UPDATE]": "NAMESPACE:{namespace}:DSM:SESSION [UPDATE]"
+      },
+      "tokenUrl": "https://dumy.oauth.net/token",
+      "type": "oauth2"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1images~1versions~1{version}/get/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]"
+          "NAMESPACE:{namespace}:DSM:CONFIG [READ]"
         ],
         "HasScope": [
           "social"
@@ -33,123 +66,17 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1{podName}~1logs/get/description",
-    "value": "Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]\n\nRequired scope: social\n\nThis endpoint queries a specified dedicated server&#39;s logs."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1servers~1register/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:DSM:SERVER [UPDATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
+    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1images~1versions~1{version}/get/parameters/1/description",
+    "value": "version of the image"
   },
   {
     "op": "replace",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs/post/description",
-    "value": "```\nRequired permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE] \nRequired scope: social\n\nThis endpoint creates config.\n\nPort is where your game listens for incoming UDP connection, if empty it&#39;ll be set to 15000\n\nCPU and Memory limit / request are formatted with Kubernetes format, \ne.g. CPU of 1000m is 1 core, and Memory of 512Mi is 512 MB.\n\nThe creation/claim/session/unreachable/heartbeat timeouts are all in seconds. \nCreation timeout is time limit for DS to startup until registers itself. \nClaim timeout is time limit for game session manager to claim its ready DS. \nSession timeout is time limit for match session before deleted.\nUnreachable timeout is time limit for DS in UNREACHABLE state before deleted.\nHeartbeat timeout is time limit for DS to give heartbeat before marked as UNREACHABLE.\n\nSample config:\n{\n\t&#34;namespace&#34;: &#34;accelbyte&#34;,\n\t&#34;providers&#34;: [\n\t&#34;aws&#34;\n\t],\n\t&#34;port&#34;: 7777,\n\t&#34;protocol&#34;: &#34;udp&#34;,\n\t&#34;creation_timeout&#34;: 120,\n\t&#34;claim_timeout&#34;: 60,\n\t&#34;session_timeout&#34;: 1800,\n\t&#34;heartbeat_timeout&#34;: 30,\n\t&#34;unreachable_timeout&#34;: 30,\n}\n```"
+    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1images~1versions~1{version}/get/parameters/1/name",
+    "value": "version"
   },
   {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs/patch/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs/patch/description",
-    "value": "```\nRequired permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE] \nRequired scope: social\n\nThis endpoint modifies config. When there are ready servers and \nthe server version is updated, those servers will be replaced with newer version.\n\nPort is where your game listens for incoming UDP connection, if empty it&#39;ll be set to 15000\n\nCPU and Memory limit / request are formatted with Kubernetes format, \ne.g. CPU of 1000m is 1 core, and Memory of 512Mi is 512 MB.\n\nThe creation/claim/session/unreachable/heartbeat timeouts are all in seconds. \nCreation timeout is time limit for DS to startup until registers itself. \nClaim timeout is time limit for game session manager to claim its ready DS. \nSession timeout is time limit for match session before deleted.\nUnreachable timeout is time limit for DS in UNREACHABLE state before deleted.\nHeartbeat timeout is time limit for DS to give heartbeat before marked as UNREACHABLE.\n\nSample config:\n{\n\t&#34;namespace&#34;: &#34;accelbyte&#34;,\n\t&#34;providers&#34;: [\n\t&#34;aws&#34;\n\t],\n\t&#34;port&#34;: 7777,\n\t&#34;protocol&#34;: &#34;udp&#34;,\n\t&#34;creation_timeout&#34;: 120,\n\t&#34;claim_timeout&#34;: 60,\n\t&#34;session_timeout&#34;: 1800,\n\t&#34;heartbeat_timeout&#34;: 30,\n\t&#34;unreachable_timeout&#34;: 30,\n}\n```"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1count/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1images~1patches/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
+    "op": "remove",
+    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1images~1versions~1{version}/get/parameters/2"
   },
   {
     "op": "add",
@@ -168,37 +95,7 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1regions~1{region}/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1regions~1{region}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1regions~1{region}/patch/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1versions~1{version}/patch/security",
     "value": [
       {
         "HasPermission": [
@@ -213,7 +110,82 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1images~1versions~1{version}~1patches/get/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1versions~1{version}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}/patch/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}/delete/security",
     "value": [
       {
         "HasPermission": [
@@ -248,21 +220,6 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1v1~1namespaces~1{namespace}~1configs~1export/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
     "path": "/paths/~1dsmcontroller~1admin~1images~1import/post/security",
     "value": [
       {
@@ -283,46 +240,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1local/get/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1ports~1{name}/patch/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1sessions/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1sessions/get/parameters/4/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]"
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]"
         ],
         "HasScope": [
           "social"
@@ -363,37 +285,7 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1ports~1{name}/patch/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1images~1versions~1{version}~1patches~1{versionPatch}/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1version~1{version}/post/security",
+    "path": "/paths/~1dsmcontroller~1admin~1v1~1namespaces~1{namespace}~1configs~1import/post/security",
     "value": [
       {
         "HasPermission": [
@@ -408,7 +300,37 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1pods/get/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1pods~1{name}/patch/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1pods~1{name}/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1pods~1{name}/get/security",
     "value": [
       {
         "HasPermission": [
@@ -423,22 +345,7 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1sessions~1count/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1versions~1{version}/delete/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1pods~1{name}/delete/security",
     "value": [
       {
         "HasPermission": [
@@ -452,86 +359,17 @@
     ]
   },
   {
+    "op": "move",
+    "from": "/security",
+    "path": "/paths/~1dsmcontroller~1public~1providers~1regions~1{region}/get/security"
+  },
+  {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1versions~1{version}/patch/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1sessions~1count/get/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1public~1providers~1regions~1{region}/get/security",
-    "value": [
-      {
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1{podName}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [DELETE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1{podName}/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1configs/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1dsmcontroller~1admin~1configs/post/description",
-    "value": "```\nRequired permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE] \nRequired scope: social\n\nThis endpoint adds/modifies config. When there are ready servers and \nthe server version is updated, those servers will be replaced with newer version.\n\nPort is where your game listens for incoming UDP connection, if empty it&#39;ll be set to 15000\n\nCPU and Memory limit / request are formatted with Kubernetes format, \ne.g. CPU of 1000m is 1 core, and Memory of 512Mi is 512 MB.\n\nThe creation/claim/session/unreachable/heartbeat timeouts are all in seconds. \nCreation timeout is time limit for DS to startup until registers itself. \nClaim timeout is time limit for game session manager to claim its ready DS. \nSession timeout is time limit for match session before deleted.\nUnreachable timeout is time limit for DS in UNREACHABLE state before deleted.\nHeartbeat timeout is time limit for DS to give heartbeat before marked as UNREACHABLE.\n\nSample config:\n{\n\t&#34;namespace&#34;: &#34;accelbyte&#34;,\n\t&#34;providers&#34;: [\n\t&#34;aws&#34;\n\t],\n\t&#34;port&#34;: 7777,\n\t&#34;protocol&#34;: &#34;udp&#34;,\n\t&#34;creation_timeout&#34;: 120,\n\t&#34;claim_timeout&#34;: 60,\n\t&#34;session_timeout&#34;: 1800,\n\t&#34;heartbeat_timeout&#34;: 30,\n\t&#34;unreachable_timeout&#34;: 30,\n\t&#34;image_version_mapping&#34;: {\n\t\t&#34;1.4.0&#34;: &#34;accelbyte/sample-ds-go:1.4.0&#34;\n\t},\n\t&#34;default_version&#34;: &#34;1.4.0&#34;,\n\t&#34;cpu_limit&#34;: &#34;100&#34;,\n\t&#34;mem_limit&#34;: &#34;64&#34;,\n\t&#34;params&#34;: &#34;&#34;,\n\t&#34;min_count&#34;: 0,\n\t&#34;max_count&#34;: 0,\n\t&#34;buffer_count&#34;: 0,\n\t&#34;configurations&#34;: {\n\t\t&#34;1player&#34;: {\n\t\t\t&#34;cpu_limit&#34;: &#34;100&#34;,\n\t\t\t&#34;mem_limit&#34;: &#34;64&#34;,\n\t\t\t&#34;params&#34;: &#34;-gamemode 1p&#34;,\n\t\t},\n\t\t&#34;50players&#34;: {\n\t\t\t&#34;cpu_limit&#34;: &#34;200&#34;,\n\t\t\t&#34;mem_limit&#34;: &#34;512&#34;,\n\t\t\t&#34;params&#34;: &#34;-gamemode 50p&#34;,\n\t\t}\n\t},\n\t&#34;deployments&#34;: {\n\t\t&#34;global-1p&#34;: {\n\t\t\t&#34;game_version&#34;: &#34;1.4.0&#34;&#34;,\n\t\t\t&#34;regions&#34;: [&#34;us-west&#34;, &#34;ap-southeast&#34;],\n\t\t\t&#34;configuration&#34;: &#34;1player&#34;,\n\t\t\t&#34;min_count&#34;: 0,\n\t\t\t&#34;max_count&#34;: 0,\n\t\t\t&#34;buffer_count&#34;: 2\n\t\t},\n\t\t&#34;us-50p&#34;: {\n\t\t\t&#34;game_version&#34;: &#34;1.4.0&#34;&#34;,\n\t\t\t&#34;regions&#34;: [&#34;us-west&#34;],\n\t\t\t&#34;configuration&#34;: &#34;50players&#34;,\n\t\t\t&#34;min_count&#34;: 0,\n\t\t\t&#34;max_count&#34;: 0,\n\t\t\t&#34;buffer_count&#34;: 5\n\t\t},\n\t},\n}\n```"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1configs/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
+          "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [READ]"
         ],
         "HasScope": [
           "social"
@@ -572,20 +410,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1public~1providers/get/security",
-    "value": [
-      {
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1sessions~1{sessionID}/delete/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1pods/get/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [DELETE]"
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
         ],
         "HasScope": [
           "social"
@@ -596,11 +425,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1versions~1{version}~1regions~1{region}/post/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1images/get/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]"
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
         ],
         "HasScope": [
           "social"
@@ -611,22 +440,7 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1versions~1{version}~1regions~1{region}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1versions~1{version}~1regions~1{region}/patch/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1images/delete/security",
     "value": [
       {
         "HasPermission": [
@@ -641,11 +455,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1local~1{name}/delete/security",
+    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1sessions/post/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [DELETE]"
+          "NAMESPACE:{namespace}:DSM:SESSION [CREATE]"
         ],
         "HasScope": [
           "social"
@@ -656,9 +470,50 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1public~1provider~1default/get/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1{podName}~1logs/get/security",
     "value": [
       {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1{podName}~1logs/get/description",
+    "value": "Required permission: ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]\n\nRequired scope: social\n\nThis endpoint queries a specified dedicated server&#39;s logs."
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1{podName}/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1{podName}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [DELETE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
         "authorization": []
       }
     ]
@@ -705,60 +560,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1servers~1shutdown/post/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1count/get/security",
     "value": [
       {
         "HasPermission": [
-          "NAMESPACE:{namespace}:DSM:SERVER [UPDATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1servers~1shutdown/post/description",
-    "value": "Required permission: NAMESPACE:{namespace}:DSM:SERVER [UPDATE]\n\nRequired scope: social\n\nThis endpoint is intended to be called by dedicated server to let DSM know that it is shutting down. Calling this will remove the server and session records from DB.Set &#39;kill_me&#39; in request to &#39;true&#39; if the DS cannot shut itself down."
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1images~1versions~1{version}/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:DSM:CONFIG [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1images~1versions~1{version}/get/parameters/1/description",
-    "value": "version of the image"
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1images~1versions~1{version}/get/parameters/1/name",
-    "value": "version"
-  },
-  {
-    "op": "remove",
-    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1images~1versions~1{version}/get/parameters/2"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1sessions~1claim/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:DSM:SESSION [UPDATE]"
+          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]"
         ],
         "HasScope": [
           "social"
@@ -789,7 +595,7 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1v1~1namespaces~1{namespace}~1configs~1import/post/security",
+    "path": "/paths/~1dsmcontroller~1admin~1configs/post/security",
     "value": [
       {
         "HasPermission": [
@@ -803,8 +609,82 @@
     ]
   },
   {
+    "op": "replace",
+    "path": "/paths/~1dsmcontroller~1admin~1configs/post/description",
+    "value": "```\nRequired permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE] \nRequired scope: social\n\nThis endpoint adds/modifies config. When there are ready servers and \nthe server version is updated, those servers will be replaced with newer version.\n\nPort is where your game listens for incoming UDP connection, if empty it&#39;ll be set to 15000\n\nCPU and Memory limit / request are formatted with Kubernetes format, \ne.g. CPU of 1000m is 1 core, and Memory of 512Mi is 512 MB.\n\nThe creation/claim/session/unreachable/heartbeat timeouts are all in seconds. \nCreation timeout is time limit for DS to startup until registers itself. \nClaim timeout is time limit for game session manager to claim its ready DS. \nSession timeout is time limit for match session before deleted.\nUnreachable timeout is time limit for DS in UNREACHABLE state before deleted.\nHeartbeat timeout is time limit for DS to give heartbeat before marked as UNREACHABLE.\n\nSample config:\n{\n\t&#34;namespace&#34;: &#34;accelbyte&#34;,\n\t&#34;providers&#34;: [\n\t&#34;aws&#34;\n\t],\n\t&#34;port&#34;: 7777,\n\t&#34;protocol&#34;: &#34;udp&#34;,\n\t&#34;creation_timeout&#34;: 120,\n\t&#34;claim_timeout&#34;: 60,\n\t&#34;session_timeout&#34;: 1800,\n\t&#34;heartbeat_timeout&#34;: 30,\n\t&#34;unreachable_timeout&#34;: 30,\n\t&#34;image_version_mapping&#34;: {\n\t\t&#34;1.4.0&#34;: &#34;accelbyte/sample-ds-go:1.4.0&#34;\n\t},\n\t&#34;default_version&#34;: &#34;1.4.0&#34;,\n\t&#34;cpu_limit&#34;: &#34;100&#34;,\n\t&#34;mem_limit&#34;: &#34;64&#34;,\n\t&#34;params&#34;: &#34;&#34;,\n\t&#34;min_count&#34;: 0,\n\t&#34;max_count&#34;: 0,\n\t&#34;buffer_count&#34;: 0,\n\t&#34;configurations&#34;: {\n\t\t&#34;1player&#34;: {\n\t\t\t&#34;cpu_limit&#34;: &#34;100&#34;,\n\t\t\t&#34;mem_limit&#34;: &#34;64&#34;,\n\t\t\t&#34;params&#34;: &#34;-gamemode 1p&#34;,\n\t\t},\n\t\t&#34;50players&#34;: {\n\t\t\t&#34;cpu_limit&#34;: &#34;200&#34;,\n\t\t\t&#34;mem_limit&#34;: &#34;512&#34;,\n\t\t\t&#34;params&#34;: &#34;-gamemode 50p&#34;,\n\t\t}\n\t},\n\t&#34;deployments&#34;: {\n\t\t&#34;global-1p&#34;: {\n\t\t\t&#34;game_version&#34;: &#34;1.4.0&#34;&#34;,\n\t\t\t&#34;regions&#34;: [&#34;us-west&#34;, &#34;ap-southeast&#34;],\n\t\t\t&#34;configuration&#34;: &#34;1player&#34;,\n\t\t\t&#34;min_count&#34;: 0,\n\t\t\t&#34;max_count&#34;: 0,\n\t\t\t&#34;buffer_count&#34;: 2\n\t\t},\n\t\t&#34;us-50p&#34;: {\n\t\t\t&#34;game_version&#34;: &#34;1.4.0&#34;&#34;,\n\t\t\t&#34;regions&#34;: [&#34;us-west&#34;],\n\t\t\t&#34;configuration&#34;: &#34;50players&#34;,\n\t\t\t&#34;min_count&#34;: 0,\n\t\t\t&#34;max_count&#34;: 0,\n\t\t\t&#34;buffer_count&#34;: 5\n\t\t},\n\t},\n}\n```"
+  },
+  {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1images/delete/security",
+    "path": "/paths/~1dsmcontroller~1admin~1configs/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1images~1versions~1{version}~1patches~1{versionPatch}/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1public~1provider~1default/get/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1images~1limit/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1regions~1{region}/patch/security",
     "value": [
       {
         "HasPermission": [
@@ -819,11 +699,130 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1images/get/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1regions~1{region}/post/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1regions~1{region}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1public~1providers/get/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1local/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1images~1patches/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1servers~1shutdown/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:DSM:SERVER [UPDATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1servers~1shutdown/post/description",
+    "value": "Required permission: NAMESPACE:{namespace}:DSM:SERVER [UPDATE]\n\nRequired scope: social\n\nThis endpoint is intended to be called by dedicated server to let DSM know that it is shutting down. Calling this will remove the server and session records from DB.Set &#39;kill_me&#39; in request to &#39;true&#39; if the DS cannot shut itself down."
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1versions~1{version}~1regions~1{region}/patch/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1versions~1{version}~1regions~1{region}/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1versions~1{version}~1regions~1{region}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]"
         ],
         "HasScope": [
           "social"
@@ -849,7 +848,101 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}/post/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs/patch/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs/patch/description",
+    "value": "```\nRequired permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE] \nRequired scope: social\n\nThis endpoint modifies config. When there are ready servers and \nthe server version is updated, those servers will be replaced with newer version.\n\nPort is where your game listens for incoming UDP connection, if empty it&#39;ll be set to 15000\n\nCPU and Memory limit / request are formatted with Kubernetes format, \ne.g. CPU of 1000m is 1 core, and Memory of 512Mi is 512 MB.\n\nThe creation/claim/session/unreachable/heartbeat timeouts are all in seconds. \nCreation timeout is time limit for DS to startup until registers itself. \nClaim timeout is time limit for game session manager to claim its ready DS. \nSession timeout is time limit for match session before deleted.\nUnreachable timeout is time limit for DS in UNREACHABLE state before deleted.\nHeartbeat timeout is time limit for DS to give heartbeat before marked as UNREACHABLE.\n\nSample config:\n{\n\t&#34;namespace&#34;: &#34;accelbyte&#34;,\n\t&#34;providers&#34;: [\n\t&#34;aws&#34;\n\t],\n\t&#34;port&#34;: 7777,\n\t&#34;protocol&#34;: &#34;udp&#34;,\n\t&#34;creation_timeout&#34;: 120,\n\t&#34;claim_timeout&#34;: 60,\n\t&#34;session_timeout&#34;: 1800,\n\t&#34;heartbeat_timeout&#34;: 30,\n\t&#34;unreachable_timeout&#34;: 30,\n}\n```"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs/post/description",
+    "value": "```\nRequired permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE] \nRequired scope: social\n\nThis endpoint creates config.\n\nPort is where your game listens for incoming UDP connection, if empty it&#39;ll be set to 15000\n\nCPU and Memory limit / request are formatted with Kubernetes format, \ne.g. CPU of 1000m is 1 core, and Memory of 512Mi is 512 MB.\n\nThe creation/claim/session/unreachable/heartbeat timeouts are all in seconds. \nCreation timeout is time limit for DS to startup until registers itself. \nClaim timeout is time limit for game session manager to claim its ready DS. \nSession timeout is time limit for match session before deleted.\nUnreachable timeout is time limit for DS in UNREACHABLE state before deleted.\nHeartbeat timeout is time limit for DS to give heartbeat before marked as UNREACHABLE.\n\nSample config:\n{\n\t&#34;namespace&#34;: &#34;accelbyte&#34;,\n\t&#34;providers&#34;: [\n\t&#34;aws&#34;\n\t],\n\t&#34;port&#34;: 7777,\n\t&#34;protocol&#34;: &#34;udp&#34;,\n\t&#34;creation_timeout&#34;: 120,\n\t&#34;claim_timeout&#34;: 60,\n\t&#34;session_timeout&#34;: 1800,\n\t&#34;heartbeat_timeout&#34;: 30,\n\t&#34;unreachable_timeout&#34;: 30,\n}\n```"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1images~1versions~1{version}~1patches/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1v1~1messages/get/security",
+    "value": [
+      {
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}~1overrides~1version~1{version}/post/security",
     "value": [
       {
         "HasPermission": [
@@ -864,11 +957,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}/delete/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1servers~1local~1{name}/delete/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
+          "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [DELETE]"
         ],
         "HasScope": [
           "social"
@@ -879,11 +972,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}/patch/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1sessions/get/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]"
+          "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [READ]"
         ],
         "HasScope": [
           "social"
@@ -894,18 +987,8 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments~1{deployment}/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1sessions/get/parameters/4/x-omitempty",
+    "value": false
   },
   {
     "op": "add",
@@ -914,81 +997,6 @@
       {
         "HasPermission": [
           "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1pods~1{name}/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1pods~1{name}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1pods~1{name}/patch/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1pods~1{name}/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1sessions~1{sessionID}/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:DSM:SESSION [READ]"
         ],
         "HasScope": [
           "social"
@@ -1014,11 +1022,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1sessions/post/security",
+    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1sessions~1{sessionID}/get/security",
     "value": [
       {
         "HasPermission": [
-          "NAMESPACE:{namespace}:DSM:SESSION [CREATE]"
+          "NAMESPACE:{namespace}:DSM:SESSION [READ]"
         ],
         "HasScope": [
           "social"
@@ -1029,7 +1037,37 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1images~1limit/get/security",
+    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1sessions~1claim/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:DSM:SESSION [UPDATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1namespaces~1{namespace}~1servers~1register/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:DSM:SERVER [UPDATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1dsmcontroller~1admin~1v1~1namespaces~1{namespace}~1configs~1export/get/security",
     "value": [
       {
         "HasPermission": [
@@ -1044,11 +1082,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1configs~1deployments/get/security",
+    "path": "/paths/~1dsmcontroller~1admin~1namespaces~1{namespace}~1sessions~1{sessionID}/delete/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]"
+          "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [DELETE]"
         ],
         "HasScope": [
           "social"
@@ -1063,15 +1101,7 @@
   },
   {
     "op": "remove",
-    "path": "/definitions/models.DeploymentConfig"
-  },
-  {
-    "op": "remove",
     "path": "/definitions/models.PodCountConfigUpdate"
-  },
-  {
-    "op": "remove",
-    "path": "/definitions/models.PodConfig"
   },
   {
     "op": "remove",
@@ -1079,61 +1109,24 @@
   },
   {
     "op": "remove",
+    "path": "/definitions/models.DeploymentConfig"
+  },
+  {
+    "op": "remove",
+    "path": "/definitions/models.PodConfig"
+  },
+  {
+    "op": "remove",
     "path": "/definitions/models.MatchResult"
   },
   {
     "op": "add",
-    "path": "/definitions/models.CreateDeploymentRequest/properties/allow_version_override/x-omitempty",
+    "path": "/definitions/models.DeploymentConfigOverride/properties/enable_region_overrides/x-omitempty",
     "value": false
   },
   {
     "op": "add",
-    "path": "/definitions/models.CreateDeploymentRequest/properties/enable_region_overrides/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.CreateDeploymentRequest/properties/use_buffer_percent/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.PatchImageRecord/properties/persistent/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.PatchImageRecord/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.PatchImageRecord/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.Server/properties/is_override_game_version/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.Server/properties/created_at/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.Server/properties/last_update/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.UpdateRegionOverrideRequest/properties/use_buffer_percent/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.ShutdownServerRequest/properties/kill_me/x-omitempty",
+    "path": "/definitions/models.DeploymentConfigOverride/properties/use_buffer_percent/x-omitempty",
     "value": false
   },
   {
@@ -1148,47 +1141,7 @@
   },
   {
     "op": "add",
-    "path": "/definitions/models.StatusHistory/properties/time_stamp/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.DeploymentConfigOverride/properties/enable_region_overrides/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.DeploymentConfigOverride/properties/use_buffer_percent/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.PodConfigRecord/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.PodConfigRecord/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.UpdateDeploymentOverrideRequest/properties/enable_region_overrides/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.UpdateDeploymentOverrideRequest/properties/use_buffer_percent/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.CreateImagePatchRequest/properties/persistent/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.UpdateDeploymentRequest/properties/allow_version_override/x-omitempty",
+    "path": "/definitions/models.PodCountConfigOverride/properties/use_buffer_percent/x-omitempty",
     "value": false
   },
   {
@@ -1198,12 +1151,12 @@
   },
   {
     "op": "add",
-    "path": "/definitions/models.UpdateDeploymentRequest/properties/use_buffer_percent/x-omitempty",
+    "path": "/definitions/models.UpdateDeploymentRequest/properties/allow_version_override/x-omitempty",
     "value": false
   },
   {
     "op": "add",
-    "path": "/definitions/models.DeploymentWithOverride/properties/allow_version_override/x-omitempty",
+    "path": "/definitions/models.UpdateDeploymentRequest/properties/use_buffer_percent/x-omitempty",
     "value": false
   },
   {
@@ -1213,12 +1166,12 @@
   },
   {
     "op": "add",
-    "path": "/definitions/models.DeploymentWithOverride/properties/use_buffer_percent/x-omitempty",
+    "path": "/definitions/models.DeploymentWithOverride/properties/allow_version_override/x-omitempty",
     "value": false
   },
   {
     "op": "add",
-    "path": "/definitions/models.DeploymentWithOverride/properties/createdAt/x-nullable",
+    "path": "/definitions/models.DeploymentWithOverride/properties/use_buffer_percent/x-omitempty",
     "value": false
   },
   {
@@ -1228,37 +1181,17 @@
   },
   {
     "op": "add",
-    "path": "/definitions/models.ImageRecord/properties/persistent/x-omitempty",
+    "path": "/definitions/models.DeploymentWithOverride/properties/createdAt/x-nullable",
     "value": false
   },
   {
     "op": "add",
-    "path": "/definitions/models.ImageRecord/properties/createdAt/x-nullable",
+    "path": "/definitions/models.ShutdownServerRequest/properties/kill_me/x-omitempty",
     "value": false
   },
   {
     "op": "add",
-    "path": "/definitions/models.ImageRecord/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.CreateRegionOverrideRequest/properties/use_buffer_percent/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.CreateImageRequest/properties/persistent/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.PodCountConfigOverride/properties/use_buffer_percent/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.ImageRecordUpdate/properties/persistent/x-omitempty",
+    "path": "/definitions/models.CreateImagePatchRequest/properties/persistent/x-omitempty",
     "value": false
   },
   {
@@ -1273,40 +1206,107 @@
   },
   {
     "op": "add",
-    "path": "/securityDefinitions/HasScope",
-    "value": {
-      "authorizationUrl": "https://dummy.oauth.net/auth",
-      "flow": "accessCode",
-      "scopes": {
-        "social": "social"
-      },
-      "tokenUrl": "https://dumy.oauth.net/token",
-      "type": "oauth2"
-    }
+    "path": "/definitions/models.ImageRecordUpdate/properties/persistent/x-omitempty",
+    "value": false
   },
   {
     "op": "add",
-    "path": "/securityDefinitions/HasPermission",
-    "value": {
-      "authorizationUrl": "https://dummy.oauth.net/auth",
-      "flow": "accessCode",
-      "scopes": {
-        "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]": "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]",
-        "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]": "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]",
-        "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]": "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]",
-        "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]": "ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]",
-        "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [DELETE]": "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [DELETE]",
-        "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]": "ADMIN:NAMESPACE:{namespace}:DSM:SERVER [READ]",
-        "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [DELETE]": "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [DELETE]",
-        "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [READ]": "ADMIN:NAMESPACE:{namespace}:DSM:SESSION [READ]",
-        "NAMESPACE:{namespace}:DSM:CONFIG [READ]": "NAMESPACE:{namespace}:DSM:CONFIG [READ]",
-        "NAMESPACE:{namespace}:DSM:SERVER [UPDATE]": "NAMESPACE:{namespace}:DSM:SERVER [UPDATE]",
-        "NAMESPACE:{namespace}:DSM:SESSION [CREATE]": "NAMESPACE:{namespace}:DSM:SESSION [CREATE]",
-        "NAMESPACE:{namespace}:DSM:SESSION [READ]": "NAMESPACE:{namespace}:DSM:SESSION [READ]",
-        "NAMESPACE:{namespace}:DSM:SESSION [UPDATE]": "NAMESPACE:{namespace}:DSM:SESSION [UPDATE]"
-      },
-      "tokenUrl": "https://dumy.oauth.net/token",
-      "type": "oauth2"
-    }
+    "path": "/definitions/models.CreateRegionOverrideRequest/properties/use_buffer_percent/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.Server/properties/created_at/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.Server/properties/is_override_game_version/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.Server/properties/last_update/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.PatchImageRecord/properties/persistent/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.PatchImageRecord/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.PatchImageRecord/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.PodConfigRecord/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.PodConfigRecord/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.CreateImageRequest/properties/persistent/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.CreateDeploymentRequest/properties/enable_region_overrides/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.CreateDeploymentRequest/properties/allow_version_override/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.CreateDeploymentRequest/properties/use_buffer_percent/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.StatusHistory/properties/time_stamp/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.UpdateDeploymentOverrideRequest/properties/enable_region_overrides/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.UpdateDeploymentOverrideRequest/properties/use_buffer_percent/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.ImageRecord/properties/persistent/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.ImageRecord/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.ImageRecord/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.UpdateRegionOverrideRequest/properties/use_buffer_percent/x-omitempty",
+    "value": false
   }
 ]

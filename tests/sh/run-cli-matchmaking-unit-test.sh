@@ -353,8 +353,8 @@ $CLI_EXE \
     --matchID '9SMNAUQV' \
     --partyID 'oiQtSQC2' \
     --userID 'kNSsmT0d' \
-    --limit '0.8471044674591004' \
-    --offset '0.4343179427166882' \
+    --limit '0' \
+    --offset '55' \
     >$TEMP_FILE 2>&1
 update_status $? 'SearchSessions'
 delete_file $TEMP_FILE
@@ -365,7 +365,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn matchmaking \
     --op GetSessionHistoryDetailed \
-    --matchID '4zA2zp1L' \
+    --matchID 'G4zA2zp1' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'GetSessionHistoryDetailed'
@@ -398,7 +398,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn matchmaking \
     --op PublicGetSingleMatchmakingChannel \
-    --channelName 's0bD6dGg' \
+    --channelName 'Ls0bD6dG' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'PublicGetSingleMatchmakingChannel'
@@ -411,13 +411,13 @@ $CLI_EXE \
     --sn matchmaking \
     --op SearchSessionsV2 \
     --namespace $TEST_NAMESPACE \
-    --channel 'wkYgHzKu' \
+    --channel 'gwkYgHzK' \
     --deleted 'True' \
-    --matchID 'boP7kfpI' \
-    --partyID 'letXrCK1' \
-    --userID 'UVO0jcs7' \
-    --limit '0.20615094482549756' \
-    --offset '0.25349997202377916' \
+    --matchID 'I2RJrboP' \
+    --partyID '7kfpIlet' \
+    --userID 'XrCK1UVO' \
+    --limit '19' \
+    --offset '5' \
     >$TEMP_FILE 2>&1
 update_status $? 'SearchSessionsV2'
 delete_file $TEMP_FILE

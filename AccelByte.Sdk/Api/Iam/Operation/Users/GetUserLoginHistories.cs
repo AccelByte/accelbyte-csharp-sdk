@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             public double? Before { get; set; }
             
-            public double? Limit { get; set; }
+            public long? Limit { get; set; }
             
             internal GetUserLoginHistoriesBuilder() { }
 
@@ -53,7 +53,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 return this;
             }
 
-            public GetUserLoginHistoriesBuilder SetLimit(double _limit)
+            public GetUserLoginHistoriesBuilder SetLimit(long _limit)
             {
                 Limit = _limit;
                 return this;
@@ -97,7 +97,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string userId,            
             double? after,            
             double? before,            
-            double? limit            
+            long? limit            
         )
         {
             PathParams["namespace"] = namespace_;

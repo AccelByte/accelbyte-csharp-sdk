@@ -1663,14 +1663,14 @@
             "in": "query",
             "name": "limit",
             "required": true,
-            "type": "number"
+            "type": "integer"
           },
           {
             "description": "offset",
             "in": "query",
             "name": "offset",
             "required": true,
-            "type": "number"
+            "type": "integer"
           }
         ],
         "produces": [
@@ -2047,14 +2047,14 @@
             "in": "query",
             "name": "limit",
             "required": true,
-            "type": "number"
+            "type": "integer"
           },
           {
             "description": "offset",
             "in": "query",
             "name": "offset",
             "required": true,
-            "type": "number"
+            "type": "integer"
           }
         ],
         "produces": [

@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         {
             
             
-            public double? Offset { get; set; }
+            public long? Offset { get; set; }
             
             
             
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             internal GetEventByEventIDHandlerBuilder() { }
 
 
-            public GetEventByEventIDHandlerBuilder SetOffset(double _offset)
+            public GetEventByEventIDHandlerBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
                 return this;
@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
                 double eventId,
                 string namespace_,
                 string endDate,
-                double pageSize,
+                long pageSize,
                 string startDate
             )
             {
@@ -65,7 +65,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             double eventId,
             string namespace_,
             string endDate,
-            double pageSize,
+            long pageSize,
             string startDate
         )
         {
@@ -86,9 +86,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public GetEventByEventIDHandler(
             double eventId,            
             string namespace_,            
-            double? offset,            
+            long? offset,            
             string endDate,            
-            double pageSize,            
+            long pageSize,            
             string startDate            
         )
         {

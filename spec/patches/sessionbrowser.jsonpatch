@@ -5,11 +5,6 @@
   },
   {
     "op": "add",
-    "path": "/host",
-    "value": "demo.accelbyte.io"
-  },
-  {
-    "op": "add",
     "path": "/schemes",
     "value": [
       "https"
@@ -17,8 +12,102 @@
   },
   {
     "op": "add",
-    "path": "/info/version",
-    "value": ""
+    "path": "/host",
+    "value": "demo.accelbyte.io"
+  },
+  {
+    "op": "remove",
+    "path": "/definitions/models.PodConfig"
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.AdminSessionResponse/properties/joinable/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.AdminSessionResponse/properties/created_at/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.CustomGameResponse/properties/joinable/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.CustomGameResponse/properties/created_at/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.MatchMaking/properties/joinable/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.MatchMaking/properties/created_at/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.AddPlayerRequest/properties/as_spectator/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.Server/properties/last_update/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.Server/properties/is_override_game_version/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.AddPlayerResponse/properties/status/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.SessionResponse/properties/joinable/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.SessionResponse/properties/created_at/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.RecentPlayerHistory/properties/created_at/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.RecentPlayerHistory/properties/updated_at/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.GameSessionSetting/properties/allow_join_in_progress/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.StatusHistory/properties/time_stamp/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.GameSession/properties/joinable/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.GameSession/properties/created_at/x-nullable",
+    "value": false
   },
   {
     "op": "add",
@@ -53,7 +142,7 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1sessionbrowser~1admin~1namespaces~1{namespace}~1gamesession~1active~1count/get/security",
+    "path": "/paths/~1sessionbrowser~1admin~1namespaces~1{namespace}~1gamesession~1{sessionID}/get/security",
     "value": [
       {
         "HasPermission": [
@@ -83,71 +172,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession/get/security",
+    "path": "/paths/~1sessionbrowser~1admin~1namespaces~1{namespace}~1gamesession~1active~1count/get/security",
     "value": [
       {
         "HasPermission": [
-          "NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [CREATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession~1{sessionID}~1player~1{userID}/delete/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [UPDATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession~1{sessionID}/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [UPDATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession~1{sessionID}/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]"
+          "ADMIN:NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]"
         ],
         "HasScope": [
           "social"
@@ -173,7 +202,7 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession~1bulk/get/security",
+    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession~1{sessionID}/get/security",
     "value": [
       {
         "HasPermission": [
@@ -188,11 +217,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession~1{sessionID}~1localds/delete/security",
+    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession~1{sessionID}/put/security",
     "value": [
       {
         "HasPermission": [
-          "NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [DELETE]"
+          "NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [UPDATE]"
         ],
         "HasScope": [
           "social"
@@ -203,11 +232,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1sessionbrowser~1admin~1namespaces~1{namespace}~1gamesession~1{sessionID}/get/security",
+    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1recentplayer~1{userID}/get/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]"
+          "NAMESPACE:{namespace}:SESSIONBROWSER:RECENTPLAYER [READ]"
         ],
         "HasScope": [
           "social"
@@ -233,11 +262,26 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1recentplayer~1{userID}/get/security",
+    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession~1{sessionID}~1localds/delete/security",
     "value": [
       {
         "HasPermission": [
-          "NAMESPACE:{namespace}:SESSIONBROWSER:RECENTPLAYER [READ]"
+          "NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [DELETE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession~1{sessionID}~1player~1{userID}/delete/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [UPDATE]"
         ],
         "HasScope": [
           "social"
@@ -277,97 +321,53 @@
     ]
   },
   {
-    "op": "remove",
-    "path": "/definitions/models.PodConfig"
+    "op": "add",
+    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession~1bulk/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
   },
   {
     "op": "add",
-    "path": "/definitions/models.GameSessionSetting/properties/allow_join_in_progress/x-omitempty",
-    "value": false
+    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession/post/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [CREATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
   },
   {
     "op": "add",
-    "path": "/definitions/models.StatusHistory/properties/time_stamp/x-nullable",
-    "value": false
+    "path": "/paths/~1sessionbrowser~1namespaces~1{namespace}~1gamesession/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
   },
   {
     "op": "add",
-    "path": "/definitions/models.SessionResponse/properties/created_at/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.SessionResponse/properties/joinable/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.GameSession/properties/created_at/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.GameSession/properties/joinable/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.CustomGameResponse/properties/created_at/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.CustomGameResponse/properties/joinable/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.AdminSessionResponse/properties/created_at/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.AdminSessionResponse/properties/joinable/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.MatchMaking/properties/created_at/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.MatchMaking/properties/joinable/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.RecentPlayerHistory/properties/created_at/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.RecentPlayerHistory/properties/updated_at/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.Server/properties/is_override_game_version/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.Server/properties/last_update/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.AddPlayerResponse/properties/status/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.AddPlayerRequest/properties/as_spectator/x-omitempty",
-    "value": false
+    "path": "/info/version",
+    "value": ""
   }
 ]

@@ -165,9 +165,9 @@ $CLI_EXE \
     --op QueryEventStreamHandler \
     --namespace $TEST_NAMESPACE \
     --endDate 'FSMIbl1a' \
-    --offset '0.8447271223694742' \
-    --pageSize '0.7713504924814581' \
-    --startDate 'CtWmHJBi' \
+    --offset '18' \
+    --pageSize '98' \
+    --startDate 'LCtWmHJB' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'QueryEventStreamHandler'
@@ -180,12 +180,12 @@ $CLI_EXE \
     --sn eventlog \
     --op GetEventSpecificUserV2Handler \
     --namespace $TEST_NAMESPACE \
-    --userId '9SoMkSE4' \
-    --endDate 'eJelwO4K' \
-    --eventName 'PMky2h8R' \
-    --offset '0.8507215387484592' \
-    --pageSize '0.5412446839893738' \
-    --startDate 'oXP8gd7J' \
+    --userId 'i9SoMkSE' \
+    --endDate '4eJelwO4' \
+    --eventName 'KPMky2h8' \
+    --offset '86' \
+    --pageSize '11' \
+    --startDate 'IXoXP8gd' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetEventSpecificUserV2Handler'
 delete_file $TEMP_FILE
@@ -197,12 +197,12 @@ $CLI_EXE \
     --sn eventlog \
     --op GetPublicEditHistory \
     --namespace $TEST_NAMESPACE \
-    --userId 'UabYc3GM' \
-    --endDate 'bxTlm1fs' \
-    --offset '0.32294313545773834' \
-    --pageSize '0.5616305535504991' \
-    --startDate 'C4s5ppGR' \
-    --type '9XcoxYTG' \
+    --userId '7JUabYc3' \
+    --endDate 'GMbxTlm1' \
+    --offset '10' \
+    --pageSize '37' \
+    --startDate 'u6J3C4s5' \
+    --type 'ppGR9Xco' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetPublicEditHistory'
 delete_file $TEMP_FILE
@@ -214,12 +214,12 @@ $CLI_EXE \
     --sn eventlog \
     --op GetUserEventsV2Public \
     --namespace $TEST_NAMESPACE \
-    --userId 'gewrLfwv' \
-    --endDate 'zJF4TpbN' \
-    --eventName 'hKq2xdmg' \
-    --offset '0.47139104773825513' \
-    --pageSize '0.06357235639685577' \
-    --startDate 'FHtf6Zie' \
+    --userId 'xYTGgewr' \
+    --endDate 'LfwvzJF4' \
+    --eventName 'TpbNhKq2' \
+    --offset '47' \
+    --pageSize '6' \
+    --startDate 'mgEBepFH' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserEventsV2Public'
 delete_file $TEMP_FILE

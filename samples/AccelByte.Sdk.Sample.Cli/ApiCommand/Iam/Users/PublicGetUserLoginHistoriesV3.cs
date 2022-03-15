@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public double? Before { get; set; }
 
         [SdkCommandArgument("limit")]
-        public double? Limit { get; set; }
+        public long? Limit { get; set; }
 
         public PublicGetUserLoginHistoriesV3Command(AccelByteSDK sdk)
         {

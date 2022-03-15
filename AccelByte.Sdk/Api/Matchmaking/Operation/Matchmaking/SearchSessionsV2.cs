@@ -79,8 +79,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
             public SearchSessionsV2 Build(
                 string namespace_,
-                double limit,
-                double offset
+                long limit,
+                long offset
             )
             {
                 return new SearchSessionsV2(this,
@@ -93,8 +93,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         private SearchSessionsV2(SearchSessionsV2Builder builder,
             string namespace_,
-            double limit,
-            double offset
+            long limit,
+            long offset
         )
         {
             PathParams["namespace"] = namespace_;
@@ -120,8 +120,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             string? matchID,            
             string? partyID,            
             string? userID,            
-            double limit,            
-            double offset            
+            long limit,            
+            long offset            
         )
         {
             PathParams["namespace"] = namespace_;

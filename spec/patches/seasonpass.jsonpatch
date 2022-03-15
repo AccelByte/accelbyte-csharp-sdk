@@ -5,6 +5,11 @@
   },
   {
     "op": "add",
+    "path": "/host",
+    "value": "demo.accelbyte.io"
+  },
+  {
+    "op": "add",
     "path": "/schemes",
     "value": [
       "https"
@@ -12,100 +17,270 @@
   },
   {
     "op": "add",
-    "path": "/host",
-    "value": "demo.accelbyte.io"
+    "path": "/securityDefinitions/HasScope",
+    "value": {
+      "authorizationUrl": "https://dummy.oauth.net/auth",
+      "flow": "accessCode",
+      "scopes": {},
+      "tokenUrl": "https://dumy.oauth.net/token",
+      "type": "oauth2"
+    }
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1reset"
+    "op": "add",
+    "path": "/securityDefinitions/HasPermission",
+    "value": {
+      "authorizationUrl": "https://dummy.oauth.net/auth",
+      "flow": "accessCode",
+      "scopes": {
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]": "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]",
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]": "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]",
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]": "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]",
+        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]": "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]",
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [DELETE]": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [DELETE]",
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]",
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]",
+        "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]": "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]",
+        "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]": "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
+      },
+      "tokenUrl": "https://dumy.oauth.net/token",
+      "type": "oauth2"
+    }
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1purchasable"
+    "op": "add",
+    "path": "/definitions/SeasonSummary/properties/end/x-nullable",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}"
+    "op": "add",
+    "path": "/definitions/SeasonSummary/properties/start/x-nullable",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}"
+    "op": "add",
+    "path": "/definitions/SeasonSummary/properties/publishedAt/x-nullable",
+    "value": true
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1retire"
+    "op": "add",
+    "path": "/definitions/UserSeasonSummary/properties/createdAt/x-nullable",
+    "value": true
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}"
+    "op": "add",
+    "path": "/definitions/UserSeasonSummary/properties/updatedAt/x-nullable",
+    "value": true
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes~1ownership~1any"
+    "op": "add",
+    "path": "/definitions/UserSeasonSummary/properties/cleared/x-omitempty",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}~1reorder"
+    "op": "add",
+    "path": "/definitions/UserSeasonSummary/properties/enrolledAt/x-nullable",
+    "value": true
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1tiers"
+    "op": "add",
+    "path": "/definitions/SeasonCloneRequest/properties/end/x-nullable",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1exp"
+    "op": "add",
+    "path": "/definitions/SeasonCloneRequest/properties/start/x-nullable",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes"
+    "op": "add",
+    "path": "/definitions/ListUserSeasonInfo/properties/cleared/x-omitempty",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data"
+    "op": "add",
+    "path": "/definitions/ListUserSeasonInfo/properties/enrolledAt/x-nullable",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons"
+    "op": "add",
+    "path": "/definitions/ListSeasonInfo/properties/createdAt/x-nullable",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes"
+    "op": "add",
+    "path": "/definitions/ListSeasonInfo/properties/updatedAt/x-nullable",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}"
+    "op": "add",
+    "path": "/definitions/ListSeasonInfo/properties/end/x-nullable",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards"
+    "op": "add",
+    "path": "/definitions/ListSeasonInfo/properties/start/x-nullable",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1unpublish"
+    "op": "add",
+    "path": "/definitions/ListSeasonInfo/properties/publishedAt/x-nullable",
+    "value": true
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers"
+    "op": "add",
+    "path": "/definitions/PassInfo/properties/createdAt/x-nullable",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards~1bulk"
+    "op": "add",
+    "path": "/definitions/PassInfo/properties/updatedAt/x-nullable",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards"
+    "op": "add",
+    "path": "/definitions/PassInfo/properties/autoEnroll/x-omitempty",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1data"
+    "op": "add",
+    "path": "/definitions/SeasonCreate/properties/end/x-nullable",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1public~1namespaces~1{namespace}~1seasons~1current"
+    "op": "add",
+    "path": "/definitions/SeasonCreate/properties/autoClaim/x-omitempty",
+    "value": false
   },
   {
-    "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons"
+    "op": "add",
+    "path": "/definitions/SeasonCreate/properties/start/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedPassInfo/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedPassInfo/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedPassInfo/properties/autoEnroll/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedSeasonInfo/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedSeasonInfo/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedSeasonInfo/properties/end/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedSeasonInfo/properties/autoClaim/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedSeasonInfo/properties/publishedAt/x-nullable",
+    "value": true
+  },
+  {
+    "op": "add",
+    "path": "/definitions/LocalizedSeasonInfo/properties/start/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonUpdate/properties/end/x-nullable",
+    "value": true
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonUpdate/properties/autoClaim/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonUpdate/properties/start/x-nullable",
+    "value": true
+  },
+  {
+    "op": "add",
+    "path": "/definitions/PassUpdate/properties/autoEnroll/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonInfo/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonInfo/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonInfo/properties/end/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonInfo/properties/autoClaim/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonInfo/properties/publishedAt/x-nullable",
+    "value": true
+  },
+  {
+    "op": "add",
+    "path": "/definitions/SeasonInfo/properties/start/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/ClaimableUserSeasonInfo/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/ClaimableUserSeasonInfo/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/ClaimableUserSeasonInfo/properties/cleared/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/ClaimableUserSeasonInfo/properties/enrolledAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/Ownership/properties/owned/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/PassCreate/properties/autoEnroll/x-omitempty",
+    "value": false
   },
   {
     "op": "remove",
@@ -113,11 +288,43 @@
   },
   {
     "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1unpublish"
+  },
+  {
+    "op": "remove",
     "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1current"
   },
   {
     "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1progression"
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}~1reorder"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1tiers"
   },
   {
     "op": "remove",
@@ -125,15 +332,150 @@
   },
   {
     "op": "remove",
-    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data"
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1retire"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1data"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes~1ownership~1any"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1reset"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1exp"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1progression"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards~1bulk"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1public~1namespaces~1{namespace}~1seasons~1current"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1purchasable"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes~1{code}"
+  },
+  {
+    "op": "remove",
+    "path": "/paths/~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes"
   },
   {
     "op": "add",
-    "path": "/paths/~1seasonpass~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards~1bulk",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1tiers",
     "value": {
       "post": {
-        "description": "This API is used to bulk claim all remained rewards, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "publicBulkClaimUserRewards",
+        "description": "This API is used to grant tier to user, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace, otherwise ignore.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "grantUserTier",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/UserTierGrant"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/UserSeasonSummary"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49148</td><td>User season does not exist</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Grant tier to user",
+        "tags": [
+          "Tier"
+        ],
+        "x-authorization": {
+          "action": "4",
+          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
+        }
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1progression",
+    "value": {
+      "get": {
+        "description": "This API is used to get current user season progression, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season progression&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "getCurrentUserSeasonProgression",
         "parameters": [
           {
             "description": "Namespace",
@@ -156,17 +498,17 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/ClaimableRewards"
+              "$ref": "#/definitions/UserSeasonSummary"
             }
           },
           "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49124</td><td>Manual claim not supported</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
             "schema": {
               "$ref": "#/definitions/ErrorEntity"
             }
           },
           "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49148</td><td>User season does not exist</td></tr><tr><td>49147</td><td>Published season does not exist</td></tr></table>",
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49147</td><td>Published season does not exist</td></tr><tr><td>49148</td><td>User season does not exist</td></tr></table>",
             "schema": {
               "$ref": "#/definitions/ErrorEntity"
             }
@@ -178,18 +520,87 @@
           },
           {
             "HasPermission": [
-              "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
+              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
             ],
             "authorization": []
           }
         ],
-        "summary": "Bulk claim all remained rewards",
+        "summary": "Get current user season progression",
         "tags": [
-          "Reward"
+          "Season"
+        ],
+        "x-authorization": {
+          "action": "2",
+          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
+        }
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1exp",
+    "value": {
+      "post": {
+        "description": "This API is used to grant exp to user, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace, otherwise ignore.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "grantUserExp",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/UserExpGrant"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/UserSeasonSummary"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Grant exp to user",
+        "tags": [
+          "Tier"
         ],
         "x-authorization": {
           "action": "4",
-          "resource": "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
+          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
         }
       }
     }
@@ -251,11 +662,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1reset",
+    "path": "/paths/~1seasonpass~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards",
     "value": {
-      "delete": {
-        "description": "&lt;b&gt;[TEST FACILITY ONLY] Forbidden in live environment. &lt;/b&gt;This API is used to reset user data in current season, it will not revoke the rewarded entitlements.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "resetUserSeason",
+      "post": {
+        "description": "This API is used to claim reward, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "publicClaimUserReward",
         "parameters": [
           {
             "description": "Namespace",
@@ -269,128 +680,14 @@
             "name": "userId",
             "required": true,
             "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "204": {
-            "description": "OK"
           },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
             "schema": {
-              "$ref": "#/definitions/ErrorEntity"
+              "$ref": "#/definitions/UserRewardClaim"
             }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [DELETE]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Reset user data in current season",
-        "tags": [
-          "Season"
-        ],
-        "x-authorization": {
-          "action": "8",
-          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
-        }
-      }
-    }
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}",
-    "value": {
-      "delete": {
-        "description": "This API is used to delete a season permanently, only draft season can be deleted. &lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "deleteSeason",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "seasonId",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "204": {
-            "description": "Delete season successfully"
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "409": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Delete a season",
-        "tags": [
-          "Season"
-        ],
-        "x-authorization": {
-          "action": "8",
-          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
-        }
-      },
-      "get": {
-        "description": "This API is used to get a season, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season data&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "getSeason",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "seasonId",
-            "required": true,
-            "type": "string"
           }
         ],
         "produces": [
@@ -400,7 +697,97 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/SeasonInfo"
+              "$ref": "#/definitions/ClaimableRewards"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49124</td><td>Manual claim not supported</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49144</td><td>Reward [{code}] does not exist</td></tr><tr><td>49148</td><td>User season does not exist</td></tr><tr><td>49147</td><td>Published season does not exist</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "409": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49182</td><td>Reward is already claimed</td></tr><tr><td>49188</td><td>Reward is claiming</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Claim tier reward",
+        "tags": [
+          "Reward"
+        ],
+        "x-authorization": {
+          "action": "4",
+          "resource": "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
+        }
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers",
+    "value": {
+      "get": {
+        "description": "This API is used to query paginated tiers for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of passes&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "queryTiers",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "seasonId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": 0,
+            "description": "offset",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "default": 20,
+            "description": "limit",
+            "format": "int32",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/TierPagingSlicedResult"
             }
           },
           "400": {
@@ -427,23 +814,24 @@
             "authorization": []
           }
         ],
-        "summary": "Get a season",
+        "summary": "Query paginated tiers for a season",
         "tags": [
-          "Season"
+          "Tier"
         ],
         "x-authorization": {
           "action": "2",
           "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
         }
       },
-      "patch": {
+      "post": {
         "consumes": [
           "application/json"
         ],
-        "description": "This API is used to update a season. Only draft season can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: updated season&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "updateSeason",
+        "description": "This API is used to create tier for a draft season, can create multiple tiers at same time.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "createTier",
         "parameters": [
           {
+            "description": "Namespace",
             "in": "path",
             "name": "namespace",
             "required": true,
@@ -460,7 +848,7 @@
             "name": "body",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/SeasonUpdate"
+              "$ref": "#/definitions/TierCreate"
             }
           }
         ],
@@ -468,95 +856,11 @@
           "application/json"
         ],
         "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/SeasonInfo"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr><tr><td>49121</td><td>Default language [{language}] required in localizations</td></tr><tr><td>49122</td><td>Invalid time range</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr><tr><td>30141</td><td>Store [{storeId}] does not exist in namespace [{namespace}]</td></tr><tr><td>49141</td><td>Tier item does not exist in the store of namespace [{namespace}]</td></tr><tr><td>36141</td><td>Currency [{currencyCode}] does not exist in namespace [{namespace}]</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "409": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "422": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20002</td><td>validation error</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ValidationErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Update a season",
-        "tags": [
-          "Season"
-        ],
-        "x-authorization": {
-          "action": "4",
-          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
-        }
-      }
-    }
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards",
-    "value": {
-      "get": {
-        "description": "This API is used to query rewards for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of rewards&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "queryRewards",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "seasonId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "q",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
+          "201": {
             "description": "successful operation",
             "schema": {
               "items": {
-                "$ref": "#/definitions/RewardInfo"
+                "$ref": "#/definitions/Tier"
               },
               "type": "array"
             }
@@ -568,85 +872,13 @@
             }
           },
           "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Query all rewards for a season",
-        "tags": [
-          "Reward"
-        ],
-        "x-authorization": {
-          "action": "2",
-          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
-        }
-      },
-      "post": {
-        "consumes": [
-          "application/json"
-        ],
-        "description": "This API is used to create a reward for a draft season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: created reward&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "createReward",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "seasonId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/RewardCreate"
-            }
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "201": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/RewardInfo"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr><tr><td>49143</td><td>Item type not match</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>30141</td><td>Store [{storeId}] does not exist in namespace [{namespace}]</td></tr><tr><td>30341</td><td>Item [{itemId}] does not exist in namespace [{namespace}]</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr><tr><td>36141</td><td>Currency [{currencyCode}] does not exist in namespace [{namespace}]</td></tr></table>",
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr><tr><td>49144</td><td>Reward [{code}] does not exist</td></tr><tr><td>49145</td><td>Pass [{code}] does not exist</td></tr></table>",
             "schema": {
               "$ref": "#/definitions/ErrorEntity"
             }
           },
           "409": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr><tr><td>49173</td><td>Reward [{code}] already exists in the season</td></tr></table>",
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr></table>",
             "schema": {
               "$ref": "#/definitions/ErrorEntity"
             }
@@ -669,9 +901,9 @@
             "authorization": []
           }
         ],
-        "summary": "Create a reward",
+        "summary": "Create tier",
         "tags": [
-          "Reward"
+          "Tier"
         ],
         "x-authorization": {
           "action": "1",
@@ -682,155 +914,14 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes~1ownership~1any",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}~1reorder",
     "value": {
-      "get": {
-        "description": "[SERVICE COMMUNICATION ONLY]This API is used to get ownership for any pass codes, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: ownership&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "existsAnyPassByPassCodes",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "userId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "collectionFormat": "multi",
-            "in": "query",
-            "items": {
-              "type": "string"
-            },
-            "name": "passCodes",
-            "required": false,
-            "type": "array"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/Ownership"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Get ownership for any pass codes",
-        "tags": [
-          "Season"
-        ],
-        "x-authorization": {
-          "action": "2",
-          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
-        }
-      }
-    }
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}",
-    "value": {
-      "delete": {
-        "description": "This API is used to delete a tier permanently, only draft season pass can be deleted. &lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "deleteTier",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "seasonId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "204": {
-            "description": "Delete tier successfully"
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "409": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Delete a tier",
-        "tags": [
-          "Tier"
-        ],
-        "x-authorization": {
-          "action": "8",
-          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
-        }
-      },
       "put": {
         "consumes": [
           "application/json"
         ],
-        "description": "This API is used to update a tier. Only draft season pass can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "updateTier",
+        "description": "This API is used to reorder a tier. Only draft season pass can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "reorderTier",
         "parameters": [
           {
             "in": "path",
@@ -855,7 +946,7 @@
             "name": "body",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/TierInput"
+              "$ref": "#/definitions/TierReorder"
             }
           }
         ],
@@ -876,7 +967,7 @@
             }
           },
           "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr><tr><td>49144</td><td>Reward [{code}] does not exist</td></tr><tr><td>49145</td><td>Pass [{code}] does not exist</td></tr><tr><td>49146</td><td>Tier does not exist</td></tr></table>",
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr><tr><td>49146</td><td>Tier does not exist</td></tr></table>",
             "schema": {
               "$ref": "#/definitions/ErrorEntity"
             }
@@ -905,7 +996,7 @@
             "authorization": []
           }
         ],
-        "summary": "Update a tier",
+        "summary": "Reorder a tier",
         "tags": [
           "Tier"
         ],
@@ -1150,6 +1241,211 @@
   },
   {
     "op": "add",
+    "path": "/paths/~1seasonpass~1public~1namespaces~1{namespace}~1seasons~1current",
+    "value": {
+      "get": {
+        "description": "This API is used to get current published season, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: localized season data&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "publicGetCurrentSeason",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "language",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/LocalizedSeasonInfo"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49147</td><td>Published season does not exist</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "summary": "Get current published season",
+        "tags": [
+          "Season"
+        ]
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes",
+    "value": {
+      "get": {
+        "description": "This API is used to query all passes for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of passes&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "queryPasses",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "seasonId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/PassInfo"
+              },
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Query all passes for a season",
+        "tags": [
+          "Pass"
+        ],
+        "x-authorization": {
+          "action": "2",
+          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "This API is used to create a pass for a draft season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: created pass&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "createPass",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "seasonId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/PassCreate"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/PassInfo"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr><tr><td>49121</td><td>Default language [{language}] required in localizations</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>30141</td><td>Store [{storeId}] does not exist in namespace [{namespace}]</td></tr><tr><td>49142</td><td>Pass item does not exist in the store of namespace [{namespace}]</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "409": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr><tr><td>49174</td><td>Pass [{code}] already exists in the season</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "422": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20002</td><td>validation error</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ValidationErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Create a pass",
+        "tags": [
+          "Pass"
+        ],
+        "x-authorization": {
+          "action": "1",
+          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
+        }
+      }
+    }
+  },
+  {
+    "op": "add",
     "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards~1{code}",
     "value": {
       "delete": {
@@ -1382,298 +1678,6 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes",
-    "value": {
-      "post": {
-        "description": "This API is used to grant pass to user, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace, otherwise ignore.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "grantUserPass",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "userId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/UserPassGrant"
-            }
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/UserSeasonSummary"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Grant pass to user",
-        "tags": [
-          "Pass"
-        ],
-        "x-authorization": {
-          "action": "4",
-          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
-        }
-      }
-    }
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1progression",
-    "value": {
-      "get": {
-        "description": "This API is used to get current user season progression, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season progression&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "getCurrentUserSeasonProgression",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "userId",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/UserSeasonSummary"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49147</td><td>Published season does not exist</td></tr><tr><td>49148</td><td>User season does not exist</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Get current user season progression",
-        "tags": [
-          "Season"
-        ],
-        "x-authorization": {
-          "action": "2",
-          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
-        }
-      }
-    }
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data",
-    "value": {
-      "get": {
-        "description": "This API is used to get user season data, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "getUserSeason",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "userId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "seasonId",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/ClaimableUserSeasonInfo"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49148</td><td>User season does not exist</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Get user season data",
-        "tags": [
-          "Season"
-        ],
-        "x-authorization": {
-          "action": "2",
-          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
-        }
-      }
-    }
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1clone",
-    "value": {
-      "post": {
-        "consumes": [
-          "application/json"
-        ],
-        "description": "This API is used to clone a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: cloned season info&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "cloneSeason",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "seasonId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/SeasonCloneRequest"
-            }
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/SeasonInfo"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr><tr><td>49122</td><td>Invalid time range</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "422": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20002</td><td>validation error</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ValidationErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Clone a season",
-        "tags": [
-          "Season"
-        ],
-        "x-authorization": {
-          "action": "1",
-          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
-        }
-      }
-    }
-  },
-  {
-    "op": "add",
     "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons",
     "value": {
       "get": {
@@ -1747,6 +1751,525 @@
         "x-authorization": {
           "action": "2",
           "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
+        }
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}",
+    "value": {
+      "delete": {
+        "description": "This API is used to delete a season permanently, only draft season can be deleted. &lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "deleteSeason",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "seasonId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "Delete season successfully"
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "409": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Delete a season",
+        "tags": [
+          "Season"
+        ],
+        "x-authorization": {
+          "action": "8",
+          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
+        }
+      },
+      "get": {
+        "description": "This API is used to get a season, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season data&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "getSeason",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "seasonId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/SeasonInfo"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Get a season",
+        "tags": [
+          "Season"
+        ],
+        "x-authorization": {
+          "action": "2",
+          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
+        }
+      },
+      "patch": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "This API is used to update a season. Only draft season can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: updated season&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "updateSeason",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "seasonId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/SeasonUpdate"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/SeasonInfo"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr><tr><td>49121</td><td>Default language [{language}] required in localizations</td></tr><tr><td>49122</td><td>Invalid time range</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr><tr><td>30141</td><td>Store [{storeId}] does not exist in namespace [{namespace}]</td></tr><tr><td>49141</td><td>Tier item does not exist in the store of namespace [{namespace}]</td></tr><tr><td>36141</td><td>Currency [{currencyCode}] does not exist in namespace [{namespace}]</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "409": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "422": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20002</td><td>validation error</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ValidationErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Update a season",
+        "tags": [
+          "Season"
+        ],
+        "x-authorization": {
+          "action": "4",
+          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
+        }
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1unpublish",
+    "value": {
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "This API is used to unpublish a published season, if the season already started it will report error except with force.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season info&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "unpublishSeason",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "seasonId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "default": false,
+            "in": "query",
+            "name": "force",
+            "required": false,
+            "type": "boolean",
+            "x-omitempty": false
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/SeasonInfo"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "409": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr><tr><td>49180</td><td>Season is already started</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Unpublish a season",
+        "tags": [
+          "Season"
+        ],
+        "x-authorization": {
+          "action": "4",
+          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
+        }
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes~1ownership~1any",
+    "value": {
+      "get": {
+        "description": "[SERVICE COMMUNICATION ONLY]This API is used to get ownership for any pass codes, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: ownership&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "existsAnyPassByPassCodes",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+              "type": "string"
+            },
+            "name": "passCodes",
+            "required": false,
+            "type": "array"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Ownership"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Get ownership for any pass codes",
+        "tags": [
+          "Season"
+        ],
+        "x-authorization": {
+          "action": "2",
+          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
+        }
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1purchasable",
+    "value": {
+      "post": {
+        "description": "This API is used to check pass or tier purchasable, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "checkSeasonPurchasable",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/UserPurchasable"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49147</td><td>Published season does not exist</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "409": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49183</td><td>Pass item does not match published season pass</td></tr><tr><td>49184</td><td>Tier item does not match published season tier</td></tr><tr><td>49185</td><td>Season has not started</td></tr><tr><td>49186</td><td>Pass already owned</td></tr><tr><td>49187</td><td>Exceed max tier count</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Check pass or tier purchasable",
+        "tags": [
+          "Season"
+        ],
+        "x-authorization": {
+          "action": "2",
+          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
+        }
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1seasonpass~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data",
+    "value": {
+      "get": {
+        "description": "This API is used to get user season data, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "publicGetUserSeason",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "seasonId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ClaimableUserSeasonInfo"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49148</td><td>User season does not exist</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Get user season data",
+        "tags": [
+          "Season"
+        ],
+        "x-authorization": {
+          "action": "2",
+          "resource": "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
         }
       }
     }
@@ -1912,14 +2435,14 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1retire",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1clone",
     "value": {
-      "put": {
+      "post": {
         "consumes": [
           "application/json"
         ],
-        "description": "This API is used to retire a published season, if the season has not ended it will report error except with force.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season info&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "retireSeason",
+        "description": "This API is used to clone a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: cloned season info&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "cloneSeason",
         "parameters": [
           {
             "in": "path",
@@ -1934,12 +2457,12 @@
             "type": "string"
           },
           {
-            "default": false,
-            "in": "query",
-            "name": "force",
+            "in": "body",
+            "name": "body",
             "required": false,
-            "type": "boolean",
-            "x-omitempty": false
+            "schema": {
+              "$ref": "#/definitions/SeasonCloneRequest"
+            }
           }
         ],
         "produces": [
@@ -1953,7 +2476,7 @@
             }
           },
           "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr><tr><td>49122</td><td>Invalid time range</td></tr></table>",
             "schema": {
               "$ref": "#/definitions/ErrorEntity"
             }
@@ -1964,10 +2487,10 @@
               "$ref": "#/definitions/ErrorEntity"
             }
           },
-          "409": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr><tr><td>49181</td><td>Season has not ended</td></tr></table>",
+          "422": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20002</td><td>validation error</td></tr></table>",
             "schema": {
-              "$ref": "#/definitions/ErrorEntity"
+              "$ref": "#/definitions/ValidationErrorEntity"
             }
           }
         },
@@ -1977,338 +2500,14 @@
           },
           {
             "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]"
+              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
             ],
             "authorization": []
           }
         ],
-        "summary": "Retire a season",
+        "summary": "Clone a season",
         "tags": [
           "Season"
-        ],
-        "x-authorization": {
-          "action": "4",
-          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
-        }
-      }
-    }
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers",
-    "value": {
-      "get": {
-        "description": "This API is used to query paginated tiers for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of passes&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "queryTiers",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "seasonId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "default": 0,
-            "description": "offset",
-            "format": "int32",
-            "in": "query",
-            "name": "offset",
-            "required": false,
-            "type": "integer"
-          },
-          {
-            "default": 20,
-            "description": "limit",
-            "format": "int32",
-            "in": "query",
-            "name": "limit",
-            "required": false,
-            "type": "integer"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/TierPagingSlicedResult"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Query paginated tiers for a season",
-        "tags": [
-          "Tier"
-        ],
-        "x-authorization": {
-          "action": "2",
-          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
-        }
-      },
-      "post": {
-        "consumes": [
-          "application/json"
-        ],
-        "description": "This API is used to create tier for a draft season, can create multiple tiers at same time.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "createTier",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "seasonId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/TierCreate"
-            }
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "201": {
-            "description": "successful operation",
-            "schema": {
-              "items": {
-                "$ref": "#/definitions/Tier"
-              },
-              "type": "array"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr><tr><td>49144</td><td>Reward [{code}] does not exist</td></tr><tr><td>49145</td><td>Pass [{code}] does not exist</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "409": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "422": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20002</td><td>validation error</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ValidationErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Create tier",
-        "tags": [
-          "Tier"
-        ],
-        "x-authorization": {
-          "action": "1",
-          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
-        }
-      }
-    }
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1passes",
-    "value": {
-      "get": {
-        "description": "This API is used to query all passes for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of passes&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "queryPasses",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "seasonId",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "items": {
-                "$ref": "#/definitions/PassInfo"
-              },
-              "type": "array"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Query all passes for a season",
-        "tags": [
-          "Pass"
-        ],
-        "x-authorization": {
-          "action": "2",
-          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
-        }
-      },
-      "post": {
-        "consumes": [
-          "application/json"
-        ],
-        "description": "This API is used to create a pass for a draft season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: created pass&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "createPass",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "seasonId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/PassCreate"
-            }
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "201": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/PassInfo"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr><tr><td>49121</td><td>Default language [{language}] required in localizations</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>30141</td><td>Store [{storeId}] does not exist in namespace [{namespace}]</td></tr><tr><td>49142</td><td>Pass item does not exist in the store of namespace [{namespace}]</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "409": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr><tr><td>49174</td><td>Pass [{code}] already exists in the season</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "422": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20002</td><td>validation error</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ValidationErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Create a pass",
-        "tags": [
-          "Pass"
         ],
         "x-authorization": {
           "action": "1",
@@ -2394,11 +2593,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1tiers",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data",
     "value": {
-      "post": {
-        "description": "This API is used to grant tier to user, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace, otherwise ignore.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "grantUserTier",
+      "get": {
+        "description": "This API is used to get user season data, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "getUserSeason",
         "parameters": [
           {
             "description": "Namespace",
@@ -2414,12 +2613,10 @@
             "type": "string"
           },
           {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/UserTierGrant"
-            }
+            "in": "path",
+            "name": "seasonId",
+            "required": true,
+            "type": "string"
           }
         ],
         "produces": [
@@ -2429,7 +2626,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/UserSeasonSummary"
+              "$ref": "#/definitions/ClaimableUserSeasonInfo"
             }
           },
           "400": {
@@ -2451,159 +2648,12 @@
           },
           {
             "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Grant tier to user",
-        "tags": [
-          "Tier"
-        ],
-        "x-authorization": {
-          "action": "4",
-          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
-        }
-      }
-    }
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1exp",
-    "value": {
-      "post": {
-        "description": "This API is used to grant exp to user, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace, otherwise ignore.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "grantUserExp",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "userId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/UserExpGrant"
-            }
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/UserSeasonSummary"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Grant exp to user",
-        "tags": [
-          "Tier"
-        ],
-        "x-authorization": {
-          "action": "4",
-          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
-        }
-      }
-    }
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1purchasable",
-    "value": {
-      "post": {
-        "description": "This API is used to check pass or tier purchasable, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "checkSeasonPurchasable",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "userId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/UserPurchasable"
-            }
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "204": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49147</td><td>Published season does not exist</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "409": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49183</td><td>Pass item does not match published season pass</td></tr><tr><td>49184</td><td>Tier item does not match published season tier</td></tr><tr><td>49185</td><td>Season has not started</td></tr><tr><td>49186</td><td>Pass already owned</td></tr><tr><td>49187</td><td>Exceed max tier count</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
               "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
             ],
             "authorization": []
           }
         ],
-        "summary": "Check pass or tier purchasable",
+        "summary": "Get user season data",
         "tags": [
           "Season"
         ],
@@ -2616,14 +2666,84 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}~1reorder",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1tiers~1{id}",
     "value": {
+      "delete": {
+        "description": "This API is used to delete a tier permanently, only draft season pass can be deleted. &lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "deleteTier",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "seasonId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "Delete tier successfully"
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "409": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Delete a tier",
+        "tags": [
+          "Tier"
+        ],
+        "x-authorization": {
+          "action": "8",
+          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
+        }
+      },
       "put": {
         "consumes": [
           "application/json"
         ],
-        "description": "This API is used to reorder a tier. Only draft season pass can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "reorderTier",
+        "description": "This API is used to update a tier. Only draft season pass can be updated.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "updateTier",
         "parameters": [
           {
             "in": "path",
@@ -2648,7 +2768,7 @@
             "name": "body",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/TierReorder"
+              "$ref": "#/definitions/TierInput"
             }
           }
         ],
@@ -2669,7 +2789,7 @@
             }
           },
           "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr><tr><td>49146</td><td>Tier does not exist</td></tr></table>",
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr><tr><td>49144</td><td>Reward [{code}] does not exist</td></tr><tr><td>49145</td><td>Pass [{code}] does not exist</td></tr><tr><td>49146</td><td>Tier does not exist</td></tr></table>",
             "schema": {
               "$ref": "#/definitions/ErrorEntity"
             }
@@ -2698,7 +2818,7 @@
             "authorization": []
           }
         ],
-        "summary": "Reorder a tier",
+        "summary": "Update a tier",
         "tags": [
           "Tier"
         ],
@@ -2711,95 +2831,14 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1seasonpass~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards",
-    "value": {
-      "post": {
-        "description": "This API is used to claim reward, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "publicClaimUserReward",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "userId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/UserRewardClaim"
-            }
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/ClaimableRewards"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49124</td><td>Manual claim not supported</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49144</td><td>Reward [{code}] does not exist</td></tr><tr><td>49148</td><td>User season does not exist</td></tr><tr><td>49147</td><td>Published season does not exist</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "409": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49182</td><td>Reward is already claimed</td></tr><tr><td>49188</td><td>Reward is claiming</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          },
-          {
-            "HasPermission": [
-              "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
-            ],
-            "authorization": []
-          }
-        ],
-        "summary": "Claim tier reward",
-        "tags": [
-          "Reward"
-        ],
-        "x-authorization": {
-          "action": "4",
-          "resource": "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
-        }
-      }
-    }
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1unpublish",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1retire",
     "value": {
       "put": {
         "consumes": [
           "application/json"
         ],
-        "description": "This API is used to unpublish a published season, if the season already started it will report error except with force.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season info&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "unpublishSeason",
+        "description": "This API is used to retire a published season, if the season has not ended it will report error except with force.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: season info&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "retireSeason",
         "parameters": [
           {
             "in": "path",
@@ -2845,7 +2884,7 @@
             }
           },
           "409": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr><tr><td>49180</td><td>Season is already started</td></tr></table>",
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr><tr><td>49181</td><td>Season has not ended</td></tr></table>",
             "schema": {
               "$ref": "#/definitions/ErrorEntity"
             }
@@ -2862,13 +2901,297 @@
             "authorization": []
           }
         ],
-        "summary": "Unpublish a season",
+        "summary": "Retire a season",
         "tags": [
           "Season"
         ],
         "x-authorization": {
           "action": "4",
           "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
+        }
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1reset",
+    "value": {
+      "delete": {
+        "description": "&lt;b&gt;[TEST FACILITY ONLY] Forbidden in live environment. &lt;/b&gt;This API is used to reset user data in current season, it will not revoke the rewarded entitlements.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=8 (DELETE)&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "resetUserSeason",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "204": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [DELETE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Reset user data in current season",
+        "tags": [
+          "Season"
+        ],
+        "x-authorization": {
+          "action": "8",
+          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
+        }
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1seasons~1{seasonId}~1rewards",
+    "value": {
+      "get": {
+        "description": "This API is used to query rewards for a season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: the list of rewards&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "queryRewards",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "seasonId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/RewardInfo"
+              },
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Query all rewards for a season",
+        "tags": [
+          "Reward"
+        ],
+        "x-authorization": {
+          "action": "2",
+          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "This API is used to create a reward for a draft season.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:SEASONPASS&#34;, action=1 (CREATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: created reward&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "createReward",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "seasonId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/RewardCreate"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/RewardInfo"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr><tr><td>49143</td><td>Item type not match</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>30141</td><td>Store [{storeId}] does not exist in namespace [{namespace}]</td></tr><tr><td>30341</td><td>Item [{itemId}] does not exist in namespace [{namespace}]</td></tr><tr><td>49143</td><td>Season [{seasonId}] does not exist in namespace [{namespace}]</td></tr><tr><td>36141</td><td>Currency [{currencyCode}] does not exist in namespace [{namespace}]</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "409": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49171</td><td>Invalid season status [{status}]</td></tr><tr><td>49173</td><td>Reward [{code}] already exists in the season</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "422": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20002</td><td>validation error</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ValidationErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Create a reward",
+        "tags": [
+          "Reward"
+        ],
+        "x-authorization": {
+          "action": "1",
+          "resource": "ADMIN:NAMESPACE:{namespace}:SEASONPASS"
+        }
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1seasonpass~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1rewards~1bulk",
+    "value": {
+      "post": {
+        "description": "This API is used to bulk claim all remained rewards, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "publicBulkClaimUserRewards",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ClaimableRewards"
+            }
+          },
+          "400": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49124</td><td>Manual claim not supported</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          },
+          "404": {
+            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49148</td><td>User season does not exist</td></tr><tr><td>49147</td><td>Published season does not exist</td></tr></table>",
+            "schema": {
+              "$ref": "#/definitions/ErrorEntity"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          },
+          {
+            "HasPermission": [
+              "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "Bulk claim all remained rewards",
+        "tags": [
+          "Reward"
+        ],
+        "x-authorization": {
+          "action": "4",
+          "resource": "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
         }
       }
     }
@@ -2942,11 +3265,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1seasonpass~1public~1namespaces~1{namespace}~1users~1{userId}~1seasons~1{seasonId}~1data",
+    "path": "/paths/~1seasonpass~1admin~1namespaces~1{namespace}~1users~1{userId}~1seasons~1current~1passes",
     "value": {
-      "get": {
-        "description": "This API is used to get user season data, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=2 (READ)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "publicGetUserSeason",
+      "post": {
+        "description": "This API is used to grant pass to user, it will auto enroll if there&#39;s no user season but active published season exist, season only located in non-publisher namespace, otherwise ignore.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Required permission&lt;/i&gt;: resource=&#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS&#34;, action=4 (UPDATE)&lt;/li&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: user season data&lt;/li&gt;&lt;/ul&gt;",
+        "operationId": "grantUserPass",
         "parameters": [
           {
             "description": "Namespace",
@@ -2962,10 +3285,12 @@
             "type": "string"
           },
           {
-            "in": "path",
-            "name": "seasonId",
-            "required": true,
-            "type": "string"
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/UserPassGrant"
+            }
           }
         ],
         "produces": [
@@ -2975,17 +3300,11 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/ClaimableUserSeasonInfo"
+              "$ref": "#/definitions/UserSeasonSummary"
             }
           },
           "400": {
             "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49148</td><td>User season does not exist</td></tr></table>",
             "schema": {
               "$ref": "#/definitions/ErrorEntity"
             }
@@ -2997,339 +3316,20 @@
           },
           {
             "HasPermission": [
-              "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]"
+              "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
             ],
             "authorization": []
           }
         ],
-        "summary": "Get user season data",
+        "summary": "Grant pass to user",
         "tags": [
-          "Season"
+          "Pass"
         ],
         "x-authorization": {
-          "action": "2",
-          "resource": "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
+          "action": "4",
+          "resource": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS"
         }
       }
     }
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1seasonpass~1public~1namespaces~1{namespace}~1seasons~1current",
-    "value": {
-      "get": {
-        "description": "This API is used to get current published season, season only located in non-publisher namespace.&lt;p&gt;Other detail info: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Returns&lt;/i&gt;: localized season data&lt;/li&gt;&lt;/ul&gt;",
-        "operationId": "publicGetCurrentSeason",
-        "parameters": [
-          {
-            "description": "Namespace",
-            "in": "path",
-            "name": "namespace",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "language",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/LocalizedSeasonInfo"
-            }
-          },
-          "400": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>20026</td><td>publisher namespace not allowed</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "404": {
-            "description": "<table><tr><td>ErrorCode</td><td>ErrorMessage</td></tr><tr><td>49147</td><td>Published season does not exist</td></tr></table>",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          }
-        },
-        "summary": "Get current published season",
-        "tags": [
-          "Season"
-        ]
-      }
-    }
-  },
-  {
-    "op": "add",
-    "path": "/securityDefinitions/HasScope",
-    "value": {
-      "authorizationUrl": "https://dummy.oauth.net/auth",
-      "flow": "accessCode",
-      "scopes": {},
-      "tokenUrl": "https://dumy.oauth.net/token",
-      "type": "oauth2"
-    }
-  },
-  {
-    "op": "add",
-    "path": "/securityDefinitions/HasPermission",
-    "value": {
-      "authorizationUrl": "https://dummy.oauth.net/auth",
-      "flow": "accessCode",
-      "scopes": {
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]": "ADMIN:NAMESPACE:{namespace}:SEASONPASS [CREATE]",
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]": "ADMIN:NAMESPACE:{namespace}:SEASONPASS [DELETE]",
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]": "ADMIN:NAMESPACE:{namespace}:SEASONPASS [READ]",
-        "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]": "ADMIN:NAMESPACE:{namespace}:SEASONPASS [UPDATE]",
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [DELETE]": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [DELETE]",
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]",
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]",
-        "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]": "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [READ]",
-        "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]": "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS [UPDATE]"
-      },
-      "tokenUrl": "https://dumy.oauth.net/token",
-      "type": "oauth2"
-    }
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonInfo/properties/start/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonInfo/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonInfo/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonInfo/properties/publishedAt/x-nullable",
-    "value": true
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonInfo/properties/end/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonInfo/properties/autoClaim/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedSeasonInfo/properties/start/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedSeasonInfo/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedSeasonInfo/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedSeasonInfo/properties/publishedAt/x-nullable",
-    "value": true
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedSeasonInfo/properties/end/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedSeasonInfo/properties/autoClaim/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonCloneRequest/properties/end/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonCloneRequest/properties/start/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonSummary/properties/publishedAt/x-nullable",
-    "value": true
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonSummary/properties/start/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonSummary/properties/end/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedPassInfo/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedPassInfo/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/LocalizedPassInfo/properties/autoEnroll/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ClaimableUserSeasonInfo/properties/enrolledAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ClaimableUserSeasonInfo/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ClaimableUserSeasonInfo/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ClaimableUserSeasonInfo/properties/cleared/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ListUserSeasonInfo/properties/enrolledAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ListUserSeasonInfo/properties/cleared/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/UserSeasonSummary/properties/enrolledAt/x-nullable",
-    "value": true
-  },
-  {
-    "op": "add",
-    "path": "/definitions/UserSeasonSummary/properties/createdAt/x-nullable",
-    "value": true
-  },
-  {
-    "op": "add",
-    "path": "/definitions/UserSeasonSummary/properties/updatedAt/x-nullable",
-    "value": true
-  },
-  {
-    "op": "add",
-    "path": "/definitions/UserSeasonSummary/properties/cleared/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonCreate/properties/start/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonCreate/properties/autoClaim/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonCreate/properties/end/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/PassInfo/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/PassInfo/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/PassInfo/properties/autoEnroll/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonUpdate/properties/start/x-nullable",
-    "value": true
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonUpdate/properties/autoClaim/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/SeasonUpdate/properties/end/x-nullable",
-    "value": true
-  },
-  {
-    "op": "add",
-    "path": "/definitions/Ownership/properties/owned/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/PassCreate/properties/autoEnroll/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/PassUpdate/properties/autoEnroll/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ListSeasonInfo/properties/publishedAt/x-nullable",
-    "value": true
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ListSeasonInfo/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ListSeasonInfo/properties/start/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ListSeasonInfo/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/ListSeasonInfo/properties/end/x-nullable",
-    "value": false
   }
 ]

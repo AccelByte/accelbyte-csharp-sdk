@@ -307,7 +307,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
             ModelsEventResponseV2? eResp = wEvent.QueryEventStreamHandler(QueryEventStreamHandler.Builder
                 .SetOffset(0)
-                .SetPageSize(10.0)
+                .SetPageSize(10)
                 .Build(eQueryPayload, _Sdk.Namespace));
             Assert.IsNotNull(eResp);
             Assert.Greater(eResp!.Data!.Count, 0);
@@ -315,7 +315,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
             eResp = wEvent.GetEventSpecificUserV2Handler(GetEventSpecificUserV2Handler.Builder
                 .SetOffset(0)
-                .SetPageSize(10.0)
+                .SetPageSize(10)
                 .Build(_Sdk.Namespace, "6bf0e538f8b4423eb9d8b9e577aa860e"));
             Assert.IsNotNull(eResp);
             Assert.Greater(eResp!.Data!.Count, 0);

@@ -26,13 +26,13 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         {
             
             
-            public double? Offset { get; set; }
+            public long? Offset { get; set; }
             
             
             internal GetUserActivitiesHandlerBuilder() { }
 
 
-            public GetUserActivitiesHandlerBuilder SetOffset(double _offset)
+            public GetUserActivitiesHandlerBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
                 return this;
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             public GetUserActivitiesHandler Build(
                 string namespace_,
                 string userId,
-                double pageSize
+                long pageSize
             )
             {
                 return new GetUserActivitiesHandler(this,
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         private GetUserActivitiesHandler(GetUserActivitiesHandlerBuilder builder,
             string namespace_,
             string userId,
-            double pageSize
+            long pageSize
         )
         {
             PathParams["namespace"] = namespace_;
@@ -76,8 +76,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public GetUserActivitiesHandler(
             string namespace_,            
             string userId,            
-            double? offset,            
-            double pageSize            
+            long? offset,            
+            long pageSize            
         )
         {
             PathParams["namespace"] = namespace_;

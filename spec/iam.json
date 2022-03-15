@@ -2130,7 +2130,7 @@
             "description": "The number of data retrieved in a page",
             "in": "query",
             "name": "limit",
-            "type": "number"
+            "type": "integer"
           }
         ],
         "produces": [
@@ -10156,7 +10156,7 @@
             "description": "The number of data retrieved in a page",
             "in": "query",
             "name": "limit",
-            "type": "number"
+            "type": "integer"
           }
         ],
         "produces": [
@@ -15512,7 +15512,7 @@
             "description": "The number of data retrieved in a page",
             "in": "query",
             "name": "limit",
-            "type": "number"
+            "type": "integer"
           }
         ],
         "produces": [

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class GetEventByNamespaceHandlerBuilder
         {
             
-            public double? Offset { get; set; }
+            public long? Offset { get; set; }
             
             
             
@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             internal GetEventByNamespaceHandlerBuilder() { }
 
 
-            public GetEventByNamespaceHandlerBuilder SetOffset(double _offset)
+            public GetEventByNamespaceHandlerBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
                 return this;
@@ -45,7 +45,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             public GetEventByNamespaceHandler Build(
                 string namespace_,
                 string endDate,
-                double pageSize,
+                long pageSize,
                 string startDate
             )
             {
@@ -61,7 +61,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         private GetEventByNamespaceHandler(GetEventByNamespaceHandlerBuilder builder,
             string namespace_,
             string endDate,
-            double pageSize,
+            long pageSize,
             string startDate
         )
         {
@@ -80,9 +80,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public GetEventByNamespaceHandler(
             string namespace_,            
-            double? offset,            
+            long? offset,            
             string endDate,            
-            double pageSize,            
+            long pageSize,            
             string startDate            
         )
         {

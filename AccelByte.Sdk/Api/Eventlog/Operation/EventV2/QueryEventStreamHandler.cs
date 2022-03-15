@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             public string? EndDate { get; set; }
             
-            public double? Offset { get; set; }
+            public long? Offset { get; set; }
             
-            public double? PageSize { get; set; }
+            public long? PageSize { get; set; }
             
             public string? StartDate { get; set; }
             
@@ -55,13 +55,13 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
                 return this;
             }
 
-            public QueryEventStreamHandlerBuilder SetOffset(double _offset)
+            public QueryEventStreamHandlerBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
                 return this;
             }
 
-            public QueryEventStreamHandlerBuilder SetPageSize(double _pageSize)
+            public QueryEventStreamHandlerBuilder SetPageSize(long _pageSize)
             {
                 PageSize = _pageSize;
                 return this;
@@ -110,8 +110,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public QueryEventStreamHandler(
             string namespace_,            
             string? endDate,            
-            double? offset,            
-            double? pageSize,            
+            long? offset,            
+            long? pageSize,            
             string? startDate,            
             Model.ModelsGenericQueryPayload body            
         )

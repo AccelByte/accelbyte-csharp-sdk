@@ -31,10 +31,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandArgument("offset")]
-        public double? Offset { get; set; }
+        public long? Offset { get; set; }
 
         [SdkCommandArgument("pageSize")]
-        public double PageSize { get; set; } = 0.0;
+        public long PageSize { get; set; } = 0;
 
         public GetUserActivitiesHandlerCommand(AccelByteSDK sdk)
         {

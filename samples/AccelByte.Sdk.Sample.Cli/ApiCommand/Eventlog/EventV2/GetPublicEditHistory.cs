@@ -34,10 +34,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         public string? EndDate { get; set; }
 
         [SdkCommandArgument("offset")]
-        public double? Offset { get; set; }
+        public long? Offset { get; set; }
 
         [SdkCommandArgument("pageSize")]
-        public double? PageSize { get; set; }
+        public long? PageSize { get; set; }
 
         [SdkCommandArgument("startDate")]
         public string? StartDate { get; set; }

@@ -31,13 +31,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandArgument("offset")]
-        public double? Offset { get; set; }
+        public long? Offset { get; set; }
 
         [SdkCommandArgument("endDate")]
         public string EndDate { get; set; } = String.Empty;
 
         [SdkCommandArgument("pageSize")]
-        public double PageSize { get; set; } = 0.0;
+        public long PageSize { get; set; } = 0;
 
         [SdkCommandArgument("startDate")]
         public string StartDate { get; set; } = String.Empty;

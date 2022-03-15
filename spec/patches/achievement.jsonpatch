@@ -5,11 +5,6 @@
   },
   {
     "op": "add",
-    "path": "/host",
-    "value": "demo.accelbyte.io"
-  },
-  {
-    "op": "add",
     "path": "/schemes",
     "value": [
       "https"
@@ -17,50 +12,16 @@
   },
   {
     "op": "add",
-    "path": "/securityDefinitions/HasPermission",
-    "value": {
-      "authorizationUrl": "https://dummy.oauth.net/auth",
-      "flow": "accessCode",
-      "scopes": {
-        "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [CREATE]": "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [CREATE]",
-        "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [DELETE]": "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [DELETE]",
-        "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [READ]": "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [READ]",
-        "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [UPDATE]": "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [UPDATE]",
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]",
-        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]",
-        "NAMESPACE:{namespace}:ACHIEVEMENT [READ]": "NAMESPACE:{namespace}:ACHIEVEMENT [READ]",
-        "NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]": "NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]",
-        "NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]": "NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]"
-      },
-      "tokenUrl": "https://dumy.oauth.net/token",
-      "type": "oauth2"
-    }
+    "path": "/host",
+    "value": "demo.accelbyte.io"
   },
   {
     "op": "add",
-    "path": "/securityDefinitions/HasScope",
-    "value": {
-      "authorizationUrl": "https://dummy.oauth.net/auth",
-      "flow": "accessCode",
-      "scopes": {
-        "social": "social"
-      },
-      "tokenUrl": "https://dumy.oauth.net/token",
-      "type": "oauth2"
-    }
-  },
-  {
-    "op": "add",
-    "path": "/info/version",
-    "value": ""
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1achievements/get/security",
+    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1achievements~1{achievementCode}~1unlock/put/security",
     "value": [
       {
         "HasPermission": [
-          "NAMESPACE:{namespace}:ACHIEVEMENT [READ]"
+          "NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]"
         ],
         "HasScope": [
           "social"
@@ -71,16 +32,16 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1achievements/get/description",
-    "value": "&lt;p&gt;Required permission \n&lt;code&gt;NAMESPACE:{namespace}:ACHIEVEMENT [READ]&lt;/code&gt; and scope &lt;code&gt;social&lt;/code&gt;&lt;/p&gt;"
+    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1achievements~1{achievementCode}~1unlock/put/description",
+    "value": "&lt;p&gt;Required permission \n&lt;code&gt;NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]&lt;/code&gt; and scope &lt;code&gt;social&lt;/code&gt;&lt;/p&gt;"
   },
   {
     "op": "add",
-    "path": "/paths/~1achievement~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1achievements/get/security",
+    "path": "/paths/~1achievement~1v1~1admin~1namespaces~1{namespace}~1achievements~1import/post/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]"
+          "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [UPDATE]"
         ],
         "HasScope": [
           "social"
@@ -88,41 +49,6 @@
         "authorization": []
       }
     ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1achievement~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1achievements/get/description",
-    "value": "&lt;p&gt;Required permission\n&lt;code&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]&lt;/code&gt; and scope &lt;code&gt;social&lt;/code&gt;&lt;/p&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1achievement~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1achievements/get/parameters/4/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1achievements/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1achievements/get/description",
-    "value": "&lt;p&gt;Required permission \n&lt;code&gt;NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]&lt;/code&gt; and scope &lt;code&gt;social&lt;/code&gt;&lt;/p&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1achievements/get/parameters/4/x-omitempty",
-    "value": false
   },
   {
     "op": "add",
@@ -138,6 +64,46 @@
         "authorization": []
       }
     ]
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1achievements~1{achievementCode}/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:ACHIEVEMENT [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1achievements~1{achievementCode}/get/description",
+    "value": "&lt;p&gt;Required permission \n&lt;code&gt;NAMESPACE:{namespace}:ACHIEVEMENT [READ]&lt;/code&gt; and scope &lt;code&gt;social&lt;/code&gt;&lt;/p&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1achievement~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1achievements~1{achievementCode}~1unlock/put/security",
+    "value": [
+      {
+        "HasPermission": [
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1achievement~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1achievements~1{achievementCode}~1unlock/put/description",
+    "value": "&lt;p&gt;Required permission \n&lt;code&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]&lt;/code&gt; and scope &lt;code&gt;social&lt;/code&gt;&lt;/p&gt;"
   },
   {
     "op": "add",
@@ -221,11 +187,11 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1achievement~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1achievements~1{achievementCode}~1unlock/put/security",
+    "path": "/paths/~1achievement~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1achievements/get/security",
     "value": [
       {
         "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]"
+          "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]"
         ],
         "HasScope": [
           "social"
@@ -236,8 +202,58 @@
   },
   {
     "op": "replace",
-    "path": "/paths/~1achievement~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1achievements~1{achievementCode}~1unlock/put/description",
-    "value": "&lt;p&gt;Required permission \n&lt;code&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]&lt;/code&gt; and scope &lt;code&gt;social&lt;/code&gt;&lt;/p&gt;"
+    "path": "/paths/~1achievement~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1achievements/get/description",
+    "value": "&lt;p&gt;Required permission\n&lt;code&gt;ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]&lt;/code&gt; and scope &lt;code&gt;social&lt;/code&gt;&lt;/p&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1achievement~1v1~1admin~1namespaces~1{namespace}~1users~1{userId}~1achievements/get/parameters/4/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1achievements/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1achievements/get/description",
+    "value": "&lt;p&gt;Required permission \n&lt;code&gt;NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]&lt;/code&gt; and scope &lt;code&gt;social&lt;/code&gt;&lt;/p&gt;"
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1achievements/get/parameters/4/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1achievements/get/security",
+    "value": [
+      {
+        "HasPermission": [
+          "NAMESPACE:{namespace}:ACHIEVEMENT [READ]"
+        ],
+        "HasScope": [
+          "social"
+        ],
+        "authorization": []
+      }
+    ]
+  },
+  {
+    "op": "replace",
+    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1achievements/get/description",
+    "value": "&lt;p&gt;Required permission \n&lt;code&gt;NAMESPACE:{namespace}:ACHIEVEMENT [READ]&lt;/code&gt; and scope &lt;code&gt;social&lt;/code&gt;&lt;/p&gt;"
   },
   {
     "op": "add",
@@ -281,132 +297,51 @@
   },
   {
     "op": "add",
-    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1achievements~1{achievementCode}/get/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:ACHIEVEMENT [READ]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1achievements~1{achievementCode}/get/description",
-    "value": "&lt;p&gt;Required permission \n&lt;code&gt;NAMESPACE:{namespace}:ACHIEVEMENT [READ]&lt;/code&gt; and scope &lt;code&gt;social&lt;/code&gt;&lt;/p&gt;"
-  },
-  {
-    "op": "add",
-    "path": "/paths/~1achievement~1v1~1admin~1namespaces~1{namespace}~1achievements~1import/post/security",
-    "value": [
-      {
-        "HasPermission": [
-          "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [UPDATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
+    "path": "/securityDefinitions/HasPermission",
+    "value": {
+      "authorizationUrl": "https://dummy.oauth.net/auth",
+      "flow": "accessCode",
+      "scopes": {
+        "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [CREATE]": "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [CREATE]",
+        "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [DELETE]": "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [DELETE]",
+        "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [READ]": "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [READ]",
+        "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [UPDATE]": "ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [UPDATE]",
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]",
+        "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]": "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]",
+        "NAMESPACE:{namespace}:ACHIEVEMENT [READ]": "NAMESPACE:{namespace}:ACHIEVEMENT [READ]",
+        "NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]": "NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]",
+        "NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]": "NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]"
+      },
+      "tokenUrl": "https://dumy.oauth.net/token",
+      "type": "oauth2"
+    }
   },
   {
     "op": "add",
-    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1achievements~1{achievementCode}~1unlock/put/security",
-    "value": [
-      {
-        "HasPermission": [
-          "NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]"
-        ],
-        "HasScope": [
-          "social"
-        ],
-        "authorization": []
-      }
-    ]
-  },
-  {
-    "op": "replace",
-    "path": "/paths/~1achievement~1v1~1public~1namespaces~1{namespace}~1users~1{userId}~1achievements~1{achievementCode}~1unlock/put/description",
-    "value": "&lt;p&gt;Required permission \n&lt;code&gt;NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]&lt;/code&gt; and scope &lt;code&gt;social&lt;/code&gt;&lt;/p&gt;"
+    "path": "/securityDefinitions/HasScope",
+    "value": {
+      "authorizationUrl": "https://dummy.oauth.net/auth",
+      "flow": "accessCode",
+      "scopes": {
+        "social": "social"
+      },
+      "tokenUrl": "https://dumy.oauth.net/token",
+      "type": "oauth2"
+    }
   },
   {
     "op": "add",
-    "path": "/definitions/models.AchievementRequest/properties/incremental/x-omitempty",
-    "value": false
+    "path": "/info/version",
+    "value": ""
   },
   {
     "op": "add",
-    "path": "/definitions/models.AchievementRequest/properties/hidden/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.UserAchievementResponse/properties/achievedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.AchievementUpdateRequest/properties/incremental/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.AchievementUpdateRequest/properties/hidden/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.AchievementResponse/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.AchievementResponse/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.AchievementResponse/properties/incremental/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.AchievementResponse/properties/hidden/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.PublicAchievementResponse/properties/createdAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.PublicAchievementResponse/properties/updatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.PublicAchievementResponse/properties/incremental/x-omitempty",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.PublicAchievementResponse/properties/hidden/x-omitempty",
+    "path": "/definitions/models.Achievement/properties/CreatedAt/x-nullable",
     "value": false
   },
   {
     "op": "add",
     "path": "/definitions/models.Achievement/properties/UpdatedAt/x-nullable",
-    "value": false
-  },
-  {
-    "op": "add",
-    "path": "/definitions/models.Achievement/properties/CreatedAt/x-nullable",
     "value": false
   },
   {
@@ -417,6 +352,71 @@
   {
     "op": "add",
     "path": "/definitions/models.Achievement/properties/Hidden/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.AchievementResponse/properties/hidden/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.AchievementResponse/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.AchievementResponse/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.AchievementResponse/properties/incremental/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.UserAchievementResponse/properties/achievedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.AchievementUpdateRequest/properties/hidden/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.AchievementUpdateRequest/properties/incremental/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.PublicAchievementResponse/properties/hidden/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.PublicAchievementResponse/properties/updatedAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.PublicAchievementResponse/properties/createdAt/x-nullable",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.PublicAchievementResponse/properties/incremental/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.AchievementRequest/properties/hidden/x-omitempty",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/definitions/models.AchievementRequest/properties/incremental/x-omitempty",
     "value": false
   }
 ]
