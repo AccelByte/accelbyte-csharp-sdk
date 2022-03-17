@@ -50,10 +50,8 @@ namespace AccelByte.Sdk.Tests.Integration
 {
     [TestFixture(Category = "Integration")]
     [Explicit]
-    public class AdminIntegrationTests
+    public class AdminIntegrationTests : BaseIntegrationTest
     {
-        private AccelByteSDK? _Sdk = null;
-
         [OneTimeSetUp]
         public void Startup()
         {
@@ -239,7 +237,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
             Dictionary<string, object> recValue = gRecord.Value!;
             Assert.IsTrue(recValue.ContainsKey("foo_bar"));
-            Assert.AreEqual("foo",recValue["foo_bar"].ToString());
+            Assert.AreEqual("foo", recValue["foo_bar"].ToString());
 
             //Update game record
             ModelsGameRecordRequestForTest updateRecord = new ModelsGameRecordRequestForTest()
@@ -289,7 +287,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 .SetLimit(10)
                 .Build(_Sdk.Namespace));
             Assert.IsNotNull(tsResp);
-        }        
+        }
 
         [Test]
         public void EventLogServiceTests()
@@ -316,13 +314,12 @@ namespace AccelByte.Sdk.Tests.Integration
             eResp = wEvent.GetEventSpecificUserV2Handler(GetEventSpecificUserV2Handler.Builder
                 .SetOffset(0)
                 .SetPageSize(10)
-                .Build(_Sdk.Namespace, "6bf0e538f8b4423eb9d8b9e577aa860e"));
+                .Build(_Sdk.Namespace, _Sdk.Configuration.Credential!.UserId));
             Assert.IsNotNull(eResp);
             Assert.Greater(eResp!.Data!.Count, 0);
         }
 
         [Test]
-        [Ignore("Still have issue with permissions.")]
         public void GDPRServiceTests()
         {
             Assert.IsNotNull(_Sdk);
@@ -331,17 +328,14 @@ namespace AccelByte.Sdk.Tests.Integration
 
             Api.Gdpr.Wrapper.DataRetrieval wGdprRetrieval = new Api.Gdpr.Wrapper.DataRetrieval(_Sdk);
 
-            string emailToTest = "dummy@example.com";
-            if (_Sdk.Configuration.Credential != null)
-                emailToTest = _Sdk.Configuration.Credential.Username;
-
-            string anotherEmailToTest = "another_email_to_test@dummy.com";
+            string firstEmailToTest = "dummy@example.com";
+            string anotherEmailToTest = "anotheremail@dummy.com";
 
             wGdprRetrieval.SaveAdminEmailConfiguration(
                 Api.Gdpr.Operation.SaveAdminEmailConfiguration.Builder
                 .Build(new List<string>
                 {
-                    emailToTest
+                    firstEmailToTest
                 }, _Sdk.Namespace));
 
             List<string>? emails = wGdprRetrieval.GetAdminEmailConfiguration(
@@ -351,11 +345,13 @@ namespace AccelByte.Sdk.Tests.Integration
 
             wGdprRetrieval.UpdateAdminEmailConfiguration(
                 Api.Gdpr.Operation.UpdateAdminEmailConfiguration.Builder
-                .Build(new List<string>(){ anotherEmailToTest },_Sdk.Namespace));
+                .Build(new List<string>() { anotherEmailToTest }, _Sdk.Namespace));
 
-            wGdprRetrieval.DeleteAdminEmailConfiguration(
-                Api.Gdpr.Operation.DeleteAdminEmailConfiguration.Builder
-                .Build(_Sdk.Namespace, new List<string>() { emailToTest }));
+            Api.Gdpr.Operation.DeleteAdminEmailConfiguration delOp = Api.Gdpr.Operation.DeleteAdminEmailConfiguration.Builder
+                .Build(_Sdk.Namespace, new List<string>() { anotherEmailToTest });
+            delOp.DoNotEncodeQueryParams = true;
+            delOp.WrapQueryParamValueWithQuote = false;
+            wGdprRetrieval.DeleteAdminEmailConfiguration(delOp);
         }
 
         [Test]
@@ -365,7 +361,26 @@ namespace AccelByte.Sdk.Tests.Integration
             if (_Sdk == null)
                 return;
 
-            Api.Group.Wrapper.Group wGroup = new Api.Group.Wrapper.Group(_Sdk);
+            string configuration_code = "csharpServerSdkConfigCode";
+
+            Api.Group.Wrapper.Configuration wConfig = new Api.Group.Wrapper.Configuration(_Sdk);
+            Api.Group.Wrapper.Group wGroup = new Api.Group.Wrapper.Group(_Sdk);            
+            
+            //Create group configuration
+            Api.Group.Model.ModelsCreateGroupConfigurationRequestV1 gcRequest = new Api.Group.Model.ModelsCreateGroupConfigurationRequestV1()
+            {
+                ConfigurationCode = configuration_code,
+                Description = "CSharp SDK Test Configuration Group",
+                GroupMaxMember = 50,
+                Name = "CSharp SDK Test Configuration Group",
+                GroupAdminRoleId = "623295c3000e792bf1e902b7",
+                GroupMemberRoleId = "623295c3000e792bf1e902b8"
+            };
+
+            Api.Group.Model.ModelsCreateGroupConfigurationResponseV1? gcResp = wConfig.CreateGroupConfigurationAdminV1(
+                Api.Group.Operation.CreateGroupConfigurationAdminV1.Builder
+                .Build(gcRequest, _Sdk.Namespace));
+            Assert.IsNotNull(gcResp);
 
             //Create a group
             Api.Group.Model.ModelsPublicCreateNewGroupRequestV1 createGroup = new Api.Group.Model.ModelsPublicCreateNewGroupRequestV1()
@@ -375,7 +390,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 GroupDescription = "Yeah, anything is welcome here.",
                 GroupMaxMember = 100,
                 GroupRegion = "us-west-1",
-                ConfigurationCode = "initialConfigurationCode"
+                ConfigurationCode = configuration_code
             };
 
             Api.Group.Model.ModelsGroupResponseV1? cGroup = wGroup.CreateNewGroupPublicV1(Api.Group.Operation.CreateNewGroupPublicV1.Builder
@@ -418,6 +433,11 @@ namespace AccelByte.Sdk.Tests.Integration
                 Api.Group.Model.ModelsGroupResponseV1? gGroup = wGroup.GetSingleGroupPublicV1(Api.Group.Operation.GetSingleGroupPublicV1.Builder
                     .Build(group_id, _Sdk.Namespace));
             });
+
+            //Delete group configuration
+            wConfig.DeleteGroupConfigurationV1(
+                Api.Group.Operation.DeleteGroupConfigurationV1.Builder
+                .Build(configuration_code, _Sdk.Namespace));
         }
 
         [Test]
@@ -578,7 +598,7 @@ namespace AccelByte.Sdk.Tests.Integration
             List<Api.Legal.Model.RetrieveAcceptedAgreementResponse>? aggrs = wLegalAgreement.RetrieveAgreementsPublic(Api.Legal.Operation.RetrieveAgreementsPublic
                 .Builder.Build());
             Assert.IsNotNull(aggrs);
-        }        
+        }
 
         [Test]
         public void PlatformServiceTests()
@@ -790,7 +810,7 @@ namespace AccelByte.Sdk.Tests.Integration
             {
                 Assert.AreEqual(tag_name, cTag.Tag);
                 tag_id = cTag.Id!;
-            }                
+            }
 
             //Get tags
             Api.Ugc.Model.ModelsPaginatedGetTagResponse? gTag = wAdminTag.AdminGetTag(

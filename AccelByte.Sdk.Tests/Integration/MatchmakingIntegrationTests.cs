@@ -37,10 +37,8 @@ namespace AccelByte.Sdk.Tests.Integration
 {
     [TestFixture(Category = "Integration")]
     [Explicit]
-    public class MatchmakingIntegrationTests
+    public class MatchmakingIntegrationTests : BaseIntegrationTest
     {
-        private AccelByteSDK? _Sdk = null;
-
         private string _GameModePrefix = "csharp_sdk_gm_";
 
         [OneTimeSetUp]
@@ -64,7 +62,19 @@ namespace AccelByte.Sdk.Tests.Integration
         }
 
         [Test]
-        //[Ignore("Claim server guaranteed to fail of no matching dedicated server available.")]
+        public void DSMCListLocalServerTest()
+        {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
+            Admin wDsmcAdmin = new Admin(_Sdk);
+            ModelsListServerResponse? serverResp = wDsmcAdmin.ListLocalServer(ListLocalServer.Builder
+                .Build(_Sdk.Namespace));
+            Assert.IsNotNull(serverResp);
+        }
+
+        [Test]        
         public void DSMCServiceTests()
         {
             Assert.IsNotNull(_Sdk);
@@ -75,28 +85,24 @@ namespace AccelByte.Sdk.Tests.Integration
             if (_Sdk.Configuration.Credential != null)
                 usernameToTest = _Sdk.Configuration.Credential.Username;
 
-            string game_mode = (_GameModePrefix + Helper.GenerateRandomId(8));
+            string target_namespace = "armadademotestqa";
+            string target_deployment = "deployruli";
+            string game_mode = "soloyogs";
+            string party_id = "PARTY_ID";
+            string party_user_id = _Sdk.Configuration.Credential!.UserId;
             string session_id = String.Empty;
 
-            Api.Sessionbrowser.Wrapper.Session wSBSession = new Api.Sessionbrowser.Wrapper.Session(_Sdk);
-            Server wServer = new Server(_Sdk);
             Session wSession = new Session(_Sdk);
-
-            //Get list of local servers
             Admin wDsmcAdmin = new Admin(_Sdk);
-            ModelsListServerResponse? serverResp = wDsmcAdmin.ListLocalServer(ListLocalServer.Builder.Build(_Sdk.Namespace));
-            Assert.IsNotNull(serverResp);
-            Assert.Greater(serverResp!.Servers!.Count, 0);
-            Api.Dsmc.Model.ModelsServer localDs = serverResp!.Servers[0];
 
-            string pod_name = localDs!.PodName!;
+            Api.Sessionbrowser.Wrapper.Session wSBSession = new Api.Sessionbrowser.Wrapper.Session(_Sdk);            
 
             //Create a session
             Api.Sessionbrowser.Model.ModelsCreateSessionRequest createSession = new Api.Sessionbrowser.Model.ModelsCreateSessionRequest()
             {
                 SessionType = "p2p",
                 GameVersion = "0.3.0",
-                Namespace = _Sdk.Namespace,
+                Namespace = target_namespace,
                 Username = usernameToTest,
                 GameSessionSetting = new Api.Sessionbrowser.Model.ModelsGameSessionSetting()
                 {
@@ -109,7 +115,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
             Api.Sessionbrowser.Model.ModelsSessionResponse? cResp = wSBSession.CreateSession(
                 Api.Sessionbrowser.Operation.CreateSession.Builder
-                .Build(createSession, _Sdk.Namespace));
+                .Build(createSession, target_namespace));
             Assert.IsNotNull(cResp);
             if (cResp != null)
             {
@@ -121,8 +127,8 @@ namespace AccelByte.Sdk.Tests.Integration
             ModelsCreateSessionRequest sessionRequest = new ModelsCreateSessionRequest()
             {
                 ClientVersion = "0.3.0",
-                Configuration = "default",
-                Deployment = "",
+                Configuration = "",
+                Deployment = target_deployment,
                 GameMode = game_mode,
                 MatchingAllies = new List<Api.Dsmc.Model.ModelsRequestMatchingAlly>()
                 {
@@ -133,36 +139,47 @@ namespace AccelByte.Sdk.Tests.Integration
                             new Api.Dsmc.Model.ModelsRequestMatchParty()
                             {
                                 PartyAttributes = new Dictionary<string, object>(),
-                                PartyId = "default_party",
+                                PartyId = party_id,
                                 PartyMembers = new List<Api.Dsmc.Model.ModelsRequestMatchMember>()
                                 {
                                     new Api.Dsmc.Model.ModelsRequestMatchMember()
                                     {
-                                        UserId = "48501f855efd4f6fbc781d2b436ebf13"
+                                        UserId = party_user_id
                                     }
                                 }
                             }
                         }
                     }
                 },
-                Region = "us-west-1",
-                PodName = pod_name,
+                Region = "",
+                PodName = "",
                 SessionId = session_id,
-                Namespace = _Sdk.Namespace
+                Namespace = target_namespace,
             };
 
             ModelsSessionResponse? csResp = wSession.CreateSession(CreateSession.Builder
-                .Build(sessionRequest, _Sdk.Namespace));
+                .Build(sessionRequest, target_namespace));
             Assert.IsNotNull(csResp);
 
-            csResp = wSession.GetSession(GetSession.Builder.Build(_Sdk.Namespace, session_id));
+            csResp = wSession.GetSession(GetSession.Builder.Build(target_namespace, session_id));
             Assert.IsNotNull(csResp);
+
+            //Waiting for the server to be ready
+            Thread.Sleep(5000);
 
             ModelsClaimSessionRequest claimServer = new ModelsClaimSessionRequest()
             {
                 SessionId = session_id
             };
-            wSession.ClaimServer(ClaimServer.Builder.Build(claimServer, _Sdk.Namespace));
+            wSession.ClaimServer(ClaimServer.Builder.Build(claimServer, target_namespace));
+
+            wDsmcAdmin.DeleteSession(DeleteSession.Builder
+                .Build(target_namespace, session_id));
+
+            Api.Sessionbrowser.Model.ModelsSessionResponse? delResp = wSBSession.DeleteSession(
+                Api.Sessionbrowser.Operation.DeleteSession.Builder
+                .Build(target_namespace, session_id));
+            Assert.IsNotNull(delResp);
 
             Assert.True(true);
         }
@@ -307,7 +324,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
             Task sendTask = lobby.SendPartyCreateRequest(new PartyCreateRequest()
             {
-                Id = request_id                
+                Id = request_id
             }, 0);
             sendTask.Wait();
 
