@@ -53,11 +53,40 @@ namespace AccelByte.Sdk.Core.Util
             return new String(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
+        private static string RandomizeChar(Random random, string source,int length)
+        {
+            string result = String.Empty;
+            for (int i = 0; i < length; i++)
+            {
+                char temp = source[random.Next(source.Length)];
+                while (true)
+                {
+                    if (result.IndexOf(temp) > -1)
+                        temp = source[random.Next(source.Length)];
+                    else
+                    {
+                        result += temp.ToString();
+                        break;
+                    }
+                }
+            }
+            return result;
+        }
+
         public static string GenerateRandomPassword(int length)
         {
             Random random = new Random();
-            string chars = "ABCDEFGHIJKLMNOPQRSTUVWabcdefghijklmnopqrstuvw0123456789!@#$%^&*()";
-            return new String(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
+
+            string final = String.Empty;
+            int pCount = (length / 3);
+
+            final += RandomizeChar(random, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", pCount);
+            final += RandomizeChar(random, "abcdefghijklmnopqrstuvwxyz", pCount);
+            
+            int fCount = (length - (pCount * 2));
+            final += RandomizeChar(random, "0123456789!@#$%^&*()", fCount);
+
+            return final;
         }
     }
 }
