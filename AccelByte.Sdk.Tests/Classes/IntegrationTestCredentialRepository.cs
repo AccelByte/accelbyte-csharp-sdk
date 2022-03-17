@@ -34,6 +34,8 @@ namespace AccelByte.Sdk.Tests
                      throw new Exception($"Environment variable not found (variable: {_EnvName_Password})");
         }
 
+        public string UserId { get; set; } = String.Empty;
+
         public IntegrationTestCredentialRepository(string envUsername, string envPassword)
         {
             _EnvName_Username = envUsername;

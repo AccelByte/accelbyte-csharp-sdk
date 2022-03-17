@@ -27,5 +27,7 @@ namespace AccelByte.Sdk.Core.Repository
             get => Environment.GetEnvironmentVariable(CLIENT_PASSWORD) ??
                     throw new Exception($"Environment variable not found (variable: {CLIENT_PASSWORD})");
         }
+
+        public string UserId { get; set; } = String.Empty;
     }
 }

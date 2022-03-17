@@ -223,8 +223,14 @@ namespace AccelByte.Sdk.Core
             var token = oAuth20.TokenGrantV3(tokenGrantV3) ??
                     throw new Exception($"TokenGrantV3 returned null");
 
-            Configuration.TokenRepository.StoreToken(token.AccessToken ??
-                    throw new Exception($"Access token is null"));
+            if (token == null)
+                throw new Exception("Token is null");
+            if (token.AccessToken == null)
+                throw new Exception("Access token is null");
+
+            Configuration.TokenRepository.StoreToken(token.AccessToken);
+            if ((Configuration.Credential != null) && (token.UserId != null))
+                Configuration.Credential.UserId = token.UserId;
 
             return true;
         }

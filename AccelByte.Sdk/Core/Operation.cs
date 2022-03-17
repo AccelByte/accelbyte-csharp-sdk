@@ -33,9 +33,23 @@ namespace AccelByte.Sdk.Core
 
         public Dictionary<string, string> CollectionFormatMap { get; } = new Dictionary<string, string>();
 
+        public bool DoNotEncodeQueryParams { get; set; } = false;
+
+        public bool WrapQueryParamValueWithQuote { get; set; } = true;
+
         public object? BodyParams { get; init; }
 
         public string? LocationQuery { get; init; }
+
+        protected string EncodeQueryString(string value)
+        {
+            return (DoNotEncodeQueryParams ? value : HttpUtility.UrlEncode(value));
+        }
+
+        protected string WrapValueWithQuote(string value)
+        {
+            return (WrapQueryParamValueWithQuote ? "\"" + value + "\"" : value);
+        }
 
         public string GetUrl(string baseUrl)
         {
@@ -83,18 +97,20 @@ namespace AccelByte.Sdk.Core
                         switch (collectionFormat)
                         {
                             case COLLECTION_FORMAT_CSV:
-                                url.Append($"{HttpUtility.UrlEncode(qp.Key)}=");
-                                foreach (var v in qp.Value) {
+                                url.Append($"{EncodeQueryString(qp.Key)}=");
+
+                                List<string> pValues = new List<string>();
+                                foreach (var v in qp.Value)
+                                {
                                     var escapedValue = v.Replace("\"", "\"\"");    // Escape " if any
-                                    url.Append($"{HttpUtility.UrlEncode($"\"{escapedValue}\"")},");
+                                    pValues.Add(EncodeQueryString(WrapValueWithQuote(escapedValue)));
                                 }
-                                url.Length--;   // Trim end ","
-                                url.Append("&");
+                                url.Append(String.Join(',', pValues) + "&");
                                 break;
                             case COLLECTION_FORMAT_MULTI:
                                 foreach (var v in qp.Value) 
                                 {
-                                    url.Append($"{HttpUtility.UrlEncode(qp.Key)}={HttpUtility.UrlEncode(v)}&");
+                                    url.Append($"{EncodeQueryString(qp.Key)}={EncodeQueryString(v)}&");
                                 }
                                 break;
                             default:

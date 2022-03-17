@@ -15,5 +15,7 @@ namespace AccelByte.Sdk.Core.Repository
         string Username { get; }
 
         string Password { get; }
+
+        string UserId { get; set; }
     }
 }
