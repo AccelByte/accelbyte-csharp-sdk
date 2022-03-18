@@ -26,3 +26,10 @@ test_cli:
 			sed -i "s/\r//" tests/sh/* && \
 			(for FILE in $$(ls tests/sh/*.sh | grep -v run-cli-all-tests.sh); do PATH="samples/AccelByte.Sdk.Sample.Cli/bin/Debug/net6.0/linux-x64/publish:$$PATH" bash $$FILE || touch test.err; done)'
 	[ ! -f test.err ]
+
+test_integration:
+	@test -n "$(TEST_ENV_FILE)" || (echo "TEST_ENV_FILE is not set" ; exit 1)
+	bash -c 'docker run --rm -v $$(pwd):/data/ -w /data/ \
+		--env-file "$(TEST_ENV_FILE)" \
+		--network host mcr.microsoft.com/dotnet/sdk:6.0 \
+		dotnet test --nologo --filter "TestCategory=Integration"'
