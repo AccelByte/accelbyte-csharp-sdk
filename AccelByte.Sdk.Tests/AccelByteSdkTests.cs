@@ -117,6 +117,7 @@ namespace AccelByte.Sdk.Tests
 
             var op = new HttpbinOperation(new HttpMethod(method),
                     queryParams: new Dictionary<string, dynamic>() { { key, value } });
+            op.WrapQueryParamValueWithQuote = true;
 
             var response = sdk.RunRequest(op);
 
@@ -147,6 +148,7 @@ namespace AccelByte.Sdk.Tests
                     collectionFormatMap: new Dictionary<string, string>() {
                         {key, collectionFormat } 
                     });
+            op.WrapQueryParamValueWithQuote = true;
 
             var response = sdk.RunRequest(op);
 

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Core
 
         public bool DoNotEncodeQueryParams { get; set; } = false;
 
-        public bool WrapQueryParamValueWithQuote { get; set; } = true;
+        public bool WrapQueryParamValueWithQuote { get; set; } = false;
 
         public object? BodyParams { get; init; }
 
@@ -95,9 +95,6 @@ namespace AccelByte.Sdk.Core
                         switch (collectionFormat)
                         {
                             case COLLECTION_FORMAT_CSV:
-                                DoNotEncodeQueryParams = true;
-                                WrapQueryParamValueWithQuote = false;
-
                                 List<string> pValues = new List<string>();
                                 foreach (var v in qp.Value)
                                 {
