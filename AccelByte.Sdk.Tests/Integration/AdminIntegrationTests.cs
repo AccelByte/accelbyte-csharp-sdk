@@ -347,11 +347,8 @@ namespace AccelByte.Sdk.Tests.Integration
                 Api.Gdpr.Operation.UpdateAdminEmailConfiguration.Builder
                 .Build(new List<string>() { anotherEmailToTest }, _Sdk.Namespace));
 
-            Api.Gdpr.Operation.DeleteAdminEmailConfiguration delOp = Api.Gdpr.Operation.DeleteAdminEmailConfiguration.Builder
-                .Build(_Sdk.Namespace, new List<string>() { anotherEmailToTest });
-            delOp.DoNotEncodeQueryParams = true;
-            delOp.WrapQueryParamValueWithQuote = false;
-            wGdprRetrieval.DeleteAdminEmailConfiguration(delOp);
+            wGdprRetrieval.DeleteAdminEmailConfiguration(Api.Gdpr.Operation.DeleteAdminEmailConfiguration.Builder
+                .Build(_Sdk.Namespace, new List<string>() { anotherEmailToTest }));
         }
 
         [Test]

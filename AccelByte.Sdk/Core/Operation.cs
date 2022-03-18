@@ -55,6 +55,7 @@ namespace AccelByte.Sdk.Core
         {
             return BuildUrl(baseUrl, Path, PathParams, QueryParams);
         }
+        
         private string BuildUrl(string baseUrl, string path, Dictionary<string, string> pathParams, Dictionary<string, dynamic> queryParams) // TODO Move to helper
         {
             if (path == null) 
@@ -81,49 +82,47 @@ namespace AccelByte.Sdk.Core
 
             if (queryParams != null && queryParams.Any())
             {
-                url.Append("?");
-
+                List<string> kpValues = new List<string>();
                 foreach (var qp in queryParams)
                 {
                     if (qp.Value is IList)
                     {
-                        var collectionFormat = string.Empty;
-
-                        if (!CollectionFormatMap.TryGetValue(qp.Key, out collectionFormat)) 
-                        {
-                            collectionFormat = COLLECTION_FORMAT_CSV;   // Default collection format CSV
-                        }
+                        // Default collection format CSV
+                        string collectionFormat = COLLECTION_FORMAT_CSV;
+                        if (CollectionFormatMap.ContainsKey(qp.Key))
+                            collectionFormat = CollectionFormatMap[qp.Key];
 
                         switch (collectionFormat)
                         {
                             case COLLECTION_FORMAT_CSV:
-                                url.Append($"{EncodeQueryString(qp.Key)}=");
+                                DoNotEncodeQueryParams = true;
+                                WrapQueryParamValueWithQuote = false;
 
                                 List<string> pValues = new List<string>();
                                 foreach (var v in qp.Value)
                                 {
-                                    var escapedValue = v.Replace("\"", "\"\"");    // Escape " if any
+                                    // Escape " if any
+                                    var escapedValue = v.Replace("\"", "\"\"");
                                     pValues.Add(EncodeQueryString(WrapValueWithQuote(escapedValue)));
                                 }
-                                url.Append(String.Join(',', pValues) + "&");
+
+                                if (pValues.Count > 0)
+                                    kpValues.Add(EncodeQueryString(qp.Key) + "=" + String.Join(',', pValues));
                                 break;
                             case COLLECTION_FORMAT_MULTI:
                                 foreach (var v in qp.Value) 
-                                {
-                                    url.Append($"{EncodeQueryString(qp.Key)}={EncodeQueryString(v)}&");
-                                }
+                                    kpValues.Add(EncodeQueryString(qp.Key) + "=" + EncodeQueryString(v));
                                 break;
                             default:
                                 throw new NotSupportedException($"Unsupported query collection format (format: {collectionFormat})");
                         }
                     }
                     else
-                    {
-                        url.Append($"{HttpUtility.UrlEncode(qp.Key)}={HttpUtility.UrlEncode(qp.Value)}&");
-                    }
+                        kpValues.Add(EncodeQueryString(qp.Key) + "=" + EncodeQueryString(qp.Value));
                 }
 
-                url.Length--;   // Trim end "&"
+                if (kpValues.Count > 0)
+                    url.Append("?" + String.Join('&', kpValues));
             }
 
             return url.ToString();
