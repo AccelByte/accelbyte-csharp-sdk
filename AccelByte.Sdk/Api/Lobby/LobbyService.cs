@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Lobby
 {
     public class LobbyService : WebSocketService
     {
-        public override string ServiceEndpoint => "/lobby";
+        public override string ServiceEndpoint => "/lobby/";
 
         public LobbyService(AccelByteConfig abConfig)
             : base(abConfig)

@@ -310,13 +310,23 @@ namespace AccelByte.Sdk.Tests.Integration
             Assert.IsNotNull(eResp);
             Assert.Greater(eResp!.Data!.Count, 0);
 
-
-            eResp = wEvent.GetEventSpecificUserV2Handler(GetEventSpecificUserV2Handler.Builder
+            try
+            {
+                eResp = wEvent.GetEventSpecificUserV2Handler(GetEventSpecificUserV2Handler.Builder
                 .SetOffset(0)
                 .SetPageSize(10)
                 .Build(_Sdk.Namespace, _Sdk.Configuration.Credential!.UserId));
-            Assert.IsNotNull(eResp);
-            Assert.Greater(eResp!.Data!.Count, 0);
+                Assert.IsNotNull(eResp);
+                Assert.Greater(eResp!.Data!.Count, 0);
+            }
+            catch (Exception x)
+            {
+                ModelErrorResponse? mer = System.Text.Json.JsonSerializer.Deserialize<ModelErrorResponse>(x.Message);
+                if (mer == null)
+                    throw new Exception("Failed to parse error response. Payload was `" + x.Message + "`.");
+                if (mer.ErrorMessage != "data not found")
+                    throw new Exception(mer.ErrorMessage, x);
+            }
         }
 
         [Test]
@@ -374,10 +384,21 @@ namespace AccelByte.Sdk.Tests.Integration
                 GroupMemberRoleId = "623295c3000e792bf1e902b8"
             };
 
-            Api.Group.Model.ModelsCreateGroupConfigurationResponseV1? gcResp = wConfig.CreateGroupConfigurationAdminV1(
-                Api.Group.Operation.CreateGroupConfigurationAdminV1.Builder
-                .Build(gcRequest, _Sdk.Namespace));
-            Assert.IsNotNull(gcResp);
+            try
+            {
+                Api.Group.Model.ModelsCreateGroupConfigurationResponseV1? gcResp = wConfig.CreateGroupConfigurationAdminV1(
+                    Api.Group.Operation.CreateGroupConfigurationAdminV1.Builder
+                    .Build(gcRequest, _Sdk.Namespace));
+                Assert.IsNotNull(gcResp);
+            }
+            catch (Exception x)
+            {
+                ModelErrorResponse? mer = System.Text.Json.JsonSerializer.Deserialize<ModelErrorResponse>(x.Message);
+                if (mer == null)
+                    throw new Exception("Failed to parse error response. Payload was `" + x.Message + "`.");
+                if (mer.ErrorCode != 73130)
+                    throw new Exception(mer.ErrorMessage, x);
+            }
 
             //Create a group
             Api.Group.Model.ModelsPublicCreateNewGroupRequestV1 createGroup = new Api.Group.Model.ModelsPublicCreateNewGroupRequestV1()

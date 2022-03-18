@@ -53,9 +53,11 @@ namespace AccelByte.Sdk.Tests.Integration
             if (_Sdk == null)
                 return;
 
-            string? user_login_id = Environment.GetEnvironmentVariable("AB_ADMIN_USERNAME");
+            string? user_login_id = Environment.GetEnvironmentVariable("AB_USERNAME");
             if (user_login_id == null)
-                throw new Exception("This test requires the value of AB_ADMIN_USERNAME env var. Please specify one.");
+                throw new Exception("This test requires the value of AB_USERNAME env var. Please specify one.");
+            
+            user_login_id = UnQuote(user_login_id);
             string stat_code = "cs-server-sdk-test";
 
             StatConfiguration wStatConfig = new StatConfiguration(_Sdk);

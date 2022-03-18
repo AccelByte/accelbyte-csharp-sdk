@@ -15,5 +15,13 @@ namespace AccelByte.Sdk.Tests.Integration
     public abstract class BaseIntegrationTest
     {
         protected AccelByteSDK? _Sdk = null;
+
+        protected string UnQuote(string value)
+        {
+            if ((value.Substring(0, 1) == "\"") && (value.Substring(value.Length - 1, 1) == "\""))
+                return value.Substring(1, value.Length - 2);
+            else
+                return value;
+        }
     }
 }
