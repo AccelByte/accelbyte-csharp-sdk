@@ -11,7 +11,10 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
 
+using AccelByte.Sdk.Core.Repository;
 using AccelByte.Sdk.Core.Util;
+
+using AccelByte.Sdk.Tests;
 
 namespace AccelByte.Sdk.Tests.Integration
 {

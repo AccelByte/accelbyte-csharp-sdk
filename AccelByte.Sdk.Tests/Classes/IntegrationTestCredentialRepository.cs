@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Tests
 {
     public class IntegrationTestCredentialRepository : ICredentialRepository
     {
-        public static readonly IntegrationTestCredentialRepository Admin = new IntegrationTestCredentialRepository("AB_ADMIN_USERNAME", "AB_ADMIN_PASSWORD");
+        public static readonly IntegrationTestCredentialRepository Admin = new IntegrationTestCredentialRepository("AB_USERNAME", "AB_PASSWORD");
 
         private string _EnvName_Username;
 
@@ -24,17 +24,37 @@ namespace AccelByte.Sdk.Tests
 
         public string Username
         {
-            get => Environment.GetEnvironmentVariable(_EnvName_Username) ??
+            get
+            {
+                string? temp = Environment.GetEnvironmentVariable(_EnvName_Username);
+                if (temp != null)
+                    return UnQuote(temp);
+                else
                     throw new Exception($"Environment variable not found (variable: {_EnvName_Username})");
+            }
         }
 
         public string Password
         {
-            get => Environment.GetEnvironmentVariable(_EnvName_Password) ??
-                     throw new Exception($"Environment variable not found (variable: {_EnvName_Password})");
+            get
+            {
+                string? temp = Environment.GetEnvironmentVariable(_EnvName_Password);
+                if (temp != null)
+                    return UnQuote(temp);
+                else
+                    throw new Exception($"Environment variable not found (variable: {_EnvName_Password})");
+            }
         }
 
         public string UserId { get; set; } = String.Empty;
+
+        private string UnQuote(string value)
+        {
+            if ((value.Substring(0, 1) == "\"") && (value.Substring(value.Length - 1, 1) == "\""))
+                return value.Substring(1, value.Length - 2);
+            else
+                return value;
+        }
 
         public IntegrationTestCredentialRepository(string envUsername, string envPassword)
         {
