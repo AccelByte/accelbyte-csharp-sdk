@@ -287,6 +287,7 @@ namespace AccelByte.Sdk.Tests
         }
 
         [Test]
+        [Ignore("This test already exists in CLI unit test")]
         public void LoginLogoutClient()
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _clientConfigRepository);
@@ -304,6 +305,7 @@ namespace AccelByte.Sdk.Tests
         }
 
         [Test]
+        [Ignore("This test already exists in CLI unit test")]
         public void LoginLogoutUser()
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _userConfigRepository);
