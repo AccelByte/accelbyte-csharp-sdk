@@ -29,7 +29,7 @@ pipeline {
       }
     }
     stage('Test') {
-      parallel {
+      stages {
         stage('CLI Tests') {
           steps {
             sshagent(credentials: [bitbucketCredentialsSsh]) {
