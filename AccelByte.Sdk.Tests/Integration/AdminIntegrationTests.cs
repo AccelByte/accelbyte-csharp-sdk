@@ -602,37 +602,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 .Build(leaderboard_code, _Sdk.Namespace));
             Assert.IsNotNull(dcLeaderboard);
             Assert.IsTrue(dcLeaderboard!.IsDeleted!);
-        }
-
-        [Test]
-        public void LegalServiceTests()
-        {
-            Assert.IsNotNull(_Sdk);
-            if (_Sdk == null)
-                return;
-
-            Api.Legal.Wrapper.Agreement wLegalAgreement = new Api.Legal.Wrapper.Agreement(_Sdk);
-
-            List<Api.Legal.Model.RetrieveAcceptedAgreementResponse>? aggrs = wLegalAgreement.RetrieveAgreementsPublic(Api.Legal.Operation.RetrieveAgreementsPublic
-                .Builder.Build());
-            Assert.IsNotNull(aggrs);
-
-            List<Api.Legal.Model.AcceptAgreementRequest> aggreementRequests = new List<Api.Legal.Model.AcceptAgreementRequest>()
-            {
-                new Api.Legal.Model.AcceptAgreementRequest()
-                {
-                    LocalizedPolicyVersionId = "152b9b0f-7b8e-4a9e-8a9d-8c82420ad8b3",
-                    PolicyVersionId = "a76ea12c-14fd-46c5-886f-fd3d0ded4408",
-                    PolicyId = "6adb3d65-b428-4dbc-a08d-e5126c644557", // the marketing policy
-                    IsAccepted = true
-                }
-            };
-
-            wLegalAgreement.ChangePreferenceConsent(
-                Api.Legal.Operation.ChangePreferenceConsent.Builder
-                .SetBody(aggreementRequests)
-                .Build());
-        }
+        }        
 
         [Test]
         public void PlatformServiceTests()
