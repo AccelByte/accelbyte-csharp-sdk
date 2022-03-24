@@ -32,4 +32,4 @@ test_integration:
 	bash -c 'docker run --rm -v $$(pwd):/data/ -w /data/ \
 		--env-file "$(TEST_ENV_FILE)" \
 		--network host mcr.microsoft.com/dotnet/sdk:6.0 \
-		dotnet test --nologo --filter "TestCategory=Integration" --verbosity m'
+		dotnet test --nologo --filter "TestCategory=Integration" --verbosity n'
