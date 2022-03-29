@@ -5101,6 +5101,9 @@
         ]
       },
       "post": {
+        "consumes": [
+          "application/json"
+        ],
         "description": "Required permission : \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:THIRDPARTY:CONFIG [CREATE]\u0026lt;/code\u0026gt; with scope \u0026lt;code\u0026gt;social\u0026lt;/code\u0026gt;\n\t\t\t\u0026lt;br\u0026gt;create third party config in a namespace.",
         "operationId": "adminCreateThirdPartyConfig",
         "parameters": [
@@ -5173,6 +5176,9 @@
         ]
       },
       "put": {
+        "consumes": [
+          "application/json"
+        ],
         "description": "Required permission : \u0026lt;code\u0026gt;ADMIN:NAMESPACE:{namespace}:THIRDPARTY:CONFIG [UPDATE]\u0026lt;/code\u0026gt; with scope \u0026lt;code\u0026gt;social\u0026lt;/code\u0026gt;\n\t\t\t\u0026lt;br\u0026gt;Update third party config in a namespace.",
         "operationId": "adminUpdateThirdPartyConfig",
         "parameters": [

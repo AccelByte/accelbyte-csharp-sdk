@@ -92,7 +92,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Put;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { "application/json" };
 
         public override string[] Produces => new string[] { "application/json" };
 
