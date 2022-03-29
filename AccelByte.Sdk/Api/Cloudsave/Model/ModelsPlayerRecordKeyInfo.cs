@@ -6,13 +6,13 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Model
 {
-    public class ModelsListGameRecordKeys : AccelByte.Sdk.Core.Model
+    public class ModelsPlayerRecordKeyInfo : AccelByte.Sdk.Core.Model
     {
-        [JsonPropertyName("data")]
-        public List<string>? Data { get; set; }
+        [JsonPropertyName("key")]
+        public string? Key { get; set; }
         
-        [JsonPropertyName("paging")]
-        public ModelsPagination? Paging { get; set; }
+        [JsonPropertyName("user_id")]
+        public string? UserId { get; set; }
         
     }
 }

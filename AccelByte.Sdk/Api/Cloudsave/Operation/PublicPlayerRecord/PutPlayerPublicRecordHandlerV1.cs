@@ -22,30 +22,62 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// 
     /// 
     /// 
-    /// If the record is not exist, it will create. If the record already exist, it will replace the record
-    /// instead. And this operation can only be applied to record with `isPublic=true`.
+    /// 
+    /// 
+    /// ## Description
+    /// 
+    /// 
+    /// 
+    /// This endpoints will create new player public record or replace the existing player public record.
+    /// 
+    ///  Replace behaviour:
+    /// The existing value will be replaced completely with the new value.
     /// 
     /// Example
-    /// 
-    /// Replace record
-    /// 
+    /// - Existing JSON:
     /// 
     /// 
     /// 
-    ///     // existed record
-    ///     {
-    ///         "foo": "bar"
-    ///     }
+    ///     { "data1": "value" }
     /// 
-    ///     // new record (request body)
-    ///     {
-    ///         "foo_new": "bar_new"
-    ///     }
     /// 
-    ///     // result
-    ///     {
-    ///         "foo_new": "bar_new"
-    ///     }
+    /// - New JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data2": "new value" }
+    /// 
+    /// 
+    /// - Result:
+    /// 
+    /// 
+    /// 
+    ///     { "data2": "new value" }
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// ## Reserved Word
+    /// 
+    /// 
+    /// 
+    /// Reserved Word List: META
+    /// 
+    /// The reserved word cannot be used as a field in record value,
+    /// If still defining the field when creating or updating the record, it will be ignored.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// ## Warning: Current Behaviour when Updating Private Record
+    /// 
+    /// 
+    /// 
+    /// When updating existing "Private Record", this endpoint will always convert the "Private Record" into "Public Record".
+    /// This behaviour might be deprecated sooner, please don't rely with that behaviour.
     /// </summary>
     public class PutPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

@@ -15,19 +15,19 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","exportconfig")]
-    public class ExportConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","adminexportconfigv1")]
+    public class AdminExportConfigV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName{ get { return "ExportConfig"; } }
+        public string OperationName{ get { return "AdminExportConfigV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        public ExportConfigCommand(AccelByteSDK sdk)
+        public AdminExportConfigV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
@@ -36,11 +36,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         {
             AccelByte.Sdk.Api.Lobby.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Config(_SDK);
 
-            ExportConfig operation = new ExportConfig(
+            AdminExportConfigV1 operation = new AdminExportConfigV1(
                 Namespace                
             );            
             
-            List<AccelByte.Sdk.Api.Lobby.Model.ModelsConfigExport>? response = wrapper.ExportConfig(operation);
+            AccelByte.Sdk.Api.Lobby.Model.ModelsConfigExport? response = wrapper.AdminExportConfigV1(operation);
             if (response == null)
                 return "No response from server.";
 

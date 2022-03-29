@@ -11,6 +11,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("itemIdentity")]
         public string? ItemIdentity { get; set; }
         
+        [JsonPropertyName("itemIdentityType")]
+        public string? ItemIdentityType { get; set; }
+        
         [JsonPropertyName("platformProductIdMap")]
         public Dictionary<string, string>? PlatformProductIdMap { get; set; }
         

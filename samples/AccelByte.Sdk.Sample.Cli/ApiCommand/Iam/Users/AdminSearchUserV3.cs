@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public long? Limit { get; set; }
 
         [SdkCommandArgument("offset")]
-        public string? Offset { get; set; }
+        public long? Offset { get; set; }
 
         [SdkCommandArgument("platformBy")]
         public string? PlatformBy { get; set; }

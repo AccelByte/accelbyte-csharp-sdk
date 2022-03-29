@@ -48,7 +48,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
                 UserId                
             );            
             
-            AccelByte.Sdk.Api.Cloudsave.Model.ModelsPlayerRecord? response = wrapper.AdminGetPlayerRecordHandlerV1(operation);
+            AccelByte.Sdk.Api.Cloudsave.Model.ModelsPlayerRecordResponse? response = wrapper.AdminGetPlayerRecordHandlerV1(operation);
             if (response == null)
                 return "No response from server.";
 

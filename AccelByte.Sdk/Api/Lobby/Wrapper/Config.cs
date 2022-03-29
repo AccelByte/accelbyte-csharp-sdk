@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelsConfigExport>? ExportConfig(ExportConfig input) {
+        public Model.ModelsConfigExport? AdminExportConfigV1(AdminExportConfigV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsImportConfigResponse? ImportConfig(ImportConfig input) {
+        public Model.ModelsImportConfigResponse? AdminImportConfigV1(AdminImportConfigV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

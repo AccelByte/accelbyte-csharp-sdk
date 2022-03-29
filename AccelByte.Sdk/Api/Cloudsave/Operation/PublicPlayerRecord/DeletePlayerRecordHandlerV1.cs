@@ -22,7 +22,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// 
     /// 
     /// 
-    /// Delete player record by its key
+    /// Delete player record by its key.
+    /// Only user that own the player record could delete it.
     /// </summary>
     public class DeletePlayerRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

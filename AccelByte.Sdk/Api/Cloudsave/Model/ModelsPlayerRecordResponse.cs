@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Model
 {
-    public class ModelsPlayerRecord : AccelByte.Sdk.Core.Model
+    public class ModelsPlayerRecordResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("created_at")]
         public DateTime? CreatedAt { get; set; }
@@ -19,6 +19,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
         
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
+        
+        [JsonPropertyName("set_by")]
+        public string? SetBy { get; set; }
         
         [JsonPropertyName("updated_at")]
         public DateTime? UpdatedAt { get; set; }

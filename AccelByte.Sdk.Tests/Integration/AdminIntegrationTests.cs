@@ -230,7 +230,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 .Build(gameRecord, "foo_bar_record", _Sdk.Namespace));
 
             //Get game record
-            ModelsGameRecord? gRecord = wPublicGameRecord.GetGameRecordHandlerV1(GetGameRecordHandlerV1.Builder
+            ModelsGameRecordResponse? gRecord = wPublicGameRecord.GetGameRecordHandlerV1(GetGameRecordHandlerV1.Builder
                 .Build("foo_bar_record", _Sdk.Namespace));
             Assert.IsNotNull(gRecord);
             Assert.IsNotNull(gRecord!.Value);
@@ -380,8 +380,8 @@ namespace AccelByte.Sdk.Tests.Integration
                 Description = "CSharp SDK Test Configuration Group",
                 GroupMaxMember = 50,
                 Name = "CSharp SDK Test Configuration Group",
-                GroupAdminRoleId = "623295c3000e792bf1e902b7",
-                GroupMemberRoleId = "623295c3000e792bf1e902b8"
+                GroupAdminRoleId = "62384e26f6b131d40dcfa0bb",
+                GroupMemberRoleId = "62384e26f6b131d40dcfa0bc"
             };
 
             try
@@ -819,8 +819,8 @@ namespace AccelByte.Sdk.Tests.Integration
             //Get tags
             Api.Ugc.Model.ModelsPaginatedGetTagResponse? gTag = wAdminTag.AdminGetTag(
                 Api.Ugc.Operation.AdminGetTag.Builder
-                .SetOffset("0")
-                .SetLimit("10")
+                .SetOffset(0)
+                .SetLimit(10)
                 .Build(_Sdk.Namespace));
             Assert.IsNotNull(gTag);
 

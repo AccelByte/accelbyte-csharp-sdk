@@ -14,63 +14,77 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// postGameRecordHandlerV1
     ///
-    /// Required Permission | `NAMESPACE:{namespace}:CLOUDSAVE:RECORD [CREATE]`
-    /// --------------------|---------------------------------------------------
-    /// Required Scope      | `social`
+    /// Required permission: `NAMESPACE:{namespace}:CLOUDSAVE:RECORD [CREATE]`
+    /// Required scope: `social`
+    /// 
+    /// 
+    /// 
+    /// ## Description
+    /// 
+    /// 
+    /// 
+    /// This endpoints will create new game record or append the existing game record.
+    /// 
+    ///  Append example:
+    /// 
+    /// Example 1
+    /// - Existing JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": "value" }
+    /// 
+    /// 
+    /// - New JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data2": "new value" }
+    /// 
+    /// 
+    /// - Result:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": "value", "data2": "new value" }
+    /// 
+    /// 
+    /// 
+    /// Example 2
+    /// - Existing JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": { "data2": "value" }
+    /// 
+    /// 
+    /// - New JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": { "data3": "new value" }
+    /// 
+    /// 
+    /// - Result:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": { "data2": "value", "data3": "new value" }
     /// 
     /// 
     /// 
     /// 
     /// 
-    /// If there's already record, the record will be merged with conditions:
-    /// - If field name is already exist, the value will be replaced
-    /// - If field name is not exists it will append the field and its value
     /// 
-    /// Example:
     /// 
-    /// Replace value in a specific JSON key
+    /// ## Reserved Word
     /// 
     /// 
     /// 
+    /// Reserved Word List: META
     /// 
-    ///     // existed record
-    ///     {
-    ///         "foo": "bar"
-    ///     }
-    /// 
-    ///     // new update (request body)
-    ///     {
-    ///         "foo": "barUpdated"
-    ///     }
-    /// 
-    ///     // result
-    ///     {
-    ///         "foo": "barUpdated"
-    ///     }
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Append new json item
-    /// 
-    /// 
-    /// 
-    /// 
-    ///     // existed record
-    ///     {
-    ///         "foo": "bar"
-    ///     }
-    /// 
-    ///     // new update (request body)
-    ///     {
-    ///         "foo_new": "bar_new"
-    ///     }
-    /// 
-    ///     // result
-    ///     {
-    ///         "foo": "bar",
-    ///         "foo_new": "bar_new"
-    ///     }
+    /// The reserved word cannot be used as a field in record value,
+    /// If still defining the field when creating or updating the record, it will be ignored.
     /// </summary>
     public class PostGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

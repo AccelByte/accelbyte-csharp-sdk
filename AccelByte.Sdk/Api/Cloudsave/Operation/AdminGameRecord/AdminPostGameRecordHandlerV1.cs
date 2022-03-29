@@ -14,11 +14,94 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminPostGameRecordHandlerV1
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [WRITE]
+    /// Required permission: `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [CREATE]`
+    /// Required scope: `social`
     /// 
-    /// Required scope: social
     /// 
-    /// This endpoints is to create new game record in namespace-level.
+    /// 
+    /// ## Description
+    /// 
+    /// 
+    /// 
+    /// This endpoints will create new game record or append the existing game record.
+    /// 
+    ///  Append example:
+    /// 
+    /// Example 1
+    /// - Existing JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": "value" }
+    /// 
+    /// 
+    /// - New JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data2": "new value" }
+    /// 
+    /// 
+    /// - Result:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": "value", "data2": "new value" }
+    /// 
+    /// 
+    /// 
+    /// Example 2
+    /// - Existing JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": { "data2": "value" }
+    /// 
+    /// 
+    /// - New JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": { "data3": "new value" }
+    /// 
+    /// 
+    /// - Result:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": { "data2": "value", "data3": "new value" }
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// ## Record Metadata
+    /// 
+    /// 
+    /// 
+    /// Metadata allows user to define the behaviour of the record.
+    /// Metadata can be defined in request body with field name META.
+    /// When creating record, if META field is not defined, the metadata value will use the default value.
+    /// When updating record, if META field is not defined, the existing metadata value will stay as is.
+    /// 
+    ///  Metadata List:
+    /// 1. set_by (default: CLIENT, type: string)
+    /// Indicate which party that could modify the game record.
+    /// SERVER: record can be modified by server only.
+    /// CLIENT: record can be modified by client and server.
+    /// 
+    ///  Request Body Example:
+    /// 
+    /// 
+    /// 
+    /// 
+    ///         {
+    ///             "META": {
+    ///                 "set_by": "SERVER"
+    ///             }
+    ///             ...
+    ///         }
     /// </summary>
     public class AdminPostGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

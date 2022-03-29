@@ -22,59 +22,74 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// 
     /// 
     /// 
-    /// This endpoint will create or update player record with `isPublic=true` meaning that the
-    /// record will be available for other player to be retrieved. Other player can only retrieve the record
-    /// and not create, update or even delete.
     /// 
-    /// This endpoint will create public player record if it is not exists otherwise merge with these criteria:
-    /// - If field name is already exists, replace the value
-    /// - If field name is not exists, append it
     /// 
-    /// Example
-    /// 
-    /// Replace value:
+    /// ## Description
     /// 
     /// 
     /// 
+    /// This endpoints will create new player public record or append the existing player public record.
     /// 
-    ///         // existed record
-    ///         {
-    ///             "foo": "bar"
-    ///         }
+    ///  Append example:
     /// 
-    ///         // new record (request body)
-    ///         {
-    ///             "foo": "bar_updated"
-    ///         }
-    /// 
-    ///         // result
-    ///         {
-    ///             "foo": "bar_updated"
-    ///         }
+    /// Example 1
+    /// - Existing JSON:
     /// 
     /// 
     /// 
-    /// 
-    /// Append value:
-    /// 
+    ///     { "data1": "value" }
     /// 
     /// 
+    /// - New JSON:
     /// 
-    ///         // existed record
-    ///         {
-    ///             "foo": "bar"
-    ///         }
     /// 
-    ///         // new record (request body)
-    ///         {
-    ///             "foo_new": "bar_new"
-    ///         }
     /// 
-    ///         // result
-    ///         {
-    ///             "foo": "bar",
-    ///             "foo_new": "bar_new"
-    ///         }
+    ///     { "data2": "new value" }
+    /// 
+    /// 
+    /// - Result:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": "value", "data2": "new value" }
+    /// 
+    /// 
+    /// 
+    /// Example 2
+    /// - Existing JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": { "data2": "value" }
+    /// 
+    /// 
+    /// - New JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": { "data3": "new value" }
+    /// 
+    /// 
+    /// - Result:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": { "data2": "value", "data3": "new value" }
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// ## Reserved Word
+    /// 
+    /// 
+    /// 
+    /// Reserved Word List: META
+    /// 
+    /// The reserved word cannot be used as a field in record value,
+    /// If still defining the field when creating or updating the record, it will be ignored.
     /// </summary>
     public class PostPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

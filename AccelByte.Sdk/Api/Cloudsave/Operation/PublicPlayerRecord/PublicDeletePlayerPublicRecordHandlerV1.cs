@@ -14,7 +14,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// publicDeletePlayerPublicRecordHandlerV1
     ///
-    /// Required scope: social
+    /// Required scope: `social`
     /// 
     /// Required valid user authorization
     /// 

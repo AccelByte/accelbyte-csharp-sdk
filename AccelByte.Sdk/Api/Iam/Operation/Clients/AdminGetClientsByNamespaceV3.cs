@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             public long? Limit { get; set; }
             
-            public string? Offset { get; set; }
+            public long? Offset { get; set; }
             
             internal AdminGetClientsByNamespaceV3Builder() { }
 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 return this;
             }
 
-            public AdminGetClientsByNamespaceV3Builder SetOffset(string _offset)
+            public AdminGetClientsByNamespaceV3Builder SetOffset(long _offset)
             {
                 Offset = _offset;
                 return this;
@@ -70,7 +70,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
             
             
@@ -81,13 +81,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public AdminGetClientsByNamespaceV3(
             string namespace_,            
             long? limit,            
-            string? offset            
+            long? offset            
         )
         {
             PathParams["namespace"] = namespace_;
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            if (offset != null) QueryParams["offset"] = offset;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
             
             

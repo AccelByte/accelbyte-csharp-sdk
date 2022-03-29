@@ -29,8 +29,14 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         [JsonPropertyName("ip")]
         public string? Ip { get; set; }
         
+        [JsonPropertyName("is_override_game_version")]
+        public bool? IsOverrideGameVersion { get; set; }
+        
         [JsonPropertyName("last_update")]
         public DateTime? LastUpdate { get; set; }
+        
+        [JsonPropertyName("match_id")]
+        public string? MatchId { get; set; }
         
         [JsonPropertyName("mem_limit")]
         public int? MemLimit { get; set; }
@@ -49,6 +55,9 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         
         [JsonPropertyName("ports")]
         public Dictionary<string, long>? Ports { get; set; }
+        
+        [JsonPropertyName("protocol")]
+        public string? Protocol { get; set; }
         
         [JsonPropertyName("provider")]
         public string? Provider { get; set; }

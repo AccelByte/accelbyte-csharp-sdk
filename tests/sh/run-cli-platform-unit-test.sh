@@ -774,7 +774,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 55 UpdateIAPItemConfig
 # body param: body
-echo '{"data": [{"itemIdentity": "g7rYaEuN", "platformProductIdMap": {"CyPoQ0oH": "YXUQdtIk"}}]}' > $TEMP_JSON_INPUT
+echo '{"data": [{"itemIdentity": "g7rYaEuN", "itemIdentityType": "ITEM_SKU", "platformProductIdMap": {"yPoQ0oHY": "XUQdtIkA"}}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateIAPItemConfig \
@@ -810,7 +810,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 58 UpdatePlaystationIAPConfig
 # body param: body
-echo '{"environment": "Akltd1zQ"}' > $TEMP_JSON_INPUT
+echo '{"environment": "kltd1zQB"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdatePlaystationIAPConfig \
@@ -882,7 +882,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 64 UpdateSteamIAPConfig
 # body param: body
-echo '{"publisherAuthenticationKey": "BzzC6ldK"}' > $TEMP_JSON_INPUT
+echo '{"publisherAuthenticationKey": "zzC6ldKr"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateSteamIAPConfig \
@@ -918,7 +918,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 67 UpdateTwitchIAPConfig
 # body param: body
-echo '{"clientId": "riI6lTRb", "clientSecret": "c1Z1HJHz", "organizationId": "l323Ynwf"}' > $TEMP_JSON_INPUT
+echo '{"clientId": "iI6lTRbc", "clientSecret": "1Z1HJHzl", "organizationId": "323Ynwf5"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateTwitchIAPConfig \
@@ -954,7 +954,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 70 UpdateXblIAPConfig
 # body param: body
-echo '{"relyingPartyCert": "5PvGejCD"}' > $TEMP_JSON_INPUT
+echo '{"relyingPartyCert": "PvGejCDg"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateXblIAPConfig \
@@ -985,7 +985,7 @@ $CLI_EXE \
     --op UpdateXblBPCertFile \
     --namespace $TEST_NAMESPACE \
     --upload $TEMP_FILE_UPLOAD \
-    --password 'gAr1pXDc' \
+    --password 'Ar1pXDcs' \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateXblBPCertFile'
 delete_file $TEMP_FILE
@@ -994,12 +994,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 73 SyncInGameItem
 # body param: body
-echo '{"categoryPath": "sHnobnaY", "targetItemId": "xGh3FovB", "targetNamespace": "nr5VUOHG"}' > $TEMP_JSON_INPUT
+echo '{"categoryPath": "HnobnaYx", "targetItemId": "Gh3FovBn", "targetNamespace": "r5VUOHGq"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SyncInGameItem \
     --namespace $TEST_NAMESPACE \
-    --storeId 'qEcuJYo3' \
+    --storeId 'EcuJYo3Y' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'SyncInGameItem'
@@ -1009,7 +1009,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 74 CreateItem
 # body param: body
-echo '{"appId": "YfMDw4Pa", "appType": "DEMO", "baseAppId": "KsFXorxY", "boothName": "0ahG5AgH", "categoryPath": "rE98qQTS", "clazz": "Xh1W7MnK", "displayOrder": 16, "entitlementType": "CONSUMABLE", "ext": {"ly255awv": {}}, "features": ["ulbNGSAj"], "images": [{"as": "eiiANETl", "caption": "kncKPmri", "height": 77, "imageUrl": "Y2aVCNUJ", "smallImageUrl": "gcpAYbj0", "width": 11}], "itemIds": ["idlWPSAI"], "itemQty": {"jaw5HSyD": 37}, "itemType": "CODE", "listable": true, "localizations": {"AxUd1bmV": {"description": "SM44scgN", "localExt": {"AZf7a3R9": {}}, "longDescription": "rIVTDDXZ", "title": "1fahMp68"}}, "maxCount": 70, "maxCountPerUser": 43, "name": "5wQ3hbDl", "purchasable": false, "recurring": {"cycle": "QUARTERLY", "fixedFreeDays": 0, "fixedTrialCycles": 61, "graceDays": 47}, "regionData": {"mVbXDomW": [{"currencyCode": "yrFZZdM0", "currencyNamespace": "0sSdUypO", "currencyType": "VIRTUAL", "discountAmount": 28, "discountExpireAt": "1990-06-15T00:00:00Z", "discountPercentage": 68, "discountPurchaseAt": "1990-01-16T00:00:00Z", "discountedPrice": 86, "expireAt": "1984-12-09T00:00:00Z", "price": 46, "purchaseAt": "1986-05-23T00:00:00Z", "trialPrice": 56}]}, "seasonType": "TIER", "sku": "0koUsUcG", "stackable": false, "status": "ACTIVE", "tags": ["tfyuPNb5"], "targetCurrencyCode": "exiRtR1Q", "targetNamespace": "e0mxLnvZ", "thumbnailUrl": "EG2biyKS", "useCount": 43}' > $TEMP_JSON_INPUT
+echo '{"appId": "fMDw4PaB", "appType": "DLC", "baseAppId": "FXorxY0a", "boothName": "hG5AgHrE", "categoryPath": "98qQTSXh", "clazz": "1W7MnK2i", "displayOrder": 60, "entitlementType": "DURABLE", "ext": {"y255awvu": {}}, "features": ["lbNGSAje"], "images": [{"as": "iiANETlk", "caption": "ncKPmri3", "height": 77, "imageUrl": "Y2aVCNUJ", "smallImageUrl": "gcpAYbj0", "width": 11}], "itemIds": ["idlWPSAI"], "itemQty": {"jaw5HSyD": 37}, "itemType": "CODE", "listable": true, "localizations": {"AxUd1bmV": {"description": "SM44scgN", "localExt": {"AZf7a3R9": {}}, "longDescription": "rIVTDDXZ", "title": "1fahMp68"}}, "maxCount": 70, "maxCountPerUser": 43, "name": "5wQ3hbDl", "purchasable": false, "recurring": {"cycle": "QUARTERLY", "fixedFreeDays": 0, "fixedTrialCycles": 61, "graceDays": 47}, "regionData": {"mVbXDomW": [{"currencyCode": "yrFZZdM0", "currencyNamespace": "0sSdUypO", "currencyType": "VIRTUAL", "discountAmount": 28, "discountExpireAt": "1990-06-15T00:00:00Z", "discountPercentage": 68, "discountPurchaseAt": "1990-01-16T00:00:00Z", "discountedPrice": 86, "expireAt": "1984-12-09T00:00:00Z", "price": 46, "purchaseAt": "1986-05-23T00:00:00Z", "trialPrice": 56}]}, "seasonType": "TIER", "sku": "0koUsUcG", "stackable": false, "status": "ACTIVE", "tags": ["tfyuPNb5"], "targetCurrencyCode": "exiRtR1Q", "targetNamespace": "e0mxLnvZ", "thumbnailUrl": "EG2biyKS", "useCount": 43}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CreateItem \
@@ -2454,12 +2454,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 177 MockFulfillIAPItem
 # body param: body
-echo '{"language": "wmCX_KxIl", "productId": "kALGxw6q", "region": "gvIJBe6r", "type": "TWITCH"}' > $TEMP_JSON_INPUT
+echo '{"itemIdentityType": "ITEM_ID", "language": "dMu", "productId": "Xi2LgkAL", "region": "Gxw6qgvI", "type": "EPICGAMES"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op MockFulfillIAPItem \
     --namespace $TEST_NAMESPACE \
-    --userId 'GbFNzsyQ' \
+    --userId 'e6rDGbFN' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'MockFulfillIAPItem'
@@ -2472,11 +2472,11 @@ $CLI_EXE \
     --sn platform \
     --op QueryUserOrders \
     --namespace $TEST_NAMESPACE \
-    --userId 'VqvSgtpU' \
-    --itemId 'VddL6A1c' \
-    --limit '90' \
-    --offset '74' \
-    --status 'CLOSED' \
+    --userId 'zsyQVqvS' \
+    --itemId 'gtpUVddL' \
+    --limit '52' \
+    --offset '4' \
+    --status 'REFUNDING' \
     >$TEMP_FILE 2>&1
 update_status $? 'QueryUserOrders'
 delete_file $TEMP_FILE
@@ -2488,8 +2488,8 @@ $CLI_EXE \
     --sn platform \
     --op CountOfPurchasedItem \
     --namespace $TEST_NAMESPACE \
-    --userId 'uKlGHZdw' \
-    --itemId 'wo66H6QO' \
+    --userId 'muKlGHZd' \
+    --itemId 'wwo66H6Q' \
     >$TEMP_FILE 2>&1
 update_status $? 'CountOfPurchasedItem'
 delete_file $TEMP_FILE
@@ -2501,8 +2501,8 @@ $CLI_EXE \
     --sn platform \
     --op GetUserOrder \
     --namespace $TEST_NAMESPACE \
-    --orderNo 'fYztHev8' \
-    --userId 'RX4MWRFk' \
+    --orderNo 'OfYztHev' \
+    --userId '8RX4MWRF' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserOrder'
 delete_file $TEMP_FILE
@@ -2511,13 +2511,13 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 181 UpdateUserOrderStatus
 # body param: body
-echo '{"status": "CHARGEBACK", "statusReason": "N13WW7U0"}' > $TEMP_JSON_INPUT
+echo '{"status": "CHARGEBACK", "statusReason": "lN13WW7U"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateUserOrderStatus \
     --namespace $TEST_NAMESPACE \
-    --orderNo 'sRVCnzRx' \
-    --userId 'ni0Kq9Zl' \
+    --orderNo '0sRVCnzR' \
+    --userId 'xni0Kq9Z' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateUserOrderStatus'
@@ -2530,8 +2530,8 @@ $CLI_EXE \
     --sn platform \
     --op FulfillUserOrder \
     --namespace $TEST_NAMESPACE \
-    --orderNo '2b7ChMCx' \
-    --userId 'b6xdzl2O' \
+    --orderNo 'l2b7ChMC' \
+    --userId 'xb6xdzl2' \
     >$TEMP_FILE 2>&1
 update_status $? 'FulfillUserOrder'
 delete_file $TEMP_FILE
@@ -2543,8 +2543,8 @@ $CLI_EXE \
     --sn platform \
     --op GetUserOrderGrant \
     --namespace $TEST_NAMESPACE \
-    --orderNo 'YVRJNC7E' \
-    --userId 'ruVITunb' \
+    --orderNo 'OYVRJNC7' \
+    --userId 'EruVITun' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserOrderGrant'
 delete_file $TEMP_FILE
@@ -2556,8 +2556,8 @@ $CLI_EXE \
     --sn platform \
     --op GetUserOrderHistories \
     --namespace $TEST_NAMESPACE \
-    --orderNo 'xaOWNrMk' \
-    --userId 'fALUDrR6' \
+    --orderNo 'bxaOWNrM' \
+    --userId 'kfALUDrR' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetUserOrderHistories'
 delete_file $TEMP_FILE
@@ -2566,7 +2566,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 185 ProcessUserOrderNotification
 # body param: body
-echo '{"additionalData": {"cardSummary": "M3vzu84T"}, "authorisedTime": "1990-12-02T00:00:00Z", "chargebackReversedTime": "1996-08-13T00:00:00Z", "chargebackTime": "1996-09-30T00:00:00Z", "chargedTime": "1978-10-21T00:00:00Z", "createdTime": "1986-06-15T00:00:00Z", "currency": {"currencyCode": "pQOjjkIY", "currencySymbol": "AQEcxGPT", "currencyType": "REAL", "decimals": 27, "namespace": "2NJ9gHmB"}, "customParameters": {"0vflV2Vp": {}}, "extOrderNo": "tGYAEziS", "extTxId": "thhR9WLi", "extUserId": "VTXHhZmB", "issuedAt": "1983-07-03T00:00:00Z", "metadata": {"lmWBLyhg": "ZsJoonMp"}, "namespace": "OQ9Jmh8w", "nonceStr": "wQ28fmxM", "paymentMethod": "FN8d9fdH", "paymentMethodFee": 52, "paymentOrderNo": "Hphhby7h", "paymentProvider": "WALLET", "paymentProviderFee": 72, "paymentStationUrl": "eIkY4Fc8", "price": 0, "refundedTime": "1980-10-13T00:00:00Z", "salesTax": 70, "sandbox": false, "sku": "bk9YdEm0", "status": "CHARGED", "statusReason": "9Rjjnkhw", "subscriptionId": "q75VqZH8", "subtotalPrice": 67, "targetNamespace": "Uq92UFWF", "targetUserId": "C8oFuU2O", "tax": 62, "totalPrice": 70, "totalTax": 45, "txEndTime": "1997-09-17T00:00:00Z", "type": "bioiiaZ8", "userId": "Uc2rWpzX", "vat": 25}' > $TEMP_JSON_INPUT
+echo '{"additionalData": {"cardSummary": "6M3vzu84"}, "authorisedTime": "1993-11-07T00:00:00Z", "chargebackReversedTime": "1992-08-14T00:00:00Z", "chargebackTime": "1996-09-30T00:00:00Z", "chargedTime": "1978-10-21T00:00:00Z", "createdTime": "1986-06-15T00:00:00Z", "currency": {"currencyCode": "pQOjjkIY", "currencySymbol": "AQEcxGPT", "currencyType": "REAL", "decimals": 27, "namespace": "2NJ9gHmB"}, "customParameters": {"0vflV2Vp": {}}, "extOrderNo": "tGYAEziS", "extTxId": "thhR9WLi", "extUserId": "VTXHhZmB", "issuedAt": "1983-07-03T00:00:00Z", "metadata": {"lmWBLyhg": "ZsJoonMp"}, "namespace": "OQ9Jmh8w", "nonceStr": "wQ28fmxM", "paymentMethod": "FN8d9fdH", "paymentMethodFee": 52, "paymentOrderNo": "Hphhby7h", "paymentProvider": "WALLET", "paymentProviderFee": 72, "paymentStationUrl": "eIkY4Fc8", "price": 0, "refundedTime": "1980-10-13T00:00:00Z", "salesTax": 70, "sandbox": false, "sku": "bk9YdEm0", "status": "CHARGED", "statusReason": "9Rjjnkhw", "subscriptionId": "q75VqZH8", "subtotalPrice": 67, "targetNamespace": "Uq92UFWF", "targetUserId": "C8oFuU2O", "tax": 62, "totalPrice": 70, "totalTax": 45, "txEndTime": "1997-09-17T00:00:00Z", "type": "bioiiaZ8", "userId": "Uc2rWpzX", "vat": 25}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op ProcessUserOrderNotification \

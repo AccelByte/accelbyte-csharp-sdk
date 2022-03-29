@@ -5,47 +5,50 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Lobby.Model;
+using AccelByte.Sdk.Api.Iam.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Lobby.Operation
+namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
-    /// ExportConfig
+    /// PublicGetMyBackupCodesV4
     ///
     /// 
-    /// Required permission ADMIN:NAMESPACE:{namespace}:LOBBY:CONFIG [READ]
     /// 
-    /// Required Scope: social
+    /// (In Development)This endpoint is used to get 8-digits backup codes.
+    /// Each code is a one-time code and will be deleted once used.
     /// 
-    /// Export lobby configuration to a json file. The file can then be imported from the /import endpoint.
+    /// 
+    /// 
+    /// 
+    /// This endpoint Requires valid user access token
     /// </summary>
-    public class ExportConfig : AccelByte.Sdk.Core.Operation
+    public class PublicGetMyBackupCodesV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ExportConfigBuilder Builder = new ExportConfigBuilder();
+        public static PublicGetMyBackupCodesV4Builder Builder = new PublicGetMyBackupCodesV4Builder();
 
-        public class ExportConfigBuilder
+        public class PublicGetMyBackupCodesV4Builder
         {
             
-            internal ExportConfigBuilder() { }
+            internal PublicGetMyBackupCodesV4Builder() { }
 
 
 
 
 
-            public ExportConfig Build(
+            public PublicGetMyBackupCodesV4 Build(
                 string namespace_
             )
             {
-                return new ExportConfig(this,
+                return new PublicGetMyBackupCodesV4(this,
                     namespace_                    
                 );
             }
         }
 
-        private ExportConfig(ExportConfigBuilder builder,
+        private PublicGetMyBackupCodesV4(PublicGetMyBackupCodesV4Builder builder,
             string namespace_
         )
         {
@@ -58,7 +61,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         }
         #endregion
 
-        public ExportConfig(
+        public PublicGetMyBackupCodesV4(
             string namespace_            
         )
         {
@@ -70,17 +73,17 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
         }
 
-        public override string Path => "/lobby/v1/admin/config/namespaces/{namespace}/export";
+        public override string Path => "/iam/v4/public/namespaces/{namespace}/users/me/mfa/backupCode";
 
         public override HttpMethod Method => HttpMethod.Get;
 
         public override string[] Consumes => new string[] {  };
 
-        public override string[] Produces => new string[] {  };
+        public override string[] Produces => new string[] { "application/json" };
 
         public override string? Security {get; set;} = "Bearer";
         
-        public List<Model.ModelsConfigExport>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelBackupCodesResponseV4? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            
             if (code == (HttpStatusCode)204)
             {
@@ -88,11 +91,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelsConfigExport>>(payload);
+                return JsonSerializer.Deserialize<Model.ModelBackupCodesResponseV4>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelsConfigExport>>(payload);
+                return JsonSerializer.Deserialize<Model.ModelBackupCodesResponseV4>(payload);
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

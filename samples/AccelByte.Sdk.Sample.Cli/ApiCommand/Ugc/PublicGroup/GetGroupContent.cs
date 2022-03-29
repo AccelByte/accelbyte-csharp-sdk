@@ -34,10 +34,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandArgument("limit")]
-        public string? Limit { get; set; }
+        public long? Limit { get; set; }
 
         [SdkCommandArgument("offset")]
-        public string? Offset { get; set; }
+        public long? Offset { get; set; }
 
         public GetGroupContentCommand(AccelByteSDK sdk)
         {

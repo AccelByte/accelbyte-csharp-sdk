@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             public string? DisplayName { get; set; }
             
-            public string? Limit { get; set; }
+            public long? Limit { get; set; }
             
             public string? LoginId { get; set; }
             
@@ -62,7 +62,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 return this;
             }
 
-            public AdminSearchUsersV2Builder SetLimit(string _limit)
+            public AdminSearchUsersV2Builder SetLimit(long _limit)
             {
                 Limit = _limit;
                 return this;
@@ -117,7 +117,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.After != null) QueryParams["after"] = builder.After;
             if (builder.Before != null) QueryParams["before"] = builder.Before;
             if (builder.DisplayName != null) QueryParams["displayName"] = builder.DisplayName;
-            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.LoginId != null) QueryParams["loginId"] = builder.LoginId;
             if (builder.PlatformUserId != null) QueryParams["platformUserId"] = builder.PlatformUserId;
             if (builder.RoleId != null) QueryParams["roleId"] = builder.RoleId;
@@ -135,7 +135,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string? after,            
             string? before,            
             string? displayName,            
-            string? limit,            
+            long? limit,            
             string? loginId,            
             string? platformUserId,            
             string? roleId,            
@@ -148,7 +148,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (after != null) QueryParams["after"] = after;
             if (before != null) QueryParams["before"] = before;
             if (displayName != null) QueryParams["displayName"] = displayName;
-            if (limit != null) QueryParams["limit"] = limit;
+            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (loginId != null) QueryParams["loginId"] = loginId;
             if (platformUserId != null) QueryParams["platformUserId"] = platformUserId;
             if (roleId != null) QueryParams["roleId"] = roleId;

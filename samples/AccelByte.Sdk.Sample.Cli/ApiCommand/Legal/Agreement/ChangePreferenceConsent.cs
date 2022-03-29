@@ -24,6 +24,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 
         public string OperationName{ get { return "ChangePreferenceConsent"; } }
 
+        [SdkCommandArgument("namespace")]
+        public string Namespace { get; set; } = String.Empty;
+
+        [SdkCommandArgument("userId")]
+        public string UserId { get; set; } = String.Empty;
+
         [SdkCommandData("body")]
         public List<AcceptAgreementRequest> Body { get; set; } = new List<AcceptAgreementRequest>();
                 
@@ -37,6 +43,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.Agreement wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.Agreement(_SDK);
 
             ChangePreferenceConsent operation = new ChangePreferenceConsent(
+                Namespace,                
+                UserId,                
                 Body                
             );            
             

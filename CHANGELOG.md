@@ -1,5 +1,36 @@
 # Changelog
 
+## v0.5.0
+- Fixed some of integration tests.
+- Added new integration tests for legal service.
+- Updated APIs.
+	- cloudsave:
+		- added new endpoints.
+		- updated endpoints.
+		- added models.
+		- updated models.
+		- BREAKING CHANGES (deleted some models related to game reord and player record).
+	- dslogmanager:
+		- updated models.
+	- iam
+		- added new endpoints.
+		- added models.
+		- updated endpoints.
+	- legal
+		- added new endpoint.
+		- updated endpoints.
+	- lobby
+		- added new endpoints.
+		- updated endpoints.
+		- updated models.
+		- BREAKING CHANGES (deleted some endpoints related to export/import config).
+	- platform
+		- updated models.
+	- sessionbrowser
+		- updated endpoints.
+	- ugc
+		- updated endpoints.
+
 ## v0.4.0
 - Added AWS Lambda sample app. See it's README in samples/AccelByte.Sdk.Sample.Aws.Lambda
 - Added integration tests.

@@ -15,6 +15,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
             _sdk = sdk;
         }
         
+        public void ChangePreferenceConsent(ChangePreferenceConsent input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.RetrieveAcceptedAgreementResponse>? RetrieveAcceptedAgreements(RetrieveAcceptedAgreements input) {
             var response = _sdk.RunRequest(input);
 
@@ -31,7 +39,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void ChangePreferenceConsent(ChangePreferenceConsent input) {
+        public void ChangePreferenceConsent1(ChangePreferenceConsent1 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(

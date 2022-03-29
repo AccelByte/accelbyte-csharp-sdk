@@ -14,11 +14,72 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminPutGameRecordHandlerV1
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [UPDATE]
+    /// Required permission: `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [UPDATE]`
+    /// Required scope: `social`
     /// 
-    /// Required scope: social
     /// 
-    /// This endpoints is to replace game record data if exists or insert new data in namespace-level
+    /// 
+    /// ## Description
+    /// 
+    /// 
+    /// 
+    /// This endpoints will create new game record or replace the existing game record.
+    /// 
+    ///  Replace behaviour:
+    /// The existing value will be replaced completely with the new value.
+    /// 
+    /// Example
+    /// - Existing JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": "value" }
+    /// 
+    /// 
+    /// - New JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data2": "new value" }
+    /// 
+    /// 
+    /// - Result:
+    /// 
+    /// 
+    /// 
+    ///     { "data2": "new value" }
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// ## Record Metadata
+    /// 
+    /// 
+    /// 
+    /// Metadata allows user to define the behaviour of the record.
+    /// Metadata can be defined in request body with field name META.
+    /// When creating record, if META field is not defined, the metadata value will use the default value.
+    /// When updating record, if META field is not defined, the existing metadata value will stay as is.
+    /// 
+    ///  Metadata List:
+    /// 1. set_by (default: CLIENT, type: string)
+    /// Indicate which party that could modify the game record.
+    /// SERVER: record can be modified by server only.
+    /// CLIENT: record can be modified by client and server.
+    /// 
+    ///  Request Body Example:
+    /// 
+    /// 
+    /// 
+    /// 
+    ///         {
+    ///             "META": {
+    ///                 "set_by": "SERVER"
+    ///             }
+    ///             ...
+    ///         }
     /// </summary>
     public class AdminPutGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

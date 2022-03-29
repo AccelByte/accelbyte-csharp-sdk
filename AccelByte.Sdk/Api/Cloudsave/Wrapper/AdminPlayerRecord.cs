@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelsListPlayerRecordKeys? ListPlayerRecordHandlerV1(ListPlayerRecordHandlerV1 input) {
+        public Model.ModelsListPlayerRecordKeysResponse? ListPlayerRecordHandlerV1(ListPlayerRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
-        public Model.ModelsListPlayerRecordKeys? AdminRetrievePlayerRecords(AdminRetrievePlayerRecords input) {
+        public Model.ModelsListPlayerRecordKeysResponse? AdminRetrievePlayerRecords(AdminRetrievePlayerRecords input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPlayerRecord? AdminGetPlayerRecordHandlerV1(AdminGetPlayerRecordHandlerV1 input) {
+        public Model.ModelsPlayerRecordResponse? AdminGetPlayerRecordHandlerV1(AdminGetPlayerRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -66,7 +66,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPlayerRecord? AdminGetPlayerPublicRecordHandlerV1(AdminGetPlayerPublicRecordHandlerV1 input) {
+        public Model.ModelsPlayerRecordResponse? AdminGetPlayerPublicRecordHandlerV1(AdminGetPlayerPublicRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

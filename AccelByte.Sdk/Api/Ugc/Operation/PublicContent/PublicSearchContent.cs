@@ -28,11 +28,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             public string? Isofficial { get; set; }
             
-            public string? Limit { get; set; }
+            public long? Limit { get; set; }
             
             public string? Name { get; set; }
             
-            public string? Offset { get; set; }
+            public long? Offset { get; set; }
             
             public string? Orderby { get; set; }
             
@@ -61,7 +61,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
                 return this;
             }
 
-            public PublicSearchContentBuilder SetLimit(string _limit)
+            public PublicSearchContentBuilder SetLimit(long _limit)
             {
                 Limit = _limit;
                 return this;
@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
                 return this;
             }
 
-            public PublicSearchContentBuilder SetOffset(string _offset)
+            public PublicSearchContentBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
                 return this;
@@ -136,9 +136,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             if (builder.Creator != null) QueryParams["creator"] = builder.Creator;
             if (builder.Isofficial != null) QueryParams["isofficial"] = builder.Isofficial;
-            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Name != null) QueryParams["name"] = builder.Name;
-            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Orderby != null) QueryParams["orderby"] = builder.Orderby;
             if (builder.Sortby != null) QueryParams["sortby"] = builder.Sortby;
             if (builder.Subtype != null) QueryParams["subtype"] = builder.Subtype;
@@ -156,9 +156,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             string namespace_,            
             string? creator,            
             string? isofficial,            
-            string? limit,            
+            long? limit,            
             string? name,            
-            string? offset,            
+            long? offset,            
             string? orderby,            
             string? sortby,            
             string? subtype,            
@@ -171,9 +171,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             if (creator != null) QueryParams["creator"] = creator;
             if (isofficial != null) QueryParams["isofficial"] = isofficial;
-            if (limit != null) QueryParams["limit"] = limit;
+            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (name != null) QueryParams["name"] = name;
-            if (offset != null) QueryParams["offset"] = offset;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (orderby != null) QueryParams["orderby"] = orderby;
             if (sortby != null) QueryParams["sortby"] = sortby;
             if (subtype != null) QueryParams["subtype"] = subtype;

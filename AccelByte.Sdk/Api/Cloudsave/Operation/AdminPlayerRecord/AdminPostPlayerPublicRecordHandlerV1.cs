@@ -14,15 +14,62 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminPostPlayerPublicRecordHandlerV1
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [CREATE]
+    /// Required permission: `ADMIN:NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [CREATE]`
+    /// Required scope: `social`
     /// 
-    /// Required scope: social
     /// 
-    /// Save a record (arbitrary JSON data) in user-level.
-    /// If a record already exist with given record key, this endpoint will try to merge.
-    /// Same top level key inside body will be replaced, different top level key will be appended.
-    /// Record saved will be a public record.
-    /// If existing record is not public (is_public false) then this endpoint won't make it public.
+    /// 
+    /// ## Description
+    /// 
+    /// 
+    /// 
+    /// This endpoints will create new player public record or append the existing player public record.
+    /// 
+    ///  Append example:
+    /// 
+    /// Example 1
+    /// - Existing JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": "value" }
+    /// 
+    /// 
+    /// - New JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data2": "new value" }
+    /// 
+    /// 
+    /// - Result:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": "value", "data2": "new value" }
+    /// 
+    /// 
+    /// 
+    /// Example 2
+    /// - Existing JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": { "data2": "value" }
+    /// 
+    /// 
+    /// - New JSON:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": { "data3": "new value" }
+    /// 
+    /// 
+    /// - Result:
+    /// 
+    /// 
+    /// 
+    ///     { "data1": { "data2": "value", "data3": "new value" }
     /// </summary>
     public class AdminPostPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

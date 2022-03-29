@@ -22,20 +22,20 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class GetUserFriendsUpdatedBuilder
         {
             
-            public string? Limit { get; set; }
+            public long? Limit { get; set; }
             
-            public string? Offset { get; set; }
+            public long? Offset { get; set; }
             
             internal GetUserFriendsUpdatedBuilder() { }
 
 
-            public GetUserFriendsUpdatedBuilder SetLimit(string _limit)
+            public GetUserFriendsUpdatedBuilder SetLimit(long _limit)
             {
                 Limit = _limit;
                 return this;
             }
 
-            public GetUserFriendsUpdatedBuilder SetOffset(string _offset)
+            public GetUserFriendsUpdatedBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
                 return this;
@@ -60,8 +60,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
-            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
             
             
@@ -71,14 +71,14 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public GetUserFriendsUpdated(
             string namespace_,            
-            string? limit,            
-            string? offset            
+            long? limit,            
+            long? offset            
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (limit != null) QueryParams["limit"] = limit;
-            if (offset != null) QueryParams["offset"] = offset;
+            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
             
             

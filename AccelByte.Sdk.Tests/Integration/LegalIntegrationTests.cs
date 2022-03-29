@@ -180,10 +180,11 @@ namespace AccelByte.Sdk.Tests.Integration
                 }
             };
 
+            string userId = _Sdk.Configuration.Credential!.UserId;
             wLegalAgreement.ChangePreferenceConsent(
                 ChangePreferenceConsent.Builder
                 .SetBody(aggreementRequests)
-                .Build());
+                .Build(_Sdk.Namespace, userId));
         }
 
         [Test]
@@ -222,10 +223,11 @@ namespace AccelByte.Sdk.Tests.Integration
                 }
             };
 
+            string userId = _Sdk.Configuration.Credential!.UserId;
             wLegalAgreement.ChangePreferenceConsent(
                 ChangePreferenceConsent.Builder
                 .SetBody(aggreementRequests)
-                .Build());
+                .Build(_Sdk.Namespace, userId));
         }
     }
 }

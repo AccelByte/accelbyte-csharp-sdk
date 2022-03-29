@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
                 Offset                
             );            
             
-            AccelByte.Sdk.Api.Cloudsave.Model.ModelsListGameRecordKeys? response = wrapper.ListGameRecordsHandlerV1(operation);
+            AccelByte.Sdk.Api.Cloudsave.Model.ModelsListGameRecordKeysResponse? response = wrapper.ListGameRecordsHandlerV1(operation);
             if (response == null)
                 return "No response from server.";
 

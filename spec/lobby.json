@@ -84,13 +84,13 @@
             "description": "maximum number of data",
             "in": "query",
             "name": "limit",
-            "type": "string"
+            "type": "integer"
           },
           {
             "description": "numbers of row to skip within the result",
             "in": "query",
             "name": "offset",
-            "type": "string"
+            "type": "integer"
           }
         ],
         "produces": [
@@ -1210,7 +1210,7 @@
     "/lobby/v1/admin/config/namespaces/{namespace}/export": {
       "get": {
         "description": "\n\t\t\t\tRequired permission ADMIN:NAMESPACE:{namespace}:LOBBY:CONFIG [READ]\n\n\t\t\t\tRequired Scope: social\n\n\t\t\t\tExport lobby configuration to a json file. The file can then be imported from the /import endpoint. \n\t\t\t",
-        "operationId": "ExportConfig",
+        "operationId": "adminExportConfigV1",
         "parameters": [
           {
             "description": "namespace",
@@ -1220,14 +1220,14 @@
             "type": "string"
           }
         ],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "OK",
             "schema": {
-              "items": {
-                "$ref": "#/definitions/models.ConfigExport"
-              },
-              "type": "array"
+              "$ref": "#/definitions/models.ConfigExport"
             }
           },
           "401": {
@@ -1272,7 +1272,7 @@
           "multipart/form-data"
         ],
         "description": "\n\t\t\t\tRequired permission ADMIN:NAMESPACE:{namespace}:LOBBY:CONFIG [UPDATE]\n\n\t\t\t\tRequired Scope: social\n\n\t\t\t\tImport config configuration from file. The existing configuration will be replaced.\n\t\t\t\tThe json file to import can be obtained from the /export endpoint. \n\t\t\t",
-        "operationId": "ImportConfig",
+        "operationId": "adminImportConfigV1",
         "parameters": [
           {
             "description": "namespace",
@@ -1354,13 +1354,13 @@
             "description": "maximum number of data",
             "in": "query",
             "name": "limit",
-            "type": "string"
+            "type": "integer"
           },
           {
             "description": "numbers of row to skip within the result",
             "in": "query",
             "name": "offset",
-            "type": "string"
+            "type": "integer"
           }
         ],
         "produces": [
@@ -8007,6 +8007,10 @@
           "format": "integer",
           "type": "integer"
         },
+        "keepPresenceActivityOnDisconnect": {
+          "type": "boolean",
+          "x-omitempty": false
+        },
         "maxPartyMember": {
           "format": "int32",
           "type": "integer"
@@ -8077,6 +8081,10 @@
           "format": "integer",
           "type": "integer"
         },
+        "keepPresenceActivityOnDisconnect": {
+          "type": "boolean",
+          "x-omitempty": false
+        },
         "maxPartyMember": {
           "format": "int32",
           "type": "integer"
@@ -8094,6 +8102,7 @@
         }
       },
       "required": [
+        "allowInviteNonConnectedUser",
         "autoKickOnDisconnect",
         "autoKickOnDisconnectDelay",
         "cancelTicketOnDisconnect",
@@ -8106,6 +8115,7 @@
         "entitlementItemID",
         "generalRateLimitBurst",
         "generalRateLimitDuration",
+        "keepPresenceActivityOnDisconnect",
         "maxPartyMember",
         "namespace",
         "profanityFilter",
@@ -8177,6 +8187,10 @@
         "generalRateLimitDuration": {
           "format": "integer",
           "type": "integer"
+        },
+        "keepPresenceActivityOnDisconnect": {
+          "type": "boolean",
+          "x-omitempty": false
         },
         "maxPartyMember": {
           "format": "int32",

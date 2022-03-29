@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string? DisplayName { get; set; }
 
         [SdkCommandArgument("limit")]
-        public string? Limit { get; set; }
+        public long? Limit { get; set; }
 
         [SdkCommandArgument("loginId")]
         public string? LoginId { get; set; }

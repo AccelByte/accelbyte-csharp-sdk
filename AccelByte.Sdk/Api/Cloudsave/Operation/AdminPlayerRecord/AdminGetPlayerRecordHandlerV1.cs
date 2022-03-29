@@ -14,9 +14,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminGetPlayerRecordHandlerV1
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [READ]
+    /// Required permission: `ADMIN:NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [READ]`
     /// 
-    /// Required scope: social
+    /// Required scope: `social`
     /// 
     /// Get a record in user-level (arbitrary JSON data) by its key.
     /// </summary>
@@ -93,7 +93,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         public override string? Security {get; set;} = "Bearer";
         
-        public Model.ModelsPlayerRecord? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsPlayerRecordResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            
             if (code == (HttpStatusCode)204)
             {
@@ -101,11 +101,11 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ModelsPlayerRecord>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsPlayerRecordResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsPlayerRecord>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsPlayerRecordResponse>(payload);
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

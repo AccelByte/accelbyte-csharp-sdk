@@ -13,11 +13,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 {
     /// <summary>
     /// changePreferenceConsent
-    ///
-    /// Change marketing preference consent.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : login user
     /// </summary>
     public class ChangePreferenceConsent : AccelByte.Sdk.Core.Operation
     {
@@ -26,6 +21,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public class ChangePreferenceConsentBuilder
         {
+            
+            
             public List<Model.AcceptAgreementRequest>? Body { get; set; }
             
             internal ChangePreferenceConsentBuilder() { }
@@ -41,16 +38,24 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
             public ChangePreferenceConsent Build(
+                string namespace_,
+                string userId
             )
             {
-                return new ChangePreferenceConsent(this
+                return new ChangePreferenceConsent(this,
+                    namespace_,                    
+                    userId                    
                 );
             }
         }
 
-        private ChangePreferenceConsent(ChangePreferenceConsentBuilder builder
+        private ChangePreferenceConsent(ChangePreferenceConsentBuilder builder,
+            string namespace_,
+            string userId
         )
         {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
             
             
             
@@ -61,9 +66,13 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         #endregion
 
         public ChangePreferenceConsent(
+            string namespace_,            
+            string userId,            
             List<Model.AcceptAgreementRequest> body            
         )
         {
+            PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
             
             
             
@@ -72,7 +81,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
         }
 
-        public override string Path => "/agreement/public/agreements/localized-policy-versions/preferences";
+        public override string Path => "/agreement/admin/agreements/localized-policy-versions/preferences/namespaces/{namespace}/userId/{userId}";
 
         public override HttpMethod Method => HttpMethod.Patch;
 

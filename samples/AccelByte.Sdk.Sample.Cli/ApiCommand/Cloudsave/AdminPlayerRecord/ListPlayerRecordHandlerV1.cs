@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             #pragma warning restore ab_deprecated_operation
             
             #pragma warning disable ab_deprecated_operation_wrapper
-            AccelByte.Sdk.Api.Cloudsave.Model.ModelsListPlayerRecordKeys? response = wrapper.ListPlayerRecordHandlerV1(operation);
+            AccelByte.Sdk.Api.Cloudsave.Model.ModelsListPlayerRecordKeysResponse? response = wrapper.ListPlayerRecordHandlerV1(operation);
             if (response == null)
                 return "No response from server.";
 

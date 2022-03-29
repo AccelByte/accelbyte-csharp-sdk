@@ -8,7 +8,7 @@
     },
     "description": "Justice Platform Service",
     "title": "justice-platform-service",
-    "version": "4.4.2"
+    "version": "4.5.1"
   },
   "schemes": [
     "https"
@@ -13457,12 +13457,6 @@
               "$ref": "#/definitions/ErrorEntity"
             }
           },
-          "409": {
-            "description": "\u003ctable\u003e\u003ctr\u003e\u003ctd\u003eErrorCode\u003c/td\u003e\u003ctd\u003eErrorMessage\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e20006\u003c/td\u003e\u003ctd\u003eoptimistic lock\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
           "422": {
             "description": "\u003ctable\u003e\u003ctr\u003e\u003ctd\u003eErrorCode\u003c/td\u003e\u003ctd\u003eErrorMessage\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e20002\u003c/td\u003e\u003ctd\u003evalidation error\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e",
             "schema": {
@@ -13540,12 +13534,6 @@
           },
           "400": {
             "description": "\u003ctable\u003e\u003ctr\u003e\u003ctd\u003eErrorCode\u003c/td\u003e\u003ctd\u003eErrorMessage\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e35123\u003c/td\u003e\u003ctd\u003eWallet [{walletId}] is inactive\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e35124\u003c/td\u003e\u003ctd\u003eWallet [{currencyCode}] has insufficient balance\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e",
-            "schema": {
-              "$ref": "#/definitions/ErrorEntity"
-            }
-          },
-          "409": {
-            "description": "\u003ctable\u003e\u003ctr\u003e\u003ctd\u003eErrorCode\u003c/td\u003e\u003ctd\u003eErrorMessage\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e20006\u003c/td\u003e\u003ctd\u003eoptimistic lock\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e",
             "schema": {
               "$ref": "#/definitions/ErrorEntity"
             }
@@ -25027,7 +25015,15 @@
     "IAPItemEntry": {
       "properties": {
         "itemIdentity": {
-          "description": "item sku",
+          "description": "item id or sku",
+          "type": "string"
+        },
+        "itemIdentityType": {
+          "description": "item identity type",
+          "enum": [
+            "ITEM_ID",
+            "ITEM_SKU"
+          ],
           "type": "string"
         },
         "platformProductIdMap": {
@@ -26487,6 +26483,14 @@
     },
     "MockIAPReceipt": {
       "properties": {
+        "itemIdentityType": {
+          "description": "The item identity type",
+          "enum": [
+            "ITEM_ID",
+            "ITEM_SKU"
+          ],
+          "type": "string"
+        },
         "language": {
           "description": "language value from language tag, allowed format: en, en-US",
           "pattern": "^[A-Za-z]{2,4}([_-][A-Za-z]{4})?([_-]([A-Za-z]{2}|[0-9]{3}))?$",

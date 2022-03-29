@@ -8,6 +8,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class MockIAPReceipt : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("itemIdentityType")]
+        public string? ItemIdentityType { get; set; }
+        
         [JsonPropertyName("language")]
         public string? Language { get; set; }
         

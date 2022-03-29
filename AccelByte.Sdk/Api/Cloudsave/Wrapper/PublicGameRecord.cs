@@ -15,7 +15,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             _sdk = sdk;
         }
         
-        public Model.ModelsGameRecord? GetGameRecordHandlerV1(GetGameRecordHandlerV1 input) {
+        public Model.ModelsGameRecordResponse? GetGameRecordHandlerV1(GetGameRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

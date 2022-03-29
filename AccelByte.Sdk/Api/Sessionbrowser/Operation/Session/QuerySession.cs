@@ -34,13 +34,13 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             public string? Joinable { get; set; }
             
-            public string? Limit { get; set; }
+            public long? Limit { get; set; }
             
             public string? MatchExist { get; set; }
             
             public string? MatchId { get; set; }
             
-            public string? Offset { get; set; }
+            public long? Offset { get; set; }
             
             public string? ServerStatus { get; set; }
             
@@ -68,7 +68,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
                 return this;
             }
 
-            public QuerySessionBuilder SetLimit(string _limit)
+            public QuerySessionBuilder SetLimit(long _limit)
             {
                 Limit = _limit;
                 return this;
@@ -86,7 +86,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
                 return this;
             }
 
-            public QuerySessionBuilder SetOffset(string _offset)
+            public QuerySessionBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
                 return this;
@@ -129,10 +129,10 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             if (builder.GameMode != null) QueryParams["game_mode"] = builder.GameMode;
             if (builder.GameVersion != null) QueryParams["game_version"] = builder.GameVersion;
             if (builder.Joinable != null) QueryParams["joinable"] = builder.Joinable;
-            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.MatchExist != null) QueryParams["match_exist"] = builder.MatchExist;
             if (builder.MatchId != null) QueryParams["match_id"] = builder.MatchId;
-            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.ServerStatus != null) QueryParams["server_status"] = builder.ServerStatus;
             if (builder.UserId != null) QueryParams["user_id"] = builder.UserId;
             if (sessionType != null) QueryParams["session_type"] = sessionType;
@@ -148,10 +148,10 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             string? gameMode,            
             string? gameVersion,            
             string? joinable,            
-            string? limit,            
+            long? limit,            
             string? matchExist,            
             string? matchId,            
-            string? offset,            
+            long? offset,            
             string? serverStatus,            
             string? userId,            
             string sessionType            
@@ -162,10 +162,10 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             if (gameMode != null) QueryParams["game_mode"] = gameMode;
             if (gameVersion != null) QueryParams["game_version"] = gameVersion;
             if (joinable != null) QueryParams["joinable"] = joinable;
-            if (limit != null) QueryParams["limit"] = limit;
+            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (matchExist != null) QueryParams["match_exist"] = matchExist;
             if (matchId != null) QueryParams["match_id"] = matchId;
-            if (offset != null) QueryParams["offset"] = offset;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (serverStatus != null) QueryParams["server_status"] = serverStatus;
             if (userId != null) QueryParams["user_id"] = userId;
             if (sessionType != null) QueryParams["session_type"] = sessionType;

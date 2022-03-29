@@ -47,6 +47,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonPropertyName("generalRateLimitDuration")]
         public long? GeneralRateLimitDuration { get; set; }
         
+        [JsonPropertyName("keepPresenceActivityOnDisconnect")]
+        public bool? KeepPresenceActivityOnDisconnect { get; set; }
+        
         [JsonPropertyName("maxPartyMember")]
         public int? MaxPartyMember { get; set; }
         

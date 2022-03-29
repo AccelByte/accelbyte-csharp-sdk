@@ -15,7 +15,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             _sdk = sdk;
         }
         
-        public Model.ModelsListGameRecordKeys? ListGameRecordsHandlerV1(ListGameRecordsHandlerV1 input) {
+        public Model.ModelsListGameRecordKeysResponse? ListGameRecordsHandlerV1(ListGameRecordsHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGameRecord? AdminGetGameRecordHandlerV1(AdminGetGameRecordHandlerV1 input) {
+        public Model.ModelsGameRecordResponse? AdminGetGameRecordHandlerV1(AdminGetGameRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

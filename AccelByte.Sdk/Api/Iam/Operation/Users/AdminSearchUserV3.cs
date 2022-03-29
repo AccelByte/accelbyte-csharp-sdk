@@ -69,7 +69,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             public long? Limit { get; set; }
             
-            public string? Offset { get; set; }
+            public long? Offset { get; set; }
             
             public string? PlatformBy { get; set; }
             
@@ -100,7 +100,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 return this;
             }
 
-            public AdminSearchUserV3Builder SetOffset(string _offset)
+            public AdminSearchUserV3Builder SetOffset(long _offset)
             {
                 Offset = _offset;
                 return this;
@@ -152,7 +152,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.By != null) QueryParams["by"] = builder.By;
             if (builder.EndDate != null) QueryParams["endDate"] = builder.EndDate;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.PlatformBy != null) QueryParams["platformBy"] = builder.PlatformBy;
             if (builder.PlatformId != null) QueryParams["platformId"] = builder.PlatformId;
             if (builder.Query != null) QueryParams["query"] = builder.Query;
@@ -169,7 +169,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string? by,            
             string? endDate,            
             long? limit,            
-            string? offset,            
+            long? offset,            
             string? platformBy,            
             string? platformId,            
             string? query,            
@@ -181,7 +181,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (by != null) QueryParams["by"] = by;
             if (endDate != null) QueryParams["endDate"] = endDate;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            if (offset != null) QueryParams["offset"] = offset;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (platformBy != null) QueryParams["platformBy"] = platformBy;
             if (platformId != null) QueryParams["platformId"] = platformId;
             if (query != null) QueryParams["query"] = query;

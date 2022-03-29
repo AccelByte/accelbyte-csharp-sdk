@@ -89,7 +89,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         public override string? Security {get; set;} = "Bearer";
         
-        public Model.ModelsGameRecord? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsGameRecordResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            
             if (code == (HttpStatusCode)204)
             {
@@ -97,11 +97,11 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ModelsGameRecord>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsGameRecordResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsGameRecord>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsGameRecordResponse>(payload);
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

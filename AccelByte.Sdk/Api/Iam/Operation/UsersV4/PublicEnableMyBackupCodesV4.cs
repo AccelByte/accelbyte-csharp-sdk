@@ -5,48 +5,49 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Lobby.Model;
+using AccelByte.Sdk.Api.Iam.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Lobby.Operation
+namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
-    /// ImportConfig
+    /// PublicEnableMyBackupCodesV4
     ///
     /// 
-    /// Required permission ADMIN:NAMESPACE:{namespace}:LOBBY:CONFIG [UPDATE]
     /// 
-    /// Required Scope: social
+    /// (In Development)This endpoint is used to enable 2FA backup codes.
     /// 
-    /// Import config configuration from file. The existing configuration will be replaced.
-    /// The json file to import can be obtained from the /export endpoint.
+    /// 
+    /// 
+    /// 
+    /// This endpoint Requires valid user access token
     /// </summary>
-    public class ImportConfig : AccelByte.Sdk.Core.Operation
+    public class PublicEnableMyBackupCodesV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ImportConfigBuilder Builder = new ImportConfigBuilder();
+        public static PublicEnableMyBackupCodesV4Builder Builder = new PublicEnableMyBackupCodesV4Builder();
 
-        public class ImportConfigBuilder
+        public class PublicEnableMyBackupCodesV4Builder
         {
             
-            internal ImportConfigBuilder() { }
+            internal PublicEnableMyBackupCodesV4Builder() { }
 
 
 
 
 
-            public ImportConfig Build(
+            public PublicEnableMyBackupCodesV4 Build(
                 string namespace_
             )
             {
-                return new ImportConfig(this,
+                return new PublicEnableMyBackupCodesV4(this,
                     namespace_                    
                 );
             }
         }
 
-        private ImportConfig(ImportConfigBuilder builder,
+        private PublicEnableMyBackupCodesV4(PublicEnableMyBackupCodesV4Builder builder,
             string namespace_
         )
         {
@@ -59,7 +60,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         }
         #endregion
 
-        public ImportConfig(
+        public PublicEnableMyBackupCodesV4(
             string namespace_            
         )
         {
@@ -71,17 +72,17 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
         }
 
-        public override string Path => "/lobby/v1/admin/config/namespaces/{namespace}/import";
+        public override string Path => "/iam/v4/public/namespaces/{namespace}/users/me/mfa/backupCode/enable";
 
         public override HttpMethod Method => HttpMethod.Post;
 
-        public override string[] Consumes => new string[] { "multipart/form-data" };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         public override string? Security {get; set;} = "Bearer";
         
-        public Model.ModelsImportConfigResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelBackupCodesResponseV4? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            
             if (code == (HttpStatusCode)204)
             {
@@ -89,11 +90,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ModelsImportConfigResponse>(payload);
+                return JsonSerializer.Deserialize<Model.ModelBackupCodesResponseV4>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsImportConfigResponse>(payload);
+                return JsonSerializer.Deserialize<Model.ModelBackupCodesResponseV4>(payload);
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

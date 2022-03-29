@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPlayerRecord? GetPlayerRecordHandlerV1(GetPlayerRecordHandlerV1 input) {
+        public Model.ModelsPlayerRecordResponse? GetPlayerRecordHandlerV1(GetPlayerRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPlayerRecord? GetPlayerPublicRecordHandlerV1(GetPlayerPublicRecordHandlerV1 input) {
+        public Model.ModelsPlayerRecordResponse? GetPlayerPublicRecordHandlerV1(GetPlayerPublicRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

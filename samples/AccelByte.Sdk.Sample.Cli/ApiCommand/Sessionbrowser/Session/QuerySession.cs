@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         public string? Joinable { get; set; }
 
         [SdkCommandArgument("limit")]
-        public string? Limit { get; set; }
+        public long? Limit { get; set; }
 
         [SdkCommandArgument("matchExist")]
         public string? MatchExist { get; set; }
@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         public string? MatchId { get; set; }
 
         [SdkCommandArgument("offset")]
-        public string? Offset { get; set; }
+        public long? Offset { get; set; }
 
         [SdkCommandArgument("serverStatus")]
         public string? ServerStatus { get; set; }

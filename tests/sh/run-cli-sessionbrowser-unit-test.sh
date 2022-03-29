@@ -132,13 +132,13 @@ $CLI_EXE \
     --gameMode 'a2jXLCtW' \
     --gameVersion 'mHJBi9So' \
     --joinable 'MkSE4eJe' \
-    --limit 'lwO4KPMk' \
-    --matchExist 'y2h8R2fI' \
-    --matchId 'XoXP8gd7' \
-    --offset 'JUabYc3G' \
-    --serverStatus 'MbxTlm1f' \
-    --userId 'su6J3C4s' \
-    --sessionType '5ppGR9Xc' \
+    --limit '23' \
+    --matchExist 'wO4KPMky' \
+    --matchId '2h8R2fIX' \
+    --offset '28' \
+    --serverStatus 'XP8gd7JU' \
+    --userId 'abYc3GMb' \
+    --sessionType 'xTlm1fsu' \
     >$TEMP_FILE 2>&1
 update_status $? 'QuerySession'
 delete_file $TEMP_FILE
@@ -147,7 +147,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 6 CreateSession
 # body param: body
-echo '{"game_session_setting": {"allow_join_in_progress": false, "current_internal_player": 46, "current_player": 90, "map_name": "GgewrLfw", "max_internal_player": 42, "max_player": 51, "mode": "JF4TpbNh", "num_bot": 73, "password": "q2xdmgEB", "settings": {"epFHtf6Z": {}}}, "game_version": "iegqdEL4", "namespace": "fsM6nBzR", "session_type": "VuC1r7UH", "username": "1Liu7UQ0"}' > $TEMP_JSON_INPUT
+echo '{"game_session_setting": {"allow_join_in_progress": true, "current_internal_player": 36, "current_player": 30, "map_name": "pGR9Xcox", "max_internal_player": 90, "max_player": 65, "mode": "gewrLfwv", "num_bot": 51, "password": "JF4TpbNh", "settings": {"Kq2xdmgE": {}}}, "game_version": "BepFHtf6", "namespace": "ZiegqdEL", "session_type": "4fsM6nBz", "username": "RVuC1r7U"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn sessionbrowser \
     --op CreateSession \
@@ -164,7 +164,7 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op GetSessionByUserIDs \
     --namespace $TEST_NAMESPACE \
-    --userIds '304McK87' \
+    --userIds 'H1Liu7UQ' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetSessionByUserIDs'
 delete_file $TEMP_FILE
@@ -176,7 +176,7 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op GetSession \
     --namespace $TEST_NAMESPACE \
-    --sessionID '3tRtr5cf' \
+    --sessionID '0304McK8' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetSession'
 delete_file $TEMP_FILE
@@ -185,12 +185,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 9 UpdateSession
 # body param: body
-echo '{"game_current_player": 97, "game_max_player": 80}' > $TEMP_JSON_INPUT
+echo '{"game_current_player": 39, "game_max_player": 87}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn sessionbrowser \
     --op UpdateSession \
     --namespace $TEST_NAMESPACE \
-    --sessionID '5JJ2c6vs' \
+    --sessionID 'tr5cfWO5' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateSession'
@@ -203,7 +203,7 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op DeleteSession \
     --namespace $TEST_NAMESPACE \
-    --sessionID 'Ons4jNWG' \
+    --sessionID 'JJ2c6vsO' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteSession'
 delete_file $TEMP_FILE
@@ -212,12 +212,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 11 JoinSession
 # body param: body
-echo '{"password": "c7CiUa4w"}' > $TEMP_JSON_INPUT
+echo '{"password": "ns4jNWGc"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn sessionbrowser \
     --op JoinSession \
     --namespace $TEST_NAMESPACE \
-    --sessionID 'M5Eu3Vqy' \
+    --sessionID '7CiUa4wM' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'JoinSession'
@@ -230,7 +230,7 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op DeleteSessionLocalDS \
     --namespace $TEST_NAMESPACE \
-    --sessionID 'msFXporM' \
+    --sessionID '5Eu3Vqym' \
     >$TEMP_FILE 2>&1
 update_status $? 'DeleteSessionLocalDS'
 delete_file $TEMP_FILE
@@ -239,12 +239,12 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 13 AddPlayerToSession
 # body param: body
-echo '{"as_spectator": true, "user_id": "EDR8E72X"}' > $TEMP_JSON_INPUT
+echo '{"as_spectator": true, "user_id": "FXporMqE"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn sessionbrowser \
     --op AddPlayerToSession \
     --namespace $TEST_NAMESPACE \
-    --sessionID 'MKfhl6eq' \
+    --sessionID 'DR8E72XM' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'AddPlayerToSession'
@@ -257,8 +257,8 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op RemovePlayerFromSession \
     --namespace $TEST_NAMESPACE \
-    --sessionID '2FzU3VL3' \
-    --userID 'LNmPLeZd' \
+    --sessionID 'Kfhl6eq2' \
+    --userID 'FzU3VL3L' \
     >$TEMP_FILE 2>&1
 update_status $? 'RemovePlayerFromSession'
 delete_file $TEMP_FILE
@@ -270,7 +270,7 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op GetRecentPlayer \
     --namespace $TEST_NAMESPACE \
-    --userID 'oCXfabFX' \
+    --userID 'NmPLeZdo' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetRecentPlayer'
 delete_file $TEMP_FILE

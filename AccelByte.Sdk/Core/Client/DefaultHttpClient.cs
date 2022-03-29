@@ -77,6 +77,9 @@ namespace AccelByte.Sdk.Core.Client
                 }
                 else if (operation.FormParams.Any())
                 {
+                    if (contentType == String.Empty)
+                        contentType = "application/x-www-form-urlencoded";
+
                     switch (contentType)
                     {
                         case "application/x-www-form-urlencoded":

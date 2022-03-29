@@ -37,13 +37,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string? Isofficial { get; set; }
 
         [SdkCommandArgument("limit")]
-        public string? Limit { get; set; }
+        public long? Limit { get; set; }
 
         [SdkCommandArgument("name")]
         public string? Name { get; set; }
 
         [SdkCommandArgument("offset")]
-        public string? Offset { get; set; }
+        public long? Offset { get; set; }
 
         [SdkCommandArgument("orderby")]
         public string? Orderby { get; set; }
