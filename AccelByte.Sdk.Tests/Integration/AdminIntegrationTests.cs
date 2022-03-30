@@ -368,11 +368,38 @@ namespace AccelByte.Sdk.Tests.Integration
             if (_Sdk == null)
                 return;
 
+            string initialConfigCode = "initialConfigurationCode";
             string configuration_code = "csharpServerSdkConfigCode";
+            string defaultAdminRoleId = String.Empty;
+            string defaultMemberRoleId = String.Empty;
 
             Api.Group.Wrapper.Configuration wConfig = new Api.Group.Wrapper.Configuration(_Sdk);
-            Api.Group.Wrapper.Group wGroup = new Api.Group.Wrapper.Group(_Sdk);            
-            
+            Api.Group.Wrapper.Group wGroup = new Api.Group.Wrapper.Group(_Sdk);
+
+
+            Api.Group.Model.ModelsGetGroupConfigurationResponseV1? gConfigCheck = wConfig.GetGroupConfigurationAdminV1(
+                Api.Group.Operation.GetGroupConfigurationAdminV1.Builder
+                .Build(initialConfigCode, _Sdk.Namespace));
+            if (gConfigCheck == null)
+            {
+                //It means no initial configuration yet. But we need it for the default role id and admin role id.
+                //So we just have to initiate it.
+
+                Api.Group.Model.ModelsCreateGroupConfigurationResponseV1? iConfigResp = wConfig.InitiateGroupConfigurationAdminV1(
+                    Api.Group.Operation.InitiateGroupConfigurationAdminV1.Builder
+                    .Build(_Sdk.Namespace));
+                Assert.IsNotNull(iConfigResp);
+
+                defaultAdminRoleId = iConfigResp!.GroupAdminRoleId!;
+                defaultMemberRoleId = iConfigResp!.GroupMemberRoleId!;
+            }
+            else
+            {
+                //Initial config exists. Grab the role identifiers.
+                defaultAdminRoleId = gConfigCheck.GroupAdminRoleId!;
+                defaultMemberRoleId = gConfigCheck.GroupMemberRoleId!;
+            }
+
             //Create group configuration
             Api.Group.Model.ModelsCreateGroupConfigurationRequestV1 gcRequest = new Api.Group.Model.ModelsCreateGroupConfigurationRequestV1()
             {
@@ -380,8 +407,8 @@ namespace AccelByte.Sdk.Tests.Integration
                 Description = "CSharp SDK Test Configuration Group",
                 GroupMaxMember = 50,
                 Name = "CSharp SDK Test Configuration Group",
-                GroupAdminRoleId = "62384e26f6b131d40dcfa0bb",
-                GroupMemberRoleId = "62384e26f6b131d40dcfa0bc"
+                GroupAdminRoleId = defaultAdminRoleId,
+                GroupMemberRoleId = defaultMemberRoleId
             };
 
             try
@@ -407,7 +434,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 GroupType = "PUBLIC",
                 GroupDescription = "Yeah, anything is welcome here.",
                 GroupMaxMember = 100,
-                GroupRegion = "us-west-1",
+                GroupRegion = "us",
                 ConfigurationCode = configuration_code
             };
 
