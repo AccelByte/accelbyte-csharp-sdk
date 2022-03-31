@@ -375,13 +375,26 @@ namespace AccelByte.Sdk.Tests.Integration
 
             Api.Group.Wrapper.Configuration wConfig = new Api.Group.Wrapper.Configuration(_Sdk);
             Api.Group.Wrapper.Group wGroup = new Api.Group.Wrapper.Group(_Sdk);
-
-
-            Api.Group.Model.ModelsGetGroupConfigurationResponseV1? gConfigCheck = wConfig.GetGroupConfigurationAdminV1(
-                Api.Group.Operation.GetGroupConfigurationAdminV1.Builder
-                .Build(initialConfigCode, _Sdk.Namespace));
-            if (gConfigCheck == null)
+            
+            try
             {
+                Api.Group.Model.ModelsGetGroupConfigurationResponseV1? gConfigCheck = wConfig.GetGroupConfigurationAdminV1(
+                    Api.Group.Operation.GetGroupConfigurationAdminV1.Builder
+                    .Build(initialConfigCode, _Sdk.Namespace));
+
+                //Initial config exists. Grab the role identifiers.
+                defaultAdminRoleId = gConfigCheck!.GroupAdminRoleId!;
+                defaultMemberRoleId = gConfigCheck!.GroupMemberRoleId!;
+            }
+            catch (Exception x)
+            {
+                ModelErrorResponse? mer = System.Text.Json.JsonSerializer.Deserialize<ModelErrorResponse>(x.Message);
+                if (mer == null)
+                    throw new Exception("Failed to parse error response. Payload was `" + x.Message + "`.");
+
+                if (mer.ErrorCode != 73131)
+                    throw new Exception(mer.ErrorMessage, x);
+
                 //It means no initial configuration yet. But we need it for the default role id and admin role id.
                 //So we just have to initiate it.
 
@@ -392,12 +405,6 @@ namespace AccelByte.Sdk.Tests.Integration
 
                 defaultAdminRoleId = iConfigResp!.GroupAdminRoleId!;
                 defaultMemberRoleId = iConfigResp!.GroupMemberRoleId!;
-            }
-            else
-            {
-                //Initial config exists. Grab the role identifiers.
-                defaultAdminRoleId = gConfigCheck.GroupAdminRoleId!;
-                defaultMemberRoleId = gConfigCheck.GroupMemberRoleId!;
             }
 
             //Create group configuration
