@@ -1,8 +1,13 @@
-# AccelByte C# Server SDK
+# AccelByte .NET (C#) SDK
+
+A software development kit (SDK) for interacting with AccelByte services written in C#.
+
+This SDK was generated from OpenAPI spec included in the [spec](spec) directory.
 
 ## Setup
+This SDK requires .NET 6.0 SDK to be installed.
 
-### 1. Add AccelByte C# Server SDK to your solution and project
+### Import SDK Project
 
 ```
 cd /path/to/your_solution
@@ -14,124 +19,98 @@ cd /path/to/your_solution/your_project
 dotnet add reference ../AccelByte.Sdk/AccelByte.Sdk.csproj
 ```
 
-### 2. Set the environment variables
+Or open the solution and build the project, then use the compiled binary in your project.
 
-You have to declare these environment variables below:
+### Environment Variables
 
-`AB_BASE_URL` (Required)
+The following environment variables need to be set when using `DefaultConfigRepository`.
 
-`AB_CLIENT_ID` (Required)
+| Name               | Required                                         | Example                          |
+|--------------------|--------------------------------------------------|----------------------------------|
+| `AB_BASE_URL`      | Yes                                              | https://demo.accelbyte.io        |
+| `AB_CLIENT_ID`     | Yes                                              | abcdef0123456789abcdef0123456789 |
+| `AB_CLIENT_SECRET` | Yes, but only if you use a private `AB_CLIENT_ID`| ab#c,d)ef(ab#c,d)ef(ab#c,d)ef(ab |
+| `AB_NAMESPACE`     | Yes                                              | accelbyte                        |
 
-`AB_CLIENT_SECRET` (Required if you use private OAuth client only)
+## Usage
 
-`AB_APP_NAME` (Required) Provide your application name.
-
-`AB_TRACEID_VERSION` (Optional) Default to '1'.
-
-`AB_ENABLE_TRACEID` (Optional) Default to 1 (true). Put 0 to disable trace id information in request header.
-
-
-## Initializing SDK
-
-You'll have to create an instance if AccelByteConfig and AccelByteSDK object.
+### Instantiation
     
 ```csharp
-var httpClient = new DefaultHttpClient();
-var tokenRepository = DefaultTokenRepository.getInstance();
-var configRepository = new DefaultConfigRepository();
-
-var config = new AccelByteConfig(httpClient, tokenRepository, configRepository);
-var sdk = new AccelByteSDK(config);
+AccelByteSDK sdk = AccelByteSDK.Builder
+    .UseDefaultHttpClient()
+    .UseDefaultConfigRepository() // Using DefaultConfigRepository, make sure the required environment variables are set
+    .UseDefaultTokenRepository()
+    .Build();
 ```
 
-## Logging In
+## Login
 
-### LoginUser
+### Login Using Username and Password
 
 ```csharp
 bool login = sdk.LoginUser("myUsername", "myPassword");
-if (!login) {
-    // unsuccessful login handling ...  
+if (!login)
+{
+    // Login failed  
 }
 ```
 
-
-### LoginClient (client credentials type)
+### Login Using OAuth Client (Public or Private)
 
 ```csharp
 bool login = sdk.LoginClient();
-if (!login) {
-    // unsuccessful login handling ...  
+if (!login)
+{
+    // Login failed  
 }
 ```
 
-## Logging Out
+## Interacting with a Service Endpoint
+
+As an example, we will get current user profile info using [getMyProfileInfo](https://demo.accelbyte.io/basic/apidocs/#/UserProfile/getMyProfileInfo) endpoint available in [basic](https://demo.accelbyte.io/basic/apidocs) service.
+
+```csharp
+// Login using username and password
+
+bool login = sdk.LoginUser("myUsername", "myPassword");
+if (!login)
+{
+    Console.WriteLine("Login failed");
+}
+
+// Instantiate UserProfile wrapper class which is part of basic service
+
+UserProfile userProfile = new UserProfile(sdk);
+
+try
+{
+    // Make a call to getMyProfileInfo endpoint
+    UserProfilePrivateInfo? response = userProfile.GetMyProfileInfo(
+        GetMyProfileInfo.Builder
+        .Build(sdk.Namespace));
+
+    Console.WriteLine(response.UserId); // Success response
+}
+catch (HttpResponseException e)
+{
+    Console.WriteLine(e.Message);
+}
+```
+
+## Logout
 ```csharp
 bool logout = sdk.Logout();
-if (!logout) {
-    // unsuccessful logout handling ...
+if (!logout)
+{
+    // Logout failed
 }
 ```
 
-## WebSocket Service
-```csharp
-//use config object from Sdk initialization.
-LobbyService service = new LobbyService(config);
+## Samples
 
+Sample apps are available in the [samples](samples) directory
 
-//Connect to the lobby service.
-await connectTask service.Connect(false);
+## Documentation
 
-
-//Start listener task.
-Task listenTask = Task.Run(() => service.Listen());
-
-
-//Send message example using string data.
-string example = "type: listIncomingFriendsRequest\nid:1234567890\ncode: 0";
-await service.Send(example);
-
-
-//Send message exampe using model object.
-ListIncomingFriendsRequest modelObject = new ListIncomingFriendsRequest()
-{
-    Id: "1234567890"
-};
-await service.Send(modelObject, 0);
-
-
-//To receive message, attach handler function to spesific event
-service.OnListIncomingFriendsResponse = (response) =>
-{
-    //handle the response...
-};
-
-
-//Disconnect from service.
-await service.Disconnect();
-```
-
-## API Covered
-
-All REST API from AccelByte services are included.
-
-1. achievement
-2. basic
-3. cloudsave
-4. dslogmanager
-5. dsmc
-6. eventlog
-7. gametelemetry
-8. gdpr
-9. group
-10. iam
-11. leaderboard
-12. legal
-13. lobby
-14. matchmaking
-15. platform
-16. qosm
-17. season pass
-18. sessionbrowser
-19. social
-20. ugc
+For documentation about AccelByte services and SDK, see [docs.accelbyte.io](https://docs.accelbyte.io/)
