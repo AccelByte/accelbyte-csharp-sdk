@@ -85,9 +85,8 @@ namespace AccelByte.Sdk.Tests.Integration
             if (_Sdk.Configuration.Credential != null)
                 usernameToTest = _Sdk.Configuration.Credential.Username;
 
-            string target_namespace = "armadademotestqa";
-            string target_deployment = "deployruli";
-            string game_mode = "soloyogs";
+            string target_deployment = "default";
+            string game_mode = "GAME_MODE";
             string party_id = "PARTY_ID";
             string party_user_id = _Sdk.Configuration.Credential!.UserId;
             string session_id = String.Empty;
@@ -102,7 +101,7 @@ namespace AccelByte.Sdk.Tests.Integration
             {
                 SessionType = "p2p",
                 GameVersion = "0.3.0",
-                Namespace = target_namespace,
+                Namespace = _Sdk.Namespace,
                 Username = usernameToTest,
                 GameSessionSetting = new Api.Sessionbrowser.Model.ModelsGameSessionSetting()
                 {
@@ -115,7 +114,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
             Api.Sessionbrowser.Model.ModelsSessionResponse? cResp = wSBSession.CreateSession(
                 Api.Sessionbrowser.Operation.CreateSession.Builder
-                .Build(createSession, target_namespace));
+                .Build(createSession, _Sdk.Namespace));
             Assert.IsNotNull(cResp);
             if (cResp != null)
             {
@@ -154,14 +153,14 @@ namespace AccelByte.Sdk.Tests.Integration
                 Region = "",
                 PodName = "",
                 SessionId = session_id,
-                Namespace = target_namespace,
+                Namespace = _Sdk.Namespace,
             };
 
             ModelsSessionResponse? csResp = wSession.CreateSession(CreateSession.Builder
-                .Build(sessionRequest, target_namespace));
+                .Build(sessionRequest, _Sdk.Namespace));
             Assert.IsNotNull(csResp);
 
-            csResp = wSession.GetSession(GetSession.Builder.Build(target_namespace, session_id));
+            csResp = wSession.GetSession(GetSession.Builder.Build(_Sdk.Namespace, session_id));
             Assert.IsNotNull(csResp);
 
             //Waiting for the server to be ready
@@ -171,14 +170,14 @@ namespace AccelByte.Sdk.Tests.Integration
             {
                 SessionId = session_id
             };
-            wSession.ClaimServer(ClaimServer.Builder.Build(claimServer, target_namespace));
+            wSession.ClaimServer(ClaimServer.Builder.Build(claimServer, _Sdk.Namespace));
 
             wDsmcAdmin.DeleteSession(DeleteSession.Builder
-                .Build(target_namespace, session_id));
+                .Build(_Sdk.Namespace, session_id));
 
             Api.Sessionbrowser.Model.ModelsSessionResponse? delResp = wSBSession.DeleteSession(
                 Api.Sessionbrowser.Operation.DeleteSession.Builder
-                .Build(target_namespace, session_id));
+                .Build(_Sdk.Namespace, session_id));
             Assert.IsNotNull(delResp);
 
             Assert.True(true);
