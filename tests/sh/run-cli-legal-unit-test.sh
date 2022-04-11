@@ -75,12 +75,12 @@ echo "1..$OPERATIONS_COUNT"
 
 #- 1 ChangePreferenceConsent
 # body param: body
-echo '[{"isAccepted": false, "localizedPolicyVersionId": "0Cjv4Ax7", "policyId": "NzYkoppa", "policyVersionId": "0VgFJAhH"}]' > $TEMP_JSON_INPUT
+echo '[{"isAccepted": false, "isNeedToSendEventMarketing": true, "localizedPolicyVersionId": "jv4Ax7Nz", "policyId": "Ykoppa0V", "policyVersionId": "gFJAhHwT"}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op ChangePreferenceConsent \
     --namespace $TEST_NAMESPACE \
-    --userId 'wTb5q010' \
+    --userId 'b5q010gN' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'ChangePreferenceConsent'
@@ -92,7 +92,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op RetrieveAcceptedAgreements \
-    --userId 'gN2MQrbp' \
+    --userId '2MQrbpeR' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveAcceptedAgreements'
 delete_file $TEMP_FILE
@@ -103,10 +103,10 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op RetrieveAllUsersByPolicyVersion \
-    --keyword 'eRnxTlCT' \
-    --limit '63' \
-    --offset '89' \
-    --policyVersionId 'MIbl1a2j' \
+    --keyword 'nxTlCTFS' \
+    --limit '76' \
+    --offset '69' \
+    --policyVersionId 'bl1a2jXL' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveAllUsersByPolicyVersion'
 delete_file $TEMP_FILE
@@ -125,7 +125,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 5 CreatePolicy
 # body param: body
-echo '{"affectedClientIds": ["XLCtWmHJ"], "affectedCountries": ["Bi9SoMkS"], "basePolicyName": "E4eJelwO", "description": "4KPMky2h", "namespace": "8R2fIXoX", "tags": ["P8gd7JUa"], "typeId": "bYc3GMbx"}' > $TEMP_JSON_INPUT
+echo '{"affectedClientIds": ["CtWmHJBi"], "affectedCountries": ["9SoMkSE4"], "basePolicyName": "eJelwO4K", "description": "PMky2h8R", "namespace": "2fIXoXP8", "tags": ["gd7JUabY"], "typeId": "c3GMbxTl"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op CreatePolicy \
@@ -140,7 +140,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op RetrieveSinglePolicy \
-    --basePolicyId 'Tlm1fsu6' \
+    --basePolicyId 'm1fsu6J3' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveSinglePolicy'
 delete_file $TEMP_FILE
@@ -149,11 +149,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 7 PartialUpdatePolicy
 # body param: body
-echo '{"affectedClientIds": ["J3C4s5pp"], "affectedCountries": ["GR9XcoxY"], "basePolicyName": "TGgewrLf", "description": "wvzJF4Tp", "namespace": "bNhKq2xd", "tags": ["mgEBepFH"]}' > $TEMP_JSON_INPUT
+echo '{"affectedClientIds": ["C4s5ppGR"], "affectedCountries": ["9XcoxYTG"], "basePolicyName": "gewrLfwv", "description": "zJF4TpbN", "namespace": "hKq2xdmg", "tags": ["EBepFHtf"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op PartialUpdatePolicy \
-    --basePolicyId 'tf6Ziegq' \
+    --basePolicyId '6ZiegqdE' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'PartialUpdatePolicy'
@@ -165,8 +165,8 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op RetrievePolicyCountry \
-    --basePolicyId 'dEL4fsM6' \
-    --countryCode 'nBzRVuC1' \
+    --basePolicyId 'L4fsM6nB' \
+    --countryCode 'zRVuC1r7' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrievePolicyCountry'
 delete_file $TEMP_FILE
@@ -177,7 +177,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op RetrieveLocalizedPolicyVersions \
-    --policyVersionId 'r7UH1Liu' \
+    --policyVersionId 'UH1Liu7U' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveLocalizedPolicyVersions'
 delete_file $TEMP_FILE
@@ -186,11 +186,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 10 CreateLocalizedPolicyVersion
 # body param: body
-echo '{"contentType": "7UQ0304M", "description": "cK873tRt", "localeCode": "r5cfWO5J"}' > $TEMP_JSON_INPUT
+echo '{"contentType": "Q0304McK", "description": "873tRtr5", "localeCode": "cfWO5JJ2"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op CreateLocalizedPolicyVersion \
-    --policyVersionId 'J2c6vsOn' \
+    --policyVersionId 'c6vsOns4' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'CreateLocalizedPolicyVersion'
@@ -202,7 +202,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op RetrieveSingleLocalizedPolicyVersion \
-    --localizedPolicyVersionId 's4jNWGc7' \
+    --localizedPolicyVersionId 'jNWGc7Ci' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveSingleLocalizedPolicyVersion'
 delete_file $TEMP_FILE
@@ -211,11 +211,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 12 UpdateLocalizedPolicyVersion
 # body param: body
-echo '{"attachmentChecksum": "CiUa4wM5", "attachmentLocation": "Eu3Vqyms", "attachmentVersionIdentifier": "FXporMqE", "contentType": "DR8E72XM", "description": "Kfhl6eq2"}' > $TEMP_JSON_INPUT
+echo '{"attachmentChecksum": "Ua4wM5Eu", "attachmentLocation": "3VqymsFX", "attachmentVersionIdentifier": "porMqEDR", "contentType": "8E72XMKf", "description": "hl6eq2Fz"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op UpdateLocalizedPolicyVersion \
-    --localizedPolicyVersionId 'FzU3VL3L' \
+    --localizedPolicyVersionId 'U3VL3LNm' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'UpdateLocalizedPolicyVersion'
@@ -225,11 +225,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 13 RequestPresignedURL
 # body param: body
-echo '{"contentMD5": "NmPLeZdo", "contentType": "CXfabFXz"}' > $TEMP_JSON_INPUT
+echo '{"contentMD5": "PLeZdoCX", "contentType": "fabFXzvj"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op RequestPresignedURL \
-    --localizedPolicyVersionId 'vjLmai7f' \
+    --localizedPolicyVersionId 'Lmai7fPK' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'RequestPresignedURL'
@@ -241,7 +241,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op SetDefaultPolicy \
-    --localizedPolicyVersionId 'PKvE2Z4a' \
+    --localizedPolicyVersionId 'vE2Z4a63' \
     >$TEMP_FILE 2>&1
 update_status $? 'SetDefaultPolicy'
 delete_file $TEMP_FILE
@@ -250,15 +250,15 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 15 IndirectBulkAcceptVersionedPolicy
 # body param: body
-echo '[{"isAccepted": true, "localizedPolicyVersionId": "LbQSWtsy", "policyId": "z0mGGyHH", "policyVersionId": "FIlIKsXg"}]' > $TEMP_JSON_INPUT
+echo '[{"isAccepted": true, "isNeedToSendEventMarketing": false, "localizedPolicyVersionId": "QSWtsyz0", "policyId": "mGGyHHFI", "policyVersionId": "lIKsXgvS"}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op IndirectBulkAcceptVersionedPolicy \
     --namespace $TEST_NAMESPACE \
-    --userId 'vSrkEgTY' \
-    --publisherUserId 'Vk5iRBE6' \
-    --clientId 'zJJ1BRHr' \
-    --countryCode 'fCHqqp2G' \
+    --userId 'rkEgTYVk' \
+    --publisherUserId '5iRBE6zJ' \
+    --clientId 'J1BRHrfC' \
+    --countryCode 'Hqqp2GwP' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'IndirectBulkAcceptVersionedPolicy'
@@ -271,10 +271,10 @@ $CLI_EXE \
     --sn legal \
     --op AdminRetrieveEligibilities \
     --namespace $TEST_NAMESPACE \
-    --userId 'wPcmzSuY' \
-    --publisherUserId '8w9VYwBE' \
-    --clientId 'fRXoZLfp' \
-    --countryCode 'VFfDwjHH' \
+    --userId 'cmzSuY8w' \
+    --publisherUserId '9VYwBEfR' \
+    --clientId 'XoZLfpVF' \
+    --countryCode 'fDwjHHCW' \
     >$TEMP_FILE 2>&1
 update_status $? 'AdminRetrieveEligibilities'
 delete_file $TEMP_FILE
@@ -285,7 +285,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op RetrievePolicies \
-    --countryCode 'CW2g5u8z' \
+    --countryCode '2g5u8z9y' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrievePolicies'
 delete_file $TEMP_FILE
@@ -294,7 +294,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 18 UpdatePolicyVersion
 # body param: body
-echo '{"description": "9yrpJdIx", "displayVersion": "5vvHS3d6", "isCommitted": true}' > $TEMP_JSON_INPUT
+echo '{"description": "rpJdIx5v", "displayVersion": "vHS3d6PK", "isCommitted": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op UpdatePolicyVersion \
@@ -427,7 +427,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 29 ChangePreferenceConsent1
 # body param: body
-echo '[{"isAccepted": true, "localizedPolicyVersionId": "0bD6dGgw", "policyId": "kYgHzKuI", "policyVersionId": "2RJrboP7"}]' > $TEMP_JSON_INPUT
+echo '[{"isAccepted": true, "isNeedToSendEventMarketing": false, "localizedPolicyVersionId": "D6dGgwkY", "policyId": "gHzKuI2R", "policyVersionId": "JrboP7kf"}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op ChangePreferenceConsent1 \
@@ -442,7 +442,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op AcceptVersionedPolicy \
-    --localizedPolicyVersionId 'kfpIletX' \
+    --localizedPolicyVersionId 'pIletXrC' \
     >$TEMP_FILE 2>&1
 update_status $? 'AcceptVersionedPolicy'
 delete_file $TEMP_FILE
@@ -461,7 +461,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 32 BulkAcceptVersionedPolicy
 # body param: body
-echo '[{"isAccepted": true, "localizedPolicyVersionId": "CK1UVO0j", "policyId": "cs7nCqso", "policyVersionId": "doTFTcWl"}]' > $TEMP_JSON_INPUT
+echo '[{"isAccepted": false, "isNeedToSendEventMarketing": false, "localizedPolicyVersionId": "s7nCqsod", "policyId": "oTFTcWla", "policyVersionId": "IBJAAknU"}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op BulkAcceptVersionedPolicy \
@@ -474,14 +474,14 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 33 IndirectBulkAcceptVersionedPolicyV2
 # body param: body
-echo '[{"isAccepted": false, "localizedPolicyVersionId": "IBJAAknU", "policyId": "6HobZgWl", "policyVersionId": "aLnedDfa"}]' > $TEMP_JSON_INPUT
+echo '[{"isAccepted": false, "isNeedToSendEventMarketing": false, "localizedPolicyVersionId": "ZgWlaLne", "policyId": "dDfasTc8", "policyVersionId": "gr2znWqD"}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op IndirectBulkAcceptVersionedPolicyV2 \
-    --clientId 'sTc8gr2z' \
-    --countryCode 'nWqD6tIc' \
+    --clientId '6tIcfI5Z' \
+    --countryCode '4tUNQ7mQ' \
     --namespace $TEST_NAMESPACE \
-    --userId 'fI5Z4tUN' \
+    --userId 'PjCalZgF' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'IndirectBulkAcceptVersionedPolicyV2'
@@ -491,11 +491,11 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 34 IndirectBulkAcceptVersionedPolicy1
 # body param: body
-echo '[{"isAccepted": false, "localizedPolicyVersionId": "QPjCalZg", "policyId": "FVEQyqav", "policyVersionId": "09OYmxCv"}]' > $TEMP_JSON_INPUT
+echo '[{"isAccepted": true, "isNeedToSendEventMarketing": true, "localizedPolicyVersionId": "qav09OYm", "policyId": "xCvMqVcX", "policyVersionId": "s2OqNz8Z"}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op IndirectBulkAcceptVersionedPolicy1 \
-    --userId 'MqVcXs2O' \
+    --userId 'LBsncbRr' \
     --reqfile $TEMP_JSON_INPUT \
     >$TEMP_FILE 2>&1
 update_status $? 'IndirectBulkAcceptVersionedPolicy1'
@@ -518,10 +518,10 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op RetrieveEligibilitiesPublicIndirect \
-    --clientId 'qNz8ZLBs' \
-    --countryCode 'ncbRrf6u' \
+    --clientId 'f6uEdjUn' \
+    --countryCode 'r04WZNhg' \
     --namespace $TEST_NAMESPACE \
-    --userId 'EdjUnr04' \
+    --userId 'EGvqKWQT' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveEligibilitiesPublicIndirect'
 delete_file $TEMP_FILE
@@ -532,7 +532,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op RetrieveSingleLocalizedPolicyVersion1 \
-    --localizedPolicyVersionId 'WZNhgEGv' \
+    --localizedPolicyVersionId 'kE65j618' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveSingleLocalizedPolicyVersion1'
 delete_file $TEMP_FILE
@@ -543,9 +543,9 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op RetrievePolicyVersions \
-    --basePolicyId 'qKWQTkE6' \
-    --localeId '5j6186p0' \
-    --namespace_ 'WfsnWZuU' \
+    --basePolicyId '6p0WfsnW' \
+    --localeId 'ZuUPsaRn' \
+    --namespace_ 'VdrdBA2h' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrievePolicyVersions'
 delete_file $TEMP_FILE
@@ -556,10 +556,10 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op RetrieveLatestPolicies \
-    --countryCode 'PsaRnVdr' \
+    --countryCode 'XwYyzZMd' \
     --defaultOnEmpty 'False' \
-    --policyType 'MARKETING_PREFERENCE_TYPE' \
-    --tags 'A2hXwYyz' \
+    --policyType 'LEGAL_DOCUMENT_TYPE' \
+    --tags 'L76hnFDg' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveLatestPolicies'
 delete_file $TEMP_FILE
@@ -574,7 +574,7 @@ $CLI_EXE \
     --alwaysIncludeDefault 'False' \
     --defaultOnEmpty 'False' \
     --policyType 'LEGAL_DOCUMENT_TYPE' \
-    --tags 'L76hnFDg' \
+    --tags 'HdfoSqDc' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveLatestPoliciesPublic'
 delete_file $TEMP_FILE
@@ -585,12 +585,12 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn legal \
     --op RetrieveLatestPoliciesByNamespaceAndCountryPublic \
-    --countryCode 'TfofHdfo' \
+    --countryCode 'aFhOc1oK' \
     --namespace $TEST_NAMESPACE \
     --alwaysIncludeDefault 'True' \
-    --defaultOnEmpty 'True' \
+    --defaultOnEmpty 'False' \
     --policyType 'LEGAL_DOCUMENT_TYPE' \
-    --tags 'aFhOc1oK' \
+    --tags 'cfy4EIxw' \
     >$TEMP_FILE 2>&1
 update_status $? 'RetrieveLatestPoliciesByNamespaceAndCountryPublic'
 delete_file $TEMP_FILE

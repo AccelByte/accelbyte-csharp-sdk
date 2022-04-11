@@ -14,7 +14,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// Change2FAMethod
     ///
-    /// Change 2FA method(In Development)
+    /// Change 2FA method
     /// 
     /// 
     /// 

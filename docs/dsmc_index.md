@@ -102,10 +102,10 @@
 | `/dsmcontroller/public/providers` | GET | ListProviders | [ListProviders](../AccelByte.Sdk/Api/Dsmc/Operation/Public/ListProviders.cs) |
 | `/dsmcontroller/public/providers/regions/{region}` | GET | ListProvidersByRegion | [ListProvidersByRegion](../AccelByte.Sdk/Api/Dsmc/Operation/Public/ListProvidersByRegion.cs) |
 
-### Operations Wrapper:  [Operations](../AccelByte.Sdk/Api/Dsmc/Wrapper/Operations.cs)
+### Dsmc Operations Wrapper:  [DsmcOperations](../AccelByte.Sdk/Api/Dsmc/Wrapper/DsmcOperations.cs)
 | Endpoint | Method | ID | Class |
 |---|---|---|---|
-| `/dsmcontroller/v1/messages` | GET | PublicGetMessages | [PublicGetMessages](../AccelByte.Sdk/Api/Dsmc/Operation/Operations/PublicGetMessages.cs) |
+| `/dsmcontroller/v1/messages` | GET | PublicGetMessages | [PublicGetMessages](../AccelByte.Sdk/Api/Dsmc/Operation/DsmcOperations/PublicGetMessages.cs) |
 
 
 &nbsp;  

@@ -30,6 +30,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             public long? Count { get; set; }
             
+            public string? Name { get; set; }
+            
             public long? Offset { get; set; }
             
             internal GetAllDeploymentBuilder() { }
@@ -38,6 +40,12 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             public GetAllDeploymentBuilder SetCount(long _count)
             {
                 Count = _count;
+                return this;
+            }
+
+            public GetAllDeploymentBuilder SetName(string _name)
+            {
+                Name = _name;
                 return this;
             }
 
@@ -67,6 +75,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
+            if (builder.Name != null) QueryParams["name"] = builder.Name;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
             
@@ -78,12 +87,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public GetAllDeployment(
             string namespace_,            
             long? count,            
+            string? name,            
             long? offset            
         )
         {
             PathParams["namespace"] = namespace_;
             
             if (count != null) QueryParams["count"] = Convert.ToString(count)!;
+            if (name != null) QueryParams["name"] = name;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
             

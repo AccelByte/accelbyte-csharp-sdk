@@ -14,7 +14,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// PublicSearchContent
     ///
-    /// Requires valid user token
+    /// Public user can access without token or if token specified, requires valid user token
     /// </summary>
     public class PublicSearchContent : AccelByte.Sdk.Core.Operation
     {

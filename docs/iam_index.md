@@ -318,6 +318,7 @@
 | `/iam/v4/admin/namespaces/{namespace}/users/bulk/validate` | POST | AdminBulkCheckValidUserIDV4 | [AdminBulkCheckValidUserIDV4](../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminBulkCheckValidUserIDV4.cs) |
 | `/iam/v4/admin/namespaces/{namespace}/users/{userId}` | PUT | AdminUpdateUserV4 | [AdminUpdateUserV4](../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminUpdateUserV4.cs) |
 | `/iam/v4/admin/namespaces/{namespace}/users/{userId}/email` | PUT | AdminUpdateUserEmailAddressV4 | [AdminUpdateUserEmailAddressV4](../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminUpdateUserEmailAddressV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/users/{userId}/mfa/disable` | DELETE | AdminDisableUserMFAV4 | [AdminDisableUserMFAV4](../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminDisableUserMFAV4.cs) |
 | `/iam/v4/admin/namespaces/{namespace}/users/{userId}/roles` | GET | AdminListUserRolesV4 | [AdminListUserRolesV4](../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminListUserRolesV4.cs) |
 | `/iam/v4/admin/namespaces/{namespace}/users/{userId}/roles` | PUT | AdminUpdateUserRoleV4 | [AdminUpdateUserRoleV4](../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminUpdateUserRoleV4.cs) |
 | `/iam/v4/admin/namespaces/{namespace}/users/{userId}/roles` | POST | AdminAddUserRoleV4 | [AdminAddUserRoleV4](../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminAddUserRoleV4.cs) |
@@ -349,6 +350,7 @@
 | `/iam/v4/public/namespaces/{namespace}/users/me/mfa/backupCode/disable` | DELETE | PublicDisableMyBackupCodesV4 | [PublicDisableMyBackupCodesV4](../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicDisableMyBackupCodesV4.cs) |
 | `/iam/v4/public/namespaces/{namespace}/users/me/mfa/backupCode/download` | GET | PublicDownloadMyBackupCodesV4 | [PublicDownloadMyBackupCodesV4](../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicDownloadMyBackupCodesV4.cs) |
 | `/iam/v4/public/namespaces/{namespace}/users/me/mfa/backupCode/enable` | POST | PublicEnableMyBackupCodesV4 | [PublicEnableMyBackupCodesV4](../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicEnableMyBackupCodesV4.cs) |
+| `/iam/v4/public/namespaces/{namespace}/users/me/mfa/device` | DELETE | PublicRemoveTrustedDeviceV4 | [PublicRemoveTrustedDeviceV4](../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicRemoveTrustedDeviceV4.cs) |
 | `/iam/v4/public/namespaces/{namespace}/users/me/mfa/factor` | GET | PublicGetMyEnabledFactorsV4 | [PublicGetMyEnabledFactorsV4](../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicGetMyEnabledFactorsV4.cs) |
 | `/iam/v4/public/namespaces/{namespace}/users/me/mfa/factor` | POST | PublicMakeFactorMyDefaultV4 | [PublicMakeFactorMyDefaultV4](../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicMakeFactorMyDefaultV4.cs) |
 

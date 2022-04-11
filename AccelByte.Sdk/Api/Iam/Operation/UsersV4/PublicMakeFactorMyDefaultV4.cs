@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
-    /// (In Development)This endpoint is used to make 2FA factor default.
+    /// This endpoint is used to make 2FA factor default.
     /// 
     /// 
     /// 

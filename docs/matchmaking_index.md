@@ -4,13 +4,13 @@
 
 ## Operations
 
-### Operations Wrapper:  [Operations](../AccelByte.Sdk/Api/Matchmaking/Wrapper/Operations.cs)
+### Matchmaking Operations Wrapper:  [MatchmakingOperations](../AccelByte.Sdk/Api/Matchmaking/Wrapper/MatchmakingOperations.cs)
 | Endpoint | Method | ID | Class |
 |---|---|---|---|
-| `/healthz` | GET | GetHealthcheckInfo | [GetHealthcheckInfo](../AccelByte.Sdk/Api/Matchmaking/Operation/Operations/GetHealthcheckInfo.cs) |
-| `/matchmaking/healthz` | GET | HandlerV3Healthz | [HandlerV3Healthz](../AccelByte.Sdk/Api/Matchmaking/Operation/Operations/HandlerV3Healthz.cs) |
-| `/matchmaking/v1/messages` | GET | PublicGetMessages | [PublicGetMessages](../AccelByte.Sdk/Api/Matchmaking/Operation/Operations/PublicGetMessages.cs) |
-| `/matchmaking/version` | GET | VersionCheckHandler | [VersionCheckHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Operations/VersionCheckHandler.cs) |
+| `/healthz` | GET | GetHealthcheckInfo | [GetHealthcheckInfo](../AccelByte.Sdk/Api/Matchmaking/Operation/MatchmakingOperations/GetHealthcheckInfo.cs) |
+| `/matchmaking/healthz` | GET | HandlerV3Healthz | [HandlerV3Healthz](../AccelByte.Sdk/Api/Matchmaking/Operation/MatchmakingOperations/HandlerV3Healthz.cs) |
+| `/matchmaking/v1/messages` | GET | PublicGetMessages | [PublicGetMessages](../AccelByte.Sdk/Api/Matchmaking/Operation/MatchmakingOperations/PublicGetMessages.cs) |
+| `/matchmaking/version` | GET | VersionCheckHandler | [VersionCheckHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/MatchmakingOperations/VersionCheckHandler.cs) |
 
 ### Matchmaking Wrapper:  [Matchmaking](../AccelByte.Sdk/Api/Matchmaking/Wrapper/Matchmaking.cs)
 | Endpoint | Method | ID | Class |

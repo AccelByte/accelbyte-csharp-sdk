@@ -29,8 +29,17 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("FederationMetadataURL")]
         public string? FederationMetadataURL { get; set; }
         
+        [JsonPropertyName("GenericOauthFlow")]
+        public bool? GenericOauthFlow { get; set; }
+        
         [JsonPropertyName("IsActive")]
         public bool? IsActive { get; set; }
+        
+        [JsonPropertyName("Issuer")]
+        public string? Issuer { get; set; }
+        
+        [JsonPropertyName("JWKSEndpoint")]
+        public string? JWKSEndpoint { get; set; }
         
         [JsonPropertyName("KeyID")]
         public string? KeyID { get; set; }
@@ -44,6 +53,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("PlatformId")]
         public string? PlatformId { get; set; }
         
+        [JsonPropertyName("PlatformName")]
+        public string? PlatformName { get; set; }
+        
         [JsonPropertyName("RedirectUri")]
         public string? RedirectUri { get; set; }
         
@@ -52,6 +64,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
         
         [JsonPropertyName("TeamID")]
         public string? TeamID { get; set; }
+        
+        [JsonPropertyName("TokenAuthenticationType")]
+        public string? TokenAuthenticationType { get; set; }
+        
+        [JsonPropertyName("TokenClaimsMapping")]
+        public Dictionary<string, string>? TokenClaimsMapping { get; set; }
         
         [JsonPropertyName("registeredDomains")]
         public List<AccountcommonRegisteredDomain>? RegisteredDomains { get; set; }

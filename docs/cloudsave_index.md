@@ -4,6 +4,12 @@
 
 ## Operations
 
+### AdminConcurrentRecord Wrapper:  [AdminConcurrentRecord](../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminConcurrentRecord.cs)
+| Endpoint | Method | ID | Class |
+|---|---|---|---|
+| `/cloudsave/v1/admin/namespaces/{namespace}/concurrent/records/{key}` | PUT | AdminPutGameRecordConcurrentHandlerV1 | [AdminPutGameRecordConcurrentHandlerV1](../AccelByte.Sdk/Api/Cloudsave/Operation/AdminConcurrentRecord/AdminPutGameRecordConcurrentHandlerV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/concurrent/records/{key}/public` | PUT | AdminPutPlayerPublicRecordConcurrentHandlerV1 | [AdminPutPlayerPublicRecordConcurrentHandlerV1](../AccelByte.Sdk/Api/Cloudsave/Operation/AdminConcurrentRecord/AdminPutPlayerPublicRecordConcurrentHandlerV1.cs) |
+
 ### AdminGameRecord Wrapper:  [AdminGameRecord](../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminGameRecord.cs)
 | Endpoint | Method | ID | Class |
 |---|---|---|---|
@@ -61,6 +67,7 @@
 
 | Model | Class |
 |---|---|
+| `models.AdminConcurrentRecordRequest` | [ModelsAdminConcurrentRecordRequest](../AccelByte.Sdk/Api/Cloudsave/Model/ModelsAdminConcurrentRecordRequest.cs) |
 | `models.BulkGetPlayerRecordResponse` | [ModelsBulkGetPlayerRecordResponse](../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetPlayerRecordResponse.cs) |
 | `models.BulkUserIDsRequest` | [ModelsBulkUserIDsRequest](../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkUserIDsRequest.cs) |
 | `models.ConcurrentRecordRequest` | [ModelsConcurrentRecordRequest](../AccelByte.Sdk/Api/Cloudsave/Model/ModelsConcurrentRecordRequest.cs) |

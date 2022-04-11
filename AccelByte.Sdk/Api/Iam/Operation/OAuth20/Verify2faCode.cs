@@ -14,7 +14,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// Verify2FACode
     ///
-    /// Verify 2FA code(In Development)
+    /// Verify 2FA code
     /// 
     /// 
     /// 

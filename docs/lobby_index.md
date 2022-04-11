@@ -84,12 +84,12 @@
 | `/lobby/v1/public/party/namespaces/{namespace}/parties/{partyId}` | GET | PublicGetPartyDataV1 | [PublicGetPartyDataV1](../AccelByte.Sdk/Api/Lobby/Operation/Party/PublicGetPartyDataV1.cs) |
 | `/lobby/v1/public/party/namespaces/{namespace}/parties/{partyId}/attributes` | PUT | PublicUpdatePartyAttributesV1 | [PublicUpdatePartyAttributesV1](../AccelByte.Sdk/Api/Lobby/Operation/Party/PublicUpdatePartyAttributesV1.cs) |
 
-### Operations Wrapper:  [Operations](../AccelByte.Sdk/Api/Lobby/Wrapper/Operations.cs)
+### Lobby Operations Wrapper:  [LobbyOperations](../AccelByte.Sdk/Api/Lobby/Wrapper/LobbyOperations.cs)
 | Endpoint | Method | ID | Class |
 |---|---|---|---|
-| `/lobby/v1/admin/party/namespaces/{namespace}/parties/{partyId}/attributes` | PUT | AdminUpdatePartyAttributesV1 | [AdminUpdatePartyAttributesV1](../AccelByte.Sdk/Api/Lobby/Operation/Operations/AdminUpdatePartyAttributesV1.cs) |
-| `/lobby/v1/admin/party/namespaces/{namespace}/parties/{partyId}/join/{userId}` | POST | AdminJoinPartyV1 | [AdminJoinPartyV1](../AccelByte.Sdk/Api/Lobby/Operation/Operations/AdminJoinPartyV1.cs) |
-| `/lobby/v1/messages` | GET | PublicGetMessages | [PublicGetMessages](../AccelByte.Sdk/Api/Lobby/Operation/Operations/PublicGetMessages.cs) |
+| `/lobby/v1/admin/party/namespaces/{namespace}/parties/{partyId}/attributes` | PUT | AdminUpdatePartyAttributesV1 | [AdminUpdatePartyAttributesV1](../AccelByte.Sdk/Api/Lobby/Operation/LobbyOperations/AdminUpdatePartyAttributesV1.cs) |
+| `/lobby/v1/admin/party/namespaces/{namespace}/parties/{partyId}/join/{userId}` | POST | AdminJoinPartyV1 | [AdminJoinPartyV1](../AccelByte.Sdk/Api/Lobby/Operation/LobbyOperations/AdminJoinPartyV1.cs) |
+| `/lobby/v1/messages` | GET | PublicGetMessages | [PublicGetMessages](../AccelByte.Sdk/Api/Lobby/Operation/LobbyOperations/PublicGetMessages.cs) |
 
 ### player Wrapper:  [Player](../AccelByte.Sdk/Api/Lobby/Wrapper/Player.cs)
 | Endpoint | Method | ID | Class |

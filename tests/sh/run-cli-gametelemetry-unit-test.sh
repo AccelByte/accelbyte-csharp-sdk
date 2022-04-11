@@ -15,7 +15,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 TEST_NAMESPACE="test"
 
-OPERATIONS_COUNT=3
+OPERATIONS_COUNT=5
 
 FINISHED_COUNT=0
 SUCCESS_COUNT=0
@@ -73,9 +73,30 @@ echo "foo" >> $CLI_TOKEN_FILE
 echo 'TAP version 13'
 echo "1..$OPERATIONS_COUNT"
 
-#- 1 ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost
+#- 1 AdminGetEventsGameTelemetryV1AdminEventsGet
+$CLI_EXE \
+    --sn gametelemetry \
+    --op AdminGetEventsGameTelemetryV1AdminEventsGet \
+    --namespace_ 'b0Cjv4Ax' \
+    >$TEMP_FILE 2>&1
+update_status $? 'AdminGetEventsGameTelemetryV1AdminEventsGet'
+delete_file $TEMP_FILE
+rm -f $TEMP_JSON_INPUT
+rm -f $TEMP_FILE_UPLOAD
+
+#- 2 AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet
+$CLI_EXE \
+    --sn gametelemetry \
+    --op AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet \
+    >$TEMP_FILE 2>&1
+update_status $? 'AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet'
+delete_file $TEMP_FILE
+rm -f $TEMP_JSON_INPUT
+rm -f $TEMP_FILE_UPLOAD
+
+#- 3 ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost
 # body param: body
-echo '[{"EventId": "b0Cjv4Ax", "EventName": "7NzYkopp", "EventNamespace": "a0VgFJAh", "EventTimestamp": "1987-06-30T00:00:00Z", "Payload": {"Tb5q010g": {}}}]' > $TEMP_JSON_INPUT
+echo '[{"EventId": "7NzYkopp", "EventName": "a0VgFJAh", "EventNamespace": "HwTb5q01", "EventTimestamp": "1997-02-12T00:00:00Z", "Payload": {"N2MQrbpe": {}}}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn gametelemetry \
     --op ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost \
@@ -86,23 +107,23 @@ delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 2 ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet
+#- 4 ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet
 $CLI_EXE \
     --sn gametelemetry \
     --op ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet \
-    --steamId 'N2MQrbpe' \
+    --steamId 'RnxTlCTF' \
     >$TEMP_FILE 2>&1
 update_status $? 'ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet'
 delete_file $TEMP_FILE
 rm -f $TEMP_JSON_INPUT
 rm -f $TEMP_FILE_UPLOAD
 
-#- 3 ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut
+#- 5 ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut
 $CLI_EXE \
     --sn gametelemetry \
     --op ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut \
-    --playtime 'RnxTlCTF' \
-    --steamId 'SMIbl1a2' \
+    --playtime 'SMIbl1a2' \
+    --steamId 'jXLCtWmH' \
     >$TEMP_FILE 2>&1
 update_status $? 'ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut'
 delete_file $TEMP_FILE

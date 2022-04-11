@@ -179,7 +179,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///        "tags": [
     /// 
-    ///            "tag"
+    ///            "exampleTag24"
     /// 
     ///        ],
     /// 

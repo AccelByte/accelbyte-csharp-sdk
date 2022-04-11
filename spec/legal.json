@@ -117,7 +117,7 @@
           "application/json"
         ],
         "responses": {
-          "default": {
+          "204": {
             "description": "successful operation"
           }
         },
@@ -2238,6 +2238,10 @@
     "AcceptAgreementRequest": {
       "properties": {
         "isAccepted": {
+          "type": "boolean",
+          "x-omitempty": false
+        },
+        "isNeedToSendEventMarketing": {
           "type": "boolean",
           "x-omitempty": false
         },

@@ -104,6 +104,8 @@
 | `/ugc/v1/public/namespaces/{namespace}/contents/followed` | GET | GetFollowedContent | [GetFollowedContent](../AccelByte.Sdk/Api/Ugc/Operation/PublicFollow/GetFollowedContent.cs) |
 | `/ugc/v1/public/namespaces/{namespace}/users/followed` | GET | GetFollowedUsers | [GetFollowedUsers](../AccelByte.Sdk/Api/Ugc/Operation/PublicFollow/GetFollowedUsers.cs) |
 | `/ugc/v1/public/namespaces/{namespace}/users/{userId}/follow` | PUT | UpdateUserFollowStatus | [UpdateUserFollowStatus](../AccelByte.Sdk/Api/Ugc/Operation/PublicFollow/UpdateUserFollowStatus.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/followers` | GET | GetPublicFollowers | [GetPublicFollowers](../AccelByte.Sdk/Api/Ugc/Operation/PublicFollow/GetPublicFollowers.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/following` | GET | GetPublicFollowing | [GetPublicFollowing](../AccelByte.Sdk/Api/Ugc/Operation/PublicFollow/GetPublicFollowing.cs) |
 
 ### Public Like Wrapper:  [PublicLike](../AccelByte.Sdk/Api/Ugc/Wrapper/PublicLike.cs)
 | Endpoint | Method | ID | Class |
@@ -125,6 +127,11 @@
 | Endpoint | Method | ID | Class |
 |---|---|---|---|
 | `/ugc/v1/public/namespaces/{namespace}/types` | GET | GetType | [GetType](../AccelByte.Sdk/Api/Ugc/Operation/PublicType/GetType.cs) |
+
+### Public Creator Wrapper:  [PublicCreator](../AccelByte.Sdk/Api/Ugc/Wrapper/PublicCreator.cs)
+| Endpoint | Method | ID | Class |
+|---|---|---|---|
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}` | GET | GetCreator | [GetCreator](../AccelByte.Sdk/Api/Ugc/Operation/PublicCreator/GetCreator.cs) |
 
 ### Public Channel Wrapper:  [PublicChannel](../AccelByte.Sdk/Api/Ugc/Wrapper/PublicChannel.cs)
 | Endpoint | Method | ID | Class |

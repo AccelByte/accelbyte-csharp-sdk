@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
-    /// (In Development)This endpoint is used to generate 8-digits backup codes.
+    /// This endpoint is used to generate 8-digits backup codes.
     /// Each code is a one-time code and will be deleted once used.
     /// 
     /// 

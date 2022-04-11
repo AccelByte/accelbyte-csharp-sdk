@@ -14,7 +14,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// PublicDownloadContentByContentID
     ///
-    /// Requires valid user token
+    /// Public user can access without token or if token specified, requires valid user token
     /// </summary>
     public class PublicDownloadContentByContentID : AccelByte.Sdk.Core.Operation
     {

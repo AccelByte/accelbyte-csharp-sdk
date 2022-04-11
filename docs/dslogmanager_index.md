@@ -17,10 +17,10 @@
 | `/dslogmanager/servers/logs/download` | POST | BatchDownloadServerLogs | [BatchDownloadServerLogs](../AccelByte.Sdk/Api/Dslogmanager/Operation/AllTerminatedServers/BatchDownloadServerLogs.cs) |
 | `/dslogmanager/servers/search` | GET | ListAllTerminatedServers | [ListAllTerminatedServers](../AccelByte.Sdk/Api/Dslogmanager/Operation/AllTerminatedServers/ListAllTerminatedServers.cs) |
 
-### Operations Wrapper:  [Operations](../AccelByte.Sdk/Api/Dslogmanager/Wrapper/Operations.cs)
+### Dslogmanager Operations Wrapper:  [DslogmanagerOperations](../AccelByte.Sdk/Api/Dslogmanager/Wrapper/DslogmanagerOperations.cs)
 | Endpoint | Method | ID | Class |
 |---|---|---|---|
-| `/dslogmanager/v1/messages` | GET | PublicGetMessages | [PublicGetMessages](../AccelByte.Sdk/Api/Dslogmanager/Operation/Operations/PublicGetMessages.cs) |
+| `/dslogmanager/v1/messages` | GET | PublicGetMessages | [PublicGetMessages](../AccelByte.Sdk/Api/Dslogmanager/Operation/DslogmanagerOperations/PublicGetMessages.cs) |
 
 
 &nbsp;  

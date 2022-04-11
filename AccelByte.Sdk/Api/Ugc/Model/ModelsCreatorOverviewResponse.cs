@@ -11,11 +11,17 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         [JsonPropertyName("followCount")]
         public int? FollowCount { get; set; }
         
+        [JsonPropertyName("followingCount")]
+        public int? FollowingCount { get; set; }
+        
         [JsonPropertyName("id")]
         public string? Id { get; set; }
         
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
+        
+        [JsonPropertyName("totalLikedContent")]
+        public long? TotalLikedContent { get; set; }
         
     }
 }

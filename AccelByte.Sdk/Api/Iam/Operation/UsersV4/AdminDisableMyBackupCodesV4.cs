@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
-    /// (In Development)This endpoint is used to enable 2FA backup codes.
+    /// This endpoint is used to enable 2FA backup codes.
     /// 
     /// 
     /// 

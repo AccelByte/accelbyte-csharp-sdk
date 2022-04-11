@@ -254,7 +254,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 15 AdminUpdateConfigV1
 # body param: body
-echo '{"allowInviteNonConnectedUser": false, "autoKickOnDisconnect": false, "autoKickOnDisconnectDelay": 71, "cancelTicketOnDisconnect": false, "chatRateLimitBurst": 3, "chatRateLimitDuration": 5, "concurrentUsersLimit": 65, "disablePartyInvitationToken": false, "enableChat": true, "entitlementCheck": false, "entitlementItemID": "m1fsu6J3", "generalRateLimitBurst": 57, "generalRateLimitDuration": 36, "keepPresenceActivityOnDisconnect": false, "maxPartyMember": 30, "profanityFilter": false, "readyConsentTimeout": 29}' > $TEMP_JSON_INPUT
+echo '{"allowInviteNonConnectedUser": false, "allowJoinPartyDuringMatchmaking": false, "autoKickOnDisconnect": false, "autoKickOnDisconnectDelay": 3, "cancelTicketOnDisconnect": false, "chatRateLimitBurst": 65, "chatRateLimitDuration": 77, "concurrentUsersLimit": 2, "disableInvitationOnJoinParty": true, "enableChat": false, "entitlementCheck": false, "entitlementItemID": "1fsu6J3C", "generalRateLimitBurst": 36, "generalRateLimitDuration": 30, "keepPresenceActivityOnDisconnect": false, "maxPartyMember": 64, "profanityFilter": false, "readyConsentTimeout": 29}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminUpdateConfigV1 \

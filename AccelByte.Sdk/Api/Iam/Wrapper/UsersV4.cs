@@ -39,6 +39,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public void AdminDisableUserMFAV4(AdminDisableUserMFAV4 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelListUserRolesV4Response? AdminListUserRolesV4(AdminListUserRolesV4 input) {
             var response = _sdk.RunRequest(input);
 
@@ -283,6 +291,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicRemoveTrustedDeviceV4(PublicRemoveTrustedDeviceV4 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

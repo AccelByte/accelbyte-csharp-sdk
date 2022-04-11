@@ -1,5 +1,41 @@
 # Changelog
 
+## v0.6.0
+- Updated integration tests.
+- Renamed some operation wrappers for better clarity.
+- Updated readme file.
+- Added operation indexes at [docs](docs).
+- Updated APIs.
+	- cloudsave:
+		- added new endpoints.
+	- dslogmanager:
+		- **BREAKING CHANGES**
+			- Renamed wrapper Operations class to DslogmanagerOperations.
+	- dsmc
+		- **BREAKING CHANGES**
+			- Renamed wrapper Operations class to DsmcOperations.
+	- gametelemetry
+		- added new endpoints.
+		- **BREAKING CHANGES**
+			- Renamed wrapper Operations class to GametelemetryOperations.
+	- iam
+		- updated endpoints.
+	- legal
+		- updated endpoints.
+	- lobby
+		- updated models.
+		- **BREAKING CHANGES**
+			- Renamed wrapper Operations class to LobbyOperations.
+	- matchmaking
+		- updated models.
+		- **BREAKING CHANGES**
+			- Renamed wrapper Operations class to MatchmakingOperations.
+	- platform
+		- updated endpoints.
+	- ugc
+		- updated endpoints.
+		- added new endpoints.
+
 ## v0.5.0
 - Fixed some of integration tests.
 - Added new integration tests for legal service.

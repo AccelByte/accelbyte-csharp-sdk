@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// 
     /// 
-    /// (In Development)This endpoint is used to get user enabled factors.
+    /// This endpoint is used to get user enabled factors.
     /// 
     /// 
     /// 

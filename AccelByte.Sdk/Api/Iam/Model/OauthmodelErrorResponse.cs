@@ -8,6 +8,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class OauthmodelErrorResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("default_factor")]
+        public string? DefaultFactor { get; set; }
+        
         [JsonPropertyName("error")]
         public string? Error { get; set; }
         
@@ -16,6 +19,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
         
         [JsonPropertyName("error_uri")]
         public string? ErrorUri { get; set; }
+        
+        [JsonPropertyName("factors")]
+        public List<string>? Factors { get; set; }
+        
+        [JsonPropertyName("mfa_token")]
+        public string? MfaToken { get; set; }
         
     }
 }

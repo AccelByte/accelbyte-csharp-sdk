@@ -205,7 +205,8 @@ $CLI_EXE \
     --op GetAllDeployment \
     --namespace $TEST_NAMESPACE \
     --count '34' \
-    --offset '92' \
+    --name '7UH1Liu7' \
+    --offset '93' \
     >$TEMP_FILE 2>&1
 update_status $? 'GetAllDeployment'
 delete_file $TEMP_FILE
@@ -216,7 +217,7 @@ rm -f $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn dsmc \
     --op GetDeployment \
-    --deployment 'H1Liu7UQ' \
+    --deployment 'Q0304McK' \
     --namespace $TEST_NAMESPACE \
     >$TEMP_FILE 2>&1
 update_status $? 'GetDeployment'
@@ -226,7 +227,7 @@ rm -f $TEMP_FILE_UPLOAD
 
 #- 14 CreateDeployment
 # body param: body
-echo '{"allow_version_override": false, "buffer_count": 73, "buffer_percent": 39, "configuration": "Rtr5cfWO", "enable_region_overrides": false, "game_version": "6vsOns4j", "max_count": 79, "min_count": 97, "overrides": {"Gc7CiUa4": {"buffer_count": 44, "buffer_percent": 76, "configuration": "5Eu3Vqym", "enable_region_overrides": true, "game_version": "FXporMqE", "max_count": 59, "min_count": 86, "name": "8E72XMKf", "region_overrides": {"hl6eq2Fz": {"buffer_count": 92, "buffer_percent": 95, "max_count": 75, "min_count": 74, "name": "NmPLeZdo", "use_buffer_percent": true}}, "regions": ["XfabFXzv"], "use_buffer_percent": false}}, "region_overrides": {"Lmai7fPK": {"buffer_count": 42, "buffer_percent": 60, "max_count": 1, "min_count": 93, "name": "VtLbQSWt", "use_buffer_percent": true}}, "regions": ["yz0mGGyH"], "use_buffer_percent": true}' > $TEMP_JSON_INPUT
+echo '{"allow_version_override": true, "buffer_count": 87, "buffer_percent": 38, "configuration": "r5cfWO5J", "enable_region_overrides": false, "game_version": "6vsOns4j", "max_count": 79, "min_count": 97, "overrides": {"Gc7CiUa4": {"buffer_count": 44, "buffer_percent": 76, "configuration": "5Eu3Vqym", "enable_region_overrides": true, "game_version": "FXporMqE", "max_count": 59, "min_count": 86, "name": "8E72XMKf", "region_overrides": {"hl6eq2Fz": {"buffer_count": 92, "buffer_percent": 95, "max_count": 75, "min_count": 74, "name": "NmPLeZdo", "use_buffer_percent": true}}, "regions": ["XfabFXzv"], "use_buffer_percent": false}}, "region_overrides": {"Lmai7fPK": {"buffer_count": 42, "buffer_percent": 60, "max_count": 1, "min_count": 93, "name": "VtLbQSWt", "use_buffer_percent": true}}, "regions": ["yz0mGGyH"], "use_buffer_percent": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op CreateDeployment \

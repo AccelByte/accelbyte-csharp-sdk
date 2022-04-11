@@ -11,6 +11,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonPropertyName("allowInviteNonConnectedUser")]
         public bool? AllowInviteNonConnectedUser { get; set; }
         
+        [JsonPropertyName("allowJoinPartyDuringMatchmaking")]
+        public bool? AllowJoinPartyDuringMatchmaking { get; set; }
+        
         [JsonPropertyName("autoKickOnDisconnect")]
         public bool? AutoKickOnDisconnect { get; set; }
         
@@ -29,8 +32,8 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonPropertyName("concurrentUsersLimit")]
         public int? ConcurrentUsersLimit { get; set; }
         
-        [JsonPropertyName("disablePartyInvitationToken")]
-        public bool? DisablePartyInvitationToken { get; set; }
+        [JsonPropertyName("disableInvitationOnJoinParty")]
+        public bool? DisableInvitationOnJoinParty { get; set; }
         
         [JsonPropertyName("enableChat")]
         public bool? EnableChat { get; set; }
