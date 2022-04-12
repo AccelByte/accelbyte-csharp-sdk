@@ -176,7 +176,8 @@ namespace AccelByte.Sdk.Tests.Integration
                     LocalizedPolicyVersionId = targetLocalizedPolicyId,
                     PolicyVersionId = targetPolicyVersionId,
                     PolicyId = targetPolicyId,
-                    IsAccepted = true
+                    IsAccepted = true,
+                    IsNeedToSendEventMarketing = false
                 }
             };
 
@@ -219,7 +220,8 @@ namespace AccelByte.Sdk.Tests.Integration
                     LocalizedPolicyVersionId = "152b9b0f-7b8e-4a9e-8a9d-8c82420ad8b3",
                     PolicyVersionId = "a76ea12c-14fd-46c5-886f-fd3d0ded4408",
                     PolicyId = "6adb3d65-b428-4dbc-a08d-e5126c644557", // the marketing policy
-                    IsAccepted = true
+                    IsAccepted = true,
+                    IsNeedToSendEventMarketing = false
                 }
             };
 

@@ -117,7 +117,7 @@
           "application/json"
         ],
         "responses": {
-          "204": {
+          "200": {
             "description": "successful operation"
           }
         },
