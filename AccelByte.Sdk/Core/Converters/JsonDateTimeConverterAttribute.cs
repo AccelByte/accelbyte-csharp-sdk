@@ -10,7 +10,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace AccelByte.Sdk.Core.Util
+namespace AccelByte.Sdk.Core.Converters
 {
     public class JsonDateTimeConverterAttribute : JsonConverterAttribute
     {

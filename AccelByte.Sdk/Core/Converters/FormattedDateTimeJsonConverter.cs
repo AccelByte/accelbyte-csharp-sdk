@@ -11,7 +11,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Globalization;
 
-namespace AccelByte.Sdk.Core.Util
+namespace AccelByte.Sdk.Core.Converters
 {
     public class FormattedDateTimeJsonConverter : JsonConverter<DateTime>
     {
