@@ -34,8 +34,5 @@ test_cli:
 
 test_integration:
 	@test -n "$(TEST_ENV_FILE)" || (echo "TEST_ENV_FILE is not set" ; exit 1)
-	bash -c 'docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ \
-		--network host mcr.microsoft.com/dotnet/sdk:6.0 \\
-		-e DOTNET_CLI_HOME="/data" \
-		--env-file "$(TEST_ENV_FILE)" \
+	bash -c 'docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ --network host -e DOTNET_CLI_HOME="/data" --env-file "$(TEST_ENV_FILE)" mcr.microsoft.com/dotnet/sdk:6.0 \
 		dotnet test --nologo --filter "TestCategory=Integration" --verbosity n'
