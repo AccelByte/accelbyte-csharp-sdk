@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("currency")]
         public CurrencySummary? Currency { get; set; }
-        
+
         [JsonPropertyName("ext")]
         public Dictionary<string, object>? Ext { get; set; }
-        
+
         [JsonPropertyName("free")]
         public bool? Free { get; set; }
-        
+
     }
 }

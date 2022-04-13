@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("apiKey")]
         public string? ApiKey { get; set; }
-        
+
     }
 }

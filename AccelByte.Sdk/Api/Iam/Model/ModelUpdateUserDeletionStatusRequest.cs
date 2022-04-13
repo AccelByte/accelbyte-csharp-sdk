@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
-        
+
     }
 }

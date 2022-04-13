@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
     {
         [JsonPropertyName("matching_parties")]
         public List<ModelsMatchingParty>? MatchingParties { get; set; }
-        
+
     }
 }

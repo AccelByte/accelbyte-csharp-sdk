@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("sandboxId")]
         public string? SandboxId { get; set; }
-        
+
     }
 }

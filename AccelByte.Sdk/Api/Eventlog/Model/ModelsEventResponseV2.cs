@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
     {
         [JsonPropertyName("data")]
         public List<ModelsEventV2>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public ModelsPaging? Paging { get; set; }
-        
+
     }
 }

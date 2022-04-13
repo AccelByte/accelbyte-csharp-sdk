@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
     {
         [JsonPropertyName("data")]
         public List<ModelsRecentPlayerHistory>? Data { get; set; }
-        
+
     }
 }

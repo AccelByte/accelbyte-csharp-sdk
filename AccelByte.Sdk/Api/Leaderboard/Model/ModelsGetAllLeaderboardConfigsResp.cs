@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
     {
         [JsonPropertyName("data")]
         public List<ModelsGetLeaderboardConfigResp>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public ModelsPagination? Paging { get; set; }
-        
+
     }
 }

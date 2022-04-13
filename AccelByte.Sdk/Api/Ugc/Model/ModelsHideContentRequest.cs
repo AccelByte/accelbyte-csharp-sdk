@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Ugc.Model
     {
         [JsonPropertyName("isHidden")]
         public bool? IsHidden { get; set; }
-        
+
     }
 }

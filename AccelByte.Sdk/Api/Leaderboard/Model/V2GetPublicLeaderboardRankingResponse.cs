@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
     {
         [JsonPropertyName("data")]
         public List<V2Entry>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public V2Pagination? Paging { get; set; }
-        
+
     }
 }

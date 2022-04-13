@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("data")]
         public List<OrderInfo>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public Paging? Paging { get; set; }
-        
+
     }
 }

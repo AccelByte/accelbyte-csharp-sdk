@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("values")]
         public List<string>? Values { get; set; }
-        
+
     }
 }

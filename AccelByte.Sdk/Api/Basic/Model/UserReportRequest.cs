@@ -10,18 +10,18 @@ namespace AccelByte.Sdk.Api.Basic.Model
     {
         [JsonPropertyName("category")]
         public string? Category { get; set; }
-        
+
         [JsonPropertyName("description")]
         public string? Description { get; set; }
-        
+
         [JsonPropertyName("gameSessionId")]
         public string? GameSessionId { get; set; }
-        
+
         [JsonPropertyName("subcategory")]
         public string? Subcategory { get; set; }
-        
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
-        
+
     }
 }

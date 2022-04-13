@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("configs")]
         public List<ModelsConfig>? Configs { get; set; }
-        
+
     }
 }

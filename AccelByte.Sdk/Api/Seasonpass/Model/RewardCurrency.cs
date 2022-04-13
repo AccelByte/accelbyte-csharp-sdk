@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     {
         [JsonPropertyName("currencyCode")]
         public string? CurrencyCode { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
     }
 }

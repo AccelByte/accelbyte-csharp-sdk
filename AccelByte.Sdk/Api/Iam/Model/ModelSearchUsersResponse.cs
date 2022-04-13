@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("Data")]
         public List<AccountcommonUserSearchResult>? Data { get; set; }
-        
+
     }
 }

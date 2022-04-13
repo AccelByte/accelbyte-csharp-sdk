@@ -10,33 +10,33 @@ namespace AccelByte.Sdk.Api.Legal.Model
     {
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
-        
+
         [JsonPropertyName("description")]
         public string? Description { get; set; }
-        
+
         [JsonPropertyName("displayVersion")]
         public string? DisplayVersion { get; set; }
-        
+
         [JsonPropertyName("id")]
         public string? Id { get; set; }
-        
+
         [JsonPropertyName("isCommitted")]
         public bool? IsCommitted { get; set; }
-        
+
         [JsonPropertyName("isInEffect")]
         public bool? IsInEffect { get; set; }
-        
+
         [JsonPropertyName("localizedPolicyVersions")]
         public List<LocalizedPolicyVersionObject>? LocalizedPolicyVersions { get; set; }
-        
+
         [JsonPropertyName("publishedDate")]
         public DateTime? PublishedDate { get; set; }
-        
+
         [JsonPropertyName("status")]
         public string? Status { get; set; }
-        
+
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
-        
+
     }
 }

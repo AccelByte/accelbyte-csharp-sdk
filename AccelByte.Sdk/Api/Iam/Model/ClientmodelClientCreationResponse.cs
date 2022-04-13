@@ -10,18 +10,18 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("ClientId")]
         public string? ClientId { get; set; }
-        
+
         [JsonPropertyName("ClientName")]
         public string? ClientName { get; set; }
-        
+
         [JsonPropertyName("ClientPermissions")]
         public List<AccountcommonPermission>? ClientPermissions { get; set; }
-        
+
         [JsonPropertyName("Namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("RedirectUri")]
         public string? RedirectUri { get; set; }
-        
+
     }
 }

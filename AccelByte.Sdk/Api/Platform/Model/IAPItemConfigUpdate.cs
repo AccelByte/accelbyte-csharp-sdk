@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("data")]
         public List<IAPItemEntry>? Data { get; set; }
-        
+
     }
 }

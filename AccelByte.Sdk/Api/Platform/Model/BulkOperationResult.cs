@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("affected")]
         public int? Affected { get; set; }
-        
+
     }
 }

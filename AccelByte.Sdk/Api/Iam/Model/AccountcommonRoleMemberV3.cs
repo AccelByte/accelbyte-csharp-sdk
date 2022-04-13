@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("displayName")]
         public string? DisplayName { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
-        
+
     }
 }

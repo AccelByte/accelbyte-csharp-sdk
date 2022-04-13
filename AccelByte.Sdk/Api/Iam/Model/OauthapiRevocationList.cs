@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("revoked_tokens")]
         public BloomFilterJSON? RevokedTokens { get; set; }
-        
+
         [JsonPropertyName("revoked_users")]
         public List<OauthcommonUserRevocationListRecord>? RevokedUsers { get; set; }
-        
+
     }
 }

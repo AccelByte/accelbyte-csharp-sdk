@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("itemId")]
         public string? ItemId_ { get; set; }
-        
+
     }
 }

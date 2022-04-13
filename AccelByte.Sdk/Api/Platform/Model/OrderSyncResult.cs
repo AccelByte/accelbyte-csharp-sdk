@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("nextEvaluatedKey")]
         public string? NextEvaluatedKey { get; set; }
-        
+
         [JsonPropertyName("orders")]
         public List<Order>? Orders { get; set; }
-        
+
     }
 }

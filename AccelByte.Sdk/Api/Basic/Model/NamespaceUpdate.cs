@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Basic.Model
     {
         [JsonPropertyName("displayName")]
         public string? DisplayName { get; set; }
-        
+
     }
 }

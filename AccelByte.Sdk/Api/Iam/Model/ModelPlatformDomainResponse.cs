@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("registeredDomains")]
         public List<AccountcommonRegisteredDomain>? RegisteredDomains { get; set; }
-        
+
     }
 }

@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
     {
         [JsonPropertyName("match_id")]
         public string? MatchId { get; set; }
-        
+
     }
 }

@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("epicGamesJwtToken")]
         public string? EpicGamesJwtToken { get; set; }
-        
+
     }
 }

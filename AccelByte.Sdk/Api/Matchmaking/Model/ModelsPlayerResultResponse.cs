@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
     {
         [JsonPropertyName("current_score")]
         public List<ModelsResultAttributeResponse>? CurrentScore { get; set; }
-        
+
         [JsonPropertyName("user_id")]
         public string? UserId { get; set; }
-        
+
     }
 }

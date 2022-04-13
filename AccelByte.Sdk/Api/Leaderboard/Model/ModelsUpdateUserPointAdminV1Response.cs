@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
     {
         [JsonPropertyName("point")]
         public double? Point { get; set; }
-        
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
-        
+
     }
 }

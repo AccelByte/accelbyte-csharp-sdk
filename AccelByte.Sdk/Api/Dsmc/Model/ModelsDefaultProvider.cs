@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("provider_name")]
         public string? ProviderName { get; set; }
-        
+
     }
 }

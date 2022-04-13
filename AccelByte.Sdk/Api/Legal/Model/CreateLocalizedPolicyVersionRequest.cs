@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Legal.Model
     {
         [JsonPropertyName("contentType")]
         public string? ContentType { get; set; }
-        
+
         [JsonPropertyName("description")]
         public string? Description { get; set; }
-        
+
         [JsonPropertyName("localeCode")]
         public string? LocaleCode { get; set; }
-        
+
     }
 }

@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("assignedNamespaces")]
         public List<string>? AssignedNamespaces { get; set; }
-        
+
         [JsonPropertyName("roleId")]
         public string? RoleId { get; set; }
-        
+
         [JsonPropertyName("roleName")]
         public string? RoleName { get; set; }
-        
+
     }
 }

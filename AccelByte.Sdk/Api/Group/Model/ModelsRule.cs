@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Group.Model
     {
         [JsonPropertyName("allowedAction")]
         public string? AllowedAction { get; set; }
-        
+
         [JsonPropertyName("ruleDetail")]
         public List<ModelsRuleInformation>? RuleDetail { get; set; }
-        
+
     }
 }

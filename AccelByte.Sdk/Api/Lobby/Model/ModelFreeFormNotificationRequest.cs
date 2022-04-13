@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("message")]
         public string? Message { get; set; }
-        
+
         [JsonPropertyName("topic")]
         public string? Topic { get; set; }
-        
+
     }
 }

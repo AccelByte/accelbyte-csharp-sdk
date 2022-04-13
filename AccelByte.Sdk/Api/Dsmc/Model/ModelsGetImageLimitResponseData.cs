@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("image_count")]
         public int? ImageCount { get; set; }
-        
+
         [JsonPropertyName("image_limit")]
         public int? ImageLimit { get; set; }
-        
+
     }
 }

@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("msg")]
         public string? Msg { get; set; }
-        
+
         [JsonPropertyName("success")]
         public bool? Success { get; set; }
-        
+
     }
 }

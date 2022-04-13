@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("data")]
         public List<ModelLocalization>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public ModelPagination? Paging { get; set; }
-        
+
     }
 }

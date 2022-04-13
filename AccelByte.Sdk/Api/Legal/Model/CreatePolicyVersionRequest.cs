@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Legal.Model
     {
         [JsonPropertyName("description")]
         public string? Description { get; set; }
-        
+
         [JsonPropertyName("displayVersion")]
         public string? DisplayVersion { get; set; }
-        
+
         [JsonPropertyName("isCommitted")]
         public bool? IsCommitted { get; set; }
-        
+
     }
 }

@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
     {
         [JsonPropertyName("LastActivityTime")]
         public DateTime? LastActivityTime { get; set; }
-        
+
         [JsonPropertyName("Namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("UserID")]
         public string? UserID { get; set; }
-        
+
     }
 }

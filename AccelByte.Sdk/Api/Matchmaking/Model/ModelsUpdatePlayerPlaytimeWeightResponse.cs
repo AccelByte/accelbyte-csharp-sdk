@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
     {
         [JsonPropertyName("playtime")]
         public string? Playtime { get; set; }
-        
+
         [JsonPropertyName("userID")]
         public string? UserID { get; set; }
-        
+
         [JsonPropertyName("weight")]
         public double? Weight { get; set; }
-        
+
     }
 }

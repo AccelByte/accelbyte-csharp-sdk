@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Group.Model
     {
         [JsonPropertyName("memberRoleId")]
         public string? MemberRoleId { get; set; }
-        
+
         [JsonPropertyName("memberRoleName")]
         public string? MemberRoleName { get; set; }
-        
+
         [JsonPropertyName("memberRolePermissions")]
         public List<ModelsRolePermission>? MemberRolePermissions { get; set; }
-        
+
     }
 }

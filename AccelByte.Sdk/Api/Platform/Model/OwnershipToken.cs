@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("ownershipToken")]
         public string? OwnershipToken_ { get; set; }
-        
+
     }
 }

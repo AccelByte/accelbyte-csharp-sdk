@@ -10,30 +10,30 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("artifactPath")]
         public string? ArtifactPath { get; set; }
-        
+
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
-        
+
         [JsonPropertyName("dockerPath")]
         public string? DockerPath { get; set; }
-        
+
         [JsonPropertyName("image")]
         public string? Image { get; set; }
-        
+
         [JsonPropertyName("modifiedBy")]
         public string? ModifiedBy { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("persistent")]
         public bool? Persistent { get; set; }
-        
+
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
-        
+
         [JsonPropertyName("version")]
         public string? Version { get; set; }
-        
+
     }
 }

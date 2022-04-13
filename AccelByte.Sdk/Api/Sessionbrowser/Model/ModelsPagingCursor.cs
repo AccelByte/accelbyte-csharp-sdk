@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
     {
         [JsonPropertyName("next")]
         public string? Next { get; set; }
-        
+
         [JsonPropertyName("previous")]
         public string? Previous { get; set; }
-        
+
     }
 }

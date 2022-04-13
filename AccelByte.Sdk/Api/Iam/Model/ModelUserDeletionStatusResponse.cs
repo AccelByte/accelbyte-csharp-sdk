@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("deletionStatus")]
         public bool? DeletionStatus { get; set; }
-        
+
     }
 }

@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("Code")]
         public string? Code { get; set; }
-        
+
         [JsonPropertyName("ContactType")]
         public string? ContactType { get; set; }
-        
+
         [JsonPropertyName("LanguageTag")]
         public string? LanguageTag { get; set; }
-        
+
         [JsonPropertyName("validateOnly")]
         public bool? ValidateOnly { get; set; }
-        
+
     }
 }

@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Achievement.Model
     {
         [JsonPropertyName("failedConfigs")]
         public List<string>? FailedConfigs { get; set; }
-        
+
         [JsonPropertyName("ignoredConfigs")]
         public List<string>? IgnoredConfigs { get; set; }
-        
+
         [JsonPropertyName("newConfigs")]
         public List<string>? NewConfigs { get; set; }
-        
+
         [JsonPropertyName("replacedConfigs")]
         public List<string>? ReplacedConfigs { get; set; }
-        
+
     }
 }

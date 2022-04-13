@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
     {
         [JsonPropertyName("alliance")]
         public ModelsAllianceRule? Alliance { get; set; }
-        
+
         [JsonPropertyName("alliance_flexing_rule")]
         public List<ModelsAllianceFlexingRule>? AllianceFlexingRule { get; set; }
-        
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-        
+
     }
 }

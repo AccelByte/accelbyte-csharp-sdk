@@ -10,27 +10,27 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
     {
         [JsonPropertyName("_id")]
         public string? Id { get; set; }
-        
+
         [JsonPropertyName("created_at")]
         public DateTime? CreatedAt { get; set; }
-        
+
         [JsonPropertyName("game_mode")]
         public string? GameMode { get; set; }
-        
+
         [JsonPropertyName("joinable")]
         public bool? Joinable { get; set; }
-        
+
         [JsonPropertyName("match_id")]
         public string? MatchId { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("status")]
         public string? Status { get; set; }
-        
+
         [JsonPropertyName("sub_game_mode")]
         public List<string>? SubGameMode { get; set; }
-        
+
     }
 }

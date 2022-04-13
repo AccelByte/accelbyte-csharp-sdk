@@ -3,6 +3,8 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
@@ -10,9 +12,55 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("rewards")]
         public List<PlatformReward>? Rewards { get; set; }
-        
+
         [JsonPropertyName("source")]
-        public string? Source { get; set; }
-        
+        [JsonStringEnum]
+        public RewardsRequestSource? Source { get; set; }
+
     }
+
+    public class RewardsRequestSource : StringEnum<RewardsRequestSource>
+    {
+        public static readonly RewardsRequestSource PURCHASE
+            = new RewardsRequestSource("PURCHASE");
+
+        public static readonly RewardsRequestSource IAP
+            = new RewardsRequestSource("IAP");
+
+        public static readonly RewardsRequestSource PROMOTION
+            = new RewardsRequestSource("PROMOTION");
+
+        public static readonly RewardsRequestSource ACHIEVEMENT
+            = new RewardsRequestSource("ACHIEVEMENT");
+
+        public static readonly RewardsRequestSource REFERRALBONUS
+            = new RewardsRequestSource("REFERRAL_BONUS");
+
+        public static readonly RewardsRequestSource REDEEMCODE
+            = new RewardsRequestSource("REDEEM_CODE");
+
+        public static readonly RewardsRequestSource REWARD
+            = new RewardsRequestSource("REWARD");
+
+        public static readonly RewardsRequestSource GIFT
+            = new RewardsRequestSource("GIFT");
+
+        public static readonly RewardsRequestSource DLC
+            = new RewardsRequestSource("DLC");
+
+        public static readonly RewardsRequestSource OTHER
+            = new RewardsRequestSource("OTHER");
+
+
+        public static implicit operator RewardsRequestSource(string value)
+        {
+            return Create(value);
+        }
+
+        public RewardsRequestSource(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

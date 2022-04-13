@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Model
     {
         [JsonPropertyName("detail")]
         public List<ValidationError>? Detail { get; set; }
-        
+
     }
 }

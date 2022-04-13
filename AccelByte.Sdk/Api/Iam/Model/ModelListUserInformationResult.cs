@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("data")]
         public List<ModelUserInfoResponse>? Data { get; set; }
-        
+
     }
 }

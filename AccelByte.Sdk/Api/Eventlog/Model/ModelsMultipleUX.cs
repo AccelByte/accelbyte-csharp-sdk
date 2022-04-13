@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
     {
         [JsonPropertyName("UX")]
         public List<ModelsUX>? UX { get; set; }
-        
+
     }
 }

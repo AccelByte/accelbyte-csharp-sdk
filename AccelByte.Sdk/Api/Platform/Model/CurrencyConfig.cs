@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("currencySymbol")]
         public string? CurrencySymbol { get; set; }
-        
+
     }
 }

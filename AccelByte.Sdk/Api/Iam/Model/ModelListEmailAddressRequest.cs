@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("listEmailAddressRequest")]
         public List<string>? ListEmailAddressRequest { get; set; }
-        
+
     }
 }

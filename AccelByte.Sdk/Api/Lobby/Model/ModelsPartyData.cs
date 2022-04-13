@@ -10,24 +10,24 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("custom_attribute")]
         public Dictionary<string, object>? CustomAttribute { get; set; }
-        
+
         [JsonPropertyName("invitees")]
         public List<string>? Invitees { get; set; }
-        
+
         [JsonPropertyName("leader")]
         public string? Leader { get; set; }
-        
+
         [JsonPropertyName("members")]
         public List<string>? Members { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("partyId")]
         public string? PartyId { get; set; }
-        
+
         [JsonPropertyName("updatedAt")]
         public long? UpdatedAt { get; set; }
-        
+
     }
 }

@@ -10,18 +10,18 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
-        
+
         [JsonPropertyName("displayName")]
         public string? DisplayName { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
-        
+
         [JsonPropertyName("userName")]
         public string? UserName { get; set; }
-        
+
     }
 }

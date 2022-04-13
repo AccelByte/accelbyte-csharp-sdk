@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Qosm.Model
     {
         [JsonPropertyName("code")]
         public int? Code { get; set; }
-        
+
         [JsonPropertyName("message")]
         public string? Message { get; set; }
-        
+
     }
 }

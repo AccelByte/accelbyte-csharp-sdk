@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("gameId")]
         public string? GameId { get; set; }
-        
+
         [JsonPropertyName("language")]
         public string? Language { get; set; }
-        
+
         [JsonPropertyName("region")]
         public string? Region { get; set; }
-        
+
     }
 }

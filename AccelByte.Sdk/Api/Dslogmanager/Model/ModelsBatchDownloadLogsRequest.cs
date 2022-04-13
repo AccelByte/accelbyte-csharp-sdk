@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
     {
         [JsonPropertyName("Downloads")]
         public List<ModelsDownloadLogsRequest>? Downloads { get; set; }
-        
+
     }
 }

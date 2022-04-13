@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
     {
         [JsonPropertyName("data")]
         public List<ModelsPlayerRecordResponse>? Data { get; set; }
-        
+
     }
 }

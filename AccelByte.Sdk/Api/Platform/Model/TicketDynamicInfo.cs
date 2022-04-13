@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("availableSaleCount")]
         public int? AvailableSaleCount { get; set; }
-        
+
     }
 }

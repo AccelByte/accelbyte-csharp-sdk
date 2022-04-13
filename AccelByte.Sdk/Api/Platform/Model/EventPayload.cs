@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("payload")]
         public Dictionary<string, object>? Payload { get; set; }
-        
+
     }
 }

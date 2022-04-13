@@ -3,6 +3,8 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Model
 {
@@ -10,60 +12,85 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     {
         [JsonPropertyName("autoClaim")]
         public bool? AutoClaim { get; set; }
-        
+
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
-        
+
         [JsonPropertyName("defaultLanguage")]
         public string? DefaultLanguage { get; set; }
-        
+
         [JsonPropertyName("defaultRequiredExp")]
         public int? DefaultRequiredExp { get; set; }
-        
+
         [JsonPropertyName("draftStoreId")]
         public string? DraftStoreId { get; set; }
-        
+
         [JsonPropertyName("end")]
         public DateTime? End { get; set; }
-        
+
         [JsonPropertyName("excessStrategy")]
         public ExcessStrategy? ExcessStrategy { get; set; }
-        
+
         [JsonPropertyName("id")]
         public string? Id { get; set; }
-        
+
         [JsonPropertyName("images")]
         public List<Image>? Images { get; set; }
-        
+
         [JsonPropertyName("localizations")]
         public Dictionary<string, Localization>? Localizations { get; set; }
-        
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("passCodes")]
         public List<string>? PassCodes { get; set; }
-        
+
         [JsonPropertyName("publishedAt")]
         public DateTime? PublishedAt { get; set; }
-        
+
         [JsonPropertyName("start")]
         public DateTime? Start { get; set; }
-        
+
         [JsonPropertyName("status")]
-        public string? Status { get; set; }
-        
+        [JsonStringEnum]
+        public SeasonInfoStatus? Status { get; set; }
+
         [JsonPropertyName("tierItemId")]
         public string? TierItemId { get; set; }
-        
+
         [JsonPropertyName("tierItemName")]
         public string? TierItemName { get; set; }
-        
+
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
-        
+
     }
+
+    public class SeasonInfoStatus : StringEnum<SeasonInfoStatus>
+    {
+        public static readonly SeasonInfoStatus DRAFT
+            = new SeasonInfoStatus("DRAFT");
+
+        public static readonly SeasonInfoStatus PUBLISHED
+            = new SeasonInfoStatus("PUBLISHED");
+
+        public static readonly SeasonInfoStatus RETIRED
+            = new SeasonInfoStatus("RETIRED");
+
+
+        public static implicit operator SeasonInfoStatus(string value)
+        {
+            return Create(value);
+        }
+
+        public SeasonInfoStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

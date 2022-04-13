@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("extraSubscriptionDays")]
         public int? ExtraSubscriptionDays { get; set; }
-        
+
         [JsonPropertyName("itemId")]
         public string? ItemId { get; set; }
-        
+
         [JsonPropertyName("itemName")]
         public string? ItemName { get; set; }
-        
+
         [JsonPropertyName("quantity")]
         public int? Quantity { get; set; }
-        
+
     }
 }

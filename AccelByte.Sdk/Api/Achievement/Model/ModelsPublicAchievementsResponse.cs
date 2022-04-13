@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Achievement.Model
     {
         [JsonPropertyName("data")]
         public List<ModelsPublicAchievementResponse>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public ModelsPagination? Paging { get; set; }
-        
+
     }
 }

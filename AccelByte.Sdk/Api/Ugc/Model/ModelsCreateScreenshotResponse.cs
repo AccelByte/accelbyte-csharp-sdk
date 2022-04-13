@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Ugc.Model
     {
         [JsonPropertyName("screenshots")]
         public List<ModelsScreenshotResponse>? Screenshots { get; set; }
-        
+
     }
 }

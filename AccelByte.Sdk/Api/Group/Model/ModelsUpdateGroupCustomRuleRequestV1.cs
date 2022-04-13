@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Group.Model
     {
         [JsonPropertyName("groupCustomRule")]
         public Dictionary<string, object>? GroupCustomRule { get; set; }
-        
+
     }
 }

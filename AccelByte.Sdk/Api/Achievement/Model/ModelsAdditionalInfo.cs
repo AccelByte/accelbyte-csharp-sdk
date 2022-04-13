@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Achievement.Model
     {
         [JsonPropertyName("numberOfAchievements")]
         public long? NumberOfAchievements { get; set; }
-        
+
         [JsonPropertyName("numberOfHiddenAchievements")]
         public long? NumberOfHiddenAchievements { get; set; }
-        
+
         [JsonPropertyName("numberOfVisibleAchievements")]
         public long? NumberOfVisibleAchievements { get; set; }
-        
+
     }
 }

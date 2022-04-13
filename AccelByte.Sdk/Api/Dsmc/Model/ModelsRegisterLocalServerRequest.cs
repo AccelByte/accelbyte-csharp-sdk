@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("custom_attribute")]
         public string? CustomAttribute { get; set; }
-        
+
         [JsonPropertyName("ip")]
         public string? Ip { get; set; }
-        
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-        
+
         [JsonPropertyName("port")]
         public int? Port { get; set; }
-        
+
     }
 }

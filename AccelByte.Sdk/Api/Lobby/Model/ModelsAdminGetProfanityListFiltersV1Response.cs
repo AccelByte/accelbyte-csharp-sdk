@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("filters")]
         public List<ModelsProfanityFilter>? Filters { get; set; }
-        
+
     }
 }

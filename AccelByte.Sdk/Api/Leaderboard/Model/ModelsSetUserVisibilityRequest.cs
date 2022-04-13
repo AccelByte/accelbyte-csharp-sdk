@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
     {
         [JsonPropertyName("visibility")]
         public bool? Visibility { get; set; }
-        
+
     }
 }

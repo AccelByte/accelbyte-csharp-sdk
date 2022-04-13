@@ -3,7 +3,8 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
-using AccelByte.Sdk.Core.Util;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Basic.Model
 {
@@ -11,37 +12,59 @@ namespace AccelByte.Sdk.Api.Basic.Model
     {
         [JsonPropertyName("avatarLargeUrl")]
         public string? AvatarLargeUrl { get; set; }
-        
+
         [JsonPropertyName("avatarSmallUrl")]
         public string? AvatarSmallUrl { get; set; }
-        
+
         [JsonPropertyName("avatarUrl")]
         public string? AvatarUrl { get; set; }
-        
+
         [JsonPropertyName("customAttributes")]
         public Dictionary<string, object>? CustomAttributes { get; set; }
-        
+
         [JsonPropertyName("dateOfBirth")]
         [JsonDateTimeConverter("yyyy-MM-dd")]
         public DateTime? DateOfBirth { get; set; }
-        
+
         [JsonPropertyName("firstName")]
         public string? FirstName { get; set; }
-        
+
         [JsonPropertyName("language")]
         public string? Language { get; set; }
-        
+
         [JsonPropertyName("lastName")]
         public string? LastName { get; set; }
-        
+
         [JsonPropertyName("status")]
-        public string? Status { get; set; }
-        
+        [JsonStringEnum]
+        public UserProfileAdminStatus? Status { get; set; }
+
         [JsonPropertyName("timeZone")]
         public string? TimeZone { get; set; }
-        
+
         [JsonPropertyName("zipCode")]
         public string? ZipCode { get; set; }
-        
+
     }
+
+    public class UserProfileAdminStatus : StringEnum<UserProfileAdminStatus>
+    {
+        public static readonly UserProfileAdminStatus ACTIVE
+            = new UserProfileAdminStatus("ACTIVE");
+
+        public static readonly UserProfileAdminStatus INACTIVE
+            = new UserProfileAdminStatus("INACTIVE");
+
+
+        public static implicit operator UserProfileAdminStatus(string value)
+        {
+            return Create(value);
+        }
+
+        public UserProfileAdminStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Legal.Model
     {
         [JsonPropertyName("attachmentChecksum")]
         public string? AttachmentChecksum { get; set; }
-        
+
         [JsonPropertyName("attachmentLocation")]
         public string? AttachmentLocation { get; set; }
-        
+
         [JsonPropertyName("attachmentUploadUrl")]
         public string? AttachmentUploadUrl { get; set; }
-        
+
     }
 }

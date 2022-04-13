@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
     {
         [JsonPropertyName("EventIDs")]
         public List<ModelsEventID>? EventIDs { get; set; }
-        
+
     }
 }

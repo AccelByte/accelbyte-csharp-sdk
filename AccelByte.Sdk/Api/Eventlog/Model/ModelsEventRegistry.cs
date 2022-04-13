@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
     {
         [JsonPropertyName("EventID")]
         public int? EventID { get; set; }
-        
+
         [JsonPropertyName("EventLevel")]
         public int? EventLevel { get; set; }
-        
+
         [JsonPropertyName("EventType")]
         public int? EventType { get; set; }
-        
+
         [JsonPropertyName("UX")]
         public int? UX { get; set; }
-        
+
     }
 }

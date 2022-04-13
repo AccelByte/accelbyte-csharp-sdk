@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("filter")]
         public string? Filter { get; set; }
-        
+
     }
 }

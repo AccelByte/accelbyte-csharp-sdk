@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
     {
         [JsonPropertyName("Next")]
         public string? Next { get; set; }
-        
+
         [JsonPropertyName("Previous")]
         public string? Previous { get; set; }
-        
+
     }
 }

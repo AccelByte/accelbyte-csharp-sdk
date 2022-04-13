@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Group.Model
     {
         [JsonPropertyName("groupId")]
         public string? GroupId { get; set; }
-        
+
         [JsonPropertyName("requestType")]
         public string? RequestType { get; set; }
-        
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
-        
+
     }
 }

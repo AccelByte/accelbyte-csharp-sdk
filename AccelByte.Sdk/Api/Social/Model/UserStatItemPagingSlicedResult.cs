@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Social.Model
     {
         [JsonPropertyName("data")]
         public List<UserStatItemInfo>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public Paging? Paging { get; set; }
-        
+
     }
 }

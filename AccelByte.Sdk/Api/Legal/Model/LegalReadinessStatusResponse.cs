@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Legal.Model
     {
         [JsonPropertyName("isReady")]
         public bool? IsReady { get; set; }
-        
+
     }
 }

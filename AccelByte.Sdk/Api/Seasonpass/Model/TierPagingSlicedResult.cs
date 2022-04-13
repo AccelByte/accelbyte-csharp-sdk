@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     {
         [JsonPropertyName("data")]
         public List<Tier>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public Paging? Paging { get; set; }
-        
+
         [JsonPropertyName("total")]
         public long? Total { get; set; }
-        
+
     }
 }

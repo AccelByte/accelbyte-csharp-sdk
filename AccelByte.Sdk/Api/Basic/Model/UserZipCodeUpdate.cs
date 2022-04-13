@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Basic.Model
     {
         [JsonPropertyName("zipCode")]
         public string? ZipCode { get; set; }
-        
+
     }
 }

@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Basic.Model
     {
         [JsonPropertyName("actionId")]
         public int? ActionId { get; set; }
-        
+
         [JsonPropertyName("comment")]
         public string? Comment { get; set; }
-        
+
         [JsonPropertyName("userIds")]
         public List<string>? UserIds { get; set; }
-        
+
     }
 }

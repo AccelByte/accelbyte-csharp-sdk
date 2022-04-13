@@ -3,6 +3,8 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Model
 {
@@ -10,21 +12,43 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     {
         [JsonPropertyName("currency")]
         public RewardCurrency? Currency { get; set; }
-        
+
         [JsonPropertyName("image")]
         public Image? Image { get; set; }
-        
+
         [JsonPropertyName("itemId")]
         public string? ItemId { get; set; }
-        
+
         [JsonPropertyName("nullFields")]
         public List<string>? NullFields { get; set; }
-        
+
         [JsonPropertyName("quantity")]
         public int? Quantity { get; set; }
-        
+
         [JsonPropertyName("type")]
-        public string? Type { get; set; }
-        
+        [JsonStringEnum]
+        public RewardUpdateType? Type { get; set; }
+
     }
+
+    public class RewardUpdateType : StringEnum<RewardUpdateType>
+    {
+        public static readonly RewardUpdateType ITEM
+            = new RewardUpdateType("ITEM");
+
+        public static readonly RewardUpdateType CURRENCY
+            = new RewardUpdateType("CURRENCY");
+
+
+        public static implicit operator RewardUpdateType(string value)
+        {
+            return Create(value);
+        }
+
+        public RewardUpdateType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Ugc.Model
     {
         [JsonPropertyName("data")]
         public List<ModelsCreatorOverviewResponse>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public ModelsPagingCursor? Paging { get; set; }
-        
+
     }
 }

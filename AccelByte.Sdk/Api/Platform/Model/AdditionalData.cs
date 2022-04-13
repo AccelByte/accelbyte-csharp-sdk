@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("cardSummary")]
         public string? CardSummary { get; set; }
-        
+
     }
 }

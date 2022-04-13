@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("needConsume")]
         public bool? NeedConsume { get; set; }
-        
+
     }
 }

@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("deployments")]
         public List<ModelsDeploymentWithOverride>? Deployments { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public ModelsPagingCursor? Paging { get; set; }
-        
+
     }
 }

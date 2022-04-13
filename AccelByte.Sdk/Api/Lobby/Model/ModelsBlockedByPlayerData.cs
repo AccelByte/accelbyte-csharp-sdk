@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("blockedAt")]
         public DateTime? BlockedAt { get; set; }
-        
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
-        
+
     }
 }

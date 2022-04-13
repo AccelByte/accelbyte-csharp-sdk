@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("publicKey")]
         public string? PublicKey { get; set; }
-        
+
         [JsonPropertyName("secretKey")]
         public string? SecretKey { get; set; }
-        
+
     }
 }

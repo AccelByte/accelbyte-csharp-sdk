@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
     {
         [JsonPropertyName("status")]
         public bool? Status { get; set; }
-        
+
     }
 }

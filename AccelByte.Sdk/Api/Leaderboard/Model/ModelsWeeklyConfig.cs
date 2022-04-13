@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
     {
         [JsonPropertyName("resetDay")]
         public long? ResetDay { get; set; }
-        
+
         [JsonPropertyName("resetTime")]
         public string? ResetTime { get; set; }
-        
+
     }
 }

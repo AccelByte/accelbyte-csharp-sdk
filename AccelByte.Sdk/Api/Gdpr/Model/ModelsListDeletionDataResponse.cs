@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
     {
         [JsonPropertyName("Data")]
         public List<ModelsDeletionData>? Data { get; set; }
-        
+
         [JsonPropertyName("Paging")]
         public ModelsPagination? Paging { get; set; }
-        
+
     }
 }

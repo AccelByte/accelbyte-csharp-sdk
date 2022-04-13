@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
     {
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
-        
+
         [JsonPropertyName("visibility")]
         public bool? Visibility { get; set; }
-        
+
     }
 }

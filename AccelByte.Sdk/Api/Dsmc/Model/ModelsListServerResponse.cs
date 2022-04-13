@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("paging")]
         public ModelsPagingCursor? Paging { get; set; }
-        
+
         [JsonPropertyName("servers")]
         public List<ModelsServer>? Servers { get; set; }
-        
+
     }
 }

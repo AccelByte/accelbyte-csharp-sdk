@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("user_id")]
         public string? UserId { get; set; }
-        
+
     }
 }

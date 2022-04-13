@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
     {
         [JsonPropertyName("set_by")]
         public string? SetBy { get; set; }
-        
+
         [JsonPropertyName("updatedAt")]
         public string? UpdatedAt { get; set; }
-        
+
         [JsonPropertyName("value")]
         public Dictionary<string, object>? Value { get; set; }
-        
+
     }
 }

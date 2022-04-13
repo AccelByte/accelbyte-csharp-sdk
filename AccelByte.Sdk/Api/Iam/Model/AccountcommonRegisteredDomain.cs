@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("affectedClientIDs")]
         public List<string>? AffectedClientIDs { get; set; }
-        
+
         [JsonPropertyName("domain")]
         public string? Domain { get; set; }
-        
+
         [JsonPropertyName("namespaces")]
         public List<string>? Namespaces { get; set; }
-        
+
         [JsonPropertyName("roleId")]
         public string? RoleId { get; set; }
-        
+
     }
 }

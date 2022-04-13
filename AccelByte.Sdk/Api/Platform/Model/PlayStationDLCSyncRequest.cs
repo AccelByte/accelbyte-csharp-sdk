@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("serviceLabel")]
         public int? ServiceLabel { get; set; }
-        
+
     }
 }

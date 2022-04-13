@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("allowedPaymentMethodTypes")]
         public List<string>? AllowedPaymentMethodTypes { get; set; }
-        
+
         [JsonPropertyName("publishableKey")]
         public string? PublishableKey { get; set; }
-        
+
         [JsonPropertyName("secretKey")]
         public string? SecretKey { get; set; }
-        
+
         [JsonPropertyName("webhookSecret")]
         public string? WebhookSecret { get; set; }
-        
+
     }
 }

@@ -10,33 +10,33 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("client_version")]
         public string? ClientVersion { get; set; }
-        
+
         [JsonPropertyName("configuration")]
         public string? Configuration { get; set; }
-        
+
         [JsonPropertyName("deployment")]
         public string? Deployment { get; set; }
-        
+
         [JsonPropertyName("game_mode")]
         public string? GameMode { get; set; }
-        
+
         [JsonPropertyName("matching_allies")]
         public List<ModelsRequestMatchingAlly>? MatchingAllies { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("notification_payload")]
         public ModelsMatchResultNotificationPayload? NotificationPayload { get; set; }
-        
+
         [JsonPropertyName("pod_name")]
         public string? PodName { get; set; }
-        
+
         [JsonPropertyName("region")]
         public string? Region { get; set; }
-        
+
         [JsonPropertyName("session_id")]
         public string? SessionId { get; set; }
-        
+
     }
 }

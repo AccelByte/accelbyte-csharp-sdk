@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("platformNamespace")]
         public string? PlatformNamespace { get; set; }
-        
+
     }
 }

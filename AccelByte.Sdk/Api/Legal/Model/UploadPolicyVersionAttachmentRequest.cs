@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Legal.Model
     {
         [JsonPropertyName("contentMD5")]
         public string? ContentMD5 { get; set; }
-        
+
         [JsonPropertyName("contentType")]
         public string? ContentType { get; set; }
-        
+
     }
 }

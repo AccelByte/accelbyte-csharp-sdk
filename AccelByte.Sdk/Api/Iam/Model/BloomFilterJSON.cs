@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("bits")]
         public List<long>? Bits { get; set; }
-        
+
         [JsonPropertyName("k")]
         public long? K { get; set; }
-        
+
         [JsonPropertyName("m")]
         public long? M { get; set; }
-        
+
     }
 }

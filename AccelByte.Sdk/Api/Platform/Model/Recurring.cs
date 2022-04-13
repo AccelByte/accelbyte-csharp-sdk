@@ -3,22 +3,52 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class Recurring : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("cycle")]
-        public string? Cycle { get; set; }
-        
+        [JsonStringEnum]
+        public RecurringCycle? Cycle { get; set; }
+
         [JsonPropertyName("fixedFreeDays")]
         public int? FixedFreeDays { get; set; }
-        
+
         [JsonPropertyName("fixedTrialCycles")]
         public int? FixedTrialCycles { get; set; }
-        
+
         [JsonPropertyName("graceDays")]
         public int? GraceDays { get; set; }
-        
+
     }
+
+    public class RecurringCycle : StringEnum<RecurringCycle>
+    {
+        public static readonly RecurringCycle WEEKLY
+            = new RecurringCycle("WEEKLY");
+
+        public static readonly RecurringCycle MONTHLY
+            = new RecurringCycle("MONTHLY");
+
+        public static readonly RecurringCycle QUARTERLY
+            = new RecurringCycle("QUARTERLY");
+
+        public static readonly RecurringCycle YEARLY
+            = new RecurringCycle("YEARLY");
+
+
+        public static implicit operator RecurringCycle(string value)
+        {
+            return Create(value);
+        }
+
+        public RecurringCycle(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

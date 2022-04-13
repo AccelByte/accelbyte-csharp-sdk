@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("reasons")]
         public List<AccountcommonBanReasonV3>? Reasons { get; set; }
-        
+
     }
 }

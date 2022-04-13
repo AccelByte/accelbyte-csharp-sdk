@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("statusCount")]
         public Dictionary<string, long>? StatusCount { get; set; }
-        
+
         [JsonPropertyName("total")]
         public long? Total { get; set; }
-        
+
     }
 }

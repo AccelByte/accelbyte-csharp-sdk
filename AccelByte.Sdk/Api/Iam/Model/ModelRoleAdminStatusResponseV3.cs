@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("adminRole")]
         public bool? AdminRole { get; set; }
-        
+
     }
 }

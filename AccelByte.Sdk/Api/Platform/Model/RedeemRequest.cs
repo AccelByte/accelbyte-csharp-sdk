@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("code")]
         public string? Code { get; set; }
-        
+
         [JsonPropertyName("orderNo")]
         public string? OrderNo { get; set; }
-        
+
     }
 }

@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
-        
+
         [JsonPropertyName("isMandatory")]
         public bool? IsMandatory { get; set; }
-        
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-        
+
     }
 }

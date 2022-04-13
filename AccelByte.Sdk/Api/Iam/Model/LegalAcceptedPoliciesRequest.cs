@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("isAccepted")]
         public bool? IsAccepted { get; set; }
-        
+
         [JsonPropertyName("localizedPolicyVersionId")]
         public string? LocalizedPolicyVersionId { get; set; }
-        
+
         [JsonPropertyName("policyId")]
         public string? PolicyId { get; set; }
-        
+
         [JsonPropertyName("policyVersionId")]
         public string? PolicyVersionId { get; set; }
-        
+
     }
 }

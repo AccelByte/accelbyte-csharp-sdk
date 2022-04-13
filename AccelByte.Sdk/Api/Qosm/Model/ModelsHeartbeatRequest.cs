@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Qosm.Model
     {
         [JsonPropertyName("ip")]
         public string? Ip { get; set; }
-        
+
         [JsonPropertyName("port")]
         public int? Port { get; set; }
-        
+
         [JsonPropertyName("region")]
         public string? Region { get; set; }
-        
+
     }
 }

@@ -3,6 +3,8 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
@@ -10,12 +12,31 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("context")]
         public FulfillmentScriptContext? Context { get; set; }
-        
+
         [JsonPropertyName("script")]
         public string? Script { get; set; }
-        
+
         [JsonPropertyName("type")]
-        public string? Type { get; set; }
-        
+        [JsonStringEnum]
+        public FulfillmentScriptEvalTestRequestType? Type { get; set; }
+
     }
+
+    public class FulfillmentScriptEvalTestRequestType : StringEnum<FulfillmentScriptEvalTestRequestType>
+    {
+        public static readonly FulfillmentScriptEvalTestRequestType GrantDays
+            = new FulfillmentScriptEvalTestRequestType("grantDays");
+
+
+        public static implicit operator FulfillmentScriptEvalTestRequestType(string value)
+        {
+            return Create(value);
+        }
+
+        public FulfillmentScriptEvalTestRequestType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

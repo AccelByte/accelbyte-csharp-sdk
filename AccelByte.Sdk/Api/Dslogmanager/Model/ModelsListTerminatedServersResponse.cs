@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
     {
         [JsonPropertyName("data")]
         public List<ModelsNotifPayloadServerStatusChange>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public ModelsPagingCursor? Paging { get; set; }
-        
+
     }
 }

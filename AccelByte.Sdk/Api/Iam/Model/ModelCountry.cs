@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("AgeRestriction")]
         public int? AgeRestriction { get; set; }
-        
+
         [JsonPropertyName("CountryCode")]
         public string? CountryCode { get; set; }
-        
+
         [JsonPropertyName("CountryName")]
         public string? CountryName { get; set; }
-        
+
         [JsonPropertyName("Enable")]
         public bool? Enable { get; set; }
-        
+
     }
 }

@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     {
         [JsonPropertyName("passCode")]
         public string? PassCode { get; set; }
-        
+
         [JsonPropertyName("rewardCode")]
         public string? RewardCode { get; set; }
-        
+
         [JsonPropertyName("tierIndex")]
         public int? TierIndex { get; set; }
-        
+
     }
 }

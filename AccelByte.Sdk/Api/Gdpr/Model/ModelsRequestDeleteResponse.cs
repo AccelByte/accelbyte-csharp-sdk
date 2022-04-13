@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
     {
         [JsonPropertyName("Namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("UserID")]
         public string? UserID { get; set; }
-        
+
     }
 }

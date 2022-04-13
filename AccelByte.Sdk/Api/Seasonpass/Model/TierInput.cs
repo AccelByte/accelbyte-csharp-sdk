@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     {
         [JsonPropertyName("requiredExp")]
         public int? RequiredExp { get; set; }
-        
+
         [JsonPropertyName("rewards")]
         public Dictionary<string, object>? Rewards { get; set; }
-        
+
     }
 }

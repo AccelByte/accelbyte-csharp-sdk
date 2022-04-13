@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
     {
         [JsonPropertyName("max_number")]
         public int? MaxNumber { get; set; }
-        
+
         [JsonPropertyName("min_number")]
         public int? MinNumber { get; set; }
-        
+
         [JsonPropertyName("player_max_number")]
         public int? PlayerMaxNumber { get; set; }
-        
+
         [JsonPropertyName("player_min_number")]
         public int? PlayerMinNumber { get; set; }
-        
+
     }
 }

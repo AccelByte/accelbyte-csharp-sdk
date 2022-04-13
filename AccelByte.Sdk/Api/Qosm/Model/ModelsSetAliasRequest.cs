@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Qosm.Model
     {
         [JsonPropertyName("alias")]
         public string? Alias { get; set; }
-        
+
     }
 }

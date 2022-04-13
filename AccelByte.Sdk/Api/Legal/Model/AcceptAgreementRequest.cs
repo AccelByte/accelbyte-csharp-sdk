@@ -10,18 +10,18 @@ namespace AccelByte.Sdk.Api.Legal.Model
     {
         [JsonPropertyName("isAccepted")]
         public bool? IsAccepted { get; set; }
-        
+
         [JsonPropertyName("isNeedToSendEventMarketing")]
         public bool? IsNeedToSendEventMarketing { get; set; }
-        
+
         [JsonPropertyName("localizedPolicyVersionId")]
         public string? LocalizedPolicyVersionId { get; set; }
-        
+
         [JsonPropertyName("policyId")]
         public string? PolicyId { get; set; }
-        
+
         [JsonPropertyName("policyVersionId")]
         public string? PolicyVersionId { get; set; }
-        
+
     }
 }

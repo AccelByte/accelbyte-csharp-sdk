@@ -3,6 +3,8 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
@@ -10,15 +12,37 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("description")]
         public string? Description { get; set; }
-        
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-        
+
         [JsonPropertyName("status")]
-        public string? Status { get; set; }
-        
+        [JsonStringEnum]
+        public KeyGroupCreateStatus? Status { get; set; }
+
         [JsonPropertyName("tags")]
         public List<string>? Tags { get; set; }
-        
+
     }
+
+    public class KeyGroupCreateStatus : StringEnum<KeyGroupCreateStatus>
+    {
+        public static readonly KeyGroupCreateStatus ACTIVE
+            = new KeyGroupCreateStatus("ACTIVE");
+
+        public static readonly KeyGroupCreateStatus INACTIVE
+            = new KeyGroupCreateStatus("INACTIVE");
+
+
+        public static implicit operator KeyGroupCreateStatus(string value)
+        {
+            return Create(value);
+        }
+
+        public KeyGroupCreateStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

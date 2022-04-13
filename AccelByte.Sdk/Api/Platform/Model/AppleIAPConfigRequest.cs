@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("bundleId")]
         public string? BundleId { get; set; }
-        
+
         [JsonPropertyName("password")]
         public string? Password { get; set; }
-        
+
     }
 }

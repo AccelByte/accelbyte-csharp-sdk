@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
     {
         [JsonPropertyName("log_existence")]
         public bool? LogExistence { get; set; }
-        
+
     }
 }

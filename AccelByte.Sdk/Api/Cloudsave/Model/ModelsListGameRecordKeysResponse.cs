@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
     {
         [JsonPropertyName("data")]
         public List<string>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public ModelsPagination? Paging { get; set; }
-        
+
     }
 }

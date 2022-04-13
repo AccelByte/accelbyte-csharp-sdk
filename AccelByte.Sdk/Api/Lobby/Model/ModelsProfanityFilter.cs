@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("filter")]
         public string? Filter { get; set; }
-        
+
         [JsonPropertyName("listName")]
         public string? ListName { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("note")]
         public string? Note { get; set; }
-        
+
     }
 }

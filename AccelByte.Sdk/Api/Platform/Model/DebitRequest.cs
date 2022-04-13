@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("amount")]
         public long? Amount { get; set; }
-        
+
         [JsonPropertyName("reason")]
         public string? Reason { get; set; }
-        
+
     }
 }

@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("NewSecret")]
         public string? NewSecret { get; set; }
-        
+
     }
 }

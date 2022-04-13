@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("localizationDescriptions")]
         public Dictionary<string, string>? LocalizationDescriptions { get; set; }
-        
+
     }
 }

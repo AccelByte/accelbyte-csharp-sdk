@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("data")]
         public List<ModelNotificationTopicResponseV1>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public ModelPagination? Paging { get; set; }
-        
+
     }
 }

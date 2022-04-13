@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("errorCode")]
         public int? ErrorCode { get; set; }
-        
+
         [JsonPropertyName("errorMessage")]
         public string? ErrorMessage { get; set; }
-        
+
         [JsonPropertyName("messageVariables")]
         public AccountcommonConflictedUserPlatformAccounts? MessageVariables { get; set; }
-        
+
     }
 }

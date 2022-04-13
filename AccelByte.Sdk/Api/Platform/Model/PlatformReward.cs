@@ -3,6 +3,8 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
@@ -10,15 +12,37 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("currency")]
         public PlatformRewardCurrency? Currency { get; set; }
-        
+
         [JsonPropertyName("item")]
         public PlatformRewardItem? Item { get; set; }
-        
+
         [JsonPropertyName("quantity")]
         public int? Quantity { get; set; }
-        
+
         [JsonPropertyName("type")]
-        public string? Type { get; set; }
-        
+        [JsonStringEnum]
+        public PlatformRewardType? Type { get; set; }
+
     }
+
+    public class PlatformRewardType : StringEnum<PlatformRewardType>
+    {
+        public static readonly PlatformRewardType ITEM
+            = new PlatformRewardType("ITEM");
+
+        public static readonly PlatformRewardType CURRENCY
+            = new PlatformRewardType("CURRENCY");
+
+
+        public static implicit operator PlatformRewardType(string value)
+        {
+            return Create(value);
+        }
+
+        public PlatformRewardType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

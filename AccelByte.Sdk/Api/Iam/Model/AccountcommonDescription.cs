@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("en-US")]
         public string? EnUS { get; set; }
-        
+
         [JsonPropertyName("zh-CN")]
         public string? ZhCN { get; set; }
-        
+
     }
 }

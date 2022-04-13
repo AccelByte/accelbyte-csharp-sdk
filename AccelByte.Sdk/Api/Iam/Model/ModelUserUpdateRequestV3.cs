@@ -10,18 +10,18 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("country")]
         public string? Country { get; set; }
-        
+
         [JsonPropertyName("dateOfBirth")]
         public string? DateOfBirth { get; set; }
-        
+
         [JsonPropertyName("displayName")]
         public string? DisplayName { get; set; }
-        
+
         [JsonPropertyName("languageTag")]
         public string? LanguageTag { get; set; }
-        
+
         [JsonPropertyName("userName")]
         public string? UserName { get; set; }
-        
+
     }
 }

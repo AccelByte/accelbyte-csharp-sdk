@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("templateLocalizations")]
         public List<ModelLocalization>? TemplateLocalizations { get; set; }
-        
+
         [JsonPropertyName("templateSlug")]
         public string? TemplateSlug { get; set; }
-        
+
     }
 }

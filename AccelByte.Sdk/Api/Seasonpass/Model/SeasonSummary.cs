@@ -3,6 +3,8 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Seasonpass.Model
 {
@@ -10,30 +12,55 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     {
         [JsonPropertyName("end")]
         public DateTime? End { get; set; }
-        
+
         [JsonPropertyName("id")]
         public string? Id { get; set; }
-        
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("passCodes")]
         public List<string>? PassCodes { get; set; }
-        
+
         [JsonPropertyName("previous")]
         public SeasonSummary? Previous { get; set; }
-        
+
         [JsonPropertyName("publishedAt")]
         public DateTime? PublishedAt { get; set; }
-        
+
         [JsonPropertyName("start")]
         public DateTime? Start { get; set; }
-        
+
         [JsonPropertyName("status")]
-        public string? Status { get; set; }
-        
+        [JsonStringEnum]
+        public SeasonSummaryStatus? Status { get; set; }
+
     }
+
+    public class SeasonSummaryStatus : StringEnum<SeasonSummaryStatus>
+    {
+        public static readonly SeasonSummaryStatus DRAFT
+            = new SeasonSummaryStatus("DRAFT");
+
+        public static readonly SeasonSummaryStatus PUBLISHED
+            = new SeasonSummaryStatus("PUBLISHED");
+
+        public static readonly SeasonSummaryStatus RETIRED
+            = new SeasonSummaryStatus("RETIRED");
+
+
+        public static implicit operator SeasonSummaryStatus(string value)
+        {
+            return Create(value);
+        }
+
+        public SeasonSummaryStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

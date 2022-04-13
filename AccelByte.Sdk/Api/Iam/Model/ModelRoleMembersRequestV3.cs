@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("members")]
         public List<AccountcommonRoleMemberV3>? Members { get; set; }
-        
+
     }
 }

@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("languageTag")]
         public string? LanguageTag { get; set; }
-        
+
         [JsonPropertyName("newPassword")]
         public string? NewPassword { get; set; }
-        
+
         [JsonPropertyName("oldPassword")]
         public string? OldPassword { get; set; }
-        
+
     }
 }

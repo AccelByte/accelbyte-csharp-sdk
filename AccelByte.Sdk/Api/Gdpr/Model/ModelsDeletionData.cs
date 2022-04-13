@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
     {
         [JsonPropertyName("DisplayName")]
         public string? DisplayName { get; set; }
-        
+
         [JsonPropertyName("RequestDate")]
         public DateTime? RequestDate { get; set; }
-        
+
         [JsonPropertyName("Status")]
         public string? Status { get; set; }
-        
+
         [JsonPropertyName("UserID")]
         public string? UserID { get; set; }
-        
+
     }
 }

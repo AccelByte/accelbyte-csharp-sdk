@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("lastDraftAt")]
         public string? LastDraftAt { get; set; }
-        
+
         [JsonPropertyName("lastPublishedAt")]
         public string? LastPublishedAt { get; set; }
-        
+
         [JsonPropertyName("templateContent")]
         public ModelTemplateContent? TemplateContent { get; set; }
-        
+
         [JsonPropertyName("templateLanguage")]
         public string? TemplateLanguage { get; set; }
-        
+
     }
 }

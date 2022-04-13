@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     {
         [JsonPropertyName("newIndex")]
         public int? NewIndex { get; set; }
-        
+
     }
 }

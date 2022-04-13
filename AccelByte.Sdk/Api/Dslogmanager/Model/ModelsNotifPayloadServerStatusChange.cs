@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
     {
         [JsonPropertyName("match")]
         public ModelsMatchResult? Match { get; set; }
-        
+
         [JsonPropertyName("server")]
         public ModelsServer? Server { get; set; }
-        
+
     }
 }

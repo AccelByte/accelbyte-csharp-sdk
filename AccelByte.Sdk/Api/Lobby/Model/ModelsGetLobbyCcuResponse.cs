@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("countCurrentUsers")]
         public int? CountCurrentUsers { get; set; }
-        
+
     }
 }

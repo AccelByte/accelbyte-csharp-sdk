@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("items")]
         public List<RedeemableItem>? Items { get; set; }
-        
+
     }
 }

@@ -10,39 +10,39 @@ namespace AccelByte.Sdk.Api.Legal.Model
     {
         [JsonPropertyName("countryCode")]
         public string? CountryCode { get; set; }
-        
+
         [JsonPropertyName("countryGroupCode")]
         public string? CountryGroupCode { get; set; }
-        
+
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
-        
+
         [JsonPropertyName("description")]
         public string? Description { get; set; }
-        
+
         [JsonPropertyName("id")]
         public string? Id { get; set; }
-        
+
         [JsonPropertyName("isDefaultOpted")]
         public bool? IsDefaultOpted { get; set; }
-        
+
         [JsonPropertyName("isDefaultSelection")]
         public bool? IsDefaultSelection { get; set; }
-        
+
         [JsonPropertyName("isMandatory")]
         public bool? IsMandatory { get; set; }
-        
+
         [JsonPropertyName("policyName")]
         public string? PolicyName { get; set; }
-        
+
         [JsonPropertyName("readableId")]
         public string? ReadableId { get; set; }
-        
+
         [JsonPropertyName("shouldNotifyOnUpdate")]
         public bool? ShouldNotifyOnUpdate { get; set; }
-        
+
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
-        
+
     }
 }

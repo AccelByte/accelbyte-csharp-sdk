@@ -3,6 +3,8 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
@@ -10,120 +12,215 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("additionalData")]
         public AdditionalData? AdditionalData { get; set; }
-        
+
         [JsonPropertyName("authorisedTime")]
         public DateTime? AuthorisedTime { get; set; }
-        
+
         [JsonPropertyName("chargebackReversedTime")]
         public DateTime? ChargebackReversedTime { get; set; }
-        
+
         [JsonPropertyName("chargebackTime")]
         public DateTime? ChargebackTime { get; set; }
-        
+
         [JsonPropertyName("chargedTime")]
         public DateTime? ChargedTime { get; set; }
-        
+
         [JsonPropertyName("createdTime")]
         public DateTime? CreatedTime { get; set; }
-        
+
         [JsonPropertyName("currency")]
         public CurrencySummary? Currency { get; set; }
-        
+
         [JsonPropertyName("customParameters")]
         public Dictionary<string, object>? CustomParameters { get; set; }
-        
+
         [JsonPropertyName("extOrderNo")]
         public string? ExtOrderNo { get; set; }
-        
+
         [JsonPropertyName("extTxId")]
         public string? ExtTxId { get; set; }
-        
+
         [JsonPropertyName("extUserId")]
         public string? ExtUserId { get; set; }
-        
+
         [JsonPropertyName("issuedAt")]
         public DateTime? IssuedAt { get; set; }
-        
+
         [JsonPropertyName("metadata")]
         public Dictionary<string, string>? Metadata { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("nonceStr")]
         public string? NonceStr { get; set; }
-        
+
         [JsonPropertyName("paymentMethod")]
         public string? PaymentMethod { get; set; }
-        
+
         [JsonPropertyName("paymentMethodFee")]
         public int? PaymentMethodFee { get; set; }
-        
+
         [JsonPropertyName("paymentOrderNo")]
         public string? PaymentOrderNo { get; set; }
-        
+
         [JsonPropertyName("paymentProvider")]
-        public string? PaymentProvider { get; set; }
-        
+        [JsonStringEnum]
+        public TradeNotificationPaymentProvider? PaymentProvider { get; set; }
+
         [JsonPropertyName("paymentProviderFee")]
         public int? PaymentProviderFee { get; set; }
-        
+
         [JsonPropertyName("paymentStationUrl")]
         public string? PaymentStationUrl { get; set; }
-        
+
         [JsonPropertyName("price")]
         public int? Price { get; set; }
-        
+
         [JsonPropertyName("refundedTime")]
         public DateTime? RefundedTime { get; set; }
-        
+
         [JsonPropertyName("salesTax")]
         public int? SalesTax { get; set; }
-        
+
         [JsonPropertyName("sandbox")]
         public bool? Sandbox { get; set; }
-        
+
         [JsonPropertyName("sku")]
         public string? Sku { get; set; }
-        
+
         [JsonPropertyName("status")]
-        public string? Status { get; set; }
-        
+        [JsonStringEnum]
+        public TradeNotificationStatus? Status { get; set; }
+
         [JsonPropertyName("statusReason")]
         public string? StatusReason { get; set; }
-        
+
         [JsonPropertyName("subscriptionId")]
         public string? SubscriptionId { get; set; }
-        
+
         [JsonPropertyName("subtotalPrice")]
         public int? SubtotalPrice { get; set; }
-        
+
         [JsonPropertyName("targetNamespace")]
         public string? TargetNamespace { get; set; }
-        
+
         [JsonPropertyName("targetUserId")]
         public string? TargetUserId { get; set; }
-        
+
         [JsonPropertyName("tax")]
         public int? Tax { get; set; }
-        
+
         [JsonPropertyName("totalPrice")]
         public int? TotalPrice { get; set; }
-        
+
         [JsonPropertyName("totalTax")]
         public int? TotalTax { get; set; }
-        
+
         [JsonPropertyName("txEndTime")]
         public DateTime? TxEndTime { get; set; }
-        
+
         [JsonPropertyName("type")]
         public string? Type { get; set; }
-        
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
-        
+
         [JsonPropertyName("vat")]
         public int? Vat { get; set; }
-        
+
     }
+
+    public class TradeNotificationPaymentProvider : StringEnum<TradeNotificationPaymentProvider>
+    {
+        public static readonly TradeNotificationPaymentProvider WALLET
+            = new TradeNotificationPaymentProvider("WALLET");
+
+        public static readonly TradeNotificationPaymentProvider XSOLLA
+            = new TradeNotificationPaymentProvider("XSOLLA");
+
+        public static readonly TradeNotificationPaymentProvider ADYEN
+            = new TradeNotificationPaymentProvider("ADYEN");
+
+        public static readonly TradeNotificationPaymentProvider STRIPE
+            = new TradeNotificationPaymentProvider("STRIPE");
+
+        public static readonly TradeNotificationPaymentProvider CHECKOUT
+            = new TradeNotificationPaymentProvider("CHECKOUT");
+
+        public static readonly TradeNotificationPaymentProvider ALIPAY
+            = new TradeNotificationPaymentProvider("ALIPAY");
+
+        public static readonly TradeNotificationPaymentProvider WXPAY
+            = new TradeNotificationPaymentProvider("WXPAY");
+
+        public static readonly TradeNotificationPaymentProvider PAYPAL
+            = new TradeNotificationPaymentProvider("PAYPAL");
+
+
+        public static implicit operator TradeNotificationPaymentProvider(string value)
+        {
+            return Create(value);
+        }
+
+        public TradeNotificationPaymentProvider(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
+
+    public class TradeNotificationStatus : StringEnum<TradeNotificationStatus>
+    {
+        public static readonly TradeNotificationStatus INIT
+            = new TradeNotificationStatus("INIT");
+
+        public static readonly TradeNotificationStatus AUTHORISED
+            = new TradeNotificationStatus("AUTHORISED");
+
+        public static readonly TradeNotificationStatus AUTHORISEFAILED
+            = new TradeNotificationStatus("AUTHORISE_FAILED");
+
+        public static readonly TradeNotificationStatus CHARGED
+            = new TradeNotificationStatus("CHARGED");
+
+        public static readonly TradeNotificationStatus CHARGEFAILED
+            = new TradeNotificationStatus("CHARGE_FAILED");
+
+        public static readonly TradeNotificationStatus NOTIFICATIONOFCHARGEBACK
+            = new TradeNotificationStatus("NOTIFICATION_OF_CHARGEBACK");
+
+        public static readonly TradeNotificationStatus REQUESTFORINFORMATION
+            = new TradeNotificationStatus("REQUEST_FOR_INFORMATION");
+
+        public static readonly TradeNotificationStatus CHARGEBACK
+            = new TradeNotificationStatus("CHARGEBACK");
+
+        public static readonly TradeNotificationStatus CHARGEBACKREVERSED
+            = new TradeNotificationStatus("CHARGEBACK_REVERSED");
+
+        public static readonly TradeNotificationStatus REFUNDING
+            = new TradeNotificationStatus("REFUNDING");
+
+        public static readonly TradeNotificationStatus REFUNDED
+            = new TradeNotificationStatus("REFUNDED");
+
+        public static readonly TradeNotificationStatus REFUNDFAILED
+            = new TradeNotificationStatus("REFUND_FAILED");
+
+        public static readonly TradeNotificationStatus DELETED
+            = new TradeNotificationStatus("DELETED");
+
+
+        public static implicit operator TradeNotificationStatus(string value)
+        {
+            return Create(value);
+        }
+
+        public TradeNotificationStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

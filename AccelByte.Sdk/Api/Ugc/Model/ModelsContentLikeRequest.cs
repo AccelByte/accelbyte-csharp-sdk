@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Ugc.Model
     {
         [JsonPropertyName("likeStatus")]
         public bool? LikeStatus { get; set; }
-        
+
     }
 }

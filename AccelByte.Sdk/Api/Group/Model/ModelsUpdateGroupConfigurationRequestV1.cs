@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Group.Model
     {
         [JsonPropertyName("description")]
         public string? Description { get; set; }
-        
+
         [JsonPropertyName("groupMaxMember")]
         public int? GroupMaxMember { get; set; }
-        
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-        
+
     }
 }

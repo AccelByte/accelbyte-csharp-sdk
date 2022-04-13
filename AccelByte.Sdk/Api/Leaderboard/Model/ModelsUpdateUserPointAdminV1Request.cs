@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
     {
         [JsonPropertyName("inc")]
         public double? Inc { get; set; }
-        
+
         [JsonPropertyName("latestValue")]
         public double? LatestValue { get; set; }
-        
+
     }
 }

@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("matching_parties")]
         public List<ModelsRequestMatchParty>? MatchingParties { get; set; }
-        
+
     }
 }

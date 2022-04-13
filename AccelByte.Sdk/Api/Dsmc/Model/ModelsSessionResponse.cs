@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("session")]
         public ModelsSession? Session { get; set; }
-        
+
     }
 }

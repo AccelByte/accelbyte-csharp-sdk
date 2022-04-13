@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
     {
         [JsonPropertyName("matching_parties")]
         public List<ModelsRequestMatchParty>? MatchingParties { get; set; }
-        
+
     }
 }

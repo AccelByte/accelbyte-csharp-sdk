@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("errorCode")]
         public int? ErrorCode { get; set; }
-        
+
         [JsonPropertyName("errorMessage")]
         public string? ErrorMessage { get; set; }
-        
+
     }
 }

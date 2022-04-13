@@ -10,24 +10,24 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("active")]
         public bool? Active { get; set; }
-        
+
         [JsonPropertyName("aud")]
         public string? Aud { get; set; }
-        
+
         [JsonPropertyName("client_id")]
         public string? ClientId { get; set; }
-        
+
         [JsonPropertyName("exp")]
         public long? Exp { get; set; }
-        
+
         [JsonPropertyName("iat")]
         public long? Iat { get; set; }
-        
+
         [JsonPropertyName("scope")]
         public string? Scope { get; set; }
-        
+
         [JsonPropertyName("sub")]
         public string? Sub { get; set; }
-        
+
     }
 }

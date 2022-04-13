@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Social.Model
     {
         [JsonPropertyName("inc")]
         public double? Inc { get; set; }
-        
+
         [JsonPropertyName("statCode")]
         public string? StatCode { get; set; }
-        
+
     }
 }

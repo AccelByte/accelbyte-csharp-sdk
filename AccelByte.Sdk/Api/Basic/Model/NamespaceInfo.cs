@@ -3,6 +3,8 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Basic.Model
 {
@@ -10,18 +12,43 @@ namespace AccelByte.Sdk.Api.Basic.Model
     {
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
-        
+
         [JsonPropertyName("displayName")]
         public string? DisplayName { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("status")]
-        public string? Status { get; set; }
-        
+        [JsonStringEnum]
+        public NamespaceInfoStatus? Status { get; set; }
+
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
-        
+
     }
+
+    public class NamespaceInfoStatus : StringEnum<NamespaceInfoStatus>
+    {
+        public static readonly NamespaceInfoStatus ACTIVE
+            = new NamespaceInfoStatus("ACTIVE");
+
+        public static readonly NamespaceInfoStatus INACTIVE
+            = new NamespaceInfoStatus("INACTIVE");
+
+        public static readonly NamespaceInfoStatus DELETED
+            = new NamespaceInfoStatus("DELETED");
+
+
+        public static implicit operator NamespaceInfoStatus(string value)
+        {
+            return Create(value);
+        }
+
+        public NamespaceInfoStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
     {
         [JsonPropertyName("error")]
         public string? Error { get; set; }
-        
+
         [JsonPropertyName("leaderboardCode")]
         public string? LeaderboardCode { get; set; }
-        
+
     }
 }

@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("deletable")]
         public bool? Deletable { get; set; }
-        
+
         [JsonPropertyName("isWildcard")]
         public bool? IsWildcard { get; set; }
-        
+
         [JsonPropertyName("roleName")]
         public string? RoleName { get; set; }
-        
+
     }
 }

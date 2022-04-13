@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("configs")]
         public List<ModelsDSMConfigRecord>? Configs { get; set; }
-        
+
     }
 }

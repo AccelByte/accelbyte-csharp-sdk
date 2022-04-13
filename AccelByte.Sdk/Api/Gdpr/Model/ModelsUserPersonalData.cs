@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
     {
         [JsonPropertyName("DataExpirationDate")]
         public DateTime? DataExpirationDate { get; set; }
-        
+
         [JsonPropertyName("RequestDate")]
         public DateTime? RequestDate { get; set; }
-        
+
         [JsonPropertyName("Status")]
         public string? Status { get; set; }
-        
+
     }
 }

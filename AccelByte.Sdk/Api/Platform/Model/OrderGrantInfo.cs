@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("credits")]
         public List<CreditSummary>? Credits { get; set; }
-        
+
         [JsonPropertyName("entitlements")]
         public List<EntitlementSummary>? Entitlements { get; set; }
-        
+
     }
 }

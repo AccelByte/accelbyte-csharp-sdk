@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("ErrorCode")]
         public int? ErrorCode { get; set; }
-        
+
         [JsonPropertyName("ErrorMessage")]
         public string? ErrorMessage { get; set; }
-        
+
     }
 }

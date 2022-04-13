@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("token")]
         public string? Token { get; set; }
-        
+
     }
 }

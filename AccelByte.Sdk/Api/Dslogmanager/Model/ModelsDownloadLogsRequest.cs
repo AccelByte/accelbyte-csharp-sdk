@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
     {
         [JsonPropertyName("alloc_id")]
         public string? AllocId { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("pod_name")]
         public string? PodName { get; set; }
-        
+
     }
 }

@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("friendIds")]
         public List<string>? FriendIds { get; set; }
-        
+
     }
 }

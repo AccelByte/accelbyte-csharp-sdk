@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     {
         [JsonPropertyName("end")]
         public DateTime? End { get; set; }
-        
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-        
+
         [JsonPropertyName("start")]
         public DateTime? Start { get; set; }
-        
+
     }
 }

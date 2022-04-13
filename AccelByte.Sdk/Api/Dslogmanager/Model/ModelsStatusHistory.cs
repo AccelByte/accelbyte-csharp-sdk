@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
     {
         [JsonPropertyName("status")]
         public string? Status { get; set; }
-        
+
         [JsonPropertyName("time_stamp")]
         public DateTime? TimeStamp { get; set; }
-        
+
     }
 }

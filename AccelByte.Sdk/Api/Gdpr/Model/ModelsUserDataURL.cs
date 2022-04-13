@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
     {
         [JsonPropertyName("URL")]
         public string? URL { get; set; }
-        
+
     }
 }

@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("data")]
         public List<ModelUserResponseV3>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public AccountcommonPaginationV3? Paging { get; set; }
-        
+
         [JsonPropertyName("totalData")]
         public int? TotalData { get; set; }
-        
+
     }
 }

@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Achievement.Model
     {
         [JsonPropertyName("countInfo")]
         public ModelsAdditionalInfo? CountInfo { get; set; }
-        
+
         [JsonPropertyName("data")]
         public List<ModelsUserAchievementResponse>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public ModelsPagination? Paging { get; set; }
-        
+
     }
 }

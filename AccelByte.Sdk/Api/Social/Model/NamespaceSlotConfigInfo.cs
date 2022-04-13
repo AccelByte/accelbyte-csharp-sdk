@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Social.Model
     {
         [JsonPropertyName("maxSlotSize")]
         public int? MaxSlotSize { get; set; }
-        
+
         [JsonPropertyName("maxSlots")]
         public int? MaxSlots { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
     }
 }

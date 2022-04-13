@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("maxSaleCount")]
         public int? MaxSaleCount { get; set; }
-        
+
         [JsonPropertyName("success")]
         public bool? Success { get; set; }
-        
+
     }
 }

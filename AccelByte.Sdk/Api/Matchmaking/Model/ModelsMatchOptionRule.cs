@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
     {
         [JsonPropertyName("options")]
         public List<ModelsMatchOption>? Options { get; set; }
-        
+
     }
 }

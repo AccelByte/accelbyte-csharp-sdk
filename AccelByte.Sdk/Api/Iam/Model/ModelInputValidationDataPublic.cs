@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("field")]
         public string? Field { get; set; }
-        
+
         [JsonPropertyName("validation")]
         public ModelValidationDetailPublic? Validation { get; set; }
-        
+
     }
 }

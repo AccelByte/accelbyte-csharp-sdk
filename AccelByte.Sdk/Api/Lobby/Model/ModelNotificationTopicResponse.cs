@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("createdAt")]
         public long? CreatedAt { get; set; }
-        
+
         [JsonPropertyName("description")]
         public string? Description { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
         [JsonPropertyName("topic")]
         public string? Topic { get; set; }
-        
+
     }
 }

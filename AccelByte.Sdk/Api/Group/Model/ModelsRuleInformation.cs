@@ -3,6 +3,8 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Group.Model
 {
@@ -10,12 +12,37 @@ namespace AccelByte.Sdk.Api.Group.Model
     {
         [JsonPropertyName("ruleAttribute")]
         public string? RuleAttribute { get; set; }
-        
+
         [JsonPropertyName("ruleCriteria")]
-        public string? RuleCriteria { get; set; }
-        
+        [JsonStringEnum]
+        public ModelsRuleInformationRuleCriteria? RuleCriteria { get; set; }
+
         [JsonPropertyName("ruleValue")]
         public double? RuleValue { get; set; }
-        
+
     }
+
+    public class ModelsRuleInformationRuleCriteria : StringEnum<ModelsRuleInformationRuleCriteria>
+    {
+        public static readonly ModelsRuleInformationRuleCriteria EQUAL
+            = new ModelsRuleInformationRuleCriteria("EQUAL");
+
+        public static readonly ModelsRuleInformationRuleCriteria MINIMUM
+            = new ModelsRuleInformationRuleCriteria("MINIMUM");
+
+        public static readonly ModelsRuleInformationRuleCriteria MAXIMUM
+            = new ModelsRuleInformationRuleCriteria("MAXIMUM");
+
+
+        public static implicit operator ModelsRuleInformationRuleCriteria(string value)
+        {
+            return Create(value);
+        }
+
+        public ModelsRuleInformationRuleCriteria(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

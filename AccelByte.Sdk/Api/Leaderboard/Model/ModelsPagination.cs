@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
     {
         [JsonPropertyName("First")]
         public string? First { get; set; }
-        
+
         [JsonPropertyName("Last")]
         public string? Last { get; set; }
-        
+
         [JsonPropertyName("Next")]
         public string? Next { get; set; }
-        
+
         [JsonPropertyName("Previous")]
         public string? Previous { get; set; }
-        
+
     }
 }

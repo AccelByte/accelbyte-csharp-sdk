@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("owned")]
         public bool? Owned { get; set; }
-        
+
     }
 }

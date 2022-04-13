@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("publisherAuthenticationKey")]
         public string? PublisherAuthenticationKey { get; set; }
-        
+
     }
 }

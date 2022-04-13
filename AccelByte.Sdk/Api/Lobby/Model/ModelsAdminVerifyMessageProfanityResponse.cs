@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("filteredMessage")]
         public string? FilteredMessage { get; set; }
-        
+
         [JsonPropertyName("hasProfanity")]
         public bool? HasProfanity { get; set; }
-        
+
     }
 }

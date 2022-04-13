@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
     {
         [JsonPropertyName("data")]
         public List<ServiceGetSessionHistorySearchResponseItem>? Data { get; set; }
-        
+
         [JsonPropertyName("pagination")]
         public ModelsPagination? Pagination { get; set; }
-        
+
     }
 }

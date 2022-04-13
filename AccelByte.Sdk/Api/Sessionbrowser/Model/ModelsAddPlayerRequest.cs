@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
     {
         [JsonPropertyName("as_spectator")]
         public bool? AsSpectator { get; set; }
-        
+
         [JsonPropertyName("user_id")]
         public string? UserId { get; set; }
-        
+
     }
 }

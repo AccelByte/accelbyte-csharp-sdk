@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Qosm.Model
     {
         [JsonPropertyName("servers")]
         public List<ModelsServer>? Servers { get; set; }
-        
+
     }
 }

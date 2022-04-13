@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("userIdPlatforms")]
         public List<AccountcommonUserPlatformInfo>? UserIdPlatforms { get; set; }
-        
+
     }
 }

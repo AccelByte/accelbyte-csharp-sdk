@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Legal.Model
     {
         [JsonPropertyName("lastUpdatedAt")]
         public DateTime? LastUpdatedAt { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
     }
 }

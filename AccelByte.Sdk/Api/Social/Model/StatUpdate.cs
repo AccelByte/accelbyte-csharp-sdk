@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Social.Model
     {
         [JsonPropertyName("description")]
         public string? Description { get; set; }
-        
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-        
+
         [JsonPropertyName("tags")]
         public List<string>? Tags { get; set; }
-        
+
     }
 }

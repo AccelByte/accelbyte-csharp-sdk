@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Legal.Model
     {
         [JsonPropertyName("comply")]
         public bool? Comply { get; set; }
-        
+
         [JsonPropertyName("ext")]
         public Dictionary<string, object>? Ext { get; set; }
-        
+
         [JsonPropertyName("proceed")]
         public bool? Proceed { get; set; }
-        
+
     }
 }

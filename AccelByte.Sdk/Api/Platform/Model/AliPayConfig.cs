@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("appId")]
         public string? AppId { get; set; }
-        
+
         [JsonPropertyName("privateKey")]
         public string? PrivateKey { get; set; }
-        
+
         [JsonPropertyName("publicKey")]
         public string? PublicKey { get; set; }
-        
+
         [JsonPropertyName("returnUrl")]
         public string? ReturnUrl { get; set; }
-        
+
     }
 }

@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Group.Model
     {
         [JsonPropertyName("groupCustomRule")]
         public ModelsGroupRuleGroupCustomRule? GroupCustomRule { get; set; }
-        
+
         [JsonPropertyName("groupPredefinedRules")]
         public List<ModelsRule>? GroupPredefinedRules { get; set; }
-        
+
     }
 }

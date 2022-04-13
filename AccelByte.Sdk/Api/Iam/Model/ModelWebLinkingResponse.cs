@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("third_party_url")]
         public string? ThirdPartyUrl { get; set; }
-        
+
     }
 }

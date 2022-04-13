@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("permissions")]
         public List<AccountcommonPermissionV3>? Permissions { get; set; }
-        
+
     }
 }

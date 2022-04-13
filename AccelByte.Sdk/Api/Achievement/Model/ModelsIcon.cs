@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Achievement.Model
     {
         [JsonPropertyName("slug")]
         public string? Slug { get; set; }
-        
+
         [JsonPropertyName("url")]
         public string? Url { get; set; }
-        
+
     }
 }

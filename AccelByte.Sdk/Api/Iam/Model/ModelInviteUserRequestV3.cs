@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("emailAddresses")]
         public List<string>? EmailAddresses { get; set; }
-        
+
         [JsonPropertyName("isAdmin")]
         public bool? IsAdmin { get; set; }
-        
+
         [JsonPropertyName("roles")]
         public List<string>? Roles { get; set; }
-        
+
     }
 }

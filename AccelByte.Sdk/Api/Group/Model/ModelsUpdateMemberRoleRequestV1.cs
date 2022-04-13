@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Group.Model
     {
         [JsonPropertyName("memberRoleName")]
         public string? MemberRoleName { get; set; }
-        
+
     }
 }

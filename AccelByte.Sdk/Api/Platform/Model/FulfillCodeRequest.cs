@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("code")]
         public string? Code { get; set; }
-        
+
         [JsonPropertyName("language")]
         public string? Language { get; set; }
-        
+
         [JsonPropertyName("region")]
         public string? Region { get; set; }
-        
+
     }
 }

@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Social.Model
     {
         [JsonPropertyName("currentValue")]
         public double? CurrentValue { get; set; }
-        
+
     }
 }

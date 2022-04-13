@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
     {
         [JsonPropertyName("key")]
         public string? Key { get; set; }
-        
+
         [JsonPropertyName("user_id")]
         public string? UserId { get; set; }
-        
+
     }
 }

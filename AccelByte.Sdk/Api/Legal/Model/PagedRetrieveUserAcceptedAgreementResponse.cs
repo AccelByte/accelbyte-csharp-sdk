@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Legal.Model
     {
         [JsonPropertyName("data")]
         public List<RetrieveUserAcceptedAgreementResponse>? Data { get; set; }
-        
+
         [JsonPropertyName("paging")]
         public Paging? Paging { get; set; }
-        
+
     }
 }

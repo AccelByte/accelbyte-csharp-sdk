@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("generatedAt")]
         public long? GeneratedAt { get; set; }
-        
+
         [JsonPropertyName("invalidCodes")]
         public List<string>? InvalidCodes { get; set; }
-        
+
         [JsonPropertyName("validCodes")]
         public List<string>? ValidCodes { get; set; }
-        
+
     }
 }

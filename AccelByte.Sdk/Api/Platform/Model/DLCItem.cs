@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("id")]
         public string? Id { get; set; }
-        
+
         [JsonPropertyName("rewards")]
         public List<PlatformReward>? Rewards { get; set; }
-        
+
     }
 }

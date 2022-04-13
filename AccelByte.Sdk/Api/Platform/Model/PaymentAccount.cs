@@ -3,6 +3,8 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
@@ -10,12 +12,34 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("id")]
         public string? Id { get; set; }
-        
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-        
+
         [JsonPropertyName("type")]
-        public string? Type { get; set; }
-        
+        [JsonStringEnum]
+        public PaymentAccountType? Type { get; set; }
+
     }
+
+    public class PaymentAccountType : StringEnum<PaymentAccountType>
+    {
+        public static readonly PaymentAccountType Card
+            = new PaymentAccountType("card");
+
+        public static readonly PaymentAccountType Paypal
+            = new PaymentAccountType("paypal");
+
+
+        public static implicit operator PaymentAccountType(string value)
+        {
+            return Create(value);
+        }
+
+        public PaymentAccountType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

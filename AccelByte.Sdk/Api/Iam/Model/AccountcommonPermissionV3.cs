@@ -10,18 +10,18 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("action")]
         public int? Action { get; set; }
-        
+
         [JsonPropertyName("resource")]
         public string? Resource { get; set; }
-        
+
         [JsonPropertyName("schedAction")]
         public int? SchedAction { get; set; }
-        
+
         [JsonPropertyName("schedCron")]
         public string? SchedCron { get; set; }
-        
+
         [JsonPropertyName("schedRange")]
         public List<string>? SchedRange { get; set; }
-        
+
     }
 }

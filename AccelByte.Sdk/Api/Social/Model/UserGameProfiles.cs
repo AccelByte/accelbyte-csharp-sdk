@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Social.Model
     {
         [JsonPropertyName("gameProfiles")]
         public List<GameProfilePublicInfo>? GameProfiles { get; set; }
-        
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
-        
+
     }
 }

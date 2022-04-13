@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("affected")]
         public List<string>? Affected { get; set; }
-        
+
         [JsonPropertyName("failed")]
         public List<string>? Failed { get; set; }
-        
+
     }
 }

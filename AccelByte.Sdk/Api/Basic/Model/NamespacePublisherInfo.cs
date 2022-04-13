@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Basic.Model
     {
         [JsonPropertyName("publisher")]
         public bool? Publisher { get; set; }
-        
+
         [JsonPropertyName("publisherNamespace")]
         public string? PublisherNamespace { get; set; }
-        
+
     }
 }

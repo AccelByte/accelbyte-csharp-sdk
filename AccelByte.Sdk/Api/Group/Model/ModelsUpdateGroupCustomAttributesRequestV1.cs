@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Group.Model
     {
         [JsonPropertyName("customAttributes")]
         public Dictionary<string, object>? CustomAttributes { get; set; }
-        
+
     }
 }

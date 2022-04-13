@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
     {
         [JsonPropertyName("leaderboardCodes")]
         public List<string>? LeaderboardCodes { get; set; }
-        
+
     }
 }

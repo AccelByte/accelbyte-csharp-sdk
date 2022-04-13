@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Achievement.Model
     {
         [JsonPropertyName("targetOrder")]
         public int? TargetOrder { get; set; }
-        
+
     }
 }

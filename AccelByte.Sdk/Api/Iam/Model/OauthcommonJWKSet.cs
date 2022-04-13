@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("keys")]
         public List<OauthcommonJWKKey>? Keys { get; set; }
-        
+
     }
 }

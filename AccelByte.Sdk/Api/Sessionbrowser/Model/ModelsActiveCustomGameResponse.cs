@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
     {
         [JsonPropertyName("pagination")]
         public ModelsPagingCursor? Pagination { get; set; }
-        
+
         [JsonPropertyName("sessions")]
         public List<ModelsCustomGameResponse>? Sessions { get; set; }
-        
+
     }
 }

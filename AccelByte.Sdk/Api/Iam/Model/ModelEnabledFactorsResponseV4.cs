@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("default")]
         public string? Default { get; set; }
-        
+
         [JsonPropertyName("enabled")]
         public List<string>? Enabled { get; set; }
-        
+
     }
 }

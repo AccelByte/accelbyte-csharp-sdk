@@ -10,18 +10,18 @@ namespace AccelByte.Sdk.Api.Social.Model
     {
         [JsonPropertyName("errorCode")]
         public string? ErrorCode { get; set; }
-        
+
         [JsonPropertyName("errorField")]
         public string? ErrorField { get; set; }
-        
+
         [JsonPropertyName("errorMessage")]
         public string? ErrorMessage { get; set; }
-        
+
         [JsonPropertyName("errorValue")]
         public string? ErrorValue { get; set; }
-        
+
         [JsonPropertyName("messageVariables")]
         public Dictionary<string, string>? MessageVariables { get; set; }
-        
+
     }
 }

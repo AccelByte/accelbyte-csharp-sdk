@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Social.Model
     {
         [JsonPropertyName("additionalData")]
         public Dictionary<string, object>? AdditionalData { get; set; }
-        
+
     }
 }

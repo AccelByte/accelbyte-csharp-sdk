@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
     {
         [JsonPropertyName("additionalData")]
         public Dictionary<string, object>? AdditionalData { get; set; }
-        
+
         [JsonPropertyName("hidden")]
         public bool? Hidden { get; set; }
-        
+
         [JsonPropertyName("point")]
         public double? Point { get; set; }
-        
+
     }
 }

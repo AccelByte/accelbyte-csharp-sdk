@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("language")]
         public string? Language { get; set; }
-        
+
         [JsonPropertyName("message")]
         public List<string>? Message { get; set; }
-        
+
     }
 }

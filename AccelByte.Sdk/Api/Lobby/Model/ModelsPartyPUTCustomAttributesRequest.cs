@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("custom_attribute")]
         public Dictionary<string, object>? CustomAttribute { get; set; }
-        
+
         [JsonPropertyName("updatedAt")]
         public long? UpdatedAt { get; set; }
-        
+
     }
 }

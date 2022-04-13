@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("DesignatedNamespace")]
         public string? DesignatedNamespace { get; set; }
-        
+
         [JsonPropertyName("UserID")]
         public string? UserID { get; set; }
-        
+
     }
 }

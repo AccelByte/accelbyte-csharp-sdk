@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
     {
         [JsonPropertyName("password")]
         public string? Password { get; set; }
-        
+
     }
 }

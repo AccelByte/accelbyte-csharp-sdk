@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Basic.Model
     {
         [JsonPropertyName("apiKey")]
         public string? ApiKey { get; set; }
-        
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
     }
 }

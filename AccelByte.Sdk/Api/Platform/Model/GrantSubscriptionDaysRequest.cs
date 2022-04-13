@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("grantDays")]
         public int? GrantDays { get; set; }
-        
+
         [JsonPropertyName("reason")]
         public string? Reason { get; set; }
-        
+
     }
 }

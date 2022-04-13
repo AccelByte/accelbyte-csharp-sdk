@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Basic.Model
     {
         [JsonPropertyName("countries")]
         public List<CountryObject>? Countries { get; set; }
-        
+
         [JsonPropertyName("countryGroupCode")]
         public string? CountryGroupCode { get; set; }
-        
+
         [JsonPropertyName("countryGroupName")]
         public string? CountryGroupName { get; set; }
-        
+
     }
 }

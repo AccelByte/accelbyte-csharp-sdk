@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("domain")]
         public string? Domain { get; set; }
-        
+
     }
 }

@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
     {
         [JsonPropertyName("AgentType")]
         public int? AgentType { get; set; }
-        
+
         [JsonPropertyName("Description")]
         public string? Description { get; set; }
-        
+
     }
 }

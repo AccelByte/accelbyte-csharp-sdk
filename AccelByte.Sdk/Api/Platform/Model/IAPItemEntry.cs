@@ -3,6 +3,8 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
@@ -10,12 +12,34 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("itemIdentity")]
         public string? ItemIdentity { get; set; }
-        
+
         [JsonPropertyName("itemIdentityType")]
-        public string? ItemIdentityType { get; set; }
-        
+        [JsonStringEnum]
+        public IAPItemEntryItemIdentityType? ItemIdentityType { get; set; }
+
         [JsonPropertyName("platformProductIdMap")]
         public Dictionary<string, string>? PlatformProductIdMap { get; set; }
-        
+
     }
+
+    public class IAPItemEntryItemIdentityType : StringEnum<IAPItemEntryItemIdentityType>
+    {
+        public static readonly IAPItemEntryItemIdentityType ITEMID
+            = new IAPItemEntryItemIdentityType("ITEM_ID");
+
+        public static readonly IAPItemEntryItemIdentityType ITEMSKU
+            = new IAPItemEntryItemIdentityType("ITEM_SKU");
+
+
+        public static implicit operator IAPItemEntryItemIdentityType(string value)
+        {
+            return Create(value);
+        }
+
+        public IAPItemEntryItemIdentityType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 }

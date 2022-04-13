@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Ugc.Model
     {
         [JsonPropertyName("tag")]
         public string? Tag { get; set; }
-        
+
     }
 }

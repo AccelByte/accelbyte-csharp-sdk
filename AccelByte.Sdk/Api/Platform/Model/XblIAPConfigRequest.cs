@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("relyingPartyCert")]
         public string? RelyingPartyCert { get; set; }
-        
+
     }
 }

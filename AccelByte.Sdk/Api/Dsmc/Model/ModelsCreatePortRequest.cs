@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("port")]
         public int? Port { get; set; }
-        
+
     }
 }

@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("appId")]
         public string? AppId { get; set; }
-        
+
         [JsonPropertyName("steamId")]
         public string? SteamId { get; set; }
-        
+
     }
 }

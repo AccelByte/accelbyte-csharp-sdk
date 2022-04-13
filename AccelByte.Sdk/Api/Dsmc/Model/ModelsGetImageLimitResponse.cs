@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("data")]
         public ModelsGetImageLimitResponseData? Data { get; set; }
-        
+
     }
 }

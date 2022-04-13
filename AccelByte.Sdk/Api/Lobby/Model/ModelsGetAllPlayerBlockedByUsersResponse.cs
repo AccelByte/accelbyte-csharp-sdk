@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("data")]
         public List<ModelsBlockedByPlayerData>? Data { get; set; }
-        
+
     }
 }

@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("ClientName")]
         public string? ClientName { get; set; }
-        
+
         [JsonPropertyName("RedirectUri")]
         public string? RedirectUri { get; set; }
-        
+
     }
 }

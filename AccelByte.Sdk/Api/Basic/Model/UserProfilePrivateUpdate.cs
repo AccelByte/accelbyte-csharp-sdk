@@ -3,7 +3,7 @@
 // and restrictions contact your company contract manager.
 
 using System.Text.Json.Serialization;
-using AccelByte.Sdk.Core.Util;
+using AccelByte.Sdk.Core.Converters;
 
 namespace AccelByte.Sdk.Api.Basic.Model
 {
@@ -11,37 +11,37 @@ namespace AccelByte.Sdk.Api.Basic.Model
     {
         [JsonPropertyName("avatarLargeUrl")]
         public string? AvatarLargeUrl { get; set; }
-        
+
         [JsonPropertyName("avatarSmallUrl")]
         public string? AvatarSmallUrl { get; set; }
-        
+
         [JsonPropertyName("avatarUrl")]
         public string? AvatarUrl { get; set; }
-        
+
         [JsonPropertyName("customAttributes")]
         public Dictionary<string, object>? CustomAttributes { get; set; }
-        
+
         [JsonPropertyName("dateOfBirth")]
         [JsonDateTimeConverter("yyyy-MM-dd")]
         public DateTime? DateOfBirth { get; set; }
-        
+
         [JsonPropertyName("firstName")]
         public string? FirstName { get; set; }
-        
+
         [JsonPropertyName("language")]
         public string? Language { get; set; }
-        
+
         [JsonPropertyName("lastName")]
         public string? LastName { get; set; }
-        
+
         [JsonPropertyName("privateCustomAttributes")]
         public Dictionary<string, object>? PrivateCustomAttributes { get; set; }
-        
+
         [JsonPropertyName("timeZone")]
         public string? TimeZone { get; set; }
-        
+
         [JsonPropertyName("zipCode")]
         public string? ZipCode { get; set; }
-        
+
     }
 }

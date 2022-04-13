@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("kill_me")]
         public bool? KillMe { get; set; }
-        
+
         [JsonPropertyName("pod_name")]
         public string? PodName { get; set; }
-        
+
     }
 }

@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("ban")]
         public string? Ban { get; set; }
-        
+
         [JsonPropertyName("banId")]
         public string? BanId { get; set; }
-        
+
         [JsonPropertyName("endDate")]
         public DateTime? EndDate { get; set; }
-        
+
     }
 }

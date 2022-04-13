@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("subscribable")]
         public bool? Subscribable_ { get; set; }
-        
+
     }
 }

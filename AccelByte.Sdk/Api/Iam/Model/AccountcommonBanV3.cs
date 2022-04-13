@@ -10,15 +10,15 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("ban")]
         public string? Ban { get; set; }
-        
+
         [JsonPropertyName("description")]
         public string? Description { get; set; }
-        
+
         [JsonPropertyName("descriptions")]
         public AccountcommonDescription? Descriptions { get; set; }
-        
+
         [JsonPropertyName("type")]
         public string? Type { get; set; }
-        
+
     }
 }

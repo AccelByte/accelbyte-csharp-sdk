@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Basic.Model
     {
         [JsonPropertyName("expires")]
         public DateTime? Expires { get; set; }
-        
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
-        
+
     }
 }

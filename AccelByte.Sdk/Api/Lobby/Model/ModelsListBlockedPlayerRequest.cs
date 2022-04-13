@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
     {
         [JsonPropertyName("listBlockedUserId")]
         public List<string>? ListBlockedUserId { get; set; }
-        
+
     }
 }

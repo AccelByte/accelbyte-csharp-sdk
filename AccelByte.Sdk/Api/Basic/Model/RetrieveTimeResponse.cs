@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Basic.Model
     {
         [JsonPropertyName("currentTime")]
         public string? CurrentTime { get; set; }
-        
+
     }
 }

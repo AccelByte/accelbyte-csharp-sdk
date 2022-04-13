@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("next")]
         public string? Next { get; set; }
-        
+
         [JsonPropertyName("previous")]
         public string? Previous { get; set; }
-        
+
     }
 }

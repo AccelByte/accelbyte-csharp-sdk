@@ -10,12 +10,12 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     {
         [JsonPropertyName("party_attributes")]
         public Dictionary<string, object>? PartyAttributes { get; set; }
-        
+
         [JsonPropertyName("party_id")]
         public string? PartyId { get; set; }
-        
+
         [JsonPropertyName("party_members")]
         public List<ModelsRequestMatchMember>? PartyMembers { get; set; }
-        
+
     }
 }

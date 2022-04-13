@@ -10,9 +10,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
     {
         [JsonPropertyName("secretKey")]
         public string? SecretKey { get; set; }
-        
+
         [JsonPropertyName("uri")]
         public string? Uri { get; set; }
-        
+
     }
 }

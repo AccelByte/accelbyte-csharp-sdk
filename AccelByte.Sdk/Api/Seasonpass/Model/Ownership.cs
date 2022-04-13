@@ -10,6 +10,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     {
         [JsonPropertyName("owned")]
         public bool? Owned { get; set; }
-        
+
     }
 }
