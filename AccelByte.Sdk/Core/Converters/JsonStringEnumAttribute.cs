@@ -2,13 +2,7 @@
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace AccelByte.Sdk.Core.Converters
 {
@@ -16,7 +10,16 @@ namespace AccelByte.Sdk.Core.Converters
     {
         public override JsonConverter? CreateConverter(Type typeToConvert)
         {
-            return new JsonStringEnumConverter();
+            if (typeToConvert.IsGenericType && typeToConvert.GetGenericTypeDefinition() == typeof(List<>))
+            {
+                Type genericType = typeToConvert.GetGenericArguments()[0];
+                return (JsonConverter?)Activator.CreateInstance(
+                    typeof(JsonStringEnumListConverter<>)
+                    .MakeGenericType(new Type[] { genericType })
+                );
+            }
+            else
+                return new JsonStringEnumConverter();
         }
     }
 }

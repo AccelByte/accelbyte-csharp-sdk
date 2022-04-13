@@ -2,13 +2,6 @@
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Converters;
 
@@ -16,18 +9,15 @@ namespace AccelByte.Sdk.Tests.Model
 {
     public class ModelWithEnum
     {
-        [JsonPropertyName("ruleAttribute")]
         public string? RuleAttribute { get; set; }
 
-        [JsonPropertyName("ruleCriteria")]
         [JsonStringEnum]
         public ModelWithEnumRuleCriteria? RuleCriteria { get; set; }
 
-        [JsonPropertyName("ruleValue")]
         public double? RuleValue { get; set; }
     }
 
-    public class ModelWithEnumRuleCriteria : StringEnum
+    public class ModelWithEnumRuleCriteria : StringEnum<ModelWithEnumRuleCriteria>
     {
         public static readonly ModelWithEnumRuleCriteria EQUAL
             = new ModelWithEnumRuleCriteria("EQUAL");
@@ -38,10 +28,9 @@ namespace AccelByte.Sdk.Tests.Model
         public static readonly ModelWithEnumRuleCriteria MAXIMUM
             = new ModelWithEnumRuleCriteria("MAXIMUM");
 
-
         public static implicit operator ModelWithEnumRuleCriteria(string value)
         {
-            return StringEnum.Create<ModelWithEnumRuleCriteria>(value);
+            return Create(value);
         }
 
         public ModelWithEnumRuleCriteria(string enumValue)

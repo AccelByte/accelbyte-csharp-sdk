@@ -14,11 +14,6 @@ namespace AccelByte.Sdk.Core
     {
         private readonly string _Value;
 
-        public static T Create<T>(string value) where T : StringEnum
-        {
-            return (T)Activator.CreateInstance(typeof(T), new object[] { value })!;
-        }
-
         public static object? Create(Type targetType,string value)
         {
             if (!typeof(StringEnum).IsAssignableFrom(targetType))
@@ -107,5 +102,34 @@ namespace AccelByte.Sdk.Core
             return (a == b.Value);
         }
         #endregion
+    }
+
+    public abstract class StringEnum<T> : StringEnum where T : StringEnum
+    {
+        public static T Create(string value)
+        {
+            return (T)Activator.CreateInstance(typeof(T), new object[] { value })!;
+        }
+
+        public static List<T> operator |(StringEnum<T> a, StringEnum<T> b)
+        {
+            return new List<T>()
+            {
+                Create(a.Value),
+                Create(b.Value)
+            };
+        }
+
+        public static List<T> operator |(List<T> a, StringEnum<T> b)
+        {
+            a.Add(Create(b.Value));
+            return a;
+        }
+
+        protected StringEnum(string value)
+            : base(value)
+        {
+
+        }
     }
 }
