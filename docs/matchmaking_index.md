@@ -5,44 +5,44 @@
 ## Operations
 
 ### Matchmaking Operations Wrapper:  [MatchmakingOperations](../AccelByte.Sdk/Api/Matchmaking/Wrapper/MatchmakingOperations.cs)
-| Endpoint | Method | ID | Class |
-|---|---|---|---|
-| `/healthz` | GET | GetHealthcheckInfo | [GetHealthcheckInfo](../AccelByte.Sdk/Api/Matchmaking/Operation/MatchmakingOperations/GetHealthcheckInfo.cs) |
-| `/matchmaking/healthz` | GET | HandlerV3Healthz | [HandlerV3Healthz](../AccelByte.Sdk/Api/Matchmaking/Operation/MatchmakingOperations/HandlerV3Healthz.cs) |
-| `/matchmaking/v1/messages` | GET | PublicGetMessages | [PublicGetMessages](../AccelByte.Sdk/Api/Matchmaking/Operation/MatchmakingOperations/PublicGetMessages.cs) |
-| `/matchmaking/version` | GET | VersionCheckHandler | [VersionCheckHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/MatchmakingOperations/VersionCheckHandler.cs) |
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/healthz` | GET | GetHealthcheckInfo | [GetHealthcheckInfo](../AccelByte.Sdk/Api/Matchmaking/Operation/MatchmakingOperations/GetHealthcheckInfo.cs) | [GetHealthcheckInfo](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/MatchmakingOperations/GetHealthcheckInfo.cs) |
+| `/matchmaking/healthz` | GET | HandlerV3Healthz | [HandlerV3Healthz](../AccelByte.Sdk/Api/Matchmaking/Operation/MatchmakingOperations/HandlerV3Healthz.cs) | [HandlerV3Healthz](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/MatchmakingOperations/HandlerV3Healthz.cs) |
+| `/matchmaking/v1/messages` | GET | PublicGetMessages | [PublicGetMessages](../AccelByte.Sdk/Api/Matchmaking/Operation/MatchmakingOperations/PublicGetMessages.cs) | [PublicGetMessages](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/MatchmakingOperations/PublicGetMessages.cs) |
+| `/matchmaking/version` | GET | VersionCheckHandler | [VersionCheckHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/MatchmakingOperations/VersionCheckHandler.cs) | [VersionCheckHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/MatchmakingOperations/VersionCheckHandler.cs) |
 
 ### Matchmaking Wrapper:  [Matchmaking](../AccelByte.Sdk/Api/Matchmaking/Wrapper/Matchmaking.cs)
-| Endpoint | Method | ID | Class |
-|---|---|---|---|
-| `/matchmaking/namespaces/{namespace}/channels` | GET | GetAllChannelsHandler | [GetAllChannelsHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetAllChannelsHandler.cs) |
-| `/matchmaking/namespaces/{namespace}/channels` | POST | CreateChannelHandler | [CreateChannelHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/CreateChannelHandler.cs) |
-| `/matchmaking/namespaces/{namespace}/channels/{channel}` | DELETE | DeleteChannelHandler | [DeleteChannelHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/DeleteChannelHandler.cs) |
-| `/matchmaking/namespaces/{namespace}/matchresult` | POST | StoreMatchResults | [StoreMatchResults](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/StoreMatchResults.cs) |
-| `/matchmaking/namespaces/{namespace}/sessions` | POST | QueueSessionHandler | [QueueSessionHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/QueueSessionHandler.cs) |
-| `/matchmaking/namespaces/{namespace}/sessions/dequeue` | POST | DequeueSessionHandler | [DequeueSessionHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/DequeueSessionHandler.cs) |
-| `/matchmaking/namespaces/{namespace}/sessions/{matchID}/status` | GET | QuerySessionHandler | [QuerySessionHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/QuerySessionHandler.cs) |
-| `/matchmaking/v1/admin/namespaces/{namespace}/channels/all/parties` | GET | GetAllPartyInAllChannel | [GetAllPartyInAllChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetAllPartyInAllChannel.cs) |
-| `/matchmaking/v1/admin/namespaces/{namespace}/channels/all/sessions/bulk` | GET | BulkGetSessions | [BulkGetSessions](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/BulkGetSessions.cs) |
-| `/matchmaking/v1/admin/namespaces/{namespace}/channels/export` | GET | ExportChannels | [ExportChannels](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/ExportChannels.cs) |
-| `/matchmaking/v1/admin/namespaces/{namespace}/channels/import` | POST | ImportChannels | [ImportChannels](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/ImportChannels.cs) |
-| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}` | GET | GetSingleMatchmakingChannel | [GetSingleMatchmakingChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetSingleMatchmakingChannel.cs) |
-| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}` | PATCH | UpdateMatchmakingChannel | [UpdateMatchmakingChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/UpdateMatchmakingChannel.cs) |
-| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/parties` | GET | GetAllPartyInChannel | [GetAllPartyInChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetAllPartyInChannel.cs) |
-| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions` | GET | GetAllSessionsInChannel | [GetAllSessionsInChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetAllSessionsInChannel.cs) |
-| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions/{matchID}` | POST | AddUserIntoSessionInChannel | [AddUserIntoSessionInChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/AddUserIntoSessionInChannel.cs) |
-| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions/{matchID}` | DELETE | DeleteSessionInChannel | [DeleteSessionInChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/DeleteSessionInChannel.cs) |
-| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions/{matchID}/users/{userID}` | DELETE | DeleteUserFromSessionInChannel | [DeleteUserFromSessionInChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/DeleteUserFromSessionInChannel.cs) |
-| `/matchmaking/v1/admin/namespaces/{namespace}/sessions/history/search` | GET | SearchSessions | [SearchSessions](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/SearchSessions.cs) |
-| `/matchmaking/v1/admin/namespaces/{namespace}/sessions/{matchID}/history/detailed` | GET | GetSessionHistoryDetailed | [GetSessionHistoryDetailed](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetSessionHistoryDetailed.cs) |
-| `/matchmaking/v1/public/namespaces/{namespace}/channels` | GET | PublicGetAllMatchmakingChannel | [PublicGetAllMatchmakingChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/PublicGetAllMatchmakingChannel.cs) |
-| `/matchmaking/v1/public/namespaces/{namespace}/channels/{channelName}` | GET | PublicGetSingleMatchmakingChannel | [PublicGetSingleMatchmakingChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/PublicGetSingleMatchmakingChannel.cs) |
-| `/matchmaking/v2/admin/namespaces/{namespace}/sessions/history/search` | GET | SearchSessionsV2 | [SearchSessionsV2](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/SearchSessionsV2.cs) |
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/matchmaking/namespaces/{namespace}/channels` | GET | GetAllChannelsHandler | [GetAllChannelsHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetAllChannelsHandler.cs) | [GetAllChannelsHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/GetAllChannelsHandler.cs) |
+| `/matchmaking/namespaces/{namespace}/channels` | POST | CreateChannelHandler | [CreateChannelHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/CreateChannelHandler.cs) | [CreateChannelHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/CreateChannelHandler.cs) |
+| `/matchmaking/namespaces/{namespace}/channels/{channel}` | DELETE | DeleteChannelHandler | [DeleteChannelHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/DeleteChannelHandler.cs) | [DeleteChannelHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/DeleteChannelHandler.cs) |
+| `/matchmaking/namespaces/{namespace}/matchresult` | POST | StoreMatchResults | [StoreMatchResults](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/StoreMatchResults.cs) | [StoreMatchResults](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/StoreMatchResults.cs) |
+| `/matchmaking/namespaces/{namespace}/sessions` | POST | QueueSessionHandler | [QueueSessionHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/QueueSessionHandler.cs) | [QueueSessionHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/QueueSessionHandler.cs) |
+| `/matchmaking/namespaces/{namespace}/sessions/dequeue` | POST | DequeueSessionHandler | [DequeueSessionHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/DequeueSessionHandler.cs) | [DequeueSessionHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/DequeueSessionHandler.cs) |
+| `/matchmaking/namespaces/{namespace}/sessions/{matchID}/status` | GET | QuerySessionHandler | [QuerySessionHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/QuerySessionHandler.cs) | [QuerySessionHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/QuerySessionHandler.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/all/parties` | GET | GetAllPartyInAllChannel | [GetAllPartyInAllChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetAllPartyInAllChannel.cs) | [GetAllPartyInAllChannel](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/GetAllPartyInAllChannel.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/all/sessions/bulk` | GET | BulkGetSessions | [BulkGetSessions](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/BulkGetSessions.cs) | [BulkGetSessions](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/BulkGetSessions.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/export` | GET | ExportChannels | [ExportChannels](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/ExportChannels.cs) | [ExportChannels](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/ExportChannels.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/import` | POST | ImportChannels | [ImportChannels](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/ImportChannels.cs) | [ImportChannels](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/ImportChannels.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}` | GET | GetSingleMatchmakingChannel | [GetSingleMatchmakingChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetSingleMatchmakingChannel.cs) | [GetSingleMatchmakingChannel](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/GetSingleMatchmakingChannel.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}` | PATCH | UpdateMatchmakingChannel | [UpdateMatchmakingChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/UpdateMatchmakingChannel.cs) | [UpdateMatchmakingChannel](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/UpdateMatchmakingChannel.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/parties` | GET | GetAllPartyInChannel | [GetAllPartyInChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetAllPartyInChannel.cs) | [GetAllPartyInChannel](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/GetAllPartyInChannel.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions` | GET | GetAllSessionsInChannel | [GetAllSessionsInChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetAllSessionsInChannel.cs) | [GetAllSessionsInChannel](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/GetAllSessionsInChannel.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions/{matchID}` | POST | AddUserIntoSessionInChannel | [AddUserIntoSessionInChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/AddUserIntoSessionInChannel.cs) | [AddUserIntoSessionInChannel](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/AddUserIntoSessionInChannel.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions/{matchID}` | DELETE | DeleteSessionInChannel | [DeleteSessionInChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/DeleteSessionInChannel.cs) | [DeleteSessionInChannel](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/DeleteSessionInChannel.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions/{matchID}/users/{userID}` | DELETE | DeleteUserFromSessionInChannel | [DeleteUserFromSessionInChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/DeleteUserFromSessionInChannel.cs) | [DeleteUserFromSessionInChannel](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/DeleteUserFromSessionInChannel.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/sessions/history/search` | GET | SearchSessions | [SearchSessions](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/SearchSessions.cs) | [SearchSessions](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/SearchSessions.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/sessions/{matchID}/history/detailed` | GET | GetSessionHistoryDetailed | [GetSessionHistoryDetailed](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetSessionHistoryDetailed.cs) | [GetSessionHistoryDetailed](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/GetSessionHistoryDetailed.cs) |
+| `/matchmaking/v1/public/namespaces/{namespace}/channels` | GET | PublicGetAllMatchmakingChannel | [PublicGetAllMatchmakingChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/PublicGetAllMatchmakingChannel.cs) | [PublicGetAllMatchmakingChannel](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/PublicGetAllMatchmakingChannel.cs) |
+| `/matchmaking/v1/public/namespaces/{namespace}/channels/{channelName}` | GET | PublicGetSingleMatchmakingChannel | [PublicGetSingleMatchmakingChannel](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/PublicGetSingleMatchmakingChannel.cs) | [PublicGetSingleMatchmakingChannel](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/PublicGetSingleMatchmakingChannel.cs) |
+| `/matchmaking/v2/admin/namespaces/{namespace}/sessions/history/search` | GET | SearchSessionsV2 | [SearchSessionsV2](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/SearchSessionsV2.cs) | [SearchSessionsV2](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/SearchSessionsV2.cs) |
 
 ### Social Matchmaking Wrapper:  [SocialMatchmaking](../AccelByte.Sdk/Api/Matchmaking/Wrapper/SocialMatchmaking.cs)
-| Endpoint | Method | ID | Class |
-|---|---|---|---|
-| `/matchmaking/social/playtime/namespaces/{namespace}/weight` | PATCH | UpdatePlayTimeWeight | [UpdatePlayTimeWeight](../AccelByte.Sdk/Api/Matchmaking/Operation/SocialMatchmaking/UpdatePlayTimeWeight.cs) |
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/matchmaking/social/playtime/namespaces/{namespace}/weight` | PATCH | UpdatePlayTimeWeight | [UpdatePlayTimeWeight](../AccelByte.Sdk/Api/Matchmaking/Operation/SocialMatchmaking/UpdatePlayTimeWeight.cs) | [UpdatePlayTimeWeight](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/SocialMatchmaking/UpdatePlayTimeWeight.cs) |
 
 
 &nbsp;  
