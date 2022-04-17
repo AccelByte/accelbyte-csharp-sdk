@@ -112,5 +112,5 @@ if (!logout)
 Sample apps are available in the [samples](samples) directory
 
 ## Documentation
-
+Reference about AccelByte service endpoints and their corresponding SDK API is available in [docs](docs) directory.
 For documentation about AccelByte services and SDK, see [docs.accelbyte.io](https://docs.accelbyte.io/)
