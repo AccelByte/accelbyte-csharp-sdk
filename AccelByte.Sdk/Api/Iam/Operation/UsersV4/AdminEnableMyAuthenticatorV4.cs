@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminEnableMyAuthenticatorV4Builder Builder = new AdminEnableMyAuthenticatorV4Builder();
 
         public class AdminEnableMyAuthenticatorV4Builder
+            : OperationBuilder<AdminEnableMyAuthenticatorV4Builder>
         {
             public string? Code { get; set; }
             
@@ -47,8 +48,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public AdminEnableMyAuthenticatorV4 Build(
             )
             {
-                return new AdminEnableMyAuthenticatorV4(this
+                AdminEnableMyAuthenticatorV4 op = new AdminEnableMyAuthenticatorV4(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -61,6 +65,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -74,6 +80,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v4/admin/users/me/mfa/authenticator/enable";
@@ -84,7 +92,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

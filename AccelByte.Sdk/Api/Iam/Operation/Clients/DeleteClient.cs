@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static DeleteClientBuilder Builder = new DeleteClientBuilder();
 
         public class DeleteClientBuilder
+            : OperationBuilder<DeleteClientBuilder>
         {
             
             internal DeleteClientBuilder() { }
@@ -42,9 +43,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string clientId
             )
             {
-                return new DeleteClient(this,
+                DeleteClient op = new DeleteClient(this,
                     clientId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -58,6 +62,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -71,6 +77,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/clients/{clientId}";
@@ -81,7 +89,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

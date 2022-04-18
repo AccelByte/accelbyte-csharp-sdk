@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PublicDeletePaymentAccountBuilder Builder = new PublicDeletePaymentAccountBuilder();
 
         public class PublicDeletePaymentAccountBuilder
+            : OperationBuilder<PublicDeletePaymentAccountBuilder>
         {
             
             
@@ -44,12 +45,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string userId
             )
             {
-                return new PublicDeletePaymentAccount(this,
+                PublicDeletePaymentAccount op = new PublicDeletePaymentAccount(this,
                     id,                    
                     namespace_,                    
                     type,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -69,6 +73,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -88,6 +94,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/users/{userId}/payment/accounts/{type}/{id}";
@@ -98,7 +106,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

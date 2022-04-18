@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static DeleteFulfillmentScriptBuilder Builder = new DeleteFulfillmentScriptBuilder();
 
         public class DeleteFulfillmentScriptBuilder
+            : OperationBuilder<DeleteFulfillmentScriptBuilder>
         {
             
             internal DeleteFulfillmentScriptBuilder() { }
@@ -37,9 +38,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string id
             )
             {
-                return new DeleteFulfillmentScript(this,
+                DeleteFulfillmentScript op = new DeleteFulfillmentScript(this,
                     id                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -66,6 +72,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/fulfillment/scripts/{id}";
@@ -76,7 +84,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] {  };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

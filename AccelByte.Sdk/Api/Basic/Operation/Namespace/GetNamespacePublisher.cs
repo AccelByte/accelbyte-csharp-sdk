@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public static GetNamespacePublisherBuilder Builder = new GetNamespacePublisherBuilder();
 
         public class GetNamespacePublisherBuilder
+            : OperationBuilder<GetNamespacePublisherBuilder>
         {
             
             internal GetNamespacePublisherBuilder() { }
@@ -39,9 +40,12 @@ namespace AccelByte.Sdk.Api.Basic.Operation
                 string namespace_
             )
             {
-                return new GetNamespacePublisher(this,
+                GetNamespacePublisher op = new GetNamespacePublisher(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -55,6 +59,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -68,6 +74,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/basic/v1/admin/namespaces/{namespace}/publisher";
@@ -78,7 +86,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.NamespacePublisherInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

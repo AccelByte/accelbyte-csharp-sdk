@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static PublicResetPasswordV2Builder Builder = new PublicResetPasswordV2Builder();
 
         public class PublicResetPasswordV2Builder
+            : OperationBuilder<PublicResetPasswordV2Builder>
         {
             
             
@@ -34,10 +35,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new PublicResetPasswordV2(this,
+                PublicResetPasswordV2 op = new PublicResetPasswordV2(this,
                     body,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -68,6 +74,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v2/public/namespaces/{namespace}/users/resetPassword";
@@ -78,7 +86,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

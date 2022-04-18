@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PublicGetItemDynamicDataBuilder Builder = new PublicGetItemDynamicDataBuilder();
 
         public class PublicGetItemDynamicDataBuilder
+            : OperationBuilder<PublicGetItemDynamicDataBuilder>
         {
             
             
@@ -39,10 +40,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string namespace_
             )
             {
-                return new PublicGetItemDynamicData(this,
+                PublicGetItemDynamicData op = new PublicGetItemDynamicData(this,
                     itemId,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -58,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
         #endregion
 
@@ -73,6 +78,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/items/{itemId}/dynamic";
@@ -83,7 +89,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ItemDynamicDataInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

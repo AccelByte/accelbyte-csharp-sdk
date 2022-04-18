@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public static GetBannedUsersBuilder Builder = new GetBannedUsersBuilder();
 
         public class GetBannedUsersBuilder
+            : OperationBuilder<GetBannedUsersBuilder>
         {
             
             
@@ -39,10 +40,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
                 List<string> userIds
             )
             {
-                return new GetBannedUsers(this,
+                GetBannedUsers op = new GetBannedUsers(this,
                     namespace_,                    
                     userIds                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -59,6 +63,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             CollectionFormatMap["userIds"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -75,6 +81,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             CollectionFormatMap["userIds"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/basic/v1/admin/namespaces/{namespace}/actions/banned";
@@ -85,7 +93,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.ADTOObjectForEqu8UserBanStatus>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public static ExportConfigV1Builder Builder = new ExportConfigV1Builder();
 
         public class ExportConfigV1Builder
+            : OperationBuilder<ExportConfigV1Builder>
         {
             
             internal ExportConfigV1Builder() { }
@@ -38,9 +39,12 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
                 string namespace_
             )
             {
-                return new ExportConfigV1(this,
+                ExportConfigV1 op = new ExportConfigV1(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -54,6 +58,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -67,6 +73,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/dsmcontroller/admin/v1/namespaces/{namespace}/configs/export";
@@ -77,7 +85,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsDSMConfigExport? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public static SetUserVisibilityStatusV2Builder Builder = new SetUserVisibilityStatusV2Builder();
 
         public class SetUserVisibilityStatusV2Builder
+            : OperationBuilder<SetUserVisibilityStatusV2Builder>
         {
             
             
@@ -38,11 +39,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
                 string userId
             )
             {
-                return new SetUserVisibilityStatusV2(this,
+                SetUserVisibilityStatusV2 op = new SetUserVisibilityStatusV2(this,
                     body,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -60,6 +64,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -77,6 +83,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/leaderboard/v2/admin/namespaces/{namespace}/users/{userId}/visibility";
@@ -87,7 +95,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGetUserVisibilityResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

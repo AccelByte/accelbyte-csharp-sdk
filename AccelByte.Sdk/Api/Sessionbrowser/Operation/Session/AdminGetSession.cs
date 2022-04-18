@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public static AdminGetSessionBuilder Builder = new AdminGetSessionBuilder();
 
         public class AdminGetSessionBuilder
+            : OperationBuilder<AdminGetSessionBuilder>
         {
             
             
@@ -40,10 +41,13 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
                 string sessionID
             )
             {
-                return new AdminGetSession(this,
+                AdminGetSession op = new AdminGetSession(this,
                     namespace_,                    
                     sessionID                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -59,6 +63,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -74,6 +80,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/sessionbrowser/admin/namespaces/{namespace}/gamesession/{sessionID}";
@@ -84,7 +92,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
         public override string[] Produces => new string[] {  };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsAdminSessionResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

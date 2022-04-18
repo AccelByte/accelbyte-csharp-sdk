@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public static PublishSeasonBuilder Builder = new PublishSeasonBuilder();
 
         public class PublishSeasonBuilder
+            : OperationBuilder<PublishSeasonBuilder>
         {
             
             
@@ -41,10 +42,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
                 string seasonId
             )
             {
-                return new PublishSeason(this,
+                PublishSeason op = new PublishSeason(this,
                     namespace_,                    
                     seasonId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -60,6 +64,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -75,6 +81,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}/publish";
@@ -85,7 +93,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.SeasonInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

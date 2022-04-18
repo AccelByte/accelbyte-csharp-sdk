@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static GetDLCItemConfigBuilder Builder = new GetDLCItemConfigBuilder();
 
         public class GetDLCItemConfigBuilder
+            : OperationBuilder<GetDLCItemConfigBuilder>
         {
             
             internal GetDLCItemConfigBuilder() { }
@@ -37,9 +38,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string namespace_
             )
             {
-                return new GetDLCItemConfig(this,
+                GetDLCItemConfig op = new GetDLCItemConfig(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -66,6 +72,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/dlc/config/item";
@@ -76,7 +84,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] {  };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.DLCItemConfigInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

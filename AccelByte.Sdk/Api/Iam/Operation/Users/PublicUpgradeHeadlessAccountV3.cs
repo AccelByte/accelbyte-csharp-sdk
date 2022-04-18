@@ -57,6 +57,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static PublicUpgradeHeadlessAccountV3Builder Builder = new PublicUpgradeHeadlessAccountV3Builder();
 
         public class PublicUpgradeHeadlessAccountV3Builder
+            : OperationBuilder<PublicUpgradeHeadlessAccountV3Builder>
         {
             
             
@@ -71,10 +72,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new PublicUpgradeHeadlessAccountV3(this,
+                PublicUpgradeHeadlessAccountV3 op = new PublicUpgradeHeadlessAccountV3(this,
                     body,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -90,6 +94,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -105,6 +111,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/public/namespaces/{namespace}/users/me/headless/code/verify";
@@ -115,7 +123,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelUserResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

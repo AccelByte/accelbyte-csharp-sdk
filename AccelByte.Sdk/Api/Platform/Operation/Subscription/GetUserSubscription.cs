@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static GetUserSubscriptionBuilder Builder = new GetUserSubscriptionBuilder();
 
         public class GetUserSubscriptionBuilder
+            : OperationBuilder<GetUserSubscriptionBuilder>
         {
             
             
@@ -42,11 +43,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string userId
             )
             {
-                return new GetUserSubscription(this,
+                GetUserSubscription op = new GetUserSubscription(this,
                     namespace_,                    
                     subscriptionId,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -64,6 +68,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -81,6 +87,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/subscriptions/{subscriptionId}";
@@ -91,7 +99,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.SubscriptionInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

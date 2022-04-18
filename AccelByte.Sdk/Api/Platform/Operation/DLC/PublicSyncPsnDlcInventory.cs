@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PublicSyncPsnDlcInventoryBuilder Builder = new PublicSyncPsnDlcInventoryBuilder();
 
         public class PublicSyncPsnDlcInventoryBuilder
+            : OperationBuilder<PublicSyncPsnDlcInventoryBuilder>
         {
             
             
@@ -49,10 +50,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string userId
             )
             {
-                return new PublicSyncPsnDlcInventory(this,
+                PublicSyncPsnDlcInventory op = new PublicSyncPsnDlcInventory(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -69,6 +73,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -86,6 +92,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/users/{userId}/dlc/psn/sync";
@@ -96,7 +104,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static CreateClientByNamespaceBuilder Builder = new CreateClientByNamespaceBuilder();
 
         public class CreateClientByNamespaceBuilder
+            : OperationBuilder<CreateClientByNamespaceBuilder>
         {
             
             
@@ -40,10 +41,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new CreateClientByNamespace(this,
+                CreateClientByNamespace op = new CreateClientByNamespace(this,
                     body,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -59,6 +63,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -74,6 +80,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/namespaces/{namespace}/clients";
@@ -84,7 +92,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ClientmodelClientCreationResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

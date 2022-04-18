@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// 
     /// 
-    /// Get Group Invitation Request List for specific group. It will check any group invitation for this user
+    /// Get Group Invitation Request List for the user calling this endpoint. It will check any group invitation for this user
     /// 
     /// 
     /// 
@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static GetGroupInvitationRequestPublicV1Builder Builder = new GetGroupInvitationRequestPublicV1Builder();
 
         public class GetGroupInvitationRequestPublicV1Builder
+            : OperationBuilder<GetGroupInvitationRequestPublicV1Builder>
         {
             
             public long? Limit { get; set; }
@@ -67,9 +68,12 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string namespace_
             )
             {
-                return new GetGroupInvitationRequestPublicV1(this,
+                GetGroupInvitationRequestPublicV1 op = new GetGroupInvitationRequestPublicV1(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -85,6 +89,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -102,6 +108,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/public/namespaces/{namespace}/users/me/invite/request";
@@ -112,7 +120,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGetMemberRequestsListResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

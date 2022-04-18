@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public static PublicGetCountriesBuilder Builder = new PublicGetCountriesBuilder();
 
         public class PublicGetCountriesBuilder
+            : OperationBuilder<PublicGetCountriesBuilder>
         {
             
             public string? Lang { get; set; }
@@ -45,9 +46,12 @@ namespace AccelByte.Sdk.Api.Basic.Operation
                 string namespace_
             )
             {
-                return new PublicGetCountries(this,
+                PublicGetCountries op = new PublicGetCountries(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
         }
         #endregion
 
@@ -77,6 +82,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
         }
 
         public override string Path => "/basic/v1/public/namespaces/{namespace}/misc/countries";
@@ -87,7 +93,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.CountryObject>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

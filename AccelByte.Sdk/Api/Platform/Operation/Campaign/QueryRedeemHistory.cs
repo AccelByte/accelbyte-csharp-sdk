@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static QueryRedeemHistoryBuilder Builder = new QueryRedeemHistoryBuilder();
 
         public class QueryRedeemHistoryBuilder
+            : OperationBuilder<QueryRedeemHistoryBuilder>
         {
             
             
@@ -72,10 +73,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string namespace_
             )
             {
-                return new QueryRedeemHistory(this,
+                QueryRedeemHistory op = new QueryRedeemHistory(this,
                     campaignId,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -95,6 +99,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -118,6 +124,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/codes/campaigns/{campaignId}/history";
@@ -128,7 +136,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.RedeemHistoryPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

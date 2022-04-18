@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static RetrieveEligibilitiesPublicBuilder Builder = new RetrieveEligibilitiesPublicBuilder();
 
         public class RetrieveEligibilitiesPublicBuilder
+            : OperationBuilder<RetrieveEligibilitiesPublicBuilder>
         {
             
             internal RetrieveEligibilitiesPublicBuilder() { }
@@ -39,9 +40,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                 string namespace_
             )
             {
-                return new RetrieveEligibilitiesPublic(this,
+                RetrieveEligibilitiesPublic op = new RetrieveEligibilitiesPublic(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -55,6 +59,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -68,6 +74,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/agreement/public/eligibilities/namespaces/{namespace}";
@@ -78,7 +86,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.RetrieveUserEligibilitiesResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

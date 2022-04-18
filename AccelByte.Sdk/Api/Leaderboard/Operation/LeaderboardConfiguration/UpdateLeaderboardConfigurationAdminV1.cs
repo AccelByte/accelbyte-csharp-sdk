@@ -54,6 +54,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public static UpdateLeaderboardConfigurationAdminV1Builder Builder = new UpdateLeaderboardConfigurationAdminV1Builder();
 
         public class UpdateLeaderboardConfigurationAdminV1Builder
+            : OperationBuilder<UpdateLeaderboardConfigurationAdminV1Builder>
         {
             
             
@@ -70,11 +71,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
                 string namespace_
             )
             {
-                return new UpdateLeaderboardConfigurationAdminV1(this,
+                UpdateLeaderboardConfigurationAdminV1 op = new UpdateLeaderboardConfigurationAdminV1(this,
                     body,                    
                     leaderboardCode,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -92,6 +96,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -109,6 +115,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/leaderboard/v1/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}";
@@ -119,7 +127,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGetLeaderboardConfigResp? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -14,11 +14,27 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminDeletePlayerPublicRecordHandlerV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [DELETE]`
+    /// Required Permission | `ADMIN:NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [DELETE]`
+    /// --------------------|------------------------------------------------------------------------------
+    /// Required Scope      | `social`
     /// 
-    /// Required scope: `social`
     /// 
-    /// Delete a public record (arbitrary JSON data) in user-level with given key.
+    /// 
+    /// Delete player public record.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// ## Warning: This endpoint is going to deprecate
+    /// 
+    /// 
+    /// 
+    /// This endpoint is going to deprecate in the future please don't use it.
+    /// 
+    /// For alternative, please use these endpoints:
+    /// - POST /cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key} and utilizing __META functionality
+    /// - PUT /cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key} and utilizing __META functionality
+    /// - DELETE /cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}
     /// </summary>
     public class AdminDeletePlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
@@ -26,6 +42,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public static AdminDeletePlayerPublicRecordHandlerV1Builder Builder = new AdminDeletePlayerPublicRecordHandlerV1Builder();
 
         public class AdminDeletePlayerPublicRecordHandlerV1Builder
+            : OperationBuilder<AdminDeletePlayerPublicRecordHandlerV1Builder>
         {
             
             
@@ -42,11 +59,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
                 string userId
             )
             {
-                return new AdminDeletePlayerPublicRecordHandlerV1(this,
+                AdminDeletePlayerPublicRecordHandlerV1 op = new AdminDeletePlayerPublicRecordHandlerV1(this,
                     key,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -64,6 +84,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -81,6 +103,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}/public";
@@ -91,7 +115,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

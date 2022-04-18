@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static GetSingleMemberRoleAdminV1Builder Builder = new GetSingleMemberRoleAdminV1Builder();
 
         public class GetSingleMemberRoleAdminV1Builder
+            : OperationBuilder<GetSingleMemberRoleAdminV1Builder>
         {
             
             
@@ -48,10 +49,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string namespace_
             )
             {
-                return new GetSingleMemberRoleAdminV1(this,
+                GetSingleMemberRoleAdminV1 op = new GetSingleMemberRoleAdminV1(this,
                     memberRoleId,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -67,6 +71,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -82,6 +88,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/admin/namespaces/{namespace}/roles/{memberRoleId}";
@@ -92,7 +100,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGetMemberRoleResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

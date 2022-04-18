@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public static AdminGeneratePersonalDataURLBuilder Builder = new AdminGeneratePersonalDataURLBuilder();
 
         public class AdminGeneratePersonalDataURLBuilder
+            : OperationBuilder<AdminGeneratePersonalDataURLBuilder>
         {
             
             
@@ -42,12 +43,15 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
                 string userId
             )
             {
-                return new AdminGeneratePersonalDataURL(this,
+                AdminGeneratePersonalDataURL op = new AdminGeneratePersonalDataURL(this,
                     password,                    
                     namespace_,                    
                     requestDate,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -67,6 +71,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -86,6 +92,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/gdpr/admin/namespaces/{namespace}/users/{userId}/requests/{requestDate}/generate";
@@ -96,7 +104,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsUserDataURL? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

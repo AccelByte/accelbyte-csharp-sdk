@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static PublicGetRoleV3Builder Builder = new PublicGetRoleV3Builder();
 
         public class PublicGetRoleV3Builder
+            : OperationBuilder<PublicGetRoleV3Builder>
         {
             
             internal PublicGetRoleV3Builder() { }
@@ -36,9 +37,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string roleId
             )
             {
-                return new PublicGetRoleV3(this,
+                PublicGetRoleV3 op = new PublicGetRoleV3(this,
                     roleId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -52,6 +56,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -65,6 +71,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/public/roles/{roleId}";
@@ -75,7 +83,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelRoleResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

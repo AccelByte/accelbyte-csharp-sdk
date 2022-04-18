@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PublicGetItemByAppIdBuilder Builder = new PublicGetItemByAppIdBuilder();
 
         public class PublicGetItemByAppIdBuilder
+            : OperationBuilder<PublicGetItemByAppIdBuilder>
         {
             
             public string? Language { get; set; }
@@ -66,10 +67,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string appId
             )
             {
-                return new PublicGetItemByAppId(this,
+                PublicGetItemByAppId op = new PublicGetItemByAppId(this,
                     namespace_,                    
                     appId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -88,6 +92,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
         #endregion
 
@@ -109,6 +114,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/items/byAppId";
@@ -119,7 +125,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ItemInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

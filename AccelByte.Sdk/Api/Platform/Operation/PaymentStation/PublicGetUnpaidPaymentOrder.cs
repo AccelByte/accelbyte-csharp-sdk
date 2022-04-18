@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PublicGetUnpaidPaymentOrderBuilder Builder = new PublicGetUnpaidPaymentOrderBuilder();
 
         public class PublicGetUnpaidPaymentOrderBuilder
+            : OperationBuilder<PublicGetUnpaidPaymentOrderBuilder>
         {
             
             
@@ -39,10 +40,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string paymentOrderNo
             )
             {
-                return new PublicGetUnpaidPaymentOrder(this,
+                PublicGetUnpaidPaymentOrder op = new PublicGetUnpaidPaymentOrder(this,
                     namespace_,                    
                     paymentOrderNo                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -58,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
         #endregion
 
@@ -73,6 +78,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/payment/orders/{paymentOrderNo}/info";
@@ -83,7 +89,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.PaymentOrderDetails? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

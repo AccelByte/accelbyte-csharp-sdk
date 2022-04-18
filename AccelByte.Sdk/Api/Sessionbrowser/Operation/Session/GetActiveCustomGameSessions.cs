@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public static GetActiveCustomGameSessionsBuilder Builder = new GetActiveCustomGameSessionsBuilder();
 
         public class GetActiveCustomGameSessionsBuilder
+            : OperationBuilder<GetActiveCustomGameSessionsBuilder>
         {
             
             public string? ServerRegion { get; set; }
@@ -52,9 +53,12 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
                 string namespace_
             )
             {
-                return new GetActiveCustomGameSessions(this,
+                GetActiveCustomGameSessions op = new GetActiveCustomGameSessions(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -70,6 +74,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -87,6 +93,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/sessionbrowser/admin/namespaces/{namespace}/gamesession/active/custom-game";
@@ -97,7 +105,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsActiveCustomGameResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

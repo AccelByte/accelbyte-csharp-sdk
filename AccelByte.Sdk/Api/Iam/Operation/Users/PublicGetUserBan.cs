@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static PublicGetUserBanBuilder Builder = new PublicGetUserBanBuilder();
 
         public class PublicGetUserBanBuilder
+            : OperationBuilder<PublicGetUserBanBuilder>
         {
             
             
@@ -42,10 +43,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string userId
             )
             {
-                return new PublicGetUserBan(this,
+                PublicGetUserBan op = new PublicGetUserBan(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -79,6 +85,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v2/public/namespaces/{namespace}/users/{userId}/bans";
@@ -89,7 +97,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.ModelUserBanResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

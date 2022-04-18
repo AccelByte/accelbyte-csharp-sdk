@@ -264,6 +264,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static PlatformTokenGrantV3Builder Builder = new PlatformTokenGrantV3Builder();
 
         public class PlatformTokenGrantV3Builder
+            : OperationBuilder<PlatformTokenGrantV3Builder>
         {
             
             public string? ClientId { get; set; }
@@ -300,9 +301,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string platformId
             )
             {
-                return new PlatformTokenGrantV3(this,
+                PlatformTokenGrantV3 op = new PlatformTokenGrantV3(this,
                     platformId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -319,6 +323,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
         #endregion
 
@@ -338,6 +344,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
 
         public override string Path => "/iam/v3/oauth/platforms/{platformId}/token";
@@ -348,7 +356,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Basic";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Basic";
         
         public Model.OauthmodelTokenResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

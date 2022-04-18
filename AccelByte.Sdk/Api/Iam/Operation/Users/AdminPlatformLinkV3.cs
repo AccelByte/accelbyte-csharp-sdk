@@ -80,6 +80,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminPlatformLinkV3Builder Builder = new AdminPlatformLinkV3Builder();
 
         public class AdminPlatformLinkV3Builder
+            : OperationBuilder<AdminPlatformLinkV3Builder>
         {
             
             
@@ -98,12 +99,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string userId
             )
             {
-                return new AdminPlatformLinkV3(this,
+                AdminPlatformLinkV3 op = new AdminPlatformLinkV3(this,
                     ticket,                    
                     namespace_,                    
                     platformId,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -123,6 +127,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -142,6 +148,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/link";
@@ -152,7 +160,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

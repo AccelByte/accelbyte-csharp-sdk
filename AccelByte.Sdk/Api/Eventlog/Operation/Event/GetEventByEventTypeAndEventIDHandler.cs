@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public static GetEventByEventTypeAndEventIDHandlerBuilder Builder = new GetEventByEventTypeAndEventIDHandlerBuilder();
 
         public class GetEventByEventTypeAndEventIDHandlerBuilder
+            : OperationBuilder<GetEventByEventTypeAndEventIDHandlerBuilder>
         {
             
             
@@ -53,7 +54,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
                 string startDate
             )
             {
-                return new GetEventByEventTypeAndEventIDHandler(this,
+                GetEventByEventTypeAndEventIDHandler op = new GetEventByEventTypeAndEventIDHandler(this,
                     eventId,                    
                     eventType,                    
                     namespace_,                    
@@ -61,6 +62,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
                     pageSize,                    
                     startDate                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -85,6 +89,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -110,6 +116,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/event/namespaces/{namespace}/eventType/{eventType}/eventId/{eventId}";
@@ -120,7 +128,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsEventResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

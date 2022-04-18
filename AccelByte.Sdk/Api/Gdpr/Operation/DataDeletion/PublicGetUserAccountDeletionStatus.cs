@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public static PublicGetUserAccountDeletionStatusBuilder Builder = new PublicGetUserAccountDeletionStatusBuilder();
 
         public class PublicGetUserAccountDeletionStatusBuilder
+            : OperationBuilder<PublicGetUserAccountDeletionStatusBuilder>
         {
             
             
@@ -38,10 +39,13 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
                 string userId
             )
             {
-                return new PublicGetUserAccountDeletionStatus(this,
+                PublicGetUserAccountDeletionStatus op = new PublicGetUserAccountDeletionStatus(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -57,6 +61,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -72,6 +78,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/gdpr/public/namespaces/{namespace}/users/{userId}/deletions/status";
@@ -82,7 +90,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsDeletionStatus? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

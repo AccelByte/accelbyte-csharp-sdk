@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminSearchUsersV2Builder Builder = new AdminSearchUsersV2Builder();
 
         public class AdminSearchUsersV2Builder
+            : OperationBuilder<AdminSearchUsersV2Builder>
         {
             
             public string? After { get; set; }
@@ -100,10 +101,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string platformId
             )
             {
-                return new AdminSearchUsersV2(this,
+                AdminSearchUsersV2 op = new AdminSearchUsersV2(this,
                     namespace_,                    
                     platformId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -127,6 +131,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -158,6 +164,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v2/admin/namespaces/{namespace}/users";
@@ -168,7 +176,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelSearchUsersByPlatformIDResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

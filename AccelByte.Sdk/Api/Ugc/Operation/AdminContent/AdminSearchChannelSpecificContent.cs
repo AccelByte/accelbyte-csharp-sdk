@@ -14,7 +14,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminSearchChannelSpecificContent
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [CREATE]
+    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ]
     /// </summary>
     public class AdminSearchChannelSpecificContent : AccelByte.Sdk.Core.Operation
     {
@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public static AdminSearchChannelSpecificContentBuilder Builder = new AdminSearchChannelSpecificContentBuilder();
 
         public class AdminSearchChannelSpecificContentBuilder
+            : OperationBuilder<AdminSearchChannelSpecificContentBuilder>
         {
             
             
@@ -124,10 +125,13 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
                 string namespace_
             )
             {
-                return new AdminSearchChannelSpecificContent(this,
+                AdminSearchChannelSpecificContent op = new AdminSearchChannelSpecificContent(this,
                     channelId,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -154,6 +158,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -191,6 +197,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/search";
@@ -201,7 +209,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsPaginatedContentDownloadResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

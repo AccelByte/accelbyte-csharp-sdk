@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static EnableUserWalletBuilder Builder = new EnableUserWalletBuilder();
 
         public class EnableUserWalletBuilder
+            : OperationBuilder<EnableUserWalletBuilder>
         {
             
             
@@ -41,11 +42,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string walletId
             )
             {
-                return new EnableUserWallet(this,
+                EnableUserWallet op = new EnableUserWallet(this,
                     namespace_,                    
                     userId,                    
                     walletId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -63,6 +67,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -80,6 +86,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/enable";
@@ -90,7 +98,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

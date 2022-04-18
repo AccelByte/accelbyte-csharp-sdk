@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static ExistsAnyUserActiveEntitlementByItemIdsBuilder Builder = new ExistsAnyUserActiveEntitlementByItemIdsBuilder();
 
         public class ExistsAnyUserActiveEntitlementByItemIdsBuilder
+            : OperationBuilder<ExistsAnyUserActiveEntitlementByItemIdsBuilder>
         {
             
             
@@ -42,11 +43,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 List<string> itemIds
             )
             {
-                return new ExistsAnyUserActiveEntitlementByItemIds(this,
+                ExistsAnyUserActiveEntitlementByItemIds op = new ExistsAnyUserActiveEntitlementByItemIds(this,
                     namespace_,                    
                     userId,                    
                     itemIds                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -65,6 +69,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             CollectionFormatMap["itemIds"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -83,6 +89,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             CollectionFormatMap["itemIds"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/anyOf";
@@ -93,7 +101,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.Ownership? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

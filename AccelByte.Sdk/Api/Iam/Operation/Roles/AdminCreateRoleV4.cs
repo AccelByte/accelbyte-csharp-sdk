@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminCreateRoleV4Builder Builder = new AdminCreateRoleV4Builder();
 
         public class AdminCreateRoleV4Builder
+            : OperationBuilder<AdminCreateRoleV4Builder>
         {
             
             internal AdminCreateRoleV4Builder() { }
@@ -42,9 +43,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 ModelRoleV4Request body
             )
             {
-                return new AdminCreateRoleV4(this,
+                AdminCreateRoleV4 op = new AdminCreateRoleV4(this,
                     body                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -58,6 +62,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -71,6 +77,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v4/admin/roles";
@@ -81,7 +89,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelRoleV4Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static RecurringChargeSubscriptionBuilder Builder = new RecurringChargeSubscriptionBuilder();
 
         public class RecurringChargeSubscriptionBuilder
+            : OperationBuilder<RecurringChargeSubscriptionBuilder>
         {
             
             
@@ -40,10 +41,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string subscriptionId
             )
             {
-                return new RecurringChargeSubscription(this,
+                RecurringChargeSubscription op = new RecurringChargeSubscription(this,
                     namespace_,                    
                     subscriptionId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -59,6 +63,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -74,6 +80,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/subscriptions/{subscriptionId}/recurring";
@@ -84,7 +92,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.RecurringChargeResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

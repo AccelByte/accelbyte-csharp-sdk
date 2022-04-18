@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static GetEntitlementBuilder Builder = new GetEntitlementBuilder();
 
         public class GetEntitlementBuilder
+            : OperationBuilder<GetEntitlementBuilder>
         {
             
             
@@ -41,10 +42,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string namespace_
             )
             {
-                return new GetEntitlement(this,
+                GetEntitlement op = new GetEntitlement(this,
                     entitlementId,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -60,6 +64,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -75,6 +81,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/entitlements/{entitlementId}";
@@ -85,7 +93,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.EntitlementInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

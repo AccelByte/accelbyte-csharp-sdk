@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public static DeleteNamespaceSlotConfigBuilder Builder = new DeleteNamespaceSlotConfigBuilder();
 
         public class DeleteNamespaceSlotConfigBuilder
+            : OperationBuilder<DeleteNamespaceSlotConfigBuilder>
         {
             
             internal DeleteNamespaceSlotConfigBuilder() { }
@@ -37,9 +38,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
                 string namespace_
             )
             {
-                return new DeleteNamespaceSlotConfig(this,
+                DeleteNamespaceSlotConfig op = new DeleteNamespaceSlotConfig(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -66,6 +72,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/social/admin/namespaces/{namespace}/config";
@@ -76,7 +84,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override string[] Produces => new string[] {  };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

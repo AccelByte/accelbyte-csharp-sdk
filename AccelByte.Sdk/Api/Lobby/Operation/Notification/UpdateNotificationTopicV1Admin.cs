@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public static UpdateNotificationTopicV1AdminBuilder Builder = new UpdateNotificationTopicV1AdminBuilder();
 
         public class UpdateNotificationTopicV1AdminBuilder
+            : OperationBuilder<UpdateNotificationTopicV1AdminBuilder>
         {
             
             
@@ -45,11 +46,14 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
                 string topicName
             )
             {
-                return new UpdateNotificationTopicV1Admin(this,
+                UpdateNotificationTopicV1Admin op = new UpdateNotificationTopicV1Admin(this,
                     body,                    
                     namespace_,                    
                     topicName                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -67,6 +71,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -84,6 +90,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/lobby/v1/admin/notification/namespaces/{namespace}/topics/{topicName}";
@@ -94,7 +102,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

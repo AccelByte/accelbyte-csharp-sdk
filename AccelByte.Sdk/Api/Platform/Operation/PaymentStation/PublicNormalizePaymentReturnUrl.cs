@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PublicNormalizePaymentReturnUrlBuilder Builder = new PublicNormalizePaymentReturnUrlBuilder();
 
         public class PublicNormalizePaymentReturnUrlBuilder
+            : OperationBuilder<PublicNormalizePaymentReturnUrlBuilder>
         {
             
             public string? PayerID { get; set; }
@@ -151,13 +152,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string returnUrl
             )
             {
-                return new PublicNormalizePaymentReturnUrl(this,
+                PublicNormalizePaymentReturnUrl op = new PublicNormalizePaymentReturnUrl(this,
                     namespace_,                    
                     orderNo,                    
                     paymentOrderNo,                    
                     paymentProvider,                    
                     returnUrl                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -190,6 +194,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
         #endregion
 
@@ -233,6 +238,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/payment/returnurl";
@@ -243,7 +249,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] {  };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

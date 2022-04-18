@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static RetrieveLatestPoliciesBuilder Builder = new RetrieveLatestPoliciesBuilder();
 
         public class RetrieveLatestPoliciesBuilder
+            : OperationBuilder<RetrieveLatestPoliciesBuilder>
         {
             
             public bool? DefaultOnEmpty { get; set; }
@@ -63,9 +64,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                 string countryCode
             )
             {
-                return new RetrieveLatestPolicies(this,
+                RetrieveLatestPolicies op = new RetrieveLatestPolicies(this,
                     countryCode                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -82,6 +86,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
         }
         #endregion
 
@@ -101,6 +106,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
         }
 
         public override string Path => "/agreement/public/policies/countries/{countryCode}";
@@ -111,7 +117,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.RetrievePolicyPublicResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

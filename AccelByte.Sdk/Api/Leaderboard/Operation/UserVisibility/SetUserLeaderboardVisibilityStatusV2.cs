@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public static SetUserLeaderboardVisibilityStatusV2Builder Builder = new SetUserLeaderboardVisibilityStatusV2Builder();
 
         public class SetUserLeaderboardVisibilityStatusV2Builder
+            : OperationBuilder<SetUserLeaderboardVisibilityStatusV2Builder>
         {
             
             
@@ -40,12 +41,15 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
                 string userId
             )
             {
-                return new SetUserLeaderboardVisibilityStatusV2(this,
+                SetUserLeaderboardVisibilityStatusV2 op = new SetUserLeaderboardVisibilityStatusV2(this,
                     body,                    
                     leaderboardCode,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -65,6 +69,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -84,6 +90,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/leaderboard/v2/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/{userId}/visibility";
@@ -94,7 +102,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGetUserVisibilityResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

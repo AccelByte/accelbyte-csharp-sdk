@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static GetUserByLoginIDBuilder Builder = new GetUserByLoginIDBuilder();
 
         public class GetUserByLoginIDBuilder
+            : OperationBuilder<GetUserByLoginIDBuilder>
         {
             
             public string? LoginId { get; set; }
@@ -42,9 +43,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new GetUserByLoginID(this,
+                GetUserByLoginID op = new GetUserByLoginID(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -59,6 +63,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -74,6 +80,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/namespaces/{namespace}/users/byLoginId";
@@ -84,7 +92,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelPublicUserResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -60,6 +60,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static PlatformAuthenticationV3Builder Builder = new PlatformAuthenticationV3Builder();
 
         public class PlatformAuthenticationV3Builder
+            : OperationBuilder<PlatformAuthenticationV3Builder>
         {
             
             public string? Code { get; set; }
@@ -170,10 +171,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string state
             )
             {
-                return new PlatformAuthenticationV3(this,
+                PlatformAuthenticationV3 op = new PlatformAuthenticationV3(this,
                     platformId,                    
                     state                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -202,6 +206,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             LocationQuery = "PLACEHOLDER";
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -242,6 +248,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             LocationQuery = "PLACEHOLDER";
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/platforms/{platformId}/authenticate";
@@ -252,7 +260,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public string ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public static GetImagePatchesBuilder Builder = new GetImagePatchesBuilder();
 
         public class GetImagePatchesBuilder
+            : OperationBuilder<GetImagePatchesBuilder>
         {
             
             
@@ -40,10 +41,13 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
                 string version
             )
             {
-                return new GetImagePatches(this,
+                GetImagePatches op = new GetImagePatches(this,
                     namespace_,                    
                     version                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -59,6 +63,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -74,6 +80,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/dsmcontroller/admin/namespaces/{namespace}/images/versions/{version}/patches";
@@ -84,7 +92,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsListImagePatchesResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

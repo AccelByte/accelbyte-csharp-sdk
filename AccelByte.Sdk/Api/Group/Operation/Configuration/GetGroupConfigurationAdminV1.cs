@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// 
     /// 
-    /// This endpoint is used to get existing configuration. This Configuration is used to be the main rule of the service. Each namespace will have its own configuration
+    /// This endpoint is used to get existing configuration. This Configuration is used as the main rule of the service. Each namespace will have its own configuration
     /// 
     /// 
     /// 
@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static GetGroupConfigurationAdminV1Builder Builder = new GetGroupConfigurationAdminV1Builder();
 
         public class GetGroupConfigurationAdminV1Builder
+            : OperationBuilder<GetGroupConfigurationAdminV1Builder>
         {
             
             
@@ -48,10 +49,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string namespace_
             )
             {
-                return new GetGroupConfigurationAdminV1(this,
+                GetGroupConfigurationAdminV1 op = new GetGroupConfigurationAdminV1(this,
                     configurationCode,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -67,6 +71,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -82,6 +88,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}";
@@ -92,7 +100,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGetGroupConfigurationResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

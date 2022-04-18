@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminInviteUserV4Builder Builder = new AdminInviteUserV4Builder();
 
         public class AdminInviteUserV4Builder
+            : OperationBuilder<AdminInviteUserV4Builder>
         {
             
             internal AdminInviteUserV4Builder() { }
@@ -40,9 +41,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 ModelInviteUserRequestV4 body
             )
             {
-                return new AdminInviteUserV4(this,
+                AdminInviteUserV4 op = new AdminInviteUserV4(this,
                     body                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -56,6 +60,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -69,6 +75,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v4/admin/users/users/invite";
@@ -79,7 +87,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelInviteUserResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public static GetActiveMatchmakingGameSessionsBuilder Builder = new GetActiveMatchmakingGameSessionsBuilder();
 
         public class GetActiveMatchmakingGameSessionsBuilder
+            : OperationBuilder<GetActiveMatchmakingGameSessionsBuilder>
         {
             
             public string? MatchId { get; set; }
@@ -60,9 +61,12 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
                 string namespace_
             )
             {
-                return new GetActiveMatchmakingGameSessions(this,
+                GetActiveMatchmakingGameSessions op = new GetActiveMatchmakingGameSessions(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -79,6 +83,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -98,6 +104,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/sessionbrowser/admin/namespaces/{namespace}/gamesession/active/matchmaking-game";
@@ -108,7 +116,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsActiveMatchmakingGameResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

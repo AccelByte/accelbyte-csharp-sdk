@@ -27,6 +27,28 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// 
     /// Action Code: 73202
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// memberRolePermissions example value :
+    /// 
+    /// 
+    /// 
+    /// 
+    /// "action": 1
+    /// 
+    /// 
+    /// 
+    /// 
+    /// "resourceName": "GROUP:ROLE"
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The changes will give user with that role have a permission to create a role for new group member
     /// </summary>
     public class CreateMemberRoleAdminV1 : AccelByte.Sdk.Core.Operation
     {
@@ -34,6 +56,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static CreateMemberRoleAdminV1Builder Builder = new CreateMemberRoleAdminV1Builder();
 
         public class CreateMemberRoleAdminV1Builder
+            : OperationBuilder<CreateMemberRoleAdminV1Builder>
         {
             
             
@@ -48,10 +71,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string namespace_
             )
             {
-                return new CreateMemberRoleAdminV1(this,
+                CreateMemberRoleAdminV1 op = new CreateMemberRoleAdminV1(this,
                     body,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -67,6 +93,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -82,6 +110,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/admin/namespaces/{namespace}/roles";
@@ -92,7 +122,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsCreateMemberRoleResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

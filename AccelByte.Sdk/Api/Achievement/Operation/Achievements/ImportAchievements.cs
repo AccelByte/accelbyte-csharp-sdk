@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         public static ImportAchievementsBuilder Builder = new ImportAchievementsBuilder();
 
         public class ImportAchievementsBuilder
+            : OperationBuilder<ImportAchievementsBuilder>
         {
             
             public Stream? File { get; set; }
@@ -58,9 +59,12 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
                 string namespace_
             )
             {
-                return new ImportAchievements(this,
+                ImportAchievements op = new ImportAchievements(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -76,6 +80,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -93,6 +99,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/achievement/v1/admin/namespaces/{namespace}/achievements/import";
@@ -103,7 +111,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ServiceImportConfigResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

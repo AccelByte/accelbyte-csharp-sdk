@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public static PublicGetTimeBuilder Builder = new PublicGetTimeBuilder();
 
         public class PublicGetTimeBuilder
+            : OperationBuilder<PublicGetTimeBuilder>
         {
             internal PublicGetTimeBuilder() { }
 
@@ -32,8 +33,11 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             public PublicGetTime Build(
             )
             {
-                return new PublicGetTime(this
+                PublicGetTime op = new PublicGetTime(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -45,6 +49,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
         }
         #endregion
 
@@ -56,6 +61,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
         }
 
         public override string Path => "/basic/v1/public/misc/time";
@@ -66,7 +72,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.RetrieveTimeResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

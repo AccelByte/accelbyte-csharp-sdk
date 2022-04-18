@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public static CreateChannelHandlerBuilder Builder = new CreateChannelHandlerBuilder();
 
         public class CreateChannelHandlerBuilder
+            : OperationBuilder<CreateChannelHandlerBuilder>
         {
             
             
@@ -53,10 +54,13 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
                 string namespace_
             )
             {
-                return new CreateChannelHandler(this,
+                CreateChannelHandler op = new CreateChannelHandler(this,
                     body,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -72,6 +76,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -87,6 +93,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/matchmaking/namespaces/{namespace}/channels";
@@ -97,7 +105,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsCreateChannelResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

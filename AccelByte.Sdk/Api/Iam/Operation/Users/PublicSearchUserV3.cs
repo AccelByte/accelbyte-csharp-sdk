@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static PublicSearchUserV3Builder Builder = new PublicSearchUserV3Builder();
 
         public class PublicSearchUserV3Builder
+            : OperationBuilder<PublicSearchUserV3Builder>
         {
             
             public string? By { get; set; }
@@ -62,9 +63,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new PublicSearchUserV3(this,
+                PublicSearchUserV3 op = new PublicSearchUserV3(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -80,6 +84,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -97,6 +103,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/public/namespaces/{namespace}/users";
@@ -107,7 +115,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelPublicUserInformationResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static UpdateClientSecretBuilder Builder = new UpdateClientSecretBuilder();
 
         public class UpdateClientSecretBuilder
+            : OperationBuilder<UpdateClientSecretBuilder>
         {
             
             
@@ -36,10 +37,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string clientId
             )
             {
-                return new UpdateClientSecret(this,
+                UpdateClientSecret op = new UpdateClientSecret(this,
                     body,                    
                     clientId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -55,6 +59,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -70,6 +76,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/clients/{clientId}/secret";
@@ -80,7 +88,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

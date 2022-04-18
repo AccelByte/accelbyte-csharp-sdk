@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public static GetAllNotificationTopicsV1AdminBuilder Builder = new GetAllNotificationTopicsV1AdminBuilder();
 
         public class GetAllNotificationTopicsV1AdminBuilder
+            : OperationBuilder<GetAllNotificationTopicsV1AdminBuilder>
         {
             
             public string? After { get; set; }
@@ -62,9 +63,12 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
                 string namespace_
             )
             {
-                return new GetAllNotificationTopicsV1Admin(this,
+                GetAllNotificationTopicsV1Admin op = new GetAllNotificationTopicsV1Admin(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -81,6 +85,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -100,6 +106,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/lobby/v1/admin/notification/namespaces/{namespace}/topics";
@@ -110,7 +118,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelGetAllNotificationTopicsResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

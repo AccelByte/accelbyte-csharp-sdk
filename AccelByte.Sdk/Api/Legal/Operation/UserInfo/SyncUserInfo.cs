@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static SyncUserInfoBuilder Builder = new SyncUserInfoBuilder();
 
         public class SyncUserInfoBuilder
+            : OperationBuilder<SyncUserInfoBuilder>
         {
             
             internal SyncUserInfoBuilder() { }
@@ -39,9 +40,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                 string namespace_
             )
             {
-                return new SyncUserInfo(this,
+                SyncUserInfo op = new SyncUserInfo(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -55,6 +59,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -68,6 +74,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/agreement/admin/userInfo";
@@ -78,7 +86,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

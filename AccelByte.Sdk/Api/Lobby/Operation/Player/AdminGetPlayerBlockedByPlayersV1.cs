@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public static AdminGetPlayerBlockedByPlayersV1Builder Builder = new AdminGetPlayerBlockedByPlayersV1Builder();
 
         public class AdminGetPlayerBlockedByPlayersV1Builder
+            : OperationBuilder<AdminGetPlayerBlockedByPlayersV1Builder>
         {
             
             
@@ -38,10 +39,13 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
                 string userId
             )
             {
-                return new AdminGetPlayerBlockedByPlayersV1(this,
+                AdminGetPlayerBlockedByPlayersV1 op = new AdminGetPlayerBlockedByPlayersV1(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -57,6 +61,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -72,6 +78,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/lobby/v1/admin/player/namespaces/{namespace}/users/{userId}/blocked-by";
@@ -82,7 +90,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGetAllPlayerBlockedByUsersResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static MockFulfillIAPItemBuilder Builder = new MockFulfillIAPItemBuilder();
 
         public class MockFulfillIAPItemBuilder
+            : OperationBuilder<MockFulfillIAPItemBuilder>
         {
             
             
@@ -49,10 +50,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string userId
             )
             {
-                return new MockFulfillIAPItem(this,
+                MockFulfillIAPItem op = new MockFulfillIAPItem(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -69,6 +73,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -86,6 +92,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/iap/mock/receipt";
@@ -96,7 +104,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

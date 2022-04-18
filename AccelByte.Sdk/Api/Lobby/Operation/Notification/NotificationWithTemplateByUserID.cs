@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public static NotificationWithTemplateByUserIDBuilder Builder = new NotificationWithTemplateByUserIDBuilder();
 
         public class NotificationWithTemplateByUserIDBuilder
+            : OperationBuilder<NotificationWithTemplateByUserIDBuilder>
         {
             
             
@@ -45,11 +46,14 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
                 string userId
             )
             {
-                return new NotificationWithTemplateByUserID(this,
+                NotificationWithTemplateByUserID op = new NotificationWithTemplateByUserID(this,
                     body,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -67,6 +71,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -84,6 +90,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/notification/namespaces/{namespace}/users/{userId}/templated";
@@ -94,7 +102,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

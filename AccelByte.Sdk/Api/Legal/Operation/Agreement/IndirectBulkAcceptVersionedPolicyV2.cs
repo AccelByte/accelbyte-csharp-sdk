@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static IndirectBulkAcceptVersionedPolicyV2Builder Builder = new IndirectBulkAcceptVersionedPolicyV2Builder();
 
         public class IndirectBulkAcceptVersionedPolicyV2Builder
+            : OperationBuilder<IndirectBulkAcceptVersionedPolicyV2Builder>
         {
             
             
@@ -53,12 +54,15 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                 string userId
             )
             {
-                return new IndirectBulkAcceptVersionedPolicyV2(this,
+                IndirectBulkAcceptVersionedPolicyV2 op = new IndirectBulkAcceptVersionedPolicyV2(this,
                     clientId,                    
                     countryCode,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -79,6 +83,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -100,6 +106,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/agreement/public/agreements/policies/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}";
@@ -110,7 +118,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.AcceptAgreementResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

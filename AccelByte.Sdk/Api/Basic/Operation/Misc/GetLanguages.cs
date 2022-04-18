@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public static GetLanguagesBuilder Builder = new GetLanguagesBuilder();
 
         public class GetLanguagesBuilder
+            : OperationBuilder<GetLanguagesBuilder>
         {
             
             internal GetLanguagesBuilder() { }
@@ -39,9 +40,12 @@ namespace AccelByte.Sdk.Api.Basic.Operation
                 string namespace_
             )
             {
-                return new GetLanguages(this,
+                GetLanguages op = new GetLanguages(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -55,6 +59,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -68,6 +74,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/basic/v1/admin/namespaces/{namespace}/misc/languages";
@@ -78,7 +86,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Dictionary<string, object>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

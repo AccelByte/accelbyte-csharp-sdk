@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public static GetLeaderboardConfigurationAdminV1Builder Builder = new GetLeaderboardConfigurationAdminV1Builder();
 
         public class GetLeaderboardConfigurationAdminV1Builder
+            : OperationBuilder<GetLeaderboardConfigurationAdminV1Builder>
         {
             
             
@@ -43,10 +44,13 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
                 string namespace_
             )
             {
-                return new GetLeaderboardConfigurationAdminV1(this,
+                GetLeaderboardConfigurationAdminV1 op = new GetLeaderboardConfigurationAdminV1(this,
                     leaderboardCode,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -77,6 +83,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/leaderboard/v1/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}";
@@ -87,7 +95,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGetLeaderboardConfigResp? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

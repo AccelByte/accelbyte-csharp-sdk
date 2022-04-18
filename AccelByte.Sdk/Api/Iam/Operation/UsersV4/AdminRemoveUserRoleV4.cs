@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminRemoveUserRoleV4Builder Builder = new AdminRemoveUserRoleV4Builder();
 
         public class AdminRemoveUserRoleV4Builder
+            : OperationBuilder<AdminRemoveUserRoleV4Builder>
         {
             
             
@@ -40,11 +41,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string userId
             )
             {
-                return new AdminRemoveUserRoleV4(this,
+                AdminRemoveUserRoleV4 op = new AdminRemoveUserRoleV4(this,
                     body,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -79,6 +85,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v4/admin/namespaces/{namespace}/users/{userId}/roles";
@@ -89,7 +97,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

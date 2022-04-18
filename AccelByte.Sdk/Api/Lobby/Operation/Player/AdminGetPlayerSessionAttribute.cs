@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public static AdminGetPlayerSessionAttributeBuilder Builder = new AdminGetPlayerSessionAttributeBuilder();
 
         public class AdminGetPlayerSessionAttributeBuilder
+            : OperationBuilder<AdminGetPlayerSessionAttributeBuilder>
         {
             
             
@@ -40,11 +41,14 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
                 string userId
             )
             {
-                return new AdminGetPlayerSessionAttribute(this,
+                AdminGetPlayerSessionAttribute op = new AdminGetPlayerSessionAttribute(this,
                     attribute,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -79,6 +85,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/lobby/v1/admin/player/namespaces/{namespace}/users/{userId}/attributes/{attribute}";
@@ -89,7 +97,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGetPlayerSessionAttributeResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

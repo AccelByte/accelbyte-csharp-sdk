@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static CloneStoreBuilder Builder = new CloneStoreBuilder();
 
         public class CloneStoreBuilder
+            : OperationBuilder<CloneStoreBuilder>
         {
             
             
@@ -49,10 +50,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string storeId
             )
             {
-                return new CloneStore(this,
+                CloneStore op = new CloneStore(this,
                     namespace_,                    
                     storeId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -69,6 +73,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -86,6 +92,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/stores/{storeId}/clone";
@@ -96,7 +104,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.StoreInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public static QueryEventStreamHandlerBuilder Builder = new QueryEventStreamHandlerBuilder();
 
         public class QueryEventStreamHandlerBuilder
+            : OperationBuilder<QueryEventStreamHandlerBuilder>
         {
             
             public string? EndDate { get; set; }
@@ -81,10 +82,13 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
                 string namespace_
             )
             {
-                return new QueryEventStreamHandler(this,
+                QueryEventStreamHandler op = new QueryEventStreamHandler(this,
                     body,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -104,6 +108,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -127,6 +133,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/event/v2/admin/namespaces/{namespace}/query";
@@ -137,7 +145,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsEventResponseV2? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

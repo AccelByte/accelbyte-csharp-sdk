@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static GetGroupListPublicV1Builder Builder = new GetGroupListPublicV1Builder();
 
         public class GetGroupListPublicV1Builder
+            : OperationBuilder<GetGroupListPublicV1Builder>
         {
             
             public string? GroupName { get; set; }
@@ -78,9 +79,12 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string namespace_
             )
             {
-                return new GetGroupListPublicV1(this,
+                GetGroupListPublicV1 op = new GetGroupListPublicV1(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -98,6 +102,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -119,6 +125,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/public/namespaces/{namespace}/groups";
@@ -129,7 +137,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGetGroupsListResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

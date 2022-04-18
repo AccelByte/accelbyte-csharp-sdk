@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public static PublicGetCurrentSeasonBuilder Builder = new PublicGetCurrentSeasonBuilder();
 
         public class PublicGetCurrentSeasonBuilder
+            : OperationBuilder<PublicGetCurrentSeasonBuilder>
         {
             
             public string? Language { get; set; }
@@ -46,9 +47,12 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
                 string namespace_
             )
             {
-                return new PublicGetCurrentSeason(this,
+                PublicGetCurrentSeason op = new PublicGetCurrentSeason(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -63,6 +67,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             
             
+
         }
         #endregion
 
@@ -78,6 +83,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             
             
+
         }
 
         public override string Path => "/seasonpass/public/namespaces/{namespace}/seasons/current";
@@ -88,7 +94,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.LocalizedSeasonInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

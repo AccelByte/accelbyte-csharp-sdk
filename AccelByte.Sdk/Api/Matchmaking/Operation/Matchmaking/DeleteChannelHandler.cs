@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public static DeleteChannelHandlerBuilder Builder = new DeleteChannelHandlerBuilder();
 
         public class DeleteChannelHandlerBuilder
+            : OperationBuilder<DeleteChannelHandlerBuilder>
         {
             
             
@@ -43,10 +44,13 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
                 string namespace_
             )
             {
-                return new DeleteChannelHandler(this,
+                DeleteChannelHandler op = new DeleteChannelHandler(this,
                     channel,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -77,6 +83,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/matchmaking/namespaces/{namespace}/channels/{channel}";
@@ -87,7 +95,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

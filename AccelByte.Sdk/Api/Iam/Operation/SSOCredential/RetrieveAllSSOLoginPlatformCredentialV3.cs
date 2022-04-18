@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static RetrieveAllSSOLoginPlatformCredentialV3Builder Builder = new RetrieveAllSSOLoginPlatformCredentialV3Builder();
 
         public class RetrieveAllSSOLoginPlatformCredentialV3Builder
+            : OperationBuilder<RetrieveAllSSOLoginPlatformCredentialV3Builder>
         {
             
             public long? Limit { get; set; }
@@ -50,9 +51,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new RetrieveAllSSOLoginPlatformCredentialV3(this,
+                RetrieveAllSSOLoginPlatformCredentialV3 op = new RetrieveAllSSOLoginPlatformCredentialV3(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -68,6 +72,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -85,6 +91,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/namespaces/{namespace}/platforms/sso";
@@ -95,7 +103,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.ModelSSOPlatformCredentialResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

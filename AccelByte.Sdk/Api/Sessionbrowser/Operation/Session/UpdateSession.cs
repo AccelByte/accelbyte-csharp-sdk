@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public static UpdateSessionBuilder Builder = new UpdateSessionBuilder();
 
         public class UpdateSessionBuilder
+            : OperationBuilder<UpdateSessionBuilder>
         {
             
             
@@ -42,11 +43,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
                 string sessionID
             )
             {
-                return new UpdateSession(this,
+                UpdateSession op = new UpdateSession(this,
                     body,                    
                     namespace_,                    
                     sessionID                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -64,6 +68,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -81,6 +87,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/sessionbrowser/namespaces/{namespace}/gamesession/{sessionID}";
@@ -91,7 +99,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsSessionResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

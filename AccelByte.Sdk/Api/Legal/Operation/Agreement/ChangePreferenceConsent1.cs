@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static ChangePreferenceConsent1Builder Builder = new ChangePreferenceConsent1Builder();
 
         public class ChangePreferenceConsent1Builder
+            : OperationBuilder<ChangePreferenceConsent1Builder>
         {
             public List<Model.AcceptAgreementRequest>? Body { get; set; }
             
@@ -43,8 +44,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             public ChangePreferenceConsent1 Build(
             )
             {
-                return new ChangePreferenceConsent1(this
+                ChangePreferenceConsent1 op = new ChangePreferenceConsent1(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -57,6 +61,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -70,6 +76,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/agreement/public/agreements/localized-policy-versions/preferences";
@@ -80,7 +88,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

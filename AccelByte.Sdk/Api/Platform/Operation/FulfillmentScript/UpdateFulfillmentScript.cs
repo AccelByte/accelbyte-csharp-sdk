@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static UpdateFulfillmentScriptBuilder Builder = new UpdateFulfillmentScriptBuilder();
 
         public class UpdateFulfillmentScriptBuilder
+            : OperationBuilder<UpdateFulfillmentScriptBuilder>
         {
             
             public Model.FulfillmentScriptUpdate? Body { get; set; }
@@ -45,9 +46,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string id
             )
             {
-                return new UpdateFulfillmentScript(this,
+                UpdateFulfillmentScript op = new UpdateFulfillmentScript(this,
                     id                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -77,6 +83,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/fulfillment/scripts/{id}";
@@ -87,7 +95,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] {  };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.FulfillmentScriptInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

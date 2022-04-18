@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public static QueryTiersBuilder Builder = new QueryTiersBuilder();
 
         public class QueryTiersBuilder
+            : OperationBuilder<QueryTiersBuilder>
         {
             
             
@@ -57,10 +58,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
                 string seasonId
             )
             {
-                return new QueryTiers(this,
+                QueryTiers op = new QueryTiers(this,
                     namespace_,                    
                     seasonId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -78,6 +82,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -97,6 +103,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}/tiers";
@@ -107,7 +115,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.TierPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

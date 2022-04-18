@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public static QueryStatsBuilder Builder = new QueryStatsBuilder();
 
         public class QueryStatsBuilder
+            : OperationBuilder<QueryStatsBuilder>
         {
             
             public int? Limit { get; set; }
@@ -55,10 +56,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
                 string keyword
             )
             {
-                return new QueryStats(this,
+                QueryStats op = new QueryStats(this,
                     namespace_,                    
                     keyword                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -76,6 +80,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -95,6 +101,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/social/v1/admin/namespaces/{namespace}/stats/search";
@@ -105,7 +113,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.StatPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static PublicUpdateUserV2Builder Builder = new PublicUpdateUserV2Builder();
 
         public class PublicUpdateUserV2Builder
+            : OperationBuilder<PublicUpdateUserV2Builder>
         {
             
             
@@ -45,11 +46,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string userId
             )
             {
-                return new PublicUpdateUserV2(this,
+                PublicUpdateUserV2 op = new PublicUpdateUserV2(this,
                     body,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -67,6 +71,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -84,6 +90,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v2/public/namespaces/{namespace}/users/{userId}";
@@ -94,7 +102,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.ModelUserResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public static HandlerV3HealthzBuilder Builder = new HandlerV3HealthzBuilder();
 
         public class HandlerV3HealthzBuilder
+            : OperationBuilder<HandlerV3HealthzBuilder>
         {
             internal HandlerV3HealthzBuilder() { }
 
@@ -30,8 +31,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             public HandlerV3Healthz Build(
             )
             {
-                return new HandlerV3Healthz(this
+                HandlerV3Healthz op = new HandlerV3Healthz(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -43,6 +47,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -54,6 +60,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/matchmaking/healthz";
@@ -64,7 +72,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         public override string[] Produces => new string[] {  };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

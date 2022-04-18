@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public static SpecificAgentTypeDescriptionHandlerBuilder Builder = new SpecificAgentTypeDescriptionHandlerBuilder();
 
         public class SpecificAgentTypeDescriptionHandlerBuilder
+            : OperationBuilder<SpecificAgentTypeDescriptionHandlerBuilder>
         {
             public string? AgentTypes { get; set; }
             
@@ -39,8 +40,11 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             public SpecificAgentTypeDescriptionHandler Build(
             )
             {
-                return new SpecificAgentTypeDescriptionHandler(this
+                SpecificAgentTypeDescriptionHandler op = new SpecificAgentTypeDescriptionHandler(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -66,6 +72,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/event/descriptions/agentType/listByAgentTypes";
@@ -76,7 +84,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsMultipleAgentType? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

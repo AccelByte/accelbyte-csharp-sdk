@@ -31,6 +31,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static TestCheckoutConfigBuilder Builder = new TestCheckoutConfigBuilder();
 
         public class TestCheckoutConfigBuilder
+            : OperationBuilder<TestCheckoutConfigBuilder>
         {
             public bool? Sandbox { get; set; }
             
@@ -57,8 +58,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public TestCheckoutConfig Build(
             )
             {
-                return new TestCheckoutConfig(this
+                TestCheckoutConfig op = new TestCheckoutConfig(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -72,6 +76,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -87,6 +93,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/payment/config/merchant/checkoutconfig/test";
@@ -97,7 +105,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.TestResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

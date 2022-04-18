@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public static DeleteUserActivitiesHandlerBuilder Builder = new DeleteUserActivitiesHandlerBuilder();
 
         public class DeleteUserActivitiesHandlerBuilder
+            : OperationBuilder<DeleteUserActivitiesHandlerBuilder>
         {
             
             
@@ -37,10 +38,13 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
                 string userId
             )
             {
-                return new DeleteUserActivitiesHandler(this,
+                DeleteUserActivitiesHandler op = new DeleteUserActivitiesHandler(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -56,6 +60,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -71,6 +77,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/event/namespaces/{namespace}/users/{userId}/activities";
@@ -81,7 +89,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

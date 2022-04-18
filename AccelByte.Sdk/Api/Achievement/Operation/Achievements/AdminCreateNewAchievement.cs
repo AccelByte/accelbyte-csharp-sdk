@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         public static AdminCreateNewAchievementBuilder Builder = new AdminCreateNewAchievementBuilder();
 
         public class AdminCreateNewAchievementBuilder
+            : OperationBuilder<AdminCreateNewAchievementBuilder>
         {
             
             
@@ -53,10 +54,13 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
                 string namespace_
             )
             {
-                return new AdminCreateNewAchievement(this,
+                AdminCreateNewAchievement op = new AdminCreateNewAchievement(this,
                     body,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -72,6 +76,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -87,6 +93,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/achievement/v1/admin/namespaces/{namespace}/achievements";
@@ -97,7 +105,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsAchievementResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

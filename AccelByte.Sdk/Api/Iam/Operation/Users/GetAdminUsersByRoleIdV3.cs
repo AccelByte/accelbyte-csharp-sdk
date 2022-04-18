@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static GetAdminUsersByRoleIdV3Builder Builder = new GetAdminUsersByRoleIdV3Builder();
 
         public class GetAdminUsersByRoleIdV3Builder
+            : OperationBuilder<GetAdminUsersByRoleIdV3Builder>
         {
             
             
@@ -77,10 +78,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string roleId
             )
             {
-                return new GetAdminUsersByRoleIdV3(this,
+                GetAdminUsersByRoleIdV3 op = new GetAdminUsersByRoleIdV3(this,
                     namespace_,                    
                     roleId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -99,6 +103,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -120,6 +126,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/namespaces/{namespace}/roles/{roleId}/users";
@@ -130,7 +138,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelGetUsersResponseWithPaginationV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

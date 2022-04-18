@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static UpdatePasswordBuilder Builder = new UpdatePasswordBuilder();
 
         public class UpdatePasswordBuilder
+            : OperationBuilder<UpdatePasswordBuilder>
         {
             
             
@@ -46,11 +47,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string userId
             )
             {
-                return new UpdatePassword(this,
+                UpdatePassword op = new UpdatePassword(this,
                     body,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -68,6 +72,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -85,6 +91,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/namespaces/{namespace}/users/{userId}/password";
@@ -95,7 +103,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

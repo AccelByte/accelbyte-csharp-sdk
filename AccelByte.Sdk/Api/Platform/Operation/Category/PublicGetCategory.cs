@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PublicGetCategoryBuilder Builder = new PublicGetCategoryBuilder();
 
         public class PublicGetCategoryBuilder
+            : OperationBuilder<PublicGetCategoryBuilder>
         {
             
             
@@ -58,10 +59,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string namespace_
             )
             {
-                return new PublicGetCategory(this,
+                PublicGetCategory op = new PublicGetCategory(this,
                     categoryPath,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -79,6 +83,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
         #endregion
 
@@ -98,6 +103,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/categories/{categoryPath}";
@@ -108,7 +114,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.CategoryInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

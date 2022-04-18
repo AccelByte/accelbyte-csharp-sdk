@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public static CreateArchivedLeaderboardRankingDataV1HandlerBuilder Builder = new CreateArchivedLeaderboardRankingDataV1HandlerBuilder();
 
         public class CreateArchivedLeaderboardRankingDataV1HandlerBuilder
+            : OperationBuilder<CreateArchivedLeaderboardRankingDataV1HandlerBuilder>
         {
             
             
@@ -44,10 +45,13 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
                 string namespace_
             )
             {
-                return new CreateArchivedLeaderboardRankingDataV1Handler(this,
+                CreateArchivedLeaderboardRankingDataV1Handler op = new CreateArchivedLeaderboardRankingDataV1Handler(this,
                     body,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -63,6 +67,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -78,6 +84,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/leaderboard/v1/admin/namespaces/{namespace}/leaderboards/archived";
@@ -88,7 +96,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

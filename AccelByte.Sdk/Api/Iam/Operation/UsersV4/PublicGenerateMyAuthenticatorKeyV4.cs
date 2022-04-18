@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static PublicGenerateMyAuthenticatorKeyV4Builder Builder = new PublicGenerateMyAuthenticatorKeyV4Builder();
 
         public class PublicGenerateMyAuthenticatorKeyV4Builder
+            : OperationBuilder<PublicGenerateMyAuthenticatorKeyV4Builder>
         {
             
             internal PublicGenerateMyAuthenticatorKeyV4Builder() { }
@@ -42,9 +43,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new PublicGenerateMyAuthenticatorKeyV4(this,
+                PublicGenerateMyAuthenticatorKeyV4 op = new PublicGenerateMyAuthenticatorKeyV4(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -58,6 +62,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -71,6 +77,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v4/public/namespaces/{namespace}/users/me/mfa/authenticator/key";
@@ -81,7 +89,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelAuthenticatorKeyResponseV4? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public static ExistsAnyPassByPassCodesBuilder Builder = new ExistsAnyPassByPassCodesBuilder();
 
         public class ExistsAnyPassByPassCodesBuilder
+            : OperationBuilder<ExistsAnyPassByPassCodesBuilder>
         {
             
             
@@ -49,10 +50,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
                 string userId
             )
             {
-                return new ExistsAnyPassByPassCodes(this,
+                ExistsAnyPassByPassCodes op = new ExistsAnyPassByPassCodes(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -70,6 +74,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             CollectionFormatMap["passCodes"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -88,6 +94,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             CollectionFormatMap["passCodes"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/seasonpass/admin/namespaces/{namespace}/users/{userId}/seasons/current/passes/ownership/any";
@@ -98,7 +106,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.Ownership? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

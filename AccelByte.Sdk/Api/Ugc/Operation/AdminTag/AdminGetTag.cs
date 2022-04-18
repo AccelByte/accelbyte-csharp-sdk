@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public static AdminGetTagBuilder Builder = new AdminGetTagBuilder();
 
         public class AdminGetTagBuilder
+            : OperationBuilder<AdminGetTagBuilder>
         {
             
             public long? Limit { get; set; }
@@ -50,9 +51,12 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
                 string namespace_
             )
             {
-                return new AdminGetTag(this,
+                AdminGetTag op = new AdminGetTag(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -68,6 +72,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -85,6 +91,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/ugc/v1/admin/namespaces/{namespace}/tags";
@@ -95,7 +103,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsPaginatedGetTagResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

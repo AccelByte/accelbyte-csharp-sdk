@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public static GetChannelsBuilder Builder = new GetChannelsBuilder();
 
         public class GetChannelsBuilder
+            : OperationBuilder<GetChannelsBuilder>
         {
             
             
@@ -52,10 +53,13 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
                 string userId
             )
             {
-                return new GetChannels(this,
+                GetChannels op = new GetChannels(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -73,6 +77,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -92,6 +98,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels";
@@ -102,7 +110,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsPaginatedGetChannelResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

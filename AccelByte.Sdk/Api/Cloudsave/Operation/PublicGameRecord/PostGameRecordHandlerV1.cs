@@ -81,7 +81,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// 
     /// 
     /// 
-    /// Reserved Word List: META
+    /// Reserved Word List: __META
     /// 
     /// The reserved word cannot be used as a field in record value,
     /// If still defining the field when creating or updating the record, it will be ignored.
@@ -92,6 +92,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public static PostGameRecordHandlerV1Builder Builder = new PostGameRecordHandlerV1Builder();
 
         public class PostGameRecordHandlerV1Builder
+            : OperationBuilder<PostGameRecordHandlerV1Builder>
         {
             
             
@@ -108,11 +109,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
                 string namespace_
             )
             {
-                return new PostGameRecordHandlerV1(this,
+                PostGameRecordHandlerV1 op = new PostGameRecordHandlerV1(this,
                     body,                    
                     key,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -130,6 +134,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -147,6 +153,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/cloudsave/v1/namespaces/{namespace}/records/{key}";
@@ -157,7 +165,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

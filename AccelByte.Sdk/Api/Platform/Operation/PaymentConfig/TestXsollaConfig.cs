@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static TestXsollaConfigBuilder Builder = new TestXsollaConfigBuilder();
 
         public class TestXsollaConfigBuilder
+            : OperationBuilder<TestXsollaConfigBuilder>
         {
             public Model.XsollaConfig? Body { get; set; }
             
@@ -56,8 +57,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public TestXsollaConfig Build(
             )
             {
-                return new TestXsollaConfig(this
+                TestXsollaConfig op = new TestXsollaConfig(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -70,6 +74,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -83,6 +89,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/payment/config/merchant/xsollaconfig/test";
@@ -93,7 +101,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.TestResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

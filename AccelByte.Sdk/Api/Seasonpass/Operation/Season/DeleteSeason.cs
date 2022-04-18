@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public static DeleteSeasonBuilder Builder = new DeleteSeasonBuilder();
 
         public class DeleteSeasonBuilder
+            : OperationBuilder<DeleteSeasonBuilder>
         {
             
             
@@ -40,10 +41,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
                 string seasonId
             )
             {
-                return new DeleteSeason(this,
+                DeleteSeason op = new DeleteSeason(this,
                     namespace_,                    
                     seasonId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -59,6 +63,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -74,6 +80,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}";
@@ -84,7 +92,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

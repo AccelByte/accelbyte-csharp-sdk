@@ -113,6 +113,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminAddRolePermissionsV3Builder Builder = new AdminAddRolePermissionsV3Builder();
 
         public class AdminAddRolePermissionsV3Builder
+            : OperationBuilder<AdminAddRolePermissionsV3Builder>
         {
             
             
@@ -127,10 +128,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string roleId
             )
             {
-                return new AdminAddRolePermissionsV3(this,
+                AdminAddRolePermissionsV3 op = new AdminAddRolePermissionsV3(this,
                     body,                    
                     roleId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -146,6 +150,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -161,6 +167,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/roles/{roleId}/permissions";
@@ -171,7 +179,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

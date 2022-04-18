@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PublicQueryItemsBuilder Builder = new PublicQueryItemsBuilder();
 
         public class PublicQueryItemsBuilder
+            : OperationBuilder<PublicQueryItemsBuilder>
         {
             
             public string? AppType { get; set; }
@@ -136,9 +137,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string namespace_
             )
             {
-                return new PublicQueryItems(this,
+                PublicQueryItems op = new PublicQueryItems(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -164,6 +168,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
         #endregion
 
@@ -201,6 +206,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/items/byCriteria";
@@ -211,7 +217,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ItemPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -58,6 +58,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static InitiateGroupConfigurationAdminV1Builder Builder = new InitiateGroupConfigurationAdminV1Builder();
 
         public class InitiateGroupConfigurationAdminV1Builder
+            : OperationBuilder<InitiateGroupConfigurationAdminV1Builder>
         {
             
             internal InitiateGroupConfigurationAdminV1Builder() { }
@@ -70,9 +71,12 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string namespace_
             )
             {
-                return new InitiateGroupConfigurationAdminV1(this,
+                InitiateGroupConfigurationAdminV1 op = new InitiateGroupConfigurationAdminV1(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -86,6 +90,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -99,6 +105,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/admin/namespaces/{namespace}/configuration/initiate";
@@ -109,7 +117,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsCreateGroupConfigurationResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

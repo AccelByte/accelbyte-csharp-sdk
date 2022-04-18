@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public static GetEventByUserEventIDAndEventTypeHandlerBuilder Builder = new GetEventByUserEventIDAndEventTypeHandlerBuilder();
 
         public class GetEventByUserEventIDAndEventTypeHandlerBuilder
+            : OperationBuilder<GetEventByUserEventIDAndEventTypeHandlerBuilder>
         {
             
             
@@ -55,7 +56,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
                 string startDate
             )
             {
-                return new GetEventByUserEventIDAndEventTypeHandler(this,
+                GetEventByUserEventIDAndEventTypeHandler op = new GetEventByUserEventIDAndEventTypeHandler(this,
                     eventId,                    
                     eventType,                    
                     namespace_,                    
@@ -64,6 +65,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
                     pageSize,                    
                     startDate                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -90,6 +94,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -117,6 +123,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/event/namespaces/{namespace}/users/{userId}/eventType/{eventType}/eventId/{eventId}";
@@ -127,7 +135,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsEventResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

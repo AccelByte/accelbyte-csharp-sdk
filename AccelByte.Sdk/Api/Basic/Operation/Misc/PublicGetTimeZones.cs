@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public static PublicGetTimeZonesBuilder Builder = new PublicGetTimeZonesBuilder();
 
         public class PublicGetTimeZonesBuilder
+            : OperationBuilder<PublicGetTimeZonesBuilder>
         {
             
             internal PublicGetTimeZonesBuilder() { }
@@ -37,9 +38,12 @@ namespace AccelByte.Sdk.Api.Basic.Operation
                 string namespace_
             )
             {
-                return new PublicGetTimeZones(this,
+                PublicGetTimeZones op = new PublicGetTimeZones(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
         }
         #endregion
 
@@ -66,6 +71,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
         }
 
         public override string Path => "/basic/v1/public/namespaces/{namespace}/misc/timezones";
@@ -76,7 +82,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<string>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

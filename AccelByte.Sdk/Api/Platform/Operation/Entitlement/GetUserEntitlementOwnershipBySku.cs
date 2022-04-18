@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static GetUserEntitlementOwnershipBySkuBuilder Builder = new GetUserEntitlementOwnershipBySkuBuilder();
 
         public class GetUserEntitlementOwnershipBySkuBuilder
+            : OperationBuilder<GetUserEntitlementOwnershipBySkuBuilder>
         {
             
             
@@ -50,11 +51,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string sku
             )
             {
-                return new GetUserEntitlementOwnershipBySku(this,
+                GetUserEntitlementOwnershipBySku op = new GetUserEntitlementOwnershipBySku(this,
                     namespace_,                    
                     userId,                    
                     sku                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -73,6 +77,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -92,6 +98,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/bySku";
@@ -102,7 +110,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.TimedOwnership? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

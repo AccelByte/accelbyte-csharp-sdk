@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PublicListStoresBuilder Builder = new PublicListStoresBuilder();
 
         public class PublicListStoresBuilder
+            : OperationBuilder<PublicListStoresBuilder>
         {
             
             internal PublicListStoresBuilder() { }
@@ -40,9 +41,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string namespace_
             )
             {
-                return new PublicListStores(this,
+                PublicListStores op = new PublicListStores(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -56,6 +60,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
         #endregion
 
@@ -69,6 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/stores";
@@ -79,7 +85,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.StoreInfo>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

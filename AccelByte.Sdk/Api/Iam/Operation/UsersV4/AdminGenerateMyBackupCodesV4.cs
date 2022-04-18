@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminGenerateMyBackupCodesV4Builder Builder = new AdminGenerateMyBackupCodesV4Builder();
 
         public class AdminGenerateMyBackupCodesV4Builder
+            : OperationBuilder<AdminGenerateMyBackupCodesV4Builder>
         {
             internal AdminGenerateMyBackupCodesV4Builder() { }
 
@@ -40,8 +41,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public AdminGenerateMyBackupCodesV4 Build(
             )
             {
-                return new AdminGenerateMyBackupCodesV4(this
+                AdminGenerateMyBackupCodesV4 op = new AdminGenerateMyBackupCodesV4(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -64,6 +70,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v4/admin/users/me/mfa/backupCode";
@@ -74,7 +82,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelBackupCodesResponseV4? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

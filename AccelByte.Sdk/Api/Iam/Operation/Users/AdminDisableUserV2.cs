@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminDisableUserV2Builder Builder = new AdminDisableUserV2Builder();
 
         public class AdminDisableUserV2Builder
+            : OperationBuilder<AdminDisableUserV2Builder>
         {
             
             
@@ -49,11 +50,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string userId
             )
             {
-                return new AdminDisableUserV2(this,
+                AdminDisableUserV2 op = new AdminDisableUserV2(this,
                     body,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -71,6 +75,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -88,6 +94,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v2/admin/namespaces/{namespace}/users/{userId}/disable";
@@ -98,7 +106,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static BulkAcceptVersionedPolicyBuilder Builder = new BulkAcceptVersionedPolicyBuilder();
 
         public class BulkAcceptVersionedPolicyBuilder
+            : OperationBuilder<BulkAcceptVersionedPolicyBuilder>
         {
             public List<Model.AcceptAgreementRequest>? Body { get; set; }
             
@@ -43,8 +44,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             public BulkAcceptVersionedPolicy Build(
             )
             {
-                return new BulkAcceptVersionedPolicy(this
+                BulkAcceptVersionedPolicy op = new BulkAcceptVersionedPolicy(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -57,6 +61,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -70,6 +76,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/agreement/public/agreements/policies";
@@ -80,7 +88,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.AcceptAgreementResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

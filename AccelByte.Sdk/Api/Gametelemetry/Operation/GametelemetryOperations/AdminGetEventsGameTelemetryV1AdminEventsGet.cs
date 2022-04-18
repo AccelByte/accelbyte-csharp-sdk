@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         public static AdminGetEventsGameTelemetryV1AdminEventsGetBuilder Builder = new AdminGetEventsGameTelemetryV1AdminEventsGetBuilder();
 
         public class AdminGetEventsGameTelemetryV1AdminEventsGetBuilder
+            : OperationBuilder<AdminGetEventsGameTelemetryV1AdminEventsGetBuilder>
         {
             
             internal AdminGetEventsGameTelemetryV1AdminEventsGetBuilder() { }
@@ -50,9 +51,12 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
                 string namespace_
             )
             {
-                return new AdminGetEventsGameTelemetryV1AdminEventsGet(this,
+                AdminGetEventsGameTelemetryV1AdminEventsGet op = new AdminGetEventsGameTelemetryV1AdminEventsGet(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -66,6 +70,9 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_COOKIE);
         }
         #endregion
 
@@ -79,6 +86,9 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_COOKIE);
         }
 
         public override string Path => "/game-telemetry/v1/admin/events";
@@ -89,7 +99,8 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

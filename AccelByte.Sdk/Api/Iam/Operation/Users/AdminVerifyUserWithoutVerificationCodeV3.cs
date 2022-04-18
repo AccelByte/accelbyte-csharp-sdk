@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminVerifyUserWithoutVerificationCodeV3Builder Builder = new AdminVerifyUserWithoutVerificationCodeV3Builder();
 
         public class AdminVerifyUserWithoutVerificationCodeV3Builder
+            : OperationBuilder<AdminVerifyUserWithoutVerificationCodeV3Builder>
         {
             
             
@@ -43,10 +44,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string userId
             )
             {
-                return new AdminVerifyUserWithoutVerificationCodeV3(this,
+                AdminVerifyUserWithoutVerificationCodeV3 op = new AdminVerifyUserWithoutVerificationCodeV3(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -77,6 +83,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/namespaces/{namespace}/users/{userId}/verify";
@@ -87,7 +95,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

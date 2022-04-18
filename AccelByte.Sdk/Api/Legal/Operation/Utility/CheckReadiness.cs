@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static CheckReadinessBuilder Builder = new CheckReadinessBuilder();
 
         public class CheckReadinessBuilder
+            : OperationBuilder<CheckReadinessBuilder>
         {
             internal CheckReadinessBuilder() { }
 
@@ -34,8 +35,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             public CheckReadiness Build(
             )
             {
-                return new CheckReadiness(this
+                CheckReadiness op = new CheckReadiness(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -47,6 +51,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -58,6 +64,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/agreement/public/readiness";
@@ -68,7 +76,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.LegalReadinessStatusResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

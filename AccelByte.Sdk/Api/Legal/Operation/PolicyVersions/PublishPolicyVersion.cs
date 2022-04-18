@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static PublishPolicyVersionBuilder Builder = new PublishPolicyVersionBuilder();
 
         public class PublishPolicyVersionBuilder
+            : OperationBuilder<PublishPolicyVersionBuilder>
         {
             
             public bool? ShouldNotify { get; set; }
@@ -45,9 +46,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                 string policyVersionId
             )
             {
-                return new PublishPolicyVersion(this,
+                PublishPolicyVersion op = new PublishPolicyVersion(this,
                     policyVersionId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -77,6 +83,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/agreement/admin/policies/versions/{policyVersionId}/latest";
@@ -87,7 +95,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

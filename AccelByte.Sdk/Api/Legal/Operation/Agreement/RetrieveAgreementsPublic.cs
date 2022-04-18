@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static RetrieveAgreementsPublicBuilder Builder = new RetrieveAgreementsPublicBuilder();
 
         public class RetrieveAgreementsPublicBuilder
+            : OperationBuilder<RetrieveAgreementsPublicBuilder>
         {
             internal RetrieveAgreementsPublicBuilder() { }
 
@@ -35,8 +36,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             public RetrieveAgreementsPublic Build(
             )
             {
-                return new RetrieveAgreementsPublic(this
+                RetrieveAgreementsPublic op = new RetrieveAgreementsPublic(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -48,6 +52,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -59,6 +65,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/agreement/public/agreements/policies";
@@ -69,7 +77,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.RetrieveAcceptedAgreementResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

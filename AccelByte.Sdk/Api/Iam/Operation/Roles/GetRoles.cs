@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static GetRolesBuilder Builder = new GetRolesBuilder();
 
         public class GetRolesBuilder
+            : OperationBuilder<GetRolesBuilder>
         {
             public string? IsWildcard { get; set; }
             
@@ -40,8 +41,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public GetRoles Build(
             )
             {
-                return new GetRoles(this
+                GetRoles op = new GetRoles(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -54,6 +58,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -67,6 +73,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/roles";
@@ -77,7 +85,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.ModelRoleResponseWithManagers>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PublicGetPaymentUrlBuilder Builder = new PublicGetPaymentUrlBuilder();
 
         public class PublicGetPaymentUrlBuilder
+            : OperationBuilder<PublicGetPaymentUrlBuilder>
         {
             
             public Model.PaymentUrlCreate? Body { get; set; }
@@ -45,9 +46,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string namespace_
             )
             {
-                return new PublicGetPaymentUrl(this,
+                PublicGetPaymentUrl op = new PublicGetPaymentUrl(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = builder.Body;
             
+
         }
         #endregion
 
@@ -77,6 +82,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = body;
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/payment/link";
@@ -87,7 +93,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.PaymentUrl? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

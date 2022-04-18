@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminUpdateCountryAgeRestrictionV3Builder Builder = new AdminUpdateCountryAgeRestrictionV3Builder();
 
         public class AdminUpdateCountryAgeRestrictionV3Builder
+            : OperationBuilder<AdminUpdateCountryAgeRestrictionV3Builder>
         {
             
             
@@ -39,11 +40,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new AdminUpdateCountryAgeRestrictionV3(this,
+                AdminUpdateCountryAgeRestrictionV3 op = new AdminUpdateCountryAgeRestrictionV3(this,
                     body,                    
                     countryCode,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -61,6 +65,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -78,6 +84,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/namespaces/{namespace}/agerestrictions/countries/{countryCode}";
@@ -88,7 +96,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelCountryV3Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

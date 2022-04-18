@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     ///           * `TokenClaimsMapping` is used to extract user info from idToken claims.
-    /// Its a JSON format with key should be `name`, `email` and `avatarURL`
+    /// Its a JSON format with key should be `name`, `email` and `avatarUrl`
     /// since IAM will look up for these key when extracting user info.
     /// </summary>
     public class AddThirdPartyLoginPlatformCredentialV3 : AccelByte.Sdk.Core.Operation
@@ -49,6 +49,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AddThirdPartyLoginPlatformCredentialV3Builder Builder = new AddThirdPartyLoginPlatformCredentialV3Builder();
 
         public class AddThirdPartyLoginPlatformCredentialV3Builder
+            : OperationBuilder<AddThirdPartyLoginPlatformCredentialV3Builder>
         {
             
             
@@ -65,11 +66,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string platformId
             )
             {
-                return new AddThirdPartyLoginPlatformCredentialV3(this,
+                AddThirdPartyLoginPlatformCredentialV3 op = new AddThirdPartyLoginPlatformCredentialV3(this,
                     body,                    
                     namespace_,                    
                     platformId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -87,6 +91,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -104,6 +110,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/clients";
@@ -114,7 +122,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelThirdPartyLoginPlatformCredentialResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

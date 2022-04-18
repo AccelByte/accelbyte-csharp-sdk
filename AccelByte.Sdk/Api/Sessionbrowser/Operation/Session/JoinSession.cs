@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public static JoinSessionBuilder Builder = new JoinSessionBuilder();
 
         public class JoinSessionBuilder
+            : OperationBuilder<JoinSessionBuilder>
         {
             
             
@@ -42,11 +43,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
                 string sessionID
             )
             {
-                return new JoinSession(this,
+                JoinSession op = new JoinSession(this,
                     body,                    
                     namespace_,                    
                     sessionID                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -64,6 +68,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -81,6 +87,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/sessionbrowser/namespaces/{namespace}/gamesession/{sessionID}/join";
@@ -91,7 +99,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsSessionResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

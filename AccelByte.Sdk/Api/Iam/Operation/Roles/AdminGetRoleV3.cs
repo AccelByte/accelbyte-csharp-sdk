@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminGetRoleV3Builder Builder = new AdminGetRoleV3Builder();
 
         public class AdminGetRoleV3Builder
+            : OperationBuilder<AdminGetRoleV3Builder>
         {
             
             internal AdminGetRoleV3Builder() { }
@@ -37,9 +38,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string roleId
             )
             {
-                return new AdminGetRoleV3(this,
+                AdminGetRoleV3 op = new AdminGetRoleV3(this,
                     roleId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -66,6 +72,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/roles/{roleId}";
@@ -76,7 +84,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelRoleResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

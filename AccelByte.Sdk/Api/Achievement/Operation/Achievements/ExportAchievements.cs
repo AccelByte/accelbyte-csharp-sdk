@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         public static ExportAchievementsBuilder Builder = new ExportAchievementsBuilder();
 
         public class ExportAchievementsBuilder
+            : OperationBuilder<ExportAchievementsBuilder>
         {
             
             internal ExportAchievementsBuilder() { }
@@ -37,9 +38,12 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
                 string namespace_
             )
             {
-                return new ExportAchievements(this,
+                ExportAchievements op = new ExportAchievements(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -66,6 +72,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/achievement/v1/admin/namespaces/{namespace}/achievements/export";
@@ -76,7 +84,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.ModelsAchievement>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

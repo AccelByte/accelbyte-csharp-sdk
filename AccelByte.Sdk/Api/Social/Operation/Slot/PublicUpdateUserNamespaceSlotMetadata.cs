@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public static PublicUpdateUserNamespaceSlotMetadataBuilder Builder = new PublicUpdateUserNamespaceSlotMetadataBuilder();
 
         public class PublicUpdateUserNamespaceSlotMetadataBuilder
+            : OperationBuilder<PublicUpdateUserNamespaceSlotMetadataBuilder>
         {
             
             
@@ -49,11 +50,14 @@ namespace AccelByte.Sdk.Api.Social.Operation
                 string userId
             )
             {
-                return new PublicUpdateUserNamespaceSlotMetadata(this,
+                PublicUpdateUserNamespaceSlotMetadata op = new PublicUpdateUserNamespaceSlotMetadata(this,
                     namespace_,                    
                     slotId,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -72,6 +76,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -91,6 +97,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/social/public/namespaces/{namespace}/users/{userId}/slots/{slotId}/metadata";
@@ -101,7 +109,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.SlotInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         public static ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder Builder = new ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder();
 
         public class ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder
+            : OperationBuilder<ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder>
         {
             
             
@@ -39,10 +40,13 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
                 string steamId
             )
             {
-                return new ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(this,
+                ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut op = new ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(this,
                     playtime,                    
                     steamId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -58,6 +62,9 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_COOKIE);
         }
         #endregion
 
@@ -73,6 +80,9 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_COOKIE);
         }
 
         public override string Path => "/game-telemetry/v1/protected/steamIds/{steamId}/playtime/{playtime}";
@@ -83,7 +93,8 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

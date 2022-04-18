@@ -31,6 +31,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public List<Model.ModelsContentDownloadResponse>? PublicGetContentBulk(PublicGetContentBulk input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsContentDownloadResponse? DownloadContentByShareCode(DownloadContentByShareCode input) {
             var response = _sdk.RunRequest(input);
 

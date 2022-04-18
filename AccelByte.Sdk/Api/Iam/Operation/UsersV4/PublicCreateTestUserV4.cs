@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static PublicCreateTestUserV4Builder Builder = new PublicCreateTestUserV4Builder();
 
         public class PublicCreateTestUserV4Builder
+            : OperationBuilder<PublicCreateTestUserV4Builder>
         {
             
             
@@ -57,10 +58,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new PublicCreateTestUserV4(this,
+                PublicCreateTestUserV4 op = new PublicCreateTestUserV4(this,
                     body,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -76,6 +80,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -91,6 +97,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v4/public/namespaces/{namespace}/test_users";
@@ -101,7 +109,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.AccountCreateUserResponseV4? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

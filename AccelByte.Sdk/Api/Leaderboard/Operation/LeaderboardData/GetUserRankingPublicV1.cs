@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public static GetUserRankingPublicV1Builder Builder = new GetUserRankingPublicV1Builder();
 
         public class GetUserRankingPublicV1Builder
+            : OperationBuilder<GetUserRankingPublicV1Builder>
         {
             
             
@@ -40,11 +41,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
                 string userId
             )
             {
-                return new GetUserRankingPublicV1(this,
+                GetUserRankingPublicV1 op = new GetUserRankingPublicV1(this,
                     leaderboardCode,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -79,6 +85,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/leaderboard/v1/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/{userId}";
@@ -89,7 +97,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsUserRankingResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

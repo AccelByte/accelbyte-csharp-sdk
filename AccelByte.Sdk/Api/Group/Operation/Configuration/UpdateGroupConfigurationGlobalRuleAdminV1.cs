@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static UpdateGroupConfigurationGlobalRuleAdminV1Builder Builder = new UpdateGroupConfigurationGlobalRuleAdminV1Builder();
 
         public class UpdateGroupConfigurationGlobalRuleAdminV1Builder
+            : OperationBuilder<UpdateGroupConfigurationGlobalRuleAdminV1Builder>
         {
             
             
@@ -52,12 +53,15 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string namespace_
             )
             {
-                return new UpdateGroupConfigurationGlobalRuleAdminV1(this,
+                UpdateGroupConfigurationGlobalRuleAdminV1 op = new UpdateGroupConfigurationGlobalRuleAdminV1(this,
                     body,                    
                     allowedAction,                    
                     configurationCode,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -77,6 +81,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -96,6 +102,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}/rules/{allowedAction}";
@@ -106,7 +114,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsUpdateGroupConfigurationResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

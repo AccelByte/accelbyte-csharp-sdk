@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public static PublicBulkClaimUserRewardsBuilder Builder = new PublicBulkClaimUserRewardsBuilder();
 
         public class PublicBulkClaimUserRewardsBuilder
+            : OperationBuilder<PublicBulkClaimUserRewardsBuilder>
         {
             
             
@@ -41,10 +42,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
                 string userId
             )
             {
-                return new PublicBulkClaimUserRewards(this,
+                PublicBulkClaimUserRewards op = new PublicBulkClaimUserRewards(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -60,6 +64,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -75,6 +81,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/seasonpass/public/namespaces/{namespace}/users/{userId}/seasons/current/rewards/bulk";
@@ -85,7 +93,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ClaimableRewards? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

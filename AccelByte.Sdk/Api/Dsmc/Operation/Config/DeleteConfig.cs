@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public static DeleteConfigBuilder Builder = new DeleteConfigBuilder();
 
         public class DeleteConfigBuilder
+            : OperationBuilder<DeleteConfigBuilder>
         {
             
             internal DeleteConfigBuilder() { }
@@ -40,9 +41,12 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
                 string namespace_
             )
             {
-                return new DeleteConfig(this,
+                DeleteConfig op = new DeleteConfig(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -56,6 +60,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -69,6 +75,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/dsmcontroller/admin/namespaces/{namespace}/configs";
@@ -79,7 +87,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

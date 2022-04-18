@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static GetStoreBuilder Builder = new GetStoreBuilder();
 
         public class GetStoreBuilder
+            : OperationBuilder<GetStoreBuilder>
         {
             
             
@@ -41,10 +42,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string storeId
             )
             {
-                return new GetStore(this,
+                GetStore op = new GetStore(this,
                     namespace_,                    
                     storeId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -60,6 +64,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -75,6 +81,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/stores/{storeId}";
@@ -85,7 +93,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.StoreInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

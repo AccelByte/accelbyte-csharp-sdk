@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public static PublicBulkCreateUserStatItemsBuilder Builder = new PublicBulkCreateUserStatItemsBuilder();
 
         public class PublicBulkCreateUserStatItemsBuilder
+            : OperationBuilder<PublicBulkCreateUserStatItemsBuilder>
         {
             
             
@@ -47,10 +48,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
                 string userId
             )
             {
-                return new PublicBulkCreateUserStatItems(this,
+                PublicBulkCreateUserStatItems op = new PublicBulkCreateUserStatItems(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -67,6 +71,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -84,6 +90,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems/bulk";
@@ -94,7 +102,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.BulkStatItemOperationResult>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

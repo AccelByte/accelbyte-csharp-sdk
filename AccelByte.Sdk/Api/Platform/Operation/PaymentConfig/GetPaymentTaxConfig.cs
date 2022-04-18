@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static GetPaymentTaxConfigBuilder Builder = new GetPaymentTaxConfigBuilder();
 
         public class GetPaymentTaxConfigBuilder
+            : OperationBuilder<GetPaymentTaxConfigBuilder>
         {
             internal GetPaymentTaxConfigBuilder() { }
 
@@ -36,8 +37,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public GetPaymentTaxConfig Build(
             )
             {
-                return new GetPaymentTaxConfig(this
+                GetPaymentTaxConfig op = new GetPaymentTaxConfig(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -49,6 +53,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -60,6 +66,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/payment/config/tax";
@@ -70,7 +78,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.PaymentTaxConfigInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

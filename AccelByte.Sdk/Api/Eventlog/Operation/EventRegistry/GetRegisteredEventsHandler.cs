@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public static GetRegisteredEventsHandlerBuilder Builder = new GetRegisteredEventsHandlerBuilder();
 
         public class GetRegisteredEventsHandlerBuilder
+            : OperationBuilder<GetRegisteredEventsHandlerBuilder>
         {
             internal GetRegisteredEventsHandlerBuilder() { }
 
@@ -33,8 +34,11 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             public GetRegisteredEventsHandler Build(
             )
             {
-                return new GetRegisteredEventsHandler(this
+                GetRegisteredEventsHandler op = new GetRegisteredEventsHandler(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -46,6 +50,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -57,6 +63,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/event/registry/eventIds";
@@ -67,7 +75,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsEventRegistry? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

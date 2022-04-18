@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder Builder = new RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder();
 
         public class RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder
+            : OperationBuilder<RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder>
         {
             
             internal RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder() { }
@@ -34,9 +35,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new RetrieveAllActiveThirdPartyLoginPlatformCredentialV3(this,
+                RetrieveAllActiveThirdPartyLoginPlatformCredentialV3 op = new RetrieveAllActiveThirdPartyLoginPlatformCredentialV3(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -50,6 +54,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -63,6 +69,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/namespaces/{namespace}/platforms/all/clients/active";
@@ -73,7 +81,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.ModelThirdPartyLoginPlatformCredentialResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public static GetSlotDataBuilder Builder = new GetSlotDataBuilder();
 
         public class GetSlotDataBuilder
+            : OperationBuilder<GetSlotDataBuilder>
         {
             
             
@@ -41,11 +42,14 @@ namespace AccelByte.Sdk.Api.Social.Operation
                 string userId
             )
             {
-                return new GetSlotData(this,
+                GetSlotData op = new GetSlotData(this,
                     namespace_,                    
                     slotId,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -63,6 +67,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -80,6 +86,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/social/admin/namespaces/{namespace}/users/{userId}/slots/{slotId}";
@@ -90,7 +98,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override string[] Produces => new string[] { "application/octet-stream" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public byte[]? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

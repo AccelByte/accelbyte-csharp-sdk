@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public static ListConfigBuilder Builder = new ListConfigBuilder();
 
         public class ListConfigBuilder
+            : OperationBuilder<ListConfigBuilder>
         {
             internal ListConfigBuilder() { }
 
@@ -36,8 +37,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             public ListConfig Build(
             )
             {
-                return new ListConfig(this
+                ListConfig op = new ListConfig(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -49,6 +53,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -60,6 +66,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/dsmcontroller/admin/configs";
@@ -70,7 +78,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsListConfigResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

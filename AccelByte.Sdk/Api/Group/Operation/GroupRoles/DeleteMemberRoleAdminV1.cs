@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static DeleteMemberRoleAdminV1Builder Builder = new DeleteMemberRoleAdminV1Builder();
 
         public class DeleteMemberRoleAdminV1Builder
+            : OperationBuilder<DeleteMemberRoleAdminV1Builder>
         {
             
             
@@ -48,10 +49,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string namespace_
             )
             {
-                return new DeleteMemberRoleAdminV1(this,
+                DeleteMemberRoleAdminV1 op = new DeleteMemberRoleAdminV1(this,
                     memberRoleId,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -67,6 +71,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -82,6 +88,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/admin/namespaces/{namespace}/roles/{memberRoleId}";
@@ -92,7 +100,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

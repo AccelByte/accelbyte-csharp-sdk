@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminListAssignedUsersV4Builder Builder = new AdminListAssignedUsersV4Builder();
 
         public class AdminListAssignedUsersV4Builder
+            : OperationBuilder<AdminListAssignedUsersV4Builder>
         {
             
             public string? After { get; set; }
@@ -60,9 +61,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string roleId
             )
             {
-                return new AdminListAssignedUsersV4(this,
+                AdminListAssignedUsersV4 op = new AdminListAssignedUsersV4(this,
                     roleId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -79,6 +83,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -98,6 +104,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v4/admin/roles/{roleId}/users";
@@ -108,7 +116,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelListAssignedUsersV4Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

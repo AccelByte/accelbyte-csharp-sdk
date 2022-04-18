@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public static GetAllChannelsHandlerBuilder Builder = new GetAllChannelsHandlerBuilder();
 
         public class GetAllChannelsHandlerBuilder
+            : OperationBuilder<GetAllChannelsHandlerBuilder>
         {
             
             public long? Limit { get; set; }
@@ -54,9 +55,12 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
                 string namespace_
             )
             {
-                return new GetAllChannelsHandler(this,
+                GetAllChannelsHandler op = new GetAllChannelsHandler(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -72,6 +76,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -89,6 +95,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/matchmaking/namespaces/{namespace}/channels";
@@ -99,7 +107,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGetChannelsResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

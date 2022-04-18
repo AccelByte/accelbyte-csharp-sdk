@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public static AdminUploadContentS3Builder Builder = new AdminUploadContentS3Builder();
 
         public class AdminUploadContentS3Builder
+            : OperationBuilder<AdminUploadContentS3Builder>
         {
             
             
@@ -42,11 +43,14 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
                 string namespace_
             )
             {
-                return new AdminUploadContentS3(this,
+                AdminUploadContentS3 op = new AdminUploadContentS3(this,
                     body,                    
                     channelId,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -64,6 +68,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -81,6 +87,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/s3";
@@ -91,7 +99,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsCreateContentResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

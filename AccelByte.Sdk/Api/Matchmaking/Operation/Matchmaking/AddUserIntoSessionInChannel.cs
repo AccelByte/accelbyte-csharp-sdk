@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public static AddUserIntoSessionInChannelBuilder Builder = new AddUserIntoSessionInChannelBuilder();
 
         public class AddUserIntoSessionInChannelBuilder
+            : OperationBuilder<AddUserIntoSessionInChannelBuilder>
         {
             
             
@@ -44,12 +45,15 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
                 string namespace_
             )
             {
-                return new AddUserIntoSessionInChannel(this,
+                AddUserIntoSessionInChannel op = new AddUserIntoSessionInChannel(this,
                     body,                    
                     channelName,                    
                     matchID,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -69,6 +73,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -88,6 +94,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions/{matchID}";
@@ -98,7 +106,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

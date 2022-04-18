@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PublicBulkGetItemsBuilder Builder = new PublicBulkGetItemsBuilder();
 
         public class PublicBulkGetItemsBuilder
+            : OperationBuilder<PublicBulkGetItemsBuilder>
         {
             
             public string? Language { get; set; }
@@ -66,10 +67,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string itemIds
             )
             {
-                return new PublicBulkGetItems(this,
+                PublicBulkGetItems op = new PublicBulkGetItems(this,
                     namespace_,                    
                     itemIds                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -88,6 +92,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
         #endregion
 
@@ -109,6 +114,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/items/locale/byIds";
@@ -119,7 +125,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.ItemInfo>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public static DeleteTopicByTopicNameBuilder Builder = new DeleteTopicByTopicNameBuilder();
 
         public class DeleteTopicByTopicNameBuilder
+            : OperationBuilder<DeleteTopicByTopicNameBuilder>
         {
             
             
@@ -41,10 +42,13 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
                 string topic
             )
             {
-                return new DeleteTopicByTopicName(this,
+                DeleteTopicByTopicName op = new DeleteTopicByTopicName(this,
                     namespace_,                    
                     topic                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -60,6 +64,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -75,6 +81,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/notification/namespaces/{namespace}/topics/{topic}";
@@ -85,7 +93,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

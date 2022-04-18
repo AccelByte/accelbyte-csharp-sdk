@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public static UpdatePlayTimeWeightBuilder Builder = new UpdatePlayTimeWeightBuilder();
 
         public class UpdatePlayTimeWeightBuilder
+            : OperationBuilder<UpdatePlayTimeWeightBuilder>
         {
             
             
@@ -42,10 +43,13 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
                 string namespace_
             )
             {
-                return new UpdatePlayTimeWeight(this,
+                UpdatePlayTimeWeight op = new UpdatePlayTimeWeight(this,
                     body,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -61,6 +65,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -76,6 +82,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/matchmaking/social/playtime/namespaces/{namespace}/weight";
@@ -86,7 +94,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsUpdatePlayerPlaytimeWeightResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

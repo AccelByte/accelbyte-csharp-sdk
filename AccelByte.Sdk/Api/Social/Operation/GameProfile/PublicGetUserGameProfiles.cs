@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public static PublicGetUserGameProfilesBuilder Builder = new PublicGetUserGameProfilesBuilder();
 
         public class PublicGetUserGameProfilesBuilder
+            : OperationBuilder<PublicGetUserGameProfilesBuilder>
         {
             
             
@@ -40,10 +41,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
                 List<string> userIds
             )
             {
-                return new PublicGetUserGameProfiles(this,
+                PublicGetUserGameProfiles op = new PublicGetUserGameProfiles(this,
                     namespace_,                    
                     userIds                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -60,6 +64,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             CollectionFormatMap["userIds"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -76,6 +82,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             CollectionFormatMap["userIds"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/social/public/namespaces/{namespace}/profiles";
@@ -86,7 +94,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.UserGameProfiles>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

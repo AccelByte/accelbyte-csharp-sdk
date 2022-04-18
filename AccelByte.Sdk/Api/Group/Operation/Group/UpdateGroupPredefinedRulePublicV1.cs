@@ -46,6 +46,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static UpdateGroupPredefinedRulePublicV1Builder Builder = new UpdateGroupPredefinedRulePublicV1Builder();
 
         public class UpdateGroupPredefinedRulePublicV1Builder
+            : OperationBuilder<UpdateGroupPredefinedRulePublicV1Builder>
         {
             
             
@@ -64,12 +65,15 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string namespace_
             )
             {
-                return new UpdateGroupPredefinedRulePublicV1(this,
+                UpdateGroupPredefinedRulePublicV1 op = new UpdateGroupPredefinedRulePublicV1(this,
                     body,                    
                     allowedAction,                    
                     groupId,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -89,6 +93,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -108,6 +114,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/public/namespaces/{namespace}/groups/{groupId}/rules/defined/{allowedAction}";
@@ -118,7 +126,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGroupResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

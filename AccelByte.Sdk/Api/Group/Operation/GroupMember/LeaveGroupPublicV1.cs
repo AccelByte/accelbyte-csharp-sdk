@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// 
     /// 
-    /// leave from group. Admin is not allowed to leave the group. This endpoint will also give response if the user is not belong to any group.
+    /// leave from group. Admin is not allowed to leave the group. This endpoint will also give response if the user does not belong to any group.
     /// 
     /// 
     /// 
@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static LeaveGroupPublicV1Builder Builder = new LeaveGroupPublicV1Builder();
 
         public class LeaveGroupPublicV1Builder
+            : OperationBuilder<LeaveGroupPublicV1Builder>
         {
             
             internal LeaveGroupPublicV1Builder() { }
@@ -51,9 +52,12 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string namespace_
             )
             {
-                return new LeaveGroupPublicV1(this,
+                LeaveGroupPublicV1 op = new LeaveGroupPublicV1(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -67,6 +71,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -80,6 +86,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/public/namespaces/{namespace}/leave";
@@ -90,7 +98,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsLeaveGroupResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

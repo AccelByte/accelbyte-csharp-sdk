@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public static DeleteBulkLeaderboardConfigurationAdminV1Builder Builder = new DeleteBulkLeaderboardConfigurationAdminV1Builder();
 
         public class DeleteBulkLeaderboardConfigurationAdminV1Builder
+            : OperationBuilder<DeleteBulkLeaderboardConfigurationAdminV1Builder>
         {
             
             
@@ -43,10 +44,13 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
                 string namespace_
             )
             {
-                return new DeleteBulkLeaderboardConfigurationAdminV1(this,
+                DeleteBulkLeaderboardConfigurationAdminV1 op = new DeleteBulkLeaderboardConfigurationAdminV1(this,
                     body,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -77,6 +83,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/leaderboard/v1/admin/namespaces/{namespace}/leaderboards/delete";
@@ -87,7 +95,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsDeleteBulkLeaderboardsResp? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

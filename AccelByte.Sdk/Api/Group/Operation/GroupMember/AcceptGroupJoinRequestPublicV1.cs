@@ -49,6 +49,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static AcceptGroupJoinRequestPublicV1Builder Builder = new AcceptGroupJoinRequestPublicV1Builder();
 
         public class AcceptGroupJoinRequestPublicV1Builder
+            : OperationBuilder<AcceptGroupJoinRequestPublicV1Builder>
         {
             
             
@@ -63,10 +64,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string userId
             )
             {
-                return new AcceptGroupJoinRequestPublicV1(this,
+                AcceptGroupJoinRequestPublicV1 op = new AcceptGroupJoinRequestPublicV1(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -82,6 +86,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -97,6 +103,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/public/namespaces/{namespace}/users/{userId}/join/accept";
@@ -107,7 +115,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsMemberRequestGroupResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

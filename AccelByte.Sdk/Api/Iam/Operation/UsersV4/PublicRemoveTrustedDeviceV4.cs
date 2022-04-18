@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static PublicRemoveTrustedDeviceV4Builder Builder = new PublicRemoveTrustedDeviceV4Builder();
 
         public class PublicRemoveTrustedDeviceV4Builder
+            : OperationBuilder<PublicRemoveTrustedDeviceV4Builder>
         {
             
             internal PublicRemoveTrustedDeviceV4Builder() { }
@@ -47,9 +48,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new PublicRemoveTrustedDeviceV4(this,
+                PublicRemoveTrustedDeviceV4 op = new PublicRemoveTrustedDeviceV4(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -63,6 +67,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -76,6 +82,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v4/public/namespaces/{namespace}/users/me/mfa/device";
@@ -86,7 +94,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

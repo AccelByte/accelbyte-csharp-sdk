@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static TestWxPayConfigByIdBuilder Builder = new TestWxPayConfigByIdBuilder();
 
         public class TestWxPayConfigByIdBuilder
+            : OperationBuilder<TestWxPayConfigByIdBuilder>
         {
             
             internal TestWxPayConfigByIdBuilder() { }
@@ -38,9 +39,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string id
             )
             {
-                return new TestWxPayConfigById(this,
+                TestWxPayConfigById op = new TestWxPayConfigById(this,
                     id                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -54,6 +58,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -67,6 +73,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/payment/config/merchant/{id}/wxpayconfig/test";
@@ -77,7 +85,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.TestResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

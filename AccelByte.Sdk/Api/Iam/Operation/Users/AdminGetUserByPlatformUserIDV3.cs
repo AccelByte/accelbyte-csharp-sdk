@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminGetUserByPlatformUserIDV3Builder Builder = new AdminGetUserByPlatformUserIDV3Builder();
 
         public class AdminGetUserByPlatformUserIDV3Builder
+            : OperationBuilder<AdminGetUserByPlatformUserIDV3Builder>
         {
             
             
@@ -42,11 +43,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string platformUserId
             )
             {
-                return new AdminGetUserByPlatformUserIDV3(this,
+                AdminGetUserByPlatformUserIDV3 op = new AdminGetUserByPlatformUserIDV3(this,
                     namespace_,                    
                     platformId,                    
                     platformUserId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -64,6 +68,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -81,6 +87,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/users/{platformUserId}";
@@ -91,7 +99,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelUserResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

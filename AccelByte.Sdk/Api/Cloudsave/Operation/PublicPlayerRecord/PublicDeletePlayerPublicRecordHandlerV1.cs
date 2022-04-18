@@ -14,11 +14,24 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// publicDeletePlayerPublicRecordHandlerV1
     ///
+    /// Required valid user authorization
     /// Required scope: `social`
     /// 
-    /// Required valid user authorization
+    /// Delete player public record.
     /// 
-    /// Delete player public record (arbitrary JSON data) in user-level with given key.
+    /// 
+    /// 
+    /// 
+    /// ## Warning: This endpoint is going to deprecate
+    /// 
+    /// 
+    /// 
+    /// This endpoint is going to deprecate in the future please don't use it.
+    /// 
+    /// For alternative, please use these endpoints:
+    /// - POST /cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key} and utilizing __META functionality
+    /// - PUT /cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key} and utilizing __META functionality
+    /// - DELETE /cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}
     /// </summary>
     public class PublicDeletePlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
@@ -26,6 +39,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public static PublicDeletePlayerPublicRecordHandlerV1Builder Builder = new PublicDeletePlayerPublicRecordHandlerV1Builder();
 
         public class PublicDeletePlayerPublicRecordHandlerV1Builder
+            : OperationBuilder<PublicDeletePlayerPublicRecordHandlerV1Builder>
         {
             
             
@@ -40,10 +54,13 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
                 string namespace_
             )
             {
-                return new PublicDeletePlayerPublicRecordHandlerV1(this,
+                PublicDeletePlayerPublicRecordHandlerV1 op = new PublicDeletePlayerPublicRecordHandlerV1(this,
                     key,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -59,6 +76,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -74,6 +93,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/cloudsave/v1/namespaces/{namespace}/users/me/records/{key}/public";
@@ -84,7 +105,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

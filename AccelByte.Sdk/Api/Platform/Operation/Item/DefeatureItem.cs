@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static DefeatureItemBuilder Builder = new DefeatureItemBuilder();
 
         public class DefeatureItemBuilder
+            : OperationBuilder<DefeatureItemBuilder>
         {
             
             
@@ -44,12 +45,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string storeId
             )
             {
-                return new DefeatureItem(this,
+                DefeatureItem op = new DefeatureItem(this,
                     feature,                    
                     itemId,                    
                     namespace_,                    
                     storeId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -69,6 +73,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -88,6 +94,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/items/{itemId}/features/{feature}";
@@ -98,7 +106,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.FullItemInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

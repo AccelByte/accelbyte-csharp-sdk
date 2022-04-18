@@ -18,6 +18,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// Other detail info:
     ///           *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
     ///           *  Returns : created stat template
+    ///           * default minimum value is 0
+    ///           * default maximum value is 1.7976931348623157e+308
     /// </summary>
     public class CreateStat : AccelByte.Sdk.Core.Operation
     {
@@ -25,6 +27,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public static CreateStatBuilder Builder = new CreateStatBuilder();
 
         public class CreateStatBuilder
+            : OperationBuilder<CreateStatBuilder>
         {
             
             public Model.StatCreate? Body { get; set; }
@@ -45,9 +48,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
                 string namespace_
             )
             {
-                return new CreateStat(this,
+                CreateStat op = new CreateStat(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +68,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -77,6 +85,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/social/v1/admin/namespaces/{namespace}/stats";
@@ -87,7 +97,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.StatInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

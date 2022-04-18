@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public static GetGlobalStatItemsBuilder Builder = new GetGlobalStatItemsBuilder();
 
         public class GetGlobalStatItemsBuilder
+            : OperationBuilder<GetGlobalStatItemsBuilder>
         {
             
             public int? Limit { get; set; }
@@ -54,9 +55,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
                 string namespace_
             )
             {
-                return new GetGlobalStatItems(this,
+                GetGlobalStatItems op = new GetGlobalStatItems(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -72,6 +76,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -89,6 +95,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/social/v1/admin/namespaces/{namespace}/globalstatitems";
@@ -99,7 +107,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.GlobalStatItemPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

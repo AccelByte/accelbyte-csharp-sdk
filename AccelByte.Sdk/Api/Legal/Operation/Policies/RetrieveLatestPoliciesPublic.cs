@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static RetrieveLatestPoliciesPublicBuilder Builder = new RetrieveLatestPoliciesPublicBuilder();
 
         public class RetrieveLatestPoliciesPublicBuilder
+            : OperationBuilder<RetrieveLatestPoliciesPublicBuilder>
         {
             
             public bool? AlwaysIncludeDefault { get; set; }
@@ -79,9 +80,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                 string namespace_
             )
             {
-                return new RetrieveLatestPoliciesPublic(this,
+                RetrieveLatestPoliciesPublic op = new RetrieveLatestPoliciesPublic(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -99,6 +103,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -120,6 +126,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/agreement/public/policies/namespaces/{namespace}";
@@ -130,7 +138,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.RetrievePolicyPublicResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

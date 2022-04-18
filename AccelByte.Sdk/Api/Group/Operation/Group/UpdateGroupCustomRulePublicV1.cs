@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static UpdateGroupCustomRulePublicV1Builder Builder = new UpdateGroupCustomRulePublicV1Builder();
 
         public class UpdateGroupCustomRulePublicV1Builder
+            : OperationBuilder<UpdateGroupCustomRulePublicV1Builder>
         {
             
             
@@ -52,11 +53,14 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string namespace_
             )
             {
-                return new UpdateGroupCustomRulePublicV1(this,
+                UpdateGroupCustomRulePublicV1 op = new UpdateGroupCustomRulePublicV1(this,
                     body,                    
                     groupId,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -74,6 +78,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -91,6 +97,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/public/namespaces/{namespace}/groups/{groupId}/rules/custom";
@@ -101,7 +109,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGroupResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

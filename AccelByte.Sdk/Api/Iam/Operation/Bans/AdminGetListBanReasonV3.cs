@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminGetListBanReasonV3Builder Builder = new AdminGetListBanReasonV3Builder();
 
         public class AdminGetListBanReasonV3Builder
+            : OperationBuilder<AdminGetListBanReasonV3Builder>
         {
             internal AdminGetListBanReasonV3Builder() { }
 
@@ -40,8 +41,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public AdminGetListBanReasonV3 Build(
             )
             {
-                return new AdminGetListBanReasonV3(this
+                AdminGetListBanReasonV3 op = new AdminGetListBanReasonV3(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -64,6 +70,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/bans/reasons";
@@ -74,7 +82,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.AccountcommonBanReasonsV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static SyncPaymentOrdersBuilder Builder = new SyncPaymentOrdersBuilder();
 
         public class SyncPaymentOrdersBuilder
+            : OperationBuilder<SyncPaymentOrdersBuilder>
         {
             public string? NextEvaluatedKey { get; set; }
             
@@ -48,10 +49,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string start
             )
             {
-                return new SyncPaymentOrders(this,
+                SyncPaymentOrders op = new SyncPaymentOrders(this,
                     end,                    
                     start                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -68,6 +72,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -85,6 +91,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/payment/orders";
@@ -95,7 +103,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.PaymentOrderSyncResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

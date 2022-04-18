@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public static PublicDownloadContentPreviewBuilder Builder = new PublicDownloadContentPreviewBuilder();
 
         public class PublicDownloadContentPreviewBuilder
+            : OperationBuilder<PublicDownloadContentPreviewBuilder>
         {
             
             
@@ -36,10 +37,13 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
                 string namespace_
             )
             {
-                return new PublicDownloadContentPreview(this,
+                PublicDownloadContentPreview op = new PublicDownloadContentPreview(this,
                     contentId,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -55,6 +59,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -70,6 +76,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/ugc/v1/public/namespaces/{namespace}/contents/{contentId}/preview";
@@ -80,7 +88,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsGetContentPreviewResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

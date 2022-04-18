@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PublicGetQRCodeBuilder Builder = new PublicGetQRCodeBuilder();
 
         public class PublicGetQRCodeBuilder
+            : OperationBuilder<PublicGetQRCodeBuilder>
         {
             
             
@@ -39,10 +40,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string code
             )
             {
-                return new PublicGetQRCode(this,
+                PublicGetQRCode op = new PublicGetQRCode(this,
                     namespace_,                    
                     code                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -58,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
         #endregion
 
@@ -73,6 +78,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/payment/qrcode";
@@ -83,7 +89,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "image/png" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public byte[]? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

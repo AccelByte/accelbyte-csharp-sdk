@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public static GetUserOutgoingFriendsBuilder Builder = new GetUserOutgoingFriendsBuilder();
 
         public class GetUserOutgoingFriendsBuilder
+            : OperationBuilder<GetUserOutgoingFriendsBuilder>
         {
             
             internal GetUserOutgoingFriendsBuilder() { }
@@ -32,9 +33,12 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
                 string namespace_
             )
             {
-                return new GetUserOutgoingFriends(this,
+                GetUserOutgoingFriends op = new GetUserOutgoingFriends(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -48,6 +52,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -61,6 +67,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/friends/namespaces/{namespace}/me/outgoing";
@@ -71,7 +79,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.ModelGetUserOutgoingFriendsResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

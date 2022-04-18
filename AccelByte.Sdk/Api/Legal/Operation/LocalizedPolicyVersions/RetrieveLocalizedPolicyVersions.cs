@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static RetrieveLocalizedPolicyVersionsBuilder Builder = new RetrieveLocalizedPolicyVersionsBuilder();
 
         public class RetrieveLocalizedPolicyVersionsBuilder
+            : OperationBuilder<RetrieveLocalizedPolicyVersionsBuilder>
         {
             
             internal RetrieveLocalizedPolicyVersionsBuilder() { }
@@ -37,9 +38,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                 string policyVersionId
             )
             {
-                return new RetrieveLocalizedPolicyVersions(this,
+                RetrieveLocalizedPolicyVersions op = new RetrieveLocalizedPolicyVersions(this,
                     policyVersionId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -66,6 +72,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/agreement/admin/localized-policy-versions/versions/{policyVersionId}";
@@ -76,7 +84,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.RetrieveLocalizedPolicyVersionResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

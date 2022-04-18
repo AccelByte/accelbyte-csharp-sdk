@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public static GetCountryGroupsBuilder Builder = new GetCountryGroupsBuilder();
 
         public class GetCountryGroupsBuilder
+            : OperationBuilder<GetCountryGroupsBuilder>
         {
             
             public string? GroupCode { get; set; }
@@ -47,9 +48,12 @@ namespace AccelByte.Sdk.Api.Basic.Operation
                 string namespace_
             )
             {
-                return new GetCountryGroups(this,
+                GetCountryGroups op = new GetCountryGroups(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -64,6 +68,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -79,6 +85,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/basic/v1/admin/namespaces/{namespace}/misc/countrygroups";
@@ -89,7 +97,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.RetrieveCountryGroupResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

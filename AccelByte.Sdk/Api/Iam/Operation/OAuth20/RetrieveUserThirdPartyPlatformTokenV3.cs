@@ -54,6 +54,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static RetrieveUserThirdPartyPlatformTokenV3Builder Builder = new RetrieveUserThirdPartyPlatformTokenV3Builder();
 
         public class RetrieveUserThirdPartyPlatformTokenV3Builder
+            : OperationBuilder<RetrieveUserThirdPartyPlatformTokenV3Builder>
         {
             
             
@@ -70,11 +71,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string userId
             )
             {
-                return new RetrieveUserThirdPartyPlatformTokenV3(this,
+                RetrieveUserThirdPartyPlatformTokenV3 op = new RetrieveUserThirdPartyPlatformTokenV3(this,
                     namespace_,                    
                     platformId,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -92,6 +96,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -109,6 +115,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/oauth/namespaces/{namespace}/users/{userId}/platforms/{platformId}/platformToken";
@@ -119,7 +127,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.OauthmodelTokenThirdPartyResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public static SearchSessionsV2Builder Builder = new SearchSessionsV2Builder();
 
         public class SearchSessionsV2Builder
+            : OperationBuilder<SearchSessionsV2Builder>
         {
             
             public string? Channel { get; set; }
@@ -83,11 +84,14 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
                 long offset
             )
             {
-                return new SearchSessionsV2(this,
+                SearchSessionsV2 op = new SearchSessionsV2(this,
                     namespace_,                    
                     limit,                    
                     offset                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -110,6 +114,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -137,6 +143,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/matchmaking/v2/admin/namespaces/{namespace}/sessions/history/search";
@@ -147,7 +155,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ServiceGetSessionHistorySearchResponseV2? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public static BulkGetSessionsBuilder Builder = new BulkGetSessionsBuilder();
 
         public class BulkGetSessionsBuilder
+            : OperationBuilder<BulkGetSessionsBuilder>
         {
             
             public string? MatchIDs { get; set; }
@@ -46,9 +47,12 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
                 string namespace_
             )
             {
-                return new BulkGetSessions(this,
+                BulkGetSessions op = new BulkGetSessions(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -63,6 +67,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -78,6 +84,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/matchmaking/v1/admin/namespaces/{namespace}/channels/all/sessions/bulk";
@@ -88,7 +96,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.ModelsMatchmakingResult>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

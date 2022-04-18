@@ -46,6 +46,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static GetJWKSV3Builder Builder = new GetJWKSV3Builder();
 
         public class GetJWKSV3Builder
+            : OperationBuilder<GetJWKSV3Builder>
         {
             internal GetJWKSV3Builder() { }
 
@@ -56,8 +57,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public GetJWKSV3 Build(
             )
             {
-                return new GetJWKSV3(this
+                GetJWKSV3 op = new GetJWKSV3(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -69,6 +73,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -80,6 +86,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/oauth/jwks";
@@ -90,7 +98,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.OauthcommonJWKSet? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

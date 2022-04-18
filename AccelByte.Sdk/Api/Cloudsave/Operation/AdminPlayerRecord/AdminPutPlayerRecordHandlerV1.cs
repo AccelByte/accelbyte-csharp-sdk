@@ -54,14 +54,15 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// 
     /// 
     /// 
+    /// 
     /// ## Record Metadata
     /// 
     /// 
     /// 
     /// Metadata allows user to define the behaviour of the record.
-    /// Metadata can be defined in request body with field name META.
-    /// When creating record, if META field is not defined, the metadata value will use the default value.
-    /// When updating record, if META field is not defined, the existing metadata value will stay as is.
+    /// Metadata can be defined in request body with field name __META.
+    /// When creating record, if __META field is not defined, the metadata value will use the default value.
+    /// When updating record, if __META field is not defined, the existing metadata value will stay as is.
     /// 
     ///  Metadata List:
     /// 1. set_by (default: CLIENT, type: string)
@@ -77,25 +78,12 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// 
     /// 
     ///         {
-    ///             "META": {
+    ///             "__META": {
     ///                 "set_by": "SERVER",
     ///                 "is_public": true
     ///             }
     ///             ...
     ///         }
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// ## Warning: Current Behaviour when Updating Public Record
-    /// 
-    /// 
-    /// 
-    /// When updating existing "Public Record" and metadata is_public is not defined in the request body,
-    /// this endpoint will always convert the "Public Record" into "Private Record".
-    /// This behaviour might be deprecated sooner, please don't rely with that behaviour.
     /// </summary>
     public class AdminPutPlayerRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
@@ -103,6 +91,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public static AdminPutPlayerRecordHandlerV1Builder Builder = new AdminPutPlayerRecordHandlerV1Builder();
 
         public class AdminPutPlayerRecordHandlerV1Builder
+            : OperationBuilder<AdminPutPlayerRecordHandlerV1Builder>
         {
             
             
@@ -121,12 +110,15 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
                 string userId
             )
             {
-                return new AdminPutPlayerRecordHandlerV1(this,
+                AdminPutPlayerRecordHandlerV1 op = new AdminPutPlayerRecordHandlerV1(this,
                     body,                    
                     key,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -146,6 +138,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -165,6 +159,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}";
@@ -175,7 +171,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

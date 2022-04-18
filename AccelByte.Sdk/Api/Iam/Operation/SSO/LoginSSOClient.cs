@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static LoginSSOClientBuilder Builder = new LoginSSOClientBuilder();
 
         public class LoginSSOClientBuilder
+            : OperationBuilder<LoginSSOClientBuilder>
         {
             
             public string? Payload { get; set; }
@@ -40,9 +41,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string platformId
             )
             {
-                return new LoginSSOClient(this,
+                LoginSSOClient op = new LoginSSOClient(this,
                     platformId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -57,6 +61,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -72,6 +78,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/sso/{platformId}";
@@ -82,7 +90,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

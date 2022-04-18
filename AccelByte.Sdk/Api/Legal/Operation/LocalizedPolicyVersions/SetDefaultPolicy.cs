@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static SetDefaultPolicyBuilder Builder = new SetDefaultPolicyBuilder();
 
         public class SetDefaultPolicyBuilder
+            : OperationBuilder<SetDefaultPolicyBuilder>
         {
             
             internal SetDefaultPolicyBuilder() { }
@@ -37,9 +38,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                 string localizedPolicyVersionId
             )
             {
-                return new SetDefaultPolicy(this,
+                SetDefaultPolicy op = new SetDefaultPolicy(this,
                     localizedPolicyVersionId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -66,6 +72,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/agreement/admin/localized-policy-versions/{localizedPolicyVersionId}/default";
@@ -76,7 +84,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

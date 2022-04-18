@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminGetClientsByNamespaceV3Builder Builder = new AdminGetClientsByNamespaceV3Builder();
 
         public class AdminGetClientsByNamespaceV3Builder
+            : OperationBuilder<AdminGetClientsByNamespaceV3Builder>
         {
             
             public long? Limit { get; set; }
@@ -57,9 +58,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new AdminGetClientsByNamespaceV3(this,
+                AdminGetClientsByNamespaceV3 op = new AdminGetClientsByNamespaceV3(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -75,6 +79,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -92,6 +98,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/namespaces/{namespace}/clients";
@@ -102,7 +110,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ClientmodelClientsV3Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

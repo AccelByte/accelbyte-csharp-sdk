@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public static PublicUpdateUserProfileBuilder Builder = new PublicUpdateUserProfileBuilder();
 
         public class PublicUpdateUserProfileBuilder
+            : OperationBuilder<PublicUpdateUserProfileBuilder>
         {
             
             
@@ -51,10 +52,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
                 string userId
             )
             {
-                return new PublicUpdateUserProfile(this,
+                PublicUpdateUserProfile op = new PublicUpdateUserProfile(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -71,6 +75,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -88,6 +94,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/basic/v1/public/namespaces/{namespace}/users/{userId}/profiles";
@@ -98,7 +106,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.UserProfileInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

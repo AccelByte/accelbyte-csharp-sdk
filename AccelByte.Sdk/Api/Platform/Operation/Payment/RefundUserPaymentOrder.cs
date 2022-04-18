@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static RefundUserPaymentOrderBuilder Builder = new RefundUserPaymentOrderBuilder();
 
         public class RefundUserPaymentOrderBuilder
+            : OperationBuilder<RefundUserPaymentOrderBuilder>
         {
             
             
@@ -49,11 +50,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string userId
             )
             {
-                return new RefundUserPaymentOrder(this,
+                RefundUserPaymentOrder op = new RefundUserPaymentOrder(this,
                     namespace_,                    
                     paymentOrderNo,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -72,6 +76,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -91,6 +97,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/payment/orders/{paymentOrderNo}/refund";
@@ -101,7 +109,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.PaymentOrderInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

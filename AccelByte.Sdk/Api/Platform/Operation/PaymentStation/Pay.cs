@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PayBuilder Builder = new PayBuilder();
 
         public class PayBuilder
+            : OperationBuilder<PayBuilder>
         {
             
             
@@ -63,10 +64,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string paymentOrderNo
             )
             {
-                return new Pay(this,
+                Pay op = new Pay(this,
                     namespace_,                    
                     paymentOrderNo                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -85,6 +89,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = builder.Body;
             
+
         }
         #endregion
 
@@ -106,6 +111,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = body;
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/payment/orders/{paymentOrderNo}/pay";
@@ -116,7 +122,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.PaymentProcessResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

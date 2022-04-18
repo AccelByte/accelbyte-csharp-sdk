@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public static AdminGetListDeletionDataRequestBuilder Builder = new AdminGetListDeletionDataRequestBuilder();
 
         public class AdminGetListDeletionDataRequestBuilder
+            : OperationBuilder<AdminGetListDeletionDataRequestBuilder>
         {
             
             public string? After { get; set; }
@@ -74,9 +75,12 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
                 string namespace_
             )
             {
-                return new AdminGetListDeletionDataRequest(this,
+                AdminGetListDeletionDataRequest op = new AdminGetListDeletionDataRequest(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -95,6 +99,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -118,6 +124,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/gdpr/admin/namespaces/{namespace}/deletions";
@@ -128,7 +136,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsListDeletionDataResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

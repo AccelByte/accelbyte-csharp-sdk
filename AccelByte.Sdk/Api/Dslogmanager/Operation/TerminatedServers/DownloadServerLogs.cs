@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         public static DownloadServerLogsBuilder Builder = new DownloadServerLogsBuilder();
 
         public class DownloadServerLogsBuilder
+            : OperationBuilder<DownloadServerLogsBuilder>
         {
             
             
@@ -40,10 +41,13 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
                 string podName
             )
             {
-                return new DownloadServerLogs(this,
+                DownloadServerLogs op = new DownloadServerLogs(this,
                     namespace_,                    
                     podName                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -59,6 +63,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -74,6 +80,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/dslogmanager/namespaces/{namespace}/servers/{podName}/logs/download";
@@ -84,7 +92,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
 
         public override string[] Produces => new string[] { "application/json","text/x-log" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public static UXNameDescriptionHandlerBuilder Builder = new UXNameDescriptionHandlerBuilder();
 
         public class UXNameDescriptionHandlerBuilder
+            : OperationBuilder<UXNameDescriptionHandlerBuilder>
         {
             internal UXNameDescriptionHandlerBuilder() { }
 
@@ -31,8 +32,11 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             public UXNameDescriptionHandler Build(
             )
             {
-                return new UXNameDescriptionHandler(this
+                UXNameDescriptionHandler op = new UXNameDescriptionHandler(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -44,6 +48,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -55,6 +61,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/event/descriptions/ux";
@@ -65,7 +73,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsMultipleUX? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

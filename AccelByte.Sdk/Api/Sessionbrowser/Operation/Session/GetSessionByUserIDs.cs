@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public static GetSessionByUserIDsBuilder Builder = new GetSessionByUserIDsBuilder();
 
         public class GetSessionByUserIDsBuilder
+            : OperationBuilder<GetSessionByUserIDsBuilder>
         {
             
             
@@ -40,10 +41,13 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
                 string userIds
             )
             {
-                return new GetSessionByUserIDs(this,
+                GetSessionByUserIDs op = new GetSessionByUserIDs(this,
                     namespace_,                    
                     userIds                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -59,6 +63,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -74,6 +80,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/sessionbrowser/namespaces/{namespace}/gamesession/bulk";
@@ -84,7 +92,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsSessionByUserIDsResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

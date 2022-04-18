@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static QueryUserEntitlementsByAppTypeBuilder Builder = new QueryUserEntitlementsByAppTypeBuilder();
 
         public class QueryUserEntitlementsByAppTypeBuilder
+            : OperationBuilder<QueryUserEntitlementsByAppTypeBuilder>
         {
             
             
@@ -67,11 +68,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string appType
             )
             {
-                return new QueryUserEntitlementsByAppType(this,
+                QueryUserEntitlementsByAppType op = new QueryUserEntitlementsByAppType(this,
                     namespace_,                    
                     userId,                    
                     appType                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -92,6 +96,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -115,6 +121,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byAppType";
@@ -125,7 +133,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.AppEntitlementPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

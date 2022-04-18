@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public static GetNamespacesBuilder Builder = new GetNamespacesBuilder();
 
         public class GetNamespacesBuilder
+            : OperationBuilder<GetNamespacesBuilder>
         {
             public bool? ActiveOnly { get; set; }
             
@@ -45,8 +46,11 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             public GetNamespaces Build(
             )
             {
-                return new GetNamespaces(this
+                GetNamespaces op = new GetNamespaces(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -59,6 +63,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -72,6 +78,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/basic/v1/admin/namespaces";
@@ -82,7 +90,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.NamespaceInfo>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

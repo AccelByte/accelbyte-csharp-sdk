@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminUpdateUserDeletionStatusV3Builder Builder = new AdminUpdateUserDeletionStatusV3Builder();
 
         public class AdminUpdateUserDeletionStatusV3Builder
+            : OperationBuilder<AdminUpdateUserDeletionStatusV3Builder>
         {
             
             
@@ -39,11 +40,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string userId
             )
             {
-                return new AdminUpdateUserDeletionStatusV3(this,
+                AdminUpdateUserDeletionStatusV3 op = new AdminUpdateUserDeletionStatusV3(this,
                     body,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -61,6 +65,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -78,6 +84,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/namespaces/{namespace}/users/{userId}/deletion/status";
@@ -88,7 +96,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

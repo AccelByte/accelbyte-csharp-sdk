@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
         public static SetServerAliasBuilder Builder = new SetServerAliasBuilder();
 
         public class SetServerAliasBuilder
+            : OperationBuilder<SetServerAliasBuilder>
         {
             
             
@@ -41,10 +42,13 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
                 string region
             )
             {
-                return new SetServerAlias(this,
+                SetServerAlias op = new SetServerAlias(this,
                     body,                    
                     region                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -60,6 +64,8 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -75,6 +81,8 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/qosm/admin/servers/{region}/alias";
@@ -85,7 +93,8 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

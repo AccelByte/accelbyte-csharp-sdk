@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static GetPaymentCustomizationBuilder Builder = new GetPaymentCustomizationBuilder();
 
         public class GetPaymentCustomizationBuilder
+            : OperationBuilder<GetPaymentCustomizationBuilder>
         {
             
             public bool? Sandbox { get; set; }
@@ -50,11 +51,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string region
             )
             {
-                return new GetPaymentCustomization(this,
+                GetPaymentCustomization op = new GetPaymentCustomization(this,
                     namespace_,                    
                     paymentProvider,                    
                     region                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -73,6 +77,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
         #endregion
 
@@ -92,6 +97,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/payment/customization";
@@ -102,7 +108,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.Customization? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

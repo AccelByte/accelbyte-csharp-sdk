@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminGetBulkUserByEmailAddressV3Builder Builder = new AdminGetBulkUserByEmailAddressV3Builder();
 
         public class AdminGetBulkUserByEmailAddressV3Builder
+            : OperationBuilder<AdminGetBulkUserByEmailAddressV3Builder>
         {
             
             
@@ -47,10 +48,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new AdminGetBulkUserByEmailAddressV3(this,
+                AdminGetBulkUserByEmailAddressV3 op = new AdminGetBulkUserByEmailAddressV3(this,
                     body,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -66,6 +70,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -81,6 +87,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/admin/namespaces/{namespace}/users/search/bulk";
@@ -91,7 +99,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelListUserResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

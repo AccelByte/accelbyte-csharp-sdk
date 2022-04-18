@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static TestStripeConfigByIdBuilder Builder = new TestStripeConfigByIdBuilder();
 
         public class TestStripeConfigByIdBuilder
+            : OperationBuilder<TestStripeConfigByIdBuilder>
         {
             
             public bool? Sandbox { get; set; }
@@ -44,9 +45,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string id
             )
             {
-                return new TestStripeConfigById(this,
+                TestStripeConfigById op = new TestStripeConfigById(this,
                     id                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -61,6 +65,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -76,6 +82,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/payment/config/merchant/{id}/stripeconfig/test";
@@ -86,7 +94,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.TestResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

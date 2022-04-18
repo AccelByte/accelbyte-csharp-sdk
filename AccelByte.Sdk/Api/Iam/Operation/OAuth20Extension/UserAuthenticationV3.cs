@@ -31,6 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static UserAuthenticationV3Builder Builder = new UserAuthenticationV3Builder();
 
         public class UserAuthenticationV3Builder
+            : OperationBuilder<UserAuthenticationV3Builder>
         {
             public string? ClientId { get; set; }
             
@@ -71,11 +72,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string userName
             )
             {
-                return new UserAuthenticationV3(this,
+                UserAuthenticationV3 op = new UserAuthenticationV3(this,
                     password,                    
                     requestId,                    
                     userName                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -97,6 +101,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             LocationQuery = "code";
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
         #endregion
 
@@ -121,6 +127,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             LocationQuery = "code";
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
 
         public override string Path => "/iam/v3/authenticate";
@@ -131,7 +139,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Basic";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Basic";
         
         public string ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

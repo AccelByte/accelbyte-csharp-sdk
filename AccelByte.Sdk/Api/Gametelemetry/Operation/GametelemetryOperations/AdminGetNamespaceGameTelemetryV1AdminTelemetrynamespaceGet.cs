@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         public static AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder Builder = new AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder();
 
         public class AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder
+            : OperationBuilder<AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder>
         {
             internal AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder() { }
 
@@ -34,8 +35,11 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             public AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet Build(
             )
             {
-                return new AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet(this
+                AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet op = new AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -47,6 +51,9 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_COOKIE);
         }
         #endregion
 
@@ -58,6 +65,9 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_COOKIE);
         }
 
         public override string Path => "/game-telemetry/v1/admin/telemetrynamespace";
@@ -68,7 +78,8 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

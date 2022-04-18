@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static CreateRoleBuilder Builder = new CreateRoleBuilder();
 
         public class CreateRoleBuilder
+            : OperationBuilder<CreateRoleBuilder>
         {
             
             internal CreateRoleBuilder() { }
@@ -57,9 +58,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 ModelRoleCreateRequest body
             )
             {
-                return new CreateRole(this,
+                CreateRole op = new CreateRole(this,
                     body                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -73,6 +77,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -86,6 +92,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/roles";
@@ -96,7 +104,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.AccountcommonRole? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

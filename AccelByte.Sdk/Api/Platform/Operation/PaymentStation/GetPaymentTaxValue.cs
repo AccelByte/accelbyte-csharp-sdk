@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static GetPaymentTaxValueBuilder Builder = new GetPaymentTaxValueBuilder();
 
         public class GetPaymentTaxValueBuilder
+            : OperationBuilder<GetPaymentTaxValueBuilder>
         {
             
             public string? ZipCode { get; set; }
@@ -49,11 +50,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string paymentProvider
             )
             {
-                return new GetPaymentTaxValue(this,
+                GetPaymentTaxValue op = new GetPaymentTaxValue(this,
                     namespace_,                    
                     paymentOrderNo,                    
                     paymentProvider                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -72,6 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
         #endregion
 
@@ -91,6 +96,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/payment/tax";
@@ -101,7 +107,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.TaxResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

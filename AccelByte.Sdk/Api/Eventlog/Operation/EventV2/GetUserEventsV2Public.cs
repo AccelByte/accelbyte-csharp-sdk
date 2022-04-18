@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public static GetUserEventsV2PublicBuilder Builder = new GetUserEventsV2PublicBuilder();
 
         public class GetUserEventsV2PublicBuilder
+            : OperationBuilder<GetUserEventsV2PublicBuilder>
         {
             
             
@@ -78,10 +79,13 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
                 string userId
             )
             {
-                return new GetUserEventsV2Public(this,
+                GetUserEventsV2Public op = new GetUserEventsV2Public(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -102,6 +106,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -127,6 +133,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/event/v2/public/namespaces/{namespace}/users/{userId}/event";
@@ -137,7 +145,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsEventResponseV2? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

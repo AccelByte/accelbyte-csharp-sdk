@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static GetUserPlatformAccountsBuilder Builder = new GetUserPlatformAccountsBuilder();
 
         public class GetUserPlatformAccountsBuilder
+            : OperationBuilder<GetUserPlatformAccountsBuilder>
         {
             
             
@@ -49,10 +50,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string userId
             )
             {
-                return new GetUserPlatformAccounts(this,
+                GetUserPlatformAccounts op = new GetUserPlatformAccounts(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -68,6 +72,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -83,6 +89,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/namespaces/{namespace}/users/{userId}/platforms";
@@ -93,7 +101,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.AccountcommonUserLinkedPlatform>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

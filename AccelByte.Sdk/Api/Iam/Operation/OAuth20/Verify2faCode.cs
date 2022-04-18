@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static Verify2faCodeBuilder Builder = new Verify2faCodeBuilder();
 
         public class Verify2faCodeBuilder
+            : OperationBuilder<Verify2faCodeBuilder>
         {
             
             
@@ -44,12 +45,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 bool rememberDevice
             )
             {
-                return new Verify2faCode(this,
+                Verify2faCode op = new Verify2faCode(this,
                     code,                    
                     factor,                    
                     mfaToken,                    
                     rememberDevice                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -69,6 +73,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -88,6 +94,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/oauth/mfa/verify";
@@ -98,7 +106,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.OauthmodelTokenResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

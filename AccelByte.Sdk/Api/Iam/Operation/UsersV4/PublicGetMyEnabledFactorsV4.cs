@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static PublicGetMyEnabledFactorsV4Builder Builder = new PublicGetMyEnabledFactorsV4Builder();
 
         public class PublicGetMyEnabledFactorsV4Builder
+            : OperationBuilder<PublicGetMyEnabledFactorsV4Builder>
         {
             
             internal PublicGetMyEnabledFactorsV4Builder() { }
@@ -41,9 +42,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new PublicGetMyEnabledFactorsV4(this,
+                PublicGetMyEnabledFactorsV4 op = new PublicGetMyEnabledFactorsV4(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -57,6 +61,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -70,6 +76,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v4/public/namespaces/{namespace}/users/me/mfa/factor";
@@ -80,7 +88,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelEnabledFactorsResponseV4? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

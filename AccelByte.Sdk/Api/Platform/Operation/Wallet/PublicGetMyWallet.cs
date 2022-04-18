@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static PublicGetMyWalletBuilder Builder = new PublicGetMyWalletBuilder();
 
         public class PublicGetMyWalletBuilder
+            : OperationBuilder<PublicGetMyWalletBuilder>
         {
             
             
@@ -43,10 +44,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string namespace_
             )
             {
-                return new PublicGetMyWallet(this,
+                PublicGetMyWallet op = new PublicGetMyWallet(this,
                     currencyCode,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -77,6 +83,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/users/me/wallets/{currencyCode}";
@@ -87,7 +95,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.WalletInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

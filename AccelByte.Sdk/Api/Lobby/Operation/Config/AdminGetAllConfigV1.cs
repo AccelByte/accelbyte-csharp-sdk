@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public static AdminGetAllConfigV1Builder Builder = new AdminGetAllConfigV1Builder();
 
         public class AdminGetAllConfigV1Builder
+            : OperationBuilder<AdminGetAllConfigV1Builder>
         {
             internal AdminGetAllConfigV1Builder() { }
 
@@ -34,8 +35,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             public AdminGetAllConfigV1 Build(
             )
             {
-                return new AdminGetAllConfigV1(this
+                AdminGetAllConfigV1 op = new AdminGetAllConfigV1(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -47,6 +51,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -58,6 +64,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/lobby/v1/admin/config";
@@ -68,7 +76,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsConfigList? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

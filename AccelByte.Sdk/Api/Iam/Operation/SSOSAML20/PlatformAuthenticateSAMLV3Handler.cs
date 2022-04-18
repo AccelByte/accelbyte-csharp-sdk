@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static PlatformAuthenticateSAMLV3HandlerBuilder Builder = new PlatformAuthenticateSAMLV3HandlerBuilder();
 
         public class PlatformAuthenticateSAMLV3HandlerBuilder
+            : OperationBuilder<PlatformAuthenticateSAMLV3HandlerBuilder>
         {
             
             public string? Code { get; set; }
@@ -63,10 +64,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string state
             )
             {
-                return new PlatformAuthenticateSAMLV3Handler(this,
+                PlatformAuthenticateSAMLV3Handler op = new PlatformAuthenticateSAMLV3Handler(this,
                     platformId,                    
                     state                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -85,6 +89,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             LocationQuery = "PLACEHOLDER";
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -105,6 +111,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             LocationQuery = "PLACEHOLDER";
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/sso/saml/platforms/{platformId}/authenticate";
@@ -115,7 +123,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] {  };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public string ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

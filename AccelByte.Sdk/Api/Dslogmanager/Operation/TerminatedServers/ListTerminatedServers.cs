@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         public static ListTerminatedServersBuilder Builder = new ListTerminatedServersBuilder();
 
         public class ListTerminatedServersBuilder
+            : OperationBuilder<ListTerminatedServersBuilder>
         {
             
             public string? Deployment { get; set; }
@@ -142,9 +143,12 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
                 string namespace_
             )
             {
-                return new ListTerminatedServers(this,
+                ListTerminatedServers op = new ListTerminatedServers(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -171,6 +175,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -210,6 +216,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/dslogmanager/namespaces/{namespace}/servers/search";
@@ -220,7 +228,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
 
         public override string[] Produces => new string[] { "application/json","text/x-log" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsListTerminatedServersResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

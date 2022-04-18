@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static ImportRewardsBuilder Builder = new ImportRewardsBuilder();
 
         public class ImportRewardsBuilder
+            : OperationBuilder<ImportRewardsBuilder>
         {
             
             
@@ -48,10 +49,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 bool replaceExisting
             )
             {
-                return new ImportRewards(this,
+                ImportRewards op = new ImportRewards(this,
                     namespace_,                    
                     replaceExisting                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -68,6 +72,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -85,6 +91,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/rewards/import";
@@ -95,7 +103,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

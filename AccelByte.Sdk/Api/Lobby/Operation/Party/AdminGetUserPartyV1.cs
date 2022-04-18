@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public static AdminGetUserPartyV1Builder Builder = new AdminGetUserPartyV1Builder();
 
         public class AdminGetUserPartyV1Builder
+            : OperationBuilder<AdminGetUserPartyV1Builder>
         {
             
             
@@ -38,10 +39,13 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
                 string userId
             )
             {
-                return new AdminGetUserPartyV1(this,
+                AdminGetUserPartyV1 op = new AdminGetUserPartyV1(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -57,6 +61,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -72,6 +78,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/lobby/v1/admin/party/namespaces/{namespace}/users/{userId}/party";
@@ -82,7 +90,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsPartyData? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public static QueueSessionHandlerBuilder Builder = new QueueSessionHandlerBuilder();
 
         public class QueueSessionHandlerBuilder
+            : OperationBuilder<QueueSessionHandlerBuilder>
         {
             
             
@@ -50,10 +51,13 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
                 string namespace_
             )
             {
-                return new QueueSessionHandler(this,
+                QueueSessionHandler op = new QueueSessionHandler(this,
                     body,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -69,6 +73,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -84,6 +90,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/matchmaking/namespaces/{namespace}/sessions";
@@ -94,7 +102,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

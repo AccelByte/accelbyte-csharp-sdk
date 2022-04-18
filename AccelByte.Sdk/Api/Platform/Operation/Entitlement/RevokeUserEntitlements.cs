@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static RevokeUserEntitlementsBuilder Builder = new RevokeUserEntitlementsBuilder();
 
         public class RevokeUserEntitlementsBuilder
+            : OperationBuilder<RevokeUserEntitlementsBuilder>
         {
             
             
@@ -42,11 +43,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string entitlementIds
             )
             {
-                return new RevokeUserEntitlements(this,
+                RevokeUserEntitlements op = new RevokeUserEntitlements(this,
                     namespace_,                    
                     userId,                    
                     entitlementIds                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -64,6 +68,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -81,6 +87,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/revoke/byIds";
@@ -91,7 +99,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.BulkOperationResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

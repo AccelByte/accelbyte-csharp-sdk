@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         public static AdminUnlockAchievementBuilder Builder = new AdminUnlockAchievementBuilder();
 
         public class AdminUnlockAchievementBuilder
+            : OperationBuilder<AdminUnlockAchievementBuilder>
         {
             
             
@@ -41,11 +42,14 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
                 string userId
             )
             {
-                return new AdminUnlockAchievement(this,
+                AdminUnlockAchievement op = new AdminUnlockAchievement(this,
                     achievementCode,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -63,6 +67,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -80,6 +86,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements/{achievementCode}/unlock";
@@ -90,7 +98,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

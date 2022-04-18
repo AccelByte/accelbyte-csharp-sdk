@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static IndirectBulkAcceptVersionedPolicy1Builder Builder = new IndirectBulkAcceptVersionedPolicy1Builder();
 
         public class IndirectBulkAcceptVersionedPolicy1Builder
+            : OperationBuilder<IndirectBulkAcceptVersionedPolicy1Builder>
         {
             
             public List<Model.AcceptAgreementRequest>? Body { get; set; }
@@ -50,9 +51,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                 string userId
             )
             {
-                return new IndirectBulkAcceptVersionedPolicy1(this,
+                IndirectBulkAcceptVersionedPolicy1 op = new IndirectBulkAcceptVersionedPolicy1(this,
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -67,6 +71,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -82,6 +88,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/agreement/public/agreements/policies/users/{userId}";
@@ -92,7 +100,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.AcceptAgreementResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

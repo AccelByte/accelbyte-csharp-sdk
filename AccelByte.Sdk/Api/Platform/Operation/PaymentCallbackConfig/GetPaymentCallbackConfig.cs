@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static GetPaymentCallbackConfigBuilder Builder = new GetPaymentCallbackConfigBuilder();
 
         public class GetPaymentCallbackConfigBuilder
+            : OperationBuilder<GetPaymentCallbackConfigBuilder>
         {
             
             internal GetPaymentCallbackConfigBuilder() { }
@@ -38,9 +39,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string namespace_
             )
             {
-                return new GetPaymentCallbackConfig(this,
+                GetPaymentCallbackConfig op = new GetPaymentCallbackConfig(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -54,6 +58,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -67,6 +73,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/payment/config/callback";
@@ -77,7 +85,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.PaymentCallbackConfigInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

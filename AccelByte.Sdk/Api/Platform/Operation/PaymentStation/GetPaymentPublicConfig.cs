@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static GetPaymentPublicConfigBuilder Builder = new GetPaymentPublicConfigBuilder();
 
         public class GetPaymentPublicConfigBuilder
+            : OperationBuilder<GetPaymentPublicConfigBuilder>
         {
             
             public bool? Sandbox { get; set; }
@@ -49,11 +50,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string region
             )
             {
-                return new GetPaymentPublicConfig(this,
+                GetPaymentPublicConfig op = new GetPaymentPublicConfig(this,
                     namespace_,                    
                     paymentProvider,                    
                     region                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -72,6 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
         #endregion
 
@@ -91,6 +96,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/payment/publicconfig";
@@ -101,7 +107,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Dictionary<string, object>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

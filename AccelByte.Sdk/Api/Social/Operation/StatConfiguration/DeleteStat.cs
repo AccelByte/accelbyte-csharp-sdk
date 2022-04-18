@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public static DeleteStatBuilder Builder = new DeleteStatBuilder();
 
         public class DeleteStatBuilder
+            : OperationBuilder<DeleteStatBuilder>
         {
             
             
@@ -38,10 +39,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
                 string statCode
             )
             {
-                return new DeleteStat(this,
+                DeleteStat op = new DeleteStat(this,
                     namespace_,                    
                     statCode                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -57,6 +61,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -72,6 +78,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/social/v1/admin/namespaces/{namespace}/stats/{statCode}";
@@ -82,7 +90,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override string[] Produces => new string[] {  };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

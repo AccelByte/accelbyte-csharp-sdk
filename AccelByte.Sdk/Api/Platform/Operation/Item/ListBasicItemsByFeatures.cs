@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static ListBasicItemsByFeaturesBuilder Builder = new ListBasicItemsByFeaturesBuilder();
 
         public class ListBasicItemsByFeaturesBuilder
+            : OperationBuilder<ListBasicItemsByFeaturesBuilder>
         {
             
             public bool? ActiveOnly { get; set; }
@@ -55,9 +56,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string namespace_
             )
             {
-                return new ListBasicItemsByFeatures(this,
+                ListBasicItemsByFeatures op = new ListBasicItemsByFeatures(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -74,6 +78,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             CollectionFormatMap["features"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -92,6 +98,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             CollectionFormatMap["features"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/items/byFeatures/basic";
@@ -102,7 +110,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.BasicItem>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

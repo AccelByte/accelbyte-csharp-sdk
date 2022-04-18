@@ -42,6 +42,28 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// 
     /// Action Code: 73406
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// memberRolePermissions example value :
+    /// 
+    /// 
+    /// 
+    /// 
+    /// "action": 1
+    /// 
+    /// 
+    /// 
+    /// 
+    /// "resourceName": "GROUP:INVITE"
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The invited user will have a permission to invite another user to the group
     /// </summary>
     public class InviteGroupPublicV1 : AccelByte.Sdk.Core.Operation
     {
@@ -49,6 +71,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static InviteGroupPublicV1Builder Builder = new InviteGroupPublicV1Builder();
 
         public class InviteGroupPublicV1Builder
+            : OperationBuilder<InviteGroupPublicV1Builder>
         {
             
             
@@ -63,10 +86,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string userId
             )
             {
-                return new InviteGroupPublicV1(this,
+                InviteGroupPublicV1 op = new InviteGroupPublicV1(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -82,6 +108,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -97,6 +125,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/public/namespaces/{namespace}/users/{userId}/invite";
@@ -107,7 +137,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsUserInvitationResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public static GetAdminEmailConfigurationBuilder Builder = new GetAdminEmailConfigurationBuilder();
 
         public class GetAdminEmailConfigurationBuilder
+            : OperationBuilder<GetAdminEmailConfigurationBuilder>
         {
             
             internal GetAdminEmailConfigurationBuilder() { }
@@ -37,9 +38,12 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
                 string namespace_
             )
             {
-                return new GetAdminEmailConfiguration(this,
+                GetAdminEmailConfiguration op = new GetAdminEmailConfiguration(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -66,6 +72,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/gdpr/admin/namespaces/{namespace}/emails/configurations";
@@ -76,7 +84,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<string>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

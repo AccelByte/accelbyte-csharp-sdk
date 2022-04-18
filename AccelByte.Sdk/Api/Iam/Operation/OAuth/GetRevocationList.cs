@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static GetRevocationListBuilder Builder = new GetRevocationListBuilder();
 
         public class GetRevocationListBuilder
+            : OperationBuilder<GetRevocationListBuilder>
         {
             internal GetRevocationListBuilder() { }
 
@@ -39,8 +40,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public GetRevocationList Build(
             )
             {
-                return new GetRevocationList(this
+                GetRevocationList op = new GetRevocationList(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -52,6 +56,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -63,6 +69,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/oauth/revocationlist";
@@ -73,7 +81,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.OauthapiRevocationList? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

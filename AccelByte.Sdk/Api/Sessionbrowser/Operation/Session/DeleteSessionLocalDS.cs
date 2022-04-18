@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public static DeleteSessionLocalDSBuilder Builder = new DeleteSessionLocalDSBuilder();
 
         public class DeleteSessionLocalDSBuilder
+            : OperationBuilder<DeleteSessionLocalDSBuilder>
         {
             
             
@@ -40,10 +41,13 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
                 string sessionID
             )
             {
-                return new DeleteSessionLocalDS(this,
+                DeleteSessionLocalDS op = new DeleteSessionLocalDS(this,
                     namespace_,                    
                     sessionID                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -59,6 +63,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -74,6 +80,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/sessionbrowser/namespaces/{namespace}/gamesession/{sessionID}/localds";
@@ -84,7 +92,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsSessionResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

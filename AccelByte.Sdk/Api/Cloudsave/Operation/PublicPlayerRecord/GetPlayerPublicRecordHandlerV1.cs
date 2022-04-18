@@ -31,6 +31,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public static GetPlayerPublicRecordHandlerV1Builder Builder = new GetPlayerPublicRecordHandlerV1Builder();
 
         public class GetPlayerPublicRecordHandlerV1Builder
+            : OperationBuilder<GetPlayerPublicRecordHandlerV1Builder>
         {
             
             
@@ -47,11 +48,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
                 string userId
             )
             {
-                return new GetPlayerPublicRecordHandlerV1(this,
+                GetPlayerPublicRecordHandlerV1 op = new GetPlayerPublicRecordHandlerV1(this,
                     key,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -69,6 +73,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -86,6 +92,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}/public";
@@ -96,7 +104,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsPlayerRecordResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public static CreateDeploymentOverrideBuilder Builder = new CreateDeploymentOverrideBuilder();
 
         public class CreateDeploymentOverrideBuilder
+            : OperationBuilder<CreateDeploymentOverrideBuilder>
         {
             
             
@@ -44,12 +45,15 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
                 string version
             )
             {
-                return new CreateDeploymentOverride(this,
+                CreateDeploymentOverride op = new CreateDeploymentOverride(this,
                     body,                    
                     deployment,                    
                     namespace_,                    
                     version                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -69,6 +73,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -88,6 +94,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/dsmcontroller/admin/namespaces/{namespace}/configs/deployments/{deployment}/overrides/version/{version}";
@@ -98,7 +106,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsDeploymentWithOverride? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

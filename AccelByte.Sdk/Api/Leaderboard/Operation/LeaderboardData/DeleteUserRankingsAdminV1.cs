@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public static DeleteUserRankingsAdminV1Builder Builder = new DeleteUserRankingsAdminV1Builder();
 
         public class DeleteUserRankingsAdminV1Builder
+            : OperationBuilder<DeleteUserRankingsAdminV1Builder>
         {
             
             
@@ -43,11 +44,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
                 List<string> leaderboardCode
             )
             {
-                return new DeleteUserRankingsAdminV1(this,
+                DeleteUserRankingsAdminV1 op = new DeleteUserRankingsAdminV1(this,
                     namespace_,                    
                     userId,                    
                     leaderboardCode                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -66,6 +70,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             CollectionFormatMap["leaderboardCode"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -84,6 +90,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             CollectionFormatMap["leaderboardCode"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/leaderboard/v1/admin/namespaces/{namespace}/users/{userId}";
@@ -94,7 +102,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

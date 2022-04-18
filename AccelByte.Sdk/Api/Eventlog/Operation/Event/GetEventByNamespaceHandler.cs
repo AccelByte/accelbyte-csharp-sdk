@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public static GetEventByNamespaceHandlerBuilder Builder = new GetEventByNamespaceHandlerBuilder();
 
         public class GetEventByNamespaceHandlerBuilder
+            : OperationBuilder<GetEventByNamespaceHandlerBuilder>
         {
             
             public long? Offset { get; set; }
@@ -49,12 +50,15 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
                 string startDate
             )
             {
-                return new GetEventByNamespaceHandler(this,
+                GetEventByNamespaceHandler op = new GetEventByNamespaceHandler(this,
                     namespace_,                    
                     endDate,                    
                     pageSize,                    
                     startDate                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -75,6 +79,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -96,6 +102,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/event/namespaces/{namespace}";
@@ -106,7 +114,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsEventResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

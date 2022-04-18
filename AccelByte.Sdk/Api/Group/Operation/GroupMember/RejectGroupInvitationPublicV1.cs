@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static RejectGroupInvitationPublicV1Builder Builder = new RejectGroupInvitationPublicV1Builder();
 
         public class RejectGroupInvitationPublicV1Builder
+            : OperationBuilder<RejectGroupInvitationPublicV1Builder>
         {
             
             
@@ -53,10 +54,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string namespace_
             )
             {
-                return new RejectGroupInvitationPublicV1(this,
+                RejectGroupInvitationPublicV1 op = new RejectGroupInvitationPublicV1(this,
                     groupId,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -72,6 +76,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -87,6 +93,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/public/namespaces/{namespace}/groups/{groupId}/invite/reject";
@@ -97,7 +105,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsMemberRequestGroupResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static GetClientsBuilder Builder = new GetClientsBuilder();
 
         public class GetClientsBuilder
+            : OperationBuilder<GetClientsBuilder>
         {
             internal GetClientsBuilder() { }
 
@@ -40,8 +41,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public GetClients Build(
             )
             {
-                return new GetClients(this
+                GetClients op = new GetClients(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -64,6 +70,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/clients";
@@ -74,7 +82,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.ClientmodelClientResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

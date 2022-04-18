@@ -61,6 +61,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AuthCodeRequestV3Builder Builder = new AuthCodeRequestV3Builder();
 
         public class AuthCodeRequestV3Builder
+            : OperationBuilder<AuthCodeRequestV3Builder>
         {
             
             public string? ClientId { get; set; }
@@ -91,10 +92,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string requestId
             )
             {
-                return new AuthCodeRequestV3(this,
+                AuthCodeRequestV3 op = new AuthCodeRequestV3(this,
                     platformId,                    
                     requestId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -113,6 +117,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             LocationQuery = "code";
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -133,6 +139,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             LocationQuery = "code";
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/oauth/platforms/{platformId}/authorize";
@@ -143,7 +151,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public string ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

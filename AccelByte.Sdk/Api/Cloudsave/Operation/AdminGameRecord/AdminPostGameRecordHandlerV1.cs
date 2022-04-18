@@ -81,9 +81,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// 
     /// 
     /// Metadata allows user to define the behaviour of the record.
-    /// Metadata can be defined in request body with field name META.
-    /// When creating record, if META field is not defined, the metadata value will use the default value.
-    /// When updating record, if META field is not defined, the existing metadata value will stay as is.
+    /// Metadata can be defined in request body with field name __META.
+    /// When creating record, if __META field is not defined, the metadata value will use the default value.
+    /// When updating record, if __META field is not defined, the existing metadata value will stay as is.
     /// 
     ///  Metadata List:
     /// 1. set_by (default: CLIENT, type: string)
@@ -97,7 +97,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// 
     /// 
     ///         {
-    ///             "META": {
+    ///             "__META": {
     ///                 "set_by": "SERVER"
     ///             }
     ///             ...
@@ -109,6 +109,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public static AdminPostGameRecordHandlerV1Builder Builder = new AdminPostGameRecordHandlerV1Builder();
 
         public class AdminPostGameRecordHandlerV1Builder
+            : OperationBuilder<AdminPostGameRecordHandlerV1Builder>
         {
             
             
@@ -125,11 +126,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
                 string namespace_
             )
             {
-                return new AdminPostGameRecordHandlerV1(this,
+                AdminPostGameRecordHandlerV1 op = new AdminPostGameRecordHandlerV1(this,
                     body,                    
                     key,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -147,6 +151,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -164,6 +170,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/cloudsave/v1/admin/namespaces/{namespace}/records/{key}";
@@ -174,7 +182,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

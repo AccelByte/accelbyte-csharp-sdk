@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminGetAgeRestrictionStatusV2Builder Builder = new AdminGetAgeRestrictionStatusV2Builder();
 
         public class AdminGetAgeRestrictionStatusV2Builder
+            : OperationBuilder<AdminGetAgeRestrictionStatusV2Builder>
         {
             
             internal AdminGetAgeRestrictionStatusV2Builder() { }
@@ -34,9 +35,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string namespace_
             )
             {
-                return new AdminGetAgeRestrictionStatusV2(this,
+                AdminGetAgeRestrictionStatusV2 op = new AdminGetAgeRestrictionStatusV2(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -50,6 +54,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -63,6 +69,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v2/admin/namespaces/{namespace}/agerestrictions";
@@ -73,7 +81,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelAgeRestrictionResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

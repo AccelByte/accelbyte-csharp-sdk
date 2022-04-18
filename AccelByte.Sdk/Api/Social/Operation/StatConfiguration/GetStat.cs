@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public static GetStatBuilder Builder = new GetStatBuilder();
 
         public class GetStatBuilder
+            : OperationBuilder<GetStatBuilder>
         {
             
             
@@ -39,10 +40,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
                 string statCode
             )
             {
-                return new GetStat(this,
+                GetStat op = new GetStat(this,
                     namespace_,                    
                     statCode                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -58,6 +62,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -73,6 +79,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/social/v1/admin/namespaces/{namespace}/stats/{statCode}";
@@ -83,7 +91,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.StatInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

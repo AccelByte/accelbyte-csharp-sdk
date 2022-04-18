@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public static SpecificEventIDDescriptionHandlerBuilder Builder = new SpecificEventIDDescriptionHandlerBuilder();
 
         public class SpecificEventIDDescriptionHandlerBuilder
+            : OperationBuilder<SpecificEventIDDescriptionHandlerBuilder>
         {
             public string? EventIds { get; set; }
             
@@ -39,8 +40,11 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             public SpecificEventIDDescriptionHandler Build(
             )
             {
-                return new SpecificEventIDDescriptionHandler(this
+                SpecificEventIDDescriptionHandler op = new SpecificEventIDDescriptionHandler(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -53,6 +57,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -66,6 +72,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/event/descriptions/eventId/listByEventIds";
@@ -76,7 +84,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsMultipleEventID? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

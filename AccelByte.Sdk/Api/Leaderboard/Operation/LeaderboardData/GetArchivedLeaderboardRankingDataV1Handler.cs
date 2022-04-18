@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public static GetArchivedLeaderboardRankingDataV1HandlerBuilder Builder = new GetArchivedLeaderboardRankingDataV1HandlerBuilder();
 
         public class GetArchivedLeaderboardRankingDataV1HandlerBuilder
+            : OperationBuilder<GetArchivedLeaderboardRankingDataV1HandlerBuilder>
         {
             
             
@@ -48,11 +49,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
                 string leaderboardCodes
             )
             {
-                return new GetArchivedLeaderboardRankingDataV1Handler(this,
+                GetArchivedLeaderboardRankingDataV1Handler op = new GetArchivedLeaderboardRankingDataV1Handler(this,
                     leaderboardCode,                    
                     namespace_,                    
                     leaderboardCodes                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -71,6 +75,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -90,6 +96,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/leaderboard/v1/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/archived";
@@ -100,7 +108,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<Model.ModelsArchiveLeaderboardSignedURLResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public static VersionCheckHandlerBuilder Builder = new VersionCheckHandlerBuilder();
 
         public class VersionCheckHandlerBuilder
+            : OperationBuilder<VersionCheckHandlerBuilder>
         {
             internal VersionCheckHandlerBuilder() { }
 
@@ -30,8 +31,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             public VersionCheckHandler Build(
             )
             {
-                return new VersionCheckHandler(this
+                VersionCheckHandler op = new VersionCheckHandler(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -43,6 +47,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -54,6 +60,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/matchmaking/version";
@@ -64,7 +72,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         public override string[] Produces => new string[] {  };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

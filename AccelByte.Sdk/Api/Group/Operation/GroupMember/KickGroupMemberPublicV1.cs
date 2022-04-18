@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static KickGroupMemberPublicV1Builder Builder = new KickGroupMemberPublicV1Builder();
 
         public class KickGroupMemberPublicV1Builder
+            : OperationBuilder<KickGroupMemberPublicV1Builder>
         {
             
             
@@ -58,10 +59,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string userId
             )
             {
-                return new KickGroupMemberPublicV1(this,
+                KickGroupMemberPublicV1 op = new KickGroupMemberPublicV1(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -77,6 +81,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -92,6 +98,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/public/namespaces/{namespace}/users/{userId}/kick";
@@ -102,7 +110,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsKickGroupMemberResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static UpdatePlatformDLCConfigBuilder Builder = new UpdatePlatformDLCConfigBuilder();
 
         public class UpdatePlatformDLCConfigBuilder
+            : OperationBuilder<UpdatePlatformDLCConfigBuilder>
         {
             
             public Model.PlatformDLCConfigUpdate? Body { get; set; }
@@ -44,9 +45,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string namespace_
             )
             {
-                return new UpdatePlatformDLCConfig(this,
+                UpdatePlatformDLCConfig op = new UpdatePlatformDLCConfig(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -61,6 +65,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -76,6 +82,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/dlc/config/platformMap";
@@ -86,7 +94,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.PlatformDLCConfigInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static TestFulfillmentScriptEvalBuilder Builder = new TestFulfillmentScriptEvalBuilder();
 
         public class TestFulfillmentScriptEvalBuilder
+            : OperationBuilder<TestFulfillmentScriptEvalBuilder>
         {
             public Model.FulfillmentScriptEvalTestRequest? Body { get; set; }
             
@@ -43,8 +44,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public TestFulfillmentScriptEval Build(
             )
             {
-                return new TestFulfillmentScriptEval(this
+                TestFulfillmentScriptEval op = new TestFulfillmentScriptEval(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -57,6 +61,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -70,6 +76,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/fulfillment/scripts/tests/eval";
@@ -80,7 +88,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] {  };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.FulfillmentScriptEvalTestResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static CheckEventConditionBuilder Builder = new CheckEventConditionBuilder();
 
         public class CheckEventConditionBuilder
+            : OperationBuilder<CheckEventConditionBuilder>
         {
             
             
@@ -47,10 +48,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string rewardId
             )
             {
-                return new CheckEventCondition(this,
+                CheckEventCondition op = new CheckEventCondition(this,
                     namespace_,                    
                     rewardId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -67,6 +71,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -84,6 +90,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/rewards/{rewardId}/match";
@@ -94,7 +102,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ConditionMatchResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

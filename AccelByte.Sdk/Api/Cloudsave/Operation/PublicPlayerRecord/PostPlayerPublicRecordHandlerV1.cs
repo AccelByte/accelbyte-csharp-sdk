@@ -86,10 +86,25 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// 
     /// 
     /// 
-    /// Reserved Word List: META
+    /// Reserved Word List: __META
     /// 
     /// The reserved word cannot be used as a field in record value,
     /// If still defining the field when creating or updating the record, it will be ignored.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// ## Warning: This endpoint is going to deprecate
+    /// 
+    /// 
+    /// 
+    /// This endpoint is going to deprecate in the future please don't use it.
+    /// 
+    /// For alternative, please use these endpoints:
+    /// - POST /cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key} and utilizing __META functionality
+    /// - PUT /cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key} and utilizing __META functionality
+    /// - DELETE /cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}
     /// </summary>
     public class PostPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
@@ -97,6 +112,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public static PostPlayerPublicRecordHandlerV1Builder Builder = new PostPlayerPublicRecordHandlerV1Builder();
 
         public class PostPlayerPublicRecordHandlerV1Builder
+            : OperationBuilder<PostPlayerPublicRecordHandlerV1Builder>
         {
             
             
@@ -115,12 +131,15 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
                 string userId
             )
             {
-                return new PostPlayerPublicRecordHandlerV1(this,
+                PostPlayerPublicRecordHandlerV1 op = new PostPlayerPublicRecordHandlerV1(this,
                     body,                    
                     key,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -140,6 +159,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -159,6 +180,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}/public";
@@ -169,7 +192,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

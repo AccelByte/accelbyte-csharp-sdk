@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public static GetSingleTemplateLocalizationV1AdminBuilder Builder = new GetSingleTemplateLocalizationV1AdminBuilder();
 
         public class GetSingleTemplateLocalizationV1AdminBuilder
+            : OperationBuilder<GetSingleTemplateLocalizationV1AdminBuilder>
         {
             
             
@@ -42,11 +43,14 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
                 string templateSlug
             )
             {
-                return new GetSingleTemplateLocalizationV1Admin(this,
+                GetSingleTemplateLocalizationV1Admin op = new GetSingleTemplateLocalizationV1Admin(this,
                     namespace_,                    
                     templateLanguage,                    
                     templateSlug                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -64,6 +68,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -81,6 +87,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/lobby/v1/admin/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}";
@@ -91,7 +99,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelLocalization? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

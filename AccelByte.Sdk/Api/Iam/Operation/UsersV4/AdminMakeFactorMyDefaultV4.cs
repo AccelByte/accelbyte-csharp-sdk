@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public static AdminMakeFactorMyDefaultV4Builder Builder = new AdminMakeFactorMyDefaultV4Builder();
 
         public class AdminMakeFactorMyDefaultV4Builder
+            : OperationBuilder<AdminMakeFactorMyDefaultV4Builder>
         {
             
             internal AdminMakeFactorMyDefaultV4Builder() { }
@@ -41,9 +42,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 string factor
             )
             {
-                return new AdminMakeFactorMyDefaultV4(this,
+                AdminMakeFactorMyDefaultV4 op = new AdminMakeFactorMyDefaultV4(this,
                     factor                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -57,6 +61,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -70,6 +76,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v4/admin/users/me/mfa/factor";
@@ -80,7 +88,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public static PublishTemplateBuilder Builder = new PublishTemplateBuilder();
 
         public class PublishTemplateBuilder
+            : OperationBuilder<PublishTemplateBuilder>
         {
             
             
@@ -40,11 +41,14 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
                 string templateSlug
             )
             {
-                return new PublishTemplate(this,
+                PublishTemplate op = new PublishTemplate(this,
                     namespace_,                    
                     templateLanguage,                    
                     templateSlug                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -62,6 +66,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -79,6 +85,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}/publish";
@@ -89,7 +97,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

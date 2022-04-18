@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public static AdminGetListPersonalDataRequestBuilder Builder = new AdminGetListPersonalDataRequestBuilder();
 
         public class AdminGetListPersonalDataRequestBuilder
+            : OperationBuilder<AdminGetListPersonalDataRequestBuilder>
         {
             
             public long? Limit { get; set; }
@@ -60,9 +61,12 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
                 string namespace_
             )
             {
-                return new AdminGetListPersonalDataRequest(this,
+                AdminGetListPersonalDataRequest op = new AdminGetListPersonalDataRequest(this,
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -79,6 +83,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -98,6 +104,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/gdpr/admin/namespaces/{namespace}/requests";
@@ -108,7 +116,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsListPersonalDataResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

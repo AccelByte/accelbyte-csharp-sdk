@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static ListExtOrderNoByExtTxIdBuilder Builder = new ListExtOrderNoByExtTxIdBuilder();
 
         public class ListExtOrderNoByExtTxIdBuilder
+            : OperationBuilder<ListExtOrderNoByExtTxIdBuilder>
         {
             
             
@@ -40,10 +41,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string extTxId
             )
             {
-                return new ListExtOrderNoByExtTxId(this,
+                ListExtOrderNoByExtTxId op = new ListExtOrderNoByExtTxId(this,
                     namespace_,                    
                     extTxId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -59,6 +63,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -74,6 +80,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/payment/orders/byExtTxId";
@@ -84,7 +92,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public List<string>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

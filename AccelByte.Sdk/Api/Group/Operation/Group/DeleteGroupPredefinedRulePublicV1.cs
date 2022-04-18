@@ -41,6 +41,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public static DeleteGroupPredefinedRulePublicV1Builder Builder = new DeleteGroupPredefinedRulePublicV1Builder();
 
         public class DeleteGroupPredefinedRulePublicV1Builder
+            : OperationBuilder<DeleteGroupPredefinedRulePublicV1Builder>
         {
             
             
@@ -57,11 +58,14 @@ namespace AccelByte.Sdk.Api.Group.Operation
                 string namespace_
             )
             {
-                return new DeleteGroupPredefinedRulePublicV1(this,
+                DeleteGroupPredefinedRulePublicV1 op = new DeleteGroupPredefinedRulePublicV1(this,
                     allowedAction,                    
                     groupId,                    
                     namespace_                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -79,6 +83,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -96,6 +102,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/group/v1/public/namespaces/{namespace}/groups/{groupId}/rules/defined/{allowedAction}";
@@ -106,7 +114,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

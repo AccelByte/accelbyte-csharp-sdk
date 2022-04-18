@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static ExistsAnyUserActiveEntitlementBuilder Builder = new ExistsAnyUserActiveEntitlementBuilder();
 
         public class ExistsAnyUserActiveEntitlementBuilder
+            : OperationBuilder<ExistsAnyUserActiveEntitlementBuilder>
         {
             
             
@@ -64,10 +65,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string userId
             )
             {
-                return new ExistsAnyUserActiveEntitlement(this,
+                ExistsAnyUserActiveEntitlement op = new ExistsAnyUserActiveEntitlement(this,
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -89,6 +93,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             CollectionFormatMap["skus"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -113,6 +119,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             CollectionFormatMap["skus"] = "multi";
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/any";
@@ -123,7 +131,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.Ownership? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

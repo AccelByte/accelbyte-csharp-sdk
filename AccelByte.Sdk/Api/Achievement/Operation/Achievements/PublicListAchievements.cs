@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         public static PublicListAchievementsBuilder Builder = new PublicListAchievementsBuilder();
 
         public class PublicListAchievementsBuilder
+            : OperationBuilder<PublicListAchievementsBuilder>
         {
             
             public long? Limit { get; set; }
@@ -63,10 +64,13 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
                 string language
             )
             {
-                return new PublicListAchievements(this,
+                PublicListAchievements op = new PublicListAchievements(this,
                     namespace_,                    
                     language                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -85,6 +89,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -106,6 +112,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/achievement/v1/public/namespaces/{namespace}/achievements";
@@ -116,7 +124,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsPublicAchievementsResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public static IndirectBulkAcceptVersionedPolicyBuilder Builder = new IndirectBulkAcceptVersionedPolicyBuilder();
 
         public class IndirectBulkAcceptVersionedPolicyBuilder
+            : OperationBuilder<IndirectBulkAcceptVersionedPolicyBuilder>
         {
             
             
@@ -57,12 +58,15 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                 string countryCode
             )
             {
-                return new IndirectBulkAcceptVersionedPolicy(this,
+                IndirectBulkAcceptVersionedPolicy op = new IndirectBulkAcceptVersionedPolicy(this,
                     namespace_,                    
                     userId,                    
                     clientId,                    
                     countryCode                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -84,6 +88,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -107,6 +113,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/agreement/admin/namespaces/{namespace}/users/{userId}/agreements/policies";
@@ -117,7 +125,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.AcceptAgreementResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

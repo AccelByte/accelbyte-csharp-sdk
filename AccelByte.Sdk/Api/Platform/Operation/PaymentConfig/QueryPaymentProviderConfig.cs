@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static QueryPaymentProviderConfigBuilder Builder = new QueryPaymentProviderConfigBuilder();
 
         public class QueryPaymentProviderConfigBuilder
+            : OperationBuilder<QueryPaymentProviderConfigBuilder>
         {
             public int? Limit { get; set; }
             
@@ -68,8 +69,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public QueryPaymentProviderConfig Build(
             )
             {
-                return new QueryPaymentProviderConfig(this
+                QueryPaymentProviderConfig op = new QueryPaymentProviderConfig(this
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -85,6 +89,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -104,6 +110,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/payment/config/provider";
@@ -114,7 +122,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.PaymentProviderConfigPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

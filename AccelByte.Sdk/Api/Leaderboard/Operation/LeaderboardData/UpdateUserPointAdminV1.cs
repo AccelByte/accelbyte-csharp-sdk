@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public static UpdateUserPointAdminV1Builder Builder = new UpdateUserPointAdminV1Builder();
 
         public class UpdateUserPointAdminV1Builder
+            : OperationBuilder<UpdateUserPointAdminV1Builder>
         {
             
             
@@ -57,12 +58,15 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
                 string userId
             )
             {
-                return new UpdateUserPointAdminV1(this,
+                UpdateUserPointAdminV1 op = new UpdateUserPointAdminV1(this,
                     body,                    
                     leaderboardCode,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -82,6 +86,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -101,6 +107,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/leaderboard/v1/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/{userId}";
@@ -111,7 +119,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.ModelsUpdateUserPointAdminV1Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

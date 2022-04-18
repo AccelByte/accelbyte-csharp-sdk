@@ -31,6 +31,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public static SendSpecificUserTemplatedNotificationV1AdminBuilder Builder = new SendSpecificUserTemplatedNotificationV1AdminBuilder();
 
         public class SendSpecificUserTemplatedNotificationV1AdminBuilder
+            : OperationBuilder<SendSpecificUserTemplatedNotificationV1AdminBuilder>
         {
             
             
@@ -47,11 +48,14 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
                 string userId
             )
             {
-                return new SendSpecificUserTemplatedNotificationV1Admin(this,
+                SendSpecificUserTemplatedNotificationV1Admin op = new SendSpecificUserTemplatedNotificationV1Admin(this,
                     body,                    
                     namespace_,                    
                     userId                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -69,6 +73,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -86,6 +92,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/lobby/v1/admin/notification/namespaces/{namespace}/users/{userId}/templates/notify";
@@ -96,7 +104,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

@@ -166,6 +166,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static RefundPaymentOrderByDedicatedBuilder Builder = new RefundPaymentOrderByDedicatedBuilder();
 
         public class RefundPaymentOrderByDedicatedBuilder
+            : OperationBuilder<RefundPaymentOrderByDedicatedBuilder>
         {
             
             
@@ -188,10 +189,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string paymentOrderNo
             )
             {
-                return new RefundPaymentOrderByDedicated(this,
+                RefundPaymentOrderByDedicated op = new RefundPaymentOrderByDedicated(this,
                     namespace_,                    
                     paymentOrderNo                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -208,6 +212,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -225,6 +231,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}/refund";
@@ -235,7 +243,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.PaymentOrderRefundResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            

@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
         public static HeartbeatBuilder Builder = new HeartbeatBuilder();
 
         public class HeartbeatBuilder
+            : OperationBuilder<HeartbeatBuilder>
         {
             
             internal HeartbeatBuilder() { }
@@ -40,9 +41,12 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
                 ModelsHeartbeatRequest body
             )
             {
-                return new Heartbeat(this,
+                Heartbeat op = new Heartbeat(this,
                     body                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -56,6 +60,8 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -69,6 +75,8 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/qosm/servers/heartbeat";
@@ -79,7 +87,8 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

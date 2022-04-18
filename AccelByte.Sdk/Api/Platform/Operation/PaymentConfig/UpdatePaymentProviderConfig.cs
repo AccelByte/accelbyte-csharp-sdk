@@ -47,6 +47,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static UpdatePaymentProviderConfigBuilder Builder = new UpdatePaymentProviderConfigBuilder();
 
         public class UpdatePaymentProviderConfigBuilder
+            : OperationBuilder<UpdatePaymentProviderConfigBuilder>
         {
             
             public Model.PaymentProviderConfigEdit? Body { get; set; }
@@ -67,9 +68,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string id
             )
             {
-                return new UpdatePaymentProviderConfig(this,
+                UpdatePaymentProviderConfig op = new UpdatePaymentProviderConfig(this,
                     id                    
                 );
+                op.PreferredSecurityMethod = PreferredSecurityMethod;
+
+                return op;
             }
         }
 
@@ -84,6 +88,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = builder.Body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -99,6 +105,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             BodyParams = body;
             
+
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/admin/payment/config/provider/{id}";
@@ -109,7 +117,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        public override string? Security {get; set;} = "Bearer";
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; } = "Bearer";
         
         public Model.PaymentProviderConfigInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            
