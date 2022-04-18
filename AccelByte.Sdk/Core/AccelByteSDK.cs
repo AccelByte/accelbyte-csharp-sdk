@@ -139,7 +139,16 @@ namespace AccelByte.Sdk.Core
         {
             var baseUrl = Configuration.ConfigRepository.BaseUrl;
 
-            switch (operation.Security)
+            string selectedSecurity = Operation.SECURITY_BASIC;
+            if (operation.PreferredSecurityMethod != String.Empty)
+                selectedSecurity = operation.PreferredSecurityMethod;
+            else
+            {
+                if (operation.Securities.Count > 0)
+                    selectedSecurity = operation.Securities[0];
+            }
+
+            switch (selectedSecurity)
             {
                 case Operation.SECURITY_BEARER:
                     if (!string.IsNullOrEmpty(Configuration.TokenRepository.GetToken()))
@@ -151,6 +160,12 @@ namespace AccelByte.Sdk.Core
                     var basicAuth = $"{Configuration.ConfigRepository.ClientId}:{Configuration.ConfigRepository.ClientSecret}";
                     var basicAuthBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(basicAuth));
                     operation.HeaderParams["Authorization"] = $"{Operation.SECURITY_BASIC} {basicAuthBase64}";
+                    break;
+                case Operation.SECURITY_COOKIE:
+                    if (!string.IsNullOrEmpty(Configuration.TokenRepository.GetToken()))
+                    {
+                        operation.Cookies["access_token"] = $"{Operation.SECURITY_BEARER} {Configuration.TokenRepository.GetToken()}";
+                    }
                     break;
             }
 

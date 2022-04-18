@@ -2,6 +2,7 @@
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -69,7 +70,8 @@ namespace AccelByte.Sdk.Tests
 
         public override string[] Produces => new[] { "application/json" };
 
-        public override string? Security {get; set;}
+        [Obsolete("Use 'Securities' property instead.")]
+        public override string? Security { get; set; }
 
         public HttpbinAnythingResponse<TArgs>? ParseResponse<TArgs>(HttpStatusCode code, string contentTpe, Stream payload)
         {

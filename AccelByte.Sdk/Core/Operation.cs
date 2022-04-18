@@ -10,18 +10,30 @@ namespace AccelByte.Sdk.Core
 {
     public abstract class Operation
     {
-        public const string SECURITY_BASIC = "Basic";
+       public const string SECURITY_BASIC = "Basic";
+
         public const string SECURITY_BEARER = "Bearer";
+
+        public const string SECURITY_COOKIE = "Cookie";
+
         public const string COLLECTION_FORMAT_CSV = "csv";
+
         public const string COLLECTION_FORMAT_MULTI = "multi";
+
         public abstract string Path { get; }
+
         public abstract HttpMethod Method { get; }
 
         public abstract string[] Consumes { get; }
 
         public abstract string[] Produces { get; }
 
+        [Obsolete("Use 'Securities' property instead.")]
         public abstract string? Security { get; set; }
+
+        public string PreferredSecurityMethod { get; set; } = String.Empty;
+
+        public List<string> Securities { get; } = new List<string>();
 
         public Dictionary<string, string> PathParams { get; } = new Dictionary<string, string>();
 
@@ -32,6 +44,8 @@ namespace AccelByte.Sdk.Core
         public Dictionary<string, dynamic> FormParams { get; } = new Dictionary<string, dynamic>();
 
         public Dictionary<string, string> CollectionFormatMap { get; } = new Dictionary<string, string>();
+
+        public Dictionary<string, string> Cookies { get; } = new Dictionary<string, string>();
 
         public bool DoNotEncodeQueryParams { get; set; } = false;
 
