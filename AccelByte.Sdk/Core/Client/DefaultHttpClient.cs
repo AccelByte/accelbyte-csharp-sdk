@@ -147,7 +147,7 @@ namespace AccelByte.Sdk.Core.Client
                     List<string> cEntries = new List<string>();
                     foreach (var c in operation.Cookies)
                         cEntries.Add(c.Key + "=" + c.Value);
-                    request.Headers.TryAddWithoutValidation("Cookie", String.Join(";", cEntries));
+                    request.Headers.TryAddWithoutValidation("Cookie", String.Join("; ", cEntries));
                 }
 
                 var response = Http!.Send(request);
