@@ -6,11 +6,19 @@ namespace AccelByte.Sdk.Core
 {
     public abstract class OperationBuilder<T> where T : OperationBuilder<T>
     {
+        internal object? WrapperObject { get; set; } = null;
+
         protected string PreferredSecurityMethod { get; set; } = String.Empty;
 
         public T SetPreferredSecurityMethod(string securityMethod)
         {
             PreferredSecurityMethod = securityMethod;
+            return (T)this;
+        }
+
+        internal T SetWrapperObject(object wrapperObject)
+        {
+            WrapperObject = wrapperObject;
             return (T)this;
         }
     }

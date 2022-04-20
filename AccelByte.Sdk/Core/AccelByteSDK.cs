@@ -14,7 +14,7 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Core
 {
-    public class AccelByteSDK
+    public partial class AccelByteSDK
     {
         public static AccelByteSdkBuilder Builder = new AccelByteSdkBuilder();
 
