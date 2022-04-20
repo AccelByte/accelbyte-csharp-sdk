@@ -33,22 +33,4 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
                     response.Payload);
         }
     }
-
-    public static class UserData_OperationExtensions
-    {
-        public static Model.ModelsGetAllUserLeaderboardsResp? Execute(
-            this GetUserLeaderboardRankingsAdminV1.GetUserLeaderboardRankingsAdminV1Builder builder,
-            string namespace_,
-            string userId
-        )
-        {
-            GetUserLeaderboardRankingsAdminV1 op = builder.Build(
-                namespace_,
-                userId
-            );
-
-            return ((UserData)builder.WrapperObject!).GetUserLeaderboardRankingsAdminV1(op);
-        }
-
-    }
 }

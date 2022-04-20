@@ -33,18 +33,4 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
     }
-
-    public static class DsmcOperations_OperationExtensions
-    {
-        public static List<Model.LogAppMessageDeclaration>? Execute(
-            this PublicGetMessages.PublicGetMessagesBuilder builder
-        )
-        {
-            PublicGetMessages op = builder.Build(
-            );
-
-            return ((DsmcOperations)builder.WrapperObject!).PublicGetMessages(op);
-        }
-
-    }
 }

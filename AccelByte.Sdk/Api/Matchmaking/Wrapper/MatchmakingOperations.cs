@@ -69,48 +69,4 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.Payload);
         }
     }
-
-    public static class MatchmakingOperations_OperationExtensions
-    {
-        public static void Execute(
-            this GetHealthcheckInfo.GetHealthcheckInfoBuilder builder
-        )
-        {
-            GetHealthcheckInfo op = builder.Build(
-            );
-
-            ((MatchmakingOperations)builder.WrapperObject!).GetHealthcheckInfo(op);
-        }
-
-        public static void Execute(
-            this HandlerV3Healthz.HandlerV3HealthzBuilder builder
-        )
-        {
-            HandlerV3Healthz op = builder.Build(
-            );
-
-            ((MatchmakingOperations)builder.WrapperObject!).HandlerV3Healthz(op);
-        }
-
-        public static List<Model.LogAppMessageDeclaration>? Execute(
-            this PublicGetMessages.PublicGetMessagesBuilder builder
-        )
-        {
-            PublicGetMessages op = builder.Build(
-            );
-
-            return ((MatchmakingOperations)builder.WrapperObject!).PublicGetMessages(op);
-        }
-
-        public static void Execute(
-            this VersionCheckHandler.VersionCheckHandlerBuilder builder
-        )
-        {
-            VersionCheckHandler op = builder.Build(
-            );
-
-            ((MatchmakingOperations)builder.WrapperObject!).VersionCheckHandler(op);
-        }
-
-    }
 }

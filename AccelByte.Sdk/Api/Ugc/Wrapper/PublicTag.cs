@@ -33,20 +33,4 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
     }
-
-    public static class PublicTag_OperationExtensions
-    {
-        public static Model.ModelsPaginatedGetTagResponse? Execute(
-            this GetTag.GetTagBuilder builder,
-            string namespace_
-        )
-        {
-            GetTag op = builder.Build(
-                namespace_
-            );
-
-            return ((PublicTag)builder.WrapperObject!).GetTag(op);
-        }
-
-    }
 }

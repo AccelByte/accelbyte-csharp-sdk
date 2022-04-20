@@ -57,40 +57,4 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
     }
-
-    public static class Public_OperationExtensions
-    {
-        public static Model.ModelsDefaultProvider? Execute(
-            this GetDefaultProvider.GetDefaultProviderBuilder builder
-        )
-        {
-            GetDefaultProvider op = builder.Build(
-            );
-
-            return ((Public)builder.WrapperObject!).GetDefaultProvider(op);
-        }
-
-        public static List<string>? Execute(
-            this ListProviders.ListProvidersBuilder builder
-        )
-        {
-            ListProviders op = builder.Build(
-            );
-
-            return ((Public)builder.WrapperObject!).ListProviders(op);
-        }
-
-        public static Model.ModelsDefaultProvider? Execute(
-            this ListProvidersByRegion.ListProvidersByRegionBuilder builder,
-            string region
-        )
-        {
-            ListProvidersByRegion op = builder.Build(
-                region
-            );
-
-            return ((Public)builder.WrapperObject!).ListProvidersByRegion(op);
-        }
-
-    }
 }

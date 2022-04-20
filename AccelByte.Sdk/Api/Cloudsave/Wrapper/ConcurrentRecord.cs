@@ -45,42 +45,4 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.Payload);
         }
     }
-
-    public static class ConcurrentRecord_OperationExtensions
-    {
-        public static void Execute(
-            this PutGameRecordConcurrentHandlerV1.PutGameRecordConcurrentHandlerV1Builder builder,
-            ModelsConcurrentRecordRequest body,
-            string key,
-            string namespace_
-        )
-        {
-            PutGameRecordConcurrentHandlerV1 op = builder.Build(
-                body,
-                key,
-                namespace_
-            );
-
-            ((ConcurrentRecord)builder.WrapperObject!).PutGameRecordConcurrentHandlerV1(op);
-        }
-
-        public static void Execute(
-            this PutPlayerPublicRecordConcurrentHandlerV1.PutPlayerPublicRecordConcurrentHandlerV1Builder builder,
-            ModelsConcurrentRecordRequest body,
-            string key,
-            string namespace_,
-            string userId
-        )
-        {
-            PutPlayerPublicRecordConcurrentHandlerV1 op = builder.Build(
-                body,
-                key,
-                namespace_,
-                userId
-            );
-
-            ((ConcurrentRecord)builder.WrapperObject!).PutPlayerPublicRecordConcurrentHandlerV1(op);
-        }
-
-    }
 }

@@ -45,40 +45,4 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
     }
-
-    public static class PaymentAccount_OperationExtensions
-    {
-        public static List<Model.PaymentAccount>? Execute(
-            this PublicGetPaymentAccounts.PublicGetPaymentAccountsBuilder builder,
-            string namespace_,
-            string userId
-        )
-        {
-            PublicGetPaymentAccounts op = builder.Build(
-                namespace_,
-                userId
-            );
-
-            return ((PaymentAccount)builder.WrapperObject!).PublicGetPaymentAccounts(op);
-        }
-
-        public static void Execute(
-            this PublicDeletePaymentAccount.PublicDeletePaymentAccountBuilder builder,
-            string id,
-            string namespace_,
-            string type,
-            string userId
-        )
-        {
-            PublicDeletePaymentAccount op = builder.Build(
-                id,
-                namespace_,
-                type,
-                userId
-            );
-
-            ((PaymentAccount)builder.WrapperObject!).PublicDeletePaymentAccount(op);
-        }
-
-    }
 }

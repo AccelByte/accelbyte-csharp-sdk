@@ -33,22 +33,4 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
     }
-
-    public static class Presence_OperationExtensions
-    {
-        public static Model.HandlersGetUsersPresenceResponse? Execute(
-            this UsersPresenceHandlerV1.UsersPresenceHandlerV1Builder builder,
-            string namespace_,
-            string userIds
-        )
-        {
-            UsersPresenceHandlerV1 op = builder.Build(
-                namespace_,
-                userIds
-            );
-
-            return ((Presence)builder.WrapperObject!).UsersPresenceHandlerV1(op);
-        }
-
-    }
 }

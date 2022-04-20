@@ -33,22 +33,4 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.Payload);
         }
     }
-
-    public static class SocialMatchmaking_OperationExtensions
-    {
-        public static Model.ModelsUpdatePlayerPlaytimeWeightResponse? Execute(
-            this UpdatePlayTimeWeight.UpdatePlayTimeWeightBuilder builder,
-            ModelsUpdatePlayTimeWeightRequest body,
-            string namespace_
-        )
-        {
-            UpdatePlayTimeWeight op = builder.Build(
-                body,
-                namespace_
-            );
-
-            return ((SocialMatchmaking)builder.WrapperObject!).UpdatePlayTimeWeight(op);
-        }
-
-    }
 }

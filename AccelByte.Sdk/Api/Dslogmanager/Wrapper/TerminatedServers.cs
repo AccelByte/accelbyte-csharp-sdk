@@ -57,48 +57,4 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
                     response.Payload);
         }
     }
-
-    public static class TerminatedServers_OperationExtensions
-    {
-        public static Model.ModelsListTerminatedServersResponse? Execute(
-            this ListTerminatedServers.ListTerminatedServersBuilder builder,
-            string namespace_
-        )
-        {
-            ListTerminatedServers op = builder.Build(
-                namespace_
-            );
-
-            return ((TerminatedServers)builder.WrapperObject!).ListTerminatedServers(op);
-        }
-
-        public static void Execute(
-            this DownloadServerLogs.DownloadServerLogsBuilder builder,
-            string namespace_,
-            string podName
-        )
-        {
-            DownloadServerLogs op = builder.Build(
-                namespace_,
-                podName
-            );
-
-            ((TerminatedServers)builder.WrapperObject!).DownloadServerLogs(op);
-        }
-
-        public static Model.ModelsLogFileStatus? Execute(
-            this CheckServerLogs.CheckServerLogsBuilder builder,
-            string namespace_,
-            string podName
-        )
-        {
-            CheckServerLogs op = builder.Build(
-                namespace_,
-                podName
-            );
-
-            return ((TerminatedServers)builder.WrapperObject!).CheckServerLogs(op);
-        }
-
-    }
 }

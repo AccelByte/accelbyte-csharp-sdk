@@ -33,18 +33,4 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
     }
-
-    public static class Utility_OperationExtensions
-    {
-        public static Model.LegalReadinessStatusResponse? Execute(
-            this CheckReadiness.CheckReadinessBuilder builder
-        )
-        {
-            CheckReadiness op = builder.Build(
-            );
-
-            return ((Utility)builder.WrapperObject!).CheckReadiness(op);
-        }
-
-    }
 }

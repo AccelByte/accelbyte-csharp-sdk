@@ -33,20 +33,4 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
     }
-
-    public static class PublicType_OperationExtensions
-    {
-        public static Model.ModelsPaginatedGetTypeResponse? Execute(
-            this GetType.GetTypeBuilder builder,
-            string namespace_
-        )
-        {
-            GetType op = builder.Build(
-                namespace_
-            );
-
-            return ((PublicType)builder.WrapperObject!).GetType(op);
-        }
-
-    }
 }

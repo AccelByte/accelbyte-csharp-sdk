@@ -45,38 +45,4 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
     }
-
-    public static class Eligibilities_OperationExtensions
-    {
-        public static List<Model.RetrieveUserEligibilitiesResponse>? Execute(
-            this RetrieveEligibilitiesPublic.RetrieveEligibilitiesPublicBuilder builder,
-            string namespace_
-        )
-        {
-            RetrieveEligibilitiesPublic op = builder.Build(
-                namespace_
-            );
-
-            return ((Eligibilities)builder.WrapperObject!).RetrieveEligibilitiesPublic(op);
-        }
-
-        public static Model.RetrieveUserEligibilitiesIndirectResponse? Execute(
-            this RetrieveEligibilitiesPublicIndirect.RetrieveEligibilitiesPublicIndirectBuilder builder,
-            string clientId,
-            string countryCode,
-            string namespace_,
-            string userId
-        )
-        {
-            RetrieveEligibilitiesPublicIndirect op = builder.Build(
-                clientId,
-                countryCode,
-                namespace_,
-                userId
-            );
-
-            return ((Eligibilities)builder.WrapperObject!).RetrieveEligibilitiesPublicIndirect(op);
-        }
-
-    }
 }

@@ -45,34 +45,4 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.Payload);
         }
     }
-
-    public static class MemberRequest_OperationExtensions
-    {
-        public static Model.ModelsGetMemberRequestsListResponseV1? Execute(
-            this GetGroupJoinRequestPublicV1.GetGroupJoinRequestPublicV1Builder builder,
-            string groupId,
-            string namespace_
-        )
-        {
-            GetGroupJoinRequestPublicV1 op = builder.Build(
-                groupId,
-                namespace_
-            );
-
-            return ((MemberRequest)builder.WrapperObject!).GetGroupJoinRequestPublicV1(op);
-        }
-
-        public static Model.ModelsGetMemberRequestsListResponseV1? Execute(
-            this GetGroupInvitationRequestPublicV1.GetGroupInvitationRequestPublicV1Builder builder,
-            string namespace_
-        )
-        {
-            GetGroupInvitationRequestPublicV1 op = builder.Build(
-                namespace_
-            );
-
-            return ((MemberRequest)builder.WrapperObject!).GetGroupInvitationRequestPublicV1(op);
-        }
-
-    }
 }

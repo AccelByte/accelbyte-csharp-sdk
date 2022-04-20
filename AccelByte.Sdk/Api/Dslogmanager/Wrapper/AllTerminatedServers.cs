@@ -45,30 +45,4 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
                     response.Payload);
         }
     }
-
-    public static class AllTerminatedServers_OperationExtensions
-    {
-        public static void Execute(
-            this BatchDownloadServerLogs.BatchDownloadServerLogsBuilder builder,
-            ModelsBatchDownloadLogsRequest body
-        )
-        {
-            BatchDownloadServerLogs op = builder.Build(
-                body
-            );
-
-            ((AllTerminatedServers)builder.WrapperObject!).BatchDownloadServerLogs(op);
-        }
-
-        public static Model.ModelsListTerminatedServersResponse? Execute(
-            this ListAllTerminatedServers.ListAllTerminatedServersBuilder builder
-        )
-        {
-            ListAllTerminatedServers op = builder.Build(
-            );
-
-            return ((AllTerminatedServers)builder.WrapperObject!).ListAllTerminatedServers(op);
-        }
-
-    }
 }

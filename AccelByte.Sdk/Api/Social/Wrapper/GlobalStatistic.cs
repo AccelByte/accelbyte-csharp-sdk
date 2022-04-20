@@ -33,20 +33,4 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
     }
-
-    public static class GlobalStatistic_OperationExtensions
-    {
-        public static Model.GlobalStatItemPagingSlicedResult? Execute(
-            this GetGlobalStatItems.GetGlobalStatItemsBuilder builder,
-            string namespace_
-        )
-        {
-            GetGlobalStatItems op = builder.Build(
-                namespace_
-            );
-
-            return ((GlobalStatistic)builder.WrapperObject!).GetGlobalStatItems(op);
-        }
-
-    }
 }

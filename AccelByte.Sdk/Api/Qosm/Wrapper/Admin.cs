@@ -45,34 +45,4 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
                     response.Payload);
         }
     }
-
-    public static class Admin_OperationExtensions
-    {
-        public static void Execute(
-            this DeleteServer.DeleteServerBuilder builder,
-            string region
-        )
-        {
-            DeleteServer op = builder.Build(
-                region
-            );
-
-            ((Admin)builder.WrapperObject!).DeleteServer(op);
-        }
-
-        public static void Execute(
-            this SetServerAlias.SetServerAliasBuilder builder,
-            ModelsSetAliasRequest body,
-            string region
-        )
-        {
-            SetServerAlias op = builder.Build(
-                body,
-                region
-            );
-
-            ((Admin)builder.WrapperObject!).SetServerAlias(op);
-        }
-
-    }
 }

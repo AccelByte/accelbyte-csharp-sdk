@@ -45,36 +45,4 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
     }
-
-    public static class PublicLike_OperationExtensions
-    {
-        public static Model.ModelsPaginatedContentDownloadResponse? Execute(
-            this GetLikedContent.GetLikedContentBuilder builder,
-            string namespace_
-        )
-        {
-            GetLikedContent op = builder.Build(
-                namespace_
-            );
-
-            return ((PublicLike)builder.WrapperObject!).GetLikedContent(op);
-        }
-
-        public static Model.ModelsContentLikeResponse? Execute(
-            this UpdateContentLikeStatus.UpdateContentLikeStatusBuilder builder,
-            ModelsContentLikeRequest body,
-            string contentId,
-            string namespace_
-        )
-        {
-            UpdateContentLikeStatus op = builder.Build(
-                body,
-                contentId,
-                namespace_
-            );
-
-            return ((PublicLike)builder.WrapperObject!).UpdateContentLikeStatus(op);
-        }
-
-    }
 }

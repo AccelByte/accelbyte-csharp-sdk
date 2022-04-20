@@ -45,32 +45,4 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
     }
-
-    public static class SSO_OperationExtensions
-    {
-        public static void Execute(
-            this LoginSSOClient.LoginSSOClientBuilder builder,
-            string platformId
-        )
-        {
-            LoginSSOClient op = builder.Build(
-                platformId
-            );
-
-            ((SSO)builder.WrapperObject!).LoginSSOClient(op);
-        }
-
-        public static void Execute(
-            this LogoutSSOClient.LogoutSSOClientBuilder builder,
-            string platformId
-        )
-        {
-            LogoutSSOClient op = builder.Build(
-                platformId
-            );
-
-            ((SSO)builder.WrapperObject!).LogoutSSOClient(op);
-        }
-
-    }
 }

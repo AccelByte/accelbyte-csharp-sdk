@@ -33,26 +33,4 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
     }
-
-    public static class AdminUserAgreement_OperationExtensions
-    {
-        public static Model.AcceptAgreementResponse? Execute(
-            this IndirectBulkAcceptVersionedPolicy.IndirectBulkAcceptVersionedPolicyBuilder builder,
-            string namespace_,
-            string userId,
-            string clientId,
-            string countryCode
-        )
-        {
-            IndirectBulkAcceptVersionedPolicy op = builder.Build(
-                namespace_,
-                userId,
-                clientId,
-                countryCode
-            );
-
-            return ((AdminUserAgreement)builder.WrapperObject!).IndirectBulkAcceptVersionedPolicy(op);
-        }
-
-    }
 }

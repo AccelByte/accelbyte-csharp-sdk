@@ -57,44 +57,4 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.Payload);
         }
     }
-
-    public static class EQU8Config_OperationExtensions
-    {
-        public static Model.Equ8Config? Execute(
-            this GetConfig.GetConfigBuilder builder,
-            string namespace_
-        )
-        {
-            GetConfig op = builder.Build(
-                namespace_
-            );
-
-            return ((EQU8Config)builder.WrapperObject!).GetConfig(op);
-        }
-
-        public static void Execute(
-            this DeleteConfig.DeleteConfigBuilder builder,
-            string namespace_
-        )
-        {
-            DeleteConfig op = builder.Build(
-                namespace_
-            );
-
-            ((EQU8Config)builder.WrapperObject!).DeleteConfig(op);
-        }
-
-        public static Model.Equ8Config? Execute(
-            this UpdateConfig.UpdateConfigBuilder builder,
-            string namespace_
-        )
-        {
-            UpdateConfig op = builder.Build(
-                namespace_
-            );
-
-            return ((EQU8Config)builder.WrapperObject!).UpdateConfig(op);
-        }
-
-    }
 }

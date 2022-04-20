@@ -33,18 +33,4 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
                     response.Payload);
         }
     }
-
-    public static class DslogmanagerOperations_OperationExtensions
-    {
-        public static List<Model.LogAppMessageDeclaration>? Execute(
-            this PublicGetMessages.PublicGetMessagesBuilder builder
-        )
-        {
-            PublicGetMessages op = builder.Build(
-            );
-
-            return ((DslogmanagerOperations)builder.WrapperObject!).PublicGetMessages(op);
-        }
-
-    }
 }

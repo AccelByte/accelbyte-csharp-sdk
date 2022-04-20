@@ -45,36 +45,4 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
     }
-
-    public static class CatalogChanges_OperationExtensions
-    {
-        public static List<Model.CatalogChangePagingSlicedResult>? Execute(
-            this QueryChanges.QueryChangesBuilder builder,
-            string namespace_,
-            string storeId
-        )
-        {
-            QueryChanges op = builder.Build(
-                namespace_,
-                storeId
-            );
-
-            return ((CatalogChanges)builder.WrapperObject!).QueryChanges(op);
-        }
-
-        public static Model.StoreInfo? Execute(
-            this PublishAll.PublishAllBuilder builder,
-            string namespace_,
-            string storeId
-        )
-        {
-            PublishAll op = builder.Build(
-                namespace_,
-                storeId
-            );
-
-            return ((CatalogChanges)builder.WrapperObject!).PublishAll(op);
-        }
-
-    }
 }

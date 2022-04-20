@@ -33,18 +33,4 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
                     response.Payload);
         }
     }
-
-    public static class Public_OperationExtensions
-    {
-        public static Model.ModelsListServerResponse? Execute(
-            this ListServer.ListServerBuilder builder
-        )
-        {
-            ListServer op = builder.Build(
-            );
-
-            return ((Public)builder.WrapperObject!).ListServer(op);
-        }
-
-    }
 }

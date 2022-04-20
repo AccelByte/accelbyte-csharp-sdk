@@ -33,26 +33,4 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
     }
-
-    public static class AdminUserEligibilities_OperationExtensions
-    {
-        public static Model.RetrieveUserEligibilitiesIndirectResponse? Execute(
-            this AdminRetrieveEligibilities.AdminRetrieveEligibilitiesBuilder builder,
-            string namespace_,
-            string userId,
-            string clientId,
-            string countryCode
-        )
-        {
-            AdminRetrieveEligibilities op = builder.Build(
-                namespace_,
-                userId,
-                clientId,
-                countryCode
-            );
-
-            return ((AdminUserEligibilities)builder.WrapperObject!).AdminRetrieveEligibilities(op);
-        }
-
-    }
 }

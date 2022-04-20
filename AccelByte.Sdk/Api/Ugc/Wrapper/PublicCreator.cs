@@ -33,22 +33,4 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
     }
-
-    public static class PublicCreator_OperationExtensions
-    {
-        public static Model.ModelsCreatorOverviewResponse? Execute(
-            this GetCreator.GetCreatorBuilder builder,
-            string namespace_,
-            string userId
-        )
-        {
-            GetCreator op = builder.Build(
-                namespace_,
-                userId
-            );
-
-            return ((PublicCreator)builder.WrapperObject!).GetCreator(op);
-        }
-
-    }
 }

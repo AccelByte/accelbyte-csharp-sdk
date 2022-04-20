@@ -57,48 +57,4 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
     }
-
-    public static class PaymentDedicated_OperationExtensions
-    {
-        public static Model.PaymentOrderCreateResult? Execute(
-            this CreatePaymentOrderByDedicated.CreatePaymentOrderByDedicatedBuilder builder,
-            string namespace_
-        )
-        {
-            CreatePaymentOrderByDedicated op = builder.Build(
-                namespace_
-            );
-
-            return ((PaymentDedicated)builder.WrapperObject!).CreatePaymentOrderByDedicated(op);
-        }
-
-        public static Model.PaymentOrderRefundResult? Execute(
-            this RefundPaymentOrderByDedicated.RefundPaymentOrderByDedicatedBuilder builder,
-            string namespace_,
-            string paymentOrderNo
-        )
-        {
-            RefundPaymentOrderByDedicated op = builder.Build(
-                namespace_,
-                paymentOrderNo
-            );
-
-            return ((PaymentDedicated)builder.WrapperObject!).RefundPaymentOrderByDedicated(op);
-        }
-
-        public static Model.PaymentOrderSyncResult? Execute(
-            this SyncPaymentOrders.SyncPaymentOrdersBuilder builder,
-            string end,
-            string start
-        )
-        {
-            SyncPaymentOrders op = builder.Build(
-                end,
-                start
-            );
-
-            return ((PaymentDedicated)builder.WrapperObject!).SyncPaymentOrders(op);
-        }
-
-    }
 }

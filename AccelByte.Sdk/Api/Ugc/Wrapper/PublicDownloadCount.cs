@@ -33,22 +33,4 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
     }
-
-    public static class PublicDownloadCount_OperationExtensions
-    {
-        public static Model.ModelsAddDownloadCountResponse? Execute(
-            this AddDownloadCount.AddDownloadCountBuilder builder,
-            string contentId,
-            string namespace_
-        )
-        {
-            AddDownloadCount op = builder.Build(
-                contentId,
-                namespace_
-            );
-
-            return ((PublicDownloadCount)builder.WrapperObject!).AddDownloadCount(op);
-        }
-
-    }
 }

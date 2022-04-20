@@ -33,22 +33,4 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
     }
-
-    public static class OrderDedicated_OperationExtensions
-    {
-        public static Model.OrderSyncResult? Execute(
-            this SyncOrders.SyncOrdersBuilder builder,
-            string end,
-            string start
-        )
-        {
-            SyncOrders op = builder.Build(
-                end,
-                start
-            );
-
-            return ((OrderDedicated)builder.WrapperObject!).SyncOrders(op);
-        }
-
-    }
 }

@@ -57,40 +57,4 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
     }
-
-    public static class UserInfo_OperationExtensions
-    {
-        public static List<Model.RetrieveUserInfoCacheStatusResponse>? Execute(
-            this GetUserInfoStatus.GetUserInfoStatusBuilder builder
-        )
-        {
-            GetUserInfoStatus op = builder.Build(
-            );
-
-            return ((UserInfo)builder.WrapperObject!).GetUserInfoStatus(op);
-        }
-
-        public static void Execute(
-            this SyncUserInfo.SyncUserInfoBuilder builder,
-            string namespace_
-        )
-        {
-            SyncUserInfo op = builder.Build(
-                namespace_
-            );
-
-            ((UserInfo)builder.WrapperObject!).SyncUserInfo(op);
-        }
-
-        public static void Execute(
-            this InvalidateUserInfoCache.InvalidateUserInfoCacheBuilder builder
-        )
-        {
-            InvalidateUserInfoCache op = builder.Build(
-            );
-
-            ((UserInfo)builder.WrapperObject!).InvalidateUserInfoCache(op);
-        }
-
-    }
 }

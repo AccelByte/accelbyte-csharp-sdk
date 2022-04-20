@@ -33,22 +33,4 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
     }
-
-    public static class SSOSAML20_OperationExtensions
-    {
-        public static string Execute(
-            this PlatformAuthenticateSAMLV3Handler.PlatformAuthenticateSAMLV3HandlerBuilder builder,
-            string platformId,
-            string state
-        )
-        {
-            PlatformAuthenticateSAMLV3Handler op = builder.Build(
-                platformId,
-                state
-            );
-
-            return ((SSOSAML20)builder.WrapperObject!).PlatformAuthenticateSAMLV3Handler(op);
-        }
-
-    }
 }

@@ -33,20 +33,4 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
     }
-
-    public static class Anonymization_OperationExtensions
-    {
-        public static void Execute(
-            this AnonymizeUserAgreement.AnonymizeUserAgreementBuilder builder,
-            string userId
-        )
-        {
-            AnonymizeUserAgreement op = builder.Build(
-                userId
-            );
-
-            ((Anonymization)builder.WrapperObject!).AnonymizeUserAgreement(op);
-        }
-
-    }
 }

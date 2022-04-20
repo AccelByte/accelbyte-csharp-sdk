@@ -45,32 +45,4 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
     }
-
-    public static class PaymentCallbackConfig_OperationExtensions
-    {
-        public static Model.PaymentCallbackConfigInfo? Execute(
-            this GetPaymentCallbackConfig.GetPaymentCallbackConfigBuilder builder,
-            string namespace_
-        )
-        {
-            GetPaymentCallbackConfig op = builder.Build(
-                namespace_
-            );
-
-            return ((PaymentCallbackConfig)builder.WrapperObject!).GetPaymentCallbackConfig(op);
-        }
-
-        public static Model.PaymentCallbackConfigInfo? Execute(
-            this UpdatePaymentCallbackConfig.UpdatePaymentCallbackConfigBuilder builder,
-            string namespace_
-        )
-        {
-            UpdatePaymentCallbackConfig op = builder.Build(
-                namespace_
-            );
-
-            return ((PaymentCallbackConfig)builder.WrapperObject!).UpdatePaymentCallbackConfig(op);
-        }
-
-    }
 }

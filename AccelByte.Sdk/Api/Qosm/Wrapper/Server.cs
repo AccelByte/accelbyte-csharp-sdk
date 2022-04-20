@@ -33,20 +33,4 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
                     response.Payload);
         }
     }
-
-    public static class Server_OperationExtensions
-    {
-        public static void Execute(
-            this Heartbeat.HeartbeatBuilder builder,
-            ModelsHeartbeatRequest body
-        )
-        {
-            Heartbeat op = builder.Build(
-                body
-            );
-
-            ((Server)builder.WrapperObject!).Heartbeat(op);
-        }
-
-    }
 }
