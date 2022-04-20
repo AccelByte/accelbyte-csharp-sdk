@@ -8,12 +8,21 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Legal.Wrapper
 {
-    public class AdminUserAgreement {
+    public class AdminUserAgreement
+    {
         private readonly AccelByteSDK _sdk;
 
-        public AdminUserAgreement(AccelByteSDK sdk){
+        public AdminUserAgreement(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public IndirectBulkAcceptVersionedPolicy.IndirectBulkAcceptVersionedPolicyBuilder IndirectBulkAcceptVersionedPolicyOp
+        {
+            get { return Operation.IndirectBulkAcceptVersionedPolicy.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public Model.AcceptAgreementResponse? IndirectBulkAcceptVersionedPolicy(IndirectBulkAcceptVersionedPolicy input) {
             var response = _sdk.RunRequest(input);
@@ -23,5 +32,27 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class AdminUserAgreement_OperationExtensions
+    {
+        public static Model.AcceptAgreementResponse? Execute(
+            this IndirectBulkAcceptVersionedPolicy.IndirectBulkAcceptVersionedPolicyBuilder builder,
+            string namespace_,
+            string userId,
+            string clientId,
+            string countryCode
+        )
+        {
+            IndirectBulkAcceptVersionedPolicy op = builder.Build(
+                namespace_,
+                userId,
+                clientId,
+                countryCode
+            );
+
+            return ((AdminUserAgreement)builder.WrapperObject!).IndirectBulkAcceptVersionedPolicy(op);
+        }
+
     }
 }

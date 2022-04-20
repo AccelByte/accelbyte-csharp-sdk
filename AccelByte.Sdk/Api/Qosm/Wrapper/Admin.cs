@@ -8,12 +8,25 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Qosm.Wrapper
 {
-    public class Admin {
+    public class Admin
+    {
         private readonly AccelByteSDK _sdk;
 
-        public Admin(AccelByteSDK sdk){
+        public Admin(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public DeleteServer.DeleteServerBuilder DeleteServerOp
+        {
+            get { return Operation.DeleteServer.Builder.SetWrapperObject(this); }
+        }
+        public SetServerAlias.SetServerAliasBuilder SetServerAliasOp
+        {
+            get { return Operation.SetServerAlias.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public void DeleteServer(DeleteServer input) {
             var response = _sdk.RunRequest(input);
@@ -31,5 +44,35 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class Admin_OperationExtensions
+    {
+        public static void Execute(
+            this DeleteServer.DeleteServerBuilder builder,
+            string region
+        )
+        {
+            DeleteServer op = builder.Build(
+                region
+            );
+
+            ((Admin)builder.WrapperObject!).DeleteServer(op);
+        }
+
+        public static void Execute(
+            this SetServerAlias.SetServerAliasBuilder builder,
+            ModelsSetAliasRequest body,
+            string region
+        )
+        {
+            SetServerAlias op = builder.Build(
+                body,
+                region
+            );
+
+            ((Admin)builder.WrapperObject!).SetServerAlias(op);
+        }
+
     }
 }

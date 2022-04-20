@@ -8,12 +8,21 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Qosm.Wrapper
 {
-    public class Public {
+    public class Public
+    {
         private readonly AccelByteSDK _sdk;
 
-        public Public(AccelByteSDK sdk){
+        public Public(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public ListServer.ListServerBuilder ListServerOp
+        {
+            get { return Operation.ListServer.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public Model.ModelsListServerResponse? ListServer(ListServer input) {
             var response = _sdk.RunRequest(input);
@@ -23,5 +32,19 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class Public_OperationExtensions
+    {
+        public static Model.ModelsListServerResponse? Execute(
+            this ListServer.ListServerBuilder builder
+        )
+        {
+            ListServer op = builder.Build(
+            );
+
+            return ((Public)builder.WrapperObject!).ListServer(op);
+        }
+
     }
 }

@@ -8,12 +8,21 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Iam.Wrapper
 {
-    public class SSOSAML20 {
+    public class SSOSAML20
+    {
         private readonly AccelByteSDK _sdk;
 
-        public SSOSAML20(AccelByteSDK sdk){
+        public SSOSAML20(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public PlatformAuthenticateSAMLV3Handler.PlatformAuthenticateSAMLV3HandlerBuilder PlatformAuthenticateSAMLV3HandlerOp
+        {
+            get { return Operation.PlatformAuthenticateSAMLV3Handler.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public string PlatformAuthenticateSAMLV3Handler(PlatformAuthenticateSAMLV3Handler input) {
             var response = _sdk.RunRequest(input);
@@ -23,5 +32,23 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class SSOSAML20_OperationExtensions
+    {
+        public static string Execute(
+            this PlatformAuthenticateSAMLV3Handler.PlatformAuthenticateSAMLV3HandlerBuilder builder,
+            string platformId,
+            string state
+        )
+        {
+            PlatformAuthenticateSAMLV3Handler op = builder.Build(
+                platformId,
+                state
+            );
+
+            return ((SSOSAML20)builder.WrapperObject!).PlatformAuthenticateSAMLV3Handler(op);
+        }
+
     }
 }

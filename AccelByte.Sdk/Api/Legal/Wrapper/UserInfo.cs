@@ -8,12 +8,29 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Legal.Wrapper
 {
-    public class UserInfo {
+    public class UserInfo
+    {
         private readonly AccelByteSDK _sdk;
 
-        public UserInfo(AccelByteSDK sdk){
+        public UserInfo(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public GetUserInfoStatus.GetUserInfoStatusBuilder GetUserInfoStatusOp
+        {
+            get { return Operation.GetUserInfoStatus.Builder.SetWrapperObject(this); }
+        }
+        public SyncUserInfo.SyncUserInfoBuilder SyncUserInfoOp
+        {
+            get { return Operation.SyncUserInfo.Builder.SetWrapperObject(this); }
+        }
+        public InvalidateUserInfoCache.InvalidateUserInfoCacheBuilder InvalidateUserInfoCacheOp
+        {
+            get { return Operation.InvalidateUserInfoCache.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public List<Model.RetrieveUserInfoCacheStatusResponse>? GetUserInfoStatus(GetUserInfoStatus input) {
             var response = _sdk.RunRequest(input);
@@ -39,5 +56,41 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class UserInfo_OperationExtensions
+    {
+        public static List<Model.RetrieveUserInfoCacheStatusResponse>? Execute(
+            this GetUserInfoStatus.GetUserInfoStatusBuilder builder
+        )
+        {
+            GetUserInfoStatus op = builder.Build(
+            );
+
+            return ((UserInfo)builder.WrapperObject!).GetUserInfoStatus(op);
+        }
+
+        public static void Execute(
+            this SyncUserInfo.SyncUserInfoBuilder builder,
+            string namespace_
+        )
+        {
+            SyncUserInfo op = builder.Build(
+                namespace_
+            );
+
+            ((UserInfo)builder.WrapperObject!).SyncUserInfo(op);
+        }
+
+        public static void Execute(
+            this InvalidateUserInfoCache.InvalidateUserInfoCacheBuilder builder
+        )
+        {
+            InvalidateUserInfoCache op = builder.Build(
+            );
+
+            ((UserInfo)builder.WrapperObject!).InvalidateUserInfoCache(op);
+        }
+
     }
 }

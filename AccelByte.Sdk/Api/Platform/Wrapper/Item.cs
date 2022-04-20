@@ -8,12 +8,145 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Platform.Wrapper
 {
-    public class Item {
+    public class Item
+    {
         private readonly AccelByteSDK _sdk;
 
-        public Item(AccelByteSDK sdk){
+        public Item(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public SyncInGameItem.SyncInGameItemBuilder SyncInGameItemOp
+        {
+            get { return Operation.SyncInGameItem.Builder.SetWrapperObject(this); }
+        }
+        public CreateItem.CreateItemBuilder CreateItemOp
+        {
+            get { return Operation.CreateItem.Builder.SetWrapperObject(this); }
+        }
+        public GetItemByAppId.GetItemByAppIdBuilder GetItemByAppIdOp
+        {
+            get { return Operation.GetItemByAppId.Builder.SetWrapperObject(this); }
+        }
+        public QueryItems.QueryItemsBuilder QueryItemsOp
+        {
+            get { return Operation.QueryItems.Builder.SetWrapperObject(this); }
+        }
+        public ListBasicItemsByFeatures.ListBasicItemsByFeaturesBuilder ListBasicItemsByFeaturesOp
+        {
+            get { return Operation.ListBasicItemsByFeatures.Builder.SetWrapperObject(this); }
+        }
+        public GetItemBySku.GetItemBySkuBuilder GetItemBySkuOp
+        {
+            get { return Operation.GetItemBySku.Builder.SetWrapperObject(this); }
+        }
+        public GetLocaleItemBySku.GetLocaleItemBySkuBuilder GetLocaleItemBySkuOp
+        {
+            get { return Operation.GetLocaleItemBySku.Builder.SetWrapperObject(this); }
+        }
+        public GetItemIdBySku.GetItemIdBySkuBuilder GetItemIdBySkuOp
+        {
+            get { return Operation.GetItemIdBySku.Builder.SetWrapperObject(this); }
+        }
+        public BulkGetLocaleItems.BulkGetLocaleItemsBuilder BulkGetLocaleItemsOp
+        {
+            get { return Operation.BulkGetLocaleItems.Builder.SetWrapperObject(this); }
+        }
+        public SearchItems.SearchItemsBuilder SearchItemsOp
+        {
+            get { return Operation.SearchItems.Builder.SetWrapperObject(this); }
+        }
+        public QueryUncategorizedItems.QueryUncategorizedItemsBuilder QueryUncategorizedItemsOp
+        {
+            get { return Operation.QueryUncategorizedItems.Builder.SetWrapperObject(this); }
+        }
+        public GetItem.GetItemBuilder GetItemOp
+        {
+            get { return Operation.GetItem.Builder.SetWrapperObject(this); }
+        }
+        public UpdateItem.UpdateItemBuilder UpdateItemOp
+        {
+            get { return Operation.UpdateItem.Builder.SetWrapperObject(this); }
+        }
+        public DeleteItem.DeleteItemBuilder DeleteItemOp
+        {
+            get { return Operation.DeleteItem.Builder.SetWrapperObject(this); }
+        }
+        public AcquireItem.AcquireItemBuilder AcquireItemOp
+        {
+            get { return Operation.AcquireItem.Builder.SetWrapperObject(this); }
+        }
+        public GetApp.GetAppBuilder GetAppOp
+        {
+            get { return Operation.GetApp.Builder.SetWrapperObject(this); }
+        }
+        public UpdateApp.UpdateAppBuilder UpdateAppOp
+        {
+            get { return Operation.UpdateApp.Builder.SetWrapperObject(this); }
+        }
+        public DisableItem.DisableItemBuilder DisableItemOp
+        {
+            get { return Operation.DisableItem.Builder.SetWrapperObject(this); }
+        }
+        public GetItemDynamicData.GetItemDynamicDataBuilder GetItemDynamicDataOp
+        {
+            get { return Operation.GetItemDynamicData.Builder.SetWrapperObject(this); }
+        }
+        public EnableItem.EnableItemBuilder EnableItemOp
+        {
+            get { return Operation.EnableItem.Builder.SetWrapperObject(this); }
+        }
+        public FeatureItem.FeatureItemBuilder FeatureItemOp
+        {
+            get { return Operation.FeatureItem.Builder.SetWrapperObject(this); }
+        }
+        public DefeatureItem.DefeatureItemBuilder DefeatureItemOp
+        {
+            get { return Operation.DefeatureItem.Builder.SetWrapperObject(this); }
+        }
+        public GetLocaleItem.GetLocaleItemBuilder GetLocaleItemOp
+        {
+            get { return Operation.GetLocaleItem.Builder.SetWrapperObject(this); }
+        }
+        public ReturnItem.ReturnItemBuilder ReturnItemOp
+        {
+            get { return Operation.ReturnItem.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetItemByAppId.PublicGetItemByAppIdBuilder PublicGetItemByAppIdOp
+        {
+            get { return Operation.PublicGetItemByAppId.Builder.SetWrapperObject(this); }
+        }
+        public PublicQueryItems.PublicQueryItemsBuilder PublicQueryItemsOp
+        {
+            get { return Operation.PublicQueryItems.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetItemBySku.PublicGetItemBySkuBuilder PublicGetItemBySkuOp
+        {
+            get { return Operation.PublicGetItemBySku.Builder.SetWrapperObject(this); }
+        }
+        public PublicBulkGetItems.PublicBulkGetItemsBuilder PublicBulkGetItemsOp
+        {
+            get { return Operation.PublicBulkGetItems.Builder.SetWrapperObject(this); }
+        }
+        public PublicSearchItems.PublicSearchItemsBuilder PublicSearchItemsOp
+        {
+            get { return Operation.PublicSearchItems.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetApp.PublicGetAppBuilder PublicGetAppOp
+        {
+            get { return Operation.PublicGetApp.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetItemDynamicData.PublicGetItemDynamicDataBuilder PublicGetItemDynamicDataOp
+        {
+            get { return Operation.PublicGetItemDynamicData.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetItem.PublicGetItemBuilder PublicGetItemOp
+        {
+            get { return Operation.PublicGetItem.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public Model.FullItemInfo? SyncInGameItem(SyncInGameItem input) {
             var response = _sdk.RunRequest(input);
@@ -271,5 +404,469 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class Item_OperationExtensions
+    {
+        public static Model.FullItemInfo? Execute(
+            this SyncInGameItem.SyncInGameItemBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            SyncInGameItem op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return ((Item)builder.WrapperObject!).SyncInGameItem(op);
+        }
+
+        public static Model.FullItemInfo? Execute(
+            this CreateItem.CreateItemBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            CreateItem op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return ((Item)builder.WrapperObject!).CreateItem(op);
+        }
+
+        public static Model.FullItemInfo? Execute(
+            this GetItemByAppId.GetItemByAppIdBuilder builder,
+            string namespace_,
+            string appId
+        )
+        {
+            GetItemByAppId op = builder.Build(
+                namespace_,
+                appId
+            );
+
+            return ((Item)builder.WrapperObject!).GetItemByAppId(op);
+        }
+
+        public static Model.FullItemPagingSlicedResult? Execute(
+            this QueryItems.QueryItemsBuilder builder,
+            string namespace_
+        )
+        {
+            QueryItems op = builder.Build(
+                namespace_
+            );
+
+            return ((Item)builder.WrapperObject!).QueryItems(op);
+        }
+
+        public static List<Model.BasicItem>? Execute(
+            this ListBasicItemsByFeatures.ListBasicItemsByFeaturesBuilder builder,
+            string namespace_
+        )
+        {
+            ListBasicItemsByFeatures op = builder.Build(
+                namespace_
+            );
+
+            return ((Item)builder.WrapperObject!).ListBasicItemsByFeatures(op);
+        }
+
+        public static Model.FullItemInfo? Execute(
+            this GetItemBySku.GetItemBySkuBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            GetItemBySku op = builder.Build(
+                namespace_,
+                sku
+            );
+
+            return ((Item)builder.WrapperObject!).GetItemBySku(op);
+        }
+
+        public static Model.PopulatedItemInfo? Execute(
+            this GetLocaleItemBySku.GetLocaleItemBySkuBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            GetLocaleItemBySku op = builder.Build(
+                namespace_,
+                sku
+            );
+
+            return ((Item)builder.WrapperObject!).GetLocaleItemBySku(op);
+        }
+
+        public static Model.ItemId? Execute(
+            this GetItemIdBySku.GetItemIdBySkuBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            GetItemIdBySku op = builder.Build(
+                namespace_,
+                sku
+            );
+
+            return ((Item)builder.WrapperObject!).GetItemIdBySku(op);
+        }
+
+        public static List<Model.ItemInfo>? Execute(
+            this BulkGetLocaleItems.BulkGetLocaleItemsBuilder builder,
+            string namespace_,
+            string itemIds
+        )
+        {
+            BulkGetLocaleItems op = builder.Build(
+                namespace_,
+                itemIds
+            );
+
+            return ((Item)builder.WrapperObject!).BulkGetLocaleItems(op);
+        }
+
+        public static Model.FullItemPagingSlicedResult? Execute(
+            this SearchItems.SearchItemsBuilder builder,
+            string namespace_,
+            string keyword,
+            string language
+        )
+        {
+            SearchItems op = builder.Build(
+                namespace_,
+                keyword,
+                language
+            );
+
+            return ((Item)builder.WrapperObject!).SearchItems(op);
+        }
+
+        public static Model.FullItemPagingSlicedResult? Execute(
+            this QueryUncategorizedItems.QueryUncategorizedItemsBuilder builder,
+            string namespace_
+        )
+        {
+            QueryUncategorizedItems op = builder.Build(
+                namespace_
+            );
+
+            return ((Item)builder.WrapperObject!).QueryUncategorizedItems(op);
+        }
+
+        public static Model.FullItemInfo? Execute(
+            this GetItem.GetItemBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            GetItem op = builder.Build(
+                itemId,
+                namespace_
+            );
+
+            return ((Item)builder.WrapperObject!).GetItem(op);
+        }
+
+        public static Model.FullItemInfo? Execute(
+            this UpdateItem.UpdateItemBuilder builder,
+            string itemId,
+            string namespace_,
+            string storeId
+        )
+        {
+            UpdateItem op = builder.Build(
+                itemId,
+                namespace_,
+                storeId
+            );
+
+            return ((Item)builder.WrapperObject!).UpdateItem(op);
+        }
+
+        public static void Execute(
+            this DeleteItem.DeleteItemBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            DeleteItem op = builder.Build(
+                itemId,
+                namespace_
+            );
+
+            ((Item)builder.WrapperObject!).DeleteItem(op);
+        }
+
+        public static Model.ItemAcquireResult? Execute(
+            this AcquireItem.AcquireItemBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            AcquireItem op = builder.Build(
+                itemId,
+                namespace_
+            );
+
+            return ((Item)builder.WrapperObject!).AcquireItem(op);
+        }
+
+        public static Model.FullAppInfo? Execute(
+            this GetApp.GetAppBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            GetApp op = builder.Build(
+                itemId,
+                namespace_
+            );
+
+            return ((Item)builder.WrapperObject!).GetApp(op);
+        }
+
+        public static Model.FullAppInfo? Execute(
+            this UpdateApp.UpdateAppBuilder builder,
+            string itemId,
+            string namespace_,
+            string storeId
+        )
+        {
+            UpdateApp op = builder.Build(
+                itemId,
+                namespace_,
+                storeId
+            );
+
+            return ((Item)builder.WrapperObject!).UpdateApp(op);
+        }
+
+        public static Model.FullItemInfo? Execute(
+            this DisableItem.DisableItemBuilder builder,
+            string itemId,
+            string namespace_,
+            string storeId
+        )
+        {
+            DisableItem op = builder.Build(
+                itemId,
+                namespace_,
+                storeId
+            );
+
+            return ((Item)builder.WrapperObject!).DisableItem(op);
+        }
+
+        public static Model.ItemDynamicDataInfo? Execute(
+            this GetItemDynamicData.GetItemDynamicDataBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            GetItemDynamicData op = builder.Build(
+                itemId,
+                namespace_
+            );
+
+            return ((Item)builder.WrapperObject!).GetItemDynamicData(op);
+        }
+
+        public static Model.FullItemInfo? Execute(
+            this EnableItem.EnableItemBuilder builder,
+            string itemId,
+            string namespace_,
+            string storeId
+        )
+        {
+            EnableItem op = builder.Build(
+                itemId,
+                namespace_,
+                storeId
+            );
+
+            return ((Item)builder.WrapperObject!).EnableItem(op);
+        }
+
+        public static Model.FullItemInfo? Execute(
+            this FeatureItem.FeatureItemBuilder builder,
+            string feature,
+            string itemId,
+            string namespace_,
+            string storeId
+        )
+        {
+            FeatureItem op = builder.Build(
+                feature,
+                itemId,
+                namespace_,
+                storeId
+            );
+
+            return ((Item)builder.WrapperObject!).FeatureItem(op);
+        }
+
+        public static Model.FullItemInfo? Execute(
+            this DefeatureItem.DefeatureItemBuilder builder,
+            string feature,
+            string itemId,
+            string namespace_,
+            string storeId
+        )
+        {
+            DefeatureItem op = builder.Build(
+                feature,
+                itemId,
+                namespace_,
+                storeId
+            );
+
+            return ((Item)builder.WrapperObject!).DefeatureItem(op);
+        }
+
+        public static Model.PopulatedItemInfo? Execute(
+            this GetLocaleItem.GetLocaleItemBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            GetLocaleItem op = builder.Build(
+                itemId,
+                namespace_
+            );
+
+            return ((Item)builder.WrapperObject!).GetLocaleItem(op);
+        }
+
+        public static void Execute(
+            this ReturnItem.ReturnItemBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            ReturnItem op = builder.Build(
+                itemId,
+                namespace_
+            );
+
+            ((Item)builder.WrapperObject!).ReturnItem(op);
+        }
+
+        public static Model.ItemInfo? Execute(
+            this PublicGetItemByAppId.PublicGetItemByAppIdBuilder builder,
+            string namespace_,
+            string appId
+        )
+        {
+            PublicGetItemByAppId op = builder.Build(
+                namespace_,
+                appId
+            );
+
+            return ((Item)builder.WrapperObject!).PublicGetItemByAppId(op);
+        }
+
+        public static Model.ItemPagingSlicedResult? Execute(
+            this PublicQueryItems.PublicQueryItemsBuilder builder,
+            string namespace_
+        )
+        {
+            PublicQueryItems op = builder.Build(
+                namespace_
+            );
+
+            return ((Item)builder.WrapperObject!).PublicQueryItems(op);
+        }
+
+        public static Model.ItemInfo? Execute(
+            this PublicGetItemBySku.PublicGetItemBySkuBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            PublicGetItemBySku op = builder.Build(
+                namespace_,
+                sku
+            );
+
+            return ((Item)builder.WrapperObject!).PublicGetItemBySku(op);
+        }
+
+        public static List<Model.ItemInfo>? Execute(
+            this PublicBulkGetItems.PublicBulkGetItemsBuilder builder,
+            string namespace_,
+            string itemIds
+        )
+        {
+            PublicBulkGetItems op = builder.Build(
+                namespace_,
+                itemIds
+            );
+
+            return ((Item)builder.WrapperObject!).PublicBulkGetItems(op);
+        }
+
+        public static Model.ItemPagingSlicedResult? Execute(
+            this PublicSearchItems.PublicSearchItemsBuilder builder,
+            string namespace_,
+            string keyword,
+            string language
+        )
+        {
+            PublicSearchItems op = builder.Build(
+                namespace_,
+                keyword,
+                language
+            );
+
+            return ((Item)builder.WrapperObject!).PublicSearchItems(op);
+        }
+
+        public static Model.AppInfo? Execute(
+            this PublicGetApp.PublicGetAppBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            PublicGetApp op = builder.Build(
+                itemId,
+                namespace_
+            );
+
+            return ((Item)builder.WrapperObject!).PublicGetApp(op);
+        }
+
+        public static Model.ItemDynamicDataInfo? Execute(
+            this PublicGetItemDynamicData.PublicGetItemDynamicDataBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            PublicGetItemDynamicData op = builder.Build(
+                itemId,
+                namespace_
+            );
+
+            return ((Item)builder.WrapperObject!).PublicGetItemDynamicData(op);
+        }
+
+        public static Model.PopulatedItemInfo? Execute(
+            this PublicGetItem.PublicGetItemBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            PublicGetItem op = builder.Build(
+                itemId,
+                namespace_
+            );
+
+            return ((Item)builder.WrapperObject!).PublicGetItem(op);
+        }
+
     }
 }

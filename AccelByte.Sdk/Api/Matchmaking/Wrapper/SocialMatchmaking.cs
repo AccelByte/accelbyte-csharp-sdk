@@ -8,12 +8,21 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
 {
-    public class SocialMatchmaking {
+    public class SocialMatchmaking
+    {
         private readonly AccelByteSDK _sdk;
 
-        public SocialMatchmaking(AccelByteSDK sdk){
+        public SocialMatchmaking(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public UpdatePlayTimeWeight.UpdatePlayTimeWeightBuilder UpdatePlayTimeWeightOp
+        {
+            get { return Operation.UpdatePlayTimeWeight.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public Model.ModelsUpdatePlayerPlaytimeWeightResponse? UpdatePlayTimeWeight(UpdatePlayTimeWeight input) {
             var response = _sdk.RunRequest(input);
@@ -23,5 +32,23 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class SocialMatchmaking_OperationExtensions
+    {
+        public static Model.ModelsUpdatePlayerPlaytimeWeightResponse? Execute(
+            this UpdatePlayTimeWeight.UpdatePlayTimeWeightBuilder builder,
+            ModelsUpdatePlayTimeWeightRequest body,
+            string namespace_
+        )
+        {
+            UpdatePlayTimeWeight op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((SocialMatchmaking)builder.WrapperObject!).UpdatePlayTimeWeight(op);
+        }
+
     }
 }

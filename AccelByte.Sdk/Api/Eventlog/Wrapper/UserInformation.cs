@@ -8,12 +8,32 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Eventlog.Wrapper
 {
-    public class UserInformation {
+    public class UserInformation
+    {
         private readonly AccelByteSDK _sdk;
 
-        public UserInformation(AccelByteSDK sdk){
+        public UserInformation(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public GetUserActivitiesHandler.GetUserActivitiesHandlerBuilder GetUserActivitiesHandlerOp
+        {
+            get { return Operation.GetUserActivitiesHandler.Builder.SetWrapperObject(this); }
+        }
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public DeleteUserActivitiesHandler.DeleteUserActivitiesHandlerBuilder DeleteUserActivitiesHandlerOp
+        {
+            get { return Operation.DeleteUserActivitiesHandler.Builder.SetWrapperObject(this); }
+        }
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public LastUserActivityTimeHandler.LastUserActivityTimeHandlerBuilder LastUserActivityTimeHandlerOp
+        {
+            get { return Operation.LastUserActivityTimeHandler.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
@@ -48,5 +68,56 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
+    }
+
+    public static class UserInformation_OperationExtensions
+    {
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public static Model.ModelsEventResponse? Execute(
+            this GetUserActivitiesHandler.GetUserActivitiesHandlerBuilder builder,
+            string namespace_,
+            string userId,
+            long pageSize
+        )
+        {
+            GetUserActivitiesHandler op = builder.Build(
+                namespace_,
+                userId,
+                pageSize
+            );
+
+            return ((UserInformation)builder.WrapperObject!).GetUserActivitiesHandler(op);
+        }
+
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public static void Execute(
+            this DeleteUserActivitiesHandler.DeleteUserActivitiesHandlerBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            DeleteUserActivitiesHandler op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            ((UserInformation)builder.WrapperObject!).DeleteUserActivitiesHandler(op);
+        }
+
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public static Model.ModelsUserLastActivity? Execute(
+            this LastUserActivityTimeHandler.LastUserActivityTimeHandlerBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            LastUserActivityTimeHandler op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((UserInformation)builder.WrapperObject!).LastUserActivityTimeHandler(op);
+        }
+
     }
 }

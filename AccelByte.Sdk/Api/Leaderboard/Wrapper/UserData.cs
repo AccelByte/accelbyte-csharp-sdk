@@ -8,12 +8,21 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
 {
-    public class UserData {
+    public class UserData
+    {
         private readonly AccelByteSDK _sdk;
 
-        public UserData(AccelByteSDK sdk){
+        public UserData(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public GetUserLeaderboardRankingsAdminV1.GetUserLeaderboardRankingsAdminV1Builder GetUserLeaderboardRankingsAdminV1Op
+        {
+            get { return Operation.GetUserLeaderboardRankingsAdminV1.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public Model.ModelsGetAllUserLeaderboardsResp? GetUserLeaderboardRankingsAdminV1(GetUserLeaderboardRankingsAdminV1 input) {
             var response = _sdk.RunRequest(input);
@@ -23,5 +32,23 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class UserData_OperationExtensions
+    {
+        public static Model.ModelsGetAllUserLeaderboardsResp? Execute(
+            this GetUserLeaderboardRankingsAdminV1.GetUserLeaderboardRankingsAdminV1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserLeaderboardRankingsAdminV1 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((UserData)builder.WrapperObject!).GetUserLeaderboardRankingsAdminV1(op);
+        }
+
     }
 }

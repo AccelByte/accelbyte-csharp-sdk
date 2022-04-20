@@ -8,12 +8,33 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Iam.Wrapper
 {
-    public class InputValidations {
+    public class InputValidations
+    {
         private readonly AccelByteSDK _sdk;
 
-        public InputValidations(AccelByteSDK sdk){
+        public InputValidations(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public AdminGetInputValidations.AdminGetInputValidationsBuilder AdminGetInputValidationsOp
+        {
+            get { return Operation.AdminGetInputValidations.Builder.SetWrapperObject(this); }
+        }
+        public AdminUpdateInputValidations.AdminUpdateInputValidationsBuilder AdminUpdateInputValidationsOp
+        {
+            get { return Operation.AdminUpdateInputValidations.Builder.SetWrapperObject(this); }
+        }
+        public AdminResetInputValidations.AdminResetInputValidationsBuilder AdminResetInputValidationsOp
+        {
+            get { return Operation.AdminResetInputValidations.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetInputValidations.PublicGetInputValidationsBuilder PublicGetInputValidationsOp
+        {
+            get { return Operation.PublicGetInputValidations.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public Model.ModelInputValidationsResponse? AdminGetInputValidations(AdminGetInputValidations input) {
             var response = _sdk.RunRequest(input);
@@ -47,5 +68,53 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class InputValidations_OperationExtensions
+    {
+        public static Model.ModelInputValidationsResponse? Execute(
+            this AdminGetInputValidations.AdminGetInputValidationsBuilder builder
+        )
+        {
+            AdminGetInputValidations op = builder.Build(
+            );
+
+            return ((InputValidations)builder.WrapperObject!).AdminGetInputValidations(op);
+        }
+
+        public static void Execute(
+            this AdminUpdateInputValidations.AdminUpdateInputValidationsBuilder builder,
+            List<ModelInputValidationUpdatePayload> body
+        )
+        {
+            AdminUpdateInputValidations op = builder.Build(
+                body
+            );
+
+            ((InputValidations)builder.WrapperObject!).AdminUpdateInputValidations(op);
+        }
+
+        public static void Execute(
+            this AdminResetInputValidations.AdminResetInputValidationsBuilder builder,
+            string field
+        )
+        {
+            AdminResetInputValidations op = builder.Build(
+                field
+            );
+
+            ((InputValidations)builder.WrapperObject!).AdminResetInputValidations(op);
+        }
+
+        public static Model.ModelInputValidationsPublicResponse? Execute(
+            this PublicGetInputValidations.PublicGetInputValidationsBuilder builder
+        )
+        {
+            PublicGetInputValidations op = builder.Build(
+            );
+
+            return ((InputValidations)builder.WrapperObject!).PublicGetInputValidations(op);
+        }
+
     }
 }

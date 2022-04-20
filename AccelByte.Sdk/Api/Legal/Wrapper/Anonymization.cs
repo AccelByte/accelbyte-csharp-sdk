@@ -8,12 +8,21 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Legal.Wrapper
 {
-    public class Anonymization {
+    public class Anonymization
+    {
         private readonly AccelByteSDK _sdk;
 
-        public Anonymization(AccelByteSDK sdk){
+        public Anonymization(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public AnonymizeUserAgreement.AnonymizeUserAgreementBuilder AnonymizeUserAgreementOp
+        {
+            get { return Operation.AnonymizeUserAgreement.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public void AnonymizeUserAgreement(AnonymizeUserAgreement input) {
             var response = _sdk.RunRequest(input);
@@ -23,5 +32,21 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class Anonymization_OperationExtensions
+    {
+        public static void Execute(
+            this AnonymizeUserAgreement.AnonymizeUserAgreementBuilder builder,
+            string userId
+        )
+        {
+            AnonymizeUserAgreement op = builder.Build(
+                userId
+            );
+
+            ((Anonymization)builder.WrapperObject!).AnonymizeUserAgreement(op);
+        }
+
     }
 }

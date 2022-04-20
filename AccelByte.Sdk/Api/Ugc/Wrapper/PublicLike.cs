@@ -8,12 +8,25 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Ugc.Wrapper
 {
-    public class PublicLike {
+    public class PublicLike
+    {
         private readonly AccelByteSDK _sdk;
 
-        public PublicLike(AccelByteSDK sdk){
+        public PublicLike(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public GetLikedContent.GetLikedContentBuilder GetLikedContentOp
+        {
+            get { return Operation.GetLikedContent.Builder.SetWrapperObject(this); }
+        }
+        public UpdateContentLikeStatus.UpdateContentLikeStatusBuilder UpdateContentLikeStatusOp
+        {
+            get { return Operation.UpdateContentLikeStatus.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public Model.ModelsPaginatedContentDownloadResponse? GetLikedContent(GetLikedContent input) {
             var response = _sdk.RunRequest(input);
@@ -31,5 +44,37 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class PublicLike_OperationExtensions
+    {
+        public static Model.ModelsPaginatedContentDownloadResponse? Execute(
+            this GetLikedContent.GetLikedContentBuilder builder,
+            string namespace_
+        )
+        {
+            GetLikedContent op = builder.Build(
+                namespace_
+            );
+
+            return ((PublicLike)builder.WrapperObject!).GetLikedContent(op);
+        }
+
+        public static Model.ModelsContentLikeResponse? Execute(
+            this UpdateContentLikeStatus.UpdateContentLikeStatusBuilder builder,
+            ModelsContentLikeRequest body,
+            string contentId,
+            string namespace_
+        )
+        {
+            UpdateContentLikeStatus op = builder.Build(
+                body,
+                contentId,
+                namespace_
+            );
+
+            return ((PublicLike)builder.WrapperObject!).UpdateContentLikeStatus(op);
+        }
+
     }
 }

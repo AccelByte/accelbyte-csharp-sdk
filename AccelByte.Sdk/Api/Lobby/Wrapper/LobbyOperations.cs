@@ -8,12 +8,29 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Lobby.Wrapper
 {
-    public class LobbyOperations {
+    public class LobbyOperations
+    {
         private readonly AccelByteSDK _sdk;
 
-        public LobbyOperations(AccelByteSDK sdk){
+        public LobbyOperations(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public AdminUpdatePartyAttributesV1.AdminUpdatePartyAttributesV1Builder AdminUpdatePartyAttributesV1Op
+        {
+            get { return Operation.AdminUpdatePartyAttributesV1.Builder.SetWrapperObject(this); }
+        }
+        public AdminJoinPartyV1.AdminJoinPartyV1Builder AdminJoinPartyV1Op
+        {
+            get { return Operation.AdminJoinPartyV1.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetMessages.PublicGetMessagesBuilder PublicGetMessagesOp
+        {
+            get { return Operation.PublicGetMessages.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public Model.ModelsPartyData? AdminUpdatePartyAttributesV1(AdminUpdatePartyAttributesV1 input) {
             var response = _sdk.RunRequest(input);
@@ -39,5 +56,51 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class LobbyOperations_OperationExtensions
+    {
+        public static Model.ModelsPartyData? Execute(
+            this AdminUpdatePartyAttributesV1.AdminUpdatePartyAttributesV1Builder builder,
+            ModelsPartyPUTCustomAttributesRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            AdminUpdatePartyAttributesV1 op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            return ((LobbyOperations)builder.WrapperObject!).AdminUpdatePartyAttributesV1(op);
+        }
+
+        public static void Execute(
+            this AdminJoinPartyV1.AdminJoinPartyV1Builder builder,
+            string namespace_,
+            string partyId,
+            string userId
+        )
+        {
+            AdminJoinPartyV1 op = builder.Build(
+                namespace_,
+                partyId,
+                userId
+            );
+
+            ((LobbyOperations)builder.WrapperObject!).AdminJoinPartyV1(op);
+        }
+
+        public static List<Model.LogAppMessageDeclaration>? Execute(
+            this PublicGetMessages.PublicGetMessagesBuilder builder
+        )
+        {
+            PublicGetMessages op = builder.Build(
+            );
+
+            return ((LobbyOperations)builder.WrapperObject!).PublicGetMessages(op);
+        }
+
     }
 }

@@ -8,12 +8,33 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Ugc.Wrapper
 {
-    public class AdminTag {
+    public class AdminTag
+    {
         private readonly AccelByteSDK _sdk;
 
-        public AdminTag(AccelByteSDK sdk){
+        public AdminTag(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public AdminGetTag.AdminGetTagBuilder AdminGetTagOp
+        {
+            get { return Operation.AdminGetTag.Builder.SetWrapperObject(this); }
+        }
+        public AdminCreateTag.AdminCreateTagBuilder AdminCreateTagOp
+        {
+            get { return Operation.AdminCreateTag.Builder.SetWrapperObject(this); }
+        }
+        public AdminUpdateTag.AdminUpdateTagBuilder AdminUpdateTagOp
+        {
+            get { return Operation.AdminUpdateTag.Builder.SetWrapperObject(this); }
+        }
+        public AdminDeleteTag.AdminDeleteTagBuilder AdminDeleteTagOp
+        {
+            get { return Operation.AdminDeleteTag.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public Model.ModelsPaginatedGetTagResponse? AdminGetTag(AdminGetTag input) {
             var response = _sdk.RunRequest(input);
@@ -47,5 +68,65 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class AdminTag_OperationExtensions
+    {
+        public static Model.ModelsPaginatedGetTagResponse? Execute(
+            this AdminGetTag.AdminGetTagBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetTag op = builder.Build(
+                namespace_
+            );
+
+            return ((AdminTag)builder.WrapperObject!).AdminGetTag(op);
+        }
+
+        public static Model.ModelsCreateTagResponse? Execute(
+            this AdminCreateTag.AdminCreateTagBuilder builder,
+            ModelsCreateTagRequest body,
+            string namespace_
+        )
+        {
+            AdminCreateTag op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((AdminTag)builder.WrapperObject!).AdminCreateTag(op);
+        }
+
+        public static Model.ModelsCreateTagResponse? Execute(
+            this AdminUpdateTag.AdminUpdateTagBuilder builder,
+            ModelsCreateTagRequest body,
+            string namespace_,
+            string tagId
+        )
+        {
+            AdminUpdateTag op = builder.Build(
+                body,
+                namespace_,
+                tagId
+            );
+
+            return ((AdminTag)builder.WrapperObject!).AdminUpdateTag(op);
+        }
+
+        public static void Execute(
+            this AdminDeleteTag.AdminDeleteTagBuilder builder,
+            string namespace_,
+            string tagId
+        )
+        {
+            AdminDeleteTag op = builder.Build(
+                namespace_,
+                tagId
+            );
+
+            ((AdminTag)builder.WrapperObject!).AdminDeleteTag(op);
+        }
+
     }
 }

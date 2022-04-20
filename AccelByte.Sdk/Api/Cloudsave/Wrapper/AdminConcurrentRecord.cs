@@ -8,12 +8,25 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
 {
-    public class AdminConcurrentRecord {
+    public class AdminConcurrentRecord
+    {
         private readonly AccelByteSDK _sdk;
 
-        public AdminConcurrentRecord(AccelByteSDK sdk){
+        public AdminConcurrentRecord(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public AdminPutGameRecordConcurrentHandlerV1.AdminPutGameRecordConcurrentHandlerV1Builder AdminPutGameRecordConcurrentHandlerV1Op
+        {
+            get { return Operation.AdminPutGameRecordConcurrentHandlerV1.Builder.SetWrapperObject(this); }
+        }
+        public AdminPutPlayerPublicRecordConcurrentHandlerV1.AdminPutPlayerPublicRecordConcurrentHandlerV1Builder AdminPutPlayerPublicRecordConcurrentHandlerV1Op
+        {
+            get { return Operation.AdminPutPlayerPublicRecordConcurrentHandlerV1.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public void AdminPutGameRecordConcurrentHandlerV1(AdminPutGameRecordConcurrentHandlerV1 input) {
             var response = _sdk.RunRequest(input);
@@ -31,5 +44,43 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class AdminConcurrentRecord_OperationExtensions
+    {
+        public static void Execute(
+            this AdminPutGameRecordConcurrentHandlerV1.AdminPutGameRecordConcurrentHandlerV1Builder builder,
+            ModelsAdminConcurrentRecordRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            AdminPutGameRecordConcurrentHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_
+            );
+
+            ((AdminConcurrentRecord)builder.WrapperObject!).AdminPutGameRecordConcurrentHandlerV1(op);
+        }
+
+        public static void Execute(
+            this AdminPutPlayerPublicRecordConcurrentHandlerV1.AdminPutPlayerPublicRecordConcurrentHandlerV1Builder builder,
+            ModelsAdminConcurrentRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminPutPlayerPublicRecordConcurrentHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            ((AdminConcurrentRecord)builder.WrapperObject!).AdminPutPlayerPublicRecordConcurrentHandlerV1(op);
+        }
+
     }
 }

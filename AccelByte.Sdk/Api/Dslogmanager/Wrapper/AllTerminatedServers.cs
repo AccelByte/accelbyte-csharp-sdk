@@ -8,12 +8,25 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
 {
-    public class AllTerminatedServers {
+    public class AllTerminatedServers
+    {
         private readonly AccelByteSDK _sdk;
 
-        public AllTerminatedServers(AccelByteSDK sdk){
+        public AllTerminatedServers(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public BatchDownloadServerLogs.BatchDownloadServerLogsBuilder BatchDownloadServerLogsOp
+        {
+            get { return Operation.BatchDownloadServerLogs.Builder.SetWrapperObject(this); }
+        }
+        public ListAllTerminatedServers.ListAllTerminatedServersBuilder ListAllTerminatedServersOp
+        {
+            get { return Operation.ListAllTerminatedServers.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public void BatchDownloadServerLogs(BatchDownloadServerLogs input) {
             var response = _sdk.RunRequest(input);
@@ -31,5 +44,31 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class AllTerminatedServers_OperationExtensions
+    {
+        public static void Execute(
+            this BatchDownloadServerLogs.BatchDownloadServerLogsBuilder builder,
+            ModelsBatchDownloadLogsRequest body
+        )
+        {
+            BatchDownloadServerLogs op = builder.Build(
+                body
+            );
+
+            ((AllTerminatedServers)builder.WrapperObject!).BatchDownloadServerLogs(op);
+        }
+
+        public static Model.ModelsListTerminatedServersResponse? Execute(
+            this ListAllTerminatedServers.ListAllTerminatedServersBuilder builder
+        )
+        {
+            ListAllTerminatedServers op = builder.Build(
+            );
+
+            return ((AllTerminatedServers)builder.WrapperObject!).ListAllTerminatedServers(op);
+        }
+
     }
 }

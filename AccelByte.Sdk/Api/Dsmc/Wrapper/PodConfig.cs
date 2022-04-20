@@ -8,12 +8,37 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Dsmc.Wrapper
 {
-    public class PodConfig {
+    public class PodConfig
+    {
         private readonly AccelByteSDK _sdk;
 
-        public PodConfig(AccelByteSDK sdk){
+        public PodConfig(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public GetAllPodConfig.GetAllPodConfigBuilder GetAllPodConfigOp
+        {
+            get { return Operation.GetAllPodConfig.Builder.SetWrapperObject(this); }
+        }
+        public GetPodConfig.GetPodConfigBuilder GetPodConfigOp
+        {
+            get { return Operation.GetPodConfig.Builder.SetWrapperObject(this); }
+        }
+        public CreatePodConfig.CreatePodConfigBuilder CreatePodConfigOp
+        {
+            get { return Operation.CreatePodConfig.Builder.SetWrapperObject(this); }
+        }
+        public DeletePodConfig.DeletePodConfigBuilder DeletePodConfigOp
+        {
+            get { return Operation.DeletePodConfig.Builder.SetWrapperObject(this); }
+        }
+        public UpdatePodConfig.UpdatePodConfigBuilder UpdatePodConfigOp
+        {
+            get { return Operation.UpdatePodConfig.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public Model.ModelsListPodConfigResponse? GetAllPodConfig(GetAllPodConfig input) {
             var response = _sdk.RunRequest(input);
@@ -55,5 +80,81 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class PodConfig_OperationExtensions
+    {
+        public static Model.ModelsListPodConfigResponse? Execute(
+            this GetAllPodConfig.GetAllPodConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetAllPodConfig op = builder.Build(
+                namespace_
+            );
+
+            return ((PodConfig)builder.WrapperObject!).GetAllPodConfig(op);
+        }
+
+        public static Model.ModelsPodConfigRecord? Execute(
+            this GetPodConfig.GetPodConfigBuilder builder,
+            string name,
+            string namespace_
+        )
+        {
+            GetPodConfig op = builder.Build(
+                name,
+                namespace_
+            );
+
+            return ((PodConfig)builder.WrapperObject!).GetPodConfig(op);
+        }
+
+        public static Model.ModelsPodConfigRecord? Execute(
+            this CreatePodConfig.CreatePodConfigBuilder builder,
+            ModelsCreatePodConfigRequest body,
+            string name,
+            string namespace_
+        )
+        {
+            CreatePodConfig op = builder.Build(
+                body,
+                name,
+                namespace_
+            );
+
+            return ((PodConfig)builder.WrapperObject!).CreatePodConfig(op);
+        }
+
+        public static void Execute(
+            this DeletePodConfig.DeletePodConfigBuilder builder,
+            string name,
+            string namespace_
+        )
+        {
+            DeletePodConfig op = builder.Build(
+                name,
+                namespace_
+            );
+
+            ((PodConfig)builder.WrapperObject!).DeletePodConfig(op);
+        }
+
+        public static Model.ModelsPodConfigRecord? Execute(
+            this UpdatePodConfig.UpdatePodConfigBuilder builder,
+            ModelsUpdatePodConfigRequest body,
+            string name,
+            string namespace_
+        )
+        {
+            UpdatePodConfig op = builder.Build(
+                body,
+                name,
+                namespace_
+            );
+
+            return ((PodConfig)builder.WrapperObject!).UpdatePodConfig(op);
+        }
+
     }
 }

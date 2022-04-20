@@ -8,12 +8,21 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Legal.Wrapper
 {
-    public class Utility {
+    public class Utility
+    {
         private readonly AccelByteSDK _sdk;
 
-        public Utility(AccelByteSDK sdk){
+        public Utility(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public CheckReadiness.CheckReadinessBuilder CheckReadinessOp
+        {
+            get { return Operation.CheckReadiness.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public Model.LegalReadinessStatusResponse? CheckReadiness(CheckReadiness input) {
             var response = _sdk.RunRequest(input);
@@ -23,5 +32,19 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class Utility_OperationExtensions
+    {
+        public static Model.LegalReadinessStatusResponse? Execute(
+            this CheckReadiness.CheckReadinessBuilder builder
+        )
+        {
+            CheckReadiness op = builder.Build(
+            );
+
+            return ((Utility)builder.WrapperObject!).CheckReadiness(op);
+        }
+
     }
 }

@@ -8,12 +8,53 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Basic.Wrapper
 {
-    public class Namespace {
+    public class Namespace
+    {
         private readonly AccelByteSDK _sdk;
 
-        public Namespace(AccelByteSDK sdk){
+        public Namespace(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public GetNamespaces.GetNamespacesBuilder GetNamespacesOp
+        {
+            get { return Operation.GetNamespaces.Builder.SetWrapperObject(this); }
+        }
+        public CreateNamespace.CreateNamespaceBuilder CreateNamespaceOp
+        {
+            get { return Operation.CreateNamespace.Builder.SetWrapperObject(this); }
+        }
+        public GetNamespace.GetNamespaceBuilder GetNamespaceOp
+        {
+            get { return Operation.GetNamespace.Builder.SetWrapperObject(this); }
+        }
+        public DeleteNamespace.DeleteNamespaceBuilder DeleteNamespaceOp
+        {
+            get { return Operation.DeleteNamespace.Builder.SetWrapperObject(this); }
+        }
+        public UpdateNamespace.UpdateNamespaceBuilder UpdateNamespaceOp
+        {
+            get { return Operation.UpdateNamespace.Builder.SetWrapperObject(this); }
+        }
+        public GetNamespacePublisher.GetNamespacePublisherBuilder GetNamespacePublisherOp
+        {
+            get { return Operation.GetNamespacePublisher.Builder.SetWrapperObject(this); }
+        }
+        public ChangeNamespaceStatus.ChangeNamespaceStatusBuilder ChangeNamespaceStatusOp
+        {
+            get { return Operation.ChangeNamespaceStatus.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetNamespaces.PublicGetNamespacesBuilder PublicGetNamespacesOp
+        {
+            get { return Operation.PublicGetNamespaces.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetNamespacePublisher.PublicGetNamespacePublisherBuilder PublicGetNamespacePublisherOp
+        {
+            get { return Operation.PublicGetNamespacePublisher.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public List<Model.NamespaceInfo>? GetNamespaces(GetNamespaces input) {
             var response = _sdk.RunRequest(input);
@@ -87,5 +128,111 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class Namespace_OperationExtensions
+    {
+        public static List<Model.NamespaceInfo>? Execute(
+            this GetNamespaces.GetNamespacesBuilder builder
+        )
+        {
+            GetNamespaces op = builder.Build(
+            );
+
+            return ((Namespace)builder.WrapperObject!).GetNamespaces(op);
+        }
+
+        public static Model.NamespaceInfo? Execute(
+            this CreateNamespace.CreateNamespaceBuilder builder
+        )
+        {
+            CreateNamespace op = builder.Build(
+            );
+
+            return ((Namespace)builder.WrapperObject!).CreateNamespace(op);
+        }
+
+        public static Model.NamespaceInfo? Execute(
+            this GetNamespace.GetNamespaceBuilder builder,
+            string namespace_
+        )
+        {
+            GetNamespace op = builder.Build(
+                namespace_
+            );
+
+            return ((Namespace)builder.WrapperObject!).GetNamespace(op);
+        }
+
+        public static Model.NamespaceInfo? Execute(
+            this DeleteNamespace.DeleteNamespaceBuilder builder,
+            string namespace_
+        )
+        {
+            DeleteNamespace op = builder.Build(
+                namespace_
+            );
+
+            return ((Namespace)builder.WrapperObject!).DeleteNamespace(op);
+        }
+
+        public static Model.NamespaceInfo? Execute(
+            this UpdateNamespace.UpdateNamespaceBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateNamespace op = builder.Build(
+                namespace_
+            );
+
+            return ((Namespace)builder.WrapperObject!).UpdateNamespace(op);
+        }
+
+        public static Model.NamespacePublisherInfo? Execute(
+            this GetNamespacePublisher.GetNamespacePublisherBuilder builder,
+            string namespace_
+        )
+        {
+            GetNamespacePublisher op = builder.Build(
+                namespace_
+            );
+
+            return ((Namespace)builder.WrapperObject!).GetNamespacePublisher(op);
+        }
+
+        public static Model.NamespaceInfo? Execute(
+            this ChangeNamespaceStatus.ChangeNamespaceStatusBuilder builder,
+            string namespace_
+        )
+        {
+            ChangeNamespaceStatus op = builder.Build(
+                namespace_
+            );
+
+            return ((Namespace)builder.WrapperObject!).ChangeNamespaceStatus(op);
+        }
+
+        public static List<Model.NamespaceInfo>? Execute(
+            this PublicGetNamespaces.PublicGetNamespacesBuilder builder
+        )
+        {
+            PublicGetNamespaces op = builder.Build(
+            );
+
+            return ((Namespace)builder.WrapperObject!).PublicGetNamespaces(op);
+        }
+
+        public static Model.NamespacePublisherInfo? Execute(
+            this PublicGetNamespacePublisher.PublicGetNamespacePublisherBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetNamespacePublisher op = builder.Build(
+                namespace_
+            );
+
+            return ((Namespace)builder.WrapperObject!).PublicGetNamespacePublisher(op);
+        }
+
     }
 }

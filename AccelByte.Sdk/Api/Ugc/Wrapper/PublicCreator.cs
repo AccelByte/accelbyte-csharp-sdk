@@ -8,12 +8,21 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Ugc.Wrapper
 {
-    public class PublicCreator {
+    public class PublicCreator
+    {
         private readonly AccelByteSDK _sdk;
 
-        public PublicCreator(AccelByteSDK sdk){
+        public PublicCreator(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public GetCreator.GetCreatorBuilder GetCreatorOp
+        {
+            get { return Operation.GetCreator.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public Model.ModelsCreatorOverviewResponse? GetCreator(GetCreator input) {
             var response = _sdk.RunRequest(input);
@@ -23,5 +32,23 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class PublicCreator_OperationExtensions
+    {
+        public static Model.ModelsCreatorOverviewResponse? Execute(
+            this GetCreator.GetCreatorBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetCreator op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((PublicCreator)builder.WrapperObject!).GetCreator(op);
+        }
+
     }
 }

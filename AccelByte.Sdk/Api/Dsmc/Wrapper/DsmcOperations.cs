@@ -8,12 +8,21 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Dsmc.Wrapper
 {
-    public class DsmcOperations {
+    public class DsmcOperations
+    {
         private readonly AccelByteSDK _sdk;
 
-        public DsmcOperations(AccelByteSDK sdk){
+        public DsmcOperations(AccelByteSDK sdk)
+        {
             _sdk = sdk;
         }
+
+        #region Operation Builders
+        public PublicGetMessages.PublicGetMessagesBuilder PublicGetMessagesOp
+        {
+            get { return Operation.PublicGetMessages.Builder.SetWrapperObject(this); }
+        }
+        #endregion
         
         public List<Model.LogAppMessageDeclaration>? PublicGetMessages(PublicGetMessages input) {
             var response = _sdk.RunRequest(input);
@@ -23,5 +32,19 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+    }
+
+    public static class DsmcOperations_OperationExtensions
+    {
+        public static List<Model.LogAppMessageDeclaration>? Execute(
+            this PublicGetMessages.PublicGetMessagesBuilder builder
+        )
+        {
+            PublicGetMessages op = builder.Build(
+            );
+
+            return ((DsmcOperations)builder.WrapperObject!).PublicGetMessages(op);
+        }
+
     }
 }
