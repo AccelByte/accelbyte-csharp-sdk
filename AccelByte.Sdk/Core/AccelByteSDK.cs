@@ -164,7 +164,7 @@ namespace AccelByte.Sdk.Core
                 case Operation.SECURITY_COOKIE:
                     if (!string.IsNullOrEmpty(Configuration.TokenRepository.GetToken()))
                     {
-                        operation.Cookies["access_token"] = $"{Operation.SECURITY_BEARER} {Configuration.TokenRepository.GetToken()}";
+                        operation.Cookies["access_token"] = Configuration.TokenRepository.GetToken();
                     }
                     break;
             }

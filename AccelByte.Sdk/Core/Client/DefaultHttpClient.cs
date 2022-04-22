@@ -8,6 +8,7 @@ using System.Net.Http.Headers;
 using System.Net.Mime;
 using System.Text;
 using System.Text.Json;
+using System.Web;
 
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
@@ -146,7 +147,7 @@ namespace AccelByte.Sdk.Core.Client
                 {
                     List<string> cEntries = new List<string>();
                     foreach (var c in operation.Cookies)
-                        cEntries.Add(c.Key + "=" + c.Value);
+                        cEntries.Add(c.Key + "=" + HttpUtility.UrlEncode(c.Value, Encoding.UTF8));
                     request.Headers.TryAddWithoutValidation("Cookie", String.Join("; ", cEntries));
                 }
 

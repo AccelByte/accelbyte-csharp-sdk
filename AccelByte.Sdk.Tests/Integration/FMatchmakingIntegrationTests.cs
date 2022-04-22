@@ -17,7 +17,7 @@ using AccelByte.Sdk.Api.Lobby.Model;
 
 namespace AccelByte.Sdk.Tests.Integration
 {
-    [TestFixture(Category = "Integration")]
+    [TestFixture(Category = "FluentIntegration")]
     [Explicit]
     public class FMatchmakingIntegrationTests : BaseIntegrationTest
     {
@@ -222,7 +222,7 @@ namespace AccelByte.Sdk.Tests.Integration
             };
 
             _Sdk.Matchmaking.Matchmaking.UpdateMatchmakingChannelOp
-                .Build(updateChannel, channel_name, _Sdk.Namespace);
+                .Execute(updateChannel, channel_name, _Sdk.Namespace);
 
             //Get a channel back to confirm update
             gResp = _Sdk.Matchmaking.Matchmaking.GetSingleMatchmakingChannelOp

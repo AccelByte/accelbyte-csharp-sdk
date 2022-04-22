@@ -287,6 +287,33 @@ namespace AccelByte.Sdk.Tests
         }
 
         [Test]
+        [TestCase("123457890")]
+        [TestCase("1234 57890")]
+        [TestCase("1234,57890")]
+        [TestCase("1234;57890")]
+        public void HttpBinCookieRequestTest(string cookieValue)
+        {
+            AccelByteSDK sdk = AccelByteSDK.Builder
+                .SetHttpClient(_httpClient)
+                .SetTokenRepository(_tokenRepository)
+                .SetConfigRepository(_httpbinConfigRepository)
+                .EnableLog()
+                .Build();
+
+            var op = new HttpbinCookieOperation();
+            op.Cookies["test_token"] = cookieValue;
+
+            var response = sdk.RunRequest(op);
+
+            var result = op.ParseResponse(response.Code, response.ContentType, response.Payload) ??
+                throw new AssertionException("Result is null");
+
+            Assert.IsNotNull(result.Cookies);
+            Assert.IsTrue(result.Cookies!.ContainsKey("test_token"));
+            Assert.AreEqual(cookieValue, HttpUtility.UrlDecode(result.Cookies!["test_token"]));
+        }
+
+        [Test]
         [Ignore("This test already exists in CLI unit test")]
         public void LoginLogoutClient()
         {
