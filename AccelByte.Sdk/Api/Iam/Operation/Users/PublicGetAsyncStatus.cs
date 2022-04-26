@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public PublicGetAsyncStatus Build(
                 string namespace_,
                 string requestId
@@ -56,6 +57,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["requestId"] = requestId;
             
             
+
             
             
             
@@ -73,6 +75,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["requestId"] = requestId;
             
             
+
             
             
             

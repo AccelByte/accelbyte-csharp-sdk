@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public UpdateTemplateLocalizationV1Admin Build(
                 ModelUpdateTemplateRequest body,
                 string namespace_,
@@ -69,6 +70,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["templateSlug"] = templateSlug;
             
             
+
             
             
             BodyParams = body;
@@ -90,6 +92,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["templateSlug"] = templateSlug;
             
             
+
             
             
             BodyParams = body;

@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetPaymentTaxValue Build(
                 string namespace_,
                 string paymentOrderNo,
@@ -73,6 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (paymentOrderNo != null) QueryParams["paymentOrderNo"] = paymentOrderNo;
             if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
             
+
             
             
             
@@ -93,6 +95,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (paymentOrderNo != null) QueryParams["paymentOrderNo"] = paymentOrderNo;
             if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
             
+
             
             
             

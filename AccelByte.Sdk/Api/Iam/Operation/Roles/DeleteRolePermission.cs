@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public DeleteRolePermission Build(
                 long action,
                 string resource,
@@ -65,6 +66,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["roleId"] = roleId;
             
             
+
             
             
             
@@ -84,6 +86,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["roleId"] = roleId;
             
             
+
             
             
             

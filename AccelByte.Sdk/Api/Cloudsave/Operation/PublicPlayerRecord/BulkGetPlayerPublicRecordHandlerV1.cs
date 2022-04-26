@@ -42,6 +42,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
 
 
+
             public BulkGetPlayerPublicRecordHandlerV1 Build(
                 ModelsBulkUserIDsRequest body,
                 string key,
@@ -69,6 +70,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -88,6 +90,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

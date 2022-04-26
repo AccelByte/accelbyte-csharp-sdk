@@ -87,6 +87,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
 
 
+
             public PlatformUnlink Build(
                 string namespace_,
                 string platformId,
@@ -116,6 +117,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             if (builder.PlatformNamespace != null) FormParams["platform_namespace"] = builder.PlatformNamespace;
+
             
             
             
@@ -137,6 +139,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             if (platformNamespace != null) FormParams["platform_namespace"] = platformNamespace;
+
             
             
             

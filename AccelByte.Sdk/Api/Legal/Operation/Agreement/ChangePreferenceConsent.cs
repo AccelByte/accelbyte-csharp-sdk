@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public ChangePreferenceConsent Build(
                 string namespace_,
                 string userId
@@ -62,6 +63,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -81,6 +83,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public AdminDeleteClientPermissionV3 Build(
                 long action,
                 string clientId,
@@ -67,6 +68,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["resource"] = resource;
             
             
+
             
             
             
@@ -88,6 +90,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["resource"] = resource;
             
             
+
             
             
             

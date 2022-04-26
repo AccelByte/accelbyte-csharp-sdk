@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public GetEventByUserIDHandler Build(
                 string namespace_,
                 string userId,
@@ -81,6 +82,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             if (startDate != null) QueryParams["startDate"] = startDate;
             
+
             
             
             
@@ -106,6 +108,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             if (startDate != null) QueryParams["startDate"] = startDate;
             
+
             
             
             

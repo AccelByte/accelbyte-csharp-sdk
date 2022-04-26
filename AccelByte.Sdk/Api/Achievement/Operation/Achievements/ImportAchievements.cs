@@ -55,6 +55,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             }
 
 
+
             public ImportAchievements Build(
                 string namespace_
             )
@@ -77,6 +78,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             if (builder.File != null) FormParams["file"] = builder.File;
             if (builder.Strategy != null) FormParams["strategy"] = builder.Strategy;
+
             
             
             
@@ -96,6 +98,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             if (file != null) FormParams["file"] = file;
             if (strategy != null) FormParams["strategy"] = strategy;
+
             
             
             

@@ -261,6 +261,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public UpdateItem Build(
                 string itemId,
                 string namespace_,
@@ -289,6 +290,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             BodyParams = builder.Body;
@@ -310,6 +312,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             BodyParams = body;

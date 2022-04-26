@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public SendMultipleUsersFreeformNotificationV1Admin Build(
                 ModelBulkUsersFreeFormNotificationRequestV1 body,
                 string namespace_
@@ -58,6 +59,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -75,6 +77,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

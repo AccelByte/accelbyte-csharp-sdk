@@ -67,6 +67,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
+
             public PublicQueryUserStatItems Build(
                 string namespace_,
                 string userId
@@ -95,6 +96,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             if (builder.StatCodes != null) QueryParams["statCodes"] = builder.StatCodes;
             if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
             
+
             
             
             
@@ -120,6 +122,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             if (statCodes != null) QueryParams["statCodes"] = statCodes;
             if (tags != null) QueryParams["tags"] = tags;
             
+
             
             
             

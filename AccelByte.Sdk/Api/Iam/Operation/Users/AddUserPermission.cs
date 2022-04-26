@@ -123,6 +123,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public AddUserPermission Build(
                 ModelUpdatePermissionScheduleRequest body,
                 long action,
@@ -158,6 +159,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;
@@ -181,6 +183,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

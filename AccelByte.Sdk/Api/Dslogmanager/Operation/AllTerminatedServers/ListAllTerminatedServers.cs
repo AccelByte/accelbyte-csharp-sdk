@@ -146,6 +146,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
 
 
 
+
             public ListAllTerminatedServers Build(
             )
             {
@@ -176,6 +177,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             if (builder.StartDate != null) QueryParams["start_date"] = builder.StartDate;
             if (builder.UserId != null) QueryParams["user_id"] = builder.UserId;
             
+
             
             
             
@@ -217,6 +219,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             if (startDate != null) QueryParams["start_date"] = startDate;
             if (userId != null) QueryParams["user_id"] = userId;
             
+
             
             
             

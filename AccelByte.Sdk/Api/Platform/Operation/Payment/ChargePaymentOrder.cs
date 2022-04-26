@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public ChargePaymentOrder Build(
                 string namespace_,
                 string paymentOrderNo
@@ -68,6 +69,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["paymentOrderNo"] = paymentOrderNo;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -87,6 +89,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["paymentOrderNo"] = paymentOrderNo;
             
             
+
             
             
             BodyParams = body;

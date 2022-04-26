@@ -30,18 +30,21 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             : OperationBuilder<ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetBuilder>
         {
             
+            
             internal ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetBuilder() { }
 
 
 
 
 
+
             public ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet Build(
-                string steamId
-            )
+                string steamId,
+                string accessToken            )
             {
                 ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet op = new ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(this,
-                    steamId                    
+                    steamId,                    
+                    accessToken
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -50,12 +53,14 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         }
 
         private ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetBuilder builder,
-            string steamId
+            string steamId,
+            string accessToken            
         )
         {
             PathParams["steamId"] = steamId;
             
             
+
             
             
             
@@ -66,12 +71,14 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         #endregion
 
         public ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(
-            string steamId            
+            string steamId,            
+            string accessToken
         )
         {
             PathParams["steamId"] = steamId;
             
             
+
             
             
             

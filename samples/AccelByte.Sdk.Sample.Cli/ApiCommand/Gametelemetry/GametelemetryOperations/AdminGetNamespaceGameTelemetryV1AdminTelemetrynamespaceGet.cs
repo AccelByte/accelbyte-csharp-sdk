@@ -24,6 +24,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
 
         public string OperationName{ get { return "AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet"; } }
 
+        [SdkCommandArgument("access_token")]
+        public string AccessToken { get; set; } = String.Empty;
+
         public AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -34,6 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
             AccelByte.Sdk.Api.Gametelemetry.Wrapper.GametelemetryOperations wrapper = new AccelByte.Sdk.Api.Gametelemetry.Wrapper.GametelemetryOperations(_SDK);
 
             AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet operation = new AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet(
+                AccessToken                
             );            
             
             wrapper.AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet(operation);

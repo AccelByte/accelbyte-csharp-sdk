@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public UpdateContentDirect Build(
                 ModelsCreateContentRequest body,
                 string channelId,
@@ -73,6 +74,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;
@@ -96,6 +98,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

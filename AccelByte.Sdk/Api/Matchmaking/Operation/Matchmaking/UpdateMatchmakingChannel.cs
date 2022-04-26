@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
 
 
+
             public UpdateMatchmakingChannel Build(
                 ModelsUpdateChannelRequest body,
                 string channelName,
@@ -66,6 +67,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -85,6 +87,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

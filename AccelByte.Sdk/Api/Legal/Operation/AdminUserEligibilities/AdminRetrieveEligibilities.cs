@@ -46,6 +46,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public AdminRetrieveEligibilities Build(
                 string namespace_,
                 string userId,
@@ -79,6 +80,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             if (clientId != null) QueryParams["clientId"] = clientId;
             if (countryCode != null) QueryParams["countryCode"] = countryCode;
             
+
             
             
             
@@ -102,6 +104,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             if (clientId != null) QueryParams["clientId"] = clientId;
             if (countryCode != null) QueryParams["countryCode"] = countryCode;
             
+
             
             
             

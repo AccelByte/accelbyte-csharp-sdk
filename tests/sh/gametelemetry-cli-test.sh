@@ -53,7 +53,8 @@ echo "foo" > "$CLI_TOKEN_FILE"
 $CLI_EXE \
     --sn gametelemetry \
     --op AdminGetEventsGameTelemetryV1AdminEventsGet \
-    --namespace_ 'b0Cjv4Ax' \
+    --access_token 'b0Cjv4Ax' \
+    --namespace_ '7NzYkopp' \
     > test.out 2>&1
 eval_tap $? 2 'AdminGetEventsGameTelemetryV1AdminEventsGet' test.out
 
@@ -61,15 +62,17 @@ eval_tap $? 2 'AdminGetEventsGameTelemetryV1AdminEventsGet' test.out
 $CLI_EXE \
     --sn gametelemetry \
     --op AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet \
+    --access_token 'a0VgFJAh' \
     > test.out 2>&1
 eval_tap $? 3 'AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet' test.out
 
 #- 4 ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost
 # body param: body
-echo '[{"EventId": "7NzYkopp", "EventName": "a0VgFJAh", "EventNamespace": "HwTb5q01", "EventTimestamp": "1997-02-12T00:00:00Z", "Payload": {"N2MQrbpe": {}}}]' > $TEMP_JSON_INPUT
+echo '[{"EventId": "HwTb5q01", "EventName": "0gN2MQrb", "EventNamespace": "peRnxTlC", "EventTimestamp": "1993-09-05T00:00:00Z", "Payload": {"SMIbl1a2": {}}}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn gametelemetry \
     --op ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost \
+    --access_token 'jXLCtWmH' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 4 'ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost' test.out
@@ -78,7 +81,8 @@ eval_tap $? 4 'ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost' test.out
 $CLI_EXE \
     --sn gametelemetry \
     --op ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet \
-    --steamId 'RnxTlCTF' \
+    --steamId 'JBi9SoMk' \
+    --access_token 'SE4eJelw' \
     > test.out 2>&1
 eval_tap $? 5 'ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet' test.out
 
@@ -86,8 +90,9 @@ eval_tap $? 5 'ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlayti
 $CLI_EXE \
     --sn gametelemetry \
     --op ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut \
-    --playtime 'SMIbl1a2' \
-    --steamId 'jXLCtWmH' \
+    --playtime 'O4KPMky2' \
+    --steamId 'h8R2fIXo' \
+    --access_token 'XP8gd7JU' \
     > test.out 2>&1
 eval_tap $? 6 'ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut' test.out
 

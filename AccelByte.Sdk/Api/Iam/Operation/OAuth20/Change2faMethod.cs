@@ -49,6 +49,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public Change2faMethod Build(
                 string factor,
                 string mfaToken
@@ -73,6 +74,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (factor != null) FormParams["factor"] = factor;
             if (mfaToken != null) FormParams["mfaToken"] = mfaToken;
+
             
             
             
@@ -90,6 +92,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (factor != null) FormParams["factor"] = factor;
             if (mfaToken != null) FormParams["mfaToken"] = mfaToken;
+
             
             
             

@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public UpdateScreenshots Build(
                 ModelsUpdateScreenshotRequest body,
                 string contentId,
@@ -67,6 +68,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;
@@ -88,6 +90,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

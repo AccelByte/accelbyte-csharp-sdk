@@ -8,7 +8,7 @@
     },
     "description": "Justice IAM Service",
     "title": "justice-iam-service",
-    "version": "5.7.1"
+    "version": "5.8.0"
   },
   "schemes": [
     "https"
@@ -1161,6 +1161,9 @@
         },
         "security": [
           {
+            "basic": []
+          },
+          {
             "HasPermission": [
               "ADMIN:NAMESPACE:{namespace}:PASSWORD:USER [UPDATE]"
             ],
@@ -1274,6 +1277,9 @@
           }
         },
         "security": [
+          {
+            "basic": []
+          },
           {
             "HasPermission": [
               "ADMIN:NAMESPACE:{namespace}:PASSWORD:USER [UPDATE]"
@@ -3584,11 +3590,6 @@
             "description": "Invalid basic auth header"
           }
         },
-        "security": [
-          {
-            "authorization": []
-          }
-        ],
         "summary": "OAuth2 revocation list API",
         "tags": [
           "OAuth"
@@ -3818,11 +3819,6 @@
             "description": "Access Token not exist or expired"
           }
         },
-        "security": [
-          {
-            "authorization": []
-          }
-        ],
         "summary": "OAuth2 token verification API",
         "tags": [
           "OAuth"
@@ -13099,6 +13095,9 @@
         },
         "security": [
           {
+            "basic": []
+          },
+          {
             "authorization": []
           }
         ],
@@ -13515,11 +13514,6 @@
             }
           }
         },
-        "security": [
-          {
-            "authorization": []
-          }
-        ],
         "summary": "OAuth2 token revocation API",
         "tags": [
           "OAuth2.0"
@@ -19387,6 +19381,18 @@
             "name": "namespace",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Cookie",
+            "required": false,
+            "type": "string",
+            "x-keys": [
+              "device_token"
+            ],
+            "x-required": [
+              "device_token"
+            ]
           }
         ],
         "produces": [
@@ -24906,6 +24912,10 @@
         },
         "platform_user_id": {
           "type": "string"
+        },
+        "refresh_expires_in": {
+          "format": "int32",
+          "type": "integer"
         },
         "refresh_token": {
           "type": "string"

@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public RevokeUserEntitlement Build(
                 string entitlementId,
                 string namespace_,
@@ -65,6 +66,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -84,6 +86,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

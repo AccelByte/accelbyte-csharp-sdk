@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public DeleteNotificationTemplateSlugV1Admin Build(
                 string namespace_,
                 string templateSlug
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["templateSlug"] = templateSlug;
             
             
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["templateSlug"] = templateSlug;
             
             
+
             
             
             

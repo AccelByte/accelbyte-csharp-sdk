@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetKeyGroupDynamic Build(
                 string keyGroupId,
                 string namespace_
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

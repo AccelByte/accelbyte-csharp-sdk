@@ -47,6 +47,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             }
 
 
+
             public AdminRequestDataRetrieval Build(
                 string namespace_,
                 string userId
@@ -72,6 +73,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             if (builder.Password != null) FormParams["password"] = builder.Password;
+
             
             
             
@@ -91,6 +93,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             if (password != null) FormParams["password"] = password;
+
             
             
             

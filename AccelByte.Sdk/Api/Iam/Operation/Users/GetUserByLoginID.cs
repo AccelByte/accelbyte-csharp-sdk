@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public GetUserByLoginID Build(
                 string namespace_
             )
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (builder.LoginId != null) QueryParams["loginId"] = builder.LoginId;
             
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (loginId != null) QueryParams["loginId"] = loginId;
             
+
             
             
             

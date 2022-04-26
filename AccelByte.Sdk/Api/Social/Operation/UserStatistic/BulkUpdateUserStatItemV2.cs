@@ -48,6 +48,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
+
             public BulkUpdateUserStatItemV2 Build(
                 string namespace_
             )
@@ -68,6 +69,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -85,6 +87,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

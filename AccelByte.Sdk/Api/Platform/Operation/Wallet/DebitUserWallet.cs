@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public DebitUserWallet Build(
                 string namespace_,
                 string userId,
@@ -72,6 +73,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["walletId"] = walletId;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -93,6 +95,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["walletId"] = walletId;
             
             
+
             
             
             BodyParams = body;

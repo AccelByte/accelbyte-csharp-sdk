@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicDeletePaymentAccount Build(
                 string id,
                 string namespace_,
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -91,6 +93,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

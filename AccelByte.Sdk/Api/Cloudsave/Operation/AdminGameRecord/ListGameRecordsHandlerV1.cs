@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
 
 
+
             public ListGameRecordsHandlerV1 Build(
                 string namespace_,
                 long limit,
@@ -74,6 +75,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
             
+
             
             
             
@@ -95,6 +97,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
             
+
             
             
             

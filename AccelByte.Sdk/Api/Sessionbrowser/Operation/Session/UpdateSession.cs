@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
 
 
+
             public UpdateSession Build(
                 ModelsUpdateSessionRequest body,
                 string namespace_,
@@ -64,6 +65,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             PathParams["sessionID"] = sessionID;
             
             
+
             
             
             BodyParams = body;
@@ -83,6 +85,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             PathParams["sessionID"] = sessionID;
             
             
+
             
             
             BodyParams = body;

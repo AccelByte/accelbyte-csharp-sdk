@@ -42,6 +42,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public PartialUpdatePolicy Build(
                 string basePolicyId
             )
@@ -62,6 +63,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["basePolicyId"] = basePolicyId;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -79,6 +81,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["basePolicyId"] = basePolicyId;
             
             
+
             
             
             BodyParams = body;

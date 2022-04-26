@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public DisableUserBan Build(
                 string banId,
                 string namespace_,
@@ -72,6 +73,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -91,6 +93,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

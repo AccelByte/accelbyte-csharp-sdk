@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
 
 
+
             public PublicGeneratedUploadUrl Build(
                 string folder,
                 string namespace_,
@@ -66,6 +67,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             if (fileType != null) QueryParams["fileType"] = fileType;
             
+
             
             
             
@@ -85,6 +87,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             if (fileType != null) QueryParams["fileType"] = fileType;
             
+
             
             
             

@@ -2997,6 +2997,7 @@ $CLI_EXE \
     --sn iam \
     --op PublicRemoveTrustedDeviceV4 \
     --namespace $AB_NAMESPACE \
+    --device_token 'JBKfFAZF' \
     > test.out 2>&1
 eval_tap $? 297 'PublicRemoveTrustedDeviceV4' test.out
 
@@ -3013,7 +3014,7 @@ $CLI_EXE \
     --sn iam \
     --op PublicMakeFactorMyDefaultV4 \
     --namespace $AB_NAMESPACE \
-    --factor 'JBKfFAZF' \
+    --factor '2oC4m8qm' \
     > test.out 2>&1
 eval_tap $? 299 'PublicMakeFactorMyDefaultV4' test.out
 

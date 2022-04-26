@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public SpecificEventTypeDescriptionHandler Build(
             )
             {
@@ -54,6 +55,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             if (builder.EventTypes != null) QueryParams["eventTypes"] = builder.EventTypes;
             
+
             
             
             
@@ -69,6 +71,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             if (eventTypes != null) QueryParams["eventTypes"] = eventTypes;
             
+
             
             
             

@@ -92,6 +92,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public QueryUserIAPOrders Build(
                 string namespace_,
                 string userId
@@ -123,6 +124,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Status != null) QueryParams["status"] = builder.Status;
             if (builder.Type != null) QueryParams["type"] = builder.Type;
             
+
             
             
             
@@ -154,6 +156,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (status != null) QueryParams["status"] = status;
             if (type != null) QueryParams["type"] = type;
             
+
             
             
             

@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public Verify2faCode Build(
                 string code,
                 string factor,
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (factor != null) FormParams["factor"] = factor;
             if (mfaToken != null) FormParams["mfaToken"] = mfaToken;
             FormParams["rememberDevice"] = Convert.ToString(rememberDevice)!;
+
             
             
             
@@ -91,6 +93,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (factor != null) FormParams["factor"] = factor;
             if (mfaToken != null) FormParams["mfaToken"] = mfaToken;
             FormParams["rememberDevice"] = Convert.ToString(rememberDevice)!;
+
             
             
             

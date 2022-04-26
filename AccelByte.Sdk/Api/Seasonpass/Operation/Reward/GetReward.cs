@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
 
 
+
             public GetReward Build(
                 string code,
                 string namespace_,
@@ -66,6 +67,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             PathParams["seasonId"] = seasonId;
             
             
+
             
             
             
@@ -85,6 +87,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             PathParams["seasonId"] = seasonId;
             
             
+
             
             
             

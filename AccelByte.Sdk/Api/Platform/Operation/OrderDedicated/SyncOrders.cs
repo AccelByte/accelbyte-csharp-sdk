@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public SyncOrders Build(
                 string end,
                 string start
@@ -69,6 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (end != null) QueryParams["end"] = end;
             if (start != null) QueryParams["start"] = start;
             
+
             
             
             
@@ -88,6 +90,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (end != null) QueryParams["end"] = end;
             if (start != null) QueryParams["start"] = start;
             
+
             
             
             

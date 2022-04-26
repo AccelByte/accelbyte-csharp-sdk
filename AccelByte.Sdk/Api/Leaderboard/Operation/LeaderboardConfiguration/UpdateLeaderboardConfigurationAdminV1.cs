@@ -65,6 +65,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
 
 
+
             public UpdateLeaderboardConfigurationAdminV1 Build(
                 ModelsUpdateLeaderboardConfigReq body,
                 string leaderboardCode,
@@ -92,6 +93,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -111,6 +113,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

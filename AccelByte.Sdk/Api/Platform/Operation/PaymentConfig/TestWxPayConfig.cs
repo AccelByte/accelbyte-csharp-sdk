@@ -42,6 +42,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public TestWxPayConfig Build(
             )
             {
@@ -58,6 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             
             
+
             
             
             BodyParams = builder.Body;
@@ -73,6 +75,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             
             
+
             
             
             BodyParams = body;

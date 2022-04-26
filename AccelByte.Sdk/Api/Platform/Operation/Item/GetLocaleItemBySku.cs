@@ -77,6 +77,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetLocaleItemBySku Build(
                 string namespace_,
                 string sku
@@ -106,6 +107,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
             if (sku != null) QueryParams["sku"] = sku;
             
+
             
             
             
@@ -133,6 +135,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (storeId != null) QueryParams["storeId"] = storeId;
             if (sku != null) QueryParams["sku"] = sku;
             
+
             
             
             

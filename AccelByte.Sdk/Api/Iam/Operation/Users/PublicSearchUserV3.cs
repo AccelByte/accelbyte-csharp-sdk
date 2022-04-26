@@ -59,6 +59,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public PublicSearchUserV3 Build(
                 string namespace_
             )
@@ -81,6 +82,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.By != null) QueryParams["by"] = builder.By;
             if (builder.Query != null) QueryParams["query"] = builder.Query;
             
+
             
             
             
@@ -100,6 +102,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (by != null) QueryParams["by"] = by;
             if (query != null) QueryParams["query"] = query;
             
+
             
             
             

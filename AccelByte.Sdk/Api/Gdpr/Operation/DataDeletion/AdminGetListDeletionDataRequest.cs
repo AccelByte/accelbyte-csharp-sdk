@@ -71,6 +71,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
 
 
+
             public AdminGetListDeletionDataRequest Build(
                 string namespace_
             )
@@ -96,6 +97,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.RequestDate != null) QueryParams["requestDate"] = builder.RequestDate;
             
+
             
             
             
@@ -121,6 +123,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (requestDate != null) QueryParams["requestDate"] = requestDate;
             
+
             
             
             

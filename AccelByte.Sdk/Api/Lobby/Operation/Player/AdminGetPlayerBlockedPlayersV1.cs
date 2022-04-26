@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public AdminGetPlayerBlockedPlayersV1 Build(
                 string namespace_,
                 string userId
@@ -58,6 +59,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -75,6 +77,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

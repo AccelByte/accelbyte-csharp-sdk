@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
+
             public UpdateStat Build(
                 string namespace_,
                 string statCode
@@ -67,6 +68,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["statCode"] = statCode;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -86,6 +88,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["statCode"] = statCode;
             
             
+
             
             
             BodyParams = body;

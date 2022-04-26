@@ -46,6 +46,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public GetPublicFollowing Build(
                 string namespace_,
                 string userId
@@ -72,6 +73,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
             if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
             
+
             
             
             
@@ -93,6 +95,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             if (limit != null) QueryParams["limit"] = limit;
             if (offset != null) QueryParams["offset"] = offset;
             
+
             
             
             

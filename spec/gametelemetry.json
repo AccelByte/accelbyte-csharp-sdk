@@ -57,6 +57,9 @@
             "type": "string",
             "x-keys": [
               "access_token"
+            ],
+            "x-required": [
+              "access_token"
             ]
           }
         ],
@@ -100,6 +103,9 @@
             "required": false,
             "type": "string",
             "x-keys": [
+              "access_token"
+            ],
+            "x-required": [
               "access_token"
             ]
           }
@@ -153,6 +159,9 @@
             "type": "string",
             "x-keys": [
               "access_token"
+            ],
+            "x-required": [
+              "access_token"
             ]
           }
         ],
@@ -201,6 +210,9 @@
             "required": false,
             "type": "string",
             "x-keys": [
+              "access_token"
+            ],
+            "x-required": [
               "access_token"
             ]
           }
@@ -260,6 +272,9 @@
             "required": false,
             "type": "string",
             "x-keys": [
+              "access_token"
+            ],
+            "x-required": [
               "access_token"
             ]
           }

@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
 
 
+
             public DeleteChannelHandler Build(
                 string channel,
                 string namespace_
@@ -63,6 +64,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -80,6 +82,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

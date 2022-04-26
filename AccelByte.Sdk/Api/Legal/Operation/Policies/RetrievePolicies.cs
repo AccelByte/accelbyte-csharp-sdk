@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public RetrievePolicies Build(
                 string countryCode
             )
@@ -54,6 +55,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["countryCode"] = countryCode;
             
             
+
             
             
             
@@ -69,6 +71,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["countryCode"] = countryCode;
             
             
+
             
             
             

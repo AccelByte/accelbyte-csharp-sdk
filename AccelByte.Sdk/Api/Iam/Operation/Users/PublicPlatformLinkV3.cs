@@ -106,6 +106,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
 
 
+
             public PublicPlatformLinkV3 Build(
                 string ticket,
                 string namespace_,
@@ -135,6 +136,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (builder.RedirectUri != null) FormParams["redirectUri"] = builder.RedirectUri;
             if (ticket != null) FormParams["ticket"] = ticket;
+
             
             
             
@@ -156,6 +158,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (redirectUri != null) FormParams["redirectUri"] = redirectUri;
             if (ticket != null) FormParams["ticket"] = ticket;
+
             
             
             

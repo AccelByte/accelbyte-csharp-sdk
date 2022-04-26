@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public UpdateEventRegistryHandler Build(
                 ModelsEventRegistry body,
                 string eventId
@@ -56,6 +57,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             PathParams["eventId"] = eventId;
             
             
+
             
             
             BodyParams = body;
@@ -73,6 +75,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             PathParams["eventId"] = eventId;
             
             
+
             
             
             BodyParams = body;

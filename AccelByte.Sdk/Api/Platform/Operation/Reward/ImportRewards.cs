@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
+
             public ImportRewards Build(
                 string namespace_,
                 bool replaceExisting
@@ -69,6 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             QueryParams["replaceExisting"] = Convert.ToString(replaceExisting)!;
             
             if (builder.File != null) FormParams["file"] = builder.File;
+
             
             
             
@@ -88,6 +90,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             QueryParams["replaceExisting"] = Convert.ToString(replaceExisting)!;
             
             if (file != null) FormParams["file"] = file;
+
             
             
             

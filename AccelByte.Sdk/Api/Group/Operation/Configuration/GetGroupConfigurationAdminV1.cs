@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
 
+
             public GetGroupConfigurationAdminV1 Build(
                 string configurationCode,
                 string namespace_
@@ -68,6 +69,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -85,6 +87,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

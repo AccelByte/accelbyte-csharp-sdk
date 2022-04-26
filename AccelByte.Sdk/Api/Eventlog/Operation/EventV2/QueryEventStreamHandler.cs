@@ -77,6 +77,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public QueryEventStreamHandler Build(
                 ModelsGenericQueryPayload body,
                 string namespace_
@@ -104,6 +105,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             if (builder.PageSize != null) QueryParams["pageSize"] = Convert.ToString(builder.PageSize)!;
             if (builder.StartDate != null) QueryParams["startDate"] = builder.StartDate;
             
+
             
             
             BodyParams = body;
@@ -129,6 +131,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             if (pageSize != null) QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             if (startDate != null) QueryParams["startDate"] = startDate;
             
+
             
             
             BodyParams = body;

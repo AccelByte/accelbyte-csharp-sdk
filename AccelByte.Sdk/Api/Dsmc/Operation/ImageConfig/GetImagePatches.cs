@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
 
 
+
             public GetImagePatches Build(
                 string namespace_,
                 string version
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             PathParams["version"] = version;
             
             
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             PathParams["version"] = version;
             
             
+
             
             
             

@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public AdminDeleteType Build(
                 string namespace_,
                 string typeId
@@ -56,6 +57,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["typeId"] = typeId;
             
             
+
             
             
             
@@ -73,6 +75,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["typeId"] = typeId;
             
             
+
             
             
             

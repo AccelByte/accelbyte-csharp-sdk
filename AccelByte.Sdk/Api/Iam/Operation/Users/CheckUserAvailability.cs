@@ -42,6 +42,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public CheckUserAvailability Build(
                 string namespace_,
                 string field,
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (field != null) QueryParams["field"] = field;
             if (query != null) QueryParams["query"] = query;
             
+
             
             
             
@@ -89,6 +91,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (field != null) QueryParams["field"] = field;
             if (query != null) QueryParams["query"] = query;
             
+
             
             
             

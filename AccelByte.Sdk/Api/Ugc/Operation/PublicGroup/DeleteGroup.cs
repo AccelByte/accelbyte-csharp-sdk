@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public DeleteGroup Build(
                 string groupId,
                 string namespace_,
@@ -61,6 +62,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -80,6 +82,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

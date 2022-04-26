@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public AdminGetPlayerSessionAttribute Build(
                 string attribute,
                 string namespace_,
@@ -63,6 +64,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -82,6 +84,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

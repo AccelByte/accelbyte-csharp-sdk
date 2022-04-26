@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetPaymentCustomization Build(
                 string namespace_,
                 string paymentProvider,
@@ -74,6 +75,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
             if (region != null) QueryParams["region"] = region;
             
+
             
             
             
@@ -94,6 +96,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
             if (region != null) QueryParams["region"] = region;
             
+
             
             
             

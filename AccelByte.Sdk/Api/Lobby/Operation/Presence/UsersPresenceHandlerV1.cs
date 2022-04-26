@@ -40,6 +40,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public UsersPresenceHandlerV1 Build(
                 string namespace_,
                 string userIds
@@ -65,6 +66,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             if (builder.CountOnly != null) QueryParams["countOnly"] = Convert.ToString(builder.CountOnly)!;
             if (userIds != null) QueryParams["userIds"] = userIds;
             
+
             
             
             
@@ -84,6 +86,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             if (countOnly != null) QueryParams["countOnly"] = Convert.ToString(countOnly)!;
             if (userIds != null) QueryParams["userIds"] = userIds;
             
+
             
             
             

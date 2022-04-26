@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public PublicWebLinkPlatformEstablish Build(
                 string namespace_,
                 string platformId,
@@ -61,6 +62,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (state != null) QueryParams["state"] = state;
             
+
             
             
             
@@ -81,6 +83,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (state != null) QueryParams["state"] = state;
             
+
             
             
             

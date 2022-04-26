@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
 
 
 
+
             public PublicGetMessages Build(
             )
             {
@@ -46,6 +47,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         {
             
             
+
             
             
             
@@ -59,6 +61,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         {
             
             
+
             
             
             

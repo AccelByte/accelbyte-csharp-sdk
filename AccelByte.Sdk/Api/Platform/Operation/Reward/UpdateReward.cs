@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public UpdateReward Build(
                 string namespace_,
                 string rewardId
@@ -68,6 +69,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["rewardId"] = rewardId;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -87,6 +89,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["rewardId"] = rewardId;
             
             
+
             
             
             BodyParams = body;

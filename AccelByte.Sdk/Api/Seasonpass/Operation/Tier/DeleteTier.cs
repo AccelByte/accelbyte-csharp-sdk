@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
 
 
+
             public DeleteTier Build(
                 string id,
                 string namespace_,
@@ -65,6 +66,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             PathParams["seasonId"] = seasonId;
             
             
+
             
             
             
@@ -84,6 +86,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             PathParams["seasonId"] = seasonId;
             
             
+
             
             
             

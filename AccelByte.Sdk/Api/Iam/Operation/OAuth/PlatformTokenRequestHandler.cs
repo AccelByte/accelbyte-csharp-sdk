@@ -76,6 +76,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
 
 
+
             public PlatformTokenRequestHandler Build(
                 string namespace_,
                 string platformId
@@ -102,6 +103,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (builder.DeviceId != null) FormParams["device_id"] = builder.DeviceId;
             if (builder.PlatformToken != null) FormParams["platform_token"] = builder.PlatformToken;
+
             
             
             
@@ -123,6 +125,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (deviceId != null) FormParams["device_id"] = deviceId;
             if (platformToken != null) FormParams["platform_token"] = platformToken;
+
             
             
             

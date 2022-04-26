@@ -50,6 +50,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             }
 
 
+
             public ImportStats Build(
                 string namespace_
             )
@@ -72,6 +73,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             if (builder.ReplaceExisting != null) QueryParams["replaceExisting"] = Convert.ToString(builder.ReplaceExisting)!;
             
             if (builder.File != null) FormParams["file"] = builder.File;
+
             
             
             
@@ -91,6 +93,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             if (replaceExisting != null) QueryParams["replaceExisting"] = Convert.ToString(replaceExisting)!;
             
             if (file != null) FormParams["file"] = file;
+
             
             
             

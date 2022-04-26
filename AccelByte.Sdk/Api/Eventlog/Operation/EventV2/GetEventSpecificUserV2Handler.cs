@@ -72,6 +72,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public GetEventSpecificUserV2Handler Build(
                 string namespace_,
                 string userId
@@ -101,6 +102,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             if (builder.PageSize != null) QueryParams["pageSize"] = Convert.ToString(builder.PageSize)!;
             if (builder.StartDate != null) QueryParams["startDate"] = builder.StartDate;
             
+
             
             
             
@@ -128,6 +130,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             if (pageSize != null) QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             if (startDate != null) QueryParams["startDate"] = startDate;
             
+
             
             
             

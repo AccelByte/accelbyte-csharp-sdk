@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetOrder Build(
                 string namespace_,
                 string orderNo
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["orderNo"] = orderNo;
             
             
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["orderNo"] = orderNo;
             
             
+
             
             
             

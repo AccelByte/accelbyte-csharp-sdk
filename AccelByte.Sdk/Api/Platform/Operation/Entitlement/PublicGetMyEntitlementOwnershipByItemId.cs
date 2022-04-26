@@ -47,6 +47,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicGetMyEntitlementOwnershipByItemId Build(
                 string namespace_,
                 string itemId
@@ -72,6 +73,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.EntitlementClazz != null) QueryParams["entitlementClazz"] = builder.EntitlementClazz;
             if (itemId != null) QueryParams["itemId"] = itemId;
             
+
             
             
             
@@ -91,6 +93,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (entitlementClazz != null) QueryParams["entitlementClazz"] = entitlementClazz;
             if (itemId != null) QueryParams["itemId"] = itemId;
             
+
             
             
             

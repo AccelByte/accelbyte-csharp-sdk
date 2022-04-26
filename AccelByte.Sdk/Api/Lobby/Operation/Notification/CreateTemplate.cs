@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public CreateTemplate Build(
                 ModelCreateTemplateRequest body,
                 string namespace_
@@ -61,6 +62,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -78,6 +80,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

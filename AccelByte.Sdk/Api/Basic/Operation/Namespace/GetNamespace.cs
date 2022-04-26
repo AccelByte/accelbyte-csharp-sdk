@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
 
 
+
             public GetNamespace Build(
                 string namespace_
             )
@@ -65,6 +66,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
             
+
             
             
             
@@ -82,6 +84,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
             
+
             
             
             

@@ -57,6 +57,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
 
+
             public ListGroupConfigurationAdminV1 Build(
                 string namespace_
             )
@@ -79,6 +80,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
+
             
             
             
@@ -98,6 +100,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
+
             
             
             

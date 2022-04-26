@@ -40,6 +40,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
 
 
+
             public QuerySessionHandler Build(
                 string matchID,
                 string namespace_
@@ -64,6 +65,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -81,6 +83,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

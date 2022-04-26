@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public AdminDeleteContent Build(
                 string channelId,
                 string contentId,
@@ -66,6 +67,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -87,6 +89,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

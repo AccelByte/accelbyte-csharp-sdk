@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
 
 
+
             public AdminDeleteGameRecordHandlerV1 Build(
                 string key,
                 string namespace_
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

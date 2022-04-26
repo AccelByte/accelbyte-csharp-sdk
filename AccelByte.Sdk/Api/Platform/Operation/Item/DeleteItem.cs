@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public DeleteItem Build(
                 string itemId,
                 string namespace_
@@ -69,6 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
             
+
             
             
             
@@ -88,6 +90,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             

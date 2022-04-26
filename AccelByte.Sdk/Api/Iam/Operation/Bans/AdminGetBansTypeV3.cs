@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public AdminGetBansTypeV3 Build(
             )
             {
@@ -49,6 +50,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
+
             
             
             
@@ -62,6 +64,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
+
             
             
             

@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public AdminDeleteAllUserContents Build(
                 string namespace_,
                 string userId
@@ -56,6 +57,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -73,6 +75,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

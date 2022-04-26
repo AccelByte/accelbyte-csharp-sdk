@@ -47,6 +47,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public IndirectBulkAcceptVersionedPolicy1 Build(
                 string userId
             )
@@ -67,6 +68,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -84,6 +86,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

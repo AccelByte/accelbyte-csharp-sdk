@@ -49,6 +49,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
 
 
+
             public GetActiveCustomGameSessions Build(
                 string namespace_
             )
@@ -71,6 +72,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             if (builder.ServerRegion != null) QueryParams["server_region"] = builder.ServerRegion;
             if (builder.SessionId != null) QueryParams["session_id"] = builder.SessionId;
             
+
             
             
             
@@ -90,6 +92,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             if (serverRegion != null) QueryParams["server_region"] = serverRegion;
             if (sessionId != null) QueryParams["session_id"] = sessionId;
             
+
             
             
             

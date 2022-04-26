@@ -62,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicBulkGetItems Build(
                 string namespace_,
                 string itemIds
@@ -89,6 +90,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
             if (itemIds != null) QueryParams["itemIds"] = itemIds;
             
+
             
             
             
@@ -111,6 +113,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (storeId != null) QueryParams["storeId"] = storeId;
             if (itemIds != null) QueryParams["itemIds"] = itemIds;
             
+
             
             
             

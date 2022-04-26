@@ -99,6 +99,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public QueryOrders Build(
                 string namespace_
             )
@@ -127,6 +128,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Status != null) QueryParams["status"] = builder.Status;
             if (builder.WithTotal != null) QueryParams["withTotal"] = Convert.ToString(builder.WithTotal)!;
             
+
             
             CollectionFormatMap["orderNos"] = "multi";
             
@@ -159,6 +161,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (status != null) QueryParams["status"] = status;
             if (withTotal != null) QueryParams["withTotal"] = Convert.ToString(withTotal)!;
             
+
             
             CollectionFormatMap["orderNos"] = "multi";
             

@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
 
 
 
+
             public BatchDownloadServerLogs Build(
                 ModelsBatchDownloadLogsRequest body
             )
@@ -54,6 +55,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         {
             
             
+
             
             
             BodyParams = body;
@@ -69,6 +71,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         {
             
             
+
             
             
             BodyParams = body;

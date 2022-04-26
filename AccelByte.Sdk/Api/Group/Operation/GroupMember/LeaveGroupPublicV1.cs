@@ -48,6 +48,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
 
+
             public LeaveGroupPublicV1 Build(
                 string namespace_
             )
@@ -68,6 +69,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -83,6 +85,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

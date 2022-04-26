@@ -107,6 +107,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public QueryPaymentNotifications Build(
                 string namespace_
             )
@@ -136,6 +137,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.StartDate != null) QueryParams["startDate"] = builder.StartDate;
             if (builder.Status != null) QueryParams["status"] = builder.Status;
             
+
             
             
             
@@ -169,6 +171,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (startDate != null) QueryParams["startDate"] = startDate;
             if (status != null) QueryParams["status"] = status;
             
+
             
             
             

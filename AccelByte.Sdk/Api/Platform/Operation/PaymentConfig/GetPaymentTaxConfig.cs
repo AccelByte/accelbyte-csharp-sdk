@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetPaymentTaxConfig Build(
             )
             {
@@ -50,6 +51,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             
             
+
             
             
             
@@ -63,6 +65,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             
             
+
             
             
             

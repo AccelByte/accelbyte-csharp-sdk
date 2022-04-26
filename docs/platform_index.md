@@ -296,6 +296,12 @@
 | `/platform/admin/namespaces/{namespace}/stores/{storeId}/export` | GET | ExportStore | [ExportStore](../AccelByte.Sdk/Api/Platform/Operation/Store/ExportStore.cs) | [ExportStore](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ExportStore.cs) |
 | `/platform/public/namespaces/{namespace}/stores` | GET | PublicListStores | [PublicListStores](../AccelByte.Sdk/Api/Platform/Operation/Store/PublicListStores.cs) | [PublicListStores](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/PublicListStores.cs) |
 
+### CatalogChanges Wrapper:  [CatalogChanges](../AccelByte.Sdk/Api/Platform/Wrapper/CatalogChanges.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/byCriteria` | GET | QueryChanges | [QueryChanges](../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/QueryChanges.cs) | [QueryChanges](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/QueryChanges.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/publishAll` | PUT | PublishAll | [PublishAll](../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/PublishAll.cs) | [PublishAll](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/PublishAll.cs) |
+
 ### Subscription Wrapper:  [Subscription](../AccelByte.Sdk/Api/Platform/Wrapper/Subscription.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -451,6 +457,8 @@
 | `CampaignPagingSlicedResult` | [CampaignPagingSlicedResult](../AccelByte.Sdk/Api/Platform/Model/CampaignPagingSlicedResult.cs) |
 | `CampaignUpdate` | [CampaignUpdate](../AccelByte.Sdk/Api/Platform/Model/CampaignUpdate.cs) |
 | `CancelRequest` | [CancelRequest](../AccelByte.Sdk/Api/Platform/Model/CancelRequest.cs) |
+| `CatalogChangeInfo` | [CatalogChangeInfo](../AccelByte.Sdk/Api/Platform/Model/CatalogChangeInfo.cs) |
+| `CatalogChangePagingSlicedResult` | [CatalogChangePagingSlicedResult](../AccelByte.Sdk/Api/Platform/Model/CatalogChangePagingSlicedResult.cs) |
 | `CategoryCreate` | [CategoryCreate](../AccelByte.Sdk/Api/Platform/Model/CategoryCreate.cs) |
 | `CategoryInfo` | [CategoryInfo](../AccelByte.Sdk/Api/Platform/Model/CategoryInfo.cs) |
 | `CategoryUpdate` | [CategoryUpdate](../AccelByte.Sdk/Api/Platform/Model/CategoryUpdate.cs) |

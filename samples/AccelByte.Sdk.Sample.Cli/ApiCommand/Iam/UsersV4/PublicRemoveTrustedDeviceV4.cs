@@ -27,6 +27,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("device_token")]
+        public string DeviceToken { get; set; } = String.Empty;
+
         public PublicRemoveTrustedDeviceV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -37,7 +40,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             PublicRemoveTrustedDeviceV4 operation = new PublicRemoveTrustedDeviceV4(
-                Namespace                
+                Namespace,                
+                DeviceToken                
             );            
             
             wrapper.PublicRemoveTrustedDeviceV4(operation);

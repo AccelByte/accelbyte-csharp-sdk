@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
 
 
+
             public GetCurrentUserSeasonProgression Build(
                 string namespace_,
                 string userId
@@ -61,6 +62,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -78,6 +80,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

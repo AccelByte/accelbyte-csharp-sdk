@@ -96,6 +96,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public AdminSearchUsersV2 Build(
                 string namespace_,
                 string platformId
@@ -128,6 +129,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
             if (platformId != null) QueryParams["platformId"] = platformId;
             
+
             
             
             
@@ -161,6 +163,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (userId != null) QueryParams["userId"] = userId;
             if (platformId != null) QueryParams["platformId"] = platformId;
             
+
             
             
             

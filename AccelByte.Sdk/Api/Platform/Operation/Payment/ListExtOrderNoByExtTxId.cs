@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public ListExtOrderNoByExtTxId Build(
                 string namespace_,
                 string extTxId
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (extTxId != null) QueryParams["extTxId"] = extTxId;
             
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (extTxId != null) QueryParams["extTxId"] = extTxId;
             
+
             
             
             

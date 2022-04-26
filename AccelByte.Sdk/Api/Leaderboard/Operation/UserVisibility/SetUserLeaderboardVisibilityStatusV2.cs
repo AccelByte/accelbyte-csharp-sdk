@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
 
 
+
             public SetUserLeaderboardVisibilityStatusV2 Build(
                 ModelsSetUserVisibilityRequest body,
                 string leaderboardCode,
@@ -65,6 +66,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;
@@ -86,6 +88,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

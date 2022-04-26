@@ -70,6 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicGetItem Build(
                 string itemId,
                 string namespace_
@@ -98,6 +99,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Region != null) QueryParams["region"] = builder.Region;
             if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
             
+
             
             
             
@@ -122,6 +124,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (region != null) QueryParams["region"] = region;
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             

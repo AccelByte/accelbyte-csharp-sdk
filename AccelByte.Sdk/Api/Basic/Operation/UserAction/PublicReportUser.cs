@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
 
 
+
             public PublicReportUser Build(
                 string namespace_,
                 string userId
@@ -68,6 +69,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -87,6 +89,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

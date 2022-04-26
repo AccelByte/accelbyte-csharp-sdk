@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public DeleteUserActivitiesHandler Build(
                 string namespace_,
                 string userId
@@ -57,6 +58,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -74,6 +76,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

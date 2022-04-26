@@ -40,6 +40,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public UpdateNotificationTopicV1Admin Build(
                 ModelUpdateTopicRequest body,
                 string namespace_,
@@ -67,6 +68,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["topicName"] = topicName;
             
             
+
             
             
             BodyParams = body;
@@ -86,6 +88,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["topicName"] = topicName;
             
             
+
             
             
             BodyParams = body;

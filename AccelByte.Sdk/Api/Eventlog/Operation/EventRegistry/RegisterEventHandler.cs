@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public RegisterEventHandler Build(
                 ModelsEventRegistry body
             )
@@ -51,6 +52,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         {
             
             
+
             
             
             BodyParams = body;
@@ -66,6 +68,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         {
             
             
+
             
             
             BodyParams = body;

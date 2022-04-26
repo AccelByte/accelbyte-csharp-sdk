@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicGetUserAppEntitlementOwnershipByAppId Build(
                 string namespace_,
                 string userId,
@@ -65,6 +66,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (appId != null) QueryParams["appId"] = appId;
             
+
             
             
             
@@ -84,6 +86,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (appId != null) QueryParams["appId"] = appId;
             
+
             
             
             

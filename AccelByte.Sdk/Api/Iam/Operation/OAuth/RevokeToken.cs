@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public RevokeToken Build(
                 string token
             )
@@ -64,6 +65,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             if (token != null) FormParams["token"] = token;
+
             
             
             
@@ -79,6 +81,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             if (token != null) FormParams["token"] = token;
+
             
             
             

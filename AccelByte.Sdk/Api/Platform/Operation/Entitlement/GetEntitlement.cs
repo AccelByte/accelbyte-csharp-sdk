@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetEntitlement Build(
                 string entitlementId,
                 string namespace_
@@ -61,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -78,6 +80,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

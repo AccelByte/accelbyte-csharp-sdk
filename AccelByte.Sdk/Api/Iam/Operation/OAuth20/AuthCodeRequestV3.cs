@@ -87,6 +87,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public AuthCodeRequestV3 Build(
                 string platformId,
                 string requestId
@@ -113,6 +114,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.RedirectUri != null) QueryParams["redirect_uri"] = builder.RedirectUri;
             if (requestId != null) QueryParams["request_id"] = requestId;
             
+
             
             
             
@@ -135,6 +137,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (redirectUri != null) QueryParams["redirect_uri"] = redirectUri;
             if (requestId != null) QueryParams["request_id"] = requestId;
             
+
             
             
             

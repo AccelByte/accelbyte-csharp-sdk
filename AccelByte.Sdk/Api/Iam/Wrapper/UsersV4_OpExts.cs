@@ -457,11 +457,13 @@ namespace AccelByte.Sdk.Api
 
         public static void Execute(
             this PublicRemoveTrustedDeviceV4.PublicRemoveTrustedDeviceV4Builder builder,
-            string namespace_
+            string namespace_,
+            string deviceToken
         )
         {
             PublicRemoveTrustedDeviceV4 op = builder.Build(
-                namespace_
+                namespace_,
+                deviceToken                
             );
 
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicRemoveTrustedDeviceV4(op);

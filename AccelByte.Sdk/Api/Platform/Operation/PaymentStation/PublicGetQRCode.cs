@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicGetQRCode Build(
                 string namespace_,
                 string code
@@ -59,6 +60,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (code != null) QueryParams["code"] = code;
             
+
             
             
             
@@ -75,6 +77,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (code != null) QueryParams["code"] = code;
             
+
             
             
             

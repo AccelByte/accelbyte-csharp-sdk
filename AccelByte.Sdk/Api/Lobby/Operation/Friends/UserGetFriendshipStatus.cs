@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public UserGetFriendshipStatus Build(
                 string friendId,
                 string namespace_
@@ -54,6 +55,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -71,6 +73,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

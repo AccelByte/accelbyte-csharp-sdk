@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
 
 
+
             public DeleteSessionInChannel Build(
                 string channelName,
                 string matchID,
@@ -65,6 +66,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -84,6 +86,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

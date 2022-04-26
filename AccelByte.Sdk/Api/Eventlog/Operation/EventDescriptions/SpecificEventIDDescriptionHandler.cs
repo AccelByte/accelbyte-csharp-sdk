@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public SpecificEventIDDescriptionHandler Build(
             )
             {
@@ -54,6 +55,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             if (builder.EventIds != null) QueryParams["eventIds"] = builder.EventIds;
             
+
             
             
             
@@ -69,6 +71,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             if (eventIds != null) QueryParams["eventIds"] = eventIds;
             
+
             
             
             

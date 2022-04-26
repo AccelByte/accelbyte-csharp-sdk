@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public AddFriendsWithoutConfirmation Build(
                 ModelBulkAddFriendsRequest body,
                 string namespace_,
@@ -62,6 +63,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;
@@ -81,6 +83,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

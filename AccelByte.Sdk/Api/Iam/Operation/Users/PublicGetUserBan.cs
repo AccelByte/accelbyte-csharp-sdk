@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public PublicGetUserBan Build(
                 string namespace_,
                 string userId
@@ -63,6 +64,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
             
+
             
             
             
@@ -82,6 +84,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
             
+
             
             
             

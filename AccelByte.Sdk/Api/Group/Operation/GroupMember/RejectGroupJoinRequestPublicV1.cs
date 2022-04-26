@@ -59,6 +59,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
 
+
             public RejectGroupJoinRequestPublicV1 Build(
                 string namespace_,
                 string userId
@@ -83,6 +84,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -100,6 +102,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

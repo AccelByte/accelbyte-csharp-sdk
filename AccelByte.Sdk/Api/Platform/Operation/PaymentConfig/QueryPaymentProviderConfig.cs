@@ -66,6 +66,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public QueryPaymentProviderConfig Build(
             )
             {
@@ -86,6 +87,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Region != null) QueryParams["region"] = builder.Region;
             
+
             
             
             
@@ -107,6 +109,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (region != null) QueryParams["region"] = region;
             
+
             
             
             

@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
 
+
             public DeleteGroupConfigurationGlobalRuleAdminV1 Build(
                 string allowedAction,
                 string configurationCode,
@@ -73,6 +74,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -92,6 +94,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

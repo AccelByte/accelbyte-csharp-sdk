@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public PublicCreateJusticeUser Build(
                 string namespace_,
                 string targetNamespace
@@ -56,6 +57,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["targetNamespace"] = targetNamespace;
             
             
+
             
             
             
@@ -73,6 +75,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["targetNamespace"] = targetNamespace;
             
             
+
             
             
             

@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
 
 
+
             public PublicRequestDataRetrieval Build(
                 string password,
                 string namespace_,
@@ -63,6 +64,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             if (password != null) FormParams["password"] = password;
+
             
             
             
@@ -82,6 +84,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             
             if (password != null) FormParams["password"] = password;
+
             
             
             

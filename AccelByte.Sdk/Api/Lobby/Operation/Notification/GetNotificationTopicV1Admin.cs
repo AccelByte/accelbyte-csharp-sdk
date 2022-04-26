@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public GetNotificationTopicV1Admin Build(
                 string namespace_,
                 string topicName
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["topicName"] = topicName;
             
             
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["topicName"] = topicName;
             
             
+
             
             
             

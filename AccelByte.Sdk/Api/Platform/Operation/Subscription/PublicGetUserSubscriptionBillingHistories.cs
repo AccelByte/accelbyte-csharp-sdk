@@ -61,6 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicGetUserSubscriptionBillingHistories Build(
                 string namespace_,
                 string subscriptionId,
@@ -92,6 +93,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
+
             
             
             
@@ -117,6 +119,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
+
             
             
             

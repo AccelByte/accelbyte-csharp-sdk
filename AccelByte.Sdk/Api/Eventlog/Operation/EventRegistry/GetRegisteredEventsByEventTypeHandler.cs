@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public GetRegisteredEventsByEventTypeHandler Build(
                 string eventType
             )
@@ -52,6 +53,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             PathParams["eventType"] = eventType;
             
             
+
             
             
             
@@ -67,6 +69,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             PathParams["eventType"] = eventType;
             
             
+
             
             
             

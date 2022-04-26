@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetCode Build(
                 string code,
                 string namespace_
@@ -69,6 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (builder.Redeemable != null) QueryParams["redeemable"] = Convert.ToString(builder.Redeemable)!;
             
+
             
             
             
@@ -88,6 +90,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (redeemable != null) QueryParams["redeemable"] = Convert.ToString(redeemable)!;
             
+
             
             
             

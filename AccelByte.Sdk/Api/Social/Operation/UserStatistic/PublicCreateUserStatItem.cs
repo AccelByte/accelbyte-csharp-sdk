@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
+
             public PublicCreateUserStatItem Build(
                 string namespace_,
                 string statCode,
@@ -64,6 +65,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -83,6 +85,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

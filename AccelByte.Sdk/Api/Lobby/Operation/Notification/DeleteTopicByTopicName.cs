@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public DeleteTopicByTopicName Build(
                 string namespace_,
                 string topic
@@ -61,6 +62,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["topic"] = topic;
             
             
+
             
             
             
@@ -78,6 +80,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["topic"] = topic;
             
             
+
             
             
             

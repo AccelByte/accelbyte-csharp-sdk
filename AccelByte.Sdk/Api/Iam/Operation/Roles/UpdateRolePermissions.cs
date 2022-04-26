@@ -126,6 +126,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public UpdateRolePermissions Build(
                 AccountcommonPermissions body,
                 string roleId
@@ -149,6 +150,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["roleId"] = roleId;
             
             
+
             
             
             BodyParams = body;
@@ -166,6 +168,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["roleId"] = roleId;
             
             
+
             
             
             BodyParams = body;

@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicListCurrencies Build(
                 string namespace_
             )
@@ -54,6 +55,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -68,6 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

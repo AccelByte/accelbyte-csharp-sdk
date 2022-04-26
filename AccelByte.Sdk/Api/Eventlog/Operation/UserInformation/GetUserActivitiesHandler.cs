@@ -42,6 +42,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public GetUserActivitiesHandler Build(
                 string namespace_,
                 string userId,
@@ -71,6 +72,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             
+
             
             
             
@@ -92,6 +94,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             
+
             
             
             

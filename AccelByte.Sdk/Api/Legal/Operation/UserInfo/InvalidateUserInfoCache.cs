@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public InvalidateUserInfoCache Build(
             )
             {
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             if (builder.Namespace != null) QueryParams["namespace"] = builder.Namespace;
             
+
             
             
             
@@ -75,6 +77,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             if (namespace_ != null) QueryParams["namespace"] = namespace_;
             
+
             
             
             

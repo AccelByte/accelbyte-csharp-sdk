@@ -59,6 +59,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
 
 
+
             public PublicListAchievements Build(
                 string namespace_,
                 string language
@@ -86,6 +87,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
             if (language != null) QueryParams["language"] = language;
             
+
             
             
             
@@ -109,6 +111,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (sortBy != null) QueryParams["sortBy"] = sortBy;
             if (language != null) QueryParams["language"] = language;
             
+
             
             
             

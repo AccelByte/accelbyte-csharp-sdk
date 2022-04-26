@@ -57,6 +57,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public GetUserJusticePlatformAccount Build(
                 string namespace_,
                 string targetNamespace,
@@ -85,6 +86,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -104,6 +106,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

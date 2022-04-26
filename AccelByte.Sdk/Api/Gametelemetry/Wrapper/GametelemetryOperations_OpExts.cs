@@ -13,21 +13,25 @@ namespace AccelByte.Sdk.Api
     {
         public static void Execute(
             this AdminGetEventsGameTelemetryV1AdminEventsGet.AdminGetEventsGameTelemetryV1AdminEventsGetBuilder builder,
-            string namespace_
+            string namespace_,
+            string accessToken
         )
         {
             AdminGetEventsGameTelemetryV1AdminEventsGet op = builder.Build(
-                namespace_
+                namespace_,
+                accessToken                
             );
 
             ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).AdminGetEventsGameTelemetryV1AdminEventsGet(op);
         }
 
         public static void Execute(
-            this AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet.AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder builder
+            this AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet.AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder builder,
+            string accessToken
         )
         {
             AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet op = builder.Build(
+                accessToken                
             );
 
             ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet(op);
@@ -35,11 +39,13 @@ namespace AccelByte.Sdk.Api
 
         public static void Execute(
             this ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost.ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder builder,
-            List<TelemetryBody> body
+            List<TelemetryBody> body,
+            string accessToken
         )
         {
             ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost op = builder.Build(
-                body
+                body,
+                accessToken                
             );
 
             ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(op);
@@ -47,11 +53,13 @@ namespace AccelByte.Sdk.Api
 
         public static Dictionary<string, object>? Execute(
             this ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet.ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetBuilder builder,
-            string steamId
+            string steamId,
+            string accessToken
         )
         {
             ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet op = builder.Build(
-                steamId
+                steamId,
+                accessToken                
             );
 
             return ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(op);
@@ -60,12 +68,14 @@ namespace AccelByte.Sdk.Api
         public static void Execute(
             this ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut.ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder builder,
             string playtime,
-            string steamId
+            string steamId,
+            string accessToken
         )
         {
             ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut op = builder.Build(
                 playtime,
-                steamId
+                steamId,
+                accessToken                
             );
 
             ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(op);

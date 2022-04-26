@@ -42,6 +42,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public RetrieveSinglePolicyVersion Build(
                 string policyId
             )
@@ -63,6 +64,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             if (builder.VersionId != null) QueryParams["versionId"] = builder.VersionId;
             
+
             
             
             
@@ -80,6 +82,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             if (versionId != null) QueryParams["versionId"] = versionId;
             
+
             
             
             

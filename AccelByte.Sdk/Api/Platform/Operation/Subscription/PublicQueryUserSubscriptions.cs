@@ -92,6 +92,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicQueryUserSubscriptions Build(
                 string namespace_,
                 string userId
@@ -123,6 +124,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Status != null) QueryParams["status"] = builder.Status;
             if (builder.SubscribedBy != null) QueryParams["subscribedBy"] = builder.SubscribedBy;
             
+
             
             
             
@@ -154,6 +156,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (status != null) QueryParams["status"] = status;
             if (subscribedBy != null) QueryParams["subscribedBy"] = subscribedBy;
             
+
             
             
             

@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
 
 
+
             public DeleteAdminEmailConfiguration Build(
                 string namespace_,
                 List<string> emails
@@ -59,6 +60,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             if (emails != null) QueryParams["emails"] = emails;
             
+
             
             CollectionFormatMap["emails"] = "csv";
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             if (emails != null) QueryParams["emails"] = emails;
             
+
             
             CollectionFormatMap["emails"] = "csv";
             

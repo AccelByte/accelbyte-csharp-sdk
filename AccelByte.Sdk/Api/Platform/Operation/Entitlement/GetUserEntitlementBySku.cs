@@ -53,6 +53,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetUserEntitlementBySku Build(
                 string namespace_,
                 string userId,
@@ -83,6 +84,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.EntitlementClazz != null) QueryParams["entitlementClazz"] = builder.EntitlementClazz;
             if (sku != null) QueryParams["sku"] = sku;
             
+
             
             
             
@@ -106,6 +108,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (entitlementClazz != null) QueryParams["entitlementClazz"] = entitlementClazz;
             if (sku != null) QueryParams["sku"] = sku;
             
+
             
             
             

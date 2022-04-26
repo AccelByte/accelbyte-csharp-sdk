@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public PublicVerifyRegistrationCode Build(
                 ModelVerifyRegistrationCode body,
                 string namespace_
@@ -57,6 +58,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -74,6 +76,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

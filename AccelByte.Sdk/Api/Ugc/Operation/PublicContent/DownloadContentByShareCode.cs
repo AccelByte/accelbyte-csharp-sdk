@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public DownloadContentByShareCode Build(
                 string namespace_,
                 string shareCode
@@ -56,6 +57,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["shareCode"] = shareCode;
             
             
+
             
             
             
@@ -73,6 +75,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["shareCode"] = shareCode;
             
             
+
             
             
             

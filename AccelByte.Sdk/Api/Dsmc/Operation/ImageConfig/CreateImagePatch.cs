@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
 
 
+
             public CreateImagePatch Build(
                 ModelsCreateImagePatchRequest body
             )
@@ -64,6 +65,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         {
             
             
+
             
             
             BodyParams = body;
@@ -79,6 +81,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         {
             
             
+
             
             
             BodyParams = body;

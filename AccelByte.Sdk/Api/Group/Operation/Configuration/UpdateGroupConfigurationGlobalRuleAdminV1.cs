@@ -46,6 +46,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
 
+
             public UpdateGroupConfigurationGlobalRuleAdminV1 Build(
                 ModelsUpdateGroupConfigurationGlobalRulesRequestV1 body,
                 string allowedAction,
@@ -77,6 +78,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -98,6 +100,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public RetrieveEligibilitiesPublicIndirect Build(
                 string clientId,
                 string countryCode,
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -91,6 +93,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

@@ -59,6 +59,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public PlatformAuthenticateSAMLV3Handler Build(
                 string platformId,
                 string state
@@ -85,6 +86,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.Error != null) QueryParams["error"] = builder.Error;
             if (state != null) QueryParams["state"] = state;
             
+
             
             
             
@@ -107,6 +109,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (error != null) QueryParams["error"] = error;
             if (state != null) QueryParams["state"] = state;
             
+
             
             
             

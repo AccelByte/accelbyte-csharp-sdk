@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
 
 
+
             public GetSessionByUserIDs Build(
                 string namespace_,
                 string userIds
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             if (userIds != null) QueryParams["user_ids"] = userIds;
             
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             if (userIds != null) QueryParams["user_ids"] = userIds;
             
+
             
             
             

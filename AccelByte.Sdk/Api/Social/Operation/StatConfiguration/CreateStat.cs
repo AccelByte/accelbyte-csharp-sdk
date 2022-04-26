@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
+
             public CreateStat Build(
                 string namespace_
             )
@@ -64,6 +65,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -81,6 +83,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

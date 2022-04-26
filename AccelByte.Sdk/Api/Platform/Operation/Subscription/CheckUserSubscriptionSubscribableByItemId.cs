@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public CheckUserSubscriptionSubscribableByItemId Build(
                 string namespace_,
                 string userId,
@@ -66,6 +67,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (itemId != null) QueryParams["itemId"] = itemId;
             
+
             
             
             
@@ -85,6 +87,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (itemId != null) QueryParams["itemId"] = itemId;
             
+
             
             
             

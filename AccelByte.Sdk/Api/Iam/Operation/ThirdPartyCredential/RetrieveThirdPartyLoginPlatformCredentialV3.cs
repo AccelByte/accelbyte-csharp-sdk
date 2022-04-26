@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public RetrieveThirdPartyLoginPlatformCredentialV3 Build(
                 string namespace_,
                 string platformId
@@ -56,6 +57,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["platformId"] = platformId;
             
             
+
             
             
             
@@ -73,6 +75,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["platformId"] = platformId;
             
             
+
             
             
             

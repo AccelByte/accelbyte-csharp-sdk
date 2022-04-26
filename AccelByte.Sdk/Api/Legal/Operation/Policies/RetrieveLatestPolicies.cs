@@ -60,6 +60,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public RetrieveLatestPolicies Build(
                 string countryCode
             )
@@ -83,6 +84,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             if (builder.PolicyType != null) QueryParams["policyType"] = builder.PolicyType;
             if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
             
+
             
             
             
@@ -103,6 +105,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             if (policyType != null) QueryParams["policyType"] = policyType;
             if (tags != null) QueryParams["tags"] = tags;
             
+
             
             
             

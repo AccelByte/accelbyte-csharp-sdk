@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public FeatureItem Build(
                 string feature,
                 string itemId,
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             
@@ -91,6 +93,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             

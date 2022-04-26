@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
 
 
+
             public GetLeaderboardConfigurationAdminV1 Build(
                 string leaderboardCode,
                 string namespace_
@@ -63,6 +64,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -80,6 +82,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

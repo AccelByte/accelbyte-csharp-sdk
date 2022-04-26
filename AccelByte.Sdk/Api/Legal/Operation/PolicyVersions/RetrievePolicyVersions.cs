@@ -58,6 +58,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public RetrievePolicyVersions Build(
             )
             {
@@ -77,6 +78,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             if (builder.LocaleId != null) QueryParams["localeId"] = builder.LocaleId;
             if (builder.Namespace != null) QueryParams["namespace"] = builder.Namespace;
             
+
             
             
             
@@ -96,6 +98,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             if (localeId != null) QueryParams["localeId"] = localeId;
             if (namespace_ != null) QueryParams["namespace"] = namespace_;
             
+
             
             
             

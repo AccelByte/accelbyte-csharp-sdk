@@ -53,6 +53,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicGetRootCategories Build(
                 string namespace_
             )
@@ -75,6 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Language != null) QueryParams["language"] = builder.Language;
             if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
             
+
             
             
             
@@ -93,6 +95,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (language != null) QueryParams["language"] = language;
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             

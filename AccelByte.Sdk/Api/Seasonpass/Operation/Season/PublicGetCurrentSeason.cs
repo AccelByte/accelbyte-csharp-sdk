@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
 
 
+
             public PublicGetCurrentSeason Build(
                 string namespace_
             )
@@ -64,6 +65,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             if (builder.Language != null) QueryParams["language"] = builder.Language;
             
+
             
             
             
@@ -80,6 +82,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             if (language != null) QueryParams["language"] = language;
             
+
             
             
             

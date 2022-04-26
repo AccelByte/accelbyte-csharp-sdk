@@ -133,6 +133,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicGetEntitlementOwnershipToken Build(
                 string namespace_
             )
@@ -156,6 +157,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.ItemIds != null) QueryParams["itemIds"] = builder.ItemIds;
             if (builder.Skus != null) QueryParams["skus"] = builder.Skus;
             
+
             
             CollectionFormatMap["appIds"] = "multi";
             CollectionFormatMap["itemIds"] = "multi";
@@ -180,6 +182,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (itemIds != null) QueryParams["itemIds"] = itemIds;
             if (skus != null) QueryParams["skus"] = skus;
             
+
             
             CollectionFormatMap["appIds"] = "multi";
             CollectionFormatMap["itemIds"] = "multi";

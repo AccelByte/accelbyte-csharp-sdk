@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public AnonymizeUserAgreement Build(
                 string userId
             )
@@ -52,6 +53,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -67,6 +69,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

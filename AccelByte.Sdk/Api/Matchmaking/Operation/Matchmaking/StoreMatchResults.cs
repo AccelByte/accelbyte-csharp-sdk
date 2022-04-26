@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
 
 
+
             public StoreMatchResults Build(
                 ModelsMatchResultRequest body,
                 string namespace_
@@ -61,6 +62,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -78,6 +80,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

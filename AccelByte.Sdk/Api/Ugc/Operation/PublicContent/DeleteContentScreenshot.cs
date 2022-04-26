@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public DeleteContentScreenshot Build(
                 string contentId,
                 string namespace_,
@@ -66,6 +67,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -87,6 +89,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

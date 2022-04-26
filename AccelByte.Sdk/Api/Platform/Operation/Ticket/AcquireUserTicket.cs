@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public AcquireUserTicket Build(
                 string boothName,
                 string namespace_,
@@ -73,6 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -94,6 +96,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

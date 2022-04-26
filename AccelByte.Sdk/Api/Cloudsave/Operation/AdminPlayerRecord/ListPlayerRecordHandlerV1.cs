@@ -60,6 +60,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
 
 
+
             public ListPlayerRecordHandlerV1 Build(
                 string namespace_
             )
@@ -83,6 +84,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Query != null) QueryParams["query"] = builder.Query;
             
+
             
             
             
@@ -104,6 +106,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (query != null) QueryParams["query"] = query;
             
+
             
             
             

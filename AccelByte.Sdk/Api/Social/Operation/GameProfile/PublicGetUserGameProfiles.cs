@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
+
             public PublicGetUserGameProfiles Build(
                 string namespace_,
                 List<string> userIds
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             if (userIds != null) QueryParams["userIds"] = userIds;
             
+
             
             CollectionFormatMap["userIds"] = "multi";
             
@@ -78,6 +80,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             if (userIds != null) QueryParams["userIds"] = userIds;
             
+
             
             CollectionFormatMap["userIds"] = "multi";
             

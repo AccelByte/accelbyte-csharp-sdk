@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
+
             public BulkFetchStatItems1 Build(
                 string namespace_,
                 string statCode,
@@ -64,6 +65,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             if (statCode != null) QueryParams["statCode"] = statCode;
             if (userIds != null) QueryParams["userIds"] = userIds;
             
+
             
             
             
@@ -83,6 +85,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             if (statCode != null) QueryParams["statCode"] = statCode;
             if (userIds != null) QueryParams["userIds"] = userIds;
             
+
             
             
             

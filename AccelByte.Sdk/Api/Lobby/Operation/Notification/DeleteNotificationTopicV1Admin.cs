@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public DeleteNotificationTopicV1Admin Build(
                 string namespace_,
                 string topicName
@@ -63,6 +64,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["topicName"] = topicName;
             
             
+
             
             
             
@@ -80,6 +82,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["topicName"] = topicName;
             
             
+
             
             
             

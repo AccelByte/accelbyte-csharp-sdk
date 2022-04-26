@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public SpecificEventLevelDescriptionHandler Build(
             )
             {
@@ -54,6 +55,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             if (builder.EventLevels != null) QueryParams["eventLevels"] = builder.EventLevels;
             
+
             
             
             
@@ -69,6 +71,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             if (eventLevels != null) QueryParams["eventLevels"] = eventLevels;
             
+
             
             
             

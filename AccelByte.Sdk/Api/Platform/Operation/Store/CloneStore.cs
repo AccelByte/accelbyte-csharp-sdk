@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public CloneStore Build(
                 string namespace_,
                 string storeId
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (builder.TargetStoreId != null) QueryParams["targetStoreId"] = builder.TargetStoreId;
             
+
             
             
             
@@ -89,6 +91,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (targetStoreId != null) QueryParams["targetStoreId"] = targetStoreId;
             
+
             
             
             

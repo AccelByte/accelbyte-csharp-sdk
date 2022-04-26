@@ -55,6 +55,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
 
 
+
             public GetCurrentWeekLeaderboardRankingAdminV1 Build(
                 string leaderboardCode,
                 string namespace_
@@ -81,6 +82,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
+
             
             
             
@@ -102,6 +104,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
+
             
             
             

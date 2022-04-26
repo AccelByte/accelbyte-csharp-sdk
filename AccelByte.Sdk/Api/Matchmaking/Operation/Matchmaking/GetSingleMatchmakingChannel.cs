@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
 
 
+
             public GetSingleMatchmakingChannel Build(
                 string channelName,
                 string namespace_
@@ -62,6 +63,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -79,6 +81,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

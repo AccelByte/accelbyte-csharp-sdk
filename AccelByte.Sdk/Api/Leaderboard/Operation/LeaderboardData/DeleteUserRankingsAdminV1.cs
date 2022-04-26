@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
 
 
+
             public DeleteUserRankingsAdminV1 Build(
                 string namespace_,
                 string userId,
@@ -66,6 +67,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             if (leaderboardCode != null) QueryParams["leaderboardCode"] = leaderboardCode;
             
+
             
             CollectionFormatMap["leaderboardCode"] = "multi";
             
@@ -86,6 +88,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             
             if (leaderboardCode != null) QueryParams["leaderboardCode"] = leaderboardCode;
             
+
             
             CollectionFormatMap["leaderboardCode"] = "multi";
             

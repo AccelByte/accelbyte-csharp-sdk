@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
 
 
+
             public RetireSeason Build(
                 string namespace_,
                 string seasonId
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             if (builder.Force != null) QueryParams["force"] = Convert.ToString(builder.Force)!;
             
+
             
             
             
@@ -89,6 +91,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             if (force != null) QueryParams["force"] = Convert.ToString(force)!;
             
+
             
             
             

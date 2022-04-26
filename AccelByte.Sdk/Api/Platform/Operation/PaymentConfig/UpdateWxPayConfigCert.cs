@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
+
             public UpdateWxPayConfigCert Build(
                 string id
             )
@@ -64,6 +65,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             if (builder.File != null) FormParams["file"] = builder.File;
+
             
             
             
@@ -81,6 +83,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             if (file != null) FormParams["file"] = file;
+
             
             
             

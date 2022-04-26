@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicGetItemDynamicData Build(
                 string itemId,
                 string namespace_
@@ -59,6 +60,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -75,6 +77,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

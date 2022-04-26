@@ -76,6 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public QueryUncategorizedItems Build(
                 string namespace_
             )
@@ -101,6 +102,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
             if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
             
+
             
             
             
@@ -126,6 +128,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (sortBy != null) QueryParams["sortBy"] = sortBy;
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             

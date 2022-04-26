@@ -46,6 +46,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public BulkDisableCodes Build(
                 string campaignId,
                 string namespace_
@@ -71,6 +72,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (builder.BatchNo != null) QueryParams["batchNo"] = Convert.ToString(builder.BatchNo)!;
             
+
             
             
             
@@ -90,6 +92,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (batchNo != null) QueryParams["batchNo"] = Convert.ToString(batchNo)!;
             
+
             
             
             

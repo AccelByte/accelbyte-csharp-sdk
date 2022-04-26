@@ -57,6 +57,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public UpdateCategory Build(
                 string categoryPath,
                 string namespace_,
@@ -85,6 +86,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             BodyParams = builder.Body;
@@ -106,6 +108,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             BodyParams = body;

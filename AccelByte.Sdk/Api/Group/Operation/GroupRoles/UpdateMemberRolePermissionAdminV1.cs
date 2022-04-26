@@ -67,6 +67,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
 
+
             public UpdateMemberRolePermissionAdminV1 Build(
                 ModelsUpdateMemberRolePermissionsRequestV1 body,
                 string memberRoleId,
@@ -94,6 +95,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -113,6 +115,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

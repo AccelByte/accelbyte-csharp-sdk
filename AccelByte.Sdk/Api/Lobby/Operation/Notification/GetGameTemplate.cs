@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public GetGameTemplate Build(
                 string namespace_
             )
@@ -53,6 +54,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -68,6 +70,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

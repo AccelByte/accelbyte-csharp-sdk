@@ -27,6 +27,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
         [SdkCommandArgument("steamId")]
         public string SteamId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("access_token")]
+        public string AccessToken { get; set; } = String.Empty;
+
         public ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -37,7 +40,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
             AccelByte.Sdk.Api.Gametelemetry.Wrapper.GametelemetryOperations wrapper = new AccelByte.Sdk.Api.Gametelemetry.Wrapper.GametelemetryOperations(_SDK);
 
             ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet operation = new ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(
-                SteamId                
+                SteamId,                
+                AccessToken                
             );            
             
             Dictionary<string, object>? response = wrapper.ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(operation);

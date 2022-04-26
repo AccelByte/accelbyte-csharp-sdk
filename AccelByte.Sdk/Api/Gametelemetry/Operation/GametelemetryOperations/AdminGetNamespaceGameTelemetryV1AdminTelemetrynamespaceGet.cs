@@ -26,16 +26,19 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         public class AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder
             : OperationBuilder<AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder>
         {
+            
             internal AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder() { }
 
 
 
 
 
+
             public AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet Build(
-            )
+                string accessToken            )
             {
-                AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet op = new AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet(this
+                AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet op = new AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet(this,
+                    accessToken
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -43,11 +46,13 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             }
         }
 
-        private AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet(AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder builder
+        private AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet(AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder builder,
+            string accessToken            
         )
         {
             
             
+
             
             
             
@@ -58,10 +63,12 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         #endregion
 
         public AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet(
+            string accessToken
         )
         {
             
             
+
             
             
             

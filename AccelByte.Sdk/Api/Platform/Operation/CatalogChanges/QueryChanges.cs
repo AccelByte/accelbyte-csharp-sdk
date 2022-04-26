@@ -109,6 +109,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public QueryChanges Build(
                 string namespace_,
                 string storeId
@@ -142,6 +143,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.UpdatedAtEnd != null) QueryParams["updatedAtEnd"] = builder.UpdatedAtEnd;
             if (builder.UpdatedAtStart != null) QueryParams["updatedAtStart"] = builder.UpdatedAtStart;
             
+
             
             
             
@@ -177,6 +179,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (updatedAtEnd != null) QueryParams["updatedAtEnd"] = updatedAtEnd;
             if (updatedAtStart != null) QueryParams["updatedAtStart"] = updatedAtStart;
             
+
             
             
             

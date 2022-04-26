@@ -67,6 +67,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public QueryKeyGroups Build(
                 string namespace_
             )
@@ -91,6 +92,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Tag != null) QueryParams["tag"] = builder.Tag;
             
+
             
             
             
@@ -114,6 +116,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (tag != null) QueryParams["tag"] = tag;
             
+
             
             
             

@@ -53,6 +53,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetItem Build(
                 string itemId,
                 string namespace_
@@ -79,6 +80,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
             if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
             
+
             
             
             
@@ -100,6 +102,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             

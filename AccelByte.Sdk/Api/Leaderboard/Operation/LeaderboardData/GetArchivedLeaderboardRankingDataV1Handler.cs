@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
 
 
+
             public GetArchivedLeaderboardRankingDataV1Handler Build(
                 string leaderboardCode,
                 string namespace_,
@@ -72,6 +73,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             if (builder.Slug != null) QueryParams["slug"] = builder.Slug;
             if (leaderboardCodes != null) QueryParams["leaderboardCodes"] = leaderboardCodes;
             
+
             
             
             
@@ -93,6 +95,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             if (slug != null) QueryParams["slug"] = slug;
             if (leaderboardCodes != null) QueryParams["leaderboardCodes"] = leaderboardCodes;
             
+
             
             
             

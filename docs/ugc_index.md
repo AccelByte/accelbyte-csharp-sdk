@@ -85,6 +85,7 @@
 |---|---|---|---|---|
 | `/ugc/v1/public/namespaces/{namespace}/channels/{channelId}/contents` | GET | SearchChannelSpecificContent | [SearchChannelSpecificContent](../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/SearchChannelSpecificContent.cs) | [SearchChannelSpecificContent](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/SearchChannelSpecificContent.cs) |
 | `/ugc/v1/public/namespaces/{namespace}/contents` | GET | PublicSearchContent | [PublicSearchContent](../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicSearchContent.cs) | [PublicSearchContent](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicSearchContent.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents/bulk` | POST | PublicGetContentBulk | [PublicGetContentBulk](../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicGetContentBulk.cs) | [PublicGetContentBulk](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicGetContentBulk.cs) |
 | `/ugc/v1/public/namespaces/{namespace}/contents/sharecodes/{shareCode}` | GET | DownloadContentByShareCode | [DownloadContentByShareCode](../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/DownloadContentByShareCode.cs) | [DownloadContentByShareCode](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/DownloadContentByShareCode.cs) |
 | `/ugc/v1/public/namespaces/{namespace}/contents/{contentId}` | GET | PublicDownloadContentByContentID | [PublicDownloadContentByContentID](../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicDownloadContentByContentID.cs) | [PublicDownloadContentByContentID](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicDownloadContentByContentID.cs) |
 | `/ugc/v1/public/namespaces/{namespace}/contents/{contentId}/preview` | GET | PublicDownloadContentPreview | [PublicDownloadContentPreview](../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicDownloadContentPreview.cs) | [PublicDownloadContentPreview](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicDownloadContentPreview.cs) |
@@ -188,6 +189,7 @@
 | `models.PaginatedGroupResponse` | [ModelsPaginatedGroupResponse](../AccelByte.Sdk/Api/Ugc/Model/ModelsPaginatedGroupResponse.cs) |
 | `models.PagingCursor` | [ModelsPagingCursor](../AccelByte.Sdk/Api/Ugc/Model/ModelsPagingCursor.cs) |
 | `models.PayloadURL` | [ModelsPayloadURL](../AccelByte.Sdk/Api/Ugc/Model/ModelsPayloadURL.cs) |
+| `models.PublicGetContentBulkRequest` | [ModelsPublicGetContentBulkRequest](../AccelByte.Sdk/Api/Ugc/Model/ModelsPublicGetContentBulkRequest.cs) |
 | `models.ScreenshotResponse` | [ModelsScreenshotResponse](../AccelByte.Sdk/Api/Ugc/Model/ModelsScreenshotResponse.cs) |
 | `models.UpdateScreenshotRequest` | [ModelsUpdateScreenshotRequest](../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateScreenshotRequest.cs) |
 | `models.UpdateScreenshotResponse` | [ModelsUpdateScreenshotResponse](../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateScreenshotResponse.cs) |

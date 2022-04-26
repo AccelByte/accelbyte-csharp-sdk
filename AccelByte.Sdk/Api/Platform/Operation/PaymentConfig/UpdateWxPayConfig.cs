@@ -51,6 +51,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public UpdateWxPayConfig Build(
                 string id
             )
@@ -72,6 +73,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (builder.Validate != null) QueryParams["validate"] = Convert.ToString(builder.Validate)!;
             
+
             
             
             BodyParams = builder.Body;
@@ -91,6 +93,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (validate != null) QueryParams["validate"] = Convert.ToString(validate)!;
             
+
             
             
             BodyParams = body;

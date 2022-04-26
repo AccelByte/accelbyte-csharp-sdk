@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
 
 
+
             public AdminEnableMyAuthenticatorV4 Build(
             )
             {
@@ -62,6 +63,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             if (builder.Code != null) FormParams["code"] = builder.Code;
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             if (code != null) FormParams["code"] = code;
+
             
             
             

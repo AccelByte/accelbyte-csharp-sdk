@@ -56,6 +56,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public RetrieveAllUsersByPolicyVersion Build(
                 string policyVersionId
             )
@@ -79,6 +80,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (policyVersionId != null) QueryParams["policyVersionId"] = policyVersionId;
             
+
             
             
             
@@ -100,6 +102,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (policyVersionId != null) QueryParams["policyVersionId"] = policyVersionId;
             
+
             
             
             

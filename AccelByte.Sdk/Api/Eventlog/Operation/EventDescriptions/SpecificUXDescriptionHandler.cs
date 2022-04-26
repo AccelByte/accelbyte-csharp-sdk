@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public SpecificUXDescriptionHandler Build(
             )
             {
@@ -54,6 +55,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             if (builder.Ux != null) QueryParams["ux"] = builder.Ux;
             
+
             
             
             
@@ -69,6 +71,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             if (ux != null) QueryParams["ux"] = ux;
             
+
             
             
             

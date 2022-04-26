@@ -52,6 +52,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
 
 
+
             public AdminRetrievePlayerRecords Build(
                 string namespace_,
                 string userId
@@ -78,6 +79,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
+
             
             
             
@@ -99,6 +101,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
+
             
             
             

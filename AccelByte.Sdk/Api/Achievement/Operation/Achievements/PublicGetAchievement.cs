@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
 
 
+
             public PublicGetAchievement Build(
                 string achievementCode,
                 string namespace_,
@@ -64,6 +65,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             if (language != null) QueryParams["language"] = language;
             
+
             
             
             
@@ -83,6 +85,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             if (language != null) QueryParams["language"] = language;
             
+
             
             
             

@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
+
             public UploadKeys Build(
                 string keyGroupId,
                 string namespace_
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             if (builder.File != null) FormParams["file"] = builder.File;
+
             
             
             
@@ -89,6 +91,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             if (file != null) FormParams["file"] = file;
+
             
             
             

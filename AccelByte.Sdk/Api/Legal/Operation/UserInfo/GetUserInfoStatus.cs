@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public GetUserInfoStatus Build(
             )
             {
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             if (builder.Namespaces != null) QueryParams["namespaces"] = builder.Namespaces;
             
+
             
             
             
@@ -75,6 +77,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             if (namespaces != null) QueryParams["namespaces"] = namespaces;
             
+
             
             
             

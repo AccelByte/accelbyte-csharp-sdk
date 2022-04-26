@@ -75,6 +75,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public QueryPaymentOrders Build(
                 string namespace_
             )
@@ -100,6 +101,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Status != null) QueryParams["status"] = builder.Status;
             
+
             
             
             
@@ -125,6 +127,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (status != null) QueryParams["status"] = status;
             
+
             
             
             

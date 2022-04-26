@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public DeleteTemplateLocalization Build(
                 string namespace_,
                 string templateLanguage,
@@ -63,6 +64,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["templateSlug"] = templateSlug;
             
             
+
             
             
             
@@ -82,6 +84,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["templateSlug"] = templateSlug;
             
             
+
             
             
             

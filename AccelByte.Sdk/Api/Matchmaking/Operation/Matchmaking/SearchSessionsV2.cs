@@ -78,6 +78,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
 
 
+
             public SearchSessionsV2 Build(
                 string namespace_,
                 long limit,
@@ -111,6 +112,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
             
+
             
             
             
@@ -140,6 +142,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
             
+
             
             
             

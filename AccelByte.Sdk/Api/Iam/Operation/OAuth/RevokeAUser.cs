@@ -54,6 +54,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public RevokeAUser Build(
                 string userID
             )
@@ -74,6 +75,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             if (userID != null) FormParams["userID"] = userID;
+
             
             
             
@@ -89,6 +91,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             if (userID != null) FormParams["userID"] = userID;
+
             
             
             

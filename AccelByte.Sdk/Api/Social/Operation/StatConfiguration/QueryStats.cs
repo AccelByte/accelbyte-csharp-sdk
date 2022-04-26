@@ -51,6 +51,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
+
             public QueryStats Build(
                 string namespace_,
                 string keyword
@@ -77,6 +78,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (keyword != null) QueryParams["keyword"] = keyword;
             
+
             
             
             
@@ -98,6 +100,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (keyword != null) QueryParams["keyword"] = keyword;
             
+
             
             
             

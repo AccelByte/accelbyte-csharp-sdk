@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public RecurringChargeSubscription Build(
                 string namespace_,
                 string subscriptionId
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["subscriptionId"] = subscriptionId;
             
             
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["subscriptionId"] = subscriptionId;
             
             
+
             
             
             

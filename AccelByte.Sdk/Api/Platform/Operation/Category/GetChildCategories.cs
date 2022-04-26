@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetChildCategories Build(
                 string categoryPath,
                 string namespace_
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
             
+
             
             
             
@@ -89,6 +91,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             

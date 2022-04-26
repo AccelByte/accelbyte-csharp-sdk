@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
 
 
+
             public AddUserIntoSessionInChannel Build(
                 ModelsMatchAddUserIntoSessionRequest body,
                 string channelName,
@@ -69,6 +70,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -90,6 +92,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

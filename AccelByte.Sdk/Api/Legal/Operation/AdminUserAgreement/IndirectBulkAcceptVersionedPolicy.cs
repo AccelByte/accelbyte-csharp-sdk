@@ -51,6 +51,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public IndirectBulkAcceptVersionedPolicy Build(
                 string namespace_,
                 string userId,
@@ -84,6 +85,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             if (clientId != null) QueryParams["clientId"] = clientId;
             if (countryCode != null) QueryParams["countryCode"] = countryCode;
             
+
             
             
             BodyParams = builder.Body;
@@ -109,6 +111,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             if (clientId != null) QueryParams["clientId"] = clientId;
             if (countryCode != null) QueryParams["countryCode"] = countryCode;
             
+
             
             
             BodyParams = body;

@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
 
 
 
+
             public Heartbeat Build(
                 ModelsHeartbeatRequest body
             )
@@ -56,6 +57,7 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
         {
             
             
+
             
             
             BodyParams = body;
@@ -71,6 +73,7 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
         {
             
             
+
             
             
             BodyParams = body;

@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public RetrieveAllLegalPolicies Build(
             )
             {
@@ -49,6 +50,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             
             
+
             
             
             
@@ -62,6 +64,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             
             
+
             
             
             

@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public AdminHideUserContent Build(
                 ModelsHideContentRequest body,
                 string contentId,
@@ -65,6 +66,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;
@@ -86,6 +88,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

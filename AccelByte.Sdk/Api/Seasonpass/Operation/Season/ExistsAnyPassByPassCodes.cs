@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
 
 
+
             public ExistsAnyPassByPassCodes Build(
                 string namespace_,
                 string userId
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             if (builder.PassCodes != null) QueryParams["passCodes"] = builder.PassCodes;
             
+
             
             CollectionFormatMap["passCodes"] = "multi";
             
@@ -90,6 +92,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             if (passCodes != null) QueryParams["passCodes"] = passCodes;
             
+
             
             CollectionFormatMap["passCodes"] = "multi";
             

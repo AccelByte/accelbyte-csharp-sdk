@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public UpdateKeyGroup Build(
                 string keyGroupId,
                 string namespace_
@@ -68,6 +69,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -87,6 +89,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

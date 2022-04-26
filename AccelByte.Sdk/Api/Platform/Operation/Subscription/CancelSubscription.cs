@@ -55,6 +55,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public CancelSubscription Build(
                 string namespace_,
                 string subscriptionId,
@@ -84,6 +85,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (builder.Force != null) QueryParams["force"] = Convert.ToString(builder.Force)!;
             
+
             
             
             BodyParams = builder.Body;
@@ -107,6 +109,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (force != null) QueryParams["force"] = Convert.ToString(force)!;
             
+
             
             
             BodyParams = body;

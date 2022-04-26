@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
 
 
+
             public UpdateNamespace Build(
                 string namespace_
             )
@@ -64,6 +65,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -81,6 +83,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

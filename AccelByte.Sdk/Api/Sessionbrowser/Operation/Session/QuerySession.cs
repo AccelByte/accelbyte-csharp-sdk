@@ -108,6 +108,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
 
 
+
             public QuerySession Build(
                 string namespace_,
                 string sessionType
@@ -141,6 +142,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             if (builder.UserId != null) QueryParams["user_id"] = builder.UserId;
             if (sessionType != null) QueryParams["session_type"] = sessionType;
             
+
             
             
             
@@ -176,6 +178,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             if (userId != null) QueryParams["user_id"] = userId;
             if (sessionType != null) QueryParams["session_type"] = sessionType;
             
+
             
             
             

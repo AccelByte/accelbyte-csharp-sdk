@@ -51,6 +51,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
 
+
             public UpdatePatchSingleGroupPublicV1 Build(
                 ModelsUpdateGroupRequestV1 body,
                 string groupId,
@@ -78,6 +79,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -97,6 +99,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

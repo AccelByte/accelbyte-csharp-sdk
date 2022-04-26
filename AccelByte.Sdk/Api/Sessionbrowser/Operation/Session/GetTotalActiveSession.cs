@@ -41,6 +41,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
 
 
+
             public GetTotalActiveSession Build(
                 string namespace_
             )
@@ -62,6 +63,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             if (builder.SessionType != null) QueryParams["session_type"] = builder.SessionType;
             
+
             
             
             
@@ -79,6 +81,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             
             if (sessionType != null) QueryParams["session_type"] = sessionType;
             
+
             
             
             

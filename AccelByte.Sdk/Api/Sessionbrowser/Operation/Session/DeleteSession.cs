@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
 
 
+
             public DeleteSession Build(
                 string namespace_,
                 string sessionID
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             PathParams["sessionID"] = sessionID;
             
             
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             PathParams["sessionID"] = sessionID;
             
             
+
             
             
             

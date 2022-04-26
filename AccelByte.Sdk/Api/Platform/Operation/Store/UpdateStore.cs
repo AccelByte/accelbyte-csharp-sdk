@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public UpdateStore Build(
                 string namespace_,
                 string storeId
@@ -69,6 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["storeId"] = storeId;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -88,6 +90,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["storeId"] = storeId;
             
             
+
             
             
             BodyParams = body;

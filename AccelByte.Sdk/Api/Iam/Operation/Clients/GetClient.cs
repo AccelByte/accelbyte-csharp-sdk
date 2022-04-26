@@ -31,6 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public GetClient Build(
                 string clientId
             )
@@ -51,6 +52,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["clientId"] = clientId;
             
             
+
             
             
             
@@ -66,6 +68,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["clientId"] = clientId;
             
             
+
             
             
             

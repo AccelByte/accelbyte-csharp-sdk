@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public AdminUpdateType Build(
                 ModelsCreateTypeRequest body,
                 string namespace_,
@@ -61,6 +62,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["typeId"] = typeId;
             
             
+
             
             
             BodyParams = body;
@@ -80,6 +82,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["typeId"] = typeId;
             
             
+
             
             
             BodyParams = body;

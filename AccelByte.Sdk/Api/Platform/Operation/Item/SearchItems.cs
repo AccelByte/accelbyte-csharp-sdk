@@ -70,6 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public SearchItems Build(
                 string namespace_,
                 string keyword,
@@ -102,6 +103,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (keyword != null) QueryParams["keyword"] = keyword;
             if (language != null) QueryParams["language"] = language;
             
+
             
             
             
@@ -129,6 +131,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (keyword != null) QueryParams["keyword"] = keyword;
             if (language != null) QueryParams["language"] = language;
             
+
             
             
             

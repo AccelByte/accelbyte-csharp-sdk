@@ -38,18 +38,21 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             : OperationBuilder<PublicRemoveTrustedDeviceV4Builder>
         {
             
+            
             internal PublicRemoveTrustedDeviceV4Builder() { }
 
 
 
 
 
+
             public PublicRemoveTrustedDeviceV4 Build(
-                string namespace_
-            )
+                string namespace_,
+                string deviceToken            )
             {
                 PublicRemoveTrustedDeviceV4 op = new PublicRemoveTrustedDeviceV4(this,
-                    namespace_                    
+                    namespace_,                    
+                    deviceToken
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -58,12 +61,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         }
 
         private PublicRemoveTrustedDeviceV4(PublicRemoveTrustedDeviceV4Builder builder,
-            string namespace_
+            string namespace_,
+            string deviceToken            
         )
         {
             PathParams["namespace"] = namespace_;
             
             
+
+            Cookies["device_token"] = deviceToken;
             
             
             
@@ -73,12 +79,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public PublicRemoveTrustedDeviceV4(
-            string namespace_            
+            string namespace_,            
+            string deviceToken
         )
         {
             PathParams["namespace"] = namespace_;
             
             
+
+            Cookies["device_token"] = deviceToken;
             
             
             

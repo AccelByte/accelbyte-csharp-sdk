@@ -42,6 +42,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public SendSpecificUserTemplatedNotificationV1Admin Build(
                 ModelNotificationWithTemplateRequestV1 body,
                 string namespace_,
@@ -69,6 +70,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;
@@ -88,6 +90,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public GetEventByNamespaceHandler Build(
                 string namespace_,
                 string endDate,
@@ -76,6 +77,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             if (startDate != null) QueryParams["startDate"] = startDate;
             
+
             
             
             
@@ -99,6 +101,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             if (startDate != null) QueryParams["startDate"] = startDate;
             
+
             
             
             

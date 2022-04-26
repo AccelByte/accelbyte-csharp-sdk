@@ -57,6 +57,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
 
 
+
             public ListCrossNamespaceAccountLink Build(
                 string linkingToken,
                 string namespace_,
@@ -86,6 +87,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (builder.PlatformId != null) FormParams["platformId"] = builder.PlatformId;
             if (linkingToken != null) FormParams["linkingToken"] = linkingToken;
+
             
             
             
@@ -107,6 +109,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (platformId != null) FormParams["platformId"] = platformId;
             if (linkingToken != null) FormParams["linkingToken"] = linkingToken;
+
             
             
             

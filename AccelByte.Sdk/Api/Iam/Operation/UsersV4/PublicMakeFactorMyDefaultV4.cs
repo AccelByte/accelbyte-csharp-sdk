@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public PublicMakeFactorMyDefaultV4 Build(
                 string factor,
                 string namespace_
@@ -63,6 +64,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             if (factor != null) FormParams["factor"] = factor;
+
             
             
             
@@ -80,6 +82,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             if (factor != null) FormParams["factor"] = factor;
+
             
             
             

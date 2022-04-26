@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public RetrieveSinglePolicy Build(
                 string basePolicyId
             )
@@ -54,6 +55,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["basePolicyId"] = basePolicyId;
             
             
+
             
             
             
@@ -69,6 +71,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["basePolicyId"] = basePolicyId;
             
             
+
             
             
             

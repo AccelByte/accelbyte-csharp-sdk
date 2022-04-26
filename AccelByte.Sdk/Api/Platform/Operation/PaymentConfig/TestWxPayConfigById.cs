@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public TestWxPayConfigById Build(
                 string id
             )
@@ -55,6 +56,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["id"] = id;
             
             
+
             
             
             
@@ -70,6 +72,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["id"] = id;
             
             
+
             
             
             

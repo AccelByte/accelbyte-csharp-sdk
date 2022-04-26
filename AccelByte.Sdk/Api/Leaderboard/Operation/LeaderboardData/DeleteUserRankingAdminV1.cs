@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
 
 
+
             public DeleteUserRankingAdminV1 Build(
                 string leaderboardCode,
                 string namespace_,
@@ -66,6 +67,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -85,6 +87,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

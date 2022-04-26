@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
 
 
+
             public CreateTier Build(
                 string namespace_,
                 string seasonId
@@ -68,6 +69,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             PathParams["seasonId"] = seasonId;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -87,6 +89,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             PathParams["seasonId"] = seasonId;
             
             
+
             
             
             BodyParams = body;

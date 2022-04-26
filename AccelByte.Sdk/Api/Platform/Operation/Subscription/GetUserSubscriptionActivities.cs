@@ -68,6 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetUserSubscriptionActivities Build(
                 string namespace_,
                 string userId
@@ -96,6 +97,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.SubscriptionId != null) QueryParams["subscriptionId"] = builder.SubscriptionId;
             
+
             
             
             
@@ -121,6 +123,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (subscriptionId != null) QueryParams["subscriptionId"] = subscriptionId;
             
+
             
             
             

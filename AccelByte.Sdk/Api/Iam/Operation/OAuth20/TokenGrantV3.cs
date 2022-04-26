@@ -293,6 +293,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
 
 
+
             public TokenGrantV3 Build(
                 string grantType
             )
@@ -321,6 +322,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.RefreshToken != null) FormParams["refresh_token"] = builder.RefreshToken;
             if (builder.Username != null) FormParams["username"] = builder.Username;
             if (grantType != null) FormParams["grant_type"] = grantType;
+
             
             
             
@@ -352,6 +354,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (refreshToken != null) FormParams["refresh_token"] = refreshToken;
             if (username != null) FormParams["username"] = username;
             if (grantType != null) FormParams["grant_type"] = grantType;
+
             
             
             

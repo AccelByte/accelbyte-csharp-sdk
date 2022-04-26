@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
 
 
+
             public DeleteNamespace Build(
                 string namespace_
             )
@@ -56,6 +57,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -71,6 +73,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

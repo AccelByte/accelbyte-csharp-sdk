@@ -144,6 +144,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicNormalizePaymentReturnUrl Build(
                 string namespace_,
                 string orderNo,
@@ -191,6 +192,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
             if (returnUrl != null) QueryParams["returnUrl"] = returnUrl;
             
+
             
             
             
@@ -235,6 +237,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
             if (returnUrl != null) QueryParams["returnUrl"] = returnUrl;
             
+
             
             
             

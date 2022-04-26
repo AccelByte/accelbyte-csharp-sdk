@@ -46,6 +46,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public PublicCancelSubscription Build(
                 string namespace_,
                 string subscriptionId,
@@ -74,6 +75,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -95,6 +97,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

@@ -67,18 +67,21 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             : OperationBuilder<ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder>
         {
             
+            
             internal ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder() { }
 
 
 
 
 
+
             public ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost Build(
-                List<TelemetryBody> body
-            )
+                List<TelemetryBody> body,
+                string accessToken            )
             {
                 ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost op = new ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(this,
-                    body                    
+                    body,                    
+                    accessToken
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -87,11 +90,13 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         }
 
         private ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder builder,
-            List<TelemetryBody> body
+            List<TelemetryBody> body,
+            string accessToken            
         )
         {
             
             
+
             
             
             BodyParams = body;
@@ -103,11 +108,13 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         #endregion
 
         public ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(
-            List<Model.TelemetryBody> body            
+            List<Model.TelemetryBody> body,            
+            string accessToken
         )
         {
             
             
+
             
             
             BodyParams = body;

@@ -84,6 +84,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
 
+
             public CreateNewGroupPublicV1 Build(
                 ModelsPublicCreateNewGroupRequestV1 body,
                 string namespace_
@@ -107,6 +108,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -124,6 +126,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

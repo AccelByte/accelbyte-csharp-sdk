@@ -120,6 +120,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public AdminSearchChannelSpecificContent Build(
                 string channelId,
                 string namespace_
@@ -155,6 +156,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             if (builder.Type != null) QueryParams["type"] = builder.Type;
             if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
             
+
             
             
             
@@ -194,6 +196,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             if (type != null) QueryParams["type"] = type;
             if (userId != null) QueryParams["userId"] = userId;
             
+
             
             
             

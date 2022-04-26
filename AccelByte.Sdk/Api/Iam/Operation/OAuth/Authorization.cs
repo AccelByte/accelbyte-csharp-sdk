@@ -151,6 +151,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
 
 
+
             public Authorization Build(
                 string clientId,
                 string redirectUri,
@@ -183,6 +184,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (clientId != null) FormParams["client_id"] = clientId;
             if (redirectUri != null) FormParams["redirect_uri"] = redirectUri;
             if (responseType != null) FormParams["response_type"] = responseType;
+
             
             
             
@@ -211,6 +213,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (clientId != null) FormParams["client_id"] = clientId;
             if (redirectUri != null) FormParams["redirect_uri"] = redirectUri;
             if (responseType != null) FormParams["response_type"] = responseType;
+
             
             
             

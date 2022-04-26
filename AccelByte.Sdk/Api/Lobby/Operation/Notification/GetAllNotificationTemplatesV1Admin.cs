@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public GetAllNotificationTemplatesV1Admin Build(
                 string namespace_
             )
@@ -55,6 +56,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -70,6 +72,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

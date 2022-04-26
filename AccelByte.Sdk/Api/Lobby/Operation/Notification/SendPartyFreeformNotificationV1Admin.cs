@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public SendPartyFreeformNotificationV1Admin Build(
                 ModelFreeFormNotificationRequestV1 body,
                 string namespace_,
@@ -62,6 +63,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["partyId"] = partyId;
             
             
+
             
             
             BodyParams = body;
@@ -81,6 +83,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["partyId"] = partyId;
             
             
+
             
             
             BodyParams = body;

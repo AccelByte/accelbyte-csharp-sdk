@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
 
 
+
             public GetUserStatus Build(
                 string namespace_,
                 string userId
@@ -59,6 +60,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             if (userId != null) QueryParams["userId"] = userId;
             
+
             
             
             
@@ -76,6 +78,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             if (userId != null) QueryParams["userId"] = userId;
             
+
             
             
             

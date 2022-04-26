@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public DeleteCategory Build(
                 string categoryPath,
                 string namespace_,
@@ -66,6 +67,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             
@@ -85,6 +87,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (storeId != null) QueryParams["storeId"] = storeId;
             
+
             
             
             

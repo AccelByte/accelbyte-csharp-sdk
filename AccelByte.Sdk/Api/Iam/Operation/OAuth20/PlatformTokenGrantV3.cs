@@ -297,6 +297,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
 
 
+
             public PlatformTokenGrantV3 Build(
                 string platformId
             )
@@ -320,6 +321,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.ClientId != null) FormParams["client_id"] = builder.ClientId;
             if (builder.DeviceId != null) FormParams["device_id"] = builder.DeviceId;
             if (builder.PlatformToken != null) FormParams["platform_token"] = builder.PlatformToken;
+
             
             
             
@@ -341,6 +343,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (clientId != null) FormParams["client_id"] = clientId;
             if (deviceId != null) FormParams["device_id"] = deviceId;
             if (platformToken != null) FormParams["platform_token"] = platformToken;
+
             
             
             

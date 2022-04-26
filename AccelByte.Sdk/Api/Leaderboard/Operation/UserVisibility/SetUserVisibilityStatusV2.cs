@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
 
 
+
             public SetUserVisibilityStatusV2 Build(
                 ModelsSetUserVisibilityRequest body,
                 string namespace_,
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;
@@ -79,6 +81,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

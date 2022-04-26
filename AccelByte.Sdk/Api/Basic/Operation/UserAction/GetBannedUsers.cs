@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
 
 
+
             public GetBannedUsers Build(
                 string namespace_,
                 List<string> userIds
@@ -59,6 +60,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             if (userIds != null) QueryParams["userIds"] = userIds;
             
+
             
             CollectionFormatMap["userIds"] = "multi";
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             if (userIds != null) QueryParams["userIds"] = userIds;
             
+
             
             CollectionFormatMap["userIds"] = "multi";
             

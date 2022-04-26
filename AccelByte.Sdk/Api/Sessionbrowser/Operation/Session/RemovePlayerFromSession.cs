@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
 
 
+
             public RemovePlayerFromSession Build(
                 string namespace_,
                 string sessionID,
@@ -65,6 +66,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             PathParams["userID"] = userID;
             
             
+
             
             
             
@@ -84,6 +86,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             PathParams["userID"] = userID;
             
             
+
             
             
             

@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public CheckReadiness Build(
             )
             {
@@ -48,6 +49,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             
             
+
             
             
             
@@ -61,6 +63,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             
             
+
             
             
             

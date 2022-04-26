@@ -68,6 +68,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
 
+
             public GetUserGroupInformationPublicV1 Build(
                 string namespace_,
                 string userId
@@ -92,6 +93,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -109,6 +111,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

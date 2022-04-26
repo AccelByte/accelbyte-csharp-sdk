@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public SingleAdminDeleteChannel Build(
                 string channelId,
                 string namespace_
@@ -56,6 +57,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -73,6 +75,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

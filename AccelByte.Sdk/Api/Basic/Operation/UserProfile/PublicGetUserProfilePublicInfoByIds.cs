@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
 
 
+
             public PublicGetUserProfilePublicInfoByIds Build(
                 string namespace_,
                 string userIds
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             if (userIds != null) QueryParams["userIds"] = userIds;
             
+
             
             
             
@@ -76,6 +78,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             if (userIds != null) QueryParams["userIds"] = userIds;
             
+
             
             
             

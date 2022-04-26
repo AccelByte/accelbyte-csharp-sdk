@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>0.6.0</Version>
-    <AssemblyVersion>0.6.0</AssemblyVersion>
+    <Version>0.7.0</Version>
+    <AssemblyVersion>0.7.0</AssemblyVersion>
     <Company>AccelByte</Company>
     <Copyright>Copyright(c) AccelByte 2022</Copyright>
   </PropertyGroup>

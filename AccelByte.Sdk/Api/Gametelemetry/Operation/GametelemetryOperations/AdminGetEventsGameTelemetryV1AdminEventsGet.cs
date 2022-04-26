@@ -41,18 +41,21 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             : OperationBuilder<AdminGetEventsGameTelemetryV1AdminEventsGetBuilder>
         {
             
+            
             internal AdminGetEventsGameTelemetryV1AdminEventsGetBuilder() { }
 
 
 
 
 
+
             public AdminGetEventsGameTelemetryV1AdminEventsGet Build(
-                string namespace_
-            )
+                string namespace_,
+                string accessToken            )
             {
                 AdminGetEventsGameTelemetryV1AdminEventsGet op = new AdminGetEventsGameTelemetryV1AdminEventsGet(this,
-                    namespace_                    
+                    namespace_,                    
+                    accessToken
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -61,12 +64,14 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         }
 
         private AdminGetEventsGameTelemetryV1AdminEventsGet(AdminGetEventsGameTelemetryV1AdminEventsGetBuilder builder,
-            string namespace_
+            string namespace_,
+            string accessToken            
         )
         {
             
             if (namespace_ != null) QueryParams["namespace"] = namespace_;
             
+
             
             
             
@@ -77,12 +82,14 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         #endregion
 
         public AdminGetEventsGameTelemetryV1AdminEventsGet(
-            string namespace_            
+            string namespace_,            
+            string accessToken
         )
         {
             
             if (namespace_ != null) QueryParams["namespace"] = namespace_;
             
+
             
             
             

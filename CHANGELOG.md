@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.7.0
+- Added support for cookie parameters
+- Added fluent interface as an alternative way to access operations and wrappers object directly from sdk object.
+- Updated integration tests.
+- Updated readme and operation indexes.
+- Updated APIs.
+	- gametelemetry
+		- updated endpoints (exposed optional cookie authentication)
+	- iam
+		- updated endpoints
+		- **BREAKING CHANGES**
+			- `PublicRemoveTrustedDeviceV4` now required device token to be specified.
+	- platform
+		- added new endpoints
+	- ugc
+		- added new endpoint.
+
 ## v0.6.0
 - Updated integration tests.
 - Renamed some operation wrappers for better clarity.

@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
 
 
+
             public DeleteUserFromSessionInChannel Build(
                 string channelName,
                 string matchID,
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["userID"] = userID;
             
             
+
             
             
             
@@ -91,6 +93,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["userID"] = userID;
             
             
+
             
             
             

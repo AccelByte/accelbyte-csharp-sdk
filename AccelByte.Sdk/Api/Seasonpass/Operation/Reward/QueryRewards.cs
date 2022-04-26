@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
 
 
+
             public QueryRewards Build(
                 string namespace_,
                 string seasonId
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             if (builder.Q != null) QueryParams["q"] = builder.Q;
             
+
             
             
             
@@ -89,6 +91,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             if (q != null) QueryParams["q"] = q;
             
+
             
             
             

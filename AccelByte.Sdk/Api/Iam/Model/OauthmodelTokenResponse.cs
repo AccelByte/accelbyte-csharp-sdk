@@ -41,6 +41,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("platform_user_id")]
         public string? PlatformUserId { get; set; }
 
+        [JsonPropertyName("refresh_expires_in")]
+        public int? RefreshExpiresIn { get; set; }
+
         [JsonPropertyName("refresh_token")]
         public string? RefreshToken { get; set; }
 

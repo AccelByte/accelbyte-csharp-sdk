@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public ExistsAnyUserActiveEntitlementByItemIds Build(
                 string namespace_,
                 string userId,
@@ -65,6 +66,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (itemIds != null) QueryParams["itemIds"] = itemIds;
             
+
             
             CollectionFormatMap["itemIds"] = "multi";
             
@@ -85,6 +87,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (itemIds != null) QueryParams["itemIds"] = itemIds;
             
+
             
             CollectionFormatMap["itemIds"] = "multi";
             

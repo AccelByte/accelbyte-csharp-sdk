@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public GetRoles Build(
             )
             {
@@ -55,6 +56,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (builder.IsWildcard != null) QueryParams["isWildcard"] = builder.IsWildcard;
             
+
             
             
             
@@ -70,6 +72,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (isWildcard != null) QueryParams["isWildcard"] = isWildcard;
             
+
             
             
             

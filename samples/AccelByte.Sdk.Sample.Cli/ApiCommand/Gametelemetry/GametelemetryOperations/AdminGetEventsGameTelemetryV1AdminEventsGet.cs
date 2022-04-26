@@ -27,6 +27,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
         [SdkCommandArgument("namespace_")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("access_token")]
+        public string AccessToken { get; set; } = String.Empty;
+
         public AdminGetEventsGameTelemetryV1AdminEventsGetCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -37,7 +40,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
             AccelByte.Sdk.Api.Gametelemetry.Wrapper.GametelemetryOperations wrapper = new AccelByte.Sdk.Api.Gametelemetry.Wrapper.GametelemetryOperations(_SDK);
 
             AdminGetEventsGameTelemetryV1AdminEventsGet operation = new AdminGetEventsGameTelemetryV1AdminEventsGet(
-                Namespace                
+                Namespace,                
+                AccessToken                
             );            
             
             wrapper.AdminGetEventsGameTelemetryV1AdminEventsGet(operation);

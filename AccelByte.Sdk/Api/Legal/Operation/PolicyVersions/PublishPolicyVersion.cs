@@ -42,6 +42,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public PublishPolicyVersion Build(
                 string policyVersionId
             )
@@ -63,6 +64,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             if (builder.ShouldNotify != null) QueryParams["shouldNotify"] = Convert.ToString(builder.ShouldNotify)!;
             
+
             
             
             
@@ -80,6 +82,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             if (shouldNotify != null) QueryParams["shouldNotify"] = Convert.ToString(shouldNotify)!;
             
+
             
             
             

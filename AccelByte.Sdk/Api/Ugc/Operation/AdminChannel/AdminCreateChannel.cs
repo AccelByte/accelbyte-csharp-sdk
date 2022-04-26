@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public AdminCreateChannel Build(
                 ModelsChannelRequest body,
                 string namespace_
@@ -55,6 +56,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -72,6 +74,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

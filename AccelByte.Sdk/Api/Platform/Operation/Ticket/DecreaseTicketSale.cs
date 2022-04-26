@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public DecreaseTicketSale Build(
                 string boothName,
                 string namespace_
@@ -67,6 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -86,6 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

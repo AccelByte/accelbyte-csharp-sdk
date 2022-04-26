@@ -34,6 +34,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+
             public DeleteTemplateSlug Build(
                 string namespace_,
                 string templateSlug
@@ -58,6 +59,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["templateSlug"] = templateSlug;
             
             
+
             
             
             
@@ -75,6 +77,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["templateSlug"] = templateSlug;
             
             
+
             
             
             

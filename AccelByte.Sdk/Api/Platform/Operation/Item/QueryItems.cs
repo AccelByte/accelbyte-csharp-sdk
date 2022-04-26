@@ -148,6 +148,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public QueryItems Build(
                 string namespace_
             )
@@ -182,6 +183,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
             if (builder.TargetNamespace != null) QueryParams["targetNamespace"] = builder.TargetNamespace;
             
+
             
             
             
@@ -225,6 +227,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (tags != null) QueryParams["tags"] = tags;
             if (targetNamespace != null) QueryParams["targetNamespace"] = targetNamespace;
             
+
             
             
             

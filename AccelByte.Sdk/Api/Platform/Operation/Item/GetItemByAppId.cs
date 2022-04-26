@@ -53,6 +53,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetItemByAppId Build(
                 string namespace_,
                 string appId
@@ -79,6 +80,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
             if (appId != null) QueryParams["appId"] = appId;
             
+
             
             
             
@@ -100,6 +102,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (storeId != null) QueryParams["storeId"] = storeId;
             if (appId != null) QueryParams["appId"] = appId;
             
+
             
             
             

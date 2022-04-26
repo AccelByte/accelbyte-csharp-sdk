@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public GetRegisteredEventIDHandler Build(
                 string eventId
             )
@@ -52,6 +53,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             PathParams["eventId"] = eventId;
             
             
+
             
             
             
@@ -67,6 +69,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             PathParams["eventId"] = eventId;
             
             
+
             
             
             

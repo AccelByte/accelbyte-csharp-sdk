@@ -30,6 +30,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
         [SdkCommandArgument("steamId")]
         public string SteamId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("access_token")]
+        public string AccessToken { get; set; } = String.Empty;
+
         public ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -41,7 +44,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
 
             ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut operation = new ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(
                 Playtime,                
-                SteamId                
+                SteamId,                
+                AccessToken                
             );            
             
             wrapper.ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(operation);

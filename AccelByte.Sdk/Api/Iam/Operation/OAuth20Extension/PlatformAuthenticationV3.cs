@@ -166,6 +166,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public PlatformAuthenticationV3 Build(
                 string platformId,
                 string state
@@ -202,6 +203,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.OpenidSigned != null) QueryParams["openid.signed"] = builder.OpenidSigned;
             if (state != null) QueryParams["state"] = state;
             
+
             
             
             
@@ -244,6 +246,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (openidSigned != null) QueryParams["openid.signed"] = openidSigned;
             if (state != null) QueryParams["state"] = state;
             
+
             
             
             

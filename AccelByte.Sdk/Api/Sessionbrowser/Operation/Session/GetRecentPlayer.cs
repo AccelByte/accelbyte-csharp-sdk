@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
 
 
+
             public GetRecentPlayer Build(
                 string namespace_,
                 string userID
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             PathParams["userID"] = userID;
             
             
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             PathParams["userID"] = userID;
             
             
+
             
             
             

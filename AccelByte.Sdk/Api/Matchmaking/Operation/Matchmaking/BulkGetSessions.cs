@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
 
 
+
             public BulkGetSessions Build(
                 string namespace_
             )
@@ -64,6 +65,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             if (builder.MatchIDs != null) QueryParams["matchIDs"] = builder.MatchIDs;
             
+
             
             
             
@@ -81,6 +83,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             
             if (matchIDs != null) QueryParams["matchIDs"] = matchIDs;
             
+
             
             
             

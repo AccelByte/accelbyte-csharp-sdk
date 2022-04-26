@@ -29,7 +29,9 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         {
             
             
+            
             internal ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder() { }
+
 
 
 
@@ -37,12 +39,13 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 
             public ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut Build(
                 string playtime,
-                string steamId
-            )
+                string steamId,
+                string accessToken            )
             {
                 ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut op = new ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(this,
                     playtime,                    
-                    steamId                    
+                    steamId,                    
+                    accessToken
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -52,13 +55,15 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 
         private ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder builder,
             string playtime,
-            string steamId
+            string steamId,
+            string accessToken            
         )
         {
             PathParams["playtime"] = playtime;
             PathParams["steamId"] = steamId;
             
             
+
             
             
             
@@ -70,13 +75,15 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 
         public ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(
             string playtime,            
-            string steamId            
+            string steamId,            
+            string accessToken
         )
         {
             PathParams["playtime"] = playtime;
             PathParams["steamId"] = steamId;
             
             
+
             
             
             

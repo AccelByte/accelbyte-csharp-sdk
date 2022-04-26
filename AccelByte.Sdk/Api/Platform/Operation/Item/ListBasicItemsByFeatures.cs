@@ -52,6 +52,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public ListBasicItemsByFeatures Build(
                 string namespace_
             )
@@ -74,6 +75,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
             if (builder.Features != null) QueryParams["features"] = builder.Features;
             
+
             
             CollectionFormatMap["features"] = "multi";
             
@@ -94,6 +96,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
             if (features != null) QueryParams["features"] = features;
             
+
             
             CollectionFormatMap["features"] = "multi";
             

@@ -68,6 +68,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
 
+
             public GetGroupMembersListPublicV1 Build(
                 string groupId,
                 string namespace_
@@ -95,6 +96,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Order != null) QueryParams["order"] = builder.Order;
             
+
             
             
             
@@ -118,6 +120,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (order != null) QueryParams["order"] = order;
             
+
             
             
             

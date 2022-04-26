@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public LoginSSOClient Build(
                 string platformId
             )
@@ -58,6 +59,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (builder.Payload != null) QueryParams["payload"] = builder.Payload;
             
+
             
             
             
@@ -75,6 +77,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (payload != null) QueryParams["payload"] = payload;
             
+
             
             
             

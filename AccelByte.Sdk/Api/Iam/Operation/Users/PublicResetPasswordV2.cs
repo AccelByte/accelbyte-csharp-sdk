@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public PublicResetPasswordV2 Build(
                 ModelResetPasswordRequest body,
                 string namespace_
@@ -53,6 +54,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -70,6 +72,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

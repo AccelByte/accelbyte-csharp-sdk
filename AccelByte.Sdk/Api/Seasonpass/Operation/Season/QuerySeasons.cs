@@ -60,6 +60,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
 
 
+
             public QuerySeasons Build(
                 string namespace_
             )
@@ -83,6 +84,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Status != null) QueryParams["status"] = builder.Status;
             
+
             
             CollectionFormatMap["status"] = "multi";
             
@@ -105,6 +107,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (status != null) QueryParams["status"] = status;
             
+
             
             CollectionFormatMap["status"] = "multi";
             

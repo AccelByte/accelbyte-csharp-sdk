@@ -73,6 +73,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
 
+
             public JoinGroupV1 Build(
                 string groupId,
                 string namespace_
@@ -97,6 +98,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -114,6 +116,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

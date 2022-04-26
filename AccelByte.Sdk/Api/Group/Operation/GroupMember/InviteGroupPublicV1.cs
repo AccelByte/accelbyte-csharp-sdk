@@ -81,6 +81,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
 
+
             public InviteGroupPublicV1 Build(
                 string namespace_,
                 string userId
@@ -105,6 +106,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             
@@ -122,6 +124,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             

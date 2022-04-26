@@ -59,6 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public Pay Build(
                 string namespace_,
                 string paymentOrderNo
@@ -85,6 +86,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.PaymentProvider != null) QueryParams["paymentProvider"] = builder.PaymentProvider;
             if (builder.ZipCode != null) QueryParams["zipCode"] = builder.ZipCode;
             
+
             
             
             BodyParams = builder.Body;
@@ -107,6 +109,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
             if (zipCode != null) QueryParams["zipCode"] = zipCode;
             
+
             
             
             BodyParams = body;

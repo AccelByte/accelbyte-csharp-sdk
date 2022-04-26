@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetUserAppEntitlementByAppId Build(
                 string namespace_,
                 string userId,
@@ -74,6 +75,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
             if (appId != null) QueryParams["appId"] = appId;
             
+
             
             
             
@@ -95,6 +97,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
             if (appId != null) QueryParams["appId"] = appId;
             
+
             
             
             

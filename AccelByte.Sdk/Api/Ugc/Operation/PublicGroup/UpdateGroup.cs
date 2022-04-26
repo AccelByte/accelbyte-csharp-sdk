@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
 
+
             public UpdateGroup Build(
                 ModelsCreateGroupRequest body,
                 string groupId,
@@ -66,6 +67,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;
@@ -87,6 +89,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

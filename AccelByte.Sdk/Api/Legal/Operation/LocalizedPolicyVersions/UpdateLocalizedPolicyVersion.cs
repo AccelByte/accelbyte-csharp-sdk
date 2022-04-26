@@ -42,6 +42,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public UpdateLocalizedPolicyVersion Build(
                 string localizedPolicyVersionId
             )
@@ -62,6 +63,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["localizedPolicyVersionId"] = localizedPolicyVersionId;
             
             
+
             
             
             BodyParams = builder.Body;
@@ -79,6 +81,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["localizedPolicyVersionId"] = localizedPolicyVersionId;
             
             
+
             
             
             BodyParams = body;

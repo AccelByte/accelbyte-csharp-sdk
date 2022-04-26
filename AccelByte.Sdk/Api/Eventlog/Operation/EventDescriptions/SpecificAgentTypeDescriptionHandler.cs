@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public SpecificAgentTypeDescriptionHandler Build(
             )
             {
@@ -54,6 +55,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             if (builder.AgentTypes != null) QueryParams["agentTypes"] = builder.AgentTypes;
             
+
             
             
             
@@ -69,6 +71,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             
             if (agentTypes != null) QueryParams["agentTypes"] = agentTypes;
             
+
             
             
             

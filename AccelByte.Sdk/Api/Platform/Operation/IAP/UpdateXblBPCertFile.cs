@@ -51,6 +51,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
+
             public UpdateXblBPCertFile Build(
                 string namespace_
             )
@@ -73,6 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (builder.File != null) FormParams["file"] = builder.File;
             if (builder.Password != null) FormParams["password"] = builder.Password;
+
             
             
             
@@ -92,6 +94,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (file != null) FormParams["file"] = file;
             if (password != null) FormParams["password"] = password;
+
             
             
             

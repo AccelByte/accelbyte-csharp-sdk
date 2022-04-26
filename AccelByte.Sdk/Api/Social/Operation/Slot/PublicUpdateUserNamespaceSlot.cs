@@ -76,6 +76,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             }
 
 
+
             public PublicUpdateUserNamespaceSlot Build(
                 string namespace_,
                 string slotId,
@@ -109,6 +110,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             if (builder.Checksum != null) FormParams["checksum"] = builder.Checksum;
             if (builder.CustomAttribute != null) FormParams["customAttribute"] = builder.CustomAttribute;
             if (builder.File != null) FormParams["file"] = builder.File;
+
             
             CollectionFormatMap["tags"] = "multi";
             
@@ -139,6 +141,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             if (checksum != null) FormParams["checksum"] = checksum;
             if (customAttribute != null) FormParams["customAttribute"] = customAttribute;
             if (file != null) FormParams["file"] = file;
+
             
             CollectionFormatMap["tags"] = "multi";
             

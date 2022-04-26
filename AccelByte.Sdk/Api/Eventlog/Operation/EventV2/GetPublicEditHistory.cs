@@ -102,6 +102,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public GetPublicEditHistory Build(
                 string namespace_,
                 string userId
@@ -131,6 +132,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             if (builder.StartDate != null) QueryParams["startDate"] = builder.StartDate;
             if (builder.Type != null) QueryParams["type"] = builder.Type;
             
+
             
             
             
@@ -158,6 +160,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             if (startDate != null) QueryParams["startDate"] = startDate;
             if (type != null) QueryParams["type"] = type;
             
+
             
             
             

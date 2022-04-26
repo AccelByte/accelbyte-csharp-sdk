@@ -27,6 +27,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
         [SdkCommandData("body")]
         public List<TelemetryBody> Body { get; set; } = new List<TelemetryBody>();
                 
+        [SdkCommandArgument("access_token")]
+        public string AccessToken { get; set; } = String.Empty;
+
         public ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -37,7 +40,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
             AccelByte.Sdk.Api.Gametelemetry.Wrapper.GametelemetryOperations wrapper = new AccelByte.Sdk.Api.Gametelemetry.Wrapper.GametelemetryOperations(_SDK);
 
             ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost operation = new ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(
-                Body                
+                Body,                
+                AccessToken                
             );            
             
             wrapper.ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(operation);

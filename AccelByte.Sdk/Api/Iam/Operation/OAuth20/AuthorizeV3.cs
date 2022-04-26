@@ -162,6 +162,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public AuthorizeV3 Build(
                 string clientId,
                 string responseType
@@ -192,6 +193,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (clientId != null) QueryParams["client_id"] = clientId;
             if (responseType != null) QueryParams["response_type"] = responseType;
             
+
             
             
             
@@ -222,6 +224,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (clientId != null) QueryParams["client_id"] = clientId;
             if (responseType != null) QueryParams["response_type"] = responseType;
             
+
             
             
             

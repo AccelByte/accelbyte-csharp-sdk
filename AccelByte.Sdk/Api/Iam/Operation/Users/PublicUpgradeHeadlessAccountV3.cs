@@ -67,6 +67,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public PublicUpgradeHeadlessAccountV3 Build(
                 ModelUpgradeHeadlessAccountWithVerificationCodeRequestV3 body,
                 string namespace_
@@ -90,6 +91,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;
@@ -107,6 +109,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             BodyParams = body;

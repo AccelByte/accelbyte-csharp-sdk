@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public GetRewardByCode Build(
                 string namespace_,
                 string rewardCode
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (rewardCode != null) QueryParams["rewardCode"] = rewardCode;
             
+
             
             
             
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (rewardCode != null) QueryParams["rewardCode"] = rewardCode;
             
+
             
             
             

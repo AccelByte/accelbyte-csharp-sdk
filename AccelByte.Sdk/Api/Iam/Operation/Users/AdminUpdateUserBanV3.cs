@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public AdminUpdateUserBanV3 Build(
                 ModelBanUpdateRequest body,
                 string banId,
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;
@@ -91,6 +93,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

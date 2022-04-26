@@ -48,6 +48,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public PublicWebLinkPlatform Build(
                 string namespace_,
                 string platformId
@@ -74,6 +75,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.ClientId != null) QueryParams["clientId"] = builder.ClientId;
             if (builder.RedirectUri != null) QueryParams["redirectUri"] = builder.RedirectUri;
             
+
             
             
             
@@ -95,6 +97,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (clientId != null) QueryParams["clientId"] = clientId;
             if (redirectUri != null) QueryParams["redirectUri"] = redirectUri;
             
+
             
             
             

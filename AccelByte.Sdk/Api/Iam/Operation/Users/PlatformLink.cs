@@ -80,6 +80,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public PlatformLink Build(
                 string ticket,
                 string namespace_,
@@ -112,6 +113,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             if (ticket != null) FormParams["ticket"] = ticket;
+
             
             
             
@@ -133,6 +135,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             
             if (ticket != null) FormParams["ticket"] = ticket;
+
             
             
             

@@ -51,6 +51,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
 
 
+
             public UpdateUserPointAdminV1 Build(
                 ModelsUpdateUserPointAdminV1Request body,
                 string leaderboardCode,
@@ -82,6 +83,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;
@@ -103,6 +105,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["userId"] = userId;
             
             
+
             
             
             BodyParams = body;

@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
 
 
+
             public DeleteImagePatch Build(
                 string namespace_,
                 string imageURI,
@@ -70,6 +71,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             if (version != null) QueryParams["version"] = version;
             if (versionPatch != null) QueryParams["versionPatch"] = versionPatch;
             
+
             
             
             
@@ -91,6 +93,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             if (version != null) QueryParams["version"] = version;
             if (versionPatch != null) QueryParams["versionPatch"] = versionPatch;
             
+
             
             
             

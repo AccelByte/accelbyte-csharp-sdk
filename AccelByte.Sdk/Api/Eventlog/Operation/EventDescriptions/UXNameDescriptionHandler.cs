@@ -29,6 +29,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
 
 
+
             public UXNameDescriptionHandler Build(
             )
             {
@@ -45,6 +46,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         {
             
             
+
             
             
             
@@ -58,6 +60,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         {
             
             
+
             
             
             

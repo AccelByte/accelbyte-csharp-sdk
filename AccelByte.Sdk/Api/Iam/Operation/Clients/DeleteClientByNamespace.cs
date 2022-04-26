@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
             public DeleteClientByNamespace Build(
                 string clientId,
                 string namespace_
@@ -56,6 +57,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             
@@ -73,6 +75,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             
+
             
             
             

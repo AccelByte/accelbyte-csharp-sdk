@@ -41,6 +41,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
 
 
+
             public BulkAcceptVersionedPolicy Build(
             )
             {
@@ -57,6 +58,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             
             
+
             
             
             BodyParams = builder.Body;
@@ -72,6 +74,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             
             
+
             
             
             BodyParams = body;

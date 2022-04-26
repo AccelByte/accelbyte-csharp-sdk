@@ -62,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+
             public QueryUserEntitlementsByAppType Build(
                 string namespace_,
                 string userId,
@@ -93,6 +94,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (appType != null) QueryParams["appType"] = appType;
             
+
             
             
             
@@ -118,6 +120,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (appType != null) QueryParams["appType"] = appType;
             
+
             
             
             
