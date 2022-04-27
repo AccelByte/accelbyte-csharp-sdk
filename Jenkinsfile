@@ -15,11 +15,12 @@ bitbucketPayload = null
 bitbucketCommitHref = null
 
 pipeline {
-  agent {
-    label "justice-codegen-sdk"
-  }
+  agent none
   stages {
     stage('Prepare') {
+      agent {
+        label "master"
+      }
       steps {
         script {
           if (env.BITBUCKET_PAYLOAD) {
@@ -35,6 +36,9 @@ pipeline {
       }
     }
     stage('Lint') {
+      agent {
+        label "justice-codegen-sdk"
+      }
       stages {
         stage('Lint Commits') {
           when {
@@ -61,22 +65,28 @@ pipeline {
       }
     }
     stage('Build') {
+      agent {
+        label "justice-codegen-sdk"
+      }
       steps {
         sh "make build"
       }
     }
     stage('Test') {
-     stages {
-       stage('Unit Tests') {
-         steps {
-            sshagent(credentials: [bitbucketCredentialsSsh]) {
-              sh "rm -rf .justice-codegen-sdk-mock-server"
-              sh "git clone --depth 1 git@bitbucket.org:accelbyte/justice-codegen-sdk-mock-server.git .justice-codegen-sdk-mock-server"
-            }
-           sh "make test SDK_MOCK_SERVER_PATH=.justice-codegen-sdk-mock-server"
-         }
-       }
-     }
+      agent {
+        label "justice-codegen-sdk"
+      }
+      stages {
+        stage('Unit Tests') {
+          steps {
+              sshagent(credentials: [bitbucketCredentialsSsh]) {
+                sh "rm -rf .justice-codegen-sdk-mock-server"
+                sh "git clone --depth 1 git@bitbucket.org:accelbyte/justice-codegen-sdk-mock-server.git .justice-codegen-sdk-mock-server"
+              }
+            sh "make test SDK_MOCK_SERVER_PATH=.justice-codegen-sdk-mock-server"
+          }
+        }
+      }
     }
   }
   post {
