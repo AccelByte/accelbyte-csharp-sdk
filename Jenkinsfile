@@ -82,7 +82,7 @@ pipeline {
         label "justice-codegen-sdk"
       }
       stages {
-        stage('Unit Tests') {
+        stage('Core Tests') {
           steps {
               sshagent(credentials: [bitbucketCredentialsSsh]) {
                 sh "rm -rf .justice-codegen-sdk-mock-server"
