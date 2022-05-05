@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Tests
             "CSharpTests");
 
         [Test]
+        [Ignore("This test is replaced by HttpBinRequestTests.")]
         [TestCase("GET")]
         [TestCase("POST")]
         [TestCase("PUT")]
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Tests
         }
 
         [Test]
+        [Ignore("This test is replaced by HttpBinRequestTests.")]
         [TestCase("GET")]
         public void HttpbinNoRequestBodyType(string method)
         {
@@ -77,6 +79,7 @@ namespace AccelByte.Sdk.Tests
         }
 
         [Test]
+        [Ignore("This test is replaced by HttpBinRequestTests.")]
         [TestCase("POST", "abc/def:123?x=1&y=2")] // Special characters need to be escaped
         public void HttpbinRequestPathParam(string method, string pathParam)
         {
@@ -109,6 +112,7 @@ namespace AccelByte.Sdk.Tests
         }
 
         [Test]
+        [Ignore("This test is replaced by HttpBinRequestTests.")]
         [TestCase("GET", "?key=key&", "?value=value&")] // Special characters need to be escaped
         public void HttpbinRequestQueryString(string method, string key, string value)
         {
@@ -186,6 +190,7 @@ namespace AccelByte.Sdk.Tests
         }
 
         [Test]
+        [Ignore("This test is replaced by HttpBinRequestTests.")]
         [TestCase("POST", "?key=key&", "?value=value&")] // Special characters need to be escaped
         public void HttpbinRequestFormParam(string method, string key, string value)
         {
@@ -234,6 +239,7 @@ namespace AccelByte.Sdk.Tests
 
 
         [Test]
+        [Ignore("This test is replaced by HttpBinRequestTests.")]
         [TestCase("POST")] // Special characters need to be escaped
         public void HttpbinRequestJson(string method)
         {
@@ -267,6 +273,7 @@ namespace AccelByte.Sdk.Tests
         }
 
         [Test]
+        [Ignore("This test is replaced by HttpBinRequestTests.")]
         [TestCase("POST")] // Special characters need to be escaped
         public void HttpbinRequestError(string method)
         {
@@ -287,6 +294,7 @@ namespace AccelByte.Sdk.Tests
         }
 
         [Test]
+        [Ignore("This test is replaced by HttpBinRequestTests.")]
         [TestCase("123457890")]
         [TestCase("1234 57890")]
         [TestCase("1234,57890")]
@@ -313,7 +321,7 @@ namespace AccelByte.Sdk.Tests
             Assert.AreEqual(cookieValue, HttpUtility.UrlDecode(result.Cookies!["test_token"]));
         }
 
-        [Test]
+        [Test]        
         [Ignore("This test already exists in CLI unit test")]
         public void LoginLogoutClient()
         {
