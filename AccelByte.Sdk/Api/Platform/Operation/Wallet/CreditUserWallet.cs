@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// creditUserWallet
     ///
-    /// Credit a user wallet by currency code, if wallet not exists, it will create a new wallet.
+    /// Credit a user wallet by currency code and balance origin, if wallet not exists, it will create a new wallet.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)

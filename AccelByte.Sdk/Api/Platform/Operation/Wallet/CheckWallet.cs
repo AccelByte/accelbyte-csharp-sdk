@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// checkWallet
     ///
-    ///  [SERVICE COMMUNICATION ONLY] Check wallet whether it's inactive.
+    ///  [SERVICE COMMUNICATION ONLY] Check wallet by balance origin and currency code whether it's inactive.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
@@ -32,6 +32,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
             
+            
             internal CheckWalletBuilder() { }
 
 
@@ -42,13 +43,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public CheckWallet Build(
                 string currencyCode,
                 string namespace_,
-                string userId
+                string userId,
+                string origin
             )
             {
                 CheckWallet op = new CheckWallet(this,
                     currencyCode,                    
                     namespace_,                    
-                    userId                    
+                    userId,                    
+                    origin                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -59,13 +62,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         private CheckWallet(CheckWalletBuilder builder,
             string currencyCode,
             string namespace_,
-            string userId
+            string userId,
+            string origin
         )
         {
             PathParams["currencyCode"] = currencyCode;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
+            if (origin != null) QueryParams["origin"] = origin;
             
 
             
@@ -79,13 +84,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public CheckWallet(
             string currencyCode,            
             string namespace_,            
-            string userId            
+            string userId,            
+            string origin            
         )
         {
             PathParams["currencyCode"] = currencyCode;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
+            if (origin != null) QueryParams["origin"] = origin;
             
 
             

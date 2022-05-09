@@ -135,7 +135,7 @@ $CLI_EXE \
     --orderby 'Q0304McK' \
     --sortby '873tRtr5' \
     --subtype 'cfWO5JJ2' \
-    --tags 'c6vsOns4' \
+    --tags '["c6vsOns4"]' \
     --type 'jNWGc7Ci' \
     --userId 'Ua4wM5Eu' \
     > test.out 2>&1
@@ -177,7 +177,7 @@ $CLI_EXE \
     --orderby 'XfabFXzv' \
     --sortby 'jLmai7fP' \
     --subtype 'KvE2Z4a6' \
-    --tags '3UVtLbQS' \
+    --tags '["3UVtLbQS"]' \
     --type 'Wtsyz0mG' \
     --userId 'GyHHFIlI' \
     > test.out 2>&1
@@ -573,7 +573,7 @@ $CLI_EXE \
     --orderby 'MHfTwrxB' \
     --sortby 'RfMxZrSf' \
     --subtype 'x3V8OXkM' \
-    --tags 'ng7p2SyF' \
+    --tags '["ng7p2SyF"]' \
     --type 'DEnmYQze' \
     --userId 'hPBqD12D' \
     > test.out 2>&1
@@ -592,7 +592,7 @@ $CLI_EXE \
     --orderby 'weHacvHR' \
     --sortby 'V345xB8h' \
     --subtype 'os4yaOBj' \
-    --tags 'MxizCxx9' \
+    --tags '["MxizCxx9"]' \
     --type 'qTOIKlpd' \
     --userId 'rqo2smD9' \
     > test.out 2>&1

@@ -31,8 +31,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             : OperationBuilder<ListCurrenciesBuilder>
         {
             
+            public string? CurrencyType { get; set; }
+            
             internal ListCurrenciesBuilder() { }
 
+
+            public ListCurrenciesBuilder SetCurrencyType(string _currencyType)
+            {
+                CurrencyType = _currencyType;
+                return this;
+            }
 
 
 
@@ -57,6 +65,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
+            if (builder.CurrencyType != null) QueryParams["currencyType"] = builder.CurrencyType;
             
 
             
@@ -68,11 +77,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         #endregion
 
         public ListCurrencies(
-            string namespace_            
+            string namespace_,            
+            string? currencyType            
         )
         {
             PathParams["namespace"] = namespace_;
             
+            if (currencyType != null) QueryParams["currencyType"] = currencyType;
             
 
             

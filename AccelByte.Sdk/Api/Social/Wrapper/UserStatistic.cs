@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.BulkIncUserStatItemValue.Builder.SetWrapperObject(this); }
         }
+        public BulkFetchOrDefaultStatItems.BulkFetchOrDefaultStatItemsBuilder BulkFetchOrDefaultStatItemsOp
+        {
+            get { return Operation.BulkFetchOrDefaultStatItems.Builder.SetWrapperObject(this); }
+        }
         public BulkResetUserStatItem.BulkResetUserStatItemBuilder BulkResetUserStatItemOp
         {
             get { return Operation.BulkResetUserStatItem.Builder.SetWrapperObject(this); }
@@ -95,6 +99,10 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.PublicBulkCreateUserStatItems.Builder.SetWrapperObject(this); }
         }
+        public PublicQueryUserStatItems1.PublicQueryUserStatItems1Builder PublicQueryUserStatItems1Op
+        {
+            get { return Operation.PublicQueryUserStatItems1.Builder.SetWrapperObject(this); }
+        }
         public PublicBulkIncUserStatItem1.PublicBulkIncUserStatItem1Builder PublicBulkIncUserStatItem1Op
         {
             get { return Operation.PublicBulkIncUserStatItem1.Builder.SetWrapperObject(this); }
@@ -131,6 +139,10 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.BulkUpdateUserStatItemV2.Builder.SetWrapperObject(this); }
         }
+        public BulkFetchOrDefaultStatItems1.BulkFetchOrDefaultStatItems1Builder BulkFetchOrDefaultStatItems1Op
+        {
+            get { return Operation.BulkFetchOrDefaultStatItems1.Builder.SetWrapperObject(this); }
+        }
         public BulkUpdateUserStatItem.BulkUpdateUserStatItemBuilder BulkUpdateUserStatItemOp
         {
             get { return Operation.BulkUpdateUserStatItem.Builder.SetWrapperObject(this); }
@@ -150,6 +162,10 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public BulkUpdateUserStatItem1.BulkUpdateUserStatItem1Builder BulkUpdateUserStatItem1Op
         {
             get { return Operation.BulkUpdateUserStatItem1.Builder.SetWrapperObject(this); }
+        }
+        public PublicQueryUserStatItems2.PublicQueryUserStatItems2Builder PublicQueryUserStatItems2Op
+        {
+            get { return Operation.PublicQueryUserStatItems2.Builder.SetWrapperObject(this); }
         }
         public BulkUpdateUserStatItem2.BulkUpdateUserStatItem2Builder BulkUpdateUserStatItem2Op
         {
@@ -178,6 +194,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
         public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItemValue(BulkIncUserStatItemValue input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ADTOObjectForUserStatItemValue>? BulkFetchOrDefaultStatItems(BulkFetchOrDefaultStatItems input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -313,6 +337,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public List<Model.ADTOObjectForUserStatItemValue>? PublicQueryUserStatItems1(PublicQueryUserStatItems1 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.BulkStatItemOperationResult>? PublicBulkIncUserStatItem1(PublicBulkIncUserStatItem1 input) {
             var response = _sdk.RunRequest(input);
 
@@ -385,6 +417,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public List<Model.ADTOObjectForUserStatItemValue>? BulkFetchOrDefaultStatItems1(BulkFetchOrDefaultStatItems1 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItem(BulkUpdateUserStatItem input) {
             var response = _sdk.RunRequest(input);
 
@@ -418,6 +458,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
         public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItem1(BulkUpdateUserStatItem1 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ADTOObjectForUserStatItemValue>? PublicQueryUserStatItems2(PublicQueryUserStatItems2 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

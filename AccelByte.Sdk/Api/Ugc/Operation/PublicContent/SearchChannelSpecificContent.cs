@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
             public string? Subtype { get; set; }
             
-            public string? Tags { get; set; }
+            public List<string>? Tags { get; set; }
             
             public string? Type { get; set; }
             
@@ -101,7 +101,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
                 return this;
             }
 
-            public SearchChannelSpecificContentBuilder SetTags(string _tags)
+            public SearchChannelSpecificContentBuilder SetTags(List<string> _tags)
             {
                 Tags = _tags;
                 return this;
@@ -160,6 +160,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
 
             
+            CollectionFormatMap["tags"] = "csv";
             
             
 
@@ -178,7 +179,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             string? orderby,            
             string? sortby,            
             string? subtype,            
-            string? tags,            
+            List<string>? tags,            
             string? type,            
             string? userId            
         )
@@ -200,6 +201,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             
 
             
+            CollectionFormatMap["tags"] = "csv";
             
             
 

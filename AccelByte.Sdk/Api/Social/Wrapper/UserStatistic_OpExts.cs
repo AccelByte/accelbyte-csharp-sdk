@@ -52,6 +52,22 @@ namespace AccelByte.Sdk.Api
             return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkIncUserStatItemValue(op);
         }
 
+        public static List<Social.Model.ADTOObjectForUserStatItemValue>? Execute(
+            this BulkFetchOrDefaultStatItems.BulkFetchOrDefaultStatItemsBuilder builder,
+            string namespace_,
+            string statCode,
+            List<string> userIds
+        )
+        {
+            BulkFetchOrDefaultStatItems op = builder.Build(
+                namespace_,
+                statCode,
+                userIds
+            );
+
+            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkFetchOrDefaultStatItems(op);
+        }
+
         public static List<Social.Model.BulkStatItemOperationResult>? Execute(
             this BulkResetUserStatItem.BulkResetUserStatItemBuilder builder,
             string namespace_
@@ -278,6 +294,20 @@ namespace AccelByte.Sdk.Api
             return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicBulkCreateUserStatItems(op);
         }
 
+        public static List<Social.Model.ADTOObjectForUserStatItemValue>? Execute(
+            this PublicQueryUserStatItems1.PublicQueryUserStatItems1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicQueryUserStatItems1 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicQueryUserStatItems1(op);
+        }
+
         public static List<Social.Model.BulkStatItemOperationResult>? Execute(
             this PublicBulkIncUserStatItem1.PublicBulkIncUserStatItem1Builder builder,
             string namespace_,
@@ -412,6 +442,22 @@ namespace AccelByte.Sdk.Api
             return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkUpdateUserStatItemV2(op);
         }
 
+        public static List<Social.Model.ADTOObjectForUserStatItemValue>? Execute(
+            this BulkFetchOrDefaultStatItems1.BulkFetchOrDefaultStatItems1Builder builder,
+            string namespace_,
+            string statCode,
+            List<string> userIds
+        )
+        {
+            BulkFetchOrDefaultStatItems1 op = builder.Build(
+                namespace_,
+                statCode,
+                userIds
+            );
+
+            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkFetchOrDefaultStatItems1(op);
+        }
+
         public static List<Social.Model.BulkStatItemOperationResult>? Execute(
             this BulkUpdateUserStatItem.BulkUpdateUserStatItemBuilder builder,
             string namespace_,
@@ -482,6 +528,20 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkUpdateUserStatItem1(op);
+        }
+
+        public static List<Social.Model.ADTOObjectForUserStatItemValue>? Execute(
+            this PublicQueryUserStatItems2.PublicQueryUserStatItems2Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicQueryUserStatItems2 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicQueryUserStatItems2(op);
         }
 
         public static List<Social.Model.BulkStatItemOperationResult>? Execute(

@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Offset                
             );            
             
-            AccelByte.Sdk.Api.Platform.Model.WalletTransactionPagingSlicedResult? response = wrapper.ListUserWalletTransactions(operation);
+            AccelByte.Sdk.Api.Platform.Model.DetailedWalletTransactionPagingSlicedResult? response = wrapper.ListUserWalletTransactions(operation);
             if (response == null)
                 return "No response from server.";
 

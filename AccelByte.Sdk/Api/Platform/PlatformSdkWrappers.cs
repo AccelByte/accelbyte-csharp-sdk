@@ -167,6 +167,17 @@ namespace AccelByte.Sdk.Core
         }
         private PaymentDedicated? _PaymentDedicated = null;
 
+        public Wallet Wallet
+        {
+            get
+            {
+                if (_Wallet == null)
+                    _Wallet = new Wallet(_SdkObject);
+                return _Wallet;
+            }
+        }
+        private Wallet? _Wallet = null;
+
         public Reward Reward
         {
             get
@@ -232,17 +243,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private Anonymization? _Anonymization = null;
-
-        public Wallet Wallet
-        {
-            get
-            {
-                if (_Wallet == null)
-                    _Wallet = new Wallet(_SdkObject);
-                return _Wallet;
-            }
-        }
-        private Wallet? _Wallet = null;
 
         public OrderDedicated OrderDedicated
         {

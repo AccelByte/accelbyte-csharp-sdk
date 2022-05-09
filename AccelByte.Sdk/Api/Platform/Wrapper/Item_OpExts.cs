@@ -120,6 +120,18 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Item)builder.WrapperObject!).GetItemIdBySku(op);
         }
 
+        public static List<Platform.Model.ItemId>? Execute(
+            this GetBulkItemIdBySkus.GetBulkItemIdBySkusBuilder builder,
+            string namespace_
+        )
+        {
+            GetBulkItemIdBySkus op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).GetBulkItemIdBySkus(op);
+        }
+
         public static List<Platform.Model.ItemInfo>? Execute(
             this BulkGetLocaleItems.BulkGetLocaleItemsBuilder builder,
             string namespace_,

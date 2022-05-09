@@ -14,6 +14,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("balance")]
         public long? Balance { get; set; }
 
+        [JsonPropertyName("balanceOrigin")]
+        public string? BalanceOrigin { get; set; }
+
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 
@@ -32,6 +35,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("status")]
         [JsonStringEnum]
         public WalletInfoStatus? Status { get; set; }
+
+        [JsonPropertyName("timeLimitedBalances")]
+        public List<TimeLimitedBalance>? TimeLimitedBalances { get; set; }
+
+        [JsonPropertyName("totalPermanentBalance")]
+        public long? TotalPermanentBalance { get; set; }
+
+        [JsonPropertyName("totalTimeLimitedBalance")]
+        public long? TotalTimeLimitedBalance { get; set; }
 
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }

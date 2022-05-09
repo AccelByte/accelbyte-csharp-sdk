@@ -210,6 +210,22 @@ namespace AccelByte.Sdk.Api
             return ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).RemovePlayerFromSession(op);
         }
 
+        public static Sessionbrowser.Model.ModelsSessionResponse? Execute(
+            this UpdateSettings.UpdateSettingsBuilder builder,
+            ModelsUpdateSettingsRequest body,
+            string namespace_,
+            string sessionID
+        )
+        {
+            UpdateSettings op = builder.Build(
+                body,
+                namespace_,
+                sessionID
+            );
+
+            return ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).UpdateSettings(op);
+        }
+
         public static Sessionbrowser.Model.ModelsRecentPlayerQueryResponse? Execute(
             this GetRecentPlayer.GetRecentPlayerBuilder builder,
             string namespace_,

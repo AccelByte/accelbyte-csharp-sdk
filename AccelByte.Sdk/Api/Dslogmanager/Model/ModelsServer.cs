@@ -33,6 +33,9 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         [JsonPropertyName("is_override_game_version")]
         public bool? IsOverrideGameVersion { get; set; }
 
+        [JsonPropertyName("job_id")]
+        public string? JobId { get; set; }
+
         [JsonPropertyName("last_update")]
         public DateTime? LastUpdate { get; set; }
 

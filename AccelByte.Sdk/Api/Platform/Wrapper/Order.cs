@@ -39,6 +39,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.QueryUserOrders.Builder.SetWrapperObject(this); }
         }
+        public AdminCreateUserOrder.AdminCreateUserOrderBuilder AdminCreateUserOrderOp
+        {
+            get { return Operation.AdminCreateUserOrder.Builder.SetWrapperObject(this); }
+        }
         public CountOfPurchasedItem.CountOfPurchasedItemBuilder CountOfPurchasedItemOp
         {
             get { return Operation.CountOfPurchasedItem.Builder.SetWrapperObject(this); }
@@ -130,6 +134,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.OrderPagingSlicedResult? QueryUserOrders(QueryUserOrders input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OrderInfo? AdminCreateUserOrder(AdminCreateUserOrder input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

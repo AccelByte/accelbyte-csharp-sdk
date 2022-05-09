@@ -12,17 +12,91 @@ namespace AccelByte.Sdk.Api
 {
     public static class PlatformWallet_OpExts
     {
-        public static void Execute(
-            this CheckWallet.CheckWalletBuilder builder,
+        public static Platform.Model.PlatformWalletConfigInfo? Execute(
+            this GetPlatformWalletConfig.GetPlatformWalletConfigBuilder builder,
+            string namespace_,
+            string platform
+        )
+        {
+            GetPlatformWalletConfig op = builder.Build(
+                namespace_,
+                platform
+            );
+
+            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetPlatformWalletConfig(op);
+        }
+
+        public static Platform.Model.PlatformWalletConfigInfo? Execute(
+            this UpdatePlatformWalletConfig.UpdatePlatformWalletConfigBuilder builder,
+            string namespace_,
+            string platform
+        )
+        {
+            UpdatePlatformWalletConfig op = builder.Build(
+                namespace_,
+                platform
+            );
+
+            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).UpdatePlatformWalletConfig(op);
+        }
+
+        public static Platform.Model.PlatformWalletConfigInfo? Execute(
+            this ResetPlatformWalletConfig.ResetPlatformWalletConfigBuilder builder,
+            string namespace_,
+            string platform
+        )
+        {
+            ResetPlatformWalletConfig op = builder.Build(
+                namespace_,
+                platform
+            );
+
+            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).ResetPlatformWalletConfig(op);
+        }
+
+        public static List<Platform.Model.CurrencyWallet>? Execute(
+            this QueryUserCurrencyWallets.QueryUserCurrencyWalletsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            QueryUserCurrencyWallets op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).QueryUserCurrencyWallets(op);
+        }
+
+        public static Platform.Model.WalletTransactionPagingSlicedResult? Execute(
+            this ListUserCurrencyTransactions.ListUserCurrencyTransactionsBuilder builder,
             string currencyCode,
             string namespace_,
             string userId
         )
         {
-            CheckWallet op = builder.Build(
+            ListUserCurrencyTransactions op = builder.Build(
                 currencyCode,
                 namespace_,
                 userId
+            );
+
+            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).ListUserCurrencyTransactions(op);
+        }
+
+        public static void Execute(
+            this CheckWallet.CheckWalletBuilder builder,
+            string currencyCode,
+            string namespace_,
+            string userId,
+            string origin
+        )
+        {
+            CheckWallet op = builder.Build(
+                currencyCode,
+                namespace_,
+                userId,
+                origin
             );
 
             ((Platform.Wrapper.Wallet)builder.WrapperObject!).CheckWallet(op);
@@ -44,7 +118,7 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).CreditUserWallet(op);
         }
 
-        public static Platform.Model.WalletInfo? Execute(
+        public static Platform.Model.PlatformWallet? Execute(
             this PayWithUserWallet.PayWithUserWalletBuilder builder,
             string currencyCode,
             string namespace_,
@@ -124,7 +198,7 @@ namespace AccelByte.Sdk.Api
             ((Platform.Wrapper.Wallet)builder.WrapperObject!).EnableUserWallet(op);
         }
 
-        public static Platform.Model.WalletTransactionPagingSlicedResult? Execute(
+        public static Platform.Model.DetailedWalletTransactionPagingSlicedResult? Execute(
             this ListUserWalletTransactions.ListUserWalletTransactionsBuilder builder,
             string namespace_,
             string userId,
@@ -166,7 +240,7 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetWallet(op);
         }
 
-        public static Platform.Model.WalletInfo? Execute(
+        public static Platform.Model.PlatformWallet? Execute(
             this PublicGetMyWallet.PublicGetMyWalletBuilder builder,
             string currencyCode,
             string namespace_
@@ -180,7 +254,7 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).PublicGetMyWallet(op);
         }
 
-        public static Platform.Model.WalletInfo? Execute(
+        public static Platform.Model.PlatformWallet? Execute(
             this PublicGetWallet.PublicGetWalletBuilder builder,
             string currencyCode,
             string namespace_,

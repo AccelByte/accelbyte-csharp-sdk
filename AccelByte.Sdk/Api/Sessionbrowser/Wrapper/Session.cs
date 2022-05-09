@@ -75,6 +75,10 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         {
             get { return Operation.RemovePlayerFromSession.Builder.SetWrapperObject(this); }
         }
+        public UpdateSettings.UpdateSettingsBuilder UpdateSettingsOp
+        {
+            get { return Operation.UpdateSettings.Builder.SetWrapperObject(this); }
+        }
         public GetRecentPlayer.GetRecentPlayerBuilder GetRecentPlayerOp
         {
             get { return Operation.GetRecentPlayer.Builder.SetWrapperObject(this); }
@@ -186,6 +190,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.Payload);
         }
         public Model.ModelsAddPlayerResponse? RemovePlayerFromSession(RemovePlayerFromSession input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsSessionResponse? UpdateSettings(UpdateSettings input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

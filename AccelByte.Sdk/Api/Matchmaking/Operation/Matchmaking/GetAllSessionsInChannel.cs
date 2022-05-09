@@ -21,6 +21,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// Required Scope: social
     /// 
     /// Get all sessions in a channel.
+    /// 
+    /// if party_id value empty/null, field will not show in response body.
     /// </summary>
     public class GetAllSessionsInChannel : AccelByte.Sdk.Core.Operation
     {

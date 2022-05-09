@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Other detail info:
     /// 
     ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-    ///   *  Returns : wallet transaction info
+    ///   *  Returns : currency transaction info
     /// </summary>
     public class PublicListUserWalletTransactions : AccelByte.Sdk.Core.Operation
     {

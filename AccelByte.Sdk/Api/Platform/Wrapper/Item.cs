@@ -51,6 +51,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.GetItemIdBySku.Builder.SetWrapperObject(this); }
         }
+        public GetBulkItemIdBySkus.GetBulkItemIdBySkusBuilder GetBulkItemIdBySkusOp
+        {
+            get { return Operation.GetBulkItemIdBySkus.Builder.SetWrapperObject(this); }
+        }
         public BulkGetLocaleItems.BulkGetLocaleItemsBuilder BulkGetLocaleItemsOp
         {
             get { return Operation.BulkGetLocaleItems.Builder.SetWrapperObject(this); }
@@ -206,6 +210,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.ItemId? GetItemIdBySku(GetItemIdBySku input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ItemId>? GetBulkItemIdBySkus(GetBulkItemIdBySkus input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

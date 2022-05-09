@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.8.0
+- Updated core unit tests.
+- Moved cli tests to cli project's folder.
+- Updated APIs.
+	- iam
+		- updated endpoints
+	- matchmaking
+		- updated endpoints
+	- platform
+		- added new endpoints
+		- updated endpoints
+	- sessionbrowser
+		- added new endpoints
+	- social
+		- added new endpoints
+		- updated endpoints
+	- ugc
+		- updated endpoints
+
 ## v0.7.0
 - Added support for cookie parameters
 - Added fluent interface as an alternative way to access operations and wrappers object directly from sdk object.

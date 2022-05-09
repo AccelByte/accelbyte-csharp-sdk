@@ -45,6 +45,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("omitNotification")]
         public bool? OmitNotification { get; set; }
 
+        [JsonPropertyName("platform")]
+        public string? Platform { get; set; }
+
         [JsonPropertyName("price")]
         public int? Price { get; set; }
 

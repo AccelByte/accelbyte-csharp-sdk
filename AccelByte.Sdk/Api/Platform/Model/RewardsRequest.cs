@@ -11,6 +11,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class RewardsRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("origin")]
+        [JsonStringEnum]
+        public RewardsRequestOrigin? Origin { get; set; }
+
         [JsonPropertyName("rewards")]
         public List<PlatformReward>? Rewards { get; set; }
 
@@ -19,6 +23,54 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public RewardsRequestSource? Source { get; set; }
 
     }
+
+    public class RewardsRequestOrigin : StringEnum<RewardsRequestOrigin>
+    {
+        public static readonly RewardsRequestOrigin Playstation
+            = new RewardsRequestOrigin("Playstation");
+
+        public static readonly RewardsRequestOrigin Xbox
+            = new RewardsRequestOrigin("Xbox");
+
+        public static readonly RewardsRequestOrigin Steam
+            = new RewardsRequestOrigin("Steam");
+
+        public static readonly RewardsRequestOrigin Epic
+            = new RewardsRequestOrigin("Epic");
+
+        public static readonly RewardsRequestOrigin Stadia
+            = new RewardsRequestOrigin("Stadia");
+
+        public static readonly RewardsRequestOrigin IOS
+            = new RewardsRequestOrigin("IOS");
+
+        public static readonly RewardsRequestOrigin GooglePlay
+            = new RewardsRequestOrigin("GooglePlay");
+
+        public static readonly RewardsRequestOrigin Twitch
+            = new RewardsRequestOrigin("Twitch");
+
+        public static readonly RewardsRequestOrigin Nintendo
+            = new RewardsRequestOrigin("Nintendo");
+
+        public static readonly RewardsRequestOrigin System
+            = new RewardsRequestOrigin("System");
+
+        public static readonly RewardsRequestOrigin Other
+            = new RewardsRequestOrigin("Other");
+
+
+        public static implicit operator RewardsRequestOrigin(string value)
+        {
+            return Create(value);
+        }
+
+        public RewardsRequestOrigin(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 
     public class RewardsRequestSource : StringEnum<RewardsRequestSource>
     {

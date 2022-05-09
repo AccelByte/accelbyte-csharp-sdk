@@ -107,7 +107,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
         
-        public Model.WalletInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.PlatformWallet? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            
             if (code == (HttpStatusCode)204)
             {
@@ -115,11 +115,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.WalletInfo>(payload);
+                return JsonSerializer.Deserialize<Model.PlatformWallet>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.WalletInfo>(payload);
+                return JsonSerializer.Deserialize<Model.PlatformWallet>(payload);
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

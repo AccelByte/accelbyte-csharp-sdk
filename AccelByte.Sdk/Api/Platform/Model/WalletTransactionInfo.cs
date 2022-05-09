@@ -32,6 +32,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("reason")]
         public string? Reason { get; set; }
 
+        [JsonPropertyName("transactionAmountDetails")]
+        public List<TransactionAmountDetails>? TransactionAmountDetails { get; set; }
+
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
 
@@ -41,9 +44,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("walletAction")]
         [JsonStringEnum]
         public WalletTransactionInfoWalletAction? WalletAction { get; set; }
-
-        [JsonPropertyName("walletId")]
-        public string? WalletId { get; set; }
 
     }
 

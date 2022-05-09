@@ -25,6 +25,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// if there are new players being matched to the session.
     /// 
     /// Possible session statuses are "sessionInQueue", "sessionFull", and "sessionTimeout".
+    /// 
+    /// if party_id value empty/null, field will not show in response body.
     /// </summary>
     public class QuerySessionHandler : AccelByte.Sdk.Core.Operation
     {

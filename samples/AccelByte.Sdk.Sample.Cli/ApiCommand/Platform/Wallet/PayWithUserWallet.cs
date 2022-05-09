@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Body                
             );            
             
-            AccelByte.Sdk.Api.Platform.Model.WalletInfo? response = wrapper.PayWithUserWallet(operation);
+            AccelByte.Sdk.Api.Platform.Model.PlatformWallet? response = wrapper.PayWithUserWallet(operation);
             if (response == null)
                 return "No response from server.";
 

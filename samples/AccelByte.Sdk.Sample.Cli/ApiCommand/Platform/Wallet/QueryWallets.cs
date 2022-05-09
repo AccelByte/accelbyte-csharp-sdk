@@ -38,6 +38,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("offset")]
         public int? Offset { get; set; }
 
+        [SdkCommandArgument("origin")]
+        public string? Origin { get; set; }
+
         [SdkCommandArgument("userId")]
         public string? UserId { get; set; }
 
@@ -55,6 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 CurrencyCode,                
                 Limit,                
                 Offset,                
+                Origin,                
                 UserId                
             );            
             

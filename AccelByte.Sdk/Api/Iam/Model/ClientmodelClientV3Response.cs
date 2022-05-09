@@ -24,6 +24,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("clientPermissions")]
         public List<AccountcommonPermissionV3>? ClientPermissions { get; set; }
 
+        [JsonPropertyName("clientPlatform")]
+        public string? ClientPlatform { get; set; }
+
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 

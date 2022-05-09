@@ -21,6 +21,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// Required Scope: social
     /// 
     /// Get session history detailed.
+    /// 
+    /// if party_id value empty/null, field will not show in response body.
     /// </summary>
     public class GetSessionHistoryDetailed : AccelByte.Sdk.Core.Operation
     {

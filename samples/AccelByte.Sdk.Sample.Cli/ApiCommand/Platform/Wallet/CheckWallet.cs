@@ -35,6 +35,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("origin")]
+        public string Origin { get; set; } = String.Empty;
+
         public CheckWalletCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -47,7 +50,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             CheckWallet operation = new CheckWallet(
                 CurrencyCode,                
                 Namespace,                
-                UserId                
+                UserId,                
+                Origin                
             );            
             
             wrapper.CheckWallet(operation);

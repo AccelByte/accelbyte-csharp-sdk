@@ -89,6 +89,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("paymentStationUrl")]
         public string? PaymentStationUrl { get; set; }
 
+        [JsonPropertyName("platform")]
+        public string? Platform { get; set; }
+
         [JsonPropertyName("price")]
         public int? Price { get; set; }
 

@@ -19,6 +19,26 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
 
         #region Operation Builders
+        public GetPlatformWalletConfig.GetPlatformWalletConfigBuilder GetPlatformWalletConfigOp
+        {
+            get { return Operation.GetPlatformWalletConfig.Builder.SetWrapperObject(this); }
+        }
+        public UpdatePlatformWalletConfig.UpdatePlatformWalletConfigBuilder UpdatePlatformWalletConfigOp
+        {
+            get { return Operation.UpdatePlatformWalletConfig.Builder.SetWrapperObject(this); }
+        }
+        public ResetPlatformWalletConfig.ResetPlatformWalletConfigBuilder ResetPlatformWalletConfigOp
+        {
+            get { return Operation.ResetPlatformWalletConfig.Builder.SetWrapperObject(this); }
+        }
+        public QueryUserCurrencyWallets.QueryUserCurrencyWalletsBuilder QueryUserCurrencyWalletsOp
+        {
+            get { return Operation.QueryUserCurrencyWallets.Builder.SetWrapperObject(this); }
+        }
+        public ListUserCurrencyTransactions.ListUserCurrencyTransactionsBuilder ListUserCurrencyTransactionsOp
+        {
+            get { return Operation.ListUserCurrencyTransactions.Builder.SetWrapperObject(this); }
+        }
         public CheckWallet.CheckWalletBuilder CheckWalletOp
         {
             get { return Operation.CheckWallet.Builder.SetWrapperObject(this); }
@@ -73,6 +93,46 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
+        public Model.PlatformWalletConfigInfo? GetPlatformWalletConfig(GetPlatformWalletConfig input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.PlatformWalletConfigInfo? UpdatePlatformWalletConfig(UpdatePlatformWalletConfig input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.PlatformWalletConfigInfo? ResetPlatformWalletConfig(ResetPlatformWalletConfig input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.CurrencyWallet>? QueryUserCurrencyWallets(QueryUserCurrencyWallets input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.WalletTransactionPagingSlicedResult? ListUserCurrencyTransactions(ListUserCurrencyTransactions input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public void CheckWallet(CheckWallet input) {
             var response = _sdk.RunRequest(input);
 
@@ -89,7 +149,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.WalletInfo? PayWithUserWallet(PayWithUserWallet input) {
+        public Model.PlatformWallet? PayWithUserWallet(PayWithUserWallet input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -129,7 +189,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.WalletTransactionPagingSlicedResult? ListUserWalletTransactions(ListUserWalletTransactions input) {
+        public Model.DetailedWalletTransactionPagingSlicedResult? ListUserWalletTransactions(ListUserWalletTransactions input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -153,7 +213,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.WalletInfo? PublicGetMyWallet(PublicGetMyWallet input) {
+        public Model.PlatformWallet? PublicGetMyWallet(PublicGetMyWallet input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -161,7 +221,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.WalletInfo? PublicGetWallet(PublicGetWallet input) {
+        public Model.PlatformWallet? PublicGetWallet(PublicGetWallet input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

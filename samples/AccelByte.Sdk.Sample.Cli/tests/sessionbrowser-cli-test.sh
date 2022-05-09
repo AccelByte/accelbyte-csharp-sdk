@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..16"
+echo "1..17"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -201,14 +201,26 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 15 'RemovePlayerFromSession' test.out
 
-#- 16 GetRecentPlayer
+#- 16 UpdateSettings
+# body param: body
+echo '{}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn sessionbrowser \
+    --op UpdateSettings \
+    --namespace $AB_NAMESPACE \
+    --sessionID 'NmPLeZdo' \
+    --reqfile $TEMP_JSON_INPUT \
+    > test.out 2>&1
+eval_tap $? 16 'UpdateSettings' test.out
+
+#- 17 GetRecentPlayer
 $CLI_EXE \
     --sn sessionbrowser \
     --op GetRecentPlayer \
     --namespace $AB_NAMESPACE \
-    --userID 'NmPLeZdo' \
+    --userID 'CXfabFXz' \
     > test.out 2>&1
-eval_tap $? 16 'GetRecentPlayer' test.out
+eval_tap $? 17 'GetRecentPlayer' test.out
 
 
 rm -f "$CLI_TOKEN_FILE"

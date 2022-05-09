@@ -63,6 +63,30 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     ///           * deletable : The flag to identify whether client is deletable (optional). default value: true
+    /// 
+    /// 
+    ///           * clientPlatform : available client platform (optional). default value: ""
+    /// 
+    /// 
+    ///             * Playstation
+    /// 
+    /// 
+    ///             * Xbox
+    /// 
+    /// 
+    ///             * Steam
+    /// 
+    /// 
+    ///             * Epic
+    /// 
+    /// 
+    ///             * IOS
+    /// 
+    /// 
+    ///             * GooglePlay
+    /// 
+    /// 
+    ///             * Nintendo
     /// </summary>
     public class AdminCreateClientV3 : AccelByte.Sdk.Core.Operation
     {

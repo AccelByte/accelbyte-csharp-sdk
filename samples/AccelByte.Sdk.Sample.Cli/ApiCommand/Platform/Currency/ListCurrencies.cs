@@ -29,6 +29,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("currencyType")]
+        public string? CurrencyType { get; set; }
+
         public ListCurrenciesCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -39,7 +42,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Currency wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Currency(_SDK);
 
             ListCurrencies operation = new ListCurrencies(
-                Namespace                
+                Namespace,                
+                CurrencyType                
             );            
             
             List<AccelByte.Sdk.Api.Platform.Model.CurrencyInfo>? response = wrapper.ListCurrencies(operation);

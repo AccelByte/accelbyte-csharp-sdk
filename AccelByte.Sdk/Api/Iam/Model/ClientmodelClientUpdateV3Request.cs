@@ -21,6 +21,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("clientPermissions")]
         public List<AccountcommonPermissionV3>? ClientPermissions { get; set; }
 
+        [JsonPropertyName("clientPlatform")]
+        public string? ClientPlatform { get; set; }
+
         [JsonPropertyName("deletable")]
         public bool? Deletable { get; set; }
 

@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string? Subtype { get; set; }
 
         [SdkCommandArgument("tags")]
-        public string? Tags { get; set; }
+        public List<string>? Tags { get; set; }
 
         [SdkCommandArgument("type")]
         public string? Type { get; set; }

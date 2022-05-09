@@ -37,6 +37,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             public int? Offset { get; set; }
             
+            public string? Origin { get; set; }
+            
             public string? UserId { get; set; }
             
             internal QueryWalletsBuilder() { }
@@ -57,6 +59,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public QueryWalletsBuilder SetOffset(int _offset)
             {
                 Offset = _offset;
+                return this;
+            }
+
+            public QueryWalletsBuilder SetOrigin(string _origin)
+            {
+                Origin = _origin;
                 return this;
             }
 
@@ -92,6 +100,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.CurrencyCode != null) QueryParams["currencyCode"] = builder.CurrencyCode;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Origin != null) QueryParams["origin"] = builder.Origin;
             if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
             
 
@@ -108,6 +117,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string? currencyCode,            
             int? limit,            
             int? offset,            
+            string? origin,            
             string? userId            
         )
         {
@@ -116,6 +126,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (currencyCode != null) QueryParams["currencyCode"] = currencyCode;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (origin != null) QueryParams["origin"] = origin;
             if (userId != null) QueryParams["userId"] = userId;
             
 

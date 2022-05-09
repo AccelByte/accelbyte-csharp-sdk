@@ -78,6 +78,20 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Order)builder.WrapperObject!).QueryUserOrders(op);
         }
 
+        public static Platform.Model.OrderInfo? Execute(
+            this AdminCreateUserOrder.AdminCreateUserOrderBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminCreateUserOrder op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Order)builder.WrapperObject!).AdminCreateUserOrder(op);
+        }
+
         public static Platform.Model.PurchasedItemCount? Execute(
             this CountOfPurchasedItem.CountOfPurchasedItemBuilder builder,
             string namespace_,
