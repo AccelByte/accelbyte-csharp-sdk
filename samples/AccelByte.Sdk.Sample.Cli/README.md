@@ -30,7 +30,7 @@ Just hit Build in the main menu, or right click in "AccelByte.Sdk.Sample.Cli", t
 
 1. You need to login first with this command:
 
-    `AccelByte.Sdk.Sample.Cli.exe --op login --user <username> --password <password>`
+    `AccelByte.Sdk.Sample.Cli.exe --op login --user <username> --pass <password>`
 
     For client type login (environment var `AB_CLIENT_SECRET` is required), use this command:
 
@@ -76,5 +76,11 @@ Just hit Build in the main menu, or right click in "AccelByte.Sdk.Sample.Cli", t
 
     `AccelByte.Sdk.Sample.Cli.exe --list-all`
 
+Other optional arguments:
+- `--enable-log` , enable logging for http requests. Log file (`http_log.txt`) will be stored in current directory.
+- `--ws` , enable web socket mode. Put this option first before using any web socket related options.
+- `--ws-listen` , enable web socket listening mode.
+- `--ws-payload "<json_content>"` , put web socket request payload using this option.
+- `--ws-payload-file "<path_to_json_file>"`, upload a file as web socket request payload.
 
 For Visual Studio 2022 users, you can define multiple debug profiles in which each of the profiles can have different command-line arguments.
