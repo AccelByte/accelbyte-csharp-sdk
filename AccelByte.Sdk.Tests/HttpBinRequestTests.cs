@@ -16,19 +16,33 @@ using System.IO;
 using NUnit.Framework;
 
 using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Client;
 
 namespace AccelByte.Sdk.Tests
 {
     [TestFixture(Category = "HttpBin")]
     public class HttpBinRequestTests
     {
+        public static object[] FixtureArgs =
+        {
+            new object[]{ AccelByte.Sdk.Core.Client.HttpClient.Default },
+            new object[]{ ReliableHttpClient.Builder.Build() }
+        };
+
         protected AccelByteSDK? _Sdk = null;
+
+        protected IHttpClient _ClientObj;
+
+        public HttpBinRequestTests(IHttpClient clientObj)
+        {
+            _ClientObj = clientObj;
+        }
 
         [OneTimeSetUp]
         public void Startup()
         {
             _Sdk = AccelByteSDK.Builder
-                .UseDefaultHttpClient()
+                .SetHttpClient(_ClientObj)
                 .SetConfigRepository(new HttpbinConfigRepository("client"))
                 .UseInMemoryTokenRepository()
                 .EnableLog()
