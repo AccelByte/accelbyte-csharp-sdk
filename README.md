@@ -160,6 +160,28 @@ if (!logout)
 }
 ```
 
+## HTTP Retry Example
+If retry feature is required, instantiate the sdk with `ReliableHttpClient` object.
+```csharp
+//Add core namespace
+using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Client;
+
+//Using default retry policy 
+HttpClientPolicy policy = HttpClientPolicy.Default;
+
+AccelByteSDK sdk = AccelByteSDK.Builder
+    .SetHttpClient(ReliableHttpClient.Builder
+        .SetDefaultPolicy(policy)                    
+        .Build())
+    .UseDefaultHttpClient()
+    .UseDefaultConfigRepository()
+    .UseDefaultTokenRepository()
+    .Build();
+```
+
+For `HttpClientPolicy` properties, refer to [this code](AccelByte.Sdk/Core/Client//HttpClientPolicy.cs).
+
 ## Samples
 
 Sample apps are available in the [samples](samples) directory
