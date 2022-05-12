@@ -278,8 +278,7 @@ namespace AccelByte.Sdk.Core.Client
                         }
                         else
                         {
-                            string sPayload = Helper.ConvertInputStreamToString(payload);
-                            throw new HttpResponseException(response.StatusCode, sPayload);
+                            throw new HttpRequestException(response.StatusCode, respContentType, payload);
                         }
                     }
                 }
@@ -294,6 +293,18 @@ namespace AccelByte.Sdk.Core.Client
                     }
                     else
                         throw xSocket;
+                }
+                catch (HttpRequestException xHttpReq)
+                {
+                    if (policy.RetryLogicHandler != null)
+                    {
+                        if (!policy.RetryLogicHandler.ExecuteRetryLogic(policy, retryCount, xHttpReq))
+                            return xHttpReq.AsHttpResponse;
+                        else
+                            retryCount++;
+                    }
+                    else
+                        return xHttpReq.AsHttpResponse;
                 }
                 catch (HttpResponseException xHttpResp)
                 {

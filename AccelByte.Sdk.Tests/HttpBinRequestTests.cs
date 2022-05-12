@@ -3,6 +3,7 @@
 // and restrictions contact your company contract manager.
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,30 +21,17 @@ using AccelByte.Sdk.Core.Client;
 
 namespace AccelByte.Sdk.Tests
 {
-    [TestFixture(Category = "HttpBin")]
-    [TestFixtureSource(nameof(FixtureArgs))]
-    public class HttpBinRequestTests
+    public abstract class HttpBinRequestTests
     {
-        public static object[] FixtureArgs =
-        {
-            new object[]{ AccelByte.Sdk.Core.Client.HttpClient.Default },
-            //new object[]{ ReliableHttpClient.Builder.Build() }
-        };
-
         protected AccelByteSDK? _Sdk = null;
 
-        protected IHttpClient _ClientObj;
-
-        public HttpBinRequestTests(IHttpClient clientObj)
-        {
-            _ClientObj = clientObj;
-        }
+        protected abstract IHttpClient GetHttpClientObject();
 
         [OneTimeSetUp]
         public void Startup()
         {
             _Sdk = AccelByteSDK.Builder
-                .SetHttpClient(_ClientObj)
+                .SetHttpClient(GetHttpClientObject())
                 .SetConfigRepository(new HttpbinConfigRepository("client"))
                 .UseInMemoryTokenRepository()
                 .EnableLog()

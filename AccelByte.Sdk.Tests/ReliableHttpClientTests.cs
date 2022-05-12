@@ -20,8 +20,18 @@ namespace AccelByte.Sdk.Tests
 {
     [TestFixture(Category = "ReliableHttpClient")]
     [Explicit]
-    public class ReliableHttpClientTests
+    public class ReliableHttpClientTests : HttpBinRequestTests
     {
+        protected override IHttpClient GetHttpClientObject()
+        {
+            HttpClientPolicy policy = HttpClientPolicy.Default;
+            policy.RetryOnException = false;
+
+            return ReliableHttpClient.Builder
+                .SetDefaultPolicy(policy)
+                .Build();
+        }
+
         public void RetrySimpleTests()
         {
 
