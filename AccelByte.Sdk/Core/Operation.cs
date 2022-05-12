@@ -6,6 +6,8 @@ using System.Collections;
 using System.Text;
 using System.Web;
 
+using AccelByte.Sdk.Core.Client;
+
 namespace AccelByte.Sdk.Core
 {
     public abstract class Operation
@@ -55,6 +57,8 @@ namespace AccelByte.Sdk.Core
 
         public string? LocationQuery { get; init; }
 
+        public HttpClientPolicy? HttpClientPolicy { get; set; } = null;
+        
         protected string EncodeQueryString(string value)
         {
             return (DoNotEncodeQueryParams ? value : HttpUtility.UrlEncode(value));

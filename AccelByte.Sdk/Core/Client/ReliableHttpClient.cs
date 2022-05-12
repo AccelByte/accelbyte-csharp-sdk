@@ -10,6 +10,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
 using System.Threading;
+using System.Web;
 
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
@@ -203,6 +204,14 @@ namespace AccelByte.Sdk.Core.Client
                 }
                 else
                     request.Headers.TryAddWithoutValidation(h.Key, h.Value);
+            }
+
+            if (operation.Cookies.Count > 0)
+            {
+                List<string> cEntries = new List<string>();
+                foreach (var c in operation.Cookies)
+                    cEntries.Add(c.Key + "=" + HttpUtility.UrlEncode(c.Value, Encoding.UTF8));
+                request.Headers.TryAddWithoutValidation("Cookie", String.Join("; ", cEntries));
             }
 
             return request;

@@ -132,6 +132,7 @@ namespace AccelByte.Sdk.Tests
             if (code == HttpStatusCode.OK)
             {
                 string sPayload = Helper.ConvertInputStreamToString(payload);
+                Console.WriteLine(sPayload);
                 return JsonSerializer.Deserialize<HttpbinAnythingResponse<TArgs>>(sPayload);
             }
             else if (code == HttpStatusCode.Created)

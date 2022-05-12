@@ -21,12 +21,13 @@ using AccelByte.Sdk.Core.Client;
 namespace AccelByte.Sdk.Tests
 {
     [TestFixture(Category = "HttpBin")]
+    [TestFixtureSource(nameof(FixtureArgs))]
     public class HttpBinRequestTests
     {
         public static object[] FixtureArgs =
         {
             new object[]{ AccelByte.Sdk.Core.Client.HttpClient.Default },
-            new object[]{ ReliableHttpClient.Builder.Build() }
+            //new object[]{ ReliableHttpClient.Builder.Build() }
         };
 
         protected AccelByteSDK? _Sdk = null;
