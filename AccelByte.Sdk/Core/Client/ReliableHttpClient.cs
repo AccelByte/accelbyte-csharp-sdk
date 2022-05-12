@@ -38,6 +38,8 @@ namespace AccelByte.Sdk.Core.Client
 
             public IHttpLogger? Logger { get; private set; } = null;
 
+            public Action<HttpRequestMessage, int>? BeforeSend { get; private set; } = null;
+
             public ReliableHttpClientBuilder SetHttp(System.Net.Http.HttpClient hcObj)
             {
                 Http = hcObj;
@@ -62,6 +64,12 @@ namespace AccelByte.Sdk.Core.Client
                 return this;
             }
 
+            public ReliableHttpClientBuilder SetBeforeSendAction(Action<HttpRequestMessage, int> action)
+            {
+                BeforeSend = action;
+                return this;
+            }
+
             public ReliableHttpClient Build()
             {
                 return new ReliableHttpClient(this);
@@ -72,6 +80,8 @@ namespace AccelByte.Sdk.Core.Client
         private LoggingHandler? _LoggingHandler = null;
 
         private HttpClientPolicy _Policy;
+
+        private Action<HttpRequestMessage, int>? _BeforeSend = null;
 
         private ReliableHttpClient(ReliableHttpClientBuilder builder)
         {
@@ -97,6 +107,8 @@ namespace AccelByte.Sdk.Core.Client
             _Policy = builder.DefaultPolicy;
             if ((builder.Logger != null) && (_LoggingHandler != null))
                 _LoggingHandler.Logger = builder.Logger;
+
+            _BeforeSend = builder.BeforeSend;
         }
 
         public IHttpClient SetLogger(IHttpLogger logger)
@@ -235,9 +247,11 @@ namespace AccelByte.Sdk.Core.Client
                     if (policy.AddRetryCountToHeaders!.Value)
                         request.Headers.TryAddWithoutValidation("X-Client-Retry-Count", retryCount.ToString());
 
+                    _BeforeSend?.Invoke(request, retryCount);
+
                     HttpResponseMessage response;
                     using (var cts = new CancellationTokenSource(policy.RequestTimeOut!.Value * 1000))
-                    {
+                    {                        
                         Task<HttpResponseMessage> sendTask = Http.SendAsync(request, cts.Token);
                         sendTask.Wait();
                         response = sendTask.Result;

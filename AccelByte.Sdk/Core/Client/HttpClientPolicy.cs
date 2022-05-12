@@ -16,16 +16,22 @@ namespace AccelByte.Sdk.Core.Client
         /// <summary>
         /// Get default HttpClientPolicy object.
         /// </summary>
-        public static readonly HttpClientPolicy Default = new HttpClientPolicy()
+        public static HttpClientPolicy Default
         {
-            RetryOnException = true,
-            MaxRetryCount = 5,
-            RetryInterval = 500,
-            IntervalType = RetryIntervalType.Linear,
-            RequestTimeOut = 100,
-            AddRetryCountToHeaders = false,
-            RetryLogicHandler = new DefaultRetryLogicHandler()
-        };
+            get
+            {
+                return new HttpClientPolicy()
+                {
+                    RetryOnException = true,
+                    MaxRetryCount = 5,
+                    RetryInterval = 500,
+                    IntervalType = RetryIntervalType.Linear,
+                    RequestTimeOut = 100,
+                    AddRetryCountToHeaders = false,
+                    RetryLogicHandler = new DefaultRetryLogicHandler()
+                };
+            }
+        }
 
         /// <summary>
         /// Flag to enable or disable retry on exception.
