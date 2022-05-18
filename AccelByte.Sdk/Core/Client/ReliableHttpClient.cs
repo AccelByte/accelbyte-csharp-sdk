@@ -320,18 +320,6 @@ namespace AccelByte.Sdk.Core.Client
                     else
                         return xHttpReq.AsHttpResponse;
                 }
-                catch (HttpResponseException xHttpResp)
-                {
-                    if (policy.RetryLogicHandler != null)
-                    {
-                        if (!policy.RetryLogicHandler.ExecuteRetryLogic(policy, retryCount, xHttpResp))
-                            throw xHttpResp;
-                        else
-                            retryCount++;
-                    }
-                    else
-                        throw xHttpResp;
-                }
                 catch (TaskCanceledException xTask)
                 {
                     if (policy.RetryLogicHandler != null)
