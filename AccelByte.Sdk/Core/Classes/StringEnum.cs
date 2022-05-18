@@ -14,7 +14,7 @@ namespace AccelByte.Sdk.Core
     {
         private readonly string _Value;
 
-        public static object? Create(Type targetType,string value)
+        public static object? NewValue(Type targetType,string value)
         {
             if (!typeof(StringEnum).IsAssignableFrom(targetType))
                 throw new ArgumentException("Target type does not inherit from AbstractStringEnum");
@@ -106,23 +106,31 @@ namespace AccelByte.Sdk.Core
 
     public abstract class StringEnum<T> : StringEnum where T : StringEnum
     {
-        public static T Create(string value)
+        public static T NewValue(string value)
         {
             return (T)Activator.CreateInstance(typeof(T), new object[] { value })!;
+        }
+
+        public static List<T> NewValue(List<string> values)
+        {
+            List<T> list = new List<T>();
+            foreach (string value in values)
+                list.Add((T)Activator.CreateInstance(typeof(T), new object[] { value })!);
+            return list;
         }
 
         public static List<T> operator |(StringEnum<T> a, StringEnum<T> b)
         {
             return new List<T>()
             {
-                Create(a.Value),
-                Create(b.Value)
+                NewValue(a.Value),
+                NewValue(b.Value)
             };
         }
 
         public static List<T> operator |(List<T> a, StringEnum<T> b)
         {
-            a.Add(Create(b.Value));
+            a.Add(NewValue(b.Value));
             return a;
         }
 

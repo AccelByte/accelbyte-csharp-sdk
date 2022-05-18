@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Tests.Model
 
         public static implicit operator ModelWithEnumRuleCriteria(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public ModelWithEnumRuleCriteria(string enumValue)

@@ -116,8 +116,9 @@ namespace AccelByte.Sdk.Core
                                 List<string> pValues = new List<string>();
                                 foreach (var v in qp.Value)
                                 {
+                                    string val = v.ToString();
                                     // Escape " if any
-                                    var escapedValue = v.Replace("\"", "\"\"");
+                                    var escapedValue = val.Replace("\"", "\"\"");
                                     pValues.Add(EncodeQueryString(WrapValueWithQuote(escapedValue)));
                                 }
 
@@ -125,8 +126,11 @@ namespace AccelByte.Sdk.Core
                                     kpValues.Add(EncodeQueryString(qp.Key) + "=" + String.Join(',', pValues));
                                 break;
                             case COLLECTION_FORMAT_MULTI:
-                                foreach (var v in qp.Value) 
-                                    kpValues.Add(EncodeQueryString(qp.Key) + "=" + EncodeQueryString(v));
+                                foreach (var v in qp.Value)
+                                {
+                                    string val = v.ToString();
+                                    kpValues.Add(EncodeQueryString(qp.Key) + "=" + EncodeQueryString(val));
+                                }
                                 break;
                             default:
                                 throw new NotSupportedException($"Unsupported query collection format (format: {collectionFormat})");

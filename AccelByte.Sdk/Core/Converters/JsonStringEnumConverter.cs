@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Core.Converters
         {
             string dValue = reader.GetString()!;
 
-            StringEnum? obj = (StringEnum?)StringEnum.Create(typeToConvert, dValue);
+            StringEnum? obj = (StringEnum?)StringEnum.NewValue(typeToConvert, dValue);
             if (obj is null)
                 throw new InvalidCastException("Could not create string enum object.");
 

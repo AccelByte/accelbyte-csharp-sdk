@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Tests
             ModelWithEnum model = new ModelWithEnum()
             {
                 RuleAttribute = "abc",
-                RuleCriteria = ModelWithEnumRuleCriteria.Create("CUSTOM"),
+                RuleCriteria = ModelWithEnumRuleCriteria.NewValue("CUSTOM"),
                 RuleValue = 20.0
             };
 
@@ -86,7 +86,7 @@ namespace AccelByte.Sdk.Tests
             Assert.IsNotNull(model);
             if (model != null)
             {
-                Assert.AreEqual(ModelWithEnumRuleCriteria.Create("CUSTOM"), model.RuleCriteria);
+                Assert.AreEqual(ModelWithEnumRuleCriteria.NewValue("CUSTOM"), model.RuleCriteria);
                 Assert.True(model.RuleCriteria! == "CUSTOM");
             }
         }

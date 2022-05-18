@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Core.Converters
                 if (value is null)
                     throw new JsonException("value is null");
 
-                list.Add(StringEnum<T>.Create(value));
+                list.Add(StringEnum<T>.NewValue(value));
             }
 
             throw new JsonException();

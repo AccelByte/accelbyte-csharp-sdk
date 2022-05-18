@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Tests.Model
 
         public static implicit operator ModelWithEnumListAggregate(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public ModelWithEnumListAggregate(string enumValue)
@@ -72,7 +72,7 @@ namespace AccelByte.Sdk.Tests.Model
 
         public static implicit operator ModelWithEnumListSpecials(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public ModelWithEnumListSpecials(string enumValue)
