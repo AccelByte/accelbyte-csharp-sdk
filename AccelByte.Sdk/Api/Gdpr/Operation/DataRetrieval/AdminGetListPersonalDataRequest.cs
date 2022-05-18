@@ -28,13 +28,17 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public class AdminGetListPersonalDataRequestBuilder
             : OperationBuilder<AdminGetListPersonalDataRequestBuilder>
         {
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
             public string? RequestDate { get; set; }
-            
+
+
+
+
+
             internal AdminGetListPersonalDataRequestBuilder() { }
 
 
@@ -81,7 +85,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.RequestDate != null) QueryParams["requestDate"] = builder.RequestDate;
+            if (builder.RequestDate is not null) QueryParams["requestDate"] = builder.RequestDate;
             
 
             
@@ -103,7 +107,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (requestDate != null) QueryParams["requestDate"] = requestDate;
+            if (requestDate is not null) QueryParams["requestDate"] = requestDate;
             
 
             
@@ -144,4 +148,5 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

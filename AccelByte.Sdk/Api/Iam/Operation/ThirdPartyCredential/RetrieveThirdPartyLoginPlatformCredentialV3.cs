@@ -26,8 +26,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class RetrieveThirdPartyLoginPlatformCredentialV3Builder
             : OperationBuilder<RetrieveThirdPartyLoginPlatformCredentialV3Builder>
         {
-            
-            
+
+
+
+
+
             internal RetrieveThirdPartyLoginPlatformCredentialV3Builder() { }
 
 
@@ -116,4 +119,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

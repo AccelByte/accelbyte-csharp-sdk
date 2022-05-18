@@ -38,9 +38,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class CreateMyProfileBuilder
             : OperationBuilder<CreateMyProfileBuilder>
         {
-            
+
+
             public Model.UserProfilePrivateCreate? Body { get; set; }
-            
+
+
+
+
             internal CreateMyProfileBuilder() { }
 
 
@@ -132,4 +136,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

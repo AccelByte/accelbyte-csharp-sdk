@@ -31,9 +31,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class AdminGetUserProfilePublicInfoByIdsBuilder
             : OperationBuilder<AdminGetUserProfilePublicInfoByIdsBuilder>
         {
-            
+
+
             public Model.UserProfileBulkRequest? Body { get; set; }
-            
+
+
+
+
             internal AdminGetUserProfilePublicInfoByIdsBuilder() { }
 
 
@@ -125,4 +129,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

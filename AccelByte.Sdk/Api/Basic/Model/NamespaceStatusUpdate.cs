@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
 
         public static implicit operator NamespaceStatusUpdateStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public NamespaceStatusUpdateStatus(string enumValue)

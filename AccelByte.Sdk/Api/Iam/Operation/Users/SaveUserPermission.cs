@@ -114,9 +114,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class SaveUserPermissionBuilder
             : OperationBuilder<SaveUserPermissionBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal SaveUserPermissionBuilder() { }
 
 
@@ -203,4 +205,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

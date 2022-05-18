@@ -30,10 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicDeletePaymentAccountBuilder
             : OperationBuilder<PublicDeletePaymentAccountBuilder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal PublicDeletePaymentAccountBuilder() { }
 
 
@@ -44,7 +45,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public PublicDeletePaymentAccount Build(
                 string id,
                 string namespace_,
-                string type,
+                PublicDeletePaymentAccountType type,
                 string userId
             )
             {
@@ -63,13 +64,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         private PublicDeletePaymentAccount(PublicDeletePaymentAccountBuilder builder,
             string id,
             string namespace_,
-            string type,
+            PublicDeletePaymentAccountType type,
             string userId
         )
         {
             PathParams["id"] = id;
             PathParams["namespace"] = namespace_;
-            PathParams["type"] = type;
+            PathParams["type"] = type.Value;
             PathParams["userId"] = userId;
             
             
@@ -85,13 +86,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public PublicDeletePaymentAccount(
             string id,            
             string namespace_,            
-            string type,            
+            PublicDeletePaymentAccountType type,            
             string userId            
         )
         {
             PathParams["id"] = id;
             PathParams["namespace"] = namespace_;
-            PathParams["type"] = type;
+            PathParams["type"] = type.Value;
             PathParams["userId"] = userId;
             
             
@@ -126,4 +127,26 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class PublicDeletePaymentAccountType : StringEnum<PublicDeletePaymentAccountType>
+    {
+        public static readonly PublicDeletePaymentAccountType Card
+            = new PublicDeletePaymentAccountType("card");
+
+        public static readonly PublicDeletePaymentAccountType Paypal
+            = new PublicDeletePaymentAccountType("paypal");
+
+
+        public static implicit operator PublicDeletePaymentAccountType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicDeletePaymentAccountType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

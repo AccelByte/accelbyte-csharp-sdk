@@ -30,9 +30,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class UpgradeHeadlessAccountWithVerificationCodeBuilder
             : OperationBuilder<UpgradeHeadlessAccountWithVerificationCodeBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal UpgradeHeadlessAccountWithVerificationCodeBuilder() { }
 
 
@@ -127,4 +129,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

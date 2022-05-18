@@ -92,7 +92,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator FulfillmentRequestOrigin(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public FulfillmentRequestOrigin(string enumValue)
@@ -137,7 +137,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator FulfillmentRequestSource(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public FulfillmentRequestSource(string enumValue)

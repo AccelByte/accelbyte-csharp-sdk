@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class RedeemCodeBuilder
             : OperationBuilder<RedeemCodeBuilder>
         {
-            
-            
+
+
             public Model.FulfillCodeRequest? Body { get; set; }
-            
+
+
+
+
             internal RedeemCodeBuilder() { }
 
 
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

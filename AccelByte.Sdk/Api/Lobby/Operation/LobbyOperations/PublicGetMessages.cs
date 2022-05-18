@@ -26,6 +26,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class PublicGetMessagesBuilder
             : OperationBuilder<PublicGetMessagesBuilder>
         {
+
+
+
+
+
             internal PublicGetMessagesBuilder() { }
 
 
@@ -102,4 +107,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

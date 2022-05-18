@@ -30,11 +30,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class UpdateTierBuilder
             : OperationBuilder<UpdateTierBuilder>
         {
-            
-            
-            
+
+
             public Model.TierInput? Body { get; set; }
-            
+
+
+
+
             internal UpdateTierBuilder() { }
 
 
@@ -138,4 +140,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

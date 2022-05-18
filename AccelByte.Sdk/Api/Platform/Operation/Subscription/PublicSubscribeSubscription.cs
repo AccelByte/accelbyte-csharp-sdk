@@ -35,10 +35,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicSubscribeSubscriptionBuilder
             : OperationBuilder<PublicSubscribeSubscriptionBuilder>
         {
-            
-            
+
+
             public Model.SubscribeRequest? Body { get; set; }
-            
+
+
+
+
             internal PublicSubscribeSubscriptionBuilder() { }
 
 
@@ -128,4 +131,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -28,9 +28,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public class PublicCancelUserPersonalDataRequestBuilder
             : OperationBuilder<PublicCancelUserPersonalDataRequestBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal PublicCancelUserPersonalDataRequestBuilder() { }
 
 
@@ -125,4 +127,5 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -30,11 +30,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class ReorderTierBuilder
             : OperationBuilder<ReorderTierBuilder>
         {
-            
-            
-            
+
+
             public Model.TierReorder? Body { get; set; }
-            
+
+
+
+
             internal ReorderTierBuilder() { }
 
 
@@ -138,4 +140,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

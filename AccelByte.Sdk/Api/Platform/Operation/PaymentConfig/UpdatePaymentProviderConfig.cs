@@ -51,9 +51,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdatePaymentProviderConfigBuilder
             : OperationBuilder<UpdatePaymentProviderConfigBuilder>
         {
-            
+
+
             public Model.PaymentProviderConfigEdit? Body { get; set; }
-            
+
+
+
+
             internal UpdatePaymentProviderConfigBuilder() { }
 
 
@@ -145,4 +149,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

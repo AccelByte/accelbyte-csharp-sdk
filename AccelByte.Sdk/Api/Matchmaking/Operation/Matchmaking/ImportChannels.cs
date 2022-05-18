@@ -35,11 +35,15 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public class ImportChannelsBuilder
             : OperationBuilder<ImportChannelsBuilder>
         {
-            
+
+
+
             public Stream? File { get; set; }
-            
+
             public string? Strategy { get; set; }
-            
+
+
+
             internal ImportChannelsBuilder() { }
 
 
@@ -79,8 +83,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
-            if (builder.File != null) FormParams["file"] = builder.File;
-            if (builder.Strategy != null) FormParams["strategy"] = builder.Strategy;
+            if (builder.File is not null) FormParams["file"] = builder.File;
+            if (builder.Strategy is not null) FormParams["strategy"] = builder.Strategy;
 
             
             
@@ -99,8 +103,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["namespace"] = namespace_;
             
             
-            if (file != null) FormParams["file"] = file;
-            if (strategy != null) FormParams["strategy"] = strategy;
+            if (file is not null) FormParams["file"] = file;
+            if (strategy is not null) FormParams["strategy"] = strategy;
 
             
             
@@ -140,4 +144,5 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -65,8 +65,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             QueryEntitlements operation = new QueryEntitlements(
                 Namespace,                
                 ActiveOnly,                
-                AppType,                
-                EntitlementClazz,                
+                (AppType is null ? null : QueryEntitlementsAppType.NewValue(AppType)),                
+                (EntitlementClazz is null ? null : QueryEntitlementsEntitlementClazz.NewValue(EntitlementClazz)),                
                 EntitlementName,                
                 ItemId,                
                 Limit,                

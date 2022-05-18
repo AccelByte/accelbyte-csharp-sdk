@@ -26,6 +26,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public class PublicGetMessagesBuilder
             : OperationBuilder<PublicGetMessagesBuilder>
         {
+
+
+
+
+
             internal PublicGetMessagesBuilder() { }
 
 
@@ -102,4 +107,5 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

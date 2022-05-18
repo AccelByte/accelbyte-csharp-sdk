@@ -26,8 +26,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class AdminCreateGroupBuilder
             : OperationBuilder<AdminCreateGroupBuilder>
         {
-            
-            
+
+
+
+
+
             internal AdminCreateGroupBuilder() { }
 
 
@@ -116,4 +119,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

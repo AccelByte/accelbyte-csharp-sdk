@@ -29,16 +29,19 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class GetUserStatItemsBuilder
             : OperationBuilder<GetUserStatItemsBuilder>
         {
-            
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? StatCodes { get; set; }
-            
+
             public string? Tags { get; set; }
-            
+
+
+
+
+
             internal GetUserStatItemsBuilder() { }
 
 
@@ -95,8 +98,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.StatCodes != null) QueryParams["statCodes"] = builder.StatCodes;
-            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
+            if (builder.StatCodes is not null) QueryParams["statCodes"] = builder.StatCodes;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             
 
             
@@ -121,8 +124,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (statCodes != null) QueryParams["statCodes"] = statCodes;
-            if (tags != null) QueryParams["tags"] = tags;
+            if (statCodes is not null) QueryParams["statCodes"] = statCodes;
+            if (tags is not null) QueryParams["tags"] = tags;
             
 
             
@@ -163,4 +166,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

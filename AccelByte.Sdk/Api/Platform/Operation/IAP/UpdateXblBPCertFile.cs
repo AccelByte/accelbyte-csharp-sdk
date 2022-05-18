@@ -30,11 +30,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateXblBPCertFileBuilder
             : OperationBuilder<UpdateXblBPCertFileBuilder>
         {
-            
+
+
+
             public Stream? File { get; set; }
-            
+
             public string? Password { get; set; }
-            
+
+
+
             internal UpdateXblBPCertFileBuilder() { }
 
 
@@ -74,8 +78,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
-            if (builder.File != null) FormParams["file"] = builder.File;
-            if (builder.Password != null) FormParams["password"] = builder.Password;
+            if (builder.File is not null) FormParams["file"] = builder.File;
+            if (builder.Password is not null) FormParams["password"] = builder.Password;
 
             
             
@@ -94,8 +98,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             
-            if (file != null) FormParams["file"] = file;
-            if (password != null) FormParams["password"] = password;
+            if (file is not null) FormParams["file"] = file;
+            if (password is not null) FormParams["password"] = password;
 
             
             
@@ -135,4 +139,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class UnpublishSeasonBuilder
             : OperationBuilder<UnpublishSeasonBuilder>
         {
-            
-            
+
             public bool? Force { get; set; }
-            
+
+
+
+
+
             internal UnpublishSeasonBuilder() { }
 
 
@@ -132,4 +135,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

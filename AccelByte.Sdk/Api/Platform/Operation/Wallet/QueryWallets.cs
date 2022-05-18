@@ -30,17 +30,21 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryWalletsBuilder
             : OperationBuilder<QueryWalletsBuilder>
         {
-            
+
             public string? CurrencyCode { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
-            public string? Origin { get; set; }
-            
+
+            public QueryWalletsOrigin? Origin { get; set; }
+
             public string? UserId { get; set; }
-            
+
+
+
+
+
             internal QueryWalletsBuilder() { }
 
 
@@ -62,7 +66,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryWalletsBuilder SetOrigin(string _origin)
+            public QueryWalletsBuilder SetOrigin(QueryWalletsOrigin _origin)
             {
                 Origin = _origin;
                 return this;
@@ -97,11 +101,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.CurrencyCode != null) QueryParams["currencyCode"] = builder.CurrencyCode;
+            if (builder.CurrencyCode is not null) QueryParams["currencyCode"] = builder.CurrencyCode;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Origin != null) QueryParams["origin"] = builder.Origin;
-            if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
+            if (builder.Origin is not null) QueryParams["origin"] = builder.Origin.Value;
+            if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
             
 
             
@@ -117,17 +121,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string? currencyCode,            
             int? limit,            
             int? offset,            
-            string? origin,            
+            QueryWalletsOrigin? origin,            
             string? userId            
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (currencyCode != null) QueryParams["currencyCode"] = currencyCode;
+            if (currencyCode is not null) QueryParams["currencyCode"] = currencyCode;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (origin != null) QueryParams["origin"] = origin;
-            if (userId != null) QueryParams["userId"] = userId;
+            if (origin is not null) QueryParams["origin"] = origin.Value;
+            if (userId is not null) QueryParams["userId"] = userId;
             
 
             
@@ -168,4 +172,53 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class QueryWalletsOrigin : StringEnum<QueryWalletsOrigin>
+    {
+        public static readonly QueryWalletsOrigin Epic
+            = new QueryWalletsOrigin("Epic");
+
+        public static readonly QueryWalletsOrigin Googleplay
+            = new QueryWalletsOrigin("GooglePlay");
+
+        public static readonly QueryWalletsOrigin Ios
+            = new QueryWalletsOrigin("IOS");
+
+        public static readonly QueryWalletsOrigin Nintendo
+            = new QueryWalletsOrigin("Nintendo");
+
+        public static readonly QueryWalletsOrigin Other
+            = new QueryWalletsOrigin("Other");
+
+        public static readonly QueryWalletsOrigin Playstation
+            = new QueryWalletsOrigin("Playstation");
+
+        public static readonly QueryWalletsOrigin Stadia
+            = new QueryWalletsOrigin("Stadia");
+
+        public static readonly QueryWalletsOrigin Steam
+            = new QueryWalletsOrigin("Steam");
+
+        public static readonly QueryWalletsOrigin System
+            = new QueryWalletsOrigin("System");
+
+        public static readonly QueryWalletsOrigin Twitch
+            = new QueryWalletsOrigin("Twitch");
+
+        public static readonly QueryWalletsOrigin Xbox
+            = new QueryWalletsOrigin("Xbox");
+
+
+        public static implicit operator QueryWalletsOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryWalletsOrigin(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

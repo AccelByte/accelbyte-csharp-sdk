@@ -29,9 +29,13 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class CreateLocalizedPolicyVersionBuilder
             : OperationBuilder<CreateLocalizedPolicyVersionBuilder>
         {
-            
+
+
             public Model.CreateLocalizedPolicyVersionRequest? Body { get; set; }
-            
+
+
+
+
             internal CreateLocalizedPolicyVersionBuilder() { }
 
 
@@ -123,4 +127,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

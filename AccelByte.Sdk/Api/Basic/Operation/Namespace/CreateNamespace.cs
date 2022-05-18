@@ -32,8 +32,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class CreateNamespaceBuilder
             : OperationBuilder<CreateNamespaceBuilder>
         {
+
+
             public Model.NamespaceCreate? Body { get; set; }
-            
+
+
+
+
             internal CreateNamespaceBuilder() { }
 
 
@@ -119,4 +124,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

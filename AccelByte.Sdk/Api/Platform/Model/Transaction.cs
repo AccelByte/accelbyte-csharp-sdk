@@ -102,7 +102,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator TransactionProvider(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public TransactionProvider(string enumValue)
@@ -123,7 +123,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator TransactionStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public TransactionStatus(string enumValue)
@@ -165,7 +165,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator TransactionType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public TransactionType(string enumValue)

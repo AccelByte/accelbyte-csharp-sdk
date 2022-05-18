@@ -176,7 +176,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator OrderPaymentProvider(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public OrderPaymentProvider(string enumValue)
@@ -224,7 +224,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator OrderStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public OrderStatus(string enumValue)

@@ -26,9 +26,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class DeleteGroupBuilder
             : OperationBuilder<DeleteGroupBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal DeleteGroupBuilder() { }
 
 
@@ -115,4 +117,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -34,6 +34,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class GetListBanReasonBuilder
             : OperationBuilder<GetListBanReasonBuilder>
         {
+
+
+
+
+
             internal GetListBanReasonBuilder() { }
 
 
@@ -110,4 +115,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

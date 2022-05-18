@@ -30,21 +30,25 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryPaymentOrdersBuilder
             : OperationBuilder<QueryPaymentOrdersBuilder>
         {
-            
-            public string? Channel { get; set; }
-            
+
+            public QueryPaymentOrdersChannel? Channel { get; set; }
+
             public string? ExtTxId { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
-            public string? Status { get; set; }
-            
+
+            public QueryPaymentOrdersStatus? Status { get; set; }
+
+
+
+
+
             internal QueryPaymentOrdersBuilder() { }
 
 
-            public QueryPaymentOrdersBuilder SetChannel(string _channel)
+            public QueryPaymentOrdersBuilder SetChannel(QueryPaymentOrdersChannel _channel)
             {
                 Channel = _channel;
                 return this;
@@ -68,7 +72,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryPaymentOrdersBuilder SetStatus(string _status)
+            public QueryPaymentOrdersBuilder SetStatus(QueryPaymentOrdersStatus _status)
             {
                 Status = _status;
                 return this;
@@ -97,11 +101,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Channel != null) QueryParams["channel"] = builder.Channel;
-            if (builder.ExtTxId != null) QueryParams["extTxId"] = builder.ExtTxId;
+            if (builder.Channel is not null) QueryParams["channel"] = builder.Channel.Value;
+            if (builder.ExtTxId is not null) QueryParams["extTxId"] = builder.ExtTxId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
             
 
             
@@ -114,20 +118,20 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public QueryPaymentOrders(
             string namespace_,            
-            string? channel,            
+            QueryPaymentOrdersChannel? channel,            
             string? extTxId,            
             int? limit,            
             int? offset,            
-            string? status            
+            QueryPaymentOrdersStatus? status            
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (channel != null) QueryParams["channel"] = channel;
-            if (extTxId != null) QueryParams["extTxId"] = extTxId;
+            if (channel is not null) QueryParams["channel"] = channel.Value;
+            if (extTxId is not null) QueryParams["extTxId"] = extTxId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (status != null) QueryParams["status"] = status;
+            if (status is not null) QueryParams["status"] = status.Value;
             
 
             
@@ -168,4 +172,80 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class QueryPaymentOrdersChannel : StringEnum<QueryPaymentOrdersChannel>
+    {
+        public static readonly QueryPaymentOrdersChannel External
+            = new QueryPaymentOrdersChannel("EXTERNAL");
+
+        public static readonly QueryPaymentOrdersChannel Internal
+            = new QueryPaymentOrdersChannel("INTERNAL");
+
+
+        public static implicit operator QueryPaymentOrdersChannel(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryPaymentOrdersChannel(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class QueryPaymentOrdersStatus : StringEnum<QueryPaymentOrdersStatus>
+    {
+        public static readonly QueryPaymentOrdersStatus Authorised
+            = new QueryPaymentOrdersStatus("AUTHORISED");
+
+        public static readonly QueryPaymentOrdersStatus AuthoriseFailed
+            = new QueryPaymentOrdersStatus("AUTHORISE_FAILED");
+
+        public static readonly QueryPaymentOrdersStatus Chargeback
+            = new QueryPaymentOrdersStatus("CHARGEBACK");
+
+        public static readonly QueryPaymentOrdersStatus ChargebackReversed
+            = new QueryPaymentOrdersStatus("CHARGEBACK_REVERSED");
+
+        public static readonly QueryPaymentOrdersStatus Charged
+            = new QueryPaymentOrdersStatus("CHARGED");
+
+        public static readonly QueryPaymentOrdersStatus ChargeFailed
+            = new QueryPaymentOrdersStatus("CHARGE_FAILED");
+
+        public static readonly QueryPaymentOrdersStatus Deleted
+            = new QueryPaymentOrdersStatus("DELETED");
+
+        public static readonly QueryPaymentOrdersStatus Init
+            = new QueryPaymentOrdersStatus("INIT");
+
+        public static readonly QueryPaymentOrdersStatus NotificationOfChargeback
+            = new QueryPaymentOrdersStatus("NOTIFICATION_OF_CHARGEBACK");
+
+        public static readonly QueryPaymentOrdersStatus Refunded
+            = new QueryPaymentOrdersStatus("REFUNDED");
+
+        public static readonly QueryPaymentOrdersStatus Refunding
+            = new QueryPaymentOrdersStatus("REFUNDING");
+
+        public static readonly QueryPaymentOrdersStatus RefundFailed
+            = new QueryPaymentOrdersStatus("REFUND_FAILED");
+
+        public static readonly QueryPaymentOrdersStatus RequestForInformation
+            = new QueryPaymentOrdersStatus("REQUEST_FOR_INFORMATION");
+
+
+        public static implicit operator QueryPaymentOrdersStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryPaymentOrdersStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

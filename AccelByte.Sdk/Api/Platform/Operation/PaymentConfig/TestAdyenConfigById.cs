@@ -28,9 +28,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class TestAdyenConfigByIdBuilder
             : OperationBuilder<TestAdyenConfigByIdBuilder>
         {
-            
+
             public bool? Sandbox { get; set; }
-            
+
+
+
+
+
             internal TestAdyenConfigByIdBuilder() { }
 
 
@@ -122,4 +126,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

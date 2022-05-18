@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator CampaignCreateRedeemType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public CampaignCreateRedeemType(string enumValue)
@@ -84,7 +84,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator CampaignCreateStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public CampaignCreateStatus(string enumValue)
@@ -102,7 +102,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator CampaignCreateType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public CampaignCreateType(string enumValue)

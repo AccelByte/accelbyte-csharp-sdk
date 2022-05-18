@@ -29,9 +29,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class BanUsersBuilder
             : OperationBuilder<BanUsersBuilder>
         {
-            
+
+
             public Model.UserBanRequest? Body { get; set; }
-            
+
+
+
+
             internal BanUsersBuilder() { }
 
 
@@ -115,4 +119,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

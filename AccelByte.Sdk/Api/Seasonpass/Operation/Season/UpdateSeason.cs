@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class UpdateSeasonBuilder
             : OperationBuilder<UpdateSeasonBuilder>
         {
-            
-            
+
+
             public Model.SeasonUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdateSeasonBuilder() { }
 
 
@@ -132,4 +135,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

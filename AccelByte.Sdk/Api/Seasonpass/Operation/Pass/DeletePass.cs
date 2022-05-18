@@ -30,9 +30,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class DeletePassBuilder
             : OperationBuilder<DeletePassBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal DeletePassBuilder() { }
 
 
@@ -119,4 +121,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

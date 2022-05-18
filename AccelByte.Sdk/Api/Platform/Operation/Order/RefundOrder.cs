@@ -29,10 +29,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class RefundOrderBuilder
             : OperationBuilder<RefundOrderBuilder>
         {
-            
-            
+
+
             public Model.OrderRefundCreate? Body { get; set; }
-            
+
+
+
+
             internal RefundOrderBuilder() { }
 
 
@@ -130,4 +133,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

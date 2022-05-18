@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class PublicReportUserBuilder
             : OperationBuilder<PublicReportUserBuilder>
         {
-            
-            
+
+
             public Model.UserReportRequest? Body { get; set; }
-            
+
+
+
+
             internal PublicReportUserBuilder() { }
 
 
@@ -123,4 +126,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicFulfillAppleIAPItemBuilder
             : OperationBuilder<PublicFulfillAppleIAPItemBuilder>
         {
-            
-            
+
+
             public Model.AppleIAPReceipt? Body { get; set; }
-            
+
+
+
+
             internal PublicFulfillAppleIAPItemBuilder() { }
 
 
@@ -124,4 +127,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

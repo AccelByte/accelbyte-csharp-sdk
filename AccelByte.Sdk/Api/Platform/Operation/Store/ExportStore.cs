@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ExportStoreBuilder
             : OperationBuilder<ExportStoreBuilder>
         {
-            
-            
+
+
+
+
+
             internal ExportStoreBuilder() { }
 
 
@@ -112,4 +115,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

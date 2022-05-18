@@ -30,9 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicGetUserAppEntitlementByAppIdBuilder
             : OperationBuilder<PublicGetUserAppEntitlementByAppIdBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal PublicGetUserAppEntitlementByAppIdBuilder() { }
 
 
@@ -66,7 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (appId != null) QueryParams["appId"] = appId;
+            if (appId is not null) QueryParams["appId"] = appId;
             
 
             
@@ -86,7 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (appId != null) QueryParams["appId"] = appId;
+            if (appId is not null) QueryParams["appId"] = appId;
             
 
             
@@ -127,4 +129,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -24,12 +24,15 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class GetPublicFollowingBuilder
             : OperationBuilder<GetPublicFollowingBuilder>
         {
-            
-            
+
             public string? Limit { get; set; }
-            
+
             public string? Offset { get; set; }
-            
+
+
+
+
+
             internal GetPublicFollowingBuilder() { }
 
 
@@ -72,8 +75,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.Limit != null) QueryParams["limit"] = builder.Limit;
-            if (builder.Offset != null) QueryParams["offset"] = builder.Offset;
+            if (builder.Limit is not null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset is not null) QueryParams["offset"] = builder.Offset;
             
 
             
@@ -94,8 +97,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (limit != null) QueryParams["limit"] = limit;
-            if (offset != null) QueryParams["offset"] = offset;
+            if (limit is not null) QueryParams["limit"] = limit;
+            if (offset is not null) QueryParams["offset"] = offset;
             
 
             
@@ -136,4 +139,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

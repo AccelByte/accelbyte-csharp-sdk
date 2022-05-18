@@ -30,6 +30,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class ListConfigBuilder
             : OperationBuilder<ListConfigBuilder>
         {
+
+
+
+
+
             internal ListConfigBuilder() { }
 
 
@@ -106,4 +111,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

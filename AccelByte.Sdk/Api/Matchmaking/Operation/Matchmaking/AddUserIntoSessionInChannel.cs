@@ -30,10 +30,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public class AddUserIntoSessionInChannelBuilder
             : OperationBuilder<AddUserIntoSessionInChannelBuilder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal AddUserIntoSessionInChannelBuilder() { }
 
 
@@ -126,4 +127,5 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

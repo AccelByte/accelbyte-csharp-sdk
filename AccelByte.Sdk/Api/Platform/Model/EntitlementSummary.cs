@@ -77,7 +77,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator EntitlementSummaryClazz(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public EntitlementSummaryClazz(string enumValue)
@@ -98,7 +98,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator EntitlementSummaryType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public EntitlementSummaryType(string enumValue)

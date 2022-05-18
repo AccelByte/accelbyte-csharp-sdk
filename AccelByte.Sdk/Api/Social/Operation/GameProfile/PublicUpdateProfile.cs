@@ -29,11 +29,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class PublicUpdateProfileBuilder
             : OperationBuilder<PublicUpdateProfileBuilder>
         {
-            
-            
-            
+
+
             public Model.GameProfileRequest? Body { get; set; }
-            
+
+
+
+
             internal PublicUpdateProfileBuilder() { }
 
 
@@ -137,4 +139,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

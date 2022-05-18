@@ -32,13 +32,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class CancelSubscriptionBuilder
             : OperationBuilder<CancelSubscriptionBuilder>
         {
-            
-            
-            
+
             public bool? Force { get; set; }
-            
+
+
             public Model.CancelRequest? Body { get; set; }
-            
+
+
+
+
             internal CancelSubscriptionBuilder() { }
 
 
@@ -151,4 +153,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

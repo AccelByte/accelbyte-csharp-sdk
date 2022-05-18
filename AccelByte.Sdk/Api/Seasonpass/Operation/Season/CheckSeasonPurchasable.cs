@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class CheckSeasonPurchasableBuilder
             : OperationBuilder<CheckSeasonPurchasableBuilder>
         {
-            
-            
+
+
             public Model.UserPurchasable? Body { get; set; }
-            
+
+
+
+
             internal CheckSeasonPurchasableBuilder() { }
 
 
@@ -123,4 +126,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

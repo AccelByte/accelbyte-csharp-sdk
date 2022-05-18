@@ -38,14 +38,17 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class GetGroupMembersListAdminV1Builder
             : OperationBuilder<GetGroupMembersListAdminV1Builder>
         {
-            
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
             public string? Order { get; set; }
-            
+
+
+
+
+
             internal GetGroupMembersListAdminV1Builder() { }
 
 
@@ -96,7 +99,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Order != null) QueryParams["order"] = builder.Order;
+            if (builder.Order is not null) QueryParams["order"] = builder.Order;
             
 
             
@@ -120,7 +123,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (order != null) QueryParams["order"] = order;
+            if (order is not null) QueryParams["order"] = order;
             
 
             
@@ -161,4 +164,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

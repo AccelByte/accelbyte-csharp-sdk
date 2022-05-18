@@ -30,11 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetUserAppEntitlementByAppIdBuilder
             : OperationBuilder<GetUserAppEntitlementByAppIdBuilder>
         {
-            
-            
+
             public bool? ActiveOnly { get; set; }
-            
-            
+
+
+
+
+
             internal GetUserAppEntitlementByAppIdBuilder() { }
 
 
@@ -75,7 +77,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
             
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
-            if (appId != null) QueryParams["appId"] = appId;
+            if (appId is not null) QueryParams["appId"] = appId;
             
 
             
@@ -97,7 +99,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
-            if (appId != null) QueryParams["appId"] = appId;
+            if (appId is not null) QueryParams["appId"] = appId;
             
 
             
@@ -138,4 +140,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator CurrencyInfoCurrencyType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public CurrencyInfoCurrencyType(string enumValue)

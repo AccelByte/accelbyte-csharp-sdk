@@ -98,10 +98,11 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public class AdminPostPlayerPublicRecordHandlerV1Builder
             : OperationBuilder<AdminPostPlayerPublicRecordHandlerV1Builder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal AdminPostPlayerPublicRecordHandlerV1Builder() { }
 
 
@@ -194,4 +195,5 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

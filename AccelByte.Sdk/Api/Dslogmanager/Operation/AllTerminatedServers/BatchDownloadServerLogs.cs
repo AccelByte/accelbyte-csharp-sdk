@@ -30,7 +30,11 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         public class BatchDownloadServerLogsBuilder
             : OperationBuilder<BatchDownloadServerLogsBuilder>
         {
-            
+
+
+
+
+
             internal BatchDownloadServerLogsBuilder() { }
 
 
@@ -105,4 +109,5 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

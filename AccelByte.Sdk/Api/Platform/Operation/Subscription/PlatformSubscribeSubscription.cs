@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PlatformSubscribeSubscriptionBuilder
             : OperationBuilder<PlatformSubscribeSubscriptionBuilder>
         {
-            
-            
+
+
             public Model.PlatformSubscribeRequest? Body { get; set; }
-            
+
+
+
+
             internal PlatformSubscribeSubscriptionBuilder() { }
 
 
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

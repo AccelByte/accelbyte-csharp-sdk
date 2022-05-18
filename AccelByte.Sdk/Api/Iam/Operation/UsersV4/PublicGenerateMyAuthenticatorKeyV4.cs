@@ -34,7 +34,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicGenerateMyAuthenticatorKeyV4Builder
             : OperationBuilder<PublicGenerateMyAuthenticatorKeyV4Builder>
         {
-            
+
+
+
+
+
             internal PublicGenerateMyAuthenticatorKeyV4Builder() { }
 
 
@@ -117,4 +121,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

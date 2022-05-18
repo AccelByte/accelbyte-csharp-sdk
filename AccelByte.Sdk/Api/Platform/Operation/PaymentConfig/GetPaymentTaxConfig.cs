@@ -30,6 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetPaymentTaxConfigBuilder
             : OperationBuilder<GetPaymentTaxConfigBuilder>
         {
+
+
+
+
+
             internal GetPaymentTaxConfigBuilder() { }
 
 
@@ -106,4 +111,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -30,22 +30,25 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryUserIAPOrdersBuilder
             : OperationBuilder<QueryUserIAPOrdersBuilder>
         {
-            
-            
+
             public string? EndTime { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? ProductId { get; set; }
-            
+
             public string? StartTime { get; set; }
-            
-            public string? Status { get; set; }
-            
-            public string? Type { get; set; }
-            
+
+            public QueryUserIAPOrdersStatus? Status { get; set; }
+
+            public QueryUserIAPOrdersType? Type { get; set; }
+
+
+
+
+
             internal QueryUserIAPOrdersBuilder() { }
 
 
@@ -79,13 +82,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryUserIAPOrdersBuilder SetStatus(string _status)
+            public QueryUserIAPOrdersBuilder SetStatus(QueryUserIAPOrdersStatus _status)
             {
                 Status = _status;
                 return this;
             }
 
-            public QueryUserIAPOrdersBuilder SetType(string _type)
+            public QueryUserIAPOrdersBuilder SetType(QueryUserIAPOrdersType _type)
             {
                 Type = _type;
                 return this;
@@ -118,13 +121,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.EndTime != null) QueryParams["endTime"] = builder.EndTime;
+            if (builder.EndTime is not null) QueryParams["endTime"] = builder.EndTime;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.ProductId != null) QueryParams["productId"] = builder.ProductId;
-            if (builder.StartTime != null) QueryParams["startTime"] = builder.StartTime;
-            if (builder.Status != null) QueryParams["status"] = builder.Status;
-            if (builder.Type != null) QueryParams["type"] = builder.Type;
+            if (builder.ProductId is not null) QueryParams["productId"] = builder.ProductId;
+            if (builder.StartTime is not null) QueryParams["startTime"] = builder.StartTime;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
+            if (builder.Type is not null) QueryParams["type"] = builder.Type.Value;
             
 
             
@@ -143,20 +146,20 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             int? offset,            
             string? productId,            
             string? startTime,            
-            string? status,            
-            string? type            
+            QueryUserIAPOrdersStatus? status,            
+            QueryUserIAPOrdersType? type            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (endTime != null) QueryParams["endTime"] = endTime;
+            if (endTime is not null) QueryParams["endTime"] = endTime;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (productId != null) QueryParams["productId"] = productId;
-            if (startTime != null) QueryParams["startTime"] = startTime;
-            if (status != null) QueryParams["status"] = status;
-            if (type != null) QueryParams["type"] = type;
+            if (productId is not null) QueryParams["productId"] = productId;
+            if (startTime is not null) QueryParams["startTime"] = startTime;
+            if (status is not null) QueryParams["status"] = status.Value;
+            if (type is not null) QueryParams["type"] = type.Value;
             
 
             
@@ -197,4 +200,68 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class QueryUserIAPOrdersStatus : StringEnum<QueryUserIAPOrdersStatus>
+    {
+        public static readonly QueryUserIAPOrdersStatus Failed
+            = new QueryUserIAPOrdersStatus("FAILED");
+
+        public static readonly QueryUserIAPOrdersStatus Fulfilled
+            = new QueryUserIAPOrdersStatus("FULFILLED");
+
+        public static readonly QueryUserIAPOrdersStatus Verified
+            = new QueryUserIAPOrdersStatus("VERIFIED");
+
+
+        public static implicit operator QueryUserIAPOrdersStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryUserIAPOrdersStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class QueryUserIAPOrdersType : StringEnum<QueryUserIAPOrdersType>
+    {
+        public static readonly QueryUserIAPOrdersType Apple
+            = new QueryUserIAPOrdersType("APPLE");
+
+        public static readonly QueryUserIAPOrdersType Epicgames
+            = new QueryUserIAPOrdersType("EPICGAMES");
+
+        public static readonly QueryUserIAPOrdersType Google
+            = new QueryUserIAPOrdersType("GOOGLE");
+
+        public static readonly QueryUserIAPOrdersType Playstation
+            = new QueryUserIAPOrdersType("PLAYSTATION");
+
+        public static readonly QueryUserIAPOrdersType Stadia
+            = new QueryUserIAPOrdersType("STADIA");
+
+        public static readonly QueryUserIAPOrdersType Steam
+            = new QueryUserIAPOrdersType("STEAM");
+
+        public static readonly QueryUserIAPOrdersType Twitch
+            = new QueryUserIAPOrdersType("TWITCH");
+
+        public static readonly QueryUserIAPOrdersType Xbox
+            = new QueryUserIAPOrdersType("XBOX");
+
+
+        public static implicit operator QueryUserIAPOrdersType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryUserIAPOrdersType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateKeyGroupBuilder
             : OperationBuilder<UpdateKeyGroupBuilder>
         {
-            
-            
+
+
             public Model.KeyGroupUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdateKeyGroupBuilder() { }
 
 
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

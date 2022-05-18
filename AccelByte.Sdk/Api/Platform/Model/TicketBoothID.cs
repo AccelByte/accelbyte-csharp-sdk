@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator TicketBoothIDType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public TicketBoothIDType(string enumValue)

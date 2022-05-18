@@ -34,9 +34,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class UpdatePasswordBuilder
             : OperationBuilder<UpdatePasswordBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal UpdatePasswordBuilder() { }
 
 
@@ -123,4 +125,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

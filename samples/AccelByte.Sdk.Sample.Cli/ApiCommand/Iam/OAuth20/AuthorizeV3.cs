@@ -61,13 +61,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             AuthorizeV3 operation = new AuthorizeV3(
                 CodeChallenge,                
-                CodeChallengeMethod,                
+                (CodeChallengeMethod is null ? null : AuthorizeV3CodeChallengeMethod.NewValue(CodeChallengeMethod)),                
                 RedirectUri,                
                 Scope,                
                 State,                
                 TargetAuthPage,                
                 ClientId,                
-                ResponseType                
+                AuthorizeV3ResponseType.NewValue(ResponseType)                
             );            
             
             string? response = wrapper.AuthorizeV3(operation);

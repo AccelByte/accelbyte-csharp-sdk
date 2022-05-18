@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class GrantUserTierBuilder
             : OperationBuilder<GrantUserTierBuilder>
         {
-            
-            
+
+
             public Model.UserTierGrant? Body { get; set; }
-            
+
+
+
+
             internal GrantUserTierBuilder() { }
 
 
@@ -132,4 +135,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

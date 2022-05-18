@@ -37,9 +37,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminDisableUserV2Builder
             : OperationBuilder<AdminDisableUserV2Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal AdminDisableUserV2Builder() { }
 
 
@@ -126,4 +128,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

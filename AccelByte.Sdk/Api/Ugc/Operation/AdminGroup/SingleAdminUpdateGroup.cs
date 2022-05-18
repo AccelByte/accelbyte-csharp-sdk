@@ -27,9 +27,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class SingleAdminUpdateGroupBuilder
             : OperationBuilder<SingleAdminUpdateGroupBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal SingleAdminUpdateGroupBuilder() { }
 
 
@@ -124,4 +126,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

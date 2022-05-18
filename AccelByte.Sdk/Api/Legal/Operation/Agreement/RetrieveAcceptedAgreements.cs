@@ -28,7 +28,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class RetrieveAcceptedAgreementsBuilder
             : OperationBuilder<RetrieveAcceptedAgreementsBuilder>
         {
-            
+
+
+
+
+
             internal RetrieveAcceptedAgreementsBuilder() { }
 
 
@@ -111,4 +115,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

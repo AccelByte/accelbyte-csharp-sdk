@@ -29,10 +29,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class UpdateUserSlotConfigBuilder
             : OperationBuilder<UpdateUserSlotConfigBuilder>
         {
-            
-            
+
+
             public Model.SlotConfigUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdateUserSlotConfigBuilder() { }
 
 
@@ -130,4 +133,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

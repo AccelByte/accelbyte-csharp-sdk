@@ -26,9 +26,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class UpgradeHeadlessAccountBuilder
             : OperationBuilder<UpgradeHeadlessAccountBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal UpgradeHeadlessAccountBuilder() { }
 
 
@@ -123,4 +125,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public class GetSessionByUserIDsBuilder
             : OperationBuilder<GetSessionByUserIDsBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetSessionByUserIDsBuilder() { }
 
 
@@ -61,7 +64,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (userIds != null) QueryParams["user_ids"] = userIds;
+            if (userIds is not null) QueryParams["user_ids"] = userIds;
             
 
             
@@ -79,7 +82,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (userIds != null) QueryParams["user_ids"] = userIds;
+            if (userIds is not null) QueryParams["user_ids"] = userIds;
             
 
             
@@ -120,4 +123,5 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

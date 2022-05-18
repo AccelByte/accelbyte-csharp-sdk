@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 Namespace,                
                 AlwaysIncludeDefault,                
                 DefaultOnEmpty,                
-                PolicyType,                
+                (PolicyType is null ? null : RetrieveLatestPoliciesPublicPolicyType.NewValue(PolicyType)),                
                 Tags                
             );            
             

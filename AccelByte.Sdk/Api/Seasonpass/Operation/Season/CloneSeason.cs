@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class CloneSeasonBuilder
             : OperationBuilder<CloneSeasonBuilder>
         {
-            
-            
+
+
             public Model.SeasonCloneRequest? Body { get; set; }
-            
+
+
+
+
             internal CloneSeasonBuilder() { }
 
 
@@ -132,4 +135,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

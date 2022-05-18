@@ -26,8 +26,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class ResetPasswordBuilder
             : OperationBuilder<ResetPasswordBuilder>
         {
-            
-            
+
+
+
+
+
             internal ResetPasswordBuilder() { }
 
 
@@ -110,4 +113,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

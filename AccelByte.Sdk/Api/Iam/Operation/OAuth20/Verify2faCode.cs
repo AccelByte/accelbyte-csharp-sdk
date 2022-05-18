@@ -30,10 +30,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class Verify2faCodeBuilder
             : OperationBuilder<Verify2faCodeBuilder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal Verify2faCodeBuilder() { }
 
 
@@ -69,9 +70,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (code != null) FormParams["code"] = code;
-            if (factor != null) FormParams["factor"] = factor;
-            if (mfaToken != null) FormParams["mfaToken"] = mfaToken;
+            if (code is not null) FormParams["code"] = code;
+            if (factor is not null) FormParams["factor"] = factor;
+            if (mfaToken is not null) FormParams["mfaToken"] = mfaToken;
             FormParams["rememberDevice"] = Convert.ToString(rememberDevice)!;
 
             
@@ -91,9 +92,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (code != null) FormParams["code"] = code;
-            if (factor != null) FormParams["factor"] = factor;
-            if (mfaToken != null) FormParams["mfaToken"] = mfaToken;
+            if (code is not null) FormParams["code"] = code;
+            if (factor is not null) FormParams["factor"] = factor;
+            if (mfaToken is not null) FormParams["mfaToken"] = mfaToken;
             FormParams["rememberDevice"] = Convert.ToString(rememberDevice)!;
 
             
@@ -134,4 +135,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

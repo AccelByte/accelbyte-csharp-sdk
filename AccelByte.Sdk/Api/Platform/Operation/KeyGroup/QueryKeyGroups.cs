@@ -30,15 +30,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryKeyGroupsBuilder
             : OperationBuilder<QueryKeyGroupsBuilder>
         {
-            
+
             public int? Limit { get; set; }
-            
+
             public string? Name { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? Tag { get; set; }
-            
+
+
+
+
+
             internal QueryKeyGroupsBuilder() { }
 
 
@@ -90,9 +94,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            if (builder.Name != null) QueryParams["name"] = builder.Name;
+            if (builder.Name is not null) QueryParams["name"] = builder.Name;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Tag != null) QueryParams["tag"] = builder.Tag;
+            if (builder.Tag is not null) QueryParams["tag"] = builder.Tag;
             
 
             
@@ -114,9 +118,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            if (name != null) QueryParams["name"] = name;
+            if (name is not null) QueryParams["name"] = name;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (tag != null) QueryParams["tag"] = tag;
+            if (tag is not null) QueryParams["tag"] = tag;
             
 
             
@@ -157,4 +161,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

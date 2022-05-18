@@ -44,7 +44,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class SetRoleAsAdminBuilder
             : OperationBuilder<SetRoleAsAdminBuilder>
         {
-            
+
+
+
+
+
             internal SetRoleAsAdminBuilder() { }
 
 
@@ -119,4 +123,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -30,16 +30,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicQueryUserOrdersBuilder
             : OperationBuilder<PublicQueryUserOrdersBuilder>
         {
-            
-            
+
             public string? ItemId { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
-            public string? Status { get; set; }
-            
+
+            public PublicQueryUserOrdersStatus? Status { get; set; }
+
+
+
+
+
             internal PublicQueryUserOrdersBuilder() { }
 
 
@@ -61,7 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public PublicQueryUserOrdersBuilder SetStatus(string _status)
+            public PublicQueryUserOrdersBuilder SetStatus(PublicQueryUserOrdersStatus _status)
             {
                 Status = _status;
                 return this;
@@ -94,10 +97,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.ItemId != null) QueryParams["itemId"] = builder.ItemId;
+            if (builder.ItemId is not null) QueryParams["itemId"] = builder.ItemId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
             
 
             
@@ -114,16 +117,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string? itemId,            
             int? limit,            
             int? offset,            
-            string? status            
+            PublicQueryUserOrdersStatus? status            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (itemId != null) QueryParams["itemId"] = itemId;
+            if (itemId is not null) QueryParams["itemId"] = itemId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (status != null) QueryParams["status"] = status;
+            if (status is not null) QueryParams["status"] = status.Value;
             
 
             
@@ -164,4 +167,53 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class PublicQueryUserOrdersStatus : StringEnum<PublicQueryUserOrdersStatus>
+    {
+        public static readonly PublicQueryUserOrdersStatus Chargeback
+            = new PublicQueryUserOrdersStatus("CHARGEBACK");
+
+        public static readonly PublicQueryUserOrdersStatus ChargebackReversed
+            = new PublicQueryUserOrdersStatus("CHARGEBACK_REVERSED");
+
+        public static readonly PublicQueryUserOrdersStatus Charged
+            = new PublicQueryUserOrdersStatus("CHARGED");
+
+        public static readonly PublicQueryUserOrdersStatus Closed
+            = new PublicQueryUserOrdersStatus("CLOSED");
+
+        public static readonly PublicQueryUserOrdersStatus Deleted
+            = new PublicQueryUserOrdersStatus("DELETED");
+
+        public static readonly PublicQueryUserOrdersStatus Fulfilled
+            = new PublicQueryUserOrdersStatus("FULFILLED");
+
+        public static readonly PublicQueryUserOrdersStatus FulfillFailed
+            = new PublicQueryUserOrdersStatus("FULFILL_FAILED");
+
+        public static readonly PublicQueryUserOrdersStatus Init
+            = new PublicQueryUserOrdersStatus("INIT");
+
+        public static readonly PublicQueryUserOrdersStatus Refunded
+            = new PublicQueryUserOrdersStatus("REFUNDED");
+
+        public static readonly PublicQueryUserOrdersStatus Refunding
+            = new PublicQueryUserOrdersStatus("REFUNDING");
+
+        public static readonly PublicQueryUserOrdersStatus RefundFailed
+            = new PublicQueryUserOrdersStatus("REFUND_FAILED");
+
+
+        public static implicit operator PublicQueryUserOrdersStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicQueryUserOrdersStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

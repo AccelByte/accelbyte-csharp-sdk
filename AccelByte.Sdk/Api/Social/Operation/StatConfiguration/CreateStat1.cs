@@ -31,9 +31,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class CreateStat1Builder
             : OperationBuilder<CreateStat1Builder>
         {
-            
+
+
             public Model.StatCreate? Body { get; set; }
-            
+
+
+
+
             internal CreateStat1Builder() { }
 
 
@@ -125,4 +129,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

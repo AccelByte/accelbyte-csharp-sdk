@@ -29,9 +29,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class UpdateConfigBuilder
             : OperationBuilder<UpdateConfigBuilder>
         {
-            
+
+
             public Model.ADTOForUpdateEqu8ConfigAPICall? Body { get; set; }
-            
+
+
+
+
             internal UpdateConfigBuilder() { }
 
 
@@ -123,4 +127,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -38,12 +38,15 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class BulkUpdateUserStatItem2Builder
             : OperationBuilder<BulkUpdateUserStatItem2Builder>
         {
-            
-            
+
             public string? AdditionalKey { get; set; }
-            
+
+
             public List<Model.BulkStatItemUpdate>? Body { get; set; }
-            
+
+
+
+
             internal BulkUpdateUserStatItem2Builder() { }
 
 
@@ -86,7 +89,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.AdditionalKey != null) QueryParams["additionalKey"] = builder.AdditionalKey;
+            if (builder.AdditionalKey is not null) QueryParams["additionalKey"] = builder.AdditionalKey;
             
 
             
@@ -108,7 +111,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (additionalKey != null) QueryParams["additionalKey"] = additionalKey;
+            if (additionalKey is not null) QueryParams["additionalKey"] = additionalKey;
             
 
             
@@ -150,4 +153,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

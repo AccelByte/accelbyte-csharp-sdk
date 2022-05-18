@@ -33,8 +33,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicGetMyWalletBuilder
             : OperationBuilder<PublicGetMyWalletBuilder>
         {
-            
-            
+
+
+
+
+
             internal PublicGetMyWalletBuilder() { }
 
 
@@ -123,4 +126,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

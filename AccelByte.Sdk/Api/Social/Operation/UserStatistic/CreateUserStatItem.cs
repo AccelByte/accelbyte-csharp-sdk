@@ -29,9 +29,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class CreateUserStatItemBuilder
             : OperationBuilder<CreateUserStatItemBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal CreateUserStatItemBuilder() { }
 
 
@@ -118,4 +120,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

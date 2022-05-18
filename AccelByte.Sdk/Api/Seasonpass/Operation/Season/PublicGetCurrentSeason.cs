@@ -30,9 +30,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class PublicGetCurrentSeasonBuilder
             : OperationBuilder<PublicGetCurrentSeasonBuilder>
         {
-            
+
             public string? Language { get; set; }
-            
+
+
+
+
+
             internal PublicGetCurrentSeasonBuilder() { }
 
 
@@ -65,7 +69,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.Language is not null) QueryParams["language"] = builder.Language;
             
 
             
@@ -82,7 +86,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (language != null) QueryParams["language"] = language;
+            if (language is not null) QueryParams["language"] = language;
             
 
             
@@ -122,4 +126,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

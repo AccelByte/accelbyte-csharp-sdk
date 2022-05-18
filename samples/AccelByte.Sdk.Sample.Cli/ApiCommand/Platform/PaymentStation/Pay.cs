@@ -53,7 +53,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             Pay operation = new Pay(
                 Namespace,                
                 PaymentOrderNo,                
-                PaymentProvider,                
+                (PaymentProvider is null ? null : PayPaymentProvider.NewValue(PaymentProvider)),                
                 ZipCode,                
                 Body                
             );            

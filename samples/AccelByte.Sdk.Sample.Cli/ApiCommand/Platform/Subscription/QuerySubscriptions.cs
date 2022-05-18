@@ -64,13 +64,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             QuerySubscriptions operation = new QuerySubscriptions(
                 Namespace,                
-                ChargeStatus,                
+                (ChargeStatus is null ? null : QuerySubscriptionsChargeStatus.NewValue(ChargeStatus)),                
                 ItemId,                
                 Limit,                
                 Offset,                
                 Sku,                
-                Status,                
-                SubscribedBy,                
+                (Status is null ? null : QuerySubscriptionsStatus.NewValue(Status)),                
+                (SubscribedBy is null ? null : QuerySubscriptionsSubscribedBy.NewValue(SubscribedBy)),                
                 UserId                
             );            
             

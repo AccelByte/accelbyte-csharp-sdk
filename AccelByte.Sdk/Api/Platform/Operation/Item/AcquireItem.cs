@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class AcquireItemBuilder
             : OperationBuilder<AcquireItemBuilder>
         {
-            
-            
+
+
             public Model.ItemAcquireRequest? Body { get; set; }
-            
+
+
+
+
             internal AcquireItemBuilder() { }
 
 
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

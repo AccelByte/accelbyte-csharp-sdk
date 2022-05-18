@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class GetServerLogsBuilder
             : OperationBuilder<GetServerLogsBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetServerLogsBuilder() { }
 
 
@@ -120,4 +123,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

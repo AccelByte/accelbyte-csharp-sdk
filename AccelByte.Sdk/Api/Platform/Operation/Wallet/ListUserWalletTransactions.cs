@@ -30,13 +30,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ListUserWalletTransactionsBuilder
             : OperationBuilder<ListUserWalletTransactionsBuilder>
         {
-            
-            
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
+
+
+
+
             internal ListUserWalletTransactionsBuilder() { }
 
 
@@ -149,4 +151,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

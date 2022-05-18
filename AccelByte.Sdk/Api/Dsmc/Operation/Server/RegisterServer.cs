@@ -34,8 +34,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class RegisterServerBuilder
             : OperationBuilder<RegisterServerBuilder>
         {
-            
-            
+
+
+
+
+
             internal RegisterServerBuilder() { }
 
 
@@ -124,4 +127,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

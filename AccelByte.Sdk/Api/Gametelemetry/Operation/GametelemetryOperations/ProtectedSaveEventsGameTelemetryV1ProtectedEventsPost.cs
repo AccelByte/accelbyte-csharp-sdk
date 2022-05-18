@@ -68,8 +68,11 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         public class ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder
             : OperationBuilder<ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder>
         {
-            
-            
+
+
+
+
+
             internal ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder() { }
 
 
@@ -149,4 +152,5 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -62,7 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator RewardsRequestOrigin(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public RewardsRequestOrigin(string enumValue)
@@ -107,7 +107,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator RewardsRequestSource(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public RewardsRequestSource(string enumValue)

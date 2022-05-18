@@ -29,9 +29,13 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class RetrieveAllPolicyTypesBuilder
             : OperationBuilder<RetrieveAllPolicyTypesBuilder>
         {
+
             public int? Offset { get; set; }
-            
-            
+
+
+
+
+
             internal RetrieveAllPolicyTypesBuilder() { }
 
 
@@ -123,4 +127,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

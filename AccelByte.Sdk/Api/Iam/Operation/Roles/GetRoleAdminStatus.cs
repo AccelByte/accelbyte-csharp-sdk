@@ -33,7 +33,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class GetRoleAdminStatusBuilder
             : OperationBuilder<GetRoleAdminStatusBuilder>
         {
-            
+
+
+
+
+
             internal GetRoleAdminStatusBuilder() { }
 
 
@@ -116,4 +120,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

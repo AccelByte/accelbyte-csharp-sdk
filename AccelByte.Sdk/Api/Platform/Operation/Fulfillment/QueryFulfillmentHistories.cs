@@ -30,15 +30,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryFulfillmentHistoriesBuilder
             : OperationBuilder<QueryFulfillmentHistoriesBuilder>
         {
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
-            public string? Status { get; set; }
-            
+
+            public QueryFulfillmentHistoriesStatus? Status { get; set; }
+
             public string? UserId { get; set; }
-            
+
+
+
+
+
             internal QueryFulfillmentHistoriesBuilder() { }
 
 
@@ -54,7 +58,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryFulfillmentHistoriesBuilder SetStatus(string _status)
+            public QueryFulfillmentHistoriesBuilder SetStatus(QueryFulfillmentHistoriesStatus _status)
             {
                 Status = _status;
                 return this;
@@ -91,8 +95,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Status != null) QueryParams["status"] = builder.Status;
-            if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
+            if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
             
 
             
@@ -107,7 +111,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string namespace_,            
             int? limit,            
             int? offset,            
-            string? status,            
+            QueryFulfillmentHistoriesStatus? status,            
             string? userId            
         )
         {
@@ -115,8 +119,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (status != null) QueryParams["status"] = status;
-            if (userId != null) QueryParams["userId"] = userId;
+            if (status is not null) QueryParams["status"] = status.Value;
+            if (userId is not null) QueryParams["userId"] = userId;
             
 
             
@@ -157,4 +161,26 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class QueryFulfillmentHistoriesStatus : StringEnum<QueryFulfillmentHistoriesStatus>
+    {
+        public static readonly QueryFulfillmentHistoriesStatus Fail
+            = new QueryFulfillmentHistoriesStatus("FAIL");
+
+        public static readonly QueryFulfillmentHistoriesStatus Success
+            = new QueryFulfillmentHistoriesStatus("SUCCESS");
+
+
+        public static implicit operator QueryFulfillmentHistoriesStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryFulfillmentHistoriesStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

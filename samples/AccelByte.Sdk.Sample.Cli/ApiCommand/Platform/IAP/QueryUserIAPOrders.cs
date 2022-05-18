@@ -70,8 +70,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Offset,                
                 ProductId,                
                 StartTime,                
-                Status,                
-                Type                
+                (Status is null ? null : QueryUserIAPOrdersStatus.NewValue(Status)),                
+                (Type is null ? null : QueryUserIAPOrdersType.NewValue(Type))                
             );            
             
             AccelByte.Sdk.Api.Platform.Model.IAPOrderPagingSlicedResult? response = wrapper.QueryUserIAPOrders(operation);

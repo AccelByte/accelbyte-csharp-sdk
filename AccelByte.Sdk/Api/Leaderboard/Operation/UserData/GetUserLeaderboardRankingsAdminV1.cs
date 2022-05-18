@@ -33,12 +33,15 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class GetUserLeaderboardRankingsAdminV1Builder
             : OperationBuilder<GetUserLeaderboardRankingsAdminV1Builder>
         {
-            
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetUserLeaderboardRankingsAdminV1Builder() { }
 
 
@@ -145,4 +148,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

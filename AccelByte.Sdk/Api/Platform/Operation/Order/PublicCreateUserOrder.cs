@@ -32,10 +32,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicCreateUserOrderBuilder
             : OperationBuilder<PublicCreateUserOrderBuilder>
         {
-            
-            
+
+
             public Model.OrderCreate? Body { get; set; }
-            
+
+
+
+
             internal PublicCreateUserOrderBuilder() { }
 
 
@@ -133,4 +136,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

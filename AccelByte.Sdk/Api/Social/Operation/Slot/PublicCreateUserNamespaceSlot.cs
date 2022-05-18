@@ -29,18 +29,21 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class PublicCreateUserNamespaceSlotBuilder
             : OperationBuilder<PublicCreateUserNamespaceSlotBuilder>
         {
-            
-            
+
             public string? Label { get; set; }
-            
+
             public List<string>? Tags { get; set; }
-            
+
+
+
             public string? Checksum { get; set; }
-            
+
             public string? CustomAttribute { get; set; }
-            
+
             public Stream? File { get; set; }
-            
+
+
+
             internal PublicCreateUserNamespaceSlotBuilder() { }
 
 
@@ -101,12 +104,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.Label != null) QueryParams["label"] = builder.Label;
-            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
+            if (builder.Label is not null) QueryParams["label"] = builder.Label;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             
-            if (builder.Checksum != null) FormParams["checksum"] = builder.Checksum;
-            if (builder.CustomAttribute != null) FormParams["customAttribute"] = builder.CustomAttribute;
-            if (builder.File != null) FormParams["file"] = builder.File;
+            if (builder.Checksum is not null) FormParams["checksum"] = builder.Checksum;
+            if (builder.CustomAttribute is not null) FormParams["customAttribute"] = builder.CustomAttribute;
+            if (builder.File is not null) FormParams["file"] = builder.File;
 
             
             CollectionFormatMap["tags"] = "multi";
@@ -130,12 +133,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (label != null) QueryParams["label"] = label;
-            if (tags != null) QueryParams["tags"] = tags;
+            if (label is not null) QueryParams["label"] = label;
+            if (tags is not null) QueryParams["tags"] = tags;
             
-            if (checksum != null) FormParams["checksum"] = checksum;
-            if (customAttribute != null) FormParams["customAttribute"] = customAttribute;
-            if (file != null) FormParams["file"] = file;
+            if (checksum is not null) FormParams["checksum"] = checksum;
+            if (customAttribute is not null) FormParams["customAttribute"] = customAttribute;
+            if (file is not null) FormParams["file"] = file;
 
             
             CollectionFormatMap["tags"] = "multi";
@@ -168,4 +171,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

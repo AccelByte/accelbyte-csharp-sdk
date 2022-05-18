@@ -68,7 +68,7 @@ namespace AccelByte.Sdk.Api.Social.Model
 
         public static implicit operator StatInfoSetBy(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public StatInfoSetBy(string enumValue)
@@ -89,7 +89,7 @@ namespace AccelByte.Sdk.Api.Social.Model
 
         public static implicit operator StatInfoStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public StatInfoStatus(string enumValue)

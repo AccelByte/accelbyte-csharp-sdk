@@ -24,7 +24,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class GetUserIncomingFriendsBuilder
             : OperationBuilder<GetUserIncomingFriendsBuilder>
         {
-            
+
+
+
+
+
             internal GetUserIncomingFriendsBuilder() { }
 
 
@@ -107,4 +111,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

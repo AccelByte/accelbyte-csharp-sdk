@@ -30,7 +30,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class GetNamespaceSlotConfigBuilder
             : OperationBuilder<GetNamespaceSlotConfigBuilder>
         {
-            
+
+
+
+
+
             internal GetNamespaceSlotConfigBuilder() { }
 
 
@@ -113,4 +117,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

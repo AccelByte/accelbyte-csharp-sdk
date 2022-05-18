@@ -27,8 +27,11 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class UpdateEventRegistryHandlerBuilder
             : OperationBuilder<UpdateEventRegistryHandlerBuilder>
         {
-            
-            
+
+
+
+
+
             internal UpdateEventRegistryHandlerBuilder() { }
 
 
@@ -109,4 +112,5 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

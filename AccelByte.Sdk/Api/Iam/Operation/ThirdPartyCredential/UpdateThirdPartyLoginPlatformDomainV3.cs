@@ -33,9 +33,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class UpdateThirdPartyLoginPlatformDomainV3Builder
             : OperationBuilder<UpdateThirdPartyLoginPlatformDomainV3Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal UpdateThirdPartyLoginPlatformDomainV3Builder() { }
 
 
@@ -130,4 +132,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

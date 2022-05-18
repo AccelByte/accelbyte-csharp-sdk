@@ -29,18 +29,21 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PayBuilder
             : OperationBuilder<PayBuilder>
         {
-            
-            
-            public string? PaymentProvider { get; set; }
-            
+
+            public PayPaymentProvider? PaymentProvider { get; set; }
+
             public string? ZipCode { get; set; }
-            
+
+
             public Model.PaymentToken? Body { get; set; }
-            
+
+
+
+
             internal PayBuilder() { }
 
 
-            public PayBuilder SetPaymentProvider(string _paymentProvider)
+            public PayBuilder SetPaymentProvider(PayPaymentProvider _paymentProvider)
             {
                 PaymentProvider = _paymentProvider;
                 return this;
@@ -85,8 +88,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["paymentOrderNo"] = paymentOrderNo;
             
-            if (builder.PaymentProvider != null) QueryParams["paymentProvider"] = builder.PaymentProvider;
-            if (builder.ZipCode != null) QueryParams["zipCode"] = builder.ZipCode;
+            if (builder.PaymentProvider is not null) QueryParams["paymentProvider"] = builder.PaymentProvider.Value;
+            if (builder.ZipCode is not null) QueryParams["zipCode"] = builder.ZipCode;
             
 
             
@@ -100,7 +103,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public Pay(
             string namespace_,            
             string paymentOrderNo,            
-            string? paymentProvider,            
+            PayPaymentProvider? paymentProvider,            
             string? zipCode,            
             Model.PaymentToken body            
         )
@@ -108,8 +111,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["paymentOrderNo"] = paymentOrderNo;
             
-            if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
-            if (zipCode != null) QueryParams["zipCode"] = zipCode;
+            if (paymentProvider is not null) QueryParams["paymentProvider"] = paymentProvider.Value;
+            if (zipCode is not null) QueryParams["zipCode"] = zipCode;
             
 
             
@@ -150,4 +153,44 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class PayPaymentProvider : StringEnum<PayPaymentProvider>
+    {
+        public static readonly PayPaymentProvider Adyen
+            = new PayPaymentProvider("ADYEN");
+
+        public static readonly PayPaymentProvider Alipay
+            = new PayPaymentProvider("ALIPAY");
+
+        public static readonly PayPaymentProvider Checkout
+            = new PayPaymentProvider("CHECKOUT");
+
+        public static readonly PayPaymentProvider Paypal
+            = new PayPaymentProvider("PAYPAL");
+
+        public static readonly PayPaymentProvider Stripe
+            = new PayPaymentProvider("STRIPE");
+
+        public static readonly PayPaymentProvider Wallet
+            = new PayPaymentProvider("WALLET");
+
+        public static readonly PayPaymentProvider Wxpay
+            = new PayPaymentProvider("WXPAY");
+
+        public static readonly PayPaymentProvider Xsolla
+            = new PayPaymentProvider("XSOLLA");
+
+
+        public static implicit operator PayPaymentProvider(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PayPaymentProvider(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

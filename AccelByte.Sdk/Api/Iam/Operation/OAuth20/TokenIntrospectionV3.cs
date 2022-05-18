@@ -38,7 +38,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class TokenIntrospectionV3Builder
             : OperationBuilder<TokenIntrospectionV3Builder>
         {
-            
+
+
+
+
+
             internal TokenIntrospectionV3Builder() { }
 
 
@@ -65,7 +69,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (token != null) FormParams["token"] = token;
+            if (token is not null) FormParams["token"] = token;
 
             
             
@@ -82,7 +86,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (token != null) FormParams["token"] = token;
+            if (token is not null) FormParams["token"] = token;
 
             
             
@@ -123,4 +127,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

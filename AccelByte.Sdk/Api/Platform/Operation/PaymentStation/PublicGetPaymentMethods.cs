@@ -29,8 +29,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicGetPaymentMethodsBuilder
             : OperationBuilder<PublicGetPaymentMethodsBuilder>
         {
-            
-            
+
+
+
+
+
             internal PublicGetPaymentMethodsBuilder() { }
 
 
@@ -60,7 +63,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (paymentOrderNo != null) QueryParams["paymentOrderNo"] = paymentOrderNo;
+            if (paymentOrderNo is not null) QueryParams["paymentOrderNo"] = paymentOrderNo;
             
 
             
@@ -77,7 +80,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (paymentOrderNo != null) QueryParams["paymentOrderNo"] = paymentOrderNo;
+            if (paymentOrderNo is not null) QueryParams["paymentOrderNo"] = paymentOrderNo;
             
 
             
@@ -117,4 +120,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -26,24 +26,27 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminSearchUsersV2Builder
             : OperationBuilder<AdminSearchUsersV2Builder>
         {
-            
+
             public string? After { get; set; }
-            
+
             public string? Before { get; set; }
-            
+
             public string? DisplayName { get; set; }
-            
+
             public long? Limit { get; set; }
-            
+
             public string? LoginId { get; set; }
-            
+
             public string? PlatformUserId { get; set; }
-            
+
             public string? RoleId { get; set; }
-            
+
             public string? UserId { get; set; }
-            
-            
+
+
+
+
+
             internal AdminSearchUsersV2Builder() { }
 
 
@@ -121,15 +124,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.After != null) QueryParams["after"] = builder.After;
-            if (builder.Before != null) QueryParams["before"] = builder.Before;
-            if (builder.DisplayName != null) QueryParams["displayName"] = builder.DisplayName;
+            if (builder.After is not null) QueryParams["after"] = builder.After;
+            if (builder.Before is not null) QueryParams["before"] = builder.Before;
+            if (builder.DisplayName is not null) QueryParams["displayName"] = builder.DisplayName;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            if (builder.LoginId != null) QueryParams["loginId"] = builder.LoginId;
-            if (builder.PlatformUserId != null) QueryParams["platformUserId"] = builder.PlatformUserId;
-            if (builder.RoleId != null) QueryParams["roleId"] = builder.RoleId;
-            if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
-            if (platformId != null) QueryParams["platformId"] = platformId;
+            if (builder.LoginId is not null) QueryParams["loginId"] = builder.LoginId;
+            if (builder.PlatformUserId is not null) QueryParams["platformUserId"] = builder.PlatformUserId;
+            if (builder.RoleId is not null) QueryParams["roleId"] = builder.RoleId;
+            if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
+            if (platformId is not null) QueryParams["platformId"] = platformId;
             
 
             
@@ -155,15 +158,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (after != null) QueryParams["after"] = after;
-            if (before != null) QueryParams["before"] = before;
-            if (displayName != null) QueryParams["displayName"] = displayName;
+            if (after is not null) QueryParams["after"] = after;
+            if (before is not null) QueryParams["before"] = before;
+            if (displayName is not null) QueryParams["displayName"] = displayName;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            if (loginId != null) QueryParams["loginId"] = loginId;
-            if (platformUserId != null) QueryParams["platformUserId"] = platformUserId;
-            if (roleId != null) QueryParams["roleId"] = roleId;
-            if (userId != null) QueryParams["userId"] = userId;
-            if (platformId != null) QueryParams["platformId"] = platformId;
+            if (loginId is not null) QueryParams["loginId"] = loginId;
+            if (platformUserId is not null) QueryParams["platformUserId"] = platformUserId;
+            if (roleId is not null) QueryParams["roleId"] = roleId;
+            if (userId is not null) QueryParams["userId"] = userId;
+            if (platformId is not null) QueryParams["platformId"] = platformId;
             
 
             
@@ -204,4 +207,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

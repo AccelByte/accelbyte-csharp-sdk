@@ -30,34 +30,39 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         public class ListAllTerminatedServersBuilder
             : OperationBuilder<ListAllTerminatedServersBuilder>
         {
+
             public string? Deployment { get; set; }
-            
+
             public string? EndDate { get; set; }
-            
+
             public string? GameMode { get; set; }
-            
+
             public long? Limit { get; set; }
-            
+
             public string? Namespace { get; set; }
-            
+
             public string? Next { get; set; }
-            
+
             public string? PartyId { get; set; }
-            
+
             public string? PodName { get; set; }
-            
+
             public string? Previous { get; set; }
-            
+
             public string? Provider { get; set; }
-            
+
             public string? Region { get; set; }
-            
+
             public string? SessionId { get; set; }
-            
+
             public string? StartDate { get; set; }
-            
+
             public string? UserId { get; set; }
-            
+
+
+
+
+
             internal ListAllTerminatedServersBuilder() { }
 
 
@@ -164,20 +169,20 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         )
         {
             
-            if (builder.Deployment != null) QueryParams["deployment"] = builder.Deployment;
-            if (builder.EndDate != null) QueryParams["end_date"] = builder.EndDate;
-            if (builder.GameMode != null) QueryParams["game_mode"] = builder.GameMode;
+            if (builder.Deployment is not null) QueryParams["deployment"] = builder.Deployment;
+            if (builder.EndDate is not null) QueryParams["end_date"] = builder.EndDate;
+            if (builder.GameMode is not null) QueryParams["game_mode"] = builder.GameMode;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            if (builder.Namespace != null) QueryParams["namespace"] = builder.Namespace;
-            if (builder.Next != null) QueryParams["next"] = builder.Next;
-            if (builder.PartyId != null) QueryParams["party_id"] = builder.PartyId;
-            if (builder.PodName != null) QueryParams["pod_name"] = builder.PodName;
-            if (builder.Previous != null) QueryParams["previous"] = builder.Previous;
-            if (builder.Provider != null) QueryParams["provider"] = builder.Provider;
-            if (builder.Region != null) QueryParams["region"] = builder.Region;
-            if (builder.SessionId != null) QueryParams["session_id"] = builder.SessionId;
-            if (builder.StartDate != null) QueryParams["start_date"] = builder.StartDate;
-            if (builder.UserId != null) QueryParams["user_id"] = builder.UserId;
+            if (builder.Namespace is not null) QueryParams["namespace"] = builder.Namespace;
+            if (builder.Next is not null) QueryParams["next"] = builder.Next;
+            if (builder.PartyId is not null) QueryParams["party_id"] = builder.PartyId;
+            if (builder.PodName is not null) QueryParams["pod_name"] = builder.PodName;
+            if (builder.Previous is not null) QueryParams["previous"] = builder.Previous;
+            if (builder.Provider is not null) QueryParams["provider"] = builder.Provider;
+            if (builder.Region is not null) QueryParams["region"] = builder.Region;
+            if (builder.SessionId is not null) QueryParams["session_id"] = builder.SessionId;
+            if (builder.StartDate is not null) QueryParams["start_date"] = builder.StartDate;
+            if (builder.UserId is not null) QueryParams["user_id"] = builder.UserId;
             
 
             
@@ -206,20 +211,20 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         )
         {
             
-            if (deployment != null) QueryParams["deployment"] = deployment;
-            if (endDate != null) QueryParams["end_date"] = endDate;
-            if (gameMode != null) QueryParams["game_mode"] = gameMode;
+            if (deployment is not null) QueryParams["deployment"] = deployment;
+            if (endDate is not null) QueryParams["end_date"] = endDate;
+            if (gameMode is not null) QueryParams["game_mode"] = gameMode;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            if (namespace_ != null) QueryParams["namespace"] = namespace_;
-            if (next != null) QueryParams["next"] = next;
-            if (partyId != null) QueryParams["party_id"] = partyId;
-            if (podName != null) QueryParams["pod_name"] = podName;
-            if (previous != null) QueryParams["previous"] = previous;
-            if (provider != null) QueryParams["provider"] = provider;
-            if (region != null) QueryParams["region"] = region;
-            if (sessionId != null) QueryParams["session_id"] = sessionId;
-            if (startDate != null) QueryParams["start_date"] = startDate;
-            if (userId != null) QueryParams["user_id"] = userId;
+            if (namespace_ is not null) QueryParams["namespace"] = namespace_;
+            if (next is not null) QueryParams["next"] = next;
+            if (partyId is not null) QueryParams["party_id"] = partyId;
+            if (podName is not null) QueryParams["pod_name"] = podName;
+            if (previous is not null) QueryParams["previous"] = previous;
+            if (provider is not null) QueryParams["provider"] = provider;
+            if (region is not null) QueryParams["region"] = region;
+            if (sessionId is not null) QueryParams["session_id"] = sessionId;
+            if (startDate is not null) QueryParams["start_date"] = startDate;
+            if (userId is not null) QueryParams["user_id"] = userId;
             
 
             
@@ -260,4 +265,5 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

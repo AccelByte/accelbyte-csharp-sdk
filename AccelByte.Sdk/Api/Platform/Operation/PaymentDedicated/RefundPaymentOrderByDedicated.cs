@@ -170,10 +170,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class RefundPaymentOrderByDedicatedBuilder
             : OperationBuilder<RefundPaymentOrderByDedicatedBuilder>
         {
-            
-            
+
+
             public Model.PaymentOrderRefund? Body { get; set; }
-            
+
+
+
+
             internal RefundPaymentOrderByDedicatedBuilder() { }
 
 
@@ -271,4 +274,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

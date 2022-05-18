@@ -34,10 +34,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class UpdateCountryGroupBuilder
             : OperationBuilder<UpdateCountryGroupBuilder>
         {
-            
-            
+
+
             public Model.UpdateCountryGroupRequest? Body { get; set; }
-            
+
+
+
+
             internal UpdateCountryGroupBuilder() { }
 
 
@@ -135,4 +138,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -27,8 +27,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class AdminCreateTypeBuilder
             : OperationBuilder<AdminCreateTypeBuilder>
         {
-            
-            
+
+
+
+
+
             internal AdminCreateTypeBuilder() { }
 
 
@@ -117,4 +120,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

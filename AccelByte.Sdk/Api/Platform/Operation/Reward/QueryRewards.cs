@@ -31,15 +31,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryRewardsBuilder
             : OperationBuilder<QueryRewardsBuilder>
         {
-            
+
             public string? EventTopic { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? SortBy { get; set; }
-            
+
+
+
+
+
             internal QueryRewardsBuilder() { }
 
 
@@ -90,10 +94,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.EventTopic != null) QueryParams["eventTopic"] = builder.EventTopic;
+            if (builder.EventTopic is not null) QueryParams["eventTopic"] = builder.EventTopic;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
             
 
             
@@ -114,10 +118,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (eventTopic != null) QueryParams["eventTopic"] = eventTopic;
+            if (eventTopic is not null) QueryParams["eventTopic"] = eventTopic;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (sortBy != null) QueryParams["sortBy"] = sortBy;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
             
 
             
@@ -158,4 +162,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

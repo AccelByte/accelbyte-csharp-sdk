@@ -28,14 +28,19 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminGetRolesV4Builder
             : OperationBuilder<AdminGetRolesV4Builder>
         {
+
             public bool? AdminRole { get; set; }
-            
+
             public bool? IsWildcard { get; set; }
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal AdminGetRolesV4Builder() { }
 
 
@@ -148,4 +153,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

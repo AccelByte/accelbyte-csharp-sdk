@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class SyncSteamInventoryBuilder
             : OperationBuilder<SyncSteamInventoryBuilder>
         {
-            
-            
+
+
             public Model.SteamSyncRequest? Body { get; set; }
-            
+
+
+
+
             internal SyncSteamInventoryBuilder() { }
 
 
@@ -124,4 +127,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

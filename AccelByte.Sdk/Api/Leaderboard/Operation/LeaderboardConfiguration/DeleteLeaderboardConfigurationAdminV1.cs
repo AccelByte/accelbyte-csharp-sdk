@@ -33,8 +33,11 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class DeleteLeaderboardConfigurationAdminV1Builder
             : OperationBuilder<DeleteLeaderboardConfigurationAdminV1Builder>
         {
-            
-            
+
+
+
+
+
             internal DeleteLeaderboardConfigurationAdminV1Builder() { }
 
 
@@ -115,4 +118,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

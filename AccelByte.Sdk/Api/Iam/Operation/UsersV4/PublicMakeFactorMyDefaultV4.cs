@@ -33,8 +33,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicMakeFactorMyDefaultV4Builder
             : OperationBuilder<PublicMakeFactorMyDefaultV4Builder>
         {
-            
-            
+
+
+
+
+
             internal PublicMakeFactorMyDefaultV4Builder() { }
 
 
@@ -65,7 +68,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             
-            if (factor != null) FormParams["factor"] = factor;
+            if (factor is not null) FormParams["factor"] = factor;
 
             
             
@@ -83,7 +86,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             
-            if (factor != null) FormParams["factor"] = factor;
+            if (factor is not null) FormParams["factor"] = factor;
 
             
             
@@ -115,4 +118,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

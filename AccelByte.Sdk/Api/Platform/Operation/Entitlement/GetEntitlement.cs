@@ -31,8 +31,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetEntitlementBuilder
             : OperationBuilder<GetEntitlementBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetEntitlementBuilder() { }
 
 
@@ -121,4 +124,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

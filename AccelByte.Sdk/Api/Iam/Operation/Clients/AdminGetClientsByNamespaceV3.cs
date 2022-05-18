@@ -33,11 +33,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminGetClientsByNamespaceV3Builder
             : OperationBuilder<AdminGetClientsByNamespaceV3Builder>
         {
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal AdminGetClientsByNamespaceV3Builder() { }
 
 
@@ -138,4 +142,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

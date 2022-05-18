@@ -47,9 +47,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class DisableUserBuilder
             : OperationBuilder<DisableUserBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal DisableUserBuilder() { }
 
 
@@ -136,4 +138,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -61,7 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator RegionDataItemCurrencyType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public RegionDataItemCurrencyType(string enumValue)

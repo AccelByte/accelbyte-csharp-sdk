@@ -28,9 +28,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminUpdateUserRoleV4Builder
             : OperationBuilder<AdminUpdateUserRoleV4Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal AdminUpdateUserRoleV4Builder() { }
 
 
@@ -125,4 +127,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

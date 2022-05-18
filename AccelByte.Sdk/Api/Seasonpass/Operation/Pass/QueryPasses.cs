@@ -31,8 +31,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class QueryPassesBuilder
             : OperationBuilder<QueryPassesBuilder>
         {
-            
-            
+
+
+
+
+
             internal QueryPassesBuilder() { }
 
 
@@ -121,4 +124,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

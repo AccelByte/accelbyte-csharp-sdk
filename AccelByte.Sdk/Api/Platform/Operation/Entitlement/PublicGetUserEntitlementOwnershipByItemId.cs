@@ -30,15 +30,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicGetUserEntitlementOwnershipByItemIdBuilder
             : OperationBuilder<PublicGetUserEntitlementOwnershipByItemIdBuilder>
         {
-            
-            
-            public string? EntitlementClazz { get; set; }
-            
-            
+
+            public PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz? EntitlementClazz { get; set; }
+
+
+
+
+
             internal PublicGetUserEntitlementOwnershipByItemIdBuilder() { }
 
 
-            public PublicGetUserEntitlementOwnershipByItemIdBuilder SetEntitlementClazz(string _entitlementClazz)
+            public PublicGetUserEntitlementOwnershipByItemIdBuilder SetEntitlementClazz(PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz _entitlementClazz)
             {
                 EntitlementClazz = _entitlementClazz;
                 return this;
@@ -74,8 +76,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.EntitlementClazz != null) QueryParams["entitlementClazz"] = builder.EntitlementClazz;
-            if (itemId != null) QueryParams["itemId"] = itemId;
+            if (builder.EntitlementClazz is not null) QueryParams["entitlementClazz"] = builder.EntitlementClazz.Value;
+            if (itemId is not null) QueryParams["itemId"] = itemId;
             
 
             
@@ -89,15 +91,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public PublicGetUserEntitlementOwnershipByItemId(
             string namespace_,            
             string userId,            
-            string? entitlementClazz,            
+            PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz? entitlementClazz,            
             string itemId            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (entitlementClazz != null) QueryParams["entitlementClazz"] = entitlementClazz;
-            if (itemId != null) QueryParams["itemId"] = itemId;
+            if (entitlementClazz is not null) QueryParams["entitlementClazz"] = entitlementClazz.Value;
+            if (itemId is not null) QueryParams["itemId"] = itemId;
             
 
             
@@ -138,4 +140,35 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz : StringEnum<PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz>
+    {
+        public static readonly PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz App
+            = new PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz("APP");
+
+        public static readonly PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz Code
+            = new PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz("CODE");
+
+        public static readonly PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz Entitlement
+            = new PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz("ENTITLEMENT");
+
+        public static readonly PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz Media
+            = new PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz("MEDIA");
+
+        public static readonly PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz Subscription
+            = new PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz("SUBSCRIPTION");
+
+
+        public static implicit operator PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicGetUserEntitlementOwnershipByItemIdEntitlementClazz(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

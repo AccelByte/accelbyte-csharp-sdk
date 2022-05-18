@@ -67,11 +67,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicDeletePlatformLinkV2Builder
             : OperationBuilder<PublicDeletePlatformLinkV2Builder>
         {
-            
-            
-            
+
+
+
             public string? PlatformNamespace { get; set; }
-            
+
+
+
             internal PublicDeletePlatformLinkV2Builder() { }
 
 
@@ -113,7 +115,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
-            if (builder.PlatformNamespace != null) FormParams["platform_namespace"] = builder.PlatformNamespace;
+            if (builder.PlatformNamespace is not null) FormParams["platform_namespace"] = builder.PlatformNamespace;
 
             
             
@@ -135,7 +137,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
-            if (platformNamespace != null) FormParams["platform_namespace"] = platformNamespace;
+            if (platformNamespace is not null) FormParams["platform_namespace"] = platformNamespace;
 
             
             
@@ -167,4 +169,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

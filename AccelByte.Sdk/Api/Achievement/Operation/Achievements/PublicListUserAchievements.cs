@@ -29,14 +29,17 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         public class PublicListUserAchievementsBuilder
             : OperationBuilder<PublicListUserAchievementsBuilder>
         {
-            
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
             public bool? PreferUnlocked { get; set; }
-            
+
+
+
+
+
             internal PublicListUserAchievementsBuilder() { }
 
 
@@ -152,4 +155,5 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

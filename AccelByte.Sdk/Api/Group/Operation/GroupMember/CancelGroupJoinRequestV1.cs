@@ -38,8 +38,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class CancelGroupJoinRequestV1Builder
             : OperationBuilder<CancelGroupJoinRequestV1Builder>
         {
-            
-            
+
+
+
+
+
             internal CancelGroupJoinRequestV1Builder() { }
 
 
@@ -128,4 +131,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Group.Model
 
         public static implicit operator ModelsRuleInformationRuleCriteria(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public ModelsRuleInformationRuleCriteria(string enumValue)

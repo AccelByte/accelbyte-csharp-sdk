@@ -30,11 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetPaymentCustomizationBuilder
             : OperationBuilder<GetPaymentCustomizationBuilder>
         {
-            
+
             public bool? Sandbox { get; set; }
-            
-            
-            
+
+
+
+
+
             internal GetPaymentCustomizationBuilder() { }
 
 
@@ -50,7 +52,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public GetPaymentCustomization Build(
                 string namespace_,
-                string paymentProvider,
+                GetPaymentCustomizationPaymentProvider paymentProvider,
                 string region
             )
             {
@@ -67,15 +69,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         private GetPaymentCustomization(GetPaymentCustomizationBuilder builder,
             string namespace_,
-            string paymentProvider,
+            GetPaymentCustomizationPaymentProvider paymentProvider,
             string region
         )
         {
             PathParams["namespace"] = namespace_;
             
             if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
-            if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
-            if (region != null) QueryParams["region"] = region;
+            if (paymentProvider is not null) QueryParams["paymentProvider"] = paymentProvider.Value;
+            if (region is not null) QueryParams["region"] = region;
             
 
             
@@ -88,15 +90,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public GetPaymentCustomization(
             string namespace_,            
             bool? sandbox,            
-            string paymentProvider,            
+            GetPaymentCustomizationPaymentProvider paymentProvider,            
             string region            
         )
         {
             PathParams["namespace"] = namespace_;
             
             if (sandbox != null) QueryParams["sandbox"] = Convert.ToString(sandbox)!;
-            if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
-            if (region != null) QueryParams["region"] = region;
+            if (paymentProvider is not null) QueryParams["paymentProvider"] = paymentProvider.Value;
+            if (region is not null) QueryParams["region"] = region;
             
 
             
@@ -136,4 +138,44 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class GetPaymentCustomizationPaymentProvider : StringEnum<GetPaymentCustomizationPaymentProvider>
+    {
+        public static readonly GetPaymentCustomizationPaymentProvider Adyen
+            = new GetPaymentCustomizationPaymentProvider("ADYEN");
+
+        public static readonly GetPaymentCustomizationPaymentProvider Alipay
+            = new GetPaymentCustomizationPaymentProvider("ALIPAY");
+
+        public static readonly GetPaymentCustomizationPaymentProvider Checkout
+            = new GetPaymentCustomizationPaymentProvider("CHECKOUT");
+
+        public static readonly GetPaymentCustomizationPaymentProvider Paypal
+            = new GetPaymentCustomizationPaymentProvider("PAYPAL");
+
+        public static readonly GetPaymentCustomizationPaymentProvider Stripe
+            = new GetPaymentCustomizationPaymentProvider("STRIPE");
+
+        public static readonly GetPaymentCustomizationPaymentProvider Wallet
+            = new GetPaymentCustomizationPaymentProvider("WALLET");
+
+        public static readonly GetPaymentCustomizationPaymentProvider Wxpay
+            = new GetPaymentCustomizationPaymentProvider("WXPAY");
+
+        public static readonly GetPaymentCustomizationPaymentProvider Xsolla
+            = new GetPaymentCustomizationPaymentProvider("XSOLLA");
+
+
+        public static implicit operator GetPaymentCustomizationPaymentProvider(string value)
+        {
+            return NewValue(value);
+        }
+
+        public GetPaymentCustomizationPaymentProvider(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

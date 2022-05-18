@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator MockIAPReceiptItemIdentityType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public MockIAPReceiptItemIdentityType(string enumValue)
@@ -80,7 +80,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator MockIAPReceiptType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public MockIAPReceiptType(string enumValue)

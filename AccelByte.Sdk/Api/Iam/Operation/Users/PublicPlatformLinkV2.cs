@@ -65,10 +65,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicPlatformLinkV2Builder
             : OperationBuilder<PublicPlatformLinkV2Builder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal PublicPlatformLinkV2Builder() { }
 
 
@@ -107,7 +108,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
-            if (ticket != null) FormParams["ticket"] = ticket;
+            if (ticket is not null) FormParams["ticket"] = ticket;
 
             
             
@@ -129,7 +130,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
-            if (ticket != null) FormParams["ticket"] = ticket;
+            if (ticket is not null) FormParams["ticket"] = ticket;
 
             
             
@@ -161,4 +162,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

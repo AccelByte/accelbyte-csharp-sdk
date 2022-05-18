@@ -31,35 +31,39 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryItemsBuilder
             : OperationBuilder<QueryItemsBuilder>
         {
-            
+
             public bool? ActiveOnly { get; set; }
-            
-            public string? AppType { get; set; }
-            
+
+            public QueryItemsAppType? AppType { get; set; }
+
             public string? AvailableDate { get; set; }
-            
+
             public string? BaseAppId { get; set; }
-            
+
             public string? CategoryPath { get; set; }
-            
+
             public string? Features { get; set; }
-            
-            public string? ItemType { get; set; }
-            
+
+            public QueryItemsItemType? ItemType { get; set; }
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? Region { get; set; }
-            
+
             public string? SortBy { get; set; }
-            
+
             public string? StoreId { get; set; }
-            
+
             public string? Tags { get; set; }
-            
+
             public string? TargetNamespace { get; set; }
-            
+
+
+
+
+
             internal QueryItemsBuilder() { }
 
 
@@ -69,7 +73,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryItemsBuilder SetAppType(string _appType)
+            public QueryItemsBuilder SetAppType(QueryItemsAppType _appType)
             {
                 AppType = _appType;
                 return this;
@@ -99,7 +103,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryItemsBuilder SetItemType(string _itemType)
+            public QueryItemsBuilder SetItemType(QueryItemsItemType _itemType)
             {
                 ItemType = _itemType;
                 return this;
@@ -171,19 +175,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
-            if (builder.AppType != null) QueryParams["appType"] = builder.AppType;
-            if (builder.AvailableDate != null) QueryParams["availableDate"] = builder.AvailableDate;
-            if (builder.BaseAppId != null) QueryParams["baseAppId"] = builder.BaseAppId;
-            if (builder.CategoryPath != null) QueryParams["categoryPath"] = builder.CategoryPath;
-            if (builder.Features != null) QueryParams["features"] = builder.Features;
-            if (builder.ItemType != null) QueryParams["itemType"] = builder.ItemType;
+            if (builder.AppType is not null) QueryParams["appType"] = builder.AppType.Value;
+            if (builder.AvailableDate is not null) QueryParams["availableDate"] = builder.AvailableDate;
+            if (builder.BaseAppId is not null) QueryParams["baseAppId"] = builder.BaseAppId;
+            if (builder.CategoryPath is not null) QueryParams["categoryPath"] = builder.CategoryPath;
+            if (builder.Features is not null) QueryParams["features"] = builder.Features;
+            if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType.Value;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Region != null) QueryParams["region"] = builder.Region;
-            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
-            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
-            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
-            if (builder.TargetNamespace != null) QueryParams["targetNamespace"] = builder.TargetNamespace;
+            if (builder.Region is not null) QueryParams["region"] = builder.Region;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
+            if (builder.TargetNamespace is not null) QueryParams["targetNamespace"] = builder.TargetNamespace;
             
 
             
@@ -197,12 +201,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public QueryItems(
             string namespace_,            
             bool? activeOnly,            
-            string? appType,            
+            QueryItemsAppType? appType,            
             string? availableDate,            
             string? baseAppId,            
             string? categoryPath,            
             string? features,            
-            string? itemType,            
+            QueryItemsItemType? itemType,            
             int? limit,            
             int? offset,            
             string? region,            
@@ -215,19 +219,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
-            if (appType != null) QueryParams["appType"] = appType;
-            if (availableDate != null) QueryParams["availableDate"] = availableDate;
-            if (baseAppId != null) QueryParams["baseAppId"] = baseAppId;
-            if (categoryPath != null) QueryParams["categoryPath"] = categoryPath;
-            if (features != null) QueryParams["features"] = features;
-            if (itemType != null) QueryParams["itemType"] = itemType;
+            if (appType is not null) QueryParams["appType"] = appType.Value;
+            if (availableDate is not null) QueryParams["availableDate"] = availableDate;
+            if (baseAppId is not null) QueryParams["baseAppId"] = baseAppId;
+            if (categoryPath is not null) QueryParams["categoryPath"] = categoryPath;
+            if (features is not null) QueryParams["features"] = features;
+            if (itemType is not null) QueryParams["itemType"] = itemType.Value;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (region != null) QueryParams["region"] = region;
-            if (sortBy != null) QueryParams["sortBy"] = sortBy;
-            if (storeId != null) QueryParams["storeId"] = storeId;
-            if (tags != null) QueryParams["tags"] = tags;
-            if (targetNamespace != null) QueryParams["targetNamespace"] = targetNamespace;
+            if (region is not null) QueryParams["region"] = region;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
+            if (tags is not null) QueryParams["tags"] = tags;
+            if (targetNamespace is not null) QueryParams["targetNamespace"] = targetNamespace;
             
 
             
@@ -268,4 +272,71 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class QueryItemsAppType : StringEnum<QueryItemsAppType>
+    {
+        public static readonly QueryItemsAppType Demo
+            = new QueryItemsAppType("DEMO");
+
+        public static readonly QueryItemsAppType Dlc
+            = new QueryItemsAppType("DLC");
+
+        public static readonly QueryItemsAppType Game
+            = new QueryItemsAppType("GAME");
+
+        public static readonly QueryItemsAppType Software
+            = new QueryItemsAppType("SOFTWARE");
+
+
+        public static implicit operator QueryItemsAppType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryItemsAppType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class QueryItemsItemType : StringEnum<QueryItemsItemType>
+    {
+        public static readonly QueryItemsItemType App
+            = new QueryItemsItemType("APP");
+
+        public static readonly QueryItemsItemType Bundle
+            = new QueryItemsItemType("BUNDLE");
+
+        public static readonly QueryItemsItemType Code
+            = new QueryItemsItemType("CODE");
+
+        public static readonly QueryItemsItemType Coins
+            = new QueryItemsItemType("COINS");
+
+        public static readonly QueryItemsItemType Ingameitem
+            = new QueryItemsItemType("INGAMEITEM");
+
+        public static readonly QueryItemsItemType Media
+            = new QueryItemsItemType("MEDIA");
+
+        public static readonly QueryItemsItemType Season
+            = new QueryItemsItemType("SEASON");
+
+        public static readonly QueryItemsItemType Subscription
+            = new QueryItemsItemType("SUBSCRIPTION");
+
+
+        public static implicit operator QueryItemsItemType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryItemsItemType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

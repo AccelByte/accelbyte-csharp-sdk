@@ -75,8 +75,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class InviteGroupPublicV1Builder
             : OperationBuilder<InviteGroupPublicV1Builder>
         {
-            
-            
+
+
+
+
+
             internal InviteGroupPublicV1Builder() { }
 
 
@@ -165,4 +168,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

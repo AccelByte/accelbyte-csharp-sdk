@@ -30,11 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class AcquireUserTicketBuilder
             : OperationBuilder<AcquireUserTicketBuilder>
         {
-            
-            
-            
+
+
             public Model.TicketAcquireRequest? Body { get; set; }
-            
+
+
+
+
             internal AcquireUserTicketBuilder() { }
 
 
@@ -138,4 +140,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

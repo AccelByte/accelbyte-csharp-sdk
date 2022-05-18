@@ -71,7 +71,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 RedirectUri,                
                 RefreshToken,                
                 Username,                
-                GrantType                
+                TokenGrantV3GrantType.NewValue(GrantType)                
             );            
             
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenResponseV3? response = wrapper.TokenGrantV3(operation);

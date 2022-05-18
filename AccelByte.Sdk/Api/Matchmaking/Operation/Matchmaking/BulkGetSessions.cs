@@ -30,9 +30,13 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public class BulkGetSessionsBuilder
             : OperationBuilder<BulkGetSessionsBuilder>
         {
-            
+
             public string? MatchIDs { get; set; }
-            
+
+
+
+
+
             internal BulkGetSessionsBuilder() { }
 
 
@@ -65,7 +69,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.MatchIDs != null) QueryParams["matchIDs"] = builder.MatchIDs;
+            if (builder.MatchIDs is not null) QueryParams["matchIDs"] = builder.MatchIDs;
             
 
             
@@ -83,7 +87,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (matchIDs != null) QueryParams["matchIDs"] = matchIDs;
+            if (matchIDs is not null) QueryParams["matchIDs"] = matchIDs;
             
 
             
@@ -124,4 +128,5 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

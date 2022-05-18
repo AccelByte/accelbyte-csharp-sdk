@@ -30,7 +30,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class ClearCacheBuilder
             : OperationBuilder<ClearCacheBuilder>
         {
-            
+
+
+
+
+
             internal ClearCacheBuilder() { }
 
 
@@ -105,4 +109,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

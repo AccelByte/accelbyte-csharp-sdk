@@ -35,9 +35,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class SendSpecificUserTemplatedNotificationV1AdminBuilder
             : OperationBuilder<SendSpecificUserTemplatedNotificationV1AdminBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal SendSpecificUserTemplatedNotificationV1AdminBuilder() { }
 
 
@@ -124,4 +126,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

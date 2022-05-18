@@ -26,11 +26,15 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class GetTagBuilder
             : OperationBuilder<GetTagBuilder>
         {
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetTagBuilder() { }
 
 
@@ -131,4 +135,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -30,6 +30,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicGetMyUserV3Builder
             : OperationBuilder<PublicGetMyUserV3Builder>
         {
+
+
+
+
+
             internal PublicGetMyUserV3Builder() { }
 
 
@@ -106,4 +111,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

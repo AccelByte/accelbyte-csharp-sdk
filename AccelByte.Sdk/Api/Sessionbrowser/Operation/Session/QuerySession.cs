@@ -30,26 +30,29 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public class QuerySessionBuilder
             : OperationBuilder<QuerySessionBuilder>
         {
-            
+
             public string? GameMode { get; set; }
-            
+
             public string? GameVersion { get; set; }
-            
+
             public string? Joinable { get; set; }
-            
+
             public long? Limit { get; set; }
-            
+
             public string? MatchExist { get; set; }
-            
+
             public string? MatchId { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
             public string? ServerStatus { get; set; }
-            
+
             public string? UserId { get; set; }
-            
-            
+
+
+
+
+
             internal QuerySessionBuilder() { }
 
 
@@ -133,16 +136,16 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.GameMode != null) QueryParams["game_mode"] = builder.GameMode;
-            if (builder.GameVersion != null) QueryParams["game_version"] = builder.GameVersion;
-            if (builder.Joinable != null) QueryParams["joinable"] = builder.Joinable;
+            if (builder.GameMode is not null) QueryParams["game_mode"] = builder.GameMode;
+            if (builder.GameVersion is not null) QueryParams["game_version"] = builder.GameVersion;
+            if (builder.Joinable is not null) QueryParams["joinable"] = builder.Joinable;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            if (builder.MatchExist != null) QueryParams["match_exist"] = builder.MatchExist;
-            if (builder.MatchId != null) QueryParams["match_id"] = builder.MatchId;
+            if (builder.MatchExist is not null) QueryParams["match_exist"] = builder.MatchExist;
+            if (builder.MatchId is not null) QueryParams["match_id"] = builder.MatchId;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.ServerStatus != null) QueryParams["server_status"] = builder.ServerStatus;
-            if (builder.UserId != null) QueryParams["user_id"] = builder.UserId;
-            if (sessionType != null) QueryParams["session_type"] = sessionType;
+            if (builder.ServerStatus is not null) QueryParams["server_status"] = builder.ServerStatus;
+            if (builder.UserId is not null) QueryParams["user_id"] = builder.UserId;
+            if (sessionType is not null) QueryParams["session_type"] = sessionType;
             
 
             
@@ -169,16 +172,16 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (gameMode != null) QueryParams["game_mode"] = gameMode;
-            if (gameVersion != null) QueryParams["game_version"] = gameVersion;
-            if (joinable != null) QueryParams["joinable"] = joinable;
+            if (gameMode is not null) QueryParams["game_mode"] = gameMode;
+            if (gameVersion is not null) QueryParams["game_version"] = gameVersion;
+            if (joinable is not null) QueryParams["joinable"] = joinable;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            if (matchExist != null) QueryParams["match_exist"] = matchExist;
-            if (matchId != null) QueryParams["match_id"] = matchId;
+            if (matchExist is not null) QueryParams["match_exist"] = matchExist;
+            if (matchId is not null) QueryParams["match_id"] = matchId;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (serverStatus != null) QueryParams["server_status"] = serverStatus;
-            if (userId != null) QueryParams["user_id"] = userId;
-            if (sessionType != null) QueryParams["session_type"] = sessionType;
+            if (serverStatus is not null) QueryParams["server_status"] = serverStatus;
+            if (userId is not null) QueryParams["user_id"] = userId;
+            if (sessionType is not null) QueryParams["session_type"] = sessionType;
             
 
             
@@ -219,4 +222,5 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

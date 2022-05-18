@@ -29,9 +29,13 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class RequestPresignedURLBuilder
             : OperationBuilder<RequestPresignedURLBuilder>
         {
-            
+
+
             public Model.UploadPolicyVersionAttachmentRequest? Body { get; set; }
-            
+
+
+
+
             internal RequestPresignedURLBuilder() { }
 
 
@@ -123,4 +127,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

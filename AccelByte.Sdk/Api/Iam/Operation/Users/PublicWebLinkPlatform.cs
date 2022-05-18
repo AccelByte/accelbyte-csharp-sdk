@@ -26,12 +26,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicWebLinkPlatformBuilder
             : OperationBuilder<PublicWebLinkPlatformBuilder>
         {
-            
-            
+
             public string? ClientId { get; set; }
-            
+
             public string? RedirectUri { get; set; }
-            
+
+
+
+
+
             internal PublicWebLinkPlatformBuilder() { }
 
 
@@ -74,8 +77,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
             
-            if (builder.ClientId != null) QueryParams["clientId"] = builder.ClientId;
-            if (builder.RedirectUri != null) QueryParams["redirectUri"] = builder.RedirectUri;
+            if (builder.ClientId is not null) QueryParams["clientId"] = builder.ClientId;
+            if (builder.RedirectUri is not null) QueryParams["redirectUri"] = builder.RedirectUri;
             
 
             
@@ -96,8 +99,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
             
-            if (clientId != null) QueryParams["clientId"] = clientId;
-            if (redirectUri != null) QueryParams["redirectUri"] = redirectUri;
+            if (clientId is not null) QueryParams["clientId"] = clientId;
+            if (redirectUri is not null) QueryParams["redirectUri"] = redirectUri;
             
 
             
@@ -138,4 +141,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

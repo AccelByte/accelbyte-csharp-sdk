@@ -29,8 +29,11 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class GetUserStatusBuilder
             : OperationBuilder<GetUserStatusBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetUserStatusBuilder() { }
 
 
@@ -60,7 +63,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (userId != null) QueryParams["userId"] = userId;
+            if (userId is not null) QueryParams["userId"] = userId;
             
 
             
@@ -78,7 +81,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (userId != null) QueryParams["userId"] = userId;
+            if (userId is not null) QueryParams["userId"] = userId;
             
 
             
@@ -119,4 +122,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

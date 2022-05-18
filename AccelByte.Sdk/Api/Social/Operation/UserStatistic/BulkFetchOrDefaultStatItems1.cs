@@ -29,11 +29,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class BulkFetchOrDefaultStatItems1Builder
             : OperationBuilder<BulkFetchOrDefaultStatItems1Builder>
         {
-            
+
             public string? AdditionalKey { get; set; }
-            
-            
-            
+
+
+
+
+
             internal BulkFetchOrDefaultStatItems1Builder() { }
 
 
@@ -72,9 +74,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.AdditionalKey != null) QueryParams["additionalKey"] = builder.AdditionalKey;
-            if (statCode != null) QueryParams["statCode"] = statCode;
-            if (userIds != null) QueryParams["userIds"] = userIds;
+            if (builder.AdditionalKey is not null) QueryParams["additionalKey"] = builder.AdditionalKey;
+            if (statCode is not null) QueryParams["statCode"] = statCode;
+            if (userIds is not null) QueryParams["userIds"] = userIds;
             
 
             
@@ -95,9 +97,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (additionalKey != null) QueryParams["additionalKey"] = additionalKey;
-            if (statCode != null) QueryParams["statCode"] = statCode;
-            if (userIds != null) QueryParams["userIds"] = userIds;
+            if (additionalKey is not null) QueryParams["additionalKey"] = additionalKey;
+            if (statCode is not null) QueryParams["statCode"] = statCode;
+            if (userIds is not null) QueryParams["userIds"] = userIds;
             
 
             
@@ -139,4 +141,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

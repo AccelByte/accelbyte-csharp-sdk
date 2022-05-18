@@ -31,16 +31,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class BulkGetLocaleItemsBuilder
             : OperationBuilder<BulkGetLocaleItemsBuilder>
         {
-            
+
             public bool? ActiveOnly { get; set; }
-            
+
             public string? Language { get; set; }
-            
+
             public string? Region { get; set; }
-            
+
             public string? StoreId { get; set; }
-            
-            
+
+
+
+
+
             internal BulkGetLocaleItemsBuilder() { }
 
 
@@ -95,10 +98,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
-            if (builder.Language != null) QueryParams["language"] = builder.Language;
-            if (builder.Region != null) QueryParams["region"] = builder.Region;
-            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
-            if (itemIds != null) QueryParams["itemIds"] = itemIds;
+            if (builder.Language is not null) QueryParams["language"] = builder.Language;
+            if (builder.Region is not null) QueryParams["region"] = builder.Region;
+            if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
+            if (itemIds is not null) QueryParams["itemIds"] = itemIds;
             
 
             
@@ -121,10 +124,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
-            if (language != null) QueryParams["language"] = language;
-            if (region != null) QueryParams["region"] = region;
-            if (storeId != null) QueryParams["storeId"] = storeId;
-            if (itemIds != null) QueryParams["itemIds"] = itemIds;
+            if (language is not null) QueryParams["language"] = language;
+            if (region is not null) QueryParams["region"] = region;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
+            if (itemIds is not null) QueryParams["itemIds"] = itemIds;
             
 
             
@@ -165,4 +168,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

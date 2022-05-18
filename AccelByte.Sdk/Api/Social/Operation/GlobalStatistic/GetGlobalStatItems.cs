@@ -30,11 +30,15 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class GetGlobalStatItemsBuilder
             : OperationBuilder<GetGlobalStatItemsBuilder>
         {
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
+
+
+
+
             internal GetGlobalStatItemsBuilder() { }
 
 
@@ -135,4 +139,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

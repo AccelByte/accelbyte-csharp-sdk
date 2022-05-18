@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator SlideType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public SlideType(string enumValue)
@@ -68,7 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator SlideVideoSource(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public SlideVideoSource(string enumValue)

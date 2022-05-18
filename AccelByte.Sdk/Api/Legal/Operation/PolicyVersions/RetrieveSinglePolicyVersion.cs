@@ -29,9 +29,13 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class RetrieveSinglePolicyVersionBuilder
             : OperationBuilder<RetrieveSinglePolicyVersionBuilder>
         {
-            
+
             public string? VersionId { get; set; }
-            
+
+
+
+
+
             internal RetrieveSinglePolicyVersionBuilder() { }
 
 
@@ -64,7 +68,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             PathParams["policyId"] = policyId;
             
-            if (builder.VersionId != null) QueryParams["versionId"] = builder.VersionId;
+            if (builder.VersionId is not null) QueryParams["versionId"] = builder.VersionId;
             
 
             
@@ -82,7 +86,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             PathParams["policyId"] = policyId;
             
-            if (versionId != null) QueryParams["versionId"] = versionId;
+            if (versionId is not null) QueryParams["versionId"] = versionId;
             
 
             
@@ -123,4 +127,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

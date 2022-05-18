@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class PublicGetUserProfilePublicInfoByIdsBuilder
             : OperationBuilder<PublicGetUserProfilePublicInfoByIdsBuilder>
         {
-            
-            
+
+
+
+
+
             internal PublicGetUserProfilePublicInfoByIdsBuilder() { }
 
 
@@ -61,7 +64,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (userIds != null) QueryParams["userIds"] = userIds;
+            if (userIds is not null) QueryParams["userIds"] = userIds;
             
 
             
@@ -78,7 +81,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (userIds != null) QueryParams["userIds"] = userIds;
+            if (userIds is not null) QueryParams["userIds"] = userIds;
             
 
             
@@ -118,4 +121,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

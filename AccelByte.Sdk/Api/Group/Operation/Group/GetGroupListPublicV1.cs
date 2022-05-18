@@ -38,15 +38,19 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class GetGroupListPublicV1Builder
             : OperationBuilder<GetGroupListPublicV1Builder>
         {
-            
+
             public string? GroupName { get; set; }
-            
+
             public string? GroupRegion { get; set; }
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetGroupListPublicV1Builder() { }
 
 
@@ -97,8 +101,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.GroupName != null) QueryParams["groupName"] = builder.GroupName;
-            if (builder.GroupRegion != null) QueryParams["groupRegion"] = builder.GroupRegion;
+            if (builder.GroupName is not null) QueryParams["groupName"] = builder.GroupName;
+            if (builder.GroupRegion is not null) QueryParams["groupRegion"] = builder.GroupRegion;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
@@ -121,8 +125,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (groupName != null) QueryParams["groupName"] = groupName;
-            if (groupRegion != null) QueryParams["groupRegion"] = groupRegion;
+            if (groupName is not null) QueryParams["groupName"] = groupName;
+            if (groupRegion is not null) QueryParams["groupRegion"] = groupRegion;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
@@ -165,4 +169,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

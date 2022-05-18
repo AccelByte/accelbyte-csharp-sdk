@@ -30,10 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class FeatureItemBuilder
             : OperationBuilder<FeatureItemBuilder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal FeatureItemBuilder() { }
 
 
@@ -71,7 +72,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
             
-            if (storeId != null) QueryParams["storeId"] = storeId;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
             
 
             
@@ -93,7 +94,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
             
-            if (storeId != null) QueryParams["storeId"] = storeId;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
             
 
             
@@ -134,4 +135,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -28,9 +28,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateXblIAPConfigBuilder
             : OperationBuilder<UpdateXblIAPConfigBuilder>
         {
-            
+
+
             public Model.XblIAPConfigRequest? Body { get; set; }
-            
+
+
+
+
             internal UpdateXblIAPConfigBuilder() { }
 
 
@@ -122,4 +126,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

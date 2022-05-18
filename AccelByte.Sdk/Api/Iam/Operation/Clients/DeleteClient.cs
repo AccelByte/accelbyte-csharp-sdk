@@ -34,7 +34,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class DeleteClientBuilder
             : OperationBuilder<DeleteClientBuilder>
         {
-            
+
+
+
+
+
             internal DeleteClientBuilder() { }
 
 
@@ -109,4 +113,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -48,8 +48,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class KickGroupMemberPublicV1Builder
             : OperationBuilder<KickGroupMemberPublicV1Builder>
         {
-            
-            
+
+
+
+
+
             internal KickGroupMemberPublicV1Builder() { }
 
 
@@ -138,4 +141,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

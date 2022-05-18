@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetCodeBuilder
             : OperationBuilder<GetCodeBuilder>
         {
-            
-            
+
             public bool? Redeemable { get; set; }
-            
+
+
+
+
+
             internal GetCodeBuilder() { }
 
 
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

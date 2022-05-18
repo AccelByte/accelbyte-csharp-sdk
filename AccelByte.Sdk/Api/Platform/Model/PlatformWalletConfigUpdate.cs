@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PlatformWalletConfigUpdateAllowedBalanceOrigins(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PlatformWalletConfigUpdateAllowedBalanceOrigins(string enumValue)

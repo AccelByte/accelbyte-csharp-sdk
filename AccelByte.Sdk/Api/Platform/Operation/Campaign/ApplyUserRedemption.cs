@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ApplyUserRedemptionBuilder
             : OperationBuilder<ApplyUserRedemptionBuilder>
         {
-            
-            
+
+
             public Model.RedeemRequest? Body { get; set; }
-            
+
+
+
+
             internal ApplyUserRedemptionBuilder() { }
 
 
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

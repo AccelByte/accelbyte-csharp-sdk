@@ -30,9 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateWxPayConfigCertBuilder
             : OperationBuilder<UpdateWxPayConfigCertBuilder>
         {
-            
+
+
+
             public Stream? File { get; set; }
-            
+
+
+
             internal UpdateWxPayConfigCertBuilder() { }
 
 
@@ -66,7 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["id"] = id;
             
             
-            if (builder.File != null) FormParams["file"] = builder.File;
+            if (builder.File is not null) FormParams["file"] = builder.File;
 
             
             
@@ -84,7 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["id"] = id;
             
             
-            if (file != null) FormParams["file"] = file;
+            if (file is not null) FormParams["file"] = file;
 
             
             
@@ -124,4 +128,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

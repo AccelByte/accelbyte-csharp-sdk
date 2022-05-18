@@ -35,15 +35,17 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class UserAuthenticationV3Builder
             : OperationBuilder<UserAuthenticationV3Builder>
         {
+
+
+
             public string? ClientId { get; set; }
-            
+
             public bool? ExtendExp { get; set; }
-            
+
             public string? RedirectUri { get; set; }
-            
-            
-            
-            
+
+
+
             internal UserAuthenticationV3Builder() { }
 
 
@@ -94,12 +96,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (builder.ClientId != null) FormParams["client_id"] = builder.ClientId;
+            if (builder.ClientId is not null) FormParams["client_id"] = builder.ClientId;
             if (builder.ExtendExp != null) FormParams["extend_exp"] = Convert.ToString(builder.ExtendExp)!;
-            if (builder.RedirectUri != null) FormParams["redirect_uri"] = builder.RedirectUri;
-            if (password != null) FormParams["password"] = password;
-            if (requestId != null) FormParams["request_id"] = requestId;
-            if (userName != null) FormParams["user_name"] = userName;
+            if (builder.RedirectUri is not null) FormParams["redirect_uri"] = builder.RedirectUri;
+            if (password is not null) FormParams["password"] = password;
+            if (requestId is not null) FormParams["request_id"] = requestId;
+            if (userName is not null) FormParams["user_name"] = userName;
 
             
             
@@ -121,12 +123,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (clientId != null) FormParams["client_id"] = clientId;
+            if (clientId is not null) FormParams["client_id"] = clientId;
             if (extendExp != null) FormParams["extend_exp"] = Convert.ToString(extendExp)!;
-            if (redirectUri != null) FormParams["redirect_uri"] = redirectUri;
-            if (password != null) FormParams["password"] = password;
-            if (requestId != null) FormParams["request_id"] = requestId;
-            if (userName != null) FormParams["user_name"] = userName;
+            if (redirectUri is not null) FormParams["redirect_uri"] = redirectUri;
+            if (password is not null) FormParams["password"] = password;
+            if (requestId is not null) FormParams["request_id"] = requestId;
+            if (userName is not null) FormParams["user_name"] = userName;
 
             
             
@@ -159,4 +161,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

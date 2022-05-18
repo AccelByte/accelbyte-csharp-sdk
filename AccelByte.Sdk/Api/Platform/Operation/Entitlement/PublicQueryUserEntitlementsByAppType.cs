@@ -31,13 +31,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicQueryUserEntitlementsByAppTypeBuilder
             : OperationBuilder<PublicQueryUserEntitlementsByAppTypeBuilder>
         {
-            
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
-            
+
+
+
+
+
             internal PublicQueryUserEntitlementsByAppTypeBuilder() { }
 
 
@@ -60,7 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public PublicQueryUserEntitlementsByAppType Build(
                 string namespace_,
                 string userId,
-                string appType
+                PublicQueryUserEntitlementsByAppTypeAppType appType
             )
             {
                 PublicQueryUserEntitlementsByAppType op = new PublicQueryUserEntitlementsByAppType(this,
@@ -77,7 +79,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         private PublicQueryUserEntitlementsByAppType(PublicQueryUserEntitlementsByAppTypeBuilder builder,
             string namespace_,
             string userId,
-            string appType
+            PublicQueryUserEntitlementsByAppTypeAppType appType
         )
         {
             PathParams["namespace"] = namespace_;
@@ -85,7 +87,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (appType != null) QueryParams["appType"] = appType;
+            if (appType is not null) QueryParams["appType"] = appType.Value;
             
 
             
@@ -101,7 +103,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string userId,            
             int? limit,            
             int? offset,            
-            string appType            
+            PublicQueryUserEntitlementsByAppTypeAppType appType            
         )
         {
             PathParams["namespace"] = namespace_;
@@ -109,7 +111,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (appType != null) QueryParams["appType"] = appType;
+            if (appType is not null) QueryParams["appType"] = appType.Value;
             
 
             
@@ -150,4 +152,32 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class PublicQueryUserEntitlementsByAppTypeAppType : StringEnum<PublicQueryUserEntitlementsByAppTypeAppType>
+    {
+        public static readonly PublicQueryUserEntitlementsByAppTypeAppType Demo
+            = new PublicQueryUserEntitlementsByAppTypeAppType("DEMO");
+
+        public static readonly PublicQueryUserEntitlementsByAppTypeAppType Dlc
+            = new PublicQueryUserEntitlementsByAppTypeAppType("DLC");
+
+        public static readonly PublicQueryUserEntitlementsByAppTypeAppType Game
+            = new PublicQueryUserEntitlementsByAppTypeAppType("GAME");
+
+        public static readonly PublicQueryUserEntitlementsByAppTypeAppType Software
+            = new PublicQueryUserEntitlementsByAppTypeAppType("SOFTWARE");
+
+
+        public static implicit operator PublicQueryUserEntitlementsByAppTypeAppType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicQueryUserEntitlementsByAppTypeAppType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

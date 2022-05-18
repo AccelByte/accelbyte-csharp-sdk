@@ -26,11 +26,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class RetrieveAllSSOLoginPlatformCredentialV3Builder
             : OperationBuilder<RetrieveAllSSOLoginPlatformCredentialV3Builder>
         {
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal RetrieveAllSSOLoginPlatformCredentialV3Builder() { }
 
 
@@ -131,4 +135,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

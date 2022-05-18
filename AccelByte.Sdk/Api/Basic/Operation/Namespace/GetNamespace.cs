@@ -31,9 +31,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class GetNamespaceBuilder
             : OperationBuilder<GetNamespaceBuilder>
         {
-            
+
             public bool? ActiveOnly { get; set; }
-            
+
+
+
+
+
             internal GetNamespaceBuilder() { }
 
 
@@ -125,4 +129,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

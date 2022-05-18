@@ -65,12 +65,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AuthCodeRequestV3Builder
             : OperationBuilder<AuthCodeRequestV3Builder>
         {
-            
+
             public string? ClientId { get; set; }
-            
+
             public string? RedirectUri { get; set; }
-            
-            
+
+
+
+
+
             internal AuthCodeRequestV3Builder() { }
 
 
@@ -112,9 +115,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["platformId"] = platformId;
             
-            if (builder.ClientId != null) QueryParams["client_id"] = builder.ClientId;
-            if (builder.RedirectUri != null) QueryParams["redirect_uri"] = builder.RedirectUri;
-            if (requestId != null) QueryParams["request_id"] = requestId;
+            if (builder.ClientId is not null) QueryParams["client_id"] = builder.ClientId;
+            if (builder.RedirectUri is not null) QueryParams["redirect_uri"] = builder.RedirectUri;
+            if (requestId is not null) QueryParams["request_id"] = requestId;
             
 
             
@@ -135,9 +138,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["platformId"] = platformId;
             
-            if (clientId != null) QueryParams["client_id"] = clientId;
-            if (redirectUri != null) QueryParams["redirect_uri"] = redirectUri;
-            if (requestId != null) QueryParams["request_id"] = requestId;
+            if (clientId is not null) QueryParams["client_id"] = clientId;
+            if (redirectUri is not null) QueryParams["redirect_uri"] = redirectUri;
+            if (requestId is not null) QueryParams["request_id"] = requestId;
             
 
             
@@ -171,4 +174,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

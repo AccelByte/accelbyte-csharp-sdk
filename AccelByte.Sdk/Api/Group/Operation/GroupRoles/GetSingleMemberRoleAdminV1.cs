@@ -38,8 +38,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class GetSingleMemberRoleAdminV1Builder
             : OperationBuilder<GetSingleMemberRoleAdminV1Builder>
         {
-            
-            
+
+
+
+
+
             internal GetSingleMemberRoleAdminV1Builder() { }
 
 
@@ -128,4 +131,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

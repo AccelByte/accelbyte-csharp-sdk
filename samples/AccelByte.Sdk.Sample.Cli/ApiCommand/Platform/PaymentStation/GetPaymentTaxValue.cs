@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 ZipCode,                
                 PaymentOrderNo,                
-                PaymentProvider                
+                GetPaymentTaxValuePaymentProvider.NewValue(PaymentProvider)                
             );            
             
             AccelByte.Sdk.Api.Platform.Model.TaxResult? response = wrapper.GetPaymentTaxValue(operation);

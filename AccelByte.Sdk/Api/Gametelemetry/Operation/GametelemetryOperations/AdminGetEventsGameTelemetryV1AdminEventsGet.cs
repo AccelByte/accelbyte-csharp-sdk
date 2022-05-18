@@ -42,8 +42,11 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         public class AdminGetEventsGameTelemetryV1AdminEventsGetBuilder
             : OperationBuilder<AdminGetEventsGameTelemetryV1AdminEventsGetBuilder>
         {
-            
-            
+
+
+
+
+
             internal AdminGetEventsGameTelemetryV1AdminEventsGetBuilder() { }
 
 
@@ -71,7 +74,7 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         )
         {
             
-            if (namespace_ != null) QueryParams["namespace"] = namespace_;
+            if (namespace_ is not null) QueryParams["namespace"] = namespace_;
             
 
             
@@ -89,7 +92,7 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         )
         {
             
-            if (namespace_ != null) QueryParams["namespace"] = namespace_;
+            if (namespace_ is not null) QueryParams["namespace"] = namespace_;
             
 
             
@@ -123,4 +126,5 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

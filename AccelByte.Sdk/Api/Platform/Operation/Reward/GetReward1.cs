@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetReward1Builder
             : OperationBuilder<GetReward1Builder>
         {
-            
-            
+
+
+
+
+
             internal GetReward1Builder() { }
 
 
@@ -120,4 +123,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

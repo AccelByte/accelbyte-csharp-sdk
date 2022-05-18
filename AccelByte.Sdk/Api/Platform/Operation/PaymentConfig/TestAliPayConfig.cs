@@ -30,10 +30,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class TestAliPayConfigBuilder
             : OperationBuilder<TestAliPayConfigBuilder>
         {
+
             public bool? Sandbox { get; set; }
-            
+
+
             public Model.AliPayConfig? Body { get; set; }
-            
+
+
+
+
             internal TestAliPayConfigBuilder() { }
 
 
@@ -128,4 +133,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

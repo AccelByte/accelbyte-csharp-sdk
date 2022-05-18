@@ -106,7 +106,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator BillingHistoryInfoStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public BillingHistoryInfoStatus(string enumValue)

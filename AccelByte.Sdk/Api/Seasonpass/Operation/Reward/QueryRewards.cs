@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class QueryRewardsBuilder
             : OperationBuilder<QueryRewardsBuilder>
         {
-            
-            
+
             public string? Q { get; set; }
-            
+
+
+
+
+
             internal QueryRewardsBuilder() { }
 
 
@@ -71,7 +74,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             PathParams["namespace"] = namespace_;
             PathParams["seasonId"] = seasonId;
             
-            if (builder.Q != null) QueryParams["q"] = builder.Q;
+            if (builder.Q is not null) QueryParams["q"] = builder.Q;
             
 
             
@@ -91,7 +94,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             PathParams["namespace"] = namespace_;
             PathParams["seasonId"] = seasonId;
             
-            if (q != null) QueryParams["q"] = q;
+            if (q is not null) QueryParams["q"] = q;
             
 
             
@@ -132,4 +135,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

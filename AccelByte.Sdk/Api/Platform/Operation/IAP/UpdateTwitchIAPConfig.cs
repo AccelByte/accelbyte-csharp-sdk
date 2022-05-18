@@ -28,9 +28,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateTwitchIAPConfigBuilder
             : OperationBuilder<UpdateTwitchIAPConfigBuilder>
         {
-            
+
+
             public Model.TwitchIAPConfigRequest? Body { get; set; }
-            
+
+
+
+
             internal UpdateTwitchIAPConfigBuilder() { }
 
 
@@ -122,4 +126,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

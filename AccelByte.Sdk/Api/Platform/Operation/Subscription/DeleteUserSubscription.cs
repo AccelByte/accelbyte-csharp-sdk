@@ -29,9 +29,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class DeleteUserSubscriptionBuilder
             : OperationBuilder<DeleteUserSubscriptionBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal DeleteUserSubscriptionBuilder() { }
 
 
@@ -118,4 +120,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -34,8 +34,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class UpdateRoleBuilder
             : OperationBuilder<UpdateRoleBuilder>
         {
-            
-            
+
+
+
+
+
             internal UpdateRoleBuilder() { }
 
 
@@ -124,4 +127,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

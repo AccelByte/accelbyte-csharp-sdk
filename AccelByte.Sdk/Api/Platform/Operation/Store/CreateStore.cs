@@ -31,9 +31,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class CreateStoreBuilder
             : OperationBuilder<CreateStoreBuilder>
         {
-            
+
+
             public Model.StoreCreate? Body { get; set; }
-            
+
+
+
+
             internal CreateStoreBuilder() { }
 
 
@@ -125,4 +129,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

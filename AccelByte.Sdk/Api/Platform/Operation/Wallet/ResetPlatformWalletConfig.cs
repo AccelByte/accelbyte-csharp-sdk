@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ResetPlatformWalletConfigBuilder
             : OperationBuilder<ResetPlatformWalletConfigBuilder>
         {
-            
-            
+
+
+
+
+
             internal ResetPlatformWalletConfigBuilder() { }
 
 
@@ -41,7 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public ResetPlatformWalletConfig Build(
                 string namespace_,
-                string platform
+                ResetPlatformWalletConfigPlatform platform
             )
             {
                 ResetPlatformWalletConfig op = new ResetPlatformWalletConfig(this,
@@ -56,11 +59,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         private ResetPlatformWalletConfig(ResetPlatformWalletConfigBuilder builder,
             string namespace_,
-            string platform
+            ResetPlatformWalletConfigPlatform platform
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["platform"] = platform;
+            PathParams["platform"] = platform.Value;
             
             
 
@@ -74,11 +77,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public ResetPlatformWalletConfig(
             string namespace_,            
-            string platform            
+            ResetPlatformWalletConfigPlatform platform            
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["platform"] = platform;
+            PathParams["platform"] = platform.Value;
             
             
 
@@ -120,4 +123,44 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class ResetPlatformWalletConfigPlatform : StringEnum<ResetPlatformWalletConfigPlatform>
+    {
+        public static readonly ResetPlatformWalletConfigPlatform Epic
+            = new ResetPlatformWalletConfigPlatform("Epic");
+
+        public static readonly ResetPlatformWalletConfigPlatform Googleplay
+            = new ResetPlatformWalletConfigPlatform("GooglePlay");
+
+        public static readonly ResetPlatformWalletConfigPlatform Ios
+            = new ResetPlatformWalletConfigPlatform("IOS");
+
+        public static readonly ResetPlatformWalletConfigPlatform Nintendo
+            = new ResetPlatformWalletConfigPlatform("Nintendo");
+
+        public static readonly ResetPlatformWalletConfigPlatform Other
+            = new ResetPlatformWalletConfigPlatform("Other");
+
+        public static readonly ResetPlatformWalletConfigPlatform Playstation
+            = new ResetPlatformWalletConfigPlatform("Playstation");
+
+        public static readonly ResetPlatformWalletConfigPlatform Steam
+            = new ResetPlatformWalletConfigPlatform("Steam");
+
+        public static readonly ResetPlatformWalletConfigPlatform Xbox
+            = new ResetPlatformWalletConfigPlatform("Xbox");
+
+
+        public static implicit operator ResetPlatformWalletConfigPlatform(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ResetPlatformWalletConfigPlatform(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

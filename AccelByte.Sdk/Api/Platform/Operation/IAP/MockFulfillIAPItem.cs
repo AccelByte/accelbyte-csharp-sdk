@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class MockFulfillIAPItemBuilder
             : OperationBuilder<MockFulfillIAPItemBuilder>
         {
-            
-            
+
+
             public Model.MockIAPReceipt? Body { get; set; }
-            
+
+
+
+
             internal MockFulfillIAPItemBuilder() { }
 
 
@@ -124,4 +127,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

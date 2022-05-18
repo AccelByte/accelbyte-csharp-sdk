@@ -61,7 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator EntitlementHistoryInfoAction(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public EntitlementHistoryInfoAction(string enumValue)

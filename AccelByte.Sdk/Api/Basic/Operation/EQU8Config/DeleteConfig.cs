@@ -29,7 +29,11 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class DeleteConfigBuilder
             : OperationBuilder<DeleteConfigBuilder>
         {
-            
+
+
+
+
+
             internal DeleteConfigBuilder() { }
 
 
@@ -104,4 +108,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

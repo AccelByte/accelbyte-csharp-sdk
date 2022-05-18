@@ -26,8 +26,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class SingleAdminDeleteGroupBuilder
             : OperationBuilder<SingleAdminDeleteGroupBuilder>
         {
-            
-            
+
+
+
+
+
             internal SingleAdminDeleteGroupBuilder() { }
 
 
@@ -108,4 +111,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

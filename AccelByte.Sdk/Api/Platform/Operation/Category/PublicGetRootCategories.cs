@@ -32,11 +32,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicGetRootCategoriesBuilder
             : OperationBuilder<PublicGetRootCategoriesBuilder>
         {
-            
+
             public string? Language { get; set; }
-            
+
             public string? StoreId { get; set; }
-            
+
+
+
+
+
             internal PublicGetRootCategoriesBuilder() { }
 
 
@@ -75,8 +79,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Language != null) QueryParams["language"] = builder.Language;
-            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (builder.Language is not null) QueryParams["language"] = builder.Language;
+            if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
             
 
             
@@ -94,8 +98,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (language != null) QueryParams["language"] = language;
-            if (storeId != null) QueryParams["storeId"] = storeId;
+            if (language is not null) QueryParams["language"] = language;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
             
 
             
@@ -135,4 +139,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

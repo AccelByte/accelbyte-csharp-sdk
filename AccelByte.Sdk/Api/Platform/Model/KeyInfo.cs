@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator KeyInfoStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public KeyInfoStatus(string enumValue)

@@ -108,20 +108,23 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AuthorizeV3Builder
             : OperationBuilder<AuthorizeV3Builder>
         {
+
             public string? CodeChallenge { get; set; }
-            
-            public string? CodeChallengeMethod { get; set; }
-            
+
+            public AuthorizeV3CodeChallengeMethod? CodeChallengeMethod { get; set; }
+
             public string? RedirectUri { get; set; }
-            
+
             public string? Scope { get; set; }
-            
+
             public string? State { get; set; }
-            
+
             public string? TargetAuthPage { get; set; }
-            
-            
-            
+
+
+
+
+
             internal AuthorizeV3Builder() { }
 
 
@@ -131,7 +134,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 return this;
             }
 
-            public AuthorizeV3Builder SetCodeChallengeMethod(string _codeChallengeMethod)
+            public AuthorizeV3Builder SetCodeChallengeMethod(AuthorizeV3CodeChallengeMethod _codeChallengeMethod)
             {
                 CodeChallengeMethod = _codeChallengeMethod;
                 return this;
@@ -167,7 +170,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public AuthorizeV3 Build(
                 string clientId,
-                string responseType
+                AuthorizeV3ResponseType responseType
             )
             {
                 AuthorizeV3 op = new AuthorizeV3(this,
@@ -182,18 +185,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         private AuthorizeV3(AuthorizeV3Builder builder,
             string clientId,
-            string responseType
+            AuthorizeV3ResponseType responseType
         )
         {
             
-            if (builder.CodeChallenge != null) QueryParams["code_challenge"] = builder.CodeChallenge;
-            if (builder.CodeChallengeMethod != null) QueryParams["code_challenge_method"] = builder.CodeChallengeMethod;
-            if (builder.RedirectUri != null) QueryParams["redirect_uri"] = builder.RedirectUri;
-            if (builder.Scope != null) QueryParams["scope"] = builder.Scope;
-            if (builder.State != null) QueryParams["state"] = builder.State;
-            if (builder.TargetAuthPage != null) QueryParams["target_auth_page"] = builder.TargetAuthPage;
-            if (clientId != null) QueryParams["client_id"] = clientId;
-            if (responseType != null) QueryParams["response_type"] = responseType;
+            if (builder.CodeChallenge is not null) QueryParams["code_challenge"] = builder.CodeChallenge;
+            if (builder.CodeChallengeMethod is not null) QueryParams["code_challenge_method"] = builder.CodeChallengeMethod.Value;
+            if (builder.RedirectUri is not null) QueryParams["redirect_uri"] = builder.RedirectUri;
+            if (builder.Scope is not null) QueryParams["scope"] = builder.Scope;
+            if (builder.State is not null) QueryParams["state"] = builder.State;
+            if (builder.TargetAuthPage is not null) QueryParams["target_auth_page"] = builder.TargetAuthPage;
+            if (clientId is not null) QueryParams["client_id"] = clientId;
+            if (responseType is not null) QueryParams["response_type"] = responseType.Value;
             
 
             
@@ -207,24 +210,24 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public AuthorizeV3(
             string? codeChallenge,            
-            string? codeChallengeMethod,            
+            AuthorizeV3CodeChallengeMethod? codeChallengeMethod,            
             string? redirectUri,            
             string? scope,            
             string? state,            
             string? targetAuthPage,            
             string clientId,            
-            string responseType            
+            AuthorizeV3ResponseType responseType            
         )
         {
             
-            if (codeChallenge != null) QueryParams["code_challenge"] = codeChallenge;
-            if (codeChallengeMethod != null) QueryParams["code_challenge_method"] = codeChallengeMethod;
-            if (redirectUri != null) QueryParams["redirect_uri"] = redirectUri;
-            if (scope != null) QueryParams["scope"] = scope;
-            if (state != null) QueryParams["state"] = state;
-            if (targetAuthPage != null) QueryParams["target_auth_page"] = targetAuthPage;
-            if (clientId != null) QueryParams["client_id"] = clientId;
-            if (responseType != null) QueryParams["response_type"] = responseType;
+            if (codeChallenge is not null) QueryParams["code_challenge"] = codeChallenge;
+            if (codeChallengeMethod is not null) QueryParams["code_challenge_method"] = codeChallengeMethod.Value;
+            if (redirectUri is not null) QueryParams["redirect_uri"] = redirectUri;
+            if (scope is not null) QueryParams["scope"] = scope;
+            if (state is not null) QueryParams["state"] = state;
+            if (targetAuthPage is not null) QueryParams["target_auth_page"] = targetAuthPage;
+            if (clientId is not null) QueryParams["client_id"] = clientId;
+            if (responseType is not null) QueryParams["response_type"] = responseType.Value;
             
 
             
@@ -258,4 +261,44 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class AuthorizeV3CodeChallengeMethod : StringEnum<AuthorizeV3CodeChallengeMethod>
+    {
+        public static readonly AuthorizeV3CodeChallengeMethod S256
+            = new AuthorizeV3CodeChallengeMethod("S256");
+
+        public static readonly AuthorizeV3CodeChallengeMethod Plain
+            = new AuthorizeV3CodeChallengeMethod("plain");
+
+
+        public static implicit operator AuthorizeV3CodeChallengeMethod(string value)
+        {
+            return NewValue(value);
+        }
+
+        public AuthorizeV3CodeChallengeMethod(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class AuthorizeV3ResponseType : StringEnum<AuthorizeV3ResponseType>
+    {
+        public static readonly AuthorizeV3ResponseType Code
+            = new AuthorizeV3ResponseType("code");
+
+
+        public static implicit operator AuthorizeV3ResponseType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public AuthorizeV3ResponseType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

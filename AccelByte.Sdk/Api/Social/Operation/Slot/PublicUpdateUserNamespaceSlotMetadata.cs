@@ -29,11 +29,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class PublicUpdateUserNamespaceSlotMetadataBuilder
             : OperationBuilder<PublicUpdateUserNamespaceSlotMetadataBuilder>
         {
-            
-            
-            
+
+
             public Model.SlotMetadataUpdate? Body { get; set; }
-            
+
+
+
+
             internal PublicUpdateUserNamespaceSlotMetadataBuilder() { }
 
 
@@ -137,4 +139,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

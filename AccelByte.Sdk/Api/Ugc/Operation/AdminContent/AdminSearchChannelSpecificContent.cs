@@ -26,30 +26,33 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class AdminSearchChannelSpecificContentBuilder
             : OperationBuilder<AdminSearchChannelSpecificContentBuilder>
         {
-            
-            
+
             public string? Creator { get; set; }
-            
+
             public string? Isofficial { get; set; }
-            
+
             public long? Limit { get; set; }
-            
+
             public string? Name { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
             public string? Orderby { get; set; }
-            
+
             public string? Sortby { get; set; }
-            
+
             public string? Subtype { get; set; }
-            
+
             public List<string>? Tags { get; set; }
-            
+
             public string? Type { get; set; }
-            
+
             public string? UserId { get; set; }
-            
+
+
+
+
+
             internal AdminSearchChannelSpecificContentBuilder() { }
 
 
@@ -146,17 +149,17 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["channelId"] = channelId;
             PathParams["namespace"] = namespace_;
             
-            if (builder.Creator != null) QueryParams["creator"] = builder.Creator;
-            if (builder.Isofficial != null) QueryParams["isofficial"] = builder.Isofficial;
+            if (builder.Creator is not null) QueryParams["creator"] = builder.Creator;
+            if (builder.Isofficial is not null) QueryParams["isofficial"] = builder.Isofficial;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            if (builder.Name != null) QueryParams["name"] = builder.Name;
+            if (builder.Name is not null) QueryParams["name"] = builder.Name;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Orderby != null) QueryParams["orderby"] = builder.Orderby;
-            if (builder.Sortby != null) QueryParams["sortby"] = builder.Sortby;
-            if (builder.Subtype != null) QueryParams["subtype"] = builder.Subtype;
-            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
-            if (builder.Type != null) QueryParams["type"] = builder.Type;
-            if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
+            if (builder.Orderby is not null) QueryParams["orderby"] = builder.Orderby;
+            if (builder.Sortby is not null) QueryParams["sortby"] = builder.Sortby;
+            if (builder.Subtype is not null) QueryParams["subtype"] = builder.Subtype;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
+            if (builder.Type is not null) QueryParams["type"] = builder.Type;
+            if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
             
 
             
@@ -187,17 +190,17 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["channelId"] = channelId;
             PathParams["namespace"] = namespace_;
             
-            if (creator != null) QueryParams["creator"] = creator;
-            if (isofficial != null) QueryParams["isofficial"] = isofficial;
+            if (creator is not null) QueryParams["creator"] = creator;
+            if (isofficial is not null) QueryParams["isofficial"] = isofficial;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            if (name != null) QueryParams["name"] = name;
+            if (name is not null) QueryParams["name"] = name;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (orderby != null) QueryParams["orderby"] = orderby;
-            if (sortby != null) QueryParams["sortby"] = sortby;
-            if (subtype != null) QueryParams["subtype"] = subtype;
-            if (tags != null) QueryParams["tags"] = tags;
-            if (type != null) QueryParams["type"] = type;
-            if (userId != null) QueryParams["userId"] = userId;
+            if (orderby is not null) QueryParams["orderby"] = orderby;
+            if (sortby is not null) QueryParams["sortby"] = sortby;
+            if (subtype is not null) QueryParams["subtype"] = subtype;
+            if (tags is not null) QueryParams["tags"] = tags;
+            if (type is not null) QueryParams["type"] = type;
+            if (userId is not null) QueryParams["userId"] = userId;
             
 
             
@@ -239,4 +242,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

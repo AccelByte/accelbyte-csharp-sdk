@@ -31,7 +31,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class SyncUserInfoBuilder
             : OperationBuilder<SyncUserInfoBuilder>
         {
-            
+
+
+
+
+
             internal SyncUserInfoBuilder() { }
 
 
@@ -57,7 +61,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             
-            if (namespace_ != null) QueryParams["namespace"] = namespace_;
+            if (namespace_ is not null) QueryParams["namespace"] = namespace_;
             
 
             
@@ -73,7 +77,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             
-            if (namespace_ != null) QueryParams["namespace"] = namespace_;
+            if (namespace_ is not null) QueryParams["namespace"] = namespace_;
             
 
             
@@ -106,4 +110,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

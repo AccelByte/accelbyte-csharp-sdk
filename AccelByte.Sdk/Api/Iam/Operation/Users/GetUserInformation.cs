@@ -26,8 +26,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class GetUserInformationBuilder
             : OperationBuilder<GetUserInformationBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetUserInformationBuilder() { }
 
 
@@ -116,4 +119,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

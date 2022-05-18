@@ -28,12 +28,15 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class GetListOfFriendsBuilder
             : OperationBuilder<GetListOfFriendsBuilder>
         {
-            
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetListOfFriendsBuilder() { }
 
 
@@ -140,4 +143,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

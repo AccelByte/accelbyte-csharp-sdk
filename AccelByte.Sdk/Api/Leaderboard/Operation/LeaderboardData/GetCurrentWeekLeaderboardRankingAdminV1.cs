@@ -33,12 +33,15 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class GetCurrentWeekLeaderboardRankingAdminV1Builder
             : OperationBuilder<GetCurrentWeekLeaderboardRankingAdminV1Builder>
         {
-            
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetCurrentWeekLeaderboardRankingAdminV1Builder() { }
 
 
@@ -145,4 +148,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

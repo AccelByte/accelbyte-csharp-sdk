@@ -34,9 +34,11 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class PublicGeneratedUserUploadContentUrlBuilder
             : OperationBuilder<PublicGeneratedUserUploadContentUrlBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal PublicGeneratedUserUploadContentUrlBuilder() { }
 
 
@@ -70,7 +72,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (fileType != null) QueryParams["fileType"] = fileType;
+            if (fileType is not null) QueryParams["fileType"] = fileType;
             
 
             
@@ -90,7 +92,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (fileType != null) QueryParams["fileType"] = fileType;
+            if (fileType is not null) QueryParams["fileType"] = fileType;
             
 
             
@@ -131,4 +133,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

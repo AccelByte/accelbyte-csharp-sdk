@@ -31,7 +31,11 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class PublicGetNamespacePublisherBuilder
             : OperationBuilder<PublicGetNamespacePublisherBuilder>
         {
-            
+
+
+
+
+
             internal PublicGetNamespacePublisherBuilder() { }
 
 
@@ -114,4 +118,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

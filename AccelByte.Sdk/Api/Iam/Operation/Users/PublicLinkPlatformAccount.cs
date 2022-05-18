@@ -28,9 +28,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicLinkPlatformAccountBuilder
             : OperationBuilder<PublicLinkPlatformAccountBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal PublicLinkPlatformAccountBuilder() { }
 
 
@@ -117,4 +119,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

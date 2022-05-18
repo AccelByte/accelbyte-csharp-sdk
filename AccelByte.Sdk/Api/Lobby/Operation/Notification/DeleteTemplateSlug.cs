@@ -28,8 +28,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class DeleteTemplateSlugBuilder
             : OperationBuilder<DeleteTemplateSlugBuilder>
         {
-            
-            
+
+
+
+
+
             internal DeleteTemplateSlugBuilder() { }
 
 
@@ -110,4 +113,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

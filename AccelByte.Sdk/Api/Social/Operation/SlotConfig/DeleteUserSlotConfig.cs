@@ -28,8 +28,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class DeleteUserSlotConfigBuilder
             : OperationBuilder<DeleteUserSlotConfigBuilder>
         {
-            
-            
+
+
+
+
+
             internal DeleteUserSlotConfigBuilder() { }
 
 
@@ -110,4 +113,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -42,7 +42,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class ImportImagesBuilder
             : OperationBuilder<ImportImagesBuilder>
         {
-            
+
+
+
+
+
             internal ImportImagesBuilder() { }
 
 
@@ -69,7 +73,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         {
             
             
-            if (file != null) FormParams["file"] = file;
+            if (file is not null) FormParams["file"] = file;
 
             
             
@@ -85,7 +89,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         {
             
             
-            if (file != null) FormParams["file"] = file;
+            if (file is not null) FormParams["file"] = file;
 
             
             
@@ -125,4 +129,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -61,7 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator FulfillmentScriptContextSource(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public FulfillmentScriptContextSource(string enumValue)

@@ -31,12 +31,13 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class IndirectBulkAcceptVersionedPolicyV2Builder
             : OperationBuilder<IndirectBulkAcceptVersionedPolicyV2Builder>
         {
-            
-            
-            
-            
+
+
             public List<Model.AcceptAgreementRequest>? Body { get; set; }
-            
+
+
+
+
             internal IndirectBulkAcceptVersionedPolicyV2Builder() { }
 
 
@@ -146,4 +147,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

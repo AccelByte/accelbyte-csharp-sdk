@@ -30,17 +30,21 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class ListImagesBuilder
             : OperationBuilder<ListImagesBuilder>
         {
-            
+
             public long? Count { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
             public string? Q { get; set; }
-            
-            public string? SortBy { get; set; }
-            
-            public string? SortDirection { get; set; }
-            
+
+            public ListImagesSortBy? SortBy { get; set; }
+
+            public ListImagesSortDirection? SortDirection { get; set; }
+
+
+
+
+
             internal ListImagesBuilder() { }
 
 
@@ -62,13 +66,13 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
                 return this;
             }
 
-            public ListImagesBuilder SetSortBy(string _sortBy)
+            public ListImagesBuilder SetSortBy(ListImagesSortBy _sortBy)
             {
                 SortBy = _sortBy;
                 return this;
             }
 
-            public ListImagesBuilder SetSortDirection(string _sortDirection)
+            public ListImagesBuilder SetSortDirection(ListImagesSortDirection _sortDirection)
             {
                 SortDirection = _sortDirection;
                 return this;
@@ -99,9 +103,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Q != null) QueryParams["q"] = builder.Q;
-            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
-            if (builder.SortDirection != null) QueryParams["sortDirection"] = builder.SortDirection;
+            if (builder.Q is not null) QueryParams["q"] = builder.Q;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
+            if (builder.SortDirection is not null) QueryParams["sortDirection"] = builder.SortDirection.Value;
             
 
             
@@ -117,17 +121,17 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             long? count,            
             long? offset,            
             string? q,            
-            string? sortBy,            
-            string? sortDirection            
+            ListImagesSortBy? sortBy,            
+            ListImagesSortDirection? sortDirection            
         )
         {
             PathParams["namespace"] = namespace_;
             
             if (count != null) QueryParams["count"] = Convert.ToString(count)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (q != null) QueryParams["q"] = q;
-            if (sortBy != null) QueryParams["sortBy"] = sortBy;
-            if (sortDirection != null) QueryParams["sortDirection"] = sortDirection;
+            if (q is not null) QueryParams["q"] = q;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
+            if (sortDirection is not null) QueryParams["sortDirection"] = sortDirection.Value;
             
 
             
@@ -168,4 +172,50 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class ListImagesSortBy : StringEnum<ListImagesSortBy>
+    {
+        public static readonly ListImagesSortBy Createdat
+            = new ListImagesSortBy("createdAt");
+
+        public static readonly ListImagesSortBy Updatedat
+            = new ListImagesSortBy("updatedAt");
+
+        public static readonly ListImagesSortBy Version
+            = new ListImagesSortBy("version");
+
+
+        public static implicit operator ListImagesSortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ListImagesSortBy(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class ListImagesSortDirection : StringEnum<ListImagesSortDirection>
+    {
+        public static readonly ListImagesSortDirection Asc
+            = new ListImagesSortDirection("asc");
+
+        public static readonly ListImagesSortDirection Desc
+            = new ListImagesSortDirection("desc");
+
+
+        public static implicit operator ListImagesSortDirection(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ListImagesSortDirection(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

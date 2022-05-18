@@ -30,14 +30,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryPaymentProviderConfigBuilder
             : OperationBuilder<QueryPaymentProviderConfigBuilder>
         {
+
             public int? Limit { get; set; }
-            
+
             public string? Namespace { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? Region { get; set; }
-            
+
+
+
+
+
             internal QueryPaymentProviderConfigBuilder() { }
 
 
@@ -85,9 +90,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            if (builder.Namespace != null) QueryParams["namespace"] = builder.Namespace;
+            if (builder.Namespace is not null) QueryParams["namespace"] = builder.Namespace;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.Region is not null) QueryParams["region"] = builder.Region;
             
 
             
@@ -107,9 +112,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            if (namespace_ != null) QueryParams["namespace"] = namespace_;
+            if (namespace_ is not null) QueryParams["namespace"] = namespace_;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (region != null) QueryParams["region"] = region;
+            if (region is not null) QueryParams["region"] = region;
             
 
             
@@ -150,4 +155,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

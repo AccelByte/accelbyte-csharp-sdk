@@ -31,9 +31,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class GetCountryGroupsBuilder
             : OperationBuilder<GetCountryGroupsBuilder>
         {
-            
+
             public string? GroupCode { get; set; }
-            
+
+
+
+
+
             internal GetCountryGroupsBuilder() { }
 
 
@@ -66,7 +70,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.GroupCode != null) QueryParams["groupCode"] = builder.GroupCode;
+            if (builder.GroupCode is not null) QueryParams["groupCode"] = builder.GroupCode;
             
 
             
@@ -84,7 +88,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (groupCode != null) QueryParams["groupCode"] = groupCode;
+            if (groupCode is not null) QueryParams["groupCode"] = groupCode;
             
 
             
@@ -125,4 +129,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

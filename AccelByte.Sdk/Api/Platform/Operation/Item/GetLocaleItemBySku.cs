@@ -31,18 +31,21 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetLocaleItemBySkuBuilder
             : OperationBuilder<GetLocaleItemBySkuBuilder>
         {
-            
+
             public bool? ActiveOnly { get; set; }
-            
+
             public string? Language { get; set; }
-            
+
             public bool? PopulateBundle { get; set; }
-            
+
             public string? Region { get; set; }
-            
+
             public string? StoreId { get; set; }
-            
-            
+
+
+
+
+
             internal GetLocaleItemBySkuBuilder() { }
 
 
@@ -103,11 +106,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
-            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.Language is not null) QueryParams["language"] = builder.Language;
             if (builder.PopulateBundle != null) QueryParams["populateBundle"] = Convert.ToString(builder.PopulateBundle)!;
-            if (builder.Region != null) QueryParams["region"] = builder.Region;
-            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
-            if (sku != null) QueryParams["sku"] = sku;
+            if (builder.Region is not null) QueryParams["region"] = builder.Region;
+            if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
+            if (sku is not null) QueryParams["sku"] = sku;
             
 
             
@@ -131,11 +134,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
-            if (language != null) QueryParams["language"] = language;
+            if (language is not null) QueryParams["language"] = language;
             if (populateBundle != null) QueryParams["populateBundle"] = Convert.ToString(populateBundle)!;
-            if (region != null) QueryParams["region"] = region;
-            if (storeId != null) QueryParams["storeId"] = storeId;
-            if (sku != null) QueryParams["sku"] = sku;
+            if (region is not null) QueryParams["region"] = region;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
+            if (sku is not null) QueryParams["sku"] = sku;
             
 
             
@@ -176,4 +179,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

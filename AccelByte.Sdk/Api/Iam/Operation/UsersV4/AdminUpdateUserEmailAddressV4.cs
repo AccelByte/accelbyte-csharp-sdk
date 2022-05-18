@@ -38,9 +38,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminUpdateUserEmailAddressV4Builder
             : OperationBuilder<AdminUpdateUserEmailAddressV4Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal AdminUpdateUserEmailAddressV4Builder() { }
 
 
@@ -127,4 +129,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

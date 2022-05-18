@@ -38,11 +38,15 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class GetMemberRolesListAdminV1Builder
             : OperationBuilder<GetMemberRolesListAdminV1Builder>
         {
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetMemberRolesListAdminV1Builder() { }
 
 
@@ -143,4 +147,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

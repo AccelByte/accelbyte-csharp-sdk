@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Social.Model
 
         public static implicit operator BulkUserStatItemUpdateUpdateStrategy(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public BulkUserStatItemUpdateUpdateStrategy(string enumValue)

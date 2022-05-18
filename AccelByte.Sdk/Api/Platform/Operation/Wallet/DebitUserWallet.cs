@@ -29,11 +29,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class DebitUserWalletBuilder
             : OperationBuilder<DebitUserWalletBuilder>
         {
-            
-            
-            
+
+
             public Model.DebitRequest? Body { get; set; }
-            
+
+
+
+
             internal DebitUserWalletBuilder() { }
 
 
@@ -137,4 +139,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

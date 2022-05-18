@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class SyncTwitchDropsEntitlementBuilder
             : OperationBuilder<SyncTwitchDropsEntitlementBuilder>
         {
-            
-            
+
+
             public Model.TwitchSyncRequest? Body { get; set; }
-            
+
+
+
+
             internal SyncTwitchDropsEntitlementBuilder() { }
 
 
@@ -124,4 +127,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

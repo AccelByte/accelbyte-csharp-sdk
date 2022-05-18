@@ -120,10 +120,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AddRolePermissionBuilder
             : OperationBuilder<AddRolePermissionBuilder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal AddRolePermissionBuilder() { }
 
 
@@ -216,4 +217,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

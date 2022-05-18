@@ -33,8 +33,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class NotificationWithTemplateBuilder
             : OperationBuilder<NotificationWithTemplateBuilder>
         {
-            
-            
+
+
+
+
+
             internal NotificationWithTemplateBuilder() { }
 
 
@@ -115,4 +118,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

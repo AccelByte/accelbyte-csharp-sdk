@@ -27,13 +27,17 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class RetrieveAllUsersByPolicyVersionBuilder
             : OperationBuilder<RetrieveAllUsersByPolicyVersionBuilder>
         {
+
             public string? Keyword { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
-            
+
+
+
+
+
             internal RetrieveAllUsersByPolicyVersionBuilder() { }
 
 
@@ -77,10 +81,10 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             
-            if (builder.Keyword != null) QueryParams["keyword"] = builder.Keyword;
+            if (builder.Keyword is not null) QueryParams["keyword"] = builder.Keyword;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (policyVersionId != null) QueryParams["policyVersionId"] = policyVersionId;
+            if (policyVersionId is not null) QueryParams["policyVersionId"] = policyVersionId;
             
 
             
@@ -99,10 +103,10 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             
-            if (keyword != null) QueryParams["keyword"] = keyword;
+            if (keyword is not null) QueryParams["keyword"] = keyword;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (policyVersionId != null) QueryParams["policyVersionId"] = policyVersionId;
+            if (policyVersionId is not null) QueryParams["policyVersionId"] = policyVersionId;
             
 
             
@@ -143,4 +147,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

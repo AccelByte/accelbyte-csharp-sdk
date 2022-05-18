@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class IncreaseTicketSaleBuilder
             : OperationBuilder<IncreaseTicketSaleBuilder>
         {
-            
-            
+
+
             public Model.TicketSaleIncrementRequest? Body { get; set; }
-            
+
+
+
+
             internal IncreaseTicketSaleBuilder() { }
 
 
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

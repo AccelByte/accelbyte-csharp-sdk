@@ -34,8 +34,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class EnableUserBuilder
             : OperationBuilder<EnableUserBuilder>
         {
-            
-            
+
+
+
+
+
             internal EnableUserBuilder() { }
 
 
@@ -116,4 +119,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

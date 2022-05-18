@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator OrderUpdateStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public OrderUpdateStatus(string enumValue)

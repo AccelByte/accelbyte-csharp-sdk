@@ -30,11 +30,15 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class GetAllPodConfigBuilder
             : OperationBuilder<GetAllPodConfigBuilder>
         {
-            
+
             public long? Count { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetAllPodConfigBuilder() { }
 
 
@@ -135,4 +139,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

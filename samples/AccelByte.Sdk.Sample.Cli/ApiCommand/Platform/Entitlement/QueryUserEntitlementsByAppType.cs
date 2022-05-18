@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 ActiveOnly,                
                 Limit,                
                 Offset,                
-                AppType                
+                QueryUserEntitlementsByAppTypeAppType.NewValue(AppType)                
             );            
             
             AccelByte.Sdk.Api.Platform.Model.AppEntitlementPagingSlicedResult? response = wrapper.QueryUserEntitlementsByAppType(operation);

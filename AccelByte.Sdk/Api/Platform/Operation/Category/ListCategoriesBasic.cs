@@ -31,9 +31,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ListCategoriesBasicBuilder
             : OperationBuilder<ListCategoriesBasicBuilder>
         {
-            
+
             public string? StoreId { get; set; }
-            
+
+
+
+
+
             internal ListCategoriesBasicBuilder() { }
 
 
@@ -66,7 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
             
 
             
@@ -84,7 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (storeId != null) QueryParams["storeId"] = storeId;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
             
 
             
@@ -125,4 +129,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

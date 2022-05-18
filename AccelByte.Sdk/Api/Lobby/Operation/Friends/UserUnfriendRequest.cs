@@ -24,8 +24,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class UserUnfriendRequestBuilder
             : OperationBuilder<UserUnfriendRequestBuilder>
         {
-            
-            
+
+
+
+
+
             internal UserUnfriendRequestBuilder() { }
 
 
@@ -106,4 +109,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

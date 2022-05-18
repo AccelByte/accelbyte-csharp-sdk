@@ -28,9 +28,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateEpicGamesIAPConfigBuilder
             : OperationBuilder<UpdateEpicGamesIAPConfigBuilder>
         {
-            
+
+
             public Model.EpicGamesIAPConfigRequest? Body { get; set; }
-            
+
+
+
+
             internal UpdateEpicGamesIAPConfigBuilder() { }
 
 
@@ -122,4 +126,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

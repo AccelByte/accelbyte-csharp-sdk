@@ -29,9 +29,11 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         public class ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder
             : OperationBuilder<ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder() { }
 
 
@@ -117,4 +119,5 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

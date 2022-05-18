@@ -31,9 +31,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicCheckUserSubscriptionSubscribableByItemIdBuilder
             : OperationBuilder<PublicCheckUserSubscriptionSubscribableByItemIdBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal PublicCheckUserSubscriptionSubscribableByItemIdBuilder() { }
 
 
@@ -67,7 +69,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (itemId != null) QueryParams["itemId"] = itemId;
+            if (itemId is not null) QueryParams["itemId"] = itemId;
             
 
             
@@ -87,7 +89,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (itemId != null) QueryParams["itemId"] = itemId;
+            if (itemId is not null) QueryParams["itemId"] = itemId;
             
 
             
@@ -128,4 +130,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

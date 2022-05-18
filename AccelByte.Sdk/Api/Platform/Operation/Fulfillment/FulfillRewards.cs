@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class FulfillRewardsBuilder
             : OperationBuilder<FulfillRewardsBuilder>
         {
-            
-            
+
+
             public Model.RewardsRequest? Body { get; set; }
-            
+
+
+
+
             internal FulfillRewardsBuilder() { }
 
 
@@ -123,4 +126,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

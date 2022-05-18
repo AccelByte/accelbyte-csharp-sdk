@@ -39,15 +39,19 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class RetrieveLatestPoliciesPublicBuilder
             : OperationBuilder<RetrieveLatestPoliciesPublicBuilder>
         {
-            
+
             public bool? AlwaysIncludeDefault { get; set; }
-            
+
             public bool? DefaultOnEmpty { get; set; }
-            
-            public string? PolicyType { get; set; }
-            
+
+            public RetrieveLatestPoliciesPublicPolicyType? PolicyType { get; set; }
+
             public string? Tags { get; set; }
-            
+
+
+
+
+
             internal RetrieveLatestPoliciesPublicBuilder() { }
 
 
@@ -63,7 +67,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                 return this;
             }
 
-            public RetrieveLatestPoliciesPublicBuilder SetPolicyType(string _policyType)
+            public RetrieveLatestPoliciesPublicBuilder SetPolicyType(RetrieveLatestPoliciesPublicPolicyType _policyType)
             {
                 PolicyType = _policyType;
                 return this;
@@ -100,8 +104,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             if (builder.AlwaysIncludeDefault != null) QueryParams["alwaysIncludeDefault"] = Convert.ToString(builder.AlwaysIncludeDefault)!;
             if (builder.DefaultOnEmpty != null) QueryParams["defaultOnEmpty"] = Convert.ToString(builder.DefaultOnEmpty)!;
-            if (builder.PolicyType != null) QueryParams["policyType"] = builder.PolicyType;
-            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
+            if (builder.PolicyType is not null) QueryParams["policyType"] = builder.PolicyType.Value;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             
 
             
@@ -116,7 +120,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             string namespace_,            
             bool? alwaysIncludeDefault,            
             bool? defaultOnEmpty,            
-            string? policyType,            
+            RetrieveLatestPoliciesPublicPolicyType? policyType,            
             string? tags            
         )
         {
@@ -124,8 +128,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             
             if (alwaysIncludeDefault != null) QueryParams["alwaysIncludeDefault"] = Convert.ToString(alwaysIncludeDefault)!;
             if (defaultOnEmpty != null) QueryParams["defaultOnEmpty"] = Convert.ToString(defaultOnEmpty)!;
-            if (policyType != null) QueryParams["policyType"] = policyType;
-            if (tags != null) QueryParams["tags"] = tags;
+            if (policyType is not null) QueryParams["policyType"] = policyType.Value;
+            if (tags is not null) QueryParams["tags"] = tags;
             
 
             
@@ -166,4 +170,26 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class RetrieveLatestPoliciesPublicPolicyType : StringEnum<RetrieveLatestPoliciesPublicPolicyType>
+    {
+        public static readonly RetrieveLatestPoliciesPublicPolicyType LegalDocumentType
+            = new RetrieveLatestPoliciesPublicPolicyType("LEGAL_DOCUMENT_TYPE");
+
+        public static readonly RetrieveLatestPoliciesPublicPolicyType MarketingPreferenceType
+            = new RetrieveLatestPoliciesPublicPolicyType("MARKETING_PREFERENCE_TYPE");
+
+
+        public static implicit operator RetrieveLatestPoliciesPublicPolicyType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public RetrieveLatestPoliciesPublicPolicyType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

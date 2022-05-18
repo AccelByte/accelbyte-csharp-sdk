@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             PublicGetUserEntitlementByItemId operation = new PublicGetUserEntitlementByItemId(
                 Namespace,                
                 UserId,                
-                EntitlementClazz,                
+                (EntitlementClazz is null ? null : PublicGetUserEntitlementByItemIdEntitlementClazz.NewValue(EntitlementClazz)),                
                 ItemId                
             );            
             

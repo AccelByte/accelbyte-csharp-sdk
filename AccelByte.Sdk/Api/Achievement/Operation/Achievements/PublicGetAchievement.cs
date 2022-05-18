@@ -29,9 +29,11 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         public class PublicGetAchievementBuilder
             : OperationBuilder<PublicGetAchievementBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal PublicGetAchievementBuilder() { }
 
 
@@ -65,7 +67,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             PathParams["achievementCode"] = achievementCode;
             PathParams["namespace"] = namespace_;
             
-            if (language != null) QueryParams["language"] = language;
+            if (language is not null) QueryParams["language"] = language;
             
 
             
@@ -85,7 +87,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             PathParams["achievementCode"] = achievementCode;
             PathParams["namespace"] = namespace_;
             
-            if (language != null) QueryParams["language"] = language;
+            if (language is not null) QueryParams["language"] = language;
             
 
             
@@ -126,4 +128,5 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

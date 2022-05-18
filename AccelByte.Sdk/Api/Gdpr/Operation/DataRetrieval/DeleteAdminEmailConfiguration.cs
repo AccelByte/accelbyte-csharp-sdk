@@ -29,8 +29,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public class DeleteAdminEmailConfigurationBuilder
             : OperationBuilder<DeleteAdminEmailConfigurationBuilder>
         {
-            
-            
+
+
+
+
+
             internal DeleteAdminEmailConfigurationBuilder() { }
 
 
@@ -60,7 +63,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (emails != null) QueryParams["emails"] = emails;
+            if (emails is not null) QueryParams["emails"] = emails;
             
 
             
@@ -79,7 +82,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (emails != null) QueryParams["emails"] = emails;
+            if (emails is not null) QueryParams["emails"] = emails;
             
 
             
@@ -113,4 +116,5 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

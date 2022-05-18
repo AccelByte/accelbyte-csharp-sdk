@@ -30,9 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ExistsAnyUserActiveEntitlementByItemIdsBuilder
             : OperationBuilder<ExistsAnyUserActiveEntitlementByItemIdsBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal ExistsAnyUserActiveEntitlementByItemIdsBuilder() { }
 
 
@@ -66,7 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (itemIds != null) QueryParams["itemIds"] = itemIds;
+            if (itemIds is not null) QueryParams["itemIds"] = itemIds;
             
 
             
@@ -87,7 +89,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (itemIds != null) QueryParams["itemIds"] = itemIds;
+            if (itemIds is not null) QueryParams["itemIds"] = itemIds;
             
 
             
@@ -129,4 +131,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

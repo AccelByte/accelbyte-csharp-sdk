@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class RetireSeasonBuilder
             : OperationBuilder<RetireSeasonBuilder>
         {
-            
-            
+
             public bool? Force { get; set; }
-            
+
+
+
+
+
             internal RetireSeasonBuilder() { }
 
 
@@ -132,4 +135,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

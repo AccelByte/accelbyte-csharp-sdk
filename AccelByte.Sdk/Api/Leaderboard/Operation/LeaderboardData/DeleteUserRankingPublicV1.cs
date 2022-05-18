@@ -31,9 +31,11 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class DeleteUserRankingPublicV1Builder
             : OperationBuilder<DeleteUserRankingPublicV1Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal DeleteUserRankingPublicV1Builder() { }
 
 
@@ -120,4 +122,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

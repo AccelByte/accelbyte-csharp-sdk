@@ -24,6 +24,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public class GetHealthcheckInfoBuilder
             : OperationBuilder<GetHealthcheckInfoBuilder>
         {
+
+
+
+
+
             internal GetHealthcheckInfoBuilder() { }
 
 
@@ -92,4 +97,5 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

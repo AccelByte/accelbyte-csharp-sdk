@@ -24,11 +24,15 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class GetUserFriendsUpdatedBuilder
             : OperationBuilder<GetUserFriendsUpdatedBuilder>
         {
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetUserFriendsUpdatedBuilder() { }
 
 
@@ -129,4 +133,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

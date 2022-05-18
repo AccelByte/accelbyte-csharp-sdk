@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator BillingAccountPaymentProvider(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public BillingAccountPaymentProvider(string enumValue)

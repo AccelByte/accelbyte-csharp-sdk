@@ -29,8 +29,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class SendMultipleUsersFreeformNotificationV1AdminBuilder
             : OperationBuilder<SendMultipleUsersFreeformNotificationV1AdminBuilder>
         {
-            
-            
+
+
+
+
+
             internal SendMultipleUsersFreeformNotificationV1AdminBuilder() { }
 
 
@@ -111,4 +114,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

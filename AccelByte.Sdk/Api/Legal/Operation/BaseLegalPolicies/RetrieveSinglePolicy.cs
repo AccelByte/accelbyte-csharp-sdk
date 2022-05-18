@@ -29,7 +29,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class RetrieveSinglePolicyBuilder
             : OperationBuilder<RetrieveSinglePolicyBuilder>
         {
-            
+
+
+
+
+
             internal RetrieveSinglePolicyBuilder() { }
 
 
@@ -112,4 +116,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

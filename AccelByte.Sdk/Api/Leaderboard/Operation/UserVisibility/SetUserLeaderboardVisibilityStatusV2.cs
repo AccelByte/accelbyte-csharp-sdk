@@ -26,10 +26,11 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class SetUserLeaderboardVisibilityStatusV2Builder
             : OperationBuilder<SetUserLeaderboardVisibilityStatusV2Builder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal SetUserLeaderboardVisibilityStatusV2Builder() { }
 
 
@@ -130,4 +131,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

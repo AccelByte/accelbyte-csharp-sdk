@@ -29,11 +29,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class CreditUserWalletBuilder
             : OperationBuilder<CreditUserWalletBuilder>
         {
-            
-            
-            
+
+
             public Model.CreditRequest? Body { get; set; }
-            
+
+
+
+
             internal CreditUserWalletBuilder() { }
 
 
@@ -137,4 +139,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

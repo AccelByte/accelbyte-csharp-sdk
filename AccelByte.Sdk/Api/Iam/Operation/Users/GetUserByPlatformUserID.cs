@@ -26,9 +26,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class GetUserByPlatformUserIDBuilder
             : OperationBuilder<GetUserByPlatformUserIDBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal GetUserByPlatformUserIDBuilder() { }
 
 
@@ -61,8 +63,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (platformID != null) QueryParams["platformID"] = platformID;
-            if (platformUserID != null) QueryParams["platformUserID"] = platformUserID;
+            if (platformID is not null) QueryParams["platformID"] = platformID;
+            if (platformUserID is not null) QueryParams["platformUserID"] = platformUserID;
             
 
             
@@ -81,8 +83,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (platformID != null) QueryParams["platformID"] = platformID;
-            if (platformUserID != null) QueryParams["platformUserID"] = platformUserID;
+            if (platformID is not null) QueryParams["platformID"] = platformID;
+            if (platformUserID is not null) QueryParams["platformUserID"] = platformUserID;
             
 
             
@@ -123,4 +125,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

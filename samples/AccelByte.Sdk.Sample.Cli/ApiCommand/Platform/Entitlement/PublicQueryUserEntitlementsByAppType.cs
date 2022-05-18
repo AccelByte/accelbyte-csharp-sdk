@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId,                
                 Limit,                
                 Offset,                
-                AppType                
+                PublicQueryUserEntitlementsByAppTypeAppType.NewValue(AppType)                
             );            
             
             AccelByte.Sdk.Api.Platform.Model.AppEntitlementPagingSlicedResult? response = wrapper.PublicQueryUserEntitlementsByAppType(operation);

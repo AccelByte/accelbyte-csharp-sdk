@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PlatformDlcEntryPlatform(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PlatformDlcEntryPlatform(string enumValue)

@@ -84,10 +84,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminPlatformLinkV3Builder
             : OperationBuilder<AdminPlatformLinkV3Builder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal AdminPlatformLinkV3Builder() { }
 
 
@@ -126,7 +127,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
-            if (ticket != null) FormParams["ticket"] = ticket;
+            if (ticket is not null) FormParams["ticket"] = ticket;
 
             
             
@@ -148,7 +149,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
-            if (ticket != null) FormParams["ticket"] = ticket;
+            if (ticket is not null) FormParams["ticket"] = ticket;
 
             
             
@@ -180,4 +181,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

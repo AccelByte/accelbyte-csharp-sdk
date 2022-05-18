@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
                 Namespace,                
                 Limit,                
                 Offset,                
-                Status                
+                (Status is null ? null : QuerySeasonsStatus.NewValue(Status))                
             );            
             
             AccelByte.Sdk.Api.Seasonpass.Model.ListSeasonInfoPagingSlicedResult? response = wrapper.QuerySeasons(operation);

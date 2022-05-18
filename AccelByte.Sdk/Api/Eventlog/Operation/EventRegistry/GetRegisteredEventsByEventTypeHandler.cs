@@ -27,7 +27,11 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class GetRegisteredEventsByEventTypeHandlerBuilder
             : OperationBuilder<GetRegisteredEventsByEventTypeHandlerBuilder>
         {
-            
+
+
+
+
+
             internal GetRegisteredEventsByEventTypeHandlerBuilder() { }
 
 
@@ -110,4 +114,5 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

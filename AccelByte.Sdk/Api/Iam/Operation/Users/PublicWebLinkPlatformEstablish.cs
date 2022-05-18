@@ -26,9 +26,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicWebLinkPlatformEstablishBuilder
             : OperationBuilder<PublicWebLinkPlatformEstablishBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal PublicWebLinkPlatformEstablishBuilder() { }
 
 
@@ -62,7 +64,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
             
-            if (state != null) QueryParams["state"] = state;
+            if (state is not null) QueryParams["state"] = state;
             
 
             
@@ -83,7 +85,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
             
-            if (state != null) QueryParams["state"] = state;
+            if (state is not null) QueryParams["state"] = state;
             
 
             
@@ -117,4 +119,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

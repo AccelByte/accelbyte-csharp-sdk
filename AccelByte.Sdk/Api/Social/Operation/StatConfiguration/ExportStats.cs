@@ -29,7 +29,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class ExportStatsBuilder
             : OperationBuilder<ExportStatsBuilder>
         {
-            
+
+
+
+
+
             internal ExportStatsBuilder() { }
 
 
@@ -104,4 +108,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

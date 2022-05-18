@@ -33,10 +33,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class PublicCreateUserProfileBuilder
             : OperationBuilder<PublicCreateUserProfileBuilder>
         {
-            
-            
+
+
             public Model.UserProfileCreate? Body { get; set; }
-            
+
+
+
+
             internal PublicCreateUserProfileBuilder() { }
 
 
@@ -134,4 +137,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

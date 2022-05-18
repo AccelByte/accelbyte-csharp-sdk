@@ -37,9 +37,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminGetUserByEmailAddressV3Builder
             : OperationBuilder<AdminGetUserByEmailAddressV3Builder>
         {
-            
+
             public string? EmailAddress { get; set; }
-            
+
+
+
+
+
             internal AdminGetUserByEmailAddressV3Builder() { }
 
 
@@ -72,7 +76,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.EmailAddress != null) QueryParams["emailAddress"] = builder.EmailAddress;
+            if (builder.EmailAddress is not null) QueryParams["emailAddress"] = builder.EmailAddress;
             
 
             
@@ -90,7 +94,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (emailAddress != null) QueryParams["emailAddress"] = emailAddress;
+            if (emailAddress is not null) QueryParams["emailAddress"] = emailAddress;
             
 
             
@@ -131,4 +135,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

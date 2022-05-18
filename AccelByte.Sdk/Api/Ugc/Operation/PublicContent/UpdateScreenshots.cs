@@ -28,10 +28,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class UpdateScreenshotsBuilder
             : OperationBuilder<UpdateScreenshotsBuilder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal UpdateScreenshotsBuilder() { }
 
 
@@ -132,4 +133,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

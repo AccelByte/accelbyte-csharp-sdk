@@ -28,10 +28,13 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder
             : OperationBuilder<AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder>
         {
-            
+
             public string? Slug { get; set; }
-            
-            
+
+
+
+
+
             internal AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder() { }
 
 
@@ -67,8 +70,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Slug != null) QueryParams["slug"] = builder.Slug;
-            if (leaderboardCodes != null) QueryParams["leaderboardCodes"] = leaderboardCodes;
+            if (builder.Slug is not null) QueryParams["slug"] = builder.Slug;
+            if (leaderboardCodes is not null) QueryParams["leaderboardCodes"] = leaderboardCodes;
             
 
             
@@ -87,8 +90,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (slug != null) QueryParams["slug"] = slug;
-            if (leaderboardCodes != null) QueryParams["leaderboardCodes"] = leaderboardCodes;
+            if (slug is not null) QueryParams["slug"] = slug;
+            if (leaderboardCodes is not null) QueryParams["leaderboardCodes"] = leaderboardCodes;
             
 
             
@@ -129,4 +132,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

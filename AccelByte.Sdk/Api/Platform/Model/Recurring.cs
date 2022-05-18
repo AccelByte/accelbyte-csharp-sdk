@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator RecurringCycle(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public RecurringCycle(string enumValue)

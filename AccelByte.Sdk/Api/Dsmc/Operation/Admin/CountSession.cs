@@ -30,9 +30,13 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class CountSessionBuilder
             : OperationBuilder<CountSessionBuilder>
         {
-            
+
             public string? Region { get; set; }
-            
+
+
+
+
+
             internal CountSessionBuilder() { }
 
 
@@ -65,7 +69,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.Region is not null) QueryParams["region"] = builder.Region;
             
 
             
@@ -83,7 +87,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (region != null) QueryParams["region"] = region;
+            if (region is not null) QueryParams["region"] = region;
             
 
             
@@ -124,4 +128,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

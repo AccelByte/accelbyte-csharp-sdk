@@ -29,10 +29,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class CheckWalletBuilder
             : OperationBuilder<CheckWalletBuilder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal CheckWalletBuilder() { }
 
 
@@ -44,7 +45,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string currencyCode,
                 string namespace_,
                 string userId,
-                string origin
+                CheckWalletOrigin origin
             )
             {
                 CheckWallet op = new CheckWallet(this,
@@ -63,14 +64,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string currencyCode,
             string namespace_,
             string userId,
-            string origin
+            CheckWalletOrigin origin
         )
         {
             PathParams["currencyCode"] = currencyCode;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (origin != null) QueryParams["origin"] = origin;
+            if (origin is not null) QueryParams["origin"] = origin.Value;
             
 
             
@@ -85,14 +86,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string currencyCode,            
             string namespace_,            
             string userId,            
-            string origin            
+            CheckWalletOrigin origin            
         )
         {
             PathParams["currencyCode"] = currencyCode;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (origin != null) QueryParams["origin"] = origin;
+            if (origin is not null) QueryParams["origin"] = origin.Value;
             
 
             
@@ -125,4 +126,53 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class CheckWalletOrigin : StringEnum<CheckWalletOrigin>
+    {
+        public static readonly CheckWalletOrigin Epic
+            = new CheckWalletOrigin("Epic");
+
+        public static readonly CheckWalletOrigin Googleplay
+            = new CheckWalletOrigin("GooglePlay");
+
+        public static readonly CheckWalletOrigin Ios
+            = new CheckWalletOrigin("IOS");
+
+        public static readonly CheckWalletOrigin Nintendo
+            = new CheckWalletOrigin("Nintendo");
+
+        public static readonly CheckWalletOrigin Other
+            = new CheckWalletOrigin("Other");
+
+        public static readonly CheckWalletOrigin Playstation
+            = new CheckWalletOrigin("Playstation");
+
+        public static readonly CheckWalletOrigin Stadia
+            = new CheckWalletOrigin("Stadia");
+
+        public static readonly CheckWalletOrigin Steam
+            = new CheckWalletOrigin("Steam");
+
+        public static readonly CheckWalletOrigin System
+            = new CheckWalletOrigin("System");
+
+        public static readonly CheckWalletOrigin Twitch
+            = new CheckWalletOrigin("Twitch");
+
+        public static readonly CheckWalletOrigin Xbox
+            = new CheckWalletOrigin("Xbox");
+
+
+        public static implicit operator CheckWalletOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public CheckWalletOrigin(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

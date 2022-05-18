@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Api.Ugc.Model
 
         public static implicit operator ModelsCreateScreenshotRequestItemFileExtension(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public ModelsCreateScreenshotRequestItemFileExtension(string enumValue)

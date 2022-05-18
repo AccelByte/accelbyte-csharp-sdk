@@ -32,9 +32,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public class UpdateMatchmakingChannelBuilder
             : OperationBuilder<UpdateMatchmakingChannelBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal UpdateMatchmakingChannelBuilder() { }
 
 
@@ -121,4 +123,5 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

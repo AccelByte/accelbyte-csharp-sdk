@@ -64,32 +64,35 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PlatformAuthenticationV3Builder
             : OperationBuilder<PlatformAuthenticationV3Builder>
         {
-            
+
             public string? Code { get; set; }
-            
+
             public string? Error { get; set; }
-            
+
             public string? OpenidAssocHandle { get; set; }
-            
+
             public string? OpenidClaimedId { get; set; }
-            
+
             public string? OpenidIdentity { get; set; }
-            
+
             public string? OpenidMode { get; set; }
-            
+
             public string? OpenidNs { get; set; }
-            
+
             public string? OpenidOpEndpoint { get; set; }
-            
+
             public string? OpenidResponseNonce { get; set; }
-            
+
             public string? OpenidReturnTo { get; set; }
-            
+
             public string? OpenidSig { get; set; }
-            
+
             public string? OpenidSigned { get; set; }
-            
-            
+
+
+
+
+
             internal PlatformAuthenticationV3Builder() { }
 
 
@@ -191,19 +194,19 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["platformId"] = platformId;
             
-            if (builder.Code != null) QueryParams["code"] = builder.Code;
-            if (builder.Error != null) QueryParams["error"] = builder.Error;
-            if (builder.OpenidAssocHandle != null) QueryParams["openid.assoc_handle"] = builder.OpenidAssocHandle;
-            if (builder.OpenidClaimedId != null) QueryParams["openid.claimed_id"] = builder.OpenidClaimedId;
-            if (builder.OpenidIdentity != null) QueryParams["openid.identity"] = builder.OpenidIdentity;
-            if (builder.OpenidMode != null) QueryParams["openid.mode"] = builder.OpenidMode;
-            if (builder.OpenidNs != null) QueryParams["openid.ns"] = builder.OpenidNs;
-            if (builder.OpenidOpEndpoint != null) QueryParams["openid.op_endpoint"] = builder.OpenidOpEndpoint;
-            if (builder.OpenidResponseNonce != null) QueryParams["openid.response_nonce"] = builder.OpenidResponseNonce;
-            if (builder.OpenidReturnTo != null) QueryParams["openid.return_to"] = builder.OpenidReturnTo;
-            if (builder.OpenidSig != null) QueryParams["openid.sig"] = builder.OpenidSig;
-            if (builder.OpenidSigned != null) QueryParams["openid.signed"] = builder.OpenidSigned;
-            if (state != null) QueryParams["state"] = state;
+            if (builder.Code is not null) QueryParams["code"] = builder.Code;
+            if (builder.Error is not null) QueryParams["error"] = builder.Error;
+            if (builder.OpenidAssocHandle is not null) QueryParams["openid.assoc_handle"] = builder.OpenidAssocHandle;
+            if (builder.OpenidClaimedId is not null) QueryParams["openid.claimed_id"] = builder.OpenidClaimedId;
+            if (builder.OpenidIdentity is not null) QueryParams["openid.identity"] = builder.OpenidIdentity;
+            if (builder.OpenidMode is not null) QueryParams["openid.mode"] = builder.OpenidMode;
+            if (builder.OpenidNs is not null) QueryParams["openid.ns"] = builder.OpenidNs;
+            if (builder.OpenidOpEndpoint is not null) QueryParams["openid.op_endpoint"] = builder.OpenidOpEndpoint;
+            if (builder.OpenidResponseNonce is not null) QueryParams["openid.response_nonce"] = builder.OpenidResponseNonce;
+            if (builder.OpenidReturnTo is not null) QueryParams["openid.return_to"] = builder.OpenidReturnTo;
+            if (builder.OpenidSig is not null) QueryParams["openid.sig"] = builder.OpenidSig;
+            if (builder.OpenidSigned is not null) QueryParams["openid.signed"] = builder.OpenidSigned;
+            if (state is not null) QueryParams["state"] = state;
             
 
             
@@ -234,19 +237,19 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["platformId"] = platformId;
             
-            if (code != null) QueryParams["code"] = code;
-            if (error != null) QueryParams["error"] = error;
-            if (openidAssocHandle != null) QueryParams["openid.assoc_handle"] = openidAssocHandle;
-            if (openidClaimedId != null) QueryParams["openid.claimed_id"] = openidClaimedId;
-            if (openidIdentity != null) QueryParams["openid.identity"] = openidIdentity;
-            if (openidMode != null) QueryParams["openid.mode"] = openidMode;
-            if (openidNs != null) QueryParams["openid.ns"] = openidNs;
-            if (openidOpEndpoint != null) QueryParams["openid.op_endpoint"] = openidOpEndpoint;
-            if (openidResponseNonce != null) QueryParams["openid.response_nonce"] = openidResponseNonce;
-            if (openidReturnTo != null) QueryParams["openid.return_to"] = openidReturnTo;
-            if (openidSig != null) QueryParams["openid.sig"] = openidSig;
-            if (openidSigned != null) QueryParams["openid.signed"] = openidSigned;
-            if (state != null) QueryParams["state"] = state;
+            if (code is not null) QueryParams["code"] = code;
+            if (error is not null) QueryParams["error"] = error;
+            if (openidAssocHandle is not null) QueryParams["openid.assoc_handle"] = openidAssocHandle;
+            if (openidClaimedId is not null) QueryParams["openid.claimed_id"] = openidClaimedId;
+            if (openidIdentity is not null) QueryParams["openid.identity"] = openidIdentity;
+            if (openidMode is not null) QueryParams["openid.mode"] = openidMode;
+            if (openidNs is not null) QueryParams["openid.ns"] = openidNs;
+            if (openidOpEndpoint is not null) QueryParams["openid.op_endpoint"] = openidOpEndpoint;
+            if (openidResponseNonce is not null) QueryParams["openid.response_nonce"] = openidResponseNonce;
+            if (openidReturnTo is not null) QueryParams["openid.return_to"] = openidReturnTo;
+            if (openidSig is not null) QueryParams["openid.sig"] = openidSig;
+            if (openidSigned is not null) QueryParams["openid.signed"] = openidSigned;
+            if (state is not null) QueryParams["state"] = state;
             
 
             
@@ -280,4 +283,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -30,12 +30,17 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class RetrievePolicyVersionsBuilder
             : OperationBuilder<RetrievePolicyVersionsBuilder>
         {
+
             public string? BasePolicyId { get; set; }
-            
+
             public string? LocaleId { get; set; }
-            
+
             public string? Namespace { get; set; }
-            
+
+
+
+
+
             internal RetrievePolicyVersionsBuilder() { }
 
 
@@ -76,9 +81,9 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             
-            if (builder.BasePolicyId != null) QueryParams["basePolicyId"] = builder.BasePolicyId;
-            if (builder.LocaleId != null) QueryParams["localeId"] = builder.LocaleId;
-            if (builder.Namespace != null) QueryParams["namespace"] = builder.Namespace;
+            if (builder.BasePolicyId is not null) QueryParams["basePolicyId"] = builder.BasePolicyId;
+            if (builder.LocaleId is not null) QueryParams["localeId"] = builder.LocaleId;
+            if (builder.Namespace is not null) QueryParams["namespace"] = builder.Namespace;
             
 
             
@@ -96,9 +101,9 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             
-            if (basePolicyId != null) QueryParams["basePolicyId"] = basePolicyId;
-            if (localeId != null) QueryParams["localeId"] = localeId;
-            if (namespace_ != null) QueryParams["namespace"] = namespace_;
+            if (basePolicyId is not null) QueryParams["basePolicyId"] = basePolicyId;
+            if (localeId is not null) QueryParams["localeId"] = localeId;
+            if (namespace_ is not null) QueryParams["namespace"] = namespace_;
             
 
             
@@ -139,4 +144,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

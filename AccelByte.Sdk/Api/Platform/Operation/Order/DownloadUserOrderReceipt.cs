@@ -30,9 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class DownloadUserOrderReceiptBuilder
             : OperationBuilder<DownloadUserOrderReceiptBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal DownloadUserOrderReceiptBuilder() { }
 
 
@@ -119,4 +121,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

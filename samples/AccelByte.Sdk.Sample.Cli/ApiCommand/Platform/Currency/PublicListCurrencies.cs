@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             PublicListCurrencies operation = new PublicListCurrencies(
                 Namespace,                
-                CurrencyType                
+                (CurrencyType is null ? null : PublicListCurrenciesCurrencyType.NewValue(CurrencyType))                
             );            
             
             List<AccelByte.Sdk.Api.Platform.Model.CurrencyInfo>? response = wrapper.PublicListCurrencies(operation);

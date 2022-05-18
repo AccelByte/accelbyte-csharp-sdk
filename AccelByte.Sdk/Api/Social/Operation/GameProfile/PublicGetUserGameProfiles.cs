@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class PublicGetUserGameProfilesBuilder
             : OperationBuilder<PublicGetUserGameProfilesBuilder>
         {
-            
-            
+
+
+
+
+
             internal PublicGetUserGameProfilesBuilder() { }
 
 
@@ -61,7 +64,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (userIds != null) QueryParams["userIds"] = userIds;
+            if (userIds is not null) QueryParams["userIds"] = userIds;
             
 
             
@@ -80,7 +83,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (userIds != null) QueryParams["userIds"] = userIds;
+            if (userIds is not null) QueryParams["userIds"] = userIds;
             
 
             
@@ -122,4 +125,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

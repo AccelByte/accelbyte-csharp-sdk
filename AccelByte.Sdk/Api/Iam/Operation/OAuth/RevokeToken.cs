@@ -39,7 +39,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class RevokeTokenBuilder
             : OperationBuilder<RevokeTokenBuilder>
         {
-            
+
+
+
+
+
             internal RevokeTokenBuilder() { }
 
 
@@ -66,7 +70,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (token != null) FormParams["token"] = token;
+            if (token is not null) FormParams["token"] = token;
 
             
             
@@ -82,7 +86,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (token != null) FormParams["token"] = token;
+            if (token is not null) FormParams["token"] = token;
 
             
             
@@ -114,4 +118,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

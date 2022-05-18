@@ -29,8 +29,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicGetQRCodeBuilder
             : OperationBuilder<PublicGetQRCodeBuilder>
         {
-            
-            
+
+
+
+
+
             internal PublicGetQRCodeBuilder() { }
 
 
@@ -60,7 +63,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (code != null) QueryParams["code"] = code;
+            if (code is not null) QueryParams["code"] = code;
             
 
             
@@ -77,7 +80,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (code != null) QueryParams["code"] = code;
+            if (code is not null) QueryParams["code"] = code;
             
 
             
@@ -125,4 +128,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

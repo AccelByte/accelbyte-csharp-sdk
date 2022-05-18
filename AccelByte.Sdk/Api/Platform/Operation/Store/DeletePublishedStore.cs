@@ -32,7 +32,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class DeletePublishedStoreBuilder
             : OperationBuilder<DeletePublishedStoreBuilder>
         {
-            
+
+
+
+
+
             internal DeletePublishedStoreBuilder() { }
 
 
@@ -115,4 +119,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

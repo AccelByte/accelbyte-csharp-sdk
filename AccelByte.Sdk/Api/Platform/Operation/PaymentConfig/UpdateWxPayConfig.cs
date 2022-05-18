@@ -30,11 +30,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateWxPayConfigBuilder
             : OperationBuilder<UpdateWxPayConfigBuilder>
         {
-            
+
             public bool? Validate { get; set; }
-            
+
+
             public Model.WxPayConfigRequest? Body { get; set; }
-            
+
+
+
+
             internal UpdateWxPayConfigBuilder() { }
 
 
@@ -135,4 +139,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

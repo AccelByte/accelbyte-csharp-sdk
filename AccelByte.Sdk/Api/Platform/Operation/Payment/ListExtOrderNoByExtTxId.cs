@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ListExtOrderNoByExtTxIdBuilder
             : OperationBuilder<ListExtOrderNoByExtTxIdBuilder>
         {
-            
-            
+
+
+
+
+
             internal ListExtOrderNoByExtTxIdBuilder() { }
 
 
@@ -61,7 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (extTxId != null) QueryParams["extTxId"] = extTxId;
+            if (extTxId is not null) QueryParams["extTxId"] = extTxId;
             
 
             
@@ -79,7 +82,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (extTxId != null) QueryParams["extTxId"] = extTxId;
+            if (extTxId is not null) QueryParams["extTxId"] = extTxId;
             
 
             
@@ -120,4 +123,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

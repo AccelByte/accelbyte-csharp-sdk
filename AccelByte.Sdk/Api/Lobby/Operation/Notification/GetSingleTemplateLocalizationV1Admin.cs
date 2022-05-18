@@ -30,9 +30,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class GetSingleTemplateLocalizationV1AdminBuilder
             : OperationBuilder<GetSingleTemplateLocalizationV1AdminBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal GetSingleTemplateLocalizationV1AdminBuilder() { }
 
 
@@ -127,4 +129,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

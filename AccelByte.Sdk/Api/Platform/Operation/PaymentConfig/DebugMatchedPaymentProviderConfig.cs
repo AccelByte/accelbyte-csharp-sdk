@@ -30,10 +30,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class DebugMatchedPaymentProviderConfigBuilder
             : OperationBuilder<DebugMatchedPaymentProviderConfigBuilder>
         {
+
             public string? Namespace { get; set; }
-            
+
             public string? Region { get; set; }
-            
+
+
+
+
+
             internal DebugMatchedPaymentProviderConfigBuilder() { }
 
 
@@ -68,8 +73,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             
-            if (builder.Namespace != null) QueryParams["namespace"] = builder.Namespace;
-            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.Namespace is not null) QueryParams["namespace"] = builder.Namespace;
+            if (builder.Region is not null) QueryParams["region"] = builder.Region;
             
 
             
@@ -86,8 +91,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             
-            if (namespace_ != null) QueryParams["namespace"] = namespace_;
-            if (region != null) QueryParams["region"] = region;
+            if (namespace_ is not null) QueryParams["namespace"] = namespace_;
+            if (region is not null) QueryParams["region"] = region;
             
 
             
@@ -128,4 +133,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class ShutdownServerBuilder
             : OperationBuilder<ShutdownServerBuilder>
         {
-            
-            
+
+
+
+
+
             internal ShutdownServerBuilder() { }
 
 
@@ -112,4 +115,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

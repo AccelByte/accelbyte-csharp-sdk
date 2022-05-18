@@ -39,8 +39,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class GetUserPlatformAccountsBuilder
             : OperationBuilder<GetUserPlatformAccountsBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetUserPlatformAccountsBuilder() { }
 
 
@@ -129,4 +132,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

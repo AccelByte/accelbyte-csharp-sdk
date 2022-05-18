@@ -61,7 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator DetailedWalletTransactionInfoWalletAction(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public DetailedWalletTransactionInfoWalletAction(string enumValue)

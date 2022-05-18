@@ -84,7 +84,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator CodeInfoRedeemType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public CodeInfoRedeemType(string enumValue)
@@ -105,7 +105,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator CodeInfoStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public CodeInfoStatus(string enumValue)
@@ -123,7 +123,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator CodeInfoType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public CodeInfoType(string enumValue)

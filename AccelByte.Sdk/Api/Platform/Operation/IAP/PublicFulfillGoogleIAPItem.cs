@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicFulfillGoogleIAPItemBuilder
             : OperationBuilder<PublicFulfillGoogleIAPItemBuilder>
         {
-            
-            
+
+
             public Model.GoogleIAPReceipt? Body { get; set; }
-            
+
+
+
+
             internal PublicFulfillGoogleIAPItemBuilder() { }
 
 
@@ -132,4 +135,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

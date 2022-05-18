@@ -32,17 +32,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicSearchItemsBuilder
             : OperationBuilder<PublicSearchItemsBuilder>
         {
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? Region { get; set; }
-            
+
             public string? StoreId { get; set; }
-            
-            
-            
+
+
+
+
+
             internal PublicSearchItemsBuilder() { }
 
 
@@ -101,10 +103,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Region != null) QueryParams["region"] = builder.Region;
-            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
-            if (keyword != null) QueryParams["keyword"] = keyword;
-            if (language != null) QueryParams["language"] = language;
+            if (builder.Region is not null) QueryParams["region"] = builder.Region;
+            if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
+            if (keyword is not null) QueryParams["keyword"] = keyword;
+            if (language is not null) QueryParams["language"] = language;
             
 
             
@@ -128,10 +130,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (region != null) QueryParams["region"] = region;
-            if (storeId != null) QueryParams["storeId"] = storeId;
-            if (keyword != null) QueryParams["keyword"] = keyword;
-            if (language != null) QueryParams["language"] = language;
+            if (region is not null) QueryParams["region"] = region;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
+            if (keyword is not null) QueryParams["keyword"] = keyword;
+            if (language is not null) QueryParams["language"] = language;
             
 
             
@@ -171,4 +173,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

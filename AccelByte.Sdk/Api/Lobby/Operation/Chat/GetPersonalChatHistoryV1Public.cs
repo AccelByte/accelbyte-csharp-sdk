@@ -31,8 +31,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class GetPersonalChatHistoryV1PublicBuilder
             : OperationBuilder<GetPersonalChatHistoryV1PublicBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetPersonalChatHistoryV1PublicBuilder() { }
 
 
@@ -121,4 +124,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

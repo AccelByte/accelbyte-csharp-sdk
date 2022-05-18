@@ -65,23 +65,27 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminSearchUserV3Builder
             : OperationBuilder<AdminSearchUserV3Builder>
         {
-            
+
             public string? By { get; set; }
-            
+
             public string? EndDate { get; set; }
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
             public string? PlatformBy { get; set; }
-            
+
             public string? PlatformId { get; set; }
-            
+
             public string? Query { get; set; }
-            
+
             public string? StartDate { get; set; }
-            
+
+
+
+
+
             internal AdminSearchUserV3Builder() { }
 
 
@@ -156,14 +160,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.By != null) QueryParams["by"] = builder.By;
-            if (builder.EndDate != null) QueryParams["endDate"] = builder.EndDate;
+            if (builder.By is not null) QueryParams["by"] = builder.By;
+            if (builder.EndDate is not null) QueryParams["endDate"] = builder.EndDate;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.PlatformBy != null) QueryParams["platformBy"] = builder.PlatformBy;
-            if (builder.PlatformId != null) QueryParams["platformId"] = builder.PlatformId;
-            if (builder.Query != null) QueryParams["query"] = builder.Query;
-            if (builder.StartDate != null) QueryParams["startDate"] = builder.StartDate;
+            if (builder.PlatformBy is not null) QueryParams["platformBy"] = builder.PlatformBy;
+            if (builder.PlatformId is not null) QueryParams["platformId"] = builder.PlatformId;
+            if (builder.Query is not null) QueryParams["query"] = builder.Query;
+            if (builder.StartDate is not null) QueryParams["startDate"] = builder.StartDate;
             
 
             
@@ -188,14 +192,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (by != null) QueryParams["by"] = by;
-            if (endDate != null) QueryParams["endDate"] = endDate;
+            if (by is not null) QueryParams["by"] = by;
+            if (endDate is not null) QueryParams["endDate"] = endDate;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (platformBy != null) QueryParams["platformBy"] = platformBy;
-            if (platformId != null) QueryParams["platformId"] = platformId;
-            if (query != null) QueryParams["query"] = query;
-            if (startDate != null) QueryParams["startDate"] = startDate;
+            if (platformBy is not null) QueryParams["platformBy"] = platformBy;
+            if (platformId is not null) QueryParams["platformId"] = platformId;
+            if (query is not null) QueryParams["query"] = query;
+            if (startDate is not null) QueryParams["startDate"] = startDate;
             
 
             
@@ -236,4 +240,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

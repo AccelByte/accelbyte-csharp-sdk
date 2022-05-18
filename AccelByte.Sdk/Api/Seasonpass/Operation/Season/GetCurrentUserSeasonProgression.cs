@@ -31,8 +31,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class GetCurrentUserSeasonProgressionBuilder
             : OperationBuilder<GetCurrentUserSeasonProgressionBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetCurrentUserSeasonProgressionBuilder() { }
 
 
@@ -121,4 +124,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

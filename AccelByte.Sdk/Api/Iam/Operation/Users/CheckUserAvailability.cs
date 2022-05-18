@@ -35,9 +35,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class CheckUserAvailabilityBuilder
             : OperationBuilder<CheckUserAvailabilityBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal CheckUserAvailabilityBuilder() { }
 
 
@@ -70,8 +72,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (field != null) QueryParams["field"] = field;
-            if (query != null) QueryParams["query"] = query;
+            if (field is not null) QueryParams["field"] = field;
+            if (query is not null) QueryParams["query"] = query;
             
 
             
@@ -90,8 +92,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (field != null) QueryParams["field"] = field;
-            if (query != null) QueryParams["query"] = query;
+            if (field is not null) QueryParams["field"] = field;
+            if (query is not null) QueryParams["query"] = query;
             
 
             
@@ -124,4 +126,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

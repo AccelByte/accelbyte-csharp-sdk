@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentProviderConfigEditAggregate(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentProviderConfigEditAggregate(string enumValue)
@@ -89,7 +89,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentProviderConfigEditSpecials(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentProviderConfigEditSpecials(string enumValue)

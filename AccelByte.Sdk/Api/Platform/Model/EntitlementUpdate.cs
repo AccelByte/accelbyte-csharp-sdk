@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator EntitlementUpdateStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public EntitlementUpdateStatus(string enumValue)

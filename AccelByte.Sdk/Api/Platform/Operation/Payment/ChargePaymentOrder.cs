@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ChargePaymentOrderBuilder
             : OperationBuilder<ChargePaymentOrderBuilder>
         {
-            
-            
+
+
             public Model.PaymentOrderChargeRequest? Body { get; set; }
-            
+
+
+
+
             internal ChargePaymentOrderBuilder() { }
 
 
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

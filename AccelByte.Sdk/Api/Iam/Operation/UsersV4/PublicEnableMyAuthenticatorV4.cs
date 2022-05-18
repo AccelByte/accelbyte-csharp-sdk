@@ -33,9 +33,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicEnableMyAuthenticatorV4Builder
             : OperationBuilder<PublicEnableMyAuthenticatorV4Builder>
         {
-            
+
+
+
             public string? Code { get; set; }
-            
+
+
+
             internal PublicEnableMyAuthenticatorV4Builder() { }
 
 
@@ -69,7 +73,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             
-            if (builder.Code != null) FormParams["code"] = builder.Code;
+            if (builder.Code is not null) FormParams["code"] = builder.Code;
 
             
             
@@ -87,7 +91,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             
-            if (code != null) FormParams["code"] = code;
+            if (code is not null) FormParams["code"] = code;
 
             
             
@@ -119,4 +123,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

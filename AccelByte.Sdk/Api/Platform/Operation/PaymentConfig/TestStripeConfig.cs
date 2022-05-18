@@ -42,10 +42,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class TestStripeConfigBuilder
             : OperationBuilder<TestStripeConfigBuilder>
         {
+
             public bool? Sandbox { get; set; }
-            
+
+
             public Model.StripeConfig? Body { get; set; }
-            
+
+
+
+
             internal TestStripeConfigBuilder() { }
 
 
@@ -140,4 +145,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

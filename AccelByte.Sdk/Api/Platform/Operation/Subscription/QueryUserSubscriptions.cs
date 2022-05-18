@@ -30,26 +30,29 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryUserSubscriptionsBuilder
             : OperationBuilder<QueryUserSubscriptionsBuilder>
         {
-            
-            
-            public string? ChargeStatus { get; set; }
-            
+
+            public QueryUserSubscriptionsChargeStatus? ChargeStatus { get; set; }
+
             public string? ItemId { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? Sku { get; set; }
-            
-            public string? Status { get; set; }
-            
-            public string? SubscribedBy { get; set; }
-            
+
+            public QueryUserSubscriptionsStatus? Status { get; set; }
+
+            public QueryUserSubscriptionsSubscribedBy? SubscribedBy { get; set; }
+
+
+
+
+
             internal QueryUserSubscriptionsBuilder() { }
 
 
-            public QueryUserSubscriptionsBuilder SetChargeStatus(string _chargeStatus)
+            public QueryUserSubscriptionsBuilder SetChargeStatus(QueryUserSubscriptionsChargeStatus _chargeStatus)
             {
                 ChargeStatus = _chargeStatus;
                 return this;
@@ -79,13 +82,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryUserSubscriptionsBuilder SetStatus(string _status)
+            public QueryUserSubscriptionsBuilder SetStatus(QueryUserSubscriptionsStatus _status)
             {
                 Status = _status;
                 return this;
             }
 
-            public QueryUserSubscriptionsBuilder SetSubscribedBy(string _subscribedBy)
+            public QueryUserSubscriptionsBuilder SetSubscribedBy(QueryUserSubscriptionsSubscribedBy _subscribedBy)
             {
                 SubscribedBy = _subscribedBy;
                 return this;
@@ -118,13 +121,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.ChargeStatus != null) QueryParams["chargeStatus"] = builder.ChargeStatus;
-            if (builder.ItemId != null) QueryParams["itemId"] = builder.ItemId;
+            if (builder.ChargeStatus is not null) QueryParams["chargeStatus"] = builder.ChargeStatus.Value;
+            if (builder.ItemId is not null) QueryParams["itemId"] = builder.ItemId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Sku != null) QueryParams["sku"] = builder.Sku;
-            if (builder.Status != null) QueryParams["status"] = builder.Status;
-            if (builder.SubscribedBy != null) QueryParams["subscribedBy"] = builder.SubscribedBy;
+            if (builder.Sku is not null) QueryParams["sku"] = builder.Sku;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
+            if (builder.SubscribedBy is not null) QueryParams["subscribedBy"] = builder.SubscribedBy.Value;
             
 
             
@@ -138,25 +141,25 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public QueryUserSubscriptions(
             string namespace_,            
             string userId,            
-            string? chargeStatus,            
+            QueryUserSubscriptionsChargeStatus? chargeStatus,            
             string? itemId,            
             int? limit,            
             int? offset,            
             string? sku,            
-            string? status,            
-            string? subscribedBy            
+            QueryUserSubscriptionsStatus? status,            
+            QueryUserSubscriptionsSubscribedBy? subscribedBy            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (chargeStatus != null) QueryParams["chargeStatus"] = chargeStatus;
-            if (itemId != null) QueryParams["itemId"] = itemId;
+            if (chargeStatus is not null) QueryParams["chargeStatus"] = chargeStatus.Value;
+            if (itemId is not null) QueryParams["itemId"] = itemId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (sku != null) QueryParams["sku"] = sku;
-            if (status != null) QueryParams["status"] = status;
-            if (subscribedBy != null) QueryParams["subscribedBy"] = subscribedBy;
+            if (sku is not null) QueryParams["sku"] = sku;
+            if (status is not null) QueryParams["status"] = status.Value;
+            if (subscribedBy is not null) QueryParams["subscribedBy"] = subscribedBy.Value;
             
 
             
@@ -197,4 +200,83 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class QueryUserSubscriptionsChargeStatus : StringEnum<QueryUserSubscriptionsChargeStatus>
+    {
+        public static readonly QueryUserSubscriptionsChargeStatus Charged
+            = new QueryUserSubscriptionsChargeStatus("CHARGED");
+
+        public static readonly QueryUserSubscriptionsChargeStatus ChargeFailed
+            = new QueryUserSubscriptionsChargeStatus("CHARGE_FAILED");
+
+        public static readonly QueryUserSubscriptionsChargeStatus Never
+            = new QueryUserSubscriptionsChargeStatus("NEVER");
+
+        public static readonly QueryUserSubscriptionsChargeStatus RecurringCharging
+            = new QueryUserSubscriptionsChargeStatus("RECURRING_CHARGING");
+
+        public static readonly QueryUserSubscriptionsChargeStatus Setup
+            = new QueryUserSubscriptionsChargeStatus("SETUP");
+
+
+        public static implicit operator QueryUserSubscriptionsChargeStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryUserSubscriptionsChargeStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class QueryUserSubscriptionsStatus : StringEnum<QueryUserSubscriptionsStatus>
+    {
+        public static readonly QueryUserSubscriptionsStatus Active
+            = new QueryUserSubscriptionsStatus("ACTIVE");
+
+        public static readonly QueryUserSubscriptionsStatus Cancelled
+            = new QueryUserSubscriptionsStatus("CANCELLED");
+
+        public static readonly QueryUserSubscriptionsStatus Expired
+            = new QueryUserSubscriptionsStatus("EXPIRED");
+
+        public static readonly QueryUserSubscriptionsStatus Init
+            = new QueryUserSubscriptionsStatus("INIT");
+
+
+        public static implicit operator QueryUserSubscriptionsStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryUserSubscriptionsStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class QueryUserSubscriptionsSubscribedBy : StringEnum<QueryUserSubscriptionsSubscribedBy>
+    {
+        public static readonly QueryUserSubscriptionsSubscribedBy Platform
+            = new QueryUserSubscriptionsSubscribedBy("PLATFORM");
+
+        public static readonly QueryUserSubscriptionsSubscribedBy User
+            = new QueryUserSubscriptionsSubscribedBy("USER");
+
+
+        public static implicit operator QueryUserSubscriptionsSubscribedBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryUserSubscriptionsSubscribedBy(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

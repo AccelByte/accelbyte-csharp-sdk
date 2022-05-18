@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class SyncPaymentOrdersBuilder
             : OperationBuilder<SyncPaymentOrdersBuilder>
         {
+
             public string? NextEvaluatedKey { get; set; }
-            
-            
-            
+
+
+
+
+
             internal SyncPaymentOrdersBuilder() { }
 
 
@@ -68,9 +71,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             
-            if (builder.NextEvaluatedKey != null) QueryParams["nextEvaluatedKey"] = builder.NextEvaluatedKey;
-            if (end != null) QueryParams["end"] = end;
-            if (start != null) QueryParams["start"] = start;
+            if (builder.NextEvaluatedKey is not null) QueryParams["nextEvaluatedKey"] = builder.NextEvaluatedKey;
+            if (end is not null) QueryParams["end"] = end;
+            if (start is not null) QueryParams["start"] = start;
             
 
             
@@ -88,9 +91,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             
-            if (nextEvaluatedKey != null) QueryParams["nextEvaluatedKey"] = nextEvaluatedKey;
-            if (end != null) QueryParams["end"] = end;
-            if (start != null) QueryParams["start"] = start;
+            if (nextEvaluatedKey is not null) QueryParams["nextEvaluatedKey"] = nextEvaluatedKey;
+            if (end is not null) QueryParams["end"] = end;
+            if (start is not null) QueryParams["start"] = start;
             
 
             
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

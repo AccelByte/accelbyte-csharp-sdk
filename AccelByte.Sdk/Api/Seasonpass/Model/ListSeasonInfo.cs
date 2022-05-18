@@ -61,7 +61,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
 
         public static implicit operator ListSeasonInfoStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public ListSeasonInfoStatus(string enumValue)

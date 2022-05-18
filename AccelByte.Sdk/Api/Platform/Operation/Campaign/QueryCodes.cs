@@ -30,18 +30,21 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryCodesBuilder
             : OperationBuilder<QueryCodesBuilder>
         {
-            
-            
+
             public bool? ActiveOnly { get; set; }
-            
+
             public int? BatchNo { get; set; }
-            
+
             public string? Code { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
+
+
+
+
             internal QueryCodesBuilder() { }
 
 
@@ -104,7 +107,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
             if (builder.BatchNo != null) QueryParams["batchNo"] = Convert.ToString(builder.BatchNo)!;
-            if (builder.Code != null) QueryParams["code"] = builder.Code;
+            if (builder.Code is not null) QueryParams["code"] = builder.Code;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
@@ -132,7 +135,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
             if (batchNo != null) QueryParams["batchNo"] = Convert.ToString(batchNo)!;
-            if (code != null) QueryParams["code"] = code;
+            if (code is not null) QueryParams["code"] = code;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
@@ -175,4 +178,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

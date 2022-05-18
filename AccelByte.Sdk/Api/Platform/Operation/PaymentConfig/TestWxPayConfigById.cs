@@ -30,7 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class TestWxPayConfigByIdBuilder
             : OperationBuilder<TestWxPayConfigByIdBuilder>
         {
-            
+
+
+
+
+
             internal TestWxPayConfigByIdBuilder() { }
 
 
@@ -113,4 +117,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

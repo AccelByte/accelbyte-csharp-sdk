@@ -67,8 +67,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class JoinGroupV1Builder
             : OperationBuilder<JoinGroupV1Builder>
         {
-            
-            
+
+
+
+
+
             internal JoinGroupV1Builder() { }
 
 
@@ -157,4 +160,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

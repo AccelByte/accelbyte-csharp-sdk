@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetUserEntitlementOwnershipByItemId operation = new GetUserEntitlementOwnershipByItemId(
                 Namespace,                
                 UserId,                
-                EntitlementClazz,                
+                (EntitlementClazz is null ? null : GetUserEntitlementOwnershipByItemIdEntitlementClazz.NewValue(EntitlementClazz)),                
                 ItemId                
             );            
             

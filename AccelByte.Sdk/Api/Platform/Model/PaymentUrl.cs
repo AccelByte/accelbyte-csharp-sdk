@@ -62,7 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentUrlPaymentProvider(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentUrlPaymentProvider(string enumValue)
@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentUrlPaymentType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentUrlPaymentType(string enumValue)

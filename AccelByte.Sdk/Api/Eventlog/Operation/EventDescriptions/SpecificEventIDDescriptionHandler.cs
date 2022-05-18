@@ -25,8 +25,13 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class SpecificEventIDDescriptionHandlerBuilder
             : OperationBuilder<SpecificEventIDDescriptionHandlerBuilder>
         {
+
             public string? EventIds { get; set; }
-            
+
+
+
+
+
             internal SpecificEventIDDescriptionHandlerBuilder() { }
 
 
@@ -55,7 +60,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             
-            if (builder.EventIds != null) QueryParams["eventIds"] = builder.EventIds;
+            if (builder.EventIds is not null) QueryParams["eventIds"] = builder.EventIds;
             
 
             
@@ -71,7 +76,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             
-            if (eventIds != null) QueryParams["eventIds"] = eventIds;
+            if (eventIds is not null) QueryParams["eventIds"] = eventIds;
             
 
             
@@ -112,4 +117,5 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

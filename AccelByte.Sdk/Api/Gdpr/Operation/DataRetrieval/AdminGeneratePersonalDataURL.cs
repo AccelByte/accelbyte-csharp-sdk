@@ -28,10 +28,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public class AdminGeneratePersonalDataURLBuilder
             : OperationBuilder<AdminGeneratePersonalDataURLBuilder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal AdminGeneratePersonalDataURLBuilder() { }
 
 
@@ -70,7 +71,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             PathParams["userId"] = userId;
             
             
-            if (password != null) FormParams["password"] = password;
+            if (password is not null) FormParams["password"] = password;
 
             
             
@@ -92,7 +93,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             PathParams["userId"] = userId;
             
             
-            if (password != null) FormParams["password"] = password;
+            if (password is not null) FormParams["password"] = password;
 
             
             
@@ -132,4 +133,5 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

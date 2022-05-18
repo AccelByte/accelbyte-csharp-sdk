@@ -30,13 +30,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdatePayPalConfigBuilder
             : OperationBuilder<UpdatePayPalConfigBuilder>
         {
-            
+
             public bool? Sandbox { get; set; }
-            
+
             public bool? Validate { get; set; }
-            
+
+
             public Model.PayPalConfig? Body { get; set; }
-            
+
+
+
+
             internal UpdatePayPalConfigBuilder() { }
 
 
@@ -146,4 +150,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

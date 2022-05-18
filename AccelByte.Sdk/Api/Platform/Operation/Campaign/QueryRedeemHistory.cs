@@ -30,16 +30,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryRedeemHistoryBuilder
             : OperationBuilder<QueryRedeemHistoryBuilder>
         {
-            
-            
+
             public string? Code { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? UserId { get; set; }
-            
+
+
+
+
+
             internal QueryRedeemHistoryBuilder() { }
 
 
@@ -94,10 +97,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["campaignId"] = campaignId;
             PathParams["namespace"] = namespace_;
             
-            if (builder.Code != null) QueryParams["code"] = builder.Code;
+            if (builder.Code is not null) QueryParams["code"] = builder.Code;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
+            if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
             
 
             
@@ -120,10 +123,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["campaignId"] = campaignId;
             PathParams["namespace"] = namespace_;
             
-            if (code != null) QueryParams["code"] = code;
+            if (code is not null) QueryParams["code"] = code;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (userId != null) QueryParams["userId"] = userId;
+            if (userId is not null) QueryParams["userId"] = userId;
             
 
             
@@ -164,4 +167,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

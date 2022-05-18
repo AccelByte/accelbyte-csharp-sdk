@@ -27,14 +27,15 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class IndirectBulkAcceptVersionedPolicyBuilder
             : OperationBuilder<IndirectBulkAcceptVersionedPolicyBuilder>
         {
-            
-            
+
             public string? PublisherUserId { get; set; }
-            
-            
-            
+
+
             public List<Model.AcceptAgreementRequest>? Body { get; set; }
-            
+
+
+
+
             internal IndirectBulkAcceptVersionedPolicyBuilder() { }
 
 
@@ -83,9 +84,9 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.PublisherUserId != null) QueryParams["publisherUserId"] = builder.PublisherUserId;
-            if (clientId != null) QueryParams["clientId"] = clientId;
-            if (countryCode != null) QueryParams["countryCode"] = countryCode;
+            if (builder.PublisherUserId is not null) QueryParams["publisherUserId"] = builder.PublisherUserId;
+            if (clientId is not null) QueryParams["clientId"] = clientId;
+            if (countryCode is not null) QueryParams["countryCode"] = countryCode;
             
 
             
@@ -109,9 +110,9 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (publisherUserId != null) QueryParams["publisherUserId"] = publisherUserId;
-            if (clientId != null) QueryParams["clientId"] = clientId;
-            if (countryCode != null) QueryParams["countryCode"] = countryCode;
+            if (publisherUserId is not null) QueryParams["publisherUserId"] = publisherUserId;
+            if (clientId is not null) QueryParams["clientId"] = clientId;
+            if (countryCode is not null) QueryParams["countryCode"] = countryCode;
             
 
             
@@ -153,4 +154,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

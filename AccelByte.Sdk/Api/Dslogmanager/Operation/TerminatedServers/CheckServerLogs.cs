@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         public class CheckServerLogsBuilder
             : OperationBuilder<CheckServerLogsBuilder>
         {
-            
-            
+
+
+
+
+
             internal CheckServerLogsBuilder() { }
 
 
@@ -120,4 +123,5 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

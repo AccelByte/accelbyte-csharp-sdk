@@ -31,11 +31,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetBulkItemIdBySkusBuilder
             : OperationBuilder<GetBulkItemIdBySkusBuilder>
         {
-            
+
             public List<string>? Sku { get; set; }
-            
+
             public string? StoreId { get; set; }
-            
+
+
+
+
+
             internal GetBulkItemIdBySkusBuilder() { }
 
 
@@ -74,8 +78,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Sku != null) QueryParams["sku"] = builder.Sku;
-            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (builder.Sku is not null) QueryParams["sku"] = builder.Sku;
+            if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
             
 
             
@@ -95,8 +99,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (sku != null) QueryParams["sku"] = sku;
-            if (storeId != null) QueryParams["storeId"] = storeId;
+            if (sku is not null) QueryParams["sku"] = sku;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
             
 
             
@@ -138,4 +142,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdatePlatformWalletConfigBuilder
             : OperationBuilder<UpdatePlatformWalletConfigBuilder>
         {
-            
-            
+
+
             public Model.PlatformWalletConfigUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdatePlatformWalletConfigBuilder() { }
 
 
@@ -49,7 +52,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public UpdatePlatformWalletConfig Build(
                 string namespace_,
-                string platform
+                UpdatePlatformWalletConfigPlatform platform
             )
             {
                 UpdatePlatformWalletConfig op = new UpdatePlatformWalletConfig(this,
@@ -64,11 +67,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         private UpdatePlatformWalletConfig(UpdatePlatformWalletConfigBuilder builder,
             string namespace_,
-            string platform
+            UpdatePlatformWalletConfigPlatform platform
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["platform"] = platform;
+            PathParams["platform"] = platform.Value;
             
             
 
@@ -83,12 +86,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public UpdatePlatformWalletConfig(
             string namespace_,            
-            string platform,            
+            UpdatePlatformWalletConfigPlatform platform,            
             Model.PlatformWalletConfigUpdate body            
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["platform"] = platform;
+            PathParams["platform"] = platform.Value;
             
             
 
@@ -131,4 +134,44 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class UpdatePlatformWalletConfigPlatform : StringEnum<UpdatePlatformWalletConfigPlatform>
+    {
+        public static readonly UpdatePlatformWalletConfigPlatform Epic
+            = new UpdatePlatformWalletConfigPlatform("Epic");
+
+        public static readonly UpdatePlatformWalletConfigPlatform Googleplay
+            = new UpdatePlatformWalletConfigPlatform("GooglePlay");
+
+        public static readonly UpdatePlatformWalletConfigPlatform Ios
+            = new UpdatePlatformWalletConfigPlatform("IOS");
+
+        public static readonly UpdatePlatformWalletConfigPlatform Nintendo
+            = new UpdatePlatformWalletConfigPlatform("Nintendo");
+
+        public static readonly UpdatePlatformWalletConfigPlatform Other
+            = new UpdatePlatformWalletConfigPlatform("Other");
+
+        public static readonly UpdatePlatformWalletConfigPlatform Playstation
+            = new UpdatePlatformWalletConfigPlatform("Playstation");
+
+        public static readonly UpdatePlatformWalletConfigPlatform Steam
+            = new UpdatePlatformWalletConfigPlatform("Steam");
+
+        public static readonly UpdatePlatformWalletConfigPlatform Xbox
+            = new UpdatePlatformWalletConfigPlatform("Xbox");
+
+
+        public static implicit operator UpdatePlatformWalletConfigPlatform(string value)
+        {
+            return NewValue(value);
+        }
+
+        public UpdatePlatformWalletConfigPlatform(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

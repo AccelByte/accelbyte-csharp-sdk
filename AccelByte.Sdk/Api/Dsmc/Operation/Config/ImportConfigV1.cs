@@ -32,9 +32,13 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class ImportConfigV1Builder
             : OperationBuilder<ImportConfigV1Builder>
         {
-            
+
+
+
             public Stream? File { get; set; }
-            
+
+
+
             internal ImportConfigV1Builder() { }
 
 
@@ -68,7 +72,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             PathParams["namespace"] = namespace_;
             
             
-            if (builder.File != null) FormParams["file"] = builder.File;
+            if (builder.File is not null) FormParams["file"] = builder.File;
 
             
             
@@ -86,7 +90,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             PathParams["namespace"] = namespace_;
             
             
-            if (file != null) FormParams["file"] = file;
+            if (file is not null) FormParams["file"] = file;
 
             
             
@@ -126,4 +130,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

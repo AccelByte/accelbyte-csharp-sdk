@@ -31,17 +31,21 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryUncategorizedItemsBuilder
             : OperationBuilder<QueryUncategorizedItemsBuilder>
         {
-            
+
             public bool? ActiveOnly { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? SortBy { get; set; }
-            
+
             public string? StoreId { get; set; }
-            
+
+
+
+
+
             internal QueryUncategorizedItemsBuilder() { }
 
 
@@ -101,8 +105,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
-            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
             
 
             
@@ -127,8 +131,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (sortBy != null) QueryParams["sortBy"] = sortBy;
-            if (storeId != null) QueryParams["storeId"] = storeId;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
             
 
             
@@ -169,4 +173,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -54,12 +54,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PlatformTokenRequestHandlerBuilder
             : OperationBuilder<PlatformTokenRequestHandlerBuilder>
         {
-            
-            
+
+
+
             public string? DeviceId { get; set; }
-            
+
             public string? PlatformToken { get; set; }
-            
+
+
+
             internal PlatformTokenRequestHandlerBuilder() { }
 
 
@@ -103,8 +106,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["platformId"] = platformId;
             
             
-            if (builder.DeviceId != null) FormParams["device_id"] = builder.DeviceId;
-            if (builder.PlatformToken != null) FormParams["platform_token"] = builder.PlatformToken;
+            if (builder.DeviceId is not null) FormParams["device_id"] = builder.DeviceId;
+            if (builder.PlatformToken is not null) FormParams["platform_token"] = builder.PlatformToken;
 
             
             
@@ -125,8 +128,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["platformId"] = platformId;
             
             
-            if (deviceId != null) FormParams["device_id"] = deviceId;
-            if (platformToken != null) FormParams["platform_token"] = platformToken;
+            if (deviceId is not null) FormParams["device_id"] = deviceId;
+            if (platformToken is not null) FormParams["platform_token"] = platformToken;
 
             
             
@@ -166,4 +169,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

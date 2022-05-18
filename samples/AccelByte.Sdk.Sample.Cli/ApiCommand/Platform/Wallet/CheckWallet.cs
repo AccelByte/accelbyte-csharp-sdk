@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 CurrencyCode,                
                 Namespace,                
                 UserId,                
-                Origin                
+                CheckWalletOrigin.NewValue(Origin)                
             );            
             
             wrapper.CheckWallet(operation);

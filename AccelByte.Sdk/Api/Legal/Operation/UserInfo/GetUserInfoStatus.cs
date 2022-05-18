@@ -31,8 +31,13 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class GetUserInfoStatusBuilder
             : OperationBuilder<GetUserInfoStatusBuilder>
         {
+
             public string? Namespaces { get; set; }
-            
+
+
+
+
+
             internal GetUserInfoStatusBuilder() { }
 
 
@@ -61,7 +66,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             
-            if (builder.Namespaces != null) QueryParams["namespaces"] = builder.Namespaces;
+            if (builder.Namespaces is not null) QueryParams["namespaces"] = builder.Namespaces;
             
 
             
@@ -77,7 +82,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             
-            if (namespaces != null) QueryParams["namespaces"] = namespaces;
+            if (namespaces is not null) QueryParams["namespaces"] = namespaces;
             
 
             
@@ -118,4 +123,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

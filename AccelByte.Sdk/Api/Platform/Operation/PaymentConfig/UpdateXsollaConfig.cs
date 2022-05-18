@@ -30,11 +30,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateXsollaConfigBuilder
             : OperationBuilder<UpdateXsollaConfigBuilder>
         {
-            
+
             public bool? Validate { get; set; }
-            
+
+
             public Model.XsollaConfig? Body { get; set; }
-            
+
+
+
+
             internal UpdateXsollaConfigBuilder() { }
 
 
@@ -135,4 +139,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

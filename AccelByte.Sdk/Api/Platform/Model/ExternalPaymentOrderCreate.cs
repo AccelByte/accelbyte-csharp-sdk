@@ -109,7 +109,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator ExternalPaymentOrderCreateItemType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public ExternalPaymentOrderCreateItemType(string enumValue)

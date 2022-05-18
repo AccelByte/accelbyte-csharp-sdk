@@ -30,13 +30,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicExistsAnyMyActiveEntitlementBuilder
             : OperationBuilder<PublicExistsAnyMyActiveEntitlementBuilder>
         {
-            
+
             public List<string>? AppIds { get; set; }
-            
+
             public List<string>? ItemIds { get; set; }
-            
+
             public List<string>? Skus { get; set; }
-            
+
+
+
+
+
             internal PublicExistsAnyMyActiveEntitlementBuilder() { }
 
 
@@ -81,9 +85,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.AppIds != null) QueryParams["appIds"] = builder.AppIds;
-            if (builder.ItemIds != null) QueryParams["itemIds"] = builder.ItemIds;
-            if (builder.Skus != null) QueryParams["skus"] = builder.Skus;
+            if (builder.AppIds is not null) QueryParams["appIds"] = builder.AppIds;
+            if (builder.ItemIds is not null) QueryParams["itemIds"] = builder.ItemIds;
+            if (builder.Skus is not null) QueryParams["skus"] = builder.Skus;
             
 
             
@@ -106,9 +110,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (appIds != null) QueryParams["appIds"] = appIds;
-            if (itemIds != null) QueryParams["itemIds"] = itemIds;
-            if (skus != null) QueryParams["skus"] = skus;
+            if (appIds is not null) QueryParams["appIds"] = appIds;
+            if (itemIds is not null) QueryParams["itemIds"] = itemIds;
+            if (skus is not null) QueryParams["skus"] = skus;
             
 
             
@@ -152,4 +156,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

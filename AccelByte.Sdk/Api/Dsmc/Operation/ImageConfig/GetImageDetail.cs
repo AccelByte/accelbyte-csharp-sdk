@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class GetImageDetailBuilder
             : OperationBuilder<GetImageDetailBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetImageDetailBuilder() { }
 
 
@@ -120,4 +123,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

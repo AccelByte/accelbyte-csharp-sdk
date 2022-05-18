@@ -28,8 +28,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class GetTopicByTopicNameBuilder
             : OperationBuilder<GetTopicByTopicNameBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetTopicByTopicNameBuilder() { }
 
 
@@ -118,4 +121,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -29,13 +29,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicListCurrenciesBuilder
             : OperationBuilder<PublicListCurrenciesBuilder>
         {
-            
-            public string? CurrencyType { get; set; }
-            
+
+            public PublicListCurrenciesCurrencyType? CurrencyType { get; set; }
+
+
+
+
+
             internal PublicListCurrenciesBuilder() { }
 
 
-            public PublicListCurrenciesBuilder SetCurrencyType(string _currencyType)
+            public PublicListCurrenciesBuilder SetCurrencyType(PublicListCurrenciesCurrencyType _currencyType)
             {
                 CurrencyType = _currencyType;
                 return this;
@@ -64,7 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.CurrencyType != null) QueryParams["currencyType"] = builder.CurrencyType;
+            if (builder.CurrencyType is not null) QueryParams["currencyType"] = builder.CurrencyType.Value;
             
 
             
@@ -76,12 +80,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public PublicListCurrencies(
             string namespace_,            
-            string? currencyType            
+            PublicListCurrenciesCurrencyType? currencyType            
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (currencyType != null) QueryParams["currencyType"] = currencyType;
+            if (currencyType is not null) QueryParams["currencyType"] = currencyType.Value;
             
 
             
@@ -121,4 +125,26 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class PublicListCurrenciesCurrencyType : StringEnum<PublicListCurrenciesCurrencyType>
+    {
+        public static readonly PublicListCurrenciesCurrencyType Real
+            = new PublicListCurrenciesCurrencyType("REAL");
+
+        public static readonly PublicListCurrenciesCurrencyType Virtual
+            = new PublicListCurrenciesCurrencyType("VIRTUAL");
+
+
+        public static implicit operator PublicListCurrenciesCurrencyType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicListCurrenciesCurrencyType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

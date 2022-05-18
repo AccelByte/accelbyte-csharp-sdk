@@ -28,9 +28,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateDLCItemConfigBuilder
             : OperationBuilder<UpdateDLCItemConfigBuilder>
         {
-            
+
+
             public Model.DLCItemConfigUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdateDLCItemConfigBuilder() { }
 
 
@@ -122,4 +126,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

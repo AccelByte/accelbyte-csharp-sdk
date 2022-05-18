@@ -30,15 +30,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicGetUserEntitlementBySkuBuilder
             : OperationBuilder<PublicGetUserEntitlementBySkuBuilder>
         {
-            
-            
-            public string? EntitlementClazz { get; set; }
-            
-            
+
+            public PublicGetUserEntitlementBySkuEntitlementClazz? EntitlementClazz { get; set; }
+
+
+
+
+
             internal PublicGetUserEntitlementBySkuBuilder() { }
 
 
-            public PublicGetUserEntitlementBySkuBuilder SetEntitlementClazz(string _entitlementClazz)
+            public PublicGetUserEntitlementBySkuBuilder SetEntitlementClazz(PublicGetUserEntitlementBySkuEntitlementClazz _entitlementClazz)
             {
                 EntitlementClazz = _entitlementClazz;
                 return this;
@@ -74,8 +76,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.EntitlementClazz != null) QueryParams["entitlementClazz"] = builder.EntitlementClazz;
-            if (sku != null) QueryParams["sku"] = sku;
+            if (builder.EntitlementClazz is not null) QueryParams["entitlementClazz"] = builder.EntitlementClazz.Value;
+            if (sku is not null) QueryParams["sku"] = sku;
             
 
             
@@ -89,15 +91,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public PublicGetUserEntitlementBySku(
             string namespace_,            
             string userId,            
-            string? entitlementClazz,            
+            PublicGetUserEntitlementBySkuEntitlementClazz? entitlementClazz,            
             string sku            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (entitlementClazz != null) QueryParams["entitlementClazz"] = entitlementClazz;
-            if (sku != null) QueryParams["sku"] = sku;
+            if (entitlementClazz is not null) QueryParams["entitlementClazz"] = entitlementClazz.Value;
+            if (sku is not null) QueryParams["sku"] = sku;
             
 
             
@@ -138,4 +140,35 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class PublicGetUserEntitlementBySkuEntitlementClazz : StringEnum<PublicGetUserEntitlementBySkuEntitlementClazz>
+    {
+        public static readonly PublicGetUserEntitlementBySkuEntitlementClazz App
+            = new PublicGetUserEntitlementBySkuEntitlementClazz("APP");
+
+        public static readonly PublicGetUserEntitlementBySkuEntitlementClazz Code
+            = new PublicGetUserEntitlementBySkuEntitlementClazz("CODE");
+
+        public static readonly PublicGetUserEntitlementBySkuEntitlementClazz Entitlement
+            = new PublicGetUserEntitlementBySkuEntitlementClazz("ENTITLEMENT");
+
+        public static readonly PublicGetUserEntitlementBySkuEntitlementClazz Media
+            = new PublicGetUserEntitlementBySkuEntitlementClazz("MEDIA");
+
+        public static readonly PublicGetUserEntitlementBySkuEntitlementClazz Subscription
+            = new PublicGetUserEntitlementBySkuEntitlementClazz("SUBSCRIPTION");
+
+
+        public static implicit operator PublicGetUserEntitlementBySkuEntitlementClazz(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicGetUserEntitlementBySkuEntitlementClazz(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

@@ -30,11 +30,13 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public class ListGameRecordsHandlerV1Builder
             : OperationBuilder<ListGameRecordsHandlerV1Builder>
         {
-            
+
             public string? Query { get; set; }
-            
-            
-            
+
+
+
+
+
             internal ListGameRecordsHandlerV1Builder() { }
 
 
@@ -73,7 +75,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Query != null) QueryParams["query"] = builder.Query;
+            if (builder.Query is not null) QueryParams["query"] = builder.Query;
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
             
@@ -95,7 +97,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (query != null) QueryParams["query"] = query;
+            if (query is not null) QueryParams["query"] = query;
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
             
@@ -138,4 +140,5 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

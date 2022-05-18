@@ -31,7 +31,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class RetrieveEligibilitiesPublicBuilder
             : OperationBuilder<RetrieveEligibilitiesPublicBuilder>
         {
-            
+
+
+
+
+
             internal RetrieveEligibilitiesPublicBuilder() { }
 
 
@@ -114,4 +118,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

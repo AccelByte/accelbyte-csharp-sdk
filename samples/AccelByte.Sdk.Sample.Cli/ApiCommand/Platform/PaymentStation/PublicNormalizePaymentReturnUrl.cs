@@ -98,7 +98,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId,                
                 OrderNo,                
                 PaymentOrderNo,                
-                PaymentProvider,                
+                PublicNormalizePaymentReturnUrlPaymentProvider.NewValue(PaymentProvider),                
                 ReturnUrl                
             );            
             

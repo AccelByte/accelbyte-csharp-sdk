@@ -28,8 +28,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public class PublicGetUserAccountDeletionStatusBuilder
             : OperationBuilder<PublicGetUserAccountDeletionStatusBuilder>
         {
-            
-            
+
+
+
+
+
             internal PublicGetUserAccountDeletionStatusBuilder() { }
 
 
@@ -118,4 +121,5 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

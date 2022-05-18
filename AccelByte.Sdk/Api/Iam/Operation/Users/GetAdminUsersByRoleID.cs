@@ -39,15 +39,19 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class GetAdminUsersByRoleIDBuilder
             : OperationBuilder<GetAdminUsersByRoleIDBuilder>
         {
-            
+
             public long? After { get; set; }
-            
+
             public long? Before { get; set; }
-            
+
             public long? Limit { get; set; }
-            
+
             public string? RoleId { get; set; }
-            
+
+
+
+
+
             internal GetAdminUsersByRoleIDBuilder() { }
 
 
@@ -101,7 +105,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.After != null) QueryParams["after"] = Convert.ToString(builder.After)!;
             if (builder.Before != null) QueryParams["before"] = Convert.ToString(builder.Before)!;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            if (builder.RoleId != null) QueryParams["roleId"] = builder.RoleId;
+            if (builder.RoleId is not null) QueryParams["roleId"] = builder.RoleId;
             
 
             
@@ -125,7 +129,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (after != null) QueryParams["after"] = Convert.ToString(after)!;
             if (before != null) QueryParams["before"] = Convert.ToString(before)!;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            if (roleId != null) QueryParams["roleId"] = roleId;
+            if (roleId is not null) QueryParams["roleId"] = roleId;
             
 
             
@@ -166,4 +170,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

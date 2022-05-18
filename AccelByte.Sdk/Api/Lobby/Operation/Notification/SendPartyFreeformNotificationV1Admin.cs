@@ -28,9 +28,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class SendPartyFreeformNotificationV1AdminBuilder
             : OperationBuilder<SendPartyFreeformNotificationV1AdminBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal SendPartyFreeformNotificationV1AdminBuilder() { }
 
 
@@ -117,4 +119,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

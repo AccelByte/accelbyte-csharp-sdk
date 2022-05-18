@@ -31,15 +31,19 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class GetLeaderboardConfigurationsAdminV1Builder
             : OperationBuilder<GetLeaderboardConfigurationsAdminV1Builder>
         {
-            
+
             public bool? IsArchived { get; set; }
-            
+
             public bool? IsDeleted { get; set; }
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetLeaderboardConfigurationsAdminV1Builder() { }
 
 
@@ -158,4 +162,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

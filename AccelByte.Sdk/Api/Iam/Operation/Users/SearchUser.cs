@@ -36,9 +36,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class SearchUserBuilder
             : OperationBuilder<SearchUserBuilder>
         {
-            
+
             public string? Query { get; set; }
-            
+
+
+
+
+
             internal SearchUserBuilder() { }
 
 
@@ -71,7 +75,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Query != null) QueryParams["query"] = builder.Query;
+            if (builder.Query is not null) QueryParams["query"] = builder.Query;
             
 
             
@@ -89,7 +93,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (query != null) QueryParams["query"] = query;
+            if (query is not null) QueryParams["query"] = query;
             
 
             
@@ -130,4 +134,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

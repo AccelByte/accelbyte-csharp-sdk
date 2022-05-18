@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class FulfillItemBuilder
             : OperationBuilder<FulfillItemBuilder>
         {
-            
-            
+
+
             public Model.FulfillmentRequest? Body { get; set; }
-            
+
+
+
+
             internal FulfillItemBuilder() { }
 
 
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

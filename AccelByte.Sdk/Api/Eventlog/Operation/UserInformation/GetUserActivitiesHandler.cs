@@ -27,11 +27,13 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class GetUserActivitiesHandlerBuilder
             : OperationBuilder<GetUserActivitiesHandlerBuilder>
         {
-            
-            
+
             public long? Offset { get; set; }
-            
-            
+
+
+
+
+
             internal GetUserActivitiesHandlerBuilder() { }
 
 
@@ -135,4 +137,5 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

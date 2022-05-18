@@ -43,7 +43,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class LeaveGroupPublicV1Builder
             : OperationBuilder<LeaveGroupPublicV1Builder>
         {
-            
+
+
+
+
+
             internal LeaveGroupPublicV1Builder() { }
 
 
@@ -126,4 +130,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

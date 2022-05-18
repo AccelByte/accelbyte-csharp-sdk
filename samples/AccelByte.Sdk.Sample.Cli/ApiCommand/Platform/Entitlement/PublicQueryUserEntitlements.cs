@@ -62,8 +62,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             PublicQueryUserEntitlements operation = new PublicQueryUserEntitlements(
                 Namespace,                
                 UserId,                
-                AppType,                
-                EntitlementClazz,                
+                (AppType is null ? null : PublicQueryUserEntitlementsAppType.NewValue(AppType)),                
+                (EntitlementClazz is null ? null : PublicQueryUserEntitlementsEntitlementClazz.NewValue(EntitlementClazz)),                
                 EntitlementName,                
                 ItemId,                
                 Limit,                

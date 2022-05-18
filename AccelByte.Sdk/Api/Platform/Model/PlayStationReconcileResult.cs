@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PlayStationReconcileResultStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PlayStationReconcileResultStatus(string enumValue)

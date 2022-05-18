@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
 
         public static implicit operator UserProfileStatusUpdateStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public UserProfileStatusUpdateStatus(string enumValue)

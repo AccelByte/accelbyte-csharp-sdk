@@ -97,7 +97,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator FullAppInfoGenres(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public FullAppInfoGenres(string enumValue)
@@ -127,7 +127,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator FullAppInfoPlatforms(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public FullAppInfoPlatforms(string enumValue)
@@ -160,7 +160,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator FullAppInfoPlayers(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public FullAppInfoPlayers(string enumValue)
@@ -208,7 +208,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator FullAppInfoPrimaryGenre(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public FullAppInfoPrimaryGenre(string enumValue)

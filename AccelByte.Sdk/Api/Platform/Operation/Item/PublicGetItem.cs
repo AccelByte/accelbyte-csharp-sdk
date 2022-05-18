@@ -32,16 +32,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicGetItemBuilder
             : OperationBuilder<PublicGetItemBuilder>
         {
-            
-            
+
             public string? Language { get; set; }
-            
+
             public bool? PopulateBundle { get; set; }
-            
+
             public string? Region { get; set; }
-            
+
             public string? StoreId { get; set; }
-            
+
+
+
+
+
             internal PublicGetItemBuilder() { }
 
 
@@ -96,10 +99,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
             
-            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.Language is not null) QueryParams["language"] = builder.Language;
             if (builder.PopulateBundle != null) QueryParams["populateBundle"] = Convert.ToString(builder.PopulateBundle)!;
-            if (builder.Region != null) QueryParams["region"] = builder.Region;
-            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (builder.Region is not null) QueryParams["region"] = builder.Region;
+            if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
             
 
             
@@ -121,10 +124,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
             
-            if (language != null) QueryParams["language"] = language;
+            if (language is not null) QueryParams["language"] = language;
             if (populateBundle != null) QueryParams["populateBundle"] = Convert.ToString(populateBundle)!;
-            if (region != null) QueryParams["region"] = region;
-            if (storeId != null) QueryParams["storeId"] = storeId;
+            if (region is not null) QueryParams["region"] = region;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
             
 
             
@@ -164,4 +167,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

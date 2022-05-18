@@ -31,7 +31,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetPublishedStoreBackupBuilder
             : OperationBuilder<GetPublishedStoreBackupBuilder>
         {
-            
+
+
+
+
+
             internal GetPublishedStoreBackupBuilder() { }
 
 
@@ -114,4 +118,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

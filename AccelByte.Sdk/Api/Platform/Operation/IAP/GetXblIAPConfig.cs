@@ -30,7 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetXblIAPConfigBuilder
             : OperationBuilder<GetXblIAPConfigBuilder>
         {
-            
+
+
+
+
+
             internal GetXblIAPConfigBuilder() { }
 
 
@@ -113,4 +117,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

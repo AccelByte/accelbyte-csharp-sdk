@@ -25,8 +25,13 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class SpecificEventLevelDescriptionHandlerBuilder
             : OperationBuilder<SpecificEventLevelDescriptionHandlerBuilder>
         {
+
             public string? EventLevels { get; set; }
-            
+
+
+
+
+
             internal SpecificEventLevelDescriptionHandlerBuilder() { }
 
 
@@ -55,7 +60,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             
-            if (builder.EventLevels != null) QueryParams["eventLevels"] = builder.EventLevels;
+            if (builder.EventLevels is not null) QueryParams["eventLevels"] = builder.EventLevels;
             
 
             
@@ -71,7 +76,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             
-            if (eventLevels != null) QueryParams["eventLevels"] = eventLevels;
+            if (eventLevels is not null) QueryParams["eventLevels"] = eventLevels;
             
 
             
@@ -112,4 +117,5 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

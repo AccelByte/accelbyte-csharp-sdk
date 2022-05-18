@@ -48,12 +48,15 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class GetGroupJoinRequestPublicV1Builder
             : OperationBuilder<GetGroupJoinRequestPublicV1Builder>
         {
-            
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetGroupJoinRequestPublicV1Builder() { }
 
 
@@ -160,4 +163,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -39,7 +39,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class UpdateImageBuilder
             : OperationBuilder<UpdateImageBuilder>
         {
-            
+
+
+
+
+
             internal UpdateImageBuilder() { }
 
 
@@ -114,4 +118,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

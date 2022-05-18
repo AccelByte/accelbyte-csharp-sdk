@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentRequestWalletPlatform(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentRequestWalletPlatform(string enumValue)

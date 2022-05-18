@@ -30,13 +30,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateAdyenConfigBuilder
             : OperationBuilder<UpdateAdyenConfigBuilder>
         {
-            
+
             public bool? Sandbox { get; set; }
-            
+
             public bool? Validate { get; set; }
-            
+
+
             public Model.AdyenConfig? Body { get; set; }
-            
+
+
+
+
             internal UpdateAdyenConfigBuilder() { }
 
 
@@ -146,4 +150,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -34,8 +34,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminRevokeUserFromRoleV4Builder
             : OperationBuilder<AdminRevokeUserFromRoleV4Builder>
         {
-            
-            
+
+
+
+
+
             internal AdminRevokeUserFromRoleV4Builder() { }
 
 
@@ -116,4 +119,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

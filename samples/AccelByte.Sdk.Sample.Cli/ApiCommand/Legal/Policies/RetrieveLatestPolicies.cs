@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             RetrieveLatestPolicies operation = new RetrieveLatestPolicies(
                 CountryCode,                
                 DefaultOnEmpty,                
-                PolicyType,                
+                (PolicyType is null ? null : RetrieveLatestPoliciesPolicyType.NewValue(PolicyType)),                
                 Tags                
             );            
             

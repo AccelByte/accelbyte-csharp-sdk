@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             ResetPlatformWalletConfig operation = new ResetPlatformWalletConfig(
                 Namespace,                
-                Platform                
+                ResetPlatformWalletConfigPlatform.NewValue(Platform)                
             );            
             
             AccelByte.Sdk.Api.Platform.Model.PlatformWalletConfigInfo? response = wrapper.ResetPlatformWalletConfig(operation);

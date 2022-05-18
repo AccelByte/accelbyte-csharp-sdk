@@ -30,9 +30,11 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public class UpdateSettingsBuilder
             : OperationBuilder<UpdateSettingsBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal UpdateSettingsBuilder() { }
 
 
@@ -127,4 +129,5 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

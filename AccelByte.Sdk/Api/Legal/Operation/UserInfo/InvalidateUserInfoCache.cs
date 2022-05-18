@@ -31,8 +31,13 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class InvalidateUserInfoCacheBuilder
             : OperationBuilder<InvalidateUserInfoCacheBuilder>
         {
+
             public string? Namespace { get; set; }
-            
+
+
+
+
+
             internal InvalidateUserInfoCacheBuilder() { }
 
 
@@ -61,7 +66,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             
-            if (builder.Namespace != null) QueryParams["namespace"] = builder.Namespace;
+            if (builder.Namespace is not null) QueryParams["namespace"] = builder.Namespace;
             
 
             
@@ -77,7 +82,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             
-            if (namespace_ != null) QueryParams["namespace"] = namespace_;
+            if (namespace_ is not null) QueryParams["namespace"] = namespace_;
             
 
             
@@ -110,4 +115,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

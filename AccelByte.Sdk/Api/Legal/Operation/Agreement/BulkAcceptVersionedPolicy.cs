@@ -29,8 +29,13 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class BulkAcceptVersionedPolicyBuilder
             : OperationBuilder<BulkAcceptVersionedPolicyBuilder>
         {
+
+
             public List<Model.AcceptAgreementRequest>? Body { get; set; }
-            
+
+
+
+
             internal BulkAcceptVersionedPolicyBuilder() { }
 
 
@@ -116,4 +121,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

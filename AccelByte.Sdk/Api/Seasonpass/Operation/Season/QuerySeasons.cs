@@ -31,13 +31,17 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class QuerySeasonsBuilder
             : OperationBuilder<QuerySeasonsBuilder>
         {
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
-            public List<string>? Status { get; set; }
-            
+
+            public List<QuerySeasonsStatus>? Status { get; set; }
+
+
+
+
+
             internal QuerySeasonsBuilder() { }
 
 
@@ -53,7 +57,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
                 return this;
             }
 
-            public QuerySeasonsBuilder SetStatus(List<string> _status)
+            public QuerySeasonsBuilder SetStatus(List<QuerySeasonsStatus> _status)
             {
                 Status = _status;
                 return this;
@@ -84,7 +88,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status;
             
 
             
@@ -100,14 +104,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             string namespace_,            
             int? limit,            
             int? offset,            
-            List<string>? status            
+            List<QuerySeasonsStatus>? status            
         )
         {
             PathParams["namespace"] = namespace_;
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (status != null) QueryParams["status"] = status;
+            if (status is not null) QueryParams["status"] = status;
             
 
             
@@ -149,4 +153,29 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class QuerySeasonsStatus : StringEnum<QuerySeasonsStatus>
+    {
+        public static readonly QuerySeasonsStatus Draft
+            = new QuerySeasonsStatus("DRAFT");
+
+        public static readonly QuerySeasonsStatus Published
+            = new QuerySeasonsStatus("PUBLISHED");
+
+        public static readonly QuerySeasonsStatus Retired
+            = new QuerySeasonsStatus("RETIRED");
+
+
+        public static implicit operator QuerySeasonsStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QuerySeasonsStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

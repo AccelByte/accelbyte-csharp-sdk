@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentMethodPaymentProvider(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentMethodPaymentProvider(string enumValue)

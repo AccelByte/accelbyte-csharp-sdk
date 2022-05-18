@@ -30,7 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetPaymentMerchantConfigBuilder
             : OperationBuilder<GetPaymentMerchantConfigBuilder>
         {
-            
+
+
+
+
+
             internal GetPaymentMerchantConfigBuilder() { }
 
 
@@ -113,4 +117,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

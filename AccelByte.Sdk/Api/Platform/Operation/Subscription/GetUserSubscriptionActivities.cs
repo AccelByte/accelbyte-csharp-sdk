@@ -30,16 +30,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetUserSubscriptionActivitiesBuilder
             : OperationBuilder<GetUserSubscriptionActivitiesBuilder>
         {
-            
-            
+
             public bool? ExcludeSystem { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? SubscriptionId { get; set; }
-            
+
+
+
+
+
             internal GetUserSubscriptionActivitiesBuilder() { }
 
 
@@ -97,7 +100,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.ExcludeSystem != null) QueryParams["excludeSystem"] = Convert.ToString(builder.ExcludeSystem)!;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.SubscriptionId != null) QueryParams["subscriptionId"] = builder.SubscriptionId;
+            if (builder.SubscriptionId is not null) QueryParams["subscriptionId"] = builder.SubscriptionId;
             
 
             
@@ -123,7 +126,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (excludeSystem != null) QueryParams["excludeSystem"] = Convert.ToString(excludeSystem)!;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (subscriptionId != null) QueryParams["subscriptionId"] = subscriptionId;
+            if (subscriptionId is not null) QueryParams["subscriptionId"] = subscriptionId;
             
 
             
@@ -164,4 +167,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

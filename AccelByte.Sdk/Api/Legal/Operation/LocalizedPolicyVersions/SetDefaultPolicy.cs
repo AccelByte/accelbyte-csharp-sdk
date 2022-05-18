@@ -29,7 +29,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class SetDefaultPolicyBuilder
             : OperationBuilder<SetDefaultPolicyBuilder>
         {
-            
+
+
+
+
+
             internal SetDefaultPolicyBuilder() { }
 
 
@@ -104,4 +108,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

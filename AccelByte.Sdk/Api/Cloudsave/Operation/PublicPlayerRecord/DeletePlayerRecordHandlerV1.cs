@@ -35,9 +35,11 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public class DeletePlayerRecordHandlerV1Builder
             : OperationBuilder<DeletePlayerRecordHandlerV1Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal DeletePlayerRecordHandlerV1Builder() { }
 
 
@@ -124,4 +126,5 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -58,9 +58,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class RetrieveUserThirdPartyPlatformTokenV3Builder
             : OperationBuilder<RetrieveUserThirdPartyPlatformTokenV3Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal RetrieveUserThirdPartyPlatformTokenV3Builder() { }
 
 
@@ -155,4 +157,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

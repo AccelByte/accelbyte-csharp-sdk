@@ -28,9 +28,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateIAPItemConfigBuilder
             : OperationBuilder<UpdateIAPItemConfigBuilder>
         {
-            
+
+
             public Model.IAPItemConfigUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdateIAPItemConfigBuilder() { }
 
 
@@ -122,4 +126,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -30,11 +30,15 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public class GetAllChannelsHandlerBuilder
             : OperationBuilder<GetAllChannelsHandlerBuilder>
         {
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetAllChannelsHandlerBuilder() { }
 
 
@@ -135,4 +139,5 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

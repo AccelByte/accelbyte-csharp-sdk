@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator EntitlementGrantSource(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public EntitlementGrantSource(string enumValue)

@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
 
         public static implicit operator RewardCreateType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public RewardCreateType(string enumValue)

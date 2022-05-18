@@ -29,8 +29,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class AnonymizePaymentBuilder
             : OperationBuilder<AnonymizePaymentBuilder>
         {
-            
-            
+
+
+
+
+
             internal AnonymizePaymentBuilder() { }
 
 
@@ -111,4 +114,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

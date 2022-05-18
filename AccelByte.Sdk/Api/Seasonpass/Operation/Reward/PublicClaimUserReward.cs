@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class PublicClaimUserRewardBuilder
             : OperationBuilder<PublicClaimUserRewardBuilder>
         {
-            
-            
+
+
             public Model.UserRewardClaim? Body { get; set; }
-            
+
+
+
+
             internal PublicClaimUserRewardBuilder() { }
 
 
@@ -132,4 +135,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

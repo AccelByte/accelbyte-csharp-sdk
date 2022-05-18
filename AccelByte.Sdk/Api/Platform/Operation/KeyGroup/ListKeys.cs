@@ -30,14 +30,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ListKeysBuilder
             : OperationBuilder<ListKeysBuilder>
         {
-            
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
-            public string? Status { get; set; }
-            
+
+            public ListKeysStatus? Status { get; set; }
+
+
+
+
+
             internal ListKeysBuilder() { }
 
 
@@ -53,7 +56,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public ListKeysBuilder SetStatus(string _status)
+            public ListKeysBuilder SetStatus(ListKeysStatus _status)
             {
                 Status = _status;
                 return this;
@@ -88,7 +91,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
             
 
             
@@ -104,7 +107,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string namespace_,            
             int? limit,            
             int? offset,            
-            string? status            
+            ListKeysStatus? status            
         )
         {
             PathParams["keyGroupId"] = keyGroupId;
@@ -112,7 +115,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (status != null) QueryParams["status"] = status;
+            if (status is not null) QueryParams["status"] = status.Value;
             
 
             
@@ -153,4 +156,26 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class ListKeysStatus : StringEnum<ListKeysStatus>
+    {
+        public static readonly ListKeysStatus Acquired
+            = new ListKeysStatus("ACQUIRED");
+
+        public static readonly ListKeysStatus Active
+            = new ListKeysStatus("ACTIVE");
+
+
+        public static implicit operator ListKeysStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ListKeysStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

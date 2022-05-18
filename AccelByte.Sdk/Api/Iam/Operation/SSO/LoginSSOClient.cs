@@ -24,9 +24,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class LoginSSOClientBuilder
             : OperationBuilder<LoginSSOClientBuilder>
         {
-            
+
             public string? Payload { get; set; }
-            
+
+
+
+
+
             internal LoginSSOClientBuilder() { }
 
 
@@ -59,7 +63,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["platformId"] = platformId;
             
-            if (builder.Payload != null) QueryParams["payload"] = builder.Payload;
+            if (builder.Payload is not null) QueryParams["payload"] = builder.Payload;
             
 
             
@@ -77,7 +81,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["platformId"] = platformId;
             
-            if (payload != null) QueryParams["payload"] = payload;
+            if (payload is not null) QueryParams["payload"] = payload;
             
 
             
@@ -110,4 +114,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

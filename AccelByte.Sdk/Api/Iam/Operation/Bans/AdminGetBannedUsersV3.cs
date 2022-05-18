@@ -29,15 +29,19 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminGetBannedUsersV3Builder
             : OperationBuilder<AdminGetBannedUsersV3Builder>
         {
-            
+
             public bool? ActiveOnly { get; set; }
-            
+
             public string? BanType { get; set; }
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal AdminGetBannedUsersV3Builder() { }
 
 
@@ -89,7 +93,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
-            if (builder.BanType != null) QueryParams["banType"] = builder.BanType;
+            if (builder.BanType is not null) QueryParams["banType"] = builder.BanType;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
@@ -113,7 +117,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
-            if (banType != null) QueryParams["banType"] = banType;
+            if (banType is not null) QueryParams["banType"] = banType;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
@@ -156,4 +160,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

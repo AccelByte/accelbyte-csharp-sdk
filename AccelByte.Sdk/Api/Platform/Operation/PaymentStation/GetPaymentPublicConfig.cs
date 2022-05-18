@@ -29,11 +29,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetPaymentPublicConfigBuilder
             : OperationBuilder<GetPaymentPublicConfigBuilder>
         {
-            
+
             public bool? Sandbox { get; set; }
-            
-            
-            
+
+
+
+
+
             internal GetPaymentPublicConfigBuilder() { }
 
 
@@ -49,7 +51,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public GetPaymentPublicConfig Build(
                 string namespace_,
-                string paymentProvider,
+                GetPaymentPublicConfigPaymentProvider paymentProvider,
                 string region
             )
             {
@@ -66,15 +68,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         private GetPaymentPublicConfig(GetPaymentPublicConfigBuilder builder,
             string namespace_,
-            string paymentProvider,
+            GetPaymentPublicConfigPaymentProvider paymentProvider,
             string region
         )
         {
             PathParams["namespace"] = namespace_;
             
             if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
-            if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
-            if (region != null) QueryParams["region"] = region;
+            if (paymentProvider is not null) QueryParams["paymentProvider"] = paymentProvider.Value;
+            if (region is not null) QueryParams["region"] = region;
             
 
             
@@ -87,15 +89,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public GetPaymentPublicConfig(
             string namespace_,            
             bool? sandbox,            
-            string paymentProvider,            
+            GetPaymentPublicConfigPaymentProvider paymentProvider,            
             string region            
         )
         {
             PathParams["namespace"] = namespace_;
             
             if (sandbox != null) QueryParams["sandbox"] = Convert.ToString(sandbox)!;
-            if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
-            if (region != null) QueryParams["region"] = region;
+            if (paymentProvider is not null) QueryParams["paymentProvider"] = paymentProvider.Value;
+            if (region is not null) QueryParams["region"] = region;
             
 
             
@@ -135,4 +137,44 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class GetPaymentPublicConfigPaymentProvider : StringEnum<GetPaymentPublicConfigPaymentProvider>
+    {
+        public static readonly GetPaymentPublicConfigPaymentProvider Adyen
+            = new GetPaymentPublicConfigPaymentProvider("ADYEN");
+
+        public static readonly GetPaymentPublicConfigPaymentProvider Alipay
+            = new GetPaymentPublicConfigPaymentProvider("ALIPAY");
+
+        public static readonly GetPaymentPublicConfigPaymentProvider Checkout
+            = new GetPaymentPublicConfigPaymentProvider("CHECKOUT");
+
+        public static readonly GetPaymentPublicConfigPaymentProvider Paypal
+            = new GetPaymentPublicConfigPaymentProvider("PAYPAL");
+
+        public static readonly GetPaymentPublicConfigPaymentProvider Stripe
+            = new GetPaymentPublicConfigPaymentProvider("STRIPE");
+
+        public static readonly GetPaymentPublicConfigPaymentProvider Wallet
+            = new GetPaymentPublicConfigPaymentProvider("WALLET");
+
+        public static readonly GetPaymentPublicConfigPaymentProvider Wxpay
+            = new GetPaymentPublicConfigPaymentProvider("WXPAY");
+
+        public static readonly GetPaymentPublicConfigPaymentProvider Xsolla
+            = new GetPaymentPublicConfigPaymentProvider("XSOLLA");
+
+
+        public static implicit operator GetPaymentPublicConfigPaymentProvider(string value)
+        {
+            return NewValue(value);
+        }
+
+        public GetPaymentPublicConfigPaymentProvider(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

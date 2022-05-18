@@ -29,9 +29,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateFulfillmentScriptBuilder
             : OperationBuilder<UpdateFulfillmentScriptBuilder>
         {
-            
+
+
             public Model.FulfillmentScriptUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdateFulfillmentScriptBuilder() { }
 
 
@@ -123,4 +127,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

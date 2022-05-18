@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator IAPItemEntryItemIdentityType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public IAPItemEntryItemIdentityType(string enumValue)

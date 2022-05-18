@@ -29,14 +29,17 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         public class PublicListAchievementsBuilder
             : OperationBuilder<PublicListAchievementsBuilder>
         {
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
             public string? SortBy { get; set; }
-            
-            
+
+
+
+
+
             internal PublicListAchievementsBuilder() { }
 
 
@@ -86,8 +89,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
-            if (language != null) QueryParams["language"] = language;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
+            if (language is not null) QueryParams["language"] = language;
             
 
             
@@ -110,8 +113,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (sortBy != null) QueryParams["sortBy"] = sortBy;
-            if (language != null) QueryParams["language"] = language;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
+            if (language is not null) QueryParams["language"] = language;
             
 
             
@@ -152,4 +155,5 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -28,11 +28,15 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public class GetActiveCustomGameSessionsBuilder
             : OperationBuilder<GetActiveCustomGameSessionsBuilder>
         {
-            
+
             public string? ServerRegion { get; set; }
-            
+
             public string? SessionId { get; set; }
-            
+
+
+
+
+
             internal GetActiveCustomGameSessionsBuilder() { }
 
 
@@ -71,8 +75,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.ServerRegion != null) QueryParams["server_region"] = builder.ServerRegion;
-            if (builder.SessionId != null) QueryParams["session_id"] = builder.SessionId;
+            if (builder.ServerRegion is not null) QueryParams["server_region"] = builder.ServerRegion;
+            if (builder.SessionId is not null) QueryParams["session_id"] = builder.SessionId;
             
 
             
@@ -91,8 +95,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (serverRegion != null) QueryParams["server_region"] = serverRegion;
-            if (sessionId != null) QueryParams["session_id"] = sessionId;
+            if (serverRegion is not null) QueryParams["server_region"] = serverRegion;
+            if (sessionId is not null) QueryParams["session_id"] = sessionId;
             
 
             
@@ -133,4 +137,5 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

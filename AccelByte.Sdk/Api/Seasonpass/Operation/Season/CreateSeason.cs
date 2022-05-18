@@ -31,9 +31,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class CreateSeasonBuilder
             : OperationBuilder<CreateSeasonBuilder>
         {
-            
+
+
             public Model.SeasonCreate? Body { get; set; }
-            
+
+
+
+
             internal CreateSeasonBuilder() { }
 
 
@@ -125,4 +129,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -77,7 +77,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentNotificationInfoNotificationSource(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentNotificationInfoNotificationSource(string enumValue)
@@ -104,7 +104,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentNotificationInfoStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentNotificationInfoStatus(string enumValue)

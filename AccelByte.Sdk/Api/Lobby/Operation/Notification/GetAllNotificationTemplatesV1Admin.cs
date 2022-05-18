@@ -30,7 +30,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class GetAllNotificationTemplatesV1AdminBuilder
             : OperationBuilder<GetAllNotificationTemplatesV1AdminBuilder>
         {
-            
+
+
+
+
+
             internal GetAllNotificationTemplatesV1AdminBuilder() { }
 
 
@@ -113,4 +117,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

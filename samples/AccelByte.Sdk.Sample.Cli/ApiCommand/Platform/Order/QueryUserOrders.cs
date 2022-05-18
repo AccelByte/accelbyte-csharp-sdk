@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 ItemId,                
                 Limit,                
                 Offset,                
-                Status                
+                (Status is null ? null : QueryUserOrdersStatus.NewValue(Status))                
             );            
             
             AccelByte.Sdk.Api.Platform.Model.OrderPagingSlicedResult? response = wrapper.QueryUserOrders(operation);

@@ -119,9 +119,11 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public class AdminPutGameRecordConcurrentHandlerV1Builder
             : OperationBuilder<AdminPutGameRecordConcurrentHandlerV1Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal AdminPutGameRecordConcurrentHandlerV1Builder() { }
 
 
@@ -208,4 +210,5 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

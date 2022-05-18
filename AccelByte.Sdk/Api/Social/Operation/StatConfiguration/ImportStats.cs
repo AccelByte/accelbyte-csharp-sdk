@@ -29,11 +29,15 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class ImportStatsBuilder
             : OperationBuilder<ImportStatsBuilder>
         {
-            
+
             public bool? ReplaceExisting { get; set; }
-            
+
+
+
             public Stream? File { get; set; }
-            
+
+
+
             internal ImportStatsBuilder() { }
 
 
@@ -74,7 +78,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             if (builder.ReplaceExisting != null) QueryParams["replaceExisting"] = Convert.ToString(builder.ReplaceExisting)!;
             
-            if (builder.File != null) FormParams["file"] = builder.File;
+            if (builder.File is not null) FormParams["file"] = builder.File;
 
             
             
@@ -94,7 +98,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             if (replaceExisting != null) QueryParams["replaceExisting"] = Convert.ToString(replaceExisting)!;
             
-            if (file != null) FormParams["file"] = file;
+            if (file is not null) FormParams["file"] = file;
 
             
             
@@ -134,4 +138,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

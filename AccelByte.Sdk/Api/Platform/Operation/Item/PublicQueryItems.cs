@@ -32,35 +32,39 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicQueryItemsBuilder
             : OperationBuilder<PublicQueryItemsBuilder>
         {
-            
-            public string? AppType { get; set; }
-            
+
+            public PublicQueryItemsAppType? AppType { get; set; }
+
             public string? BaseAppId { get; set; }
-            
+
             public string? CategoryPath { get; set; }
-            
+
             public string? Features { get; set; }
-            
-            public string? ItemType { get; set; }
-            
+
+            public PublicQueryItemsItemType? ItemType { get; set; }
+
             public string? Language { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? Region { get; set; }
-            
+
             public string? SortBy { get; set; }
-            
+
             public string? StoreId { get; set; }
-            
+
             public string? Tags { get; set; }
-            
+
+
+
+
+
             internal PublicQueryItemsBuilder() { }
 
 
-            public PublicQueryItemsBuilder SetAppType(string _appType)
+            public PublicQueryItemsBuilder SetAppType(PublicQueryItemsAppType _appType)
             {
                 AppType = _appType;
                 return this;
@@ -84,7 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public PublicQueryItemsBuilder SetItemType(string _itemType)
+            public PublicQueryItemsBuilder SetItemType(PublicQueryItemsItemType _itemType)
             {
                 ItemType = _itemType;
                 return this;
@@ -155,18 +159,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.AppType != null) QueryParams["appType"] = builder.AppType;
-            if (builder.BaseAppId != null) QueryParams["baseAppId"] = builder.BaseAppId;
-            if (builder.CategoryPath != null) QueryParams["categoryPath"] = builder.CategoryPath;
-            if (builder.Features != null) QueryParams["features"] = builder.Features;
-            if (builder.ItemType != null) QueryParams["itemType"] = builder.ItemType;
-            if (builder.Language != null) QueryParams["language"] = builder.Language;
+            if (builder.AppType is not null) QueryParams["appType"] = builder.AppType.Value;
+            if (builder.BaseAppId is not null) QueryParams["baseAppId"] = builder.BaseAppId;
+            if (builder.CategoryPath is not null) QueryParams["categoryPath"] = builder.CategoryPath;
+            if (builder.Features is not null) QueryParams["features"] = builder.Features;
+            if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType.Value;
+            if (builder.Language is not null) QueryParams["language"] = builder.Language;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Region != null) QueryParams["region"] = builder.Region;
-            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
-            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
-            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
+            if (builder.Region is not null) QueryParams["region"] = builder.Region;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             
 
             
@@ -178,11 +182,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public PublicQueryItems(
             string namespace_,            
-            string? appType,            
+            PublicQueryItemsAppType? appType,            
             string? baseAppId,            
             string? categoryPath,            
             string? features,            
-            string? itemType,            
+            PublicQueryItemsItemType? itemType,            
             string? language,            
             int? limit,            
             int? offset,            
@@ -194,18 +198,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (appType != null) QueryParams["appType"] = appType;
-            if (baseAppId != null) QueryParams["baseAppId"] = baseAppId;
-            if (categoryPath != null) QueryParams["categoryPath"] = categoryPath;
-            if (features != null) QueryParams["features"] = features;
-            if (itemType != null) QueryParams["itemType"] = itemType;
-            if (language != null) QueryParams["language"] = language;
+            if (appType is not null) QueryParams["appType"] = appType.Value;
+            if (baseAppId is not null) QueryParams["baseAppId"] = baseAppId;
+            if (categoryPath is not null) QueryParams["categoryPath"] = categoryPath;
+            if (features is not null) QueryParams["features"] = features;
+            if (itemType is not null) QueryParams["itemType"] = itemType.Value;
+            if (language is not null) QueryParams["language"] = language;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (region != null) QueryParams["region"] = region;
-            if (sortBy != null) QueryParams["sortBy"] = sortBy;
-            if (storeId != null) QueryParams["storeId"] = storeId;
-            if (tags != null) QueryParams["tags"] = tags;
+            if (region is not null) QueryParams["region"] = region;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
+            if (tags is not null) QueryParams["tags"] = tags;
             
 
             
@@ -245,4 +249,71 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class PublicQueryItemsAppType : StringEnum<PublicQueryItemsAppType>
+    {
+        public static readonly PublicQueryItemsAppType Demo
+            = new PublicQueryItemsAppType("DEMO");
+
+        public static readonly PublicQueryItemsAppType Dlc
+            = new PublicQueryItemsAppType("DLC");
+
+        public static readonly PublicQueryItemsAppType Game
+            = new PublicQueryItemsAppType("GAME");
+
+        public static readonly PublicQueryItemsAppType Software
+            = new PublicQueryItemsAppType("SOFTWARE");
+
+
+        public static implicit operator PublicQueryItemsAppType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicQueryItemsAppType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class PublicQueryItemsItemType : StringEnum<PublicQueryItemsItemType>
+    {
+        public static readonly PublicQueryItemsItemType App
+            = new PublicQueryItemsItemType("APP");
+
+        public static readonly PublicQueryItemsItemType Bundle
+            = new PublicQueryItemsItemType("BUNDLE");
+
+        public static readonly PublicQueryItemsItemType Code
+            = new PublicQueryItemsItemType("CODE");
+
+        public static readonly PublicQueryItemsItemType Coins
+            = new PublicQueryItemsItemType("COINS");
+
+        public static readonly PublicQueryItemsItemType Ingameitem
+            = new PublicQueryItemsItemType("INGAMEITEM");
+
+        public static readonly PublicQueryItemsItemType Media
+            = new PublicQueryItemsItemType("MEDIA");
+
+        public static readonly PublicQueryItemsItemType Season
+            = new PublicQueryItemsItemType("SEASON");
+
+        public static readonly PublicQueryItemsItemType Subscription
+            = new PublicQueryItemsItemType("SUBSCRIPTION");
+
+
+        public static implicit operator PublicQueryItemsItemType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicQueryItemsItemType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

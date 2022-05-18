@@ -30,13 +30,17 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class GetAllDeploymentBuilder
             : OperationBuilder<GetAllDeploymentBuilder>
         {
-            
+
             public long? Count { get; set; }
-            
+
             public string? Name { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetAllDeploymentBuilder() { }
 
 
@@ -82,7 +86,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
-            if (builder.Name != null) QueryParams["name"] = builder.Name;
+            if (builder.Name is not null) QueryParams["name"] = builder.Name;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
 
@@ -104,7 +108,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             PathParams["namespace"] = namespace_;
             
             if (count != null) QueryParams["count"] = Convert.ToString(count)!;
-            if (name != null) QueryParams["name"] = name;
+            if (name is not null) QueryParams["name"] = name;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
 
@@ -146,4 +150,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

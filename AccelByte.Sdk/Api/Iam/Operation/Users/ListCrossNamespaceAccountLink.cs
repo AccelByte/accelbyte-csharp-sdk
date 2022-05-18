@@ -42,11 +42,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class ListCrossNamespaceAccountLinkBuilder
             : OperationBuilder<ListCrossNamespaceAccountLinkBuilder>
         {
-            
-            
+
+
+
             public string? PlatformId { get; set; }
-            
-            
+
+
+
             internal ListCrossNamespaceAccountLinkBuilder() { }
 
 
@@ -87,8 +89,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
-            if (builder.PlatformId != null) FormParams["platformId"] = builder.PlatformId;
-            if (linkingToken != null) FormParams["linkingToken"] = linkingToken;
+            if (builder.PlatformId is not null) FormParams["platformId"] = builder.PlatformId;
+            if (linkingToken is not null) FormParams["linkingToken"] = linkingToken;
 
             
             
@@ -109,8 +111,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
-            if (platformId != null) FormParams["platformId"] = platformId;
-            if (linkingToken != null) FormParams["linkingToken"] = linkingToken;
+            if (platformId is not null) FormParams["platformId"] = platformId;
+            if (linkingToken is not null) FormParams["linkingToken"] = linkingToken;
 
             
             
@@ -142,4 +144,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

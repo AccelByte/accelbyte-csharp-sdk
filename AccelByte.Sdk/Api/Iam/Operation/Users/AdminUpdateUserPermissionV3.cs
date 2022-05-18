@@ -114,9 +114,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminUpdateUserPermissionV3Builder
             : OperationBuilder<AdminUpdateUserPermissionV3Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal AdminUpdateUserPermissionV3Builder() { }
 
 
@@ -203,4 +205,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

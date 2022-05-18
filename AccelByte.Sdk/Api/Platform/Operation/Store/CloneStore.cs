@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class CloneStoreBuilder
             : OperationBuilder<CloneStoreBuilder>
         {
-            
-            
+
             public string? TargetStoreId { get; set; }
-            
+
+
+
+
+
             internal CloneStoreBuilder() { }
 
 
@@ -71,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["storeId"] = storeId;
             
-            if (builder.TargetStoreId != null) QueryParams["targetStoreId"] = builder.TargetStoreId;
+            if (builder.TargetStoreId is not null) QueryParams["targetStoreId"] = builder.TargetStoreId;
             
 
             
@@ -91,7 +94,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["storeId"] = storeId;
             
-            if (targetStoreId != null) QueryParams["targetStoreId"] = targetStoreId;
+            if (targetStoreId is not null) QueryParams["targetStoreId"] = targetStoreId;
             
 
             
@@ -132,4 +135,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

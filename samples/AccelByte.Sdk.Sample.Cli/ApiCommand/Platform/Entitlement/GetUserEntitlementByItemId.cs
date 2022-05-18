@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 UserId,                
                 ActiveOnly,                
-                EntitlementClazz,                
+                (EntitlementClazz is null ? null : GetUserEntitlementByItemIdEntitlementClazz.NewValue(EntitlementClazz)),                
                 ItemId                
             );            
             

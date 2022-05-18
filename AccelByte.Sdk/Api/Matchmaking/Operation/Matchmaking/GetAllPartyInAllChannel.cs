@@ -30,7 +30,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public class GetAllPartyInAllChannelBuilder
             : OperationBuilder<GetAllPartyInAllChannelBuilder>
         {
-            
+
+
+
+
+
             internal GetAllPartyInAllChannelBuilder() { }
 
 
@@ -113,4 +117,5 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

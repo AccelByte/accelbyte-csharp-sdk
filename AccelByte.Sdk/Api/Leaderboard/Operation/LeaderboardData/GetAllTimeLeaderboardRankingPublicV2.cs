@@ -26,12 +26,15 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class GetAllTimeLeaderboardRankingPublicV2Builder
             : OperationBuilder<GetAllTimeLeaderboardRankingPublicV2Builder>
         {
-            
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetAllTimeLeaderboardRankingPublicV2Builder() { }
 
 
@@ -138,4 +141,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

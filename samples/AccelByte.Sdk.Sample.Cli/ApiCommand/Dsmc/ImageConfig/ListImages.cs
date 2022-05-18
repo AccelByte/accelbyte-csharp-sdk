@@ -58,8 +58,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
                 Count,                
                 Offset,                
                 Q,                
-                SortBy,                
-                SortDirection                
+                (SortBy is null ? null : ListImagesSortBy.NewValue(SortBy)),                
+                (SortDirection is null ? null : ListImagesSortDirection.NewValue(SortDirection))                
             );            
             
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListImageResponse? response = wrapper.ListImages(operation);

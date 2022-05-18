@@ -29,9 +29,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class SendSpecificUserFreeformNotificationV1AdminBuilder
             : OperationBuilder<SendSpecificUserFreeformNotificationV1AdminBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal SendSpecificUserFreeformNotificationV1AdminBuilder() { }
 
 
@@ -118,4 +120,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

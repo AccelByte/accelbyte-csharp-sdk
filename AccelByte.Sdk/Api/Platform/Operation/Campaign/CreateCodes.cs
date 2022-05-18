@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class CreateCodesBuilder
             : OperationBuilder<CreateCodesBuilder>
         {
-            
-            
+
+
             public Model.CodeCreate? Body { get; set; }
-            
+
+
+
+
             internal CreateCodesBuilder() { }
 
 
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

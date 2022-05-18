@@ -30,9 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateXsollaUIConfigBuilder
             : OperationBuilder<UpdateXsollaUIConfigBuilder>
         {
-            
+
+
             public Model.XsollaPaywallConfigRequest? Body { get; set; }
-            
+
+
+
+
             internal UpdateXsollaUIConfigBuilder() { }
 
 
@@ -124,4 +128,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class ForgotPasswordBuilder
             : OperationBuilder<ForgotPasswordBuilder>
         {
-            
-            
+
+
+
+
+
             internal ForgotPasswordBuilder() { }
 
 
@@ -114,4 +117,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

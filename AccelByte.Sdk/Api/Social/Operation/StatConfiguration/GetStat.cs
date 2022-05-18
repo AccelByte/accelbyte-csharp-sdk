@@ -29,8 +29,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class GetStatBuilder
             : OperationBuilder<GetStatBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetStatBuilder() { }
 
 
@@ -119,4 +122,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

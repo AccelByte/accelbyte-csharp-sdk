@@ -28,6 +28,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class AdminGetAllConfigV1Builder
             : OperationBuilder<AdminGetAllConfigV1Builder>
         {
+
+
+
+
+
             internal AdminGetAllConfigV1Builder() { }
 
 
@@ -104,4 +109,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

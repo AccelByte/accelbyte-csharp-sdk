@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class GetUserSlotConfigBuilder
             : OperationBuilder<GetUserSlotConfigBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetUserSlotConfigBuilder() { }
 
 
@@ -120,4 +123,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

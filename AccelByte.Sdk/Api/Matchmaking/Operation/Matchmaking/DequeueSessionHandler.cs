@@ -33,8 +33,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public class DequeueSessionHandlerBuilder
             : OperationBuilder<DequeueSessionHandlerBuilder>
         {
-            
-            
+
+
+
+
+
             internal DequeueSessionHandlerBuilder() { }
 
 
@@ -115,4 +118,5 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

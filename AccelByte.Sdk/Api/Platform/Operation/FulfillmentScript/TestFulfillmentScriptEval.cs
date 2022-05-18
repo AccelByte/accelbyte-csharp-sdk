@@ -29,8 +29,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class TestFulfillmentScriptEvalBuilder
             : OperationBuilder<TestFulfillmentScriptEvalBuilder>
         {
+
+
             public Model.FulfillmentScriptEvalTestRequest? Body { get; set; }
-            
+
+
+
+
             internal TestFulfillmentScriptEvalBuilder() { }
 
 
@@ -116,4 +121,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

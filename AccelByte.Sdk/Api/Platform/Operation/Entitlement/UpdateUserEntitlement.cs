@@ -30,11 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateUserEntitlementBuilder
             : OperationBuilder<UpdateUserEntitlementBuilder>
         {
-            
-            
-            
+
+
             public Model.EntitlementUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdateUserEntitlementBuilder() { }
 
 
@@ -138,4 +140,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

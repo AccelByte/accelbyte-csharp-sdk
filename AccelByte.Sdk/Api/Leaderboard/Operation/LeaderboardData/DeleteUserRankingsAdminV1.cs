@@ -31,9 +31,11 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class DeleteUserRankingsAdminV1Builder
             : OperationBuilder<DeleteUserRankingsAdminV1Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal DeleteUserRankingsAdminV1Builder() { }
 
 
@@ -67,7 +69,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (leaderboardCode != null) QueryParams["leaderboardCode"] = leaderboardCode;
+            if (leaderboardCode is not null) QueryParams["leaderboardCode"] = leaderboardCode;
             
 
             
@@ -88,7 +90,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (leaderboardCode != null) QueryParams["leaderboardCode"] = leaderboardCode;
+            if (leaderboardCode is not null) QueryParams["leaderboardCode"] = leaderboardCode;
             
 
             
@@ -122,4 +124,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

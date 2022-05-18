@@ -30,13 +30,17 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class ListServerBuilder
             : OperationBuilder<ListServerBuilder>
         {
-            
+
             public long? Count { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
             public string? Region { get; set; }
-            
+
+
+
+
+
             internal ListServerBuilder() { }
 
 
@@ -83,7 +87,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Region != null) QueryParams["region"] = builder.Region;
+            if (builder.Region is not null) QueryParams["region"] = builder.Region;
             
 
             
@@ -105,7 +109,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             
             if (count != null) QueryParams["count"] = Convert.ToString(count)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (region != null) QueryParams["region"] = region;
+            if (region is not null) QueryParams["region"] = region;
             
 
             
@@ -146,4 +150,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

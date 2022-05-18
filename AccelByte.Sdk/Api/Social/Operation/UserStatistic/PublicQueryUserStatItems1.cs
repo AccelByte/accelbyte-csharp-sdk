@@ -32,12 +32,15 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class PublicQueryUserStatItems1Builder
             : OperationBuilder<PublicQueryUserStatItems1Builder>
         {
-            
-            
+
             public List<string>? StatCodes { get; set; }
-            
+
             public List<string>? Tags { get; set; }
-            
+
+
+
+
+
             internal PublicQueryUserStatItems1Builder() { }
 
 
@@ -80,8 +83,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.StatCodes != null) QueryParams["statCodes"] = builder.StatCodes;
-            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
+            if (builder.StatCodes is not null) QueryParams["statCodes"] = builder.StatCodes;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             
 
             
@@ -104,8 +107,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (statCodes != null) QueryParams["statCodes"] = statCodes;
-            if (tags != null) QueryParams["tags"] = tags;
+            if (statCodes is not null) QueryParams["statCodes"] = statCodes;
+            if (tags is not null) QueryParams["tags"] = tags;
             
 
             
@@ -148,4 +151,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -28,13 +28,17 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminListAssignedUsersV4Builder
             : OperationBuilder<AdminListAssignedUsersV4Builder>
         {
-            
+
             public string? After { get; set; }
-            
+
             public string? Before { get; set; }
-            
+
             public long? Limit { get; set; }
-            
+
+
+
+
+
             internal AdminListAssignedUsersV4Builder() { }
 
 
@@ -79,8 +83,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["roleId"] = roleId;
             
-            if (builder.After != null) QueryParams["after"] = builder.After;
-            if (builder.Before != null) QueryParams["before"] = builder.Before;
+            if (builder.After is not null) QueryParams["after"] = builder.After;
+            if (builder.Before is not null) QueryParams["before"] = builder.Before;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             
 
@@ -101,8 +105,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["roleId"] = roleId;
             
-            if (after != null) QueryParams["after"] = after;
-            if (before != null) QueryParams["before"] = before;
+            if (after is not null) QueryParams["after"] = after;
+            if (before is not null) QueryParams["before"] = before;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             
 
@@ -144,4 +148,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

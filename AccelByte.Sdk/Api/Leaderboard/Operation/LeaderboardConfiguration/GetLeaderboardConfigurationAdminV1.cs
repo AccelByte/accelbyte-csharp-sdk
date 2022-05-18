@@ -33,8 +33,11 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class GetLeaderboardConfigurationAdminV1Builder
             : OperationBuilder<GetLeaderboardConfigurationAdminV1Builder>
         {
-            
-            
+
+
+
+
+
             internal GetLeaderboardConfigurationAdminV1Builder() { }
 
 
@@ -123,4 +126,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

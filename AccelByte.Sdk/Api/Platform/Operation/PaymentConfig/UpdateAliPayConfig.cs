@@ -30,13 +30,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateAliPayConfigBuilder
             : OperationBuilder<UpdateAliPayConfigBuilder>
         {
-            
+
             public bool? Sandbox { get; set; }
-            
+
             public bool? Validate { get; set; }
-            
+
+
             public Model.AliPayConfig? Body { get; set; }
-            
+
+
+
+
             internal UpdateAliPayConfigBuilder() { }
 
 
@@ -146,4 +150,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

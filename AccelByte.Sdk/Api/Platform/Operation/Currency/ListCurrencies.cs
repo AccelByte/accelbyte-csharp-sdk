@@ -30,13 +30,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ListCurrenciesBuilder
             : OperationBuilder<ListCurrenciesBuilder>
         {
-            
-            public string? CurrencyType { get; set; }
-            
+
+            public ListCurrenciesCurrencyType? CurrencyType { get; set; }
+
+
+
+
+
             internal ListCurrenciesBuilder() { }
 
 
-            public ListCurrenciesBuilder SetCurrencyType(string _currencyType)
+            public ListCurrenciesBuilder SetCurrencyType(ListCurrenciesCurrencyType _currencyType)
             {
                 CurrencyType = _currencyType;
                 return this;
@@ -65,7 +69,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.CurrencyType != null) QueryParams["currencyType"] = builder.CurrencyType;
+            if (builder.CurrencyType is not null) QueryParams["currencyType"] = builder.CurrencyType.Value;
             
 
             
@@ -78,12 +82,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public ListCurrencies(
             string namespace_,            
-            string? currencyType            
+            ListCurrenciesCurrencyType? currencyType            
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (currencyType != null) QueryParams["currencyType"] = currencyType;
+            if (currencyType is not null) QueryParams["currencyType"] = currencyType.Value;
             
 
             
@@ -124,4 +128,26 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class ListCurrenciesCurrencyType : StringEnum<ListCurrenciesCurrencyType>
+    {
+        public static readonly ListCurrenciesCurrencyType Real
+            = new ListCurrenciesCurrencyType("REAL");
+
+        public static readonly ListCurrenciesCurrencyType Virtual
+            = new ListCurrenciesCurrencyType("VIRTUAL");
+
+
+        public static implicit operator ListCurrenciesCurrencyType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ListCurrenciesCurrencyType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

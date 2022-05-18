@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator CatalogChangeInfoAction(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public CatalogChangeInfoAction(string enumValue)
@@ -112,7 +112,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator CatalogChangeInfoItemType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public CatalogChangeInfoItemType(string enumValue)
@@ -133,7 +133,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator CatalogChangeInfoStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public CatalogChangeInfoStatus(string enumValue)
@@ -157,7 +157,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator CatalogChangeInfoType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public CatalogChangeInfoType(string enumValue)

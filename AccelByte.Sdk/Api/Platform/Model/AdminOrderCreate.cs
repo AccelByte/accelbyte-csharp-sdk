@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator AdminOrderCreatePlatform(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public AdminOrderCreatePlatform(string enumValue)

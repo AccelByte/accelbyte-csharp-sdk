@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator XsollaPaywallConfigDevice(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public XsollaPaywallConfigDevice(string enumValue)
@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator XsollaPaywallConfigSize(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public XsollaPaywallConfigSize(string enumValue)
@@ -87,7 +87,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator XsollaPaywallConfigTheme(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public XsollaPaywallConfigTheme(string enumValue)

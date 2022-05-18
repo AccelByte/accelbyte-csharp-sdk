@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetPaymentPublicConfig operation = new GetPaymentPublicConfig(
                 Namespace,                
                 Sandbox,                
-                PaymentProvider,                
+                GetPaymentPublicConfigPaymentProvider.NewValue(PaymentProvider),                
                 Region                
             );            
             

@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class ResetUserSeasonBuilder
             : OperationBuilder<ResetUserSeasonBuilder>
         {
-            
-            
+
+
+
+
+
             internal ResetUserSeasonBuilder() { }
 
 
@@ -112,4 +115,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

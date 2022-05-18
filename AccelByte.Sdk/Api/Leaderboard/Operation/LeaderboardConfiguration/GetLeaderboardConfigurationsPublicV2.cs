@@ -26,11 +26,15 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class GetLeaderboardConfigurationsPublicV2Builder
             : OperationBuilder<GetLeaderboardConfigurationsPublicV2Builder>
         {
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetLeaderboardConfigurationsPublicV2Builder() { }
 
 
@@ -131,4 +135,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

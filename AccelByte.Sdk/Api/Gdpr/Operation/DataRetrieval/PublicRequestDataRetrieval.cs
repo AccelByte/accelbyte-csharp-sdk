@@ -28,9 +28,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public class PublicRequestDataRetrievalBuilder
             : OperationBuilder<PublicRequestDataRetrievalBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal PublicRequestDataRetrievalBuilder() { }
 
 
@@ -65,7 +67,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             PathParams["userId"] = userId;
             
             
-            if (password != null) FormParams["password"] = password;
+            if (password is not null) FormParams["password"] = password;
 
             
             
@@ -85,7 +87,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             PathParams["userId"] = userId;
             
             
-            if (password != null) FormParams["password"] = password;
+            if (password is not null) FormParams["password"] = password;
 
             
             
@@ -125,4 +127,5 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

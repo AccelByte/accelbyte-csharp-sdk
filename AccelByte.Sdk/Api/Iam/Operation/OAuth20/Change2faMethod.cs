@@ -43,8 +43,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class Change2faMethodBuilder
             : OperationBuilder<Change2faMethodBuilder>
         {
-            
-            
+
+
+
+
+
             internal Change2faMethodBuilder() { }
 
 
@@ -74,8 +77,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (factor != null) FormParams["factor"] = factor;
-            if (mfaToken != null) FormParams["mfaToken"] = mfaToken;
+            if (factor is not null) FormParams["factor"] = factor;
+            if (mfaToken is not null) FormParams["mfaToken"] = mfaToken;
 
             
             
@@ -92,8 +95,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (factor != null) FormParams["factor"] = factor;
-            if (mfaToken != null) FormParams["mfaToken"] = mfaToken;
+            if (factor is not null) FormParams["factor"] = factor;
+            if (mfaToken is not null) FormParams["mfaToken"] = mfaToken;
 
             
             
@@ -125,4 +128,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

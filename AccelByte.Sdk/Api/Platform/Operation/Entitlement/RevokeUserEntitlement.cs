@@ -30,9 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class RevokeUserEntitlementBuilder
             : OperationBuilder<RevokeUserEntitlementBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal RevokeUserEntitlementBuilder() { }
 
 
@@ -127,4 +129,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

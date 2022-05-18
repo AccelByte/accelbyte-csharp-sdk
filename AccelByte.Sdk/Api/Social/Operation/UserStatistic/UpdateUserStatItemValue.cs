@@ -38,13 +38,15 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class UpdateUserStatItemValueBuilder
             : OperationBuilder<UpdateUserStatItemValueBuilder>
         {
-            
-            
-            
+
             public string? AdditionalKey { get; set; }
-            
+
+
             public Model.StatItemUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdateUserStatItemValueBuilder() { }
 
 
@@ -91,7 +93,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["statCode"] = statCode;
             PathParams["userId"] = userId;
             
-            if (builder.AdditionalKey != null) QueryParams["additionalKey"] = builder.AdditionalKey;
+            if (builder.AdditionalKey is not null) QueryParams["additionalKey"] = builder.AdditionalKey;
             
 
             
@@ -115,7 +117,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["statCode"] = statCode;
             PathParams["userId"] = userId;
             
-            if (additionalKey != null) QueryParams["additionalKey"] = additionalKey;
+            if (additionalKey is not null) QueryParams["additionalKey"] = additionalKey;
             
 
             
@@ -157,4 +159,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

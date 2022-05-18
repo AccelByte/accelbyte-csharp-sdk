@@ -44,9 +44,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class UpdateSingleGroupV1Builder
             : OperationBuilder<UpdateSingleGroupV1Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal UpdateSingleGroupV1Builder() { }
 
 
@@ -141,4 +143,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

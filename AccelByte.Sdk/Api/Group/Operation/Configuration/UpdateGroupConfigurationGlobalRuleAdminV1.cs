@@ -38,10 +38,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class UpdateGroupConfigurationGlobalRuleAdminV1Builder
             : OperationBuilder<UpdateGroupConfigurationGlobalRuleAdminV1Builder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal UpdateGroupConfigurationGlobalRuleAdminV1Builder() { }
 
 
@@ -142,4 +143,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

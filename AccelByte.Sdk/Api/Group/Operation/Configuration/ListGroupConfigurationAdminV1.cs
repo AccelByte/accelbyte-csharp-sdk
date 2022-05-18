@@ -36,11 +36,15 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class ListGroupConfigurationAdminV1Builder
             : OperationBuilder<ListGroupConfigurationAdminV1Builder>
         {
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal ListGroupConfigurationAdminV1Builder() { }
 
 
@@ -141,4 +145,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

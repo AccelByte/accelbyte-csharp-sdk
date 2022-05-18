@@ -30,9 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdatePaymentCallbackConfigBuilder
             : OperationBuilder<UpdatePaymentCallbackConfigBuilder>
         {
-            
+
+
             public Model.PaymentCallbackConfigUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdatePaymentCallbackConfigBuilder() { }
 
 
@@ -124,4 +128,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -26,9 +26,11 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class GetUserVisibilityStatusV2Builder
             : OperationBuilder<GetUserVisibilityStatusV2Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal GetUserVisibilityStatusV2Builder() { }
 
 
@@ -123,4 +125,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

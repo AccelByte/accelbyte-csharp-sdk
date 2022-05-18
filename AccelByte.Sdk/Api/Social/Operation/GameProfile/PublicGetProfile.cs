@@ -29,9 +29,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class PublicGetProfileBuilder
             : OperationBuilder<PublicGetProfileBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal PublicGetProfileBuilder() { }
 
 
@@ -126,4 +128,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

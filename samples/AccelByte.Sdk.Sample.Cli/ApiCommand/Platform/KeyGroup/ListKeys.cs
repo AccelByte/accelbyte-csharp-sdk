@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 Limit,                
                 Offset,                
-                Status                
+                (Status is null ? null : ListKeysStatus.NewValue(Status))                
             );            
             
             AccelByte.Sdk.Api.Platform.Model.KeyPagingSliceResult? response = wrapper.ListKeys(operation);

@@ -28,7 +28,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class GetGameTemplateBuilder
             : OperationBuilder<GetGameTemplateBuilder>
         {
-            
+
+
+
+
+
             internal GetGameTemplateBuilder() { }
 
 
@@ -111,4 +115,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

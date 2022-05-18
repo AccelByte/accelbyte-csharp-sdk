@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 CurrencyCode,                
                 Limit,                
                 Offset,                
-                Origin,                
+                (Origin is null ? null : QueryWalletsOrigin.NewValue(Origin)),                
                 UserId                
             );            
             

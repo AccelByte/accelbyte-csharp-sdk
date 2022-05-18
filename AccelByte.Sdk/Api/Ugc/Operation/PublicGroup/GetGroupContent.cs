@@ -26,13 +26,15 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class GetGroupContentBuilder
             : OperationBuilder<GetGroupContentBuilder>
         {
-            
-            
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetGroupContentBuilder() { }
 
 
@@ -145,4 +147,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

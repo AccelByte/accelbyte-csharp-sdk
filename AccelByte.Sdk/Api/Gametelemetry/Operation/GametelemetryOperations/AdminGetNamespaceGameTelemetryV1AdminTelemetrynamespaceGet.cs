@@ -28,7 +28,11 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         public class AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder
             : OperationBuilder<AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder>
         {
-            
+
+
+
+
+
             internal AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder() { }
 
 
@@ -102,4 +106,5 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -32,10 +32,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class BulkDisableCodesBuilder
             : OperationBuilder<BulkDisableCodesBuilder>
         {
-            
-            
+
             public int? BatchNo { get; set; }
-            
+
+
+
+
+
             internal BulkDisableCodesBuilder() { }
 
 
@@ -133,4 +136,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -28,7 +28,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class AdminGetThirdPartyConfigBuilder
             : OperationBuilder<AdminGetThirdPartyConfigBuilder>
         {
-            
+
+
+
+
+
             internal AdminGetThirdPartyConfigBuilder() { }
 
 
@@ -111,4 +115,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -30,9 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class CreateCampaignBuilder
             : OperationBuilder<CreateCampaignBuilder>
         {
-            
+
+
             public Model.CampaignCreate? Body { get; set; }
-            
+
+
+
+
             internal CreateCampaignBuilder() { }
 
 
@@ -124,4 +128,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

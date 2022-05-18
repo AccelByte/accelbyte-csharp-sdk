@@ -24,8 +24,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicResetPasswordV2Builder
             : OperationBuilder<PublicResetPasswordV2Builder>
         {
-            
-            
+
+
+
+
+
             internal PublicResetPasswordV2Builder() { }
 
 
@@ -106,4 +109,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -32,7 +32,11 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
         public class HeartbeatBuilder
             : OperationBuilder<HeartbeatBuilder>
         {
-            
+
+
+
+
+
             internal HeartbeatBuilder() { }
 
 
@@ -107,4 +111,5 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

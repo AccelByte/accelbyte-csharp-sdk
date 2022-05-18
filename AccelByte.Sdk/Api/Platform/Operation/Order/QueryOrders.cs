@@ -30,23 +30,27 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryOrdersBuilder
             : OperationBuilder<QueryOrdersBuilder>
         {
-            
+
             public string? EndTime { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public List<string>? OrderNos { get; set; }
-            
+
             public string? SortBy { get; set; }
-            
+
             public string? StartTime { get; set; }
-            
-            public string? Status { get; set; }
-            
+
+            public QueryOrdersStatus? Status { get; set; }
+
             public bool? WithTotal { get; set; }
-            
+
+
+
+
+
             internal QueryOrdersBuilder() { }
 
 
@@ -86,7 +90,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryOrdersBuilder SetStatus(string _status)
+            public QueryOrdersBuilder SetStatus(QueryOrdersStatus _status)
             {
                 Status = _status;
                 return this;
@@ -121,13 +125,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.EndTime != null) QueryParams["endTime"] = builder.EndTime;
+            if (builder.EndTime is not null) QueryParams["endTime"] = builder.EndTime;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.OrderNos != null) QueryParams["orderNos"] = builder.OrderNos;
-            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
-            if (builder.StartTime != null) QueryParams["startTime"] = builder.StartTime;
-            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            if (builder.OrderNos is not null) QueryParams["orderNos"] = builder.OrderNos;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.StartTime is not null) QueryParams["startTime"] = builder.StartTime;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
             if (builder.WithTotal != null) QueryParams["withTotal"] = Convert.ToString(builder.WithTotal)!;
             
 
@@ -148,19 +152,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             List<string>? orderNos,            
             string? sortBy,            
             string? startTime,            
-            string? status,            
+            QueryOrdersStatus? status,            
             bool? withTotal            
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (endTime != null) QueryParams["endTime"] = endTime;
+            if (endTime is not null) QueryParams["endTime"] = endTime;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (orderNos != null) QueryParams["orderNos"] = orderNos;
-            if (sortBy != null) QueryParams["sortBy"] = sortBy;
-            if (startTime != null) QueryParams["startTime"] = startTime;
-            if (status != null) QueryParams["status"] = status;
+            if (orderNos is not null) QueryParams["orderNos"] = orderNos;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
+            if (startTime is not null) QueryParams["startTime"] = startTime;
+            if (status is not null) QueryParams["status"] = status.Value;
             if (withTotal != null) QueryParams["withTotal"] = Convert.ToString(withTotal)!;
             
 
@@ -203,4 +207,53 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class QueryOrdersStatus : StringEnum<QueryOrdersStatus>
+    {
+        public static readonly QueryOrdersStatus Chargeback
+            = new QueryOrdersStatus("CHARGEBACK");
+
+        public static readonly QueryOrdersStatus ChargebackReversed
+            = new QueryOrdersStatus("CHARGEBACK_REVERSED");
+
+        public static readonly QueryOrdersStatus Charged
+            = new QueryOrdersStatus("CHARGED");
+
+        public static readonly QueryOrdersStatus Closed
+            = new QueryOrdersStatus("CLOSED");
+
+        public static readonly QueryOrdersStatus Deleted
+            = new QueryOrdersStatus("DELETED");
+
+        public static readonly QueryOrdersStatus Fulfilled
+            = new QueryOrdersStatus("FULFILLED");
+
+        public static readonly QueryOrdersStatus FulfillFailed
+            = new QueryOrdersStatus("FULFILL_FAILED");
+
+        public static readonly QueryOrdersStatus Init
+            = new QueryOrdersStatus("INIT");
+
+        public static readonly QueryOrdersStatus Refunded
+            = new QueryOrdersStatus("REFUNDED");
+
+        public static readonly QueryOrdersStatus Refunding
+            = new QueryOrdersStatus("REFUNDING");
+
+        public static readonly QueryOrdersStatus RefundFailed
+            = new QueryOrdersStatus("REFUND_FAILED");
+
+
+        public static implicit operator QueryOrdersStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryOrdersStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

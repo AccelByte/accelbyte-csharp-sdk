@@ -70,12 +70,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 EndDate,                
                 ExternalId,                
                 Limit,                
-                NotificationSource,                
+                (NotificationSource is null ? null : QueryPaymentNotificationsNotificationSource.NewValue(NotificationSource)),                
                 NotificationType,                
                 Offset,                
                 PaymentOrderNo,                
                 StartDate,                
-                Status                
+                (Status is null ? null : QueryPaymentNotificationsStatus.NewValue(Status))                
             );            
             
             AccelByte.Sdk.Api.Platform.Model.PaymentNotificationPagingSlicedResult? response = wrapper.QueryPaymentNotifications(operation);

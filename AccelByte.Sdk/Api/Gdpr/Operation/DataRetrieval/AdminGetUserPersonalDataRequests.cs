@@ -28,12 +28,15 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public class AdminGetUserPersonalDataRequestsBuilder
             : OperationBuilder<AdminGetUserPersonalDataRequestsBuilder>
         {
-            
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal AdminGetUserPersonalDataRequestsBuilder() { }
 
 
@@ -140,4 +143,5 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

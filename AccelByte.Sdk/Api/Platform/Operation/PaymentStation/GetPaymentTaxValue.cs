@@ -29,11 +29,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetPaymentTaxValueBuilder
             : OperationBuilder<GetPaymentTaxValueBuilder>
         {
-            
+
             public string? ZipCode { get; set; }
-            
-            
-            
+
+
+
+
+
             internal GetPaymentTaxValueBuilder() { }
 
 
@@ -50,7 +52,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public GetPaymentTaxValue Build(
                 string namespace_,
                 string paymentOrderNo,
-                string paymentProvider
+                GetPaymentTaxValuePaymentProvider paymentProvider
             )
             {
                 GetPaymentTaxValue op = new GetPaymentTaxValue(this,
@@ -67,14 +69,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         private GetPaymentTaxValue(GetPaymentTaxValueBuilder builder,
             string namespace_,
             string paymentOrderNo,
-            string paymentProvider
+            GetPaymentTaxValuePaymentProvider paymentProvider
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.ZipCode != null) QueryParams["zipCode"] = builder.ZipCode;
-            if (paymentOrderNo != null) QueryParams["paymentOrderNo"] = paymentOrderNo;
-            if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
+            if (builder.ZipCode is not null) QueryParams["zipCode"] = builder.ZipCode;
+            if (paymentOrderNo is not null) QueryParams["paymentOrderNo"] = paymentOrderNo;
+            if (paymentProvider is not null) QueryParams["paymentProvider"] = paymentProvider.Value;
             
 
             
@@ -88,14 +90,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string namespace_,            
             string? zipCode,            
             string paymentOrderNo,            
-            string paymentProvider            
+            GetPaymentTaxValuePaymentProvider paymentProvider            
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (zipCode != null) QueryParams["zipCode"] = zipCode;
-            if (paymentOrderNo != null) QueryParams["paymentOrderNo"] = paymentOrderNo;
-            if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
+            if (zipCode is not null) QueryParams["zipCode"] = zipCode;
+            if (paymentOrderNo is not null) QueryParams["paymentOrderNo"] = paymentOrderNo;
+            if (paymentProvider is not null) QueryParams["paymentProvider"] = paymentProvider.Value;
             
 
             
@@ -135,4 +137,44 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class GetPaymentTaxValuePaymentProvider : StringEnum<GetPaymentTaxValuePaymentProvider>
+    {
+        public static readonly GetPaymentTaxValuePaymentProvider Adyen
+            = new GetPaymentTaxValuePaymentProvider("ADYEN");
+
+        public static readonly GetPaymentTaxValuePaymentProvider Alipay
+            = new GetPaymentTaxValuePaymentProvider("ALIPAY");
+
+        public static readonly GetPaymentTaxValuePaymentProvider Checkout
+            = new GetPaymentTaxValuePaymentProvider("CHECKOUT");
+
+        public static readonly GetPaymentTaxValuePaymentProvider Paypal
+            = new GetPaymentTaxValuePaymentProvider("PAYPAL");
+
+        public static readonly GetPaymentTaxValuePaymentProvider Stripe
+            = new GetPaymentTaxValuePaymentProvider("STRIPE");
+
+        public static readonly GetPaymentTaxValuePaymentProvider Wallet
+            = new GetPaymentTaxValuePaymentProvider("WALLET");
+
+        public static readonly GetPaymentTaxValuePaymentProvider Wxpay
+            = new GetPaymentTaxValuePaymentProvider("WXPAY");
+
+        public static readonly GetPaymentTaxValuePaymentProvider Xsolla
+            = new GetPaymentTaxValuePaymentProvider("XSOLLA");
+
+
+        public static implicit operator GetPaymentTaxValuePaymentProvider(string value)
+        {
+            return NewValue(value);
+        }
+
+        public GetPaymentTaxValuePaymentProvider(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

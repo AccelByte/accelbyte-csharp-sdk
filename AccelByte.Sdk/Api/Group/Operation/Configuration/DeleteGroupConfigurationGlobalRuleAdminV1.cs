@@ -38,9 +38,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class DeleteGroupConfigurationGlobalRuleAdminV1Builder
             : OperationBuilder<DeleteGroupConfigurationGlobalRuleAdminV1Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal DeleteGroupConfigurationGlobalRuleAdminV1Builder() { }
 
 
@@ -135,4 +137,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -29,8 +29,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class RetrievePolicyCountryBuilder
             : OperationBuilder<RetrievePolicyCountryBuilder>
         {
-            
-            
+
+
+
+
+
             internal RetrievePolicyCountryBuilder() { }
 
 
@@ -119,4 +122,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

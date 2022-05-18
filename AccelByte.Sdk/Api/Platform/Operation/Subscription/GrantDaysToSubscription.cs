@@ -31,11 +31,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GrantDaysToSubscriptionBuilder
             : OperationBuilder<GrantDaysToSubscriptionBuilder>
         {
-            
-            
-            
+
+
             public Model.GrantSubscriptionDaysRequest? Body { get; set; }
-            
+
+
+
+
             internal GrantDaysToSubscriptionBuilder() { }
 
 
@@ -139,4 +141,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

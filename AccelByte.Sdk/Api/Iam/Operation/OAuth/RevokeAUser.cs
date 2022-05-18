@@ -49,7 +49,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class RevokeAUserBuilder
             : OperationBuilder<RevokeAUserBuilder>
         {
-            
+
+
+
+
+
             internal RevokeAUserBuilder() { }
 
 
@@ -76,7 +80,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (userID != null) FormParams["userID"] = userID;
+            if (userID is not null) FormParams["userID"] = userID;
 
             
             
@@ -92,7 +96,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (userID != null) FormParams["userID"] = userID;
+            if (userID is not null) FormParams["userID"] = userID;
 
             
             
@@ -124,4 +128,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -31,12 +31,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetItemByAppIdBuilder
             : OperationBuilder<GetItemByAppIdBuilder>
         {
-            
+
             public bool? ActiveOnly { get; set; }
-            
+
             public string? StoreId { get; set; }
-            
-            
+
+
+
+
+
             internal GetItemByAppIdBuilder() { }
 
 
@@ -79,8 +82,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
-            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
-            if (appId != null) QueryParams["appId"] = appId;
+            if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
+            if (appId is not null) QueryParams["appId"] = appId;
             
 
             
@@ -101,8 +104,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
-            if (storeId != null) QueryParams["storeId"] = storeId;
-            if (appId != null) QueryParams["appId"] = appId;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
+            if (appId is not null) QueryParams["appId"] = appId;
             
 
             
@@ -143,4 +146,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

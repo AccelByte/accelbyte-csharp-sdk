@@ -37,7 +37,11 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class GetMyProfileInfoBuilder
             : OperationBuilder<GetMyProfileInfoBuilder>
         {
-            
+
+
+
+
+
             internal GetMyProfileInfoBuilder() { }
 
 
@@ -120,4 +124,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

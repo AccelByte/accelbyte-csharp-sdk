@@ -29,12 +29,15 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class QueryStatsBuilder
             : OperationBuilder<QueryStatsBuilder>
         {
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
-            
+
+
+
+
+
             internal QueryStatsBuilder() { }
 
 
@@ -78,7 +81,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (keyword != null) QueryParams["keyword"] = keyword;
+            if (keyword is not null) QueryParams["keyword"] = keyword;
             
 
             
@@ -100,7 +103,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (keyword != null) QueryParams["keyword"] = keyword;
+            if (keyword is not null) QueryParams["keyword"] = keyword;
             
 
             
@@ -141,4 +144,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

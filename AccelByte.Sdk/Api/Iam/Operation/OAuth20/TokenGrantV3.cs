@@ -224,23 +224,27 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class TokenGrantV3Builder
             : OperationBuilder<TokenGrantV3Builder>
         {
+
+
+
             public string? ClientId { get; set; }
-            
+
             public string? Code { get; set; }
-            
+
             public string? CodeVerifier { get; set; }
-            
+
             public bool? ExtendExp { get; set; }
-            
+
             public string? Password { get; set; }
-            
+
             public string? RedirectUri { get; set; }
-            
+
             public string? RefreshToken { get; set; }
-            
+
             public string? Username { get; set; }
-            
-            
+
+
+
             internal TokenGrantV3Builder() { }
 
 
@@ -297,7 +301,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
             public TokenGrantV3 Build(
-                string grantType
+                TokenGrantV3GrantType grantType
             )
             {
                 TokenGrantV3 op = new TokenGrantV3(this,
@@ -310,20 +314,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         }
 
         private TokenGrantV3(TokenGrantV3Builder builder,
-            string grantType
+            TokenGrantV3GrantType grantType
         )
         {
             
             
-            if (builder.ClientId != null) FormParams["client_id"] = builder.ClientId;
-            if (builder.Code != null) FormParams["code"] = builder.Code;
-            if (builder.CodeVerifier != null) FormParams["code_verifier"] = builder.CodeVerifier;
+            if (builder.ClientId is not null) FormParams["client_id"] = builder.ClientId;
+            if (builder.Code is not null) FormParams["code"] = builder.Code;
+            if (builder.CodeVerifier is not null) FormParams["code_verifier"] = builder.CodeVerifier;
             if (builder.ExtendExp != null) FormParams["extend_exp"] = Convert.ToString(builder.ExtendExp)!;
-            if (builder.Password != null) FormParams["password"] = builder.Password;
-            if (builder.RedirectUri != null) FormParams["redirect_uri"] = builder.RedirectUri;
-            if (builder.RefreshToken != null) FormParams["refresh_token"] = builder.RefreshToken;
-            if (builder.Username != null) FormParams["username"] = builder.Username;
-            if (grantType != null) FormParams["grant_type"] = grantType;
+            if (builder.Password is not null) FormParams["password"] = builder.Password;
+            if (builder.RedirectUri is not null) FormParams["redirect_uri"] = builder.RedirectUri;
+            if (builder.RefreshToken is not null) FormParams["refresh_token"] = builder.RefreshToken;
+            if (builder.Username is not null) FormParams["username"] = builder.Username;
+            if (grantType is not null) FormParams["grant_type"] = grantType.Value;
 
             
             
@@ -342,20 +346,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string? redirectUri,            
             string? refreshToken,            
             string? username,            
-            string grantType            
+            TokenGrantV3GrantType grantType            
         )
         {
             
             
-            if (clientId != null) FormParams["client_id"] = clientId;
-            if (code != null) FormParams["code"] = code;
-            if (codeVerifier != null) FormParams["code_verifier"] = codeVerifier;
+            if (clientId is not null) FormParams["client_id"] = clientId;
+            if (code is not null) FormParams["code"] = code;
+            if (codeVerifier is not null) FormParams["code_verifier"] = codeVerifier;
             if (extendExp != null) FormParams["extend_exp"] = Convert.ToString(extendExp)!;
-            if (password != null) FormParams["password"] = password;
-            if (redirectUri != null) FormParams["redirect_uri"] = redirectUri;
-            if (refreshToken != null) FormParams["refresh_token"] = refreshToken;
-            if (username != null) FormParams["username"] = username;
-            if (grantType != null) FormParams["grant_type"] = grantType;
+            if (password is not null) FormParams["password"] = password;
+            if (redirectUri is not null) FormParams["redirect_uri"] = redirectUri;
+            if (refreshToken is not null) FormParams["refresh_token"] = refreshToken;
+            if (username is not null) FormParams["username"] = username;
+            if (grantType is not null) FormParams["grant_type"] = grantType.Value;
 
             
             
@@ -395,4 +399,32 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class TokenGrantV3GrantType : StringEnum<TokenGrantV3GrantType>
+    {
+        public static readonly TokenGrantV3GrantType AuthorizationCode
+            = new TokenGrantV3GrantType("authorization_code");
+
+        public static readonly TokenGrantV3GrantType ClientCredentials
+            = new TokenGrantV3GrantType("client_credentials");
+
+        public static readonly TokenGrantV3GrantType Password
+            = new TokenGrantV3GrantType("password");
+
+        public static readonly TokenGrantV3GrantType RefreshToken
+            = new TokenGrantV3GrantType("refresh_token");
+
+
+        public static implicit operator TokenGrantV3GrantType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public TokenGrantV3GrantType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

@@ -169,7 +169,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentOrderInfoChannel(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentOrderInfoChannel(string enumValue)
@@ -208,7 +208,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentOrderInfoItemType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentOrderInfoItemType(string enumValue)
@@ -247,7 +247,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentOrderInfoPaymentProvider(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentOrderInfoPaymentProvider(string enumValue)
@@ -301,7 +301,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentOrderInfoStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentOrderInfoStatus(string enumValue)

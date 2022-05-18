@@ -32,14 +32,17 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class PublicQueryUserStatItems2Builder
             : OperationBuilder<PublicQueryUserStatItems2Builder>
         {
-            
-            
+
             public string? AdditionalKey { get; set; }
-            
+
             public List<string>? StatCodes { get; set; }
-            
+
             public List<string>? Tags { get; set; }
-            
+
+
+
+
+
             internal PublicQueryUserStatItems2Builder() { }
 
 
@@ -88,9 +91,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.AdditionalKey != null) QueryParams["additionalKey"] = builder.AdditionalKey;
-            if (builder.StatCodes != null) QueryParams["statCodes"] = builder.StatCodes;
-            if (builder.Tags != null) QueryParams["tags"] = builder.Tags;
+            if (builder.AdditionalKey is not null) QueryParams["additionalKey"] = builder.AdditionalKey;
+            if (builder.StatCodes is not null) QueryParams["statCodes"] = builder.StatCodes;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             
 
             
@@ -114,9 +117,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (additionalKey != null) QueryParams["additionalKey"] = additionalKey;
-            if (statCodes != null) QueryParams["statCodes"] = statCodes;
-            if (tags != null) QueryParams["tags"] = tags;
+            if (additionalKey is not null) QueryParams["additionalKey"] = additionalKey;
+            if (statCodes is not null) QueryParams["statCodes"] = statCodes;
+            if (tags is not null) QueryParams["tags"] = tags;
             
 
             
@@ -159,4 +162,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

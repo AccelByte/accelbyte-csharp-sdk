@@ -26,9 +26,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class GetUsersByLoginIdsBuilder
             : OperationBuilder<GetUsersByLoginIdsBuilder>
         {
-            
+
             public string? LoginIds { get; set; }
-            
+
+
+
+
+
             internal GetUsersByLoginIdsBuilder() { }
 
 
@@ -61,7 +65,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.LoginIds != null) QueryParams["loginIds"] = builder.LoginIds;
+            if (builder.LoginIds is not null) QueryParams["loginIds"] = builder.LoginIds;
             
 
             
@@ -79,7 +83,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (loginIds != null) QueryParams["loginIds"] = loginIds;
+            if (loginIds is not null) QueryParams["loginIds"] = loginIds;
             
 
             
@@ -120,4 +124,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

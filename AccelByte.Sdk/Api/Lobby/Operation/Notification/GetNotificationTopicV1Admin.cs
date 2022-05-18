@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class GetNotificationTopicV1AdminBuilder
             : OperationBuilder<GetNotificationTopicV1AdminBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetNotificationTopicV1AdminBuilder() { }
 
 
@@ -120,4 +123,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

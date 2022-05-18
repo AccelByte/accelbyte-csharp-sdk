@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class PublicUpdateUserProfileStatusBuilder
             : OperationBuilder<PublicUpdateUserProfileStatusBuilder>
         {
-            
-            
+
+
             public Model.UserProfileStatusUpdate? Body { get; set; }
-            
+
+
+
+
             internal PublicUpdateUserProfileStatusBuilder() { }
 
 
@@ -132,4 +135,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

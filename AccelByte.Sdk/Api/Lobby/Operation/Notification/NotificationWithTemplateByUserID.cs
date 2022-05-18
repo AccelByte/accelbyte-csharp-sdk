@@ -33,9 +33,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class NotificationWithTemplateByUserIDBuilder
             : OperationBuilder<NotificationWithTemplateByUserIDBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal NotificationWithTemplateByUserIDBuilder() { }
 
 
@@ -122,4 +124,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

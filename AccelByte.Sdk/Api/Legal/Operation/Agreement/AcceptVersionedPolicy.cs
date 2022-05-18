@@ -29,7 +29,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class AcceptVersionedPolicyBuilder
             : OperationBuilder<AcceptVersionedPolicyBuilder>
         {
-            
+
+
+
+
+
             internal AcceptVersionedPolicyBuilder() { }
 
 
@@ -104,4 +108,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class CreateUserPaymentOrderBuilder
             : OperationBuilder<CreateUserPaymentOrderBuilder>
         {
-            
-            
+
+
             public Model.PaymentOrderCreate? Body { get; set; }
-            
+
+
+
+
             internal CreateUserPaymentOrderBuilder() { }
 
 
@@ -132,4 +135,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

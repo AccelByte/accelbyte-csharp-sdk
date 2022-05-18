@@ -243,21 +243,25 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class TokenGrantBuilder
             : OperationBuilder<TokenGrantBuilder>
         {
+
+
+
             public string? Code { get; set; }
-            
+
             public bool? ExtendExp { get; set; }
-            
+
             public string? Namespace { get; set; }
-            
+
             public string? Password { get; set; }
-            
+
             public string? RedirectUri { get; set; }
-            
+
             public string? RefreshToken { get; set; }
-            
+
             public string? Username { get; set; }
-            
-            
+
+
+
             internal TokenGrantBuilder() { }
 
 
@@ -308,7 +312,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
             public TokenGrant Build(
-                string grantType
+                TokenGrantGrantType grantType
             )
             {
                 TokenGrant op = new TokenGrant(this,
@@ -321,19 +325,19 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         }
 
         private TokenGrant(TokenGrantBuilder builder,
-            string grantType
+            TokenGrantGrantType grantType
         )
         {
             
             
-            if (builder.Code != null) FormParams["code"] = builder.Code;
+            if (builder.Code is not null) FormParams["code"] = builder.Code;
             if (builder.ExtendExp != null) FormParams["extend_exp"] = Convert.ToString(builder.ExtendExp)!;
-            if (builder.Namespace != null) FormParams["namespace"] = builder.Namespace;
-            if (builder.Password != null) FormParams["password"] = builder.Password;
-            if (builder.RedirectUri != null) FormParams["redirect_uri"] = builder.RedirectUri;
-            if (builder.RefreshToken != null) FormParams["refresh_token"] = builder.RefreshToken;
-            if (builder.Username != null) FormParams["username"] = builder.Username;
-            if (grantType != null) FormParams["grant_type"] = grantType;
+            if (builder.Namespace is not null) FormParams["namespace"] = builder.Namespace;
+            if (builder.Password is not null) FormParams["password"] = builder.Password;
+            if (builder.RedirectUri is not null) FormParams["redirect_uri"] = builder.RedirectUri;
+            if (builder.RefreshToken is not null) FormParams["refresh_token"] = builder.RefreshToken;
+            if (builder.Username is not null) FormParams["username"] = builder.Username;
+            if (grantType is not null) FormParams["grant_type"] = grantType.Value;
 
             
             
@@ -351,19 +355,19 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string? redirectUri,            
             string? refreshToken,            
             string? username,            
-            string grantType            
+            TokenGrantGrantType grantType            
         )
         {
             
             
-            if (code != null) FormParams["code"] = code;
+            if (code is not null) FormParams["code"] = code;
             if (extendExp != null) FormParams["extend_exp"] = Convert.ToString(extendExp)!;
-            if (namespace_ != null) FormParams["namespace"] = namespace_;
-            if (password != null) FormParams["password"] = password;
-            if (redirectUri != null) FormParams["redirect_uri"] = redirectUri;
-            if (refreshToken != null) FormParams["refresh_token"] = refreshToken;
-            if (username != null) FormParams["username"] = username;
-            if (grantType != null) FormParams["grant_type"] = grantType;
+            if (namespace_ is not null) FormParams["namespace"] = namespace_;
+            if (password is not null) FormParams["password"] = password;
+            if (redirectUri is not null) FormParams["redirect_uri"] = redirectUri;
+            if (refreshToken is not null) FormParams["refresh_token"] = refreshToken;
+            if (username is not null) FormParams["username"] = username;
+            if (grantType is not null) FormParams["grant_type"] = grantType.Value;
 
             
             
@@ -403,4 +407,32 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class TokenGrantGrantType : StringEnum<TokenGrantGrantType>
+    {
+        public static readonly TokenGrantGrantType AuthorizationCode
+            = new TokenGrantGrantType("authorization_code");
+
+        public static readonly TokenGrantGrantType ClientCredentials
+            = new TokenGrantGrantType("client_credentials");
+
+        public static readonly TokenGrantGrantType Password
+            = new TokenGrantGrantType("password");
+
+        public static readonly TokenGrantGrantType RefreshToken
+            = new TokenGrantGrantType("refresh_token");
+
+
+        public static implicit operator TokenGrantGrantType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public TokenGrantGrantType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

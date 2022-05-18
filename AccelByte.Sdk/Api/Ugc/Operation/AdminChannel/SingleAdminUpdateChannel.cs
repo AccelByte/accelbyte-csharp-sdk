@@ -26,9 +26,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class SingleAdminUpdateChannelBuilder
             : OperationBuilder<SingleAdminUpdateChannelBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal SingleAdminUpdateChannelBuilder() { }
 
 
@@ -123,4 +125,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

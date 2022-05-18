@@ -35,10 +35,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class TestCheckoutConfigBuilder
             : OperationBuilder<TestCheckoutConfigBuilder>
         {
+
             public bool? Sandbox { get; set; }
-            
+
+
             public Model.CheckoutConfig? Body { get; set; }
-            
+
+
+
+
             internal TestCheckoutConfigBuilder() { }
 
 
@@ -133,4 +138,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

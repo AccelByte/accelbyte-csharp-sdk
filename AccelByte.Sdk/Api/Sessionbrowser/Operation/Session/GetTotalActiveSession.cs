@@ -28,9 +28,13 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public class GetTotalActiveSessionBuilder
             : OperationBuilder<GetTotalActiveSessionBuilder>
         {
-            
+
             public string? SessionType { get; set; }
-            
+
+
+
+
+
             internal GetTotalActiveSessionBuilder() { }
 
 
@@ -63,7 +67,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.SessionType != null) QueryParams["session_type"] = builder.SessionType;
+            if (builder.SessionType is not null) QueryParams["session_type"] = builder.SessionType;
             
 
             
@@ -81,7 +85,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (sessionType != null) QueryParams["session_type"] = sessionType;
+            if (sessionType is not null) QueryParams["session_type"] = sessionType;
             
 
             
@@ -122,4 +126,5 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

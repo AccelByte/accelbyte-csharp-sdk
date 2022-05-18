@@ -30,12 +30,15 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public class AdminRetrievePlayerRecordsBuilder
             : OperationBuilder<AdminRetrievePlayerRecordsBuilder>
         {
-            
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal AdminRetrievePlayerRecordsBuilder() { }
 
 
@@ -142,4 +145,5 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

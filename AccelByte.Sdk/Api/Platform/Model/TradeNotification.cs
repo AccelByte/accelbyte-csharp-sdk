@@ -161,7 +161,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator TradeNotificationPaymentProvider(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public TradeNotificationPaymentProvider(string enumValue)
@@ -215,7 +215,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator TradeNotificationStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public TradeNotificationStatus(string enumValue)

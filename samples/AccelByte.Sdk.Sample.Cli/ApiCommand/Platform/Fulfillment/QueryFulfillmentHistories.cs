@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 Limit,                
                 Offset,                
-                Status,                
+                (Status is null ? null : QueryFulfillmentHistoriesStatus.NewValue(Status)),                
                 UserId                
             );            
             

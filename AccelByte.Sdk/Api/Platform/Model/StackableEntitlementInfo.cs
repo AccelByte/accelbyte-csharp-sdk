@@ -110,7 +110,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator StackableEntitlementInfoAppType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public StackableEntitlementInfoAppType(string enumValue)
@@ -140,7 +140,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator StackableEntitlementInfoClazz(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public StackableEntitlementInfoClazz(string enumValue)
@@ -182,7 +182,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator StackableEntitlementInfoSource(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public StackableEntitlementInfoSource(string enumValue)
@@ -209,7 +209,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator StackableEntitlementInfoStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public StackableEntitlementInfoStatus(string enumValue)
@@ -230,7 +230,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator StackableEntitlementInfoType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public StackableEntitlementInfoType(string enumValue)

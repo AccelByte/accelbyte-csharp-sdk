@@ -29,9 +29,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicGetPaymentUrlBuilder
             : OperationBuilder<PublicGetPaymentUrlBuilder>
         {
-            
+
+
             public Model.PaymentUrlCreate? Body { get; set; }
-            
+
+
+
+
             internal PublicGetPaymentUrlBuilder() { }
 
 
@@ -121,4 +125,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

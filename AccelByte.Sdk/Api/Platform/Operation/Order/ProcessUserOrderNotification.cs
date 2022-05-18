@@ -30,11 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ProcessUserOrderNotificationBuilder
             : OperationBuilder<ProcessUserOrderNotificationBuilder>
         {
-            
-            
-            
+
+
             public Model.TradeNotification? Body { get; set; }
-            
+
+
+
+
             internal ProcessUserOrderNotificationBuilder() { }
 
 
@@ -130,4 +132,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

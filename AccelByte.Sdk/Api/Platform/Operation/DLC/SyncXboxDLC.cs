@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class SyncXboxDLCBuilder
             : OperationBuilder<SyncXboxDLCBuilder>
         {
-            
-            
+
+
             public Model.XblDLCSyncRequest? Body { get; set; }
-            
+
+
+
+
             internal SyncXboxDLCBuilder() { }
 
 
@@ -124,4 +127,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

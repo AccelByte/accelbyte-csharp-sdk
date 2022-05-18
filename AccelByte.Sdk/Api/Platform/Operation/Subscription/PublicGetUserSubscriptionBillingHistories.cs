@@ -30,15 +30,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicGetUserSubscriptionBillingHistoriesBuilder
             : OperationBuilder<PublicGetUserSubscriptionBillingHistoriesBuilder>
         {
-            
-            
-            
+
             public bool? ExcludeFree { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
+
+
+
+
             internal PublicGetUserSubscriptionBillingHistoriesBuilder() { }
 
 
@@ -160,4 +162,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

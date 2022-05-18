@@ -33,9 +33,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class AdminUploadContentScreenshotBuilder
             : OperationBuilder<AdminUploadContentScreenshotBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal AdminUploadContentScreenshotBuilder() { }
 
 
@@ -130,4 +132,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

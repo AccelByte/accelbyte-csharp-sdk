@@ -45,8 +45,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class DeleteGroupPublicV1Builder
             : OperationBuilder<DeleteGroupPublicV1Builder>
         {
-            
-            
+
+
+
+
+
             internal DeleteGroupPublicV1Builder() { }
 
 
@@ -127,4 +130,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

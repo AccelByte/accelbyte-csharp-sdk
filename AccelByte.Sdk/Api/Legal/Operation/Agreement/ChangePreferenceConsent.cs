@@ -24,10 +24,13 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class ChangePreferenceConsentBuilder
             : OperationBuilder<ChangePreferenceConsentBuilder>
         {
-            
-            
+
+
             public List<Model.AcceptAgreementRequest>? Body { get; set; }
-            
+
+
+
+
             internal ChangePreferenceConsentBuilder() { }
 
 
@@ -117,4 +120,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

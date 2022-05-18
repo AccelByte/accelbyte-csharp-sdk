@@ -28,8 +28,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class AdminGetPlayerBlockedPlayersV1Builder
             : OperationBuilder<AdminGetPlayerBlockedPlayersV1Builder>
         {
-            
-            
+
+
+
+
+
             internal AdminGetPlayerBlockedPlayersV1Builder() { }
 
 
@@ -118,4 +121,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

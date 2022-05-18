@@ -29,9 +29,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class BulkFetchStatItemsBuilder
             : OperationBuilder<BulkFetchStatItemsBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal BulkFetchStatItemsBuilder() { }
 
 
@@ -64,8 +66,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (statCode != null) QueryParams["statCode"] = statCode;
-            if (userIds != null) QueryParams["userIds"] = userIds;
+            if (statCode is not null) QueryParams["statCode"] = statCode;
+            if (userIds is not null) QueryParams["userIds"] = userIds;
             
 
             
@@ -84,8 +86,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (statCode != null) QueryParams["statCode"] = statCode;
-            if (userIds != null) QueryParams["userIds"] = userIds;
+            if (statCode is not null) QueryParams["statCode"] = statCode;
+            if (userIds is not null) QueryParams["userIds"] = userIds;
             
 
             
@@ -126,4 +128,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

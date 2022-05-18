@@ -29,9 +29,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class PublicGetSlotDataBuilder
             : OperationBuilder<PublicGetSlotDataBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal PublicGetSlotDataBuilder() { }
 
 
@@ -134,4 +136,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -34,8 +34,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class CreateNotificationTemplateV1AdminBuilder
             : OperationBuilder<CreateNotificationTemplateV1AdminBuilder>
         {
-            
-            
+
+
+
+
+
             internal CreateNotificationTemplateV1AdminBuilder() { }
 
 
@@ -116,4 +119,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

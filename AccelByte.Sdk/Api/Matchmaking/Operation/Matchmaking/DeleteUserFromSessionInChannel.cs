@@ -30,10 +30,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public class DeleteUserFromSessionInChannelBuilder
             : OperationBuilder<DeleteUserFromSessionInChannelBuilder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal DeleteUserFromSessionInChannelBuilder() { }
 
 
@@ -126,4 +127,5 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

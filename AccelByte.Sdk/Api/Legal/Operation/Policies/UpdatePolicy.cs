@@ -29,9 +29,13 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class UpdatePolicyBuilder
             : OperationBuilder<UpdatePolicyBuilder>
         {
-            
+
+
             public Model.UpdatePolicyRequest? Body { get; set; }
-            
+
+
+
+
             internal UpdatePolicyBuilder() { }
 
 
@@ -115,4 +119,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

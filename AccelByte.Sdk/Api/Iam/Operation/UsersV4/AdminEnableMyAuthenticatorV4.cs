@@ -33,8 +33,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminEnableMyAuthenticatorV4Builder
             : OperationBuilder<AdminEnableMyAuthenticatorV4Builder>
         {
+
+
+
             public string? Code { get; set; }
-            
+
+
+
             internal AdminEnableMyAuthenticatorV4Builder() { }
 
 
@@ -64,7 +69,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (builder.Code != null) FormParams["code"] = builder.Code;
+            if (builder.Code is not null) FormParams["code"] = builder.Code;
 
             
             
@@ -80,7 +85,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (code != null) FormParams["code"] = code;
+            if (code is not null) FormParams["code"] = code;
 
             
             
@@ -112,4 +117,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

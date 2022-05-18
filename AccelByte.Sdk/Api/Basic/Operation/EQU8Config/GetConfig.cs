@@ -29,7 +29,11 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class GetConfigBuilder
             : OperationBuilder<GetConfigBuilder>
         {
-            
+
+
+
+
+
             internal GetConfigBuilder() { }
 
 
@@ -112,4 +116,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

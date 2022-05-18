@@ -91,7 +91,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator AppUpdateGenres(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public AppUpdateGenres(string enumValue)
@@ -121,7 +121,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator AppUpdatePlatforms(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public AppUpdatePlatforms(string enumValue)
@@ -154,7 +154,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator AppUpdatePlayers(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public AppUpdatePlayers(string enumValue)
@@ -202,7 +202,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator AppUpdatePrimaryGenre(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public AppUpdatePrimaryGenre(string enumValue)

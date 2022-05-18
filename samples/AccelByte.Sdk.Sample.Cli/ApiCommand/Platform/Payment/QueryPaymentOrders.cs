@@ -55,11 +55,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             QueryPaymentOrders operation = new QueryPaymentOrders(
                 Namespace,                
-                Channel,                
+                (Channel is null ? null : QueryPaymentOrdersChannel.NewValue(Channel)),                
                 ExtTxId,                
                 Limit,                
                 Offset,                
-                Status                
+                (Status is null ? null : QueryPaymentOrdersStatus.NewValue(Status))                
             );            
             
             AccelByte.Sdk.Api.Platform.Model.PaymentOrderPagingSlicedResult? response = wrapper.QueryPaymentOrders(operation);

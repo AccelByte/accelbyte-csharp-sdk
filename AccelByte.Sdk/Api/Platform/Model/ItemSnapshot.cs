@@ -130,7 +130,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator ItemSnapshotAppType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public ItemSnapshotAppType(string enumValue)
@@ -151,7 +151,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator ItemSnapshotEntitlementType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public ItemSnapshotEntitlementType(string enumValue)
@@ -190,7 +190,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator ItemSnapshotItemType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public ItemSnapshotItemType(string enumValue)
@@ -211,7 +211,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator ItemSnapshotSeasonType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public ItemSnapshotSeasonType(string enumValue)

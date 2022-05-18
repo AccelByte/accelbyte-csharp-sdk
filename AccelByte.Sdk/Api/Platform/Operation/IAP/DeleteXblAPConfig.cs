@@ -29,7 +29,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class DeleteXblAPConfigBuilder
             : OperationBuilder<DeleteXblAPConfigBuilder>
         {
-            
+
+
+
+
+
             internal DeleteXblAPConfigBuilder() { }
 
 
@@ -104,4 +108,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

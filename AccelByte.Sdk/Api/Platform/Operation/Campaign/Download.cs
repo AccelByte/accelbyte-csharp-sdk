@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class DownloadBuilder
             : OperationBuilder<DownloadBuilder>
         {
-            
-            
+
             public int? BatchNo { get; set; }
-            
+
+
+
+
+
             internal DownloadBuilder() { }
 
 
@@ -123,4 +126,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

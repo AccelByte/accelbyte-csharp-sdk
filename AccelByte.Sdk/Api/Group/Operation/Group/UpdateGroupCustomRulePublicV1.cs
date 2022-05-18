@@ -40,9 +40,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class UpdateGroupCustomRulePublicV1Builder
             : OperationBuilder<UpdateGroupCustomRulePublicV1Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal UpdateGroupCustomRulePublicV1Builder() { }
 
 
@@ -137,4 +139,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

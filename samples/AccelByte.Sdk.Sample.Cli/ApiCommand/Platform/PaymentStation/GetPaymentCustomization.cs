@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GetPaymentCustomization operation = new GetPaymentCustomization(
                 Namespace,                
                 Sandbox,                
-                PaymentProvider,                
+                GetPaymentCustomizationPaymentProvider.NewValue(PaymentProvider),                
                 Region                
             );            
             #pragma warning restore ab_deprecated_operation

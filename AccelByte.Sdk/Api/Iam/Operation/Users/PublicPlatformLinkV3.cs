@@ -91,11 +91,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicPlatformLinkV3Builder
             : OperationBuilder<PublicPlatformLinkV3Builder>
         {
-            
-            
+
+
+
             public string? RedirectUri { get; set; }
-            
-            
+
+
+
             internal PublicPlatformLinkV3Builder() { }
 
 
@@ -136,8 +138,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["platformId"] = platformId;
             
             
-            if (builder.RedirectUri != null) FormParams["redirectUri"] = builder.RedirectUri;
-            if (ticket != null) FormParams["ticket"] = ticket;
+            if (builder.RedirectUri is not null) FormParams["redirectUri"] = builder.RedirectUri;
+            if (ticket is not null) FormParams["ticket"] = ticket;
 
             
             
@@ -158,8 +160,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["platformId"] = platformId;
             
             
-            if (redirectUri != null) FormParams["redirectUri"] = redirectUri;
-            if (ticket != null) FormParams["ticket"] = ticket;
+            if (redirectUri is not null) FormParams["redirectUri"] = redirectUri;
+            if (ticket is not null) FormParams["ticket"] = ticket;
 
             
             
@@ -191,4 +193,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

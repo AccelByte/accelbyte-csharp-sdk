@@ -33,7 +33,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminMakeFactorMyDefaultV4Builder
             : OperationBuilder<AdminMakeFactorMyDefaultV4Builder>
         {
-            
+
+
+
+
+
             internal AdminMakeFactorMyDefaultV4Builder() { }
 
 
@@ -60,7 +64,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (factor != null) FormParams["factor"] = factor;
+            if (factor is not null) FormParams["factor"] = factor;
 
             
             
@@ -76,7 +80,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             
-            if (factor != null) FormParams["factor"] = factor;
+            if (factor is not null) FormParams["factor"] = factor;
 
             
             
@@ -108,4 +112,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

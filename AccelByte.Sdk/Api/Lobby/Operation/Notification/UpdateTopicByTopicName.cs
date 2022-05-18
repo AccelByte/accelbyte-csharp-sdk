@@ -31,9 +31,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class UpdateTopicByTopicNameBuilder
             : OperationBuilder<UpdateTopicByTopicNameBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal UpdateTopicByTopicNameBuilder() { }
 
 
@@ -120,4 +122,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

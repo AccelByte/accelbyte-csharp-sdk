@@ -26,9 +26,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminBanUserV2Builder
             : OperationBuilder<AdminBanUserV2Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal AdminBanUserV2Builder() { }
 
 
@@ -123,4 +125,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

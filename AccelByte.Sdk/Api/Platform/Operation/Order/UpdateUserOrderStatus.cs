@@ -30,11 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateUserOrderStatusBuilder
             : OperationBuilder<UpdateUserOrderStatusBuilder>
         {
-            
-            
-            
+
+
             public Model.OrderUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdateUserOrderStatusBuilder() { }
 
 
@@ -138,4 +140,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

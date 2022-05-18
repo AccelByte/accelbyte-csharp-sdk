@@ -62,8 +62,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class CreateGroupConfigurationAdminV1Builder
             : OperationBuilder<CreateGroupConfigurationAdminV1Builder>
         {
-            
-            
+
+
+
+
+
             internal CreateGroupConfigurationAdminV1Builder() { }
 
 
@@ -152,4 +155,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

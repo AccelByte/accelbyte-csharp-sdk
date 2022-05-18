@@ -27,7 +27,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class RetrieveSingleLocalizedPolicyVersion1Builder
             : OperationBuilder<RetrieveSingleLocalizedPolicyVersion1Builder>
         {
-            
+
+
+
+
+
             internal RetrieveSingleLocalizedPolicyVersion1Builder() { }
 
 
@@ -108,4 +112,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

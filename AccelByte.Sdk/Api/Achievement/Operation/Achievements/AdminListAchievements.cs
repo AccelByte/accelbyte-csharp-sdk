@@ -27,13 +27,17 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         public class AdminListAchievementsBuilder
             : OperationBuilder<AdminListAchievementsBuilder>
         {
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
             public string? SortBy { get; set; }
-            
+
+
+
+
+
             internal AdminListAchievementsBuilder() { }
 
 
@@ -80,7 +84,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.SortBy != null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
             
 
             
@@ -102,7 +106,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (sortBy != null) QueryParams["sortBy"] = sortBy;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
             
 
             
@@ -143,4 +147,5 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

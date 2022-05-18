@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class ExistsAnyPassByPassCodesBuilder
             : OperationBuilder<ExistsAnyPassByPassCodesBuilder>
         {
-            
-            
+
             public List<string>? PassCodes { get; set; }
-            
+
+
+
+
+
             internal ExistsAnyPassByPassCodesBuilder() { }
 
 
@@ -71,7 +74,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.PassCodes != null) QueryParams["passCodes"] = builder.PassCodes;
+            if (builder.PassCodes is not null) QueryParams["passCodes"] = builder.PassCodes;
             
 
             
@@ -92,7 +95,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (passCodes != null) QueryParams["passCodes"] = passCodes;
+            if (passCodes is not null) QueryParams["passCodes"] = passCodes;
             
 
             
@@ -134,4 +137,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

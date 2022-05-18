@@ -26,10 +26,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class AdminHideUserContentBuilder
             : OperationBuilder<AdminHideUserContentBuilder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal AdminHideUserContentBuilder() { }
 
 
@@ -130,4 +131,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

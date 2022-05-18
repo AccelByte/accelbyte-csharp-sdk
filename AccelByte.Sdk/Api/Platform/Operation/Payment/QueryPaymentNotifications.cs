@@ -30,25 +30,29 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryPaymentNotificationsBuilder
             : OperationBuilder<QueryPaymentNotificationsBuilder>
         {
-            
+
             public string? EndDate { get; set; }
-            
+
             public string? ExternalId { get; set; }
-            
+
             public int? Limit { get; set; }
-            
-            public string? NotificationSource { get; set; }
-            
+
+            public QueryPaymentNotificationsNotificationSource? NotificationSource { get; set; }
+
             public string? NotificationType { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? PaymentOrderNo { get; set; }
-            
+
             public string? StartDate { get; set; }
-            
-            public string? Status { get; set; }
-            
+
+            public QueryPaymentNotificationsStatus? Status { get; set; }
+
+
+
+
+
             internal QueryPaymentNotificationsBuilder() { }
 
 
@@ -70,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryPaymentNotificationsBuilder SetNotificationSource(string _notificationSource)
+            public QueryPaymentNotificationsBuilder SetNotificationSource(QueryPaymentNotificationsNotificationSource _notificationSource)
             {
                 NotificationSource = _notificationSource;
                 return this;
@@ -100,7 +104,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryPaymentNotificationsBuilder SetStatus(string _status)
+            public QueryPaymentNotificationsBuilder SetStatus(QueryPaymentNotificationsStatus _status)
             {
                 Status = _status;
                 return this;
@@ -129,15 +133,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.EndDate != null) QueryParams["endDate"] = builder.EndDate;
-            if (builder.ExternalId != null) QueryParams["externalId"] = builder.ExternalId;
+            if (builder.EndDate is not null) QueryParams["endDate"] = builder.EndDate;
+            if (builder.ExternalId is not null) QueryParams["externalId"] = builder.ExternalId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            if (builder.NotificationSource != null) QueryParams["notificationSource"] = builder.NotificationSource;
-            if (builder.NotificationType != null) QueryParams["notificationType"] = builder.NotificationType;
+            if (builder.NotificationSource is not null) QueryParams["notificationSource"] = builder.NotificationSource.Value;
+            if (builder.NotificationType is not null) QueryParams["notificationType"] = builder.NotificationType;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.PaymentOrderNo != null) QueryParams["paymentOrderNo"] = builder.PaymentOrderNo;
-            if (builder.StartDate != null) QueryParams["startDate"] = builder.StartDate;
-            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            if (builder.PaymentOrderNo is not null) QueryParams["paymentOrderNo"] = builder.PaymentOrderNo;
+            if (builder.StartDate is not null) QueryParams["startDate"] = builder.StartDate;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
             
 
             
@@ -153,25 +157,25 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string? endDate,            
             string? externalId,            
             int? limit,            
-            string? notificationSource,            
+            QueryPaymentNotificationsNotificationSource? notificationSource,            
             string? notificationType,            
             int? offset,            
             string? paymentOrderNo,            
             string? startDate,            
-            string? status            
+            QueryPaymentNotificationsStatus? status            
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (endDate != null) QueryParams["endDate"] = endDate;
-            if (externalId != null) QueryParams["externalId"] = externalId;
+            if (endDate is not null) QueryParams["endDate"] = endDate;
+            if (externalId is not null) QueryParams["externalId"] = externalId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            if (notificationSource != null) QueryParams["notificationSource"] = notificationSource;
-            if (notificationType != null) QueryParams["notificationType"] = notificationType;
+            if (notificationSource is not null) QueryParams["notificationSource"] = notificationSource.Value;
+            if (notificationType is not null) QueryParams["notificationType"] = notificationType;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (paymentOrderNo != null) QueryParams["paymentOrderNo"] = paymentOrderNo;
-            if (startDate != null) QueryParams["startDate"] = startDate;
-            if (status != null) QueryParams["status"] = status;
+            if (paymentOrderNo is not null) QueryParams["paymentOrderNo"] = paymentOrderNo;
+            if (startDate is not null) QueryParams["startDate"] = startDate;
+            if (status is not null) QueryParams["status"] = status.Value;
             
 
             
@@ -212,4 +216,71 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class QueryPaymentNotificationsNotificationSource : StringEnum<QueryPaymentNotificationsNotificationSource>
+    {
+        public static readonly QueryPaymentNotificationsNotificationSource Adyen
+            = new QueryPaymentNotificationsNotificationSource("ADYEN");
+
+        public static readonly QueryPaymentNotificationsNotificationSource Alipay
+            = new QueryPaymentNotificationsNotificationSource("ALIPAY");
+
+        public static readonly QueryPaymentNotificationsNotificationSource Checkout
+            = new QueryPaymentNotificationsNotificationSource("CHECKOUT");
+
+        public static readonly QueryPaymentNotificationsNotificationSource Paypal
+            = new QueryPaymentNotificationsNotificationSource("PAYPAL");
+
+        public static readonly QueryPaymentNotificationsNotificationSource Stripe
+            = new QueryPaymentNotificationsNotificationSource("STRIPE");
+
+        public static readonly QueryPaymentNotificationsNotificationSource Wallet
+            = new QueryPaymentNotificationsNotificationSource("WALLET");
+
+        public static readonly QueryPaymentNotificationsNotificationSource Wxpay
+            = new QueryPaymentNotificationsNotificationSource("WXPAY");
+
+        public static readonly QueryPaymentNotificationsNotificationSource Xsolla
+            = new QueryPaymentNotificationsNotificationSource("XSOLLA");
+
+
+        public static implicit operator QueryPaymentNotificationsNotificationSource(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryPaymentNotificationsNotificationSource(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class QueryPaymentNotificationsStatus : StringEnum<QueryPaymentNotificationsStatus>
+    {
+        public static readonly QueryPaymentNotificationsStatus Error
+            = new QueryPaymentNotificationsStatus("ERROR");
+
+        public static readonly QueryPaymentNotificationsStatus Ignored
+            = new QueryPaymentNotificationsStatus("IGNORED");
+
+        public static readonly QueryPaymentNotificationsStatus Processed
+            = new QueryPaymentNotificationsStatus("PROCESSED");
+
+        public static readonly QueryPaymentNotificationsStatus Warn
+            = new QueryPaymentNotificationsStatus("WARN");
+
+
+        public static implicit operator QueryPaymentNotificationsStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryPaymentNotificationsStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

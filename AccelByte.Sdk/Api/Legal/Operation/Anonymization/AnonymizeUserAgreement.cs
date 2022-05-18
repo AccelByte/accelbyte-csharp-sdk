@@ -27,7 +27,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class AnonymizeUserAgreementBuilder
             : OperationBuilder<AnonymizeUserAgreementBuilder>
         {
-            
+
+
+
+
+
             internal AnonymizeUserAgreementBuilder() { }
 
 
@@ -102,4 +106,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

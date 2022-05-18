@@ -31,11 +31,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class UpdateRewardBuilder
             : OperationBuilder<UpdateRewardBuilder>
         {
-            
-            
-            
+
+
             public Model.RewardUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdateRewardBuilder() { }
 
 
@@ -139,4 +141,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

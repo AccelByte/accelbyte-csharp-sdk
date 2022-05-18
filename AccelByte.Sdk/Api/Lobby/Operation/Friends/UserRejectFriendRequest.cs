@@ -24,8 +24,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class UserRejectFriendRequestBuilder
             : OperationBuilder<UserRejectFriendRequestBuilder>
         {
-            
-            
+
+
+
+
+
             internal UserRejectFriendRequestBuilder() { }
 
 
@@ -106,4 +109,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

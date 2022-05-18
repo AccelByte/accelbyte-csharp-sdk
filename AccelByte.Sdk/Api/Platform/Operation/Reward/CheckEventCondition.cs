@@ -29,10 +29,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class CheckEventConditionBuilder
             : OperationBuilder<CheckEventConditionBuilder>
         {
-            
-            
+
+
             public Model.EventPayload? Body { get; set; }
-            
+
+
+
+
             internal CheckEventConditionBuilder() { }
 
 
@@ -130,4 +133,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

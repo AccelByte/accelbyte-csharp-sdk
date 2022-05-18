@@ -28,9 +28,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class GetLocalizationTemplateBuilder
             : OperationBuilder<GetLocalizationTemplateBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal GetLocalizationTemplateBuilder() { }
 
 
@@ -125,4 +127,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -29,6 +29,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminGetBansTypeV3Builder
             : OperationBuilder<AdminGetBansTypeV3Builder>
         {
+
+
+
+
+
             internal AdminGetBansTypeV3Builder() { }
 
 
@@ -105,4 +110,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

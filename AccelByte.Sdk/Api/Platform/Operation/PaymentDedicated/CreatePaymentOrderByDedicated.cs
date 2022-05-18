@@ -194,9 +194,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class CreatePaymentOrderByDedicatedBuilder
             : OperationBuilder<CreatePaymentOrderByDedicatedBuilder>
         {
-            
+
+
             public Model.ExternalPaymentOrderCreate? Body { get; set; }
-            
+
+
+
+
             internal CreatePaymentOrderByDedicatedBuilder() { }
 
 
@@ -288,4 +292,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

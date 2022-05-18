@@ -30,9 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class RevokeUserEntitlementsBuilder
             : OperationBuilder<RevokeUserEntitlementsBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal RevokeUserEntitlementsBuilder() { }
 
 
@@ -66,7 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (entitlementIds != null) QueryParams["entitlementIds"] = entitlementIds;
+            if (entitlementIds is not null) QueryParams["entitlementIds"] = entitlementIds;
             
 
             
@@ -86,7 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (entitlementIds != null) QueryParams["entitlementIds"] = entitlementIds;
+            if (entitlementIds is not null) QueryParams["entitlementIds"] = entitlementIds;
             
 
             
@@ -127,4 +129,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

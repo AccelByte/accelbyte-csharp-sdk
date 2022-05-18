@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateCurrencyBuilder
             : OperationBuilder<UpdateCurrencyBuilder>
         {
-            
-            
+
+
             public Model.CurrencyUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdateCurrencyBuilder() { }
 
 
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -47,33 +47,33 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicNormalizePaymentReturnUrlBuilder
             : OperationBuilder<PublicNormalizePaymentReturnUrlBuilder>
         {
-            
+
             public string? PayerID { get; set; }
-            
+
             public string? Foreinginvoice { get; set; }
-            
+
             public string? InvoiceId { get; set; }
-            
+
             public string? Payload { get; set; }
-            
+
             public string? RedirectResult { get; set; }
-            
+
             public string? ResultCode { get; set; }
-            
+
             public string? SessionId { get; set; }
-            
+
             public string? Status { get; set; }
-            
+
             public string? Token { get; set; }
-            
+
             public string? Type { get; set; }
-            
+
             public string? UserId { get; set; }
-            
-            
-            
-            
-            
+
+
+
+
+
             internal PublicNormalizePaymentReturnUrlBuilder() { }
 
 
@@ -151,7 +151,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 string namespace_,
                 string orderNo,
                 string paymentOrderNo,
-                string paymentProvider,
+                PublicNormalizePaymentReturnUrlPaymentProvider paymentProvider,
                 string returnUrl
             )
             {
@@ -172,27 +172,27 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string namespace_,
             string orderNo,
             string paymentOrderNo,
-            string paymentProvider,
+            PublicNormalizePaymentReturnUrlPaymentProvider paymentProvider,
             string returnUrl
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.PayerID != null) QueryParams["PayerID"] = builder.PayerID;
-            if (builder.Foreinginvoice != null) QueryParams["foreinginvoice"] = builder.Foreinginvoice;
-            if (builder.InvoiceId != null) QueryParams["invoice_id"] = builder.InvoiceId;
-            if (builder.Payload != null) QueryParams["payload"] = builder.Payload;
-            if (builder.RedirectResult != null) QueryParams["redirectResult"] = builder.RedirectResult;
-            if (builder.ResultCode != null) QueryParams["resultCode"] = builder.ResultCode;
-            if (builder.SessionId != null) QueryParams["sessionId"] = builder.SessionId;
-            if (builder.Status != null) QueryParams["status"] = builder.Status;
-            if (builder.Token != null) QueryParams["token"] = builder.Token;
-            if (builder.Type != null) QueryParams["type"] = builder.Type;
-            if (builder.UserId != null) QueryParams["user_id"] = builder.UserId;
-            if (orderNo != null) QueryParams["orderNo"] = orderNo;
-            if (paymentOrderNo != null) QueryParams["paymentOrderNo"] = paymentOrderNo;
-            if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
-            if (returnUrl != null) QueryParams["returnUrl"] = returnUrl;
+            if (builder.PayerID is not null) QueryParams["PayerID"] = builder.PayerID;
+            if (builder.Foreinginvoice is not null) QueryParams["foreinginvoice"] = builder.Foreinginvoice;
+            if (builder.InvoiceId is not null) QueryParams["invoice_id"] = builder.InvoiceId;
+            if (builder.Payload is not null) QueryParams["payload"] = builder.Payload;
+            if (builder.RedirectResult is not null) QueryParams["redirectResult"] = builder.RedirectResult;
+            if (builder.ResultCode is not null) QueryParams["resultCode"] = builder.ResultCode;
+            if (builder.SessionId is not null) QueryParams["sessionId"] = builder.SessionId;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status;
+            if (builder.Token is not null) QueryParams["token"] = builder.Token;
+            if (builder.Type is not null) QueryParams["type"] = builder.Type;
+            if (builder.UserId is not null) QueryParams["user_id"] = builder.UserId;
+            if (orderNo is not null) QueryParams["orderNo"] = orderNo;
+            if (paymentOrderNo is not null) QueryParams["paymentOrderNo"] = paymentOrderNo;
+            if (paymentProvider is not null) QueryParams["paymentProvider"] = paymentProvider.Value;
+            if (returnUrl is not null) QueryParams["returnUrl"] = returnUrl;
             
 
             
@@ -217,27 +217,27 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string? userId,            
             string orderNo,            
             string paymentOrderNo,            
-            string paymentProvider,            
+            PublicNormalizePaymentReturnUrlPaymentProvider paymentProvider,            
             string returnUrl            
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (payerID != null) QueryParams["PayerID"] = payerID;
-            if (foreinginvoice != null) QueryParams["foreinginvoice"] = foreinginvoice;
-            if (invoiceId != null) QueryParams["invoice_id"] = invoiceId;
-            if (payload != null) QueryParams["payload"] = payload;
-            if (redirectResult != null) QueryParams["redirectResult"] = redirectResult;
-            if (resultCode != null) QueryParams["resultCode"] = resultCode;
-            if (sessionId != null) QueryParams["sessionId"] = sessionId;
-            if (status != null) QueryParams["status"] = status;
-            if (token != null) QueryParams["token"] = token;
-            if (type != null) QueryParams["type"] = type;
-            if (userId != null) QueryParams["user_id"] = userId;
-            if (orderNo != null) QueryParams["orderNo"] = orderNo;
-            if (paymentOrderNo != null) QueryParams["paymentOrderNo"] = paymentOrderNo;
-            if (paymentProvider != null) QueryParams["paymentProvider"] = paymentProvider;
-            if (returnUrl != null) QueryParams["returnUrl"] = returnUrl;
+            if (payerID is not null) QueryParams["PayerID"] = payerID;
+            if (foreinginvoice is not null) QueryParams["foreinginvoice"] = foreinginvoice;
+            if (invoiceId is not null) QueryParams["invoice_id"] = invoiceId;
+            if (payload is not null) QueryParams["payload"] = payload;
+            if (redirectResult is not null) QueryParams["redirectResult"] = redirectResult;
+            if (resultCode is not null) QueryParams["resultCode"] = resultCode;
+            if (sessionId is not null) QueryParams["sessionId"] = sessionId;
+            if (status is not null) QueryParams["status"] = status;
+            if (token is not null) QueryParams["token"] = token;
+            if (type is not null) QueryParams["type"] = type;
+            if (userId is not null) QueryParams["user_id"] = userId;
+            if (orderNo is not null) QueryParams["orderNo"] = orderNo;
+            if (paymentOrderNo is not null) QueryParams["paymentOrderNo"] = paymentOrderNo;
+            if (paymentProvider is not null) QueryParams["paymentProvider"] = paymentProvider.Value;
+            if (returnUrl is not null) QueryParams["returnUrl"] = returnUrl;
             
 
             
@@ -269,4 +269,44 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class PublicNormalizePaymentReturnUrlPaymentProvider : StringEnum<PublicNormalizePaymentReturnUrlPaymentProvider>
+    {
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Adyen
+            = new PublicNormalizePaymentReturnUrlPaymentProvider("ADYEN");
+
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Alipay
+            = new PublicNormalizePaymentReturnUrlPaymentProvider("ALIPAY");
+
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Checkout
+            = new PublicNormalizePaymentReturnUrlPaymentProvider("CHECKOUT");
+
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Paypal
+            = new PublicNormalizePaymentReturnUrlPaymentProvider("PAYPAL");
+
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Stripe
+            = new PublicNormalizePaymentReturnUrlPaymentProvider("STRIPE");
+
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Wallet
+            = new PublicNormalizePaymentReturnUrlPaymentProvider("WALLET");
+
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Wxpay
+            = new PublicNormalizePaymentReturnUrlPaymentProvider("WXPAY");
+
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Xsolla
+            = new PublicNormalizePaymentReturnUrlPaymentProvider("XSOLLA");
+
+
+        public static implicit operator PublicNormalizePaymentReturnUrlPaymentProvider(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicNormalizePaymentReturnUrlPaymentProvider(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

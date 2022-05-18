@@ -30,9 +30,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class DeleteUserStatItemsBuilder
             : OperationBuilder<DeleteUserStatItemsBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal DeleteUserStatItemsBuilder() { }
 
 
@@ -119,4 +121,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

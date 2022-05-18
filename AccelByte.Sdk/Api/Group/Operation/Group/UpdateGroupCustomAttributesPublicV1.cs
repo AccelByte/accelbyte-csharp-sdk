@@ -45,9 +45,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class UpdateGroupCustomAttributesPublicV1Builder
             : OperationBuilder<UpdateGroupCustomAttributesPublicV1Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal UpdateGroupCustomAttributesPublicV1Builder() { }
 
 
@@ -142,4 +144,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -27,7 +27,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminGetAgeRestrictionStatusV3Builder
             : OperationBuilder<AdminGetAgeRestrictionStatusV3Builder>
         {
-            
+
+
+
+
+
             internal AdminGetAgeRestrictionStatusV3Builder() { }
 
 
@@ -110,4 +114,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -34,7 +34,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class RemoveRoleAdminBuilder
             : OperationBuilder<RemoveRoleAdminBuilder>
         {
-            
+
+
+
+
+
             internal RemoveRoleAdminBuilder() { }
 
 
@@ -109,4 +113,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

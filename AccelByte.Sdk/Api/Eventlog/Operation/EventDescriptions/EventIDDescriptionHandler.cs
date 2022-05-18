@@ -25,6 +25,11 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class EventIDDescriptionHandlerBuilder
             : OperationBuilder<EventIDDescriptionHandlerBuilder>
         {
+
+
+
+
+
             internal EventIDDescriptionHandlerBuilder() { }
 
 
@@ -101,4 +106,5 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

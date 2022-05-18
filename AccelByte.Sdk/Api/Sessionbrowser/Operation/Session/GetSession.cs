@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public class GetSessionBuilder
             : OperationBuilder<GetSessionBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetSessionBuilder() { }
 
 
@@ -120,4 +123,5 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

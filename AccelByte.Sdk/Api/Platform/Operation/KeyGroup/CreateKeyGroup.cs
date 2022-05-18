@@ -30,9 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class CreateKeyGroupBuilder
             : OperationBuilder<CreateKeyGroupBuilder>
         {
-            
+
+
             public Model.KeyGroupCreate? Body { get; set; }
-            
+
+
+
+
             internal CreateKeyGroupBuilder() { }
 
 
@@ -124,4 +128,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

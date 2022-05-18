@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class SyncEpicGamesInventoryBuilder
             : OperationBuilder<SyncEpicGamesInventoryBuilder>
         {
-            
-            
+
+
             public Model.EpicGamesReconcileRequest? Body { get; set; }
-            
+
+
+
+
             internal SyncEpicGamesInventoryBuilder() { }
 
 
@@ -132,4 +135,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

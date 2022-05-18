@@ -28,12 +28,15 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class GetCurrentSeasonLeaderboardRankingPublicV1Builder
             : OperationBuilder<GetCurrentSeasonLeaderboardRankingPublicV1Builder>
         {
-            
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
+
+
+
+
             internal GetCurrentSeasonLeaderboardRankingPublicV1Builder() { }
 
 
@@ -140,4 +143,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

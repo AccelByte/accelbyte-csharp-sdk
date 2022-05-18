@@ -29,10 +29,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class BulkIncUserStatItemValue2Builder
             : OperationBuilder<BulkIncUserStatItemValue2Builder>
         {
-            
-            
+
+
             public List<Model.BulkStatItemInc>? Body { get; set; }
-            
+
+
+
+
             internal BulkIncUserStatItemValue2Builder() { }
 
 
@@ -130,4 +133,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

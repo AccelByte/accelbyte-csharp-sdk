@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class SyncStadiaEntitlementBuilder
             : OperationBuilder<SyncStadiaEntitlementBuilder>
         {
-            
-            
+
+
             public Model.StadiaSyncRequest? Body { get; set; }
-            
+
+
+
+
             internal SyncStadiaEntitlementBuilder() { }
 
 
@@ -124,4 +127,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

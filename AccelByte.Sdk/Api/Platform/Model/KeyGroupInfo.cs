@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator KeyGroupInfoStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public KeyGroupInfoStatus(string enumValue)

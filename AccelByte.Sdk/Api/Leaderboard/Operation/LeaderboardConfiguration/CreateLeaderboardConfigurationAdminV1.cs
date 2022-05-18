@@ -62,8 +62,11 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class CreateLeaderboardConfigurationAdminV1Builder
             : OperationBuilder<CreateLeaderboardConfigurationAdminV1Builder>
         {
-            
-            
+
+
+
+
+
             internal CreateLeaderboardConfigurationAdminV1Builder() { }
 
 
@@ -152,4 +155,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

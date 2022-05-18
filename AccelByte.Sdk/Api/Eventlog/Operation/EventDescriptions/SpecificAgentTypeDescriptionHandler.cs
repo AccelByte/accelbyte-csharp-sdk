@@ -25,8 +25,13 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class SpecificAgentTypeDescriptionHandlerBuilder
             : OperationBuilder<SpecificAgentTypeDescriptionHandlerBuilder>
         {
+
             public string? AgentTypes { get; set; }
-            
+
+
+
+
+
             internal SpecificAgentTypeDescriptionHandlerBuilder() { }
 
 
@@ -55,7 +60,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             
-            if (builder.AgentTypes != null) QueryParams["agentTypes"] = builder.AgentTypes;
+            if (builder.AgentTypes is not null) QueryParams["agentTypes"] = builder.AgentTypes;
             
 
             
@@ -71,7 +76,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             
-            if (agentTypes != null) QueryParams["agentTypes"] = agentTypes;
+            if (agentTypes is not null) QueryParams["agentTypes"] = agentTypes;
             
 
             
@@ -112,4 +117,5 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

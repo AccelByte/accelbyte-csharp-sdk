@@ -34,9 +34,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicValidateUserByUserIDAndPasswordV3Builder
             : OperationBuilder<PublicValidateUserByUserIDAndPasswordV3Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal PublicValidateUserByUserIDAndPasswordV3Builder() { }
 
 
@@ -71,7 +73,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
-            if (password != null) FormParams["password"] = password;
+            if (password is not null) FormParams["password"] = password;
 
             
             
@@ -91,7 +93,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
             
             
-            if (password != null) FormParams["password"] = password;
+            if (password is not null) FormParams["password"] = password;
 
             
             
@@ -123,4 +125,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

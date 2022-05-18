@@ -44,8 +44,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdatePaymentTaxConfigBuilder
             : OperationBuilder<UpdatePaymentTaxConfigBuilder>
         {
+
+
             public Model.PaymentTaxConfigEdit? Body { get; set; }
-            
+
+
+
+
             internal UpdatePaymentTaxConfigBuilder() { }
 
 
@@ -131,4 +136,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

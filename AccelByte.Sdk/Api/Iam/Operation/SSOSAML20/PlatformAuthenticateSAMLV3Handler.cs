@@ -37,12 +37,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PlatformAuthenticateSAMLV3HandlerBuilder
             : OperationBuilder<PlatformAuthenticateSAMLV3HandlerBuilder>
         {
-            
+
             public string? Code { get; set; }
-            
+
             public string? Error { get; set; }
-            
-            
+
+
+
+
+
             internal PlatformAuthenticateSAMLV3HandlerBuilder() { }
 
 
@@ -84,9 +87,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["platformId"] = platformId;
             
-            if (builder.Code != null) QueryParams["code"] = builder.Code;
-            if (builder.Error != null) QueryParams["error"] = builder.Error;
-            if (state != null) QueryParams["state"] = state;
+            if (builder.Code is not null) QueryParams["code"] = builder.Code;
+            if (builder.Error is not null) QueryParams["error"] = builder.Error;
+            if (state is not null) QueryParams["state"] = state;
             
 
             
@@ -107,9 +110,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["platformId"] = platformId;
             
-            if (code != null) QueryParams["code"] = code;
-            if (error != null) QueryParams["error"] = error;
-            if (state != null) QueryParams["state"] = state;
+            if (code is not null) QueryParams["code"] = code;
+            if (error is not null) QueryParams["error"] = error;
+            if (state is not null) QueryParams["state"] = state;
             
 
             
@@ -143,4 +146,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -38,10 +38,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicGetInputValidationsBuilder
             : OperationBuilder<PublicGetInputValidationsBuilder>
         {
+
             public bool? DefaultOnEmpty { get; set; }
-            
+
             public string? LanguageCode { get; set; }
-            
+
+
+
+
+
             internal PublicGetInputValidationsBuilder() { }
 
 
@@ -77,7 +82,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             if (builder.DefaultOnEmpty != null) QueryParams["defaultOnEmpty"] = Convert.ToString(builder.DefaultOnEmpty)!;
-            if (builder.LanguageCode != null) QueryParams["languageCode"] = builder.LanguageCode;
+            if (builder.LanguageCode is not null) QueryParams["languageCode"] = builder.LanguageCode;
             
 
             
@@ -95,7 +100,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             
             if (defaultOnEmpty != null) QueryParams["defaultOnEmpty"] = Convert.ToString(defaultOnEmpty)!;
-            if (languageCode != null) QueryParams["languageCode"] = languageCode;
+            if (languageCode is not null) QueryParams["languageCode"] = languageCode;
             
 
             
@@ -136,4 +141,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

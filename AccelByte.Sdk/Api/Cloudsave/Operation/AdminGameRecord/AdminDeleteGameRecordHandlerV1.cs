@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public class AdminDeleteGameRecordHandlerV1Builder
             : OperationBuilder<AdminDeleteGameRecordHandlerV1Builder>
         {
-            
-            
+
+
+
+
+
             internal AdminDeleteGameRecordHandlerV1Builder() { }
 
 
@@ -112,4 +115,5 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

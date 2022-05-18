@@ -32,7 +32,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicListStoresBuilder
             : OperationBuilder<PublicListStoresBuilder>
         {
-            
+
+
+
+
+
             internal PublicListStoresBuilder() { }
 
 
@@ -113,4 +117,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

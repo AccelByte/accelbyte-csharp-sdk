@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator EpicGamesReconcileResultStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public EpicGamesReconcileResultStatus(string enumValue)

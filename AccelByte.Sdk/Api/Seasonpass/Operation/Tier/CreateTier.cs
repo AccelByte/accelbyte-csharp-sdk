@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class CreateTierBuilder
             : OperationBuilder<CreateTierBuilder>
         {
-            
-            
+
+
             public Model.TierCreate? Body { get; set; }
-            
+
+
+
+
             internal CreateTierBuilder() { }
 
 
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -38,9 +38,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class UpdateMemberRoleAdminV1Builder
             : OperationBuilder<UpdateMemberRoleAdminV1Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal UpdateMemberRoleAdminV1Builder() { }
 
 
@@ -135,4 +137,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

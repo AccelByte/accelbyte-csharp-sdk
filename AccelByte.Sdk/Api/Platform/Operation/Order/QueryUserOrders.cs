@@ -30,16 +30,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryUserOrdersBuilder
             : OperationBuilder<QueryUserOrdersBuilder>
         {
-            
-            
+
             public string? ItemId { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
-            public string? Status { get; set; }
-            
+
+            public QueryUserOrdersStatus? Status { get; set; }
+
+
+
+
+
             internal QueryUserOrdersBuilder() { }
 
 
@@ -61,7 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryUserOrdersBuilder SetStatus(string _status)
+            public QueryUserOrdersBuilder SetStatus(QueryUserOrdersStatus _status)
             {
                 Status = _status;
                 return this;
@@ -94,10 +97,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.ItemId != null) QueryParams["itemId"] = builder.ItemId;
+            if (builder.ItemId is not null) QueryParams["itemId"] = builder.ItemId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Status != null) QueryParams["status"] = builder.Status;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
             
 
             
@@ -114,16 +117,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string? itemId,            
             int? limit,            
             int? offset,            
-            string? status            
+            QueryUserOrdersStatus? status            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (itemId != null) QueryParams["itemId"] = itemId;
+            if (itemId is not null) QueryParams["itemId"] = itemId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (status != null) QueryParams["status"] = status;
+            if (status is not null) QueryParams["status"] = status.Value;
             
 
             
@@ -164,4 +167,53 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class QueryUserOrdersStatus : StringEnum<QueryUserOrdersStatus>
+    {
+        public static readonly QueryUserOrdersStatus Chargeback
+            = new QueryUserOrdersStatus("CHARGEBACK");
+
+        public static readonly QueryUserOrdersStatus ChargebackReversed
+            = new QueryUserOrdersStatus("CHARGEBACK_REVERSED");
+
+        public static readonly QueryUserOrdersStatus Charged
+            = new QueryUserOrdersStatus("CHARGED");
+
+        public static readonly QueryUserOrdersStatus Closed
+            = new QueryUserOrdersStatus("CLOSED");
+
+        public static readonly QueryUserOrdersStatus Deleted
+            = new QueryUserOrdersStatus("DELETED");
+
+        public static readonly QueryUserOrdersStatus Fulfilled
+            = new QueryUserOrdersStatus("FULFILLED");
+
+        public static readonly QueryUserOrdersStatus FulfillFailed
+            = new QueryUserOrdersStatus("FULFILL_FAILED");
+
+        public static readonly QueryUserOrdersStatus Init
+            = new QueryUserOrdersStatus("INIT");
+
+        public static readonly QueryUserOrdersStatus Refunded
+            = new QueryUserOrdersStatus("REFUNDED");
+
+        public static readonly QueryUserOrdersStatus Refunding
+            = new QueryUserOrdersStatus("REFUNDING");
+
+        public static readonly QueryUserOrdersStatus RefundFailed
+            = new QueryUserOrdersStatus("REFUND_FAILED");
+
+
+        public static implicit operator QueryUserOrdersStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryUserOrdersStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

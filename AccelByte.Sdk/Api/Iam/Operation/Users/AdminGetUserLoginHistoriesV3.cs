@@ -33,14 +33,17 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AdminGetUserLoginHistoriesV3Builder
             : OperationBuilder<AdminGetUserLoginHistoriesV3Builder>
         {
-            
-            
+
             public double? After { get; set; }
-            
+
             public double? Before { get; set; }
-            
+
             public long? Limit { get; set; }
-            
+
+
+
+
+
             internal AdminGetUserLoginHistoriesV3Builder() { }
 
 
@@ -156,4 +159,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

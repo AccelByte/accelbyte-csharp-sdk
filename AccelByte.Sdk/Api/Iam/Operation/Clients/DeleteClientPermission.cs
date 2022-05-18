@@ -26,9 +26,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class DeleteClientPermissionBuilder
             : OperationBuilder<DeleteClientPermissionBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal DeleteClientPermissionBuilder() { }
 
 
@@ -115,4 +117,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -112,17 +112,19 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class AuthorizationBuilder
             : OperationBuilder<AuthorizationBuilder>
         {
+
+
+
             public string? Login { get; set; }
-            
+
             public string? Password { get; set; }
-            
+
             public string? Scope { get; set; }
-            
+
             public string? State { get; set; }
-            
-            
-            
-            
+
+
+
             internal AuthorizationBuilder() { }
 
 
@@ -157,7 +159,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public Authorization Build(
                 string clientId,
                 string redirectUri,
-                string responseType
+                AuthorizationResponseType responseType
             )
             {
                 Authorization op = new Authorization(this,
@@ -174,18 +176,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         private Authorization(AuthorizationBuilder builder,
             string clientId,
             string redirectUri,
-            string responseType
+            AuthorizationResponseType responseType
         )
         {
             
             
-            if (builder.Login != null) FormParams["login"] = builder.Login;
-            if (builder.Password != null) FormParams["password"] = builder.Password;
-            if (builder.Scope != null) FormParams["scope"] = builder.Scope;
-            if (builder.State != null) FormParams["state"] = builder.State;
-            if (clientId != null) FormParams["client_id"] = clientId;
-            if (redirectUri != null) FormParams["redirect_uri"] = redirectUri;
-            if (responseType != null) FormParams["response_type"] = responseType;
+            if (builder.Login is not null) FormParams["login"] = builder.Login;
+            if (builder.Password is not null) FormParams["password"] = builder.Password;
+            if (builder.Scope is not null) FormParams["scope"] = builder.Scope;
+            if (builder.State is not null) FormParams["state"] = builder.State;
+            if (clientId is not null) FormParams["client_id"] = clientId;
+            if (redirectUri is not null) FormParams["redirect_uri"] = redirectUri;
+            if (responseType is not null) FormParams["response_type"] = responseType.Value;
 
             
             
@@ -203,18 +205,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string? state,            
             string clientId,            
             string redirectUri,            
-            string responseType            
+            AuthorizationResponseType responseType            
         )
         {
             
             
-            if (login != null) FormParams["login"] = login;
-            if (password != null) FormParams["password"] = password;
-            if (scope != null) FormParams["scope"] = scope;
-            if (state != null) FormParams["state"] = state;
-            if (clientId != null) FormParams["client_id"] = clientId;
-            if (redirectUri != null) FormParams["redirect_uri"] = redirectUri;
-            if (responseType != null) FormParams["response_type"] = responseType;
+            if (login is not null) FormParams["login"] = login;
+            if (password is not null) FormParams["password"] = password;
+            if (scope is not null) FormParams["scope"] = scope;
+            if (state is not null) FormParams["state"] = state;
+            if (clientId is not null) FormParams["client_id"] = clientId;
+            if (redirectUri is not null) FormParams["redirect_uri"] = redirectUri;
+            if (responseType is not null) FormParams["response_type"] = responseType.Value;
 
             
             
@@ -247,4 +249,26 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class AuthorizationResponseType : StringEnum<AuthorizationResponseType>
+    {
+        public static readonly AuthorizationResponseType Code
+            = new AuthorizationResponseType("code");
+
+        public static readonly AuthorizationResponseType Token
+            = new AuthorizationResponseType("token");
+
+
+        public static implicit operator AuthorizationResponseType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public AuthorizationResponseType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

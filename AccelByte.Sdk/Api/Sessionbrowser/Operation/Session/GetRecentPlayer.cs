@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         public class GetRecentPlayerBuilder
             : OperationBuilder<GetRecentPlayerBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetRecentPlayerBuilder() { }
 
 
@@ -120,4 +123,5 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

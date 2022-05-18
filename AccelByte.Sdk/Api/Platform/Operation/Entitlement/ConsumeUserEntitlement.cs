@@ -30,11 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ConsumeUserEntitlementBuilder
             : OperationBuilder<ConsumeUserEntitlementBuilder>
         {
-            
-            
-            
+
+
             public Model.EntitlementDecrement? Body { get; set; }
-            
+
+
+
+
             internal ConsumeUserEntitlementBuilder() { }
 
 
@@ -138,4 +140,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

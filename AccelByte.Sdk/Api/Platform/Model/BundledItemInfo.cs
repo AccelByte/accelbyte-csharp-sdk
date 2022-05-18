@@ -164,7 +164,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator BundledItemInfoAppType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public BundledItemInfoAppType(string enumValue)
@@ -185,7 +185,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator BundledItemInfoEntitlementType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public BundledItemInfoEntitlementType(string enumValue)
@@ -224,7 +224,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator BundledItemInfoItemType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public BundledItemInfoItemType(string enumValue)
@@ -245,7 +245,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator BundledItemInfoSeasonType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public BundledItemInfoSeasonType(string enumValue)
@@ -266,7 +266,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator BundledItemInfoStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public BundledItemInfoStatus(string enumValue)

@@ -76,11 +76,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             PublicQueryItems operation = new PublicQueryItems(
                 Namespace,                
-                AppType,                
+                (AppType is null ? null : PublicQueryItemsAppType.NewValue(AppType)),                
                 BaseAppId,                
                 CategoryPath,                
                 Features,                
-                ItemType,                
+                (ItemType is null ? null : PublicQueryItemsItemType.NewValue(ItemType)),                
                 Language,                
                 Limit,                
                 Offset,                

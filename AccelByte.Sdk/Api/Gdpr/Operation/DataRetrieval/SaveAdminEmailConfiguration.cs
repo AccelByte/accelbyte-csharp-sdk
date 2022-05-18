@@ -29,8 +29,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public class SaveAdminEmailConfigurationBuilder
             : OperationBuilder<SaveAdminEmailConfigurationBuilder>
         {
-            
-            
+
+
+
+
+
             internal SaveAdminEmailConfigurationBuilder() { }
 
 
@@ -111,4 +114,5 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

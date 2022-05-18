@@ -31,10 +31,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class GrantUserPassBuilder
             : OperationBuilder<GrantUserPassBuilder>
         {
-            
-            
+
+
             public Model.UserPassGrant? Body { get; set; }
-            
+
+
+
+
             internal GrantUserPassBuilder() { }
 
 
@@ -132,4 +135,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

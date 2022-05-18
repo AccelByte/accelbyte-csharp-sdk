@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PlatformRewardType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PlatformRewardType(string enumValue)

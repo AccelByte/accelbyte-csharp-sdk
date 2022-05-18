@@ -65,13 +65,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             QueryUserSubscriptions operation = new QueryUserSubscriptions(
                 Namespace,                
                 UserId,                
-                ChargeStatus,                
+                (ChargeStatus is null ? null : QueryUserSubscriptionsChargeStatus.NewValue(ChargeStatus)),                
                 ItemId,                
                 Limit,                
                 Offset,                
                 Sku,                
-                Status,                
-                SubscribedBy                
+                (Status is null ? null : QueryUserSubscriptionsStatus.NewValue(Status)),                
+                (SubscribedBy is null ? null : QueryUserSubscriptionsSubscribedBy.NewValue(SubscribedBy))                
             );            
             
             AccelByte.Sdk.Api.Platform.Model.SubscriptionPagingSlicedResult? response = wrapper.QueryUserSubscriptions(operation);

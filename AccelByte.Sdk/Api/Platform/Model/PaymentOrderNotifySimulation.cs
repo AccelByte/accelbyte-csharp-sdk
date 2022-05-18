@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentOrderNotifySimulationNotifyType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentOrderNotifySimulationNotifyType(string enumValue)
@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator PaymentOrderNotifySimulationPaymentProvider(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public PaymentOrderNotifySimulationPaymentProvider(string enumValue)

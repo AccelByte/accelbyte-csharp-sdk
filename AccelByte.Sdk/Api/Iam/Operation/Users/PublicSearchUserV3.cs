@@ -38,11 +38,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicSearchUserV3Builder
             : OperationBuilder<PublicSearchUserV3Builder>
         {
-            
+
             public string? By { get; set; }
-            
+
             public string? Query { get; set; }
-            
+
+
+
+
+
             internal PublicSearchUserV3Builder() { }
 
 
@@ -81,8 +85,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.By != null) QueryParams["by"] = builder.By;
-            if (builder.Query != null) QueryParams["query"] = builder.Query;
+            if (builder.By is not null) QueryParams["by"] = builder.By;
+            if (builder.Query is not null) QueryParams["query"] = builder.Query;
             
 
             
@@ -101,8 +105,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (by != null) QueryParams["by"] = by;
-            if (query != null) QueryParams["query"] = query;
+            if (by is not null) QueryParams["by"] = by;
+            if (query is not null) QueryParams["query"] = query;
             
 
             
@@ -143,4 +147,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

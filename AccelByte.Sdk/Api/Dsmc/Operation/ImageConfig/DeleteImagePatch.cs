@@ -30,10 +30,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class DeleteImagePatchBuilder
             : OperationBuilder<DeleteImagePatchBuilder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal DeleteImagePatchBuilder() { }
 
 
@@ -69,9 +70,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (imageURI != null) QueryParams["imageURI"] = imageURI;
-            if (version != null) QueryParams["version"] = version;
-            if (versionPatch != null) QueryParams["versionPatch"] = versionPatch;
+            if (imageURI is not null) QueryParams["imageURI"] = imageURI;
+            if (version is not null) QueryParams["version"] = version;
+            if (versionPatch is not null) QueryParams["versionPatch"] = versionPatch;
             
 
             
@@ -91,9 +92,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (imageURI != null) QueryParams["imageURI"] = imageURI;
-            if (version != null) QueryParams["version"] = version;
-            if (versionPatch != null) QueryParams["versionPatch"] = versionPatch;
+            if (imageURI is not null) QueryParams["imageURI"] = imageURI;
+            if (version is not null) QueryParams["version"] = version;
+            if (versionPatch is not null) QueryParams["versionPatch"] = versionPatch;
             
 
             
@@ -126,4 +127,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

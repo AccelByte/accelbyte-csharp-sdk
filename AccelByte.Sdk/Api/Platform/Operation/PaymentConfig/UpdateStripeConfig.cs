@@ -30,13 +30,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateStripeConfigBuilder
             : OperationBuilder<UpdateStripeConfigBuilder>
         {
-            
+
             public bool? Sandbox { get; set; }
-            
+
             public bool? Validate { get; set; }
-            
+
+
             public Model.StripeConfig? Body { get; set; }
-            
+
+
+
+
             internal UpdateStripeConfigBuilder() { }
 
 
@@ -146,4 +150,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -30,10 +30,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class SimulatePaymentOrderNotificationBuilder
             : OperationBuilder<SimulatePaymentOrderNotificationBuilder>
         {
-            
-            
+
+
             public Model.PaymentOrderNotifySimulation? Body { get; set; }
-            
+
+
+
+
             internal SimulatePaymentOrderNotificationBuilder() { }
 
 
@@ -131,4 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

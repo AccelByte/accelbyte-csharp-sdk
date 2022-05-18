@@ -27,7 +27,11 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class UnregisterEventIDHandlerBuilder
             : OperationBuilder<UnregisterEventIDHandlerBuilder>
         {
-            
+
+
+
+
+
             internal UnregisterEventIDHandlerBuilder() { }
 
 
@@ -102,4 +106,5 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

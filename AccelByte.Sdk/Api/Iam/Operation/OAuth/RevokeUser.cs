@@ -38,8 +38,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class RevokeUserBuilder
             : OperationBuilder<RevokeUserBuilder>
         {
-            
-            
+
+
+
+
+
             internal RevokeUserBuilder() { }
 
 
@@ -120,4 +123,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

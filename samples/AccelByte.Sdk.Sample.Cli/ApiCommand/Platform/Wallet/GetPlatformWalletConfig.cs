@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             GetPlatformWalletConfig operation = new GetPlatformWalletConfig(
                 Namespace,                
-                Platform                
+                GetPlatformWalletConfigPlatform.NewValue(Platform)                
             );            
             
             AccelByte.Sdk.Api.Platform.Model.PlatformWalletConfigInfo? response = wrapper.GetPlatformWalletConfig(operation);

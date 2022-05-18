@@ -31,9 +31,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class GetCountriesBuilder
             : OperationBuilder<GetCountriesBuilder>
         {
-            
+
             public string? Lang { get; set; }
-            
+
+
+
+
+
             internal GetCountriesBuilder() { }
 
 
@@ -66,7 +70,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Lang != null) QueryParams["lang"] = builder.Lang;
+            if (builder.Lang is not null) QueryParams["lang"] = builder.Lang;
             
 
             
@@ -84,7 +88,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (lang != null) QueryParams["lang"] = lang;
+            if (lang is not null) QueryParams["lang"] = lang;
             
 
             
@@ -125,4 +129,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

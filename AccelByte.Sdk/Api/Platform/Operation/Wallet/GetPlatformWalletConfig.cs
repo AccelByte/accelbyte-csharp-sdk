@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetPlatformWalletConfigBuilder
             : OperationBuilder<GetPlatformWalletConfigBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetPlatformWalletConfigBuilder() { }
 
 
@@ -41,7 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public GetPlatformWalletConfig Build(
                 string namespace_,
-                string platform
+                GetPlatformWalletConfigPlatform platform
             )
             {
                 GetPlatformWalletConfig op = new GetPlatformWalletConfig(this,
@@ -56,11 +59,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         private GetPlatformWalletConfig(GetPlatformWalletConfigBuilder builder,
             string namespace_,
-            string platform
+            GetPlatformWalletConfigPlatform platform
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["platform"] = platform;
+            PathParams["platform"] = platform.Value;
             
             
 
@@ -74,11 +77,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public GetPlatformWalletConfig(
             string namespace_,            
-            string platform            
+            GetPlatformWalletConfigPlatform platform            
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["platform"] = platform;
+            PathParams["platform"] = platform.Value;
             
             
 
@@ -120,4 +123,44 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class GetPlatformWalletConfigPlatform : StringEnum<GetPlatformWalletConfigPlatform>
+    {
+        public static readonly GetPlatformWalletConfigPlatform Epic
+            = new GetPlatformWalletConfigPlatform("Epic");
+
+        public static readonly GetPlatformWalletConfigPlatform Googleplay
+            = new GetPlatformWalletConfigPlatform("GooglePlay");
+
+        public static readonly GetPlatformWalletConfigPlatform Ios
+            = new GetPlatformWalletConfigPlatform("IOS");
+
+        public static readonly GetPlatformWalletConfigPlatform Nintendo
+            = new GetPlatformWalletConfigPlatform("Nintendo");
+
+        public static readonly GetPlatformWalletConfigPlatform Other
+            = new GetPlatformWalletConfigPlatform("Other");
+
+        public static readonly GetPlatformWalletConfigPlatform Playstation
+            = new GetPlatformWalletConfigPlatform("Playstation");
+
+        public static readonly GetPlatformWalletConfigPlatform Steam
+            = new GetPlatformWalletConfigPlatform("Steam");
+
+        public static readonly GetPlatformWalletConfigPlatform Xbox
+            = new GetPlatformWalletConfigPlatform("Xbox");
+
+
+        public static implicit operator GetPlatformWalletConfigPlatform(string value)
+        {
+            return NewValue(value);
+        }
+
+        public GetPlatformWalletConfigPlatform(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

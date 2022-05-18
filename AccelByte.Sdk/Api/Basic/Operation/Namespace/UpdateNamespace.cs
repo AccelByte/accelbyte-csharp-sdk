@@ -31,9 +31,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class UpdateNamespaceBuilder
             : OperationBuilder<UpdateNamespaceBuilder>
         {
-            
+
+
             public Model.NamespaceUpdate? Body { get; set; }
-            
+
+
+
+
             internal UpdateNamespaceBuilder() { }
 
 
@@ -125,4 +129,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

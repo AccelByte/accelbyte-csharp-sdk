@@ -25,8 +25,13 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class SpecificUXDescriptionHandlerBuilder
             : OperationBuilder<SpecificUXDescriptionHandlerBuilder>
         {
+
             public string? Ux { get; set; }
-            
+
+
+
+
+
             internal SpecificUXDescriptionHandlerBuilder() { }
 
 
@@ -55,7 +60,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             
-            if (builder.Ux != null) QueryParams["ux"] = builder.Ux;
+            if (builder.Ux is not null) QueryParams["ux"] = builder.Ux;
             
 
             
@@ -71,7 +76,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             
-            if (ux != null) QueryParams["ux"] = ux;
+            if (ux is not null) QueryParams["ux"] = ux;
             
 
             
@@ -112,4 +117,5 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -27,15 +27,13 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class GetEventByUserEventIDAndEventTypeHandlerBuilder
             : OperationBuilder<GetEventByUserEventIDAndEventTypeHandlerBuilder>
         {
-            
-            
-            
-            
+
             public long? Offset { get; set; }
-            
-            
-            
-            
+
+
+
+
+
             internal GetEventByUserEventIDAndEventTypeHandlerBuilder() { }
 
 
@@ -90,9 +88,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             PathParams["userId"] = userId;
             
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (endDate != null) QueryParams["endDate"] = endDate;
+            if (endDate is not null) QueryParams["endDate"] = endDate;
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
-            if (startDate != null) QueryParams["startDate"] = startDate;
+            if (startDate is not null) QueryParams["startDate"] = startDate;
             
 
             
@@ -120,9 +118,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             PathParams["userId"] = userId;
             
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (endDate != null) QueryParams["endDate"] = endDate;
+            if (endDate is not null) QueryParams["endDate"] = endDate;
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
-            if (startDate != null) QueryParams["startDate"] = startDate;
+            if (startDate is not null) QueryParams["startDate"] = startDate;
             
 
             
@@ -163,4 +161,5 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

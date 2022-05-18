@@ -31,9 +31,11 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class GeneratedUploadUrlBuilder
             : OperationBuilder<GeneratedUploadUrlBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal GeneratedUploadUrlBuilder() { }
 
 
@@ -67,7 +69,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             PathParams["folder"] = folder;
             PathParams["namespace"] = namespace_;
             
-            if (fileType != null) QueryParams["fileType"] = fileType;
+            if (fileType is not null) QueryParams["fileType"] = fileType;
             
 
             
@@ -87,7 +89,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             PathParams["folder"] = folder;
             PathParams["namespace"] = namespace_;
             
-            if (fileType != null) QueryParams["fileType"] = fileType;
+            if (fileType is not null) QueryParams["fileType"] = fileType;
             
 
             
@@ -128,4 +130,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

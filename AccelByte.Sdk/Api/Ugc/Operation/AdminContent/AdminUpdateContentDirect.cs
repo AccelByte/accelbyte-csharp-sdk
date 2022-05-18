@@ -29,11 +29,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class AdminUpdateContentDirectBuilder
             : OperationBuilder<AdminUpdateContentDirectBuilder>
         {
-            
-            
-            
-            
-            
+
+
+
+
+
             internal AdminUpdateContentDirectBuilder() { }
 
 
@@ -140,4 +140,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -29,9 +29,13 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         public class PublishPolicyVersionBuilder
             : OperationBuilder<PublishPolicyVersionBuilder>
         {
-            
+
             public bool? ShouldNotify { get; set; }
-            
+
+
+
+
+
             internal PublishPolicyVersionBuilder() { }
 
 
@@ -115,4 +119,5 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -30,7 +30,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class GetConfigBuilder
             : OperationBuilder<GetConfigBuilder>
         {
-            
+
+
+
+
+
             internal GetConfigBuilder() { }
 
 
@@ -113,4 +117,5 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

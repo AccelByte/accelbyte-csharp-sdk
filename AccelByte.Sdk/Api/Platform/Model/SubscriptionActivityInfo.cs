@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator SubscriptionActivityInfoAction(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public SubscriptionActivityInfoAction(string enumValue)
@@ -104,7 +104,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator SubscriptionActivityInfoSubscribedBy(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public SubscriptionActivityInfoSubscribedBy(string enumValue)

@@ -26,10 +26,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class DeleteContentScreenshotBuilder
             : OperationBuilder<DeleteContentScreenshotBuilder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal DeleteContentScreenshotBuilder() { }
 
 
@@ -122,4 +123,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

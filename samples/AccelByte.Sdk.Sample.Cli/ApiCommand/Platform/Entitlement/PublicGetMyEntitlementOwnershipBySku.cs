@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             PublicGetMyEntitlementOwnershipBySku operation = new PublicGetMyEntitlementOwnershipBySku(
                 Namespace,                
-                EntitlementClazz,                
+                (EntitlementClazz is null ? null : PublicGetMyEntitlementOwnershipBySkuEntitlementClazz.NewValue(EntitlementClazz)),                
                 Sku                
             );            
             

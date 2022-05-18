@@ -26,8 +26,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class GetRolesBuilder
             : OperationBuilder<GetRolesBuilder>
         {
+
             public string? IsWildcard { get; set; }
-            
+
+
+
+
+
             internal GetRolesBuilder() { }
 
 
@@ -56,7 +61,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             
-            if (builder.IsWildcard != null) QueryParams["isWildcard"] = builder.IsWildcard;
+            if (builder.IsWildcard is not null) QueryParams["isWildcard"] = builder.IsWildcard;
             
 
             
@@ -72,7 +77,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             
-            if (isWildcard != null) QueryParams["isWildcard"] = isWildcard;
+            if (isWildcard is not null) QueryParams["isWildcard"] = isWildcard;
             
 
             
@@ -113,4 +118,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

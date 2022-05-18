@@ -30,11 +30,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ImportStoreBuilder
             : OperationBuilder<ImportStoreBuilder>
         {
-            
+
             public string? StoreId { get; set; }
-            
+
+
+
             public Stream? File { get; set; }
-            
+
+
+
             internal ImportStoreBuilder() { }
 
 
@@ -73,9 +77,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.StoreId != null) QueryParams["storeId"] = builder.StoreId;
+            if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
             
-            if (builder.File != null) FormParams["file"] = builder.File;
+            if (builder.File is not null) FormParams["file"] = builder.File;
 
             
             
@@ -93,9 +97,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (storeId != null) QueryParams["storeId"] = storeId;
+            if (storeId is not null) QueryParams["storeId"] = storeId;
             
-            if (file != null) FormParams["file"] = file;
+            if (file is not null) FormParams["file"] = file;
 
             
             
@@ -135,4 +139,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -28,9 +28,11 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class GetUserRankingPublicV1Builder
             : OperationBuilder<GetUserRankingPublicV1Builder>
         {
-            
-            
-            
+
+
+
+
+
             internal GetUserRankingPublicV1Builder() { }
 
 
@@ -125,4 +127,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -53,8 +53,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
         public class RejectGroupJoinRequestPublicV1Builder
             : OperationBuilder<RejectGroupJoinRequestPublicV1Builder>
         {
-            
-            
+
+
+
+
+
             internal RejectGroupJoinRequestPublicV1Builder() { }
 
 
@@ -143,4 +146,5 @@ namespace AccelByte.Sdk.Api.Group.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -31,12 +31,15 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         public class QueryTiersBuilder
             : OperationBuilder<QueryTiersBuilder>
         {
-            
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
+
+
+
+
             internal QueryTiersBuilder() { }
 
 
@@ -143,4 +146,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

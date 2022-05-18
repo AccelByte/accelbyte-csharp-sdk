@@ -47,10 +47,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class TestAdyenConfigBuilder
             : OperationBuilder<TestAdyenConfigBuilder>
         {
+
             public bool? Sandbox { get; set; }
-            
+
+
             public Model.AdyenConfig? Body { get; set; }
-            
+
+
+
+
             internal TestAdyenConfigBuilder() { }
 
 
@@ -145,4 +150,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

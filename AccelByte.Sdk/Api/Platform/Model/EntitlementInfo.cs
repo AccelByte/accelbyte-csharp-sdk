@@ -107,7 +107,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator EntitlementInfoAppType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public EntitlementInfoAppType(string enumValue)
@@ -137,7 +137,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator EntitlementInfoClazz(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public EntitlementInfoClazz(string enumValue)
@@ -179,7 +179,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator EntitlementInfoSource(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public EntitlementInfoSource(string enumValue)
@@ -206,7 +206,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator EntitlementInfoStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public EntitlementInfoStatus(string enumValue)
@@ -227,7 +227,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator EntitlementInfoType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public EntitlementInfoType(string enumValue)

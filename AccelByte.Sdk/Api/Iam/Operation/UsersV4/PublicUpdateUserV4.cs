@@ -56,8 +56,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicUpdateUserV4Builder
             : OperationBuilder<PublicUpdateUserV4Builder>
         {
-            
-            
+
+
+
+
+
             internal PublicUpdateUserV4Builder() { }
 
 
@@ -146,4 +149,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

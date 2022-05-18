@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             PublicDeletePaymentAccount operation = new PublicDeletePaymentAccount(
                 Id,                
                 Namespace,                
-                Type,                
+                PublicDeletePaymentAccountType.NewValue(Type),                
                 UserId                
             );            
             

@@ -27,10 +27,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public class UpdateGroupBuilder
             : OperationBuilder<UpdateGroupBuilder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal UpdateGroupBuilder() { }
 
 
@@ -131,4 +132,5 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

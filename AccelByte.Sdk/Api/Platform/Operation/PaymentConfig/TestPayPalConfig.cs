@@ -41,10 +41,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class TestPayPalConfigBuilder
             : OperationBuilder<TestPayPalConfigBuilder>
         {
+
             public bool? Sandbox { get; set; }
-            
+
+
             public Model.PayPalConfig? Body { get; set; }
-            
+
+
+
+
             internal TestPayPalConfigBuilder() { }
 
 
@@ -139,4 +144,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

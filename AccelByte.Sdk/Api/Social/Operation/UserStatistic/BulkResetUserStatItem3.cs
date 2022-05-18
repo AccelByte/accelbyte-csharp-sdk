@@ -29,10 +29,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class BulkResetUserStatItem3Builder
             : OperationBuilder<BulkResetUserStatItem3Builder>
         {
-            
-            
+
+
             public List<Model.BulkStatItemReset>? Body { get; set; }
-            
+
+
+
+
             internal BulkResetUserStatItem3Builder() { }
 
 
@@ -130,4 +133,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

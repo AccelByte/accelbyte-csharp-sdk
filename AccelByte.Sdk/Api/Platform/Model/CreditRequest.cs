@@ -68,7 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator CreditRequestOrigin(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public CreditRequestOrigin(string enumValue)
@@ -113,7 +113,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator CreditRequestSource(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public CreditRequestSource(string enumValue)

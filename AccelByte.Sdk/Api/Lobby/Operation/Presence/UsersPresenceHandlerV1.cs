@@ -26,10 +26,13 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class UsersPresenceHandlerV1Builder
             : OperationBuilder<UsersPresenceHandlerV1Builder>
         {
-            
+
             public bool? CountOnly { get; set; }
-            
-            
+
+
+
+
+
             internal UsersPresenceHandlerV1Builder() { }
 
 
@@ -66,7 +69,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.CountOnly != null) QueryParams["countOnly"] = Convert.ToString(builder.CountOnly)!;
-            if (userIds != null) QueryParams["userIds"] = userIds;
+            if (userIds is not null) QueryParams["userIds"] = userIds;
             
 
             
@@ -86,7 +89,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             
             if (countOnly != null) QueryParams["countOnly"] = Convert.ToString(countOnly)!;
-            if (userIds != null) QueryParams["userIds"] = userIds;
+            if (userIds is not null) QueryParams["userIds"] = userIds;
             
 
             
@@ -127,4 +130,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

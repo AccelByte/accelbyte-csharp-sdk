@@ -31,9 +31,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicGetUserEntitlementBuilder
             : OperationBuilder<PublicGetUserEntitlementBuilder>
         {
-            
-            
-            
+
+
+
+
+
             internal PublicGetUserEntitlementBuilder() { }
 
 
@@ -128,4 +130,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

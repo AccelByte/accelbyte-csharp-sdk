@@ -26,17 +26,21 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public class AdminGetListDeletionDataRequestBuilder
             : OperationBuilder<AdminGetListDeletionDataRequestBuilder>
         {
-            
+
             public string? After { get; set; }
-            
+
             public string? Before { get; set; }
-            
+
             public long? Limit { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
             public string? RequestDate { get; set; }
-            
+
+
+
+
+
             internal AdminGetListDeletionDataRequestBuilder() { }
 
 
@@ -93,11 +97,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.After != null) QueryParams["after"] = builder.After;
-            if (builder.Before != null) QueryParams["before"] = builder.Before;
+            if (builder.After is not null) QueryParams["after"] = builder.After;
+            if (builder.Before is not null) QueryParams["before"] = builder.Before;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.RequestDate != null) QueryParams["requestDate"] = builder.RequestDate;
+            if (builder.RequestDate is not null) QueryParams["requestDate"] = builder.RequestDate;
             
 
             
@@ -119,11 +123,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (after != null) QueryParams["after"] = after;
-            if (before != null) QueryParams["before"] = before;
+            if (after is not null) QueryParams["after"] = after;
+            if (before is not null) QueryParams["before"] = before;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (requestDate != null) QueryParams["requestDate"] = requestDate;
+            if (requestDate is not null) QueryParams["requestDate"] = requestDate;
             
 
             
@@ -164,4 +168,5 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

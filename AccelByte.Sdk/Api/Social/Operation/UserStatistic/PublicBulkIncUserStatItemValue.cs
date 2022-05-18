@@ -29,9 +29,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class PublicBulkIncUserStatItemValueBuilder
             : OperationBuilder<PublicBulkIncUserStatItemValueBuilder>
         {
-            
+
+
             public List<Model.BulkUserStatItemInc>? Body { get; set; }
-            
+
+
+
+
             internal PublicBulkIncUserStatItemValueBuilder() { }
 
 
@@ -123,4 +127,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

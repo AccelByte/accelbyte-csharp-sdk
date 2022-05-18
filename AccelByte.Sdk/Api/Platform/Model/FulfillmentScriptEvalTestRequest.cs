@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator FulfillmentScriptEvalTestRequestType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public FulfillmentScriptEvalTestRequestType(string enumValue)

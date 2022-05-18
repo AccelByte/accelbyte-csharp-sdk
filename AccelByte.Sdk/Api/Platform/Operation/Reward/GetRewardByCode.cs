@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetRewardByCodeBuilder
             : OperationBuilder<GetRewardByCodeBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetRewardByCodeBuilder() { }
 
 
@@ -61,7 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (rewardCode != null) QueryParams["rewardCode"] = rewardCode;
+            if (rewardCode is not null) QueryParams["rewardCode"] = rewardCode;
             
 
             
@@ -79,7 +82,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (rewardCode != null) QueryParams["rewardCode"] = rewardCode;
+            if (rewardCode is not null) QueryParams["rewardCode"] = rewardCode;
             
 
             
@@ -120,4 +123,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

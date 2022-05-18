@@ -268,13 +268,17 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PlatformTokenGrantV3Builder
             : OperationBuilder<PlatformTokenGrantV3Builder>
         {
-            
+
+
+
             public string? ClientId { get; set; }
-            
+
             public string? DeviceId { get; set; }
-            
+
             public string? PlatformToken { get; set; }
-            
+
+
+
             internal PlatformTokenGrantV3Builder() { }
 
 
@@ -320,9 +324,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["platformId"] = platformId;
             
             
-            if (builder.ClientId != null) FormParams["client_id"] = builder.ClientId;
-            if (builder.DeviceId != null) FormParams["device_id"] = builder.DeviceId;
-            if (builder.PlatformToken != null) FormParams["platform_token"] = builder.PlatformToken;
+            if (builder.ClientId is not null) FormParams["client_id"] = builder.ClientId;
+            if (builder.DeviceId is not null) FormParams["device_id"] = builder.DeviceId;
+            if (builder.PlatformToken is not null) FormParams["platform_token"] = builder.PlatformToken;
 
             
             
@@ -342,9 +346,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["platformId"] = platformId;
             
             
-            if (clientId != null) FormParams["client_id"] = clientId;
-            if (deviceId != null) FormParams["device_id"] = deviceId;
-            if (platformToken != null) FormParams["platform_token"] = platformToken;
+            if (clientId is not null) FormParams["client_id"] = clientId;
+            if (deviceId is not null) FormParams["device_id"] = deviceId;
+            if (platformToken is not null) FormParams["platform_token"] = platformToken;
 
             
             
@@ -384,4 +388,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

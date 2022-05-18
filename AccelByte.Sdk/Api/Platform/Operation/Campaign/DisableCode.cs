@@ -32,8 +32,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class DisableCodeBuilder
             : OperationBuilder<DisableCodeBuilder>
         {
-            
-            
+
+
+
+
+
             internal DisableCodeBuilder() { }
 
 
@@ -122,4 +125,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

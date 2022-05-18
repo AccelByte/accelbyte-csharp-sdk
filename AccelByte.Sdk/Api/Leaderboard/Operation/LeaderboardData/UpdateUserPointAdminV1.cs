@@ -43,10 +43,11 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public class UpdateUserPointAdminV1Builder
             : OperationBuilder<UpdateUserPointAdminV1Builder>
         {
-            
-            
-            
-            
+
+
+
+
+
             internal UpdateUserPointAdminV1Builder() { }
 
 
@@ -147,4 +148,5 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

@@ -28,8 +28,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicVerifyRegistrationCodeBuilder
             : OperationBuilder<PublicVerifyRegistrationCodeBuilder>
         {
-            
-            
+
+
+
+
+
             internal PublicVerifyRegistrationCodeBuilder() { }
 
 
@@ -110,4 +113,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

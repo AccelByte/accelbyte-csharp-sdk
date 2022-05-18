@@ -70,7 +70,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 OrderNos,                
                 SortBy,                
                 StartTime,                
-                Status,                
+                (Status is null ? null : QueryOrdersStatus.NewValue(Status)),                
                 WithTotal                
             );            
             

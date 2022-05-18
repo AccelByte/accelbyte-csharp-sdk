@@ -30,26 +30,29 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class PublicQueryUserSubscriptionsBuilder
             : OperationBuilder<PublicQueryUserSubscriptionsBuilder>
         {
-            
-            
-            public string? ChargeStatus { get; set; }
-            
+
+            public PublicQueryUserSubscriptionsChargeStatus? ChargeStatus { get; set; }
+
             public string? ItemId { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? Sku { get; set; }
-            
-            public string? Status { get; set; }
-            
-            public string? SubscribedBy { get; set; }
-            
+
+            public PublicQueryUserSubscriptionsStatus? Status { get; set; }
+
+            public PublicQueryUserSubscriptionsSubscribedBy? SubscribedBy { get; set; }
+
+
+
+
+
             internal PublicQueryUserSubscriptionsBuilder() { }
 
 
-            public PublicQueryUserSubscriptionsBuilder SetChargeStatus(string _chargeStatus)
+            public PublicQueryUserSubscriptionsBuilder SetChargeStatus(PublicQueryUserSubscriptionsChargeStatus _chargeStatus)
             {
                 ChargeStatus = _chargeStatus;
                 return this;
@@ -79,13 +82,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public PublicQueryUserSubscriptionsBuilder SetStatus(string _status)
+            public PublicQueryUserSubscriptionsBuilder SetStatus(PublicQueryUserSubscriptionsStatus _status)
             {
                 Status = _status;
                 return this;
             }
 
-            public PublicQueryUserSubscriptionsBuilder SetSubscribedBy(string _subscribedBy)
+            public PublicQueryUserSubscriptionsBuilder SetSubscribedBy(PublicQueryUserSubscriptionsSubscribedBy _subscribedBy)
             {
                 SubscribedBy = _subscribedBy;
                 return this;
@@ -118,13 +121,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.ChargeStatus != null) QueryParams["chargeStatus"] = builder.ChargeStatus;
-            if (builder.ItemId != null) QueryParams["itemId"] = builder.ItemId;
+            if (builder.ChargeStatus is not null) QueryParams["chargeStatus"] = builder.ChargeStatus.Value;
+            if (builder.ItemId is not null) QueryParams["itemId"] = builder.ItemId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Sku != null) QueryParams["sku"] = builder.Sku;
-            if (builder.Status != null) QueryParams["status"] = builder.Status;
-            if (builder.SubscribedBy != null) QueryParams["subscribedBy"] = builder.SubscribedBy;
+            if (builder.Sku is not null) QueryParams["sku"] = builder.Sku;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
+            if (builder.SubscribedBy is not null) QueryParams["subscribedBy"] = builder.SubscribedBy.Value;
             
 
             
@@ -138,25 +141,25 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public PublicQueryUserSubscriptions(
             string namespace_,            
             string userId,            
-            string? chargeStatus,            
+            PublicQueryUserSubscriptionsChargeStatus? chargeStatus,            
             string? itemId,            
             int? limit,            
             int? offset,            
             string? sku,            
-            string? status,            
-            string? subscribedBy            
+            PublicQueryUserSubscriptionsStatus? status,            
+            PublicQueryUserSubscriptionsSubscribedBy? subscribedBy            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (chargeStatus != null) QueryParams["chargeStatus"] = chargeStatus;
-            if (itemId != null) QueryParams["itemId"] = itemId;
+            if (chargeStatus is not null) QueryParams["chargeStatus"] = chargeStatus.Value;
+            if (itemId is not null) QueryParams["itemId"] = itemId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (sku != null) QueryParams["sku"] = sku;
-            if (status != null) QueryParams["status"] = status;
-            if (subscribedBy != null) QueryParams["subscribedBy"] = subscribedBy;
+            if (sku is not null) QueryParams["sku"] = sku;
+            if (status is not null) QueryParams["status"] = status.Value;
+            if (subscribedBy is not null) QueryParams["subscribedBy"] = subscribedBy.Value;
             
 
             
@@ -197,4 +200,83 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class PublicQueryUserSubscriptionsChargeStatus : StringEnum<PublicQueryUserSubscriptionsChargeStatus>
+    {
+        public static readonly PublicQueryUserSubscriptionsChargeStatus Charged
+            = new PublicQueryUserSubscriptionsChargeStatus("CHARGED");
+
+        public static readonly PublicQueryUserSubscriptionsChargeStatus ChargeFailed
+            = new PublicQueryUserSubscriptionsChargeStatus("CHARGE_FAILED");
+
+        public static readonly PublicQueryUserSubscriptionsChargeStatus Never
+            = new PublicQueryUserSubscriptionsChargeStatus("NEVER");
+
+        public static readonly PublicQueryUserSubscriptionsChargeStatus RecurringCharging
+            = new PublicQueryUserSubscriptionsChargeStatus("RECURRING_CHARGING");
+
+        public static readonly PublicQueryUserSubscriptionsChargeStatus Setup
+            = new PublicQueryUserSubscriptionsChargeStatus("SETUP");
+
+
+        public static implicit operator PublicQueryUserSubscriptionsChargeStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicQueryUserSubscriptionsChargeStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class PublicQueryUserSubscriptionsStatus : StringEnum<PublicQueryUserSubscriptionsStatus>
+    {
+        public static readonly PublicQueryUserSubscriptionsStatus Active
+            = new PublicQueryUserSubscriptionsStatus("ACTIVE");
+
+        public static readonly PublicQueryUserSubscriptionsStatus Cancelled
+            = new PublicQueryUserSubscriptionsStatus("CANCELLED");
+
+        public static readonly PublicQueryUserSubscriptionsStatus Expired
+            = new PublicQueryUserSubscriptionsStatus("EXPIRED");
+
+        public static readonly PublicQueryUserSubscriptionsStatus Init
+            = new PublicQueryUserSubscriptionsStatus("INIT");
+
+
+        public static implicit operator PublicQueryUserSubscriptionsStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicQueryUserSubscriptionsStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class PublicQueryUserSubscriptionsSubscribedBy : StringEnum<PublicQueryUserSubscriptionsSubscribedBy>
+    {
+        public static readonly PublicQueryUserSubscriptionsSubscribedBy Platform
+            = new PublicQueryUserSubscriptionsSubscribedBy("PLATFORM");
+
+        public static readonly PublicQueryUserSubscriptionsSubscribedBy User
+            = new PublicQueryUserSubscriptionsSubscribedBy("USER");
+
+
+        public static implicit operator PublicQueryUserSubscriptionsSubscribedBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicQueryUserSubscriptionsSubscribedBy(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

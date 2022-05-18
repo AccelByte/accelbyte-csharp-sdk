@@ -27,8 +27,11 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class LastUserActivityTimeHandlerBuilder
             : OperationBuilder<LastUserActivityTimeHandlerBuilder>
         {
-            
-            
+
+
+
+
+
             internal LastUserActivityTimeHandlerBuilder() { }
 
 
@@ -117,4 +120,5 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

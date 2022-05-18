@@ -28,9 +28,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class UpdateSteamIAPConfigBuilder
             : OperationBuilder<UpdateSteamIAPConfigBuilder>
         {
-            
+
+
             public Model.SteamIAPConfigRequest? Body { get; set; }
-            
+
+
+
+
             internal UpdateSteamIAPConfigBuilder() { }
 
 
@@ -122,4 +126,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

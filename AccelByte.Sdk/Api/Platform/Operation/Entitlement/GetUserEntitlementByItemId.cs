@@ -30,13 +30,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class GetUserEntitlementByItemIdBuilder
             : OperationBuilder<GetUserEntitlementByItemIdBuilder>
         {
-            
-            
+
             public bool? ActiveOnly { get; set; }
-            
-            public string? EntitlementClazz { get; set; }
-            
-            
+
+            public GetUserEntitlementByItemIdEntitlementClazz? EntitlementClazz { get; set; }
+
+
+
+
+
             internal GetUserEntitlementByItemIdBuilder() { }
 
 
@@ -46,7 +48,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public GetUserEntitlementByItemIdBuilder SetEntitlementClazz(string _entitlementClazz)
+            public GetUserEntitlementByItemIdBuilder SetEntitlementClazz(GetUserEntitlementByItemIdEntitlementClazz _entitlementClazz)
             {
                 EntitlementClazz = _entitlementClazz;
                 return this;
@@ -83,8 +85,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
             
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
-            if (builder.EntitlementClazz != null) QueryParams["entitlementClazz"] = builder.EntitlementClazz;
-            if (itemId != null) QueryParams["itemId"] = itemId;
+            if (builder.EntitlementClazz is not null) QueryParams["entitlementClazz"] = builder.EntitlementClazz.Value;
+            if (itemId is not null) QueryParams["itemId"] = itemId;
             
 
             
@@ -99,7 +101,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string namespace_,            
             string userId,            
             bool? activeOnly,            
-            string? entitlementClazz,            
+            GetUserEntitlementByItemIdEntitlementClazz? entitlementClazz,            
             string itemId            
         )
         {
@@ -107,8 +109,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
-            if (entitlementClazz != null) QueryParams["entitlementClazz"] = entitlementClazz;
-            if (itemId != null) QueryParams["itemId"] = itemId;
+            if (entitlementClazz is not null) QueryParams["entitlementClazz"] = entitlementClazz.Value;
+            if (itemId is not null) QueryParams["itemId"] = itemId;
             
 
             
@@ -149,4 +151,35 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class GetUserEntitlementByItemIdEntitlementClazz : StringEnum<GetUserEntitlementByItemIdEntitlementClazz>
+    {
+        public static readonly GetUserEntitlementByItemIdEntitlementClazz App
+            = new GetUserEntitlementByItemIdEntitlementClazz("APP");
+
+        public static readonly GetUserEntitlementByItemIdEntitlementClazz Code
+            = new GetUserEntitlementByItemIdEntitlementClazz("CODE");
+
+        public static readonly GetUserEntitlementByItemIdEntitlementClazz Entitlement
+            = new GetUserEntitlementByItemIdEntitlementClazz("ENTITLEMENT");
+
+        public static readonly GetUserEntitlementByItemIdEntitlementClazz Media
+            = new GetUserEntitlementByItemIdEntitlementClazz("MEDIA");
+
+        public static readonly GetUserEntitlementByItemIdEntitlementClazz Subscription
+            = new GetUserEntitlementByItemIdEntitlementClazz("SUBSCRIPTION");
+
+
+        public static implicit operator GetUserEntitlementByItemIdEntitlementClazz(string value)
+        {
+            return NewValue(value);
+        }
+
+        public GetUserEntitlementByItemIdEntitlementClazz(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

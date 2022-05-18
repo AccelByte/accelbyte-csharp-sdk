@@ -28,6 +28,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class LogoutBuilder
             : OperationBuilder<LogoutBuilder>
         {
+
+
+
+
+
             internal LogoutBuilder() { }
 
 
@@ -96,4 +101,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

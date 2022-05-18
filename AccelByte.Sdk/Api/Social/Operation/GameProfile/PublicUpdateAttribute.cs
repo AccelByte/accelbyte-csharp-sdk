@@ -29,12 +29,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class PublicUpdateAttributeBuilder
             : OperationBuilder<PublicUpdateAttributeBuilder>
         {
-            
-            
-            
-            
+
+
             public Model.Attribute? Body { get; set; }
-            
+
+
+
+
             internal PublicUpdateAttributeBuilder() { }
 
 
@@ -144,4 +145,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

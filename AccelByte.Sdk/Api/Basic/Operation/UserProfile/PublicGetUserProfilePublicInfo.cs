@@ -30,8 +30,11 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public class PublicGetUserProfilePublicInfoBuilder
             : OperationBuilder<PublicGetUserProfilePublicInfoBuilder>
         {
-            
-            
+
+
+
+
+
             internal PublicGetUserProfilePublicInfoBuilder() { }
 
 
@@ -118,4 +121,5 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

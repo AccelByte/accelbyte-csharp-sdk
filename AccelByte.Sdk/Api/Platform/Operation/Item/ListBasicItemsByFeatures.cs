@@ -31,11 +31,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class ListBasicItemsByFeaturesBuilder
             : OperationBuilder<ListBasicItemsByFeaturesBuilder>
         {
-            
+
             public bool? ActiveOnly { get; set; }
-            
+
             public List<string>? Features { get; set; }
-            
+
+
+
+
+
             internal ListBasicItemsByFeaturesBuilder() { }
 
 
@@ -75,7 +79,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
-            if (builder.Features != null) QueryParams["features"] = builder.Features;
+            if (builder.Features is not null) QueryParams["features"] = builder.Features;
             
 
             
@@ -96,7 +100,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
-            if (features != null) QueryParams["features"] = features;
+            if (features is not null) QueryParams["features"] = features;
             
 
             
@@ -138,4 +142,5 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

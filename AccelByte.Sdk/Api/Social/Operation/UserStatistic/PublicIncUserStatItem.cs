@@ -29,11 +29,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class PublicIncUserStatItemBuilder
             : OperationBuilder<PublicIncUserStatItemBuilder>
         {
-            
-            
-            
+
+
             public Model.StatItemInc? Body { get; set; }
-            
+
+
+
+
             internal PublicIncUserStatItemBuilder() { }
 
 
@@ -137,4 +139,5 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

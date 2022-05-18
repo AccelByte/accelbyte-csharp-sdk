@@ -31,19 +31,21 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public class SearchSessionsV2Builder
             : OperationBuilder<SearchSessionsV2Builder>
         {
-            
+
             public string? Channel { get; set; }
-            
+
             public bool? Deleted { get; set; }
-            
+
             public string? MatchID { get; set; }
-            
+
             public string? PartyID { get; set; }
-            
+
             public string? UserID { get; set; }
-            
-            
-            
+
+
+
+
+
             internal SearchSessionsV2Builder() { }
 
 
@@ -106,11 +108,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Channel != null) QueryParams["channel"] = builder.Channel;
+            if (builder.Channel is not null) QueryParams["channel"] = builder.Channel;
             if (builder.Deleted != null) QueryParams["deleted"] = Convert.ToString(builder.Deleted)!;
-            if (builder.MatchID != null) QueryParams["matchID"] = builder.MatchID;
-            if (builder.PartyID != null) QueryParams["partyID"] = builder.PartyID;
-            if (builder.UserID != null) QueryParams["userID"] = builder.UserID;
+            if (builder.MatchID is not null) QueryParams["matchID"] = builder.MatchID;
+            if (builder.PartyID is not null) QueryParams["partyID"] = builder.PartyID;
+            if (builder.UserID is not null) QueryParams["userID"] = builder.UserID;
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
             
@@ -136,11 +138,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (channel != null) QueryParams["channel"] = channel;
+            if (channel is not null) QueryParams["channel"] = channel;
             if (deleted != null) QueryParams["deleted"] = Convert.ToString(deleted)!;
-            if (matchID != null) QueryParams["matchID"] = matchID;
-            if (partyID != null) QueryParams["partyID"] = partyID;
-            if (userID != null) QueryParams["userID"] = userID;
+            if (matchID is not null) QueryParams["matchID"] = matchID;
+            if (partyID is not null) QueryParams["partyID"] = partyID;
+            if (userID is not null) QueryParams["userID"] = userID;
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
             
@@ -183,4 +185,5 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

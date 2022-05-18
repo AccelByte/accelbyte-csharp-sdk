@@ -26,8 +26,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         public class PublicGetSingleMatchmakingChannelBuilder
             : OperationBuilder<PublicGetSingleMatchmakingChannelBuilder>
         {
-            
-            
+
+
+
+
+
             internal PublicGetSingleMatchmakingChannelBuilder() { }
 
 
@@ -116,4 +119,5 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

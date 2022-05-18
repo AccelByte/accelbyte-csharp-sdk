@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             UpdatePlatformWalletConfig operation = new UpdatePlatformWalletConfig(
                 Namespace,                
-                Platform,                
+                UpdatePlatformWalletConfigPlatform.NewValue(Platform),                
                 Body                
             );            
             

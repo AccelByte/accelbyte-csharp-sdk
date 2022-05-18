@@ -39,16 +39,19 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class QueryEventStreamHandlerBuilder
             : OperationBuilder<QueryEventStreamHandlerBuilder>
         {
-            
+
             public string? EndDate { get; set; }
-            
+
             public long? Offset { get; set; }
-            
+
             public long? PageSize { get; set; }
-            
+
             public string? StartDate { get; set; }
-            
-            
+
+
+
+
+
             internal QueryEventStreamHandlerBuilder() { }
 
 
@@ -102,10 +105,10 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.EndDate != null) QueryParams["endDate"] = builder.EndDate;
+            if (builder.EndDate is not null) QueryParams["endDate"] = builder.EndDate;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.PageSize != null) QueryParams["pageSize"] = Convert.ToString(builder.PageSize)!;
-            if (builder.StartDate != null) QueryParams["startDate"] = builder.StartDate;
+            if (builder.StartDate is not null) QueryParams["startDate"] = builder.StartDate;
             
 
             
@@ -128,10 +131,10 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         {
             PathParams["namespace"] = namespace_;
             
-            if (endDate != null) QueryParams["endDate"] = endDate;
+            if (endDate is not null) QueryParams["endDate"] = endDate;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (pageSize != null) QueryParams["pageSize"] = Convert.ToString(pageSize)!;
-            if (startDate != null) QueryParams["startDate"] = startDate;
+            if (startDate is not null) QueryParams["startDate"] = startDate;
             
 
             
@@ -173,4 +176,5 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

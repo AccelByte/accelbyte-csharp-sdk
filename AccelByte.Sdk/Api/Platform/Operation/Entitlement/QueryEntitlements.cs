@@ -31,23 +31,27 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryEntitlementsBuilder
             : OperationBuilder<QueryEntitlementsBuilder>
         {
-            
+
             public bool? ActiveOnly { get; set; }
-            
-            public string? AppType { get; set; }
-            
-            public string? EntitlementClazz { get; set; }
-            
+
+            public QueryEntitlementsAppType? AppType { get; set; }
+
+            public QueryEntitlementsEntitlementClazz? EntitlementClazz { get; set; }
+
             public string? EntitlementName { get; set; }
-            
+
             public List<string>? ItemId { get; set; }
-            
+
             public int? Limit { get; set; }
-            
+
             public int? Offset { get; set; }
-            
+
             public string? UserId { get; set; }
-            
+
+
+
+
+
             internal QueryEntitlementsBuilder() { }
 
 
@@ -57,13 +61,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryEntitlementsBuilder SetAppType(string _appType)
+            public QueryEntitlementsBuilder SetAppType(QueryEntitlementsAppType _appType)
             {
                 AppType = _appType;
                 return this;
             }
 
-            public QueryEntitlementsBuilder SetEntitlementClazz(string _entitlementClazz)
+            public QueryEntitlementsBuilder SetEntitlementClazz(QueryEntitlementsEntitlementClazz _entitlementClazz)
             {
                 EntitlementClazz = _entitlementClazz;
                 return this;
@@ -123,13 +127,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
-            if (builder.AppType != null) QueryParams["appType"] = builder.AppType;
-            if (builder.EntitlementClazz != null) QueryParams["entitlementClazz"] = builder.EntitlementClazz;
-            if (builder.EntitlementName != null) QueryParams["entitlementName"] = builder.EntitlementName;
-            if (builder.ItemId != null) QueryParams["itemId"] = builder.ItemId;
+            if (builder.AppType is not null) QueryParams["appType"] = builder.AppType.Value;
+            if (builder.EntitlementClazz is not null) QueryParams["entitlementClazz"] = builder.EntitlementClazz.Value;
+            if (builder.EntitlementName is not null) QueryParams["entitlementName"] = builder.EntitlementName;
+            if (builder.ItemId is not null) QueryParams["itemId"] = builder.ItemId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.UserId != null) QueryParams["userId"] = builder.UserId;
+            if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
             
 
             
@@ -144,8 +148,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public QueryEntitlements(
             string namespace_,            
             bool? activeOnly,            
-            string? appType,            
-            string? entitlementClazz,            
+            QueryEntitlementsAppType? appType,            
+            QueryEntitlementsEntitlementClazz? entitlementClazz,            
             string? entitlementName,            
             List<string>? itemId,            
             int? limit,            
@@ -156,13 +160,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
-            if (appType != null) QueryParams["appType"] = appType;
-            if (entitlementClazz != null) QueryParams["entitlementClazz"] = entitlementClazz;
-            if (entitlementName != null) QueryParams["entitlementName"] = entitlementName;
-            if (itemId != null) QueryParams["itemId"] = itemId;
+            if (appType is not null) QueryParams["appType"] = appType.Value;
+            if (entitlementClazz is not null) QueryParams["entitlementClazz"] = entitlementClazz.Value;
+            if (entitlementName is not null) QueryParams["entitlementName"] = entitlementName;
+            if (itemId is not null) QueryParams["itemId"] = itemId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (userId != null) QueryParams["userId"] = userId;
+            if (userId is not null) QueryParams["userId"] = userId;
             
 
             
@@ -204,4 +208,62 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
+    public class QueryEntitlementsAppType : StringEnum<QueryEntitlementsAppType>
+    {
+        public static readonly QueryEntitlementsAppType Demo
+            = new QueryEntitlementsAppType("DEMO");
+
+        public static readonly QueryEntitlementsAppType Dlc
+            = new QueryEntitlementsAppType("DLC");
+
+        public static readonly QueryEntitlementsAppType Game
+            = new QueryEntitlementsAppType("GAME");
+
+        public static readonly QueryEntitlementsAppType Software
+            = new QueryEntitlementsAppType("SOFTWARE");
+
+
+        public static implicit operator QueryEntitlementsAppType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryEntitlementsAppType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class QueryEntitlementsEntitlementClazz : StringEnum<QueryEntitlementsEntitlementClazz>
+    {
+        public static readonly QueryEntitlementsEntitlementClazz App
+            = new QueryEntitlementsEntitlementClazz("APP");
+
+        public static readonly QueryEntitlementsEntitlementClazz Code
+            = new QueryEntitlementsEntitlementClazz("CODE");
+
+        public static readonly QueryEntitlementsEntitlementClazz Entitlement
+            = new QueryEntitlementsEntitlementClazz("ENTITLEMENT");
+
+        public static readonly QueryEntitlementsEntitlementClazz Media
+            = new QueryEntitlementsEntitlementClazz("MEDIA");
+
+        public static readonly QueryEntitlementsEntitlementClazz Subscription
+            = new QueryEntitlementsEntitlementClazz("SUBSCRIPTION");
+
+
+        public static implicit operator QueryEntitlementsEntitlementClazz(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryEntitlementsEntitlementClazz(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
 }

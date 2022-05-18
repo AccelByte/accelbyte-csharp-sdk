@@ -25,8 +25,13 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         public class SpecificEventTypeDescriptionHandlerBuilder
             : OperationBuilder<SpecificEventTypeDescriptionHandlerBuilder>
         {
+
             public string? EventTypes { get; set; }
-            
+
+
+
+
+
             internal SpecificEventTypeDescriptionHandlerBuilder() { }
 
 
@@ -55,7 +60,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             
-            if (builder.EventTypes != null) QueryParams["eventTypes"] = builder.EventTypes;
+            if (builder.EventTypes is not null) QueryParams["eventTypes"] = builder.EventTypes;
             
 
             
@@ -71,7 +76,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             
-            if (eventTypes != null) QueryParams["eventTypes"] = eventTypes;
+            if (eventTypes is not null) QueryParams["eventTypes"] = eventTypes;
             
 
             
@@ -112,4 +117,5 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

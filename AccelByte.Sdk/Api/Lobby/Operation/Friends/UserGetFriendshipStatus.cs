@@ -24,8 +24,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public class UserGetFriendshipStatusBuilder
             : OperationBuilder<UserGetFriendshipStatusBuilder>
         {
-            
-            
+
+
+
+
+
             internal UserGetFriendshipStatusBuilder() { }
 
 
@@ -114,4 +117,5 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

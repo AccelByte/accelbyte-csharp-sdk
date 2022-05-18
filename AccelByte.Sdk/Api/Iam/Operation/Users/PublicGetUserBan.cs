@@ -24,10 +24,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class PublicGetUserBanBuilder
             : OperationBuilder<PublicGetUserBanBuilder>
         {
-            
-            
+
             public bool? ActiveOnly { get; set; }
-            
+
+
+
+
+
             internal PublicGetUserBanBuilder() { }
 
 
@@ -125,4 +128,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }

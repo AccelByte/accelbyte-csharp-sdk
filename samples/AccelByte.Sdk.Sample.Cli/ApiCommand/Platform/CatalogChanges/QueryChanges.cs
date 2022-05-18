@@ -71,13 +71,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             QueryChanges operation = new QueryChanges(
                 Namespace,                
                 StoreId,                
-                Action,                
-                ItemType,                
+                (Action is null ? null : QueryChangesAction.NewValue(Action)),                
+                (ItemType is null ? null : QueryChangesItemType.NewValue(ItemType)),                
                 Limit,                
                 Offset,                
                 SortBy,                
-                Status,                
-                Type,                
+                (Status is null ? null : QueryChangesStatus.NewValue(Status)),                
+                (Type is null ? null : QueryChangesType.NewValue(Type)),                
                 UpdatedAtEnd,                
                 UpdatedAtStart                
             );            

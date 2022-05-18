@@ -92,7 +92,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator IAPOrderInfoStatus(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public IAPOrderInfoStatus(string enumValue)
@@ -131,7 +131,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static implicit operator IAPOrderInfoType(string value)
         {
-            return Create(value);
+            return NewValue(value);
         }
 
         public IAPOrderInfoType(string enumValue)

@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 State,                
                 ClientId,                
                 RedirectUri,                
-                ResponseType                
+                AuthorizationResponseType.NewValue(ResponseType)                
             );            
             
             string? response = wrapper.Authorization(operation);

@@ -26,8 +26,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public class GetListJusticePlatformAccountsBuilder
             : OperationBuilder<GetListJusticePlatformAccountsBuilder>
         {
-            
-            
+
+
+
+
+
             internal GetListJusticePlatformAccountsBuilder() { }
 
 
@@ -116,4 +119,5 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
     }
+
 }
