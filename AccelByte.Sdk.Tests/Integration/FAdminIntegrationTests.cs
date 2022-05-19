@@ -15,6 +15,7 @@ using AccelByte.Sdk.Api.Achievement.Model;
 using AccelByte.Sdk.Api.Basic.Model;
 using AccelByte.Sdk.Api.Cloudsave.Model;
 using AccelByte.Sdk.Api.Eventlog.Model;
+using AccelByte.Sdk.Api.Gametelemetry.Model;
 using AccelByte.Sdk.Api.Group.Model;
 using AccelByte.Sdk.Api.Iam.Model;
 using AccelByte.Sdk.Api.Leaderboard.Model;
@@ -297,6 +298,45 @@ namespace AccelByte.Sdk.Tests.Integration
                 if (mer.ErrorMessage != "data not found")
                     throw new Exception(mer.ErrorMessage, x);
             }
+        }
+
+        [Test]
+        public void GametelemetryServiceTests()
+        {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
+            string steamId = "76561199259217491";
+            string playTime = "4";
+            string accessToken = _Sdk.Configuration.TokenRepository.GetToken();
+            
+            _Sdk.Gametelemetry.GametelemetryOperations.ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostOp
+                .Execute(new List<TelemetryBody>
+                {
+                    new TelemetryBody
+                    {
+                        EventId = "csharpsdk",
+                        EventName = "CsharpEvent",
+                        EventNamespace = "test",
+                        EventTimestamp = DateTime.Now,
+                        Payload = new Dictionary<string, object>
+                        {
+                            {"foo", "bar"}
+                        }
+                    }
+                }, accessToken);
+            
+            _Sdk.Gametelemetry.GametelemetryOperations.ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutOp
+                .Execute(playTime, steamId, accessToken);
+
+            Dictionary<string, object>? resGet = _Sdk.Gametelemetry.GametelemetryOperations
+                                                     .ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetOp
+                                                     .Execute(steamId, accessToken);
+
+            Assert.IsNotNull(resGet);
+            Assert.Contains("total_playtime", resGet);
+            Assert.Equals(playTime, resGet!["total_playtime"]);
         }
 
         [Test]

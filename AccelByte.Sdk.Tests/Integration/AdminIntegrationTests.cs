@@ -36,6 +36,10 @@ using AccelByte.Sdk.Api.Eventlog.Model;
 using AccelByte.Sdk.Api.Eventlog.Operation;
 using AccelByte.Sdk.Api.Eventlog.Wrapper;
 
+using AccelByte.Sdk.Api.Gametelemetry.Model;
+using AccelByte.Sdk.Api.Gametelemetry.Operation;
+using AccelByte.Sdk.Api.Gametelemetry.Wrapper;
+
 using AccelByte.Sdk.Api.Leaderboard.Model;
 using AccelByte.Sdk.Api.Leaderboard.Operation;
 using AccelByte.Sdk.Api.Leaderboard.Wrapper;
@@ -327,6 +331,50 @@ namespace AccelByte.Sdk.Tests.Integration
                 if (mer.ErrorMessage != "data not found")
                     throw new Exception(mer.ErrorMessage, x);
             }
+        }
+
+        [Test]
+        public void GameTelemetryServiceTests()
+        {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
+            string steamId = "76561199259217491";
+            string playTime = "4";
+            string accessToken = _Sdk.Configuration.TokenRepository.GetToken();
+
+            Api.Gametelemetry.Wrapper.GametelemetryOperations wGametelemetryOperations = new Api.Gametelemetry.Wrapper.GametelemetryOperations(_Sdk);
+
+            wGametelemetryOperations.ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(
+                Api.Gametelemetry.Operation.ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost.Builder
+                   .Build(new List<TelemetryBody>
+                   {
+                       new TelemetryBody
+                       {
+                           EventId = "csharpsdk",
+                           EventName = "CsharpEvent",
+                           EventNamespace = "test",
+                           EventTimestamp = DateTime.Now,
+                           Payload = new Dictionary<string, object>
+                           {
+                               {"foo", "bar"}
+                           }
+                       }
+                   }, accessToken));
+
+            wGametelemetryOperations.ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(
+                Api.Gametelemetry.Operation
+                   .ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut.Builder
+                   .Build(playTime, steamId, accessToken));
+
+            Dictionary<string, object>? resGet = wGametelemetryOperations.ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(
+                Api.Gametelemetry.Operation.ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet.Builder
+                   .Build(steamId, accessToken));
+
+            Assert.IsNotNull(resGet);
+            Assert.Contains("total_playtime", resGet);
+            Assert.Equals(playTime, resGet!["total_playtime"]);
         }
 
         [Test]
