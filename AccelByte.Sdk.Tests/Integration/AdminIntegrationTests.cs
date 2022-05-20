@@ -363,10 +363,21 @@ namespace AccelByte.Sdk.Tests.Integration
                        }
                    }, accessToken));
 
-            wGametelemetryOperations.ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(
-                Api.Gametelemetry.Operation
-                   .ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut.Builder
-                   .Build(playTime, steamId, accessToken));
+            try
+            {
+                wGametelemetryOperations
+                    .ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(
+                        Api.Gametelemetry.Operation
+                           .ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut.Builder
+                           .Build(playTime, steamId, accessToken));
+            }
+            catch (HttpResponseException e)
+            {
+                if (e.Message.ToLower().Contains("user not found"))
+                {
+                    Assert.Ignore("User not found.");
+                }
+            }
 
             Dictionary<string, object>? resGet = wGametelemetryOperations.ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(
                 Api.Gametelemetry.Operation.ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet.Builder
