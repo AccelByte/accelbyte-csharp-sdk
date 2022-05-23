@@ -15,5 +15,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("image_limit")]
         public int? ImageLimit { get; set; }
 
+        [JsonPropertyName("non_persistent_image_number")]
+        public int? NonPersistentImageNumber { get; set; }
+
     }
 }

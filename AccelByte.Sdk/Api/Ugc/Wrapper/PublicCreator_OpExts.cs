@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class UgcPublicCreator_OpExts
     {
-        public static Ugc.Model.ModelsCreatorOverviewResponse? Execute(
+        public static Ugc.Model.ModelsCreatorResponse? Execute(
             this GetCreator.GetCreatorBuilder builder,
             string namespace_,
             string userId

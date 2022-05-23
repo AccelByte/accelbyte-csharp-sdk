@@ -15,6 +15,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("displayName")]
         public string? DisplayName { get; set; }
 
+        [JsonPropertyName("platformUserIds")]
+        public Dictionary<string, string>? PlatformUserIds { get; set; }
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
 

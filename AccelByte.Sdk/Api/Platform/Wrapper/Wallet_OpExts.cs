@@ -84,24 +84,6 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).ListUserCurrencyTransactions(op);
         }
 
-        public static void Execute(
-            this CheckWallet.CheckWalletBuilder builder,
-            string currencyCode,
-            string namespace_,
-            string userId,
-            string origin
-        )
-        {
-            CheckWallet op = builder.Build(
-                currencyCode,
-                namespace_,
-                userId,
-                origin
-            );
-
-            ((Platform.Wrapper.Wallet)builder.WrapperObject!).CheckWallet(op);
-        }
-
         public static Platform.Model.WalletInfo? Execute(
             this CreditUserWallet.CreditUserWalletBuilder builder,
             string currencyCode,
@@ -132,112 +114,6 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).PayWithUserWallet(op);
-        }
-
-        public static Platform.Model.WalletInfo? Execute(
-            this GetUserWallet.GetUserWalletBuilder builder,
-            string namespace_,
-            string userId,
-            string walletId
-        )
-        {
-            GetUserWallet op = builder.Build(
-                namespace_,
-                userId,
-                walletId
-            );
-
-            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetUserWallet(op);
-        }
-
-        public static Platform.Model.WalletInfo? Execute(
-            this DebitUserWallet.DebitUserWalletBuilder builder,
-            string namespace_,
-            string userId,
-            string walletId
-        )
-        {
-            DebitUserWallet op = builder.Build(
-                namespace_,
-                userId,
-                walletId
-            );
-
-            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).DebitUserWallet(op);
-        }
-
-        public static void Execute(
-            this DisableUserWallet.DisableUserWalletBuilder builder,
-            string namespace_,
-            string userId,
-            string walletId
-        )
-        {
-            DisableUserWallet op = builder.Build(
-                namespace_,
-                userId,
-                walletId
-            );
-
-            ((Platform.Wrapper.Wallet)builder.WrapperObject!).DisableUserWallet(op);
-        }
-
-        public static void Execute(
-            this EnableUserWallet.EnableUserWalletBuilder builder,
-            string namespace_,
-            string userId,
-            string walletId
-        )
-        {
-            EnableUserWallet op = builder.Build(
-                namespace_,
-                userId,
-                walletId
-            );
-
-            ((Platform.Wrapper.Wallet)builder.WrapperObject!).EnableUserWallet(op);
-        }
-
-        public static Platform.Model.DetailedWalletTransactionPagingSlicedResult? Execute(
-            this ListUserWalletTransactions.ListUserWalletTransactionsBuilder builder,
-            string namespace_,
-            string userId,
-            string walletId
-        )
-        {
-            ListUserWalletTransactions op = builder.Build(
-                namespace_,
-                userId,
-                walletId
-            );
-
-            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).ListUserWalletTransactions(op);
-        }
-
-        public static Platform.Model.WalletPagingSlicedResult? Execute(
-            this QueryWallets.QueryWalletsBuilder builder,
-            string namespace_
-        )
-        {
-            QueryWallets op = builder.Build(
-                namespace_
-            );
-
-            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).QueryWallets(op);
-        }
-
-        public static Platform.Model.WalletInfo? Execute(
-            this GetWallet.GetWalletBuilder builder,
-            string namespace_,
-            string walletId
-        )
-        {
-            GetWallet op = builder.Build(
-                namespace_,
-                walletId
-            );
-
-            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetWallet(op);
         }
 
         public static Platform.Model.PlatformWallet? Execute(

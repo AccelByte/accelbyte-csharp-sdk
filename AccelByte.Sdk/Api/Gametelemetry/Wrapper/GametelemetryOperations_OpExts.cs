@@ -13,32 +13,6 @@ namespace AccelByte.Sdk.Api
     public static class GametelemetryGametelemetryOperations_OpExts
     {
         public static void Execute(
-            this AdminGetEventsGameTelemetryV1AdminEventsGet.AdminGetEventsGameTelemetryV1AdminEventsGetBuilder builder,
-            string namespace_,
-            string accessToken
-        )
-        {
-            AdminGetEventsGameTelemetryV1AdminEventsGet op = builder.Build(
-                namespace_,
-                accessToken                
-            );
-
-            ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).AdminGetEventsGameTelemetryV1AdminEventsGet(op);
-        }
-
-        public static void Execute(
-            this AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet.AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder builder,
-            string accessToken
-        )
-        {
-            AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet op = builder.Build(
-                accessToken                
-            );
-
-            ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet(op);
-        }
-
-        public static void Execute(
             this ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost.ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder builder,
             List<TelemetryBody> body,
             string accessToken

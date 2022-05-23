@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","disableuserwallet")]
-    public class DisableUserWalletCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform","listuserwallettransactions")]
+    public class ListUserWalletTransactionsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName{ get { return "DisableUserWallet"; } }
+        public string OperationName{ get { return "ListUserWalletTransactions"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,23 +35,34 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("walletId")]
         public string WalletId { get; set; } = String.Empty;
 
-        public DisableUserWalletCommand(AccelByteSDK sdk)
+        [SdkCommandArgument("limit")]
+        public int? Limit { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public int? Offset { get; set; }
+
+        public ListUserWalletTransactionsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
+            AccelByte.Sdk.Api.Platform.Wrapper.WalletDeprecated wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.WalletDeprecated(_SDK);
 
-            DisableUserWallet operation = new DisableUserWallet(
+            ListUserWalletTransactions operation = new ListUserWalletTransactions(
                 Namespace,                
                 UserId,                
-                WalletId                
+                WalletId,                
+                Limit,                
+                Offset                
             );            
             
-            wrapper.DisableUserWallet(operation);
-            return String.Empty;
+            AccelByte.Sdk.Api.Platform.Model.DetailedWalletTransactionPagingSlicedResult? response = wrapper.ListUserWalletTransactions(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

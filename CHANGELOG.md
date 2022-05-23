@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.9.0
+- Implemented enum in operation's parameter
+	- Possible **BREAKING CHANGES**.
+- `StringEnum::Create` function is renamed to `StringEnum::NewValue`.
+- Updated APIs
+	- dsmc
+		- updated models
+	- gametelemetry
+		- updated endpoints
+	- iam
+		- updated models
+	- platform
+		- added new endpoints
+		- updated endpoints
+	- ugc
+		- updated endpoint
+
 ## v0.8.0
 - Updated core unit tests.
 - Moved cli tests to cli project's folder.

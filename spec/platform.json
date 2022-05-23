@@ -8,7 +8,7 @@
     },
     "description": "Justice Platform Service",
     "title": "justice-platform-service",
-    "version": "4.7.1"
+    "version": "4.8.0"
   },
   "schemes": [
     "https"
@@ -88,6 +88,9 @@
     },
     {
       "name": "Wallet"
+    },
+    {
+      "name": "Wallet(Deprecated)"
     }
   ],
   "securityDefinitions": {
@@ -14174,7 +14177,7 @@
         ],
         "summary": "Check wallet by balance origin and currency code",
         "tags": [
-          "Wallet"
+          "Wallet(Deprecated)"
         ],
         "x-authorization": {
           "action": "2",
@@ -14403,7 +14406,7 @@
         ],
         "summary": "Get a user wallet",
         "tags": [
-          "Wallet"
+          "Wallet(Deprecated)"
         ],
         "x-authorization": {
           "action": "2",
@@ -14496,7 +14499,7 @@
         ],
         "summary": "Debit a user wallet",
         "tags": [
-          "Wallet"
+          "Wallet(Deprecated)"
         ],
         "x-authorization": {
           "action": "4",
@@ -14567,7 +14570,7 @@
         ],
         "summary": "Disable a user wallet",
         "tags": [
-          "Wallet"
+          "Wallet(Deprecated)"
         ],
         "x-authorization": {
           "action": "4",
@@ -14638,7 +14641,7 @@
         ],
         "summary": "Enable a user wallet",
         "tags": [
-          "Wallet"
+          "Wallet(Deprecated)"
         ],
         "x-authorization": {
           "action": "4",
@@ -14722,7 +14725,7 @@
         ],
         "summary": "List user wallet transactions",
         "tags": [
-          "Wallet"
+          "Wallet(Deprecated)"
         ],
         "x-authorization": {
           "action": "2",
@@ -14820,7 +14823,7 @@
         ],
         "summary": "Query wallets",
         "tags": [
-          "Wallet"
+          "Wallet(Deprecated)"
         ],
         "x-authorization": {
           "action": "2",
@@ -14880,7 +14883,7 @@
         ],
         "summary": "Get a wallet by wallet id",
         "tags": [
-          "Wallet"
+          "Wallet(Deprecated)"
         ],
         "x-authorization": {
           "action": "2",
@@ -24083,6 +24086,7 @@
             "REWARD",
             "GIFT",
             "REFUND",
+            "DLC",
             "OTHER"
           ],
           "type": "string"
@@ -31548,7 +31552,7 @@
     "SteamDLCSyncRequest": {
       "properties": {
         "appId": {
-          "description": "Steam app id",
+          "description": "Steam app id, this field is deprecated",
           "type": "string"
         },
         "steamId": {
@@ -31557,7 +31561,6 @@
         }
       },
       "required": [
-        "appId",
         "steamId"
       ],
       "type": "object"

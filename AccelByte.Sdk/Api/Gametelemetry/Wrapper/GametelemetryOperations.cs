@@ -19,14 +19,6 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Wrapper
         }
 
         #region Operation Builders
-        public AdminGetEventsGameTelemetryV1AdminEventsGet.AdminGetEventsGameTelemetryV1AdminEventsGetBuilder AdminGetEventsGameTelemetryV1AdminEventsGetOp
-        {
-            get { return Operation.AdminGetEventsGameTelemetryV1AdminEventsGet.Builder.SetWrapperObject(this); }
-        }
-        public AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet.AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetBuilder AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGetOp
-        {
-            get { return Operation.AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet.Builder.SetWrapperObject(this); }
-        }
         public ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost.ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostOp
         {
             get { return Operation.ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost.Builder.SetWrapperObject(this); }
@@ -41,22 +33,6 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Wrapper
         }
         #endregion
         
-        public void AdminGetEventsGameTelemetryV1AdminEventsGet(AdminGetEventsGameTelemetryV1AdminEventsGet input) {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code, 
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet(AdminGetNamespaceGameTelemetryV1AdminTelemetrynamespaceGet input) {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code, 
-                    response.ContentType,
-                    response.Payload);
-        }
         public void ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost input) {
             var response = _sdk.RunRequest(input);
 

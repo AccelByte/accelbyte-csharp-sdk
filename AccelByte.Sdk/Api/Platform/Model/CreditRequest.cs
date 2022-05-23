@@ -107,6 +107,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly CreditRequestSource REFUND
             = new CreditRequestSource("REFUND");
 
+        public static readonly CreditRequestSource DLC
+            = new CreditRequestSource("DLC");
+
         public static readonly CreditRequestSource OTHER
             = new CreditRequestSource("OTHER");
 

@@ -15,6 +15,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 {
     /// <summary>
     /// GetCreator
+    ///
+    /// Public user can access without token or if token specified, requires valid user token
     /// </summary>
     public class GetCreator : AccelByte.Sdk.Core.Operation
     {
@@ -97,7 +99,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
         
-        public Model.ModelsCreatorOverviewResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsCreatorResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            
             if (code == (HttpStatusCode)204)
             {
@@ -105,11 +107,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ModelsCreatorOverviewResponse>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsCreatorResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsCreatorOverviewResponse>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsCreatorResponse>(payload);
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

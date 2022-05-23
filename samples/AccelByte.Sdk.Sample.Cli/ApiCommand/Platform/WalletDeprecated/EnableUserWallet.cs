@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getuserwallet")]
-    public class GetUserWalletCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform","enableuserwallet")]
+    public class EnableUserWalletCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetUserWallet"; } }
+        public string OperationName{ get { return "EnableUserWallet"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,26 +35,23 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("walletId")]
         public string WalletId { get; set; } = String.Empty;
 
-        public GetUserWalletCommand(AccelByteSDK sdk)
+        public EnableUserWalletCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
+            AccelByte.Sdk.Api.Platform.Wrapper.WalletDeprecated wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.WalletDeprecated(_SDK);
 
-            GetUserWallet operation = new GetUserWallet(
+            EnableUserWallet operation = new EnableUserWallet(
                 Namespace,                
                 UserId,                
                 WalletId                
             );            
             
-            AccelByte.Sdk.Api.Platform.Model.WalletInfo? response = wrapper.GetUserWallet(operation);
-            if (response == null)
-                return "No response from server.";
-
-            return SdkHelper.SerializeToJson(response);
+            wrapper.EnableUserWallet(operation);
+            return String.Empty;
         }
     }
 }

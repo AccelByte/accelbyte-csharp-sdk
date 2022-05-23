@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         #endregion
         
-        public Model.ModelsCreatorOverviewResponse? GetCreator(GetCreator input) {
+        public Model.ModelsCreatorResponse? GetCreator(GetCreator input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

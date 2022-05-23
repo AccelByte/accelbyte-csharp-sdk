@@ -8,7 +8,7 @@
     },
     "description": "Justice IAM Service",
     "title": "justice-iam-service",
-    "version": "5.8.0"
+    "version": "5.8.3"
   },
   "schemes": [
     "https"
@@ -23701,6 +23701,12 @@
         "displayName": {
           "type": "string"
         },
+        "platformUserIds": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
         "userId": {
           "type": "string"
         }
@@ -23708,6 +23714,7 @@
       "required": [
         "avatarUrl",
         "displayName",
+        "platformUserIds",
         "userId"
       ]
     },

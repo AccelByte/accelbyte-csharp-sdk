@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
                 UserId                
             );            
             
-            AccelByte.Sdk.Api.Ugc.Model.ModelsCreatorOverviewResponse? response = wrapper.GetCreator(operation);
+            AccelByte.Sdk.Api.Ugc.Model.ModelsCreatorResponse? response = wrapper.GetCreator(operation);
             if (response == null)
                 return "No response from server.";
 
