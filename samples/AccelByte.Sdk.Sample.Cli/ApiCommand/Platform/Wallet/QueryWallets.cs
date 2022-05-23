@@ -51,8 +51,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Platform.Wrapper.WalletDeprecated wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.WalletDeprecated(_SDK);
+            AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             QueryWallets operation = new QueryWallets(
                 Namespace,                
                 CurrencyCode,                
@@ -61,12 +62,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 (Origin is null ? null : QueryWalletsOrigin.NewValue(Origin)),                
                 UserId                
             );            
+            #pragma warning restore ab_deprecated_operation
             
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Platform.Model.WalletPagingSlicedResult? response = wrapper.QueryWallets(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

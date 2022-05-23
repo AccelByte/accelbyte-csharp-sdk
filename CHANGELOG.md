@@ -14,6 +14,7 @@
 	- platform
 		- added new endpoints
 		- updated endpoints
+		- deprecation notice for some of wallet endpoints
 	- ugc
 		- updated endpoint
 

@@ -88,9 +88,6 @@
     },
     {
       "name": "Wallet"
-    },
-    {
-      "name": "Wallet(Deprecated)"
     }
   ],
   "securityDefinitions": {
@@ -14095,6 +14092,7 @@
         "consumes": [
           "application/json"
         ],
+        "deprecated": true,
         "description": "\u0026lt;b\u0026gt;[SERVICE COMMUNICATION ONLY]\u0026lt;/b\u0026gt; Check wallet by balance origin and currency code whether it\u0026#39;s inactive.\u0026lt;br\u0026gt;Other detail info: \u0026lt;ul\u0026gt;\u0026lt;li\u0026gt;\u0026lt;i\u0026gt;Required permission\u0026lt;/i\u0026gt;: resource=\u0026#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET\u0026#34;, action=2 (READ)\u0026lt;/li\u0026gt;\u0026lt;/ul\u0026gt;",
         "operationId": "checkWallet",
         "parameters": [
@@ -14177,7 +14175,7 @@
         ],
         "summary": "Check wallet by balance origin and currency code",
         "tags": [
-          "Wallet(Deprecated)"
+          "Wallet"
         ],
         "x-authorization": {
           "action": "2",
@@ -14352,6 +14350,7 @@
         "consumes": [
           "application/json"
         ],
+        "deprecated": true,
         "description": "get a user wallet.\u0026lt;br\u0026gt;Other detail info: \u0026lt;ul\u0026gt;\u0026lt;li\u0026gt;\u0026lt;i\u0026gt;Required permission\u0026lt;/i\u0026gt;: resource=\u0026#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET\u0026#34;, action=2 (READ)\u0026lt;/li\u0026gt;\u0026lt;li\u0026gt;\u0026lt;i\u0026gt;Returns\u0026lt;/i\u0026gt;: wallet info\u0026lt;/li\u0026gt;\u0026lt;/ul\u0026gt;",
         "operationId": "getUserWallet",
         "parameters": [
@@ -14406,7 +14405,7 @@
         ],
         "summary": "Get a user wallet",
         "tags": [
-          "Wallet(Deprecated)"
+          "Wallet"
         ],
         "x-authorization": {
           "action": "2",
@@ -14419,6 +14418,7 @@
         "consumes": [
           "application/json"
         ],
+        "deprecated": true,
         "description": "Debit a user wallet.\u0026lt;br\u0026gt;Other detail info: \u0026lt;ul\u0026gt;\u0026lt;li\u0026gt;\u0026lt;i\u0026gt;Required permission\u0026lt;/i\u0026gt;: resource=\u0026#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET\u0026#34;, action=4 (UPDATE)\u0026lt;/li\u0026gt;\u0026lt;/ul\u0026gt;",
         "operationId": "debitUserWallet",
         "parameters": [
@@ -14499,7 +14499,7 @@
         ],
         "summary": "Debit a user wallet",
         "tags": [
-          "Wallet(Deprecated)"
+          "Wallet"
         ],
         "x-authorization": {
           "action": "4",
@@ -14512,6 +14512,7 @@
         "consumes": [
           "application/json"
         ],
+        "deprecated": true,
         "description": "disable a user wallet.\u0026lt;br\u0026gt;Other detail info: \u0026lt;ul\u0026gt;\u0026lt;li\u0026gt;\u0026lt;i\u0026gt;Required permission\u0026lt;/i\u0026gt;: resource=\u0026#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET\u0026#34;, action=4 (UPDATE)\u0026lt;/li\u0026gt;\u0026lt;/ul\u0026gt;",
         "operationId": "disableUserWallet",
         "parameters": [
@@ -14570,7 +14571,7 @@
         ],
         "summary": "Disable a user wallet",
         "tags": [
-          "Wallet(Deprecated)"
+          "Wallet"
         ],
         "x-authorization": {
           "action": "4",
@@ -14583,6 +14584,7 @@
         "consumes": [
           "application/json"
         ],
+        "deprecated": true,
         "description": "enable a user wallet.\u0026lt;br\u0026gt;Other detail info: \u0026lt;ul\u0026gt;\u0026lt;li\u0026gt;\u0026lt;i\u0026gt;Required permission\u0026lt;/i\u0026gt;: resource=\u0026#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET\u0026#34;, action=4 (UPDATE)\u0026lt;/li\u0026gt;\u0026lt;/ul\u0026gt;",
         "operationId": "enableUserWallet",
         "parameters": [
@@ -14641,7 +14643,7 @@
         ],
         "summary": "Enable a user wallet",
         "tags": [
-          "Wallet(Deprecated)"
+          "Wallet"
         ],
         "x-authorization": {
           "action": "4",
@@ -14654,6 +14656,7 @@
         "consumes": [
           "application/json"
         ],
+        "deprecated": true,
         "description": "List user wallet transactions ordered by create time desc.\u0026lt;br\u0026gt;Other detail info: \u0026lt;ul\u0026gt;\u0026lt;li\u0026gt;\u0026lt;i\u0026gt;Required permission\u0026lt;/i\u0026gt;: resource=\u0026#34;ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET\u0026#34;, action=2 (READ)\u0026lt;/li\u0026gt;\u0026lt;li\u0026gt;\u0026lt;i\u0026gt;Returns\u0026lt;/i\u0026gt;: wallet transaction info\u0026lt;/li\u0026gt;\u0026lt;/ul\u0026gt;",
         "operationId": "listUserWalletTransactions",
         "parameters": [
@@ -14725,7 +14728,7 @@
         ],
         "summary": "List user wallet transactions",
         "tags": [
-          "Wallet(Deprecated)"
+          "Wallet"
         ],
         "x-authorization": {
           "action": "2",
@@ -14738,6 +14741,7 @@
         "consumes": [
           "application/json"
         ],
+        "deprecated": true,
         "description": "Query wallets.\u0026lt;br\u0026gt;Other detail info: \u0026lt;ul\u0026gt;\u0026lt;li\u0026gt;\u0026lt;i\u0026gt;Required permission\u0026lt;/i\u0026gt;: resource=\u0026#34;ADMIN:NAMESPACE:{namespace}:WALLET\u0026#34;, action=2 (READ)\u0026lt;/li\u0026gt;\u0026lt;li\u0026gt;\u0026lt;i\u0026gt;Returns\u0026lt;/i\u0026gt;: paginated wallets info\u0026lt;/li\u0026gt;\u0026lt;/ul\u0026gt;",
         "operationId": "queryWallets",
         "parameters": [
@@ -14823,7 +14827,7 @@
         ],
         "summary": "Query wallets",
         "tags": [
-          "Wallet(Deprecated)"
+          "Wallet"
         ],
         "x-authorization": {
           "action": "2",
@@ -14836,6 +14840,7 @@
         "consumes": [
           "application/json"
         ],
+        "deprecated": true,
         "description": "get a wallet by wallet id.\u0026lt;br\u0026gt;Other detail info: \u0026lt;ul\u0026gt;\u0026lt;li\u0026gt;\u0026lt;i\u0026gt;Required permission\u0026lt;/i\u0026gt;: resource=\u0026#34;ADMIN:NAMESPACE:{namespace}:WALLET\u0026#34;, action=2 (READ)\u0026lt;/li\u0026gt;\u0026lt;li\u0026gt;\u0026lt;i\u0026gt;Returns\u0026lt;/i\u0026gt;: wallet info\u0026lt;/li\u0026gt;\u0026lt;/ul\u0026gt;",
         "operationId": "getWallet",
         "parameters": [
@@ -14883,7 +14888,7 @@
         ],
         "summary": "Get a wallet by wallet id",
         "tags": [
-          "Wallet(Deprecated)"
+          "Wallet"
         ],
         "x-authorization": {
           "action": "2",

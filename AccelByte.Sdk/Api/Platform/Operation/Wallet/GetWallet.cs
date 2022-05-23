@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=2 (READ)
     ///   *  Returns : wallet info
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetWallet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

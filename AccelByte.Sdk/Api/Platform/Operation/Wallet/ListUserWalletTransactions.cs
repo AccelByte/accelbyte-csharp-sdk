@@ -14,48 +14,58 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
     /// <summary>
-    /// debitUserWallet
+    /// listUserWalletTransactions
     ///
-    /// Debit a user wallet.
+    /// List user wallet transactions ordered by create time desc.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
+    ///   *  Returns : wallet transaction info
     /// </summary>
-    public class DebitUserWallet : AccelByte.Sdk.Core.Operation
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    public class ListUserWalletTransactions : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DebitUserWalletBuilder Builder = new DebitUserWalletBuilder();
+        public static ListUserWalletTransactionsBuilder Builder = new ListUserWalletTransactionsBuilder();
 
-        public class DebitUserWalletBuilder
-            : OperationBuilder<DebitUserWalletBuilder>
+        public class ListUserWalletTransactionsBuilder
+            : OperationBuilder<ListUserWalletTransactionsBuilder>
         {
 
+            public int? Limit { get; set; }
 
-            public Model.DebitRequest? Body { get; set; }
-
-
-
-
-            internal DebitUserWalletBuilder() { }
+            public int? Offset { get; set; }
 
 
 
-            public DebitUserWalletBuilder SetBody(Model.DebitRequest _body)
+
+
+            internal ListUserWalletTransactionsBuilder() { }
+
+
+            public ListUserWalletTransactionsBuilder SetLimit(int _limit)
             {
-                Body = _body;
+                Limit = _limit;
+                return this;
+            }
+
+            public ListUserWalletTransactionsBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
                 return this;
             }
 
 
 
 
-            public DebitUserWallet Build(
+
+            public ListUserWalletTransactions Build(
                 string namespace_,
                 string userId,
                 string walletId
             )
             {
-                DebitUserWallet op = new DebitUserWallet(this,
+                ListUserWalletTransactions op = new ListUserWalletTransactions(this,
                     namespace_,                    
                     userId,                    
                     walletId                    
@@ -66,7 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private DebitUserWallet(DebitUserWalletBuilder builder,
+        private ListUserWalletTransactions(ListUserWalletTransactionsBuilder builder,
             string namespace_,
             string userId,
             string walletId
@@ -76,41 +86,44 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
             PathParams["walletId"] = walletId;
             
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
 
             
             
-            BodyParams = builder.Body;
             
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public DebitUserWallet(
+        public ListUserWalletTransactions(
             string namespace_,            
             string userId,            
             string walletId,            
-            Model.DebitRequest body            
+            int? limit,            
+            int? offset            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             PathParams["walletId"] = walletId;
             
+            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
 
             
             
-            BodyParams = body;
             
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/debit";
+        public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/transactions";
 
-        public override HttpMethod Method => HttpMethod.Put;
+        public override HttpMethod Method => HttpMethod.Get;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -119,7 +132,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
         
-        public Model.WalletInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.DetailedWalletTransactionPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            
             if (code == (HttpStatusCode)204)
             {
@@ -127,11 +140,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.WalletInfo>(payload);
+                return JsonSerializer.Deserialize<Model.DetailedWalletTransactionPagingSlicedResult>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.WalletInfo>(payload);
+                return JsonSerializer.Deserialize<Model.DetailedWalletTransactionPagingSlicedResult>(payload);
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

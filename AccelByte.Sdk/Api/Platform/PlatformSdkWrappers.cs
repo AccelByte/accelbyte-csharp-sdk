@@ -244,17 +244,6 @@ namespace AccelByte.Sdk.Core
         }
         private Anonymization? _Anonymization = null;
 
-        public WalletDeprecated WalletDeprecated
-        {
-            get
-            {
-                if (_WalletDeprecated == null)
-                    _WalletDeprecated = new WalletDeprecated(_SdkObject);
-                return _WalletDeprecated;
-            }
-        }
-        private WalletDeprecated? _WalletDeprecated = null;
-
         public OrderDedicated OrderDedicated
         {
             get

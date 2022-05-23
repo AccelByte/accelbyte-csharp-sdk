@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","disableuserwallet")]
-    public class DisableUserWalletCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform","debituserwallet")]
+    public class DebitUserWalletCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName{ get { return "DisableUserWallet"; } }
+        public string OperationName{ get { return "DebitUserWallet"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,23 +35,34 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("walletId")]
         public string WalletId { get; set; } = String.Empty;
 
-        public DisableUserWalletCommand(AccelByteSDK sdk)
+        [SdkCommandData("body")]
+        public DebitRequest Body { get; set; } = new DebitRequest();
+                
+        public DebitUserWalletCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Platform.Wrapper.WalletDeprecated wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.WalletDeprecated(_SDK);
+            AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
 
-            DisableUserWallet operation = new DisableUserWallet(
+            #pragma warning disable ab_deprecated_operation
+            DebitUserWallet operation = new DebitUserWallet(
                 Namespace,                
                 UserId,                
-                WalletId                
+                WalletId,                
+                Body                
             );            
+            #pragma warning restore ab_deprecated_operation
             
-            wrapper.DisableUserWallet(operation);
-            return String.Empty;
+            #pragma warning disable ab_deprecated_operation_wrapper
+            AccelByte.Sdk.Api.Platform.Model.WalletInfo? response = wrapper.DebitUserWallet(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class DisableUserWallet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

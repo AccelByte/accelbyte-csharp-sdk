@@ -42,16 +42,20 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Platform.Wrapper.WalletDeprecated wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.WalletDeprecated(_SDK);
+            AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             EnableUserWallet operation = new EnableUserWallet(
                 Namespace,                
                 UserId,                
                 WalletId                
             );            
+            #pragma warning restore ab_deprecated_operation
             
+            #pragma warning disable ab_deprecated_operation_wrapper
             wrapper.EnableUserWallet(operation);
             return String.Empty;
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }
