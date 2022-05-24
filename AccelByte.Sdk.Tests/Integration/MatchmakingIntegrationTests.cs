@@ -44,8 +44,15 @@ namespace AccelByte.Sdk.Tests.Integration
         [OneTimeSetUp]
         public void Startup()
         {
+            HttpClientPolicy policy = HttpClientPolicy.Default;
+            policy.MaxRetryCount = 10;
+            policy.RetryInterval = 1000;
+            policy.RetryLogicHandler = new ResponseCodeCheckLogicHandler("425");
+
             _Sdk = AccelByteSDK.Builder
-                .UseDefaultHttpClient()
+                .SetHttpClient(ReliableHttpClient.Builder
+                    .SetDefaultPolicy(policy)
+                    .Build())
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseInMemoryTokenRepository()
                 .SetCredentialRepository(IntegrationTestCredentialRepository.Admin)
