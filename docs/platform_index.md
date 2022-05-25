@@ -179,6 +179,7 @@
 | `/platform/admin/namespaces/{namespace}/items/bySku` | GET | GetItemBySku | [GetItemBySku](../AccelByte.Sdk/Api/Platform/Operation/Item/GetItemBySku.cs) | [GetItemBySku](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/GetItemBySku.cs) |
 | `/platform/admin/namespaces/{namespace}/items/bySku/locale` | GET | GetLocaleItemBySku | [GetLocaleItemBySku](../AccelByte.Sdk/Api/Platform/Operation/Item/GetLocaleItemBySku.cs) | [GetLocaleItemBySku](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/GetLocaleItemBySku.cs) |
 | `/platform/admin/namespaces/{namespace}/items/itemId/bySku` | GET | GetItemIdBySku | [GetItemIdBySku](../AccelByte.Sdk/Api/Platform/Operation/Item/GetItemIdBySku.cs) | [GetItemIdBySku](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/GetItemIdBySku.cs) |
+| `/platform/admin/namespaces/{namespace}/items/itemId/bySkus` | GET | GetBulkItemIdBySkus | [GetBulkItemIdBySkus](../AccelByte.Sdk/Api/Platform/Operation/Item/GetBulkItemIdBySkus.cs) | [GetBulkItemIdBySkus](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/GetBulkItemIdBySkus.cs) |
 | `/platform/admin/namespaces/{namespace}/items/locale/byIds` | GET | BulkGetLocaleItems | [BulkGetLocaleItems](../AccelByte.Sdk/Api/Platform/Operation/Item/BulkGetLocaleItems.cs) | [BulkGetLocaleItems](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/BulkGetLocaleItems.cs) |
 | `/platform/admin/namespaces/{namespace}/items/search` | GET | SearchItems | [SearchItems](../AccelByte.Sdk/Api/Platform/Operation/Item/SearchItems.cs) | [SearchItems](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/SearchItems.cs) |
 | `/platform/admin/namespaces/{namespace}/items/uncategorized` | GET | QueryUncategorizedItems | [QueryUncategorizedItems](../AccelByte.Sdk/Api/Platform/Operation/Item/QueryUncategorizedItems.cs) | [QueryUncategorizedItems](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/QueryUncategorizedItems.cs) |
@@ -223,6 +224,7 @@
 | `/platform/admin/namespaces/{namespace}/orders/{orderNo}` | GET | GetOrder | [GetOrder](../AccelByte.Sdk/Api/Platform/Operation/Order/GetOrder.cs) | [GetOrder](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/GetOrder.cs) |
 | `/platform/admin/namespaces/{namespace}/orders/{orderNo}/refund` | PUT | RefundOrder | [RefundOrder](../AccelByte.Sdk/Api/Platform/Operation/Order/RefundOrder.cs) | [RefundOrder](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/RefundOrder.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/orders` | GET | QueryUserOrders | [QueryUserOrders](../AccelByte.Sdk/Api/Platform/Operation/Order/QueryUserOrders.cs) | [QueryUserOrders](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/QueryUserOrders.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/orders` | POST | AdminCreateUserOrder | [AdminCreateUserOrder](../AccelByte.Sdk/Api/Platform/Operation/Order/AdminCreateUserOrder.cs) | [AdminCreateUserOrder](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/AdminCreateUserOrder.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/orders/countOfItem` | GET | CountOfPurchasedItem | [CountOfPurchasedItem](../AccelByte.Sdk/Api/Platform/Operation/Order/CountOfPurchasedItem.cs) | [CountOfPurchasedItem](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/CountOfPurchasedItem.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}` | GET | GetUserOrder | [GetUserOrder](../AccelByte.Sdk/Api/Platform/Operation/Order/GetUserOrder.cs) | [GetUserOrder](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/GetUserOrder.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}` | PUT | UpdateUserOrderStatus | [UpdateUserOrderStatus](../AccelByte.Sdk/Api/Platform/Operation/Order/UpdateUserOrderStatus.cs) | [UpdateUserOrderStatus](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/UpdateUserOrderStatus.cs) |
@@ -263,6 +265,28 @@
 | `/platform/admin/namespaces/{namespace}/payment/orders` | POST | CreatePaymentOrderByDedicated | [CreatePaymentOrderByDedicated](../AccelByte.Sdk/Api/Platform/Operation/PaymentDedicated/CreatePaymentOrderByDedicated.cs) | [CreatePaymentOrderByDedicated](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentDedicated/CreatePaymentOrderByDedicated.cs) |
 | `/platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}/refund` | PUT | RefundPaymentOrderByDedicated | [RefundPaymentOrderByDedicated](../AccelByte.Sdk/Api/Platform/Operation/PaymentDedicated/RefundPaymentOrderByDedicated.cs) | [RefundPaymentOrderByDedicated](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentDedicated/RefundPaymentOrderByDedicated.cs) |
 | `/platform/admin/payment/orders` | GET | SyncPaymentOrders | [SyncPaymentOrders](../AccelByte.Sdk/Api/Platform/Operation/PaymentDedicated/SyncPaymentOrders.cs) | [SyncPaymentOrders](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentDedicated/SyncPaymentOrders.cs) |
+
+### Wallet Wrapper:  [Wallet](../AccelByte.Sdk/Api/Platform/Wrapper/Wallet.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config` | GET | GetPlatformWalletConfig | [GetPlatformWalletConfig](../AccelByte.Sdk/Api/Platform/Operation/Wallet/GetPlatformWalletConfig.cs) | [GetPlatformWalletConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/GetPlatformWalletConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config` | PUT | UpdatePlatformWalletConfig | [UpdatePlatformWalletConfig](../AccelByte.Sdk/Api/Platform/Operation/Wallet/UpdatePlatformWalletConfig.cs) | [UpdatePlatformWalletConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/UpdatePlatformWalletConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config/reset` | PUT | ResetPlatformWalletConfig | [ResetPlatformWalletConfig](../AccelByte.Sdk/Api/Platform/Operation/Wallet/ResetPlatformWalletConfig.cs) | [ResetPlatformWalletConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/ResetPlatformWalletConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/summary` | GET | QueryUserCurrencyWallets | [QueryUserCurrencyWallets](../AccelByte.Sdk/Api/Platform/Operation/Wallet/QueryUserCurrencyWallets.cs) | [QueryUserCurrencyWallets](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/QueryUserCurrencyWallets.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/transactions` | GET | ListUserCurrencyTransactions | [ListUserCurrencyTransactions](../AccelByte.Sdk/Api/Platform/Operation/Wallet/ListUserCurrencyTransactions.cs) | [ListUserCurrencyTransactions](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/ListUserCurrencyTransactions.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/check` | GET | CheckWallet | [CheckWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/CheckWallet.cs) | [CheckWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/CheckWallet.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/credit` | PUT | CreditUserWallet | [CreditUserWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/CreditUserWallet.cs) | [CreditUserWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/CreditUserWallet.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/payment` | PUT | PayWithUserWallet | [PayWithUserWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/PayWithUserWallet.cs) | [PayWithUserWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/PayWithUserWallet.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}` | GET | GetUserWallet | [GetUserWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/GetUserWallet.cs) | [GetUserWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/GetUserWallet.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/debit` | PUT | DebitUserWallet | [DebitUserWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/DebitUserWallet.cs) | [DebitUserWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/DebitUserWallet.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/disable` | PUT | DisableUserWallet | [DisableUserWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/DisableUserWallet.cs) | [DisableUserWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/DisableUserWallet.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/enable` | PUT | EnableUserWallet | [EnableUserWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/EnableUserWallet.cs) | [EnableUserWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/EnableUserWallet.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/transactions` | GET | ListUserWalletTransactions | [ListUserWalletTransactions](../AccelByte.Sdk/Api/Platform/Operation/Wallet/ListUserWalletTransactions.cs) | [ListUserWalletTransactions](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/ListUserWalletTransactions.cs) |
+| `/platform/admin/namespaces/{namespace}/wallets` | GET | QueryWallets | [QueryWallets](../AccelByte.Sdk/Api/Platform/Operation/Wallet/QueryWallets.cs) | [QueryWallets](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/QueryWallets.cs) |
+| `/platform/admin/namespaces/{namespace}/wallets/{walletId}` | GET | GetWallet | [GetWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/GetWallet.cs) | [GetWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/GetWallet.cs) |
+| `/platform/public/namespaces/{namespace}/users/me/wallets/{currencyCode}` | GET | PublicGetMyWallet | [PublicGetMyWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/PublicGetMyWallet.cs) | [PublicGetMyWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/PublicGetMyWallet.cs) |
+| `/platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}` | GET | PublicGetWallet | [PublicGetWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/PublicGetWallet.cs) | [PublicGetWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/PublicGetWallet.cs) |
+| `/platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/transactions` | GET | PublicListUserWalletTransactions | [PublicListUserWalletTransactions](../AccelByte.Sdk/Api/Platform/Operation/Wallet/PublicListUserWalletTransactions.cs) | [PublicListUserWalletTransactions](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/PublicListUserWalletTransactions.cs) |
 
 ### Reward Wrapper:  [Reward](../AccelByte.Sdk/Api/Platform/Wrapper/Reward.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -346,23 +370,6 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/anonymization/subscriptions` | DELETE | AnonymizeSubscription | [AnonymizeSubscription](../AccelByte.Sdk/Api/Platform/Operation/Anonymization/AnonymizeSubscription.cs) | [AnonymizeSubscription](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Anonymization/AnonymizeSubscription.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/anonymization/wallets` | DELETE | AnonymizeWallet | [AnonymizeWallet](../AccelByte.Sdk/Api/Platform/Operation/Anonymization/AnonymizeWallet.cs) | [AnonymizeWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Anonymization/AnonymizeWallet.cs) |
 
-### Wallet Wrapper:  [Wallet](../AccelByte.Sdk/Api/Platform/Wrapper/Wallet.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/check` | GET | CheckWallet | [CheckWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/CheckWallet.cs) | [CheckWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/CheckWallet.cs) |
-| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/credit` | PUT | CreditUserWallet | [CreditUserWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/CreditUserWallet.cs) | [CreditUserWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/CreditUserWallet.cs) |
-| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/payment` | PUT | PayWithUserWallet | [PayWithUserWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/PayWithUserWallet.cs) | [PayWithUserWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/PayWithUserWallet.cs) |
-| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}` | GET | GetUserWallet | [GetUserWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/GetUserWallet.cs) | [GetUserWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/GetUserWallet.cs) |
-| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/debit` | PUT | DebitUserWallet | [DebitUserWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/DebitUserWallet.cs) | [DebitUserWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/DebitUserWallet.cs) |
-| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/disable` | PUT | DisableUserWallet | [DisableUserWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/DisableUserWallet.cs) | [DisableUserWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/DisableUserWallet.cs) |
-| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/enable` | PUT | EnableUserWallet | [EnableUserWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/EnableUserWallet.cs) | [EnableUserWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/EnableUserWallet.cs) |
-| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/transactions` | GET | ListUserWalletTransactions | [ListUserWalletTransactions](../AccelByte.Sdk/Api/Platform/Operation/Wallet/ListUserWalletTransactions.cs) | [ListUserWalletTransactions](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/ListUserWalletTransactions.cs) |
-| `/platform/admin/namespaces/{namespace}/wallets` | GET | QueryWallets | [QueryWallets](../AccelByte.Sdk/Api/Platform/Operation/Wallet/QueryWallets.cs) | [QueryWallets](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/QueryWallets.cs) |
-| `/platform/admin/namespaces/{namespace}/wallets/{walletId}` | GET | GetWallet | [GetWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/GetWallet.cs) | [GetWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/GetWallet.cs) |
-| `/platform/public/namespaces/{namespace}/users/me/wallets/{currencyCode}` | GET | PublicGetMyWallet | [PublicGetMyWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/PublicGetMyWallet.cs) | [PublicGetMyWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/PublicGetMyWallet.cs) |
-| `/platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}` | GET | PublicGetWallet | [PublicGetWallet](../AccelByte.Sdk/Api/Platform/Operation/Wallet/PublicGetWallet.cs) | [PublicGetWallet](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/PublicGetWallet.cs) |
-| `/platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/transactions` | GET | PublicListUserWalletTransactions | [PublicListUserWalletTransactions](../AccelByte.Sdk/Api/Platform/Operation/Wallet/PublicListUserWalletTransactions.cs) | [PublicListUserWalletTransactions](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/PublicListUserWalletTransactions.cs) |
-
 ### Order(Dedicated) Wrapper:  [OrderDedicated](../AccelByte.Sdk/Api/Platform/Wrapper/OrderDedicated.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -434,6 +441,7 @@
 | Model | Class |
 |---|---|
 | `AdditionalData` | [AdditionalData](../AccelByte.Sdk/Api/Platform/Model/AdditionalData.cs) |
+| `AdminOrderCreate` | [AdminOrderCreate](../AccelByte.Sdk/Api/Platform/Model/AdminOrderCreate.cs) |
 | `AdyenConfig` | [AdyenConfig](../AccelByte.Sdk/Api/Platform/Model/AdyenConfig.cs) |
 | `AliPayConfig` | [AliPayConfig](../AccelByte.Sdk/Api/Platform/Model/AliPayConfig.cs) |
 | `AppEntitlementInfo` | [AppEntitlementInfo](../AccelByte.Sdk/Api/Platform/Model/AppEntitlementInfo.cs) |
@@ -475,11 +483,14 @@
 | `CurrencyInfo` | [CurrencyInfo](../AccelByte.Sdk/Api/Platform/Model/CurrencyInfo.cs) |
 | `CurrencySummary` | [CurrencySummary](../AccelByte.Sdk/Api/Platform/Model/CurrencySummary.cs) |
 | `CurrencyUpdate` | [CurrencyUpdate](../AccelByte.Sdk/Api/Platform/Model/CurrencyUpdate.cs) |
+| `CurrencyWallet` | [CurrencyWallet](../AccelByte.Sdk/Api/Platform/Model/CurrencyWallet.cs) |
 | `Customization` | [Customization](../AccelByte.Sdk/Api/Platform/Model/Customization.cs) |
 | `DLCItem` | [DLCItem](../AccelByte.Sdk/Api/Platform/Model/DLCItem.cs) |
 | `DLCItemConfigInfo` | [DLCItemConfigInfo](../AccelByte.Sdk/Api/Platform/Model/DLCItemConfigInfo.cs) |
 | `DLCItemConfigUpdate` | [DLCItemConfigUpdate](../AccelByte.Sdk/Api/Platform/Model/DLCItemConfigUpdate.cs) |
 | `DebitRequest` | [DebitRequest](../AccelByte.Sdk/Api/Platform/Model/DebitRequest.cs) |
+| `DetailedWalletTransactionInfo` | [DetailedWalletTransactionInfo](../AccelByte.Sdk/Api/Platform/Model/DetailedWalletTransactionInfo.cs) |
+| `DetailedWalletTransactionPagingSlicedResult` | [DetailedWalletTransactionPagingSlicedResult](../AccelByte.Sdk/Api/Platform/Model/DetailedWalletTransactionPagingSlicedResult.cs) |
 | `EntitlementDecrement` | [EntitlementDecrement](../AccelByte.Sdk/Api/Platform/Model/EntitlementDecrement.cs) |
 | `EntitlementGrant` | [EntitlementGrant](../AccelByte.Sdk/Api/Platform/Model/EntitlementGrant.cs) |
 | `EntitlementHistoryInfo` | [EntitlementHistoryInfo](../AccelByte.Sdk/Api/Platform/Model/EntitlementHistoryInfo.cs) |
@@ -598,6 +609,9 @@
 | `PlatformRewardCurrency` | [PlatformRewardCurrency](../AccelByte.Sdk/Api/Platform/Model/PlatformRewardCurrency.cs) |
 | `PlatformRewardItem` | [PlatformRewardItem](../AccelByte.Sdk/Api/Platform/Model/PlatformRewardItem.cs) |
 | `PlatformSubscribeRequest` | [PlatformSubscribeRequest](../AccelByte.Sdk/Api/Platform/Model/PlatformSubscribeRequest.cs) |
+| `PlatformWallet` | [PlatformWallet](../AccelByte.Sdk/Api/Platform/Model/PlatformWallet.cs) |
+| `PlatformWalletConfigInfo` | [PlatformWalletConfigInfo](../AccelByte.Sdk/Api/Platform/Model/PlatformWalletConfigInfo.cs) |
+| `PlatformWalletConfigUpdate` | [PlatformWalletConfigUpdate](../AccelByte.Sdk/Api/Platform/Model/PlatformWalletConfigUpdate.cs) |
 | `PlayStationDLCSyncRequest` | [PlayStationDLCSyncRequest](../AccelByte.Sdk/Api/Platform/Model/PlayStationDLCSyncRequest.cs) |
 | `PlayStationIAPConfigInfo` | [PlayStationIAPConfigInfo](../AccelByte.Sdk/Api/Platform/Model/PlayStationIAPConfigInfo.cs) |
 | `PlayStationReconcileRequest` | [PlayStationReconcileRequest](../AccelByte.Sdk/Api/Platform/Model/PlayStationReconcileRequest.cs) |
@@ -651,9 +665,11 @@
 | `TicketSaleDecrementRequest` | [TicketSaleDecrementRequest](../AccelByte.Sdk/Api/Platform/Model/TicketSaleDecrementRequest.cs) |
 | `TicketSaleIncrementRequest` | [TicketSaleIncrementRequest](../AccelByte.Sdk/Api/Platform/Model/TicketSaleIncrementRequest.cs) |
 | `TicketSaleIncrementResult` | [TicketSaleIncrementResult](../AccelByte.Sdk/Api/Platform/Model/TicketSaleIncrementResult.cs) |
+| `Time-limited balance` | [TimeLimitedBalance](../AccelByte.Sdk/Api/Platform/Model/TimeLimitedBalance.cs) |
 | `TimedOwnership` | [TimedOwnership](../AccelByte.Sdk/Api/Platform/Model/TimedOwnership.cs) |
 | `TradeNotification` | [TradeNotification](../AccelByte.Sdk/Api/Platform/Model/TradeNotification.cs) |
 | `Transaction` | [Transaction](../AccelByte.Sdk/Api/Platform/Model/Transaction.cs) |
+| `TransactionAmountDetails` | [TransactionAmountDetails](../AccelByte.Sdk/Api/Platform/Model/TransactionAmountDetails.cs) |
 | `TwitchIAPConfigInfo` | [TwitchIAPConfigInfo](../AccelByte.Sdk/Api/Platform/Model/TwitchIAPConfigInfo.cs) |
 | `TwitchIAPConfigRequest` | [TwitchIAPConfigRequest](../AccelByte.Sdk/Api/Platform/Model/TwitchIAPConfigRequest.cs) |
 | `TwitchSyncRequest` | [TwitchSyncRequest](../AccelByte.Sdk/Api/Platform/Model/TwitchSyncRequest.cs) |

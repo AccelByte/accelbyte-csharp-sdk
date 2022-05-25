@@ -178,6 +178,7 @@
 | `models.CreateTypeResponse` | [ModelsCreateTypeResponse](../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateTypeResponse.cs) |
 | `models.CreatorFollowState` | [ModelsCreatorFollowState](../AccelByte.Sdk/Api/Ugc/Model/ModelsCreatorFollowState.cs) |
 | `models.CreatorOverviewResponse` | [ModelsCreatorOverviewResponse](../AccelByte.Sdk/Api/Ugc/Model/ModelsCreatorOverviewResponse.cs) |
+| `models.CreatorResponse` | [ModelsCreatorResponse](../AccelByte.Sdk/Api/Ugc/Model/ModelsCreatorResponse.cs) |
 | `models.GetContentPreviewResponse` | [ModelsGetContentPreviewResponse](../AccelByte.Sdk/Api/Ugc/Model/ModelsGetContentPreviewResponse.cs) |
 | `models.HideContentRequest` | [ModelsHideContentRequest](../AccelByte.Sdk/Api/Ugc/Model/ModelsHideContentRequest.cs) |
 | `models.LikeState` | [ModelsLikeState](../AccelByte.Sdk/Api/Ugc/Model/ModelsLikeState.cs) |

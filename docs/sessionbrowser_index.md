@@ -21,6 +21,7 @@
 | `/sessionbrowser/namespaces/{namespace}/gamesession/{sessionID}/localds` | DELETE | DeleteSessionLocalDS | [DeleteSessionLocalDS](../AccelByte.Sdk/Api/Sessionbrowser/Operation/Session/DeleteSessionLocalDS.cs) | [DeleteSessionLocalDS](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionbrowser/Session/DeleteSessionLocalDS.cs) |
 | `/sessionbrowser/namespaces/{namespace}/gamesession/{sessionID}/player` | POST | AddPlayerToSession | [AddPlayerToSession](../AccelByte.Sdk/Api/Sessionbrowser/Operation/Session/AddPlayerToSession.cs) | [AddPlayerToSession](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionbrowser/Session/AddPlayerToSession.cs) |
 | `/sessionbrowser/namespaces/{namespace}/gamesession/{sessionID}/player/{userID}` | DELETE | RemovePlayerFromSession | [RemovePlayerFromSession](../AccelByte.Sdk/Api/Sessionbrowser/Operation/Session/RemovePlayerFromSession.cs) | [RemovePlayerFromSession](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionbrowser/Session/RemovePlayerFromSession.cs) |
+| `/sessionbrowser/namespaces/{namespace}/gamesession/{sessionID}/settings` | PUT | UpdateSettings | [UpdateSettings](../AccelByte.Sdk/Api/Sessionbrowser/Operation/Session/UpdateSettings.cs) | [UpdateSettings](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionbrowser/Session/UpdateSettings.cs) |
 | `/sessionbrowser/namespaces/{namespace}/recentplayer/{userID}` | GET | GetRecentPlayer | [GetRecentPlayer](../AccelByte.Sdk/Api/Sessionbrowser/Operation/Session/GetRecentPlayer.cs) | [GetRecentPlayer](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionbrowser/Session/GetRecentPlayer.cs) |
 
 
@@ -54,5 +55,6 @@
 | `models.SessionResponse` | [ModelsSessionResponse](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsSessionResponse.cs) |
 | `models.StatusHistory` | [ModelsStatusHistory](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsStatusHistory.cs) |
 | `models.UpdateSessionRequest` | [ModelsUpdateSessionRequest](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsUpdateSessionRequest.cs) |
+| `models.UpdateSettingsRequest` | [ModelsUpdateSettingsRequest](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsUpdateSettingsRequest.cs) |
 | `response.Error` | [ResponseError](../AccelByte.Sdk/Api/Sessionbrowser/Model/ResponseError.cs) |
 | `restapi.ErrorResponseV2` | [RestapiErrorResponseV2](../AccelByte.Sdk/Api/Sessionbrowser/Model/RestapiErrorResponseV2.cs) |
