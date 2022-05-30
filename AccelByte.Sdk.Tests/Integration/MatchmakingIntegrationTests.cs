@@ -45,7 +45,7 @@ namespace AccelByte.Sdk.Tests.Integration
         public void Startup()
         {
             HttpClientPolicy policy = HttpClientPolicy.Default;
-            policy.MaxRetryCount = 10;
+            policy.MaxRetryCount = 1000;
             policy.RetryInterval = 1000;
             policy.RetryLogicHandler = new ResponseCodeCheckLogicHandler("425");
 
