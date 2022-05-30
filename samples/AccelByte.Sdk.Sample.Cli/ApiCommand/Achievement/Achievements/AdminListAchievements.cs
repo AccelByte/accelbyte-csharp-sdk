@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 Namespace,                
                 Limit,                
                 Offset,                
-                SortBy                
+                (SortBy is null ? null : AdminListAchievementsSortBy.NewValue(SortBy))                
             );            
             
             AccelByte.Sdk.Api.Achievement.Model.ModelsPaginatedAchievementResponse? response = wrapper.AdminListAchievements(operation);

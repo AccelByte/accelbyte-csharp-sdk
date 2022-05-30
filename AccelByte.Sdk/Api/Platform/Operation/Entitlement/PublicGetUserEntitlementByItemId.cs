@@ -143,19 +143,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class PublicGetUserEntitlementByItemIdEntitlementClazz : StringEnum<PublicGetUserEntitlementByItemIdEntitlementClazz>
     {
-        public static readonly PublicGetUserEntitlementByItemIdEntitlementClazz App
+        public static readonly PublicGetUserEntitlementByItemIdEntitlementClazz APP
             = new PublicGetUserEntitlementByItemIdEntitlementClazz("APP");
 
-        public static readonly PublicGetUserEntitlementByItemIdEntitlementClazz Code
+        public static readonly PublicGetUserEntitlementByItemIdEntitlementClazz CODE
             = new PublicGetUserEntitlementByItemIdEntitlementClazz("CODE");
 
-        public static readonly PublicGetUserEntitlementByItemIdEntitlementClazz Entitlement
+        public static readonly PublicGetUserEntitlementByItemIdEntitlementClazz ENTITLEMENT
             = new PublicGetUserEntitlementByItemIdEntitlementClazz("ENTITLEMENT");
 
-        public static readonly PublicGetUserEntitlementByItemIdEntitlementClazz Media
+        public static readonly PublicGetUserEntitlementByItemIdEntitlementClazz MEDIA
             = new PublicGetUserEntitlementByItemIdEntitlementClazz("MEDIA");
 
-        public static readonly PublicGetUserEntitlementByItemIdEntitlementClazz Subscription
+        public static readonly PublicGetUserEntitlementByItemIdEntitlementClazz SUBSCRIPTION
             = new PublicGetUserEntitlementByItemIdEntitlementClazz("SUBSCRIPTION");
 
 

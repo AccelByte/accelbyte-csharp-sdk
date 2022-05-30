@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         }
 
         #region Operation Builders
+        public GetUserProfileInfoByPublicId.GetUserProfileInfoByPublicIdBuilder GetUserProfileInfoByPublicIdOp
+        {
+            get { return Operation.GetUserProfileInfoByPublicId.Builder.SetWrapperObject(this); }
+        }
         public AdminGetUserProfilePublicInfoByIds.AdminGetUserProfilePublicInfoByIdsBuilder AdminGetUserProfilePublicInfoByIdsOp
         {
             get { return Operation.AdminGetUserProfilePublicInfoByIds.Builder.SetWrapperObject(this); }
@@ -58,6 +62,10 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         public PublicGetUserProfilePublicInfoByIds.PublicGetUserProfilePublicInfoByIdsBuilder PublicGetUserProfilePublicInfoByIdsOp
         {
             get { return Operation.PublicGetUserProfilePublicInfoByIds.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetUserProfileInfoByPublicId.PublicGetUserProfileInfoByPublicIdBuilder PublicGetUserProfileInfoByPublicIdOp
+        {
+            get { return Operation.PublicGetUserProfileInfoByPublicId.Builder.SetWrapperObject(this); }
         }
         public GetMyProfileInfo.GetMyProfileInfoBuilder GetMyProfileInfoOp
         {
@@ -109,6 +117,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         }
         #endregion
         
+        public Model.UserProfileInfo? GetUserProfileInfoByPublicId(GetUserProfileInfoByPublicId input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.UserProfilePublicInfo>? AdminGetUserProfilePublicInfoByIds(AdminGetUserProfilePublicInfoByIds input) {
             var response = _sdk.RunRequest(input);
 
@@ -182,6 +198,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.Payload);
         }
         public List<Model.UserProfilePublicInfo>? PublicGetUserProfilePublicInfoByIds(PublicGetUserProfilePublicInfoByIds input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserProfilePublicInfo? PublicGetUserProfileInfoByPublicId(PublicGetUserProfileInfoByPublicId input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

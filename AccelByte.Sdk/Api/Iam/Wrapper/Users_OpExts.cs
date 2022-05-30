@@ -1936,6 +1936,20 @@ namespace AccelByte.Sdk.Api
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicPlatformUnlinkV3(op);
         }
 
+        public static void Execute(
+            this PublicPlatformUnlinkAllV3.PublicPlatformUnlinkAllV3Builder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            PublicPlatformUnlinkAllV3 op = builder.Build(
+                namespace_,
+                platformId
+            );
+
+            ((Iam.Wrapper.Users)builder.WrapperObject!).PublicPlatformUnlinkAllV3(op);
+        }
+
         public static Iam.Model.ModelWebLinkingResponse? Execute(
             this PublicWebLinkPlatform.PublicWebLinkPlatformBuilder builder,
             string namespace_,
@@ -2008,6 +2022,20 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserBanHistoryV3(op);
         }
 
+        public static Iam.Model.AccountcommonDistinctPlatformResponseV3? Execute(
+            this PublicListUserAllPlatformAccountsDistinctV3.PublicListUserAllPlatformAccountsDistinctV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicListUserAllPlatformAccountsDistinctV3 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicListUserAllPlatformAccountsDistinctV3(op);
+        }
+
         public static Iam.Model.ModelLoginHistoriesResponse? Execute(
             this PublicGetUserLoginHistoriesV3.PublicGetUserLoginHistoriesV3Builder builder,
             string namespace_,
@@ -2050,6 +2078,22 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicLinkPlatformAccount(op);
+        }
+
+        public static void Execute(
+            this PublicForceLinkPlatformWithProgression.PublicForceLinkPlatformWithProgressionBuilder builder,
+            ModelLinkPlatformAccountWithProgressionRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicForceLinkPlatformWithProgression op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            ((Iam.Wrapper.Users)builder.WrapperObject!).PublicForceLinkPlatformWithProgression(op);
         }
 
         public static void Execute(

@@ -21,6 +21,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    /// If already linked with justice account or match SSO condition, will redirect to client's redirect url with code. then invoke '/iam/v3/oauth/token' with grant_type=authorization_code
+    /// 
+    /// 
+    /// 
+    /// 
+    /// If already not linked with justice account and not match SSO condition, will redirect to client's account linking page
+    /// 
+    /// 
+    /// 
+    /// 
     /// ## Supported platforms:
     /// 
     /// 

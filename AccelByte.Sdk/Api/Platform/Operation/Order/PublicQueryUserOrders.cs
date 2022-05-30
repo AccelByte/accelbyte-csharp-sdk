@@ -170,37 +170,37 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class PublicQueryUserOrdersStatus : StringEnum<PublicQueryUserOrdersStatus>
     {
-        public static readonly PublicQueryUserOrdersStatus Chargeback
+        public static readonly PublicQueryUserOrdersStatus CHARGEBACK
             = new PublicQueryUserOrdersStatus("CHARGEBACK");
 
-        public static readonly PublicQueryUserOrdersStatus ChargebackReversed
+        public static readonly PublicQueryUserOrdersStatus CHARGEBACKREVERSED
             = new PublicQueryUserOrdersStatus("CHARGEBACK_REVERSED");
 
-        public static readonly PublicQueryUserOrdersStatus Charged
+        public static readonly PublicQueryUserOrdersStatus CHARGED
             = new PublicQueryUserOrdersStatus("CHARGED");
 
-        public static readonly PublicQueryUserOrdersStatus Closed
+        public static readonly PublicQueryUserOrdersStatus CLOSED
             = new PublicQueryUserOrdersStatus("CLOSED");
 
-        public static readonly PublicQueryUserOrdersStatus Deleted
+        public static readonly PublicQueryUserOrdersStatus DELETED
             = new PublicQueryUserOrdersStatus("DELETED");
 
-        public static readonly PublicQueryUserOrdersStatus Fulfilled
+        public static readonly PublicQueryUserOrdersStatus FULFILLED
             = new PublicQueryUserOrdersStatus("FULFILLED");
 
-        public static readonly PublicQueryUserOrdersStatus FulfillFailed
+        public static readonly PublicQueryUserOrdersStatus FULFILLFAILED
             = new PublicQueryUserOrdersStatus("FULFILL_FAILED");
 
-        public static readonly PublicQueryUserOrdersStatus Init
+        public static readonly PublicQueryUserOrdersStatus INIT
             = new PublicQueryUserOrdersStatus("INIT");
 
-        public static readonly PublicQueryUserOrdersStatus Refunded
+        public static readonly PublicQueryUserOrdersStatus REFUNDED
             = new PublicQueryUserOrdersStatus("REFUNDED");
 
-        public static readonly PublicQueryUserOrdersStatus Refunding
+        public static readonly PublicQueryUserOrdersStatus REFUNDING
             = new PublicQueryUserOrdersStatus("REFUNDING");
 
-        public static readonly PublicQueryUserOrdersStatus RefundFailed
+        public static readonly PublicQueryUserOrdersStatus REFUNDFAILED
             = new PublicQueryUserOrdersStatus("REFUND_FAILED");
 
 

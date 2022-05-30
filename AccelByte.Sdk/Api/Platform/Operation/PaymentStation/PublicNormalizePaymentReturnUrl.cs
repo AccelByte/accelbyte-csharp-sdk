@@ -272,28 +272,28 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class PublicNormalizePaymentReturnUrlPaymentProvider : StringEnum<PublicNormalizePaymentReturnUrlPaymentProvider>
     {
-        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Adyen
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider ADYEN
             = new PublicNormalizePaymentReturnUrlPaymentProvider("ADYEN");
 
-        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Alipay
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider ALIPAY
             = new PublicNormalizePaymentReturnUrlPaymentProvider("ALIPAY");
 
-        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Checkout
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider CHECKOUT
             = new PublicNormalizePaymentReturnUrlPaymentProvider("CHECKOUT");
 
-        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Paypal
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider PAYPAL
             = new PublicNormalizePaymentReturnUrlPaymentProvider("PAYPAL");
 
-        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Stripe
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider STRIPE
             = new PublicNormalizePaymentReturnUrlPaymentProvider("STRIPE");
 
-        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Wallet
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider WALLET
             = new PublicNormalizePaymentReturnUrlPaymentProvider("WALLET");
 
-        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Wxpay
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider WXPAY
             = new PublicNormalizePaymentReturnUrlPaymentProvider("WXPAY");
 
-        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider Xsolla
+        public static readonly PublicNormalizePaymentReturnUrlPaymentProvider XSOLLA
             = new PublicNormalizePaymentReturnUrlPaymentProvider("XSOLLA");
 
 

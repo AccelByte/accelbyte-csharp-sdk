@@ -210,37 +210,37 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryOrdersStatus : StringEnum<QueryOrdersStatus>
     {
-        public static readonly QueryOrdersStatus Chargeback
+        public static readonly QueryOrdersStatus CHARGEBACK
             = new QueryOrdersStatus("CHARGEBACK");
 
-        public static readonly QueryOrdersStatus ChargebackReversed
+        public static readonly QueryOrdersStatus CHARGEBACKREVERSED
             = new QueryOrdersStatus("CHARGEBACK_REVERSED");
 
-        public static readonly QueryOrdersStatus Charged
+        public static readonly QueryOrdersStatus CHARGED
             = new QueryOrdersStatus("CHARGED");
 
-        public static readonly QueryOrdersStatus Closed
+        public static readonly QueryOrdersStatus CLOSED
             = new QueryOrdersStatus("CLOSED");
 
-        public static readonly QueryOrdersStatus Deleted
+        public static readonly QueryOrdersStatus DELETED
             = new QueryOrdersStatus("DELETED");
 
-        public static readonly QueryOrdersStatus Fulfilled
+        public static readonly QueryOrdersStatus FULFILLED
             = new QueryOrdersStatus("FULFILLED");
 
-        public static readonly QueryOrdersStatus FulfillFailed
+        public static readonly QueryOrdersStatus FULFILLFAILED
             = new QueryOrdersStatus("FULFILL_FAILED");
 
-        public static readonly QueryOrdersStatus Init
+        public static readonly QueryOrdersStatus INIT
             = new QueryOrdersStatus("INIT");
 
-        public static readonly QueryOrdersStatus Refunded
+        public static readonly QueryOrdersStatus REFUNDED
             = new QueryOrdersStatus("REFUNDED");
 
-        public static readonly QueryOrdersStatus Refunding
+        public static readonly QueryOrdersStatus REFUNDING
             = new QueryOrdersStatus("REFUNDING");
 
-        public static readonly QueryOrdersStatus RefundFailed
+        public static readonly QueryOrdersStatus REFUNDFAILED
             = new QueryOrdersStatus("REFUND_FAILED");
 
 

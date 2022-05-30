@@ -203,19 +203,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryUserSubscriptionsChargeStatus : StringEnum<QueryUserSubscriptionsChargeStatus>
     {
-        public static readonly QueryUserSubscriptionsChargeStatus Charged
+        public static readonly QueryUserSubscriptionsChargeStatus CHARGED
             = new QueryUserSubscriptionsChargeStatus("CHARGED");
 
-        public static readonly QueryUserSubscriptionsChargeStatus ChargeFailed
+        public static readonly QueryUserSubscriptionsChargeStatus CHARGEFAILED
             = new QueryUserSubscriptionsChargeStatus("CHARGE_FAILED");
 
-        public static readonly QueryUserSubscriptionsChargeStatus Never
+        public static readonly QueryUserSubscriptionsChargeStatus NEVER
             = new QueryUserSubscriptionsChargeStatus("NEVER");
 
-        public static readonly QueryUserSubscriptionsChargeStatus RecurringCharging
+        public static readonly QueryUserSubscriptionsChargeStatus RECURRINGCHARGING
             = new QueryUserSubscriptionsChargeStatus("RECURRING_CHARGING");
 
-        public static readonly QueryUserSubscriptionsChargeStatus Setup
+        public static readonly QueryUserSubscriptionsChargeStatus SETUP
             = new QueryUserSubscriptionsChargeStatus("SETUP");
 
 
@@ -233,16 +233,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryUserSubscriptionsStatus : StringEnum<QueryUserSubscriptionsStatus>
     {
-        public static readonly QueryUserSubscriptionsStatus Active
+        public static readonly QueryUserSubscriptionsStatus ACTIVE
             = new QueryUserSubscriptionsStatus("ACTIVE");
 
-        public static readonly QueryUserSubscriptionsStatus Cancelled
+        public static readonly QueryUserSubscriptionsStatus CANCELLED
             = new QueryUserSubscriptionsStatus("CANCELLED");
 
-        public static readonly QueryUserSubscriptionsStatus Expired
+        public static readonly QueryUserSubscriptionsStatus EXPIRED
             = new QueryUserSubscriptionsStatus("EXPIRED");
 
-        public static readonly QueryUserSubscriptionsStatus Init
+        public static readonly QueryUserSubscriptionsStatus INIT
             = new QueryUserSubscriptionsStatus("INIT");
 
 
@@ -260,10 +260,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryUserSubscriptionsSubscribedBy : StringEnum<QueryUserSubscriptionsSubscribedBy>
     {
-        public static readonly QueryUserSubscriptionsSubscribedBy Platform
+        public static readonly QueryUserSubscriptionsSubscribedBy PLATFORM
             = new QueryUserSubscriptionsSubscribedBy("PLATFORM");
 
-        public static readonly QueryUserSubscriptionsSubscribedBy User
+        public static readonly QueryUserSubscriptionsSubscribedBy USER
             = new QueryUserSubscriptionsSubscribedBy("USER");
 
 

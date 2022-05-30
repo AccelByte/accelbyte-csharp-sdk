@@ -175,10 +175,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryPaymentOrdersChannel : StringEnum<QueryPaymentOrdersChannel>
     {
-        public static readonly QueryPaymentOrdersChannel External
+        public static readonly QueryPaymentOrdersChannel EXTERNAL
             = new QueryPaymentOrdersChannel("EXTERNAL");
 
-        public static readonly QueryPaymentOrdersChannel Internal
+        public static readonly QueryPaymentOrdersChannel INTERNAL
             = new QueryPaymentOrdersChannel("INTERNAL");
 
 
@@ -196,43 +196,43 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryPaymentOrdersStatus : StringEnum<QueryPaymentOrdersStatus>
     {
-        public static readonly QueryPaymentOrdersStatus Authorised
+        public static readonly QueryPaymentOrdersStatus AUTHORISED
             = new QueryPaymentOrdersStatus("AUTHORISED");
 
-        public static readonly QueryPaymentOrdersStatus AuthoriseFailed
+        public static readonly QueryPaymentOrdersStatus AUTHORISEFAILED
             = new QueryPaymentOrdersStatus("AUTHORISE_FAILED");
 
-        public static readonly QueryPaymentOrdersStatus Chargeback
+        public static readonly QueryPaymentOrdersStatus CHARGEBACK
             = new QueryPaymentOrdersStatus("CHARGEBACK");
 
-        public static readonly QueryPaymentOrdersStatus ChargebackReversed
+        public static readonly QueryPaymentOrdersStatus CHARGEBACKREVERSED
             = new QueryPaymentOrdersStatus("CHARGEBACK_REVERSED");
 
-        public static readonly QueryPaymentOrdersStatus Charged
+        public static readonly QueryPaymentOrdersStatus CHARGED
             = new QueryPaymentOrdersStatus("CHARGED");
 
-        public static readonly QueryPaymentOrdersStatus ChargeFailed
+        public static readonly QueryPaymentOrdersStatus CHARGEFAILED
             = new QueryPaymentOrdersStatus("CHARGE_FAILED");
 
-        public static readonly QueryPaymentOrdersStatus Deleted
+        public static readonly QueryPaymentOrdersStatus DELETED
             = new QueryPaymentOrdersStatus("DELETED");
 
-        public static readonly QueryPaymentOrdersStatus Init
+        public static readonly QueryPaymentOrdersStatus INIT
             = new QueryPaymentOrdersStatus("INIT");
 
-        public static readonly QueryPaymentOrdersStatus NotificationOfChargeback
+        public static readonly QueryPaymentOrdersStatus NOTIFICATIONOFCHARGEBACK
             = new QueryPaymentOrdersStatus("NOTIFICATION_OF_CHARGEBACK");
 
-        public static readonly QueryPaymentOrdersStatus Refunded
+        public static readonly QueryPaymentOrdersStatus REFUNDED
             = new QueryPaymentOrdersStatus("REFUNDED");
 
-        public static readonly QueryPaymentOrdersStatus Refunding
+        public static readonly QueryPaymentOrdersStatus REFUNDING
             = new QueryPaymentOrdersStatus("REFUNDING");
 
-        public static readonly QueryPaymentOrdersStatus RefundFailed
+        public static readonly QueryPaymentOrdersStatus REFUNDFAILED
             = new QueryPaymentOrdersStatus("REFUND_FAILED");
 
-        public static readonly QueryPaymentOrdersStatus RequestForInformation
+        public static readonly QueryPaymentOrdersStatus REQUESTFORINFORMATION
             = new QueryPaymentOrdersStatus("REQUEST_FOR_INFORMATION");
 
 

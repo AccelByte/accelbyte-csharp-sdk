@@ -155,16 +155,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class PublicQueryUserEntitlementsByAppTypeAppType : StringEnum<PublicQueryUserEntitlementsByAppTypeAppType>
     {
-        public static readonly PublicQueryUserEntitlementsByAppTypeAppType Demo
+        public static readonly PublicQueryUserEntitlementsByAppTypeAppType DEMO
             = new PublicQueryUserEntitlementsByAppTypeAppType("DEMO");
 
-        public static readonly PublicQueryUserEntitlementsByAppTypeAppType Dlc
+        public static readonly PublicQueryUserEntitlementsByAppTypeAppType DLC
             = new PublicQueryUserEntitlementsByAppTypeAppType("DLC");
 
-        public static readonly PublicQueryUserEntitlementsByAppTypeAppType Game
+        public static readonly PublicQueryUserEntitlementsByAppTypeAppType GAME
             = new PublicQueryUserEntitlementsByAppTypeAppType("GAME");
 
-        public static readonly PublicQueryUserEntitlementsByAppTypeAppType Software
+        public static readonly PublicQueryUserEntitlementsByAppTypeAppType SOFTWARE
             = new PublicQueryUserEntitlementsByAppTypeAppType("SOFTWARE");
 
 

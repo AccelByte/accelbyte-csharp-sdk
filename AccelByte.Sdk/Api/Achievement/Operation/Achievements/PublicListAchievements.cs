@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
             public long? Offset { get; set; }
 
-            public string? SortBy { get; set; }
+            public PublicListAchievementsSortBy? SortBy { get; set; }
 
 
 
@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
                 return this;
             }
 
-            public PublicListAchievementsBuilder SetSortBy(string _sortBy)
+            public PublicListAchievementsBuilder SetSortBy(PublicListAchievementsSortBy _sortBy)
             {
                 SortBy = _sortBy;
                 return this;
@@ -89,7 +89,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
             if (language is not null) QueryParams["language"] = language;
             
 
@@ -105,7 +105,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             string namespace_,            
             long? limit,            
             long? offset,            
-            string? sortBy,            
+            PublicListAchievementsSortBy? sortBy,            
             string language            
         )
         {
@@ -113,7 +113,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
             if (language is not null) QueryParams["language"] = language;
             
 
@@ -153,6 +153,48 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
             
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class PublicListAchievementsSortBy : StringEnum<PublicListAchievementsSortBy>
+    {
+        public static readonly PublicListAchievementsSortBy ListOrder
+            = new PublicListAchievementsSortBy("listOrder");
+
+        public static readonly PublicListAchievementsSortBy ListOrderasc
+            = new PublicListAchievementsSortBy("listOrder:asc");
+
+        public static readonly PublicListAchievementsSortBy ListOrderdesc
+            = new PublicListAchievementsSortBy("listOrder:desc");
+
+        public static readonly PublicListAchievementsSortBy CreatedAt
+            = new PublicListAchievementsSortBy("createdAt");
+
+        public static readonly PublicListAchievementsSortBy CreatedAtasc
+            = new PublicListAchievementsSortBy("createdAt:asc");
+
+        public static readonly PublicListAchievementsSortBy CreatedAtdesc
+            = new PublicListAchievementsSortBy("createdAt:desc");
+
+        public static readonly PublicListAchievementsSortBy UpdatedAt
+            = new PublicListAchievementsSortBy("updatedAt");
+
+        public static readonly PublicListAchievementsSortBy UpdatedAtasc
+            = new PublicListAchievementsSortBy("updatedAt:asc");
+
+        public static readonly PublicListAchievementsSortBy UpdatedAtdesc
+            = new PublicListAchievementsSortBy("updatedAt:desc");
+
+
+        public static implicit operator PublicListAchievementsSortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicListAchievementsSortBy(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

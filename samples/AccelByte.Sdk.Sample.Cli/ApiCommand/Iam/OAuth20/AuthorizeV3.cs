@@ -32,6 +32,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("codeChallengeMethod")]
         public string? CodeChallengeMethod { get; set; }
 
+        [SdkCommandArgument("createHeadless")]
+        public bool? CreateHeadless { get; set; }
+
         [SdkCommandArgument("redirectUri")]
         public string? RedirectUri { get; set; }
 
@@ -62,6 +65,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AuthorizeV3 operation = new AuthorizeV3(
                 CodeChallenge,                
                 (CodeChallengeMethod is null ? null : AuthorizeV3CodeChallengeMethod.NewValue(CodeChallengeMethod)),                
+                CreateHeadless,                
                 RedirectUri,                
                 Scope,                
                 State,                

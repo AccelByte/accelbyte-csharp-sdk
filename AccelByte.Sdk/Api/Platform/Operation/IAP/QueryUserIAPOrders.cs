@@ -203,13 +203,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryUserIAPOrdersStatus : StringEnum<QueryUserIAPOrdersStatus>
     {
-        public static readonly QueryUserIAPOrdersStatus Failed
+        public static readonly QueryUserIAPOrdersStatus FAILED
             = new QueryUserIAPOrdersStatus("FAILED");
 
-        public static readonly QueryUserIAPOrdersStatus Fulfilled
+        public static readonly QueryUserIAPOrdersStatus FULFILLED
             = new QueryUserIAPOrdersStatus("FULFILLED");
 
-        public static readonly QueryUserIAPOrdersStatus Verified
+        public static readonly QueryUserIAPOrdersStatus VERIFIED
             = new QueryUserIAPOrdersStatus("VERIFIED");
 
 
@@ -227,28 +227,28 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryUserIAPOrdersType : StringEnum<QueryUserIAPOrdersType>
     {
-        public static readonly QueryUserIAPOrdersType Apple
+        public static readonly QueryUserIAPOrdersType APPLE
             = new QueryUserIAPOrdersType("APPLE");
 
-        public static readonly QueryUserIAPOrdersType Epicgames
+        public static readonly QueryUserIAPOrdersType EPICGAMES
             = new QueryUserIAPOrdersType("EPICGAMES");
 
-        public static readonly QueryUserIAPOrdersType Google
+        public static readonly QueryUserIAPOrdersType GOOGLE
             = new QueryUserIAPOrdersType("GOOGLE");
 
-        public static readonly QueryUserIAPOrdersType Playstation
+        public static readonly QueryUserIAPOrdersType PLAYSTATION
             = new QueryUserIAPOrdersType("PLAYSTATION");
 
-        public static readonly QueryUserIAPOrdersType Stadia
+        public static readonly QueryUserIAPOrdersType STADIA
             = new QueryUserIAPOrdersType("STADIA");
 
-        public static readonly QueryUserIAPOrdersType Steam
+        public static readonly QueryUserIAPOrdersType STEAM
             = new QueryUserIAPOrdersType("STEAM");
 
-        public static readonly QueryUserIAPOrdersType Twitch
+        public static readonly QueryUserIAPOrdersType TWITCH
             = new QueryUserIAPOrdersType("TWITCH");
 
-        public static readonly QueryUserIAPOrdersType Xbox
+        public static readonly QueryUserIAPOrdersType XBOX
             = new QueryUserIAPOrdersType("XBOX");
 
 

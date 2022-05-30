@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 Namespace,                
                 Limit,                
                 Offset,                
-                SortBy,                
+                (SortBy is null ? null : PublicListAchievementsSortBy.NewValue(SortBy)),                
                 Language                
             );            
             

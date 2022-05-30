@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public int? Offset { get; set; }
 
-            public string? SortBy { get; set; }
+            public List<QueryUncategorizedItemsSortBy>? SortBy { get; set; }
 
             public string? StoreId { get; set; }
 
@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryUncategorizedItemsBuilder SetSortBy(string _sortBy)
+            public QueryUncategorizedItemsBuilder SetSortBy(List<QueryUncategorizedItemsSortBy> _sortBy)
             {
                 SortBy = _sortBy;
                 return this;
@@ -110,6 +110,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
 
             
+            CollectionFormatMap["sortBy"] = "csv";
             
             
 
@@ -122,7 +123,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             bool? activeOnly,            
             int? limit,            
             int? offset,            
-            string? sortBy,            
+            List<QueryUncategorizedItemsSortBy>? sortBy,            
             string? storeId            
         )
         {
@@ -136,6 +137,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
 
             
+            CollectionFormatMap["sortBy"] = "csv";
             
             
 
@@ -171,6 +173,57 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
             
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class QueryUncategorizedItemsSortBy : StringEnum<QueryUncategorizedItemsSortBy>
+    {
+        public static readonly QueryUncategorizedItemsSortBy Name
+            = new QueryUncategorizedItemsSortBy("name");
+
+        public static readonly QueryUncategorizedItemsSortBy Nameasc
+            = new QueryUncategorizedItemsSortBy("name:asc");
+
+        public static readonly QueryUncategorizedItemsSortBy Namedesc
+            = new QueryUncategorizedItemsSortBy("name:desc");
+
+        public static readonly QueryUncategorizedItemsSortBy CreatedAt
+            = new QueryUncategorizedItemsSortBy("createdAt");
+
+        public static readonly QueryUncategorizedItemsSortBy CreatedAtasc
+            = new QueryUncategorizedItemsSortBy("createdAt:asc");
+
+        public static readonly QueryUncategorizedItemsSortBy CreatedAtdesc
+            = new QueryUncategorizedItemsSortBy("createdAt:desc");
+
+        public static readonly QueryUncategorizedItemsSortBy UpdatedAt
+            = new QueryUncategorizedItemsSortBy("updatedAt");
+
+        public static readonly QueryUncategorizedItemsSortBy UpdatedAtasc
+            = new QueryUncategorizedItemsSortBy("updatedAt:asc");
+
+        public static readonly QueryUncategorizedItemsSortBy UpdatedAtdesc
+            = new QueryUncategorizedItemsSortBy("updatedAt:desc");
+
+        public static readonly QueryUncategorizedItemsSortBy DisplayOrder
+            = new QueryUncategorizedItemsSortBy("displayOrder");
+
+        public static readonly QueryUncategorizedItemsSortBy DisplayOrderasc
+            = new QueryUncategorizedItemsSortBy("displayOrder:asc");
+
+        public static readonly QueryUncategorizedItemsSortBy DisplayOrderdesc
+            = new QueryUncategorizedItemsSortBy("displayOrder:desc");
+
+
+        public static implicit operator QueryUncategorizedItemsSortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryUncategorizedItemsSortBy(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

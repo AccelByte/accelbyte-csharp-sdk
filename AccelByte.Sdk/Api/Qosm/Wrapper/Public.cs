@@ -19,12 +19,24 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
         }
 
         #region Operation Builders
+        public ListServerPerNamespace.ListServerPerNamespaceBuilder ListServerPerNamespaceOp
+        {
+            get { return Operation.ListServerPerNamespace.Builder.SetWrapperObject(this); }
+        }
         public ListServer.ListServerBuilder ListServerOp
         {
             get { return Operation.ListServer.Builder.SetWrapperObject(this); }
         }
         #endregion
         
+        public Model.ModelsListServerResponse? ListServerPerNamespace(ListServerPerNamespace input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsListServerResponse? ListServer(ListServer input) {
             var response = _sdk.RunRequest(input);
 

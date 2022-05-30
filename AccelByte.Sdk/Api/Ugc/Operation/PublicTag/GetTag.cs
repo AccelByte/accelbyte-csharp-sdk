@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// GetTag
     ///
-    /// Requires valid user token
+    /// Publicly accessible
     /// </summary>
     public class GetTag : AccelByte.Sdk.Core.Operation
     {

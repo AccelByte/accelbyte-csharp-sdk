@@ -41,6 +41,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public string? By { get; set; }
 
+            public string? Limit { get; set; }
+
+            public string? Offset { get; set; }
+
             public string? Query { get; set; }
 
 
@@ -53,6 +57,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public PublicSearchUserV3Builder SetBy(string _by)
             {
                 By = _by;
+                return this;
+            }
+
+            public PublicSearchUserV3Builder SetLimit(string _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicSearchUserV3Builder SetOffset(string _offset)
+            {
+                Offset = _offset;
                 return this;
             }
 
@@ -86,6 +102,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.By is not null) QueryParams["by"] = builder.By;
+            if (builder.Limit is not null) QueryParams["limit"] = builder.Limit;
+            if (builder.Offset is not null) QueryParams["offset"] = builder.Offset;
             if (builder.Query is not null) QueryParams["query"] = builder.Query;
             
 
@@ -100,12 +118,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public PublicSearchUserV3(
             string namespace_,            
             string? by,            
+            string? limit,            
+            string? offset,            
             string? query            
         )
         {
             PathParams["namespace"] = namespace_;
             
             if (by is not null) QueryParams["by"] = by;
+            if (limit is not null) QueryParams["limit"] = limit;
+            if (offset is not null) QueryParams["offset"] = offset;
             if (query is not null) QueryParams["query"] = query;
             
 

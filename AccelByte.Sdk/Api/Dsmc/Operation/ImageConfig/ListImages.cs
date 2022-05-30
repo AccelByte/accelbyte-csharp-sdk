@@ -175,10 +175,10 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
     public class ListImagesSortBy : StringEnum<ListImagesSortBy>
     {
-        public static readonly ListImagesSortBy Createdat
+        public static readonly ListImagesSortBy CreatedAt
             = new ListImagesSortBy("createdAt");
 
-        public static readonly ListImagesSortBy Updatedat
+        public static readonly ListImagesSortBy UpdatedAt
             = new ListImagesSortBy("updatedAt");
 
         public static readonly ListImagesSortBy Version

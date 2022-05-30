@@ -60,7 +60,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string? Region { get; set; }
 
         [SdkCommandArgument("sortBy")]
-        public string? SortBy { get; set; }
+        public List<string>? SortBy { get; set; }
 
         [SdkCommandArgument("storeId")]
         public string? StoreId { get; set; }
@@ -92,7 +92,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Limit,                
                 Offset,                
                 Region,                
-                SortBy,                
+                (SortBy is null ? null : QueryItemsSortBy.NewValue(SortBy)),                
                 StoreId,                
                 Tags,                
                 TargetNamespace                

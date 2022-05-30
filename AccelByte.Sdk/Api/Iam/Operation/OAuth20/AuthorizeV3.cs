@@ -113,6 +113,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public AuthorizeV3CodeChallengeMethod? CodeChallengeMethod { get; set; }
 
+            public bool? CreateHeadless { get; set; }
+
             public string? RedirectUri { get; set; }
 
             public string? Scope { get; set; }
@@ -137,6 +139,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public AuthorizeV3Builder SetCodeChallengeMethod(AuthorizeV3CodeChallengeMethod _codeChallengeMethod)
             {
                 CodeChallengeMethod = _codeChallengeMethod;
+                return this;
+            }
+
+            public AuthorizeV3Builder SetCreateHeadless(bool _createHeadless)
+            {
+                CreateHeadless = _createHeadless;
                 return this;
             }
 
@@ -191,6 +199,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (builder.CodeChallenge is not null) QueryParams["code_challenge"] = builder.CodeChallenge;
             if (builder.CodeChallengeMethod is not null) QueryParams["code_challenge_method"] = builder.CodeChallengeMethod.Value;
+            if (builder.CreateHeadless != null) QueryParams["createHeadless"] = Convert.ToString(builder.CreateHeadless)!;
             if (builder.RedirectUri is not null) QueryParams["redirect_uri"] = builder.RedirectUri;
             if (builder.Scope is not null) QueryParams["scope"] = builder.Scope;
             if (builder.State is not null) QueryParams["state"] = builder.State;
@@ -211,6 +220,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public AuthorizeV3(
             string? codeChallenge,            
             AuthorizeV3CodeChallengeMethod? codeChallengeMethod,            
+            bool? createHeadless,            
             string? redirectUri,            
             string? scope,            
             string? state,            
@@ -222,6 +232,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             
             if (codeChallenge is not null) QueryParams["code_challenge"] = codeChallenge;
             if (codeChallengeMethod is not null) QueryParams["code_challenge_method"] = codeChallengeMethod.Value;
+            if (createHeadless != null) QueryParams["createHeadless"] = Convert.ToString(createHeadless)!;
             if (redirectUri is not null) QueryParams["redirect_uri"] = redirectUri;
             if (scope is not null) QueryParams["scope"] = scope;
             if (state is not null) QueryParams["state"] = state;

@@ -131,10 +131,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class ListCurrenciesCurrencyType : StringEnum<ListCurrenciesCurrencyType>
     {
-        public static readonly ListCurrenciesCurrencyType Real
+        public static readonly ListCurrenciesCurrencyType REAL
             = new ListCurrenciesCurrencyType("REAL");
 
-        public static readonly ListCurrenciesCurrencyType Virtual
+        public static readonly ListCurrenciesCurrencyType VIRTUAL
             = new ListCurrenciesCurrencyType("VIRTUAL");
 
 

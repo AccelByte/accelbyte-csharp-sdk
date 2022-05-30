@@ -156,13 +156,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
     public class QuerySeasonsStatus : StringEnum<QuerySeasonsStatus>
     {
-        public static readonly QuerySeasonsStatus Draft
+        public static readonly QuerySeasonsStatus DRAFT
             = new QuerySeasonsStatus("DRAFT");
 
-        public static readonly QuerySeasonsStatus Published
+        public static readonly QuerySeasonsStatus PUBLISHED
             = new QuerySeasonsStatus("PUBLISHED");
 
-        public static readonly QuerySeasonsStatus Retired
+        public static readonly QuerySeasonsStatus RETIRED
             = new QuerySeasonsStatus("RETIRED");
 
 

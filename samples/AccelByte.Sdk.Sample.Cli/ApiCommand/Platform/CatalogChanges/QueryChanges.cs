@@ -45,7 +45,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public int? Offset { get; set; }
 
         [SdkCommandArgument("sortBy")]
-        public string? SortBy { get; set; }
+        public List<string>? SortBy { get; set; }
 
         [SdkCommandArgument("status")]
         public string? Status { get; set; }
@@ -75,7 +75,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 (ItemType is null ? null : QueryChangesItemType.NewValue(ItemType)),                
                 Limit,                
                 Offset,                
-                SortBy,                
+                (SortBy is null ? null : QueryChangesSortBy.NewValue(SortBy)),                
                 (Status is null ? null : QueryChangesStatus.NewValue(Status)),                
                 (Type is null ? null : QueryChangesType.NewValue(Type)),                
                 UpdatedAtEnd,                

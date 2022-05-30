@@ -208,19 +208,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QuerySubscriptionsChargeStatus : StringEnum<QuerySubscriptionsChargeStatus>
     {
-        public static readonly QuerySubscriptionsChargeStatus Charged
+        public static readonly QuerySubscriptionsChargeStatus CHARGED
             = new QuerySubscriptionsChargeStatus("CHARGED");
 
-        public static readonly QuerySubscriptionsChargeStatus ChargeFailed
+        public static readonly QuerySubscriptionsChargeStatus CHARGEFAILED
             = new QuerySubscriptionsChargeStatus("CHARGE_FAILED");
 
-        public static readonly QuerySubscriptionsChargeStatus Never
+        public static readonly QuerySubscriptionsChargeStatus NEVER
             = new QuerySubscriptionsChargeStatus("NEVER");
 
-        public static readonly QuerySubscriptionsChargeStatus RecurringCharging
+        public static readonly QuerySubscriptionsChargeStatus RECURRINGCHARGING
             = new QuerySubscriptionsChargeStatus("RECURRING_CHARGING");
 
-        public static readonly QuerySubscriptionsChargeStatus Setup
+        public static readonly QuerySubscriptionsChargeStatus SETUP
             = new QuerySubscriptionsChargeStatus("SETUP");
 
 
@@ -238,16 +238,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QuerySubscriptionsStatus : StringEnum<QuerySubscriptionsStatus>
     {
-        public static readonly QuerySubscriptionsStatus Active
+        public static readonly QuerySubscriptionsStatus ACTIVE
             = new QuerySubscriptionsStatus("ACTIVE");
 
-        public static readonly QuerySubscriptionsStatus Cancelled
+        public static readonly QuerySubscriptionsStatus CANCELLED
             = new QuerySubscriptionsStatus("CANCELLED");
 
-        public static readonly QuerySubscriptionsStatus Expired
+        public static readonly QuerySubscriptionsStatus EXPIRED
             = new QuerySubscriptionsStatus("EXPIRED");
 
-        public static readonly QuerySubscriptionsStatus Init
+        public static readonly QuerySubscriptionsStatus INIT
             = new QuerySubscriptionsStatus("INIT");
 
 
@@ -265,10 +265,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QuerySubscriptionsSubscribedBy : StringEnum<QuerySubscriptionsSubscribedBy>
     {
-        public static readonly QuerySubscriptionsSubscribedBy Platform
+        public static readonly QuerySubscriptionsSubscribedBy PLATFORM
             = new QuerySubscriptionsSubscribedBy("PLATFORM");
 
-        public static readonly QuerySubscriptionsSubscribedBy User
+        public static readonly QuerySubscriptionsSubscribedBy USER
             = new QuerySubscriptionsSubscribedBy("USER");
 
 

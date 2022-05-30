@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..29"
+echo "1..30"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -106,74 +106,85 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 7 'StoreMatchResults' test.out
 
-#- 8 QueueSessionHandler
+#- 8 Rebalance
 # body param: body
-echo '{"channel": "gEBepFHt", "client_version": "f6Ziegqd", "deployment": "EL4fsM6n", "game_mode": "BzRVuC1r", "joinable": false, "match_id": "u7UQ0304", "matching_allies": [{"matching_parties": [{"first_ticket_created_at": 77, "party_attributes": {"cK873tRt": {}}, "party_id": "r5cfWO5J", "party_members": [{"extra_attributes": {"J2c6vsOn": {}}, "user_id": "s4jNWGc7"}]}]}], "namespace": "CiUa4wM5", "party_attributes": {"Eu3Vqyms": {}}, "party_id": "FXporMqE", "queued_at": 59, "region": "R8E72XMK", "server_name": "fhl6eq2F", "status": "zU3VL3LN", "updated_at": "1977-11-30T00:00:00Z"}' > $TEMP_JSON_INPUT
+echo '{"match_id": "gEBepFHt"}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn matchmaking \
+    --op Rebalance \
+    --namespace $AB_NAMESPACE \
+    --reqfile $TEMP_JSON_INPUT \
+    > test.out 2>&1
+eval_tap $? 8 'Rebalance' test.out
+
+#- 9 QueueSessionHandler
+# body param: body
+echo '{"channel": "f6Ziegqd", "client_version": "EL4fsM6n", "deployment": "BzRVuC1r", "game_mode": "7UH1Liu7", "joinable": false, "match_id": "K873tRtr", "matching_allies": [{"matching_parties": [{"first_ticket_created_at": 4, "party_attributes": {"fWO5JJ2c": {}}, "party_id": "6vsOns4j", "party_members": [{"extra_attributes": {"NWGc7CiU": {}}, "user_id": "a4wM5Eu3"}]}]}], "namespace": "VqymsFXp", "party_attributes": {"orMqEDR8": {}}, "party_id": "E72XMKfh", "queued_at": 23, "region": "6eq2FzU3", "server_name": "VL3LNmPL", "status": "eZdoCXfa", "updated_at": "1971-09-09T00:00:00Z"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op QueueSessionHandler \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 8 'QueueSessionHandler' test.out
+eval_tap $? 9 'QueueSessionHandler' test.out
 
-#- 9 DequeueSessionHandler
+#- 10 DequeueSessionHandler
 # body param: body
-echo '{"match_id": "LeZdoCXf"}' > $TEMP_JSON_INPUT
+echo '{"match_id": "XzvjLmai"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op DequeueSessionHandler \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 9 'DequeueSessionHandler' test.out
+eval_tap $? 10 'DequeueSessionHandler' test.out
 
-#- 10 QuerySessionHandler
+#- 11 QuerySessionHandler
 $CLI_EXE \
     --sn matchmaking \
     --op QuerySessionHandler \
-    --matchID 'abFXzvjL' \
+    --matchID '7fPKvE2Z' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 10 'QuerySessionHandler' test.out
+eval_tap $? 11 'QuerySessionHandler' test.out
 
-#- 11 UpdatePlayTimeWeight
+#- 12 UpdatePlayTimeWeight
 # body param: body
-echo '{"playtime": 25, "userID": "ai7fPKvE", "weight": 0.8591577024149795}' > $TEMP_JSON_INPUT
+echo '{"playtime": 1, "userID": "63UVtLbQ", "weight": 0.6911512892884695}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op UpdatePlayTimeWeight \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 11 'UpdatePlayTimeWeight' test.out
+eval_tap $? 12 'UpdatePlayTimeWeight' test.out
 
-#- 12 GetAllPartyInAllChannel
+#- 13 GetAllPartyInAllChannel
 $CLI_EXE \
     --sn matchmaking \
     --op GetAllPartyInAllChannel \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 12 'GetAllPartyInAllChannel' test.out
+eval_tap $? 13 'GetAllPartyInAllChannel' test.out
 
-#- 13 BulkGetSessions
+#- 14 BulkGetSessions
 $CLI_EXE \
     --sn matchmaking \
     --op BulkGetSessions \
     --namespace $AB_NAMESPACE \
-    --matchIDs '4a63UVtL' \
+    --matchIDs 'tsyz0mGG' \
     > test.out 2>&1
-eval_tap $? 13 'BulkGetSessions' test.out
+eval_tap $? 14 'BulkGetSessions' test.out
 
-#- 14 ExportChannels
+#- 15 ExportChannels
 $CLI_EXE \
     --sn matchmaking \
     --op ExportChannels \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 14 'ExportChannels' test.out
+eval_tap $? 15 'ExportChannels' test.out
 
-#- 15 ImportChannels
+#- 16 ImportChannels
 # form data upload: file
 echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
@@ -181,152 +192,152 @@ $CLI_EXE \
     --op ImportChannels \
     --namespace $AB_NAMESPACE \
     --upload $TEMP_FILE_UPLOAD \
-    --strategy 'bQSWtsyz' \
+    --strategy 'yHHFIlIK' \
     > test.out 2>&1
-eval_tap $? 15 'ImportChannels' test.out
+eval_tap $? 16 'ImportChannels' test.out
 
-#- 16 GetSingleMatchmakingChannel
+#- 17 GetSingleMatchmakingChannel
 $CLI_EXE \
     --sn matchmaking \
     --op GetSingleMatchmakingChannel \
-    --channelName '0mGGyHHF' \
+    --channelName 'sXgvSrkE' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 16 'GetSingleMatchmakingChannel' test.out
+eval_tap $? 17 'GetSingleMatchmakingChannel' test.out
 
-#- 17 UpdateMatchmakingChannel
+#- 18 UpdateMatchmakingChannel
 # body param: body
-echo '{"deployment": "IlIKsXgv", "description": "SrkEgTYV", "findMatchTimeoutSeconds": 21, "joinable": false, "max_delay_ms": 86, "ruleSet": {"alliance": {"maxNumber": 54, "minNumber": 61, "playerMaxNumber": 51, "playerMinNumber": 71}, "alliance_flexing_rule": [{"duration": 70, "max_number": 54, "min_number": 86, "player_max_number": 67, "player_min_number": 34}], "flexingRules": [{"attribute": "fCHqqp2G", "criteria": "wPcmzSuY", "duration": 44, "reference": 0.966459071248867}], "match_options": {"options": [{"name": "YwBEfRXo", "type": "ZLfpVFfD"}]}, "matchingRules": [{"attribute": "wjHHCW2g", "criteria": "5u8z9yrp", "reference": 0.5580847789487178}], "sub_game_modes": {}}, "sessionQueueTimeoutSeconds": 68, "socialMatchmaking": true, "use_sub_gamemode": true}' > $TEMP_JSON_INPUT
+echo '{"deployment": "gTYVk5iR", "description": "BE6zJJ1B", "findMatchTimeoutSeconds": 86, "joinable": true, "max_delay_ms": 11, "ruleSet": {"alliance": {"maxNumber": 57, "minNumber": 66, "playerMaxNumber": 33, "playerMinNumber": 33}, "alliance_flexing_rule": [{"duration": 31, "max_number": 65, "min_number": 44, "player_max_number": 82, "player_min_number": 5}], "flexingRules": [{"attribute": "mzSuY8w9", "criteria": "VYwBEfRX", "duration": 28, "reference": 0.7976290031325527}], "match_options": {"options": [{"name": "fpVFfDwj", "type": "HHCW2g5u"}]}, "matchingRules": [{"attribute": "8z9yrpJd", "criteria": "Ix5vvHS3", "reference": 0.06153850933481442}], "sub_game_modes": {}}, "sessionQueueTimeoutSeconds": 82, "socialMatchmaking": true, "use_sub_gamemode": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op UpdateMatchmakingChannel \
-    --channelName 'vHS3d6PK' \
+    --channelName 'I6Px8jt8' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 17 'UpdateMatchmakingChannel' test.out
+eval_tap $? 18 'UpdateMatchmakingChannel' test.out
 
-#- 18 GetAllPartyInChannel
+#- 19 GetAllPartyInChannel
 $CLI_EXE \
     --sn matchmaking \
     --op GetAllPartyInChannel \
-    --channelName 'PE27mI6P' \
+    --channelName 'Lq4x0F7N' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 18 'GetAllPartyInChannel' test.out
+eval_tap $? 19 'GetAllPartyInChannel' test.out
 
-#- 19 GetAllSessionsInChannel
+#- 20 GetAllSessionsInChannel
 $CLI_EXE \
     --sn matchmaking \
     --op GetAllSessionsInChannel \
-    --channelName 'x8jt8Lq4' \
+    --channelName 'cocelJjt' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 19 'GetAllSessionsInChannel' test.out
+eval_tap $? 20 'GetAllSessionsInChannel' test.out
 
-#- 20 AddUserIntoSessionInChannel
+#- 21 AddUserIntoSessionInChannel
 # body param: body
-echo '{"blocked_players": ["x0F7Ncoc"], "party_id": "elJjtlKY", "user_id": "u8iCPznx"}' > $TEMP_JSON_INPUT
+echo '{"blocked_players": ["lKYu8iCP"], "party_id": "znx0s5Tz", "user_id": "T51oV4HT"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op AddUserIntoSessionInChannel \
-    --channelName '0s5TzT51' \
-    --matchID 'oV4HTmiv' \
+    --channelName 'mivmb6tP' \
+    --matchID 'mCirkhYv' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 20 'AddUserIntoSessionInChannel' test.out
+eval_tap $? 21 'AddUserIntoSessionInChannel' test.out
 
-#- 21 DeleteSessionInChannel
+#- 22 DeleteSessionInChannel
 $CLI_EXE \
     --sn matchmaking \
     --op DeleteSessionInChannel \
-    --channelName 'mb6tPmCi' \
-    --matchID 'rkhYvcOU' \
+    --channelName 'cOUucjPW' \
+    --matchID 'GwPsvjLK' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 21 'DeleteSessionInChannel' test.out
+eval_tap $? 22 'DeleteSessionInChannel' test.out
 
-#- 22 DeleteUserFromSessionInChannel
+#- 23 DeleteUserFromSessionInChannel
 $CLI_EXE \
     --sn matchmaking \
     --op DeleteUserFromSessionInChannel \
-    --channelName 'ucjPWGwP' \
-    --matchID 'svjLK1Cj' \
+    --channelName '1CjPt93u' \
+    --matchID 'tbMkpUFH' \
     --namespace $AB_NAMESPACE \
-    --userID 'Pt93utbM' \
+    --userID 'T0fL9q9S' \
     > test.out 2>&1
-eval_tap $? 22 'DeleteUserFromSessionInChannel' test.out
+eval_tap $? 23 'DeleteUserFromSessionInChannel' test.out
 
-#- 23 SearchSessions
+#- 24 SearchSessions
 $CLI_EXE \
     --sn matchmaking \
     --op SearchSessions \
     --namespace $AB_NAMESPACE \
-    --channel 'kpUFHT0f' \
+    --channel 'MNAUQVoi' \
     --deleted 'True' \
-    --matchID '9SMNAUQV' \
-    --partyID 'oiQtSQC2' \
-    --userID 'kNSsmT0d' \
-    --limit '0' \
-    --offset '55' \
+    --matchID 'SQC2kNSs' \
+    --partyID 'mT0d2aBG' \
+    --userID '4zA2zp1L' \
+    --limit '37' \
+    --offset '3' \
     > test.out 2>&1
-eval_tap $? 23 'SearchSessions' test.out
+eval_tap $? 24 'SearchSessions' test.out
 
-#- 24 GetSessionHistoryDetailed
+#- 25 GetSessionHistoryDetailed
 $CLI_EXE \
     --sn matchmaking \
     --op GetSessionHistoryDetailed \
-    --matchID 'G4zA2zp1' \
+    --matchID 'D6dGgwkY' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 24 'GetSessionHistoryDetailed' test.out
+eval_tap $? 25 'GetSessionHistoryDetailed' test.out
 
-#- 25 PublicGetMessages
+#- 26 PublicGetMessages
 $CLI_EXE \
     --sn matchmaking \
     --op PublicGetMessages \
     > test.out 2>&1
-eval_tap $? 25 'PublicGetMessages' test.out
+eval_tap $? 26 'PublicGetMessages' test.out
 
-#- 26 PublicGetAllMatchmakingChannel
+#- 27 PublicGetAllMatchmakingChannel
 $CLI_EXE \
     --sn matchmaking \
     --op PublicGetAllMatchmakingChannel \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 26 'PublicGetAllMatchmakingChannel' test.out
+eval_tap $? 27 'PublicGetAllMatchmakingChannel' test.out
 
-#- 27 PublicGetSingleMatchmakingChannel
+#- 28 PublicGetSingleMatchmakingChannel
 $CLI_EXE \
     --sn matchmaking \
     --op PublicGetSingleMatchmakingChannel \
-    --channelName 'Ls0bD6dG' \
+    --channelName 'gHzKuI2R' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 27 'PublicGetSingleMatchmakingChannel' test.out
+eval_tap $? 28 'PublicGetSingleMatchmakingChannel' test.out
 
-#- 28 SearchSessionsV2
+#- 29 SearchSessionsV2
 $CLI_EXE \
     --sn matchmaking \
     --op SearchSessionsV2 \
     --namespace $AB_NAMESPACE \
-    --channel 'gwkYgHzK' \
-    --deleted 'True' \
-    --matchID 'I2RJrboP' \
-    --partyID '7kfpIlet' \
-    --userID 'XrCK1UVO' \
-    --limit '19' \
-    --offset '5' \
+    --channel 'JrboP7kf' \
+    --deleted 'False' \
+    --matchID 'IletXrCK' \
+    --partyID '1UVO0jcs' \
+    --userID '7nCqsodo' \
+    --limit '91' \
+    --offset '63' \
     > test.out 2>&1
-eval_tap $? 28 'SearchSessionsV2' test.out
+eval_tap $? 29 'SearchSessionsV2' test.out
 
-#- 29 VersionCheckHandler
+#- 30 VersionCheckHandler
 $CLI_EXE \
     --sn matchmaking \
     --op VersionCheckHandler \
     > test.out 2>&1
-eval_tap $? 29 'VersionCheckHandler' test.out
+eval_tap $? 30 'VersionCheckHandler' test.out
 
 
 rm -f "$CLI_TOKEN_FILE"

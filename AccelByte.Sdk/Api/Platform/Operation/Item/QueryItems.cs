@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public string? Region { get; set; }
 
-            public string? SortBy { get; set; }
+            public List<QueryItemsSortBy>? SortBy { get; set; }
 
             public string? StoreId { get; set; }
 
@@ -127,7 +127,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryItemsBuilder SetSortBy(string _sortBy)
+            public QueryItemsBuilder SetSortBy(List<QueryItemsSortBy> _sortBy)
             {
                 SortBy = _sortBy;
                 return this;
@@ -191,6 +191,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
 
             
+            CollectionFormatMap["sortBy"] = "csv";
             
             
 
@@ -210,7 +211,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             int? limit,            
             int? offset,            
             string? region,            
-            string? sortBy,            
+            List<QueryItemsSortBy>? sortBy,            
             string? storeId,            
             string? tags,            
             string? targetNamespace            
@@ -235,6 +236,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
 
             
+            CollectionFormatMap["sortBy"] = "csv";
             
             
 
@@ -275,16 +277,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryItemsAppType : StringEnum<QueryItemsAppType>
     {
-        public static readonly QueryItemsAppType Demo
+        public static readonly QueryItemsAppType DEMO
             = new QueryItemsAppType("DEMO");
 
-        public static readonly QueryItemsAppType Dlc
+        public static readonly QueryItemsAppType DLC
             = new QueryItemsAppType("DLC");
 
-        public static readonly QueryItemsAppType Game
+        public static readonly QueryItemsAppType GAME
             = new QueryItemsAppType("GAME");
 
-        public static readonly QueryItemsAppType Software
+        public static readonly QueryItemsAppType SOFTWARE
             = new QueryItemsAppType("SOFTWARE");
 
 
@@ -302,28 +304,28 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryItemsItemType : StringEnum<QueryItemsItemType>
     {
-        public static readonly QueryItemsItemType App
+        public static readonly QueryItemsItemType APP
             = new QueryItemsItemType("APP");
 
-        public static readonly QueryItemsItemType Bundle
+        public static readonly QueryItemsItemType BUNDLE
             = new QueryItemsItemType("BUNDLE");
 
-        public static readonly QueryItemsItemType Code
+        public static readonly QueryItemsItemType CODE
             = new QueryItemsItemType("CODE");
 
-        public static readonly QueryItemsItemType Coins
+        public static readonly QueryItemsItemType COINS
             = new QueryItemsItemType("COINS");
 
-        public static readonly QueryItemsItemType Ingameitem
+        public static readonly QueryItemsItemType INGAMEITEM
             = new QueryItemsItemType("INGAMEITEM");
 
-        public static readonly QueryItemsItemType Media
+        public static readonly QueryItemsItemType MEDIA
             = new QueryItemsItemType("MEDIA");
 
-        public static readonly QueryItemsItemType Season
+        public static readonly QueryItemsItemType SEASON
             = new QueryItemsItemType("SEASON");
 
-        public static readonly QueryItemsItemType Subscription
+        public static readonly QueryItemsItemType SUBSCRIPTION
             = new QueryItemsItemType("SUBSCRIPTION");
 
 
@@ -333,6 +335,57 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         public QueryItemsItemType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class QueryItemsSortBy : StringEnum<QueryItemsSortBy>
+    {
+        public static readonly QueryItemsSortBy Name
+            = new QueryItemsSortBy("name");
+
+        public static readonly QueryItemsSortBy Nameasc
+            = new QueryItemsSortBy("name:asc");
+
+        public static readonly QueryItemsSortBy Namedesc
+            = new QueryItemsSortBy("name:desc");
+
+        public static readonly QueryItemsSortBy CreatedAt
+            = new QueryItemsSortBy("createdAt");
+
+        public static readonly QueryItemsSortBy CreatedAtasc
+            = new QueryItemsSortBy("createdAt:asc");
+
+        public static readonly QueryItemsSortBy CreatedAtdesc
+            = new QueryItemsSortBy("createdAt:desc");
+
+        public static readonly QueryItemsSortBy UpdatedAt
+            = new QueryItemsSortBy("updatedAt");
+
+        public static readonly QueryItemsSortBy UpdatedAtasc
+            = new QueryItemsSortBy("updatedAt:asc");
+
+        public static readonly QueryItemsSortBy UpdatedAtdesc
+            = new QueryItemsSortBy("updatedAt:desc");
+
+        public static readonly QueryItemsSortBy DisplayOrder
+            = new QueryItemsSortBy("displayOrder");
+
+        public static readonly QueryItemsSortBy DisplayOrderasc
+            = new QueryItemsSortBy("displayOrder:asc");
+
+        public static readonly QueryItemsSortBy DisplayOrderdesc
+            = new QueryItemsSortBy("displayOrder:desc");
+
+
+        public static implicit operator QueryItemsSortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryItemsSortBy(string enumValue)
             : base(enumValue)
         {
 

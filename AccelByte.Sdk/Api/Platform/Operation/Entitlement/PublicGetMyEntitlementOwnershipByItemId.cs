@@ -140,19 +140,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz : StringEnum<PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz>
     {
-        public static readonly PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz App
+        public static readonly PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz APP
             = new PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz("APP");
 
-        public static readonly PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz Code
+        public static readonly PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz CODE
             = new PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz("CODE");
 
-        public static readonly PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz Entitlement
+        public static readonly PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz ENTITLEMENT
             = new PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz("ENTITLEMENT");
 
-        public static readonly PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz Media
+        public static readonly PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz MEDIA
             = new PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz("MEDIA");
 
-        public static readonly PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz Subscription
+        public static readonly PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz SUBSCRIPTION
             = new PublicGetMyEntitlementOwnershipByItemIdEntitlementClazz("SUBSCRIPTION");
 
 

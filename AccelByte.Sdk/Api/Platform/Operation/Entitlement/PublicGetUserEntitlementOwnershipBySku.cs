@@ -143,19 +143,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class PublicGetUserEntitlementOwnershipBySkuEntitlementClazz : StringEnum<PublicGetUserEntitlementOwnershipBySkuEntitlementClazz>
     {
-        public static readonly PublicGetUserEntitlementOwnershipBySkuEntitlementClazz App
+        public static readonly PublicGetUserEntitlementOwnershipBySkuEntitlementClazz APP
             = new PublicGetUserEntitlementOwnershipBySkuEntitlementClazz("APP");
 
-        public static readonly PublicGetUserEntitlementOwnershipBySkuEntitlementClazz Code
+        public static readonly PublicGetUserEntitlementOwnershipBySkuEntitlementClazz CODE
             = new PublicGetUserEntitlementOwnershipBySkuEntitlementClazz("CODE");
 
-        public static readonly PublicGetUserEntitlementOwnershipBySkuEntitlementClazz Entitlement
+        public static readonly PublicGetUserEntitlementOwnershipBySkuEntitlementClazz ENTITLEMENT
             = new PublicGetUserEntitlementOwnershipBySkuEntitlementClazz("ENTITLEMENT");
 
-        public static readonly PublicGetUserEntitlementOwnershipBySkuEntitlementClazz Media
+        public static readonly PublicGetUserEntitlementOwnershipBySkuEntitlementClazz MEDIA
             = new PublicGetUserEntitlementOwnershipBySkuEntitlementClazz("MEDIA");
 
-        public static readonly PublicGetUserEntitlementOwnershipBySkuEntitlementClazz Subscription
+        public static readonly PublicGetUserEntitlementOwnershipBySkuEntitlementClazz SUBSCRIPTION
             = new PublicGetUserEntitlementOwnershipBySkuEntitlementClazz("SUBSCRIPTION");
 
 

@@ -219,28 +219,28 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryPaymentNotificationsNotificationSource : StringEnum<QueryPaymentNotificationsNotificationSource>
     {
-        public static readonly QueryPaymentNotificationsNotificationSource Adyen
+        public static readonly QueryPaymentNotificationsNotificationSource ADYEN
             = new QueryPaymentNotificationsNotificationSource("ADYEN");
 
-        public static readonly QueryPaymentNotificationsNotificationSource Alipay
+        public static readonly QueryPaymentNotificationsNotificationSource ALIPAY
             = new QueryPaymentNotificationsNotificationSource("ALIPAY");
 
-        public static readonly QueryPaymentNotificationsNotificationSource Checkout
+        public static readonly QueryPaymentNotificationsNotificationSource CHECKOUT
             = new QueryPaymentNotificationsNotificationSource("CHECKOUT");
 
-        public static readonly QueryPaymentNotificationsNotificationSource Paypal
+        public static readonly QueryPaymentNotificationsNotificationSource PAYPAL
             = new QueryPaymentNotificationsNotificationSource("PAYPAL");
 
-        public static readonly QueryPaymentNotificationsNotificationSource Stripe
+        public static readonly QueryPaymentNotificationsNotificationSource STRIPE
             = new QueryPaymentNotificationsNotificationSource("STRIPE");
 
-        public static readonly QueryPaymentNotificationsNotificationSource Wallet
+        public static readonly QueryPaymentNotificationsNotificationSource WALLET
             = new QueryPaymentNotificationsNotificationSource("WALLET");
 
-        public static readonly QueryPaymentNotificationsNotificationSource Wxpay
+        public static readonly QueryPaymentNotificationsNotificationSource WXPAY
             = new QueryPaymentNotificationsNotificationSource("WXPAY");
 
-        public static readonly QueryPaymentNotificationsNotificationSource Xsolla
+        public static readonly QueryPaymentNotificationsNotificationSource XSOLLA
             = new QueryPaymentNotificationsNotificationSource("XSOLLA");
 
 
@@ -258,16 +258,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryPaymentNotificationsStatus : StringEnum<QueryPaymentNotificationsStatus>
     {
-        public static readonly QueryPaymentNotificationsStatus Error
+        public static readonly QueryPaymentNotificationsStatus ERROR
             = new QueryPaymentNotificationsStatus("ERROR");
 
-        public static readonly QueryPaymentNotificationsStatus Ignored
+        public static readonly QueryPaymentNotificationsStatus IGNORED
             = new QueryPaymentNotificationsStatus("IGNORED");
 
-        public static readonly QueryPaymentNotificationsStatus Processed
+        public static readonly QueryPaymentNotificationsStatus PROCESSED
             = new QueryPaymentNotificationsStatus("PROCESSED");
 
-        public static readonly QueryPaymentNotificationsStatus Warn
+        public static readonly QueryPaymentNotificationsStatus WARN
             = new QueryPaymentNotificationsStatus("WARN");
 
 

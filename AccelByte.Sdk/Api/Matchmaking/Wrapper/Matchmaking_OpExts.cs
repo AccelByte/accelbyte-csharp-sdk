@@ -66,6 +66,20 @@ namespace AccelByte.Sdk.Api
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).StoreMatchResults(op);
         }
 
+        public static Matchmaking.Model.ModelsRebalanceResponse? Execute(
+            this Rebalance.RebalanceBuilder builder,
+            ModelsRebalanceRequest body,
+            string namespace_
+        )
+        {
+            Rebalance op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).Rebalance(op);
+        }
+
         public static void Execute(
             this QueueSessionHandler.QueueSessionHandlerBuilder builder,
             ModelsMatchmakingResult body,

@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
         }
 
         #region Operation Builders
+        public UpdateServerConfig.UpdateServerConfigBuilder UpdateServerConfigOp
+        {
+            get { return Operation.UpdateServerConfig.Builder.SetWrapperObject(this); }
+        }
         public DeleteServer.DeleteServerBuilder DeleteServerOp
         {
             get { return Operation.DeleteServer.Builder.SetWrapperObject(this); }
@@ -29,6 +33,14 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
         }
         #endregion
         
+        public void UpdateServerConfig(UpdateServerConfig input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public void DeleteServer(DeleteServer input) {
             var response = _sdk.RunRequest(input);
 

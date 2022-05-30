@@ -13,6 +13,18 @@ namespace AccelByte.Sdk.Api
     public static class QosmPublic_OpExts
     {
         public static Qosm.Model.ModelsListServerResponse? Execute(
+            this ListServerPerNamespace.ListServerPerNamespaceBuilder builder,
+            string namespace_
+        )
+        {
+            ListServerPerNamespace op = builder.Build(
+                namespace_
+            );
+
+            return ((Qosm.Wrapper.Public)builder.WrapperObject!).ListServerPerNamespace(op);
+        }
+
+        public static Qosm.Model.ModelsListServerResponse? Execute(
             this ListServer.ListServerBuilder builder
         )
         {

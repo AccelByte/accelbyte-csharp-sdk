@@ -203,19 +203,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class PublicQueryUserSubscriptionsChargeStatus : StringEnum<PublicQueryUserSubscriptionsChargeStatus>
     {
-        public static readonly PublicQueryUserSubscriptionsChargeStatus Charged
+        public static readonly PublicQueryUserSubscriptionsChargeStatus CHARGED
             = new PublicQueryUserSubscriptionsChargeStatus("CHARGED");
 
-        public static readonly PublicQueryUserSubscriptionsChargeStatus ChargeFailed
+        public static readonly PublicQueryUserSubscriptionsChargeStatus CHARGEFAILED
             = new PublicQueryUserSubscriptionsChargeStatus("CHARGE_FAILED");
 
-        public static readonly PublicQueryUserSubscriptionsChargeStatus Never
+        public static readonly PublicQueryUserSubscriptionsChargeStatus NEVER
             = new PublicQueryUserSubscriptionsChargeStatus("NEVER");
 
-        public static readonly PublicQueryUserSubscriptionsChargeStatus RecurringCharging
+        public static readonly PublicQueryUserSubscriptionsChargeStatus RECURRINGCHARGING
             = new PublicQueryUserSubscriptionsChargeStatus("RECURRING_CHARGING");
 
-        public static readonly PublicQueryUserSubscriptionsChargeStatus Setup
+        public static readonly PublicQueryUserSubscriptionsChargeStatus SETUP
             = new PublicQueryUserSubscriptionsChargeStatus("SETUP");
 
 
@@ -233,16 +233,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class PublicQueryUserSubscriptionsStatus : StringEnum<PublicQueryUserSubscriptionsStatus>
     {
-        public static readonly PublicQueryUserSubscriptionsStatus Active
+        public static readonly PublicQueryUserSubscriptionsStatus ACTIVE
             = new PublicQueryUserSubscriptionsStatus("ACTIVE");
 
-        public static readonly PublicQueryUserSubscriptionsStatus Cancelled
+        public static readonly PublicQueryUserSubscriptionsStatus CANCELLED
             = new PublicQueryUserSubscriptionsStatus("CANCELLED");
 
-        public static readonly PublicQueryUserSubscriptionsStatus Expired
+        public static readonly PublicQueryUserSubscriptionsStatus EXPIRED
             = new PublicQueryUserSubscriptionsStatus("EXPIRED");
 
-        public static readonly PublicQueryUserSubscriptionsStatus Init
+        public static readonly PublicQueryUserSubscriptionsStatus INIT
             = new PublicQueryUserSubscriptionsStatus("INIT");
 
 
@@ -260,10 +260,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class PublicQueryUserSubscriptionsSubscribedBy : StringEnum<PublicQueryUserSubscriptionsSubscribedBy>
     {
-        public static readonly PublicQueryUserSubscriptionsSubscribedBy Platform
+        public static readonly PublicQueryUserSubscriptionsSubscribedBy PLATFORM
             = new PublicQueryUserSubscriptionsSubscribedBy("PLATFORM");
 
-        public static readonly PublicQueryUserSubscriptionsSubscribedBy User
+        public static readonly PublicQueryUserSubscriptionsSubscribedBy USER
             = new PublicQueryUserSubscriptionsSubscribedBy("USER");
 
 

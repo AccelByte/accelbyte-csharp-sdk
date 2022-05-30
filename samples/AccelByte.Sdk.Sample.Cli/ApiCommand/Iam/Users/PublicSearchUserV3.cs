@@ -32,6 +32,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("by")]
         public string? By { get; set; }
 
+        [SdkCommandArgument("limit")]
+        public string? Limit { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public string? Offset { get; set; }
+
         [SdkCommandArgument("query")]
         public string? Query { get; set; }
 
@@ -47,6 +53,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             PublicSearchUserV3 operation = new PublicSearchUserV3(
                 Namespace,                
                 By,                
+                Limit,                
+                Offset,                
                 Query                
             );            
             

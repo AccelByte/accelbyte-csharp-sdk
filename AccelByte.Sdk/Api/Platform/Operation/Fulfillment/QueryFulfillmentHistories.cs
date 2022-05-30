@@ -164,10 +164,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryFulfillmentHistoriesStatus : StringEnum<QueryFulfillmentHistoriesStatus>
     {
-        public static readonly QueryFulfillmentHistoriesStatus Fail
+        public static readonly QueryFulfillmentHistoriesStatus FAIL
             = new QueryFulfillmentHistoriesStatus("FAIL");
 
-        public static readonly QueryFulfillmentHistoriesStatus Success
+        public static readonly QueryFulfillmentHistoriesStatus SUCCESS
             = new QueryFulfillmentHistoriesStatus("SUCCESS");
 
 

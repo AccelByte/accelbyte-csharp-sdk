@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class SteamIAPConfigRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("appId")]
+        public string? AppId { get; set; }
+
         [JsonPropertyName("publisherAuthenticationKey")]
         public string? PublisherAuthenticationKey { get; set; }
 

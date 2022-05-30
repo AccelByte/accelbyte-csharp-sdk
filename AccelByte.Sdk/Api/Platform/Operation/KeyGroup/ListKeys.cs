@@ -159,10 +159,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class ListKeysStatus : StringEnum<ListKeysStatus>
     {
-        public static readonly ListKeysStatus Acquired
+        public static readonly ListKeysStatus ACQUIRED
             = new ListKeysStatus("ACQUIRED");
 
-        public static readonly ListKeysStatus Active
+        public static readonly ListKeysStatus ACTIVE
             = new ListKeysStatus("ACTIVE");
 
 

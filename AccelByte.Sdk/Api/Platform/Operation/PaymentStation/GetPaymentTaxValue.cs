@@ -140,28 +140,28 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class GetPaymentTaxValuePaymentProvider : StringEnum<GetPaymentTaxValuePaymentProvider>
     {
-        public static readonly GetPaymentTaxValuePaymentProvider Adyen
+        public static readonly GetPaymentTaxValuePaymentProvider ADYEN
             = new GetPaymentTaxValuePaymentProvider("ADYEN");
 
-        public static readonly GetPaymentTaxValuePaymentProvider Alipay
+        public static readonly GetPaymentTaxValuePaymentProvider ALIPAY
             = new GetPaymentTaxValuePaymentProvider("ALIPAY");
 
-        public static readonly GetPaymentTaxValuePaymentProvider Checkout
+        public static readonly GetPaymentTaxValuePaymentProvider CHECKOUT
             = new GetPaymentTaxValuePaymentProvider("CHECKOUT");
 
-        public static readonly GetPaymentTaxValuePaymentProvider Paypal
+        public static readonly GetPaymentTaxValuePaymentProvider PAYPAL
             = new GetPaymentTaxValuePaymentProvider("PAYPAL");
 
-        public static readonly GetPaymentTaxValuePaymentProvider Stripe
+        public static readonly GetPaymentTaxValuePaymentProvider STRIPE
             = new GetPaymentTaxValuePaymentProvider("STRIPE");
 
-        public static readonly GetPaymentTaxValuePaymentProvider Wallet
+        public static readonly GetPaymentTaxValuePaymentProvider WALLET
             = new GetPaymentTaxValuePaymentProvider("WALLET");
 
-        public static readonly GetPaymentTaxValuePaymentProvider Wxpay
+        public static readonly GetPaymentTaxValuePaymentProvider WXPAY
             = new GetPaymentTaxValuePaymentProvider("WXPAY");
 
-        public static readonly GetPaymentTaxValuePaymentProvider Xsolla
+        public static readonly GetPaymentTaxValuePaymentProvider XSOLLA
             = new GetPaymentTaxValuePaymentProvider("XSOLLA");
 
 

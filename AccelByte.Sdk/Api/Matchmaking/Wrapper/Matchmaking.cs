@@ -35,6 +35,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         {
             get { return Operation.StoreMatchResults.Builder.SetWrapperObject(this); }
         }
+        public Rebalance.RebalanceBuilder RebalanceOp
+        {
+            get { return Operation.Rebalance.Builder.SetWrapperObject(this); }
+        }
         public QueueSessionHandler.QueueSessionHandlerBuilder QueueSessionHandlerOp
         {
             get { return Operation.QueueSessionHandler.Builder.SetWrapperObject(this); }
@@ -138,6 +142,14 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.Payload);
         }
         public Model.ModelsMatchResultResponse? StoreMatchResults(StoreMatchResults input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsRebalanceResponse? Rebalance(Rebalance input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

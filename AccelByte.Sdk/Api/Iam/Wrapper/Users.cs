@@ -541,6 +541,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicPlatformUnlinkV3.Builder.SetWrapperObject(this); }
         }
+        public PublicPlatformUnlinkAllV3.PublicPlatformUnlinkAllV3Builder PublicPlatformUnlinkAllV3Op
+        {
+            get { return Operation.PublicPlatformUnlinkAllV3.Builder.SetWrapperObject(this); }
+        }
         public PublicWebLinkPlatform.PublicWebLinkPlatformBuilder PublicWebLinkPlatformOp
         {
             get { return Operation.PublicWebLinkPlatform.Builder.SetWrapperObject(this); }
@@ -561,6 +565,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicGetUserBanHistoryV3.Builder.SetWrapperObject(this); }
         }
+        public PublicListUserAllPlatformAccountsDistinctV3.PublicListUserAllPlatformAccountsDistinctV3Builder PublicListUserAllPlatformAccountsDistinctV3Op
+        {
+            get { return Operation.PublicListUserAllPlatformAccountsDistinctV3.Builder.SetWrapperObject(this); }
+        }
         public PublicGetUserLoginHistoriesV3.PublicGetUserLoginHistoriesV3Builder PublicGetUserLoginHistoriesV3Op
         {
             get { return Operation.PublicGetUserLoginHistoriesV3.Builder.SetWrapperObject(this); }
@@ -572,6 +580,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public PublicLinkPlatformAccount.PublicLinkPlatformAccountBuilder PublicLinkPlatformAccountOp
         {
             get { return Operation.PublicLinkPlatformAccount.Builder.SetWrapperObject(this); }
+        }
+        public PublicForceLinkPlatformWithProgression.PublicForceLinkPlatformWithProgressionBuilder PublicForceLinkPlatformWithProgressionOp
+        {
+            get { return Operation.PublicForceLinkPlatformWithProgression.Builder.SetWrapperObject(this); }
         }
         public PublicValidateUserByUserIDAndPasswordV3.PublicValidateUserByUserIDAndPasswordV3Builder PublicValidateUserByUserIDAndPasswordV3Op
         {
@@ -1633,6 +1645,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public void PublicPlatformUnlinkAllV3(PublicPlatformUnlinkAllV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelWebLinkingResponse? PublicWebLinkPlatform(PublicWebLinkPlatform input) {
             var response = _sdk.RunRequest(input);
 
@@ -1673,6 +1693,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.AccountcommonDistinctPlatformResponseV3? PublicListUserAllPlatformAccountsDistinctV3(PublicListUserAllPlatformAccountsDistinctV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelLoginHistoriesResponse? PublicGetUserLoginHistoriesV3(PublicGetUserLoginHistoriesV3 input) {
             var response = _sdk.RunRequest(input);
 
@@ -1690,6 +1718,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public void PublicLinkPlatformAccount(PublicLinkPlatformAccount input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicForceLinkPlatformWithProgression(PublicForceLinkPlatformWithProgression input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(

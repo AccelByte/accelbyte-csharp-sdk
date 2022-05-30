@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public int? Offset { get; set; }
 
-            public string? SortBy { get; set; }
+            public List<QueryRewards1SortBy>? SortBy { get; set; }
 
 
 
@@ -65,7 +65,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryRewards1Builder SetSortBy(string _sortBy)
+            public QueryRewards1Builder SetSortBy(List<QueryRewards1SortBy> _sortBy)
             {
                 SortBy = _sortBy;
                 return this;
@@ -101,6 +101,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
 
             
+            CollectionFormatMap["sortBy"] = "csv";
             
             
 
@@ -113,7 +114,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string? eventTopic,            
             int? limit,            
             int? offset,            
-            string? sortBy            
+            List<QueryRewards1SortBy>? sortBy            
         )
         {
             PathParams["namespace"] = namespace_;
@@ -125,6 +126,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
 
             
+            CollectionFormatMap["sortBy"] = "csv";
             
             
 
@@ -160,6 +162,39 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
             
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class QueryRewards1SortBy : StringEnum<QueryRewards1SortBy>
+    {
+        public static readonly QueryRewards1SortBy Namespace
+            = new QueryRewards1SortBy("namespace");
+
+        public static readonly QueryRewards1SortBy Namespaceasc
+            = new QueryRewards1SortBy("namespace:asc");
+
+        public static readonly QueryRewards1SortBy Namespacedesc
+            = new QueryRewards1SortBy("namespace:desc");
+
+        public static readonly QueryRewards1SortBy RewardCode
+            = new QueryRewards1SortBy("rewardCode");
+
+        public static readonly QueryRewards1SortBy RewardCodeasc
+            = new QueryRewards1SortBy("rewardCode:asc");
+
+        public static readonly QueryRewards1SortBy RewardCodedesc
+            = new QueryRewards1SortBy("rewardCode:desc");
+
+
+        public static implicit operator QueryRewards1SortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryRewards1SortBy(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

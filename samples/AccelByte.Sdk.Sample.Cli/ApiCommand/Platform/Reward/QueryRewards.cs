@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public int? Offset { get; set; }
 
         [SdkCommandArgument("sortBy")]
-        public string? SortBy { get; set; }
+        public List<string>? SortBy { get; set; }
 
         public QueryRewardsCommand(AccelByteSDK sdk)
         {
@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 EventTopic,                
                 Limit,                
                 Offset,                
-                SortBy                
+                (SortBy is null ? null : QueryRewardsSortBy.NewValue(SortBy))                
             );            
             
             AccelByte.Sdk.Api.Platform.Model.RewardPagingSlicedResult? response = wrapper.QueryRewards(operation);

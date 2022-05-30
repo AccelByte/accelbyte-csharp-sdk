@@ -140,28 +140,28 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class GetPaymentPublicConfigPaymentProvider : StringEnum<GetPaymentPublicConfigPaymentProvider>
     {
-        public static readonly GetPaymentPublicConfigPaymentProvider Adyen
+        public static readonly GetPaymentPublicConfigPaymentProvider ADYEN
             = new GetPaymentPublicConfigPaymentProvider("ADYEN");
 
-        public static readonly GetPaymentPublicConfigPaymentProvider Alipay
+        public static readonly GetPaymentPublicConfigPaymentProvider ALIPAY
             = new GetPaymentPublicConfigPaymentProvider("ALIPAY");
 
-        public static readonly GetPaymentPublicConfigPaymentProvider Checkout
+        public static readonly GetPaymentPublicConfigPaymentProvider CHECKOUT
             = new GetPaymentPublicConfigPaymentProvider("CHECKOUT");
 
-        public static readonly GetPaymentPublicConfigPaymentProvider Paypal
+        public static readonly GetPaymentPublicConfigPaymentProvider PAYPAL
             = new GetPaymentPublicConfigPaymentProvider("PAYPAL");
 
-        public static readonly GetPaymentPublicConfigPaymentProvider Stripe
+        public static readonly GetPaymentPublicConfigPaymentProvider STRIPE
             = new GetPaymentPublicConfigPaymentProvider("STRIPE");
 
-        public static readonly GetPaymentPublicConfigPaymentProvider Wallet
+        public static readonly GetPaymentPublicConfigPaymentProvider WALLET
             = new GetPaymentPublicConfigPaymentProvider("WALLET");
 
-        public static readonly GetPaymentPublicConfigPaymentProvider Wxpay
+        public static readonly GetPaymentPublicConfigPaymentProvider WXPAY
             = new GetPaymentPublicConfigPaymentProvider("WXPAY");
 
-        public static readonly GetPaymentPublicConfigPaymentProvider Xsolla
+        public static readonly GetPaymentPublicConfigPaymentProvider XSOLLA
             = new GetPaymentPublicConfigPaymentProvider("XSOLLA");
 
 

@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public string? Region { get; set; }
 
-            public string? SortBy { get; set; }
+            public List<PublicQueryItemsSortBy>? SortBy { get; set; }
 
             public string? StoreId { get; set; }
 
@@ -118,7 +118,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public PublicQueryItemsBuilder SetSortBy(string _sortBy)
+            public PublicQueryItemsBuilder SetSortBy(List<PublicQueryItemsSortBy> _sortBy)
             {
                 SortBy = _sortBy;
                 return this;
@@ -174,6 +174,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
 
             
+            CollectionFormatMap["sortBy"] = "csv";
             
             
 
@@ -191,7 +192,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             int? limit,            
             int? offset,            
             string? region,            
-            string? sortBy,            
+            List<PublicQueryItemsSortBy>? sortBy,            
             string? storeId,            
             string? tags            
         )
@@ -213,6 +214,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
 
             
+            CollectionFormatMap["sortBy"] = "csv";
             
             
 
@@ -252,16 +254,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class PublicQueryItemsAppType : StringEnum<PublicQueryItemsAppType>
     {
-        public static readonly PublicQueryItemsAppType Demo
+        public static readonly PublicQueryItemsAppType DEMO
             = new PublicQueryItemsAppType("DEMO");
 
-        public static readonly PublicQueryItemsAppType Dlc
+        public static readonly PublicQueryItemsAppType DLC
             = new PublicQueryItemsAppType("DLC");
 
-        public static readonly PublicQueryItemsAppType Game
+        public static readonly PublicQueryItemsAppType GAME
             = new PublicQueryItemsAppType("GAME");
 
-        public static readonly PublicQueryItemsAppType Software
+        public static readonly PublicQueryItemsAppType SOFTWARE
             = new PublicQueryItemsAppType("SOFTWARE");
 
 
@@ -279,28 +281,28 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class PublicQueryItemsItemType : StringEnum<PublicQueryItemsItemType>
     {
-        public static readonly PublicQueryItemsItemType App
+        public static readonly PublicQueryItemsItemType APP
             = new PublicQueryItemsItemType("APP");
 
-        public static readonly PublicQueryItemsItemType Bundle
+        public static readonly PublicQueryItemsItemType BUNDLE
             = new PublicQueryItemsItemType("BUNDLE");
 
-        public static readonly PublicQueryItemsItemType Code
+        public static readonly PublicQueryItemsItemType CODE
             = new PublicQueryItemsItemType("CODE");
 
-        public static readonly PublicQueryItemsItemType Coins
+        public static readonly PublicQueryItemsItemType COINS
             = new PublicQueryItemsItemType("COINS");
 
-        public static readonly PublicQueryItemsItemType Ingameitem
+        public static readonly PublicQueryItemsItemType INGAMEITEM
             = new PublicQueryItemsItemType("INGAMEITEM");
 
-        public static readonly PublicQueryItemsItemType Media
+        public static readonly PublicQueryItemsItemType MEDIA
             = new PublicQueryItemsItemType("MEDIA");
 
-        public static readonly PublicQueryItemsItemType Season
+        public static readonly PublicQueryItemsItemType SEASON
             = new PublicQueryItemsItemType("SEASON");
 
-        public static readonly PublicQueryItemsItemType Subscription
+        public static readonly PublicQueryItemsItemType SUBSCRIPTION
             = new PublicQueryItemsItemType("SUBSCRIPTION");
 
 
@@ -310,6 +312,57 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         public PublicQueryItemsItemType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class PublicQueryItemsSortBy : StringEnum<PublicQueryItemsSortBy>
+    {
+        public static readonly PublicQueryItemsSortBy Name
+            = new PublicQueryItemsSortBy("name");
+
+        public static readonly PublicQueryItemsSortBy Nameasc
+            = new PublicQueryItemsSortBy("name:asc");
+
+        public static readonly PublicQueryItemsSortBy Namedesc
+            = new PublicQueryItemsSortBy("name:desc");
+
+        public static readonly PublicQueryItemsSortBy CreatedAt
+            = new PublicQueryItemsSortBy("createdAt");
+
+        public static readonly PublicQueryItemsSortBy CreatedAtasc
+            = new PublicQueryItemsSortBy("createdAt:asc");
+
+        public static readonly PublicQueryItemsSortBy CreatedAtdesc
+            = new PublicQueryItemsSortBy("createdAt:desc");
+
+        public static readonly PublicQueryItemsSortBy UpdatedAt
+            = new PublicQueryItemsSortBy("updatedAt");
+
+        public static readonly PublicQueryItemsSortBy UpdatedAtasc
+            = new PublicQueryItemsSortBy("updatedAt:asc");
+
+        public static readonly PublicQueryItemsSortBy UpdatedAtdesc
+            = new PublicQueryItemsSortBy("updatedAt:desc");
+
+        public static readonly PublicQueryItemsSortBy DisplayOrder
+            = new PublicQueryItemsSortBy("displayOrder");
+
+        public static readonly PublicQueryItemsSortBy DisplayOrderasc
+            = new PublicQueryItemsSortBy("displayOrder:asc");
+
+        public static readonly PublicQueryItemsSortBy DisplayOrderdesc
+            = new PublicQueryItemsSortBy("displayOrder:desc");
+
+
+        public static implicit operator PublicQueryItemsSortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicQueryItemsSortBy(string enumValue)
             : base(enumValue)
         {
 

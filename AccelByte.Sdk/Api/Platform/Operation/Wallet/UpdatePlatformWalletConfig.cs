@@ -140,10 +140,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly UpdatePlatformWalletConfigPlatform Epic
             = new UpdatePlatformWalletConfigPlatform("Epic");
 
-        public static readonly UpdatePlatformWalletConfigPlatform Googleplay
+        public static readonly UpdatePlatformWalletConfigPlatform GooglePlay
             = new UpdatePlatformWalletConfigPlatform("GooglePlay");
 
-        public static readonly UpdatePlatformWalletConfigPlatform Ios
+        public static readonly UpdatePlatformWalletConfigPlatform IOS
             = new UpdatePlatformWalletConfigPlatform("IOS");
 
         public static readonly UpdatePlatformWalletConfigPlatform Nintendo

@@ -12,6 +12,15 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("client_id")]
         public string? ClientId { get; set; }
 
+        [JsonPropertyName("conflict_publisher_user_id")]
+        public string? ConflictPublisherUserId { get; set; }
+
+        [JsonPropertyName("conflict_user_linked_games")]
+        public List<string>? ConflictUserLinkedGames { get; set; }
+
+        [JsonPropertyName("current_user_linked_games")]
+        public List<string>? CurrentUserLinkedGames { get; set; }
+
         [JsonPropertyName("error")]
         public RestErrorResponse? Error { get; set; }
 
@@ -26,6 +35,15 @@ namespace AccelByte.Sdk.Api.Iam.Model
 
         [JsonPropertyName("payload")]
         public Dictionary<string, object>? Payload { get; set; }
+
+        [JsonPropertyName("platformDisplayName")]
+        public string? PlatformDisplayName { get; set; }
+
+        [JsonPropertyName("platformID")]
+        public string? PlatformID { get; set; }
+
+        [JsonPropertyName("platform_user_id")]
+        public string? PlatformUserId { get; set; }
 
         [JsonPropertyName("redirect_uri")]
         public string? RedirectUri { get; set; }

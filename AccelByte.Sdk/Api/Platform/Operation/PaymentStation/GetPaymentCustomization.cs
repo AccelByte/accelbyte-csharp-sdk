@@ -141,28 +141,28 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class GetPaymentCustomizationPaymentProvider : StringEnum<GetPaymentCustomizationPaymentProvider>
     {
-        public static readonly GetPaymentCustomizationPaymentProvider Adyen
+        public static readonly GetPaymentCustomizationPaymentProvider ADYEN
             = new GetPaymentCustomizationPaymentProvider("ADYEN");
 
-        public static readonly GetPaymentCustomizationPaymentProvider Alipay
+        public static readonly GetPaymentCustomizationPaymentProvider ALIPAY
             = new GetPaymentCustomizationPaymentProvider("ALIPAY");
 
-        public static readonly GetPaymentCustomizationPaymentProvider Checkout
+        public static readonly GetPaymentCustomizationPaymentProvider CHECKOUT
             = new GetPaymentCustomizationPaymentProvider("CHECKOUT");
 
-        public static readonly GetPaymentCustomizationPaymentProvider Paypal
+        public static readonly GetPaymentCustomizationPaymentProvider PAYPAL
             = new GetPaymentCustomizationPaymentProvider("PAYPAL");
 
-        public static readonly GetPaymentCustomizationPaymentProvider Stripe
+        public static readonly GetPaymentCustomizationPaymentProvider STRIPE
             = new GetPaymentCustomizationPaymentProvider("STRIPE");
 
-        public static readonly GetPaymentCustomizationPaymentProvider Wallet
+        public static readonly GetPaymentCustomizationPaymentProvider WALLET
             = new GetPaymentCustomizationPaymentProvider("WALLET");
 
-        public static readonly GetPaymentCustomizationPaymentProvider Wxpay
+        public static readonly GetPaymentCustomizationPaymentProvider WXPAY
             = new GetPaymentCustomizationPaymentProvider("WXPAY");
 
-        public static readonly GetPaymentCustomizationPaymentProvider Xsolla
+        public static readonly GetPaymentCustomizationPaymentProvider XSOLLA
             = new GetPaymentCustomizationPaymentProvider("XSOLLA");
 
 

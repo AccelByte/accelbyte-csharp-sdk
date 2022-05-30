@@ -32,6 +32,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("client_id")]
         public string ClientId { get; set; } = String.Empty;
                     
+        [SdkCommandArgument("createHeadless")]
+        public bool CreateHeadless { get; set; } = false;
+                    
         [SdkCommandArgument("device_id")]
         public string DeviceId { get; set; } = String.Empty;
                     
@@ -50,6 +53,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             PlatformTokenGrantV3 operation = new PlatformTokenGrantV3(
                 PlatformId,                
                 ClientId,                
+                CreateHeadless,                
                 DeviceId,                
                 PlatformToken                
             );            

@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public int? Offset { get; set; }
 
-            public string? SortBy { get; set; }
+            public List<QueryChangesSortBy>? SortBy { get; set; }
 
             public QueryChangesStatus? Status { get; set; }
 
@@ -81,7 +81,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryChangesBuilder SetSortBy(string _sortBy)
+            public QueryChangesBuilder SetSortBy(List<QueryChangesSortBy> _sortBy)
             {
                 SortBy = _sortBy;
                 return this;
@@ -150,6 +150,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
 
             
+            CollectionFormatMap["sortBy"] = "csv";
             
             
 
@@ -164,7 +165,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             QueryChangesItemType? itemType,            
             int? limit,            
             int? offset,            
-            string? sortBy,            
+            List<QueryChangesSortBy>? sortBy,            
             QueryChangesStatus? status,            
             QueryChangesType? type,            
             string? updatedAtEnd,            
@@ -186,6 +187,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
 
             
+            CollectionFormatMap["sortBy"] = "csv";
             
             
 
@@ -226,13 +228,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryChangesAction : StringEnum<QueryChangesAction>
     {
-        public static readonly QueryChangesAction Create
+        public static readonly QueryChangesAction CREATE
             = new QueryChangesAction("CREATE");
 
-        public static readonly QueryChangesAction Delete
+        public static readonly QueryChangesAction DELETE
             = new QueryChangesAction("DELETE");
 
-        public static readonly QueryChangesAction Update
+        public static readonly QueryChangesAction UPDATE
             = new QueryChangesAction("UPDATE");
 
 
@@ -250,28 +252,28 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryChangesItemType : StringEnum<QueryChangesItemType>
     {
-        public static readonly QueryChangesItemType App
+        public static readonly QueryChangesItemType APP
             = new QueryChangesItemType("APP");
 
-        public static readonly QueryChangesItemType Bundle
+        public static readonly QueryChangesItemType BUNDLE
             = new QueryChangesItemType("BUNDLE");
 
-        public static readonly QueryChangesItemType Code
+        public static readonly QueryChangesItemType CODE
             = new QueryChangesItemType("CODE");
 
-        public static readonly QueryChangesItemType Coins
+        public static readonly QueryChangesItemType COINS
             = new QueryChangesItemType("COINS");
 
-        public static readonly QueryChangesItemType Ingameitem
+        public static readonly QueryChangesItemType INGAMEITEM
             = new QueryChangesItemType("INGAMEITEM");
 
-        public static readonly QueryChangesItemType Media
+        public static readonly QueryChangesItemType MEDIA
             = new QueryChangesItemType("MEDIA");
 
-        public static readonly QueryChangesItemType Season
+        public static readonly QueryChangesItemType SEASON
             = new QueryChangesItemType("SEASON");
 
-        public static readonly QueryChangesItemType Subscription
+        public static readonly QueryChangesItemType SUBSCRIPTION
             = new QueryChangesItemType("SUBSCRIPTION");
 
 
@@ -287,12 +289,45 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
     }
 
+    public class QueryChangesSortBy : StringEnum<QueryChangesSortBy>
+    {
+        public static readonly QueryChangesSortBy CreatedAt
+            = new QueryChangesSortBy("createdAt");
+
+        public static readonly QueryChangesSortBy CreatedAtasc
+            = new QueryChangesSortBy("createdAt:asc");
+
+        public static readonly QueryChangesSortBy CreatedAtdesc
+            = new QueryChangesSortBy("createdAt:desc");
+
+        public static readonly QueryChangesSortBy UpdatedAt
+            = new QueryChangesSortBy("updatedAt");
+
+        public static readonly QueryChangesSortBy UpdatedAtasc
+            = new QueryChangesSortBy("updatedAt:asc");
+
+        public static readonly QueryChangesSortBy UpdatedAtdesc
+            = new QueryChangesSortBy("updatedAt:desc");
+
+
+        public static implicit operator QueryChangesSortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryChangesSortBy(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
     public class QueryChangesStatus : StringEnum<QueryChangesStatus>
     {
-        public static readonly QueryChangesStatus Published
+        public static readonly QueryChangesStatus PUBLISHED
             = new QueryChangesStatus("PUBLISHED");
 
-        public static readonly QueryChangesStatus Unpublished
+        public static readonly QueryChangesStatus UNPUBLISHED
             = new QueryChangesStatus("UNPUBLISHED");
 
 
@@ -310,13 +345,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryChangesType : StringEnum<QueryChangesType>
     {
-        public static readonly QueryChangesType Category
+        public static readonly QueryChangesType CATEGORY
             = new QueryChangesType("CATEGORY");
 
-        public static readonly QueryChangesType Item
+        public static readonly QueryChangesType ITEM
             = new QueryChangesType("ITEM");
 
-        public static readonly QueryChangesType Store
+        public static readonly QueryChangesType STORE
             = new QueryChangesType("STORE");
 
 

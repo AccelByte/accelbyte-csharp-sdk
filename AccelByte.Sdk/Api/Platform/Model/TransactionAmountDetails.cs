@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("amount")]
         public long? Amount { get; set; }
 
+        [JsonPropertyName("expireAt")]
+        public DateTime? ExpireAt { get; set; }
+
         [JsonPropertyName("origin")]
         public string? Origin { get; set; }
 

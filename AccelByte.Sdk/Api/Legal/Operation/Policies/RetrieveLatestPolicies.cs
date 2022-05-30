@@ -152,10 +152,10 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
     public class RetrieveLatestPoliciesPolicyType : StringEnum<RetrieveLatestPoliciesPolicyType>
     {
-        public static readonly RetrieveLatestPoliciesPolicyType LegalDocumentType
+        public static readonly RetrieveLatestPoliciesPolicyType LEGALDOCUMENTTYPE
             = new RetrieveLatestPoliciesPolicyType("LEGAL_DOCUMENT_TYPE");
 
-        public static readonly RetrieveLatestPoliciesPolicyType MarketingPreferenceType
+        public static readonly RetrieveLatestPoliciesPolicyType MARKETINGPREFERENCETYPE
             = new RetrieveLatestPoliciesPolicyType("MARKETING_PREFERENCE_TYPE");
 
 

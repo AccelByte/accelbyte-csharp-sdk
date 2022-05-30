@@ -170,37 +170,37 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryUserOrdersStatus : StringEnum<QueryUserOrdersStatus>
     {
-        public static readonly QueryUserOrdersStatus Chargeback
+        public static readonly QueryUserOrdersStatus CHARGEBACK
             = new QueryUserOrdersStatus("CHARGEBACK");
 
-        public static readonly QueryUserOrdersStatus ChargebackReversed
+        public static readonly QueryUserOrdersStatus CHARGEBACKREVERSED
             = new QueryUserOrdersStatus("CHARGEBACK_REVERSED");
 
-        public static readonly QueryUserOrdersStatus Charged
+        public static readonly QueryUserOrdersStatus CHARGED
             = new QueryUserOrdersStatus("CHARGED");
 
-        public static readonly QueryUserOrdersStatus Closed
+        public static readonly QueryUserOrdersStatus CLOSED
             = new QueryUserOrdersStatus("CLOSED");
 
-        public static readonly QueryUserOrdersStatus Deleted
+        public static readonly QueryUserOrdersStatus DELETED
             = new QueryUserOrdersStatus("DELETED");
 
-        public static readonly QueryUserOrdersStatus Fulfilled
+        public static readonly QueryUserOrdersStatus FULFILLED
             = new QueryUserOrdersStatus("FULFILLED");
 
-        public static readonly QueryUserOrdersStatus FulfillFailed
+        public static readonly QueryUserOrdersStatus FULFILLFAILED
             = new QueryUserOrdersStatus("FULFILL_FAILED");
 
-        public static readonly QueryUserOrdersStatus Init
+        public static readonly QueryUserOrdersStatus INIT
             = new QueryUserOrdersStatus("INIT");
 
-        public static readonly QueryUserOrdersStatus Refunded
+        public static readonly QueryUserOrdersStatus REFUNDED
             = new QueryUserOrdersStatus("REFUNDED");
 
-        public static readonly QueryUserOrdersStatus Refunding
+        public static readonly QueryUserOrdersStatus REFUNDING
             = new QueryUserOrdersStatus("REFUNDING");
 
-        public static readonly QueryUserOrdersStatus RefundFailed
+        public static readonly QueryUserOrdersStatus REFUNDFAILED
             = new QueryUserOrdersStatus("REFUND_FAILED");
 
 

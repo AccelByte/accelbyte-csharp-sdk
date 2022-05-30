@@ -156,28 +156,28 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class PayPaymentProvider : StringEnum<PayPaymentProvider>
     {
-        public static readonly PayPaymentProvider Adyen
+        public static readonly PayPaymentProvider ADYEN
             = new PayPaymentProvider("ADYEN");
 
-        public static readonly PayPaymentProvider Alipay
+        public static readonly PayPaymentProvider ALIPAY
             = new PayPaymentProvider("ALIPAY");
 
-        public static readonly PayPaymentProvider Checkout
+        public static readonly PayPaymentProvider CHECKOUT
             = new PayPaymentProvider("CHECKOUT");
 
-        public static readonly PayPaymentProvider Paypal
+        public static readonly PayPaymentProvider PAYPAL
             = new PayPaymentProvider("PAYPAL");
 
-        public static readonly PayPaymentProvider Stripe
+        public static readonly PayPaymentProvider STRIPE
             = new PayPaymentProvider("STRIPE");
 
-        public static readonly PayPaymentProvider Wallet
+        public static readonly PayPaymentProvider WALLET
             = new PayPaymentProvider("WALLET");
 
-        public static readonly PayPaymentProvider Wxpay
+        public static readonly PayPaymentProvider WXPAY
             = new PayPaymentProvider("WXPAY");
 
-        public static readonly PayPaymentProvider Xsolla
+        public static readonly PayPaymentProvider XSOLLA
             = new PayPaymentProvider("XSOLLA");
 
 

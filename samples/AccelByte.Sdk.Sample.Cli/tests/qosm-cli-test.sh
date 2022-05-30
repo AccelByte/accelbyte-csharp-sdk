@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..5"
+echo "1..7"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -51,41 +51,62 @@ fi
 
 echo "foo" > "$CLI_TOKEN_FILE"
 
-#- 2 DeleteServer
+#- 2 UpdateServerConfig
+# body param: body
+echo '{"status": "b0Cjv4Ax"}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn qosm \
+    --op UpdateServerConfig \
+    --namespace $AB_NAMESPACE \
+    --region '7NzYkopp' \
+    --reqfile $TEMP_JSON_INPUT \
+    > test.out 2>&1
+eval_tap $? 2 'UpdateServerConfig' test.out
+
+#- 3 DeleteServer
 $CLI_EXE \
     --sn qosm \
     --op DeleteServer \
-    --region 'b0Cjv4Ax' \
+    --region 'a0VgFJAh' \
     > test.out 2>&1
-eval_tap $? 2 'DeleteServer' test.out
+eval_tap $? 3 'DeleteServer' test.out
 
-#- 3 SetServerAlias
+#- 4 SetServerAlias
 # body param: body
-echo '{"alias": "7NzYkopp"}' > $TEMP_JSON_INPUT
+echo '{"alias": "HwTb5q01"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn qosm \
     --op SetServerAlias \
-    --region 'a0VgFJAh' \
+    --region '0gN2MQrb' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 3 'SetServerAlias' test.out
+eval_tap $? 4 'SetServerAlias' test.out
 
-#- 4 ListServer
+#- 5 ListServerPerNamespace
+$CLI_EXE \
+    --sn qosm \
+    --op ListServerPerNamespace \
+    --namespace $AB_NAMESPACE \
+    --status 'peRnxTlC' \
+    > test.out 2>&1
+eval_tap $? 5 'ListServerPerNamespace' test.out
+
+#- 6 ListServer
 $CLI_EXE \
     --sn qosm \
     --op ListServer \
     > test.out 2>&1
-eval_tap $? 4 'ListServer' test.out
+eval_tap $? 6 'ListServer' test.out
 
-#- 5 Heartbeat
+#- 7 Heartbeat
 # body param: body
-echo '{"ip": "HwTb5q01", "port": 12, "region": "N2MQrbpe"}' > $TEMP_JSON_INPUT
+echo '{"ip": "TFSMIbl1", "port": 1, "region": "2jXLCtWm"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn qosm \
     --op Heartbeat \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 5 'Heartbeat' test.out
+eval_tap $? 7 'Heartbeat' test.out
 
 
 rm -f "$CLI_TOKEN_FILE"

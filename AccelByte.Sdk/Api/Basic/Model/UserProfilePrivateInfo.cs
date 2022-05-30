@@ -42,6 +42,9 @@ namespace AccelByte.Sdk.Api.Basic.Model
         [JsonPropertyName("privateCustomAttributes")]
         public Dictionary<string, object>? PrivateCustomAttributes { get; set; }
 
+        [JsonPropertyName("publicId")]
+        public string? PublicId { get; set; }
+
         [JsonPropertyName("status")]
         [JsonStringEnum]
         public UserProfilePrivateInfoStatus? Status { get; set; }

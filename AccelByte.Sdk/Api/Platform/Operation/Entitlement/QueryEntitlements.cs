@@ -211,16 +211,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryEntitlementsAppType : StringEnum<QueryEntitlementsAppType>
     {
-        public static readonly QueryEntitlementsAppType Demo
+        public static readonly QueryEntitlementsAppType DEMO
             = new QueryEntitlementsAppType("DEMO");
 
-        public static readonly QueryEntitlementsAppType Dlc
+        public static readonly QueryEntitlementsAppType DLC
             = new QueryEntitlementsAppType("DLC");
 
-        public static readonly QueryEntitlementsAppType Game
+        public static readonly QueryEntitlementsAppType GAME
             = new QueryEntitlementsAppType("GAME");
 
-        public static readonly QueryEntitlementsAppType Software
+        public static readonly QueryEntitlementsAppType SOFTWARE
             = new QueryEntitlementsAppType("SOFTWARE");
 
 
@@ -238,19 +238,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryEntitlementsEntitlementClazz : StringEnum<QueryEntitlementsEntitlementClazz>
     {
-        public static readonly QueryEntitlementsEntitlementClazz App
+        public static readonly QueryEntitlementsEntitlementClazz APP
             = new QueryEntitlementsEntitlementClazz("APP");
 
-        public static readonly QueryEntitlementsEntitlementClazz Code
+        public static readonly QueryEntitlementsEntitlementClazz CODE
             = new QueryEntitlementsEntitlementClazz("CODE");
 
-        public static readonly QueryEntitlementsEntitlementClazz Entitlement
+        public static readonly QueryEntitlementsEntitlementClazz ENTITLEMENT
             = new QueryEntitlementsEntitlementClazz("ENTITLEMENT");
 
-        public static readonly QueryEntitlementsEntitlementClazz Media
+        public static readonly QueryEntitlementsEntitlementClazz MEDIA
             = new QueryEntitlementsEntitlementClazz("MEDIA");
 
-        public static readonly QueryEntitlementsEntitlementClazz Subscription
+        public static readonly QueryEntitlementsEntitlementClazz SUBSCRIPTION
             = new QueryEntitlementsEntitlementClazz("SUBSCRIPTION");
 
 

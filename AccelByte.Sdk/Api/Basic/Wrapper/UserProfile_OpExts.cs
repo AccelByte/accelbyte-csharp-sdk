@@ -12,6 +12,20 @@ namespace AccelByte.Sdk.Api
 {
     public static class BasicUserProfile_OpExts
     {
+        public static Basic.Model.UserProfileInfo? Execute(
+            this GetUserProfileInfoByPublicId.GetUserProfileInfoByPublicIdBuilder builder,
+            string namespace_,
+            string publicId
+        )
+        {
+            GetUserProfileInfoByPublicId op = builder.Build(
+                namespace_,
+                publicId
+            );
+
+            return ((Basic.Wrapper.UserProfile)builder.WrapperObject!).GetUserProfileInfoByPublicId(op);
+        }
+
         public static List<Basic.Model.UserProfilePublicInfo>? Execute(
             this AdminGetUserProfilePublicInfoByIds.AdminGetUserProfilePublicInfoByIdsBuilder builder,
             string namespace_
@@ -148,6 +162,20 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Basic.Wrapper.UserProfile)builder.WrapperObject!).PublicGetUserProfilePublicInfoByIds(op);
+        }
+
+        public static Basic.Model.UserProfilePublicInfo? Execute(
+            this PublicGetUserProfileInfoByPublicId.PublicGetUserProfileInfoByPublicIdBuilder builder,
+            string namespace_,
+            string publicId
+        )
+        {
+            PublicGetUserProfileInfoByPublicId op = builder.Build(
+                namespace_,
+                publicId
+            );
+
+            return ((Basic.Wrapper.UserProfile)builder.WrapperObject!).PublicGetUserProfileInfoByPublicId(op);
         }
 
         public static Basic.Model.UserProfilePrivateInfo? Execute(

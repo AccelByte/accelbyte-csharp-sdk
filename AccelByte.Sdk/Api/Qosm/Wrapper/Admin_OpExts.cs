@@ -13,6 +13,22 @@ namespace AccelByte.Sdk.Api
     public static class QosmAdmin_OpExts
     {
         public static void Execute(
+            this UpdateServerConfig.UpdateServerConfigBuilder builder,
+            ModelsUpdateServerRequest body,
+            string namespace_,
+            string region
+        )
+        {
+            UpdateServerConfig op = builder.Build(
+                body,
+                namespace_,
+                region
+            );
+
+            ((Qosm.Wrapper.Admin)builder.WrapperObject!).UpdateServerConfig(op);
+        }
+
+        public static void Execute(
             this DeleteServer.DeleteServerBuilder builder,
             string region
         )

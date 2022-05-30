@@ -23,6 +23,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.UserAuthenticationV3.Builder.SetWrapperObject(this); }
         }
+        public AuthenticationWithPlatformLinkV3.AuthenticationWithPlatformLinkV3Builder AuthenticationWithPlatformLinkV3Op
+        {
+            get { return Operation.AuthenticationWithPlatformLinkV3.Builder.SetWrapperObject(this); }
+        }
+        public GenerateTokenByNewHeadlessAccountV3.GenerateTokenByNewHeadlessAccountV3Builder GenerateTokenByNewHeadlessAccountV3Op
+        {
+            get { return Operation.GenerateTokenByNewHeadlessAccountV3.Builder.SetWrapperObject(this); }
+        }
         public GetCountryLocationV3.GetCountryLocationV3Builder GetCountryLocationV3Op
         {
             get { return Operation.GetCountryLocationV3.Builder.SetWrapperObject(this); }
@@ -38,6 +46,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #endregion
         
         public string UserAuthenticationV3(UserAuthenticationV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OauthmodelTokenResponseV3? AuthenticationWithPlatformLinkV3(AuthenticationWithPlatformLinkV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OauthmodelTokenResponseV3? GenerateTokenByNewHeadlessAccountV3(GenerateTokenByNewHeadlessAccountV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

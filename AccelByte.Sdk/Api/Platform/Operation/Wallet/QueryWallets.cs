@@ -179,10 +179,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryWalletsOrigin Epic
             = new QueryWalletsOrigin("Epic");
 
-        public static readonly QueryWalletsOrigin Googleplay
+        public static readonly QueryWalletsOrigin GooglePlay
             = new QueryWalletsOrigin("GooglePlay");
 
-        public static readonly QueryWalletsOrigin Ios
+        public static readonly QueryWalletsOrigin IOS
             = new QueryWalletsOrigin("IOS");
 
         public static readonly QueryWalletsOrigin Nintendo

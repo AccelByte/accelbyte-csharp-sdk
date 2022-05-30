@@ -206,16 +206,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryUserEntitlementsAppType : StringEnum<QueryUserEntitlementsAppType>
     {
-        public static readonly QueryUserEntitlementsAppType Demo
+        public static readonly QueryUserEntitlementsAppType DEMO
             = new QueryUserEntitlementsAppType("DEMO");
 
-        public static readonly QueryUserEntitlementsAppType Dlc
+        public static readonly QueryUserEntitlementsAppType DLC
             = new QueryUserEntitlementsAppType("DLC");
 
-        public static readonly QueryUserEntitlementsAppType Game
+        public static readonly QueryUserEntitlementsAppType GAME
             = new QueryUserEntitlementsAppType("GAME");
 
-        public static readonly QueryUserEntitlementsAppType Software
+        public static readonly QueryUserEntitlementsAppType SOFTWARE
             = new QueryUserEntitlementsAppType("SOFTWARE");
 
 
@@ -233,19 +233,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
     public class QueryUserEntitlementsEntitlementClazz : StringEnum<QueryUserEntitlementsEntitlementClazz>
     {
-        public static readonly QueryUserEntitlementsEntitlementClazz App
+        public static readonly QueryUserEntitlementsEntitlementClazz APP
             = new QueryUserEntitlementsEntitlementClazz("APP");
 
-        public static readonly QueryUserEntitlementsEntitlementClazz Code
+        public static readonly QueryUserEntitlementsEntitlementClazz CODE
             = new QueryUserEntitlementsEntitlementClazz("CODE");
 
-        public static readonly QueryUserEntitlementsEntitlementClazz Entitlement
+        public static readonly QueryUserEntitlementsEntitlementClazz ENTITLEMENT
             = new QueryUserEntitlementsEntitlementClazz("ENTITLEMENT");
 
-        public static readonly QueryUserEntitlementsEntitlementClazz Media
+        public static readonly QueryUserEntitlementsEntitlementClazz MEDIA
             = new QueryUserEntitlementsEntitlementClazz("MEDIA");
 
-        public static readonly QueryUserEntitlementsEntitlementClazz Subscription
+        public static readonly QueryUserEntitlementsEntitlementClazz SUBSCRIPTION
             = new QueryUserEntitlementsEntitlementClazz("SUBSCRIPTION");
 
 

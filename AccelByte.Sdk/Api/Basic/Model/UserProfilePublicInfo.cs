@@ -24,6 +24,9 @@ namespace AccelByte.Sdk.Api.Basic.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("publicId")]
+        public string? PublicId { get; set; }
+
         [JsonPropertyName("timeZone")]
         public string? TimeZone { get; set; }
 

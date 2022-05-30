@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class OauthmodelErrorResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("clientId")]
+        public string? ClientId { get; set; }
+
         [JsonPropertyName("default_factor")]
         public string? DefaultFactor { get; set; }
 
@@ -24,8 +27,14 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("factors")]
         public List<string>? Factors { get; set; }
 
+        [JsonPropertyName("linkingToken")]
+        public string? LinkingToken { get; set; }
+
         [JsonPropertyName("mfa_token")]
         public string? MfaToken { get; set; }
+
+        [JsonPropertyName("platformId")]
+        public string? PlatformId { get; set; }
 
     }
 }

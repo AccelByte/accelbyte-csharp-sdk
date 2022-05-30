@@ -19,6 +19,7 @@
 | `/matchmaking/namespaces/{namespace}/channels` | POST | CreateChannelHandler | [CreateChannelHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/CreateChannelHandler.cs) | [CreateChannelHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/CreateChannelHandler.cs) |
 | `/matchmaking/namespaces/{namespace}/channels/{channel}` | DELETE | DeleteChannelHandler | [DeleteChannelHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/DeleteChannelHandler.cs) | [DeleteChannelHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/DeleteChannelHandler.cs) |
 | `/matchmaking/namespaces/{namespace}/matchresult` | POST | StoreMatchResults | [StoreMatchResults](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/StoreMatchResults.cs) | [StoreMatchResults](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/StoreMatchResults.cs) |
+| `/matchmaking/namespaces/{namespace}/rebalance` | POST | Rebalance | [Rebalance](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/Rebalance.cs) | [Rebalance](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/Rebalance.cs) |
 | `/matchmaking/namespaces/{namespace}/sessions` | POST | QueueSessionHandler | [QueueSessionHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/QueueSessionHandler.cs) | [QueueSessionHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/QueueSessionHandler.cs) |
 | `/matchmaking/namespaces/{namespace}/sessions/dequeue` | POST | DequeueSessionHandler | [DequeueSessionHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/DequeueSessionHandler.cs) | [DequeueSessionHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/DequeueSessionHandler.cs) |
 | `/matchmaking/namespaces/{namespace}/sessions/{matchID}/status` | GET | QuerySessionHandler | [QuerySessionHandler](../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/QuerySessionHandler.cs) | [QuerySessionHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/QuerySessionHandler.cs) |
@@ -76,6 +77,8 @@
 | `models.PartyMember` | [ModelsPartyMember](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsPartyMember.cs) |
 | `models.PlayerResultRequest` | [ModelsPlayerResultRequest](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsPlayerResultRequest.cs) |
 | `models.PlayerResultResponse` | [ModelsPlayerResultResponse](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsPlayerResultResponse.cs) |
+| `models.RebalanceRequest` | [ModelsRebalanceRequest](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRebalanceRequest.cs) |
+| `models.RebalanceResponse` | [ModelsRebalanceResponse](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRebalanceResponse.cs) |
 | `models.ResultAttributeRequest` | [ModelsResultAttributeRequest](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsResultAttributeRequest.cs) |
 | `models.ResultAttributeResponse` | [ModelsResultAttributeResponse](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsResultAttributeResponse.cs) |
 | `models.RuleSet` | [ModelsRuleSet](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRuleSet.cs) |

@@ -28,6 +28,36 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).UserAuthenticationV3(op);
         }
 
+        public static Iam.Model.OauthmodelTokenResponseV3? Execute(
+            this AuthenticationWithPlatformLinkV3.AuthenticationWithPlatformLinkV3Builder builder,
+            string clientId,
+            string linkingToken,
+            string password,
+            string username
+        )
+        {
+            AuthenticationWithPlatformLinkV3 op = builder.Build(
+                clientId,
+                linkingToken,
+                password,
+                username
+            );
+
+            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).AuthenticationWithPlatformLinkV3(op);
+        }
+
+        public static Iam.Model.OauthmodelTokenResponseV3? Execute(
+            this GenerateTokenByNewHeadlessAccountV3.GenerateTokenByNewHeadlessAccountV3Builder builder,
+            string linkingToken
+        )
+        {
+            GenerateTokenByNewHeadlessAccountV3 op = builder.Build(
+                linkingToken
+            );
+
+            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).GenerateTokenByNewHeadlessAccountV3(op);
+        }
+
         public static Iam.Model.OauthmodelCountryLocationResponse? Execute(
             this GetCountryLocationV3.GetCountryLocationV3Builder builder
         )

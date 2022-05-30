@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class SteamIAPConfig : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("appId")]
+        public string? AppId { get; set; }
+
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 

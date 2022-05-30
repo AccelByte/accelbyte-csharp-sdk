@@ -133,10 +133,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly CheckWalletOrigin Epic
             = new CheckWalletOrigin("Epic");
 
-        public static readonly CheckWalletOrigin Googleplay
+        public static readonly CheckWalletOrigin GooglePlay
             = new CheckWalletOrigin("GooglePlay");
 
-        public static readonly CheckWalletOrigin Ios
+        public static readonly CheckWalletOrigin IOS
             = new CheckWalletOrigin("IOS");
 
         public static readonly CheckWalletOrigin Nintendo

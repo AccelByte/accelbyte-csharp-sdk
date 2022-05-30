@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public int? Offset { get; set; }
 
         [SdkCommandArgument("sortBy")]
-        public string? SortBy { get; set; }
+        public List<string>? SortBy { get; set; }
 
         [SdkCommandArgument("storeId")]
         public string? StoreId { get; set; }
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 ActiveOnly,                
                 Limit,                
                 Offset,                
-                SortBy,                
+                (SortBy is null ? null : QueryUncategorizedItemsSortBy.NewValue(SortBy)),                
                 StoreId                
             );            
             

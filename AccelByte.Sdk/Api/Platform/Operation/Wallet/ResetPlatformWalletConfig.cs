@@ -129,10 +129,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly ResetPlatformWalletConfigPlatform Epic
             = new ResetPlatformWalletConfigPlatform("Epic");
 
-        public static readonly ResetPlatformWalletConfigPlatform Googleplay
+        public static readonly ResetPlatformWalletConfigPlatform GooglePlay
             = new ResetPlatformWalletConfigPlatform("GooglePlay");
 
-        public static readonly ResetPlatformWalletConfigPlatform Ios
+        public static readonly ResetPlatformWalletConfigPlatform IOS
             = new ResetPlatformWalletConfigPlatform("IOS");
 
         public static readonly ResetPlatformWalletConfigPlatform Nintendo
