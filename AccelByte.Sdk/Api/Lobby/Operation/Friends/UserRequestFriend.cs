@@ -15,6 +15,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 {
     /// <summary>
     /// userRequestFriend
+    ///
+    /// Client should provide either friendID or friendPublicID. If both are provided, friendID will be chosen to be used.
     /// </summary>
     public class UserRequestFriend : AccelByte.Sdk.Core.Operation
     {
@@ -37,7 +39,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
             public UserRequestFriend Build(
-                ModelRequestFriendsRequest body,
+                ModelUserRequestFriendRequest body,
                 string namespace_
             )
             {
@@ -52,7 +54,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         }
 
         private UserRequestFriend(UserRequestFriendBuilder builder,
-            ModelRequestFriendsRequest body,
+            ModelUserRequestFriendRequest body,
             string namespace_
         )
         {
@@ -71,7 +73,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public UserRequestFriend(
             string namespace_,            
-            Model.ModelRequestFriendsRequest body            
+            Model.ModelUserRequestFriendRequest body            
         )
         {
             PathParams["namespace"] = namespace_;

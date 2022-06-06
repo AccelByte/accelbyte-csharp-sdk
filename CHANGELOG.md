@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.10.0
+- Implemented enum patches in operation's parameter
+	- Possible **BREAKING CHANGES**
+- Updated operation indexes
+- Updated APIs
+	- lobby
+		- updated endpoints
+		- **BREAKING CHANGES**
+			- `ModelRequestFriendsRequest` replaced by `ModelUserRequestFriendRequest`
+		
 ## v0.9.0
 - Implemented enum in operation's parameter
 	- Possible **BREAKING CHANGES**.

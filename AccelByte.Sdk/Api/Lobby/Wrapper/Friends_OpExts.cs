@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Api
 
         public static void Execute(
             this UserRequestFriend.UserRequestFriendBuilder builder,
-            ModelRequestFriendsRequest body,
+            ModelUserRequestFriendRequest body,
             string namespace_
         )
         {

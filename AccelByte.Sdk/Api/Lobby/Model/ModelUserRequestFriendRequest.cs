@@ -7,10 +7,13 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Lobby.Model
 {
-    public class ModelRequestFriendsRequest : AccelByte.Sdk.Core.Model
+    public class ModelUserRequestFriendRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("friendId")]
         public string? FriendId { get; set; }
+
+        [JsonPropertyName("friendPublicId")]
+        public string? FriendPublicId { get; set; }
 
     }
 }

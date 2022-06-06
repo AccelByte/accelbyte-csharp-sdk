@@ -35,12 +35,20 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+            public Stream? File { get; set; }
+
 
 
             internal AdminImportConfigV1Builder() { }
 
 
 
+
+            public AdminImportConfigV1Builder SetFile(Stream _file)
+            {
+                File = _file;
+                return this;
+            }
 
 
 
@@ -64,6 +72,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             
             
+            if (builder.File is not null) FormParams["file"] = builder.File;
 
             
             
@@ -74,12 +83,14 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         #endregion
 
         public AdminImportConfigV1(
-            string namespace_            
+            string namespace_,            
+            Stream? file            
         )
         {
             PathParams["namespace"] = namespace_;
             
             
+            if (file is not null) FormParams["file"] = file;
 
             
             

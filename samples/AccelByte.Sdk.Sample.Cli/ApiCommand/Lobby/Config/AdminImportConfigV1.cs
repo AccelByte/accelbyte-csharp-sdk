@@ -29,6 +29,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandFile("file")]
+        public Stream? File { get; set; }
+                    
         public AdminImportConfigV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -39,7 +42,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Config(_SDK);
 
             AdminImportConfigV1 operation = new AdminImportConfigV1(
-                Namespace                
+                Namespace,                
+                File                
             );            
             
             AccelByte.Sdk.Api.Lobby.Model.ModelsImportConfigResponse? response = wrapper.AdminImportConfigV1(operation);

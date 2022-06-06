@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelRequestFriendsRequest Body { get; set; } = new ModelRequestFriendsRequest();
+        public ModelUserRequestFriendRequest Body { get; set; } = new ModelUserRequestFriendRequest();
                 
         public UserRequestFriendCommand(AccelByteSDK sdk)
         {

@@ -165,7 +165,6 @@
 | `model.NotificationWithTemplateRequest` | [ModelNotificationWithTemplateRequest](../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationWithTemplateRequest.cs) |
 | `model.NotificationWithTemplateRequestV1` | [ModelNotificationWithTemplateRequestV1](../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationWithTemplateRequestV1.cs) |
 | `model.Pagination` | [ModelPagination](../AccelByte.Sdk/Api/Lobby/Model/ModelPagination.cs) |
-| `model.RequestFriendsRequest` | [ModelRequestFriendsRequest](../AccelByte.Sdk/Api/Lobby/Model/ModelRequestFriendsRequest.cs) |
 | `model.TemplateContent` | [ModelTemplateContent](../AccelByte.Sdk/Api/Lobby/Model/ModelTemplateContent.cs) |
 | `model.TemplateLocalization` | [ModelTemplateLocalization](../AccelByte.Sdk/Api/Lobby/Model/ModelTemplateLocalization.cs) |
 | `model.TemplateLocalizationResponse` | [ModelTemplateLocalizationResponse](../AccelByte.Sdk/Api/Lobby/Model/ModelTemplateLocalizationResponse.cs) |
@@ -177,6 +176,7 @@
 | `model.UserCancelFriendRequest` | [ModelUserCancelFriendRequest](../AccelByte.Sdk/Api/Lobby/Model/ModelUserCancelFriendRequest.cs) |
 | `model.UserGetFriendshipStatusResponse` | [ModelUserGetFriendshipStatusResponse](../AccelByte.Sdk/Api/Lobby/Model/ModelUserGetFriendshipStatusResponse.cs) |
 | `model.UserRejectFriendRequest` | [ModelUserRejectFriendRequest](../AccelByte.Sdk/Api/Lobby/Model/ModelUserRejectFriendRequest.cs) |
+| `model.UserRequestFriendRequest` | [ModelUserRequestFriendRequest](../AccelByte.Sdk/Api/Lobby/Model/ModelUserRequestFriendRequest.cs) |
 | `model.UserUnfriendRequest` | [ModelUserUnfriendRequest](../AccelByte.Sdk/Api/Lobby/Model/ModelUserUnfriendRequest.cs) |
 | `models.AdminAddProfanityFilterIntoListRequest` | [ModelsAdminAddProfanityFilterIntoListRequest](../AccelByte.Sdk/Api/Lobby/Model/ModelsAdminAddProfanityFilterIntoListRequest.cs) |
 | `models.AdminAddProfanityFiltersFilterRequest` | [ModelsAdminAddProfanityFiltersFilterRequest](../AccelByte.Sdk/Api/Lobby/Model/ModelsAdminAddProfanityFiltersFilterRequest.cs) |
