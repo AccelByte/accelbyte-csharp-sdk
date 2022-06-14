@@ -50,43 +50,59 @@ namespace AccelByte.Sdk.Core
                 throw new Exception("Null credential repository");
 
             ICredentialRepository cred = Configuration.Credential;
-            return LoginUser(cred.Username, cred.Password);
+            return LoginUser(cred.Username, cred.Password, null);
+        }
+
+        public bool LoginUser(Action<OauthmodelTokenResponseV3>? onTokenReceived)
+        {
+            if (Configuration.Credential == null)
+                throw new Exception("Null credential repository");
+
+            ICredentialRepository cred = Configuration.Credential;
+            return LoginUser(cred.Username, cred.Password, onTokenReceived);
         }
 
         public bool LoginUser(string username, string password)
         {
+            return LoginUser(username, password, null);
+        }
+
+        public bool LoginUser(string username, string password, Action<OauthmodelTokenResponseV3>? onTokenReceived)
+        {
+            Configuration.TokenRepository.RemoveToken();
+
             var codeVerifier = Helper.GenerateCodeVerifier();
             var codeChallenge = Helper.GenerateCodeChallenge(codeVerifier);
             var clientId = Configuration.ConfigRepository.ClientId;
 
-            var oAuth20 = new OAuth20(this);            
+            var oAuth20 = new OAuth20(this);
             var authorizeV3 = AuthorizeV3.Builder
                 .SetCodeChallenge(codeChallenge)
                 .SetCodeChallengeMethod("S256")
                 .SetScope("commerce account social publishing analytics")
-                .Build(clientId,"code");
+                .Build(clientId, "code");
 
             var authorizeV3Response = oAuth20.AuthorizeV3(authorizeV3);
 
-            var authorizeV3Query = HttpUtility.ParseQueryString( new Uri(authorizeV3Response).Query);
-            var requestId = authorizeV3Query[authorizeV3.LocationQuery] ?? 
-                    throw new Exception($"Not getting the expected value from backend (key: {authorizeV3.LocationQuery})");;
+            var authorizeV3Query = HttpUtility.ParseQueryString(new Uri(authorizeV3Response).Query);
+            var requestId = authorizeV3Query[authorizeV3.LocationQuery] ??
+                    throw new Exception($"Not getting the expected value from backend (key: {authorizeV3.LocationQuery})"); ;
 
             var oAuth20Extension = new OAuth20Extension(this);
             var userAuthenticationV3 = UserAuthenticationV3.Builder
                 .SetClientId(clientId)
-                .Build(password,requestId,username);
+                .Build(password, requestId, username);
             var userAuthenticationResponse = oAuth20Extension.UserAuthenticationV3(userAuthenticationV3);
 
-            authorizeV3Query = HttpUtility.ParseQueryString( new Uri(userAuthenticationResponse).Query);
-            var code = authorizeV3Query[userAuthenticationV3.LocationQuery] ?? 
-                    throw new Exception($"Not getting the expected value from backend (key: {userAuthenticationV3.LocationQuery})");;
+            authorizeV3Query = HttpUtility.ParseQueryString(new Uri(userAuthenticationResponse).Query);
+            var code = authorizeV3Query[userAuthenticationV3.LocationQuery] ??
+                    throw new Exception($"Not getting the expected value from backend (key: {userAuthenticationV3.LocationQuery})"); ;
 
             var tokenGrantV3 = TokenGrantV3.Builder
                 .SetClientId(clientId)
                 .SetCode(code)
                 .SetCodeVerifier(codeVerifier)
-                .Build("authorization_code");            
+                .Build("authorization_code");
 
             var token = oAuth20.TokenGrantV3(tokenGrantV3) ??
                     throw new Exception($"TokenGrantV3 returned null");
@@ -100,11 +116,19 @@ namespace AccelByte.Sdk.Core
             if ((Configuration.Credential != null) && (token.UserId != null))
                 Configuration.Credential.UserId = token.UserId;
 
+            onTokenReceived?.Invoke(token);
             return true;
         }
 
         public bool LoginClient()
         {
+            return LoginClient(null);
+        }
+
+        public bool LoginClient(Action<OauthmodelTokenResponseV3>? onTokenReceived)
+        {
+            Configuration.TokenRepository.RemoveToken();
+
             var tokenGrantV3 = TokenGrantV3.Builder.Build("client_credentials");
             var oAuth20 = new OAuth20(this);
 
@@ -114,6 +138,34 @@ namespace AccelByte.Sdk.Core
             Configuration.TokenRepository.StoreToken(token.AccessToken ??
                     throw new Exception($"Access token is null"));
 
+            onTokenReceived?.Invoke(token);
+            return true;
+        }
+
+        public bool RefreshAccessToken(string refreshToken)
+        {
+            return RefreshAccessToken(refreshToken, null);
+        }
+
+        public bool RefreshAccessToken(string refreshToken, Action<OauthmodelTokenResponseV3>? onTokenReceived)
+        {
+            Configuration.TokenRepository.RemoveToken();
+
+            TokenGrantV3 op = TokenGrantV3.Builder
+                .SetRefreshToken(refreshToken)
+                .Build(TokenGrantV3GrantType.RefreshToken);
+            var oAuth20 = new OAuth20(this);
+
+            var token = oAuth20.TokenGrantV3(op) ??
+                throw new Exception("TokenGrantV3 for RefreshToken returned null");
+
+            if (token == null)
+                throw new Exception("Token is null");
+            if (token.AccessToken == null)
+                throw new Exception("Access token is null");
+
+            Configuration.TokenRepository.StoreToken(token.AccessToken);
+            onTokenReceived?.Invoke(token);
             return true;
         }
 
