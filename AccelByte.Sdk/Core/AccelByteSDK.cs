@@ -5,12 +5,16 @@
 using System.Net;
 using System.Text;
 using System.Web;
-using AccelByte.Sdk.Api.Iam.Operation;
-using AccelByte.Sdk.Api.Iam.Wrapper;
+
 using AccelByte.Sdk.Core.Client;
 using AccelByte.Sdk.Core.Repository;
 using AccelByte.Sdk.Core.Logging;
 using AccelByte.Sdk.Core.Util;
+using AccelByte.Sdk.Core.Pipeline;
+
+using AccelByte.Sdk.Api.Iam.Operation;
+using AccelByte.Sdk.Api.Iam.Wrapper;
+using AccelByte.Sdk.Api.Iam.Model;
 
 namespace AccelByte.Sdk.Core
 {
@@ -18,113 +22,8 @@ namespace AccelByte.Sdk.Core
     {
         public static AccelByteSdkBuilder Builder = new AccelByteSdkBuilder();
 
-        public class AccelByteSdkBuilder
-        {
-            private IHttpClient? _Client = null;
-
-            private ITokenRepository? _TokenRepository = null;
-
-            private IConfigRepository? _ConfigRepository = null;
-
-            private ICredentialRepository? _Credential = null;
-
-            private IHttpLogger? _Logger = null;
-
-            private bool _EnableLogging = false;
-
-            public AccelByteSdkBuilder SetHttpClient(IHttpClient client)
-            {
-                _Client = client;
-                return this;
-            }
-
-            public AccelByteSdkBuilder UseDefaultHttpClient()
-            {
-                _Client = AccelByte.Sdk.Core.Client.HttpClient.Default;
-                return this;
-            }
-
-            public AccelByteSdkBuilder SetTokenRepository(ITokenRepository repository)
-            {
-                _TokenRepository = repository;
-                return this;
-            }
-
-            public AccelByteSdkBuilder UseDefaultTokenRepository()
-            {
-                _TokenRepository = DefaultTokenRepository.GetInstance();
-                return this;
-            }
-
-            public AccelByteSdkBuilder UseInMemoryTokenRepository()
-            {
-                _TokenRepository = new InMemoryTokenRepository();
-                return this;
-            }
-
-            public AccelByteSdkBuilder SetConfigRepository(IConfigRepository repository)
-            {
-                _ConfigRepository = repository;
-                return this;
-            }
-
-            public AccelByteSdkBuilder UseDefaultConfigRepository()
-            {
-                _ConfigRepository = new DefaultConfigRepository();
-                return this;
-            }
-
-            public AccelByteSdkBuilder SetCredentialRepository(ICredentialRepository credential)
-            {
-                _Credential = credential;
-                return this;
-            }
-
-            public AccelByteSdkBuilder UseDefaultCredentialRepository()
-            {
-                _Credential = new DefaultCredentialRepository();
-                return this;
-            }
-
-            public AccelByteSdkBuilder EnableLog()
-            {
-                _EnableLogging = true;
-                return this;
-            }
-
-            public AccelByteSdkBuilder SetLogger(IHttpLogger logger)
-            {
-                _Logger = logger;
-                return this;
-            }
-
-            public AccelByteSDK Build()
-            {
-                if (_Client == null)
-                    throw IncompleteComponentException.NoHttpClient;
-                if (_TokenRepository == null)
-                    throw IncompleteComponentException.NoTokenRepository;
-                if (_ConfigRepository == null)
-                    throw IncompleteComponentException.NoConfigRepository;
-
-                if (_EnableLogging)
-                {
-                    if (_Logger == null)
-                    {
-                        IHttpLogger logger = new DefaultHttpLogger();
-                        _Client.SetLogger(logger);
-                    }
-                    else
-                        _Client.SetLogger(_Logger);
-                }
-
-                AccelByteConfig config = new AccelByteConfig(_Client, _TokenRepository, _ConfigRepository);
-                if (_Credential != null)
-                    config.Credential = _Credential;
-
-                return new AccelByteSDK(config);
-            }
-        }
+        public OperationProcessPipeline OpProcess { get => _OpProcess; }
+        private OperationProcessPipeline _OpProcess;
 
         public AccelByteConfig Configuration { get; private set; }
 
@@ -133,62 +32,16 @@ namespace AccelByte.Sdk.Core
         public AccelByteSDK(AccelByteConfig config)
         {
             Configuration = config;
+            _OpProcess = new OperationProcessPipeline();
+            _OpProcess.AppendToChain(new SdkMandatoryOperationProcess());
         }
 
         public HttpResponse RunRequest(Operation operation)
         {
+            Operation pOperation = _OpProcess.RunProcessPipeline(operation, this);
+
             var baseUrl = Configuration.ConfigRepository.BaseUrl;
-
-            string selectedSecurity = Operation.SECURITY_BASIC;
-            if (operation.PreferredSecurityMethod != String.Empty)
-                selectedSecurity = operation.PreferredSecurityMethod;
-            else
-            {
-                if (operation.Securities.Count > 0)
-                    selectedSecurity = operation.Securities[0];
-            }
-
-            switch (selectedSecurity)
-            {
-                case Operation.SECURITY_BEARER:
-                    if (!string.IsNullOrEmpty(Configuration.TokenRepository.GetToken()))
-                    {
-                        operation.HeaderParams["Authorization"] = $"{Operation.SECURITY_BEARER} {Configuration.TokenRepository.GetToken()}";
-                    }
-                    break;
-                case Operation.SECURITY_BASIC:
-                    var basicAuth = $"{Configuration.ConfigRepository.ClientId}:{Configuration.ConfigRepository.ClientSecret}";
-                    var basicAuthBase64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(basicAuth));
-                    operation.HeaderParams["Authorization"] = $"{Operation.SECURITY_BASIC} {basicAuthBase64}";
-                    break;
-                case Operation.SECURITY_COOKIE:
-                    if (!string.IsNullOrEmpty(Configuration.TokenRepository.GetToken()))
-                    {
-                        operation.Cookies["access_token"] = Configuration.TokenRepository.GetToken();
-                    }
-                    break;
-            }
-
-            if (Configuration.ConfigRepository.EnableUserAgentInfo)
-            {
-                Version asVer = this.GetType().Assembly.GetName().Version!;
-                string userAgent = String.Format("AccelByteCSharpSDK/{0}.{1}.{2} ({3})", asVer.Major, asVer.Minor, asVer.Revision, Configuration.ConfigRepository.AppName);
-                operation.HeaderParams["User-Agent"] = userAgent;
-            }
-
-            if (Configuration.ConfigRepository.EnableTraceId)
-            {
-                string uTime = DateTimeOffset.Now.ToUnixTimeSeconds().ToString("X").PadLeft(8, '0').ToLowerInvariant();
-                string rGuid = Guid.NewGuid().ToString().Replace("-", "");
-                string guid = String.Empty;
-                for (int i = 0; i < rGuid.Length; i += 4)
-                    guid += rGuid.Substring(i, 3);
-
-                string amazonTraceId = String.Format("{0}-{1}-{2}", Configuration.ConfigRepository.TraceIdVersion, uTime, guid);
-                operation.HeaderParams["X-Amzn-Trace-Id"] = amazonTraceId;
-            }
-
-            return Configuration.HttpClient.SendRequest(operation, baseUrl);
+            return Configuration.HttpClient.SendRequest(pOperation, baseUrl);
         }
 
         public bool LoginUser()
@@ -269,6 +122,129 @@ namespace AccelByte.Sdk.Core
             Configuration.TokenRepository.RemoveToken();
 
             return true;
+        }
+    }
+
+    public class AccelByteSdkBuilder
+    {
+        private IHttpClient? _Client = null;
+
+        private ITokenRepository? _TokenRepository = null;
+
+        private IConfigRepository? _ConfigRepository = null;
+
+        private ICredentialRepository? _Credential = null;
+
+        private IHttpLogger? _Logger = null;
+
+        private bool _EnableLogging = false;
+
+        private List<IOperationProcessPipeline> _OpProcesses = new List<IOperationProcessPipeline>();
+
+        public AccelByteSdkBuilder SetHttpClient(IHttpClient client)
+        {
+            _Client = client;
+            return this;
+        }
+
+        public AccelByteSdkBuilder UseDefaultHttpClient()
+        {
+            _Client = AccelByte.Sdk.Core.Client.HttpClient.Default;
+            return this;
+        }
+
+        public AccelByteSdkBuilder SetTokenRepository(ITokenRepository repository)
+        {
+            _TokenRepository = repository;
+            return this;
+        }
+
+        public AccelByteSdkBuilder UseDefaultTokenRepository()
+        {
+            _TokenRepository = DefaultTokenRepository.GetInstance();
+            return this;
+        }
+
+        public AccelByteSdkBuilder UseInMemoryTokenRepository()
+        {
+            _TokenRepository = new InMemoryTokenRepository();
+            return this;
+        }
+
+        public AccelByteSdkBuilder SetConfigRepository(IConfigRepository repository)
+        {
+            _ConfigRepository = repository;
+            return this;
+        }
+
+        public AccelByteSdkBuilder UseDefaultConfigRepository()
+        {
+            _ConfigRepository = new DefaultConfigRepository();
+            return this;
+        }
+
+        public AccelByteSdkBuilder SetCredentialRepository(ICredentialRepository credential)
+        {
+            _Credential = credential;
+            return this;
+        }
+
+        public AccelByteSdkBuilder UseDefaultCredentialRepository()
+        {
+            _Credential = new DefaultCredentialRepository();
+            return this;
+        }
+
+        public AccelByteSdkBuilder EnableLog()
+        {
+            _EnableLogging = true;
+            return this;
+        }
+
+        public AccelByteSdkBuilder SetLogger(IHttpLogger logger)
+        {
+            _Logger = logger;
+            return this;
+        }
+
+        public AccelByteSdkBuilder AddOperationProcess(IOperationProcessPipeline opProcess)
+        {
+            _OpProcesses.Add(opProcess);
+            return this;
+        }
+
+        public AccelByteSDK Build()
+        {
+            if (_Client == null)
+                throw IncompleteComponentException.NoHttpClient;
+            if (_TokenRepository == null)
+                throw IncompleteComponentException.NoTokenRepository;
+            if (_ConfigRepository == null)
+                throw IncompleteComponentException.NoConfigRepository;
+
+            if (_EnableLogging)
+            {
+                if (_Logger == null)
+                {
+                    IHttpLogger logger = new DefaultHttpLogger();
+                    _Client.SetLogger(logger);
+                }
+                else
+                    _Client.SetLogger(_Logger);
+            }
+
+            AccelByteConfig config = new AccelByteConfig(_Client, _TokenRepository, _ConfigRepository);
+            if (_Credential != null)
+                config.Credential = _Credential;
+
+            AccelByteSDK sdk = new AccelByteSDK(config);
+            if (_OpProcesses.Count > 0)
+            {
+                foreach (IOperationProcessPipeline opp in _OpProcesses)
+                    sdk.OpProcess.AppendToChain(opp);
+            }
+
+            return sdk;
         }
     }
 }

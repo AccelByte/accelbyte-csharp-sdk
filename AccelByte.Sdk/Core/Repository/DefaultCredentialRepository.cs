@@ -10,24 +10,48 @@ using System.Threading.Tasks;
 
 namespace AccelByte.Sdk.Core.Repository
 {
-    public class DefaultCredentialRepository : ICredentialRepository
+    public class DefaultCredentialRepository : ICredentialRepository, IResettableCredentialRepository
     {
         private const string CLIENT_USERNAME = "AB_USERNAME";
 
-        private const string CLIENT_PASSWORD = "AB_PASSWORD";        
+        private const string CLIENT_PASSWORD = "AB_PASSWORD";
+
+        private string _Username = String.Empty;
+
+        private string _Password = String.Empty;
 
         public string Username
         {
-            get => Environment.GetEnvironmentVariable(CLIENT_USERNAME) ??
-                    throw new Exception($"Environment variable not found (variable: {CLIENT_USERNAME})");
+            get
+            {
+                if (_Username == String.Empty)
+                {
+                    _Username = Environment.GetEnvironmentVariable(CLIENT_USERNAME) ??
+                        throw new Exception($"Environment variable not found (variable: {CLIENT_USERNAME})");
+                }
+                return _Username;
+            }
         }
 
         public string Password
         {
-            get => Environment.GetEnvironmentVariable(CLIENT_PASSWORD) ??
-                    throw new Exception($"Environment variable not found (variable: {CLIENT_PASSWORD})");
+            get
+            {
+                if (_Password == String.Empty)
+                {
+                    _Password = Environment.GetEnvironmentVariable(CLIENT_PASSWORD) ??
+                        throw new Exception($"Environment variable not found (variable: {CLIENT_PASSWORD})");
+                }
+                return _Password;
+            }
         }
 
         public string UserId { get; set; } = String.Empty;
+
+        public void SetUsernameAndPassword(string username, string password)
+        {
+            _Username = username;
+            _Password = password;
+        }
     }
 }
