@@ -173,14 +173,52 @@ HttpClientPolicy policy = HttpClientPolicy.Default;
 AccelByteSDK sdk = AccelByteSDK.Builder
     .SetHttpClient(ReliableHttpClient.Builder
         .SetDefaultPolicy(policy)                    
-        .Build())
-    .UseDefaultHttpClient()
+        .Build())    
     .UseDefaultConfigRepository()
     .UseDefaultTokenRepository()
     .Build();
 ```
 
 For `HttpClientPolicy` properties, refer to [this code](AccelByte.Sdk/Core/Client//HttpClientPolicy.cs).
+
+## Automatically Refresh Access Token
+To enable automatic access token refresh, include `AccelByte.Sdk.Feature.AutoRefreshToken` and instantiate the sdk with following code.
+```csharp
+//Add core namespace
+using AccelByte.Sdk.Core;
+
+//Add feature namespace
+using AccelByte.Sdk.Feature.AutoRefreshToken;
+
+AccelByteSDK sdk = AccelByteSDK.Builder
+    .UseDefaultHttpClient()
+    // Using DefaultConfigRepository, make sure the required environment variables are set
+    .UseDefaultConfigRepository()
+    // Credential repository is required for auto refresh token to works
+    .UseDefaultCredentialRepository()
+    // call this to enable the feature
+    .UseAutoTokenRefresh()
+    .Build();
+```
+Then when login, use the extension method provided.
+```csharp
+using AccelByte.Sdk.Feature.AutoRefreshToken;
+
+//pass true to the third parameter
+bool login = sdk.LoginUser("myUsername", "myPassword", true);
+if (!login)
+{
+    Console.WriteLine("Login failed");
+}
+
+//Or simply pass true to the first parameter if username and password are stored and retrieved by credential repository
+bool login = sdk.LoginUser(true);
+if (!login)
+{
+    Console.WriteLine("Login failed");
+}
+```
+
 
 ## Samples
 
