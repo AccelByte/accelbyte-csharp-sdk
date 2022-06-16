@@ -32,6 +32,8 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
         bool IsRefreshOnProgress { get; set; }
 
+        bool TryToSetRefreshOnProgressToTrue();
+
         void StoreRefreshToken(LoginType loginType, string refreshToken, float refreshThreshold, int expiryIn);
 
         void UpdateRefreshToken(string refreshToken, int expiryIn);

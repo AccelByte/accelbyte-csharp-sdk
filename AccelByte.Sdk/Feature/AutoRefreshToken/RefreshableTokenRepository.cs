@@ -12,6 +12,8 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 {
     public class RefreshableTokenRepository : ITokenRepository, IRefreshTokenRepository
     {
+        private static object _ROPLock = new object();
+
         private string _AccessToken = String.Empty;
 
         private string _RefreshToken = String.Empty;
@@ -22,7 +24,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
         private int _TokenExpiryIn = 0;
 
-        private volatile bool _IsRefreshInProgress = false;
+        private bool _IsRefreshInProgress = false;
 
 
         public bool RefreshTokenEnabled { get; set; } = false;
@@ -58,7 +60,23 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
         public LoginType LoginType { get => _LoginType; }
 
-        public bool IsRefreshOnProgress { get => _IsRefreshInProgress; set => _IsRefreshInProgress = value; }
+        public bool IsRefreshOnProgress
+        {
+            get
+            {
+                lock (_ROPLock)
+                {
+                    return _IsRefreshInProgress;
+                }                
+            }
+            set
+            {
+                lock(_ROPLock)
+                {
+                    _IsRefreshInProgress = value;
+                }
+            }            
+        }
 
         public long CurrentTimestamp
         {
@@ -78,6 +96,20 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
         public void StoreToken(string token)
         {
             _AccessToken = token;
+        }
+
+        public bool TryToSetRefreshOnProgressToTrue()
+        {
+            lock (_ROPLock)
+            {
+                if (_IsRefreshInProgress)
+                    return false;
+                else
+                {
+                    _IsRefreshInProgress = true;
+                    return _IsRefreshInProgress;
+                }
+            }
         }
 
         public void StoreRefreshToken(LoginType loginType, string refreshToken, float refreshThreshold, int expiryIn)
