@@ -74,7 +74,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                         refreshTokenRepo.RefreshTokenEnabled = true;
                         refreshTokenRepo.StoreRefreshToken(
                             LoginType.Client,
-                            token.RefreshToken!,
+                            String.Empty,
                             refreshThreshold,
                             token.ExpiresIn!.Value);
                     }

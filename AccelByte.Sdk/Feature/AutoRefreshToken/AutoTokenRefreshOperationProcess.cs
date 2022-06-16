@@ -5,6 +5,7 @@
 using System;
 
 using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Core.Pipeline;
 
 namespace AccelByte.Sdk.Feature.AutoTokenRefresh
@@ -25,18 +26,26 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                     {
                         if (refreshTokenRepo.IsTokenExpiring)
                         {
-                            if (refreshTokenRepo.HasRefreshToken)
+                            if (!refreshTokenRepo.IsRefreshOnProgress)
                             {
-                                sdk.RefreshAccessToken(refreshTokenRepo.RefreshToken, (token) =>
+                                refreshTokenRepo.IsRefreshOnProgress = true;
+                                if (refreshTokenRepo.LoginType == LoginType.User)
                                 {
-                                    refreshTokenRepo.UpdateRefreshToken(token.RefreshToken!, token.ExpiresIn!.Value);
-                                });
-                            }
-                            else
-                            {
-                                if (refreshTokenRepo.LoginType == Core.Util.LoginType.User)
-                                    sdk.LoginUser(true, refreshTokenRepo.RefreshThreshold);
-                            }
+                                    if (refreshTokenRepo.HasRefreshToken)
+                                    {
+                                        sdk.RefreshAccessToken(refreshTokenRepo.RefreshToken, (token) =>
+                                        {
+                                            refreshTokenRepo.UpdateRefreshToken(token.RefreshToken!, token.ExpiresIn!.Value);
+                                        });
+                                    }
+                                    else
+                                        sdk.LoginUser(true, refreshTokenRepo.RefreshThreshold);
+                                }
+                                else if (refreshTokenRepo.LoginType == LoginType.Client)
+                                {
+                                    sdk.LoginClient(true, refreshTokenRepo.RefreshThreshold);
+                                }
+                            }                            
                         }
                     }
                 }                

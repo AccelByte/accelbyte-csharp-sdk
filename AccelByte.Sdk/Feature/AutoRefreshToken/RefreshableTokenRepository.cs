@@ -22,6 +22,8 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
         private int _TokenExpiryIn = 0;
 
+        private volatile bool _IsRefreshInProgress = false;
+
 
         public bool RefreshTokenEnabled { get; set; } = false;
 
@@ -56,6 +58,8 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
         public LoginType LoginType { get => _LoginType; }
 
+        public bool IsRefreshOnProgress { get => _IsRefreshInProgress; set => _IsRefreshInProgress = value; }
+
         public long CurrentTimestamp
         {
             get => (new DateTimeOffset(DateTime.UtcNow)).ToUnixTimeSeconds();
@@ -84,6 +88,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
             _TokenExpiryIn = expiryIn;
 
             IssuedTimestamp = CurrentTimestamp;
+            _IsRefreshInProgress = false;
         }
 
         public void UpdateRefreshToken(string refreshToken, int expiryIn)
@@ -92,6 +97,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
             _TokenExpiryIn = expiryIn;
 
             IssuedTimestamp = CurrentTimestamp;
+            _IsRefreshInProgress = false;
         }
 
         public void SetTokenExpiry(int expiryIn)

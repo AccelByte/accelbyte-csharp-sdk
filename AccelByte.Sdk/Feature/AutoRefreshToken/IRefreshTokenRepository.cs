@@ -30,6 +30,8 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
         LoginType LoginType { get; }
 
+        bool IsRefreshOnProgress { get; set; }
+
         void StoreRefreshToken(LoginType loginType, string refreshToken, float refreshThreshold, int expiryIn);
 
         void UpdateRefreshToken(string refreshToken, int expiryIn);
