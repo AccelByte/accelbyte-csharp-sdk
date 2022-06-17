@@ -399,6 +399,7 @@
 | `accountcommon.JWTBanV3` | [AccountcommonJWTBanV3](../AccelByte.Sdk/Api/Iam/Model/AccountcommonJWTBanV3.cs) |
 | `accountcommon.ListUsersWithPlatformAccountsResponse` | [AccountcommonListUsersWithPlatformAccountsResponse](../AccelByte.Sdk/Api/Iam/Model/AccountcommonListUsersWithPlatformAccountsResponse.cs) |
 | `accountcommon.NamespaceRole` | [AccountcommonNamespaceRole](../AccelByte.Sdk/Api/Iam/Model/AccountcommonNamespaceRole.cs) |
+| `accountcommon.NetflixCertificates` | [AccountcommonNetflixCertificates](../AccelByte.Sdk/Api/Iam/Model/AccountcommonNetflixCertificates.cs) |
 | `accountcommon.Pagination` | [AccountcommonPagination](../AccelByte.Sdk/Api/Iam/Model/AccountcommonPagination.cs) |
 | `accountcommon.PaginationV3` | [AccountcommonPaginationV3](../AccelByte.Sdk/Api/Iam/Model/AccountcommonPaginationV3.cs) |
 | `accountcommon.Permission` | [AccountcommonPermission](../AccelByte.Sdk/Api/Iam/Model/AccountcommonPermission.cs) |

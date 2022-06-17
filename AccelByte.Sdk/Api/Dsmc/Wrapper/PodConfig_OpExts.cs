@@ -14,11 +14,15 @@ namespace AccelByte.Sdk.Api
     {
         public static Dsmc.Model.ModelsListPodConfigResponse? Execute(
             this GetAllPodConfig.GetAllPodConfigBuilder builder,
-            string namespace_
+            string namespace_,
+            long count,
+            long offset
         )
         {
             GetAllPodConfig op = builder.Build(
-                namespace_
+                namespace_,
+                count,
+                offset
             );
 
             return ((Dsmc.Wrapper.PodConfig)builder.WrapperObject!).GetAllPodConfig(op);

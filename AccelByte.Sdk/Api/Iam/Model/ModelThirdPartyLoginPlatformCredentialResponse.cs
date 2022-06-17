@@ -48,6 +48,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("Namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("NetflixCertificates")]
+        public AccountcommonNetflixCertificates? NetflixCertificates { get; set; }
+
         [JsonPropertyName("OrganizationId")]
         public string? OrganizationId { get; set; }
 

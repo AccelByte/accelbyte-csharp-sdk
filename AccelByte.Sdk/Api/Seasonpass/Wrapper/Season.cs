@@ -79,6 +79,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         {
             get { return Operation.ResetUserSeason.Builder.SetWrapperObject(this); }
         }
+        public QueryUserExpGrantHistory.QueryUserExpGrantHistoryBuilder QueryUserExpGrantHistoryOp
+        {
+            get { return Operation.QueryUserExpGrantHistory.Builder.SetWrapperObject(this); }
+        }
+        public QueryUserExpGrantHistoryTag.QueryUserExpGrantHistoryTagBuilder QueryUserExpGrantHistoryTagOp
+        {
+            get { return Operation.QueryUserExpGrantHistoryTag.Builder.SetWrapperObject(this); }
+        }
         public GetUserSeason.GetUserSeasonBuilder GetUserSeasonOp
         {
             get { return Operation.GetUserSeason.Builder.SetWrapperObject(this); }
@@ -213,6 +221,22 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ExpGrantHistoryPagingSlicedResult? QueryUserExpGrantHistory(QueryUserExpGrantHistory input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ReasonTagsResult? QueryUserExpGrantHistoryTag(QueryUserExpGrantHistoryTag input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

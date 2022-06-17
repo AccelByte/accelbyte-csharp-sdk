@@ -70,5 +70,21 @@ namespace AccelByte.Sdk.Api
             return ((Lobby.Wrapper.Party)builder.WrapperObject!).PublicUpdatePartyAttributesV1(op);
         }
 
+        public static void Execute(
+            this PublicSetPartyLimitV1.PublicSetPartyLimitV1Builder builder,
+            ModelsPartyPUTLimitSizeRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicSetPartyLimitV1 op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            ((Lobby.Wrapper.Party)builder.WrapperObject!).PublicSetPartyLimitV1(op);
+        }
+
     }
 }

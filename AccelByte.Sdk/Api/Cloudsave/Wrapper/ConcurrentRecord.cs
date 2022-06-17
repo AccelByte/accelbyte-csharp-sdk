@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         {
             get { return Operation.PutGameRecordConcurrentHandlerV1.Builder.SetWrapperObject(this); }
         }
+        public PutPlayerRecordConcurrentHandlerV1.PutPlayerRecordConcurrentHandlerV1Builder PutPlayerRecordConcurrentHandlerV1Op
+        {
+            get { return Operation.PutPlayerRecordConcurrentHandlerV1.Builder.SetWrapperObject(this); }
+        }
         public PutPlayerPublicRecordConcurrentHandlerV1.PutPlayerPublicRecordConcurrentHandlerV1Builder PutPlayerPublicRecordConcurrentHandlerV1Op
         {
             get { return Operation.PutPlayerPublicRecordConcurrentHandlerV1.Builder.SetWrapperObject(this); }
@@ -30,6 +34,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         #endregion
         
         public void PutGameRecordConcurrentHandlerV1(PutGameRecordConcurrentHandlerV1 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PutPlayerRecordConcurrentHandlerV1(PutPlayerRecordConcurrentHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(

@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class ModelUserUpdateRequestV3 : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("avatarUrl")]
+        public string? AvatarUrl { get; set; }
+
         [JsonPropertyName("country")]
         public string? Country { get; set; }
 

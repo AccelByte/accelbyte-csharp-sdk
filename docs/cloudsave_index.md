@@ -8,6 +8,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/cloudsave/v1/admin/namespaces/{namespace}/concurrent/records/{key}` | PUT | AdminPutGameRecordConcurrentHandlerV1 | [AdminPutGameRecordConcurrentHandlerV1](../AccelByte.Sdk/Api/Cloudsave/Operation/AdminConcurrentRecord/AdminPutGameRecordConcurrentHandlerV1.cs) | [AdminPutGameRecordConcurrentHandlerV1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminConcurrentRecord/AdminPutGameRecordConcurrentHandlerV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/concurrent/records/{key}` | PUT | AdminPutPlayerRecordConcurrentHandlerV1 | [AdminPutPlayerRecordConcurrentHandlerV1](../AccelByte.Sdk/Api/Cloudsave/Operation/AdminConcurrentRecord/AdminPutPlayerRecordConcurrentHandlerV1.cs) | [AdminPutPlayerRecordConcurrentHandlerV1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminConcurrentRecord/AdminPutPlayerRecordConcurrentHandlerV1.cs) |
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/concurrent/records/{key}/public` | PUT | AdminPutPlayerPublicRecordConcurrentHandlerV1 | [AdminPutPlayerPublicRecordConcurrentHandlerV1](../AccelByte.Sdk/Api/Cloudsave/Operation/AdminConcurrentRecord/AdminPutPlayerPublicRecordConcurrentHandlerV1.cs) | [AdminPutPlayerPublicRecordConcurrentHandlerV1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminConcurrentRecord/AdminPutPlayerPublicRecordConcurrentHandlerV1.cs) |
 
 ### AdminGameRecord Wrapper:  [AdminGameRecord](../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminGameRecord.cs)
@@ -37,6 +38,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/cloudsave/v1/namespaces/{namespace}/concurrent/records/{key}` | PUT | PutGameRecordConcurrentHandlerV1 | [PutGameRecordConcurrentHandlerV1](../AccelByte.Sdk/Api/Cloudsave/Operation/ConcurrentRecord/PutGameRecordConcurrentHandlerV1.cs) | [PutGameRecordConcurrentHandlerV1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/ConcurrentRecord/PutGameRecordConcurrentHandlerV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/{userId}/concurrent/records/{key}` | PUT | PutPlayerRecordConcurrentHandlerV1 | [PutPlayerRecordConcurrentHandlerV1](../AccelByte.Sdk/Api/Cloudsave/Operation/ConcurrentRecord/PutPlayerRecordConcurrentHandlerV1.cs) | [PutPlayerRecordConcurrentHandlerV1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/ConcurrentRecord/PutPlayerRecordConcurrentHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/users/{userId}/concurrent/records/{key}/public` | PUT | PutPlayerPublicRecordConcurrentHandlerV1 | [PutPlayerPublicRecordConcurrentHandlerV1](../AccelByte.Sdk/Api/Cloudsave/Operation/ConcurrentRecord/PutPlayerPublicRecordConcurrentHandlerV1.cs) | [PutPlayerPublicRecordConcurrentHandlerV1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/ConcurrentRecord/PutPlayerPublicRecordConcurrentHandlerV1.cs) |
 
 ### PublicGameRecord Wrapper:  [PublicGameRecord](../AccelByte.Sdk/Api/Cloudsave/Wrapper/PublicGameRecord.cs)

@@ -21,6 +21,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// Required scope: social
     /// 
     /// This endpoint get a all pod configs in a namespace
+    /// 
+    /// Parameter Offset and Count is Required
     /// </summary>
     public class GetAllPodConfig : AccelByte.Sdk.Core.Operation
     {
@@ -31,10 +33,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             : OperationBuilder<GetAllPodConfigBuilder>
         {
 
-            public long? Count { get; set; }
-
-            public long? Offset { get; set; }
-
 
 
 
@@ -42,28 +40,20 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             internal GetAllPodConfigBuilder() { }
 
 
-            public GetAllPodConfigBuilder SetCount(long _count)
-            {
-                Count = _count;
-                return this;
-            }
-
-            public GetAllPodConfigBuilder SetOffset(long _offset)
-            {
-                Offset = _offset;
-                return this;
-            }
-
 
 
 
 
             public GetAllPodConfig Build(
-                string namespace_
+                string namespace_,
+                long count,
+                long offset
             )
             {
                 GetAllPodConfig op = new GetAllPodConfig(this,
-                    namespace_                    
+                    namespace_,                    
+                    count,                    
+                    offset                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -72,13 +62,15 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         }
 
         private GetAllPodConfig(GetAllPodConfigBuilder builder,
-            string namespace_
+            string namespace_,
+            long count,
+            long offset
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
-            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            QueryParams["count"] = Convert.ToString(count)!;
+            QueryParams["offset"] = Convert.ToString(offset)!;
             
 
             
@@ -91,14 +83,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public GetAllPodConfig(
             string namespace_,            
-            long? count,            
-            long? offset            
+            long count,            
+            long offset            
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (count != null) QueryParams["count"] = Convert.ToString(count)!;
-            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            QueryParams["count"] = Convert.ToString(count)!;
+            QueryParams["offset"] = Convert.ToString(offset)!;
             
 
             

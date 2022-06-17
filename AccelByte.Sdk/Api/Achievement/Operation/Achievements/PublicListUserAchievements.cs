@@ -20,6 +20,13 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// 
     /// Required permission
     /// `NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]` and scope `social`
+    /// 
+    /// 
+    /// 
+    /// 
+    /// Note: user achievement status value mean: `status = 1 (in progress)` and `status = 2 (unlocked)
+    /// 
+    /// `
     /// </summary>
     public class PublicListUserAchievements : AccelByte.Sdk.Core.Operation
     {

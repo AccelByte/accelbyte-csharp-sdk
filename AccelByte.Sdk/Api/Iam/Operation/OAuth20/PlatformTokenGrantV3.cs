@@ -92,6 +92,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///                 * xblweb : The platform_tokenâs value is code returned by xbox after login
     /// 
     /// 
+    ///                 * netflix : The platform_tokenâs value is GAT (Gamer Access Token) returned by Netflix backend
+    /// 
+    /// 
     /// 
     /// 
     /// ## Account Group

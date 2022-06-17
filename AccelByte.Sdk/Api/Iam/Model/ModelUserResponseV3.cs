@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("authType")]
         public string? AuthType { get; set; }
 
+        [JsonPropertyName("avatarUrl")]
+        public string? AvatarUrl { get; set; }
+
         [JsonPropertyName("bans")]
         public List<ModelUserActiveBanResponseV3>? Bans { get; set; }
 

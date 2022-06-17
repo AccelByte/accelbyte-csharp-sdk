@@ -30,10 +30,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("count")]
-        public long? Count { get; set; }
+        public long Count { get; set; } = 0;
 
         [SdkCommandArgument("offset")]
-        public long? Offset { get; set; }
+        public long Offset { get; set; } = 0;
 
         public GetAllPodConfigCommand(AccelByteSDK sdk)
         {

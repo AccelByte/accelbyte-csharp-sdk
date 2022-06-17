@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..40"
+echo "1..42"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -333,24 +333,24 @@ eval_tap $? 27 'GetUserParticipatedSeasons' test.out
 
 #- 28 GrantUserExp
 # body param: body
-echo '{"exp": 29}' > $TEMP_JSON_INPUT
+echo '{"exp": 29, "source": "SWEAT", "tags": ["I8f5ocfy"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn seasonpass \
     --op GrantUserExp \
     --namespace $AB_NAMESPACE \
-    --userId 'KxI8f5oc' \
+    --userId '4EIxwBiB' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 28 'GrantUserExp' test.out
 
 #- 29 GrantUserPass
 # body param: body
-echo '{"passCode": "fy4EIxwB", "passItemId": "iB90vdgS"}' > $TEMP_JSON_INPUT
+echo '{"passCode": "90vdgS5Y", "passItemId": "pKsdbpiU"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn seasonpass \
     --op GrantUserPass \
     --namespace $AB_NAMESPACE \
-    --userId '5YpKsdbp' \
+    --userId '2UfyMO4D' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 29 'GrantUserPass' test.out
@@ -360,8 +360,8 @@ $CLI_EXE \
     --sn seasonpass \
     --op ExistsAnyPassByPassCodes \
     --namespace $AB_NAMESPACE \
-    --userId 'iU2UfyMO' \
-    --passCodes '["4DhL9fBK"]' \
+    --userId 'hL9fBKJv' \
+    --passCodes '["jBOUn3bY"]' \
     > test.out 2>&1
 eval_tap $? 30 'ExistsAnyPassByPassCodes' test.out
 
@@ -370,18 +370,18 @@ $CLI_EXE \
     --sn seasonpass \
     --op GetCurrentUserSeasonProgression \
     --namespace $AB_NAMESPACE \
-    --userId 'JvjBOUn3' \
+    --userId 'f5ouXqkb' \
     > test.out 2>&1
 eval_tap $? 31 'GetCurrentUserSeasonProgression' test.out
 
 #- 32 CheckSeasonPurchasable
 # body param: body
-echo '{"passItemId": "bYf5ouXq", "tierItemCount": 21, "tierItemId": "biExqT6D"}' > $TEMP_JSON_INPUT
+echo '{"passItemId": "iExqT6Dk", "tierItemCount": 85, "tierItemId": "FqaAjhwO"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn seasonpass \
     --op CheckSeasonPurchasable \
     --namespace $AB_NAMESPACE \
-    --userId 'k9QFqaAj' \
+    --userId 'I1P04dMH' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 32 'CheckSeasonPurchasable' test.out
@@ -391,80 +391,106 @@ $CLI_EXE \
     --sn seasonpass \
     --op ResetUserSeason \
     --namespace $AB_NAMESPACE \
-    --userId 'hwOI1P04' \
+    --userId 'fTwrxBRf' \
     > test.out 2>&1
 eval_tap $? 33 'ResetUserSeason' test.out
 
 #- 34 GrantUserTier
 # body param: body
-echo '{"count": 7}' > $TEMP_JSON_INPUT
+echo '{"count": 77, "source": "SWEAT", "tags": ["ZrSfx3V8"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn seasonpass \
     --op GrantUserTier \
     --namespace $AB_NAMESPACE \
-    --userId 'MHfTwrxB' \
+    --userId 'OXkMng7p' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 34 'GrantUserTier' test.out
 
-#- 35 GetUserSeason
+#- 35 QueryUserExpGrantHistory
+$CLI_EXE \
+    --sn seasonpass \
+    --op QueryUserExpGrantHistory \
+    --namespace $AB_NAMESPACE \
+    --userId '2SyFDEnm' \
+    --from 'YQzehPBq' \
+    --limit '59' \
+    --offset '59' \
+    --seasonId 'vvzNNZSu' \
+    --source 'SWEAT' \
+    --tags '["ZVgY3Zos"]' \
+    --to 'fd01vaOG' \
+    > test.out 2>&1
+eval_tap $? 35 'QueryUserExpGrantHistory' test.out
+
+#- 36 QueryUserExpGrantHistoryTag
+$CLI_EXE \
+    --sn seasonpass \
+    --op QueryUserExpGrantHistoryTag \
+    --namespace $AB_NAMESPACE \
+    --userId 'weHacvHR' \
+    --seasonId 'V345xB8h' \
+    > test.out 2>&1
+eval_tap $? 36 'QueryUserExpGrantHistoryTag' test.out
+
+#- 37 GetUserSeason
 $CLI_EXE \
     --sn seasonpass \
     --op GetUserSeason \
     --namespace $AB_NAMESPACE \
-    --seasonId 'RfMxZrSf' \
-    --userId 'x3V8OXkM' \
+    --seasonId 'os4yaOBj' \
+    --userId 'MxizCxx9' \
     > test.out 2>&1
-eval_tap $? 35 'GetUserSeason' test.out
+eval_tap $? 37 'GetUserSeason' test.out
 
-#- 36 PublicGetCurrentSeason
+#- 38 PublicGetCurrentSeason
 $CLI_EXE \
     --sn seasonpass \
     --op PublicGetCurrentSeason \
     --namespace $AB_NAMESPACE \
-    --language 'ng7p2SyF' \
+    --language 'qTOIKlpd' \
     > test.out 2>&1
-eval_tap $? 36 'PublicGetCurrentSeason' test.out
+eval_tap $? 38 'PublicGetCurrentSeason' test.out
 
-#- 37 PublicGetCurrentUserSeason
+#- 39 PublicGetCurrentUserSeason
 $CLI_EXE \
     --sn seasonpass \
     --op PublicGetCurrentUserSeason \
     --namespace $AB_NAMESPACE \
-    --userId 'DEnmYQze' \
+    --userId 'rqo2smD9' \
     > test.out 2>&1
-eval_tap $? 37 'PublicGetCurrentUserSeason' test.out
+eval_tap $? 39 'PublicGetCurrentUserSeason' test.out
 
-#- 38 PublicClaimUserReward
+#- 40 PublicClaimUserReward
 # body param: body
-echo '{"passCode": "hPBqD12D", "rewardCode": "vvzNNZSu", "tierIndex": 51}' > $TEMP_JSON_INPUT
+echo '{"passCode": "RPpjOWK0", "rewardCode": "k76i1g7r", "tierIndex": 1}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn seasonpass \
     --op PublicClaimUserReward \
     --namespace $AB_NAMESPACE \
-    --userId 'ZVgY3Zos' \
+    --userId 'EuNCyPoQ' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 38 'PublicClaimUserReward' test.out
+eval_tap $? 40 'PublicClaimUserReward' test.out
 
-#- 39 PublicBulkClaimUserRewards
+#- 41 PublicBulkClaimUserRewards
 $CLI_EXE \
     --sn seasonpass \
     --op PublicBulkClaimUserRewards \
     --namespace $AB_NAMESPACE \
-    --userId 'fd01vaOG' \
+    --userId '0oHYXUQd' \
     > test.out 2>&1
-eval_tap $? 39 'PublicBulkClaimUserRewards' test.out
+eval_tap $? 41 'PublicBulkClaimUserRewards' test.out
 
-#- 40 PublicGetUserSeason
+#- 42 PublicGetUserSeason
 $CLI_EXE \
     --sn seasonpass \
     --op PublicGetUserSeason \
     --namespace $AB_NAMESPACE \
-    --seasonId 'weHacvHR' \
-    --userId 'V345xB8h' \
+    --seasonId 'tIkAkltd' \
+    --userId '1zQBzzC6' \
     > test.out 2>&1
-eval_tap $? 40 'PublicGetUserSeason' test.out
+eval_tap $? 42 'PublicGetUserSeason' test.out
 
 
 rm -f "$CLI_TOKEN_FILE"

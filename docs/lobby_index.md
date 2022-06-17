@@ -83,6 +83,7 @@
 | `/lobby/v1/admin/party/namespaces/{namespace}/users/{userId}/party` | GET | AdminGetUserPartyV1 | [AdminGetUserPartyV1](../AccelByte.Sdk/Api/Lobby/Operation/Party/AdminGetUserPartyV1.cs) | [AdminGetUserPartyV1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Party/AdminGetUserPartyV1.cs) |
 | `/lobby/v1/public/party/namespaces/{namespace}/parties/{partyId}` | GET | PublicGetPartyDataV1 | [PublicGetPartyDataV1](../AccelByte.Sdk/Api/Lobby/Operation/Party/PublicGetPartyDataV1.cs) | [PublicGetPartyDataV1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Party/PublicGetPartyDataV1.cs) |
 | `/lobby/v1/public/party/namespaces/{namespace}/parties/{partyId}/attributes` | PUT | PublicUpdatePartyAttributesV1 | [PublicUpdatePartyAttributesV1](../AccelByte.Sdk/Api/Lobby/Operation/Party/PublicUpdatePartyAttributesV1.cs) | [PublicUpdatePartyAttributesV1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Party/PublicUpdatePartyAttributesV1.cs) |
+| `/lobby/v1/public/party/namespaces/{namespace}/parties/{partyId}/limit` | PUT | PublicSetPartyLimitV1 | [PublicSetPartyLimitV1](../AccelByte.Sdk/Api/Lobby/Operation/Party/PublicSetPartyLimitV1.cs) | [PublicSetPartyLimitV1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Party/PublicSetPartyLimitV1.cs) |
 
 ### Lobby Operations Wrapper:  [LobbyOperations](../AccelByte.Sdk/Api/Lobby/Wrapper/LobbyOperations.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -208,6 +209,7 @@
 | `models.ListBlockedPlayerRequest` | [ModelsListBlockedPlayerRequest](../AccelByte.Sdk/Api/Lobby/Model/ModelsListBlockedPlayerRequest.cs) |
 | `models.PartyData` | [ModelsPartyData](../AccelByte.Sdk/Api/Lobby/Model/ModelsPartyData.cs) |
 | `models.PartyPUTCustomAttributesRequest` | [ModelsPartyPUTCustomAttributesRequest](../AccelByte.Sdk/Api/Lobby/Model/ModelsPartyPUTCustomAttributesRequest.cs) |
+| `models.PartyPUTLimitSizeRequest` | [ModelsPartyPUTLimitSizeRequest](../AccelByte.Sdk/Api/Lobby/Model/ModelsPartyPUTLimitSizeRequest.cs) |
 | `models.ProfanityFilter` | [ModelsProfanityFilter](../AccelByte.Sdk/Api/Lobby/Model/ModelsProfanityFilter.cs) |
 | `models.ProfanityRule` | [ModelsProfanityRule](../AccelByte.Sdk/Api/Lobby/Model/ModelsProfanityRule.cs) |
 | `models.SetPlayerSessionAttributeRequest` | [ModelsSetPlayerSessionAttributeRequest](../AccelByte.Sdk/Api/Lobby/Model/ModelsSetPlayerSessionAttributeRequest.cs) |

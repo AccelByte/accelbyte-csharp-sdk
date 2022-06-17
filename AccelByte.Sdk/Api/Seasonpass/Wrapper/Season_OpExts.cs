@@ -216,6 +216,34 @@ namespace AccelByte.Sdk.Api
             ((Seasonpass.Wrapper.Season)builder.WrapperObject!).ResetUserSeason(op);
         }
 
+        public static Seasonpass.Model.ExpGrantHistoryPagingSlicedResult? Execute(
+            this QueryUserExpGrantHistory.QueryUserExpGrantHistoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            QueryUserExpGrantHistory op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).QueryUserExpGrantHistory(op);
+        }
+
+        public static Seasonpass.Model.ReasonTagsResult? Execute(
+            this QueryUserExpGrantHistoryTag.QueryUserExpGrantHistoryTagBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            QueryUserExpGrantHistoryTag op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).QueryUserExpGrantHistoryTag(op);
+        }
+
         public static Seasonpass.Model.ClaimableUserSeasonInfo? Execute(
             this GetUserSeason.GetUserSeasonBuilder builder,
             string namespace_,

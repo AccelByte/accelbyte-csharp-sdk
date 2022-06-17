@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    /// Supported field {country, displayName, languageTag, dateOfBirth}
+    /// Supported field {country, displayName, languageTag, dateOfBirth, avatarUrl}
     /// 
     /// 
     /// 

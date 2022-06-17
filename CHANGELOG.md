@@ -1,5 +1,27 @@
 # Changelog
 
+## v0.11.0
+- Implemented token auto refresh
+- Updated APIs
+	- achievement
+		- updated endpoints
+	- cloudsave
+		- added new endpoints
+		- updated endpoints
+	- dsmc
+		- updated endpoints
+	- iam
+		- updated models
+		- updated endpoints
+	- lobby
+		- added new endpoints
+	- platform
+		- updated models
+	- seasonpass
+		- added new endpoints
+		- updated models
+		- updated endpoints
+
 ## v0.10.0
 - Implemented enum patches in operation's parameter
 	- Possible **BREAKING CHANGES**

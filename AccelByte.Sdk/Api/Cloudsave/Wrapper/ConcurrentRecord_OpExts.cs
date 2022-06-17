@@ -29,6 +29,24 @@ namespace AccelByte.Sdk.Api
         }
 
         public static void Execute(
+            this PutPlayerRecordConcurrentHandlerV1.PutPlayerRecordConcurrentHandlerV1Builder builder,
+            ModelsConcurrentRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PutPlayerRecordConcurrentHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutPlayerRecordConcurrentHandlerV1(op);
+        }
+
+        public static void Execute(
             this PutPlayerPublicRecordConcurrentHandlerV1.PutPlayerPublicRecordConcurrentHandlerV1Builder builder,
             ModelsConcurrentRecordRequest body,
             string key,

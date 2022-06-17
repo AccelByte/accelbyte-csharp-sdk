@@ -24,6 +24,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonPropertyName("description")]
+        public string? Description { get; set; }
+
         [JsonPropertyName("itemId")]
         public string? ItemId { get; set; }
 

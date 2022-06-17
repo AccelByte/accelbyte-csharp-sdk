@@ -22,6 +22,8 @@
 | `/seasonpass/admin/namespaces/{namespace}/users/{userId}/seasons/current/progression` | GET | GetCurrentUserSeasonProgression | [GetCurrentUserSeasonProgression](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/GetCurrentUserSeasonProgression.cs) | [GetCurrentUserSeasonProgression](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/GetCurrentUserSeasonProgression.cs) |
 | `/seasonpass/admin/namespaces/{namespace}/users/{userId}/seasons/current/purchasable` | POST | CheckSeasonPurchasable | [CheckSeasonPurchasable](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/CheckSeasonPurchasable.cs) | [CheckSeasonPurchasable](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/CheckSeasonPurchasable.cs) |
 | `/seasonpass/admin/namespaces/{namespace}/users/{userId}/seasons/current/reset` | DELETE | ResetUserSeason | [ResetUserSeason](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/ResetUserSeason.cs) | [ResetUserSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/ResetUserSeason.cs) |
+| `/seasonpass/admin/namespaces/{namespace}/users/{userId}/seasons/exp/history` | GET | QueryUserExpGrantHistory | [QueryUserExpGrantHistory](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/QueryUserExpGrantHistory.cs) | [QueryUserExpGrantHistory](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/QueryUserExpGrantHistory.cs) |
+| `/seasonpass/admin/namespaces/{namespace}/users/{userId}/seasons/exp/history/tags` | GET | QueryUserExpGrantHistoryTag | [QueryUserExpGrantHistoryTag](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/QueryUserExpGrantHistoryTag.cs) | [QueryUserExpGrantHistoryTag](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/QueryUserExpGrantHistoryTag.cs) |
 | `/seasonpass/admin/namespaces/{namespace}/users/{userId}/seasons/{seasonId}/data` | GET | GetUserSeason | [GetUserSeason](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/GetUserSeason.cs) | [GetUserSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/GetUserSeason.cs) |
 | `/seasonpass/public/namespaces/{namespace}/seasons/current` | GET | PublicGetCurrentSeason | [PublicGetCurrentSeason](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/PublicGetCurrentSeason.cs) | [PublicGetCurrentSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/PublicGetCurrentSeason.cs) |
 | `/seasonpass/public/namespaces/{namespace}/users/{userId}/seasons/current/data` | GET | PublicGetCurrentUserSeason | [PublicGetCurrentUserSeason](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/PublicGetCurrentUserSeason.cs) | [PublicGetCurrentUserSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/PublicGetCurrentUserSeason.cs) |
@@ -70,6 +72,8 @@
 | `ClaimableUserSeasonInfo` | [ClaimableUserSeasonInfo](../AccelByte.Sdk/Api/Seasonpass/Model/ClaimableUserSeasonInfo.cs) |
 | `ErrorEntity` | [ErrorEntity](../AccelByte.Sdk/Api/Seasonpass/Model/ErrorEntity.cs) |
 | `ExcessStrategy` | [ExcessStrategy](../AccelByte.Sdk/Api/Seasonpass/Model/ExcessStrategy.cs) |
+| `ExpGrantHistoryInfo` | [ExpGrantHistoryInfo](../AccelByte.Sdk/Api/Seasonpass/Model/ExpGrantHistoryInfo.cs) |
+| `ExpGrantHistoryPagingSlicedResult` | [ExpGrantHistoryPagingSlicedResult](../AccelByte.Sdk/Api/Seasonpass/Model/ExpGrantHistoryPagingSlicedResult.cs) |
 | `FieldValidationError` | [FieldValidationError](../AccelByte.Sdk/Api/Seasonpass/Model/FieldValidationError.cs) |
 | `Image` | [Image](../AccelByte.Sdk/Api/Seasonpass/Model/Image.cs) |
 | `ListSeasonInfo` | [ListSeasonInfo](../AccelByte.Sdk/Api/Seasonpass/Model/ListSeasonInfo.cs) |
@@ -84,6 +88,7 @@
 | `PassCreate` | [PassCreate](../AccelByte.Sdk/Api/Seasonpass/Model/PassCreate.cs) |
 | `PassInfo` | [PassInfo](../AccelByte.Sdk/Api/Seasonpass/Model/PassInfo.cs) |
 | `PassUpdate` | [PassUpdate](../AccelByte.Sdk/Api/Seasonpass/Model/PassUpdate.cs) |
+| `ReasonTagsResult` | [ReasonTagsResult](../AccelByte.Sdk/Api/Seasonpass/Model/ReasonTagsResult.cs) |
 | `RewardCreate` | [RewardCreate](../AccelByte.Sdk/Api/Seasonpass/Model/RewardCreate.cs) |
 | `RewardCurrency` | [RewardCurrency](../AccelByte.Sdk/Api/Seasonpass/Model/RewardCurrency.cs) |
 | `RewardInfo` | [RewardInfo](../AccelByte.Sdk/Api/Seasonpass/Model/RewardInfo.cs) |

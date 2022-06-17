@@ -51,6 +51,15 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         [JsonPropertyName("toClaimRewards")]
         public Dictionary<string, object>? ToClaimRewards { get; set; }
 
+        [JsonPropertyName("totalExp")]
+        public long? TotalExp { get; set; }
+
+        [JsonPropertyName("totalPaidForExp")]
+        public long? TotalPaidForExp { get; set; }
+
+        [JsonPropertyName("totalSweatExp")]
+        public long? TotalSweatExp { get; set; }
+
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
 
