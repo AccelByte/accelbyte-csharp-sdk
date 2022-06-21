@@ -144,6 +144,31 @@ namespace AccelByte.Sdk.Tests.Integration
             if (_Sdk == null)
                 return;
 
+            try
+            {
+                //Get user's own profile info, will throw an exception if profile does not exists which is expected.
+                UserProfilePrivateInfo? check = _Sdk.Basic.UserProfile.GetMyProfileInfoOp
+                    .Execute(_Sdk.Namespace);
+
+                if (check != null)
+                {
+                    //But if the profile do actually exists, just delete it.
+                    UserProfilePrivateInfo? checkDel = _Sdk.Basic.UserProfile.DeleteUserProfileOp
+                        .Execute(_Sdk.Namespace, check.UserId!);
+                    Assert.IsNotNull(checkDel);
+                }
+            }
+            catch (HttpResponseException x)
+            {
+                Api.Basic.Model.ErrorEntity? error =
+                    System.Text.Json.JsonSerializer.Deserialize<Api.Basic.Model.ErrorEntity>(x.Message);
+                if (error == null)
+                    throw new Exception("Response is null");
+
+                if (error.ErrorCode != 11440)
+                    Assert.Fail("Unexpected error response from Basic::GetMyProfileInfoOp.");
+            }
+
             //Create user's own profile info
             UserProfilePrivateCreate createProfile = new UserProfilePrivateCreate()
             {
