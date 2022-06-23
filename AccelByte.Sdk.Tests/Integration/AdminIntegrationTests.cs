@@ -368,8 +368,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
             string steamId = "76561199259217491";
             string playTime = "4";
-            string accessToken = _Sdk.Configuration.TokenRepository.GetToken();
-
+            
             Api.Gametelemetry.Wrapper.GametelemetryOperations wGametelemetryOperations = new Api.Gametelemetry.Wrapper.GametelemetryOperations(_Sdk);
 
             wGametelemetryOperations.ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(
@@ -387,7 +386,7 @@ namespace AccelByte.Sdk.Tests.Integration
                                {"foo", "bar"}
                            }
                        }
-                   }, accessToken));
+                   }));
 
             try
             {
@@ -395,7 +394,7 @@ namespace AccelByte.Sdk.Tests.Integration
                     .ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(
                         Api.Gametelemetry.Operation
                            .ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut.Builder
-                           .Build(playTime, steamId, accessToken));
+                           .Build(playTime, steamId));
             }
             catch (HttpResponseException e)
             {
@@ -407,7 +406,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
             Dictionary<string, object>? resGet = wGametelemetryOperations.ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(
                 Api.Gametelemetry.Operation.ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet.Builder
-                   .Build(steamId, accessToken));
+                   .Build(steamId));
 
             Assert.IsNotNull(resGet);
             Assert.Contains("total_playtime", resGet);

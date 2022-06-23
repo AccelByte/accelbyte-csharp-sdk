@@ -43,13 +43,13 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 
             public ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut Build(
                 string playtime,
-                string steamId,
-                string accessToken            )
+                string steamId
+            )
             {
                 ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut op = new ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(this,
                     playtime,                    
-                    steamId,                    
-                    accessToken
+                    steamId                    
+
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -59,8 +59,8 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 
         private ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder builder,
             string playtime,
-            string steamId,
-            string accessToken            
+            string steamId
+            
         )
         {
             PathParams["playtime"] = playtime;

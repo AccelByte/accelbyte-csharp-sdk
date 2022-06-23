@@ -81,12 +81,12 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 
 
             public ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost Build(
-                List<TelemetryBody> body,
-                string accessToken            )
+                List<TelemetryBody> body
+            )
             {
                 ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost op = new ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(this,
-                    body,                    
-                    accessToken
+                    body                    
+
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -95,8 +95,8 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         }
 
         private ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder builder,
-            List<TelemetryBody> body,
-            string accessToken            
+            List<TelemetryBody> body
+            
         )
         {
             

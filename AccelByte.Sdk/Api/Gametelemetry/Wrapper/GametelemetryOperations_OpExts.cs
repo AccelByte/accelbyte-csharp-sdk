@@ -14,13 +14,13 @@ namespace AccelByte.Sdk.Api
     {
         public static void Execute(
             this ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost.ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder builder,
-            List<TelemetryBody> body,
-            string accessToken
+            List<TelemetryBody> body
+
         )
         {
             ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost op = builder.Build(
-                body,
-                accessToken                
+                body
+                
             );
 
             ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(op);
@@ -28,13 +28,13 @@ namespace AccelByte.Sdk.Api
 
         public static Dictionary<string, object>? Execute(
             this ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet.ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetBuilder builder,
-            string steamId,
-            string accessToken
+            string steamId
+
         )
         {
             ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet op = builder.Build(
-                steamId,
-                accessToken                
+                steamId
+                
             );
 
             return ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(op);
@@ -43,14 +43,14 @@ namespace AccelByte.Sdk.Api
         public static void Execute(
             this ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut.ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder builder,
             string playtime,
-            string steamId,
-            string accessToken
+            string steamId
+
         )
         {
             ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut op = builder.Build(
                 playtime,
-                steamId,
-                accessToken                
+                steamId
+                
             );
 
             ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(op);
