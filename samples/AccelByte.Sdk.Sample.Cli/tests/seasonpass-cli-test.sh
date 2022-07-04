@@ -64,7 +64,7 @@ eval_tap $? 2 'QuerySeasons' test.out
 
 #- 3 CreateSeason
 # body param: body
-echo '{"autoClaim": true, "defaultLanguage": "4Ax7NzYk", "defaultRequiredExp": 28, "draftStoreId": "ppa0VgFJ", "end": "1984-03-02T00:00:00Z", "excessStrategy": {"currency": "HwTb5q01", "method": "NONE", "percentPerExp": 79}, "images": [{"as": "2MQrbpeR", "caption": "nxTlCTFS", "height": 76, "imageUrl": "Ibl1a2jX", "smallImageUrl": "LCtWmHJB", "width": 17}], "localizations": {"9SoMkSE4": {"description": "eJelwO4K", "title": "PMky2h8R"}}, "name": "2fIXoXP8", "start": "1974-01-30T00:00:00Z", "tierItemId": "7JUabYc3"}' > $TEMP_JSON_INPUT
+echo '{"autoClaim": true, "defaultLanguage": "4Ax7NzYk", "defaultRequiredExp": 28, "draftStoreId": "ppa0VgFJ", "end": "1984-03-02T00:00:00Z", "excessStrategy": {"currency": "HwTb5q01", "method": "CURRENCY", "percentPerExp": 79}, "images": [{"as": "2MQrbpeR", "caption": "nxTlCTFS", "height": 76, "imageUrl": "Ibl1a2jX", "smallImageUrl": "LCtWmHJB", "width": 17}], "localizations": {"9SoMkSE4": {"description": "eJelwO4K", "title": "PMky2h8R"}}, "name": "2fIXoXP8", "start": "1974-01-30T00:00:00Z", "tierItemId": "7JUabYc3"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn seasonpass \
     --op CreateSeason \
@@ -101,7 +101,7 @@ eval_tap $? 6 'DeleteSeason' test.out
 
 #- 7 UpdateSeason
 # body param: body
-echo '{"autoClaim": true, "defaultLanguage": "5ppGR9Xc", "defaultRequiredExp": 29, "draftStoreId": "xYTGgewr", "end": "1989-02-07T00:00:00Z", "excessStrategy": {"currency": "wvzJF4Tp", "method": "NONE", "percentPerExp": 79}, "images": [{"as": "hKq2xdmg", "caption": "EBepFHtf", "height": 17, "imageUrl": "egqdEL4f", "smallImageUrl": "sM6nBzRV", "width": 40}], "localizations": {"C1r7UH1L": {"description": "iu7UQ030", "title": "4McK873t"}}, "name": "Rtr5cfWO", "start": "1999-10-09T00:00:00Z", "tierItemId": "J2c6vsOn"}' > $TEMP_JSON_INPUT
+echo '{"autoClaim": true, "defaultLanguage": "5ppGR9Xc", "defaultRequiredExp": 29, "draftStoreId": "xYTGgewr", "end": "1989-02-07T00:00:00Z", "excessStrategy": {"currency": "wvzJF4Tp", "method": "CURRENCY", "percentPerExp": 79}, "images": [{"as": "hKq2xdmg", "caption": "EBepFHtf", "height": 17, "imageUrl": "egqdEL4f", "smallImageUrl": "sM6nBzRV", "width": 40}], "localizations": {"C1r7UH1L": {"description": "iu7UQ030", "title": "4McK873t"}}, "name": "Rtr5cfWO", "start": "1999-10-09T00:00:00Z", "tierItemId": "J2c6vsOn"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn seasonpass \
     --op UpdateSeason \
@@ -208,7 +208,7 @@ eval_tap $? 16 'QueryRewards' test.out
 
 #- 17 CreateReward
 # body param: body
-echo '{"code": "cjPWGwPs", "currency": {"currencyCode": "vjLK1CjP", "namespace": "t93utbMk"}, "image": {"as": "pUFHT0fL", "caption": "9q9SMNAU", "height": 85, "imageUrl": "VoiQtSQC", "smallImageUrl": "2kNSsmT0", "width": 6}, "itemId": "2aBG4zA2", "quantity": 51, "type": "ITEM"}' > $TEMP_JSON_INPUT
+echo '{"code": "cjPWGwPs", "currency": {"currencyCode": "vjLK1CjP", "namespace": "t93utbMk"}, "image": {"as": "pUFHT0fL", "caption": "9q9SMNAU", "height": 85, "imageUrl": "VoiQtSQC", "smallImageUrl": "2kNSsmT0", "width": 6}, "itemId": "2aBG4zA2", "quantity": 51, "type": "CURRENCY"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn seasonpass \
     --op CreateReward \
@@ -240,7 +240,7 @@ eval_tap $? 19 'DeleteReward' test.out
 
 #- 20 UpdateReward
 # body param: body
-echo '{"currency": {"currencyCode": "VO0jcs7n", "namespace": "CqsodoTF"}, "image": {"as": "TcWlaIBJ", "caption": "AAknU6Ho", "height": 2, "imageUrl": "ZgWlaLne", "smallImageUrl": "dDfasTc8", "width": 12}, "itemId": "r2znWqD6", "nullFields": ["tIcfI5Z4"], "quantity": 38, "type": "ITEM"}' > $TEMP_JSON_INPUT
+echo '{"currency": {"currencyCode": "VO0jcs7n", "namespace": "CqsodoTF"}, "image": {"as": "TcWlaIBJ", "caption": "AAknU6Ho", "height": 2, "imageUrl": "ZgWlaLne", "smallImageUrl": "dDfasTc8", "width": 12}, "itemId": "r2znWqD6", "nullFields": ["tIcfI5Z4"], "quantity": 38, "type": "CURRENCY"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn seasonpass \
     --op UpdateReward \

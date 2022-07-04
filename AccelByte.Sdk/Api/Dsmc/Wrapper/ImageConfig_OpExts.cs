@@ -62,11 +62,15 @@ namespace AccelByte.Sdk.Api
 
         public static Dsmc.Model.ModelsListImageResponse? Execute(
             this ListImages.ListImagesBuilder builder,
-            string namespace_
+            string namespace_,
+            long count,
+            long offset
         )
         {
             ListImages op = builder.Build(
-                namespace_
+                namespace_,
+                count,
+                offset
             );
 
             return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).ListImages(op);

@@ -25,20 +25,20 @@ namespace AccelByte.Sdk.Api.Ugc.Model
 
     public class ModelsCreateScreenshotRequestItemFileExtension : StringEnum<ModelsCreateScreenshotRequestItemFileExtension>
     {
-        public static readonly ModelsCreateScreenshotRequestItemFileExtension Pjp
-            = new ModelsCreateScreenshotRequestItemFileExtension("pjp");
-
-        public static readonly ModelsCreateScreenshotRequestItemFileExtension Jpg
-            = new ModelsCreateScreenshotRequestItemFileExtension("jpg");
-
-        public static readonly ModelsCreateScreenshotRequestItemFileExtension Jpeg
-            = new ModelsCreateScreenshotRequestItemFileExtension("jpeg");
+        public static readonly ModelsCreateScreenshotRequestItemFileExtension Bmp
+            = new ModelsCreateScreenshotRequestItemFileExtension("bmp");
 
         public static readonly ModelsCreateScreenshotRequestItemFileExtension Jfif
             = new ModelsCreateScreenshotRequestItemFileExtension("jfif");
 
-        public static readonly ModelsCreateScreenshotRequestItemFileExtension Bmp
-            = new ModelsCreateScreenshotRequestItemFileExtension("bmp");
+        public static readonly ModelsCreateScreenshotRequestItemFileExtension Jpeg
+            = new ModelsCreateScreenshotRequestItemFileExtension("jpeg");
+
+        public static readonly ModelsCreateScreenshotRequestItemFileExtension Jpg
+            = new ModelsCreateScreenshotRequestItemFileExtension("jpg");
+
+        public static readonly ModelsCreateScreenshotRequestItemFileExtension Pjp
+            = new ModelsCreateScreenshotRequestItemFileExtension("pjp");
 
         public static readonly ModelsCreateScreenshotRequestItemFileExtension Png
             = new ModelsCreateScreenshotRequestItemFileExtension("png");

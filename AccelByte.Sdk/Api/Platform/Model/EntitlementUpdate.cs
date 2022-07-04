@@ -34,11 +34,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly EntitlementUpdateStatus ACTIVE
             = new EntitlementUpdateStatus("ACTIVE");
 
-        public static readonly EntitlementUpdateStatus INACTIVE
-            = new EntitlementUpdateStatus("INACTIVE");
-
         public static readonly EntitlementUpdateStatus CONSUMED
             = new EntitlementUpdateStatus("CONSUMED");
+
+        public static readonly EntitlementUpdateStatus INACTIVE
+            = new EntitlementUpdateStatus("INACTIVE");
 
         public static readonly EntitlementUpdateStatus REVOKED
             = new EntitlementUpdateStatus("REVOKED");

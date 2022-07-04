@@ -28,14 +28,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class RecurringCycle : StringEnum<RecurringCycle>
     {
-        public static readonly RecurringCycle WEEKLY
-            = new RecurringCycle("WEEKLY");
-
         public static readonly RecurringCycle MONTHLY
             = new RecurringCycle("MONTHLY");
 
         public static readonly RecurringCycle QUARTERLY
             = new RecurringCycle("QUARTERLY");
+
+        public static readonly RecurringCycle WEEKLY
+            = new RecurringCycle("WEEKLY");
 
         public static readonly RecurringCycle YEARLY
             = new RecurringCycle("YEARLY");

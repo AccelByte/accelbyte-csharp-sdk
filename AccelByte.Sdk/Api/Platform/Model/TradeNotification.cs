@@ -134,29 +134,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class TradeNotificationPaymentProvider : StringEnum<TradeNotificationPaymentProvider>
     {
-        public static readonly TradeNotificationPaymentProvider WALLET
-            = new TradeNotificationPaymentProvider("WALLET");
-
-        public static readonly TradeNotificationPaymentProvider XSOLLA
-            = new TradeNotificationPaymentProvider("XSOLLA");
-
         public static readonly TradeNotificationPaymentProvider ADYEN
             = new TradeNotificationPaymentProvider("ADYEN");
-
-        public static readonly TradeNotificationPaymentProvider STRIPE
-            = new TradeNotificationPaymentProvider("STRIPE");
-
-        public static readonly TradeNotificationPaymentProvider CHECKOUT
-            = new TradeNotificationPaymentProvider("CHECKOUT");
 
         public static readonly TradeNotificationPaymentProvider ALIPAY
             = new TradeNotificationPaymentProvider("ALIPAY");
 
-        public static readonly TradeNotificationPaymentProvider WXPAY
-            = new TradeNotificationPaymentProvider("WXPAY");
+        public static readonly TradeNotificationPaymentProvider CHECKOUT
+            = new TradeNotificationPaymentProvider("CHECKOUT");
 
         public static readonly TradeNotificationPaymentProvider PAYPAL
             = new TradeNotificationPaymentProvider("PAYPAL");
+
+        public static readonly TradeNotificationPaymentProvider STRIPE
+            = new TradeNotificationPaymentProvider("STRIPE");
+
+        public static readonly TradeNotificationPaymentProvider WALLET
+            = new TradeNotificationPaymentProvider("WALLET");
+
+        public static readonly TradeNotificationPaymentProvider WXPAY
+            = new TradeNotificationPaymentProvider("WXPAY");
+
+        public static readonly TradeNotificationPaymentProvider XSOLLA
+            = new TradeNotificationPaymentProvider("XSOLLA");
 
 
         public static implicit operator TradeNotificationPaymentProvider(string value)
@@ -173,26 +173,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class TradeNotificationStatus : StringEnum<TradeNotificationStatus>
     {
-        public static readonly TradeNotificationStatus INIT
-            = new TradeNotificationStatus("INIT");
-
         public static readonly TradeNotificationStatus AUTHORISED
             = new TradeNotificationStatus("AUTHORISED");
 
         public static readonly TradeNotificationStatus AUTHORISEFAILED
             = new TradeNotificationStatus("AUTHORISE_FAILED");
-
-        public static readonly TradeNotificationStatus CHARGED
-            = new TradeNotificationStatus("CHARGED");
-
-        public static readonly TradeNotificationStatus CHARGEFAILED
-            = new TradeNotificationStatus("CHARGE_FAILED");
-
-        public static readonly TradeNotificationStatus NOTIFICATIONOFCHARGEBACK
-            = new TradeNotificationStatus("NOTIFICATION_OF_CHARGEBACK");
-
-        public static readonly TradeNotificationStatus REQUESTFORINFORMATION
-            = new TradeNotificationStatus("REQUEST_FOR_INFORMATION");
 
         public static readonly TradeNotificationStatus CHARGEBACK
             = new TradeNotificationStatus("CHARGEBACK");
@@ -200,17 +185,32 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly TradeNotificationStatus CHARGEBACKREVERSED
             = new TradeNotificationStatus("CHARGEBACK_REVERSED");
 
-        public static readonly TradeNotificationStatus REFUNDING
-            = new TradeNotificationStatus("REFUNDING");
+        public static readonly TradeNotificationStatus CHARGED
+            = new TradeNotificationStatus("CHARGED");
+
+        public static readonly TradeNotificationStatus CHARGEFAILED
+            = new TradeNotificationStatus("CHARGE_FAILED");
+
+        public static readonly TradeNotificationStatus DELETED
+            = new TradeNotificationStatus("DELETED");
+
+        public static readonly TradeNotificationStatus INIT
+            = new TradeNotificationStatus("INIT");
+
+        public static readonly TradeNotificationStatus NOTIFICATIONOFCHARGEBACK
+            = new TradeNotificationStatus("NOTIFICATION_OF_CHARGEBACK");
 
         public static readonly TradeNotificationStatus REFUNDED
             = new TradeNotificationStatus("REFUNDED");
 
+        public static readonly TradeNotificationStatus REFUNDING
+            = new TradeNotificationStatus("REFUNDING");
+
         public static readonly TradeNotificationStatus REFUNDFAILED
             = new TradeNotificationStatus("REFUND_FAILED");
 
-        public static readonly TradeNotificationStatus DELETED
-            = new TradeNotificationStatus("DELETED");
+        public static readonly TradeNotificationStatus REQUESTFORINFORMATION
+            = new TradeNotificationStatus("REQUEST_FOR_INFORMATION");
 
 
         public static implicit operator TradeNotificationStatus(string value)

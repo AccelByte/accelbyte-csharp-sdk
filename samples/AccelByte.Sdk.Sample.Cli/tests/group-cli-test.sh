@@ -63,7 +63,7 @@ eval_tap $? 2 'ListGroupConfigurationAdminV1' test.out
 
 #- 3 CreateGroupConfigurationAdminV1
 # body param: body
-echo '{"configurationCode": "jv4Ax7Nz", "description": "Ykoppa0V", "globalRules": [{"allowedAction": "gFJAhHwT", "ruleDetail": [{"ruleAttribute": "b5q010gN", "ruleCriteria": "MAXIMUM", "ruleValue": 0.6659805943942503}]}], "groupAdminRoleId": "bpeRnxTl", "groupMaxMember": 57, "groupMemberRoleId": "TFSMIbl1", "name": "a2jXLCtW"}' > $TEMP_JSON_INPUT
+echo '{"configurationCode": "jv4Ax7Nz", "description": "Ykoppa0V", "globalRules": [{"allowedAction": "gFJAhHwT", "ruleDetail": [{"ruleAttribute": "b5q010gN", "ruleCriteria": "MINIMUM", "ruleValue": 0.6659805943942503}]}], "groupAdminRoleId": "bpeRnxTl", "groupMaxMember": 57, "groupMemberRoleId": "TFSMIbl1", "name": "a2jXLCtW"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op CreateGroupConfigurationAdminV1 \

@@ -34,11 +34,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
 
     public class RewardUpdateType : StringEnum<RewardUpdateType>
     {
-        public static readonly RewardUpdateType ITEM
-            = new RewardUpdateType("ITEM");
-
         public static readonly RewardUpdateType CURRENCY
             = new RewardUpdateType("CURRENCY");
+
+        public static readonly RewardUpdateType ITEM
+            = new RewardUpdateType("ITEM");
 
 
         public static implicit operator RewardUpdateType(string value)

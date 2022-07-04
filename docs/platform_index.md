@@ -325,6 +325,12 @@
 |---|---|---|---|---|
 | `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/byCriteria` | GET | QueryChanges | [QueryChanges](../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/QueryChanges.cs) | [QueryChanges](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/QueryChanges.cs) |
 | `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/publishAll` | PUT | PublishAll | [PublishAll](../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/PublishAll.cs) | [PublishAll](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/PublishAll.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/publishSelected` | PUT | PublishSelected | [PublishSelected](../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/PublishSelected.cs) | [PublishSelected](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/PublishSelected.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/selectAll` | PUT | SelectAllRecords | [SelectAllRecords](../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/SelectAllRecords.cs) | [SelectAllRecords](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/SelectAllRecords.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/statistics` | GET | GetStatistic | [GetStatistic](../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/GetStatistic.cs) | [GetStatistic](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/GetStatistic.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/unselectAll` | PUT | UnselectAllRecords | [UnselectAllRecords](../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/UnselectAllRecords.cs) | [UnselectAllRecords](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/UnselectAllRecords.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/{changeId}/select` | PUT | SelectRecord | [SelectRecord](../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/SelectRecord.cs) | [SelectRecord](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/SelectRecord.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/{changeId}/unselect` | PUT | UnselectRecord | [UnselectRecord](../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/UnselectRecord.cs) | [UnselectRecord](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/UnselectRecord.cs) |
 
 ### Subscription Wrapper:  [Subscription](../AccelByte.Sdk/Api/Platform/Wrapper/Subscription.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -357,6 +363,12 @@
 | `/platform/admin/namespaces/{namespace}/tickets/{boothName}/id` | GET | GetTicketBoothID | [GetTicketBoothID](../AccelByte.Sdk/Api/Platform/Operation/Ticket/GetTicketBoothID.cs) | [GetTicketBoothID](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Ticket/GetTicketBoothID.cs) |
 | `/platform/admin/namespaces/{namespace}/tickets/{boothName}/increment` | PUT | IncreaseTicketSale | [IncreaseTicketSale](../AccelByte.Sdk/Api/Platform/Operation/Ticket/IncreaseTicketSale.cs) | [IncreaseTicketSale](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Ticket/IncreaseTicketSale.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/tickets/{boothName}` | POST | AcquireUserTicket | [AcquireUserTicket](../AccelByte.Sdk/Api/Platform/Operation/Ticket/AcquireUserTicket.cs) | [AcquireUserTicket](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Ticket/AcquireUserTicket.cs) |
+
+### Achievement(Platform) Wrapper:  [AchievementPlatform](../AccelByte.Sdk/Api/Platform/Wrapper/AchievementPlatform.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/users/{userId}/achievement/steam` | PUT | UnlockSteamUserAchievement | [UnlockSteamUserAchievement](../AccelByte.Sdk/Api/Platform/Operation/AchievementPlatform/UnlockSteamUserAchievement.cs) | [UnlockSteamUserAchievement](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/AchievementPlatform/UnlockSteamUserAchievement.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/achievement/xbl` | PUT | UpdateXblUserAchievement | [UpdateXblUserAchievement](../AccelByte.Sdk/Api/Platform/Operation/AchievementPlatform/UpdateXblUserAchievement.cs) | [UpdateXblUserAchievement](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/AchievementPlatform/UpdateXblUserAchievement.cs) |
 
 ### Anonymization Wrapper:  [Anonymization](../AccelByte.Sdk/Api/Platform/Wrapper/Anonymization.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -440,6 +452,8 @@
 
 | Model | Class |
 |---|---|
+| `A DTO object for unlock steam achievement API` | [ADTOObjectForUnlockSteamAchievementAPI](../AccelByte.Sdk/Api/Platform/Model/ADTOObjectForUnlockSteamAchievementAPI.cs) |
+| `A DTO object for update xbox achievement complete percentage API` | [ADTOObjectForUpdateXboxAchievementCompletePercentageAPI](../AccelByte.Sdk/Api/Platform/Model/ADTOObjectForUpdateXboxAchievementCompletePercentageAPI.cs) |
 | `AdditionalData` | [AdditionalData](../AccelByte.Sdk/Api/Platform/Model/AdditionalData.cs) |
 | `AdminOrderCreate` | [AdminOrderCreate](../AccelByte.Sdk/Api/Platform/Model/AdminOrderCreate.cs) |
 | `AdyenConfig` | [AdyenConfig](../AccelByte.Sdk/Api/Platform/Model/AdyenConfig.cs) |
@@ -467,6 +481,7 @@
 | `CancelRequest` | [CancelRequest](../AccelByte.Sdk/Api/Platform/Model/CancelRequest.cs) |
 | `CatalogChangeInfo` | [CatalogChangeInfo](../AccelByte.Sdk/Api/Platform/Model/CatalogChangeInfo.cs) |
 | `CatalogChangePagingSlicedResult` | [CatalogChangePagingSlicedResult](../AccelByte.Sdk/Api/Platform/Model/CatalogChangePagingSlicedResult.cs) |
+| `CatalogChangeStatistics` | [CatalogChangeStatistics](../AccelByte.Sdk/Api/Platform/Model/CatalogChangeStatistics.cs) |
 | `CategoryCreate` | [CategoryCreate](../AccelByte.Sdk/Api/Platform/Model/CategoryCreate.cs) |
 | `CategoryInfo` | [CategoryInfo](../AccelByte.Sdk/Api/Platform/Model/CategoryInfo.cs) |
 | `CategoryUpdate` | [CategoryUpdate](../AccelByte.Sdk/Api/Platform/Model/CategoryUpdate.cs) |
@@ -688,3 +703,5 @@
 | `XsollaConfig` | [XsollaConfig](../AccelByte.Sdk/Api/Platform/Model/XsollaConfig.cs) |
 | `XsollaPaywallConfig` | [XsollaPaywallConfig](../AccelByte.Sdk/Api/Platform/Model/XsollaPaywallConfig.cs) |
 | `XsollaPaywallConfigRequest` | [XsollaPaywallConfigRequest](../AccelByte.Sdk/Api/Platform/Model/XsollaPaywallConfigRequest.cs) |
+| `steam achievement request` | [SteamAchievementRequest](../AccelByte.Sdk/Api/Platform/Model/SteamAchievementRequest.cs) |
+| `xbox achievement request` | [XboxAchievementRequest](../AccelByte.Sdk/Api/Platform/Model/XboxAchievementRequest.cs) |

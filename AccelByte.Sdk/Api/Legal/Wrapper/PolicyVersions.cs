@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.RetrievePolicyVersionResponse>? RetrievePolicyVersions(RetrievePolicyVersions input) {
+        public Model.RetrievePolicyVersionResponse? RetrievePolicyVersions(RetrievePolicyVersions input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

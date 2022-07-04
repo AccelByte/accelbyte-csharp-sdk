@@ -88,14 +88,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class BillingHistoryInfoStatus : StringEnum<BillingHistoryInfoStatus>
     {
-        public static readonly BillingHistoryInfoStatus INIT
-            = new BillingHistoryInfoStatus("INIT");
-
         public static readonly BillingHistoryInfoStatus CHARGED
             = new BillingHistoryInfoStatus("CHARGED");
 
         public static readonly BillingHistoryInfoStatus CHARGEFAILED
             = new BillingHistoryInfoStatus("CHARGE_FAILED");
+
+        public static readonly BillingHistoryInfoStatus INIT
+            = new BillingHistoryInfoStatus("INIT");
 
         public static readonly BillingHistoryInfoStatus REFUNDED
             = new BillingHistoryInfoStatus("REFUNDED");

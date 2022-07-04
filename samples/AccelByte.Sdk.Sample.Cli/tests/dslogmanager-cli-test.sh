@@ -68,7 +68,8 @@ $CLI_EXE \
     --region 'HJBi9SoM' \
     --sessionId 'kSE4eJel' \
     --startDate 'wO4KPMky' \
-    --userId '2h8R2fIX' \
+    --status '2h8R2fIX' \
+    --userId 'oXP8gd7J' \
     > test.out 2>&1
 eval_tap $? 2 'ListTerminatedServers' test.out
 
@@ -77,7 +78,7 @@ $CLI_EXE \
     --sn dslogmanager \
     --op DownloadServerLogs \
     --namespace $AB_NAMESPACE \
-    --podName 'oXP8gd7J' \
+    --podName 'UabYc3GM' \
     > test.out 2>&1
 eval_tap $? 3 'DownloadServerLogs' test.out
 
@@ -86,13 +87,13 @@ $CLI_EXE \
     --sn dslogmanager \
     --op CheckServerLogs \
     --namespace $AB_NAMESPACE \
-    --podName 'UabYc3GM' \
+    --podName 'bxTlm1fs' \
     > test.out 2>&1
 eval_tap $? 4 'CheckServerLogs' test.out
 
 #- 5 BatchDownloadServerLogs
 # body param: body
-echo '{"Downloads": [{"alloc_id": "bxTlm1fs", "namespace": "u6J3C4s5", "pod_name": "ppGR9Xco"}]}' > $TEMP_JSON_INPUT
+echo '{"Downloads": [{"alloc_id": "u6J3C4s5", "namespace": "ppGR9Xco", "pod_name": "xYTGgewr"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dslogmanager \
     --op BatchDownloadServerLogs \
@@ -104,20 +105,21 @@ eval_tap $? 5 'BatchDownloadServerLogs' test.out
 $CLI_EXE \
     --sn dslogmanager \
     --op ListAllTerminatedServers \
-    --deployment 'xYTGgewr' \
-    --endDate 'LfwvzJF4' \
-    --gameMode 'TpbNhKq2' \
-    --limit '47' \
-    --namespace_ 'dmgEBepF' \
-    --next 'Htf6Zieg' \
-    --partyId 'qdEL4fsM' \
-    --podName '6nBzRVuC' \
-    --previous '1r7UH1Li' \
-    --provider 'u7UQ0304' \
-    --region 'McK873tR' \
-    --sessionId 'tr5cfWO5' \
-    --startDate 'JJ2c6vsO' \
-    --userId 'ns4jNWGc' \
+    --deployment 'LfwvzJF4' \
+    --endDate 'TpbNhKq2' \
+    --gameMode 'xdmgEBep' \
+    --limit '62' \
+    --namespace_ 'Htf6Zieg' \
+    --next 'qdEL4fsM' \
+    --partyId '6nBzRVuC' \
+    --podName '1r7UH1Li' \
+    --previous 'u7UQ0304' \
+    --provider 'McK873tR' \
+    --region 'tr5cfWO5' \
+    --sessionId 'JJ2c6vsO' \
+    --startDate 'ns4jNWGc' \
+    --status '7CiUa4wM' \
+    --userId '5Eu3Vqym' \
     > test.out 2>&1
 eval_tap $? 6 'ListAllTerminatedServers' test.out
 

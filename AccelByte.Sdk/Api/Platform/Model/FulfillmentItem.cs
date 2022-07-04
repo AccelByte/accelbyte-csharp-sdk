@@ -40,26 +40,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly FulfillmentItemItemType APP
             = new FulfillmentItemItemType("APP");
 
-        public static readonly FulfillmentItemItemType COINS
-            = new FulfillmentItemItemType("COINS");
-
-        public static readonly FulfillmentItemItemType INGAMEITEM
-            = new FulfillmentItemItemType("INGAMEITEM");
-
         public static readonly FulfillmentItemItemType BUNDLE
             = new FulfillmentItemItemType("BUNDLE");
 
         public static readonly FulfillmentItemItemType CODE
             = new FulfillmentItemItemType("CODE");
 
-        public static readonly FulfillmentItemItemType SUBSCRIPTION
-            = new FulfillmentItemItemType("SUBSCRIPTION");
+        public static readonly FulfillmentItemItemType COINS
+            = new FulfillmentItemItemType("COINS");
+
+        public static readonly FulfillmentItemItemType INGAMEITEM
+            = new FulfillmentItemItemType("INGAMEITEM");
+
+        public static readonly FulfillmentItemItemType MEDIA
+            = new FulfillmentItemItemType("MEDIA");
 
         public static readonly FulfillmentItemItemType SEASON
             = new FulfillmentItemItemType("SEASON");
 
-        public static readonly FulfillmentItemItemType MEDIA
-            = new FulfillmentItemItemType("MEDIA");
+        public static readonly FulfillmentItemItemType SUBSCRIPTION
+            = new FulfillmentItemItemType("SUBSCRIPTION");
 
 
         public static implicit operator FulfillmentItemItemType(string value)

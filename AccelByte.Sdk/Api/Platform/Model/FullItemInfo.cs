@@ -131,17 +131,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class FullItemInfoAppType : StringEnum<FullItemInfoAppType>
     {
+        public static readonly FullItemInfoAppType DEMO
+            = new FullItemInfoAppType("DEMO");
+
+        public static readonly FullItemInfoAppType DLC
+            = new FullItemInfoAppType("DLC");
+
         public static readonly FullItemInfoAppType GAME
             = new FullItemInfoAppType("GAME");
 
         public static readonly FullItemInfoAppType SOFTWARE
             = new FullItemInfoAppType("SOFTWARE");
-
-        public static readonly FullItemInfoAppType DLC
-            = new FullItemInfoAppType("DLC");
-
-        public static readonly FullItemInfoAppType DEMO
-            = new FullItemInfoAppType("DEMO");
 
 
         public static implicit operator FullItemInfoAppType(string value)
@@ -158,11 +158,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class FullItemInfoEntitlementType : StringEnum<FullItemInfoEntitlementType>
     {
-        public static readonly FullItemInfoEntitlementType DURABLE
-            = new FullItemInfoEntitlementType("DURABLE");
-
         public static readonly FullItemInfoEntitlementType CONSUMABLE
             = new FullItemInfoEntitlementType("CONSUMABLE");
+
+        public static readonly FullItemInfoEntitlementType DURABLE
+            = new FullItemInfoEntitlementType("DURABLE");
 
 
         public static implicit operator FullItemInfoEntitlementType(string value)
@@ -182,26 +182,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly FullItemInfoItemType APP
             = new FullItemInfoItemType("APP");
 
-        public static readonly FullItemInfoItemType COINS
-            = new FullItemInfoItemType("COINS");
-
-        public static readonly FullItemInfoItemType INGAMEITEM
-            = new FullItemInfoItemType("INGAMEITEM");
-
         public static readonly FullItemInfoItemType BUNDLE
             = new FullItemInfoItemType("BUNDLE");
 
         public static readonly FullItemInfoItemType CODE
             = new FullItemInfoItemType("CODE");
 
-        public static readonly FullItemInfoItemType SUBSCRIPTION
-            = new FullItemInfoItemType("SUBSCRIPTION");
+        public static readonly FullItemInfoItemType COINS
+            = new FullItemInfoItemType("COINS");
+
+        public static readonly FullItemInfoItemType INGAMEITEM
+            = new FullItemInfoItemType("INGAMEITEM");
+
+        public static readonly FullItemInfoItemType MEDIA
+            = new FullItemInfoItemType("MEDIA");
 
         public static readonly FullItemInfoItemType SEASON
             = new FullItemInfoItemType("SEASON");
 
-        public static readonly FullItemInfoItemType MEDIA
-            = new FullItemInfoItemType("MEDIA");
+        public static readonly FullItemInfoItemType SUBSCRIPTION
+            = new FullItemInfoItemType("SUBSCRIPTION");
 
 
         public static implicit operator FullItemInfoItemType(string value)

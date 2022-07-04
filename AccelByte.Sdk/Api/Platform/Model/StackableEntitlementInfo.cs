@@ -95,17 +95,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class StackableEntitlementInfoAppType : StringEnum<StackableEntitlementInfoAppType>
     {
+        public static readonly StackableEntitlementInfoAppType DEMO
+            = new StackableEntitlementInfoAppType("DEMO");
+
+        public static readonly StackableEntitlementInfoAppType DLC
+            = new StackableEntitlementInfoAppType("DLC");
+
         public static readonly StackableEntitlementInfoAppType GAME
             = new StackableEntitlementInfoAppType("GAME");
 
         public static readonly StackableEntitlementInfoAppType SOFTWARE
             = new StackableEntitlementInfoAppType("SOFTWARE");
-
-        public static readonly StackableEntitlementInfoAppType DLC
-            = new StackableEntitlementInfoAppType("DLC");
-
-        public static readonly StackableEntitlementInfoAppType DEMO
-            = new StackableEntitlementInfoAppType("DEMO");
 
 
         public static implicit operator StackableEntitlementInfoAppType(string value)
@@ -125,17 +125,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly StackableEntitlementInfoClazz APP
             = new StackableEntitlementInfoClazz("APP");
 
-        public static readonly StackableEntitlementInfoClazz ENTITLEMENT
-            = new StackableEntitlementInfoClazz("ENTITLEMENT");
-
         public static readonly StackableEntitlementInfoClazz CODE
             = new StackableEntitlementInfoClazz("CODE");
 
-        public static readonly StackableEntitlementInfoClazz SUBSCRIPTION
-            = new StackableEntitlementInfoClazz("SUBSCRIPTION");
+        public static readonly StackableEntitlementInfoClazz ENTITLEMENT
+            = new StackableEntitlementInfoClazz("ENTITLEMENT");
 
         public static readonly StackableEntitlementInfoClazz MEDIA
             = new StackableEntitlementInfoClazz("MEDIA");
+
+        public static readonly StackableEntitlementInfoClazz SUBSCRIPTION
+            = new StackableEntitlementInfoClazz("SUBSCRIPTION");
 
 
         public static implicit operator StackableEntitlementInfoClazz(string value)
@@ -152,32 +152,32 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class StackableEntitlementInfoSource : StringEnum<StackableEntitlementInfoSource>
     {
-        public static readonly StackableEntitlementInfoSource PURCHASE
-            = new StackableEntitlementInfoSource("PURCHASE");
-
-        public static readonly StackableEntitlementInfoSource IAP
-            = new StackableEntitlementInfoSource("IAP");
-
-        public static readonly StackableEntitlementInfoSource PROMOTION
-            = new StackableEntitlementInfoSource("PROMOTION");
-
         public static readonly StackableEntitlementInfoSource ACHIEVEMENT
             = new StackableEntitlementInfoSource("ACHIEVEMENT");
-
-        public static readonly StackableEntitlementInfoSource REFERRALBONUS
-            = new StackableEntitlementInfoSource("REFERRAL_BONUS");
-
-        public static readonly StackableEntitlementInfoSource REDEEMCODE
-            = new StackableEntitlementInfoSource("REDEEM_CODE");
-
-        public static readonly StackableEntitlementInfoSource REWARD
-            = new StackableEntitlementInfoSource("REWARD");
 
         public static readonly StackableEntitlementInfoSource GIFT
             = new StackableEntitlementInfoSource("GIFT");
 
+        public static readonly StackableEntitlementInfoSource IAP
+            = new StackableEntitlementInfoSource("IAP");
+
         public static readonly StackableEntitlementInfoSource OTHER
             = new StackableEntitlementInfoSource("OTHER");
+
+        public static readonly StackableEntitlementInfoSource PROMOTION
+            = new StackableEntitlementInfoSource("PROMOTION");
+
+        public static readonly StackableEntitlementInfoSource PURCHASE
+            = new StackableEntitlementInfoSource("PURCHASE");
+
+        public static readonly StackableEntitlementInfoSource REDEEMCODE
+            = new StackableEntitlementInfoSource("REDEEM_CODE");
+
+        public static readonly StackableEntitlementInfoSource REFERRALBONUS
+            = new StackableEntitlementInfoSource("REFERRAL_BONUS");
+
+        public static readonly StackableEntitlementInfoSource REWARD
+            = new StackableEntitlementInfoSource("REWARD");
 
 
         public static implicit operator StackableEntitlementInfoSource(string value)
@@ -197,11 +197,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly StackableEntitlementInfoStatus ACTIVE
             = new StackableEntitlementInfoStatus("ACTIVE");
 
-        public static readonly StackableEntitlementInfoStatus INACTIVE
-            = new StackableEntitlementInfoStatus("INACTIVE");
-
         public static readonly StackableEntitlementInfoStatus CONSUMED
             = new StackableEntitlementInfoStatus("CONSUMED");
+
+        public static readonly StackableEntitlementInfoStatus INACTIVE
+            = new StackableEntitlementInfoStatus("INACTIVE");
 
         public static readonly StackableEntitlementInfoStatus REVOKED
             = new StackableEntitlementInfoStatus("REVOKED");
@@ -221,11 +221,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class StackableEntitlementInfoType : StringEnum<StackableEntitlementInfoType>
     {
-        public static readonly StackableEntitlementInfoType DURABLE
-            = new StackableEntitlementInfoType("DURABLE");
-
         public static readonly StackableEntitlementInfoType CONSUMABLE
             = new StackableEntitlementInfoType("CONSUMABLE");
+
+        public static readonly StackableEntitlementInfoType DURABLE
+            = new StackableEntitlementInfoType("DURABLE");
 
 
         public static implicit operator StackableEntitlementInfoType(string value)

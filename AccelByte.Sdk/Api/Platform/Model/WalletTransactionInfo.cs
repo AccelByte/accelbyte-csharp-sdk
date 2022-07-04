@@ -52,11 +52,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly WalletTransactionInfoWalletAction CREDIT
             = new WalletTransactionInfoWalletAction("CREDIT");
 
-        public static readonly WalletTransactionInfoWalletAction PAYMENT
-            = new WalletTransactionInfoWalletAction("PAYMENT");
-
         public static readonly WalletTransactionInfoWalletAction DEBIT
             = new WalletTransactionInfoWalletAction("DEBIT");
+
+        public static readonly WalletTransactionInfoWalletAction PAYMENT
+            = new WalletTransactionInfoWalletAction("PAYMENT");
 
 
         public static implicit operator WalletTransactionInfoWalletAction(string value)

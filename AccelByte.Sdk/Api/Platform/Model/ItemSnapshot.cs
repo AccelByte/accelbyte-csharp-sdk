@@ -115,17 +115,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class ItemSnapshotAppType : StringEnum<ItemSnapshotAppType>
     {
+        public static readonly ItemSnapshotAppType DEMO
+            = new ItemSnapshotAppType("DEMO");
+
+        public static readonly ItemSnapshotAppType DLC
+            = new ItemSnapshotAppType("DLC");
+
         public static readonly ItemSnapshotAppType GAME
             = new ItemSnapshotAppType("GAME");
 
         public static readonly ItemSnapshotAppType SOFTWARE
             = new ItemSnapshotAppType("SOFTWARE");
-
-        public static readonly ItemSnapshotAppType DLC
-            = new ItemSnapshotAppType("DLC");
-
-        public static readonly ItemSnapshotAppType DEMO
-            = new ItemSnapshotAppType("DEMO");
 
 
         public static implicit operator ItemSnapshotAppType(string value)
@@ -142,11 +142,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class ItemSnapshotEntitlementType : StringEnum<ItemSnapshotEntitlementType>
     {
-        public static readonly ItemSnapshotEntitlementType DURABLE
-            = new ItemSnapshotEntitlementType("DURABLE");
-
         public static readonly ItemSnapshotEntitlementType CONSUMABLE
             = new ItemSnapshotEntitlementType("CONSUMABLE");
+
+        public static readonly ItemSnapshotEntitlementType DURABLE
+            = new ItemSnapshotEntitlementType("DURABLE");
 
 
         public static implicit operator ItemSnapshotEntitlementType(string value)
@@ -166,26 +166,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly ItemSnapshotItemType APP
             = new ItemSnapshotItemType("APP");
 
-        public static readonly ItemSnapshotItemType COINS
-            = new ItemSnapshotItemType("COINS");
-
-        public static readonly ItemSnapshotItemType INGAMEITEM
-            = new ItemSnapshotItemType("INGAMEITEM");
-
         public static readonly ItemSnapshotItemType BUNDLE
             = new ItemSnapshotItemType("BUNDLE");
 
         public static readonly ItemSnapshotItemType CODE
             = new ItemSnapshotItemType("CODE");
 
-        public static readonly ItemSnapshotItemType SUBSCRIPTION
-            = new ItemSnapshotItemType("SUBSCRIPTION");
+        public static readonly ItemSnapshotItemType COINS
+            = new ItemSnapshotItemType("COINS");
+
+        public static readonly ItemSnapshotItemType INGAMEITEM
+            = new ItemSnapshotItemType("INGAMEITEM");
+
+        public static readonly ItemSnapshotItemType MEDIA
+            = new ItemSnapshotItemType("MEDIA");
 
         public static readonly ItemSnapshotItemType SEASON
             = new ItemSnapshotItemType("SEASON");
 
-        public static readonly ItemSnapshotItemType MEDIA
-            = new ItemSnapshotItemType("MEDIA");
+        public static readonly ItemSnapshotItemType SUBSCRIPTION
+            = new ItemSnapshotItemType("SUBSCRIPTION");
 
 
         public static implicit operator ItemSnapshotItemType(string value)

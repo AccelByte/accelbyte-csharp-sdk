@@ -29,14 +29,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("count")]
-        public long? Count { get; set; }
-
-        [SdkCommandArgument("offset")]
-        public long? Offset { get; set; }
-
         [SdkCommandArgument("region")]
         public string? Region { get; set; }
+
+        [SdkCommandArgument("count")]
+        public long Count { get; set; } = 0;
+
+        [SdkCommandArgument("offset")]
+        public long Offset { get; set; } = 0;
 
         public ListServerCommand(AccelByteSDK sdk)
         {
@@ -49,9 +49,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
             ListServer operation = new ListServer(
                 Namespace,                
+                Region,                
                 Count,                
-                Offset,                
-                Region                
+                Offset                
             );            
             
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListServerResponse? response = wrapper.ListServer(operation);

@@ -40,23 +40,23 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class EntitlementHistoryInfoAction : StringEnum<EntitlementHistoryInfoAction>
     {
-        public static readonly EntitlementHistoryInfoAction GRANT
-            = new EntitlementHistoryInfoAction("GRANT");
-
-        public static readonly EntitlementHistoryInfoAction UPDATE
-            = new EntitlementHistoryInfoAction("UPDATE");
-
         public static readonly EntitlementHistoryInfoAction DECREMENT
             = new EntitlementHistoryInfoAction("DECREMENT");
-
-        public static readonly EntitlementHistoryInfoAction REVOKE
-            = new EntitlementHistoryInfoAction("REVOKE");
 
         public static readonly EntitlementHistoryInfoAction DISABLE
             = new EntitlementHistoryInfoAction("DISABLE");
 
         public static readonly EntitlementHistoryInfoAction ENABLE
             = new EntitlementHistoryInfoAction("ENABLE");
+
+        public static readonly EntitlementHistoryInfoAction GRANT
+            = new EntitlementHistoryInfoAction("GRANT");
+
+        public static readonly EntitlementHistoryInfoAction REVOKE
+            = new EntitlementHistoryInfoAction("REVOKE");
+
+        public static readonly EntitlementHistoryInfoAction UPDATE
+            = new EntitlementHistoryInfoAction("UPDATE");
 
 
         public static implicit operator EntitlementHistoryInfoAction(string value)

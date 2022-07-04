@@ -152,8 +152,8 @@ $CLI_EXE \
     --sn dsmc \
     --op GetAllDeployment \
     --namespace $AB_NAMESPACE \
-    --count '34' \
-    --name '7UH1Liu7' \
+    --name '1r7UH1Li' \
+    --count '41' \
     --offset '93' \
     > test.out 2>&1
 eval_tap $? 13 'GetAllDeployment' test.out
@@ -401,11 +401,11 @@ $CLI_EXE \
     --sn dsmc \
     --op ListImages \
     --namespace $AB_NAMESPACE \
-    --count '27' \
-    --offset '95' \
-    --q 'drdBA2hX' \
-    --sortBy 'updatedAt' \
+    --q 'nVdrdBA2' \
+    --sortBy 'createdAt' \
     --sortDirection 'desc' \
+    --count '100' \
+    --offset '48' \
     > test.out 2>&1
 eval_tap $? 35 'ListImages' test.out
 
@@ -479,9 +479,9 @@ $CLI_EXE \
     --sn dsmc \
     --op ListServer \
     --namespace $AB_NAMESPACE \
-    --count '48' \
-    --offset '76' \
-    --region 'O4DhL9fB' \
+    --region 'yMO4DhL9' \
+    --count '10' \
+    --offset '55' \
     > test.out 2>&1
 eval_tap $? 43 'ListServer' test.out
 
@@ -551,10 +551,10 @@ $CLI_EXE \
     --sn dsmc \
     --op ListSession \
     --namespace $AB_NAMESPACE \
-    --count '7' \
-    --offset '77' \
-    --region 'HfTwrxBR' \
-    --withServer 'False' \
+    --region '04dMHfTw' \
+    --withServer 'True' \
+    --count '46' \
+    --offset '54' \
     > test.out 2>&1
 eval_tap $? 51 'ListSession' test.out
 
@@ -563,7 +563,7 @@ $CLI_EXE \
     --sn dsmc \
     --op CountSession \
     --namespace $AB_NAMESPACE \
-    --region 'MxZrSfx3' \
+    --region 'RfMxZrSf' \
     > test.out 2>&1
 eval_tap $? 52 'CountSession' test.out
 
@@ -572,7 +572,7 @@ $CLI_EXE \
     --sn dsmc \
     --op DeleteSession \
     --namespace $AB_NAMESPACE \
-    --sessionID 'V8OXkMng' \
+    --sessionID 'x3V8OXkM' \
     > test.out 2>&1
 eval_tap $? 53 'DeleteSession' test.out
 
@@ -600,13 +600,13 @@ $CLI_EXE \
     --sn dsmc \
     --op ImageDetailClient \
     --namespace $AB_NAMESPACE \
-    --version '7p2SyFDE' \
+    --version 'ng7p2SyF' \
     > test.out 2>&1
 eval_tap $? 56 'ImageDetailClient' test.out
 
 #- 57 DeregisterLocalServer
 # body param: body
-echo '{"name": "nmYQzehP"}' > $TEMP_JSON_INPUT
+echo '{"name": "DEnmYQze"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op DeregisterLocalServer \
@@ -617,7 +617,7 @@ eval_tap $? 57 'DeregisterLocalServer' test.out
 
 #- 58 RegisterLocalServer
 # body param: body
-echo '{"custom_attribute": "BqD12Dvv", "ip": "zNNZSu5z", "name": "ZVgY3Zos", "port": 11}' > $TEMP_JSON_INPUT
+echo '{"custom_attribute": "hPBqD12D", "ip": "vvzNNZSu", "name": "5zZVgY3Z", "port": 28}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op RegisterLocalServer \
@@ -628,7 +628,7 @@ eval_tap $? 58 'RegisterLocalServer' test.out
 
 #- 59 RegisterServer
 # body param: body
-echo '{"custom_attribute": "d01vaOGw", "pod_name": "eHacvHRV"}' > $TEMP_JSON_INPUT
+echo '{"custom_attribute": "sfd01vaO", "pod_name": "GweHacvH"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op RegisterServer \

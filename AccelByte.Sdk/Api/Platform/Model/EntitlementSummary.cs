@@ -62,17 +62,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly EntitlementSummaryClazz APP
             = new EntitlementSummaryClazz("APP");
 
-        public static readonly EntitlementSummaryClazz ENTITLEMENT
-            = new EntitlementSummaryClazz("ENTITLEMENT");
-
         public static readonly EntitlementSummaryClazz CODE
             = new EntitlementSummaryClazz("CODE");
 
-        public static readonly EntitlementSummaryClazz SUBSCRIPTION
-            = new EntitlementSummaryClazz("SUBSCRIPTION");
+        public static readonly EntitlementSummaryClazz ENTITLEMENT
+            = new EntitlementSummaryClazz("ENTITLEMENT");
 
         public static readonly EntitlementSummaryClazz MEDIA
             = new EntitlementSummaryClazz("MEDIA");
+
+        public static readonly EntitlementSummaryClazz SUBSCRIPTION
+            = new EntitlementSummaryClazz("SUBSCRIPTION");
 
 
         public static implicit operator EntitlementSummaryClazz(string value)
@@ -89,11 +89,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class EntitlementSummaryType : StringEnum<EntitlementSummaryType>
     {
-        public static readonly EntitlementSummaryType DURABLE
-            = new EntitlementSummaryType("DURABLE");
-
         public static readonly EntitlementSummaryType CONSUMABLE
             = new EntitlementSummaryType("CONSUMABLE");
+
+        public static readonly EntitlementSummaryType DURABLE
+            = new EntitlementSummaryType("DURABLE");
 
 
         public static implicit operator EntitlementSummaryType(string value)

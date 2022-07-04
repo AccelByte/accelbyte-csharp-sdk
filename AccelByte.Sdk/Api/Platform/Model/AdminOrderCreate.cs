@@ -49,29 +49,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class AdminOrderCreatePlatform : StringEnum<AdminOrderCreatePlatform>
     {
-        public static readonly AdminOrderCreatePlatform Playstation
-            = new AdminOrderCreatePlatform("Playstation");
-
-        public static readonly AdminOrderCreatePlatform Xbox
-            = new AdminOrderCreatePlatform("Xbox");
-
-        public static readonly AdminOrderCreatePlatform Steam
-            = new AdminOrderCreatePlatform("Steam");
-
         public static readonly AdminOrderCreatePlatform Epic
             = new AdminOrderCreatePlatform("Epic");
 
-        public static readonly AdminOrderCreatePlatform IOS
-            = new AdminOrderCreatePlatform("IOS");
-
         public static readonly AdminOrderCreatePlatform GooglePlay
             = new AdminOrderCreatePlatform("GooglePlay");
+
+        public static readonly AdminOrderCreatePlatform IOS
+            = new AdminOrderCreatePlatform("IOS");
 
         public static readonly AdminOrderCreatePlatform Nintendo
             = new AdminOrderCreatePlatform("Nintendo");
 
         public static readonly AdminOrderCreatePlatform Other
             = new AdminOrderCreatePlatform("Other");
+
+        public static readonly AdminOrderCreatePlatform Playstation
+            = new AdminOrderCreatePlatform("Playstation");
+
+        public static readonly AdminOrderCreatePlatform Steam
+            = new AdminOrderCreatePlatform("Steam");
+
+        public static readonly AdminOrderCreatePlatform Xbox
+            = new AdminOrderCreatePlatform("Xbox");
 
 
         public static implicit operator AdminOrderCreatePlatform(string value)

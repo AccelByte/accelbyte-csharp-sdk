@@ -28,11 +28,11 @@ namespace AccelByte.Sdk.Api.Group.Model
         public static readonly ModelsRuleInformationRuleCriteria EQUAL
             = new ModelsRuleInformationRuleCriteria("EQUAL");
 
-        public static readonly ModelsRuleInformationRuleCriteria MINIMUM
-            = new ModelsRuleInformationRuleCriteria("MINIMUM");
-
         public static readonly ModelsRuleInformationRuleCriteria MAXIMUM
             = new ModelsRuleInformationRuleCriteria("MAXIMUM");
+
+        public static readonly ModelsRuleInformationRuleCriteria MINIMUM
+            = new ModelsRuleInformationRuleCriteria("MINIMUM");
 
 
         public static implicit operator ModelsRuleInformationRuleCriteria(string value)

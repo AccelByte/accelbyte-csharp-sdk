@@ -56,26 +56,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly MockIAPReceiptType APPLE
             = new MockIAPReceiptType("APPLE");
 
+        public static readonly MockIAPReceiptType EPICGAMES
+            = new MockIAPReceiptType("EPICGAMES");
+
         public static readonly MockIAPReceiptType GOOGLE
             = new MockIAPReceiptType("GOOGLE");
 
         public static readonly MockIAPReceiptType PLAYSTATION
             = new MockIAPReceiptType("PLAYSTATION");
 
-        public static readonly MockIAPReceiptType STEAM
-            = new MockIAPReceiptType("STEAM");
-
-        public static readonly MockIAPReceiptType XBOX
-            = new MockIAPReceiptType("XBOX");
-
         public static readonly MockIAPReceiptType STADIA
             = new MockIAPReceiptType("STADIA");
 
-        public static readonly MockIAPReceiptType EPICGAMES
-            = new MockIAPReceiptType("EPICGAMES");
+        public static readonly MockIAPReceiptType STEAM
+            = new MockIAPReceiptType("STEAM");
 
         public static readonly MockIAPReceiptType TWITCH
             = new MockIAPReceiptType("TWITCH");
+
+        public static readonly MockIAPReceiptType XBOX
+            = new MockIAPReceiptType("XBOX");
 
 
         public static implicit operator MockIAPReceiptType(string value)

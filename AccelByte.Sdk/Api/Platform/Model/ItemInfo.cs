@@ -146,17 +146,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class ItemInfoAppType : StringEnum<ItemInfoAppType>
     {
+        public static readonly ItemInfoAppType DEMO
+            = new ItemInfoAppType("DEMO");
+
+        public static readonly ItemInfoAppType DLC
+            = new ItemInfoAppType("DLC");
+
         public static readonly ItemInfoAppType GAME
             = new ItemInfoAppType("GAME");
 
         public static readonly ItemInfoAppType SOFTWARE
             = new ItemInfoAppType("SOFTWARE");
-
-        public static readonly ItemInfoAppType DLC
-            = new ItemInfoAppType("DLC");
-
-        public static readonly ItemInfoAppType DEMO
-            = new ItemInfoAppType("DEMO");
 
 
         public static implicit operator ItemInfoAppType(string value)
@@ -173,11 +173,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class ItemInfoEntitlementType : StringEnum<ItemInfoEntitlementType>
     {
-        public static readonly ItemInfoEntitlementType DURABLE
-            = new ItemInfoEntitlementType("DURABLE");
-
         public static readonly ItemInfoEntitlementType CONSUMABLE
             = new ItemInfoEntitlementType("CONSUMABLE");
+
+        public static readonly ItemInfoEntitlementType DURABLE
+            = new ItemInfoEntitlementType("DURABLE");
 
 
         public static implicit operator ItemInfoEntitlementType(string value)
@@ -197,26 +197,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly ItemInfoItemType APP
             = new ItemInfoItemType("APP");
 
-        public static readonly ItemInfoItemType COINS
-            = new ItemInfoItemType("COINS");
-
-        public static readonly ItemInfoItemType INGAMEITEM
-            = new ItemInfoItemType("INGAMEITEM");
-
         public static readonly ItemInfoItemType BUNDLE
             = new ItemInfoItemType("BUNDLE");
 
         public static readonly ItemInfoItemType CODE
             = new ItemInfoItemType("CODE");
 
-        public static readonly ItemInfoItemType SUBSCRIPTION
-            = new ItemInfoItemType("SUBSCRIPTION");
+        public static readonly ItemInfoItemType COINS
+            = new ItemInfoItemType("COINS");
+
+        public static readonly ItemInfoItemType INGAMEITEM
+            = new ItemInfoItemType("INGAMEITEM");
+
+        public static readonly ItemInfoItemType MEDIA
+            = new ItemInfoItemType("MEDIA");
 
         public static readonly ItemInfoItemType SEASON
             = new ItemInfoItemType("SEASON");
 
-        public static readonly ItemInfoItemType MEDIA
-            = new ItemInfoItemType("MEDIA");
+        public static readonly ItemInfoItemType SUBSCRIPTION
+            = new ItemInfoItemType("SUBSCRIPTION");
 
 
         public static implicit operator ItemInfoItemType(string value)

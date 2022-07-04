@@ -56,29 +56,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentOrderNotifySimulationPaymentProvider : StringEnum<PaymentOrderNotifySimulationPaymentProvider>
     {
-        public static readonly PaymentOrderNotifySimulationPaymentProvider WALLET
-            = new PaymentOrderNotifySimulationPaymentProvider("WALLET");
-
-        public static readonly PaymentOrderNotifySimulationPaymentProvider XSOLLA
-            = new PaymentOrderNotifySimulationPaymentProvider("XSOLLA");
-
         public static readonly PaymentOrderNotifySimulationPaymentProvider ADYEN
             = new PaymentOrderNotifySimulationPaymentProvider("ADYEN");
-
-        public static readonly PaymentOrderNotifySimulationPaymentProvider STRIPE
-            = new PaymentOrderNotifySimulationPaymentProvider("STRIPE");
-
-        public static readonly PaymentOrderNotifySimulationPaymentProvider CHECKOUT
-            = new PaymentOrderNotifySimulationPaymentProvider("CHECKOUT");
 
         public static readonly PaymentOrderNotifySimulationPaymentProvider ALIPAY
             = new PaymentOrderNotifySimulationPaymentProvider("ALIPAY");
 
-        public static readonly PaymentOrderNotifySimulationPaymentProvider WXPAY
-            = new PaymentOrderNotifySimulationPaymentProvider("WXPAY");
+        public static readonly PaymentOrderNotifySimulationPaymentProvider CHECKOUT
+            = new PaymentOrderNotifySimulationPaymentProvider("CHECKOUT");
 
         public static readonly PaymentOrderNotifySimulationPaymentProvider PAYPAL
             = new PaymentOrderNotifySimulationPaymentProvider("PAYPAL");
+
+        public static readonly PaymentOrderNotifySimulationPaymentProvider STRIPE
+            = new PaymentOrderNotifySimulationPaymentProvider("STRIPE");
+
+        public static readonly PaymentOrderNotifySimulationPaymentProvider WALLET
+            = new PaymentOrderNotifySimulationPaymentProvider("WALLET");
+
+        public static readonly PaymentOrderNotifySimulationPaymentProvider WXPAY
+            = new PaymentOrderNotifySimulationPaymentProvider("WXPAY");
+
+        public static readonly PaymentOrderNotifySimulationPaymentProvider XSOLLA
+            = new PaymentOrderNotifySimulationPaymentProvider("XSOLLA");
 
 
         public static implicit operator PaymentOrderNotifySimulationPaymentProvider(string value)

@@ -149,29 +149,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class OrderPaymentProvider : StringEnum<OrderPaymentProvider>
     {
-        public static readonly OrderPaymentProvider WALLET
-            = new OrderPaymentProvider("WALLET");
-
-        public static readonly OrderPaymentProvider XSOLLA
-            = new OrderPaymentProvider("XSOLLA");
-
         public static readonly OrderPaymentProvider ADYEN
             = new OrderPaymentProvider("ADYEN");
-
-        public static readonly OrderPaymentProvider STRIPE
-            = new OrderPaymentProvider("STRIPE");
-
-        public static readonly OrderPaymentProvider CHECKOUT
-            = new OrderPaymentProvider("CHECKOUT");
 
         public static readonly OrderPaymentProvider ALIPAY
             = new OrderPaymentProvider("ALIPAY");
 
-        public static readonly OrderPaymentProvider WXPAY
-            = new OrderPaymentProvider("WXPAY");
+        public static readonly OrderPaymentProvider CHECKOUT
+            = new OrderPaymentProvider("CHECKOUT");
 
         public static readonly OrderPaymentProvider PAYPAL
             = new OrderPaymentProvider("PAYPAL");
+
+        public static readonly OrderPaymentProvider STRIPE
+            = new OrderPaymentProvider("STRIPE");
+
+        public static readonly OrderPaymentProvider WALLET
+            = new OrderPaymentProvider("WALLET");
+
+        public static readonly OrderPaymentProvider WXPAY
+            = new OrderPaymentProvider("WXPAY");
+
+        public static readonly OrderPaymentProvider XSOLLA
+            = new OrderPaymentProvider("XSOLLA");
 
 
         public static implicit operator OrderPaymentProvider(string value)
@@ -188,17 +188,20 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class OrderStatus : StringEnum<OrderStatus>
     {
-        public static readonly OrderStatus INIT
-            = new OrderStatus("INIT");
-
-        public static readonly OrderStatus CHARGED
-            = new OrderStatus("CHARGED");
-
         public static readonly OrderStatus CHARGEBACK
             = new OrderStatus("CHARGEBACK");
 
         public static readonly OrderStatus CHARGEBACKREVERSED
             = new OrderStatus("CHARGEBACK_REVERSED");
+
+        public static readonly OrderStatus CHARGED
+            = new OrderStatus("CHARGED");
+
+        public static readonly OrderStatus CLOSED
+            = new OrderStatus("CLOSED");
+
+        public static readonly OrderStatus DELETED
+            = new OrderStatus("DELETED");
 
         public static readonly OrderStatus FULFILLED
             = new OrderStatus("FULFILLED");
@@ -206,20 +209,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly OrderStatus FULFILLFAILED
             = new OrderStatus("FULFILL_FAILED");
 
-        public static readonly OrderStatus REFUNDING
-            = new OrderStatus("REFUNDING");
+        public static readonly OrderStatus INIT
+            = new OrderStatus("INIT");
 
         public static readonly OrderStatus REFUNDED
             = new OrderStatus("REFUNDED");
 
+        public static readonly OrderStatus REFUNDING
+            = new OrderStatus("REFUNDING");
+
         public static readonly OrderStatus REFUNDFAILED
             = new OrderStatus("REFUND_FAILED");
-
-        public static readonly OrderStatus CLOSED
-            = new OrderStatus("CLOSED");
-
-        public static readonly OrderStatus DELETED
-            = new OrderStatus("DELETED");
 
 
         public static implicit operator OrderStatus(string value)

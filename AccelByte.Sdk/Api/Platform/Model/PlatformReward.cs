@@ -28,11 +28,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PlatformRewardType : StringEnum<PlatformRewardType>
     {
-        public static readonly PlatformRewardType ITEM
-            = new PlatformRewardType("ITEM");
-
         public static readonly PlatformRewardType CURRENCY
             = new PlatformRewardType("CURRENCY");
+
+        public static readonly PlatformRewardType ITEM
+            = new PlatformRewardType("ITEM");
 
 
         public static implicit operator PlatformRewardType(string value)

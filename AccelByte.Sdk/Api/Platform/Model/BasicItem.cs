@@ -68,17 +68,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class BasicItemAppType : StringEnum<BasicItemAppType>
     {
+        public static readonly BasicItemAppType DEMO
+            = new BasicItemAppType("DEMO");
+
+        public static readonly BasicItemAppType DLC
+            = new BasicItemAppType("DLC");
+
         public static readonly BasicItemAppType GAME
             = new BasicItemAppType("GAME");
 
         public static readonly BasicItemAppType SOFTWARE
             = new BasicItemAppType("SOFTWARE");
-
-        public static readonly BasicItemAppType DLC
-            = new BasicItemAppType("DLC");
-
-        public static readonly BasicItemAppType DEMO
-            = new BasicItemAppType("DEMO");
 
 
         public static implicit operator BasicItemAppType(string value)
@@ -95,11 +95,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class BasicItemEntitlementType : StringEnum<BasicItemEntitlementType>
     {
-        public static readonly BasicItemEntitlementType DURABLE
-            = new BasicItemEntitlementType("DURABLE");
-
         public static readonly BasicItemEntitlementType CONSUMABLE
             = new BasicItemEntitlementType("CONSUMABLE");
+
+        public static readonly BasicItemEntitlementType DURABLE
+            = new BasicItemEntitlementType("DURABLE");
 
 
         public static implicit operator BasicItemEntitlementType(string value)
@@ -119,26 +119,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly BasicItemItemType APP
             = new BasicItemItemType("APP");
 
-        public static readonly BasicItemItemType COINS
-            = new BasicItemItemType("COINS");
-
-        public static readonly BasicItemItemType INGAMEITEM
-            = new BasicItemItemType("INGAMEITEM");
-
         public static readonly BasicItemItemType BUNDLE
             = new BasicItemItemType("BUNDLE");
 
         public static readonly BasicItemItemType CODE
             = new BasicItemItemType("CODE");
 
-        public static readonly BasicItemItemType SUBSCRIPTION
-            = new BasicItemItemType("SUBSCRIPTION");
+        public static readonly BasicItemItemType COINS
+            = new BasicItemItemType("COINS");
+
+        public static readonly BasicItemItemType INGAMEITEM
+            = new BasicItemItemType("INGAMEITEM");
+
+        public static readonly BasicItemItemType MEDIA
+            = new BasicItemItemType("MEDIA");
 
         public static readonly BasicItemItemType SEASON
             = new BasicItemItemType("SEASON");
 
-        public static readonly BasicItemItemType MEDIA
-            = new BasicItemItemType("MEDIA");
+        public static readonly BasicItemItemType SUBSCRIPTION
+            = new BasicItemItemType("SUBSCRIPTION");
 
 
         public static implicit operator BasicItemItemType(string value)

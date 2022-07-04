@@ -53,17 +53,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class AppEntitlementInfoAppType : StringEnum<AppEntitlementInfoAppType>
     {
+        public static readonly AppEntitlementInfoAppType DEMO
+            = new AppEntitlementInfoAppType("DEMO");
+
+        public static readonly AppEntitlementInfoAppType DLC
+            = new AppEntitlementInfoAppType("DLC");
+
         public static readonly AppEntitlementInfoAppType GAME
             = new AppEntitlementInfoAppType("GAME");
 
         public static readonly AppEntitlementInfoAppType SOFTWARE
             = new AppEntitlementInfoAppType("SOFTWARE");
-
-        public static readonly AppEntitlementInfoAppType DLC
-            = new AppEntitlementInfoAppType("DLC");
-
-        public static readonly AppEntitlementInfoAppType DEMO
-            = new AppEntitlementInfoAppType("DEMO");
 
 
         public static implicit operator AppEntitlementInfoAppType(string value)
@@ -83,11 +83,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly AppEntitlementInfoStatus ACTIVE
             = new AppEntitlementInfoStatus("ACTIVE");
 
-        public static readonly AppEntitlementInfoStatus INACTIVE
-            = new AppEntitlementInfoStatus("INACTIVE");
-
         public static readonly AppEntitlementInfoStatus CONSUMED
             = new AppEntitlementInfoStatus("CONSUMED");
+
+        public static readonly AppEntitlementInfoStatus INACTIVE
+            = new AppEntitlementInfoStatus("INACTIVE");
 
         public static readonly AppEntitlementInfoStatus REVOKED
             = new AppEntitlementInfoStatus("REVOKED");

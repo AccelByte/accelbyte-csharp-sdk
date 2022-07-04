@@ -59,11 +59,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly SlideVideoSource Generic
             = new SlideVideoSource("generic");
 
-        public static readonly SlideVideoSource Youtube
-            = new SlideVideoSource("youtube");
-
         public static readonly SlideVideoSource Vimeo
             = new SlideVideoSource("vimeo");
+
+        public static readonly SlideVideoSource Youtube
+            = new SlideVideoSource("youtube");
 
 
         public static implicit operator SlideVideoSource(string value)

@@ -31,14 +31,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class XblReconcileResultIapOrderStatus : StringEnum<XblReconcileResultIapOrderStatus>
     {
-        public static readonly XblReconcileResultIapOrderStatus VERIFIED
-            = new XblReconcileResultIapOrderStatus("VERIFIED");
+        public static readonly XblReconcileResultIapOrderStatus FAILED
+            = new XblReconcileResultIapOrderStatus("FAILED");
 
         public static readonly XblReconcileResultIapOrderStatus FULFILLED
             = new XblReconcileResultIapOrderStatus("FULFILLED");
 
-        public static readonly XblReconcileResultIapOrderStatus FAILED
-            = new XblReconcileResultIapOrderStatus("FAILED");
+        public static readonly XblReconcileResultIapOrderStatus VERIFIED
+            = new XblReconcileResultIapOrderStatus("VERIFIED");
 
 
         public static implicit operator XblReconcileResultIapOrderStatus(string value)

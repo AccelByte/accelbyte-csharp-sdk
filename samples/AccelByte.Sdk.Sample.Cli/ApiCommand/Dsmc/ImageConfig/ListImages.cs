@@ -29,12 +29,6 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("count")]
-        public long? Count { get; set; }
-
-        [SdkCommandArgument("offset")]
-        public long? Offset { get; set; }
-
         [SdkCommandArgument("q")]
         public string? Q { get; set; }
 
@@ -43,6 +37,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
         [SdkCommandArgument("sortDirection")]
         public string? SortDirection { get; set; }
+
+        [SdkCommandArgument("count")]
+        public long Count { get; set; } = 0;
+
+        [SdkCommandArgument("offset")]
+        public long Offset { get; set; } = 0;
 
         public ListImagesCommand(AccelByteSDK sdk)
         {
@@ -55,11 +55,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
             ListImages operation = new ListImages(
                 Namespace,                
-                Count,                
-                Offset,                
                 Q,                
                 (SortBy is null ? null : ListImagesSortBy.NewValue(SortBy)),                
-                (SortDirection is null ? null : ListImagesSortDirection.NewValue(SortDirection))                
+                (SortDirection is null ? null : ListImagesSortDirection.NewValue(SortDirection)),                
+                Count,                
+                Offset                
             );            
             
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListImageResponse? response = wrapper.ListImages(operation);

@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class KeyInfoStatus : StringEnum<KeyInfoStatus>
     {
-        public static readonly KeyInfoStatus ACTIVE
-            = new KeyInfoStatus("ACTIVE");
-
         public static readonly KeyInfoStatus ACQUIRED
             = new KeyInfoStatus("ACQUIRED");
+
+        public static readonly KeyInfoStatus ACTIVE
+            = new KeyInfoStatus("ACTIVE");
 
 
         public static implicit operator KeyInfoStatus(string value)

@@ -31,29 +31,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentUrlCreatePaymentProvider : StringEnum<PaymentUrlCreatePaymentProvider>
     {
-        public static readonly PaymentUrlCreatePaymentProvider WALLET
-            = new PaymentUrlCreatePaymentProvider("WALLET");
-
-        public static readonly PaymentUrlCreatePaymentProvider XSOLLA
-            = new PaymentUrlCreatePaymentProvider("XSOLLA");
-
         public static readonly PaymentUrlCreatePaymentProvider ADYEN
             = new PaymentUrlCreatePaymentProvider("ADYEN");
-
-        public static readonly PaymentUrlCreatePaymentProvider STRIPE
-            = new PaymentUrlCreatePaymentProvider("STRIPE");
-
-        public static readonly PaymentUrlCreatePaymentProvider CHECKOUT
-            = new PaymentUrlCreatePaymentProvider("CHECKOUT");
 
         public static readonly PaymentUrlCreatePaymentProvider ALIPAY
             = new PaymentUrlCreatePaymentProvider("ALIPAY");
 
-        public static readonly PaymentUrlCreatePaymentProvider WXPAY
-            = new PaymentUrlCreatePaymentProvider("WXPAY");
+        public static readonly PaymentUrlCreatePaymentProvider CHECKOUT
+            = new PaymentUrlCreatePaymentProvider("CHECKOUT");
 
         public static readonly PaymentUrlCreatePaymentProvider PAYPAL
             = new PaymentUrlCreatePaymentProvider("PAYPAL");
+
+        public static readonly PaymentUrlCreatePaymentProvider STRIPE
+            = new PaymentUrlCreatePaymentProvider("STRIPE");
+
+        public static readonly PaymentUrlCreatePaymentProvider WALLET
+            = new PaymentUrlCreatePaymentProvider("WALLET");
+
+        public static readonly PaymentUrlCreatePaymentProvider WXPAY
+            = new PaymentUrlCreatePaymentProvider("WXPAY");
+
+        public static readonly PaymentUrlCreatePaymentProvider XSOLLA
+            = new PaymentUrlCreatePaymentProvider("XSOLLA");
 
 
         public static implicit operator PaymentUrlCreatePaymentProvider(string value)

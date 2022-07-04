@@ -53,23 +53,23 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public static readonly RewardInfoItemType APP
             = new RewardInfoItemType("APP");
 
-        public static readonly RewardInfoItemType COINS
-            = new RewardInfoItemType("COINS");
-
-        public static readonly RewardInfoItemType INGAMEITEM
-            = new RewardInfoItemType("INGAMEITEM");
-
         public static readonly RewardInfoItemType BUNDLE
             = new RewardInfoItemType("BUNDLE");
 
         public static readonly RewardInfoItemType CODE
             = new RewardInfoItemType("CODE");
 
-        public static readonly RewardInfoItemType SUBSCRIPTION
-            = new RewardInfoItemType("SUBSCRIPTION");
+        public static readonly RewardInfoItemType COINS
+            = new RewardInfoItemType("COINS");
+
+        public static readonly RewardInfoItemType INGAMEITEM
+            = new RewardInfoItemType("INGAMEITEM");
 
         public static readonly RewardInfoItemType SEASON
             = new RewardInfoItemType("SEASON");
+
+        public static readonly RewardInfoItemType SUBSCRIPTION
+            = new RewardInfoItemType("SUBSCRIPTION");
 
 
         public static implicit operator RewardInfoItemType(string value)
@@ -86,11 +86,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
 
     public class RewardInfoType : StringEnum<RewardInfoType>
     {
-        public static readonly RewardInfoType ITEM
-            = new RewardInfoType("ITEM");
-
         public static readonly RewardInfoType CURRENCY
             = new RewardInfoType("CURRENCY");
+
+        public static readonly RewardInfoType ITEM
+            = new RewardInfoType("ITEM");
 
 
         public static implicit operator RewardInfoType(string value)

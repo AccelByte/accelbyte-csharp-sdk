@@ -22,29 +22,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentRequestWalletPlatform : StringEnum<PaymentRequestWalletPlatform>
     {
-        public static readonly PaymentRequestWalletPlatform Playstation
-            = new PaymentRequestWalletPlatform("Playstation");
-
-        public static readonly PaymentRequestWalletPlatform Xbox
-            = new PaymentRequestWalletPlatform("Xbox");
-
-        public static readonly PaymentRequestWalletPlatform Steam
-            = new PaymentRequestWalletPlatform("Steam");
-
         public static readonly PaymentRequestWalletPlatform Epic
             = new PaymentRequestWalletPlatform("Epic");
 
-        public static readonly PaymentRequestWalletPlatform IOS
-            = new PaymentRequestWalletPlatform("IOS");
-
         public static readonly PaymentRequestWalletPlatform GooglePlay
             = new PaymentRequestWalletPlatform("GooglePlay");
+
+        public static readonly PaymentRequestWalletPlatform IOS
+            = new PaymentRequestWalletPlatform("IOS");
 
         public static readonly PaymentRequestWalletPlatform Nintendo
             = new PaymentRequestWalletPlatform("Nintendo");
 
         public static readonly PaymentRequestWalletPlatform Other
             = new PaymentRequestWalletPlatform("Other");
+
+        public static readonly PaymentRequestWalletPlatform Playstation
+            = new PaymentRequestWalletPlatform("Playstation");
+
+        public static readonly PaymentRequestWalletPlatform Steam
+            = new PaymentRequestWalletPlatform("Steam");
+
+        public static readonly PaymentRequestWalletPlatform Xbox
+            = new PaymentRequestWalletPlatform("Xbox");
 
 
         public static implicit operator PaymentRequestWalletPlatform(string value)

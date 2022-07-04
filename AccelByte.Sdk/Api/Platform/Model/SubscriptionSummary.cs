@@ -44,9 +44,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class SubscriptionSummaryStatus : StringEnum<SubscriptionSummaryStatus>
     {
-        public static readonly SubscriptionSummaryStatus INIT
-            = new SubscriptionSummaryStatus("INIT");
-
         public static readonly SubscriptionSummaryStatus ACTIVE
             = new SubscriptionSummaryStatus("ACTIVE");
 
@@ -55,6 +52,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly SubscriptionSummaryStatus EXPIRED
             = new SubscriptionSummaryStatus("EXPIRED");
+
+        public static readonly SubscriptionSummaryStatus INIT
+            = new SubscriptionSummaryStatus("INIT");
 
 
         public static implicit operator SubscriptionSummaryStatus(string value)
@@ -71,11 +71,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class SubscriptionSummarySubscribedBy : StringEnum<SubscriptionSummarySubscribedBy>
     {
-        public static readonly SubscriptionSummarySubscribedBy USER
-            = new SubscriptionSummarySubscribedBy("USER");
-
         public static readonly SubscriptionSummarySubscribedBy PLATFORM
             = new SubscriptionSummarySubscribedBy("PLATFORM");
+
+        public static readonly SubscriptionSummarySubscribedBy USER
+            = new SubscriptionSummarySubscribedBy("USER");
 
 
         public static implicit operator SubscriptionSummarySubscribedBy(string value)

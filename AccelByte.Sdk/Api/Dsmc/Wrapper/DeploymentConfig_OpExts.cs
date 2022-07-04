@@ -14,11 +14,15 @@ namespace AccelByte.Sdk.Api
     {
         public static Dsmc.Model.ModelsListDeploymentResponse? Execute(
             this GetAllDeployment.GetAllDeploymentBuilder builder,
-            string namespace_
+            string namespace_,
+            long count,
+            long offset
         )
         {
             GetAllDeployment op = builder.Build(
-                namespace_
+                namespace_,
+                count,
+                offset
             );
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).GetAllDeployment(op);

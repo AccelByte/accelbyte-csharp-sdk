@@ -21,6 +21,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// Required scope: social
     /// 
     /// This endpoint lists all of dedicated servers images.
+    /// 
+    /// Parameter Offset and Count is Required
     /// </summary>
     public class ListImages : AccelByte.Sdk.Core.Operation
     {
@@ -30,10 +32,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class ListImagesBuilder
             : OperationBuilder<ListImagesBuilder>
         {
-
-            public long? Count { get; set; }
-
-            public long? Offset { get; set; }
 
             public string? Q { get; set; }
 
@@ -47,18 +45,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
             internal ListImagesBuilder() { }
 
-
-            public ListImagesBuilder SetCount(long _count)
-            {
-                Count = _count;
-                return this;
-            }
-
-            public ListImagesBuilder SetOffset(long _offset)
-            {
-                Offset = _offset;
-                return this;
-            }
 
             public ListImagesBuilder SetQ(string _q)
             {
@@ -83,11 +69,15 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
 
             public ListImages Build(
-                string namespace_
+                string namespace_,
+                long count,
+                long offset
             )
             {
                 ListImages op = new ListImages(this,
-                    namespace_                    
+                    namespace_,                    
+                    count,                    
+                    offset                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -96,16 +86,18 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         }
 
         private ListImages(ListImagesBuilder builder,
-            string namespace_
+            string namespace_,
+            long count,
+            long offset
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
-            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Q is not null) QueryParams["q"] = builder.Q;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
             if (builder.SortDirection is not null) QueryParams["sortDirection"] = builder.SortDirection.Value;
+            QueryParams["count"] = Convert.ToString(count)!;
+            QueryParams["offset"] = Convert.ToString(offset)!;
             
 
             
@@ -118,20 +110,20 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public ListImages(
             string namespace_,            
-            long? count,            
-            long? offset,            
             string? q,            
             ListImagesSortBy? sortBy,            
-            ListImagesSortDirection? sortDirection            
+            ListImagesSortDirection? sortDirection,            
+            long count,            
+            long offset            
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (count != null) QueryParams["count"] = Convert.ToString(count)!;
-            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (q is not null) QueryParams["q"] = q;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
             if (sortDirection is not null) QueryParams["sortDirection"] = sortDirection.Value;
+            QueryParams["count"] = Convert.ToString(count)!;
+            QueryParams["offset"] = Convert.ToString(offset)!;
             
 
             

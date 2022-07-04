@@ -29,17 +29,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("count")]
-        public long? Count { get; set; }
-
-        [SdkCommandArgument("offset")]
-        public long? Offset { get; set; }
-
         [SdkCommandArgument("region")]
         public string? Region { get; set; }
 
         [SdkCommandArgument("withServer")]
         public bool? WithServer { get; set; }
+
+        [SdkCommandArgument("count")]
+        public long Count { get; set; } = 0;
+
+        [SdkCommandArgument("offset")]
+        public long Offset { get; set; } = 0;
 
         public ListSessionCommand(AccelByteSDK sdk)
         {
@@ -52,10 +52,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
             ListSession operation = new ListSession(
                 Namespace,                
-                Count,                
-                Offset,                
                 Region,                
-                WithServer                
+                WithServer,                
+                Count,                
+                Offset                
             );            
             
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListSessionResponse? response = wrapper.ListSession(operation);

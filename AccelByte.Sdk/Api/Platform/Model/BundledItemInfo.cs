@@ -149,17 +149,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class BundledItemInfoAppType : StringEnum<BundledItemInfoAppType>
     {
+        public static readonly BundledItemInfoAppType DEMO
+            = new BundledItemInfoAppType("DEMO");
+
+        public static readonly BundledItemInfoAppType DLC
+            = new BundledItemInfoAppType("DLC");
+
         public static readonly BundledItemInfoAppType GAME
             = new BundledItemInfoAppType("GAME");
 
         public static readonly BundledItemInfoAppType SOFTWARE
             = new BundledItemInfoAppType("SOFTWARE");
-
-        public static readonly BundledItemInfoAppType DLC
-            = new BundledItemInfoAppType("DLC");
-
-        public static readonly BundledItemInfoAppType DEMO
-            = new BundledItemInfoAppType("DEMO");
 
 
         public static implicit operator BundledItemInfoAppType(string value)
@@ -176,11 +176,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class BundledItemInfoEntitlementType : StringEnum<BundledItemInfoEntitlementType>
     {
-        public static readonly BundledItemInfoEntitlementType DURABLE
-            = new BundledItemInfoEntitlementType("DURABLE");
-
         public static readonly BundledItemInfoEntitlementType CONSUMABLE
             = new BundledItemInfoEntitlementType("CONSUMABLE");
+
+        public static readonly BundledItemInfoEntitlementType DURABLE
+            = new BundledItemInfoEntitlementType("DURABLE");
 
 
         public static implicit operator BundledItemInfoEntitlementType(string value)
@@ -200,26 +200,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly BundledItemInfoItemType APP
             = new BundledItemInfoItemType("APP");
 
-        public static readonly BundledItemInfoItemType COINS
-            = new BundledItemInfoItemType("COINS");
-
-        public static readonly BundledItemInfoItemType INGAMEITEM
-            = new BundledItemInfoItemType("INGAMEITEM");
-
         public static readonly BundledItemInfoItemType BUNDLE
             = new BundledItemInfoItemType("BUNDLE");
 
         public static readonly BundledItemInfoItemType CODE
             = new BundledItemInfoItemType("CODE");
 
-        public static readonly BundledItemInfoItemType SUBSCRIPTION
-            = new BundledItemInfoItemType("SUBSCRIPTION");
+        public static readonly BundledItemInfoItemType COINS
+            = new BundledItemInfoItemType("COINS");
+
+        public static readonly BundledItemInfoItemType INGAMEITEM
+            = new BundledItemInfoItemType("INGAMEITEM");
+
+        public static readonly BundledItemInfoItemType MEDIA
+            = new BundledItemInfoItemType("MEDIA");
 
         public static readonly BundledItemInfoItemType SEASON
             = new BundledItemInfoItemType("SEASON");
 
-        public static readonly BundledItemInfoItemType MEDIA
-            = new BundledItemInfoItemType("MEDIA");
+        public static readonly BundledItemInfoItemType SUBSCRIPTION
+            = new BundledItemInfoItemType("SUBSCRIPTION");
 
 
         public static implicit operator BundledItemInfoItemType(string value)

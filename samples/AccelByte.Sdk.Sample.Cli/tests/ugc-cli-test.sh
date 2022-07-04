@@ -215,7 +215,7 @@ eval_tap $? 16 'AdminUpdateScreenshots' test.out
 
 #- 17 AdminUploadContentScreenshot
 # body param: body
-echo '{"screenshots": [{"contentType": "zSuY8w9V", "description": "YwBEfRXo", "fileExtension": "bmp"}]}' > $TEMP_JSON_INPUT
+echo '{"screenshots": [{"contentType": "zSuY8w9V", "description": "YwBEfRXo", "fileExtension": "pjp"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ugc \
     --op AdminUploadContentScreenshot \
@@ -850,7 +850,7 @@ eval_tap $? 76 'UpdateScreenshots' test.out
 
 #- 77 UploadContentScreenshot
 # body param: body
-echo '{"screenshots": [{"contentType": "mxLnvZEG", "description": "2biyKS8v", "fileExtension": "pjp"}]}' > $TEMP_JSON_INPUT
+echo '{"screenshots": [{"contentType": "mxLnvZEG", "description": "2biyKS8v", "fileExtension": "bmp"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ugc \
     --op UploadContentScreenshot \
@@ -890,8 +890,8 @@ $CLI_EXE \
     --op GetPublicFollowers \
     --namespace $AB_NAMESPACE \
     --userId 'sKaP5KNn' \
-    --limit '0UGr95D9' \
-    --offset 'VatfxBoa' \
+    --limit '92' \
+    --offset '65' \
     > test.out 2>&1
 eval_tap $? 80 'GetPublicFollowers' test.out
 
@@ -900,9 +900,9 @@ $CLI_EXE \
     --sn ugc \
     --op GetPublicFollowing \
     --namespace $AB_NAMESPACE \
-    --userId 'kHUqz2uO' \
-    --limit 'KJVjX7j5' \
-    --offset 'MgRZ3kPm' \
+    --userId 'r95D9Vat' \
+    --limit '10' \
+    --offset '46' \
     > test.out 2>&1
 eval_tap $? 81 'GetPublicFollowing' test.out
 
@@ -911,20 +911,20 @@ $CLI_EXE \
     --sn ugc \
     --op GetGroups \
     --namespace $AB_NAMESPACE \
-    --userId 'SrNaFzJw' \
-    --limit '54' \
-    --offset '5' \
+    --userId 'BoakHUqz' \
+    --limit '41' \
+    --offset '81' \
     > test.out 2>&1
 eval_tap $? 82 'GetGroups' test.out
 
 #- 83 CreateGroup
 # body param: body
-echo '{"contents": ["eJQ0viEY"], "name": "Qy4JxBky"}' > $TEMP_JSON_INPUT
+echo '{"contents": ["KJVjX7j5"], "name": "MgRZ3kPm"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ugc \
     --op CreateGroup \
     --namespace $AB_NAMESPACE \
-    --userId 'XfgwzMTA' \
+    --userId 'SrNaFzJw' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 83 'CreateGroup' test.out
@@ -934,7 +934,7 @@ $CLI_EXE \
     --sn ugc \
     --op DeleteAllUserGroup \
     --namespace $AB_NAMESPACE \
-    --userId 'lT2q2EbG' \
+    --userId 'BceJQ0vi' \
     > test.out 2>&1
 eval_tap $? 84 'DeleteAllUserGroup' test.out
 
@@ -942,21 +942,21 @@ eval_tap $? 84 'DeleteAllUserGroup' test.out
 $CLI_EXE \
     --sn ugc \
     --op GetGroup \
-    --groupId '4Z95Sldy' \
+    --groupId 'EYQy4JxB' \
     --namespace $AB_NAMESPACE \
-    --userId 'We2X8cLe' \
+    --userId 'kyXfgwzM' \
     > test.out 2>&1
 eval_tap $? 85 'GetGroup' test.out
 
 #- 86 UpdateGroup
 # body param: body
-echo '{"contents": ["s0TRTAek"], "name": "rfR30IRA"}' > $TEMP_JSON_INPUT
+echo '{"contents": ["TAlT2q2E"], "name": "bG4Z95Sl"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ugc \
     --op UpdateGroup \
-    --groupId '6CzcXFcj' \
+    --groupId 'dyWe2X8c' \
     --namespace $AB_NAMESPACE \
-    --userId 'Rpu7wVEz' \
+    --userId 'Les0TRTA' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 86 'UpdateGroup' test.out
@@ -965,9 +965,9 @@ eval_tap $? 86 'UpdateGroup' test.out
 $CLI_EXE \
     --sn ugc \
     --op DeleteGroup \
-    --groupId 'bwHvOGqw' \
+    --groupId 'ekrfR30I' \
     --namespace $AB_NAMESPACE \
-    --userId 'b7FAI8lx' \
+    --userId 'RA6CzcXF' \
     > test.out 2>&1
 eval_tap $? 87 'DeleteGroup' test.out
 
@@ -975,11 +975,11 @@ eval_tap $? 87 'DeleteGroup' test.out
 $CLI_EXE \
     --sn ugc \
     --op GetGroupContent \
-    --groupId 'DoRtwKNH' \
+    --groupId 'cjRpu7wV' \
     --namespace $AB_NAMESPACE \
-    --userId 'CncWRyVD' \
-    --limit '82' \
-    --offset '79' \
+    --userId 'EzbwHvOG' \
+    --limit '33' \
+    --offset '44' \
     > test.out 2>&1
 eval_tap $? 88 'GetGroupContent' test.out
 
@@ -988,7 +988,7 @@ $CLI_EXE \
     --sn ugc \
     --op DeleteAllUserStates \
     --namespace $AB_NAMESPACE \
-    --userId 'RFIbOIi0' \
+    --userId 'b7FAI8lx' \
     > test.out 2>&1
 eval_tap $? 89 'DeleteAllUserStates' test.out
 

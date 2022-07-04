@@ -28,35 +28,35 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class FulfillmentScriptContextSource : StringEnum<FulfillmentScriptContextSource>
     {
-        public static readonly FulfillmentScriptContextSource PURCHASE
-            = new FulfillmentScriptContextSource("PURCHASE");
-
-        public static readonly FulfillmentScriptContextSource IAP
-            = new FulfillmentScriptContextSource("IAP");
-
-        public static readonly FulfillmentScriptContextSource PROMOTION
-            = new FulfillmentScriptContextSource("PROMOTION");
-
         public static readonly FulfillmentScriptContextSource ACHIEVEMENT
             = new FulfillmentScriptContextSource("ACHIEVEMENT");
-
-        public static readonly FulfillmentScriptContextSource REFERRALBONUS
-            = new FulfillmentScriptContextSource("REFERRAL_BONUS");
-
-        public static readonly FulfillmentScriptContextSource REDEEMCODE
-            = new FulfillmentScriptContextSource("REDEEM_CODE");
-
-        public static readonly FulfillmentScriptContextSource REWARD
-            = new FulfillmentScriptContextSource("REWARD");
-
-        public static readonly FulfillmentScriptContextSource GIFT
-            = new FulfillmentScriptContextSource("GIFT");
 
         public static readonly FulfillmentScriptContextSource DLC
             = new FulfillmentScriptContextSource("DLC");
 
+        public static readonly FulfillmentScriptContextSource GIFT
+            = new FulfillmentScriptContextSource("GIFT");
+
+        public static readonly FulfillmentScriptContextSource IAP
+            = new FulfillmentScriptContextSource("IAP");
+
         public static readonly FulfillmentScriptContextSource OTHER
             = new FulfillmentScriptContextSource("OTHER");
+
+        public static readonly FulfillmentScriptContextSource PROMOTION
+            = new FulfillmentScriptContextSource("PROMOTION");
+
+        public static readonly FulfillmentScriptContextSource PURCHASE
+            = new FulfillmentScriptContextSource("PURCHASE");
+
+        public static readonly FulfillmentScriptContextSource REDEEMCODE
+            = new FulfillmentScriptContextSource("REDEEM_CODE");
+
+        public static readonly FulfillmentScriptContextSource REFERRALBONUS
+            = new FulfillmentScriptContextSource("REFERRAL_BONUS");
+
+        public static readonly FulfillmentScriptContextSource REWARD
+            = new FulfillmentScriptContextSource("REWARD");
 
 
         public static implicit operator FulfillmentScriptContextSource(string value)

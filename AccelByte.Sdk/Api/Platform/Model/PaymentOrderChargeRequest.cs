@@ -25,29 +25,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentOrderChargeRequestPaymentProvider : StringEnum<PaymentOrderChargeRequestPaymentProvider>
     {
-        public static readonly PaymentOrderChargeRequestPaymentProvider WALLET
-            = new PaymentOrderChargeRequestPaymentProvider("WALLET");
-
-        public static readonly PaymentOrderChargeRequestPaymentProvider XSOLLA
-            = new PaymentOrderChargeRequestPaymentProvider("XSOLLA");
-
         public static readonly PaymentOrderChargeRequestPaymentProvider ADYEN
             = new PaymentOrderChargeRequestPaymentProvider("ADYEN");
-
-        public static readonly PaymentOrderChargeRequestPaymentProvider STRIPE
-            = new PaymentOrderChargeRequestPaymentProvider("STRIPE");
-
-        public static readonly PaymentOrderChargeRequestPaymentProvider CHECKOUT
-            = new PaymentOrderChargeRequestPaymentProvider("CHECKOUT");
 
         public static readonly PaymentOrderChargeRequestPaymentProvider ALIPAY
             = new PaymentOrderChargeRequestPaymentProvider("ALIPAY");
 
-        public static readonly PaymentOrderChargeRequestPaymentProvider WXPAY
-            = new PaymentOrderChargeRequestPaymentProvider("WXPAY");
+        public static readonly PaymentOrderChargeRequestPaymentProvider CHECKOUT
+            = new PaymentOrderChargeRequestPaymentProvider("CHECKOUT");
 
         public static readonly PaymentOrderChargeRequestPaymentProvider PAYPAL
             = new PaymentOrderChargeRequestPaymentProvider("PAYPAL");
+
+        public static readonly PaymentOrderChargeRequestPaymentProvider STRIPE
+            = new PaymentOrderChargeRequestPaymentProvider("STRIPE");
+
+        public static readonly PaymentOrderChargeRequestPaymentProvider WALLET
+            = new PaymentOrderChargeRequestPaymentProvider("WALLET");
+
+        public static readonly PaymentOrderChargeRequestPaymentProvider WXPAY
+            = new PaymentOrderChargeRequestPaymentProvider("WXPAY");
+
+        public static readonly PaymentOrderChargeRequestPaymentProvider XSOLLA
+            = new PaymentOrderChargeRequestPaymentProvider("XSOLLA");
 
 
         public static implicit operator PaymentOrderChargeRequestPaymentProvider(string value)

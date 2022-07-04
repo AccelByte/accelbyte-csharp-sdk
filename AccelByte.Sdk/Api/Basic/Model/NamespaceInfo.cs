@@ -34,11 +34,11 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public static readonly NamespaceInfoStatus ACTIVE
             = new NamespaceInfoStatus("ACTIVE");
 
-        public static readonly NamespaceInfoStatus INACTIVE
-            = new NamespaceInfoStatus("INACTIVE");
-
         public static readonly NamespaceInfoStatus DELETED
             = new NamespaceInfoStatus("DELETED");
+
+        public static readonly NamespaceInfoStatus INACTIVE
+            = new NamespaceInfoStatus("INACTIVE");
 
 
         public static implicit operator NamespaceInfoStatus(string value)

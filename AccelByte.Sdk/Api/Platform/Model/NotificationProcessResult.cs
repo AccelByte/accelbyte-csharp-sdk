@@ -28,17 +28,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class NotificationProcessResultStatus : StringEnum<NotificationProcessResultStatus>
     {
-        public static readonly NotificationProcessResultStatus PROCESSED
-            = new NotificationProcessResultStatus("PROCESSED");
-
         public static readonly NotificationProcessResultStatus ERROR
             = new NotificationProcessResultStatus("ERROR");
 
-        public static readonly NotificationProcessResultStatus WARN
-            = new NotificationProcessResultStatus("WARN");
-
         public static readonly NotificationProcessResultStatus IGNORED
             = new NotificationProcessResultStatus("IGNORED");
+
+        public static readonly NotificationProcessResultStatus PROCESSED
+            = new NotificationProcessResultStatus("PROCESSED");
+
+        public static readonly NotificationProcessResultStatus WARN
+            = new NotificationProcessResultStatus("WARN");
 
 
         public static implicit operator NotificationProcessResultStatus(string value)

@@ -31,14 +31,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PlayStationReconcileResultStatus : StringEnum<PlayStationReconcileResultStatus>
     {
-        public static readonly PlayStationReconcileResultStatus VERIFIED
-            = new PlayStationReconcileResultStatus("VERIFIED");
+        public static readonly PlayStationReconcileResultStatus FAILED
+            = new PlayStationReconcileResultStatus("FAILED");
 
         public static readonly PlayStationReconcileResultStatus FULFILLED
             = new PlayStationReconcileResultStatus("FULFILLED");
 
-        public static readonly PlayStationReconcileResultStatus FAILED
-            = new PlayStationReconcileResultStatus("FAILED");
+        public static readonly PlayStationReconcileResultStatus VERIFIED
+            = new PlayStationReconcileResultStatus("VERIFIED");
 
 
         public static implicit operator PlayStationReconcileResultStatus(string value)

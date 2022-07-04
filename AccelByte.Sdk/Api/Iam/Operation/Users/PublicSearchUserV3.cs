@@ -41,9 +41,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public string? By { get; set; }
 
-            public string? Limit { get; set; }
+            public long? Limit { get; set; }
 
-            public string? Offset { get; set; }
+            public long? Offset { get; set; }
 
             public string? Query { get; set; }
 
@@ -60,13 +60,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 return this;
             }
 
-            public PublicSearchUserV3Builder SetLimit(string _limit)
+            public PublicSearchUserV3Builder SetLimit(long _limit)
             {
                 Limit = _limit;
                 return this;
             }
 
-            public PublicSearchUserV3Builder SetOffset(string _offset)
+            public PublicSearchUserV3Builder SetOffset(long _offset)
             {
                 Offset = _offset;
                 return this;
@@ -102,8 +102,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.By is not null) QueryParams["by"] = builder.By;
-            if (builder.Limit is not null) QueryParams["limit"] = builder.Limit;
-            if (builder.Offset is not null) QueryParams["offset"] = builder.Offset;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Query is not null) QueryParams["query"] = builder.Query;
             
 
@@ -118,16 +118,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public PublicSearchUserV3(
             string namespace_,            
             string? by,            
-            string? limit,            
-            string? offset,            
+            long? limit,            
+            long? offset,            
             string? query            
         )
         {
             PathParams["namespace"] = namespace_;
             
             if (by is not null) QueryParams["by"] = by;
-            if (limit is not null) QueryParams["limit"] = limit;
-            if (offset is not null) QueryParams["offset"] = offset;
+            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (query is not null) QueryParams["query"] = query;
             
 

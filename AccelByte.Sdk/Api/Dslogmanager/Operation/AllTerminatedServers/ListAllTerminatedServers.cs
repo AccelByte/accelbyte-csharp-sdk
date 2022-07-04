@@ -57,6 +57,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
 
             public string? StartDate { get; set; }
 
+            public string? Status { get; set; }
+
             public string? UserId { get; set; }
 
 
@@ -144,6 +146,12 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
                 return this;
             }
 
+            public ListAllTerminatedServersBuilder SetStatus(string _status)
+            {
+                Status = _status;
+                return this;
+            }
+
             public ListAllTerminatedServersBuilder SetUserId(string _userId)
             {
                 UserId = _userId;
@@ -182,6 +190,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
             if (builder.SessionId is not null) QueryParams["session_id"] = builder.SessionId;
             if (builder.StartDate is not null) QueryParams["start_date"] = builder.StartDate;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status;
             if (builder.UserId is not null) QueryParams["user_id"] = builder.UserId;
             
 
@@ -207,6 +216,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             string? region,            
             string? sessionId,            
             string? startDate,            
+            string? status,            
             string? userId            
         )
         {
@@ -224,6 +234,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             if (region is not null) QueryParams["region"] = region;
             if (sessionId is not null) QueryParams["session_id"] = sessionId;
             if (startDate is not null) QueryParams["start_date"] = startDate;
+            if (status is not null) QueryParams["status"] = status;
             if (userId is not null) QueryParams["user_id"] = userId;
             
 

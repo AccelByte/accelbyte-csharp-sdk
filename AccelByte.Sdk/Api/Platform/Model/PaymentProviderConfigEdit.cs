@@ -41,11 +41,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentProviderConfigEditAggregate : StringEnum<PaymentProviderConfigEditAggregate>
     {
-        public static readonly PaymentProviderConfigEditAggregate XSOLLA
-            = new PaymentProviderConfigEditAggregate("XSOLLA");
-
         public static readonly PaymentProviderConfigEditAggregate ADYEN
             = new PaymentProviderConfigEditAggregate("ADYEN");
+
+        public static readonly PaymentProviderConfigEditAggregate XSOLLA
+            = new PaymentProviderConfigEditAggregate("XSOLLA");
 
 
         public static implicit operator PaymentProviderConfigEditAggregate(string value)
@@ -62,29 +62,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentProviderConfigEditSpecials : StringEnum<PaymentProviderConfigEditSpecials>
     {
-        public static readonly PaymentProviderConfigEditSpecials WALLET
-            = new PaymentProviderConfigEditSpecials("WALLET");
-
-        public static readonly PaymentProviderConfigEditSpecials XSOLLA
-            = new PaymentProviderConfigEditSpecials("XSOLLA");
-
         public static readonly PaymentProviderConfigEditSpecials ADYEN
             = new PaymentProviderConfigEditSpecials("ADYEN");
-
-        public static readonly PaymentProviderConfigEditSpecials STRIPE
-            = new PaymentProviderConfigEditSpecials("STRIPE");
-
-        public static readonly PaymentProviderConfigEditSpecials CHECKOUT
-            = new PaymentProviderConfigEditSpecials("CHECKOUT");
 
         public static readonly PaymentProviderConfigEditSpecials ALIPAY
             = new PaymentProviderConfigEditSpecials("ALIPAY");
 
-        public static readonly PaymentProviderConfigEditSpecials WXPAY
-            = new PaymentProviderConfigEditSpecials("WXPAY");
+        public static readonly PaymentProviderConfigEditSpecials CHECKOUT
+            = new PaymentProviderConfigEditSpecials("CHECKOUT");
 
         public static readonly PaymentProviderConfigEditSpecials PAYPAL
             = new PaymentProviderConfigEditSpecials("PAYPAL");
+
+        public static readonly PaymentProviderConfigEditSpecials STRIPE
+            = new PaymentProviderConfigEditSpecials("STRIPE");
+
+        public static readonly PaymentProviderConfigEditSpecials WALLET
+            = new PaymentProviderConfigEditSpecials("WALLET");
+
+        public static readonly PaymentProviderConfigEditSpecials WXPAY
+            = new PaymentProviderConfigEditSpecials("WXPAY");
+
+        public static readonly PaymentProviderConfigEditSpecials XSOLLA
+            = new PaymentProviderConfigEditSpecials("XSOLLA");
 
 
         public static implicit operator PaymentProviderConfigEditSpecials(string value)

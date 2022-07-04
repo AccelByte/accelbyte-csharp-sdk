@@ -149,17 +149,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PopulatedItemInfoAppType : StringEnum<PopulatedItemInfoAppType>
     {
+        public static readonly PopulatedItemInfoAppType DEMO
+            = new PopulatedItemInfoAppType("DEMO");
+
+        public static readonly PopulatedItemInfoAppType DLC
+            = new PopulatedItemInfoAppType("DLC");
+
         public static readonly PopulatedItemInfoAppType GAME
             = new PopulatedItemInfoAppType("GAME");
 
         public static readonly PopulatedItemInfoAppType SOFTWARE
             = new PopulatedItemInfoAppType("SOFTWARE");
-
-        public static readonly PopulatedItemInfoAppType DLC
-            = new PopulatedItemInfoAppType("DLC");
-
-        public static readonly PopulatedItemInfoAppType DEMO
-            = new PopulatedItemInfoAppType("DEMO");
 
 
         public static implicit operator PopulatedItemInfoAppType(string value)
@@ -176,11 +176,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PopulatedItemInfoEntitlementType : StringEnum<PopulatedItemInfoEntitlementType>
     {
-        public static readonly PopulatedItemInfoEntitlementType DURABLE
-            = new PopulatedItemInfoEntitlementType("DURABLE");
-
         public static readonly PopulatedItemInfoEntitlementType CONSUMABLE
             = new PopulatedItemInfoEntitlementType("CONSUMABLE");
+
+        public static readonly PopulatedItemInfoEntitlementType DURABLE
+            = new PopulatedItemInfoEntitlementType("DURABLE");
 
 
         public static implicit operator PopulatedItemInfoEntitlementType(string value)
@@ -200,26 +200,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PopulatedItemInfoItemType APP
             = new PopulatedItemInfoItemType("APP");
 
-        public static readonly PopulatedItemInfoItemType COINS
-            = new PopulatedItemInfoItemType("COINS");
-
-        public static readonly PopulatedItemInfoItemType INGAMEITEM
-            = new PopulatedItemInfoItemType("INGAMEITEM");
-
         public static readonly PopulatedItemInfoItemType BUNDLE
             = new PopulatedItemInfoItemType("BUNDLE");
 
         public static readonly PopulatedItemInfoItemType CODE
             = new PopulatedItemInfoItemType("CODE");
 
-        public static readonly PopulatedItemInfoItemType SUBSCRIPTION
-            = new PopulatedItemInfoItemType("SUBSCRIPTION");
+        public static readonly PopulatedItemInfoItemType COINS
+            = new PopulatedItemInfoItemType("COINS");
+
+        public static readonly PopulatedItemInfoItemType INGAMEITEM
+            = new PopulatedItemInfoItemType("INGAMEITEM");
+
+        public static readonly PopulatedItemInfoItemType MEDIA
+            = new PopulatedItemInfoItemType("MEDIA");
 
         public static readonly PopulatedItemInfoItemType SEASON
             = new PopulatedItemInfoItemType("SEASON");
 
-        public static readonly PopulatedItemInfoItemType MEDIA
-            = new PopulatedItemInfoItemType("MEDIA");
+        public static readonly PopulatedItemInfoItemType SUBSCRIPTION
+            = new PopulatedItemInfoItemType("SUBSCRIPTION");
 
 
         public static implicit operator PopulatedItemInfoItemType(string value)

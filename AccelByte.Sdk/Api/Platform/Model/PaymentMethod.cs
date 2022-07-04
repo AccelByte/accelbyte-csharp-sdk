@@ -22,29 +22,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentMethodPaymentProvider : StringEnum<PaymentMethodPaymentProvider>
     {
-        public static readonly PaymentMethodPaymentProvider WALLET
-            = new PaymentMethodPaymentProvider("WALLET");
-
-        public static readonly PaymentMethodPaymentProvider XSOLLA
-            = new PaymentMethodPaymentProvider("XSOLLA");
-
         public static readonly PaymentMethodPaymentProvider ADYEN
             = new PaymentMethodPaymentProvider("ADYEN");
-
-        public static readonly PaymentMethodPaymentProvider STRIPE
-            = new PaymentMethodPaymentProvider("STRIPE");
-
-        public static readonly PaymentMethodPaymentProvider CHECKOUT
-            = new PaymentMethodPaymentProvider("CHECKOUT");
 
         public static readonly PaymentMethodPaymentProvider ALIPAY
             = new PaymentMethodPaymentProvider("ALIPAY");
 
-        public static readonly PaymentMethodPaymentProvider WXPAY
-            = new PaymentMethodPaymentProvider("WXPAY");
+        public static readonly PaymentMethodPaymentProvider CHECKOUT
+            = new PaymentMethodPaymentProvider("CHECKOUT");
 
         public static readonly PaymentMethodPaymentProvider PAYPAL
             = new PaymentMethodPaymentProvider("PAYPAL");
+
+        public static readonly PaymentMethodPaymentProvider STRIPE
+            = new PaymentMethodPaymentProvider("STRIPE");
+
+        public static readonly PaymentMethodPaymentProvider WALLET
+            = new PaymentMethodPaymentProvider("WALLET");
+
+        public static readonly PaymentMethodPaymentProvider WXPAY
+            = new PaymentMethodPaymentProvider("WXPAY");
+
+        public static readonly PaymentMethodPaymentProvider XSOLLA
+            = new PaymentMethodPaymentProvider("XSOLLA");
 
 
         public static implicit operator PaymentMethodPaymentProvider(string value)

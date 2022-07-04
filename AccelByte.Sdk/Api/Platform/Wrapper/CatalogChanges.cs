@@ -27,6 +27,30 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.PublishAll.Builder.SetWrapperObject(this); }
         }
+        public PublishSelected.PublishSelectedBuilder PublishSelectedOp
+        {
+            get { return Operation.PublishSelected.Builder.SetWrapperObject(this); }
+        }
+        public SelectAllRecords.SelectAllRecordsBuilder SelectAllRecordsOp
+        {
+            get { return Operation.SelectAllRecords.Builder.SetWrapperObject(this); }
+        }
+        public GetStatistic.GetStatisticBuilder GetStatisticOp
+        {
+            get { return Operation.GetStatistic.Builder.SetWrapperObject(this); }
+        }
+        public UnselectAllRecords.UnselectAllRecordsBuilder UnselectAllRecordsOp
+        {
+            get { return Operation.UnselectAllRecords.Builder.SetWrapperObject(this); }
+        }
+        public SelectRecord.SelectRecordBuilder SelectRecordOp
+        {
+            get { return Operation.SelectRecord.Builder.SetWrapperObject(this); }
+        }
+        public UnselectRecord.UnselectRecordBuilder UnselectRecordOp
+        {
+            get { return Operation.UnselectRecord.Builder.SetWrapperObject(this); }
+        }
         #endregion
         
         public List<Model.CatalogChangePagingSlicedResult>? QueryChanges(QueryChanges input) {
@@ -41,6 +65,54 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.StoreInfo? PublishSelected(PublishSelected input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void SelectAllRecords(SelectAllRecords input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.CatalogChangeStatistics? GetStatistic(GetStatistic input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void UnselectAllRecords(UnselectAllRecords input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void SelectRecord(SelectRecord input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void UnselectRecord(UnselectRecord input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

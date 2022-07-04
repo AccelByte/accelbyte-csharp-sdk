@@ -92,17 +92,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class EntitlementInfoAppType : StringEnum<EntitlementInfoAppType>
     {
+        public static readonly EntitlementInfoAppType DEMO
+            = new EntitlementInfoAppType("DEMO");
+
+        public static readonly EntitlementInfoAppType DLC
+            = new EntitlementInfoAppType("DLC");
+
         public static readonly EntitlementInfoAppType GAME
             = new EntitlementInfoAppType("GAME");
 
         public static readonly EntitlementInfoAppType SOFTWARE
             = new EntitlementInfoAppType("SOFTWARE");
-
-        public static readonly EntitlementInfoAppType DLC
-            = new EntitlementInfoAppType("DLC");
-
-        public static readonly EntitlementInfoAppType DEMO
-            = new EntitlementInfoAppType("DEMO");
 
 
         public static implicit operator EntitlementInfoAppType(string value)
@@ -122,17 +122,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly EntitlementInfoClazz APP
             = new EntitlementInfoClazz("APP");
 
-        public static readonly EntitlementInfoClazz ENTITLEMENT
-            = new EntitlementInfoClazz("ENTITLEMENT");
-
         public static readonly EntitlementInfoClazz CODE
             = new EntitlementInfoClazz("CODE");
 
-        public static readonly EntitlementInfoClazz SUBSCRIPTION
-            = new EntitlementInfoClazz("SUBSCRIPTION");
+        public static readonly EntitlementInfoClazz ENTITLEMENT
+            = new EntitlementInfoClazz("ENTITLEMENT");
 
         public static readonly EntitlementInfoClazz MEDIA
             = new EntitlementInfoClazz("MEDIA");
+
+        public static readonly EntitlementInfoClazz SUBSCRIPTION
+            = new EntitlementInfoClazz("SUBSCRIPTION");
 
 
         public static implicit operator EntitlementInfoClazz(string value)
@@ -149,32 +149,32 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class EntitlementInfoSource : StringEnum<EntitlementInfoSource>
     {
-        public static readonly EntitlementInfoSource PURCHASE
-            = new EntitlementInfoSource("PURCHASE");
-
-        public static readonly EntitlementInfoSource IAP
-            = new EntitlementInfoSource("IAP");
-
-        public static readonly EntitlementInfoSource PROMOTION
-            = new EntitlementInfoSource("PROMOTION");
-
         public static readonly EntitlementInfoSource ACHIEVEMENT
             = new EntitlementInfoSource("ACHIEVEMENT");
-
-        public static readonly EntitlementInfoSource REFERRALBONUS
-            = new EntitlementInfoSource("REFERRAL_BONUS");
-
-        public static readonly EntitlementInfoSource REDEEMCODE
-            = new EntitlementInfoSource("REDEEM_CODE");
-
-        public static readonly EntitlementInfoSource REWARD
-            = new EntitlementInfoSource("REWARD");
 
         public static readonly EntitlementInfoSource GIFT
             = new EntitlementInfoSource("GIFT");
 
+        public static readonly EntitlementInfoSource IAP
+            = new EntitlementInfoSource("IAP");
+
         public static readonly EntitlementInfoSource OTHER
             = new EntitlementInfoSource("OTHER");
+
+        public static readonly EntitlementInfoSource PROMOTION
+            = new EntitlementInfoSource("PROMOTION");
+
+        public static readonly EntitlementInfoSource PURCHASE
+            = new EntitlementInfoSource("PURCHASE");
+
+        public static readonly EntitlementInfoSource REDEEMCODE
+            = new EntitlementInfoSource("REDEEM_CODE");
+
+        public static readonly EntitlementInfoSource REFERRALBONUS
+            = new EntitlementInfoSource("REFERRAL_BONUS");
+
+        public static readonly EntitlementInfoSource REWARD
+            = new EntitlementInfoSource("REWARD");
 
 
         public static implicit operator EntitlementInfoSource(string value)
@@ -194,11 +194,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly EntitlementInfoStatus ACTIVE
             = new EntitlementInfoStatus("ACTIVE");
 
-        public static readonly EntitlementInfoStatus INACTIVE
-            = new EntitlementInfoStatus("INACTIVE");
-
         public static readonly EntitlementInfoStatus CONSUMED
             = new EntitlementInfoStatus("CONSUMED");
+
+        public static readonly EntitlementInfoStatus INACTIVE
+            = new EntitlementInfoStatus("INACTIVE");
 
         public static readonly EntitlementInfoStatus REVOKED
             = new EntitlementInfoStatus("REVOKED");
@@ -218,11 +218,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class EntitlementInfoType : StringEnum<EntitlementInfoType>
     {
-        public static readonly EntitlementInfoType DURABLE
-            = new EntitlementInfoType("DURABLE");
-
         public static readonly EntitlementInfoType CONSUMABLE
             = new EntitlementInfoType("CONSUMABLE");
+
+        public static readonly EntitlementInfoType DURABLE
+            = new EntitlementInfoType("DURABLE");
 
 
         public static implicit operator EntitlementInfoType(string value)

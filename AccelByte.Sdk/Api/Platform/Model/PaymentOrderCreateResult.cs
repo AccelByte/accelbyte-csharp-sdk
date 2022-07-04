@@ -37,26 +37,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentOrderCreateResultStatus : StringEnum<PaymentOrderCreateResultStatus>
     {
-        public static readonly PaymentOrderCreateResultStatus INIT
-            = new PaymentOrderCreateResultStatus("INIT");
-
         public static readonly PaymentOrderCreateResultStatus AUTHORISED
             = new PaymentOrderCreateResultStatus("AUTHORISED");
 
         public static readonly PaymentOrderCreateResultStatus AUTHORISEFAILED
             = new PaymentOrderCreateResultStatus("AUTHORISE_FAILED");
-
-        public static readonly PaymentOrderCreateResultStatus CHARGED
-            = new PaymentOrderCreateResultStatus("CHARGED");
-
-        public static readonly PaymentOrderCreateResultStatus CHARGEFAILED
-            = new PaymentOrderCreateResultStatus("CHARGE_FAILED");
-
-        public static readonly PaymentOrderCreateResultStatus NOTIFICATIONOFCHARGEBACK
-            = new PaymentOrderCreateResultStatus("NOTIFICATION_OF_CHARGEBACK");
-
-        public static readonly PaymentOrderCreateResultStatus REQUESTFORINFORMATION
-            = new PaymentOrderCreateResultStatus("REQUEST_FOR_INFORMATION");
 
         public static readonly PaymentOrderCreateResultStatus CHARGEBACK
             = new PaymentOrderCreateResultStatus("CHARGEBACK");
@@ -64,17 +49,32 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentOrderCreateResultStatus CHARGEBACKREVERSED
             = new PaymentOrderCreateResultStatus("CHARGEBACK_REVERSED");
 
-        public static readonly PaymentOrderCreateResultStatus REFUNDING
-            = new PaymentOrderCreateResultStatus("REFUNDING");
+        public static readonly PaymentOrderCreateResultStatus CHARGED
+            = new PaymentOrderCreateResultStatus("CHARGED");
+
+        public static readonly PaymentOrderCreateResultStatus CHARGEFAILED
+            = new PaymentOrderCreateResultStatus("CHARGE_FAILED");
+
+        public static readonly PaymentOrderCreateResultStatus DELETED
+            = new PaymentOrderCreateResultStatus("DELETED");
+
+        public static readonly PaymentOrderCreateResultStatus INIT
+            = new PaymentOrderCreateResultStatus("INIT");
+
+        public static readonly PaymentOrderCreateResultStatus NOTIFICATIONOFCHARGEBACK
+            = new PaymentOrderCreateResultStatus("NOTIFICATION_OF_CHARGEBACK");
 
         public static readonly PaymentOrderCreateResultStatus REFUNDED
             = new PaymentOrderCreateResultStatus("REFUNDED");
 
+        public static readonly PaymentOrderCreateResultStatus REFUNDING
+            = new PaymentOrderCreateResultStatus("REFUNDING");
+
         public static readonly PaymentOrderCreateResultStatus REFUNDFAILED
             = new PaymentOrderCreateResultStatus("REFUND_FAILED");
 
-        public static readonly PaymentOrderCreateResultStatus DELETED
-            = new PaymentOrderCreateResultStatus("DELETED");
+        public static readonly PaymentOrderCreateResultStatus REQUESTFORINFORMATION
+            = new PaymentOrderCreateResultStatus("REQUEST_FOR_INFORMATION");
 
 
         public static implicit operator PaymentOrderCreateResultStatus(string value)

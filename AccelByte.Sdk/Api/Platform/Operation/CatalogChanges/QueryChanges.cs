@@ -34,11 +34,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public QueryChangesAction? Action { get; set; }
 
+            public string? ItemSku { get; set; }
+
             public QueryChangesItemType? ItemType { get; set; }
 
             public int? Limit { get; set; }
 
             public int? Offset { get; set; }
+
+            public bool? Selected { get; set; }
 
             public List<QueryChangesSortBy>? SortBy { get; set; }
 
@@ -63,6 +67,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
+            public QueryChangesBuilder SetItemSku(string _itemSku)
+            {
+                ItemSku = _itemSku;
+                return this;
+            }
+
             public QueryChangesBuilder SetItemType(QueryChangesItemType _itemType)
             {
                 ItemType = _itemType;
@@ -78,6 +88,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public QueryChangesBuilder SetOffset(int _offset)
             {
                 Offset = _offset;
+                return this;
+            }
+
+            public QueryChangesBuilder SetSelected(bool _selected)
+            {
+                Selected = _selected;
                 return this;
             }
 
@@ -139,9 +155,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["storeId"] = storeId;
             
             if (builder.Action is not null) QueryParams["action"] = builder.Action.Value;
+            if (builder.ItemSku is not null) QueryParams["itemSku"] = builder.ItemSku;
             if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType.Value;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Selected != null) QueryParams["selected"] = Convert.ToString(builder.Selected)!;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
             if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
             if (builder.Type is not null) QueryParams["type"] = builder.Type.Value;
@@ -162,9 +180,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string namespace_,            
             string storeId,            
             QueryChangesAction? action,            
+            string? itemSku,            
             QueryChangesItemType? itemType,            
             int? limit,            
             int? offset,            
+            bool? selected,            
             List<QueryChangesSortBy>? sortBy,            
             QueryChangesStatus? status,            
             QueryChangesType? type,            
@@ -176,9 +196,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["storeId"] = storeId;
             
             if (action is not null) QueryParams["action"] = action.Value;
+            if (itemSku is not null) QueryParams["itemSku"] = itemSku;
             if (itemType is not null) QueryParams["itemType"] = itemType.Value;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (selected != null) QueryParams["selected"] = Convert.ToString(selected)!;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy;
             if (status is not null) QueryParams["status"] = status.Value;
             if (type is not null) QueryParams["type"] = type.Value;

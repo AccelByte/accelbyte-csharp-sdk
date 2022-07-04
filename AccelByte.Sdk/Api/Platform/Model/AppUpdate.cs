@@ -73,11 +73,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly AppUpdateGenres MassivelyMultiplayer
             = new AppUpdateGenres("MassivelyMultiplayer");
 
-        public static readonly AppUpdateGenres Racing
-            = new AppUpdateGenres("Racing");
-
         public static readonly AppUpdateGenres RPG
             = new AppUpdateGenres("RPG");
+
+        public static readonly AppUpdateGenres Racing
+            = new AppUpdateGenres("Racing");
 
         public static readonly AppUpdateGenres Simulation
             = new AppUpdateGenres("Simulation");
@@ -103,20 +103,20 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class AppUpdatePlatforms : StringEnum<AppUpdatePlatforms>
     {
-        public static readonly AppUpdatePlatforms Windows
-            = new AppUpdatePlatforms("Windows");
-
-        public static readonly AppUpdatePlatforms MacOS
-            = new AppUpdatePlatforms("MacOS");
-
-        public static readonly AppUpdatePlatforms Linux
-            = new AppUpdatePlatforms("Linux");
+        public static readonly AppUpdatePlatforms Android
+            = new AppUpdatePlatforms("Android");
 
         public static readonly AppUpdatePlatforms IOS
             = new AppUpdatePlatforms("IOS");
 
-        public static readonly AppUpdatePlatforms Android
-            = new AppUpdatePlatforms("Android");
+        public static readonly AppUpdatePlatforms Linux
+            = new AppUpdatePlatforms("Linux");
+
+        public static readonly AppUpdatePlatforms MacOS
+            = new AppUpdatePlatforms("MacOS");
+
+        public static readonly AppUpdatePlatforms Windows
+            = new AppUpdatePlatforms("Windows");
 
 
         public static implicit operator AppUpdatePlatforms(string value)
@@ -133,23 +133,23 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class AppUpdatePlayers : StringEnum<AppUpdatePlayers>
     {
-        public static readonly AppUpdatePlayers Single
-            = new AppUpdatePlayers("Single");
-
-        public static readonly AppUpdatePlayers Multi
-            = new AppUpdatePlayers("Multi");
+        public static readonly AppUpdatePlayers Coop
+            = new AppUpdatePlayers("Coop");
 
         public static readonly AppUpdatePlayers CrossPlatformMulti
             = new AppUpdatePlayers("CrossPlatformMulti");
 
+        public static readonly AppUpdatePlayers LocalCoop
+            = new AppUpdatePlayers("LocalCoop");
+
         public static readonly AppUpdatePlayers MMO
             = new AppUpdatePlayers("MMO");
 
-        public static readonly AppUpdatePlayers Coop
-            = new AppUpdatePlayers("Coop");
+        public static readonly AppUpdatePlayers Multi
+            = new AppUpdatePlayers("Multi");
 
-        public static readonly AppUpdatePlayers LocalCoop
-            = new AppUpdatePlayers("LocalCoop");
+        public static readonly AppUpdatePlayers Single
+            = new AppUpdatePlayers("Single");
 
 
         public static implicit operator AppUpdatePlayers(string value)
@@ -184,11 +184,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly AppUpdatePrimaryGenre MassivelyMultiplayer
             = new AppUpdatePrimaryGenre("MassivelyMultiplayer");
 
-        public static readonly AppUpdatePrimaryGenre Racing
-            = new AppUpdatePrimaryGenre("Racing");
-
         public static readonly AppUpdatePrimaryGenre RPG
             = new AppUpdatePrimaryGenre("RPG");
+
+        public static readonly AppUpdatePrimaryGenre Racing
+            = new AppUpdatePrimaryGenre("Racing");
 
         public static readonly AppUpdatePrimaryGenre Simulation
             = new AppUpdatePrimaryGenre("Simulation");

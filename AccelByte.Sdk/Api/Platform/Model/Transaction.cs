@@ -75,29 +75,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class TransactionProvider : StringEnum<TransactionProvider>
     {
-        public static readonly TransactionProvider WALLET
-            = new TransactionProvider("WALLET");
-
-        public static readonly TransactionProvider XSOLLA
-            = new TransactionProvider("XSOLLA");
-
         public static readonly TransactionProvider ADYEN
             = new TransactionProvider("ADYEN");
-
-        public static readonly TransactionProvider STRIPE
-            = new TransactionProvider("STRIPE");
-
-        public static readonly TransactionProvider CHECKOUT
-            = new TransactionProvider("CHECKOUT");
 
         public static readonly TransactionProvider ALIPAY
             = new TransactionProvider("ALIPAY");
 
-        public static readonly TransactionProvider WXPAY
-            = new TransactionProvider("WXPAY");
+        public static readonly TransactionProvider CHECKOUT
+            = new TransactionProvider("CHECKOUT");
 
         public static readonly TransactionProvider PAYPAL
             = new TransactionProvider("PAYPAL");
+
+        public static readonly TransactionProvider STRIPE
+            = new TransactionProvider("STRIPE");
+
+        public static readonly TransactionProvider WALLET
+            = new TransactionProvider("WALLET");
+
+        public static readonly TransactionProvider WXPAY
+            = new TransactionProvider("WXPAY");
+
+        public static readonly TransactionProvider XSOLLA
+            = new TransactionProvider("XSOLLA");
 
 
         public static implicit operator TransactionProvider(string value)
@@ -114,11 +114,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class TransactionStatus : StringEnum<TransactionStatus>
     {
-        public static readonly TransactionStatus FINISHED
-            = new TransactionStatus("FINISHED");
-
         public static readonly TransactionStatus FAILED
             = new TransactionStatus("FAILED");
+
+        public static readonly TransactionStatus FINISHED
+            = new TransactionStatus("FINISHED");
 
 
         public static implicit operator TransactionStatus(string value)
@@ -141,26 +141,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly TransactionType CHARGE
             = new TransactionType("CHARGE");
 
-        public static readonly TransactionType CHARGEFAILED
-            = new TransactionType("CHARGE_FAILED");
-
-        public static readonly TransactionType NOTIFICATIONOFCHARGEBACK
-            = new TransactionType("NOTIFICATION_OF_CHARGEBACK");
-
-        public static readonly TransactionType REQUESTFORINFORMATION
-            = new TransactionType("REQUEST_FOR_INFORMATION");
-
         public static readonly TransactionType CHARGEBACK
             = new TransactionType("CHARGEBACK");
 
         public static readonly TransactionType CHARGEBACKREVERSED
             = new TransactionType("CHARGEBACK_REVERSED");
 
+        public static readonly TransactionType CHARGEFAILED
+            = new TransactionType("CHARGE_FAILED");
+
+        public static readonly TransactionType NOTIFICATIONOFCHARGEBACK
+            = new TransactionType("NOTIFICATION_OF_CHARGEBACK");
+
         public static readonly TransactionType REFUND
             = new TransactionType("REFUND");
 
         public static readonly TransactionType REFUNDFAILED
             = new TransactionType("REFUND_FAILED");
+
+        public static readonly TransactionType REQUESTFORINFORMATION
+            = new TransactionType("REQUEST_FOR_INFORMATION");
 
 
         public static implicit operator TransactionType(string value)

@@ -71,6 +71,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///                 * stadia
     /// 
     /// 
+    ///                 * snapchat
+    /// 
+    /// 
     /// 
     /// 
     /// Unlink user's account from a specific platform. 'justice' platform might have multiple accounts from different namespaces linked.

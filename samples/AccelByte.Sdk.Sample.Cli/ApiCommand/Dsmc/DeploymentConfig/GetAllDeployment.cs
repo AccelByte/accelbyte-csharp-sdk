@@ -29,14 +29,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("count")]
-        public long? Count { get; set; }
-
         [SdkCommandArgument("name")]
         public string? Name { get; set; }
 
+        [SdkCommandArgument("count")]
+        public long Count { get; set; } = 0;
+
         [SdkCommandArgument("offset")]
-        public long? Offset { get; set; }
+        public long Offset { get; set; } = 0;
 
         public GetAllDeploymentCommand(AccelByteSDK sdk)
         {
@@ -49,8 +49,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
             GetAllDeployment operation = new GetAllDeployment(
                 Namespace,                
-                Count,                
                 Name,                
+                Count,                
                 Offset                
             );            
             

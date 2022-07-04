@@ -40,6 +40,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("publishedAt")]
         public DateTime? PublishedAt { get; set; }
 
+        [JsonPropertyName("selected")]
+        public bool? Selected { get; set; }
+
         [JsonPropertyName("sku")]
         public string? Sku { get; set; }
 
@@ -67,11 +70,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly CatalogChangeInfoAction CREATE
             = new CatalogChangeInfoAction("CREATE");
 
-        public static readonly CatalogChangeInfoAction UPDATE
-            = new CatalogChangeInfoAction("UPDATE");
-
         public static readonly CatalogChangeInfoAction DELETE
             = new CatalogChangeInfoAction("DELETE");
+
+        public static readonly CatalogChangeInfoAction UPDATE
+            = new CatalogChangeInfoAction("UPDATE");
 
 
         public static implicit operator CatalogChangeInfoAction(string value)
@@ -91,26 +94,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly CatalogChangeInfoItemType APP
             = new CatalogChangeInfoItemType("APP");
 
-        public static readonly CatalogChangeInfoItemType COINS
-            = new CatalogChangeInfoItemType("COINS");
-
-        public static readonly CatalogChangeInfoItemType INGAMEITEM
-            = new CatalogChangeInfoItemType("INGAMEITEM");
-
         public static readonly CatalogChangeInfoItemType BUNDLE
             = new CatalogChangeInfoItemType("BUNDLE");
 
         public static readonly CatalogChangeInfoItemType CODE
             = new CatalogChangeInfoItemType("CODE");
 
-        public static readonly CatalogChangeInfoItemType SUBSCRIPTION
-            = new CatalogChangeInfoItemType("SUBSCRIPTION");
+        public static readonly CatalogChangeInfoItemType COINS
+            = new CatalogChangeInfoItemType("COINS");
+
+        public static readonly CatalogChangeInfoItemType INGAMEITEM
+            = new CatalogChangeInfoItemType("INGAMEITEM");
+
+        public static readonly CatalogChangeInfoItemType MEDIA
+            = new CatalogChangeInfoItemType("MEDIA");
 
         public static readonly CatalogChangeInfoItemType SEASON
             = new CatalogChangeInfoItemType("SEASON");
 
-        public static readonly CatalogChangeInfoItemType MEDIA
-            = new CatalogChangeInfoItemType("MEDIA");
+        public static readonly CatalogChangeInfoItemType SUBSCRIPTION
+            = new CatalogChangeInfoItemType("SUBSCRIPTION");
 
 
         public static implicit operator CatalogChangeInfoItemType(string value)
@@ -127,11 +130,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class CatalogChangeInfoStatus : StringEnum<CatalogChangeInfoStatus>
     {
-        public static readonly CatalogChangeInfoStatus UNPUBLISHED
-            = new CatalogChangeInfoStatus("UNPUBLISHED");
-
         public static readonly CatalogChangeInfoStatus PUBLISHED
             = new CatalogChangeInfoStatus("PUBLISHED");
+
+        public static readonly CatalogChangeInfoStatus UNPUBLISHED
+            = new CatalogChangeInfoStatus("UNPUBLISHED");
 
 
         public static implicit operator CatalogChangeInfoStatus(string value)
@@ -148,14 +151,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class CatalogChangeInfoType : StringEnum<CatalogChangeInfoType>
     {
-        public static readonly CatalogChangeInfoType STORE
-            = new CatalogChangeInfoType("STORE");
-
         public static readonly CatalogChangeInfoType CATEGORY
             = new CatalogChangeInfoType("CATEGORY");
 
         public static readonly CatalogChangeInfoType ITEM
             = new CatalogChangeInfoType("ITEM");
+
+        public static readonly CatalogChangeInfoType STORE
+            = new CatalogChangeInfoType("STORE");
 
 
         public static implicit operator CatalogChangeInfoType(string value)

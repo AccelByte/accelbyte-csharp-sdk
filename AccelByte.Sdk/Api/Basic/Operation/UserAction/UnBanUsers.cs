@@ -109,7 +109,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
-            if (code == (HttpStatusCode)204)
+            if (code == (HttpStatusCode)200)
             {
                 return;
             }

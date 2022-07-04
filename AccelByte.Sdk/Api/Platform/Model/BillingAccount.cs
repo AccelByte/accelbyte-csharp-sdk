@@ -25,29 +25,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class BillingAccountPaymentProvider : StringEnum<BillingAccountPaymentProvider>
     {
-        public static readonly BillingAccountPaymentProvider WALLET
-            = new BillingAccountPaymentProvider("WALLET");
-
-        public static readonly BillingAccountPaymentProvider XSOLLA
-            = new BillingAccountPaymentProvider("XSOLLA");
-
         public static readonly BillingAccountPaymentProvider ADYEN
             = new BillingAccountPaymentProvider("ADYEN");
-
-        public static readonly BillingAccountPaymentProvider STRIPE
-            = new BillingAccountPaymentProvider("STRIPE");
-
-        public static readonly BillingAccountPaymentProvider CHECKOUT
-            = new BillingAccountPaymentProvider("CHECKOUT");
 
         public static readonly BillingAccountPaymentProvider ALIPAY
             = new BillingAccountPaymentProvider("ALIPAY");
 
-        public static readonly BillingAccountPaymentProvider WXPAY
-            = new BillingAccountPaymentProvider("WXPAY");
+        public static readonly BillingAccountPaymentProvider CHECKOUT
+            = new BillingAccountPaymentProvider("CHECKOUT");
 
         public static readonly BillingAccountPaymentProvider PAYPAL
             = new BillingAccountPaymentProvider("PAYPAL");
+
+        public static readonly BillingAccountPaymentProvider STRIPE
+            = new BillingAccountPaymentProvider("STRIPE");
+
+        public static readonly BillingAccountPaymentProvider WALLET
+            = new BillingAccountPaymentProvider("WALLET");
+
+        public static readonly BillingAccountPaymentProvider WXPAY
+            = new BillingAccountPaymentProvider("WXPAY");
+
+        public static readonly BillingAccountPaymentProvider XSOLLA
+            = new BillingAccountPaymentProvider("XSOLLA");
 
 
         public static implicit operator BillingAccountPaymentProvider(string value)

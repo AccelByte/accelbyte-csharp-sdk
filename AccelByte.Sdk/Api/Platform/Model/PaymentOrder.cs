@@ -196,26 +196,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentOrderItemType APP
             = new PaymentOrderItemType("APP");
 
-        public static readonly PaymentOrderItemType COINS
-            = new PaymentOrderItemType("COINS");
-
-        public static readonly PaymentOrderItemType INGAMEITEM
-            = new PaymentOrderItemType("INGAMEITEM");
-
         public static readonly PaymentOrderItemType BUNDLE
             = new PaymentOrderItemType("BUNDLE");
 
         public static readonly PaymentOrderItemType CODE
             = new PaymentOrderItemType("CODE");
 
-        public static readonly PaymentOrderItemType SUBSCRIPTION
-            = new PaymentOrderItemType("SUBSCRIPTION");
+        public static readonly PaymentOrderItemType COINS
+            = new PaymentOrderItemType("COINS");
+
+        public static readonly PaymentOrderItemType INGAMEITEM
+            = new PaymentOrderItemType("INGAMEITEM");
+
+        public static readonly PaymentOrderItemType MEDIA
+            = new PaymentOrderItemType("MEDIA");
 
         public static readonly PaymentOrderItemType SEASON
             = new PaymentOrderItemType("SEASON");
 
-        public static readonly PaymentOrderItemType MEDIA
-            = new PaymentOrderItemType("MEDIA");
+        public static readonly PaymentOrderItemType SUBSCRIPTION
+            = new PaymentOrderItemType("SUBSCRIPTION");
 
 
         public static implicit operator PaymentOrderItemType(string value)
@@ -232,29 +232,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentOrderPaymentProvider : StringEnum<PaymentOrderPaymentProvider>
     {
-        public static readonly PaymentOrderPaymentProvider WALLET
-            = new PaymentOrderPaymentProvider("WALLET");
-
-        public static readonly PaymentOrderPaymentProvider XSOLLA
-            = new PaymentOrderPaymentProvider("XSOLLA");
-
         public static readonly PaymentOrderPaymentProvider ADYEN
             = new PaymentOrderPaymentProvider("ADYEN");
-
-        public static readonly PaymentOrderPaymentProvider STRIPE
-            = new PaymentOrderPaymentProvider("STRIPE");
-
-        public static readonly PaymentOrderPaymentProvider CHECKOUT
-            = new PaymentOrderPaymentProvider("CHECKOUT");
 
         public static readonly PaymentOrderPaymentProvider ALIPAY
             = new PaymentOrderPaymentProvider("ALIPAY");
 
-        public static readonly PaymentOrderPaymentProvider WXPAY
-            = new PaymentOrderPaymentProvider("WXPAY");
+        public static readonly PaymentOrderPaymentProvider CHECKOUT
+            = new PaymentOrderPaymentProvider("CHECKOUT");
 
         public static readonly PaymentOrderPaymentProvider PAYPAL
             = new PaymentOrderPaymentProvider("PAYPAL");
+
+        public static readonly PaymentOrderPaymentProvider STRIPE
+            = new PaymentOrderPaymentProvider("STRIPE");
+
+        public static readonly PaymentOrderPaymentProvider WALLET
+            = new PaymentOrderPaymentProvider("WALLET");
+
+        public static readonly PaymentOrderPaymentProvider WXPAY
+            = new PaymentOrderPaymentProvider("WXPAY");
+
+        public static readonly PaymentOrderPaymentProvider XSOLLA
+            = new PaymentOrderPaymentProvider("XSOLLA");
 
 
         public static implicit operator PaymentOrderPaymentProvider(string value)
@@ -271,26 +271,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentOrderStatus : StringEnum<PaymentOrderStatus>
     {
-        public static readonly PaymentOrderStatus INIT
-            = new PaymentOrderStatus("INIT");
-
         public static readonly PaymentOrderStatus AUTHORISED
             = new PaymentOrderStatus("AUTHORISED");
 
         public static readonly PaymentOrderStatus AUTHORISEFAILED
             = new PaymentOrderStatus("AUTHORISE_FAILED");
-
-        public static readonly PaymentOrderStatus CHARGED
-            = new PaymentOrderStatus("CHARGED");
-
-        public static readonly PaymentOrderStatus CHARGEFAILED
-            = new PaymentOrderStatus("CHARGE_FAILED");
-
-        public static readonly PaymentOrderStatus NOTIFICATIONOFCHARGEBACK
-            = new PaymentOrderStatus("NOTIFICATION_OF_CHARGEBACK");
-
-        public static readonly PaymentOrderStatus REQUESTFORINFORMATION
-            = new PaymentOrderStatus("REQUEST_FOR_INFORMATION");
 
         public static readonly PaymentOrderStatus CHARGEBACK
             = new PaymentOrderStatus("CHARGEBACK");
@@ -298,17 +283,32 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentOrderStatus CHARGEBACKREVERSED
             = new PaymentOrderStatus("CHARGEBACK_REVERSED");
 
-        public static readonly PaymentOrderStatus REFUNDING
-            = new PaymentOrderStatus("REFUNDING");
+        public static readonly PaymentOrderStatus CHARGED
+            = new PaymentOrderStatus("CHARGED");
+
+        public static readonly PaymentOrderStatus CHARGEFAILED
+            = new PaymentOrderStatus("CHARGE_FAILED");
+
+        public static readonly PaymentOrderStatus DELETED
+            = new PaymentOrderStatus("DELETED");
+
+        public static readonly PaymentOrderStatus INIT
+            = new PaymentOrderStatus("INIT");
+
+        public static readonly PaymentOrderStatus NOTIFICATIONOFCHARGEBACK
+            = new PaymentOrderStatus("NOTIFICATION_OF_CHARGEBACK");
 
         public static readonly PaymentOrderStatus REFUNDED
             = new PaymentOrderStatus("REFUNDED");
 
+        public static readonly PaymentOrderStatus REFUNDING
+            = new PaymentOrderStatus("REFUNDING");
+
         public static readonly PaymentOrderStatus REFUNDFAILED
             = new PaymentOrderStatus("REFUND_FAILED");
 
-        public static readonly PaymentOrderStatus DELETED
-            = new PaymentOrderStatus("DELETED");
+        public static readonly PaymentOrderStatus REQUESTFORINFORMATION
+            = new PaymentOrderStatus("REQUEST_FOR_INFORMATION");
 
 
         public static implicit operator PaymentOrderStatus(string value)

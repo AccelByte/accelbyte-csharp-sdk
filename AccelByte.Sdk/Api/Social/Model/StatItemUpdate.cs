@@ -25,9 +25,6 @@ namespace AccelByte.Sdk.Api.Social.Model
 
     public class StatItemUpdateUpdateStrategy : StringEnum<StatItemUpdateUpdateStrategy>
     {
-        public static readonly StatItemUpdateUpdateStrategy OVERRIDE
-            = new StatItemUpdateUpdateStrategy("OVERRIDE");
-
         public static readonly StatItemUpdateUpdateStrategy INCREMENT
             = new StatItemUpdateUpdateStrategy("INCREMENT");
 
@@ -36,6 +33,9 @@ namespace AccelByte.Sdk.Api.Social.Model
 
         public static readonly StatItemUpdateUpdateStrategy MIN
             = new StatItemUpdateUpdateStrategy("MIN");
+
+        public static readonly StatItemUpdateUpdateStrategy OVERRIDE
+            = new StatItemUpdateUpdateStrategy("OVERRIDE");
 
 
         public static implicit operator StatItemUpdateUpdateStrategy(string value)

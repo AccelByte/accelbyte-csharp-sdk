@@ -746,7 +746,7 @@ eval_tap $? 64 'ResetUserStatItemValue1' test.out
 
 #- 65 BulkUpdateUserStatItemV2
 # body param: body
-echo '[{"additionalData": {"1W7MnK2i": {}}, "additionalKey": "8Ely255a", "statCode": "wvulbNGS", "updateStrategy": "MIN", "userId": "jeiiANET", "value": 0.18447252488176302}]' > $TEMP_JSON_INPUT
+echo '[{"additionalData": {"1W7MnK2i": {}}, "additionalKey": "8Ely255a", "statCode": "wvulbNGS", "updateStrategy": "OVERRIDE", "userId": "jeiiANET", "value": 0.18447252488176302}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkUpdateUserStatItemV2 \
@@ -768,7 +768,7 @@ eval_tap $? 66 'BulkFetchOrDefaultStatItems1' test.out
 
 #- 67 BulkUpdateUserStatItem
 # body param: body
-echo '[{"additionalData": {"j0fidlWP": {}}, "statCode": "SAIjaw5H", "updateStrategy": "MIN", "value": 0.4596686608621954}]' > $TEMP_JSON_INPUT
+echo '[{"additionalData": {"j0fidlWP": {}}, "statCode": "SAIjaw5H", "updateStrategy": "OVERRIDE", "value": 0.4596686608621954}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkUpdateUserStatItem \
@@ -805,7 +805,7 @@ eval_tap $? 69 'DeleteUserStatItems2' test.out
 
 #- 70 UpdateUserStatItemValue
 # body param: body
-echo '{"additionalData": {"WyrFZZdM": {}}, "updateStrategy": "MAX", "value": 0.6880338569069245}' > $TEMP_JSON_INPUT
+echo '{"additionalData": {"WyrFZZdM": {}}, "updateStrategy": "MIN", "value": 0.6880338569069245}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op UpdateUserStatItemValue \
@@ -819,7 +819,7 @@ eval_tap $? 70 'UpdateUserStatItemValue' test.out
 
 #- 71 BulkUpdateUserStatItem1
 # body param: body
-echo '[{"additionalData": {"oUsUcGfj": {}}, "additionalKey": "tfyuPNb5", "statCode": "exiRtR1Q", "updateStrategy": "OVERRIDE", "userId": "0mxLnvZE", "value": 0.5090649116475479}]' > $TEMP_JSON_INPUT
+echo '[{"additionalData": {"oUsUcGfj": {}}, "additionalKey": "tfyuPNb5", "statCode": "exiRtR1Q", "updateStrategy": "INCREMENT", "userId": "0mxLnvZE", "value": 0.5090649116475479}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkUpdateUserStatItem1 \
@@ -842,7 +842,7 @@ eval_tap $? 72 'PublicQueryUserStatItems2' test.out
 
 #- 73 BulkUpdateUserStatItem2
 # body param: body
-echo '[{"additionalData": {"Ig82ffzx": {}}, "statCode": "6WCUdwQn", "updateStrategy": "INCREMENT", "value": 0.334298719520429}]' > $TEMP_JSON_INPUT
+echo '[{"additionalData": {"Ig82ffzx": {}}, "statCode": "6WCUdwQn", "updateStrategy": "MAX", "value": 0.334298719520429}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkUpdateUserStatItem2 \
@@ -855,7 +855,7 @@ eval_tap $? 73 'BulkUpdateUserStatItem2' test.out
 
 #- 74 UpdateUserStatItemValue1
 # body param: body
-echo '{"additionalData": {"Gr95D9Va": {}}, "updateStrategy": "MAX", "value": 0.07961324129829306}' > $TEMP_JSON_INPUT
+echo '{"additionalData": {"Gr95D9Va": {}}, "updateStrategy": "MIN", "value": 0.07961324129829306}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op UpdateUserStatItemValue1 \

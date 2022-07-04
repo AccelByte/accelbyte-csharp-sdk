@@ -65,6 +65,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
         [SdkCommandArgument("startDate")]
         public string? StartDate { get; set; }
 
+        [SdkCommandArgument("status")]
+        public string? Status { get; set; }
+
         [SdkCommandArgument("userId")]
         public string? UserId { get; set; }
 
@@ -91,6 +94,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
                 Region,                
                 SessionId,                
                 StartDate,                
+                Status,                
                 UserId                
             );            
             

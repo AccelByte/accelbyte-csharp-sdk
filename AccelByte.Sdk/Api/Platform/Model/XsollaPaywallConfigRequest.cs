@@ -51,14 +51,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class XsollaPaywallConfigRequestSize : StringEnum<XsollaPaywallConfigRequestSize>
     {
-        public static readonly XsollaPaywallConfigRequestSize SMALL
-            = new XsollaPaywallConfigRequestSize("SMALL");
+        public static readonly XsollaPaywallConfigRequestSize LARGE
+            = new XsollaPaywallConfigRequestSize("LARGE");
 
         public static readonly XsollaPaywallConfigRequestSize MEDIUM
             = new XsollaPaywallConfigRequestSize("MEDIUM");
 
-        public static readonly XsollaPaywallConfigRequestSize LARGE
-            = new XsollaPaywallConfigRequestSize("LARGE");
+        public static readonly XsollaPaywallConfigRequestSize SMALL
+            = new XsollaPaywallConfigRequestSize("SMALL");
 
 
         public static implicit operator XsollaPaywallConfigRequestSize(string value)
@@ -75,11 +75,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class XsollaPaywallConfigRequestTheme : StringEnum<XsollaPaywallConfigRequestTheme>
     {
-        public static readonly XsollaPaywallConfigRequestTheme DEFAULT
-            = new XsollaPaywallConfigRequestTheme("DEFAULT");
-
         public static readonly XsollaPaywallConfigRequestTheme DARK
             = new XsollaPaywallConfigRequestTheme("DARK");
+
+        public static readonly XsollaPaywallConfigRequestTheme DEFAULT
+            = new XsollaPaywallConfigRequestTheme("DEFAULT");
 
         public static readonly XsollaPaywallConfigRequestTheme DEFAULTDARK
             = new XsollaPaywallConfigRequestTheme("DEFAULT_DARK");

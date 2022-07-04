@@ -86,13 +86,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///                 * awscognito : The platform_tokenâs value is the aws cognito access token or id token (JWT).
     /// 
     /// 
-    ///                 * xbl : The platform_tokenâs value is XSTS token
+    ///                 * live : The platform_tokenâs value is xbox XSTS token
     /// 
     /// 
     ///                 * xblweb : The platform_tokenâs value is code returned by xbox after login
     /// 
     /// 
     ///                 * netflix : The platform_tokenâs value is GAT (Gamer Access Token) returned by Netflix backend
+    /// 
+    /// 
+    ///                 * snapchat : The platform_tokenâs value is the authorization code returned by Snapchat OAuth.
     /// 
     /// 
     /// 

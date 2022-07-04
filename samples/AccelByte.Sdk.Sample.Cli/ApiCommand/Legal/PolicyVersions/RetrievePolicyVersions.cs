@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 Namespace                
             );            
             
-            List<AccelByte.Sdk.Api.Legal.Model.RetrievePolicyVersionResponse>? response = wrapper.RetrievePolicyVersions(operation);
+            AccelByte.Sdk.Api.Legal.Model.RetrievePolicyVersionResponse? response = wrapper.RetrievePolicyVersions(operation);
             if (response == null)
                 return "No response from server.";
 

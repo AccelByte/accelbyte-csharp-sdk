@@ -46,32 +46,32 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class EntitlementGrantSource : StringEnum<EntitlementGrantSource>
     {
-        public static readonly EntitlementGrantSource PURCHASE
-            = new EntitlementGrantSource("PURCHASE");
-
-        public static readonly EntitlementGrantSource IAP
-            = new EntitlementGrantSource("IAP");
-
-        public static readonly EntitlementGrantSource PROMOTION
-            = new EntitlementGrantSource("PROMOTION");
-
         public static readonly EntitlementGrantSource ACHIEVEMENT
             = new EntitlementGrantSource("ACHIEVEMENT");
-
-        public static readonly EntitlementGrantSource REFERRALBONUS
-            = new EntitlementGrantSource("REFERRAL_BONUS");
-
-        public static readonly EntitlementGrantSource REDEEMCODE
-            = new EntitlementGrantSource("REDEEM_CODE");
-
-        public static readonly EntitlementGrantSource REWARD
-            = new EntitlementGrantSource("REWARD");
 
         public static readonly EntitlementGrantSource GIFT
             = new EntitlementGrantSource("GIFT");
 
+        public static readonly EntitlementGrantSource IAP
+            = new EntitlementGrantSource("IAP");
+
         public static readonly EntitlementGrantSource OTHER
             = new EntitlementGrantSource("OTHER");
+
+        public static readonly EntitlementGrantSource PROMOTION
+            = new EntitlementGrantSource("PROMOTION");
+
+        public static readonly EntitlementGrantSource PURCHASE
+            = new EntitlementGrantSource("PURCHASE");
+
+        public static readonly EntitlementGrantSource REDEEMCODE
+            = new EntitlementGrantSource("REDEEM_CODE");
+
+        public static readonly EntitlementGrantSource REFERRALBONUS
+            = new EntitlementGrantSource("REFERRAL_BONUS");
+
+        public static readonly EntitlementGrantSource REWARD
+            = new EntitlementGrantSource("REWARD");
 
 
         public static implicit operator EntitlementGrantSource(string value)

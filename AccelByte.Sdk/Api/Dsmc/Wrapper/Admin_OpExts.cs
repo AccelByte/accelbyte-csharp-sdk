@@ -14,11 +14,15 @@ namespace AccelByte.Sdk.Api
     {
         public static Dsmc.Model.ModelsListServerResponse? Execute(
             this ListServer.ListServerBuilder builder,
-            string namespace_
+            string namespace_,
+            long count,
+            long offset
         )
         {
             ListServer op = builder.Build(
-                namespace_
+                namespace_,
+                count,
+                offset
             );
 
             return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).ListServer(op);
@@ -118,11 +122,15 @@ namespace AccelByte.Sdk.Api
 
         public static Dsmc.Model.ModelsListSessionResponse? Execute(
             this ListSession.ListSessionBuilder builder,
-            string namespace_
+            string namespace_,
+            long count,
+            long offset
         )
         {
             ListSession op = builder.Build(
-                namespace_
+                namespace_,
+                count,
+                offset
             );
 
             return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).ListSession(op);

@@ -60,7 +60,7 @@ namespace AccelByte.Sdk.Api
             return ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).CreatePolicyVersion(op);
         }
 
-        public static List<Legal.Model.RetrievePolicyVersionResponse>? Execute(
+        public static Legal.Model.RetrievePolicyVersionResponse? Execute(
             this RetrievePolicyVersions.RetrievePolicyVersionsBuilder builder
         )
         {

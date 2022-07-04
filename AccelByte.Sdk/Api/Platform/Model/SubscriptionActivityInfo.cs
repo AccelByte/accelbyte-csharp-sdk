@@ -62,11 +62,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class SubscriptionActivityInfoAction : StringEnum<SubscriptionActivityInfoAction>
     {
-        public static readonly SubscriptionActivityInfoAction SUBSCRIBE
-            = new SubscriptionActivityInfoAction("SUBSCRIBE");
-
         public static readonly SubscriptionActivityInfoAction CANCEL
             = new SubscriptionActivityInfoAction("CANCEL");
+
+        public static readonly SubscriptionActivityInfoAction CHANGEBILLINGACCOUNT
+            = new SubscriptionActivityInfoAction("CHANGE_BILLING_ACCOUNT");
+
+        public static readonly SubscriptionActivityInfoAction GRANTDAYS
+            = new SubscriptionActivityInfoAction("GRANT_DAYS");
 
         public static readonly SubscriptionActivityInfoAction IMMEDIATECANCEL
             = new SubscriptionActivityInfoAction("IMMEDIATE_CANCEL");
@@ -74,11 +77,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly SubscriptionActivityInfoAction RESUBSCRIBE
             = new SubscriptionActivityInfoAction("RESUBSCRIBE");
 
-        public static readonly SubscriptionActivityInfoAction GRANTDAYS
-            = new SubscriptionActivityInfoAction("GRANT_DAYS");
-
-        public static readonly SubscriptionActivityInfoAction CHANGEBILLINGACCOUNT
-            = new SubscriptionActivityInfoAction("CHANGE_BILLING_ACCOUNT");
+        public static readonly SubscriptionActivityInfoAction SUBSCRIBE
+            = new SubscriptionActivityInfoAction("SUBSCRIBE");
 
 
         public static implicit operator SubscriptionActivityInfoAction(string value)
@@ -95,11 +95,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class SubscriptionActivityInfoSubscribedBy : StringEnum<SubscriptionActivityInfoSubscribedBy>
     {
-        public static readonly SubscriptionActivityInfoSubscribedBy USER
-            = new SubscriptionActivityInfoSubscribedBy("USER");
-
         public static readonly SubscriptionActivityInfoSubscribedBy PLATFORM
             = new SubscriptionActivityInfoSubscribedBy("PLATFORM");
+
+        public static readonly SubscriptionActivityInfoSubscribedBy USER
+            = new SubscriptionActivityInfoSubscribedBy("USER");
 
 
         public static implicit operator SubscriptionActivityInfoSubscribedBy(string value)

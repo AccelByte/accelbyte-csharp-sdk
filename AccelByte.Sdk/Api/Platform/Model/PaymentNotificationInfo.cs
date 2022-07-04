@@ -50,29 +50,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentNotificationInfoNotificationSource : StringEnum<PaymentNotificationInfoNotificationSource>
     {
-        public static readonly PaymentNotificationInfoNotificationSource WALLET
-            = new PaymentNotificationInfoNotificationSource("WALLET");
-
-        public static readonly PaymentNotificationInfoNotificationSource XSOLLA
-            = new PaymentNotificationInfoNotificationSource("XSOLLA");
-
         public static readonly PaymentNotificationInfoNotificationSource ADYEN
             = new PaymentNotificationInfoNotificationSource("ADYEN");
-
-        public static readonly PaymentNotificationInfoNotificationSource STRIPE
-            = new PaymentNotificationInfoNotificationSource("STRIPE");
-
-        public static readonly PaymentNotificationInfoNotificationSource CHECKOUT
-            = new PaymentNotificationInfoNotificationSource("CHECKOUT");
 
         public static readonly PaymentNotificationInfoNotificationSource ALIPAY
             = new PaymentNotificationInfoNotificationSource("ALIPAY");
 
-        public static readonly PaymentNotificationInfoNotificationSource WXPAY
-            = new PaymentNotificationInfoNotificationSource("WXPAY");
+        public static readonly PaymentNotificationInfoNotificationSource CHECKOUT
+            = new PaymentNotificationInfoNotificationSource("CHECKOUT");
 
         public static readonly PaymentNotificationInfoNotificationSource PAYPAL
             = new PaymentNotificationInfoNotificationSource("PAYPAL");
+
+        public static readonly PaymentNotificationInfoNotificationSource STRIPE
+            = new PaymentNotificationInfoNotificationSource("STRIPE");
+
+        public static readonly PaymentNotificationInfoNotificationSource WALLET
+            = new PaymentNotificationInfoNotificationSource("WALLET");
+
+        public static readonly PaymentNotificationInfoNotificationSource WXPAY
+            = new PaymentNotificationInfoNotificationSource("WXPAY");
+
+        public static readonly PaymentNotificationInfoNotificationSource XSOLLA
+            = new PaymentNotificationInfoNotificationSource("XSOLLA");
 
 
         public static implicit operator PaymentNotificationInfoNotificationSource(string value)
@@ -89,17 +89,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentNotificationInfoStatus : StringEnum<PaymentNotificationInfoStatus>
     {
-        public static readonly PaymentNotificationInfoStatus PROCESSED
-            = new PaymentNotificationInfoStatus("PROCESSED");
-
         public static readonly PaymentNotificationInfoStatus ERROR
             = new PaymentNotificationInfoStatus("ERROR");
 
-        public static readonly PaymentNotificationInfoStatus WARN
-            = new PaymentNotificationInfoStatus("WARN");
-
         public static readonly PaymentNotificationInfoStatus IGNORED
             = new PaymentNotificationInfoStatus("IGNORED");
+
+        public static readonly PaymentNotificationInfoStatus PROCESSED
+            = new PaymentNotificationInfoStatus("PROCESSED");
+
+        public static readonly PaymentNotificationInfoStatus WARN
+            = new PaymentNotificationInfoStatus("WARN");
 
 
         public static implicit operator PaymentNotificationInfoStatus(string value)

@@ -56,38 +56,38 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class FulfillmentRequestOrigin : StringEnum<FulfillmentRequestOrigin>
     {
-        public static readonly FulfillmentRequestOrigin Playstation
-            = new FulfillmentRequestOrigin("Playstation");
-
-        public static readonly FulfillmentRequestOrigin Xbox
-            = new FulfillmentRequestOrigin("Xbox");
-
-        public static readonly FulfillmentRequestOrigin Steam
-            = new FulfillmentRequestOrigin("Steam");
-
         public static readonly FulfillmentRequestOrigin Epic
             = new FulfillmentRequestOrigin("Epic");
-
-        public static readonly FulfillmentRequestOrigin Stadia
-            = new FulfillmentRequestOrigin("Stadia");
-
-        public static readonly FulfillmentRequestOrigin IOS
-            = new FulfillmentRequestOrigin("IOS");
 
         public static readonly FulfillmentRequestOrigin GooglePlay
             = new FulfillmentRequestOrigin("GooglePlay");
 
-        public static readonly FulfillmentRequestOrigin Twitch
-            = new FulfillmentRequestOrigin("Twitch");
+        public static readonly FulfillmentRequestOrigin IOS
+            = new FulfillmentRequestOrigin("IOS");
 
         public static readonly FulfillmentRequestOrigin Nintendo
             = new FulfillmentRequestOrigin("Nintendo");
 
+        public static readonly FulfillmentRequestOrigin Other
+            = new FulfillmentRequestOrigin("Other");
+
+        public static readonly FulfillmentRequestOrigin Playstation
+            = new FulfillmentRequestOrigin("Playstation");
+
+        public static readonly FulfillmentRequestOrigin Stadia
+            = new FulfillmentRequestOrigin("Stadia");
+
+        public static readonly FulfillmentRequestOrigin Steam
+            = new FulfillmentRequestOrigin("Steam");
+
         public static readonly FulfillmentRequestOrigin System
             = new FulfillmentRequestOrigin("System");
 
-        public static readonly FulfillmentRequestOrigin Other
-            = new FulfillmentRequestOrigin("Other");
+        public static readonly FulfillmentRequestOrigin Twitch
+            = new FulfillmentRequestOrigin("Twitch");
+
+        public static readonly FulfillmentRequestOrigin Xbox
+            = new FulfillmentRequestOrigin("Xbox");
 
 
         public static implicit operator FulfillmentRequestOrigin(string value)
@@ -104,35 +104,35 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class FulfillmentRequestSource : StringEnum<FulfillmentRequestSource>
     {
-        public static readonly FulfillmentRequestSource PURCHASE
-            = new FulfillmentRequestSource("PURCHASE");
-
-        public static readonly FulfillmentRequestSource IAP
-            = new FulfillmentRequestSource("IAP");
-
-        public static readonly FulfillmentRequestSource PROMOTION
-            = new FulfillmentRequestSource("PROMOTION");
-
         public static readonly FulfillmentRequestSource ACHIEVEMENT
             = new FulfillmentRequestSource("ACHIEVEMENT");
-
-        public static readonly FulfillmentRequestSource REFERRALBONUS
-            = new FulfillmentRequestSource("REFERRAL_BONUS");
-
-        public static readonly FulfillmentRequestSource REDEEMCODE
-            = new FulfillmentRequestSource("REDEEM_CODE");
-
-        public static readonly FulfillmentRequestSource REWARD
-            = new FulfillmentRequestSource("REWARD");
-
-        public static readonly FulfillmentRequestSource GIFT
-            = new FulfillmentRequestSource("GIFT");
 
         public static readonly FulfillmentRequestSource DLC
             = new FulfillmentRequestSource("DLC");
 
+        public static readonly FulfillmentRequestSource GIFT
+            = new FulfillmentRequestSource("GIFT");
+
+        public static readonly FulfillmentRequestSource IAP
+            = new FulfillmentRequestSource("IAP");
+
         public static readonly FulfillmentRequestSource OTHER
             = new FulfillmentRequestSource("OTHER");
+
+        public static readonly FulfillmentRequestSource PROMOTION
+            = new FulfillmentRequestSource("PROMOTION");
+
+        public static readonly FulfillmentRequestSource PURCHASE
+            = new FulfillmentRequestSource("PURCHASE");
+
+        public static readonly FulfillmentRequestSource REDEEMCODE
+            = new FulfillmentRequestSource("REDEEM_CODE");
+
+        public static readonly FulfillmentRequestSource REFERRALBONUS
+            = new FulfillmentRequestSource("REFERRAL_BONUS");
+
+        public static readonly FulfillmentRequestSource REWARD
+            = new FulfillmentRequestSource("REWARD");
 
 
         public static implicit operator FulfillmentRequestSource(string value)

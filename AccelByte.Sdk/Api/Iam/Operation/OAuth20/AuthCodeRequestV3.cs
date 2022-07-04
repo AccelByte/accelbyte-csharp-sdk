@@ -55,6 +55,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///                 * google
     /// This endpoint redirects to google login page, then redirect back to platform
     /// authenticate endpoint after successfully authenticating google user.
+    /// 
+    ///                 * snapchat
+    /// This endpoint redirects to snapchat login page, then redirect back to platform
+    /// authenticate endpoint after successfully authenticating snapchat user.
     /// action code : 10702'
     /// </summary>
     public class AuthCodeRequestV3 : AccelByte.Sdk.Core.Operation

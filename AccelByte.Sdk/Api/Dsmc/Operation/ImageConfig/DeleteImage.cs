@@ -18,9 +18,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     ///
     /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [UPDATE]
     /// 
-    /// Required scope: social
+    /// Required scope: social.
     /// 
-    /// This endpoint will delete an image that specified in the request parameter
+    /// This endpoint will delete an image that specified in the request parameter.
+    /// 
+    /// Default image is cannot be deleted and will throw error 422 (Unprocessable entity).
     /// </summary>
     public class DeleteImage : AccelByte.Sdk.Core.Operation
     {

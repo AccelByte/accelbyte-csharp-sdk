@@ -40,5 +40,93 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).PublishAll(op);
         }
 
+        public static Platform.Model.StoreInfo? Execute(
+            this PublishSelected.PublishSelectedBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            PublishSelected op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).PublishSelected(op);
+        }
+
+        public static void Execute(
+            this SelectAllRecords.SelectAllRecordsBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            SelectAllRecords op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).SelectAllRecords(op);
+        }
+
+        public static Platform.Model.CatalogChangeStatistics? Execute(
+            this GetStatistic.GetStatisticBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            GetStatistic op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).GetStatistic(op);
+        }
+
+        public static void Execute(
+            this UnselectAllRecords.UnselectAllRecordsBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            UnselectAllRecords op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).UnselectAllRecords(op);
+        }
+
+        public static void Execute(
+            this SelectRecord.SelectRecordBuilder builder,
+            string changeId,
+            string namespace_,
+            string storeId
+        )
+        {
+            SelectRecord op = builder.Build(
+                changeId,
+                namespace_,
+                storeId
+            );
+
+            ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).SelectRecord(op);
+        }
+
+        public static void Execute(
+            this UnselectRecord.UnselectRecordBuilder builder,
+            string changeId,
+            string namespace_,
+            string storeId
+        )
+        {
+            UnselectRecord op = builder.Build(
+                changeId,
+                namespace_,
+                storeId
+            );
+
+            ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).UnselectRecord(op);
+        }
+
     }
 }

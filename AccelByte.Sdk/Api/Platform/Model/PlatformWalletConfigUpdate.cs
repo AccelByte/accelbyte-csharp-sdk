@@ -19,38 +19,38 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PlatformWalletConfigUpdateAllowedBalanceOrigins : StringEnum<PlatformWalletConfigUpdateAllowedBalanceOrigins>
     {
-        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Playstation
-            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Playstation");
-
-        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Xbox
-            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Xbox");
-
-        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Steam
-            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Steam");
-
         public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Epic
             = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Epic");
-
-        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Stadia
-            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Stadia");
-
-        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins IOS
-            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("IOS");
 
         public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins GooglePlay
             = new PlatformWalletConfigUpdateAllowedBalanceOrigins("GooglePlay");
 
-        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Twitch
-            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Twitch");
+        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins IOS
+            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("IOS");
 
         public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Nintendo
             = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Nintendo");
 
+        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Other
+            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Other");
+
+        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Playstation
+            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Playstation");
+
+        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Stadia
+            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Stadia");
+
+        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Steam
+            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Steam");
+
         public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins System
             = new PlatformWalletConfigUpdateAllowedBalanceOrigins("System");
 
-        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Other
-            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Other");
+        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Twitch
+            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Twitch");
+
+        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Xbox
+            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Xbox");
 
 
         public static implicit operator PlatformWalletConfigUpdateAllowedBalanceOrigins(string value)

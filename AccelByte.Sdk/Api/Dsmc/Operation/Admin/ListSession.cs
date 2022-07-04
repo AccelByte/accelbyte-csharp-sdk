@@ -21,6 +21,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// Required scope: social
     /// 
     /// This endpoint lists all of sessions in a namespace managed by this service.
+    /// 
+    /// Parameter Offset and Count is Required
     /// </summary>
     public class ListSession : AccelByte.Sdk.Core.Operation
     {
@@ -30,10 +32,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public class ListSessionBuilder
             : OperationBuilder<ListSessionBuilder>
         {
-
-            public long? Count { get; set; }
-
-            public long? Offset { get; set; }
 
             public string? Region { get; set; }
 
@@ -45,18 +43,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
             internal ListSessionBuilder() { }
 
-
-            public ListSessionBuilder SetCount(long _count)
-            {
-                Count = _count;
-                return this;
-            }
-
-            public ListSessionBuilder SetOffset(long _offset)
-            {
-                Offset = _offset;
-                return this;
-            }
 
             public ListSessionBuilder SetRegion(string _region)
             {
@@ -75,11 +61,15 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
 
             public ListSession Build(
-                string namespace_
+                string namespace_,
+                long count,
+                long offset
             )
             {
                 ListSession op = new ListSession(this,
-                    namespace_                    
+                    namespace_,                    
+                    count,                    
+                    offset                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -88,15 +78,17 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         }
 
         private ListSession(ListSessionBuilder builder,
-            string namespace_
+            string namespace_,
+            long count,
+            long offset
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
-            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
             if (builder.WithServer != null) QueryParams["withServer"] = Convert.ToString(builder.WithServer)!;
+            QueryParams["count"] = Convert.ToString(count)!;
+            QueryParams["offset"] = Convert.ToString(offset)!;
             
 
             
@@ -109,18 +101,18 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public ListSession(
             string namespace_,            
-            long? count,            
-            long? offset,            
             string? region,            
-            bool? withServer            
+            bool? withServer,            
+            long count,            
+            long offset            
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (count != null) QueryParams["count"] = Convert.ToString(count)!;
-            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (region is not null) QueryParams["region"] = region;
             if (withServer != null) QueryParams["withServer"] = Convert.ToString(withServer)!;
+            QueryParams["count"] = Convert.ToString(count)!;
+            QueryParams["offset"] = Convert.ToString(offset)!;
             
 
             

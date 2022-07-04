@@ -124,7 +124,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
         
-        public List<Model.RetrievePolicyVersionResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.RetrievePolicyVersionResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            
             if (code == (HttpStatusCode)204)
             {
@@ -132,11 +132,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.RetrievePolicyVersionResponse>>(payload);
+                return JsonSerializer.Deserialize<Model.RetrievePolicyVersionResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.RetrievePolicyVersionResponse>>(payload);
+                return JsonSerializer.Deserialize<Model.RetrievePolicyVersionResponse>(payload);
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

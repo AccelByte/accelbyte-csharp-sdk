@@ -25,11 +25,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
 
     public class ExcessStrategyMethod : StringEnum<ExcessStrategyMethod>
     {
-        public static readonly ExcessStrategyMethod NONE
-            = new ExcessStrategyMethod("NONE");
-
         public static readonly ExcessStrategyMethod CURRENCY
             = new ExcessStrategyMethod("CURRENCY");
+
+        public static readonly ExcessStrategyMethod NONE
+            = new ExcessStrategyMethod("NONE");
 
 
         public static implicit operator ExcessStrategyMethod(string value)

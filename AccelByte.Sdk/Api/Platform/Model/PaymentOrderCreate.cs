@@ -79,26 +79,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentOrderCreateItemType APP
             = new PaymentOrderCreateItemType("APP");
 
-        public static readonly PaymentOrderCreateItemType COINS
-            = new PaymentOrderCreateItemType("COINS");
-
-        public static readonly PaymentOrderCreateItemType INGAMEITEM
-            = new PaymentOrderCreateItemType("INGAMEITEM");
-
         public static readonly PaymentOrderCreateItemType BUNDLE
             = new PaymentOrderCreateItemType("BUNDLE");
 
         public static readonly PaymentOrderCreateItemType CODE
             = new PaymentOrderCreateItemType("CODE");
 
-        public static readonly PaymentOrderCreateItemType SUBSCRIPTION
-            = new PaymentOrderCreateItemType("SUBSCRIPTION");
+        public static readonly PaymentOrderCreateItemType COINS
+            = new PaymentOrderCreateItemType("COINS");
+
+        public static readonly PaymentOrderCreateItemType INGAMEITEM
+            = new PaymentOrderCreateItemType("INGAMEITEM");
+
+        public static readonly PaymentOrderCreateItemType MEDIA
+            = new PaymentOrderCreateItemType("MEDIA");
 
         public static readonly PaymentOrderCreateItemType SEASON
             = new PaymentOrderCreateItemType("SEASON");
 
-        public static readonly PaymentOrderCreateItemType MEDIA
-            = new PaymentOrderCreateItemType("MEDIA");
+        public static readonly PaymentOrderCreateItemType SUBSCRIPTION
+            = new PaymentOrderCreateItemType("SUBSCRIPTION");
 
 
         public static implicit operator PaymentOrderCreateItemType(string value)

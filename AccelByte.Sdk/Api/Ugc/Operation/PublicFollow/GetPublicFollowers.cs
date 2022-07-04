@@ -25,9 +25,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             : OperationBuilder<GetPublicFollowersBuilder>
         {
 
-            public string? Limit { get; set; }
+            public long? Limit { get; set; }
 
-            public string? Offset { get; set; }
+            public long? Offset { get; set; }
 
 
 
@@ -36,13 +36,13 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             internal GetPublicFollowersBuilder() { }
 
 
-            public GetPublicFollowersBuilder SetLimit(string _limit)
+            public GetPublicFollowersBuilder SetLimit(long _limit)
             {
                 Limit = _limit;
                 return this;
             }
 
-            public GetPublicFollowersBuilder SetOffset(string _offset)
+            public GetPublicFollowersBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
                 return this;
@@ -75,8 +75,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (builder.Limit is not null) QueryParams["limit"] = builder.Limit;
-            if (builder.Offset is not null) QueryParams["offset"] = builder.Offset;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
 
             
@@ -90,15 +90,15 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         public GetPublicFollowers(
             string namespace_,            
             string userId,            
-            string? limit,            
-            string? offset            
+            long? limit,            
+            long? offset            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
-            if (limit is not null) QueryParams["limit"] = limit;
-            if (offset is not null) QueryParams["offset"] = offset;
+            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
 
             

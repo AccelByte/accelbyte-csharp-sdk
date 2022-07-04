@@ -35,6 +35,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("action")]
         public string? Action { get; set; }
 
+        [SdkCommandArgument("itemSku")]
+        public string? ItemSku { get; set; }
+
         [SdkCommandArgument("itemType")]
         public string? ItemType { get; set; }
 
@@ -43,6 +46,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandArgument("offset")]
         public int? Offset { get; set; }
+
+        [SdkCommandArgument("selected")]
+        public bool? Selected { get; set; }
 
         [SdkCommandArgument("sortBy")]
         public List<string>? SortBy { get; set; }
@@ -72,9 +78,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace,                
                 StoreId,                
                 (Action is null ? null : QueryChangesAction.NewValue(Action)),                
+                ItemSku,                
                 (ItemType is null ? null : QueryChangesItemType.NewValue(ItemType)),                
                 Limit,                
                 Offset,                
+                Selected,                
                 (SortBy is null ? null : QueryChangesSortBy.NewValue(SortBy)),                
                 (Status is null ? null : QueryChangesStatus.NewValue(Status)),                
                 (Type is null ? null : QueryChangesType.NewValue(Type)),                

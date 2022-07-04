@@ -1,5 +1,35 @@
 # Changelog
 
+## v0.12.0
+- Fixed basic user profile integration tests
+- Updated gametelemetry integration test
+- Updated APIs
+	- basic
+		- updated endpoints
+		- updated model
+	- dslogmanager
+		- updated endpoints
+	- dsmc
+		- updated endpoints
+	- group
+		- updated model
+	- iam
+		- updated model
+		- updated endpoints
+	- legal
+		- updated endpoints		
+	- platform
+		- updated models
+		- added new endpoints
+		- updated endpoints
+	- seasonpass
+		- updated models
+	- social
+		- updated models
+	- ugc
+		- updated model
+		- updated endpoints
+
 ## v0.11.0
 - Implemented token auto refresh
 - Updated APIs

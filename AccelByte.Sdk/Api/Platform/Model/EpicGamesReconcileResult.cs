@@ -31,14 +31,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class EpicGamesReconcileResultStatus : StringEnum<EpicGamesReconcileResultStatus>
     {
-        public static readonly EpicGamesReconcileResultStatus VERIFIED
-            = new EpicGamesReconcileResultStatus("VERIFIED");
+        public static readonly EpicGamesReconcileResultStatus FAILED
+            = new EpicGamesReconcileResultStatus("FAILED");
 
         public static readonly EpicGamesReconcileResultStatus FULFILLED
             = new EpicGamesReconcileResultStatus("FULFILLED");
 
-        public static readonly EpicGamesReconcileResultStatus FAILED
-            = new EpicGamesReconcileResultStatus("FAILED");
+        public static readonly EpicGamesReconcileResultStatus VERIFIED
+            = new EpicGamesReconcileResultStatus("VERIFIED");
 
 
         public static implicit operator EpicGamesReconcileResultStatus(string value)

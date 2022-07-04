@@ -34,9 +34,6 @@ namespace AccelByte.Sdk.Api.Social.Model
 
     public class BulkUserStatItemUpdateUpdateStrategy : StringEnum<BulkUserStatItemUpdateUpdateStrategy>
     {
-        public static readonly BulkUserStatItemUpdateUpdateStrategy OVERRIDE
-            = new BulkUserStatItemUpdateUpdateStrategy("OVERRIDE");
-
         public static readonly BulkUserStatItemUpdateUpdateStrategy INCREMENT
             = new BulkUserStatItemUpdateUpdateStrategy("INCREMENT");
 
@@ -45,6 +42,9 @@ namespace AccelByte.Sdk.Api.Social.Model
 
         public static readonly BulkUserStatItemUpdateUpdateStrategy MIN
             = new BulkUserStatItemUpdateUpdateStrategy("MIN");
+
+        public static readonly BulkUserStatItemUpdateUpdateStrategy OVERRIDE
+            = new BulkUserStatItemUpdateUpdateStrategy("OVERRIDE");
 
 
         public static implicit operator BulkUserStatItemUpdateUpdateStrategy(string value)

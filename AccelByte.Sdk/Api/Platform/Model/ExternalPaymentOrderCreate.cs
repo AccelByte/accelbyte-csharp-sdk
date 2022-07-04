@@ -85,26 +85,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly ExternalPaymentOrderCreateItemType APP
             = new ExternalPaymentOrderCreateItemType("APP");
 
-        public static readonly ExternalPaymentOrderCreateItemType COINS
-            = new ExternalPaymentOrderCreateItemType("COINS");
-
-        public static readonly ExternalPaymentOrderCreateItemType INGAMEITEM
-            = new ExternalPaymentOrderCreateItemType("INGAMEITEM");
-
         public static readonly ExternalPaymentOrderCreateItemType BUNDLE
             = new ExternalPaymentOrderCreateItemType("BUNDLE");
 
         public static readonly ExternalPaymentOrderCreateItemType CODE
             = new ExternalPaymentOrderCreateItemType("CODE");
 
-        public static readonly ExternalPaymentOrderCreateItemType SUBSCRIPTION
-            = new ExternalPaymentOrderCreateItemType("SUBSCRIPTION");
+        public static readonly ExternalPaymentOrderCreateItemType COINS
+            = new ExternalPaymentOrderCreateItemType("COINS");
+
+        public static readonly ExternalPaymentOrderCreateItemType INGAMEITEM
+            = new ExternalPaymentOrderCreateItemType("INGAMEITEM");
+
+        public static readonly ExternalPaymentOrderCreateItemType MEDIA
+            = new ExternalPaymentOrderCreateItemType("MEDIA");
 
         public static readonly ExternalPaymentOrderCreateItemType SEASON
             = new ExternalPaymentOrderCreateItemType("SEASON");
 
-        public static readonly ExternalPaymentOrderCreateItemType MEDIA
-            = new ExternalPaymentOrderCreateItemType("MEDIA");
+        public static readonly ExternalPaymentOrderCreateItemType SUBSCRIPTION
+            = new ExternalPaymentOrderCreateItemType("SUBSCRIPTION");
 
 
         public static implicit operator ExternalPaymentOrderCreateItemType(string value)

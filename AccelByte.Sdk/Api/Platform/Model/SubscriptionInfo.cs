@@ -147,20 +147,20 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class SubscriptionInfoChargeStatus : StringEnum<SubscriptionInfoChargeStatus>
     {
-        public static readonly SubscriptionInfoChargeStatus NEVER
-            = new SubscriptionInfoChargeStatus("NEVER");
-
-        public static readonly SubscriptionInfoChargeStatus SETUP
-            = new SubscriptionInfoChargeStatus("SETUP");
-
-        public static readonly SubscriptionInfoChargeStatus RECURRINGCHARGING
-            = new SubscriptionInfoChargeStatus("RECURRING_CHARGING");
-
         public static readonly SubscriptionInfoChargeStatus CHARGED
             = new SubscriptionInfoChargeStatus("CHARGED");
 
         public static readonly SubscriptionInfoChargeStatus CHARGEFAILED
             = new SubscriptionInfoChargeStatus("CHARGE_FAILED");
+
+        public static readonly SubscriptionInfoChargeStatus NEVER
+            = new SubscriptionInfoChargeStatus("NEVER");
+
+        public static readonly SubscriptionInfoChargeStatus RECURRINGCHARGING
+            = new SubscriptionInfoChargeStatus("RECURRING_CHARGING");
+
+        public static readonly SubscriptionInfoChargeStatus SETUP
+            = new SubscriptionInfoChargeStatus("SETUP");
 
 
         public static implicit operator SubscriptionInfoChargeStatus(string value)
@@ -177,9 +177,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class SubscriptionInfoStatus : StringEnum<SubscriptionInfoStatus>
     {
-        public static readonly SubscriptionInfoStatus INIT
-            = new SubscriptionInfoStatus("INIT");
-
         public static readonly SubscriptionInfoStatus ACTIVE
             = new SubscriptionInfoStatus("ACTIVE");
 
@@ -188,6 +185,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly SubscriptionInfoStatus EXPIRED
             = new SubscriptionInfoStatus("EXPIRED");
+
+        public static readonly SubscriptionInfoStatus INIT
+            = new SubscriptionInfoStatus("INIT");
 
 
         public static implicit operator SubscriptionInfoStatus(string value)
@@ -204,11 +204,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class SubscriptionInfoSubscribedBy : StringEnum<SubscriptionInfoSubscribedBy>
     {
-        public static readonly SubscriptionInfoSubscribedBy USER
-            = new SubscriptionInfoSubscribedBy("USER");
-
         public static readonly SubscriptionInfoSubscribedBy PLATFORM
             = new SubscriptionInfoSubscribedBy("PLATFORM");
+
+        public static readonly SubscriptionInfoSubscribedBy USER
+            = new SubscriptionInfoSubscribedBy("USER");
 
 
         public static implicit operator SubscriptionInfoSubscribedBy(string value)

@@ -21,6 +21,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// Required scope: social
     /// 
     /// This endpoint lists all of dedicated servers in a namespace managed by this service.
+    /// 
+    /// Parameter Offset and Count is Required
     /// </summary>
     public class ListServer : AccelByte.Sdk.Core.Operation
     {
@@ -31,10 +33,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             : OperationBuilder<ListServerBuilder>
         {
 
-            public long? Count { get; set; }
-
-            public long? Offset { get; set; }
-
             public string? Region { get; set; }
 
 
@@ -43,18 +41,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
             internal ListServerBuilder() { }
 
-
-            public ListServerBuilder SetCount(long _count)
-            {
-                Count = _count;
-                return this;
-            }
-
-            public ListServerBuilder SetOffset(long _offset)
-            {
-                Offset = _offset;
-                return this;
-            }
 
             public ListServerBuilder SetRegion(string _region)
             {
@@ -67,11 +53,15 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
 
             public ListServer Build(
-                string namespace_
+                string namespace_,
+                long count,
+                long offset
             )
             {
                 ListServer op = new ListServer(this,
-                    namespace_                    
+                    namespace_,                    
+                    count,                    
+                    offset                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -80,14 +70,16 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         }
 
         private ListServer(ListServerBuilder builder,
-            string namespace_
+            string namespace_,
+            long count,
+            long offset
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
-            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
+            QueryParams["count"] = Convert.ToString(count)!;
+            QueryParams["offset"] = Convert.ToString(offset)!;
             
 
             
@@ -100,16 +92,16 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public ListServer(
             string namespace_,            
-            long? count,            
-            long? offset,            
-            string? region            
+            string? region,            
+            long count,            
+            long offset            
         )
         {
             PathParams["namespace"] = namespace_;
             
-            if (count != null) QueryParams["count"] = Convert.ToString(count)!;
-            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (region is not null) QueryParams["region"] = region;
+            QueryParams["count"] = Convert.ToString(count)!;
+            QueryParams["offset"] = Convert.ToString(offset)!;
             
 
             

@@ -233,6 +233,17 @@ namespace AccelByte.Sdk.Core
         }
         private Ticket? _Ticket = null;
 
+        public AchievementPlatform AchievementPlatform
+        {
+            get
+            {
+                if (_AchievementPlatform == null)
+                    _AchievementPlatform = new AchievementPlatform(_SdkObject);
+                return _AchievementPlatform;
+            }
+        }
+        private AchievementPlatform? _AchievementPlatform = null;
+
         public Anonymization Anonymization
         {
             get

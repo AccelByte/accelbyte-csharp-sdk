@@ -113,17 +113,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class ItemUpdateAppType : StringEnum<ItemUpdateAppType>
     {
+        public static readonly ItemUpdateAppType DEMO
+            = new ItemUpdateAppType("DEMO");
+
+        public static readonly ItemUpdateAppType DLC
+            = new ItemUpdateAppType("DLC");
+
         public static readonly ItemUpdateAppType GAME
             = new ItemUpdateAppType("GAME");
 
         public static readonly ItemUpdateAppType SOFTWARE
             = new ItemUpdateAppType("SOFTWARE");
-
-        public static readonly ItemUpdateAppType DLC
-            = new ItemUpdateAppType("DLC");
-
-        public static readonly ItemUpdateAppType DEMO
-            = new ItemUpdateAppType("DEMO");
 
 
         public static implicit operator ItemUpdateAppType(string value)
@@ -140,11 +140,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class ItemUpdateEntitlementType : StringEnum<ItemUpdateEntitlementType>
     {
-        public static readonly ItemUpdateEntitlementType DURABLE
-            = new ItemUpdateEntitlementType("DURABLE");
-
         public static readonly ItemUpdateEntitlementType CONSUMABLE
             = new ItemUpdateEntitlementType("CONSUMABLE");
+
+        public static readonly ItemUpdateEntitlementType DURABLE
+            = new ItemUpdateEntitlementType("DURABLE");
 
 
         public static implicit operator ItemUpdateEntitlementType(string value)
@@ -164,26 +164,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly ItemUpdateItemType APP
             = new ItemUpdateItemType("APP");
 
-        public static readonly ItemUpdateItemType COINS
-            = new ItemUpdateItemType("COINS");
-
-        public static readonly ItemUpdateItemType INGAMEITEM
-            = new ItemUpdateItemType("INGAMEITEM");
-
         public static readonly ItemUpdateItemType BUNDLE
             = new ItemUpdateItemType("BUNDLE");
 
         public static readonly ItemUpdateItemType CODE
             = new ItemUpdateItemType("CODE");
 
-        public static readonly ItemUpdateItemType SUBSCRIPTION
-            = new ItemUpdateItemType("SUBSCRIPTION");
+        public static readonly ItemUpdateItemType COINS
+            = new ItemUpdateItemType("COINS");
+
+        public static readonly ItemUpdateItemType INGAMEITEM
+            = new ItemUpdateItemType("INGAMEITEM");
+
+        public static readonly ItemUpdateItemType MEDIA
+            = new ItemUpdateItemType("MEDIA");
 
         public static readonly ItemUpdateItemType SEASON
             = new ItemUpdateItemType("SEASON");
 
-        public static readonly ItemUpdateItemType MEDIA
-            = new ItemUpdateItemType("MEDIA");
+        public static readonly ItemUpdateItemType SUBSCRIPTION
+            = new ItemUpdateItemType("SUBSCRIPTION");
 
 
         public static implicit operator ItemUpdateItemType(string value)

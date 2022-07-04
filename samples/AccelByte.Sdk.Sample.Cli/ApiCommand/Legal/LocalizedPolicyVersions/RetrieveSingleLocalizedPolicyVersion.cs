@@ -42,7 +42,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
                 LocalizedPolicyVersionId                
             );            
             
-            AccelByte.Sdk.Api.Legal.Model.UpdateLocalizedPolicyVersionResponse? response = wrapper.RetrieveSingleLocalizedPolicyVersion(operation);
+            AccelByte.Sdk.Api.Legal.Model.RetrieveLocalizedPolicyVersionResponse? response = wrapper.RetrieveSingleLocalizedPolicyVersion(operation);
             if (response == null)
                 return "No response from server.";
 

@@ -79,11 +79,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly FullAppInfoGenres MassivelyMultiplayer
             = new FullAppInfoGenres("MassivelyMultiplayer");
 
-        public static readonly FullAppInfoGenres Racing
-            = new FullAppInfoGenres("Racing");
-
         public static readonly FullAppInfoGenres RPG
             = new FullAppInfoGenres("RPG");
+
+        public static readonly FullAppInfoGenres Racing
+            = new FullAppInfoGenres("Racing");
 
         public static readonly FullAppInfoGenres Simulation
             = new FullAppInfoGenres("Simulation");
@@ -109,20 +109,20 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class FullAppInfoPlatforms : StringEnum<FullAppInfoPlatforms>
     {
-        public static readonly FullAppInfoPlatforms Windows
-            = new FullAppInfoPlatforms("Windows");
-
-        public static readonly FullAppInfoPlatforms MacOS
-            = new FullAppInfoPlatforms("MacOS");
-
-        public static readonly FullAppInfoPlatforms Linux
-            = new FullAppInfoPlatforms("Linux");
+        public static readonly FullAppInfoPlatforms Android
+            = new FullAppInfoPlatforms("Android");
 
         public static readonly FullAppInfoPlatforms IOS
             = new FullAppInfoPlatforms("IOS");
 
-        public static readonly FullAppInfoPlatforms Android
-            = new FullAppInfoPlatforms("Android");
+        public static readonly FullAppInfoPlatforms Linux
+            = new FullAppInfoPlatforms("Linux");
+
+        public static readonly FullAppInfoPlatforms MacOS
+            = new FullAppInfoPlatforms("MacOS");
+
+        public static readonly FullAppInfoPlatforms Windows
+            = new FullAppInfoPlatforms("Windows");
 
 
         public static implicit operator FullAppInfoPlatforms(string value)
@@ -139,23 +139,23 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class FullAppInfoPlayers : StringEnum<FullAppInfoPlayers>
     {
-        public static readonly FullAppInfoPlayers Single
-            = new FullAppInfoPlayers("Single");
-
-        public static readonly FullAppInfoPlayers Multi
-            = new FullAppInfoPlayers("Multi");
+        public static readonly FullAppInfoPlayers Coop
+            = new FullAppInfoPlayers("Coop");
 
         public static readonly FullAppInfoPlayers CrossPlatformMulti
             = new FullAppInfoPlayers("CrossPlatformMulti");
 
+        public static readonly FullAppInfoPlayers LocalCoop
+            = new FullAppInfoPlayers("LocalCoop");
+
         public static readonly FullAppInfoPlayers MMO
             = new FullAppInfoPlayers("MMO");
 
-        public static readonly FullAppInfoPlayers Coop
-            = new FullAppInfoPlayers("Coop");
+        public static readonly FullAppInfoPlayers Multi
+            = new FullAppInfoPlayers("Multi");
 
-        public static readonly FullAppInfoPlayers LocalCoop
-            = new FullAppInfoPlayers("LocalCoop");
+        public static readonly FullAppInfoPlayers Single
+            = new FullAppInfoPlayers("Single");
 
 
         public static implicit operator FullAppInfoPlayers(string value)
@@ -190,11 +190,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly FullAppInfoPrimaryGenre MassivelyMultiplayer
             = new FullAppInfoPrimaryGenre("MassivelyMultiplayer");
 
-        public static readonly FullAppInfoPrimaryGenre Racing
-            = new FullAppInfoPrimaryGenre("Racing");
-
         public static readonly FullAppInfoPrimaryGenre RPG
             = new FullAppInfoPrimaryGenre("RPG");
+
+        public static readonly FullAppInfoPrimaryGenre Racing
+            = new FullAppInfoPrimaryGenre("Racing");
 
         public static readonly FullAppInfoPrimaryGenre Simulation
             = new FullAppInfoPrimaryGenre("Simulation");

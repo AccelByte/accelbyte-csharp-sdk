@@ -35,29 +35,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentUrlPaymentProvider : StringEnum<PaymentUrlPaymentProvider>
     {
-        public static readonly PaymentUrlPaymentProvider WALLET
-            = new PaymentUrlPaymentProvider("WALLET");
-
-        public static readonly PaymentUrlPaymentProvider XSOLLA
-            = new PaymentUrlPaymentProvider("XSOLLA");
-
         public static readonly PaymentUrlPaymentProvider ADYEN
             = new PaymentUrlPaymentProvider("ADYEN");
-
-        public static readonly PaymentUrlPaymentProvider STRIPE
-            = new PaymentUrlPaymentProvider("STRIPE");
-
-        public static readonly PaymentUrlPaymentProvider CHECKOUT
-            = new PaymentUrlPaymentProvider("CHECKOUT");
 
         public static readonly PaymentUrlPaymentProvider ALIPAY
             = new PaymentUrlPaymentProvider("ALIPAY");
 
-        public static readonly PaymentUrlPaymentProvider WXPAY
-            = new PaymentUrlPaymentProvider("WXPAY");
+        public static readonly PaymentUrlPaymentProvider CHECKOUT
+            = new PaymentUrlPaymentProvider("CHECKOUT");
 
         public static readonly PaymentUrlPaymentProvider PAYPAL
             = new PaymentUrlPaymentProvider("PAYPAL");
+
+        public static readonly PaymentUrlPaymentProvider STRIPE
+            = new PaymentUrlPaymentProvider("STRIPE");
+
+        public static readonly PaymentUrlPaymentProvider WALLET
+            = new PaymentUrlPaymentProvider("WALLET");
+
+        public static readonly PaymentUrlPaymentProvider WXPAY
+            = new PaymentUrlPaymentProvider("WXPAY");
+
+        public static readonly PaymentUrlPaymentProvider XSOLLA
+            = new PaymentUrlPaymentProvider("XSOLLA");
 
 
         public static implicit operator PaymentUrlPaymentProvider(string value)
@@ -74,11 +74,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PaymentUrlPaymentType : StringEnum<PaymentUrlPaymentType>
     {
-        public static readonly PaymentUrlPaymentType QRCODE
-            = new PaymentUrlPaymentType("QR_CODE");
-
         public static readonly PaymentUrlPaymentType LINK
             = new PaymentUrlPaymentType("LINK");
+
+        public static readonly PaymentUrlPaymentType QRCODE
+            = new PaymentUrlPaymentType("QR_CODE");
 
 
         public static implicit operator PaymentUrlPaymentType(string value)

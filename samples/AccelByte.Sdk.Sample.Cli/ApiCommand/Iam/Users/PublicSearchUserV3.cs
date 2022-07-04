@@ -33,10 +33,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string? By { get; set; }
 
         [SdkCommandArgument("limit")]
-        public string? Limit { get; set; }
+        public long? Limit { get; set; }
 
         [SdkCommandArgument("offset")]
-        public string? Offset { get; set; }
+        public long? Offset { get; set; }
 
         [SdkCommandArgument("query")]
         public string? Query { get; set; }

@@ -55,11 +55,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class FulfillmentHistoryInfoStatus : StringEnum<FulfillmentHistoryInfoStatus>
     {
-        public static readonly FulfillmentHistoryInfoStatus SUCCESS
-            = new FulfillmentHistoryInfoStatus("SUCCESS");
-
         public static readonly FulfillmentHistoryInfoStatus FAIL
             = new FulfillmentHistoryInfoStatus("FAIL");
+
+        public static readonly FulfillmentHistoryInfoStatus SUCCESS
+            = new FulfillmentHistoryInfoStatus("SUCCESS");
 
 
         public static implicit operator FulfillmentHistoryInfoStatus(string value)

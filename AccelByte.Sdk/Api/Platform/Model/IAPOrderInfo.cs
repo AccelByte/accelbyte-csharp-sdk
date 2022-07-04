@@ -80,14 +80,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class IAPOrderInfoStatus : StringEnum<IAPOrderInfoStatus>
     {
-        public static readonly IAPOrderInfoStatus VERIFIED
-            = new IAPOrderInfoStatus("VERIFIED");
+        public static readonly IAPOrderInfoStatus FAILED
+            = new IAPOrderInfoStatus("FAILED");
 
         public static readonly IAPOrderInfoStatus FULFILLED
             = new IAPOrderInfoStatus("FULFILLED");
 
-        public static readonly IAPOrderInfoStatus FAILED
-            = new IAPOrderInfoStatus("FAILED");
+        public static readonly IAPOrderInfoStatus VERIFIED
+            = new IAPOrderInfoStatus("VERIFIED");
 
 
         public static implicit operator IAPOrderInfoStatus(string value)
@@ -107,26 +107,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly IAPOrderInfoType APPLE
             = new IAPOrderInfoType("APPLE");
 
+        public static readonly IAPOrderInfoType EPICGAMES
+            = new IAPOrderInfoType("EPICGAMES");
+
         public static readonly IAPOrderInfoType GOOGLE
             = new IAPOrderInfoType("GOOGLE");
 
         public static readonly IAPOrderInfoType PLAYSTATION
             = new IAPOrderInfoType("PLAYSTATION");
 
-        public static readonly IAPOrderInfoType STEAM
-            = new IAPOrderInfoType("STEAM");
-
-        public static readonly IAPOrderInfoType XBOX
-            = new IAPOrderInfoType("XBOX");
-
         public static readonly IAPOrderInfoType STADIA
             = new IAPOrderInfoType("STADIA");
 
-        public static readonly IAPOrderInfoType EPICGAMES
-            = new IAPOrderInfoType("EPICGAMES");
+        public static readonly IAPOrderInfoType STEAM
+            = new IAPOrderInfoType("STEAM");
 
         public static readonly IAPOrderInfoType TWITCH
             = new IAPOrderInfoType("TWITCH");
+
+        public static readonly IAPOrderInfoType XBOX
+            = new IAPOrderInfoType("XBOX");
 
 
         public static implicit operator IAPOrderInfoType(string value)

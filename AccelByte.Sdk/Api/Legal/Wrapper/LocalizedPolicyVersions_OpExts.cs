@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api
             return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).CreateLocalizedPolicyVersion(op);
         }
 
-        public static Legal.Model.UpdateLocalizedPolicyVersionResponse? Execute(
+        public static Legal.Model.RetrieveLocalizedPolicyVersionResponse? Execute(
             this RetrieveSingleLocalizedPolicyVersion.RetrieveSingleLocalizedPolicyVersionBuilder builder,
             string localizedPolicyVersionId
         )
