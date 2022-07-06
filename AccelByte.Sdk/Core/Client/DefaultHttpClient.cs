@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Core.Client
             AllowAutoRedirect = false   // Handle redirect manually
         });
 
-        private static readonly System.Net.Http.HttpClient Http = new System.Net.Http.HttpClient(Handler);
+        public static readonly System.Net.Http.HttpClient Http = new System.Net.Http.HttpClient(Handler);
         
         private static object HttpLock = new object();
 

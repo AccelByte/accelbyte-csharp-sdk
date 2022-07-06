@@ -142,6 +142,30 @@ namespace AccelByte.Sdk.Core
             return true;
         }
 
+        public bool LoginPlatform(string platformId, string platformToken)
+        {
+            return LoginPlatform(platformId, platformToken, null);
+        }
+
+        public bool LoginPlatform(string platformId, string platformToken, Action<OauthmodelTokenResponse>? onTokenReceived)
+        {
+            Configuration.TokenRepository.RemoveToken();
+
+            var tokenGrantV3 = PlatformTokenGrantV3.Builder
+                .SetPlatformToken(platformToken)
+                .Build(platformId);
+
+            var oAuth20 = new OAuth20(this);
+            var token = oAuth20.PlatformTokenGrantV3(tokenGrantV3) ??
+                throw new Exception($"PlatformTokenGrantV3 returned null");
+
+            Configuration.TokenRepository.StoreToken(token.AccessToken ??
+                throw new Exception($"Access token is null"));
+
+            onTokenReceived?.Invoke(token);
+            return true;
+        }
+
         public bool RefreshAccessToken(string refreshToken)
         {
             return RefreshAccessToken(refreshToken, null);

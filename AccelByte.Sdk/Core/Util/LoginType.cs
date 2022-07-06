@@ -7,6 +7,7 @@ namespace AccelByte.Sdk.Core.Util
     public enum LoginType
     {
         User,
-        Client
+        Client,
+        Platform
     }
 }

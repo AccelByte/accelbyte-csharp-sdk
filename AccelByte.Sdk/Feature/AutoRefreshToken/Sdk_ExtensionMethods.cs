@@ -81,6 +81,27 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                 }
             });
         }
+
+        public static bool LoginPlatform(this AccelByteSDK sdk, string platformId, string platformToken, bool autoRefresh, float refreshThreshold = 0.8f)
+        {
+            return sdk.LoginPlatform(platformId, platformToken, (token) =>
+              {
+                  if (autoRefresh)
+                  {
+                      ITokenRepository tokenRepo = sdk.Configuration.TokenRepository;
+                      if (tokenRepo is IRefreshTokenRepository)
+                      {
+                          IRefreshTokenRepository refreshTokenRepo = (IRefreshTokenRepository)tokenRepo;
+                          refreshTokenRepo.RefreshTokenEnabled = true;
+                          refreshTokenRepo.StoreRefreshToken(
+                              LoginType.Platform,
+                              token.RefreshToken!,
+                              refreshThreshold,
+                              token.ExpiresIn!.Value);
+                      }
+                  }
+              });
+        }
     }
 
     public static class SdkBuilder_ExtensionMethods

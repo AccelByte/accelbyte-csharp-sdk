@@ -28,7 +28,8 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                         {
                             if (refreshTokenRepo.TryToSetRefreshOnProgressToTrue())
                             {
-                                if (refreshTokenRepo.LoginType == LoginType.User)
+                                if (refreshTokenRepo.LoginType == LoginType.User ||
+                                    refreshTokenRepo.LoginType == LoginType.Platform)
                                 {
                                     if (refreshTokenRepo.HasRefreshToken)
                                     {
