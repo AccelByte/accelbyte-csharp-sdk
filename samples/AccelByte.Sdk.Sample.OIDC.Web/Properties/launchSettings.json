@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "AccelByte.Sdk.Sample.OIDC.Web": {
+      "commandName": "Project",
+      "hotReloadEnabled": true
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "environmentVariables": {},
+      "distributionName": ""
+    },
+    "DEMO ENV": {
+      "commandName": "Project",
+      "environmentVariables": {}
+    }
+  }
+}

@@ -1,0 +1,11 @@
+[
+    {
+      "name": "Phantauth",
+      "key": "phantauth",
+      "discovery_url": "https://phantauth.net/.well-known/openid-configuration",
+      "client_id": "test.client",
+      "client_secret": "UTBcWwt5",
+      "scope": "openid profile email phone address",
+      "platform_id": "phantauth"
+    }
+  ]

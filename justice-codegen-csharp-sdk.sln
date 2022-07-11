@@ -15,11 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccelByte.Sdk.Sample.Aws.La
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DF42FE42-6912-4108-B768-8A9E6A14E341}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.Aws.Lambda", "samples\AccelByte.Sdk.Sample.Aws.Lambda\src\AccelByte.Sdk.Sample.Aws.Lambda\AccelByte.Sdk.Sample.Aws.Lambda.csproj", "{3611E2C3-C428-40ED-AFE2-8308957E45C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.Aws.Lambda", "samples\AccelByte.Sdk.Sample.Aws.Lambda\src\AccelByte.Sdk.Sample.Aws.Lambda\AccelByte.Sdk.Sample.Aws.Lambda.csproj", "{3611E2C3-C428-40ED-AFE2-8308957E45C7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{7ED4C109-0FAF-44B7-9ABE-948429D9EDD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.Aws.Lambda.Tests", "samples\AccelByte.Sdk.Sample.Aws.Lambda\test\AccelByte.Sdk.Sample.Aws.Lambda.Tests\AccelByte.Sdk.Sample.Aws.Lambda.Tests.csproj", "{598175BD-9C0A-4638-AFB2-188D642BE2D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.Aws.Lambda.Tests", "samples\AccelByte.Sdk.Sample.Aws.Lambda\test\AccelByte.Sdk.Sample.Aws.Lambda.Tests\AccelByte.Sdk.Sample.Aws.Lambda.Tests.csproj", "{598175BD-9C0A-4638-AFB2-188D642BE2D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.OIDC.Web", "samples\AccelByte.Sdk.Sample.OIDC.Web\AccelByte.Sdk.Sample.OIDC.Web.csproj", "{4C659080-FBF4-498A-B1B4-E38A5C850CEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,12 +49,13 @@ Global
 		{598175BD-9C0A-4638-AFB2-188D642BE2D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{598175BD-9C0A-4638-AFB2-188D642BE2D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{598175BD-9C0A-4638-AFB2-188D642BE2D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C659080-FBF4-498A-B1B4-E38A5C850CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C659080-FBF4-498A-B1B4-E38A5C850CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C659080-FBF4-498A-B1B4-E38A5C850CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C659080-FBF4-498A-B1B4-E38A5C850CEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0683A376-6097-43C6-B3B5-3820D97D171F}
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{95271080-B06D-4712-94D4-09900C546391} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
@@ -60,5 +63,8 @@ Global
 		{3611E2C3-C428-40ED-AFE2-8308957E45C7} = {DF42FE42-6912-4108-B768-8A9E6A14E341}
 		{7ED4C109-0FAF-44B7-9ABE-948429D9EDD2} = {95271080-B06D-4712-94D4-09900C546391}
 		{598175BD-9C0A-4638-AFB2-188D642BE2D9} = {7ED4C109-0FAF-44B7-9ABE-948429D9EDD2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0683A376-6097-43C6-B3B5-3820D97D171F}
 	EndGlobalSection
 EndGlobal

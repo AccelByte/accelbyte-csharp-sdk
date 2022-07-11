@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OIDC Web Sample</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col-sm text-center">
+                <h3>AccelByte Server SDK OIDC Flow Sample</h3>
+            </div>
+        </div>
+        <div id="login-buttons">
+            <div class="row mt-2">
+                <div class="col-sm text-center">
+                    <span>Login with</span>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-sm text-center">
+                    <ul class="list-group list-group-horizontal rounded-0" id="login-providers"></ul>
+                </div>
+            </div>
+        </div>
+        <div id="login-info" class="d-none">
+            <p>Login Info</p>
+        </div>
+    </div>
+    <script src="oidconfig.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/oidc-client/1.6.1/oidc-client.min.js"></script>
+    <script type="text/javascript">
+        function getProviderConfig(providerKey) {
+            for (var i = 0; i < document.OidConfig.length; i++) {
+                if (document.OidConfig[i].key == providerKey)
+                    return document.OidConfig[i];
+            }
+            return null;
+        }
+
+        function discoverOidConfigAndCreateClient(config, onCreated) {
+            $.ajax({
+                url: config.discovery_url,
+                method: 'GET',
+                success: function (dResp) {
+                    var oidcClient = new Oidc.OidcClient({
+                        authority: dResp.issuer,
+                        client_id: config.client_id,
+                        redirect_uri: (window.location.href + 'callback?provider=' + config.key),
+                        response_type: "code",
+                        scope: config.scope,
+                        filterProtocolClaims: false,
+                        loadUserInfo: false
+                    });
+                    if (onCreated != undefined)
+                        onCreated(oidcClient, dResp);
+                }
+            });
+        }
+
+        $(document).ready(function () {
+
+            var lps = '';
+            $.each(document.OidConfig, function (idx, itm) {
+                lps += '<li class="list-group-item">';
+                lps += '<button class="btn btn-primary rounded-0 btn-login-with" data-provider="' + itm.key + '" >' + itm.name + '</button>';
+                lps += '</li>';
+            });
+            $('#login-providers').html(lps);
+
+
+            $('.btn-login-with').click(function (e) {
+                e.preventDefault();
+
+                var oidProvider = $(e.currentTarget).attr('data-provider').trim();
+                var config = getProviderConfig(oidProvider);
+
+                discoverOidConfigAndCreateClient(config,
+                    function (client, discData) {
+                        client.createSigninRequest({
+                            state: {
+                                bar: Math.random()
+                            }
+                        }).then(function (req) {
+                            window.location = req.url;
+                        }).catch(function (err) {
+                            console.log(err);
+                            window.alert(err);
+                        });
+                    });
+            });
+        });
+    </script>
+</body>
+</html>
