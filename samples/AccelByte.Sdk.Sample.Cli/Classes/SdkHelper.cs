@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Sample.Cli
             AccelByteConfig config = new AccelByteConfig(httpClient, tokenRepo, cRepo);
             AccelByteSDK sdk = new AccelByteSDK(config);
 
-            if (tokenRepo.GetToken() == String.Empty)
+            if (!tokenRepo.HasToken)
             {
                 Console.WriteLine("No stored token found. Trying to login using supplied credential if any.");
                 if (cArgs.LoginType == CommandArguments.LoginTypeUser)

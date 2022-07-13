@@ -26,7 +26,7 @@ public class Functions
     {
         _Sdk = AccelByteSDK.Builder
             .UseDefaultConfigRepository()
-            .UseInMemoryTokenRepository()
+            .UseDefaultTokenRepository()
             .UseDefaultHttpClient()
             .Build();
 

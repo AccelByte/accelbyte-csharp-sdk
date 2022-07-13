@@ -33,7 +33,7 @@ eval_tap() {
 }
 
 CLI_EXE="AccelByte.Sdk.Sample.Cli"
-CLI_TOKEN_FILE="$(dirname "$(which $CLI_EXE)")/token.txt"
+CLI_TOKEN_FILE="$(dirname "$(which $CLI_EXE)")/token.json"
 TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
@@ -49,7 +49,7 @@ if [ $EXIT_CODE -ne 0 ]; then
   exit $EXIT_CODE
 fi
 
-echo "foo" > "$CLI_TOKEN_FILE"
+# echo "foo" > "$CLI_TOKEN_FILE"
 
 #- 2 ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost
 # body param: body
@@ -82,6 +82,9 @@ $CLI_EXE \
 eval_tap $? 4 'ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut' test.out
 
 
+# remove artifacts
 rm -f "$CLI_TOKEN_FILE"
+rm -f "$TEMP_JSON_INPUT"
+rm -f "$TEMP_FILE_UPLOAD"
 
 exit $EXIT_CODE
