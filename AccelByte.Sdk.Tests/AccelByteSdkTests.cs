@@ -20,7 +20,8 @@ namespace AccelByte.Sdk.Tests
     public class Tests
     {
         private static readonly IHttpClient _httpClient = new DefaultHttpClient();
-        private static readonly ITokenRepository _tokenRepository = DefaultTokenRepository.GetInstance();
+
+        private static readonly ITokenRepository _tokenRepository = new DefaultTokenRepository();
 
         private static readonly TestConfigRepository _httpbinConfigRepository = new TestConfigRepository(
             "https://httpbin.org",      // Requires internet connection
@@ -333,10 +334,10 @@ namespace AccelByte.Sdk.Tests
             Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.ClientSecret));
 
             Assert.IsTrue(sdk.LoginClient(), $"Login client failed");
-            Assert.IsTrue(!string.IsNullOrEmpty(sdk.Configuration.TokenRepository.GetToken()));
+            Assert.IsTrue(!string.IsNullOrEmpty(sdk.Configuration.TokenRepository.Token));
 
             sdk.Logout();
-            Assert.IsTrue(string.IsNullOrEmpty(sdk.Configuration.TokenRepository.GetToken()));
+            Assert.IsTrue(string.IsNullOrEmpty(sdk.Configuration.TokenRepository.Token));
         }
 
         [Test]
@@ -351,10 +352,10 @@ namespace AccelByte.Sdk.Tests
             //Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.ClientSecret)); // Not required for user login
 
             Assert.IsTrue(sdk.LoginUser("user", "user"), $"Login user failed");
-            Assert.IsTrue(!string.IsNullOrEmpty(sdk.Configuration.TokenRepository.GetToken()));
+            Assert.IsTrue(!string.IsNullOrEmpty(sdk.Configuration.TokenRepository.Token));
 
             sdk.Logout();
-            Assert.IsTrue(string.IsNullOrEmpty(sdk.Configuration.TokenRepository.GetToken()));
+            Assert.IsTrue(string.IsNullOrEmpty(sdk.Configuration.TokenRepository.Token));
         }
 
         // TODO Binary request & response

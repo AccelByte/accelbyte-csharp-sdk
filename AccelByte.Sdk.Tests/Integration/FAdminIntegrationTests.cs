@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Tests.Integration
             _Sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
-                .UseInMemoryTokenRepository()
+                .UseDefaultTokenRepository()
                 .SetCredentialRepository(IntegrationTestCredentialRepository.Admin)
                 .EnableLog()
                 .Build();

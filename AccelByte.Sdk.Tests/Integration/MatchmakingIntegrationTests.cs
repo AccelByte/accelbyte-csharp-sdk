@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Tests.Integration
                     .SetDefaultPolicy(policy)
                     .Build())
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
-                .UseInMemoryTokenRepository()
+                .UseDefaultTokenRepository()
                 .SetCredentialRepository(IntegrationTestCredentialRepository.Admin)
                 .EnableLog()
                 .Build();

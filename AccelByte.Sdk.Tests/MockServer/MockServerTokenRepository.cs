@@ -12,21 +12,11 @@ using AccelByte.Sdk.Core.Repository;
 
 namespace AccelByte.Sdk.Tests.MockServer
 {
-    public class MockServerTokenRepository : ITokenRepository
+    public class MockServerTokenRepository : DefaultTokenRepository
     {
-        public string GetToken()
+        public MockServerTokenRepository()
         {
-            return "foo";
-        }
-
-        public void RemoveToken()
-        {
-            //
-        }
-
-        public void StoreToken(string token)
-        {
-            //
+            Token = "foo";
         }
     }
 }

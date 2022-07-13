@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Tests
             _Sdk = AccelByteSDK.Builder
                 .SetHttpClient(GetHttpClientObject())
                 .SetConfigRepository(new HttpbinConfigRepository("client"))
-                .UseInMemoryTokenRepository()
+                .UseDefaultTokenRepository()
                 .EnableLog()
                 .Build();
         }
