@@ -14,28 +14,18 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
         string RefreshToken { get; }
 
-        int SecondsUntilExpiry { get; }
-
-        long IssuedTimestamp { get; }
-
-        bool HasToken { get; }
-         
         bool HasRefreshToken { get; }
-
-        bool IsTokenExpired { get; }
 
         bool IsTokenExpiring { get; }
 
         float RefreshThreshold { get; }
 
-        LoginType LoginType { get; }
-
         bool IsRefreshOnProgress { get; set; }
 
         bool TryToSetRefreshOnProgressToTrue();
 
-        void StoreRefreshToken(LoginType loginType, string refreshToken, float refreshThreshold, int expiryIn);
+        void StoreRefreshToken(string refreshToken, float refreshThreshold);
 
-        void UpdateRefreshToken(string refreshToken, int expiryIn);
+        void UpdateRefreshToken(string refreshToken);
     }
 }

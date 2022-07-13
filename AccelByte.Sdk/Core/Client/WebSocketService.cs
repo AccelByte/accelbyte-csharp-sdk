@@ -126,9 +126,9 @@ namespace AccelByte.Sdk.Core
             string url = (_BaseUrl + ServiceEndpoint);
             if (_Config != null)
             {
-                if (!string.IsNullOrEmpty(_Config.TokenRepository.GetToken()))
+                if (!string.IsNullOrEmpty(_Config.TokenRepository.Token))
                 {
-                    string token = _Config.TokenRepository.GetToken();
+                    string token = _Config.TokenRepository.Token;
                     _Socket.Options.SetRequestHeader("Authorization", String.Format("{0} {1}", Operation.SECURITY_BEARER, token));
                 }
             }

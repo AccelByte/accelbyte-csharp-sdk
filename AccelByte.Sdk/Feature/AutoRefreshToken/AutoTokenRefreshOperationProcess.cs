@@ -7,6 +7,7 @@ using System;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Core.Pipeline;
+using AccelByte.Sdk.Core.Repository;
 
 namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 {
@@ -17,31 +18,33 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
         public Operation Handle(Operation operation, AccelByteSDK sdk)
         {
             AccelByteConfig config = sdk.Configuration;
+            ITokenRepository tokenRepo = config.TokenRepository;
+
             if (config.TokenRepository is IRefreshTokenRepository)
             {
                 IRefreshTokenRepository refreshTokenRepo = (IRefreshTokenRepository)config.TokenRepository;
                 if (refreshTokenRepo.RefreshTokenEnabled)
                 {
-                    if (refreshTokenRepo.HasToken)
+                    if (tokenRepo.HasToken)
                     {
                         if (refreshTokenRepo.IsTokenExpiring)
                         {
                             if (refreshTokenRepo.TryToSetRefreshOnProgressToTrue())
                             {
-                                if (refreshTokenRepo.LoginType == LoginType.User ||
-                                    refreshTokenRepo.LoginType == LoginType.Platform)
+                                if (tokenRepo.LoginType == LoginType.User ||
+                                    tokenRepo.LoginType == LoginType.Platform)
                                 {
                                     if (refreshTokenRepo.HasRefreshToken)
                                     {
                                         sdk.RefreshAccessToken(refreshTokenRepo.RefreshToken, (token) =>
                                         {
-                                            refreshTokenRepo.UpdateRefreshToken(token.RefreshToken!, token.ExpiresIn!.Value);
+                                            refreshTokenRepo.UpdateRefreshToken(token.RefreshToken!);
                                         });
                                     }
                                     else
                                         sdk.LoginUser(true, refreshTokenRepo.RefreshThreshold);
                                 }
-                                else if (refreshTokenRepo.LoginType == LoginType.Client)
+                                else if (tokenRepo.LoginType == LoginType.Client)
                                 {
                                     sdk.LoginClient(true, refreshTokenRepo.RefreshThreshold);
                                 }

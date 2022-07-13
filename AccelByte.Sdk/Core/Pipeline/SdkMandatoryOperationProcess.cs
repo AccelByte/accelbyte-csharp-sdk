@@ -29,9 +29,9 @@ namespace AccelByte.Sdk.Core.Pipeline
             switch (selectedSecurity)
             {
                 case Operation.SECURITY_BEARER:
-                    if (!string.IsNullOrEmpty(config.TokenRepository.GetToken()))
+                    if (!string.IsNullOrEmpty(config.TokenRepository.Token))
                     {
-                        operation.HeaderParams["Authorization"] = $"{Operation.SECURITY_BEARER} {config.TokenRepository.GetToken()}";
+                        operation.HeaderParams["Authorization"] = $"{Operation.SECURITY_BEARER} {config.TokenRepository.Token}";
                     }
                     break;
                 case Operation.SECURITY_BASIC:
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Core.Pipeline
                     operation.HeaderParams["Authorization"] = $"{Operation.SECURITY_BASIC} {basicAuthBase64}";
                     break;
                 case Operation.SECURITY_COOKIE:
-                    if (!string.IsNullOrEmpty(config.TokenRepository.GetToken()))
+                    if (!string.IsNullOrEmpty(config.TokenRepository.Token))
                     {
-                        operation.Cookies["access_token"] = config.TokenRepository.GetToken();
+                        operation.Cookies["access_token"] = config.TokenRepository.Token;
                     }
                     break;
             }

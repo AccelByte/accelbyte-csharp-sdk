@@ -107,12 +107,7 @@ namespace AccelByte.Sdk.Core
             var token = oAuth20.TokenGrantV3(tokenGrantV3) ??
                     throw new Exception($"TokenGrantV3 returned null");
 
-            if (token == null)
-                throw new Exception("Token is null");
-            if (token.AccessToken == null)
-                throw new Exception("Access token is null");
-
-            Configuration.TokenRepository.StoreToken(token.AccessToken);
+            Configuration.TokenRepository.StoreToken(LoginType.User, token);
             if ((Configuration.Credential != null) && (token.UserId != null))
                 Configuration.Credential.UserId = token.UserId;
 
@@ -135,8 +130,7 @@ namespace AccelByte.Sdk.Core
             var token = oAuth20.TokenGrantV3(tokenGrantV3) ??
                     throw new Exception($"TokenGrantV3 returned null");
 
-            Configuration.TokenRepository.StoreToken(token.AccessToken ??
-                    throw new Exception($"Access token is null"));
+            Configuration.TokenRepository.StoreToken(LoginType.Client, token);
 
             onTokenReceived?.Invoke(token);
             return true;
@@ -159,8 +153,7 @@ namespace AccelByte.Sdk.Core
             var token = oAuth20.PlatformTokenGrantV3(tokenGrantV3) ??
                 throw new Exception($"PlatformTokenGrantV3 returned null");
 
-            Configuration.TokenRepository.StoreToken(token.AccessToken ??
-                throw new Exception($"Access token is null"));
+            Configuration.TokenRepository.StoreToken(LoginType.Platform, token);
 
             onTokenReceived?.Invoke(token);
             return true;
@@ -173,8 +166,6 @@ namespace AccelByte.Sdk.Core
 
         public bool RefreshAccessToken(string refreshToken, Action<OauthmodelTokenResponseV3>? onTokenReceived)
         {
-            Configuration.TokenRepository.RemoveToken();
-
             TokenGrantV3 op = TokenGrantV3.Builder
                 .SetRefreshToken(refreshToken)
                 .Build(TokenGrantV3GrantType.RefreshToken);
@@ -183,12 +174,7 @@ namespace AccelByte.Sdk.Core
             var token = oAuth20.TokenGrantV3(op) ??
                 throw new Exception("TokenGrantV3 for RefreshToken returned null");
 
-            if (token == null)
-                throw new Exception("Token is null");
-            if (token.AccessToken == null)
-                throw new Exception("Access token is null");
-
-            Configuration.TokenRepository.StoreToken(token.AccessToken);
+            Configuration.TokenRepository.UpdateToken(token);
             onTokenReceived?.Invoke(token);
             return true;
         }
@@ -196,7 +182,6 @@ namespace AccelByte.Sdk.Core
         public bool Logout()
         {
             Configuration.TokenRepository.RemoveToken();
-
             return true;
         }
     }
@@ -237,10 +222,17 @@ namespace AccelByte.Sdk.Core
 
         public AccelByteSdkBuilder UseDefaultTokenRepository()
         {
-            _TokenRepository = DefaultTokenRepository.GetInstance();
+            _TokenRepository = new DefaultTokenRepository();
             return this;
         }
 
+        public AccelByteSdkBuilder UseSharedTokenRepository()
+        {
+            _TokenRepository = SharedTokenRepository.Instance;
+            return this;
+        }
+
+        [Obsolete("Use default token repository instead.", DiagnosticId = "AB_TOKEN_REPO_DEPRECATED_METHOD")]
         public AccelByteSdkBuilder UseInMemoryTokenRepository()
         {
             _TokenRepository = new InMemoryTokenRepository();
