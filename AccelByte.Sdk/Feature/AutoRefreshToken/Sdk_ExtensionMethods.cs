@@ -96,5 +96,17 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
             builder.AddOperationProcess(new AutoTokenRefreshOperationProcess());
             return builder;
         }
+
+        public static AccelByteSdkBuilder UseScheduledTokenRefresh(this AccelByteSdkBuilder builder)
+        {
+            builder.SetTokenRepository(new ScheduledRefreshTokenRepository());
+            return builder;
+        }
+
+        public static AccelByteSdkBuilder UseScheduledTokenRefresh(this AccelByteSdkBuilder builder, Action onTokenRefreshed)
+        {
+            builder.SetTokenRepository(new ScheduledRefreshTokenRepository(onTokenRefreshed));
+            return builder;
+        }
     }
 }

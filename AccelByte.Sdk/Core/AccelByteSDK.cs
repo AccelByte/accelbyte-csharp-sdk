@@ -306,6 +306,14 @@ namespace AccelByte.Sdk.Core
                 config.Credential = _Credential;
 
             AccelByteSDK sdk = new AccelByteSDK(config);
+
+            if (_TokenRepository is ISdkConsumerRepository)
+                ((ISdkConsumerRepository)_TokenRepository).SetSdkObject(sdk);
+            if (_ConfigRepository is ISdkConsumerRepository)
+                ((ISdkConsumerRepository)_ConfigRepository).SetSdkObject(sdk);
+            if ((_Credential != null) && (_Credential is ISdkConsumerRepository))
+                ((ISdkConsumerRepository)_Credential).SetSdkObject(sdk);
+
             if (_OpProcesses.Count > 0)
             {
                 foreach (IOperationProcessPipeline opp in _OpProcesses)

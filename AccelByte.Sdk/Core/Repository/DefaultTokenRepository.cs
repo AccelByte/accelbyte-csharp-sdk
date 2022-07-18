@@ -78,7 +78,7 @@ namespace AccelByte.Sdk.Core.Repository
                 throw new Exception("No token stored.");
         }
 
-        public void RemoveToken()
+        public virtual void RemoveToken()
         {
             lock (_TokenLock)
             {
