@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.13.0
+- Fixed automatic token refresh performance issue.
+- Added scheduled token refresh as an alternative to automatic token refresh.
+- Added Platform login feature.
+- Added OIDC sample web app.
+- **BREAKING CHANGE** Moved all deprecated operations into its own namespace respective to each service.
+- **POSSIBLE BREAKING CHANGE** There are some deprecated endpoints in IAM service.
+- Added new endpoints in Platform service.
+- Updated CLI sample app due to token refresh support and deprecation change.
+
 ## v0.12.0
 - Fixed basic user profile integration tests
 - Updated gametelemetry integration test
