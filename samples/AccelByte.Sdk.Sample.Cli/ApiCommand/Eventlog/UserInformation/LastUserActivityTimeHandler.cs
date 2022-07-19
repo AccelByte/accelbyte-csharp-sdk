@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Eventlog.Wrapper;
 using AccelByte.Sdk.Api.Eventlog.Model;
-using AccelByte.Sdk.Api.Eventlog.Operation;
+using AccelByte.Sdk.Api.Eventlog.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","lastuseractivitytimehandler")]
-    public class LastUserActivityTimeHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog","deprecated-lastuseractivitytimehandler")]
+    public class DeprecatedLastUserActivityTimeHandlerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
-        public LastUserActivityTimeHandlerCommand(AccelByteSDK sdk)
+        public DeprecatedLastUserActivityTimeHandlerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

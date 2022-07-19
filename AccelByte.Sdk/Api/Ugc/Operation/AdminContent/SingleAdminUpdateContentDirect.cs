@@ -11,7 +11,7 @@ using AccelByte.Sdk.Api.Ugc.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Ugc.Operation
+namespace AccelByte.Sdk.Api.Ugc.Operation.Deprecated
 {
     /// <summary>
     /// SingleAdminUpdateContentDirect

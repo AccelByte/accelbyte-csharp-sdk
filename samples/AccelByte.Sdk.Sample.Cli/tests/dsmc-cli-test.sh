@@ -169,11 +169,11 @@ eval_tap $? 14 'GetDeployment' test.out
 
 #- 15 CreateDeployment
 # body param: body
-echo '{"allow_version_override": true, "buffer_count": 87, "buffer_percent": 38, "configuration": "r5cfWO5J", "enable_region_overrides": false, "game_version": "6vsOns4j", "max_count": 79, "min_count": 97, "overrides": {"Gc7CiUa4": {"buffer_count": 44, "buffer_percent": 76, "configuration": "5Eu3Vqym", "enable_region_overrides": true, "game_version": "FXporMqE", "max_count": 59, "min_count": 86, "name": "8E72XMKf", "region_overrides": {"hl6eq2Fz": {"buffer_count": 92, "buffer_percent": 95, "max_count": 75, "min_count": 74, "name": "NmPLeZdo", "use_buffer_percent": true}}, "regions": ["XfabFXzv"], "use_buffer_percent": false}}, "region_overrides": {"Lmai7fPK": {"buffer_count": 42, "buffer_percent": 60, "max_count": 1, "min_count": 93, "name": "VtLbQSWt", "use_buffer_percent": true}}, "regions": ["yz0mGGyH"], "use_buffer_percent": true}' > $TEMP_JSON_INPUT
+echo '{"allow_version_override": true, "buffer_count": 87, "buffer_percent": 38, "configuration": "r5cfWO5J", "enable_region_overrides": false, "game_version": "6vsOns4j", "max_count": 79, "min_count": 97, "overrides": {"Gc7CiUa4": {"buffer_count": 44, "buffer_percent": 76, "configuration": "5Eu3Vqym", "enable_region_overrides": true, "game_version": "FXporMqE", "max_count": 59, "min_count": 86, "name": "8E72XMKf", "region_overrides": {"hl6eq2Fz": {"buffer_count": 92, "buffer_percent": 95, "max_count": 75, "min_count": 74, "name": "NmPLeZdo", "use_buffer_percent": true}}, "regions": ["XfabFXzv"], "session_timeout": 19, "use_buffer_percent": false}}, "region_overrides": {"ai7fPKvE": {"buffer_count": 1, "buffer_percent": 93, "max_count": 94, "min_count": 38, "name": "LbQSWtsy", "use_buffer_percent": true}}, "regions": ["0mGGyHHF"], "session_timeout": 68, "use_buffer_percent": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op CreateDeployment \
-    --deployment 'IlIKsXgv' \
+    --deployment 'IKsXgvSr' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -183,14 +183,14 @@ eval_tap $? 15 'CreateDeployment' test.out
 $CLI_EXE \
     --sn dsmc \
     --op DeleteDeployment \
-    --deployment 'SrkEgTYV' \
+    --deployment 'kEgTYVk5' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 16 'DeleteDeployment' test.out
 
 #- 17 UpdateDeployment
 # body param: body
-echo '{"allow_version_override": false, "buffer_count": 17, "buffer_percent": 86, "configuration": "BE6zJJ1B", "enable_region_overrides": true, "game_version": "fCHqqp2G", "max_count": 44, "min_count": 82, "regions": ["cmzSuY8w"], "use_buffer_percent": true}' > $TEMP_JSON_INPUT
+echo '{"allow_version_override": false, "buffer_count": 86, "buffer_percent": 54, "configuration": "E6zJJ1BR", "enable_region_overrides": true, "game_version": "fCHqqp2G", "max_count": 44, "min_count": 82, "regions": ["cmzSuY8w"], "session_timeout": 95, "use_buffer_percent": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op UpdateDeployment \
@@ -238,7 +238,7 @@ eval_tap $? 20 'UpdateRootRegionOverride' test.out
 
 #- 21 CreateDeploymentOverride
 # body param: body
-echo '{"buffer_count": 22, "buffer_percent": 71, "configuration": "jtlKYu8i", "enable_region_overrides": true, "game_version": "Pznx0s5T", "max_count": 50, "min_count": 91, "region_overrides": {"51oV4HTm": {"buffer_count": 17, "buffer_percent": 42, "max_count": 25, "min_count": 2, "name": "6tPmCirk", "use_buffer_percent": false}}, "regions": ["YvcOUucj"], "use_buffer_percent": true}' > $TEMP_JSON_INPUT
+echo '{"buffer_count": 22, "buffer_percent": 71, "configuration": "jtlKYu8i", "enable_region_overrides": true, "game_version": "Pznx0s5T", "max_count": 50, "min_count": 91, "region_overrides": {"51oV4HTm": {"buffer_count": 17, "buffer_percent": 42, "max_count": 25, "min_count": 2, "name": "6tPmCirk", "use_buffer_percent": false}}, "regions": ["YvcOUucj"], "session_timeout": 83, "use_buffer_percent": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op CreateDeploymentOverride \

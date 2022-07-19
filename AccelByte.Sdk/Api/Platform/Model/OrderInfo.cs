@@ -26,6 +26,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("createdTime")]
         public DateTime? CreatedTime { get; set; }
 
+        [JsonPropertyName("creationOptions")]
+        public ADTOObjectForOrderCreationOptions? CreationOptions { get; set; }
+
         [JsonPropertyName("currency")]
         public CurrencySummary? Currency { get; set; }
 

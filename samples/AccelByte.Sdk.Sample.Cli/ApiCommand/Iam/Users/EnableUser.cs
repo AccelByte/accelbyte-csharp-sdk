@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Iam.Wrapper;
 using AccelByte.Sdk.Api.Iam.Model;
-using AccelByte.Sdk.Api.Iam.Operation;
+using AccelByte.Sdk.Api.Iam.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","enableuser")]
-    public class EnableUserCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam","deprecated-enableuser")]
+    public class DeprecatedEnableUserCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
-        public EnableUserCommand(AccelByteSDK sdk)
+        public DeprecatedEnableUserCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

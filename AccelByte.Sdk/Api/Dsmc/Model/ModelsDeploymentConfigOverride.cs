@@ -39,6 +39,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("regions")]
         public List<string>? Regions { get; set; }
 
+        [JsonPropertyName("session_timeout")]
+        public int? SessionTimeout { get; set; }
+
         [JsonPropertyName("use_buffer_percent")]
         public bool? UseBufferPercent { get; set; }
 

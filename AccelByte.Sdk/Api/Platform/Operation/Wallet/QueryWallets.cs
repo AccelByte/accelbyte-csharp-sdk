@@ -11,7 +11,7 @@ using AccelByte.Sdk.Api.Platform.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Platform.Operation
+namespace AccelByte.Sdk.Api.Platform.Operation.Deprecated
 {
     /// <summary>
     /// queryWallets

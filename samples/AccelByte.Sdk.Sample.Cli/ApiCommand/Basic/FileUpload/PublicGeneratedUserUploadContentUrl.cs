@@ -32,6 +32,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("category")]
+        public string? Category { get; set; }
+
         [SdkCommandArgument("fileType")]
         public string FileType { get; set; } = String.Empty;
 
@@ -47,6 +50,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             PublicGeneratedUserUploadContentUrl operation = new PublicGeneratedUserUploadContentUrl(
                 Namespace,                
                 UserId,                
+                Category,                
                 FileType                
             );            
             

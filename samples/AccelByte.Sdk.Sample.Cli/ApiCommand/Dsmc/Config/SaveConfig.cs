@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Dsmc.Wrapper;
 using AccelByte.Sdk.Api.Dsmc.Model;
-using AccelByte.Sdk.Api.Dsmc.Operation;
+using AccelByte.Sdk.Api.Dsmc.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","saveconfig")]
-    public class SaveConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc","deprecated-saveconfig")]
+    public class DeprecatedSaveConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         [SdkCommandData("body")]
         public ModelsDSMConfigRecord Body { get; set; } = new ModelsDSMConfigRecord();
                 
-        public SaveConfigCommand(AccelByteSDK sdk)
+        public DeprecatedSaveConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

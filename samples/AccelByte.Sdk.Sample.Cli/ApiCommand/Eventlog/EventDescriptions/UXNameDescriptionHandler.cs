@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Eventlog.Wrapper;
 using AccelByte.Sdk.Api.Eventlog.Model;
-using AccelByte.Sdk.Api.Eventlog.Operation;
+using AccelByte.Sdk.Api.Eventlog.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","uxnamedescriptionhandler")]
-    public class UXNameDescriptionHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog","deprecated-uxnamedescriptionhandler")]
+    public class DeprecatedUXNameDescriptionHandlerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 
         public string OperationName{ get { return "UXNameDescriptionHandler"; } }
 
-        public UXNameDescriptionHandlerCommand(AccelByteSDK sdk)
+        public DeprecatedUXNameDescriptionHandlerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Iam.Wrapper;
 using AccelByte.Sdk.Api.Iam.Model;
-using AccelByte.Sdk.Api.Iam.Operation;
+using AccelByte.Sdk.Api.Iam.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","disableuser")]
-    public class DisableUserCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam","deprecated-disableuser")]
+    public class DeprecatedDisableUserCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandData("body")]
         public ModelDisableUserRequest Body { get; set; } = new ModelDisableUserRequest();
                 
-        public DisableUserCommand(AccelByteSDK sdk)
+        public DeprecatedDisableUserCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

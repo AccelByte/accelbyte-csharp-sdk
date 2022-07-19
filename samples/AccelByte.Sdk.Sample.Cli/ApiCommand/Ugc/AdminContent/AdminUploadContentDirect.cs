@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Ugc.Wrapper;
 using AccelByte.Sdk.Api.Ugc.Model;
-using AccelByte.Sdk.Api.Ugc.Operation;
+using AccelByte.Sdk.Api.Ugc.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","adminuploadcontentdirect")]
-    public class AdminUploadContentDirectCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","deprecated-adminuploadcontentdirect")]
+    public class DeprecatedAdminUploadContentDirectCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         [SdkCommandData("body")]
         public ModelsCreateContentRequest Body { get; set; } = new ModelsCreateContentRequest();
                 
-        public AdminUploadContentDirectCommand(AccelByteSDK sdk)
+        public DeprecatedAdminUploadContentDirectCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

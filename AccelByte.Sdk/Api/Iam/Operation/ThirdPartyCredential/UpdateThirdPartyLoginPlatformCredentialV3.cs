@@ -33,6 +33,86 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    /// No secret for awscognito , we only need to configure AWS Cognito Region and User Pool
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The secret for discord is client secret of the twitch client id.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The secret for epicgames is client secret of the epicgames client id.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The secret for facebook is client secret of the facebook client id.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The secret for google is client secret of the google OAuth client.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// No secret for nintendo , we only need to configure app id of the game
+    /// 
+    /// 
+    /// 
+    /// 
+    /// No secret for netflix , we configure the Root, Public, Private Key certificate pem file and target environment; value: [sandbox, production]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The secret for oculus is app secret of the oculus app.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The secret for ps4, ps5, and ps4web is client secret of the psn web server.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The secret for stadia is the google cloud service account in base64 encode JSON format.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The secret for stadiaweb is client secret of the google OAuth client.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The secret for steam is the Steam Web API Key.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The secret for steamopenid is the Steam Web API Key.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The secret for twitch is client secret of the twitch client.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The secret for live is the Relying Party Private Key in base64 encode PEM format.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// The secret for xblwebapi is client secret of the xbl client.
+    /// 
+    /// 
+    /// 
+    /// 
     /// If generic oauth flow is set to true:
     /// 
     /// 

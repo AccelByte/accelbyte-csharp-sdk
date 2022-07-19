@@ -116,12 +116,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
-            if ( code == (HttpStatusCode)400 )
+            if (code == (HttpStatusCode)204)
             {
-                var payloadString = Helper.ConvertInputStreamToString(payload);
-                
-                throw new HttpResponseException(code, payloadString);
+                return;
             }
+            
+            var payloadString = Helper.ConvertInputStreamToString(payload);
+            
+            throw new HttpResponseException(code, payloadString);
         }
     }
 

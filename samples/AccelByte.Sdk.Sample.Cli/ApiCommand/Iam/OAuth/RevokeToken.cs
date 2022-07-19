@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Iam.Wrapper;
 using AccelByte.Sdk.Api.Iam.Model;
-using AccelByte.Sdk.Api.Iam.Operation;
+using AccelByte.Sdk.Api.Iam.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","revoketoken")]
-    public class RevokeTokenCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam","deprecated-revoketoken")]
+    public class DeprecatedRevokeTokenCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("token")]
         public string Token { get; set; } = String.Empty;
                     
-        public RevokeTokenCommand(AccelByteSDK sdk)
+        public DeprecatedRevokeTokenCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

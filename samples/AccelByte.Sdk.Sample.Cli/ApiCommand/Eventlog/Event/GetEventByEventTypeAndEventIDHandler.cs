@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Eventlog.Wrapper;
 using AccelByte.Sdk.Api.Eventlog.Model;
-using AccelByte.Sdk.Api.Eventlog.Operation;
+using AccelByte.Sdk.Api.Eventlog.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","geteventbyeventtypeandeventidhandler")]
-    public class GetEventByEventTypeAndEventIDHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog","deprecated-geteventbyeventtypeandeventidhandler")]
+    public class DeprecatedGetEventByEventTypeAndEventIDHandlerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         [SdkCommandArgument("startDate")]
         public string StartDate { get; set; } = String.Empty;
 
-        public GetEventByEventTypeAndEventIDHandlerCommand(AccelByteSDK sdk)
+        public DeprecatedGetEventByEventTypeAndEventIDHandlerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

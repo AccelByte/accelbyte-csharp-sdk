@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Eventlog.Wrapper;
 using AccelByte.Sdk.Api.Eventlog.Model;
-using AccelByte.Sdk.Api.Eventlog.Operation;
+using AccelByte.Sdk.Api.Eventlog.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","deleteuseractivitieshandler")]
-    public class DeleteUserActivitiesHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog","deprecated-deleteuseractivitieshandler")]
+    public class DeprecatedDeleteUserActivitiesHandlerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
-        public DeleteUserActivitiesHandlerCommand(AccelByteSDK sdk)
+        public DeprecatedDeleteUserActivitiesHandlerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

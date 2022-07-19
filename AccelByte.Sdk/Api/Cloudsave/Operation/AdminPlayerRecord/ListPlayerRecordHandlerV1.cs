@@ -11,7 +11,7 @@ using AccelByte.Sdk.Api.Cloudsave.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Cloudsave.Operation
+namespace AccelByte.Sdk.Api.Cloudsave.Operation.Deprecated
 {
     /// <summary>
     /// listPlayerRecordHandlerV1

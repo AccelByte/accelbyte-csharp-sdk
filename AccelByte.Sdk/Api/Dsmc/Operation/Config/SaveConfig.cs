@@ -11,7 +11,7 @@ using AccelByte.Sdk.Api.Dsmc.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Dsmc.Operation
+namespace AccelByte.Sdk.Api.Dsmc.Operation.Deprecated
 {
     /// <summary>
     /// SaveConfig

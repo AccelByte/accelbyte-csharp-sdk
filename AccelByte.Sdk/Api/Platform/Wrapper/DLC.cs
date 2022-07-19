@@ -43,6 +43,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.DeletePlatformDLCConfig.Builder.SetWrapperObject(this); }
         }
+        public SyncEpicGameDLC.SyncEpicGameDLCBuilder SyncEpicGameDLCOp
+        {
+            get { return Operation.SyncEpicGameDLC.Builder.SetWrapperObject(this); }
+        }
         public PublicSyncPsnDlcInventory.PublicSyncPsnDlcInventoryBuilder PublicSyncPsnDlcInventoryOp
         {
             get { return Operation.PublicSyncPsnDlcInventory.Builder.SetWrapperObject(this); }
@@ -98,6 +102,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public void DeletePlatformDLCConfig(DeletePlatformDLCConfig input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void SyncEpicGameDLC(SyncEpicGameDLC input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(

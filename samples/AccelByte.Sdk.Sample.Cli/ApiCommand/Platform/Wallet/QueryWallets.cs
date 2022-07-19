@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Platform.Wrapper;
 using AccelByte.Sdk.Api.Platform.Model;
-using AccelByte.Sdk.Api.Platform.Operation;
+using AccelByte.Sdk.Api.Platform.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","querywallets")]
-    public class QueryWalletsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform","deprecated-querywallets")]
+    public class DeprecatedQueryWalletsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("userId")]
         public string? UserId { get; set; }
 
-        public QueryWalletsCommand(AccelByteSDK sdk)
+        public DeprecatedQueryWalletsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

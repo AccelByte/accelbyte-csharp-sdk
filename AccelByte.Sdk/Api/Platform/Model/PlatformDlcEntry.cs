@@ -22,6 +22,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class PlatformDlcEntryPlatform : StringEnum<PlatformDlcEntryPlatform>
     {
+        public static readonly PlatformDlcEntryPlatform EPICGAMES
+            = new PlatformDlcEntryPlatform("EPICGAMES");
+
         public static readonly PlatformDlcEntryPlatform PSN
             = new PlatformDlcEntryPlatform("PSN");
 

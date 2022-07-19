@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Iam.Wrapper;
 using AccelByte.Sdk.Api.Iam.Model;
-using AccelByte.Sdk.Api.Iam.Operation;
+using AccelByte.Sdk.Api.Iam.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","platformtokenrequesthandler")]
-    public class PlatformTokenRequestHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam","deprecated-platformtokenrequesthandler")]
+    public class DeprecatedPlatformTokenRequestHandlerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("platform_token")]
         public string PlatformToken { get; set; } = String.Empty;
                     
-        public PlatformTokenRequestHandlerCommand(AccelByteSDK sdk)
+        public DeprecatedPlatformTokenRequestHandlerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

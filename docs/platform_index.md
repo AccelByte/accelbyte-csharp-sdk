@@ -70,6 +70,7 @@
 | `/platform/admin/namespaces/{namespace}/dlc/config/platformMap` | GET | GetPlatformDLCConfig | [GetPlatformDLCConfig](../AccelByte.Sdk/Api/Platform/Operation/DLC/GetPlatformDLCConfig.cs) | [GetPlatformDLCConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/GetPlatformDLCConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/dlc/config/platformMap` | PUT | UpdatePlatformDLCConfig | [UpdatePlatformDLCConfig](../AccelByte.Sdk/Api/Platform/Operation/DLC/UpdatePlatformDLCConfig.cs) | [UpdatePlatformDLCConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/UpdatePlatformDLCConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/dlc/config/platformMap` | DELETE | DeletePlatformDLCConfig | [DeletePlatformDLCConfig](../AccelByte.Sdk/Api/Platform/Operation/DLC/DeletePlatformDLCConfig.cs) | [DeletePlatformDLCConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/DeletePlatformDLCConfig.cs) |
+| `/platform/public/namespaces/{namespace}/users/{userId}/dlc/epicgames/sync` | PUT | SyncEpicGameDLC | [SyncEpicGameDLC](../AccelByte.Sdk/Api/Platform/Operation/DLC/SyncEpicGameDLC.cs) | [SyncEpicGameDLC](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/SyncEpicGameDLC.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/dlc/psn/sync` | PUT | PublicSyncPsnDlcInventory | [PublicSyncPsnDlcInventory](../AccelByte.Sdk/Api/Platform/Operation/DLC/PublicSyncPsnDlcInventory.cs) | [PublicSyncPsnDlcInventory](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/PublicSyncPsnDlcInventory.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/dlc/steam/sync` | PUT | SyncSteamDLC | [SyncSteamDLC](../AccelByte.Sdk/Api/Platform/Operation/DLC/SyncSteamDLC.cs) | [SyncSteamDLC](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/SyncSteamDLC.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/dlc/xbl/sync` | PUT | SyncXboxDLC | [SyncXboxDLC](../AccelByte.Sdk/Api/Platform/Operation/DLC/SyncXboxDLC.cs) | [SyncXboxDLC](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/SyncXboxDLC.cs) |
@@ -368,6 +369,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/platform/admin/namespaces/{namespace}/users/{userId}/achievement/steam` | PUT | UnlockSteamUserAchievement | [UnlockSteamUserAchievement](../AccelByte.Sdk/Api/Platform/Operation/AchievementPlatform/UnlockSteamUserAchievement.cs) | [UnlockSteamUserAchievement](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/AchievementPlatform/UnlockSteamUserAchievement.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/achievement/xbl` | GET | GetXblUserAchievements | [GetXblUserAchievements](../AccelByte.Sdk/Api/Platform/Operation/AchievementPlatform/GetXblUserAchievements.cs) | [GetXblUserAchievements](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/AchievementPlatform/GetXblUserAchievements.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/achievement/xbl` | PUT | UpdateXblUserAchievement | [UpdateXblUserAchievement](../AccelByte.Sdk/Api/Platform/Operation/AchievementPlatform/UpdateXblUserAchievement.cs) | [UpdateXblUserAchievement](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/AchievementPlatform/UpdateXblUserAchievement.cs) |
 
 ### Anonymization Wrapper:  [Anonymization](../AccelByte.Sdk/Api/Platform/Wrapper/Anonymization.cs)
@@ -452,8 +454,11 @@
 
 | Model | Class |
 |---|---|
+| `A DTO object for order creation options` | [ADTOObjectForOrderCreationOptions](../AccelByte.Sdk/Api/Platform/Model/ADTOObjectForOrderCreationOptions.cs) |
+| `A DTO object for querying xbox user achievements` | [ADTOObjectForQueryingXboxUserAchievements](../AccelByte.Sdk/Api/Platform/Model/ADTOObjectForQueryingXboxUserAchievements.cs) |
 | `A DTO object for unlock steam achievement API` | [ADTOObjectForUnlockSteamAchievementAPI](../AccelByte.Sdk/Api/Platform/Model/ADTOObjectForUnlockSteamAchievementAPI.cs) |
 | `A DTO object for update xbox achievement complete percentage API` | [ADTOObjectForUpdateXboxAchievementCompletePercentageAPI](../AccelByte.Sdk/Api/Platform/Model/ADTOObjectForUpdateXboxAchievementCompletePercentageAPI.cs) |
+| `AchievementInfo` | [AchievementInfo](../AccelByte.Sdk/Api/Platform/Model/AchievementInfo.cs) |
 | `AdditionalData` | [AdditionalData](../AccelByte.Sdk/Api/Platform/Model/AdditionalData.cs) |
 | `AdminOrderCreate` | [AdminOrderCreate](../AccelByte.Sdk/Api/Platform/Model/AdminOrderCreate.cs) |
 | `AdyenConfig` | [AdyenConfig](../AccelByte.Sdk/Api/Platform/Model/AdyenConfig.cs) |
@@ -513,6 +518,7 @@
 | `EntitlementPagingSlicedResult` | [EntitlementPagingSlicedResult](../AccelByte.Sdk/Api/Platform/Model/EntitlementPagingSlicedResult.cs) |
 | `EntitlementSummary` | [EntitlementSummary](../AccelByte.Sdk/Api/Platform/Model/EntitlementSummary.cs) |
 | `EntitlementUpdate` | [EntitlementUpdate](../AccelByte.Sdk/Api/Platform/Model/EntitlementUpdate.cs) |
+| `EpicGamesDLCSyncRequest` | [EpicGamesDLCSyncRequest](../AccelByte.Sdk/Api/Platform/Model/EpicGamesDLCSyncRequest.cs) |
 | `EpicGamesIAPConfigInfo` | [EpicGamesIAPConfigInfo](../AccelByte.Sdk/Api/Platform/Model/EpicGamesIAPConfigInfo.cs) |
 | `EpicGamesIAPConfigRequest` | [EpicGamesIAPConfigRequest](../AccelByte.Sdk/Api/Platform/Model/EpicGamesIAPConfigRequest.cs) |
 | `EpicGamesReconcileRequest` | [EpicGamesReconcileRequest](../AccelByte.Sdk/Api/Platform/Model/EpicGamesReconcileRequest.cs) |

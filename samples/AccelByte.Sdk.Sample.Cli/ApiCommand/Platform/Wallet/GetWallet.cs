@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Platform.Wrapper;
 using AccelByte.Sdk.Api.Platform.Model;
-using AccelByte.Sdk.Api.Platform.Operation;
+using AccelByte.Sdk.Api.Platform.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getwallet")]
-    public class GetWalletCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform","deprecated-getwallet")]
+    public class DeprecatedGetWalletCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("walletId")]
         public string WalletId { get; set; } = String.Empty;
 
-        public GetWalletCommand(AccelByteSDK sdk)
+        public DeprecatedGetWalletCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

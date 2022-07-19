@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Eventlog.Wrapper;
 using AccelByte.Sdk.Api.Eventlog.Model;
-using AccelByte.Sdk.Api.Eventlog.Operation;
+using AccelByte.Sdk.Api.Eventlog.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","specificuxdescriptionhandler")]
-    public class SpecificUXDescriptionHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog","deprecated-specificuxdescriptionhandler")]
+    public class DeprecatedSpecificUXDescriptionHandlerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         [SdkCommandArgument("ux")]
         public string? Ux { get; set; }
 
-        public SpecificUXDescriptionHandlerCommand(AccelByteSDK sdk)
+        public DeprecatedSpecificUXDescriptionHandlerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

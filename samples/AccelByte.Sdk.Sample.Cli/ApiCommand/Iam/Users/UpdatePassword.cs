@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Iam.Wrapper;
 using AccelByte.Sdk.Api.Iam.Model;
-using AccelByte.Sdk.Api.Iam.Operation;
+using AccelByte.Sdk.Api.Iam.Operation.Deprecated;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","updatepassword")]
-    public class UpdatePasswordCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam","deprecated-updatepassword")]
+    public class DeprecatedUpdatePasswordCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandData("body")]
         public ModelUserPasswordUpdateRequest Body { get; set; } = new ModelUserPasswordUpdateRequest();
                 
-        public UpdatePasswordCommand(AccelByteSDK sdk)
+        public DeprecatedUpdatePasswordCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

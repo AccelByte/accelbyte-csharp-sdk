@@ -11,7 +11,7 @@ using AccelByte.Sdk.Api.Iam.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Iam.Operation
+namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
 {
     /// <summary>
     /// RevokeToken

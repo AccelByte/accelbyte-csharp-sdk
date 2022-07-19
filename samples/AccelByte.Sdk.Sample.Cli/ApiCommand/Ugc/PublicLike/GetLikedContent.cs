@@ -29,11 +29,32 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("isofficial")]
+        public bool? Isofficial { get; set; }
+
         [SdkCommandArgument("limit")]
         public long? Limit { get; set; }
 
+        [SdkCommandArgument("name")]
+        public string? Name { get; set; }
+
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
+
+        [SdkCommandArgument("orderby")]
+        public string? Orderby { get; set; }
+
+        [SdkCommandArgument("sortby")]
+        public string? Sortby { get; set; }
+
+        [SdkCommandArgument("subtype")]
+        public string? Subtype { get; set; }
+
+        [SdkCommandArgument("tags")]
+        public List<string>? Tags { get; set; }
+
+        [SdkCommandArgument("type")]
+        public string? Type { get; set; }
 
         public GetLikedContentCommand(AccelByteSDK sdk)
         {
@@ -46,8 +67,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
             GetLikedContent operation = new GetLikedContent(
                 Namespace,                
+                Isofficial,                
                 Limit,                
-                Offset                
+                Name,                
+                Offset,                
+                Orderby,                
+                Sortby,                
+                Subtype,                
+                Tags,                
+                Type                
             );            
             
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedContentDownloadResponse? response = wrapper.GetLikedContent(operation);

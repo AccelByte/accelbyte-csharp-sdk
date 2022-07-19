@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// generatedUserUploadContentUrl
     ///
     /// Generate an upload URL for user content. It's valid for 10 minutes.
-    /// There are 2 kinds of storage limitation per user : maximum file count and maximum file size.
     /// Other detail info:
     /// 
     ///   * Required permission : resource = "ADMIN:NAMESPACE:{namespace}:USER:{userId}:FILEUPLOAD" , action=1 (CREATE)
@@ -35,12 +34,20 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             : OperationBuilder<GeneratedUserUploadContentUrlBuilder>
         {
 
+            public string? Category { get; set; }
+
 
 
 
 
             internal GeneratedUserUploadContentUrlBuilder() { }
 
+
+            public GeneratedUserUploadContentUrlBuilder SetCategory(string _category)
+            {
+                Category = _category;
+                return this;
+            }
 
 
 
@@ -72,6 +79,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
+            if (builder.Category is not null) QueryParams["category"] = builder.Category;
             if (fileType is not null) QueryParams["fileType"] = fileType;
             
 
@@ -86,12 +94,14 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         public GeneratedUserUploadContentUrl(
             string namespace_,            
             string userId,            
+            string? category,            
             string fileType            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
+            if (category is not null) QueryParams["category"] = category;
             if (fileType is not null) QueryParams["fileType"] = fileType;
             
 

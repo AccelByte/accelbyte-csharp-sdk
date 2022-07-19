@@ -65,7 +65,6 @@
 | `/agreement/admin/policies/versions/{policyVersionId}/latest` | PATCH | PublishPolicyVersion | [PublishPolicyVersion](../AccelByte.Sdk/Api/Legal/Operation/PolicyVersions/PublishPolicyVersion.cs) | [PublishPolicyVersion](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/PolicyVersions/PublishPolicyVersion.cs) |
 | `/agreement/admin/policies/{policyId}/versions` | GET | RetrieveSinglePolicyVersion | [RetrieveSinglePolicyVersion](../AccelByte.Sdk/Api/Legal/Operation/PolicyVersions/RetrieveSinglePolicyVersion.cs) | [RetrieveSinglePolicyVersion](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/PolicyVersions/RetrieveSinglePolicyVersion.cs) |
 | `/agreement/admin/policies/{policyId}/versions` | POST | CreatePolicyVersion | [CreatePolicyVersion](../AccelByte.Sdk/Api/Legal/Operation/PolicyVersions/CreatePolicyVersion.cs) | [CreatePolicyVersion](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/PolicyVersions/CreatePolicyVersion.cs) |
-| `/agreement/public/policies` | GET | RetrievePolicyVersions | [RetrievePolicyVersions](../AccelByte.Sdk/Api/Legal/Operation/PolicyVersions/RetrievePolicyVersions.cs) | [RetrievePolicyVersions](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/PolicyVersions/RetrievePolicyVersions.cs) |
 
 ### UserInfo Wrapper:  [UserInfo](../AccelByte.Sdk/Api/Legal/Wrapper/UserInfo.cs)
 | Endpoint | Method | ID | Class | Example |

@@ -27,9 +27,23 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             : OperationBuilder<GetLikedContentBuilder>
         {
 
+            public bool? Isofficial { get; set; }
+
             public long? Limit { get; set; }
 
+            public string? Name { get; set; }
+
             public long? Offset { get; set; }
+
+            public string? Orderby { get; set; }
+
+            public string? Sortby { get; set; }
+
+            public string? Subtype { get; set; }
+
+            public List<string>? Tags { get; set; }
+
+            public string? Type { get; set; }
 
 
 
@@ -38,15 +52,57 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             internal GetLikedContentBuilder() { }
 
 
+            public GetLikedContentBuilder SetIsofficial(bool _isofficial)
+            {
+                Isofficial = _isofficial;
+                return this;
+            }
+
             public GetLikedContentBuilder SetLimit(long _limit)
             {
                 Limit = _limit;
                 return this;
             }
 
+            public GetLikedContentBuilder SetName(string _name)
+            {
+                Name = _name;
+                return this;
+            }
+
             public GetLikedContentBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
+                return this;
+            }
+
+            public GetLikedContentBuilder SetOrderby(string _orderby)
+            {
+                Orderby = _orderby;
+                return this;
+            }
+
+            public GetLikedContentBuilder SetSortby(string _sortby)
+            {
+                Sortby = _sortby;
+                return this;
+            }
+
+            public GetLikedContentBuilder SetSubtype(string _subtype)
+            {
+                Subtype = _subtype;
+                return this;
+            }
+
+            public GetLikedContentBuilder SetTags(List<string> _tags)
+            {
+                Tags = _tags;
+                return this;
+            }
+
+            public GetLikedContentBuilder SetType(string _type)
+            {
+                Type = _type;
                 return this;
             }
 
@@ -73,11 +129,19 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         {
             PathParams["namespace"] = namespace_;
             
+            if (builder.Isofficial != null) QueryParams["isofficial"] = Convert.ToString(builder.Isofficial)!;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Name is not null) QueryParams["name"] = builder.Name;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Orderby is not null) QueryParams["orderby"] = builder.Orderby;
+            if (builder.Sortby is not null) QueryParams["sortby"] = builder.Sortby;
+            if (builder.Subtype is not null) QueryParams["subtype"] = builder.Subtype;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
+            if (builder.Type is not null) QueryParams["type"] = builder.Type;
             
 
             
+            CollectionFormatMap["tags"] = "csv";
             
             
 
@@ -87,17 +151,32 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         public GetLikedContent(
             string namespace_,            
+            bool? isofficial,            
             long? limit,            
-            long? offset            
+            string? name,            
+            long? offset,            
+            string? orderby,            
+            string? sortby,            
+            string? subtype,            
+            List<string>? tags,            
+            string? type            
         )
         {
             PathParams["namespace"] = namespace_;
             
+            if (isofficial != null) QueryParams["isofficial"] = Convert.ToString(isofficial)!;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (name is not null) QueryParams["name"] = name;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (orderby is not null) QueryParams["orderby"] = orderby;
+            if (sortby is not null) QueryParams["sortby"] = sortby;
+            if (subtype is not null) QueryParams["subtype"] = subtype;
+            if (tags is not null) QueryParams["tags"] = tags;
+            if (type is not null) QueryParams["type"] = type;
             
 
             
+            CollectionFormatMap["tags"] = "csv";
             
             
 

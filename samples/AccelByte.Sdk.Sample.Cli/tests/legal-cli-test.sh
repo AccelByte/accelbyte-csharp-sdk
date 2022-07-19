@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..43"
+echo "1..42"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -406,58 +406,48 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 38 'RetrieveSingleLocalizedPolicyVersion1' test.out
 
-#- 39 RetrievePolicyVersions
-$CLI_EXE \
-    --sn legal \
-    --op RetrievePolicyVersions \
-    --basePolicyId '6p0WfsnW' \
-    --localeId 'ZuUPsaRn' \
-    --namespace_ 'VdrdBA2h' \
-    > test.out 2>&1
-eval_tap $? 39 'RetrievePolicyVersions' test.out
-
-#- 40 RetrieveLatestPolicies
+#- 39 RetrieveLatestPolicies
 $CLI_EXE \
     --sn legal \
     --op RetrieveLatestPolicies \
-    --countryCode 'XwYyzZMd' \
-    --defaultOnEmpty 'False' \
-    --policyType 'LEGAL_DOCUMENT_TYPE' \
-    --tags 'L76hnFDg' \
+    --countryCode '6p0WfsnW' \
+    --defaultOnEmpty 'True' \
+    --policyType 'MARKETING_PREFERENCE_TYPE' \
+    --tags 'aRnVdrdB' \
     > test.out 2>&1
-eval_tap $? 40 'RetrieveLatestPolicies' test.out
+eval_tap $? 39 'RetrieveLatestPolicies' test.out
 
-#- 41 RetrieveLatestPoliciesPublic
+#- 40 RetrieveLatestPoliciesPublic
 $CLI_EXE \
     --sn legal \
     --op RetrieveLatestPoliciesPublic \
     --namespace $AB_NAMESPACE \
-    --alwaysIncludeDefault 'False' \
+    --alwaysIncludeDefault 'True' \
     --defaultOnEmpty 'False' \
-    --policyType 'LEGAL_DOCUMENT_TYPE' \
-    --tags 'HdfoSqDc' \
+    --policyType 'MARKETING_PREFERENCE_TYPE' \
+    --tags 'YyzZMdlR' \
     > test.out 2>&1
-eval_tap $? 41 'RetrieveLatestPoliciesPublic' test.out
+eval_tap $? 40 'RetrieveLatestPoliciesPublic' test.out
 
-#- 42 RetrieveLatestPoliciesByNamespaceAndCountryPublic
+#- 41 RetrieveLatestPoliciesByNamespaceAndCountryPublic
 $CLI_EXE \
     --sn legal \
     --op RetrieveLatestPoliciesByNamespaceAndCountryPublic \
-    --countryCode 'aFhOc1oK' \
+    --countryCode '4cL76hnF' \
     --namespace $AB_NAMESPACE \
     --alwaysIncludeDefault 'True' \
     --defaultOnEmpty 'False' \
     --policyType 'LEGAL_DOCUMENT_TYPE' \
-    --tags 'cfy4EIxw' \
+    --tags 'ofHdfoSq' \
     > test.out 2>&1
-eval_tap $? 42 'RetrieveLatestPoliciesByNamespaceAndCountryPublic' test.out
+eval_tap $? 41 'RetrieveLatestPoliciesByNamespaceAndCountryPublic' test.out
 
-#- 43 CheckReadiness
+#- 42 CheckReadiness
 $CLI_EXE \
     --sn legal \
     --op CheckReadiness \
     > test.out 2>&1
-eval_tap $? 43 'CheckReadiness' test.out
+eval_tap $? 42 'CheckReadiness' test.out
 
 
 # remove artifacts
