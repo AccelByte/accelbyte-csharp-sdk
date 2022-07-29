@@ -24,10 +24,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///           * DeactivateAccount : if your deletion request comes from user
     /// 
     /// 
-    ///           * AdminDeactivateAccount : if your deletion request comes from admin
+    ///   * DeactivateAccount : if your deletion request comes from user
+    /// 
+    /// 
+    ///   * AdminDeactivateAccount : if your deletion request comes from admin
     /// </summary>
     public class AdminDisableUserV2 : AccelByte.Sdk.Core.Operation
     {

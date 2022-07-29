@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// updateIAPItemConfig
     ///
     /// Update iap item config. Other detail info:
+    /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
     ///   *  Returns : updated iap item config
     /// </summary>

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetAdminUsersByRoleID
     ///
-    /// 
-    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER [READ]'
     /// 
     /// 

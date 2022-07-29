@@ -18,8 +18,14 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("AWSCognitoUserPool")]
         public string? AWSCognitoUserPool { get; set; }
 
+        [JsonPropertyName("AllowedClients")]
+        public List<string>? AllowedClients { get; set; }
+
         [JsonPropertyName("AppId")]
         public string? AppId { get; set; }
+
+        [JsonPropertyName("AuthorizationEndpoint")]
+        public string? AuthorizationEndpoint { get; set; }
 
         [JsonPropertyName("ClientId")]
         public string? ClientId { get; set; }
@@ -74,6 +80,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
 
         [JsonPropertyName("TokenClaimsMapping")]
         public Dictionary<string, string>? TokenClaimsMapping { get; set; }
+
+        [JsonPropertyName("TokenEndpoint")]
+        public string? TokenEndpoint { get; set; }
 
         [JsonPropertyName("registeredDomains")]
         public List<AccountcommonRegisteredDomain>? RegisteredDomains { get; set; }

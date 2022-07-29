@@ -46,16 +46,16 @@ namespace AccelByte.Sdk.Core
         }
         private Users? _Users = null;
 
-        public OAuth OAuth
+        public OAuthDeprecated OAuthDeprecated
         {
             get
             {
-                if (_OAuth == null)
-                    _OAuth = new OAuth(_SdkObject);
-                return _OAuth;
+                if (_OAuthDeprecated == null)
+                    _OAuthDeprecated = new OAuthDeprecated(_SdkObject);
+                return _OAuthDeprecated;
             }
         }
-        private OAuth? _OAuth = null;
+        private OAuthDeprecated? _OAuthDeprecated = null;
 
         public RolesDeprecated RolesDeprecated
         {

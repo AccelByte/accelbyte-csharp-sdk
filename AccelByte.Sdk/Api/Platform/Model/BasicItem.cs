@@ -134,6 +134,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly BasicItemItemType MEDIA
             = new BasicItemItemType("MEDIA");
 
+        public static readonly BasicItemItemType OPTIONBOX
+            = new BasicItemItemType("OPTIONBOX");
+
         public static readonly BasicItemItemType SEASON
             = new BasicItemItemType("SEASON");
 

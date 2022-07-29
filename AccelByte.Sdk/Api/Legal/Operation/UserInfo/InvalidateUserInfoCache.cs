@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// invalidateUserInfoCache
     ///
-    ///  Important: GOING TO DEPRECATE
+    /// Important: GOING TO DEPRECATE
     /// 
     /// Invalidate user info cache in agreement service.
     /// Other detail info:

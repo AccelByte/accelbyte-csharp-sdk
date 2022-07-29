@@ -59,6 +59,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.BulkGetLocaleItems.Builder.SetWrapperObject(this); }
         }
+        public GetAvailablePredicateTypes.GetAvailablePredicateTypesBuilder GetAvailablePredicateTypesOp
+        {
+            get { return Operation.GetAvailablePredicateTypes.Builder.SetWrapperObject(this); }
+        }
+        public ValidateItemPurchaseCondition.ValidateItemPurchaseConditionBuilder ValidateItemPurchaseConditionOp
+        {
+            get { return Operation.ValidateItemPurchaseCondition.Builder.SetWrapperObject(this); }
+        }
         public SearchItems.SearchItemsBuilder SearchItemsOp
         {
             get { return Operation.SearchItems.Builder.SetWrapperObject(this); }
@@ -115,6 +123,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.GetLocaleItem.Builder.SetWrapperObject(this); }
         }
+        public UpdateItemPurchaseCondition.UpdateItemPurchaseConditionBuilder UpdateItemPurchaseConditionOp
+        {
+            get { return Operation.UpdateItemPurchaseCondition.Builder.SetWrapperObject(this); }
+        }
         public ReturnItem.ReturnItemBuilder ReturnItemOp
         {
             get { return Operation.ReturnItem.Builder.SetWrapperObject(this); }
@@ -134,6 +146,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public PublicBulkGetItems.PublicBulkGetItemsBuilder PublicBulkGetItemsOp
         {
             get { return Operation.PublicBulkGetItems.Builder.SetWrapperObject(this); }
+        }
+        public PublicValidateItemPurchaseCondition.PublicValidateItemPurchaseConditionBuilder PublicValidateItemPurchaseConditionOp
+        {
+            get { return Operation.PublicValidateItemPurchaseCondition.Builder.SetWrapperObject(this); }
         }
         public PublicSearchItems.PublicSearchItemsBuilder PublicSearchItemsOp
         {
@@ -226,6 +242,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public List<Model.ItemInfo>? BulkGetLocaleItems(BulkGetLocaleItems input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.AvailablePredicateObject>? GetAvailablePredicateTypes(GetAvailablePredicateTypes input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ItemPurchaseConditionValidateResult>? ValidateItemPurchaseCondition(ValidateItemPurchaseCondition input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -345,6 +377,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.FullItemInfo? UpdateItemPurchaseCondition(UpdateItemPurchaseCondition input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public void ReturnItem(ReturnItem input) {
             var response = _sdk.RunRequest(input);
 
@@ -378,6 +418,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public List<Model.ItemInfo>? PublicBulkGetItems(PublicBulkGetItems input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ItemPurchaseConditionValidateResult>? PublicValidateItemPurchaseCondition(PublicValidateItemPurchaseCondition input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

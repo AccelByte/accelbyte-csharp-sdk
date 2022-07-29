@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
     /// <summary>
     /// ListCrossNamespaceAccountLink
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated at 9 July, 2018. Please use this instead: /users/{userId}/platforms/{platformId}/link
     /// 
     /// 

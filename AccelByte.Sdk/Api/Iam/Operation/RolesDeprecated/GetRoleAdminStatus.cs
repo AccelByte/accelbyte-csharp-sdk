@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
     /// <summary>
     /// GetRoleAdminStatus
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
@@ -30,10 +28,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
     /// Endpoint migration guide
     /// 
     /// 
-    ///         * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [GET]
     /// 
     /// 
-    ///         * Note:
+    ///   * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [GET]
+    /// 
+    /// 
+    ///   * Note:
     /// </summary>
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetRoleAdminStatus : AccelByte.Sdk.Core.Operation

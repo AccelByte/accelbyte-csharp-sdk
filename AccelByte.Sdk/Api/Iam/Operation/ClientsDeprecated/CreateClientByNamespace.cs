@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
     /// <summary>
     /// CreateClientByNamespace
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 

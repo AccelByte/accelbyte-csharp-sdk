@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetPublisherUser
     ///
-    /// 
-    /// 
     /// Required permissions 'NAMESPACE:{namespace}:PUBLISHER:USER:{userId} [READ].
     /// 
     /// 

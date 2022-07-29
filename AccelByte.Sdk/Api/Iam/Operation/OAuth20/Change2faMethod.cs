@@ -30,10 +30,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                 * authenticator
     /// 
     /// 
-    ///                 * backupCodes
+    ///   * authenticator
+    /// 
+    /// 
+    ///   * backupCodes
     /// </summary>
     public class Change2faMethod : AccelByte.Sdk.Core.Operation
     {

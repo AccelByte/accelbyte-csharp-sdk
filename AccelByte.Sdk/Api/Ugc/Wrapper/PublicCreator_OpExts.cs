@@ -13,18 +13,30 @@ namespace AccelByte.Sdk.Api
 {
     public static class UgcPublicCreator_OpExts
     {
+        public static Ugc.Model.ModelsPaginatedCreatorOverviewResponse? Execute(
+            this PublicSearchCreator.PublicSearchCreatorBuilder builder,
+            string namespace_
+        )
+        {
+            PublicSearchCreator op = builder.Build(
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.PublicCreator)builder.WrapperObject!).PublicSearchCreator(op);
+        }
+
         public static Ugc.Model.ModelsCreatorResponse? Execute(
-            this GetCreator.GetCreatorBuilder builder,
+            this PublicGetCreator.PublicGetCreatorBuilder builder,
             string namespace_,
             string userId
         )
         {
-            GetCreator op = builder.Build(
+            PublicGetCreator op = builder.Build(
                 namespace_,
                 userId
             );
 
-            return ((Ugc.Wrapper.PublicCreator)builder.WrapperObject!).GetCreator(op);
+            return ((Ugc.Wrapper.PublicCreator)builder.WrapperObject!).PublicGetCreator(op);
         }
 
     }

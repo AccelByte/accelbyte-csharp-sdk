@@ -27,66 +27,68 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Fields Description:
     /// 
     /// 
-    ///           * clientId : The client ID. e.g f815e5c44f364993961be3b3f26a7bf4
     /// 
     /// 
-    ///           * clientName : The client name. e.g E-commerce
+    ///   * clientId : The client ID. e.g f815e5c44f364993961be3b3f26a7bf4
     /// 
     /// 
-    ///           * secret : The client's secret. It's empty if the client's type is a public client. Otherwise, the client secret is required
+    ///   * clientName : The client name. e.g E-commerce
     /// 
     /// 
-    ///           * namespace : The namespace where the client lives. e.g sample-game
+    ///   * secret : The client's secret. It's empty if the client's type is a public client. Otherwise, the client secret is required
     /// 
     /// 
-    ///           * redirectUri : Contains the redirect URI used in OAuth callback. e.g https://example.net/platform
+    ///   * namespace : The namespace where the client lives. e.g sample-game
     /// 
     /// 
-    ///           * oauthClientType : The OAuth 2.0 client type. The client type determines whether the authorization needs Proof Of Key Exchange or not.
+    ///   * redirectUri : Contains the redirect URI used in OAuth callback. e.g https://example.net/platform
+    /// 
+    /// 
+    ///   * oauthClientType : The OAuth 2.0 client type. The client type determines whether the authorization needs Proof Of Key Exchange or not.
     /// A public client type doesn't have a client secret and should use PKCE flow.
     /// A confidential client type has a client secret and don't use PKCE flow
     /// Supported oAuthClientType :
     /// 
-    ///             * Public
+    ///     * Public
     /// 
     /// 
-    ///             * Confidential
+    ///     * Confidential
     /// 
     /// 
-    ///           * audiences : List of target client IDs who is intended to receive the token. e.g ["eaaa65618fe24293b00a61454182b435", "40073ee9bc3446d3a051a71b48509a5d"]
+    ///   * audiences : List of target client IDs who is intended to receive the token. e.g ["eaaa65618fe24293b00a61454182b435", "40073ee9bc3446d3a051a71b48509a5d"]
     /// 
     /// 
-    ///           * baseUri : A base URI of the application. It is used for making sure the token is intended to be used by the client. e.g https://example.net/platform
+    ///   * baseUri : A base URI of the application. It is used for making sure the token is intended to be used by the client. e.g https://example.net/platform
     /// 
     /// 
-    ///           * clientPermissions : Contains the client's permissions
+    ///   * clientPermissions : Contains the client's permissions
     /// 
     /// 
-    ///           * deletable : The flag to identify whether client is deletable (optional). default value: true
+    ///   * deletable : The flag to identify whether client is deletable (optional). default value: true
     /// 
     /// 
-    ///           * clientPlatform : available client platform (optional). default value: ""
+    ///   * clientPlatform : available client platform (optional). default value: ""
     /// 
     /// 
-    ///             * Playstation
+    ///     * Playstation
     /// 
     /// 
-    ///             * Xbox
+    ///     * Xbox
     /// 
     /// 
-    ///             * Steam
+    ///     * Steam
     /// 
     /// 
-    ///             * Epic
+    ///     * Epic
     /// 
     /// 
-    ///             * IOS
+    ///     * IOS
     /// 
     /// 
-    ///             * GooglePlay
+    ///     * GooglePlay
     /// 
     /// 
-    ///             * Nintendo
+    ///     * Nintendo
     /// </summary>
     public class AdminCreateClientV3 : AccelByte.Sdk.Core.Operation
     {

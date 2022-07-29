@@ -235,6 +235,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly GetStatisticItemType MEDIA
             = new GetStatisticItemType("MEDIA");
 
+        public static readonly GetStatisticItemType OPTIONBOX
+            = new GetStatisticItemType("OPTIONBOX");
+
         public static readonly GetStatisticItemType SEASON
             = new GetStatisticItemType("SEASON");
 

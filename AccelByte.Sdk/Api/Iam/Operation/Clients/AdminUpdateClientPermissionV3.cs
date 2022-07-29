@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateClientPermissionV3
     ///
-    /// 
-    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:CLIENT [UPDATE]'
     /// 
     /// 

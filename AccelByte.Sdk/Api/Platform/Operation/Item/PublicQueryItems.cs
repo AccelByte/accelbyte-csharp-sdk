@@ -178,6 +178,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
 
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -218,6 +219,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
 
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/items/byCriteria";
@@ -298,6 +300,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public static readonly PublicQueryItemsItemType MEDIA
             = new PublicQueryItemsItemType("MEDIA");
+
+        public static readonly PublicQueryItemsItemType OPTIONBOX
+            = new PublicQueryItemsItemType("OPTIONBOX");
 
         public static readonly PublicQueryItemsItemType SEASON
             = new PublicQueryItemsItemType("SEASON");

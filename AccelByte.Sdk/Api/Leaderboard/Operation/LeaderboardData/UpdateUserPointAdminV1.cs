@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// <summary>
     /// updateUserPointAdminV1
     ///
-    /// 
-    /// 
     /// Update user point in a leaderboard. This endpoint uses for test utility only.
     /// 
     /// 

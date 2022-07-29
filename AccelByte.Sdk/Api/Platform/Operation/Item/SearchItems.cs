@@ -34,6 +34,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public bool? ActiveOnly { get; set; }
 
+            public SearchItemsItemType? ItemType { get; set; }
+
             public int? Limit { get; set; }
 
             public int? Offset { get; set; }
@@ -50,6 +52,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public SearchItemsBuilder SetActiveOnly(bool _activeOnly)
             {
                 ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public SearchItemsBuilder SetItemType(SearchItemsItemType _itemType)
+            {
+                ItemType = _itemType;
                 return this;
             }
 
@@ -101,6 +109,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType.Value;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
@@ -119,6 +128,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public SearchItems(
             string namespace_,            
             bool? activeOnly,            
+            SearchItemsItemType? itemType,            
             int? limit,            
             int? offset,            
             string? storeId,            
@@ -129,6 +139,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
+            if (itemType is not null) QueryParams["itemType"] = itemType.Value;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (storeId is not null) QueryParams["storeId"] = storeId;
@@ -172,6 +183,48 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
             
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class SearchItemsItemType : StringEnum<SearchItemsItemType>
+    {
+        public static readonly SearchItemsItemType APP
+            = new SearchItemsItemType("APP");
+
+        public static readonly SearchItemsItemType BUNDLE
+            = new SearchItemsItemType("BUNDLE");
+
+        public static readonly SearchItemsItemType CODE
+            = new SearchItemsItemType("CODE");
+
+        public static readonly SearchItemsItemType COINS
+            = new SearchItemsItemType("COINS");
+
+        public static readonly SearchItemsItemType INGAMEITEM
+            = new SearchItemsItemType("INGAMEITEM");
+
+        public static readonly SearchItemsItemType MEDIA
+            = new SearchItemsItemType("MEDIA");
+
+        public static readonly SearchItemsItemType OPTIONBOX
+            = new SearchItemsItemType("OPTIONBOX");
+
+        public static readonly SearchItemsItemType SEASON
+            = new SearchItemsItemType("SEASON");
+
+        public static readonly SearchItemsItemType SUBSCRIPTION
+            = new SearchItemsItemType("SUBSCRIPTION");
+
+
+        public static implicit operator SearchItemsItemType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public SearchItemsItemType(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

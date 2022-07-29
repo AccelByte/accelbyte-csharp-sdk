@@ -21,6 +21,9 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         [JsonPropertyName("preview")]
         public string? Preview { get; set; }
 
+        [JsonPropertyName("previewMetadata")]
+        public ModelsPreviewMetadata? PreviewMetadata { get; set; }
+
         [JsonPropertyName("subType")]
         public string? SubType { get; set; }
 

@@ -18,8 +18,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Update a user slot configuration in given namespace.
     /// Other detail info:
-    ///     *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=4 (UPDATE)
-    ///     *  Returns : updated slot config
+    /// 
+    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=4 (UPDATE)
+    ///   *  Returns : updated slot config
     /// </summary>
     public class UpdateUserSlotConfig : AccelByte.Sdk.Core.Operation
     {

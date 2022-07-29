@@ -16,37 +16,36 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// TokenGrantV3
     ///
-    /// 
-    /// 
     /// This endpoint supports grant type:
     /// 
     /// 
     /// 
-    ///                   1. Grant Type == `authorization_code`:
+    ///   1. Grant Type == `authorization_code`:
     /// 
     ///     It generates the user token by given the authorization
-    /// code which generated in "/v3/oauth/auth" API response. It should also pass
+    /// code which generated in "/iam/v3/authenticate" API response. It should also pass
     /// in the redirect_uri, which should be the same as generating the
     /// authorization code request.
     /// 
     /// 
     /// 
-    ///                   2. Grant Type == `password`:
+    ///   2. Grant Type == `password`:
     /// 
     ///     The grant type to use for authenticating a user, whether it's by email / username and password combination
     /// or through platform.
     /// 
     /// 
     /// 
-    ///                   3. Grant Type == `refresh_token`:
+    ///   3. Grant Type == `refresh_token`:
     /// 
     ///     Used to get a new access token for a valid refresh token.
     /// 
     /// 
     /// 
-    ///                   4. Grant Type == `client_credentials`:
+    ///   4. Grant Type == `client_credentials`:
     /// 
     ///     It generates a token by checking the client credentials provided through Authorization header.
+    /// 
     /// 
     /// 
     /// 
@@ -61,7 +60,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                   *
+    /// 
+    /// 
+    ///   *
     /// 
     /// 
     /// namespace. It is the namespace the token was generated from.
@@ -70,7 +71,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                   *
+    ///   *
     /// 
     /// 
     /// display_name. The display name of the sub. It is empty if the token is generated from the client credential
@@ -79,7 +80,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                   *
+    ///   *
     /// 
     /// 
     /// roles. The subâs roles. It is empty if the token is generated from the client credential
@@ -88,7 +89,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                   *
+    ///   *
     /// 
     /// 
     /// namespace_roles. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
@@ -97,7 +98,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                   *
+    ///   *
     /// 
     /// 
     /// permissions. The sub or audâ permissions
@@ -106,7 +107,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                   *
+    ///   *
     /// 
     /// 
     /// bans. The subâs list of bans. It is used by the IAM client for validating the token.
@@ -115,7 +116,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                   *
+    ///   *
     /// 
     /// 
     /// jflgs. It stands for Justice Flags. It is a special flag used for storing additional status information regarding the sub. It is implemented as a bit mask. Following explains what each bit represents:
@@ -123,26 +124,26 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                     * 1: Email Address Verified
+    ///     * 1: Email Address Verified
     /// 
     /// 
     /// 
-    ///                     * 2: Phone Number Verified
+    ///     * 2: Phone Number Verified
     /// 
     /// 
     /// 
-    ///                     * 4: Anonymous
+    ///     * 4: Anonymous
     /// 
     /// 
     /// 
-    ///                     * 8: Suspicious Login
+    ///     * 8: Suspicious Login
     /// 
     /// 
     /// 
     /// 
     /// 
     /// 
-    ///                   *
+    ///   *
     /// 
     /// 
     /// aud. The aud is the targeted resource server.
@@ -151,7 +152,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                   *
+    ///   *
     /// 
     /// 
     /// iat. The time the token issues at. It is in Epoch time format
@@ -160,7 +161,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                   *
+    ///   *
     /// 
     /// 
     /// exp. The time the token expires. It is in Epoch time format
@@ -169,7 +170,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                   *
+    ///   *
     /// 
     /// 
     /// client_id. The UserID. The sub is omitted if the token is generated from client credential
@@ -178,10 +179,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                   *
+    ///   *
     /// 
     /// 
     /// scope. The scope of the access request, expressed as a list of space-delimited, case-sensitive strings
+    /// 
     /// 
     /// 
     /// 

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicUserVerificationV3
     ///
-    /// 
-    /// 
     /// Will consume code if validateOnly is set false
     /// 
     /// 

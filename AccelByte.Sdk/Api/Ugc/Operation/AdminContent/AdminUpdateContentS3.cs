@@ -21,6 +21,10 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// All request body are required except payload, preview, tags, and contentType.
     /// contentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
     /// If not specified, it will use fileExtension value.
+    /// 
+    /// 
+    /// 
+    /// NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
     /// </summary>
     public class AdminUpdateContentS3 : AccelByte.Sdk.Core.Operation
     {

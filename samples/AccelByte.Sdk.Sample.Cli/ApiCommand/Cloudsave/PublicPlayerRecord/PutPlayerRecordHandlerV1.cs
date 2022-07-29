@@ -54,8 +54,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
                 Body                
             );            
             
-            wrapper.PutPlayerRecordHandlerV1(operation);
-            return String.Empty;
+            AccelByte.Sdk.Api.Cloudsave.Model.ModelsPlayerRecordResponse? response = wrapper.PutPlayerRecordHandlerV1(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

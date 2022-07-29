@@ -18,8 +18,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Updates the slot metadata.
     /// Other detail info:
-    ///         *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=4 (UPDATE)
-    ///         *  Returns : updated slot
+    /// 
+    ///   *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=4 (UPDATE)
+    ///   *  Returns : updated slot
     /// </summary>
     public class PublicUpdateUserNamespaceSlotMetadata : AccelByte.Sdk.Core.Operation
     {

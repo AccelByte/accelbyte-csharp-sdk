@@ -1,5 +1,39 @@
 # Changelog
 
+## v0.14.0
+- Updated APIs
+	- achievement
+		- updated endpoints
+	- cloudsave
+		- updated endpoints
+	- dsmc
+		- updated model
+	- eventlog
+		- updated endpoints
+	- gametelemetry
+		- added new endpoints
+	- gdpr
+		- updated endpoints
+	- group
+		- updated endpoints
+	- iam
+		- added new endpoints
+		- updated endpoints
+	- leaderboard
+		- updated endpoints
+	- legal
+		- updated endpoints
+	- platform		
+		- added new endpoints
+		- updated endpoints
+	- seasonpass
+		- updated endpoints
+	- social
+		- updated endpoints
+	- ugc
+		- updated endpoints
+		- added new endpoints
+
 ## v0.13.0
 - Fixed automatic token refresh performance issue.
 - Added scheduled token refresh as an alternative to automatic token refresh.

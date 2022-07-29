@@ -147,6 +147,32 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Item)builder.WrapperObject!).BulkGetLocaleItems(op);
         }
 
+        public static List<Platform.Model.AvailablePredicateObject>? Execute(
+            this GetAvailablePredicateTypes.GetAvailablePredicateTypesBuilder builder,
+            string namespace_
+        )
+        {
+            GetAvailablePredicateTypes op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).GetAvailablePredicateTypes(op);
+        }
+
+        public static List<Platform.Model.ItemPurchaseConditionValidateResult>? Execute(
+            this ValidateItemPurchaseCondition.ValidateItemPurchaseConditionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            ValidateItemPurchaseCondition op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).ValidateItemPurchaseCondition(op);
+        }
+
         public static Platform.Model.FullItemPagingSlicedResult? Execute(
             this SearchItems.SearchItemsBuilder builder,
             string namespace_,
@@ -359,6 +385,22 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Item)builder.WrapperObject!).GetLocaleItem(op);
         }
 
+        public static Platform.Model.FullItemInfo? Execute(
+            this UpdateItemPurchaseCondition.UpdateItemPurchaseConditionBuilder builder,
+            string itemId,
+            string namespace_,
+            string storeId
+        )
+        {
+            UpdateItemPurchaseCondition op = builder.Build(
+                itemId,
+                namespace_,
+                storeId
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).UpdateItemPurchaseCondition(op);
+        }
+
         public static void Execute(
             this ReturnItem.ReturnItemBuilder builder,
             string itemId,
@@ -425,6 +467,18 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Item)builder.WrapperObject!).PublicBulkGetItems(op);
+        }
+
+        public static List<Platform.Model.ItemPurchaseConditionValidateResult>? Execute(
+            this PublicValidateItemPurchaseCondition.PublicValidateItemPurchaseConditionBuilder builder,
+            string namespace_
+        )
+        {
+            PublicValidateItemPurchaseCondition op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).PublicValidateItemPurchaseCondition(op);
         }
 
         public static Platform.Model.ItemPagingSlicedResult? Execute(

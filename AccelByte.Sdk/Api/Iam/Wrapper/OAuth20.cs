@@ -71,6 +71,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.TokenGrantV3.Builder.SetWrapperObject(this); }
         }
+        public VerifyTokenV3.VerifyTokenV3Builder VerifyTokenV3Op
+        {
+            get { return Operation.VerifyTokenV3.Builder.SetWrapperObject(this); }
+        }
         #endregion
         
         public Model.OauthmodelTokenThirdPartyResponse? AdminRetrieveUserThirdPartyPlatformTokenV3(AdminRetrieveUserThirdPartyPlatformTokenV3 input) {
@@ -170,6 +174,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public Model.OauthmodelTokenResponseV3? TokenGrantV3(TokenGrantV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OauthmodelTokenResponseV3? VerifyTokenV3(VerifyTokenV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

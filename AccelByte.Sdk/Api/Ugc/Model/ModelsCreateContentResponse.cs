@@ -45,6 +45,9 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         [JsonPropertyName("preview")]
         public string? Preview { get; set; }
 
+        [JsonPropertyName("previewURL")]
+        public List<ModelsPreviewURL>? PreviewURL { get; set; }
+
         [JsonPropertyName("shareCode")]
         public string? ShareCode { get; set; }
 
@@ -56,6 +59,9 @@ namespace AccelByte.Sdk.Api.Ugc.Model
 
         [JsonPropertyName("type")]
         public string? Type { get; set; }
+
+        [JsonPropertyName("updatedTime")]
+        public string? UpdatedTime { get; set; }
 
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }

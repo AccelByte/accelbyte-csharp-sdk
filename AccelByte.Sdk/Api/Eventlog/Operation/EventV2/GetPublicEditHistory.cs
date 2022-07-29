@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     /// <summary>
     /// GetPublicEditHistory
     ///
-    /// 
-    /// 
     /// Available Type:
     /// 
     /// 

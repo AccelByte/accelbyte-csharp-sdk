@@ -131,6 +131,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly EntitlementInfoClazz MEDIA
             = new EntitlementInfoClazz("MEDIA");
 
+        public static readonly EntitlementInfoClazz OPTIONBOX
+            = new EntitlementInfoClazz("OPTIONBOX");
+
         public static readonly EntitlementInfoClazz SUBSCRIPTION
             = new EntitlementInfoClazz("SUBSCRIPTION");
 

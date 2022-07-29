@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
     /// <summary>
     /// SearchUser
     ///
-    /// 
-    /// 
     /// ## The endpoint is deprecated. Please use this instead: iam/v3/admin/namespaces/{namespace}/users/search
     /// 
     /// 

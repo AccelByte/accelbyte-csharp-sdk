@@ -172,18 +172,18 @@
 | `/iam/v3/public/namespaces/{namespace}/users/{userId}/validate` | POST | PublicValidateUserByUserIDAndPasswordV3 | [PublicValidateUserByUserIDAndPasswordV3](../AccelByte.Sdk/Api/Iam/Operation/Users/PublicValidateUserByUserIDAndPasswordV3.cs) | [PublicValidateUserByUserIDAndPasswordV3](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicValidateUserByUserIDAndPasswordV3.cs) |
 | `/iam/v3/public/users/me` | GET | PublicGetMyUserV3 | [PublicGetMyUserV3](../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetMyUserV3.cs) | [PublicGetMyUserV3](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetMyUserV3.cs) |
 
-### OAuth Wrapper:  [OAuth](../AccelByte.Sdk/Api/Iam/Wrapper/OAuth.cs)
+### OAuth(Deprecated) Wrapper:  [OAuthDeprecated](../AccelByte.Sdk/Api/Iam/Wrapper/OAuthDeprecated.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/iam/oauth/authorize` | POST | Authorization | [Authorization](../AccelByte.Sdk/Api/Iam/Operation/OAuth/Authorization.cs) | [Authorization](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/Authorization.cs) |
-| `/iam/oauth/jwks` | GET | GetJWKS | [GetJWKS](../AccelByte.Sdk/Api/Iam/Operation/OAuth/GetJWKS.cs) | [GetJWKS](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/GetJWKS.cs) |
-| `/iam/oauth/namespaces/{namespace}/platforms/{platformId}/token` | POST | PlatformTokenRequestHandler | [PlatformTokenRequestHandler](../AccelByte.Sdk/Api/Iam/Operation/OAuth/PlatformTokenRequestHandler.cs) | [PlatformTokenRequestHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/PlatformTokenRequestHandler.cs) |
-| `/iam/oauth/namespaces/{namespace}/users/{userId}/revoke` | POST | RevokeUser | [RevokeUser](../AccelByte.Sdk/Api/Iam/Operation/OAuth/RevokeUser.cs) | [RevokeUser](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/RevokeUser.cs) |
-| `/iam/oauth/revocationlist` | GET | GetRevocationList | [GetRevocationList](../AccelByte.Sdk/Api/Iam/Operation/OAuth/GetRevocationList.cs) | [GetRevocationList](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/GetRevocationList.cs) |
-| `/iam/oauth/revoke/token` | POST | RevokeToken | [RevokeToken](../AccelByte.Sdk/Api/Iam/Operation/OAuth/RevokeToken.cs) | [RevokeToken](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/RevokeToken.cs) |
-| `/iam/oauth/revoke/user` | POST | RevokeAUser | [RevokeAUser](../AccelByte.Sdk/Api/Iam/Operation/OAuth/RevokeAUser.cs) | [RevokeAUser](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/RevokeAUser.cs) |
-| `/iam/oauth/token` | POST | TokenGrant | [TokenGrant](../AccelByte.Sdk/Api/Iam/Operation/OAuth/TokenGrant.cs) | [TokenGrant](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/TokenGrant.cs) |
-| `/iam/oauth/verify` | POST | VerifyToken | [VerifyToken](../AccelByte.Sdk/Api/Iam/Operation/OAuth/VerifyToken.cs) | [VerifyToken](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/VerifyToken.cs) |
+| `/iam/oauth/authorize` | POST | Authorization | [Authorization](../AccelByte.Sdk/Api/Iam/Operation/OAuthDeprecated/Authorization.cs) | [Authorization](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuthDeprecated/Authorization.cs) |
+| `/iam/oauth/jwks` | GET | GetJWKS | [GetJWKS](../AccelByte.Sdk/Api/Iam/Operation/OAuthDeprecated/GetJWKS.cs) | [GetJWKS](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuthDeprecated/GetJWKS.cs) |
+| `/iam/oauth/namespaces/{namespace}/platforms/{platformId}/token` | POST | PlatformTokenRequestHandler | [PlatformTokenRequestHandler](../AccelByte.Sdk/Api/Iam/Operation/OAuthDeprecated/PlatformTokenRequestHandler.cs) | [PlatformTokenRequestHandler](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuthDeprecated/PlatformTokenRequestHandler.cs) |
+| `/iam/oauth/namespaces/{namespace}/users/{userId}/revoke` | POST | RevokeUser | [RevokeUser](../AccelByte.Sdk/Api/Iam/Operation/OAuthDeprecated/RevokeUser.cs) | [RevokeUser](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuthDeprecated/RevokeUser.cs) |
+| `/iam/oauth/revocationlist` | GET | GetRevocationList | [GetRevocationList](../AccelByte.Sdk/Api/Iam/Operation/OAuthDeprecated/GetRevocationList.cs) | [GetRevocationList](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuthDeprecated/GetRevocationList.cs) |
+| `/iam/oauth/revoke/token` | POST | RevokeToken | [RevokeToken](../AccelByte.Sdk/Api/Iam/Operation/OAuthDeprecated/RevokeToken.cs) | [RevokeToken](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuthDeprecated/RevokeToken.cs) |
+| `/iam/oauth/revoke/user` | POST | RevokeAUser | [RevokeAUser](../AccelByte.Sdk/Api/Iam/Operation/OAuthDeprecated/RevokeAUser.cs) | [RevokeAUser](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuthDeprecated/RevokeAUser.cs) |
+| `/iam/oauth/token` | POST | TokenGrant | [TokenGrant](../AccelByte.Sdk/Api/Iam/Operation/OAuthDeprecated/TokenGrant.cs) | [TokenGrant](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuthDeprecated/TokenGrant.cs) |
+| `/iam/oauth/verify` | POST | VerifyToken | [VerifyToken](../AccelByte.Sdk/Api/Iam/Operation/OAuthDeprecated/VerifyToken.cs) | [VerifyToken](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuthDeprecated/VerifyToken.cs) |
 
 ### Roles(Deprecated) Wrapper:  [RolesDeprecated](../AccelByte.Sdk/Api/Iam/Wrapper/RolesDeprecated.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -247,6 +247,7 @@
 | `/iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/clients/domain` | PUT | UpdateThirdPartyLoginPlatformDomainV3 | [UpdateThirdPartyLoginPlatformDomainV3](../AccelByte.Sdk/Api/Iam/Operation/ThirdPartyCredential/UpdateThirdPartyLoginPlatformDomainV3.cs) | [UpdateThirdPartyLoginPlatformDomainV3](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/ThirdPartyCredential/UpdateThirdPartyLoginPlatformDomainV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/clients/domain` | DELETE | DeleteThirdPartyLoginPlatformDomainV3 | [DeleteThirdPartyLoginPlatformDomainV3](../AccelByte.Sdk/Api/Iam/Operation/ThirdPartyCredential/DeleteThirdPartyLoginPlatformDomainV3.cs) | [DeleteThirdPartyLoginPlatformDomainV3](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/ThirdPartyCredential/DeleteThirdPartyLoginPlatformDomainV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/platforms/clients/active` | GET | RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3 | [RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3](../AccelByte.Sdk/Api/Iam/Operation/ThirdPartyCredential/RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3.cs) | [RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/ThirdPartyCredential/RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3.cs) |
+| `/iam/v3/public/namespaces/{namespace}/platforms/clients/oidc` | GET | RetrieveActiveOIDCClientsPublicV3 | [RetrieveActiveOIDCClientsPublicV3](../AccelByte.Sdk/Api/Iam/Operation/ThirdPartyCredential/RetrieveActiveOIDCClientsPublicV3.cs) | [RetrieveActiveOIDCClientsPublicV3](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/ThirdPartyCredential/RetrieveActiveOIDCClientsPublicV3.cs) |
 
 ### SSO Credential Wrapper:  [SSOCredential](../AccelByte.Sdk/Api/Iam/Wrapper/SSOCredential.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -318,6 +319,7 @@
 | `/iam/v3/oauth/revocationlist` | GET | GetRevocationListV3 | [GetRevocationListV3](../AccelByte.Sdk/Api/Iam/Operation/OAuth20/GetRevocationListV3.cs) | [GetRevocationListV3](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/GetRevocationListV3.cs) |
 | `/iam/v3/oauth/revoke` | POST | TokenRevocationV3 | [TokenRevocationV3](../AccelByte.Sdk/Api/Iam/Operation/OAuth20/TokenRevocationV3.cs) | [TokenRevocationV3](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/TokenRevocationV3.cs) |
 | `/iam/v3/oauth/token` | POST | TokenGrantV3 | [TokenGrantV3](../AccelByte.Sdk/Api/Iam/Operation/OAuth20/TokenGrantV3.cs) | [TokenGrantV3](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/TokenGrantV3.cs) |
+| `/iam/v3/oauth/verify` | POST | VerifyTokenV3 | [VerifyTokenV3](../AccelByte.Sdk/Api/Iam/Operation/OAuth20/VerifyTokenV3.cs) | [VerifyTokenV3](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/VerifyTokenV3.cs) |
 
 ### SSO SAML 2.0 Wrapper:  [SSOSAML20](../AccelByte.Sdk/Api/Iam/Wrapper/SSOSAML20.cs)
 | Endpoint | Method | ID | Class | Example |

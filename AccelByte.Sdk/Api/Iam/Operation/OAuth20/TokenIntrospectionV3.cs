@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// TokenIntrospectionV3
     ///
-    /// 
-    /// 
     /// This endpoint returns information about an access token intended to be used by resource servers or other internal servers.
     /// 
     /// 

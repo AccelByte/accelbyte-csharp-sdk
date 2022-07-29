@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// <summary>
     /// GetCurrentSeasonLeaderboardRankingPublicV1
     ///
-    /// 
-    /// 
     /// Get rankings in current season leaderboard.
     /// </summary>
     public class GetCurrentSeasonLeaderboardRankingPublicV1 : AccelByte.Sdk.Core.Operation

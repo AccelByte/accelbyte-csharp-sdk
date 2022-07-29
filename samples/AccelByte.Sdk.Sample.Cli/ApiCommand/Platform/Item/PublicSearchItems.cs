@@ -29,6 +29,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("itemType")]
+        public string? ItemType { get; set; }
+
         [SdkCommandArgument("limit")]
         public int? Limit { get; set; }
 
@@ -58,6 +61,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             PublicSearchItems operation = new PublicSearchItems(
                 Namespace,                
+                (ItemType is null ? null : PublicSearchItemsItemType.NewValue(ItemType)),                
                 Limit,                
                 Offset,                
                 Region,                

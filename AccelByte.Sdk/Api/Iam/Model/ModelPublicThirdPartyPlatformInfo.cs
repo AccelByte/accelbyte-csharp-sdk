@@ -24,5 +24,8 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("PlatformId")]
         public string? PlatformId { get; set; }
 
+        [JsonPropertyName("PlatformName")]
+        public string? PlatformName { get; set; }
+
     }
 }

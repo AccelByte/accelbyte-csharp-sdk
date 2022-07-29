@@ -32,6 +32,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("activeOnly")]
         public bool? ActiveOnly { get; set; }
 
+        [SdkCommandArgument("itemType")]
+        public string? ItemType { get; set; }
+
         [SdkCommandArgument("limit")]
         public int? Limit { get; set; }
 
@@ -59,6 +62,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             SearchItems operation = new SearchItems(
                 Namespace,                
                 ActiveOnly,                
+                (ItemType is null ? null : SearchItemsItemType.NewValue(ItemType)),                
                 Limit,                
                 Offset,                
                 StoreId,                

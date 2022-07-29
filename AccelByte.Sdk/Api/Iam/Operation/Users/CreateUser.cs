@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// CreateUser
     ///
-    /// 
-    /// 
     /// Required permission 'NAMESPACE:{namespace}:USER [CREATE]'.
     /// 
     /// 

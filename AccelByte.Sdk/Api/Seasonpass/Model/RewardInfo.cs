@@ -65,6 +65,12 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public static readonly RewardInfoItemType INGAMEITEM
             = new RewardInfoItemType("INGAMEITEM");
 
+        public static readonly RewardInfoItemType MEDIA
+            = new RewardInfoItemType("MEDIA");
+
+        public static readonly RewardInfoItemType OPTIONBOX
+            = new RewardInfoItemType("OPTIONBOX");
+
         public static readonly RewardInfoItemType SEASON
             = new RewardInfoItemType("SEASON");
 

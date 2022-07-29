@@ -16,41 +16,42 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicDeletePlatformLinkV2
     ///
-    /// 
-    /// 
     /// ## Supported platforms:
     /// 
     /// 
     /// 
     /// 
-    ///           * steam
     /// 
     /// 
-    ///           * steamopenid
+    ///   * steam
     /// 
     /// 
-    ///           * facebook
+    ///   * steamopenid
     /// 
     /// 
-    ///           * google
+    ///   * facebook
     /// 
     /// 
-    ///           * oculus
+    ///   * google
     /// 
     /// 
-    ///           * twitch
+    ///   * oculus
     /// 
     /// 
-    ///           * android
+    ///   * twitch
     /// 
     /// 
-    ///           * ios
+    ///   * android
     /// 
     /// 
-    ///           * device
+    ///   * ios
     /// 
     /// 
-    ///           * discord
+    ///   * device
+    /// 
+    /// 
+    ///   * discord
+    /// 
     /// 
     /// 
     /// 

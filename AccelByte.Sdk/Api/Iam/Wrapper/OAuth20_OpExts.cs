@@ -187,5 +187,17 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).TokenGrantV3(op);
         }
 
+        public static Iam.Model.OauthmodelTokenResponseV3? Execute(
+            this VerifyTokenV3.VerifyTokenV3Builder builder,
+            string token
+        )
+        {
+            VerifyTokenV3 op = builder.Build(
+                token
+            );
+
+            return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).VerifyTokenV3(op);
+        }
+
     }
 }

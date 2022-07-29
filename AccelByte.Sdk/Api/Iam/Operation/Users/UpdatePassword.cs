@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
     /// <summary>
     /// UpdatePassword
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated. Admin user please use this instead: iam/v2/admin/namespaces/{namespace}/users/{userId}/password
     /// 
     /// 

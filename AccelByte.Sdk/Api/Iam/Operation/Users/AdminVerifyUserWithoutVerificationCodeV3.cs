@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminVerifyUserWithoutVerificationCodeV3
     ///
-    /// 
-    /// 
     /// This endpoint force verify user. Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]
     /// 
     /// 

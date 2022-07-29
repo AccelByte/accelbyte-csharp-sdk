@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// kickGroupMemberPublicV1
     ///
-    /// 
-    /// 
     /// Required valid user authentication
     /// 
     /// 

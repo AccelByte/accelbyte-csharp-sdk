@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicUpdateUserV4
     ///
-    /// 
-    /// 
     /// Requires valid user access token
     /// 
     /// 

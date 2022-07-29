@@ -90,6 +90,7 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/anyOf` | GET | ExistsAnyUserActiveEntitlementByItemIds | [ExistsAnyUserActiveEntitlementByItemIds](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/ExistsAnyUserActiveEntitlementByItemIds.cs) | [ExistsAnyUserActiveEntitlementByItemIds](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/ExistsAnyUserActiveEntitlementByItemIds.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/byAppId` | GET | GetUserAppEntitlementOwnershipByAppId | [GetUserAppEntitlementOwnershipByAppId](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserAppEntitlementOwnershipByAppId.cs) | [GetUserAppEntitlementOwnershipByAppId](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserAppEntitlementOwnershipByAppId.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemId` | GET | GetUserEntitlementOwnershipByItemId | [GetUserEntitlementOwnershipByItemId](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserEntitlementOwnershipByItemId.cs) | [GetUserEntitlementOwnershipByItemId](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserEntitlementOwnershipByItemId.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemIds` | GET | GetUserEntitlementOwnershipByItemIds | [GetUserEntitlementOwnershipByItemIds](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserEntitlementOwnershipByItemIds.cs) | [GetUserEntitlementOwnershipByItemIds](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserEntitlementOwnershipByItemIds.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/bySku` | GET | GetUserEntitlementOwnershipBySku | [GetUserEntitlementOwnershipBySku](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserEntitlementOwnershipBySku.cs) | [GetUserEntitlementOwnershipBySku](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserEntitlementOwnershipBySku.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/revoke/byIds` | PUT | RevokeUserEntitlements | [RevokeUserEntitlements](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/RevokeUserEntitlements.cs) | [RevokeUserEntitlements](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/RevokeUserEntitlements.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}` | GET | GetUserEntitlement | [GetUserEntitlement](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserEntitlement.cs) | [GetUserEntitlement](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserEntitlement.cs) |
@@ -112,6 +113,7 @@
 | `/platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/any` | GET | PublicExistsAnyUserActiveEntitlement | [PublicExistsAnyUserActiveEntitlement](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicExistsAnyUserActiveEntitlement.cs) | [PublicExistsAnyUserActiveEntitlement](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/PublicExistsAnyUserActiveEntitlement.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/byAppId` | GET | PublicGetUserAppEntitlementOwnershipByAppId | [PublicGetUserAppEntitlementOwnershipByAppId](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicGetUserAppEntitlementOwnershipByAppId.cs) | [PublicGetUserAppEntitlementOwnershipByAppId](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/PublicGetUserAppEntitlementOwnershipByAppId.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemId` | GET | PublicGetUserEntitlementOwnershipByItemId | [PublicGetUserEntitlementOwnershipByItemId](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicGetUserEntitlementOwnershipByItemId.cs) | [PublicGetUserEntitlementOwnershipByItemId](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/PublicGetUserEntitlementOwnershipByItemId.cs) |
+| `/platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemIds` | GET | PublicGetUserEntitlementOwnershipByItemIds | [PublicGetUserEntitlementOwnershipByItemIds](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicGetUserEntitlementOwnershipByItemIds.cs) | [PublicGetUserEntitlementOwnershipByItemIds](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/PublicGetUserEntitlementOwnershipByItemIds.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/entitlements/ownership/bySku` | GET | PublicGetUserEntitlementOwnershipBySku | [PublicGetUserEntitlementOwnershipBySku](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicGetUserEntitlementOwnershipBySku.cs) | [PublicGetUserEntitlementOwnershipBySku](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/PublicGetUserEntitlementOwnershipBySku.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}` | GET | PublicGetUserEntitlement | [PublicGetUserEntitlement](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicGetUserEntitlement.cs) | [PublicGetUserEntitlement](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/PublicGetUserEntitlement.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/decrement` | PUT | PublicConsumeUserEntitlement | [PublicConsumeUserEntitlement](../AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicConsumeUserEntitlement.cs) | [PublicConsumeUserEntitlement](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/PublicConsumeUserEntitlement.cs) |
@@ -182,6 +184,8 @@
 | `/platform/admin/namespaces/{namespace}/items/itemId/bySku` | GET | GetItemIdBySku | [GetItemIdBySku](../AccelByte.Sdk/Api/Platform/Operation/Item/GetItemIdBySku.cs) | [GetItemIdBySku](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/GetItemIdBySku.cs) |
 | `/platform/admin/namespaces/{namespace}/items/itemId/bySkus` | GET | GetBulkItemIdBySkus | [GetBulkItemIdBySkus](../AccelByte.Sdk/Api/Platform/Operation/Item/GetBulkItemIdBySkus.cs) | [GetBulkItemIdBySkus](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/GetBulkItemIdBySkus.cs) |
 | `/platform/admin/namespaces/{namespace}/items/locale/byIds` | GET | BulkGetLocaleItems | [BulkGetLocaleItems](../AccelByte.Sdk/Api/Platform/Operation/Item/BulkGetLocaleItems.cs) | [BulkGetLocaleItems](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/BulkGetLocaleItems.cs) |
+| `/platform/admin/namespaces/{namespace}/items/predicate/types` | GET | GetAvailablePredicateTypes | [GetAvailablePredicateTypes](../AccelByte.Sdk/Api/Platform/Operation/Item/GetAvailablePredicateTypes.cs) | [GetAvailablePredicateTypes](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/GetAvailablePredicateTypes.cs) |
+| `/platform/admin/namespaces/{namespace}/items/purchase/conditions/validate` | POST | ValidateItemPurchaseCondition | [ValidateItemPurchaseCondition](../AccelByte.Sdk/Api/Platform/Operation/Item/ValidateItemPurchaseCondition.cs) | [ValidateItemPurchaseCondition](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/ValidateItemPurchaseCondition.cs) |
 | `/platform/admin/namespaces/{namespace}/items/search` | GET | SearchItems | [SearchItems](../AccelByte.Sdk/Api/Platform/Operation/Item/SearchItems.cs) | [SearchItems](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/SearchItems.cs) |
 | `/platform/admin/namespaces/{namespace}/items/uncategorized` | GET | QueryUncategorizedItems | [QueryUncategorizedItems](../AccelByte.Sdk/Api/Platform/Operation/Item/QueryUncategorizedItems.cs) | [QueryUncategorizedItems](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/QueryUncategorizedItems.cs) |
 | `/platform/admin/namespaces/{namespace}/items/{itemId}` | GET | GetItem | [GetItem](../AccelByte.Sdk/Api/Platform/Operation/Item/GetItem.cs) | [GetItem](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/GetItem.cs) |
@@ -196,11 +200,13 @@
 | `/platform/admin/namespaces/{namespace}/items/{itemId}/features/{feature}` | PUT | FeatureItem | [FeatureItem](../AccelByte.Sdk/Api/Platform/Operation/Item/FeatureItem.cs) | [FeatureItem](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/FeatureItem.cs) |
 | `/platform/admin/namespaces/{namespace}/items/{itemId}/features/{feature}` | DELETE | DefeatureItem | [DefeatureItem](../AccelByte.Sdk/Api/Platform/Operation/Item/DefeatureItem.cs) | [DefeatureItem](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/DefeatureItem.cs) |
 | `/platform/admin/namespaces/{namespace}/items/{itemId}/locale` | GET | GetLocaleItem | [GetLocaleItem](../AccelByte.Sdk/Api/Platform/Operation/Item/GetLocaleItem.cs) | [GetLocaleItem](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/GetLocaleItem.cs) |
+| `/platform/admin/namespaces/{namespace}/items/{itemId}/purchase/condition` | PUT | UpdateItemPurchaseCondition | [UpdateItemPurchaseCondition](../AccelByte.Sdk/Api/Platform/Operation/Item/UpdateItemPurchaseCondition.cs) | [UpdateItemPurchaseCondition](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/UpdateItemPurchaseCondition.cs) |
 | `/platform/admin/namespaces/{namespace}/items/{itemId}/return` | PUT | ReturnItem | [ReturnItem](../AccelByte.Sdk/Api/Platform/Operation/Item/ReturnItem.cs) | [ReturnItem](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/ReturnItem.cs) |
 | `/platform/public/namespaces/{namespace}/items/byAppId` | GET | PublicGetItemByAppId | [PublicGetItemByAppId](../AccelByte.Sdk/Api/Platform/Operation/Item/PublicGetItemByAppId.cs) | [PublicGetItemByAppId](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/PublicGetItemByAppId.cs) |
 | `/platform/public/namespaces/{namespace}/items/byCriteria` | GET | PublicQueryItems | [PublicQueryItems](../AccelByte.Sdk/Api/Platform/Operation/Item/PublicQueryItems.cs) | [PublicQueryItems](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/PublicQueryItems.cs) |
 | `/platform/public/namespaces/{namespace}/items/bySku` | GET | PublicGetItemBySku | [PublicGetItemBySku](../AccelByte.Sdk/Api/Platform/Operation/Item/PublicGetItemBySku.cs) | [PublicGetItemBySku](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/PublicGetItemBySku.cs) |
 | `/platform/public/namespaces/{namespace}/items/locale/byIds` | GET | PublicBulkGetItems | [PublicBulkGetItems](../AccelByte.Sdk/Api/Platform/Operation/Item/PublicBulkGetItems.cs) | [PublicBulkGetItems](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/PublicBulkGetItems.cs) |
+| `/platform/public/namespaces/{namespace}/items/purchase/conditions/validate` | POST | PublicValidateItemPurchaseCondition | [PublicValidateItemPurchaseCondition](../AccelByte.Sdk/Api/Platform/Operation/Item/PublicValidateItemPurchaseCondition.cs) | [PublicValidateItemPurchaseCondition](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/PublicValidateItemPurchaseCondition.cs) |
 | `/platform/public/namespaces/{namespace}/items/search` | GET | PublicSearchItems | [PublicSearchItems](../AccelByte.Sdk/Api/Platform/Operation/Item/PublicSearchItems.cs) | [PublicSearchItems](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/PublicSearchItems.cs) |
 | `/platform/public/namespaces/{namespace}/items/{itemId}/app/locale` | GET | PublicGetApp | [PublicGetApp](../AccelByte.Sdk/Api/Platform/Operation/Item/PublicGetApp.cs) | [PublicGetApp](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/PublicGetApp.cs) |
 | `/platform/public/namespaces/{namespace}/items/{itemId}/dynamic` | GET | PublicGetItemDynamicData | [PublicGetItemDynamicData](../AccelByte.Sdk/Api/Platform/Operation/Item/PublicGetItemDynamicData.cs) | [PublicGetItemDynamicData](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/PublicGetItemDynamicData.cs) |
@@ -495,6 +501,8 @@
 | `CodeCreateResult` | [CodeCreateResult](../AccelByte.Sdk/Api/Platform/Model/CodeCreateResult.cs) |
 | `CodeInfo` | [CodeInfo](../AccelByte.Sdk/Api/Platform/Model/CodeInfo.cs) |
 | `CodeInfoPagingSlicedResult` | [CodeInfoPagingSlicedResult](../AccelByte.Sdk/Api/Platform/Model/CodeInfoPagingSlicedResult.cs) |
+| `ConditionGroup` | [ConditionGroup](../AccelByte.Sdk/Api/Platform/Model/ConditionGroup.cs) |
+| `ConditionGroupValidateResult` | [ConditionGroupValidateResult](../AccelByte.Sdk/Api/Platform/Model/ConditionGroupValidateResult.cs) |
 | `ConditionMatchResult` | [ConditionMatchResult](../AccelByte.Sdk/Api/Platform/Model/ConditionMatchResult.cs) |
 | `CreditRequest` | [CreditRequest](../AccelByte.Sdk/Api/Platform/Model/CreditRequest.cs) |
 | `CreditSummary` | [CreditSummary](../AccelByte.Sdk/Api/Platform/Model/CreditSummary.cs) |
@@ -515,6 +523,7 @@
 | `EntitlementGrant` | [EntitlementGrant](../AccelByte.Sdk/Api/Platform/Model/EntitlementGrant.cs) |
 | `EntitlementHistoryInfo` | [EntitlementHistoryInfo](../AccelByte.Sdk/Api/Platform/Model/EntitlementHistoryInfo.cs) |
 | `EntitlementInfo` | [EntitlementInfo](../AccelByte.Sdk/Api/Platform/Model/EntitlementInfo.cs) |
+| `EntitlementOwnership` | [EntitlementOwnership](../AccelByte.Sdk/Api/Platform/Model/EntitlementOwnership.cs) |
 | `EntitlementPagingSlicedResult` | [EntitlementPagingSlicedResult](../AccelByte.Sdk/Api/Platform/Model/EntitlementPagingSlicedResult.cs) |
 | `EntitlementSummary` | [EntitlementSummary](../AccelByte.Sdk/Api/Platform/Model/EntitlementSummary.cs) |
 | `EntitlementUpdate` | [EntitlementUpdate](../AccelByte.Sdk/Api/Platform/Model/EntitlementUpdate.cs) |
@@ -564,6 +573,8 @@
 | `ItemId` | [ItemId](../AccelByte.Sdk/Api/Platform/Model/ItemId.cs) |
 | `ItemInfo` | [ItemInfo](../AccelByte.Sdk/Api/Platform/Model/ItemInfo.cs) |
 | `ItemPagingSlicedResult` | [ItemPagingSlicedResult](../AccelByte.Sdk/Api/Platform/Model/ItemPagingSlicedResult.cs) |
+| `ItemPurchaseConditionValidateRequest` | [ItemPurchaseConditionValidateRequest](../AccelByte.Sdk/Api/Platform/Model/ItemPurchaseConditionValidateRequest.cs) |
+| `ItemPurchaseConditionValidateResult` | [ItemPurchaseConditionValidateResult](../AccelByte.Sdk/Api/Platform/Model/ItemPurchaseConditionValidateResult.cs) |
 | `ItemReturnRequest` | [ItemReturnRequest](../AccelByte.Sdk/Api/Platform/Model/ItemReturnRequest.cs) |
 | `ItemSnapshot` | [ItemSnapshot](../AccelByte.Sdk/Api/Platform/Model/ItemSnapshot.cs) |
 | `ItemUpdate` | [ItemUpdate](../AccelByte.Sdk/Api/Platform/Model/ItemUpdate.cs) |
@@ -577,6 +588,8 @@
 | `Localization` | [Localization](../AccelByte.Sdk/Api/Platform/Model/Localization.cs) |
 | `MockIAPReceipt` | [MockIAPReceipt](../AccelByte.Sdk/Api/Platform/Model/MockIAPReceipt.cs) |
 | `NotificationProcessResult` | [NotificationProcessResult](../AccelByte.Sdk/Api/Platform/Model/NotificationProcessResult.cs) |
+| `OptionBoxConfig` | [OptionBoxConfig](../AccelByte.Sdk/Api/Platform/Model/OptionBoxConfig.cs) |
+| `OptionBoxItem` | [OptionBoxItem](../AccelByte.Sdk/Api/Platform/Model/OptionBoxItem.cs) |
 | `Order` | [Order](../AccelByte.Sdk/Api/Platform/Model/Order.cs) |
 | `OrderCreate` | [OrderCreate](../AccelByte.Sdk/Api/Platform/Model/OrderCreate.cs) |
 | `OrderGrantInfo` | [OrderGrantInfo](../AccelByte.Sdk/Api/Platform/Model/OrderGrantInfo.cs) |
@@ -639,6 +652,9 @@
 | `PlayStationReconcileResult` | [PlayStationReconcileResult](../AccelByte.Sdk/Api/Platform/Model/PlayStationReconcileResult.cs) |
 | `PlaystationIAPConfigRequest` | [PlaystationIAPConfigRequest](../AccelByte.Sdk/Api/Platform/Model/PlaystationIAPConfigRequest.cs) |
 | `PopulatedItemInfo` | [PopulatedItemInfo](../AccelByte.Sdk/Api/Platform/Model/PopulatedItemInfo.cs) |
+| `PredicateValidateResult` | [PredicateValidateResult](../AccelByte.Sdk/Api/Platform/Model/PredicateValidateResult.cs) |
+| `PurchaseCondition` | [PurchaseCondition](../AccelByte.Sdk/Api/Platform/Model/PurchaseCondition.cs) |
+| `PurchaseConditionUpdate` | [PurchaseConditionUpdate](../AccelByte.Sdk/Api/Platform/Model/PurchaseConditionUpdate.cs) |
 | `PurchasedItemCount` | [PurchasedItemCount](../AccelByte.Sdk/Api/Platform/Model/PurchasedItemCount.cs) |
 | `Recurring` | [Recurring](../AccelByte.Sdk/Api/Platform/Model/Recurring.cs) |
 | `RecurringChargeResult` | [RecurringChargeResult](../AccelByte.Sdk/Api/Platform/Model/RecurringChargeResult.cs) |
@@ -709,5 +725,8 @@
 | `XsollaConfig` | [XsollaConfig](../AccelByte.Sdk/Api/Platform/Model/XsollaConfig.cs) |
 | `XsollaPaywallConfig` | [XsollaPaywallConfig](../AccelByte.Sdk/Api/Platform/Model/XsollaPaywallConfig.cs) |
 | `XsollaPaywallConfigRequest` | [XsollaPaywallConfigRequest](../AccelByte.Sdk/Api/Platform/Model/XsollaPaywallConfigRequest.cs) |
+| `available comparison object` | [AvailableComparisonObject](../AccelByte.Sdk/Api/Platform/Model/AvailableComparisonObject.cs) |
+| `available predicate object` | [AvailablePredicateObject](../AccelByte.Sdk/Api/Platform/Model/AvailablePredicateObject.cs) |
+| `predicate object` | [PredicateObject](../AccelByte.Sdk/Api/Platform/Model/PredicateObject.cs) |
 | `steam achievement request` | [SteamAchievementRequest](../AccelByte.Sdk/Api/Platform/Model/SteamAchievementRequest.cs) |
 | `xbox achievement request` | [XboxAchievementRequest](../AccelByte.Sdk/Api/Platform/Model/XboxAchievementRequest.cs) |

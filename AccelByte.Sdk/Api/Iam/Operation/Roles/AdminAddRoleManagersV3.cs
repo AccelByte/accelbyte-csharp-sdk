@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminAddRoleManagersV3
     ///
-    /// 
-    /// 
     /// Role can only be assigned to other users by the role's manager.
     /// 
     /// 

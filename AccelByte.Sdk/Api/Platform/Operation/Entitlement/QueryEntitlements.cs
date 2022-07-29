@@ -250,6 +250,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryEntitlementsEntitlementClazz MEDIA
             = new QueryEntitlementsEntitlementClazz("MEDIA");
 
+        public static readonly QueryEntitlementsEntitlementClazz OPTIONBOX
+            = new QueryEntitlementsEntitlementClazz("OPTIONBOX");
+
         public static readonly QueryEntitlementsEntitlementClazz SUBSCRIPTION
             = new QueryEntitlementsEntitlementClazz("SUBSCRIPTION");
 

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
     /// <summary>
     /// CreateRole
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
@@ -40,10 +38,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
     /// Endpoint migration guide
     /// 
     /// 
-    ///         * Substitute endpoint: /iam/v3/admin/roles [POST]
     /// 
     /// 
-    ///         * Note:
+    ///   * Substitute endpoint: /iam/v3/admin/roles [POST]
+    /// 
+    /// 
+    ///   * Note:
     /// </summary>
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class CreateRole : AccelByte.Sdk.Core.Operation

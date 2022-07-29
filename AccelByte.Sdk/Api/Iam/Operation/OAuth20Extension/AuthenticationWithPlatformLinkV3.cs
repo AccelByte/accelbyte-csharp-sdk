@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AuthenticationWithPlatformLinkV3
     ///
-    /// 
-    /// 
     /// This endpoint is being used to authenticate a user account and perform platform link.
     /// It validates user's email / username and password. If user already enable 2FA,
     /// invoke ''/mfa/verify' with response's mfa_token'

@@ -18,9 +18,10 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Create new profile for user.
     /// Other detail info:
-    ///         *  Required permission
+    /// 
+    ///   *  Required permission
     /// : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=1 (CREATE)
-    ///         *  Returns
+    ///   *  Returns
     /// : created game profile
     /// </summary>
     public class PublicCreateProfile : AccelByte.Sdk.Core.Operation

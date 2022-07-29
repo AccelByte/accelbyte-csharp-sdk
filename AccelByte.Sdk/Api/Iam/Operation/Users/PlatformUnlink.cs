@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PlatformUnlink
     ///
-    /// 
-    /// 
     /// Required permission 'NAMESPACE:{namespace}:USER:{userId} [UPDATE]'.
     /// 
     /// 
@@ -28,34 +26,37 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///         * steam
     /// 
     /// 
-    ///         * steamopenid
+    ///   * steam
     /// 
     /// 
-    ///         * facebook
+    ///   * steamopenid
     /// 
     /// 
-    ///         * google
+    ///   * facebook
     /// 
     /// 
-    ///         * oculus
+    ///   * google
     /// 
     /// 
-    ///         * twitch
+    ///   * oculus
     /// 
     /// 
-    ///         * android
+    ///   * twitch
     /// 
     /// 
-    ///         * ios
+    ///   * android
     /// 
     /// 
-    ///         * device
+    ///   * ios
     /// 
     /// 
-    ///         * justice : A user might have several 'justiceâ platform on different namespaces. Thatâs why the platform_namespace need to be specified when the platform ID is âjusticeâ. The platform_namespace is the designated userâs namespace.
+    ///   * device
+    /// 
+    /// 
+    ///   * justice : A user might have several 'justiceâ platform on different namespaces. Thatâs why the platform_namespace need to be specified when the platform ID is âjusticeâ. The platform_namespace is the designated userâs namespace.
+    /// 
     /// 
     /// 
     /// 

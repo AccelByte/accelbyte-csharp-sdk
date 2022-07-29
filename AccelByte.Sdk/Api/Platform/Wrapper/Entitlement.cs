@@ -67,6 +67,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.GetUserEntitlementOwnershipByItemId.Builder.SetWrapperObject(this); }
         }
+        public GetUserEntitlementOwnershipByItemIds.GetUserEntitlementOwnershipByItemIdsBuilder GetUserEntitlementOwnershipByItemIdsOp
+        {
+            get { return Operation.GetUserEntitlementOwnershipByItemIds.Builder.SetWrapperObject(this); }
+        }
         public GetUserEntitlementOwnershipBySku.GetUserEntitlementOwnershipBySkuBuilder GetUserEntitlementOwnershipBySkuOp
         {
             get { return Operation.GetUserEntitlementOwnershipBySku.Builder.SetWrapperObject(this); }
@@ -154,6 +158,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public PublicGetUserEntitlementOwnershipByItemId.PublicGetUserEntitlementOwnershipByItemIdBuilder PublicGetUserEntitlementOwnershipByItemIdOp
         {
             get { return Operation.PublicGetUserEntitlementOwnershipByItemId.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetUserEntitlementOwnershipByItemIds.PublicGetUserEntitlementOwnershipByItemIdsBuilder PublicGetUserEntitlementOwnershipByItemIdsOp
+        {
+            get { return Operation.PublicGetUserEntitlementOwnershipByItemIds.Builder.SetWrapperObject(this); }
         }
         public PublicGetUserEntitlementOwnershipBySku.PublicGetUserEntitlementOwnershipBySkuBuilder PublicGetUserEntitlementOwnershipBySkuOp
         {
@@ -258,6 +266,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.TimedOwnership? GetUserEntitlementOwnershipByItemId(GetUserEntitlementOwnershipByItemId input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.EntitlementOwnership>? GetUserEntitlementOwnershipByItemIds(GetUserEntitlementOwnershipByItemIds input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -434,6 +450,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.TimedOwnership? PublicGetUserEntitlementOwnershipByItemId(PublicGetUserEntitlementOwnershipByItemId input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.EntitlementOwnership>? PublicGetUserEntitlementOwnershipByItemIds(PublicGetUserEntitlementOwnershipByItemIds input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

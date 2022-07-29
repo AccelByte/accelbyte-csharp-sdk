@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDisableUserMFAV4
     ///
-    /// 
-    /// 
     /// This endpoint requires ADMIN:NAMESPACE:{namespace}:USER:{userId} [DELETE] permission
     /// 
     /// 

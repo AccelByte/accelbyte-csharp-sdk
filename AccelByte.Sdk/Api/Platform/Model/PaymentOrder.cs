@@ -211,6 +211,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentOrderItemType MEDIA
             = new PaymentOrderItemType("MEDIA");
 
+        public static readonly PaymentOrderItemType OPTIONBOX
+            = new PaymentOrderItemType("OPTIONBOX");
+
         public static readonly PaymentOrderItemType SEASON
             = new PaymentOrderItemType("SEASON");
 

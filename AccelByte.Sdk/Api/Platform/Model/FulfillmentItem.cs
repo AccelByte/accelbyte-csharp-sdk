@@ -55,6 +55,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly FulfillmentItemItemType MEDIA
             = new FulfillmentItemItemType("MEDIA");
 
+        public static readonly FulfillmentItemItemType OPTIONBOX
+            = new FulfillmentItemItemType("OPTIONBOX");
+
         public static readonly FulfillmentItemItemType SEASON
             = new FulfillmentItemItemType("SEASON");
 

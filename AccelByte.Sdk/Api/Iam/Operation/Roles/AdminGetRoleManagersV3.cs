@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetRoleManagersV3
     ///
-    /// 
-    /// 
     /// Required permission 'ADMIN:ROLE [READ]'
     /// 
     /// 

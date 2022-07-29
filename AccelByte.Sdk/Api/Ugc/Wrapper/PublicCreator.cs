@@ -19,13 +19,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
 
         #region Operation Builders
-        public GetCreator.GetCreatorBuilder GetCreatorOp
+        public PublicSearchCreator.PublicSearchCreatorBuilder PublicSearchCreatorOp
         {
-            get { return Operation.GetCreator.Builder.SetWrapperObject(this); }
+            get { return Operation.PublicSearchCreator.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetCreator.PublicGetCreatorBuilder PublicGetCreatorOp
+        {
+            get { return Operation.PublicGetCreator.Builder.SetWrapperObject(this); }
         }
         #endregion
         
-        public Model.ModelsCreatorResponse? GetCreator(GetCreator input) {
+        public Model.ModelsPaginatedCreatorOverviewResponse? PublicSearchCreator(PublicSearchCreator input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsCreatorResponse? PublicGetCreator(PublicGetCreator input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

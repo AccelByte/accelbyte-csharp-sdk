@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateUserV4
     ///
-    /// 
-    /// 
     /// This endpoint requires ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE] permission
     /// 
     /// 

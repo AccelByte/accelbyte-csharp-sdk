@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicRemoveTrustedDeviceV4
     ///
-    /// 
-    /// 
     /// (Only for test)This endpoint is used to remove trusted device.
     /// 
     /// 

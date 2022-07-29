@@ -95,8 +95,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("optionBoxConfig")]
+        public OptionBoxConfig? OptionBoxConfig { get; set; }
+
         [JsonPropertyName("purchasable")]
         public bool? Purchasable { get; set; }
+
+        [JsonPropertyName("purchaseCondition")]
+        public PurchaseCondition? PurchaseCondition { get; set; }
 
         [JsonPropertyName("recurring")]
         public Recurring? Recurring { get; set; }
@@ -214,6 +220,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly BundledItemInfoItemType MEDIA
             = new BundledItemInfoItemType("MEDIA");
+
+        public static readonly BundledItemInfoItemType OPTIONBOX
+            = new BundledItemInfoItemType("OPTIONBOX");
 
         public static readonly BundledItemInfoItemType SEASON
             = new BundledItemInfoItemType("SEASON");

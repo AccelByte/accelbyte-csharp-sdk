@@ -18,8 +18,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// List user's statItems.
     /// Other detail info:
-    ///           *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
-    ///           *  Returns : stat items
+    /// 
+    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+    ///   *  Returns : stat items
     /// </summary>
     public class GetUserStatItems : AccelByte.Sdk.Core.Operation
     {

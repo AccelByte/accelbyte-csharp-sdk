@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// indirectBulkAcceptVersionedPolicyV2
     ///
-    ///  IMPORTANT: GOING TO DEPRECATE
+    /// IMPORTANT: GOING TO DEPRECATE
     /// 
     /// Accepts many legal policy versions all at once. Supply with localized version policy id, version policy id, policy id, userId, namespace, country code and client id to accept an agreement. This endpoint used by APIGateway during new user registration.
     /// Other detail info:

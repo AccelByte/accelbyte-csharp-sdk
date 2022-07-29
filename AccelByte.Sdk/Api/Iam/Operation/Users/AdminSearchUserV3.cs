@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminSearchUserV3
     ///
-    /// 
-    /// 
     /// Required permission ADMIN:NAMESPACE:{namespace}:USER [READ]
     /// 
     /// 
@@ -25,31 +23,33 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Endpoint behavior :
     /// 
-    ///           * by default this endpoint searches all users on the specified namespace
+    /// 
+    ///   * by default this endpoint searches all users on the specified namespace
     /// 
     /// 
-    ///           * if query parameter is defined, endpoint will search users whose email address, display name, username, or third party partially match with the query
+    ///   * if query parameter is defined, endpoint will search users whose email address, display name, username, or third party partially match with the query
     /// 
     /// 
-    ///           * if startDate and endDate parameters is defined, endpoint will search users which created on the certain date range
+    ///   * if startDate and endDate parameters is defined, endpoint will search users which created on the certain date range
     /// 
     /// 
-    ///           * if query, startDate and endDate parameters are defined, endpoint will search users whose email address and display name match and created on the certain date range
+    ///   * if query, startDate and endDate parameters are defined, endpoint will search users whose email address and display name match and created on the certain date range
     /// 
     /// 
-    ///           * if startDate parameter is defined, endpoint will search users that created start from the defined date
+    ///   * if startDate parameter is defined, endpoint will search users that created start from the defined date
     /// 
     /// 
-    ///           * if endDate parameter is defined, endpoint will search users that created until the defined date
+    ///   * if endDate parameter is defined, endpoint will search users that created until the defined date
     /// 
     /// 
-    ///           * if platformId parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformId they have linked to
+    ///   * if platformId parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformId they have linked to
     /// 
     /// 
-    ///           * if platformBy parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformUserId or platformDisplayName they have linked to, example value: platformUserId or platformDisplayName
+    ///   * if platformBy parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformUserId or platformDisplayName they have linked to, example value: platformUserId or platformDisplayName
     /// 
     /// 
-    ///           * if limit is not defined, The default limit is 100
+    ///   * if limit is not defined, The default limit is 100
+    /// 
     /// 
     /// 
     /// 

@@ -18,8 +18,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Create statItem for a user.
     /// Other detail info:
-    ///             *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
-    ///             *  Returns : created user's statItem
+    /// 
+    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
+    ///   *  Returns : created user's statItem
     /// </summary>
     public class CreateUserStatItem : AccelByte.Sdk.Core.Operation
     {

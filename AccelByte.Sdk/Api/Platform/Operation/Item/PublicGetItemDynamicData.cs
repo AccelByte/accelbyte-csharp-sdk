@@ -70,6 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
 
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -87,6 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
 
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/items/{itemId}/dynamic";

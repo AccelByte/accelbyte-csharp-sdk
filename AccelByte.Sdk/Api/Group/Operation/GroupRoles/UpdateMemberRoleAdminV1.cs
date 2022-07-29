@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// updateMemberRoleAdminV1
     ///
-    /// 
-    /// 
     /// Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [UPDATE]
     /// 
     /// 

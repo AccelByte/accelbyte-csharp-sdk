@@ -13,6 +13,17 @@ namespace AccelByte.Sdk.Core
     {
         private AccelByteSDK _SdkObject;
 
+        public Operations Operations
+        {
+            get
+            {
+                if (_Operations == null)
+                    _Operations = new Operations(_SdkObject);
+                return _Operations;
+            }
+        }
+        private Operations? _Operations = null;
+
         public GametelemetryOperations GametelemetryOperations
         {
             get

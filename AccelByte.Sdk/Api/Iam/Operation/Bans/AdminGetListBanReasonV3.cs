@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetListBanReasonV3
     ///
-    /// 
-    /// 
     /// Required permission 'ADMIN:BAN [READ]'
     /// 
     /// 

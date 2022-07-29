@@ -18,8 +18,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Bulk update user's statitems value.
     /// Other detail info:
-    ///             *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
-    ///             *  Returns : bulk updated result
+    /// 
+    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
+    ///   *  Returns : bulk updated result
     /// </summary>
     public class BulkIncUserStatItem1 : AccelByte.Sdk.Core.Operation
     {

@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// AdminDownloadContentPreview
     ///
     /// Required permission ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ]
+    /// 
+    ///  NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
     /// </summary>
     public class AdminDownloadContentPreview : AccelByte.Sdk.Core.Operation
     {

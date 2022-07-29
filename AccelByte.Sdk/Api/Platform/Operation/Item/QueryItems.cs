@@ -322,6 +322,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryItemsItemType MEDIA
             = new QueryItemsItemType("MEDIA");
 
+        public static readonly QueryItemsItemType OPTIONBOX
+            = new QueryItemsItemType("OPTIONBOX");
+
         public static readonly QueryItemsItemType SEASON
             = new QueryItemsItemType("SEASON");
 

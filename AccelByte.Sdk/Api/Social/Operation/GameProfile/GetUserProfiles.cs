@@ -18,8 +18,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Returns all profiles' header for a user.
     /// Other detail info:
-    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
-    ///         *  Returns : list of profiles
+    /// 
+    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
+    ///   *  Returns : list of profiles
     /// </summary>
     public class GetUserProfiles : AccelByte.Sdk.Core.Operation
     {

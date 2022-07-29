@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// PublicDownloadContentPreview
     ///
     /// Requires valid user token
+    /// 
+    ///  NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
     /// </summary>
     public class PublicDownloadContentPreview : AccelByte.Sdk.Core.Operation
     {

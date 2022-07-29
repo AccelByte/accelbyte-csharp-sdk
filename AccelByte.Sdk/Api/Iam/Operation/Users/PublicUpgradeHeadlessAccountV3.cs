@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicUpgradeHeadlessAccountV3
     ///
-    /// 
-    /// 
     /// If validateOnly is set false, consume code and upgrade headless account and automatically verified the email address if it is succeeded
     /// 
     /// 
@@ -41,13 +39,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Supported user data fields :
     /// 
     /// 
-    ///                       * displayName
     /// 
     /// 
-    ///                       * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
+    ///   * displayName
     /// 
     /// 
-    ///                       * country : format ISO3166-1 alpha-2 two letter, e.g. US
+    ///   * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
+    /// 
+    /// 
+    ///   * country : format ISO3166-1 alpha-2 two letter, e.g. US
+    /// 
     /// 
     /// 
     /// 

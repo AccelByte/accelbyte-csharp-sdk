@@ -81,18 +81,18 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void PutPlayerRecordHandlerV1(PutPlayerRecordHandlerV1 input) {
+        public Model.ModelsPlayerRecordResponse? PutPlayerRecordHandlerV1(PutPlayerRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void PostPlayerRecordHandlerV1(PostPlayerRecordHandlerV1 input) {
+        public Model.ModelsPlayerRecordResponse? PostPlayerRecordHandlerV1(PostPlayerRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -113,18 +113,18 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void PutPlayerPublicRecordHandlerV1(PutPlayerPublicRecordHandlerV1 input) {
+        public Model.ModelsPlayerRecordResponse? PutPlayerPublicRecordHandlerV1(PutPlayerPublicRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void PostPlayerPublicRecordHandlerV1(PostPlayerPublicRecordHandlerV1 input) {
+        public Model.ModelsPlayerRecordResponse? PostPlayerPublicRecordHandlerV1(PostPlayerPublicRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

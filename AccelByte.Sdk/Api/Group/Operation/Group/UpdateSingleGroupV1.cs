@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// updateSingleGroupV1
     ///
-    /// 
-    /// 
     /// Required valid user authentication
     /// 
     /// 

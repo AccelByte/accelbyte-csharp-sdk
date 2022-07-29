@@ -193,6 +193,20 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementOwnershipByItemId(op);
         }
 
+        public static List<Platform.Model.EntitlementOwnership>? Execute(
+            this GetUserEntitlementOwnershipByItemIds.GetUserEntitlementOwnershipByItemIdsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserEntitlementOwnershipByItemIds op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementOwnershipByItemIds(op);
+        }
+
         public static Platform.Model.TimedOwnership? Execute(
             this GetUserEntitlementOwnershipBySku.GetUserEntitlementOwnershipBySkuBuilder builder,
             string namespace_,
@@ -525,6 +539,20 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementOwnershipByItemId(op);
+        }
+
+        public static List<Platform.Model.EntitlementOwnership>? Execute(
+            this PublicGetUserEntitlementOwnershipByItemIds.PublicGetUserEntitlementOwnershipByItemIdsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetUserEntitlementOwnershipByItemIds op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementOwnershipByItemIds(op);
         }
 
         public static Platform.Model.TimedOwnership? Execute(

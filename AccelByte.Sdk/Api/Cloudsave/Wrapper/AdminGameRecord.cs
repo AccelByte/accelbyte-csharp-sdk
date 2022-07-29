@@ -57,18 +57,18 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminPutGameRecordHandlerV1(AdminPutGameRecordHandlerV1 input) {
+        public Model.ModelsGameRecordResponse? AdminPutGameRecordHandlerV1(AdminPutGameRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminPostGameRecordHandlerV1(AdminPostGameRecordHandlerV1 input) {
+        public Model.ModelsGameRecordResponse? AdminPostGameRecordHandlerV1(AdminPostGameRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

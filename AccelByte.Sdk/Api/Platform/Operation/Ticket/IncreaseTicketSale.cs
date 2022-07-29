@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// increaseTicketSale
     ///
-    ///  [SERVICE COMMUNICATION ONLY] increase ticket(code/key) sale.
+    /// [SERVICE COMMUNICATION ONLY] increase ticket(code/key) sale.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:TICKET", action=4 (UPDATE)

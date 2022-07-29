@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// UserAuthenticationV3
     ///
-    /// 
-    /// 
     /// This endpoint is being used to authenticate a user account.
     /// It validates user's email / username and password. Deactivated or login-banned users are unable to login
     /// Redirect URI and Client ID must be specified as a pair and only used to redirect to the specified

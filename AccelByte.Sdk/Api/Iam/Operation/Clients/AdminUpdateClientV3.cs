@@ -26,49 +26,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Fields Description:
     /// 
     /// 
-    ///           * clientName : The client name. It should not be empty if the field exists in the body. e.g E-commerce
     /// 
     /// 
-    ///           * namespace : The namespace where the client lives. e.g sample-game
+    ///   * clientName : The client name. It should not be empty if the field exists in the body. e.g E-commerce
     /// 
     /// 
-    ///           * redirectUri : Contains the redirect URI used in OAuth callback. It should not be empty if the field exists in the body. e.g https://example.net/platform
+    ///   * namespace : The namespace where the client lives. e.g sample-game
     /// 
     /// 
-    ///           * audiences : List of target client IDs who is intended to receive the token. e.g ["eaaa65618fe24293b00a61454182b435", "40073ee9bc3446d3a051a71b48509a5d"]
+    ///   * redirectUri : Contains the redirect URI used in OAuth callback. It should not be empty if the field exists in the body. e.g https://example.net/platform
     /// 
     /// 
-    ///           * baseUri : A base URI of the application. It is used in the audience checking for making sure the token is used by the right resource server. Required if the application type is a server. e.g https://example.net/platform
+    ///   * audiences : List of target client IDs who is intended to receive the token. e.g ["eaaa65618fe24293b00a61454182b435", "40073ee9bc3446d3a051a71b48509a5d"]
     /// 
     /// 
-    ///           * clientPermissions : Contains the client's permissions
+    ///   * baseUri : A base URI of the application. It is used in the audience checking for making sure the token is used by the right resource server. Required if the application type is a server. e.g https://example.net/platform
     /// 
     /// 
-    ///           * deletable : The flag to identify whether client is deletable (optional). e.g. true
+    ///   * clientPermissions : Contains the client's permissions
     /// 
     /// 
-    ///           * clientPlatform : available client platform (optional). default value: "".
+    ///   * deletable : The flag to identify whether client is deletable (optional). e.g. true
     /// 
     /// 
-    ///             * Playstation
+    ///   * clientPlatform : available client platform (optional). default value: "".
     /// 
     /// 
-    ///             * Xbox
+    ///     * Playstation
     /// 
     /// 
-    ///             * Steam
+    ///     * Xbox
     /// 
     /// 
-    ///             * Epic
+    ///     * Steam
     /// 
     /// 
-    ///             * IOS
+    ///     * Epic
     /// 
     /// 
-    ///             * GooglePlay
+    ///     * IOS
     /// 
     /// 
-    ///             * Nintendo
+    ///     * GooglePlay
+    /// 
+    /// 
+    ///     * Nintendo
     /// </summary>
     public class AdminUpdateClientV3 : AccelByte.Sdk.Core.Operation
     {

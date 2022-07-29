@@ -68,6 +68,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("optionBoxConfig")]
+        public OptionBoxConfig? OptionBoxConfig { get; set; }
+
         [JsonPropertyName("purchasable")]
         public bool? Purchasable { get; set; }
 
@@ -180,6 +183,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly ItemSnapshotItemType MEDIA
             = new ItemSnapshotItemType("MEDIA");
+
+        public static readonly ItemSnapshotItemType OPTIONBOX
+            = new ItemSnapshotItemType("OPTIONBOX");
 
         public static readonly ItemSnapshotItemType SEASON
             = new ItemSnapshotItemType("SEASON");

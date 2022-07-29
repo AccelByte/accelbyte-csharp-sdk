@@ -55,6 +55,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3.Builder.SetWrapperObject(this); }
         }
+        public RetrieveActiveOIDCClientsPublicV3.RetrieveActiveOIDCClientsPublicV3Builder RetrieveActiveOIDCClientsPublicV3Op
+        {
+            get { return Operation.RetrieveActiveOIDCClientsPublicV3.Builder.SetWrapperObject(this); }
+        }
         #endregion
         
         public List<Model.ModelThirdPartyLoginPlatformCredentialResponse>? RetrieveAllThirdPartyLoginPlatformCredentialV3(RetrieveAllThirdPartyLoginPlatformCredentialV3 input) {
@@ -122,6 +126,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public List<Model.ModelPublicThirdPartyPlatformInfo>? RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3(RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ModelPublicThirdPartyPlatformInfo>? RetrieveActiveOIDCClientsPublicV3(RetrieveActiveOIDCClientsPublicV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

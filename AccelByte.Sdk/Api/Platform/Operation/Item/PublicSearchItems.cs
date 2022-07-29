@@ -33,6 +33,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             : OperationBuilder<PublicSearchItemsBuilder>
         {
 
+            public PublicSearchItemsItemType? ItemType { get; set; }
+
             public int? Limit { get; set; }
 
             public int? Offset { get; set; }
@@ -47,6 +49,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             internal PublicSearchItemsBuilder() { }
 
+
+            public PublicSearchItemsBuilder SetItemType(PublicSearchItemsItemType _itemType)
+            {
+                ItemType = _itemType;
+                return this;
+            }
 
             public PublicSearchItemsBuilder SetLimit(int _limit)
             {
@@ -101,6 +109,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
+            if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType.Value;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
@@ -113,11 +122,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
 
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicSearchItems(
             string namespace_,            
+            PublicSearchItemsItemType? itemType,            
             int? limit,            
             int? offset,            
             string? region,            
@@ -128,6 +139,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             
+            if (itemType is not null) QueryParams["itemType"] = itemType.Value;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (region is not null) QueryParams["region"] = region;
@@ -140,6 +152,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             
             
 
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/platform/public/namespaces/{namespace}/items/search";
@@ -171,6 +184,48 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
             
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class PublicSearchItemsItemType : StringEnum<PublicSearchItemsItemType>
+    {
+        public static readonly PublicSearchItemsItemType APP
+            = new PublicSearchItemsItemType("APP");
+
+        public static readonly PublicSearchItemsItemType BUNDLE
+            = new PublicSearchItemsItemType("BUNDLE");
+
+        public static readonly PublicSearchItemsItemType CODE
+            = new PublicSearchItemsItemType("CODE");
+
+        public static readonly PublicSearchItemsItemType COINS
+            = new PublicSearchItemsItemType("COINS");
+
+        public static readonly PublicSearchItemsItemType INGAMEITEM
+            = new PublicSearchItemsItemType("INGAMEITEM");
+
+        public static readonly PublicSearchItemsItemType MEDIA
+            = new PublicSearchItemsItemType("MEDIA");
+
+        public static readonly PublicSearchItemsItemType OPTIONBOX
+            = new PublicSearchItemsItemType("OPTIONBOX");
+
+        public static readonly PublicSearchItemsItemType SEASON
+            = new PublicSearchItemsItemType("SEASON");
+
+        public static readonly PublicSearchItemsItemType SUBSCRIPTION
+            = new PublicSearchItemsItemType("SUBSCRIPTION");
+
+
+        public static implicit operator PublicSearchItemsItemType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicSearchItemsItemType(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

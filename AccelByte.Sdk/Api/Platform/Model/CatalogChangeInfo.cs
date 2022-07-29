@@ -109,6 +109,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly CatalogChangeInfoItemType MEDIA
             = new CatalogChangeInfoItemType("MEDIA");
 
+        public static readonly CatalogChangeInfoItemType OPTIONBOX
+            = new CatalogChangeInfoItemType("OPTIONBOX");
+
         public static readonly CatalogChangeInfoItemType SEASON
             = new CatalogChangeInfoItemType("SEASON");
 

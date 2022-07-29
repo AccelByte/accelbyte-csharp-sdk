@@ -155,6 +155,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly PublicGetUserEntitlementOwnershipBySkuEntitlementClazz MEDIA
             = new PublicGetUserEntitlementOwnershipBySkuEntitlementClazz("MEDIA");
 
+        public static readonly PublicGetUserEntitlementOwnershipBySkuEntitlementClazz OPTIONBOX
+            = new PublicGetUserEntitlementOwnershipBySkuEntitlementClazz("OPTIONBOX");
+
         public static readonly PublicGetUserEntitlementOwnershipBySkuEntitlementClazz SUBSCRIPTION
             = new PublicGetUserEntitlementOwnershipBySkuEntitlementClazz("SUBSCRIPTION");
 

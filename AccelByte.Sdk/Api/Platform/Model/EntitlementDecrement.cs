@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class EntitlementDecrement : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("options")]
+        public List<string>? Options { get; set; }
+
         [JsonPropertyName("useCount")]
         public int? UseCount { get; set; }
 

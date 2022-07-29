@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
     /// <summary>
     /// UpdateRolePermissions
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
@@ -63,25 +61,28 @@ namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
     /// 
     /// 
     /// 
-    ///         1. Seconds: 0-59 * / , -
     /// 
     /// 
-    ///         2. Minutes: 0-59 * / , -
+    ///   1. Seconds: 0-59 * / , -
     /// 
     /// 
-    ///         3. Hours: 0-23 * / , -
+    ///   2. Minutes: 0-59 * / , -
     /// 
     /// 
-    ///         4. Day of month: 1-31 * / , - L W
+    ///   3. Hours: 0-23 * / , -
     /// 
     /// 
-    ///         5. Month: 1-12 JAN-DEC * / , -
+    ///   4. Day of month: 1-31 * / , - L W
     /// 
     /// 
-    ///         6. Day of week: 0-6 SUN-SAT * / , - L #
+    ///   5. Month: 1-12 JAN-DEC * / , -
     /// 
     /// 
-    ///         7. Year: 1970-2099 * / , -
+    ///   6. Day of week: 0-6 SUN-SAT * / , - L #
+    /// 
+    /// 
+    ///   7. Year: 1970-2099 * / , -
+    /// 
     /// 
     /// 
     /// 
@@ -91,34 +92,39 @@ namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
     /// 
     /// 
     /// 
-    ///         1. *: all values in the fields, e.g. * in seconds fields indicates every second
     /// 
     /// 
-    ///         2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+    ///   1. *: all values in the fields, e.g. * in seconds fields indicates every second
     /// 
     /// 
-    ///         3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+    ///   2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
     /// 
     /// 
-    ///         4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+    ///   3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
     /// 
     /// 
-    ///         5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+    ///   4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
     /// 
     /// 
-    ///         6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+    ///   5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
     /// 
     /// 
-    ///         7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+    ///   6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+    /// 
+    /// 
+    ///   7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+    /// 
     /// 
     /// 
     /// Endpoint migration guide
     /// 
     /// 
-    ///         * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions [POST]
     /// 
     /// 
-    ///         * Note:
+    ///   * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions [POST]
+    /// 
+    /// 
+    ///   * Note:
     /// </summary>
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class UpdateRolePermissions : AccelByte.Sdk.Core.Operation

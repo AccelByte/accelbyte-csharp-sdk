@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// listBasicItemsByFeatures
     ///
-    ///  [SERVICE COMMUNICATION ONLY] This API is used to list basic items by features.
+    /// [SERVICE COMMUNICATION ONLY] This API is used to list basic items by features.
     /// 
     /// Other detail info:
     /// 

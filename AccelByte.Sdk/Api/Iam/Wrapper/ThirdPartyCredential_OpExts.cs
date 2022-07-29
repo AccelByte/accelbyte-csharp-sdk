@@ -141,5 +141,19 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3(op);
         }
 
+        public static List<Iam.Model.ModelPublicThirdPartyPlatformInfo>? Execute(
+            this RetrieveActiveOIDCClientsPublicV3.RetrieveActiveOIDCClientsPublicV3Builder builder,
+            string namespace_,
+            string clientId
+        )
+        {
+            RetrieveActiveOIDCClientsPublicV3 op = builder.Build(
+                namespace_,
+                clientId
+            );
+
+            return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveActiveOIDCClientsPublicV3(op);
+        }
+
     }
 }

@@ -132,7 +132,8 @@
 ### Public Creator Wrapper:  [PublicCreator](../AccelByte.Sdk/Api/Ugc/Wrapper/PublicCreator.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/ugc/v1/public/namespaces/{namespace}/users/{userId}` | GET | GetCreator | [GetCreator](../AccelByte.Sdk/Api/Ugc/Operation/PublicCreator/GetCreator.cs) | [GetCreator](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicCreator/GetCreator.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users` | GET | PublicSearchCreator | [PublicSearchCreator](../AccelByte.Sdk/Api/Ugc/Operation/PublicCreator/PublicSearchCreator.cs) | [PublicSearchCreator](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicCreator/PublicSearchCreator.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}` | GET | PublicGetCreator | [PublicGetCreator](../AccelByte.Sdk/Api/Ugc/Operation/PublicCreator/PublicGetCreator.cs) | [PublicGetCreator](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicCreator/PublicGetCreator.cs) |
 
 ### Public Channel Wrapper:  [PublicChannel](../AccelByte.Sdk/Api/Ugc/Wrapper/PublicChannel.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -190,6 +191,7 @@
 | `models.PaginatedGroupResponse` | [ModelsPaginatedGroupResponse](../AccelByte.Sdk/Api/Ugc/Model/ModelsPaginatedGroupResponse.cs) |
 | `models.PagingCursor` | [ModelsPagingCursor](../AccelByte.Sdk/Api/Ugc/Model/ModelsPagingCursor.cs) |
 | `models.PayloadURL` | [ModelsPayloadURL](../AccelByte.Sdk/Api/Ugc/Model/ModelsPayloadURL.cs) |
+| `models.PreviewURL` | [ModelsPreviewURL](../AccelByte.Sdk/Api/Ugc/Model/ModelsPreviewURL.cs) |
 | `models.PublicGetContentBulkRequest` | [ModelsPublicGetContentBulkRequest](../AccelByte.Sdk/Api/Ugc/Model/ModelsPublicGetContentBulkRequest.cs) |
 | `models.ScreenshotResponse` | [ModelsScreenshotResponse](../AccelByte.Sdk/Api/Ugc/Model/ModelsScreenshotResponse.cs) |
 | `models.UpdateScreenshotRequest` | [ModelsUpdateScreenshotRequest](../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateScreenshotRequest.cs) |
@@ -197,5 +199,6 @@
 | `models.UserFollowRequest` | [ModelsUserFollowRequest](../AccelByte.Sdk/Api/Ugc/Model/ModelsUserFollowRequest.cs) |
 | `models.UserFollowResponse` | [ModelsUserFollowResponse](../AccelByte.Sdk/Api/Ugc/Model/ModelsUserFollowResponse.cs) |
 | `models.createScreenshotRequestItem` | [ModelsCreateScreenshotRequestItem](../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateScreenshotRequestItem.cs) |
+| `models.previewMetadata` | [ModelsPreviewMetadata](../AccelByte.Sdk/Api/Ugc/Model/ModelsPreviewMetadata.cs) |
 | `models.updateScreenshot` | [ModelsUpdateScreenshot](../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateScreenshot.cs) |
 | `response.Error` | [ResponseError](../AccelByte.Sdk/Api/Ugc/Model/ResponseError.cs) |

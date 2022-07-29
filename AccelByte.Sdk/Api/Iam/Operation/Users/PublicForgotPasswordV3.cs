@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicForgotPasswordV3
     ///
-    /// 
-    /// 
-    ///  Special note for publisher-game scenario:
+    /// Special note for publisher-game scenario:
     /// Game Client should provide game namespace path parameter and Publisher
     /// Client should provide publisher namespace path parameter.
     /// 

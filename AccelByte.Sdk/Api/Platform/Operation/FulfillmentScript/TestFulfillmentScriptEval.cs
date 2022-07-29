@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testFulfillmentScriptEval
     ///
-    ///  [TEST FACILITY ONLY] Test eval fulfillment script.
+    /// [TEST FACILITY ONLY] Test eval fulfillment script.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:FULFILLMENT", action=2 (READ)

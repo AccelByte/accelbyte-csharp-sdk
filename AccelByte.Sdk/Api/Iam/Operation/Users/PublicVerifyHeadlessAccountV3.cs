@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicVerifyHeadlessAccountV3
     ///
-    /// 
-    /// 
     /// Require valid user authorization
     /// action code : 10124
     /// </summary>

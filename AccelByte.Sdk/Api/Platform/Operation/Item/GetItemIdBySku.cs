@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getItemIdBySku
     ///
-    ///  [SERVICE COMMUNICATION ONLY] This API is used to get the itemId by sku.
+    /// [SERVICE COMMUNICATION ONLY] This API is used to get the itemId by sku.
     /// 
     /// Other detail info:
     /// 

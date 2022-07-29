@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeletePlatformLinkV2
     ///
-    /// 
-    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [DELETE]'.
     /// 
     /// 
@@ -28,34 +26,37 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///           * steam
     /// 
     /// 
-    ///           * steamopenid
+    ///   * steam
     /// 
     /// 
-    ///           * facebook
+    ///   * steamopenid
     /// 
     /// 
-    ///           * google
+    ///   * facebook
     /// 
     /// 
-    ///           * oculus
+    ///   * google
     /// 
     /// 
-    ///           * twitch
+    ///   * oculus
     /// 
     /// 
-    ///           * android
+    ///   * twitch
     /// 
     /// 
-    ///           * ios
+    ///   * android
     /// 
     /// 
-    ///           * device
+    ///   * ios
     /// 
     /// 
-    ///           * discord
+    ///   * device
+    /// 
+    /// 
+    ///   * discord
+    /// 
     /// 
     /// 
     /// 

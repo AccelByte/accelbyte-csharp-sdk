@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetInputValidations
     ///
-    /// 
-    /// 
     /// Required permission 'ADMIN:CONFIGURATION'[READ]
     /// 
     /// 

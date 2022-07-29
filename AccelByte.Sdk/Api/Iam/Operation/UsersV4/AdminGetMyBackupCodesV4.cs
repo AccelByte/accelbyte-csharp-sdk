@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetMyBackupCodesV4
     ///
-    /// 
-    /// 
     /// This endpoint is used to get 8-digits backup codes.
     /// Each code is a one-time code and will be deleted once used.
     /// 

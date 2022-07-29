@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetUserPlatformAccountsV3
     ///
-    /// 
-    /// 
     /// This endpoint retrieves platform accounts linked to user. Required valid user authorization.
     /// 
     /// action code: 10128
