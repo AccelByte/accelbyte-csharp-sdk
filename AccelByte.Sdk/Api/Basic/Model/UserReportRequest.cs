@@ -13,12 +13,15 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public string? Category { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("gameSessionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? GameSessionId { get; set; }
 
         [JsonPropertyName("subcategory")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Subcategory { get; set; }
 
         [JsonPropertyName("userId")]

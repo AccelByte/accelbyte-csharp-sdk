@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class RedeemableItem : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("extraSubscriptionDays")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? ExtraSubscriptionDays { get; set; }
 
         [JsonPropertyName("itemId")]
@@ -19,6 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? ItemName { get; set; }
 
         [JsonPropertyName("quantity")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Quantity { get; set; }
 
     }

@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Basic.Model
     public class ADTOObjectForEqu8UserBanStatus : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("expires")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? Expires { get; set; }
 
         [JsonPropertyName("userId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserId { get; set; }
 
     }

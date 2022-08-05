@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class GoogleIAPReceipt : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("autoAck")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? AutoAck { get; set; }
 
         [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
         [JsonPropertyName("orderId")]
@@ -31,6 +33,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? PurchaseToken { get; set; }
 
         [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
 
     }

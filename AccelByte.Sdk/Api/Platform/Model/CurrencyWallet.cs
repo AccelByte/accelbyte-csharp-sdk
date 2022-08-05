@@ -22,15 +22,18 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("totalPermanentBalance")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? TotalPermanentBalance { get; set; }
 
         [JsonPropertyName("totalTimeLimitedBalance")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? TotalTimeLimitedBalance { get; set; }
 
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
 
         [JsonPropertyName("walletInfos")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<WalletInfo>? WalletInfos { get; set; }
 
     }

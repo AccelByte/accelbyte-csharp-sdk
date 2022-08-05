@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
     public class UserZipCode : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("zipCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ZipCode { get; set; }
 
     }

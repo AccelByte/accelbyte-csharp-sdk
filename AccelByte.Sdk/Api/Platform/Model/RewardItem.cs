@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class RewardItem : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("duration")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Duration { get; set; }
 
         [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemId { get; set; }
 
         [JsonPropertyName("quantity")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Quantity { get; set; }
 
     }

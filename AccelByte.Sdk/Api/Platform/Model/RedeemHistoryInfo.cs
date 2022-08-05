@@ -25,9 +25,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("orderNo")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? OrderNo { get; set; }
 
         [JsonPropertyName("redeemedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? RedeemedAt { get; set; }
 
         [JsonPropertyName("updatedAt")]

@@ -10,39 +10,48 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class RewardInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("createdAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("eventTopic")]
         public string? EventTopic { get; set; }
 
         [JsonPropertyName("maxAwarded")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxAwarded { get; set; }
 
         [JsonPropertyName("maxAwardedPerUser")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxAwardedPerUser { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("namespaceExpression")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? NamespaceExpression { get; set; }
 
         [JsonPropertyName("rewardCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? RewardCode { get; set; }
 
         [JsonPropertyName("rewardConditions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<RewardCondition>? RewardConditions { get; set; }
 
         [JsonPropertyName("rewardId")]
         public string? RewardId { get; set; }
 
         [JsonPropertyName("updatedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? UpdatedAt { get; set; }
 
         [JsonPropertyName("userIdExpression")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserIdExpression { get; set; }
 
     }

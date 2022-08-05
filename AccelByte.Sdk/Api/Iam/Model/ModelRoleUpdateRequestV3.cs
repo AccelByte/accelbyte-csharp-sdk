@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class ModelRoleUpdateRequestV3 : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("deletable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Deletable { get; set; }
 
         [JsonPropertyName("isWildcard")]

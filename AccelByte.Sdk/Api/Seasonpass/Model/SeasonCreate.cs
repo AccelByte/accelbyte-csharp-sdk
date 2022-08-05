@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class SeasonCreate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("autoClaim")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? AutoClaim { get; set; }
 
         [JsonPropertyName("defaultLanguage")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DefaultLanguage { get; set; }
 
         [JsonPropertyName("defaultRequiredExp")]
@@ -25,9 +27,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public DateTime? End { get; set; }
 
         [JsonPropertyName("excessStrategy")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ExcessStrategy? ExcessStrategy { get; set; }
 
         [JsonPropertyName("images")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<Image>? Images { get; set; }
 
         [JsonPropertyName("localizations")]

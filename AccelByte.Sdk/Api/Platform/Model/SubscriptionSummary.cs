@@ -12,9 +12,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class SubscriptionSummary : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("currentPeriodEnd")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CurrentPeriodEnd { get; set; }
 
         [JsonPropertyName("currentPeriodStart")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CurrentPeriodStart { get; set; }
 
         [JsonPropertyName("id")]
@@ -27,6 +29,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("sku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
 
         [JsonPropertyName("status")]
@@ -34,6 +37,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public SubscriptionSummaryStatus? Status { get; set; }
 
         [JsonPropertyName("subscribedBy")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public SubscriptionSummarySubscribedBy? SubscribedBy { get; set; }
 

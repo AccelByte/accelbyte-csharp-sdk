@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class TimeLimitedBalance : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("balance")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? Balance { get; set; }
 
         [JsonPropertyName("balanceSource")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? BalanceSource { get; set; }
 
         [JsonPropertyName("expireAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? ExpireAt { get; set; }
 
     }

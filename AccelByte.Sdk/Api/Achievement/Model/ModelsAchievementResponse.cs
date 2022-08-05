@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Achievement.Model
         public Dictionary<string, string>? Description { get; set; }
 
         [JsonPropertyName("goalValue")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public double? GoalValue { get; set; }
 
         [JsonPropertyName("hidden")]
@@ -43,6 +44,7 @@ namespace AccelByte.Sdk.Api.Achievement.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("statCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? StatCode { get; set; }
 
         [JsonPropertyName("tags")]

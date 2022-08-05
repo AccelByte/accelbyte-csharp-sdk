@@ -12,9 +12,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PaymentOrderChargeStatus : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("charging")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Charging { get; set; }
 
         [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public PaymentOrderChargeStatusStatus? Status { get; set; }
 

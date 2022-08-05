@@ -10,21 +10,27 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class ModelUserUpdateRequestV3 : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("avatarUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AvatarUrl { get; set; }
 
         [JsonPropertyName("country")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Country { get; set; }
 
         [JsonPropertyName("dateOfBirth")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DateOfBirth { get; set; }
 
         [JsonPropertyName("displayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DisplayName { get; set; }
 
         [JsonPropertyName("languageTag")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LanguageTag { get; set; }
 
         [JsonPropertyName("userName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserName { get; set; }
 
     }

@@ -12,13 +12,16 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class IAPItemEntry : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("itemIdentity")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemIdentity { get; set; }
 
         [JsonPropertyName("itemIdentityType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public IAPItemEntryItemIdentityType? ItemIdentityType { get; set; }
 
         [JsonPropertyName("platformProductIdMap")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, string>? PlatformProductIdMap { get; set; }
 
     }

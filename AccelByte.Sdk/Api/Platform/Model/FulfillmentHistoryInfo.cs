@@ -12,24 +12,30 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class FulfillmentHistoryInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("code")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Code { get; set; }
 
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("creditSummaries")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<CreditSummary>? CreditSummaries { get; set; }
 
         [JsonPropertyName("entitlementSummaries")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<EntitlementSummary>? EntitlementSummaries { get; set; }
 
         [JsonPropertyName("fulfillItems")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<FulfillmentItem>? FulfillItems { get; set; }
 
         [JsonPropertyName("fulfillmentError")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public FulfillmentError? FulfillmentError { get; set; }
 
         [JsonPropertyName("grantedItemIds")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? GrantedItemIds { get; set; }
 
         [JsonPropertyName("id")]
@@ -39,6 +45,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("orderNo")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? OrderNo { get; set; }
 
         [JsonPropertyName("status")]

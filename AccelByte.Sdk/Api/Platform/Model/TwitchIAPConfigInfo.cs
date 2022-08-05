@@ -10,15 +10,18 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class TwitchIAPConfigInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("clientId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ClientId { get; set; }
 
         [JsonPropertyName("clientSecret")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ClientSecret { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("organizationId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? OrganizationId { get; set; }
 
     }

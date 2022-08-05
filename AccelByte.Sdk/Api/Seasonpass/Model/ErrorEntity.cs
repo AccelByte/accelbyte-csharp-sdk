@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class ErrorEntity : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("devStackTrace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DevStackTrace { get; set; }
 
         [JsonPropertyName("errorCode")]
@@ -19,6 +20,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? ErrorMessage { get; set; }
 
         [JsonPropertyName("messageVariables")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, string>? MessageVariables { get; set; }
 
     }

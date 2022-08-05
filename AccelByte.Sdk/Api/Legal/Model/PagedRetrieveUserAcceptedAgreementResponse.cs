@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Legal.Model
     public class PagedRetrieveUserAcceptedAgreementResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("data")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<RetrieveUserAcceptedAgreementResponse>? Data { get; set; }
 
         [JsonPropertyName("paging")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Paging? Paging { get; set; }
 
     }

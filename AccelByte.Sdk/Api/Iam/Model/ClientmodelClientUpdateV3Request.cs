@@ -10,27 +10,34 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class ClientmodelClientUpdateV3Request : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("audiences")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Audiences { get; set; }
 
         [JsonPropertyName("baseUri")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? BaseUri { get; set; }
 
         [JsonPropertyName("clientName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ClientName { get; set; }
 
         [JsonPropertyName("clientPermissions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<AccountcommonPermissionV3>? ClientPermissions { get; set; }
 
         [JsonPropertyName("clientPlatform")]
         public string? ClientPlatform { get; set; }
 
         [JsonPropertyName("deletable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Deletable { get; set; }
 
         [JsonPropertyName("namespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("redirectUri")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? RedirectUri { get; set; }
 
     }

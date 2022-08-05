@@ -12,13 +12,16 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class BasicItem : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("appId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AppId { get; set; }
 
         [JsonPropertyName("appType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public BasicItemAppType? AppType { get; set; }
 
         [JsonPropertyName("baseAppId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? BaseAppId { get; set; }
 
         [JsonPropertyName("createdAt")]
@@ -29,6 +32,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public BasicItemEntitlementType? EntitlementType { get; set; }
 
         [JsonPropertyName("features")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Features { get; set; }
 
         [JsonPropertyName("itemId")]
@@ -45,10 +49,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("seasonType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public BasicItemSeasonType? SeasonType { get; set; }
 
         [JsonPropertyName("sku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
 
         [JsonPropertyName("status")]
@@ -56,12 +62,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public BasicItemStatus? Status { get; set; }
 
         [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
 
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
 
         [JsonPropertyName("useCount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? UseCount { get; set; }
 
     }

@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
     public class UserProfileBulkRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("userIds")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? UserIds { get; set; }
 
     }

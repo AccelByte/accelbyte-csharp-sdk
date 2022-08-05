@@ -10,15 +10,19 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class ADTOObjectForUpdateXboxAchievementCompletePercentageAPI : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("achievements")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<XboxAchievementRequest>? Achievements { get; set; }
 
         [JsonPropertyName("serviceConfigId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ServiceConfigId { get; set; }
 
         [JsonPropertyName("titleId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TitleId { get; set; }
 
         [JsonPropertyName("xboxUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? XboxUserId { get; set; }
 
     }

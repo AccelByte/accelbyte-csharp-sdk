@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class CurrencyUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("localizationDescriptions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, string>? LocalizationDescriptions { get; set; }
 
     }

@@ -10,15 +10,19 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class TaxResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("enableTax")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? EnableTax { get; set; }
 
         [JsonPropertyName("formattedTax")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? FormattedTax { get; set; }
 
         [JsonPropertyName("state")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? State { get; set; }
 
         [JsonPropertyName("tax")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Tax { get; set; }
 
     }

@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class ModelDisableUserRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("Reason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Reason { get; set; }
 
     }

@@ -12,16 +12,20 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class AvailablePredicateObject : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("availableComparisons")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<AvailableComparisonObject>? AvailableComparisons { get; set; }
 
         [JsonPropertyName("predicateType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public AvailablePredicateObjectPredicateType? PredicateType { get; set; }
 
         [JsonPropertyName("showAnyOf")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? ShowAnyOf { get; set; }
 
         [JsonPropertyName("valueType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public AvailablePredicateObjectValueType? ValueType { get; set; }
 

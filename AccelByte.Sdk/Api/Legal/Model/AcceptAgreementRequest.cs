@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public bool? IsAccepted { get; set; }
 
         [JsonPropertyName("isNeedToSendEventMarketing")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IsNeedToSendEventMarketing { get; set; }
 
         [JsonPropertyName("localizedPolicyVersionId")]

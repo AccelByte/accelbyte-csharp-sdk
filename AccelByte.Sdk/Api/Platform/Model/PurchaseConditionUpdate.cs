@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PurchaseConditionUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("purchaseCondition")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public PurchaseCondition? PurchaseCondition { get; set; }
 
     }

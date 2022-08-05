@@ -12,22 +12,28 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class ItemSnapshot : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("appId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AppId { get; set; }
 
         [JsonPropertyName("appType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public ItemSnapshotAppType? AppType { get; set; }
 
         [JsonPropertyName("baseAppId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? BaseAppId { get; set; }
 
         [JsonPropertyName("boothName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? BoothName { get; set; }
 
         [JsonPropertyName("createdAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("entitlementType")]
@@ -35,15 +41,18 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public ItemSnapshotEntitlementType? EntitlementType { get; set; }
 
         [JsonPropertyName("features")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Features { get; set; }
 
         [JsonPropertyName("itemId")]
         public string? ItemId { get; set; }
 
         [JsonPropertyName("itemIds")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? ItemIds { get; set; }
 
         [JsonPropertyName("itemQty")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, int>? ItemQty { get; set; }
 
         [JsonPropertyName("itemType")]
@@ -54,12 +63,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Language { get; set; }
 
         [JsonPropertyName("listable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Listable { get; set; }
 
         [JsonPropertyName("maxCount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxCount { get; set; }
 
         [JsonPropertyName("maxCountPerUser")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxCountPerUser { get; set; }
 
         [JsonPropertyName("name")]
@@ -69,49 +81,62 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("optionBoxConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public OptionBoxConfig? OptionBoxConfig { get; set; }
 
         [JsonPropertyName("purchasable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Purchasable { get; set; }
 
         [JsonPropertyName("recurring")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Recurring? Recurring { get; set; }
 
         [JsonPropertyName("region")]
         public string? Region { get; set; }
 
         [JsonPropertyName("regionDataItem")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public RegionDataItem? RegionDataItem { get; set; }
 
         [JsonPropertyName("seasonType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public ItemSnapshotSeasonType? SeasonType { get; set; }
 
         [JsonPropertyName("sku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
 
         [JsonPropertyName("stackable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Stackable { get; set; }
 
         [JsonPropertyName("targetCurrencyCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TargetCurrencyCode { get; set; }
 
         [JsonPropertyName("targetItemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TargetItemId { get; set; }
 
         [JsonPropertyName("targetNamespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TargetNamespace { get; set; }
 
         [JsonPropertyName("thumbnailUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ThumbnailUrl { get; set; }
 
         [JsonPropertyName("title")]
         public string? Title { get; set; }
 
         [JsonPropertyName("updatedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? UpdatedAt { get; set; }
 
         [JsonPropertyName("useCount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? UseCount { get; set; }
 
     }

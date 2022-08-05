@@ -13,9 +13,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public bool? Pending { get; set; }
 
         [JsonPropertyName("reason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Reason { get; set; }
 
         [JsonPropertyName("redirectUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? RedirectUrl { get; set; }
 
         [JsonPropertyName("success")]

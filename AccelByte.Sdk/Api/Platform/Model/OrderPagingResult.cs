@@ -13,9 +13,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public List<OrderInfo>? Data { get; set; }
 
         [JsonPropertyName("paging")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Paging? Paging { get; set; }
 
         [JsonPropertyName("total")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? Total { get; set; }
 
     }

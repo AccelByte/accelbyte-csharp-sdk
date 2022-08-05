@@ -12,18 +12,23 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class FulfillmentItem : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("extraSubscriptionDays")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? ExtraSubscriptionDays { get; set; }
 
         [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemId { get; set; }
 
         [JsonPropertyName("itemName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemName { get; set; }
 
         [JsonPropertyName("itemSku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemSku { get; set; }
 
         [JsonPropertyName("itemType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public FulfillmentItemItemType? ItemType { get; set; }
 
@@ -31,6 +36,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public int? Quantity { get; set; }
 
         [JsonPropertyName("storeId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? StoreId { get; set; }
 
     }

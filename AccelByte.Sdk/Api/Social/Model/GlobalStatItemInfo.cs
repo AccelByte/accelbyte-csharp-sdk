@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Social.Model
         public string? StatName { get; set; }
 
         [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
 
         [JsonPropertyName("updatedAt")]

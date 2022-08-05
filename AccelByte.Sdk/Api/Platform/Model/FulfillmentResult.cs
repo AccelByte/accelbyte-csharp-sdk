@@ -10,15 +10,18 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class FulfillmentResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("creditSummaries")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<CreditSummary>? CreditSummaries { get; set; }
 
         [JsonPropertyName("entitlementSummaries")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<EntitlementSummary>? EntitlementSummaries { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("subscriptionSummaries")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<SubscriptionSummary>? SubscriptionSummaries { get; set; }
 
         [JsonPropertyName("userId")]

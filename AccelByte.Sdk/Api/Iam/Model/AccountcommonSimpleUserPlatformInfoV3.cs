@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class AccountcommonSimpleUserPlatformInfoV3 : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("displayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DisplayName { get; set; }
 
         [JsonPropertyName("linkedAt")]
@@ -22,6 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? OriginNamespace { get; set; }
 
         [JsonPropertyName("platformId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformId { get; set; }
 
     }

@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Legal.Model
     public class RetrievePolicyVersionResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("basePolicyId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? BasePolicyId { get; set; }
 
         [JsonPropertyName("createdAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("displayVersion")]
@@ -31,18 +34,22 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public bool? IsInEffect { get; set; }
 
         [JsonPropertyName("localizedPolicyVersions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<LocalizedPolicyVersionObject>? LocalizedPolicyVersions { get; set; }
 
         [JsonPropertyName("policyId")]
         public string? PolicyId { get; set; }
 
         [JsonPropertyName("publishedDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? PublishedDate { get; set; }
 
         [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Status { get; set; }
 
         [JsonPropertyName("updatedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? UpdatedAt { get; set; }
 
     }

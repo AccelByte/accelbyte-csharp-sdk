@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class PassCreate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("autoEnroll")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? AutoEnroll { get; set; }
 
         [JsonPropertyName("code")]
@@ -19,6 +20,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public int? DisplayOrder { get; set; }
 
         [JsonPropertyName("images")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<Image>? Images { get; set; }
 
         [JsonPropertyName("localizations")]

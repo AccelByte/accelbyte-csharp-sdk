@@ -12,19 +12,24 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class EpicGamesReconcileResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("epicGamesItemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? EpicGamesItemId { get; set; }
 
         [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemId { get; set; }
 
         [JsonPropertyName("sku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
 
         [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public EpicGamesReconcileResultStatus? Status { get; set; }
 
         [JsonPropertyName("transactionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TransactionId { get; set; }
 
     }

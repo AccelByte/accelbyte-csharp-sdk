@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? CurrencySymbol { get; set; }
 
         [JsonPropertyName("id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
 
         [JsonPropertyName("namespace")]
@@ -30,9 +31,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? UserId { get; set; }
 
         [JsonPropertyName("walletInfos")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<WalletInfo>? WalletInfos { get; set; }
 
         [JsonPropertyName("walletStatus")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public PlatformWalletWalletStatus? WalletStatus { get; set; }
 

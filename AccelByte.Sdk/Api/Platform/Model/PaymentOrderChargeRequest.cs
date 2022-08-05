@@ -12,9 +12,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PaymentOrderChargeRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("extTxId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ExtTxId { get; set; }
 
         [JsonPropertyName("paymentMethod")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentMethod { get; set; }
 
         [JsonPropertyName("paymentProvider")]

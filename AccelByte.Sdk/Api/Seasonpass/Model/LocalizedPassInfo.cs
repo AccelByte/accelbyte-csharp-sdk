@@ -19,12 +19,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("displayOrder")]
         public string? DisplayOrder { get; set; }
 
         [JsonPropertyName("images")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<Image>? Images { get; set; }
 
         [JsonPropertyName("language")]
@@ -40,6 +42,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? SeasonId { get; set; }
 
         [JsonPropertyName("title")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Title { get; set; }
 
         [JsonPropertyName("updatedAt")]

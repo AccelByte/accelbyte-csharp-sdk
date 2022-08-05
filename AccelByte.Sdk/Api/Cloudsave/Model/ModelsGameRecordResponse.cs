@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("set_by")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SetBy { get; set; }
 
         [JsonPropertyName("updated_at")]

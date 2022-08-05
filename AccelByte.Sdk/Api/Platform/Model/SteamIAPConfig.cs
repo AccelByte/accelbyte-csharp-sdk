@@ -10,21 +10,27 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class SteamIAPConfig : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("appId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AppId { get; set; }
 
         [JsonPropertyName("createdAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("namespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("publisherAuthenticationKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PublisherAuthenticationKey { get; set; }
 
         [JsonPropertyName("rvn")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Rvn { get; set; }
 
         [JsonPropertyName("updatedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? UpdatedAt { get; set; }
 
     }

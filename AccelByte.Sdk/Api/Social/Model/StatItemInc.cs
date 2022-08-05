@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Social.Model
     public class StatItemInc : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("inc")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public double? Inc { get; set; }
 
     }

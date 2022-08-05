@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? AuthType { get; set; }
 
         [JsonPropertyName("avatarUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AvatarUrl { get; set; }
 
         [JsonPropertyName("bans")]
@@ -55,6 +56,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<AccountcommonNamespaceRole>? NamespaceRoles { get; set; }
 
         [JsonPropertyName("newEmailAddress")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? NewEmailAddress { get; set; }
 
         [JsonPropertyName("oldEmailAddress")]
@@ -64,21 +66,26 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<ModelUserPermissionsResponseV3>? Permissions { get; set; }
 
         [JsonPropertyName("phoneNumber")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PhoneNumber { get; set; }
 
         [JsonPropertyName("phoneVerified")]
         public bool? PhoneVerified { get; set; }
 
         [JsonPropertyName("platformAvatarUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformAvatarUrl { get; set; }
 
         [JsonPropertyName("platformDisplayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformDisplayName { get; set; }
 
         [JsonPropertyName("platformId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformId { get; set; }
 
         [JsonPropertyName("platformUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformUserId { get; set; }
 
         [JsonPropertyName("roles")]
@@ -88,6 +95,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? UserId { get; set; }
 
         [JsonPropertyName("userName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserName { get; set; }
 
     }

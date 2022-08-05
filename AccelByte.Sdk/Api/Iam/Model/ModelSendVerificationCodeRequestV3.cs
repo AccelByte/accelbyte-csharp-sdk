@@ -10,12 +10,14 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class ModelSendVerificationCodeRequestV3 : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("context")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Context { get; set; }
 
         [JsonPropertyName("emailAddress")]
         public string? EmailAddress { get; set; }
 
         [JsonPropertyName("languageTag")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LanguageTag { get; set; }
 
     }

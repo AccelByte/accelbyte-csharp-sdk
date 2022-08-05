@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? PlatformName { get; set; }
 
         [JsonPropertyName("platformUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformUserId { get; set; }
 
     }

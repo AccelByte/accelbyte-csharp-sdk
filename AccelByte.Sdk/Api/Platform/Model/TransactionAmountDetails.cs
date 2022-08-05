@@ -10,15 +10,19 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class TransactionAmountDetails : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("amount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? Amount { get; set; }
 
         [JsonPropertyName("expireAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? ExpireAt { get; set; }
 
         [JsonPropertyName("origin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Origin { get; set; }
 
         [JsonPropertyName("walletId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? WalletId { get; set; }
 
     }

@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? PaymentOrderNo { get; set; }
 
         [JsonPropertyName("paymentStationUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentStationUrl { get; set; }
 
         [JsonPropertyName("status")]
@@ -28,9 +29,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public PaymentOrderCreateResultStatus? Status { get; set; }
 
         [JsonPropertyName("targetNamespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TargetNamespace { get; set; }
 
         [JsonPropertyName("targetUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TargetUserId { get; set; }
 
     }

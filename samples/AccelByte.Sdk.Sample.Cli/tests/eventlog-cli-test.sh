@@ -137,15 +137,15 @@ eval_tap 0 29 'GetRegisteredEventsByEventTypeHandler # SKIP deprecated' test.out
 
 #- 30 QueryEventStreamHandler
 # body param: body
-echo '{"clientId": "WEKVRmaP", "eventName": "OPz8X5TU", "payloadQuery": {"wHcVrI4a": {}, "JUs3MWzx": {}, "Tv1Crssg": {}}, "sessionId": "pXUA7Wuu", "traceId": "h9RFD6DL", "userId": "S9Y5Leab", "version": 79}' > $TEMP_JSON_INPUT
+echo '{"clientId": "If3wp6e6", "eventName": "HwcSw3HO", "payloadQuery": {"tZrbQMGK": {}, "EoPIWcdr": {}, "QsdlQhw9": {}}, "sessionId": "UtBrNmMC", "traceId": "2HiKH5aO", "userId": "fDxOnyf6", "version": 49}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn eventlog \
     --op QueryEventStreamHandler \
     --namespace $AB_NAMESPACE \
-    --endDate 'z3oobj3C' \
-    --offset '1' \
-    --pageSize '57' \
-    --startDate 'dCHssOFk' \
+    --endDate 'igtJRurh' \
+    --offset '43' \
+    --pageSize '86' \
+    --startDate 'QoowmrgO' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 30 'QueryEventStreamHandler' test.out
@@ -155,12 +155,12 @@ $CLI_EXE \
     --sn eventlog \
     --op GetEventSpecificUserV2Handler \
     --namespace $AB_NAMESPACE \
-    --userId 'F6HPfA3p' \
-    --endDate 'ASrw88Qd' \
-    --eventName 'HIq1xKre' \
-    --offset '51' \
-    --pageSize '23' \
-    --startDate 'QdaeWN9C' \
+    --userId 'iT1YvO8u' \
+    --endDate 'lK0TthDd' \
+    --eventName 'p0jWcg6O' \
+    --offset '55' \
+    --pageSize '73' \
+    --startDate 'kSnkh8LP' \
     > test.out 2>&1
 eval_tap $? 31 'GetEventSpecificUserV2Handler' test.out
 
@@ -169,12 +169,12 @@ $CLI_EXE \
     --sn eventlog \
     --op GetPublicEditHistory \
     --namespace $AB_NAMESPACE \
-    --userId 'fWnOwhnO' \
-    --endDate 'UMS8Fniv' \
-    --offset '19' \
-    --pageSize '26' \
-    --startDate 'GDMKllR1' \
-    --type 'Bl25HR31' \
+    --userId 'bz7LW7ZA' \
+    --endDate 'SwbeSM4S' \
+    --offset '85' \
+    --pageSize '82' \
+    --startDate 'ZAcJ2VVU' \
+    --type 'NYxpJSFg' \
     > test.out 2>&1
 eval_tap $? 32 'GetPublicEditHistory' test.out
 
@@ -183,12 +183,12 @@ $CLI_EXE \
     --sn eventlog \
     --op GetUserEventsV2Public \
     --namespace $AB_NAMESPACE \
-    --userId 'JMIFzsTK' \
-    --endDate 'hDrlTwxm' \
-    --eventName 'zLtNKOGS' \
-    --offset '29' \
-    --pageSize '71' \
-    --startDate '9TSY26YA' \
+    --userId 'bAOBbfjP' \
+    --endDate 'KjGAyU5S' \
+    --eventName '82NK9efB' \
+    --offset '41' \
+    --pageSize '31' \
+    --startDate '8wzIsR3X' \
     > test.out 2>&1
 eval_tap $? 33 'GetUserEventsV2Public' test.out
 

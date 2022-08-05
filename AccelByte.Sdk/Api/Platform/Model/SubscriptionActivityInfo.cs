@@ -25,12 +25,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public int? CurrentCycle { get; set; }
 
         [JsonPropertyName("grantDays")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? GrantDays { get; set; }
 
         [JsonPropertyName("inFixedCycleTrial")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? InFixedCycleTrial { get; set; }
 
         [JsonPropertyName("inFixedFreeDays")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? InFixedFreeDays { get; set; }
 
         [JsonPropertyName("namespace")]
@@ -40,6 +43,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Operator { get; set; }
 
         [JsonPropertyName("reason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Reason { get; set; }
 
         [JsonPropertyName("subscribedBy")]
@@ -50,6 +54,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? SubscriptionId { get; set; }
 
         [JsonPropertyName("trialedCycles")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? TrialedCycles { get; set; }
 
         [JsonPropertyName("updatedAt")]

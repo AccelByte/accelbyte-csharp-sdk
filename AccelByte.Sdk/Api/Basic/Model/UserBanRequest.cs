@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public int? ActionId { get; set; }
 
         [JsonPropertyName("comment")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Comment { get; set; }
 
         [JsonPropertyName("userIds")]

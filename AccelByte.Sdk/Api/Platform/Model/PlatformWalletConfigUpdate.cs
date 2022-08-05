@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PlatformWalletConfigUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("allowedBalanceOrigins")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public List<PlatformWalletConfigUpdateAllowedBalanceOrigins>? AllowedBalanceOrigins { get; set; }
 

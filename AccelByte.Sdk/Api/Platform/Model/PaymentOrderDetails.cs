@@ -19,15 +19,18 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? CurrencySymbol { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("displayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DisplayName { get; set; }
 
         [JsonPropertyName("price")]
         public string? Price { get; set; }
 
         [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
 
         [JsonPropertyName("sandbox")]

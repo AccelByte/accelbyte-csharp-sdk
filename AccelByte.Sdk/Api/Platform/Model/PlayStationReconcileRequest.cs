@@ -10,15 +10,19 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PlayStationReconcileRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("currencyCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CurrencyCode { get; set; }
 
         [JsonPropertyName("price")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public double? Price { get; set; }
 
         [JsonPropertyName("productId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ProductId { get; set; }
 
         [JsonPropertyName("serviceLabel")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? ServiceLabel { get; set; }
 
     }

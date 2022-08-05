@@ -15,6 +15,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("externalId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ExternalId { get; set; }
 
         [JsonPropertyName("id")]
@@ -41,6 +42,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public PaymentNotificationInfoStatus? Status { get; set; }
 
         [JsonPropertyName("statusReason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? StatusReason { get; set; }
 
         [JsonPropertyName("updatedAt")]

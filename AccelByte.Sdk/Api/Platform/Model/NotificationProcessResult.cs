@@ -12,15 +12,19 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class NotificationProcessResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("code")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Code { get; set; }
 
         [JsonPropertyName("customParam")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? CustomParam { get; set; }
 
         [JsonPropertyName("severity")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Severity { get; set; }
 
         [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public NotificationProcessResultStatus? Status { get; set; }
 

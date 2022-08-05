@@ -24,12 +24,15 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("passCodes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? PassCodes { get; set; }
 
         [JsonPropertyName("previous")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public SeasonSummary? Previous { get; set; }
 
         [JsonPropertyName("publishedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? PublishedAt { get; set; }
 
         [JsonPropertyName("start")]

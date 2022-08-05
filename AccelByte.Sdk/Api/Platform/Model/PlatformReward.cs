@@ -12,15 +12,19 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PlatformReward : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("currency")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public PlatformRewardCurrency? Currency { get; set; }
 
         [JsonPropertyName("item")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public PlatformRewardItem? Item { get; set; }
 
         [JsonPropertyName("quantity")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Quantity { get; set; }
 
         [JsonPropertyName("type")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public PlatformRewardType? Type { get; set; }
 

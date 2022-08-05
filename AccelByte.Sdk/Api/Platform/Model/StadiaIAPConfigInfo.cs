@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class StadiaIAPConfigInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("jsonFile")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? JsonFile { get; set; }
 
         [JsonPropertyName("namespace")]

@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Social.Model
     public class SlotConfigUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("maxSlotSize")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxSlotSize { get; set; }
 
         [JsonPropertyName("maxSlots")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxSlots { get; set; }
 
     }

@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class SteamIAPConfigInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("appId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AppId { get; set; }
 
         [JsonPropertyName("namespace")]

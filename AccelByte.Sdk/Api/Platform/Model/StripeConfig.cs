@@ -10,15 +10,19 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class StripeConfig : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("allowedPaymentMethodTypes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? AllowedPaymentMethodTypes { get; set; }
 
         [JsonPropertyName("publishableKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PublishableKey { get; set; }
 
         [JsonPropertyName("secretKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SecretKey { get; set; }
 
         [JsonPropertyName("webhookSecret")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? WebhookSecret { get; set; }
 
     }

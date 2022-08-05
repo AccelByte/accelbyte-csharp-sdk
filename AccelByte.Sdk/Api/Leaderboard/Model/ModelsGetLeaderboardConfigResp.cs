@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         public ModelsDailyConfig? Daily { get; set; }
 
         [JsonPropertyName("deletedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? DeletedAt { get; set; }
 
         [JsonPropertyName("descending")]

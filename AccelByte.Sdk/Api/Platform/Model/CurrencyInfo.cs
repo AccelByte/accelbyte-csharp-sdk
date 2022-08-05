@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public int? Decimals { get; set; }
 
         [JsonPropertyName("localizationDescriptions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, string>? LocalizationDescriptions { get; set; }
 
         [JsonPropertyName("namespace")]

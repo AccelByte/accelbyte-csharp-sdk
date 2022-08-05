@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Social.Model
     public class Paging : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("next")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Next { get; set; }
 
         [JsonPropertyName("previous")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Previous { get; set; }
 
     }

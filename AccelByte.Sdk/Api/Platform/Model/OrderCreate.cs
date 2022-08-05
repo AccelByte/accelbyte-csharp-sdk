@@ -16,12 +16,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public int? DiscountedPrice { get; set; }
 
         [JsonPropertyName("ext")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Ext { get; set; }
 
         [JsonPropertyName("itemId")]
         public string? ItemId { get; set; }
 
         [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
         [JsonPropertyName("price")]
@@ -31,9 +33,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public int? Quantity { get; set; }
 
         [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
 
         [JsonPropertyName("returnUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ReturnUrl { get; set; }
 
     }

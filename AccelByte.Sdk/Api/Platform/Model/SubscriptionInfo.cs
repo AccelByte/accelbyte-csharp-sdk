@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class SubscriptionInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("billingAccount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public BillingAccount? BillingAccount { get; set; }
 
         [JsonPropertyName("chargeStatus")]
@@ -19,33 +20,42 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public SubscriptionInfoChargeStatus? ChargeStatus { get; set; }
 
         [JsonPropertyName("chargedCycles")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? ChargedCycles { get; set; }
 
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("currency")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public CurrencySummary? Currency { get; set; }
 
         [JsonPropertyName("currentCycle")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? CurrentCycle { get; set; }
 
         [JsonPropertyName("currentPeriodEnd")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CurrentPeriodEnd { get; set; }
 
         [JsonPropertyName("currentPeriodStart")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CurrentPeriodStart { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("end")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? End { get; set; }
 
         [JsonPropertyName("entitlements")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<EntitlementSummary>? Entitlements { get; set; }
 
         [JsonPropertyName("firstSubscribe")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? FirstSubscribe { get; set; }
 
         [JsonPropertyName("id")]
@@ -61,54 +71,68 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? ItemId { get; set; }
 
         [JsonPropertyName("itemSnapshot")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ItemSnapshot? ItemSnapshot { get; set; }
 
         [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("nextBillingDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? NextBillingDate { get; set; }
 
         [JsonPropertyName("paid")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Paid { get; set; }
 
         [JsonPropertyName("paymentFlowRequired")]
         public bool? PaymentFlowRequired { get; set; }
 
         [JsonPropertyName("paymentOrderNo")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentOrderNo { get; set; }
 
         [JsonPropertyName("paymentStationUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentStationUrl { get; set; }
 
         [JsonPropertyName("price")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Price { get; set; }
 
         [JsonPropertyName("recurring")]
         public Recurring? Recurring { get; set; }
 
         [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
 
         [JsonPropertyName("retryAttempted")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? RetryAttempted { get; set; }
 
         [JsonPropertyName("returnUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ReturnUrl { get; set; }
 
         [JsonPropertyName("sandbox")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Sandbox { get; set; }
 
         [JsonPropertyName("sku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
 
         [JsonPropertyName("source")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Source { get; set; }
 
         [JsonPropertyName("start")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? Start { get; set; }
 
         [JsonPropertyName("status")]
@@ -116,25 +140,32 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public SubscriptionInfoStatus? Status { get; set; }
 
         [JsonPropertyName("subscribedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? SubscribedAt { get; set; }
 
         [JsonPropertyName("subscribedBy")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public SubscriptionInfoSubscribedBy? SubscribedBy { get; set; }
 
         [JsonPropertyName("title")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Title { get; set; }
 
         [JsonPropertyName("trialPrice")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? TrialPrice { get; set; }
 
         [JsonPropertyName("trialedCycles")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? TrialedCycles { get; set; }
 
         [JsonPropertyName("unsubscribeReason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UnsubscribeReason { get; set; }
 
         [JsonPropertyName("unsubscribedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? UnsubscribedAt { get; set; }
 
         [JsonPropertyName("updatedAt")]

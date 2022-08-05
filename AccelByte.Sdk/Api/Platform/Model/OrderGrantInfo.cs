@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class OrderGrantInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("credits")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<CreditSummary>? Credits { get; set; }
 
         [JsonPropertyName("entitlements")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<EntitlementSummary>? Entitlements { get; set; }
 
     }

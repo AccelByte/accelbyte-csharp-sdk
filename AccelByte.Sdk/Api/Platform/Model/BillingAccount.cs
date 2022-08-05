@@ -12,12 +12,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class BillingAccount : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("additionalData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public AdditionalData? AdditionalData { get; set; }
 
         [JsonPropertyName("paymentMethod")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentMethod { get; set; }
 
         [JsonPropertyName("paymentProvider")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public BillingAccountPaymentProvider? PaymentProvider { get; set; }
 

@@ -19,30 +19,37 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("endDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? EndDate { get; set; }
 
         [JsonPropertyName("grantedCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? GrantedCode { get; set; }
 
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 
         [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemId { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("stackable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Stackable { get; set; }
 
         [JsonPropertyName("stackedUseCount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? StackedUseCount { get; set; }
 
         [JsonPropertyName("startDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? StartDate { get; set; }
 
         [JsonPropertyName("storeId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? StoreId { get; set; }
 
         [JsonPropertyName("type")]

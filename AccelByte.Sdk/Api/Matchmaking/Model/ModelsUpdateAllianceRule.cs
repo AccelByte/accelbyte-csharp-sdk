@@ -10,15 +10,19 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
     public class ModelsUpdateAllianceRule : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("maxNumber")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxNumber { get; set; }
 
         [JsonPropertyName("minNumber")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MinNumber { get; set; }
 
         [JsonPropertyName("playerMaxNumber")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? PlayerMaxNumber { get; set; }
 
         [JsonPropertyName("playerMinNumber")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? PlayerMinNumber { get; set; }
 
     }

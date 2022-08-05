@@ -12,9 +12,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class KeyInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("acquireOrderNo")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AcquireOrderNo { get; set; }
 
         [JsonPropertyName("acquireUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AcquireUserId { get; set; }
 
         [JsonPropertyName("createdAt")]

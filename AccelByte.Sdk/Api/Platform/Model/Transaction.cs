@@ -12,63 +12,82 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class Transaction : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("additionalData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public AdditionalData? AdditionalData { get; set; }
 
         [JsonPropertyName("amount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Amount { get; set; }
 
         [JsonPropertyName("currency")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public CurrencySummary? Currency { get; set; }
 
         [JsonPropertyName("extMessage")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ExtMessage { get; set; }
 
         [JsonPropertyName("extStatusCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ExtStatusCode { get; set; }
 
         [JsonPropertyName("extTxId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ExtTxId { get; set; }
 
         [JsonPropertyName("merchantId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? MerchantId { get; set; }
 
         [JsonPropertyName("notified")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Notified { get; set; }
 
         [JsonPropertyName("paymentMethod")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentMethod { get; set; }
 
         [JsonPropertyName("paymentMethodFee")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? PaymentMethodFee { get; set; }
 
         [JsonPropertyName("paymentProviderFee")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? PaymentProviderFee { get; set; }
 
         [JsonPropertyName("provider")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public TransactionProvider? Provider { get; set; }
 
         [JsonPropertyName("salesTax")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? SalesTax { get; set; }
 
         [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public TransactionStatus? Status { get; set; }
 
         [JsonPropertyName("tax")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Tax { get; set; }
 
         [JsonPropertyName("txEndTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? TxEndTime { get; set; }
 
         [JsonPropertyName("txId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TxId { get; set; }
 
         [JsonPropertyName("type")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public TransactionType? Type { get; set; }
 
         [JsonPropertyName("vat")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Vat { get; set; }
 
     }

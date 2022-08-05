@@ -13,12 +13,15 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? CountryCode { get; set; }
 
         [JsonPropertyName("countryGroupCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CountryGroupCode { get; set; }
 
         [JsonPropertyName("createdAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("id")]
@@ -37,12 +40,14 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? PolicyName { get; set; }
 
         [JsonPropertyName("readableId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ReadableId { get; set; }
 
         [JsonPropertyName("shouldNotifyOnUpdate")]
         public bool? ShouldNotifyOnUpdate { get; set; }
 
         [JsonPropertyName("updatedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? UpdatedAt { get; set; }
 
     }

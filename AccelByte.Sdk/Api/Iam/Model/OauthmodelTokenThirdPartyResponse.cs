@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? PlatformToken { get; set; }
 
         [JsonPropertyName("sand_box_id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SandBoxId { get; set; }
 
     }

@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class EntitlementOwnership : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemId { get; set; }
 
         [JsonPropertyName("owned")]

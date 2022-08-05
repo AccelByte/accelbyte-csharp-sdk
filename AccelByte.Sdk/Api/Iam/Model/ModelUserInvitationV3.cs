@@ -16,6 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public DateTime? ExpiredAt { get; set; }
 
         [JsonPropertyName("id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
 
         [JsonPropertyName("roles")]

@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? EmailAddress { get; set; }
 
         [JsonPropertyName("languageTag")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LanguageTag { get; set; }
 
     }

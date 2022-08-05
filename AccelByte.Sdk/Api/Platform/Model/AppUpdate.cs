@@ -12,43 +12,55 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class AppUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("carousel")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<Slide>? Carousel { get; set; }
 
         [JsonPropertyName("developer")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Developer { get; set; }
 
         [JsonPropertyName("forumUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ForumUrl { get; set; }
 
         [JsonPropertyName("genres")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public List<AppUpdateGenres>? Genres { get; set; }
 
         [JsonPropertyName("localizations")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, AppLocalization>? Localizations { get; set; }
 
         [JsonPropertyName("platformRequirements")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? PlatformRequirements { get; set; }
 
         [JsonPropertyName("platforms")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public List<AppUpdatePlatforms>? Platforms { get; set; }
 
         [JsonPropertyName("players")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public List<AppUpdatePlayers>? Players { get; set; }
 
         [JsonPropertyName("primaryGenre")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public AppUpdatePrimaryGenre? PrimaryGenre { get; set; }
 
         [JsonPropertyName("publisher")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Publisher { get; set; }
 
         [JsonPropertyName("releaseDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? ReleaseDate { get; set; }
 
         [JsonPropertyName("websiteUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? WebsiteUrl { get; set; }
 
     }

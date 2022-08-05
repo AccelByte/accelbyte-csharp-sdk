@@ -16,6 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? ErrorMessage { get; set; }
 
         [JsonPropertyName("messageVariables")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public AccountcommonConflictedUserPlatformAccounts? MessageVariables { get; set; }
 
     }

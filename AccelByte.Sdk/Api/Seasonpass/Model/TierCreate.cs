@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class TierCreate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("index")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Index { get; set; }
 
         [JsonPropertyName("quantity")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Quantity { get; set; }
 
         [JsonPropertyName("tier")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public TierInput? Tier { get; set; }
 
     }

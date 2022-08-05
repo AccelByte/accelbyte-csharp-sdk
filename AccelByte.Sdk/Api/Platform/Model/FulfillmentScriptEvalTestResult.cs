@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class FulfillmentScriptEvalTestResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("errorStackTrace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ErrorStackTrace { get; set; }
 
         [JsonPropertyName("result")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Result { get; set; }
 
     }

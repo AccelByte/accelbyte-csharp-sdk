@@ -10,36 +10,47 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class SeasonUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("autoClaim")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? AutoClaim { get; set; }
 
         [JsonPropertyName("defaultLanguage")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DefaultLanguage { get; set; }
 
         [JsonPropertyName("defaultRequiredExp")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? DefaultRequiredExp { get; set; }
 
         [JsonPropertyName("draftStoreId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DraftStoreId { get; set; }
 
         [JsonPropertyName("end")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? End { get; set; }
 
         [JsonPropertyName("excessStrategy")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ExcessStrategy? ExcessStrategy { get; set; }
 
         [JsonPropertyName("images")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<Image>? Images { get; set; }
 
         [JsonPropertyName("localizations")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, Localization>? Localizations { get; set; }
 
         [JsonPropertyName("name")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Name { get; set; }
 
         [JsonPropertyName("start")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? Start { get; set; }
 
         [JsonPropertyName("tierItemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TierItemId { get; set; }
 
     }

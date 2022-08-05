@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PaymentProviderConfigEdit : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("aggregate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public PaymentProviderConfigEditAggregate? Aggregate { get; set; }
 
@@ -22,19 +23,24 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Region { get; set; }
 
         [JsonPropertyName("sandboxTaxJarApiToken")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SandboxTaxJarApiToken { get; set; }
 
         [JsonPropertyName("specials")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public List<PaymentProviderConfigEditSpecials>? Specials { get; set; }
 
         [JsonPropertyName("taxJarApiToken")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TaxJarApiToken { get; set; }
 
         [JsonPropertyName("taxJarEnabled")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? TaxJarEnabled { get; set; }
 
         [JsonPropertyName("useGlobalTaxJarApiToken")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? UseGlobalTaxJarApiToken { get; set; }
 
     }

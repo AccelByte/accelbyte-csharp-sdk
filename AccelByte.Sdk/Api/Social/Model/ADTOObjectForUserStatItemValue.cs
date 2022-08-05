@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Social.Model
     public class ADTOObjectForUserStatItemValue : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("profileId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ProfileId { get; set; }
 
         [JsonPropertyName("statCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? StatCode { get; set; }
 
         [JsonPropertyName("value")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public double? Value { get; set; }
 
     }

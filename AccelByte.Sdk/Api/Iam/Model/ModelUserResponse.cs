@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? AuthType { get; set; }
 
         [JsonPropertyName("AvatarUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AvatarUrl { get; set; }
 
         [JsonPropertyName("Bans")]
@@ -34,6 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? DisplayName { get; set; }
 
         [JsonPropertyName("EmailAddress")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? EmailAddress { get; set; }
 
         [JsonPropertyName("EmailVerified")]
@@ -58,6 +60,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<AccountcommonNamespaceRole>? NamespaceRoles { get; set; }
 
         [JsonPropertyName("NewEmailAddress")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? NewEmailAddress { get; set; }
 
         [JsonPropertyName("OldEmailAddress")]
@@ -67,15 +70,18 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<AccountcommonPermission>? Permissions { get; set; }
 
         [JsonPropertyName("PhoneNumber")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PhoneNumber { get; set; }
 
         [JsonPropertyName("PhoneVerified")]
         public bool? PhoneVerified { get; set; }
 
         [JsonPropertyName("PlatformId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformId { get; set; }
 
         [JsonPropertyName("PlatformUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformUserId { get; set; }
 
         [JsonPropertyName("Roles")]
@@ -85,9 +91,11 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? UserId { get; set; }
 
         [JsonPropertyName("Username")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Username { get; set; }
 
         [JsonPropertyName("XUID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? XUID { get; set; }
 
     }

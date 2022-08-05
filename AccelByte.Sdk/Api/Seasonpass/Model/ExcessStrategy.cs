@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class ExcessStrategy : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("currency")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Currency { get; set; }
 
         [JsonPropertyName("method")]
@@ -19,6 +20,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public ExcessStrategyMethod? Method { get; set; }
 
         [JsonPropertyName("percentPerExp")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? PercentPerExp { get; set; }
 
     }

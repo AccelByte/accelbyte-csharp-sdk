@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Model
     public class HTTPValidationError : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("detail")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ValidationError>? Detail { get; set; }
 
     }

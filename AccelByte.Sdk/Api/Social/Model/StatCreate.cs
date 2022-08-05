@@ -15,21 +15,26 @@ namespace AccelByte.Sdk.Api.Social.Model
         public double? DefaultValue { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("incrementOnly")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IncrementOnly { get; set; }
 
         [JsonPropertyName("maximum")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public double? Maximum { get; set; }
 
         [JsonPropertyName("minimum")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public double? Minimum { get; set; }
 
         [JsonPropertyName("name")]
         public string? Name { get; set; }
 
         [JsonPropertyName("setAsGlobal")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? SetAsGlobal { get; set; }
 
         [JsonPropertyName("setBy")]
@@ -40,6 +45,7 @@ namespace AccelByte.Sdk.Api.Social.Model
         public string? StatCode { get; set; }
 
         [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
 
     }

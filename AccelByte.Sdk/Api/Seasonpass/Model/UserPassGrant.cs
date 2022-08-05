@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class UserPassGrant : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("passCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PassCode { get; set; }
 
         [JsonPropertyName("passItemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PassItemId { get; set; }
 
     }

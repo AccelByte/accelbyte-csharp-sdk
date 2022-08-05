@@ -16,6 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public CatalogChangeInfoAction? Action { get; set; }
 
         [JsonPropertyName("categoryPath")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CategoryPath { get; set; }
 
         [JsonPropertyName("changeId")]
@@ -25,12 +26,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemId { get; set; }
 
         [JsonPropertyName("itemType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public CatalogChangeInfoItemType? ItemType { get; set; }
 
@@ -38,12 +42,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("publishedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? PublishedAt { get; set; }
 
         [JsonPropertyName("selected")]
         public bool? Selected { get; set; }
 
         [JsonPropertyName("sku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
 
         [JsonPropertyName("status")]
@@ -54,9 +60,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? StoreId { get; set; }
 
         [JsonPropertyName("title")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Title { get; set; }
 
         [JsonPropertyName("type")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public CatalogChangeInfoType? Type { get; set; }
 

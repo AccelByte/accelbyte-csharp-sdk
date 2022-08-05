@@ -16,6 +16,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public string? ErrorMessage { get; set; }
 
         [JsonPropertyName("errors")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<FieldValidationError>? Errors { get; set; }
 
     }

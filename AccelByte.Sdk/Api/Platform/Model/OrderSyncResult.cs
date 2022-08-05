@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class OrderSyncResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("nextEvaluatedKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? NextEvaluatedKey { get; set; }
 
         [JsonPropertyName("orders")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<Order>? Orders { get; set; }
 
     }

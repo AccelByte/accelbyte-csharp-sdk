@@ -13,9 +13,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? AppId { get; set; }
 
         [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
         [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
 
         [JsonPropertyName("stadiaPlayerId")]

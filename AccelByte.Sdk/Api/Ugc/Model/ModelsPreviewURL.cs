@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Ugc.Model
     public class ModelsPreviewURL : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("source")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Source { get; set; }
 
         [JsonPropertyName("url")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Url { get; set; }
 
     }

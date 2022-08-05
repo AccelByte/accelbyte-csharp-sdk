@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("id")]
@@ -34,6 +35,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public KeyGroupInfoStatus? Status { get; set; }
 
         [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
 
         [JsonPropertyName("updatedAt")]

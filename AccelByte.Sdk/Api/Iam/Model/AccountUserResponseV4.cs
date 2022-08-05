@@ -49,6 +49,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("newEmailAddress")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? NewEmailAddress { get; set; }
 
         [JsonPropertyName("oldEmailAddress")]
@@ -58,15 +59,18 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<AccountUserPermissionsResponseV4>? Permissions { get; set; }
 
         [JsonPropertyName("phoneNumber")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PhoneNumber { get; set; }
 
         [JsonPropertyName("phoneVerified")]
         public bool? PhoneVerified { get; set; }
 
         [JsonPropertyName("platformId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformId { get; set; }
 
         [JsonPropertyName("platformUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformUserId { get; set; }
 
         [JsonPropertyName("roles")]
@@ -76,6 +80,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? UserId { get; set; }
 
         [JsonPropertyName("username")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Username { get; set; }
 
     }

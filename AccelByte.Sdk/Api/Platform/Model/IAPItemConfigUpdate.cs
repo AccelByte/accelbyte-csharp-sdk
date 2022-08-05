@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class IAPItemConfigUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("data")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<IAPItemEntry>? Data { get; set; }
 
     }

@@ -10,15 +10,19 @@ namespace AccelByte.Sdk.Api.Basic.Model
     public class FileUploadUrlInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("accessUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AccessUrl { get; set; }
 
         [JsonPropertyName("contentType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ContentType { get; set; }
 
         [JsonPropertyName("method")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Method { get; set; }
 
         [JsonPropertyName("url")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Url { get; set; }
 
     }

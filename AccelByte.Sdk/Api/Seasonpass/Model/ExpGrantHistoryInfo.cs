@@ -27,10 +27,12 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? SeasonId { get; set; }
 
         [JsonPropertyName("source")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public ExpGrantHistoryInfoSource? Source { get; set; }
 
         [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
 
         [JsonPropertyName("userId")]

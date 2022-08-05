@@ -12,23 +12,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PredicateObject : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("anyOf")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? AnyOf { get; set; }
 
         [JsonPropertyName("comparison")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public PredicateObjectComparison? Comparison { get; set; }
 
         [JsonPropertyName("name")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Name { get; set; }
 
         [JsonPropertyName("predicateType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public PredicateObjectPredicateType? PredicateType { get; set; }
 
         [JsonPropertyName("value")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Value { get; set; }
 
         [JsonPropertyName("values")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Values { get; set; }
 
     }

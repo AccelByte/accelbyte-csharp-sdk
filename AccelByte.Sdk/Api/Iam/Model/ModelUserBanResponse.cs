@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("DisabledDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? DisabledDate { get; set; }
 
         [JsonPropertyName("Enabled")]

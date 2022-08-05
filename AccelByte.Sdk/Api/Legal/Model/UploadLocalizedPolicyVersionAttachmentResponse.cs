@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Legal.Model
     public class UploadLocalizedPolicyVersionAttachmentResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("attachmentChecksum")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AttachmentChecksum { get; set; }
 
         [JsonPropertyName("attachmentLocation")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AttachmentLocation { get; set; }
 
         [JsonPropertyName("attachmentUploadUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AttachmentUploadUrl { get; set; }
 
     }

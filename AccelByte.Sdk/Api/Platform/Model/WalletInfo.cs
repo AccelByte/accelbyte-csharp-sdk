@@ -37,12 +37,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public WalletInfoStatus? Status { get; set; }
 
         [JsonPropertyName("timeLimitedBalances")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<TimeLimitedBalance>? TimeLimitedBalances { get; set; }
 
         [JsonPropertyName("totalPermanentBalance")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? TotalPermanentBalance { get; set; }
 
         [JsonPropertyName("totalTimeLimitedBalance")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? TotalTimeLimitedBalance { get; set; }
 
         [JsonPropertyName("updatedAt")]

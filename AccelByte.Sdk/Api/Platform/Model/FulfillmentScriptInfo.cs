@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class FulfillmentScriptInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("grantDays")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? GrantDays { get; set; }
 
         [JsonPropertyName("id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
 
     }

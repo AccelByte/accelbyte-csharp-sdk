@@ -12,10 +12,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PlatformDlcEntry : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("platform")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public PlatformDlcEntryPlatform? Platform { get; set; }
 
         [JsonPropertyName("platformDlcIdMap")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, string>? PlatformDlcIdMap { get; set; }
 
     }

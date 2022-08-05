@@ -10,15 +10,19 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class RewardCondition : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("condition")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Condition { get; set; }
 
         [JsonPropertyName("conditionName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ConditionName { get; set; }
 
         [JsonPropertyName("eventName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? EventName { get; set; }
 
         [JsonPropertyName("rewardItems")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<RewardItem>? RewardItems { get; set; }
 
     }

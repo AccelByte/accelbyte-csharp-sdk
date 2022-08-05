@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Basic.Model
     public class AddCountryGroupResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("countries")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<CountryObject>? Countries { get; set; }
 
         [JsonPropertyName("countryGroupCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CountryGroupCode { get; set; }
 
         [JsonPropertyName("countryGroupName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CountryGroupName { get; set; }
 
     }

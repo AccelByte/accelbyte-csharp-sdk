@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? AppId { get; set; }
 
         [JsonPropertyName("publisherAuthenticationKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PublisherAuthenticationKey { get; set; }
 
     }

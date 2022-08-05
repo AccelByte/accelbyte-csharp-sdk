@@ -12,22 +12,28 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class Slide : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("alt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Alt { get; set; }
 
         [JsonPropertyName("previewUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PreviewUrl { get; set; }
 
         [JsonPropertyName("thumbnailUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ThumbnailUrl { get; set; }
 
         [JsonPropertyName("type")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public SlideType? Type { get; set; }
 
         [JsonPropertyName("url")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Url { get; set; }
 
         [JsonPropertyName("videoSource")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public SlideVideoSource? VideoSource { get; set; }
 

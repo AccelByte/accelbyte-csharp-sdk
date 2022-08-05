@@ -10,15 +10,18 @@ namespace AccelByte.Sdk.Api.Legal.Model
     public class RetrieveUserEligibilitiesResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("baseUrls")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? BaseUrls { get; set; }
 
         [JsonPropertyName("countryCode")]
         public string? CountryCode { get; set; }
 
         [JsonPropertyName("countryGroupCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CountryGroupCode { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("isAccepted")]
@@ -40,9 +43,11 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? PolicyType { get; set; }
 
         [JsonPropertyName("policyVersions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<PolicyVersionWithLocalizedVersionObject>? PolicyVersions { get; set; }
 
         [JsonPropertyName("readableId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ReadableId { get; set; }
 
     }

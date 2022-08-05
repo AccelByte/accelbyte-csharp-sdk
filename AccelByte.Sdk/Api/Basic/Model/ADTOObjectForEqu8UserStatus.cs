@@ -10,18 +10,23 @@ namespace AccelByte.Sdk.Api.Basic.Model
     public class ADTOObjectForEqu8UserStatus : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("actionComment")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ActionComment { get; set; }
 
         [JsonPropertyName("actionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? ActionId { get; set; }
 
         [JsonPropertyName("expires")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? Expires { get; set; }
 
         [JsonPropertyName("userId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserId { get; set; }
 
         [JsonPropertyName("when")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? When { get; set; }
 
     }

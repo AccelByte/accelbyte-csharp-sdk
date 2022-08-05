@@ -15,21 +15,27 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? Code { get; set; }
 
         [JsonPropertyName("currency")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public RewardCurrency? Currency { get; set; }
 
         [JsonPropertyName("image")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Image? Image { get; set; }
 
         [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemId { get; set; }
 
         [JsonPropertyName("itemName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemName { get; set; }
 
         [JsonPropertyName("itemSku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemSku { get; set; }
 
         [JsonPropertyName("itemType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public RewardInfoItemType? ItemType { get; set; }
 
@@ -37,6 +43,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("quantity")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Quantity { get; set; }
 
         [JsonPropertyName("seasonId")]

@@ -12,9 +12,11 @@ namespace AccelByte.Sdk.Api.Social.Model
     public class BulkUserStatItemUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("additionalData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? AdditionalData { get; set; }
 
         [JsonPropertyName("additionalKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AdditionalKey { get; set; }
 
         [JsonPropertyName("statCode")]

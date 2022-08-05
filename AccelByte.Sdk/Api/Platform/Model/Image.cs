@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class Image : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("as")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? As { get; set; }
 
         [JsonPropertyName("caption")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Caption { get; set; }
 
         [JsonPropertyName("height")]

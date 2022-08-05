@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public bool? AdminRole { get; set; }
 
         [JsonPropertyName("deletable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Deletable { get; set; }
 
         [JsonPropertyName("isWildcard")]

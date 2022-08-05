@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Legal.Model
     public class CreateLocalizedPolicyVersionRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("contentType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ContentType { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("localeCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LocaleCode { get; set; }
 
     }

@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class OptionBoxConfig : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("boxItems")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<OptionBoxItem>? BoxItems { get; set; }
 
     }

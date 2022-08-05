@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public bool? Comply { get; set; }
 
         [JsonPropertyName("ext")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Ext { get; set; }
 
         [JsonPropertyName("proceed")]

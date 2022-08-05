@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("party_id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PartyId { get; set; }
 
         [JsonPropertyName("region")]

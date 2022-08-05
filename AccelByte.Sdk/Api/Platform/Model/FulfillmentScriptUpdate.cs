@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class FulfillmentScriptUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("grantDays")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? GrantDays { get; set; }
 
     }

@@ -10,15 +10,19 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PredicateValidateResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("matched")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Matched { get; set; }
 
         [JsonPropertyName("predicateName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PredicateName { get; set; }
 
         [JsonPropertyName("unmatched")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Unmatched { get; set; }
 
         [JsonPropertyName("validated")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Validated { get; set; }
 
     }

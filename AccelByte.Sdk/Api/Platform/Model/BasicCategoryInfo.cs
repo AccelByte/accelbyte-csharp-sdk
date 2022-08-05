@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? ParentCategoryPath { get; set; }
 
         [JsonPropertyName("root")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Root { get; set; }
 
         [JsonPropertyName("updatedAt")]

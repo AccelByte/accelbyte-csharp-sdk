@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class SteamAchievementRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
 
         [JsonPropertyName("value")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? Value { get; set; }
 
     }

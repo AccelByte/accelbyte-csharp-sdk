@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Basic.Model
     public class UpdateCountryGroupRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("countries")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<CountryObject>? Countries { get; set; }
 
         [JsonPropertyName("countryGroupName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CountryGroupName { get; set; }
 
     }

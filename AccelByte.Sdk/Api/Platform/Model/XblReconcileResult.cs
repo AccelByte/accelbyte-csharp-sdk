@@ -12,19 +12,24 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class XblReconcileResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("iapOrderStatus")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public XblReconcileResultIapOrderStatus? IapOrderStatus { get; set; }
 
         [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemId { get; set; }
 
         [JsonPropertyName("sku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
 
         [JsonPropertyName("transactionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TransactionId { get; set; }
 
         [JsonPropertyName("xboxProductId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? XboxProductId { get; set; }
 
     }

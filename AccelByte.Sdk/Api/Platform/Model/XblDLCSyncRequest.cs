@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class XblDLCSyncRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("xstsToken")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? XstsToken { get; set; }
 
     }

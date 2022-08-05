@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class AppleIAPReceipt : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("excludeOldTransactions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? ExcludeOldTransactions { get; set; }
 
         [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
         [JsonPropertyName("productId")]
@@ -22,6 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? ReceiptData { get; set; }
 
         [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
 
         [JsonPropertyName("transactionId")]

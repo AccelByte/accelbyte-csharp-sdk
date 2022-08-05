@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("end")]
@@ -27,6 +28,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? Id { get; set; }
 
         [JsonPropertyName("images")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<Image>? Images { get; set; }
 
         [JsonPropertyName("language")]
@@ -39,12 +41,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("passCodes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? PassCodes { get; set; }
 
         [JsonPropertyName("passes")]
         public List<LocalizedPassInfo>? Passes { get; set; }
 
         [JsonPropertyName("publishedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? PublishedAt { get; set; }
 
         [JsonPropertyName("rewards")]
@@ -64,6 +68,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public List<Tier>? Tiers { get; set; }
 
         [JsonPropertyName("title")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Title { get; set; }
 
         [JsonPropertyName("updatedAt")]

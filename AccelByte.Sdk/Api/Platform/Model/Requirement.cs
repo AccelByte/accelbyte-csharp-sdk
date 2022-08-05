@@ -10,30 +10,38 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class Requirement : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("additionals")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Additionals { get; set; }
 
         [JsonPropertyName("directXVersion")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DirectXVersion { get; set; }
 
         [JsonPropertyName("diskSpace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DiskSpace { get; set; }
 
         [JsonPropertyName("graphics")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Graphics { get; set; }
 
         [JsonPropertyName("label")]
         public string? Label { get; set; }
 
         [JsonPropertyName("osVersion")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? OsVersion { get; set; }
 
         [JsonPropertyName("processor")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Processor { get; set; }
 
         [JsonPropertyName("ram")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Ram { get; set; }
 
         [JsonPropertyName("soundCard")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SoundCard { get; set; }
 
     }

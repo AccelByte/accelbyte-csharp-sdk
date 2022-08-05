@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? BundleId { get; set; }
 
         [JsonPropertyName("password")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Password { get; set; }
 
     }

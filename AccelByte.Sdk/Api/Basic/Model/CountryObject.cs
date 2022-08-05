@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Basic.Model
     public class CountryObject : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("code")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Code { get; set; }
 
         [JsonPropertyName("name")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Name { get; set; }
 
     }

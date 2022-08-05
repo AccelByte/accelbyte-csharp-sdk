@@ -16,6 +16,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
         public string? DisplayName { get; set; }
 
         [JsonPropertyName("ExecutionDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? ExecutionDate { get; set; }
 
         [JsonPropertyName("Status")]

@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? DisplayOrder { get; set; }
 
         [JsonPropertyName("images")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<Image>? Images { get; set; }
 
         [JsonPropertyName("localizations")]

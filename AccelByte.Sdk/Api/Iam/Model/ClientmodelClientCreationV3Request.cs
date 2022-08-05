@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? ClientPlatform { get; set; }
 
         [JsonPropertyName("deletable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Deletable { get; set; }
 
         [JsonPropertyName("namespace")]

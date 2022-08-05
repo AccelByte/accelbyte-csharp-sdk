@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class OrderSummary : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("currency")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public CurrencySummary? Currency { get; set; }
 
         [JsonPropertyName("ext")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Ext { get; set; }
 
         [JsonPropertyName("free")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Free { get; set; }
 
     }

@@ -10,18 +10,23 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class PassUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("autoEnroll")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? AutoEnroll { get; set; }
 
         [JsonPropertyName("displayOrder")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? DisplayOrder { get; set; }
 
         [JsonPropertyName("images")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<Image>? Images { get; set; }
 
         [JsonPropertyName("localizations")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, Localization>? Localizations { get; set; }
 
         [JsonPropertyName("passItemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PassItemId { get; set; }
 
     }

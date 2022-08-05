@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class ModelPublicUsersResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("Users")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelPublicUserResponse>? Users { get; set; }
 
     }

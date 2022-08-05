@@ -61,7 +61,7 @@ eval_tap $? 2 'GetNamespaces' test.out
 
 #- 3 CreateNamespace
 # body param: body
-echo '{"displayName": "WI3UBHvq", "namespace": "IymtAnp5"}' > $TEMP_JSON_INPUT
+echo '{"displayName": "EvuXTa0e", "namespace": "WXhfDspt"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op CreateNamespace \
@@ -96,7 +96,7 @@ eval_tap $? 6 'GetActions' test.out
 
 #- 7 BanUsers
 # body param: body
-echo '{"actionId": 40, "comment": "EiqsDnJ1", "userIds": ["gaXw5RCQ", "OdLjCJGZ", "SeQQXVad"]}' > $TEMP_JSON_INPUT
+echo '{"actionId": 70, "comment": "qQOyHOPF", "userIds": ["NSwlwLzP", "P470Pm1n", "zBAyEIWl"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op BanUsers \
@@ -110,13 +110,13 @@ $CLI_EXE \
     --sn basic \
     --op GetBannedUsers \
     --namespace $AB_NAMESPACE \
-    --userIds '["iA4czrkc", "iQeLhjmj", "w8AgCx4a"]' \
+    --userIds '["iPMKlNwn", "OcJYaRbH", "Q5DXWbXz"]' \
     > test.out 2>&1
 eval_tap $? 8 'GetBannedUsers' test.out
 
 #- 9 ReportUser
 # body param: body
-echo '{"category": "Zwb0DZ3J", "description": "vRfq8P8i", "gameSessionId": "lElBC2iN", "subcategory": "cfr2opje", "userId": "DULVQNxa"}' > $TEMP_JSON_INPUT
+echo '{"category": "NKUnKNAq", "description": "JXIUNit7", "gameSessionId": "YjOp0Wln", "subcategory": "CDvPXId8", "userId": "hazmcQym"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op ReportUser \
@@ -130,13 +130,13 @@ $CLI_EXE \
     --sn basic \
     --op GetUserStatus \
     --namespace $AB_NAMESPACE \
-    --userId 'm84HgJN1' \
+    --userId '46ziJON3' \
     > test.out 2>&1
 eval_tap $? 10 'GetUserStatus' test.out
 
 #- 11 UnBanUsers
 # body param: body
-echo '{"comment": "nAYq4FPJ", "userIds": ["HITZ0kAu", "0JQwn6M9", "R1s3S0PJ"]}' > $TEMP_JSON_INPUT
+echo '{"comment": "7CexE5SS", "userIds": ["5lx6a8uh", "U5ChpFA5", "2qjrbS3m"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UnBanUsers \
@@ -147,7 +147,7 @@ eval_tap $? 11 'UnBanUsers' test.out
 
 #- 12 UpdateNamespace
 # body param: body
-echo '{"displayName": "0EaU5plt"}' > $TEMP_JSON_INPUT
+echo '{"displayName": "AHqVckGs"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdateNamespace \
@@ -174,7 +174,7 @@ eval_tap $? 14 'DeleteConfig' test.out
 
 #- 15 UpdateConfig
 # body param: body
-echo '{"apiKey": "qIy4oSW6"}' > $TEMP_JSON_INPUT
+echo '{"apiKey": "5qQ4DigY"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdateConfig \
@@ -187,9 +187,9 @@ eval_tap $? 15 'UpdateConfig' test.out
 $CLI_EXE \
     --sn basic \
     --op GeneratedUploadUrl \
-    --folder 'Ci9pzUSm' \
+    --folder 'OjC6g6RQ' \
     --namespace $AB_NAMESPACE \
-    --fileType 'EFuce6ci' \
+    --fileType 'hJnSYdre' \
     > test.out 2>&1
 eval_tap $? 16 'GeneratedUploadUrl' test.out
 
@@ -198,7 +198,7 @@ $CLI_EXE \
     --sn basic \
     --op GetCountries \
     --namespace $AB_NAMESPACE \
-    --lang 'qwr33Wse' \
+    --lang '1GkbJYDD' \
     > test.out 2>&1
 eval_tap $? 17 'GetCountries' test.out
 
@@ -207,13 +207,13 @@ $CLI_EXE \
     --sn basic \
     --op GetCountryGroups \
     --namespace $AB_NAMESPACE \
-    --groupCode 'Fc0qhPKF' \
+    --groupCode 'nxC6ESrL' \
     > test.out 2>&1
 eval_tap $? 18 'GetCountryGroups' test.out
 
 #- 19 AddCountryGroup
 # body param: body
-echo '{"countries": [{"code": "jmXNHir5", "name": "DBmLcPmn"}, {"code": "TTgOgis2", "name": "L5B5UuLx"}, {"code": "mgM0ZwOG", "name": "ecIQ7pNE"}], "countryGroupCode": "CCUFKmvX", "countryGroupName": "QO5fJjNc"}' > $TEMP_JSON_INPUT
+echo '{"countries": [{"code": "O5oNFilx", "name": "ew5GDVAC"}, {"code": "4b2WxL0N", "name": "NgEBJZzs"}, {"code": "6rxqecMi", "name": "GpPDhYlv"}], "countryGroupCode": "amLij8x1", "countryGroupName": "F47DrlYO"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op AddCountryGroup \
@@ -224,11 +224,11 @@ eval_tap $? 19 'AddCountryGroup' test.out
 
 #- 20 UpdateCountryGroup
 # body param: body
-echo '{"countries": [{"code": "IDCl1Hxz", "name": "GwYOqo60"}, {"code": "9Tz1glkb", "name": "lie4fCre"}, {"code": "xEFG9XAQ", "name": "ikB78G3i"}], "countryGroupName": "MMbCEAni"}' > $TEMP_JSON_INPUT
+echo '{"countries": [{"code": "SXgmjNhJ", "name": "e7XFA79c"}, {"code": "udnkS4pV", "name": "2Svzh4jD"}, {"code": "meDmaCEG", "name": "UXv9avGh"}], "countryGroupName": "NIkZdSKP"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdateCountryGroup \
-    --countryGroupCode 'zJo1CBLH' \
+    --countryGroupCode 'mAyPxR4m' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -238,7 +238,7 @@ eval_tap $? 20 'UpdateCountryGroup' test.out
 $CLI_EXE \
     --sn basic \
     --op DeleteCountryGroup \
-    --countryGroupCode 'uXasvXtJ' \
+    --countryGroupCode 'QvafA2vh' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 21 'DeleteCountryGroup' test.out
@@ -264,13 +264,13 @@ $CLI_EXE \
     --sn basic \
     --op GetUserProfileInfoByPublicId \
     --namespace $AB_NAMESPACE \
-    --publicId '9MUMdVOa' \
+    --publicId 'KboRGhLB' \
     > test.out 2>&1
 eval_tap $? 24 'GetUserProfileInfoByPublicId' test.out
 
 #- 25 AdminGetUserProfilePublicInfoByIds
 # body param: body
-echo '{"userIds": ["1CiAA9Ub", "VefvRctQ", "p2IAV8Ob"]}' > $TEMP_JSON_INPUT
+echo '{"userIds": ["WTLJ3hi9", "UW7ZORwv", "SsyBQTU6"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op AdminGetUserProfilePublicInfoByIds \
@@ -289,7 +289,7 @@ eval_tap $? 26 'GetNamespacePublisher' test.out
 
 #- 27 ChangeNamespaceStatus
 # body param: body
-echo '{"status": "ACTIVE"}' > $TEMP_JSON_INPUT
+echo '{"status": "INACTIVE"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op ChangeNamespaceStatus \
@@ -303,7 +303,7 @@ $CLI_EXE \
     --sn basic \
     --op AnonymizeUserProfile \
     --namespace $AB_NAMESPACE \
-    --userId 'yHupeo1Z' \
+    --userId 'ldfRjShc' \
     > test.out 2>&1
 eval_tap $? 28 'AnonymizeUserProfile' test.out
 
@@ -312,9 +312,9 @@ $CLI_EXE \
     --sn basic \
     --op GeneratedUserUploadContentUrl \
     --namespace $AB_NAMESPACE \
-    --userId 'OM82QAfZ' \
-    --category 'NcorBKrL' \
-    --fileType 'fTJz4I0M' \
+    --userId 'vMb0b5Qd' \
+    --category 'FLOvfpqb' \
+    --fileType 'Y5pmZo22' \
     > test.out 2>&1
 eval_tap $? 29 'GeneratedUserUploadContentUrl' test.out
 
@@ -323,18 +323,18 @@ $CLI_EXE \
     --sn basic \
     --op GetUserProfileInfo \
     --namespace $AB_NAMESPACE \
-    --userId 'wa6Qsl1m' \
+    --userId 'kBDvC6fe' \
     > test.out 2>&1
 eval_tap $? 30 'GetUserProfileInfo' test.out
 
 #- 31 UpdateUserProfile
 # body param: body
-echo '{"avatarLargeUrl": "rcI6mp9e", "avatarSmallUrl": "qpHWI1ZQ", "avatarUrl": "7NwTCgu4", "customAttributes": {"lGGqH1t1": {}, "DQAp34tV": {}, "IV66DfL9": {}}, "dateOfBirth": "1999-04-26", "firstName": "CrkKvmfK", "language": "DuT", "lastName": "5N2t5HpL", "status": "INACTIVE", "timeZone": "5pNAJrK7", "zipCode": "04A8sZfB"}' > $TEMP_JSON_INPUT
+echo '{"avatarLargeUrl": "OmikLmV6", "avatarSmallUrl": "RqbH2KeS", "avatarUrl": "McQpAeIS", "customAttributes": {"KvuWXGzP": {}, "xfL2Eoe1": {}, "nEkxzX26": {}}, "dateOfBirth": "1977-02-05", "firstName": "JQ97tD7I", "language": "Qc-078", "lastName": "VdsJnSp0", "status": "ACTIVE", "timeZone": "jjwkTmbV", "zipCode": "RokG0fik"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdateUserProfile \
     --namespace $AB_NAMESPACE \
-    --userId 'MIngzR8C' \
+    --userId 'T6UdkHk0' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 31 'UpdateUserProfile' test.out
@@ -344,7 +344,7 @@ $CLI_EXE \
     --sn basic \
     --op DeleteUserProfile \
     --namespace $AB_NAMESPACE \
-    --userId 'YDTCV95X' \
+    --userId 'mpsZnTXn' \
     > test.out 2>&1
 eval_tap $? 32 'DeleteUserProfile' test.out
 
@@ -353,18 +353,18 @@ $CLI_EXE \
     --sn basic \
     --op GetCustomAttributesInfo \
     --namespace $AB_NAMESPACE \
-    --userId 'P4zA8p5v' \
+    --userId 'avMGJKcT' \
     > test.out 2>&1
 eval_tap $? 33 'GetCustomAttributesInfo' test.out
 
 #- 34 UpdateCustomAttributesPartially
 # body param: body
-echo '{"JNwmLPNw": {}, "tRuKDQnZ": {}, "it37Q97o": {}}' > $TEMP_JSON_INPUT
+echo '{"GAefmfvJ": {}, "GgIUqBBd": {}, "qnelanGQ": {}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdateCustomAttributesPartially \
     --namespace $AB_NAMESPACE \
-    --userId 'uT6zw0tn' \
+    --userId 'YeAhcFSE' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 34 'UpdateCustomAttributesPartially' test.out
@@ -374,18 +374,18 @@ $CLI_EXE \
     --sn basic \
     --op GetPrivateCustomAttributesInfo \
     --namespace $AB_NAMESPACE \
-    --userId 'lSaeDZfd' \
+    --userId 'd88DJDJn' \
     > test.out 2>&1
 eval_tap $? 35 'GetPrivateCustomAttributesInfo' test.out
 
 #- 36 UpdatePrivateCustomAttributesPartially
 # body param: body
-echo '{"W1k61i8H": {}, "JxjWumwD": {}, "2T9Cxzd1": {}}' > $TEMP_JSON_INPUT
+echo '{"z4lBXyFk": {}, "UAepw3Ai": {}, "taDzg8fb": {}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdatePrivateCustomAttributesPartially \
     --namespace $AB_NAMESPACE \
-    --userId 'CMheQ3ly' \
+    --userId 'qITlf6pZ' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 36 'UpdatePrivateCustomAttributesPartially' test.out
@@ -397,7 +397,7 @@ $CLI_EXE \
     --sn basic \
     --op UpdateUserProfileStatus \
     --namespace $AB_NAMESPACE \
-    --userId 'oRXBUUC4' \
+    --userId 'hg5gsvYa' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 37 'UpdateUserProfileStatus' test.out
@@ -421,9 +421,9 @@ eval_tap $? 39 'PublicGetNamespaces' test.out
 $CLI_EXE \
     --sn basic \
     --op PublicGeneratedUploadUrl \
-    --folder 'F5jWrBhG' \
+    --folder '94IVeX86' \
     --namespace $AB_NAMESPACE \
-    --fileType 'xXIenO0q' \
+    --fileType 'aeCcMNrn' \
     > test.out 2>&1
 eval_tap $? 40 'PublicGeneratedUploadUrl' test.out
 
@@ -432,7 +432,7 @@ $CLI_EXE \
     --sn basic \
     --op PublicGetCountries \
     --namespace $AB_NAMESPACE \
-    --lang '4d25OLJ7' \
+    --lang 'DlexhZr9' \
     > test.out 2>&1
 eval_tap $? 41 'PublicGetCountries' test.out
 
@@ -457,7 +457,7 @@ $CLI_EXE \
     --sn basic \
     --op PublicGetUserProfilePublicInfoByIds \
     --namespace $AB_NAMESPACE \
-    --userIds 'Wbgk7akh' \
+    --userIds '76f38zqt' \
     > test.out 2>&1
 eval_tap $? 44 'PublicGetUserProfilePublicInfoByIds' test.out
 
@@ -466,7 +466,7 @@ $CLI_EXE \
     --sn basic \
     --op PublicGetUserProfileInfoByPublicId \
     --namespace $AB_NAMESPACE \
-    --publicId 'gsJ3lUHD' \
+    --publicId 'F0LMB6In' \
     > test.out 2>&1
 eval_tap $? 45 'PublicGetUserProfileInfoByPublicId' test.out
 
@@ -488,7 +488,7 @@ eval_tap $? 47 'GetMyProfileInfo' test.out
 
 #- 48 UpdateMyProfile
 # body param: body
-echo '{"avatarLargeUrl": "7TjoYZpr", "avatarSmallUrl": "IlgilzvV", "avatarUrl": "tca8E9q4", "customAttributes": {"rsW4zT49": {}, "Ku2s39r2": {}, "Vxx7xOqX": {}}, "dateOfBirth": "1977-01-14", "firstName": "MYj0mUFz", "language": "ID_cBIS", "lastName": "yuFwSRdE", "privateCustomAttributes": {"fejFWJwu": {}, "dxGmCZGz": {}, "AVPh8Zt9": {}}, "timeZone": "fydwDGO6", "zipCode": "GnkzMuZ5"}' > $TEMP_JSON_INPUT
+echo '{"avatarLargeUrl": "PaDpO4TZ", "avatarSmallUrl": "DQ33iAtx", "avatarUrl": "UQPkA4KI", "customAttributes": {"nIGdwHJX": {}, "OhsWOgYH": {}, "kCkVnfmw": {}}, "dateOfBirth": "1989-10-20", "firstName": "ImX2i7gb", "language": "kLs-yH", "lastName": "YRS4R92y", "privateCustomAttributes": {"23fnyol2": {}, "anaMBJo5": {}, "DOBV04k1": {}}, "timeZone": "oo3057V3", "zipCode": "WCI7ez9B"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdateMyProfile \
@@ -499,7 +499,7 @@ eval_tap $? 48 'UpdateMyProfile' test.out
 
 #- 49 CreateMyProfile
 # body param: body
-echo '{"avatarLargeUrl": "m6m46dei", "avatarSmallUrl": "qcdzJ9Ty", "avatarUrl": "MTZQPmK5", "customAttributes": {"DWJultX6": {}, "GJmScOfC": {}, "v3AoWIiw": {}}, "dateOfBirth": "1987-07-07", "firstName": "aJBcgWUE", "language": "lvzV-PZnP", "lastName": "Cl5XoHL3", "privateCustomAttributes": {"4DeNK1Gg": {}, "BCaCnPxc": {}, "RhZZcXtI": {}}, "timeZone": "TGhbmVfK"}' > $TEMP_JSON_INPUT
+echo '{"avatarLargeUrl": "0KrANTSy", "avatarSmallUrl": "v6bdVSrZ", "avatarUrl": "CvuKiPdX", "customAttributes": {"Y6c8m6wQ": {}, "XEz2oE1g": {}, "s0kbIqfE": {}}, "dateOfBirth": "1997-12-05", "firstName": "wgQsnOGF", "language": "sv", "lastName": "yEp0r2BB", "privateCustomAttributes": {"u01BDjOr": {}, "FesbntKG": {}, "mAfeLvFA": {}}, "timeZone": "rYTJI5S8"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op CreateMyProfile \
@@ -518,7 +518,7 @@ eval_tap $? 50 'GetMyZipCode' test.out
 
 #- 51 UpdateMyZipCode
 # body param: userZipCodeUpdate
-echo '{"zipCode": "mamr8MoL"}' > $TEMP_JSON_INPUT
+echo '{"zipCode": "3vJHCSYM"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op UpdateMyZipCode \
@@ -529,12 +529,12 @@ eval_tap $? 51 'UpdateMyZipCode' test.out
 
 #- 52 PublicReportUser
 # body param: body
-echo '{"category": "33VKeDs0", "description": "9sHojaol", "gameSessionId": "AdBUrEf3", "subcategory": "MNj4i9d5", "userId": "tsLUyL7s"}' > $TEMP_JSON_INPUT
+echo '{"category": "rDdAe0F7", "description": "wyLthxkb", "gameSessionId": "ZI6gSNpV", "subcategory": "lLdLQp1h", "userId": "IbkKxsYP"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op PublicReportUser \
     --namespace $AB_NAMESPACE \
-    --userId 'jqofM3DC' \
+    --userId 'PjintnyI' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 52 'PublicReportUser' test.out
@@ -544,9 +544,9 @@ $CLI_EXE \
     --sn basic \
     --op PublicGeneratedUserUploadContentUrl \
     --namespace $AB_NAMESPACE \
-    --userId '44nwf2Ry' \
-    --category 'RnZF7ws2' \
-    --fileType '876E7aea' \
+    --userId 'EVDb1gPs' \
+    --category 'ljdp3soD' \
+    --fileType 'PTn0boVU' \
     > test.out 2>&1
 eval_tap $? 53 'PublicGeneratedUserUploadContentUrl' test.out
 
@@ -555,30 +555,30 @@ $CLI_EXE \
     --sn basic \
     --op PublicGetUserProfileInfo \
     --namespace $AB_NAMESPACE \
-    --userId 'TJx2xCr3' \
+    --userId 'Tnl4Xi0n' \
     > test.out 2>&1
 eval_tap $? 54 'PublicGetUserProfileInfo' test.out
 
 #- 55 PublicUpdateUserProfile
 # body param: body
-echo '{"avatarLargeUrl": "sZv88dVE", "avatarSmallUrl": "D0Y32vWc", "avatarUrl": "k7GNDSpz", "customAttributes": {"9ur25rrR": {}, "mdH6LUn6": {}, "zOkaYTaM": {}}, "dateOfBirth": "1976-06-08", "firstName": "dPUJmnKL", "language": "iYWQ-wCMl-PQ", "lastName": "jwQBEbOx", "timeZone": "W3UDH9FL", "zipCode": "nRCPaKqt"}' > $TEMP_JSON_INPUT
+echo '{"avatarLargeUrl": "NUEqS0bm", "avatarSmallUrl": "QRbyDNBh", "avatarUrl": "XG34RTPz", "customAttributes": {"gQpX7L1w": {}, "b9E0ZW5j": {}, "488ZHs8g": {}}, "dateOfBirth": "1978-08-19", "firstName": "0wYsj4kZ", "language": "zBcL_NLIF", "lastName": "GR9MDpMD", "timeZone": "dmKNdpWD", "zipCode": "hPOK3wl8"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op PublicUpdateUserProfile \
     --namespace $AB_NAMESPACE \
-    --userId 'KCHMRw24' \
+    --userId 'ns6oNSOO' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 55 'PublicUpdateUserProfile' test.out
 
 #- 56 PublicCreateUserProfile
 # body param: body
-echo '{"avatarLargeUrl": "mGvgn6i3", "avatarSmallUrl": "EAgXdcYW", "avatarUrl": "Sx5kZbbT", "customAttributes": {"Il3jgd8r": {}, "YPc498NY": {}, "EBWsL4IS": {}}, "dateOfBirth": "1996-01-16", "firstName": "97XLPztW", "language": "KcVw-hmic_895", "lastName": "NQoNteiZ", "timeZone": "RdpGWG6w"}' > $TEMP_JSON_INPUT
+echo '{"avatarLargeUrl": "MV2XxoGi", "avatarSmallUrl": "MpaPxQQ1", "avatarUrl": "vfiLkrRK", "customAttributes": {"iDnzhiXu": {}, "6RQaIKEY": {}, "gVCanGlY": {}}, "dateOfBirth": "1976-05-19", "firstName": "Qt6Ue1aY", "language": "RNRl", "lastName": "6OlAF5oI", "timeZone": "3FCnHul6"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op PublicCreateUserProfile \
     --namespace $AB_NAMESPACE \
-    --userId 'QlTus8Sl' \
+    --userId 'QrEjleLQ' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 56 'PublicCreateUserProfile' test.out
@@ -588,18 +588,18 @@ $CLI_EXE \
     --sn basic \
     --op PublicGetCustomAttributesInfo \
     --namespace $AB_NAMESPACE \
-    --userId 'AbUSuAnD' \
+    --userId '22gX2FnR' \
     > test.out 2>&1
 eval_tap $? 57 'PublicGetCustomAttributesInfo' test.out
 
 #- 58 PublicUpdateCustomAttributesPartially
 # body param: body
-echo '{"ghIqRpih": {}, "h3PmTknU": {}, "cjwIVfI2": {}}' > $TEMP_JSON_INPUT
+echo '{"5OysMaOD": {}, "841oAcbX": {}, "HW2T4xr6": {}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op PublicUpdateCustomAttributesPartially \
     --namespace $AB_NAMESPACE \
-    --userId 'ZxiWaFgX' \
+    --userId '1a7SxFjN' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 58 'PublicUpdateCustomAttributesPartially' test.out
@@ -609,18 +609,18 @@ $CLI_EXE \
     --sn basic \
     --op PublicGetUserProfilePublicInfo \
     --namespace $AB_NAMESPACE \
-    --userId 't0TwkTAv' \
+    --userId 'q0EXFJR7' \
     > test.out 2>&1
 eval_tap $? 59 'PublicGetUserProfilePublicInfo' test.out
 
 #- 60 PublicUpdateUserProfileStatus
 # body param: body
-echo '{"status": "INACTIVE"}' > $TEMP_JSON_INPUT
+echo '{"status": "ACTIVE"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn basic \
     --op PublicUpdateUserProfileStatus \
     --namespace $AB_NAMESPACE \
-    --userId 'tiBZIzMD' \
+    --userId 'c4w2TI9z' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 60 'PublicUpdateUserProfileStatus' test.out

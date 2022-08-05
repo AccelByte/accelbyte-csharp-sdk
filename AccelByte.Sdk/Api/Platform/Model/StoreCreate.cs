@@ -10,18 +10,23 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class StoreCreate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("defaultLanguage")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DefaultLanguage { get; set; }
 
         [JsonPropertyName("defaultRegion")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DefaultRegion { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("supportedLanguages")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? SupportedLanguages { get; set; }
 
         [JsonPropertyName("supportedRegions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? SupportedRegions { get; set; }
 
         [JsonPropertyName("title")]

@@ -70,14 +70,14 @@ $CLI_EXE \
     --sn matchmaking \
     --op GetAllChannelsHandler \
     --namespace $AB_NAMESPACE \
-    --limit '55' \
-    --offset '85' \
+    --limit '38' \
+    --offset '51' \
     > test.out 2>&1
 eval_tap $? 4 'GetAllChannelsHandler' test.out
 
 #- 5 CreateChannelHandler
 # body param: body
-echo '{"deployment": "koP2O8LY", "description": "HUQLTcXq", "find_match_timeout_seconds": 9, "game_mode": "z73cgCgN", "joinable": false, "max_delay_ms": 27, "rule_set": {"alliance": {"max_number": 70, "min_number": 22, "player_max_number": 14, "player_min_number": 31}, "alliance_flexing_rule": [{"duration": 68, "max_number": 79, "min_number": 56, "player_max_number": 58, "player_min_number": 87}, {"duration": 43, "max_number": 12, "min_number": 74, "player_max_number": 57, "player_min_number": 84}, {"duration": 79, "max_number": 45, "min_number": 4, "player_max_number": 86, "player_min_number": 9}], "flexing_rule": [{"attribute": "x1XvCAD6", "criteria": "injqnydk", "duration": 4, "reference": 0.7278102114409918}, {"attribute": "ZrSqU13y", "criteria": "fqqOIlIw", "duration": 38, "reference": 0.5852000082936823}, {"attribute": "PjFt9Tn0", "criteria": "TuFnldyF", "duration": 59, "reference": 0.06419524745115868}], "match_options": {"options": [{"name": "JXZYY89q", "type": "GqmRoQiI"}, {"name": "eIBUgzHj", "type": "YS1fgxpf"}, {"name": "E9GaTwVo", "type": "ACDGw2ps"}]}, "matching_rule": [{"attribute": "kfNNdYsC", "criteria": "Z2NhRnaF", "reference": 0.7726737942604491}, {"attribute": "4zdQpsqG", "criteria": "zt9ggw8o", "reference": 0.5525871439095233}, {"attribute": "eFgnV0uf", "criteria": "IB1mo5yD", "reference": 0.29674147038065946}], "sub_game_modes": {"sfzrsTYw": {"alliance": {"max_number": 79, "min_number": 76, "player_max_number": 56, "player_min_number": 36}, "alliance_flexing_rule": [{"duration": 86, "max_number": 72, "min_number": 74, "player_max_number": 28, "player_min_number": 87}, {"duration": 4, "max_number": 18, "min_number": 36, "player_max_number": 40, "player_min_number": 58}, {"duration": 22, "max_number": 51, "min_number": 49, "player_max_number": 80, "player_min_number": 71}], "name": "a7Nukn4f"}, "pYVh1PIJ": {"alliance": {"max_number": 24, "min_number": 7, "player_max_number": 31, "player_min_number": 18}, "alliance_flexing_rule": [{"duration": 58, "max_number": 80, "min_number": 3, "player_max_number": 67, "player_min_number": 50}, {"duration": 81, "max_number": 77, "min_number": 25, "player_max_number": 7, "player_min_number": 32}, {"duration": 17, "max_number": 56, "min_number": 67, "player_max_number": 34, "player_min_number": 69}], "name": "OKf54lae"}, "zLK9MA9A": {"alliance": {"max_number": 46, "min_number": 38, "player_max_number": 95, "player_min_number": 44}, "alliance_flexing_rule": [{"duration": 45, "max_number": 73, "min_number": 45, "player_max_number": 11, "player_min_number": 86}, {"duration": 24, "max_number": 96, "min_number": 78, "player_max_number": 19, "player_min_number": 20}, {"duration": 70, "max_number": 54, "min_number": 50, "player_max_number": 90, "player_min_number": 68}], "name": "uCATG5gV"}}}, "session_queue_timeout_seconds": 71, "social_matchmaking": false, "use_sub_gamemode": true}' > $TEMP_JSON_INPUT
+echo '{"deployment": "KkG1blCg", "description": "mXOz7rnV", "find_match_timeout_seconds": 63, "game_mode": "gsHwI483", "joinable": false, "max_delay_ms": 94, "rule_set": {"alliance": {"max_number": 77, "min_number": 90, "player_max_number": 9, "player_min_number": 4}, "alliance_flexing_rule": [{"duration": 23, "max_number": 73, "min_number": 94, "player_max_number": 65, "player_min_number": 68}, {"duration": 14, "max_number": 4, "min_number": 24, "player_max_number": 39, "player_min_number": 46}, {"duration": 1, "max_number": 24, "min_number": 69, "player_max_number": 71, "player_min_number": 38}], "flexing_rule": [{"attribute": "kqLRtev1", "criteria": "Lif26I4T", "duration": 19, "reference": 0.8397721338732549}, {"attribute": "qRoQfvDv", "criteria": "LU2jCG9b", "duration": 67, "reference": 0.6338528029257142}, {"attribute": "6OMtXGiy", "criteria": "77zGZP6s", "duration": 7, "reference": 0.38647726761208856}], "match_options": {"options": [{"name": "Nq1Vb6Rl", "type": "VoSbZuHi"}, {"name": "q2Sx9n6b", "type": "4B1YZxgU"}, {"name": "t3d3cd4p", "type": "euhfna6P"}]}, "matching_rule": [{"attribute": "6kXkK689", "criteria": "zMWEkaeZ", "reference": 0.22367056996007828}, {"attribute": "IZXOyzpb", "criteria": "vfZEDqXt", "reference": 0.46641269700206345}, {"attribute": "UcydL1fd", "criteria": "SPKrC7ux", "reference": 0.9756259192248564}], "sub_game_modes": {"x4MDgEun": {"alliance": {"max_number": 51, "min_number": 80, "player_max_number": 43, "player_min_number": 73}, "alliance_flexing_rule": [{"duration": 52, "max_number": 36, "min_number": 18, "player_max_number": 26, "player_min_number": 48}, {"duration": 99, "max_number": 21, "min_number": 21, "player_max_number": 83, "player_min_number": 78}, {"duration": 64, "max_number": 18, "min_number": 71, "player_max_number": 99, "player_min_number": 57}], "name": "wnfj2jC8"}, "QOc012DT": {"alliance": {"max_number": 3, "min_number": 65, "player_max_number": 59, "player_min_number": 67}, "alliance_flexing_rule": [{"duration": 97, "max_number": 1, "min_number": 10, "player_max_number": 54, "player_min_number": 8}, {"duration": 2, "max_number": 92, "min_number": 92, "player_max_number": 17, "player_min_number": 97}, {"duration": 3, "max_number": 38, "min_number": 78, "player_max_number": 62, "player_min_number": 43}], "name": "1NEsfZzM"}, "gcvkc5PF": {"alliance": {"max_number": 7, "min_number": 78, "player_max_number": 46, "player_min_number": 73}, "alliance_flexing_rule": [{"duration": 92, "max_number": 86, "min_number": 82, "player_max_number": 28, "player_min_number": 31}, {"duration": 16, "max_number": 86, "min_number": 85, "player_max_number": 81, "player_min_number": 23}, {"duration": 13, "max_number": 20, "min_number": 38, "player_max_number": 70, "player_min_number": 37}], "name": "C02iCZlv"}}}, "session_queue_timeout_seconds": 73, "social_matchmaking": false, "use_sub_gamemode": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op CreateChannelHandler \
@@ -90,14 +90,14 @@ eval_tap $? 5 'CreateChannelHandler' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op DeleteChannelHandler \
-    --channel 'TfAPpsPD' \
+    --channel 'g3MJeMvK' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 6 'DeleteChannelHandler' test.out
 
 #- 7 StoreMatchResults
 # body param: body
-echo '{"match_id": "wrxtVtgC", "players": [{"results": [{"attribute": "08GK1PkX", "value": 0.8403093663002416}, {"attribute": "XYkBk7PT", "value": 0.555964543337812}, {"attribute": "JWuhX6R9", "value": 0.9597733614075497}], "user_id": "OZHrwJz4"}, {"results": [{"attribute": "sd87tpxG", "value": 0.6500195304332339}, {"attribute": "NCx2MWjc", "value": 0.44872734011544946}, {"attribute": "ZW4K81b4", "value": 0.2538699578130922}], "user_id": "vfACsfTE"}, {"results": [{"attribute": "gtMgdTby", "value": 0.0999450003338691}, {"attribute": "8olorJpl", "value": 0.24733198099328324}, {"attribute": "svxUC9cQ", "value": 0.5396383287014169}], "user_id": "1wdi8gJp"}]}' > $TEMP_JSON_INPUT
+echo '{"match_id": "kf70JRM6", "players": [{"results": [{"attribute": "EupWBmEV", "value": 0.32992380354999373}, {"attribute": "dN9DhZ3n", "value": 0.3195034832784396}, {"attribute": "fMmWt9Rj", "value": 0.5538230334940689}], "user_id": "gdfU77Bc"}, {"results": [{"attribute": "yP0xZYQb", "value": 0.6772393858679885}, {"attribute": "Am7XSLQW", "value": 0.38228367917360895}, {"attribute": "8rUvye2j", "value": 0.15053123381309375}], "user_id": "33G7pkOI"}, {"results": [{"attribute": "dwTeiudg", "value": 0.37646107516297145}, {"attribute": "xKUjT8o6", "value": 0.18299092437833453}, {"attribute": "jFI0AZA8", "value": 0.6959323338855015}], "user_id": "HfHkpyDR"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op StoreMatchResults \
@@ -108,7 +108,7 @@ eval_tap $? 7 'StoreMatchResults' test.out
 
 #- 8 Rebalance
 # body param: body
-echo '{"match_id": "20WoSXy8"}' > $TEMP_JSON_INPUT
+echo '{"match_id": "N3hmbtOP"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op Rebalance \
@@ -119,7 +119,7 @@ eval_tap $? 8 'Rebalance' test.out
 
 #- 9 QueueSessionHandler
 # body param: body
-echo '{"channel": "gRdCTwfD", "client_version": "2E3BuINr", "deployment": "pWfUdEpG", "game_mode": "gda2fHIo", "joinable": false, "match_id": "fMfaVl2p", "matching_allies": [{"matching_parties": [{"first_ticket_created_at": 36, "party_attributes": {"MT5EInDX": {}, "7IXUk8zD": {}, "FRgJ1pHD": {}}, "party_id": "iSlWZpX8", "party_members": [{"extra_attributes": {"VoOUZdtB": {}, "N7DYB0uC": {}, "br2OXaHG": {}}, "user_id": "D2aBNTik"}, {"extra_attributes": {"Jc64dDYq": {}, "b8IAV1NG": {}, "0wWuiyUe": {}}, "user_id": "HI33O6DW"}, {"extra_attributes": {"5YrSgVNC": {}, "3ycCVkYj": {}, "mo94Sw51": {}}, "user_id": "XsmP1k15"}]}, {"first_ticket_created_at": 88, "party_attributes": {"X3uTJo0T": {}, "3SwwJBGx": {}, "R87xRLow": {}}, "party_id": "tiluhY0o", "party_members": [{"extra_attributes": {"xvzvxUvl": {}, "USxIZ2O9": {}, "z80BQOIq": {}}, "user_id": "VVI1Muj2"}, {"extra_attributes": {"cLKBCKxc": {}, "ZPIEMvGu": {}, "YRgEymZA": {}}, "user_id": "dNnMsd76"}, {"extra_attributes": {"ZuaJ7SXH": {}, "uJvvTh2V": {}, "BJCiWRgQ": {}}, "user_id": "asWMoIDK"}]}, {"first_ticket_created_at": 9, "party_attributes": {"LGN5KrYC": {}, "XNg1S5wg": {}, "EHuUCTZs": {}}, "party_id": "l58GHCaV", "party_members": [{"extra_attributes": {"DOazxiJf": {}, "4TSm89dQ": {}, "8ZFawOVJ": {}}, "user_id": "xd7W5SNi"}, {"extra_attributes": {"oC2a6Hgv": {}, "KclYxsd2": {}, "0vThsoaM": {}}, "user_id": "G8Srei5y"}, {"extra_attributes": {"dxJONE5i": {}, "p748zZEM": {}, "EjGLiGBN": {}}, "user_id": "IKdR2msG"}]}]}, {"matching_parties": [{"first_ticket_created_at": 7, "party_attributes": {"evRtmHV6": {}, "Kfm1xYsr": {}, "YgOOSO1z": {}}, "party_id": "Ln71kHmR", "party_members": [{"extra_attributes": {"YXqIVvRt": {}, "ABoUb4Z6": {}, "dV7u2iHl": {}}, "user_id": "E2443jsE"}, {"extra_attributes": {"M42zPtDV": {}, "4MIkPfeW": {}, "L31lPhNP": {}}, "user_id": "NlQBOhwM"}, {"extra_attributes": {"tmM9iijY": {}, "WyqPuWQC": {}, "Z39oh0YM": {}}, "user_id": "2IStit4V"}]}, {"first_ticket_created_at": 67, "party_attributes": {"PEo1dA2H": {}, "hcxb2plz": {}, "KshEpntw": {}}, "party_id": "qbilfS12", "party_members": [{"extra_attributes": {"ov9rF3fY": {}, "uww54Q8Y": {}, "WFUMAvob": {}}, "user_id": "hWLKrXWs"}, {"extra_attributes": {"zdnrSfD7": {}, "36FbFxGL": {}, "Vug09lLo": {}}, "user_id": "ve3pCCvm"}, {"extra_attributes": {"0R3TnibA": {}, "MSVsBrZe": {}, "0VosoXGk": {}}, "user_id": "5gIRCU4L"}]}, {"first_ticket_created_at": 92, "party_attributes": {"TjVes89Q": {}, "dCY1sQKP": {}, "w7GihaCR": {}}, "party_id": "OoSxaf4T", "party_members": [{"extra_attributes": {"0JwCJOcw": {}, "X54zgHl4": {}, "sqRwOrkr": {}}, "user_id": "Ix9AmqQg"}, {"extra_attributes": {"rhKBKI02": {}, "rhu0kQbx": {}, "p8SQqIHr": {}}, "user_id": "l0PsJftE"}, {"extra_attributes": {"J3cgGDWg": {}, "yRKZnyaq": {}, "I8XbXOkI": {}}, "user_id": "91WywjjE"}]}]}, {"matching_parties": [{"first_ticket_created_at": 84, "party_attributes": {"NyAz1u0L": {}, "nKmrd9QI": {}, "4POjZUCR": {}}, "party_id": "28QEm5kH", "party_members": [{"extra_attributes": {"MBrmv8v3": {}, "JdWeRarI": {}, "A7nkywjM": {}}, "user_id": "Di1Wh8zQ"}, {"extra_attributes": {"43GgUblL": {}, "uZUZwjlp": {}, "R5thIU8Q": {}}, "user_id": "ayzNBQZ9"}, {"extra_attributes": {"BHEcwwGg": {}, "MPbuTQbI": {}, "PWM1fJJ6": {}}, "user_id": "JImurXpy"}]}, {"first_ticket_created_at": 51, "party_attributes": {"aN5mONlf": {}, "YWhG9cza": {}, "L1LoimWQ": {}}, "party_id": "tEE4HcvA", "party_members": [{"extra_attributes": {"OIC2O0jv": {}, "lMGcklkY": {}, "psGy7eKl": {}}, "user_id": "nMGktFsS"}, {"extra_attributes": {"Lhzw61ui": {}, "51vqcqvw": {}, "2qTvSuJv": {}}, "user_id": "9znc4DIK"}, {"extra_attributes": {"oK5Aga5S": {}, "QvZc7jc7": {}, "YwL8fPvF": {}}, "user_id": "s1lNgHfh"}]}, {"first_ticket_created_at": 78, "party_attributes": {"4HbYm0OH": {}, "dObMpIv1": {}, "pHu67fCG": {}}, "party_id": "VUpuEZWS", "party_members": [{"extra_attributes": {"Dlvd8Zb7": {}, "w1037ZFT": {}, "vbKQqyi4": {}}, "user_id": "oqYpeOV9"}, {"extra_attributes": {"jgIdXTId": {}, "TTgXb8LM": {}, "3VP8PBk1": {}}, "user_id": "5cCSPeSu"}, {"extra_attributes": {"rHIbx45P": {}, "L2gSbyTy": {}, "gENcvc7F": {}}, "user_id": "YrpjlCPm"}]}]}], "namespace": "fCK0Zho0", "party_attributes": {"8rgkW0AF": {}, "Avjp5ed0": {}, "bFLtNmGl": {}}, "party_id": "2UM24rLf", "queued_at": 9, "region": "JLqvqMKL", "server_name": "YSIs7uq7", "status": "PaQ7OSix", "updated_at": "1997-09-12T00:00:00Z"}' > $TEMP_JSON_INPUT
+echo '{"channel": "iL8jK7Kf", "client_version": "JoZv7I8T", "deployment": "e5JSgP07", "game_mode": "JQWV3Exq", "joinable": true, "match_id": "x3qd9RxP", "matching_allies": [{"matching_parties": [{"first_ticket_created_at": 84, "party_attributes": {"igm8QYZt": {}, "o7IYfBO4": {}, "4m0RYnQm": {}}, "party_id": "OiFSqWdf", "party_members": [{"extra_attributes": {"oMbINCyp": {}, "SKDR5lSU": {}, "59KZ5sw1": {}}, "user_id": "9GreqMFK"}, {"extra_attributes": {"AF6deFEI": {}, "TRpQzJSv": {}, "oFVOIY8M": {}}, "user_id": "Lq8PC005"}, {"extra_attributes": {"boUw4daf": {}, "1u2NCpLH": {}, "bx6E31JI": {}}, "user_id": "UZlVzVa3"}]}, {"first_ticket_created_at": 37, "party_attributes": {"cnVoFu2J": {}, "toEiz7sg": {}, "RjV9DLae": {}}, "party_id": "AMAhR4kA", "party_members": [{"extra_attributes": {"pdQbAyqP": {}, "R9HONADV": {}, "5kONz6tt": {}}, "user_id": "W7jRsEqJ"}, {"extra_attributes": {"17LnzpJw": {}, "UozvmZSb": {}, "44b7o0Xf": {}}, "user_id": "lUHZTto9"}, {"extra_attributes": {"XvRvPD6F": {}, "LjKbhTvp": {}, "ZVklOkKU": {}}, "user_id": "rLgx95A2"}]}, {"first_ticket_created_at": 98, "party_attributes": {"LgPcJjRJ": {}, "CGTXFtuh": {}, "RJjAEZrf": {}}, "party_id": "Uyg2Wb3C", "party_members": [{"extra_attributes": {"1JMPBFkT": {}, "ntCqcpIN": {}, "McDL7Fit": {}}, "user_id": "B1aJfpon"}, {"extra_attributes": {"dIPt6rwy": {}, "y2DaYbdE": {}, "1D7oqIua": {}}, "user_id": "kKRcsDJl"}, {"extra_attributes": {"5G5JSDZY": {}, "lZ6F7Kpo": {}, "Z57nH7mX": {}}, "user_id": "UhJtQ0wU"}]}]}, {"matching_parties": [{"first_ticket_created_at": 45, "party_attributes": {"FvIkVoP0": {}, "WJhJWzXU": {}, "6sD9dLmo": {}}, "party_id": "rDGNYlgD", "party_members": [{"extra_attributes": {"GZxVEOAF": {}, "eKU1Xhit": {}, "2BOEHXtf": {}}, "user_id": "GqXISfTn"}, {"extra_attributes": {"YbeC4jMK": {}, "uB2MHFdW": {}, "QPyswPqQ": {}}, "user_id": "f0Uf10SL"}, {"extra_attributes": {"pfAcpvTF": {}, "idJVWFpJ": {}, "RffQ90cd": {}}, "user_id": "ggVw6ovv"}]}, {"first_ticket_created_at": 84, "party_attributes": {"mE0WeX39": {}, "qwHITpAm": {}, "tH8chtbu": {}}, "party_id": "EReZDNIU", "party_members": [{"extra_attributes": {"i4krf8eE": {}, "t3TzHca1": {}, "tfyVtHUo": {}}, "user_id": "TEkJmQvJ"}, {"extra_attributes": {"3kovpFZZ": {}, "NCfHPfgK": {}, "o1VmF5q9": {}}, "user_id": "00XUTvH9"}, {"extra_attributes": {"zwikUAEI": {}, "sTjpdbVd": {}, "ZWr936bA": {}}, "user_id": "LeBBxbs3"}]}, {"first_ticket_created_at": 58, "party_attributes": {"jmgxT18p": {}, "MGV7RJBI": {}, "o6CZwcvQ": {}}, "party_id": "pkdNi2lk", "party_members": [{"extra_attributes": {"rZuCgaE2": {}, "g3oLzRSF": {}, "SyXuYhMv": {}}, "user_id": "bWlShdCB"}, {"extra_attributes": {"nYMT4GpK": {}, "MrlN8Hci": {}, "BAlagxJe": {}}, "user_id": "o09qSN9E"}, {"extra_attributes": {"Oc7Ae5HG": {}, "97l1j4L6": {}, "GmV6xPEf": {}}, "user_id": "oHWdLjye"}]}]}, {"matching_parties": [{"first_ticket_created_at": 15, "party_attributes": {"2WVv6rbo": {}, "RYdnhkFK": {}, "ufqskGzr": {}}, "party_id": "qU9eAgMA", "party_members": [{"extra_attributes": {"mTtpU9AT": {}, "WhQG7O2l": {}, "hdegZlNK": {}}, "user_id": "LNFBEqNs"}, {"extra_attributes": {"Jw73IvgJ": {}, "IP7ezLSM": {}, "Mep5VJiz": {}}, "user_id": "NjE9fhKb"}, {"extra_attributes": {"qq2FgzOC": {}, "MBr7dWys": {}, "j5Eu5kIS": {}}, "user_id": "cPblVSJk"}]}, {"first_ticket_created_at": 28, "party_attributes": {"ZyVwpwOm": {}, "EloNmwMA": {}, "zz3O7lZB": {}}, "party_id": "0Xht0KIK", "party_members": [{"extra_attributes": {"ctxZ9hs5": {}, "vEihlWZ8": {}, "ruOgQ9Ck": {}}, "user_id": "GW9WN7LF"}, {"extra_attributes": {"OPv01dvo": {}, "5GhSqxMX": {}, "cEpqH3mo": {}}, "user_id": "XAH72rDY"}, {"extra_attributes": {"V8EAfF9F": {}, "ky85lTwQ": {}, "HJG1Q8iP": {}}, "user_id": "Fm4x7Q8B"}]}, {"first_ticket_created_at": 74, "party_attributes": {"ZzQngqaP": {}, "zhN0uffI": {}, "pnzbz2qR": {}}, "party_id": "FYKMnJPg", "party_members": [{"extra_attributes": {"4U0QyTSK": {}, "YnVrUQo5": {}, "wnQRKSwj": {}}, "user_id": "mzt7Y9nO"}, {"extra_attributes": {"GP54cxok": {}, "337PzXVd": {}, "TScgJWsB": {}}, "user_id": "tIwwxmqa"}, {"extra_attributes": {"qEoJdWaw": {}, "FaDOP5pu": {}, "WhGhAn4J": {}}, "user_id": "dxHX8W79"}]}]}], "namespace": "AypPVq02", "party_attributes": {"rZkUqgOd": {}, "jxAypQ1R": {}, "WYwsdqyW": {}}, "party_id": "55oVjeU8", "queued_at": 30, "region": "3hVpdSpS", "server_name": "cprGEV7F", "status": "mHhcFXf1", "updated_at": "1996-11-08T00:00:00Z"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op QueueSessionHandler \
@@ -130,7 +130,7 @@ eval_tap $? 9 'QueueSessionHandler' test.out
 
 #- 10 DequeueSessionHandler
 # body param: body
-echo '{"match_id": "OdvkRCnc"}' > $TEMP_JSON_INPUT
+echo '{"match_id": "UYXobIKN"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op DequeueSessionHandler \
@@ -143,14 +143,14 @@ eval_tap $? 10 'DequeueSessionHandler' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op QuerySessionHandler \
-    --matchID 'klnV71Hm' \
+    --matchID 'kI6CvLIA' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 11 'QuerySessionHandler' test.out
 
 #- 12 UpdatePlayTimeWeight
 # body param: body
-echo '{"playtime": 100, "userID": "am3uaAv5", "weight": 0.06634169079098173}' > $TEMP_JSON_INPUT
+echo '{"playtime": 20, "userID": "yhjt3HJt", "weight": 0.5517428503677576}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op UpdatePlayTimeWeight \
@@ -172,7 +172,7 @@ $CLI_EXE \
     --sn matchmaking \
     --op BulkGetSessions \
     --namespace $AB_NAMESPACE \
-    --matchIDs 'BWVNqyZH' \
+    --matchIDs 'lr2JCvVH' \
     > test.out 2>&1
 eval_tap $? 14 'BulkGetSessions' test.out
 
@@ -192,7 +192,7 @@ $CLI_EXE \
     --op ImportChannels \
     --namespace $AB_NAMESPACE \
     --upload $TEMP_FILE_UPLOAD \
-    --strategy 'u1xe3qO9' \
+    --strategy 'jLBb98Lj' \
     > test.out 2>&1
 eval_tap $? 16 'ImportChannels' test.out
 
@@ -200,18 +200,18 @@ eval_tap $? 16 'ImportChannels' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op GetSingleMatchmakingChannel \
-    --channelName 'tk4BtkQs' \
+    --channelName 'jmN6cUZ1' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 17 'GetSingleMatchmakingChannel' test.out
 
 #- 18 UpdateMatchmakingChannel
 # body param: body
-echo '{"deployment": "0jr7FijX", "description": "1e5qI3aB", "findMatchTimeoutSeconds": 62, "joinable": true, "max_delay_ms": 81, "ruleSet": {"alliance": {"maxNumber": 41, "minNumber": 79, "playerMaxNumber": 39, "playerMinNumber": 97}, "alliance_flexing_rule": [{"duration": 12, "max_number": 63, "min_number": 35, "player_max_number": 82, "player_min_number": 19}, {"duration": 25, "max_number": 7, "min_number": 8, "player_max_number": 60, "player_min_number": 15}, {"duration": 83, "max_number": 7, "min_number": 73, "player_max_number": 11, "player_min_number": 96}], "flexingRules": [{"attribute": "rFi1xokq", "criteria": "hCCcZeAf", "duration": 83, "reference": 0.6297533060498484}, {"attribute": "Icq5n3kk", "criteria": "a9q5g2Io", "duration": 54, "reference": 0.9861124056794485}, {"attribute": "EKqyqjLe", "criteria": "0plgIqxf", "duration": 69, "reference": 0.6636601802868719}], "match_options": {"options": [{"name": "EP1QANKb", "type": "PXQkT8TO"}, {"name": "eQ7DSgyC", "type": "kzClCvqZ"}, {"name": "aOmIZ8yu", "type": "jrN1pw3p"}]}, "matchingRules": [{"attribute": "fYTwpVkl", "criteria": "e0lVLpUe", "reference": 0.8332590799071001}, {"attribute": "dy9ZKO5y", "criteria": "c2Ihe0hL", "reference": 0.7224432897934608}, {"attribute": "vbffucvo", "criteria": "ocroUsyH", "reference": 0.9175654297494404}], "sub_game_modes": {}}, "sessionQueueTimeoutSeconds": 50, "socialMatchmaking": false, "use_sub_gamemode": false}' > $TEMP_JSON_INPUT
+echo '{"deployment": "xE1Lsatk", "description": "bL482hUX", "findMatchTimeoutSeconds": 48, "joinable": true, "max_delay_ms": 58, "ruleSet": {"alliance": {"maxNumber": 55, "minNumber": 40, "playerMaxNumber": 19, "playerMinNumber": 76}, "alliance_flexing_rule": [{"duration": 61, "max_number": 3, "min_number": 96, "player_max_number": 30, "player_min_number": 98}, {"duration": 1, "max_number": 31, "min_number": 8, "player_max_number": 53, "player_min_number": 47}, {"duration": 35, "max_number": 14, "min_number": 69, "player_max_number": 14, "player_min_number": 75}], "flexingRules": [{"attribute": "GvQkiE5B", "criteria": "gAjKcixw", "duration": 74, "reference": 0.22097386968779986}, {"attribute": "AVVDvUHq", "criteria": "RmXqmMwy", "duration": 7, "reference": 0.4438066928453046}, {"attribute": "a4LX39SZ", "criteria": "GB5FHYax", "duration": 96, "reference": 0.30649288639838956}], "match_options": {"options": [{"name": "qNc5JStS", "type": "Q395zYYz"}, {"name": "1CSS32cQ", "type": "mnEVXn8i"}, {"name": "sRM8jiYH", "type": "bGPasvYc"}]}, "matchingRules": [{"attribute": "kWnPDX9q", "criteria": "bcz6OTu6", "reference": 0.9058191562950796}, {"attribute": "Cd30PXDn", "criteria": "cFiJJ9jm", "reference": 0.8953654424544208}, {"attribute": "SH8UgyyE", "criteria": "tJ8OzUUb", "reference": 0.7581824180957311}], "sub_game_modes": {}}, "sessionQueueTimeoutSeconds": 30, "socialMatchmaking": true, "use_sub_gamemode": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op UpdateMatchmakingChannel \
-    --channelName 'vab1JMin' \
+    --channelName '9w36qK16' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -221,7 +221,7 @@ eval_tap $? 18 'UpdateMatchmakingChannel' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op GetAllPartyInChannel \
-    --channelName 'qkqBeh7O' \
+    --channelName 'iOxrHyUx' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 19 'GetAllPartyInChannel' test.out
@@ -230,19 +230,19 @@ eval_tap $? 19 'GetAllPartyInChannel' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op GetAllSessionsInChannel \
-    --channelName 'HjT7V9QP' \
+    --channelName 'xhwEIk6z' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 20 'GetAllSessionsInChannel' test.out
 
 #- 21 AddUserIntoSessionInChannel
 # body param: body
-echo '{"blocked_players": ["qM004kNj", "ygB1Hs3S", "XO1emRu2"], "party_id": "q1yAhYhN", "user_id": "A24N43Uc"}' > $TEMP_JSON_INPUT
+echo '{"blocked_players": ["5KJt0sdt", "UbZqYwGy", "voiZwiMH"], "party_id": "5r50ifBm", "user_id": "3v8CpwrQ"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op AddUserIntoSessionInChannel \
-    --channelName '7r3oDLd0' \
-    --matchID '7q4gyYwa' \
+    --channelName 'RXg2OtOk' \
+    --matchID 'PcwaZjNm' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -252,8 +252,8 @@ eval_tap $? 21 'AddUserIntoSessionInChannel' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op DeleteSessionInChannel \
-    --channelName 'K2tpvwhm' \
-    --matchID 'wH04Zur3' \
+    --channelName 'EWoIACuC' \
+    --matchID 'P83Mi7Xk' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 22 'DeleteSessionInChannel' test.out
@@ -262,10 +262,10 @@ eval_tap $? 22 'DeleteSessionInChannel' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op DeleteUserFromSessionInChannel \
-    --channelName 'cR69o1ju' \
-    --matchID 'OxuR0IMh' \
+    --channelName 'fVXj3JJi' \
+    --matchID 'NcvI8KX0' \
     --namespace $AB_NAMESPACE \
-    --userID 'AnwZkzf5' \
+    --userID 'hx7Gw5ja' \
     > test.out 2>&1
 eval_tap $? 23 'DeleteUserFromSessionInChannel' test.out
 
@@ -274,13 +274,13 @@ $CLI_EXE \
     --sn matchmaking \
     --op SearchSessions \
     --namespace $AB_NAMESPACE \
-    --channel 'UuYZojLb' \
-    --deleted 'true' \
-    --matchID 'RaC095Ov' \
-    --partyID 'NnZpZh5J' \
-    --userID 'Y5vXfjcS' \
-    --limit '8' \
-    --offset '17' \
+    --channel '161p34sl' \
+    --deleted 'false' \
+    --matchID '7K9BVVzG' \
+    --partyID 'IomHbwgY' \
+    --userID 'xpAxVc0D' \
+    --limit '56' \
+    --offset '52' \
     > test.out 2>&1
 eval_tap $? 24 'SearchSessions' test.out
 
@@ -288,7 +288,7 @@ eval_tap $? 24 'SearchSessions' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op GetSessionHistoryDetailed \
-    --matchID 'TNmBFec0' \
+    --matchID 'Zo9VlUkO' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 25 'GetSessionHistoryDetailed' test.out
@@ -312,7 +312,7 @@ eval_tap $? 27 'PublicGetAllMatchmakingChannel' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op PublicGetSingleMatchmakingChannel \
-    --channelName 'zuf42n0W' \
+    --channelName 'qrlcFydE' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 28 'PublicGetSingleMatchmakingChannel' test.out
@@ -322,13 +322,13 @@ $CLI_EXE \
     --sn matchmaking \
     --op SearchSessionsV2 \
     --namespace $AB_NAMESPACE \
-    --channel '3NmJTl8m' \
-    --deleted 'false' \
-    --matchID 'yyph3fE6' \
-    --partyID 'tZ2WwcmQ' \
-    --userID 'xP3Cfk9r' \
-    --limit '69' \
-    --offset '100' \
+    --channel 'Ql7NHQkg' \
+    --deleted 'true' \
+    --matchID 'wViHABuB' \
+    --partyID 'O8Cfp2as' \
+    --userID 'OqNGsE0u' \
+    --limit '30' \
+    --offset '95' \
     > test.out 2>&1
 eval_tap $? 29 'SearchSessionsV2' test.out
 

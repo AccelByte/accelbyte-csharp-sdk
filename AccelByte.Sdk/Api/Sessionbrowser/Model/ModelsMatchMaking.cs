@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public string? GameMode { get; set; }
 
         [JsonPropertyName("joinable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Joinable { get; set; }
 
         [JsonPropertyName("match_id")]
@@ -43,6 +44,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public Dictionary<string, object>? PartyAttributes { get; set; }
 
         [JsonPropertyName("party_id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PartyId { get; set; }
 
         [JsonPropertyName("queued_at")]

@@ -10,21 +10,27 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PaymentMerchantConfigInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("adyenConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public AdyenConfig? AdyenConfig { get; set; }
 
         [JsonPropertyName("adyenSandboxConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public AdyenConfig? AdyenSandboxConfig { get; set; }
 
         [JsonPropertyName("aliPayConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public AliPayConfig? AliPayConfig { get; set; }
 
         [JsonPropertyName("aliPaySandboxConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public AliPayConfig? AliPaySandboxConfig { get; set; }
 
         [JsonPropertyName("checkoutConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public CheckoutConfig? CheckoutConfig { get; set; }
 
         [JsonPropertyName("checkoutSandboxConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public CheckoutConfig? CheckoutSandboxConfig { get; set; }
 
         [JsonPropertyName("createdAt")]
@@ -34,27 +40,34 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Id { get; set; }
 
         [JsonPropertyName("payPalConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public PayPalConfig? PayPalConfig { get; set; }
 
         [JsonPropertyName("payPalSandboxConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public PayPalConfig? PayPalSandboxConfig { get; set; }
 
         [JsonPropertyName("stripeConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public StripeConfig? StripeConfig { get; set; }
 
         [JsonPropertyName("stripeSandboxConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public StripeConfig? StripeSandboxConfig { get; set; }
 
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
 
         [JsonPropertyName("wxPayConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public WxPayConfigInfo? WxPayConfig { get; set; }
 
         [JsonPropertyName("xsollaConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public XsollaConfig? XsollaConfig { get; set; }
 
         [JsonPropertyName("xsollaPaywallConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public XsollaPaywallConfig? XsollaPaywallConfig { get; set; }
 
     }

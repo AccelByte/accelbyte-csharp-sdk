@@ -12,31 +12,38 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class AppEntitlementInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("appId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AppId { get; set; }
 
         [JsonPropertyName("appType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public AppEntitlementInfoAppType? AppType { get; set; }
 
         [JsonPropertyName("endDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? EndDate { get; set; }
 
         [JsonPropertyName("grantedAt")]
         public DateTime? GrantedAt { get; set; }
 
         [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemId { get; set; }
 
         [JsonPropertyName("itemSnapshot")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ItemSnapshot? ItemSnapshot { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("sku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
 
         [JsonPropertyName("startDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? StartDate { get; set; }
 
         [JsonPropertyName("status")]
@@ -44,6 +51,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public AppEntitlementInfoStatus? Status { get; set; }
 
         [JsonPropertyName("storeId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? StoreId { get; set; }
 
         [JsonPropertyName("userId")]

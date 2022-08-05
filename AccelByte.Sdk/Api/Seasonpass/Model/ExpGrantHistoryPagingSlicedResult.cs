@@ -13,9 +13,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public List<ExpGrantHistoryInfo>? Data { get; set; }
 
         [JsonPropertyName("paging")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Paging? Paging { get; set; }
 
         [JsonPropertyName("total")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? Total { get; set; }
 
     }

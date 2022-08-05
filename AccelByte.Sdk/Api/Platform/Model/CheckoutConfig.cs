@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class CheckoutConfig : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("publicKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PublicKey { get; set; }
 
         [JsonPropertyName("secretKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SecretKey { get; set; }
 
     }

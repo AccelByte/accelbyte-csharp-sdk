@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
     public class ADTOForUnbanUserAPICall : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("comment")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Comment { get; set; }
 
         [JsonPropertyName("userIds")]

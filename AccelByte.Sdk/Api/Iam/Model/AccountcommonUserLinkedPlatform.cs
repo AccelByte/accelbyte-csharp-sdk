@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class AccountcommonUserLinkedPlatform : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("DisplayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DisplayName { get; set; }
 
         [JsonPropertyName("EmailAddress")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? EmailAddress { get; set; }
 
         [JsonPropertyName("LinkedAt")]
@@ -25,15 +27,18 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? OriginNamespace { get; set; }
 
         [JsonPropertyName("PlatformId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformId { get; set; }
 
         [JsonPropertyName("PlatformUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformUserId { get; set; }
 
         [JsonPropertyName("UserId")]
         public string? UserId { get; set; }
 
         [JsonPropertyName("XUID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? XUID { get; set; }
 
     }

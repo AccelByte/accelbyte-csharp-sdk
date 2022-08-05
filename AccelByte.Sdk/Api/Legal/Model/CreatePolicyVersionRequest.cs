@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Legal.Model
     public class CreatePolicyVersionRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("displayVersion")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DisplayVersion { get; set; }
 
         [JsonPropertyName("isCommitted")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IsCommitted { get; set; }
 
     }

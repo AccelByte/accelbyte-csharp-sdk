@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class RewardsRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("origin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public RewardsRequestOrigin? Origin { get; set; }
 
@@ -19,6 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public List<PlatformReward>? Rewards { get; set; }
 
         [JsonPropertyName("source")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public RewardsRequestSource? Source { get; set; }
 

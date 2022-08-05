@@ -12,16 +12,19 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class KeyGroupUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("name")]
         public string? Name { get; set; }
 
         [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public KeyGroupUpdateStatus? Status { get; set; }
 
         [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
 
     }

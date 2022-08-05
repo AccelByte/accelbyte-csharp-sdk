@@ -13,21 +13,27 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public bool? Active { get; set; }
 
         [JsonPropertyName("aud")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Aud { get; set; }
 
         [JsonPropertyName("client_id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ClientId { get; set; }
 
         [JsonPropertyName("exp")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? Exp { get; set; }
 
         [JsonPropertyName("iat")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? Iat { get; set; }
 
         [JsonPropertyName("scope")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Scope { get; set; }
 
         [JsonPropertyName("sub")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sub { get; set; }
 
     }

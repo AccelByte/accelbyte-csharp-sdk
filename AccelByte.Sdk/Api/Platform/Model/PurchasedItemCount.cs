@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PurchasedItemCount : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("count")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? Count { get; set; }
 
     }

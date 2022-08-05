@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? AppId { get; set; }
 
         [JsonPropertyName("AuthorizationEndpoint")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AuthorizationEndpoint { get; set; }
 
         [JsonPropertyName("ClientId")]
@@ -55,6 +56,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("NetflixCertificates")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public AccountcommonNetflixCertificates? NetflixCertificates { get; set; }
 
         [JsonPropertyName("OrganizationId")]
@@ -82,6 +84,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public Dictionary<string, string>? TokenClaimsMapping { get; set; }
 
         [JsonPropertyName("TokenEndpoint")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TokenEndpoint { get; set; }
 
         [JsonPropertyName("registeredDomains")]

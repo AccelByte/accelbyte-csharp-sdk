@@ -12,10 +12,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class ConditionGroup : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("operator")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public ConditionGroupOperator? Operator { get; set; }
 
         [JsonPropertyName("predicates")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<PredicateObject>? Predicates { get; set; }
 
     }

@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? DefaultRegion { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("namespace")]
@@ -28,6 +29,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public bool? Published { get; set; }
 
         [JsonPropertyName("publishedTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? PublishedTime { get; set; }
 
         [JsonPropertyName("storeId")]

@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class GoogleReceiptResolveResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("needConsume")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? NeedConsume { get; set; }
 
     }

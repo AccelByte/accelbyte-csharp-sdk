@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
     public class ModelsMatchAddUserIntoSessionRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("blocked_players")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? BlockedPlayers { get; set; }
 
         [JsonPropertyName("party_id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PartyId { get; set; }
 
         [JsonPropertyName("user_id")]

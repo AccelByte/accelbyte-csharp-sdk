@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class RecurringChargeResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("code")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Code { get; set; }
 
         [JsonPropertyName("detail")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Detail { get; set; }
 
         [JsonPropertyName("triggered")]

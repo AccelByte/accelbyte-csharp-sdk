@@ -16,6 +16,7 @@ namespace AccelByte.Sdk.Api.Group.Model
         public List<string>? MemberRoleId { get; set; }
 
         [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Status { get; set; }
 
         [JsonPropertyName("userId")]

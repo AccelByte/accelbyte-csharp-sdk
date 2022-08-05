@@ -18,12 +18,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 
         [JsonPropertyName("items")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<RedeemableItem>? Items { get; set; }
 
         [JsonPropertyName("maxRedeemCountPerCampaignPerUser")]
@@ -45,9 +47,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("redeemEnd")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? RedeemEnd { get; set; }
 
         [JsonPropertyName("redeemStart")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? RedeemStart { get; set; }
 
         [JsonPropertyName("redeemType")]
@@ -59,6 +63,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public CampaignInfoStatus? Status { get; set; }
 
         [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
 
         [JsonPropertyName("type")]

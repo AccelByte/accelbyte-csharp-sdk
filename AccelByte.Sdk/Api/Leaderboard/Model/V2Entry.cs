@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
     public class V2Entry : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("additionalData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? AdditionalData { get; set; }
 
         [JsonPropertyName("hidden")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Hidden { get; set; }
 
         [JsonPropertyName("point")]

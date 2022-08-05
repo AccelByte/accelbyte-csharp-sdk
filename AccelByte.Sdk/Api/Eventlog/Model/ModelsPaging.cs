@@ -10,15 +10,19 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
     public class ModelsPaging : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("first")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? First { get; set; }
 
         [JsonPropertyName("last")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Last { get; set; }
 
         [JsonPropertyName("next")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Next { get; set; }
 
         [JsonPropertyName("previous")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Previous { get; set; }
 
     }

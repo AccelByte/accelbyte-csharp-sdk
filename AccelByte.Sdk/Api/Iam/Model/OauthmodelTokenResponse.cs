@@ -22,9 +22,11 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public int? ExpiresIn { get; set; }
 
         [JsonPropertyName("is_comply")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IsComply { get; set; }
 
         [JsonPropertyName("jflgs")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Jflgs { get; set; }
 
         [JsonPropertyName("namespace")]
@@ -37,12 +39,15 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<AccountcommonPermission>? Permissions { get; set; }
 
         [JsonPropertyName("platform_id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformId { get; set; }
 
         [JsonPropertyName("platform_user_id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformUserId { get; set; }
 
         [JsonPropertyName("refresh_expires_in")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? RefreshExpiresIn { get; set; }
 
         [JsonPropertyName("refresh_token")]

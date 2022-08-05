@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class TierReorder : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("newIndex")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? NewIndex { get; set; }
 
     }

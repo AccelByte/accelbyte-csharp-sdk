@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? PaymentOrderNo { get; set; }
 
         [JsonPropertyName("refundedTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? RefundedTime { get; set; }
 
         [JsonPropertyName("status")]
@@ -28,9 +29,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public PaymentOrderRefundResultStatus? Status { get; set; }
 
         [JsonPropertyName("targetNamespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TargetNamespace { get; set; }
 
         [JsonPropertyName("targetUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TargetUserId { get; set; }
 
     }

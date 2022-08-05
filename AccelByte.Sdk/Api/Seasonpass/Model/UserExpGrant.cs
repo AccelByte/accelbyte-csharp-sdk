@@ -12,13 +12,16 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class UserExpGrant : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("exp")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Exp { get; set; }
 
         [JsonPropertyName("source")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public UserExpGrantSource? Source { get; set; }
 
         [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
 
     }

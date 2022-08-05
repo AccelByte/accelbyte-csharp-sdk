@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Social.Model
     public class SlotMetadataUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("customAttribute")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CustomAttribute { get; set; }
 
         [JsonPropertyName("label")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Label { get; set; }
 
         [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
 
     }

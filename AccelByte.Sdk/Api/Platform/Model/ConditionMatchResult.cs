@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class ConditionMatchResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("matched")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Matched { get; set; }
 
         [JsonPropertyName("matchedConditions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<object>? MatchedConditions { get; set; }
 
         [JsonPropertyName("notMatchReason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? NotMatchReason { get; set; }
 
     }

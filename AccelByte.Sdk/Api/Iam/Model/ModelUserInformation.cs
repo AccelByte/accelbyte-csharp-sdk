@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Username { get; set; }
 
         [JsonPropertyName("XUID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? XUID { get; set; }
 
     }

@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class Customization : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("settings")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Settings { get; set; }
 
     }

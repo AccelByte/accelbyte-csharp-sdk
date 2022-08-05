@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Basic.Model
     public class NamespacePublisherInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("publisher")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Publisher { get; set; }
 
         [JsonPropertyName("publisherNamespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PublisherNamespace { get; set; }
 
     }

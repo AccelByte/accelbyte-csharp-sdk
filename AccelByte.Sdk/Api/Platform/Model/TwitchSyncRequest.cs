@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class TwitchSyncRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("gameId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? GameId { get; set; }
 
         [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
         [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
 
     }

@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class AdditionalData : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("cardSummary")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CardSummary { get; set; }
 
     }

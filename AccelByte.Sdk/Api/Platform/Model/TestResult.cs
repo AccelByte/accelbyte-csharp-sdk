@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class TestResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("msg")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Msg { get; set; }
 
         [JsonPropertyName("success")]

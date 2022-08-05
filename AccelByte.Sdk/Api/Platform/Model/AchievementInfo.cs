@@ -10,18 +10,23 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class AchievementInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
 
         [JsonPropertyName("name")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Name { get; set; }
 
         [JsonPropertyName("progressState")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ProgressState { get; set; }
 
         [JsonPropertyName("progression")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Progression { get; set; }
 
         [JsonPropertyName("serviceConfigId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ServiceConfigId { get; set; }
 
     }

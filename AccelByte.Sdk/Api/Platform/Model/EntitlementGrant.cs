@@ -12,9 +12,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class EntitlementGrant : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("endDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? EndDate { get; set; }
 
         [JsonPropertyName("grantedCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? GrantedCode { get; set; }
 
         [JsonPropertyName("itemId")]
@@ -24,22 +26,27 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? ItemNamespace { get; set; }
 
         [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
         [JsonPropertyName("quantity")]
         public int? Quantity { get; set; }
 
         [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
 
         [JsonPropertyName("source")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public EntitlementGrantSource? Source { get; set; }
 
         [JsonPropertyName("startDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? StartDate { get; set; }
 
         [JsonPropertyName("storeId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? StoreId { get; set; }
 
     }

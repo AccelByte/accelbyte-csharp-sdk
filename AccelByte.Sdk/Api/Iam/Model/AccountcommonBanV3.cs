@@ -13,9 +13,11 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Ban { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("descriptions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public AccountcommonDescription? Descriptions { get; set; }
 
         [JsonPropertyName("type")]

@@ -10,15 +10,18 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class XblIAPConfigInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("businessPartnerCertFileName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? BusinessPartnerCertFileName { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("password")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Password { get; set; }
 
         [JsonPropertyName("relyingPartyCert")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? RelyingPartyCert { get; set; }
 
     }

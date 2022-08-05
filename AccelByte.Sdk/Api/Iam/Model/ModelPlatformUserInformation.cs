@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? DisplayName { get; set; }
 
         [JsonPropertyName("EmailAddress")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? EmailAddress { get; set; }
 
         [JsonPropertyName("LinkedAt")]
@@ -28,6 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? PlatformUserID { get; set; }
 
         [JsonPropertyName("XUID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? XUID { get; set; }
 
     }

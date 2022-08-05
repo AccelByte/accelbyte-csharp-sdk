@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? FileExtension { get; set; }
 
         [JsonPropertyName("groups")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Groups { get; set; }
 
         [JsonPropertyName("id")]
@@ -43,6 +44,7 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public int? LikeCount { get; set; }
 
         [JsonPropertyName("likeState")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsLikeState? LikeState { get; set; }
 
         [JsonPropertyName("name")]
@@ -52,15 +54,19 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("payload")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Payload { get; set; }
 
         [JsonPropertyName("payloadURL")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsPayloadURL>? PayloadURL { get; set; }
 
         [JsonPropertyName("previewURL")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsPreviewURL>? PreviewURL { get; set; }
 
         [JsonPropertyName("screenshots")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsScreenshotResponse>? Screenshots { get; set; }
 
         [JsonPropertyName("shareCode")]

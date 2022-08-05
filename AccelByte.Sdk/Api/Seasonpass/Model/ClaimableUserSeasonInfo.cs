@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public int? RequiredExp { get; set; }
 
         [JsonPropertyName("season")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public SeasonSummary? Season { get; set; }
 
         [JsonPropertyName("seasonId")]
@@ -52,12 +53,15 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public Dictionary<string, object>? ToClaimRewards { get; set; }
 
         [JsonPropertyName("totalExp")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? TotalExp { get; set; }
 
         [JsonPropertyName("totalPaidForExp")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? TotalPaidForExp { get; set; }
 
         [JsonPropertyName("totalSweatExp")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? TotalSweatExp { get; set; }
 
         [JsonPropertyName("updatedAt")]

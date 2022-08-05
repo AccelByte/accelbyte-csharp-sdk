@@ -49,9 +49,11 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public bool? PhoneVerified { get; set; }
 
         [JsonPropertyName("PlatformId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformId { get; set; }
 
         [JsonPropertyName("PlatformUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformUserId { get; set; }
 
         [JsonPropertyName("Roles")]
@@ -61,9 +63,11 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? UserId { get; set; }
 
         [JsonPropertyName("Username")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Username { get; set; }
 
         [JsonPropertyName("XUID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? XUID { get; set; }
 
     }

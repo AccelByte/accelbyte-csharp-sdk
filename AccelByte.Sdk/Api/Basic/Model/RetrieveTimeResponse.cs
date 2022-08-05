@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
     public class RetrieveTimeResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("currentTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CurrentTime { get; set; }
 
     }

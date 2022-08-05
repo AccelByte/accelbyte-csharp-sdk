@@ -22,30 +22,38 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public RegionDataItemCurrencyType? CurrencyType { get; set; }
 
         [JsonPropertyName("discountAmount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? DiscountAmount { get; set; }
 
         [JsonPropertyName("discountExpireAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? DiscountExpireAt { get; set; }
 
         [JsonPropertyName("discountPercentage")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? DiscountPercentage { get; set; }
 
         [JsonPropertyName("discountPurchaseAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? DiscountPurchaseAt { get; set; }
 
         [JsonPropertyName("discountedPrice")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? DiscountedPrice { get; set; }
 
         [JsonPropertyName("expireAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? ExpireAt { get; set; }
 
         [JsonPropertyName("price")]
         public int? Price { get; set; }
 
         [JsonPropertyName("purchaseAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? PurchaseAt { get; set; }
 
         [JsonPropertyName("trialPrice")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? TrialPrice { get; set; }
 
     }

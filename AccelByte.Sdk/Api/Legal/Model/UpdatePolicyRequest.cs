@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Legal.Model
     public class UpdatePolicyRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("isDefaultOpted")]
@@ -22,6 +23,7 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? PolicyName { get; set; }
 
         [JsonPropertyName("readableId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ReadableId { get; set; }
 
         [JsonPropertyName("shouldNotifyOnUpdate")]

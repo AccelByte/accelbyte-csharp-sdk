@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class BulkOperationResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("affected")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Affected { get; set; }
 
     }

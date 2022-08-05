@@ -12,18 +12,23 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class AppInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("announcement")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Announcement { get; set; }
 
         [JsonPropertyName("carousel")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<Slide>? Carousel { get; set; }
 
         [JsonPropertyName("developer")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Developer { get; set; }
 
         [JsonPropertyName("forumUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ForumUrl { get; set; }
 
         [JsonPropertyName("genres")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public List<AppInfoGenres>? Genres { get; set; }
 
@@ -31,39 +36,49 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? ItemId { get; set; }
 
         [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("platformRequirements")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? PlatformRequirements { get; set; }
 
         [JsonPropertyName("platforms")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public List<AppInfoPlatforms>? Platforms { get; set; }
 
         [JsonPropertyName("players")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public List<AppInfoPlayers>? Players { get; set; }
 
         [JsonPropertyName("primaryGenre")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public AppInfoPrimaryGenre? PrimaryGenre { get; set; }
 
         [JsonPropertyName("publisher")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Publisher { get; set; }
 
         [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
 
         [JsonPropertyName("releaseDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? ReleaseDate { get; set; }
 
         [JsonPropertyName("slogan")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Slogan { get; set; }
 
         [JsonPropertyName("websiteUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? WebsiteUrl { get; set; }
 
     }

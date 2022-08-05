@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Code { get; set; }
 
         [JsonPropertyName("orderNo")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? OrderNo { get; set; }
 
     }

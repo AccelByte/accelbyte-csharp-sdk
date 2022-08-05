@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class CancelRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("immediate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Immediate { get; set; }
 
         [JsonPropertyName("reason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Reason { get; set; }
 
     }

@@ -13,18 +13,22 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? BasePolicyId { get; set; }
 
         [JsonPropertyName("baseUrls")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? BaseUrls { get; set; }
 
         [JsonPropertyName("countryCode")]
         public string? CountryCode { get; set; }
 
         [JsonPropertyName("countryGroupCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CountryGroupCode { get; set; }
 
         [JsonPropertyName("createdAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("id")]
@@ -49,18 +53,22 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? PolicyType { get; set; }
 
         [JsonPropertyName("policyVersions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<PolicyVersionWithLocalizedVersionObject>? PolicyVersions { get; set; }
 
         [JsonPropertyName("readableId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ReadableId { get; set; }
 
         [JsonPropertyName("shouldNotifyOnUpdate")]
         public bool? ShouldNotifyOnUpdate { get; set; }
 
         [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
 
         [JsonPropertyName("updatedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? UpdatedAt { get; set; }
 
     }

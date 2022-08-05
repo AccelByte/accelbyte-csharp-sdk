@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? OrderNo { get; set; }
 
         [JsonPropertyName("reason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Reason { get; set; }
 
         [JsonPropertyName("updatedAt")]

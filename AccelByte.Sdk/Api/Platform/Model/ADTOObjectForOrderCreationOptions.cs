@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class ADTOObjectForOrderCreationOptions : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("skipPriceValidation")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? SkipPriceValidation { get; set; }
 
     }

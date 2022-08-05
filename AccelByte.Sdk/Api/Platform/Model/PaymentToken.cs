@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PaymentToken : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("token")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Token { get; set; }
 
     }

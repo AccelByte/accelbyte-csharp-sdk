@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class UserPurchasable : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("passItemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PassItemId { get; set; }
 
         [JsonPropertyName("tierItemCount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? TierItemCount { get; set; }
 
         [JsonPropertyName("tierItemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TierItemId { get; set; }
 
     }

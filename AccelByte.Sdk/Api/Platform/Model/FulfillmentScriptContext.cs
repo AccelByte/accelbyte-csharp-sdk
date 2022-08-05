@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("order")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public OrderSummary? Order { get; set; }
 
         [JsonPropertyName("source")]

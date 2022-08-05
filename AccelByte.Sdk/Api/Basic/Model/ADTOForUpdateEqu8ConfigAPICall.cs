@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
     public class ADTOForUpdateEqu8ConfigAPICall : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("apiKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ApiKey { get; set; }
 
     }

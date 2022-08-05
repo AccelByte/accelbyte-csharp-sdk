@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class ItemPurchaseConditionValidateRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("itemIds")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? ItemIds { get; set; }
 
     }

@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public string? GameMode { get; set; }
 
         [JsonPropertyName("joinable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Joinable { get; set; }
 
         [JsonPropertyName("max_delay_ms")]
@@ -34,9 +35,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public int? SessionQueueTimeoutSeconds { get; set; }
 
         [JsonPropertyName("social_matchmaking")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? SocialMatchmaking { get; set; }
 
         [JsonPropertyName("use_sub_gamemode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? UseSubGamemode { get; set; }
 
     }

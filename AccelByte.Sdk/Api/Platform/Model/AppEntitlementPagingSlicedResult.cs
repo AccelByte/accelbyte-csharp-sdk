@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class AppEntitlementPagingSlicedResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("data")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<AppEntitlementInfo>? Data { get; set; }
 
         [JsonPropertyName("paging")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Paging? Paging { get; set; }
 
     }

@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("payload")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Payload { get; set; }
 
         [JsonPropertyName("sessionId")]

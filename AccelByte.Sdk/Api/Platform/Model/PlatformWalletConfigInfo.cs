@@ -13,9 +13,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public List<string>? AllowedBalanceOrigins { get; set; }
 
         [JsonPropertyName("createdAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
 
         [JsonPropertyName("namespace")]
@@ -25,6 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Platform { get; set; }
 
         [JsonPropertyName("updatedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? UpdatedAt { get; set; }
 
     }

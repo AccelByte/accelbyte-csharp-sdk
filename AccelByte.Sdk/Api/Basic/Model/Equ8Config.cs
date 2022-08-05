@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Basic.Model
     public class Equ8Config : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("apiKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ApiKey { get; set; }
 
         [JsonPropertyName("namespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
 
     }

@@ -12,10 +12,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class AvailableComparisonObject : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("comparison")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public AvailableComparisonObjectComparison? Comparison { get; set; }
 
         [JsonPropertyName("text")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Text { get; set; }
 
     }

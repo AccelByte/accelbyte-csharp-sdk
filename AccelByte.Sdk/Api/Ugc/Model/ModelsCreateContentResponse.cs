@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? ChannelId { get; set; }
 
         [JsonPropertyName("contentType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ContentType { get; set; }
 
         [JsonPropertyName("createdTime")]
@@ -40,12 +41,14 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("payloadURL")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsPayloadURL>? PayloadURL { get; set; }
 
         [JsonPropertyName("preview")]
         public string? Preview { get; set; }
 
         [JsonPropertyName("previewURL")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsPreviewURL>? PreviewURL { get; set; }
 
         [JsonPropertyName("shareCode")]

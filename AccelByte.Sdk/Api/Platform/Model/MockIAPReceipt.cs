@@ -12,16 +12,19 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class MockIAPReceipt : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("itemIdentityType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public MockIAPReceiptItemIdentityType? ItemIdentityType { get; set; }
 
         [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
         [JsonPropertyName("productId")]
         public string? ProductId { get; set; }
 
         [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
 
         [JsonPropertyName("type")]

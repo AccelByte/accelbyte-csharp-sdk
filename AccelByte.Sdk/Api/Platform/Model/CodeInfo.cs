@@ -12,9 +12,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class CodeInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("acquireOrderNo")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AcquireOrderNo { get; set; }
 
         [JsonPropertyName("acquireUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AcquireUserId { get; set; }
 
         [JsonPropertyName("batchNo")]
@@ -30,6 +32,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Id { get; set; }
 
         [JsonPropertyName("items")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<RedeemableItem>? Items { get; set; }
 
         [JsonPropertyName("maxRedeemCountPerCampaignPerUser")]
@@ -45,9 +48,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("redeemEnd")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? RedeemEnd { get; set; }
 
         [JsonPropertyName("redeemStart")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? RedeemStart { get; set; }
 
         [JsonPropertyName("redeemType")]

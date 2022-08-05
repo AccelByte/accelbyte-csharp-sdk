@@ -16,12 +16,15 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Resource { get; set; }
 
         [JsonPropertyName("schedAction")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? SchedAction { get; set; }
 
         [JsonPropertyName("schedCron")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SchedCron { get; set; }
 
         [JsonPropertyName("schedRange")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? SchedRange { get; set; }
 
     }

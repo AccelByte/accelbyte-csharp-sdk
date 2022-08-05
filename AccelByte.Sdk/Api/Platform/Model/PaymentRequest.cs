@@ -15,6 +15,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public long? Amount { get; set; }
 
         [JsonPropertyName("walletPlatform")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public PaymentRequestWalletPlatform? WalletPlatform { get; set; }
 

@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class AppLocalization : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("announcement")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Announcement { get; set; }
 
         [JsonPropertyName("slogan")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Slogan { get; set; }
 
     }

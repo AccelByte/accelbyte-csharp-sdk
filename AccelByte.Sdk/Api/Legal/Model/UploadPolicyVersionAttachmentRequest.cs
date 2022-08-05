@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Legal.Model
     public class UploadPolicyVersionAttachmentRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("contentMD5")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ContentMD5 { get; set; }
 
         [JsonPropertyName("contentType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ContentType { get; set; }
 
     }

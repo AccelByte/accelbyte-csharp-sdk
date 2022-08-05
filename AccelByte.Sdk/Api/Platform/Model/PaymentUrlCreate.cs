@@ -19,12 +19,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public PaymentUrlCreatePaymentProvider? PaymentProvider { get; set; }
 
         [JsonPropertyName("returnUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ReturnUrl { get; set; }
 
         [JsonPropertyName("ui")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Ui { get; set; }
 
         [JsonPropertyName("zipCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ZipCode { get; set; }
 
     }

@@ -12,9 +12,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class EntitlementInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("appId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AppId { get; set; }
 
         [JsonPropertyName("appType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public EntitlementInfoAppType? AppType { get; set; }
 
@@ -26,15 +28,18 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("endDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? EndDate { get; set; }
 
         [JsonPropertyName("features")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Features { get; set; }
 
         [JsonPropertyName("grantedAt")]
         public DateTime? GrantedAt { get; set; }
 
         [JsonPropertyName("grantedCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? GrantedCode { get; set; }
 
         [JsonPropertyName("id")]
@@ -47,6 +52,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? ItemNamespace { get; set; }
 
         [JsonPropertyName("itemSnapshot")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ItemSnapshot? ItemSnapshot { get; set; }
 
         [JsonPropertyName("name")]
@@ -56,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("sku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
 
         [JsonPropertyName("source")]
@@ -63,9 +70,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public EntitlementInfoSource? Source { get; set; }
 
         [JsonPropertyName("stackable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Stackable { get; set; }
 
         [JsonPropertyName("startDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? StartDate { get; set; }
 
         [JsonPropertyName("status")]
@@ -73,6 +82,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public EntitlementInfoStatus? Status { get; set; }
 
         [JsonPropertyName("storeId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? StoreId { get; set; }
 
         [JsonPropertyName("type")]
@@ -83,6 +93,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? UpdatedAt { get; set; }
 
         [JsonPropertyName("useCount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? UseCount { get; set; }
 
         [JsonPropertyName("userId")]

@@ -12,21 +12,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class OrderInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("chargebackReversedTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? ChargebackReversedTime { get; set; }
 
         [JsonPropertyName("chargebackTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? ChargebackTime { get; set; }
 
         [JsonPropertyName("chargedTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? ChargedTime { get; set; }
 
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("createdTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedTime { get; set; }
 
         [JsonPropertyName("creationOptions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ADTOObjectForOrderCreationOptions? CreationOptions { get; set; }
 
         [JsonPropertyName("currency")]
@@ -39,18 +44,22 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? ExpireTime { get; set; }
 
         [JsonPropertyName("ext")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Ext { get; set; }
 
         [JsonPropertyName("fulfilledTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? FulfilledTime { get; set; }
 
         [JsonPropertyName("itemId")]
         public string? ItemId { get; set; }
 
         [JsonPropertyName("itemSnapshot")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ItemSnapshot? ItemSnapshot { get; set; }
 
         [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
         [JsonPropertyName("namespace")]
@@ -60,25 +69,31 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? OrderNo { get; set; }
 
         [JsonPropertyName("paymentMethod")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentMethod { get; set; }
 
         [JsonPropertyName("paymentMethodFee")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? PaymentMethodFee { get; set; }
 
         [JsonPropertyName("paymentOrderNo")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentOrderNo { get; set; }
 
         [JsonPropertyName("paymentProvider")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public OrderInfoPaymentProvider? PaymentProvider { get; set; }
 
         [JsonPropertyName("paymentProviderFee")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? PaymentProviderFee { get; set; }
 
         [JsonPropertyName("paymentRemainSeconds")]
         public int? PaymentRemainSeconds { get; set; }
 
         [JsonPropertyName("paymentStationUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentStationUrl { get; set; }
 
         [JsonPropertyName("price")]
@@ -88,12 +103,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public int? Quantity { get; set; }
 
         [JsonPropertyName("refundedTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? RefundedTime { get; set; }
 
         [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
 
         [JsonPropertyName("salesTax")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? SalesTax { get; set; }
 
         [JsonPropertyName("sandbox")]
@@ -104,18 +122,23 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public OrderInfoStatus? Status { get; set; }
 
         [JsonPropertyName("statusReason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? StatusReason { get; set; }
 
         [JsonPropertyName("subtotalPrice")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? SubtotalPrice { get; set; }
 
         [JsonPropertyName("tax")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Tax { get; set; }
 
         [JsonPropertyName("totalPrice")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? TotalPrice { get; set; }
 
         [JsonPropertyName("totalTax")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? TotalTax { get; set; }
 
         [JsonPropertyName("updatedAt")]
@@ -125,6 +148,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? UserId { get; set; }
 
         [JsonPropertyName("vat")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Vat { get; set; }
 
     }

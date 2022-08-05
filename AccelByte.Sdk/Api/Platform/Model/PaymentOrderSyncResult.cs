@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PaymentOrderSyncResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("nextEvaluatedKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? NextEvaluatedKey { get; set; }
 
         [JsonPropertyName("paymentOrders")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<PaymentOrder>? PaymentOrders { get; set; }
 
     }

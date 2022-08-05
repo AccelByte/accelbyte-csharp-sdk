@@ -10,42 +10,55 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class AdyenConfig : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("allowedPaymentMethods")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? AllowedPaymentMethods { get; set; }
 
         [JsonPropertyName("apiKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ApiKey { get; set; }
 
         [JsonPropertyName("authoriseAsCapture")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? AuthoriseAsCapture { get; set; }
 
         [JsonPropertyName("blockedPaymentMethods")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? BlockedPaymentMethods { get; set; }
 
         [JsonPropertyName("clientKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ClientKey { get; set; }
 
         [JsonPropertyName("dropInSettings")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DropInSettings { get; set; }
 
         [JsonPropertyName("liveEndpointUrlPrefix")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LiveEndpointUrlPrefix { get; set; }
 
         [JsonPropertyName("merchantAccount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? MerchantAccount { get; set; }
 
         [JsonPropertyName("notificationHmacKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? NotificationHmacKey { get; set; }
 
         [JsonPropertyName("notificationPassword")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? NotificationPassword { get; set; }
 
         [JsonPropertyName("notificationUsername")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? NotificationUsername { get; set; }
 
         [JsonPropertyName("returnUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ReturnUrl { get; set; }
 
         [JsonPropertyName("settings")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Settings { get; set; }
 
     }

@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         public Dictionary<string, object>? AdditionalData { get; set; }
 
         [JsonPropertyName("hidden")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Hidden { get; set; }
 
         [JsonPropertyName("point")]

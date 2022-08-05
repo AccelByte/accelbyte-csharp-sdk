@@ -31,6 +31,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? UpdatedAt { get; set; }
 
         [JsonPropertyName("useCount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? UseCount { get; set; }
 
         [JsonPropertyName("userId")]

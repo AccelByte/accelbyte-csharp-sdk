@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PaymentOrderNotifySimulation : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("amount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Amount { get; set; }
 
         [JsonPropertyName("currencyCode")]
@@ -26,9 +27,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public PaymentOrderNotifySimulationPaymentProvider? PaymentProvider { get; set; }
 
         [JsonPropertyName("salesTax")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? SalesTax { get; set; }
 
         [JsonPropertyName("vat")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Vat { get; set; }
 
     }

@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class Tier : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
 
         [JsonPropertyName("requiredExp")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? RequiredExp { get; set; }
 
         [JsonPropertyName("rewards")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Rewards { get; set; }
 
     }

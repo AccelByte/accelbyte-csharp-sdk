@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PurchaseCondition : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("conditionGroups")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ConditionGroup>? ConditionGroups { get; set; }
 
     }

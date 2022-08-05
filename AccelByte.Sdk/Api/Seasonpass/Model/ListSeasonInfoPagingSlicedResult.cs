@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public List<ListSeasonInfo>? Data { get; set; }
 
         [JsonPropertyName("paging")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Paging? Paging { get; set; }
 
     }

@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Ban { get; set; }
 
         [JsonPropertyName("disabledDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? DisabledDate { get; set; }
 
         [JsonPropertyName("enabled")]

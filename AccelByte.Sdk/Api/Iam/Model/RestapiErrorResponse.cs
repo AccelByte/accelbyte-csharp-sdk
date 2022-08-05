@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class RestapiErrorResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("Code")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Code { get; set; }
 
         [JsonPropertyName("Message")]

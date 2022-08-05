@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class ConditionGroupValidateResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("predicateValidateResults")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<PredicateValidateResult>? PredicateValidateResults { get; set; }
 
     }

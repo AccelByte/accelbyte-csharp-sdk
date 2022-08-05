@@ -10,15 +10,19 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PaymentTaxConfigEdit : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("sandboxTaxJarApiToken")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SandboxTaxJarApiToken { get; set; }
 
         [JsonPropertyName("taxJarApiToken")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TaxJarApiToken { get; set; }
 
         [JsonPropertyName("taxJarEnabled")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? TaxJarEnabled { get; set; }
 
         [JsonPropertyName("taxJarProductCodesMapping")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, string>? TaxJarProductCodesMapping { get; set; }
 
     }

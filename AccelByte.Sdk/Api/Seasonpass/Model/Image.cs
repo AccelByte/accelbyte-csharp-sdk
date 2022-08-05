@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class Image : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("as")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? As { get; set; }
 
         [JsonPropertyName("caption")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Caption { get; set; }
 
         [JsonPropertyName("height")]
@@ -22,6 +24,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? ImageUrl { get; set; }
 
         [JsonPropertyName("smallImageUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SmallImageUrl { get; set; }
 
         [JsonPropertyName("width")]

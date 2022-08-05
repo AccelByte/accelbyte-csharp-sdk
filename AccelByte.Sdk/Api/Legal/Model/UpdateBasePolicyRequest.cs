@@ -10,21 +10,27 @@ namespace AccelByte.Sdk.Api.Legal.Model
     public class UpdateBasePolicyRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("affectedClientIds")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? AffectedClientIds { get; set; }
 
         [JsonPropertyName("affectedCountries")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? AffectedCountries { get; set; }
 
         [JsonPropertyName("basePolicyName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? BasePolicyName { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("namespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
 
     }

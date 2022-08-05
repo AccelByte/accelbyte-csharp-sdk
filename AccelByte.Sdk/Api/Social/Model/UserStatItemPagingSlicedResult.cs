@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Social.Model
         public List<UserStatItemInfo>? Data { get; set; }
 
         [JsonPropertyName("paging")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Paging? Paging { get; set; }
 
     }

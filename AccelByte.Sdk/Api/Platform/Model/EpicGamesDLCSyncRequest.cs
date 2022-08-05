@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class EpicGamesDLCSyncRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("epicGamesJwtToken")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? EpicGamesJwtToken { get; set; }
 
     }

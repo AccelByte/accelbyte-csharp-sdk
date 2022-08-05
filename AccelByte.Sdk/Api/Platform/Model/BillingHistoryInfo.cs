@@ -15,9 +15,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public int? Amount { get; set; }
 
         [JsonPropertyName("billingAccount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public BillingAccount? BillingAccount { get; set; }
 
         [JsonPropertyName("changeBillingAccount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? ChangeBillingAccount { get; set; }
 
         [JsonPropertyName("createdAt")]
@@ -27,9 +29,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public CurrencySummary? Currency { get; set; }
 
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("extTxId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ExtTxId { get; set; }
 
         [JsonPropertyName("itemId")]
@@ -45,12 +49,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? RecurringOrderNo { get; set; }
 
         [JsonPropertyName("retryAttempted")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? RetryAttempted { get; set; }
 
         [JsonPropertyName("sandbox")]
         public bool? Sandbox { get; set; }
 
         [JsonPropertyName("sku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
 
         [JsonPropertyName("status")]
@@ -58,24 +64,29 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public BillingHistoryInfoStatus? Status { get; set; }
 
         [JsonPropertyName("statusReason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? StatusReason { get; set; }
 
         [JsonPropertyName("subscriptionId")]
         public string? SubscriptionId { get; set; }
 
         [JsonPropertyName("subtotalPrice")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? SubtotalPrice { get; set; }
 
         [JsonPropertyName("title")]
         public string? Title { get; set; }
 
         [JsonPropertyName("totalPrice")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? TotalPrice { get; set; }
 
         [JsonPropertyName("totalTax")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? TotalTax { get; set; }
 
         [JsonPropertyName("txEndTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? TxEndTime { get; set; }
 
         [JsonPropertyName("updatedAt")]

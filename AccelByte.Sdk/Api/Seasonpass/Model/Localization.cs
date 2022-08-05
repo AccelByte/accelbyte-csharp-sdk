@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
     public class Localization : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
         [JsonPropertyName("title")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Title { get; set; }
 
     }

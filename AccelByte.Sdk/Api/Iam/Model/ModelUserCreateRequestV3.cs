@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class ModelUserCreateRequestV3 : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("PasswordMD5Sum")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PasswordMD5Sum { get; set; }
 
         [JsonPropertyName("acceptedPolicies")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<LegalAcceptedPoliciesRequest>? AcceptedPolicies { get; set; }
 
         [JsonPropertyName("authType")]
@@ -25,6 +27,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Country { get; set; }
 
         [JsonPropertyName("dateOfBirth")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DateOfBirth { get; set; }
 
         [JsonPropertyName("displayName")]

@@ -15,16 +15,20 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? CurrencyCode { get; set; }
 
         [JsonPropertyName("currencySymbol")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CurrencySymbol { get; set; }
 
         [JsonPropertyName("currencyType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public CurrencyCreateCurrencyType? CurrencyType { get; set; }
 
         [JsonPropertyName("decimals")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Decimals { get; set; }
 
         [JsonPropertyName("localizationDescriptions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, string>? LocalizationDescriptions { get; set; }
 
     }

@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class ModelUnlinkUserPlatformRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("platformNamespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformNamespace { get; set; }
 
     }

@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Social.Model
     public class BulkStatItemOperationResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("details")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Details { get; set; }
 
         [JsonPropertyName("statCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? StatCode { get; set; }
 
         [JsonPropertyName("success")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Success { get; set; }
 
     }

@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? Preview { get; set; }
 
         [JsonPropertyName("previewURL")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsPreviewURL? PreviewURL { get; set; }
 
     }

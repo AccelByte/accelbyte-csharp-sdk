@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("notification_payload")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsMatchResultNotificationPayload? NotificationPayload { get; set; }
 
         [JsonPropertyName("pod_name")]

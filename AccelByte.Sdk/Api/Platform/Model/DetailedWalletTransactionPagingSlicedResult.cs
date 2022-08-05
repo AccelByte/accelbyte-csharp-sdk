@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public List<DetailedWalletTransactionInfo>? Data { get; set; }
 
         [JsonPropertyName("paging")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Paging? Paging { get; set; }
 
     }

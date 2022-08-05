@@ -12,17 +12,21 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class XsollaPaywallConfigRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("device")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public XsollaPaywallConfigRequestDevice? Device { get; set; }
 
         [JsonPropertyName("showCloseButton")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? ShowCloseButton { get; set; }
 
         [JsonPropertyName("size")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public XsollaPaywallConfigRequestSize? Size { get; set; }
 
         [JsonPropertyName("theme")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public XsollaPaywallConfigRequestTheme? Theme { get; set; }
 

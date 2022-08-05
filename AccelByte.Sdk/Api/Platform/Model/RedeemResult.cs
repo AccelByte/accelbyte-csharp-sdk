@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class RedeemResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("items")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<RedeemableItem>? Items { get; set; }
 
     }

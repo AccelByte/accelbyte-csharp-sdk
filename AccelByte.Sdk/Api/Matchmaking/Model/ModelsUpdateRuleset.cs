@@ -16,15 +16,19 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public List<ModelsAllianceFlexingRule>? AllianceFlexingRule { get; set; }
 
         [JsonPropertyName("flexingRules")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsFlexingRule>? FlexingRules { get; set; }
 
         [JsonPropertyName("match_options")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsMatchOptionRule? MatchOptions { get; set; }
 
         [JsonPropertyName("matchingRules")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsMatchingRule>? MatchingRules { get; set; }
 
         [JsonPropertyName("sub_game_modes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsUpdateRulesetSubGameModes? SubGameModes { get; set; }
 
     }

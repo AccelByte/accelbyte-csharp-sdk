@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class ModelSendVerificationCodeRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("Context")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Context { get; set; }
 
         [JsonPropertyName("LanguageTag")]

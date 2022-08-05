@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class XboxAchievementRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
 
         [JsonPropertyName("percentComplete")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? PercentComplete { get; set; }
 
     }

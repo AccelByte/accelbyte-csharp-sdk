@@ -12,12 +12,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class PaymentOrderCreate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("currencyCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CurrencyCode { get; set; }
 
         [JsonPropertyName("currencyNamespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CurrencyNamespace { get; set; }
 
         [JsonPropertyName("customParameters")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? CustomParameters { get; set; }
 
         [JsonPropertyName("description")]
@@ -27,46 +30,59 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? ExtOrderNo { get; set; }
 
         [JsonPropertyName("extUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ExtUserId { get; set; }
 
         [JsonPropertyName("itemType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public PaymentOrderCreateItemType? ItemType { get; set; }
 
         [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
         [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, string>? Metadata { get; set; }
 
         [JsonPropertyName("notifyUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? NotifyUrl { get; set; }
 
         [JsonPropertyName("omitNotification")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? OmitNotification { get; set; }
 
         [JsonPropertyName("platform")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Platform { get; set; }
 
         [JsonPropertyName("price")]
         public int? Price { get; set; }
 
         [JsonPropertyName("recurringPaymentOrderNo")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? RecurringPaymentOrderNo { get; set; }
 
         [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
 
         [JsonPropertyName("returnUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ReturnUrl { get; set; }
 
         [JsonPropertyName("sandbox")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Sandbox { get; set; }
 
         [JsonPropertyName("sku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
 
         [JsonPropertyName("subscriptionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SubscriptionId { get; set; }
 
         [JsonPropertyName("title")]
