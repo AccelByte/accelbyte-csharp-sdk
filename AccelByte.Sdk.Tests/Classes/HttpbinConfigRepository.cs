@@ -17,7 +17,12 @@ namespace AccelByte.Sdk.Tests
     {
         public HttpbinConfigRepository(string type)
         {
-            BaseUrl = "https://httpbin.org";
+            string? temp = Environment.GetEnvironmentVariable("AB_HTTPBIN_URL");
+            if (temp != null)
+                BaseUrl = temp;
+            else
+                throw new Exception($"Environment variable not found (variable: AB_HTTPBIN_URL)");
+                
             ClientId = type;
             ClientSecret = type;
             AppName = "CSharpSDKUnitTests";
