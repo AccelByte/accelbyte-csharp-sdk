@@ -12,14 +12,12 @@ build:
 test:
 	@test -n "$(SDK_MOCK_SERVER_PATH)" || (echo "SDK_MOCK_SERVER_PATH is not set" ; exit 1)
 	sed -i "s/\r//" "$(SDK_MOCK_SERVER_PATH)/mock-server.sh" && \
-			trap "docker stop -t 1 justice-codegen-sdk-mock-server" EXIT && \
-			docker rm -f mylocal_httpbin
+			trap "docker stop -t 1 justice-codegen-sdk-mock-server && docker rm -f mylocal_httpbin" EXIT && \
 			docker run -d --name mylocal_httpbin --network host -p 8070:80 kennethreitz/httpbin && \
 			(bash "$(SDK_MOCK_SERVER_PATH)/mock-server.sh" -s /data/spec &) && \
 			(for i in $$(seq 1 10); do bash -c "timeout 1 echo > /dev/tcp/127.0.0.1/8080" 2>/dev/null && exit 0 || sleep 10; done; exit 1) && \
 			docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ --network host -e AB_HTTPBIN_URL=http://localhost -e DOTNET_CLI_HOME="/data" mcr.microsoft.com/dotnet/sdk:6.0 dotnet test && \
 			docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ --network host -e AB_HTTPBIN_URL=http://localhost -e DOTNET_CLI_HOME="/data" mcr.microsoft.com/dotnet/sdk:6.0 dotnet test --filter="TestCategory=ReliableHttpClient"
-			docker rm -f mylocal_httpbin
 
 test_cli:
 	@test -n "$(SDK_MOCK_SERVER_PATH)" || (echo "SDK_MOCK_SERVER_PATH is not set" ; exit 1)
