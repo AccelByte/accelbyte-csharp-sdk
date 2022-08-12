@@ -16,8 +16,30 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetUserByUserID
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint(Public): /iam/v3/public/namespaces/{namespace}/users/{userId} [GET]
+    /// 
+    ///   * Substitute endpoint(Admin): /iam/v3/admin/namespaces/{namespace}/users/{userId} [GET]
+    /// 
+    /// 
+    /// 
+    ///   * Note:
+    ///     format difference in response: Pascal case => Camel case
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required permission 'NAMESPACE:{namespace}:USER:{userId} [READ]'
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetUserByUserID : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

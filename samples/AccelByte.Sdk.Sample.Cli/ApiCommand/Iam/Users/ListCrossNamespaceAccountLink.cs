@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Iam.Wrapper;
 using AccelByte.Sdk.Api.Iam.Model;
-using AccelByte.Sdk.Api.Iam.Operation.Deprecated;
+using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","deprecated-listcrossnamespaceaccountlink")]
-    public class DeprecatedListCrossNamespaceAccountLinkCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam","listcrossnamespaceaccountlink")]
+    public class ListCrossNamespaceAccountLinkCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("linkingToken")]
         public string LinkingToken { get; set; } = String.Empty;
                     
-        public DeprecatedListCrossNamespaceAccountLinkCommand(AccelByteSDK sdk)
+        public ListCrossNamespaceAccountLinkCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

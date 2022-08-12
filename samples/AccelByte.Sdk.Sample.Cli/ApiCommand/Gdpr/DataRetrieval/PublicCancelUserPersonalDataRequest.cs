@@ -50,11 +50,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
                 UserId                
             );            
             
-            AccelByte.Sdk.Api.Gdpr.Model.ModelsListPersonalDataResponse? response = wrapper.PublicCancelUserPersonalDataRequest(operation);
-            if (response == null)
-                return "No response from server.";
-
-            return SdkHelper.SerializeToJson(response);
+            wrapper.PublicCancelUserPersonalDataRequest(operation);
+            return String.Empty;
         }
     }
 }

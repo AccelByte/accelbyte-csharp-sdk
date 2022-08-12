@@ -41,16 +41,20 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             CreateUser operation = new CreateUser(
                 Namespace,                
                 Body                
             );            
+            #pragma warning restore ab_deprecated_operation
             
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Iam.Model.ModelUserCreateResponse? response = wrapper.CreateUser(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

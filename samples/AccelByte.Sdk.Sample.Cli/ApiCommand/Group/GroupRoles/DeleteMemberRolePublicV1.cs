@@ -50,11 +50,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 Body                
             );            
             
-            AccelByte.Sdk.Api.Group.Model.ModelsUpdateMemberRoleResponseV1? response = wrapper.DeleteMemberRolePublicV1(operation);
-            if (response == null)
-                return "No response from server.";
-
-            return SdkHelper.SerializeToJson(response);
+            wrapper.DeleteMemberRolePublicV1(operation);
+            return String.Empty;
         }
     }
 }

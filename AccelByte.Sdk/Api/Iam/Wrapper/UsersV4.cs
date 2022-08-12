@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
 
         #region Operation Builders
+        public AdminCreateTestUsersV4.AdminCreateTestUsersV4Builder AdminCreateTestUsersV4Op
+        {
+            get { return Operation.AdminCreateTestUsersV4.Builder.SetWrapperObject(this); }
+        }
         public AdminBulkCheckValidUserIDV4.AdminBulkCheckValidUserIDV4Builder AdminBulkCheckValidUserIDV4Op
         {
             get { return Operation.AdminBulkCheckValidUserIDV4.Builder.SetWrapperObject(this); }
@@ -173,6 +177,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
         #endregion
         
+        public Model.AccountCreateTestUsersResponseV4? AdminCreateTestUsersV4(AdminCreateTestUsersV4 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelListValidUserIDResponseV4? AdminBulkCheckValidUserIDV4(AdminBulkCheckValidUserIDV4 input) {
             var response = _sdk.RunRequest(input);
 

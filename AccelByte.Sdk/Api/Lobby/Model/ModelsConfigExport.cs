@@ -54,6 +54,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonPropertyName("keepPresenceActivityOnDisconnect")]
         public bool? KeepPresenceActivityOnDisconnect { get; set; }
 
+        [JsonPropertyName("maxDSWaitTime")]
+        public long? MaxDSWaitTime { get; set; }
+
         [JsonPropertyName("maxPartyMember")]
         public int? MaxPartyMember { get; set; }
 

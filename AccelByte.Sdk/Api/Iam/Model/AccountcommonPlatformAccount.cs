@@ -12,6 +12,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("platformId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PlatformId { get; set; }
+
         [JsonPropertyName("platformUserId")]
         public string? PlatformUserId { get; set; }
 

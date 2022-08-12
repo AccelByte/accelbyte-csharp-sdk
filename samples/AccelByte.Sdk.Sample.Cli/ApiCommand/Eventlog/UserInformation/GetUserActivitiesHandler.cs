@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Eventlog.Wrapper;
 using AccelByte.Sdk.Api.Eventlog.Model;
-using AccelByte.Sdk.Api.Eventlog.Operation.Deprecated;
+using AccelByte.Sdk.Api.Eventlog.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","deprecated-getuseractivitieshandler")]
-    public class DeprecatedGetUserActivitiesHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog","getuseractivitieshandler")]
+    public class GetUserActivitiesHandlerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         [SdkCommandArgument("pageSize")]
         public long PageSize { get; set; } = 0;
 
-        public DeprecatedGetUserActivitiesHandlerCommand(AccelByteSDK sdk)
+        public GetUserActivitiesHandlerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

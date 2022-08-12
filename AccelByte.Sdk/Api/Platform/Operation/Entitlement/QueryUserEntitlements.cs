@@ -40,6 +40,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public string? EntitlementName { get; set; }
 
+            public List<string>? Features { get; set; }
+
             public List<string>? ItemId { get; set; }
 
             public int? Limit { get; set; }
@@ -74,6 +76,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public QueryUserEntitlementsBuilder SetEntitlementName(string _entitlementName)
             {
                 EntitlementName = _entitlementName;
+                return this;
+            }
+
+            public QueryUserEntitlementsBuilder SetFeatures(List<string> _features)
+            {
+                Features = _features;
                 return this;
             }
 
@@ -126,12 +134,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.AppType is not null) QueryParams["appType"] = builder.AppType.Value;
             if (builder.EntitlementClazz is not null) QueryParams["entitlementClazz"] = builder.EntitlementClazz.Value;
             if (builder.EntitlementName is not null) QueryParams["entitlementName"] = builder.EntitlementName;
+            if (builder.Features is not null) QueryParams["features"] = builder.Features;
             if (builder.ItemId is not null) QueryParams["itemId"] = builder.ItemId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             
 
             
+            CollectionFormatMap["features"] = "multi";
             CollectionFormatMap["itemId"] = "multi";
             
             
@@ -147,6 +157,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             QueryUserEntitlementsAppType? appType,            
             QueryUserEntitlementsEntitlementClazz? entitlementClazz,            
             string? entitlementName,            
+            List<string>? features,            
             List<string>? itemId,            
             int? limit,            
             int? offset            
@@ -159,12 +170,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (appType is not null) QueryParams["appType"] = appType.Value;
             if (entitlementClazz is not null) QueryParams["entitlementClazz"] = entitlementClazz.Value;
             if (entitlementName is not null) QueryParams["entitlementName"] = entitlementName;
+            if (features is not null) QueryParams["features"] = features;
             if (itemId is not null) QueryParams["itemId"] = itemId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             
 
             
+            CollectionFormatMap["features"] = "multi";
             CollectionFormatMap["itemId"] = "multi";
             
             

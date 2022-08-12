@@ -1,4 +1,10 @@
-# Changelog
+<a name="v0.15.0"></a>
+## [v0.15.0]
+- Added integration test for SeasonPass
+- Added integration test for QoSM
+- Switch public HttpBin with locally deployed HttpBin image for core tests
+- **POSSIBLE BREAKING CHANGE** Moved all deprecated operations back from its own namespace respective to each service.
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 ## v0.14.0
 - Updated APIs

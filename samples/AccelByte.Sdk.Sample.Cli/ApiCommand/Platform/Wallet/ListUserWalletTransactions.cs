@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Platform.Wrapper;
 using AccelByte.Sdk.Api.Platform.Model;
-using AccelByte.Sdk.Api.Platform.Operation.Deprecated;
+using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","deprecated-listuserwallettransactions")]
-    public class DeprecatedListUserWalletTransactionsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform","listuserwallettransactions")]
+    public class ListUserWalletTransactionsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("offset")]
         public int? Offset { get; set; }
 
-        public DeprecatedListUserWalletTransactionsCommand(AccelByteSDK sdk)
+        public ListUserWalletTransactionsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

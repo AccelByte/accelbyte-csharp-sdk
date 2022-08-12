@@ -18,6 +18,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("image")]
         public string? Image { get; set; }
 
+        [JsonPropertyName("imageSize")]
+        public int? ImageSize { get; set; }
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 

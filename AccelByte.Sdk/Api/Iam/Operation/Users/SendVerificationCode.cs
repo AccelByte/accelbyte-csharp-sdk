@@ -16,6 +16,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// SendVerificationCode
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/code/request [POST]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required permission 'NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
     /// 
     /// 
@@ -47,6 +61,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// The context is intended to be used whenever the email address wanted to be automatically verified on upgrading a headless account. If this context used, IAM rejects the request if the loginId field's value is already used by others by returning HTTP Status Code 409.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class SendVerificationCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

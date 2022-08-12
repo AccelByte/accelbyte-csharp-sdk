@@ -13,27 +13,27 @@ namespace AccelByte.Sdk.Core
     {
         private AccelByteSDK _SdkObject;
 
-        public BansDeprecated BansDeprecated
+        public Bans Bans
         {
             get
             {
-                if (_BansDeprecated == null)
-                    _BansDeprecated = new BansDeprecated(_SdkObject);
-                return _BansDeprecated;
+                if (_Bans == null)
+                    _Bans = new Bans(_SdkObject);
+                return _Bans;
             }
         }
-        private BansDeprecated? _BansDeprecated = null;
+        private Bans? _Bans = null;
 
-        public ClientsDeprecated ClientsDeprecated
+        public Clients Clients
         {
             get
             {
-                if (_ClientsDeprecated == null)
-                    _ClientsDeprecated = new ClientsDeprecated(_SdkObject);
-                return _ClientsDeprecated;
+                if (_Clients == null)
+                    _Clients = new Clients(_SdkObject);
+                return _Clients;
             }
         }
-        private ClientsDeprecated? _ClientsDeprecated = null;
+        private Clients? _Clients = null;
 
         public Users Users
         {
@@ -46,38 +46,27 @@ namespace AccelByte.Sdk.Core
         }
         private Users? _Users = null;
 
-        public OAuthDeprecated OAuthDeprecated
+        public OAuth OAuth
         {
             get
             {
-                if (_OAuthDeprecated == null)
-                    _OAuthDeprecated = new OAuthDeprecated(_SdkObject);
-                return _OAuthDeprecated;
+                if (_OAuth == null)
+                    _OAuth = new OAuth(_SdkObject);
+                return _OAuth;
             }
         }
-        private OAuthDeprecated? _OAuthDeprecated = null;
+        private OAuth? _OAuth = null;
 
-        public RolesDeprecated RolesDeprecated
+        public Roles Roles
         {
             get
             {
-                if (_RolesDeprecated == null)
-                    _RolesDeprecated = new RolesDeprecated(_SdkObject);
-                return _RolesDeprecated;
+                if (_Roles == null)
+                    _Roles = new Roles(_SdkObject);
+                return _Roles;
             }
         }
-        private RolesDeprecated? _RolesDeprecated = null;
-
-        public Bans Bans
-        {
-            get
-            {
-                if (_Bans == null)
-                    _Bans = new Bans(_SdkObject);
-                return _Bans;
-            }
-        }
-        private Bans? _Bans = null;
+        private Roles? _Roles = null;
 
         public InputValidations InputValidations
         {
@@ -89,17 +78,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private InputValidations? _InputValidations = null;
-
-        public Clients Clients
-        {
-            get
-            {
-                if (_Clients == null)
-                    _Clients = new Clients(_SdkObject);
-                return _Clients;
-            }
-        }
-        private Clients? _Clients = null;
 
         public ThirdPartyCredential ThirdPartyCredential
         {
@@ -122,17 +100,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private SSOCredential? _SSOCredential = null;
-
-        public Roles Roles
-        {
-            get
-            {
-                if (_Roles == null)
-                    _Roles = new Roles(_SdkObject);
-                return _Roles;
-            }
-        }
-        private Roles? _Roles = null;
 
         public OAuth20Extension OAuth20Extension
         {

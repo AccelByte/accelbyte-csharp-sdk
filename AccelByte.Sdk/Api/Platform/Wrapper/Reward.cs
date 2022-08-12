@@ -51,6 +51,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.CheckEventCondition.Builder.SetWrapperObject(this); }
         }
+        public DeleteRewardConditionRecord.DeleteRewardConditionRecordBuilder DeleteRewardConditionRecordOp
+        {
+            get { return Operation.DeleteRewardConditionRecord.Builder.SetWrapperObject(this); }
+        }
         public GetRewardByCode.GetRewardByCodeBuilder GetRewardByCodeOp
         {
             get { return Operation.GetRewardByCode.Builder.SetWrapperObject(this); }
@@ -125,6 +129,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeleteRewardConditionRecord(DeleteRewardConditionRecord input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

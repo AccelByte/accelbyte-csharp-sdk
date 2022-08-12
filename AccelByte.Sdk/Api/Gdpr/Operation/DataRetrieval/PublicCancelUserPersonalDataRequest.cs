@@ -105,19 +105,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
         
-        public Model.ModelsListPersonalDataResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        {
             if (code == (HttpStatusCode)204)
             {
-                return null;
-            }
-            else if (code == (HttpStatusCode)201)
-            {
-                return JsonSerializer.Deserialize<Model.ModelsListPersonalDataResponse>(payload);
-            }
-            else if (code == (HttpStatusCode)200)
-            {
-                return JsonSerializer.Deserialize<Model.ModelsListPersonalDataResponse>(payload);
+                return;
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

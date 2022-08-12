@@ -16,6 +16,21 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetPublisherUser
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/{userId}/publisher [GET]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required permissions 'NAMESPACE:{namespace}:PUBLISHER:USER:{userId} [READ].
     /// 
     /// 
@@ -24,6 +39,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Restriction:
     /// Path Parameter namespace can be provided only with game namespace
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetPublisherUser : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

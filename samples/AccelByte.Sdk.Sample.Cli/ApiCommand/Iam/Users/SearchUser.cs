@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Iam.Wrapper;
 using AccelByte.Sdk.Api.Iam.Model;
-using AccelByte.Sdk.Api.Iam.Operation.Deprecated;
+using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","deprecated-searchuser")]
-    public class DeprecatedSearchUserCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam","searchuser")]
+    public class SearchUserCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("query")]
         public string? Query { get; set; }
 
-        public DeprecatedSearchUserCommand(AccelByteSDK sdk)
+        public SearchUserCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

@@ -44,6 +44,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("entitlementName")]
         public string? EntitlementName { get; set; }
 
+        [SdkCommandArgument("features")]
+        public List<string>? Features { get; set; }
+
         [SdkCommandArgument("itemId")]
         public List<string>? ItemId { get; set; }
 
@@ -69,6 +72,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 (AppType is null ? null : QueryUserEntitlementsAppType.NewValue(AppType)),                
                 (EntitlementClazz is null ? null : QueryUserEntitlementsEntitlementClazz.NewValue(EntitlementClazz)),                
                 EntitlementName,                
+                Features,                
                 ItemId,                
                 Limit,                
                 Offset                

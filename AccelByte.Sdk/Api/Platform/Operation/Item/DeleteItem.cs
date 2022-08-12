@@ -16,8 +16,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// deleteItem
     ///
-    /// This API is used to delete an item permanently, usually for test purpose. DO NOT delete already published item.
+    /// This API is used to delete an item permanently.
     /// 
+    /// force: the default value should be: false. When the value is:
+    /// * false: only the items in the draft store that have never been published yet can be removed.
+    /// *  true: the item in the draft store(even been published before) can be removed.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=8 (DELETE)
@@ -31,6 +34,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             : OperationBuilder<DeleteItemBuilder>
         {
 
+            public bool? Force { get; set; }
+
             public string? StoreId { get; set; }
 
 
@@ -39,6 +44,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             internal DeleteItemBuilder() { }
 
+
+            public DeleteItemBuilder SetForce(bool _force)
+            {
+                Force = _force;
+                return this;
+            }
 
             public DeleteItemBuilder SetStoreId(string _storeId)
             {
@@ -73,6 +84,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
             
+            if (builder.Force != null) QueryParams["force"] = Convert.ToString(builder.Force)!;
             if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
             
 
@@ -87,12 +99,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public DeleteItem(
             string itemId,            
             string namespace_,            
+            bool? force,            
             string? storeId            
         )
         {
             PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
             
+            if (force != null) QueryParams["force"] = Convert.ToString(force)!;
             if (storeId is not null) QueryParams["storeId"] = storeId;
             
 

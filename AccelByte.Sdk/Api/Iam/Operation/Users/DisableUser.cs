@@ -11,15 +11,25 @@ using AccelByte.Sdk.Api.Iam.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
+namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
     /// DisableUser
     ///
-    /// ## The endpoint is going to be deprecated. Please use this instead: iam/v2/admin/namespaces/{namespace}/users/{userId}/disable
+    /// ## The endpoint is going to be deprecated
     /// 
     /// 
-    /// +
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/status [PATCH]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// 
     /// Required permissions 'ADMIN:NAMESPACE:{namespace}:USERSTATUS:USER:{userId} [UPDATE]'
     /// 

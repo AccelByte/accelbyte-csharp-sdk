@@ -21,6 +21,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// Required scope: social
     /// 
     /// This endpoint get image patches by version.
+    /// 
+    /// Image Size unit is byte.
     /// </summary>
     public class GetImagePatches : AccelByte.Sdk.Core.Operation
     {

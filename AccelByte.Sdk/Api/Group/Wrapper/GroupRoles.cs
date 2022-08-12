@@ -121,10 +121,10 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsUpdateMemberRoleResponseV1? DeleteMemberRolePublicV1(DeleteMemberRolePublicV1 input) {
+        public void DeleteMemberRolePublicV1(DeleteMemberRolePublicV1 input) {
             var response = _sdk.RunRequest(input);
 
-            return input.ParseResponse(
+            input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

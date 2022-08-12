@@ -32,6 +32,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("force")]
+        public bool? Force { get; set; }
+
         [SdkCommandArgument("storeId")]
         public string? StoreId { get; set; }
 
@@ -47,6 +50,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             DeleteItem operation = new DeleteItem(
                 ItemId,                
                 Namespace,                
+                Force,                
                 StoreId                
             );            
             

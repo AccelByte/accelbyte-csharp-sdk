@@ -11,12 +11,22 @@ using AccelByte.Sdk.Api.Iam.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
+namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
     /// SearchUser
     ///
-    /// ## The endpoint is deprecated. Please use this instead: iam/v3/admin/namespaces/{namespace}/users/search
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/search [GET]
+    /// 
+    /// 
     /// 
     /// 
     /// 

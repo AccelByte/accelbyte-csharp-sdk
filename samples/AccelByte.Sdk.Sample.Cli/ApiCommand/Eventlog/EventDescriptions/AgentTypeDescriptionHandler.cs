@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Eventlog.Wrapper;
 using AccelByte.Sdk.Api.Eventlog.Model;
-using AccelByte.Sdk.Api.Eventlog.Operation.Deprecated;
+using AccelByte.Sdk.Api.Eventlog.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","deprecated-agenttypedescriptionhandler")]
-    public class DeprecatedAgentTypeDescriptionHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog","agenttypedescriptionhandler")]
+    public class AgentTypeDescriptionHandlerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 
         public string OperationName{ get { return "AgentTypeDescriptionHandler"; } }
 
-        public DeprecatedAgentTypeDescriptionHandlerCommand(AccelByteSDK sdk)
+        public AgentTypeDescriptionHandlerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

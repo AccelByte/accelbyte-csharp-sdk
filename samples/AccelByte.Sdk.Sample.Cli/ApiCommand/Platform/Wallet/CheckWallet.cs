@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Platform.Wrapper;
 using AccelByte.Sdk.Api.Platform.Model;
-using AccelByte.Sdk.Api.Platform.Operation.Deprecated;
+using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","deprecated-checkwallet")]
-    public class DeprecatedCheckWalletCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform","checkwallet")]
+    public class CheckWalletCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("origin")]
         public string Origin { get; set; } = String.Empty;
 
-        public DeprecatedCheckWalletCommand(AccelByteSDK sdk)
+        public CheckWalletCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

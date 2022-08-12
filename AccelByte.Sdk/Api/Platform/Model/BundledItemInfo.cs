@@ -66,6 +66,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Features { get; set; }
 
+        [JsonPropertyName("fresh")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Fresh { get; set; }
+
         [JsonPropertyName("images")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<Image>? Images { get; set; }

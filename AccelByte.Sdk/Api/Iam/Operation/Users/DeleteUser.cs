@@ -16,8 +16,23 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// DeleteUser
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/information [DELETE]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required permission 'NAMESPACE:{namespace}:USER:{userId} [DELETE]'
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class DeleteUser : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

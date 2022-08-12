@@ -11,7 +11,7 @@ using AccelByte.Sdk.Api.Eventlog.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Eventlog.Operation.Deprecated
+namespace AccelByte.Sdk.Api.Eventlog.Operation
 {
     /// <summary>
     /// SpecificAgentTypeDescriptionHandler

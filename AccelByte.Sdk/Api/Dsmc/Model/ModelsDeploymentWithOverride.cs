@@ -58,6 +58,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? SessionTimeout { get; set; }
 
+        [JsonPropertyName("unlimited")]
+        public bool? Unlimited { get; set; }
+
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
 

@@ -44,17 +44,21 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
+            #pragma warning disable ab_deprecated_operation
             BanUser operation = new BanUser(
                 Namespace,                
                 UserId,                
                 Body                
             );            
+            #pragma warning restore ab_deprecated_operation
             
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Iam.Model.ModelUserBanResponse? response = wrapper.BanUser(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

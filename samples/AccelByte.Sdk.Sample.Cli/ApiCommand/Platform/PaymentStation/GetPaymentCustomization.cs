@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Platform.Wrapper;
 using AccelByte.Sdk.Api.Platform.Model;
-using AccelByte.Sdk.Api.Platform.Operation.Deprecated;
+using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","deprecated-getpaymentcustomization")]
-    public class DeprecatedGetPaymentCustomizationCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform","getpaymentcustomization")]
+    public class GetPaymentCustomizationCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("region")]
         public string Region { get; set; } = String.Empty;
 
-        public DeprecatedGetPaymentCustomizationCommand(AccelByteSDK sdk)
+        public GetPaymentCustomizationCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

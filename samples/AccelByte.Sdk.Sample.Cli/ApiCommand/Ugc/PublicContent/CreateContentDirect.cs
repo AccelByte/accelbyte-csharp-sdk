@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Ugc.Wrapper;
 using AccelByte.Sdk.Api.Ugc.Model;
-using AccelByte.Sdk.Api.Ugc.Operation.Deprecated;
+using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","deprecated-createcontentdirect")]
-    public class DeprecatedCreateContentDirectCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","createcontentdirect")]
+    public class CreateContentDirectCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         [SdkCommandData("body")]
         public ModelsCreateContentRequest Body { get; set; } = new ModelsCreateContentRequest();
                 
-        public DeprecatedCreateContentDirectCommand(AccelByteSDK sdk)
+        public CreateContentDirectCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Eventlog.Wrapper;
 using AccelByte.Sdk.Api.Eventlog.Model;
-using AccelByte.Sdk.Api.Eventlog.Operation.Deprecated;
+using AccelByte.Sdk.Api.Eventlog.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","deprecated-unregistereventidhandler")]
-    public class DeprecatedUnregisterEventIDHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog","unregistereventidhandler")]
+    public class UnregisterEventIDHandlerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         [SdkCommandArgument("eventId")]
         public string EventId { get; set; } = String.Empty;
 
-        public DeprecatedUnregisterEventIDHandlerCommand(AccelByteSDK sdk)
+        public UnregisterEventIDHandlerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

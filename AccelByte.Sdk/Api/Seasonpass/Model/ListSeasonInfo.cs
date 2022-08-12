@@ -44,6 +44,12 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         [JsonStringEnum]
         public ListSeasonInfoStatus? Status { get; set; }
 
+        [JsonPropertyName("tierItemId")]
+        public string? TierItemId { get; set; }
+
+        [JsonPropertyName("tierItemName")]
+        public string? TierItemName { get; set; }
+
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
 

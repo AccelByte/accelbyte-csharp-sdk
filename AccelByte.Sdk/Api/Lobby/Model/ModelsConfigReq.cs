@@ -69,6 +69,10 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? KeepPresenceActivityOnDisconnect { get; set; }
 
+        [JsonPropertyName("maxDSWaitTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public long? MaxDSWaitTime { get; set; }
+
         [JsonPropertyName("maxPartyMember")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxPartyMember { get; set; }

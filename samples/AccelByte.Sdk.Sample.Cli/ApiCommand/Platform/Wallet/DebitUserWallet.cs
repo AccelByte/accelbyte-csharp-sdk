@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Platform.Wrapper;
 using AccelByte.Sdk.Api.Platform.Model;
-using AccelByte.Sdk.Api.Platform.Operation.Deprecated;
+using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","deprecated-debituserwallet")]
-    public class DeprecatedDebitUserWalletCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform","debituserwallet")]
+    public class DebitUserWalletCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandData("body")]
         public DebitRequest Body { get; set; } = new DebitRequest();
                 
-        public DeprecatedDebitUserWalletCommand(AccelByteSDK sdk)
+        public DebitUserWalletCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

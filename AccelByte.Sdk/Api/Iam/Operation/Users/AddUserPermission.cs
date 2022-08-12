@@ -16,6 +16,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AddUserPermission
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/permissions [POST]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:PERMISSION:USER:{userId} [UPDATE]'
     /// 
     /// 
@@ -109,6 +125,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     ///   7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class AddUserPermission : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

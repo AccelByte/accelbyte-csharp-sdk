@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Eventlog.Wrapper;
 using AccelByte.Sdk.Api.Eventlog.Model;
-using AccelByte.Sdk.Api.Eventlog.Operation.Deprecated;
+using AccelByte.Sdk.Api.Eventlog.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","deprecated-specificeventtypedescriptionhandler")]
-    public class DeprecatedSpecificEventTypeDescriptionHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog","specificeventtypedescriptionhandler")]
+    public class SpecificEventTypeDescriptionHandlerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         [SdkCommandArgument("eventTypes")]
         public string? EventTypes { get; set; }
 
-        public DeprecatedSpecificEventTypeDescriptionHandlerCommand(AccelByteSDK sdk)
+        public SpecificEventTypeDescriptionHandlerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

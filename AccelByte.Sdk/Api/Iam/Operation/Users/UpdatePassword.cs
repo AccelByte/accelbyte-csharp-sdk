@@ -11,15 +11,23 @@ using AccelByte.Sdk.Api.Iam.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Iam.Operation.Deprecated
+namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
     /// UpdatePassword
     ///
-    /// ## The endpoint is going to be deprecated. Admin user please use this instead: iam/v2/admin/namespaces/{namespace}/users/{userId}/password
+    /// ## The endpoint is going to be deprecated
     /// 
     /// 
-    /// +
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/password [PUT]
+    /// 
+    /// 
+    /// 
     /// 
     /// Required permission 'NAMESPACE:{namespace}:PASSWORD:USER:{userId} [UPDATE]'
     /// </summary>

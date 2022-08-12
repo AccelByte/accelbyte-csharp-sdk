@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// Required permission : `ADMIN:NAMESPACE:{namespace}:LOBBY:CONFIG [READ]` with scope `social`
     /// 
     /// get lobby config of a namespace.
+    /// default MaxDSWaitTime is 120 (second)
     /// </summary>
     public class AdminGetConfigV1 : AccelByte.Sdk.Core.Operation
     {

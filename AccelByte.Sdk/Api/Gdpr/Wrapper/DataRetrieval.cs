@@ -161,10 +161,10 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsListPersonalDataResponse? PublicCancelUserPersonalDataRequest(PublicCancelUserPersonalDataRequest input) {
+        public void PublicCancelUserPersonalDataRequest(PublicCancelUserPersonalDataRequest input) {
             var response = _sdk.RunRequest(input);
 
-            return input.ParseResponse(
+            input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

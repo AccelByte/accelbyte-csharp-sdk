@@ -306,6 +306,7 @@
 | `/platform/admin/namespaces/{namespace}/rewards/{rewardId}` | PUT | UpdateReward | [UpdateReward](../AccelByte.Sdk/Api/Platform/Operation/Reward/UpdateReward.cs) | [UpdateReward](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Reward/UpdateReward.cs) |
 | `/platform/admin/namespaces/{namespace}/rewards/{rewardId}` | DELETE | DeleteReward | [DeleteReward](../AccelByte.Sdk/Api/Platform/Operation/Reward/DeleteReward.cs) | [DeleteReward](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Reward/DeleteReward.cs) |
 | `/platform/admin/namespaces/{namespace}/rewards/{rewardId}/match` | PUT | CheckEventCondition | [CheckEventCondition](../AccelByte.Sdk/Api/Platform/Operation/Reward/CheckEventCondition.cs) | [CheckEventCondition](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Reward/CheckEventCondition.cs) |
+| `/platform/admin/namespaces/{namespace}/rewards/{rewardId}/record` | DELETE | DeleteRewardConditionRecord | [DeleteRewardConditionRecord](../AccelByte.Sdk/Api/Platform/Operation/Reward/DeleteRewardConditionRecord.cs) | [DeleteRewardConditionRecord](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Reward/DeleteRewardConditionRecord.cs) |
 | `/platform/public/namespaces/{namespace}/rewards/byCode` | GET | GetRewardByCode | [GetRewardByCode](../AccelByte.Sdk/Api/Platform/Operation/Reward/GetRewardByCode.cs) | [GetRewardByCode](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Reward/GetRewardByCode.cs) |
 | `/platform/public/namespaces/{namespace}/rewards/byCriteria` | GET | QueryRewards1 | [QueryRewards1](../AccelByte.Sdk/Api/Platform/Operation/Reward/QueryRewards1.cs) | [QueryRewards1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Reward/QueryRewards1.cs) |
 | `/platform/public/namespaces/{namespace}/rewards/{rewardId}` | GET | GetReward1 | [GetReward1](../AccelByte.Sdk/Api/Platform/Operation/Reward/GetReward1.cs) | [GetReward1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Reward/GetReward1.cs) |
@@ -517,6 +518,7 @@
 | `DLCItemConfigInfo` | [DLCItemConfigInfo](../AccelByte.Sdk/Api/Platform/Model/DLCItemConfigInfo.cs) |
 | `DLCItemConfigUpdate` | [DLCItemConfigUpdate](../AccelByte.Sdk/Api/Platform/Model/DLCItemConfigUpdate.cs) |
 | `DebitRequest` | [DebitRequest](../AccelByte.Sdk/Api/Platform/Model/DebitRequest.cs) |
+| `DeleteRewardConditionRequest` | [DeleteRewardConditionRequest](../AccelByte.Sdk/Api/Platform/Model/DeleteRewardConditionRequest.cs) |
 | `DetailedWalletTransactionInfo` | [DetailedWalletTransactionInfo](../AccelByte.Sdk/Api/Platform/Model/DetailedWalletTransactionInfo.cs) |
 | `DetailedWalletTransactionPagingSlicedResult` | [DetailedWalletTransactionPagingSlicedResult](../AccelByte.Sdk/Api/Platform/Model/DetailedWalletTransactionPagingSlicedResult.cs) |
 | `EntitlementDecrement` | [EntitlementDecrement](../AccelByte.Sdk/Api/Platform/Model/EntitlementDecrement.cs) |

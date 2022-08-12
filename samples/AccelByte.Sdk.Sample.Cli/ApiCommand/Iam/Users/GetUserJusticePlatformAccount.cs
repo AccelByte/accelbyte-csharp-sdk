@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Iam.Wrapper;
 using AccelByte.Sdk.Api.Iam.Model;
-using AccelByte.Sdk.Api.Iam.Operation.Deprecated;
+using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","deprecated-getuserjusticeplatformaccount")]
-    public class DeprecatedGetUserJusticePlatformAccountCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam","getuserjusticeplatformaccount")]
+    public class GetUserJusticePlatformAccountCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
-        public DeprecatedGetUserJusticePlatformAccountCommand(AccelByteSDK sdk)
+        public GetUserJusticePlatformAccountCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }

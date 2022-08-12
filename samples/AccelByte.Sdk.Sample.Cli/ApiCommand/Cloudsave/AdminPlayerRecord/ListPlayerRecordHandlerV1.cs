@@ -13,12 +13,12 @@ using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Cloudsave.Wrapper;
 using AccelByte.Sdk.Api.Cloudsave.Model;
-using AccelByte.Sdk.Api.Cloudsave.Operation.Deprecated;
+using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave","deprecated-listplayerrecordhandlerv1")]
-    public class DeprecatedListPlayerRecordHandlerV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave","listplayerrecordhandlerv1")]
+    public class ListPlayerRecordHandlerV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
         [SdkCommandArgument("query")]
         public string? Query { get; set; }
 
-        public DeprecatedListPlayerRecordHandlerV1Command(AccelByteSDK sdk)
+        public ListPlayerRecordHandlerV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
