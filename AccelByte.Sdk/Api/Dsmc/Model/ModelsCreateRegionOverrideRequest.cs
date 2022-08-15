@@ -21,9 +21,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("min_count")]
         public int? MinCount { get; set; }
 
-        [JsonPropertyName("unlimited")]
-        public bool? Unlimited { get; set; }
-
         [JsonPropertyName("use_buffer_percent")]
         public bool? UseBufferPercent { get; set; }
 
