@@ -1,0 +1,47 @@
+library(
+  identifier: 'jenkins-shared-library@master',
+  retriever: modernSCM(
+    [
+      $class: 'GitSCMSource',
+      remote: 'https://github.com/dhanarab/jenkins-pipeline-library.git'
+    ]
+  )
+)
+
+pipeline {
+  agent {
+    label "justice-codegen-sdk"
+  }
+  stages {
+    stage('Coverity') {
+      agent {
+        docker {
+          image 'rbs1518/cov-analysis:2022.6-1'
+          reuseNode true
+        }
+      }
+      steps {
+        script {
+          sh "rm -rfv cov-int csharp-server-sdk.bz2"
+          sh "cov-build --dir cov-int dotnet build"
+          sh "tar caf csharp-server-sdk.bz2 cov-int"
+          withCredentials([usernamePassword(credentialsId: 'coverity-accelbyte-csharp-sdk', passwordVariable: 'COVERITY_TOKEN', usernameVariable: 'COVERITY_EMAIL')]) {
+            gitCommitHashShort = git.getCommitHashShort()
+            sh "curl --form token=\$COVERITY_TOKEN --form email=\$COVERITY_EMAIL --form file=@csharp-server-sdk.bz2 --form version='${gitCommitHashShort}' --form description='Automated Coverity Scan' 'https://scan.coverity.com/builds?project=accelbyte-csharp-sdk'"
+          }
+        }
+      }
+    }
+  }
+  post {    
+    failure {
+      script {
+        message = """
+            :no_entry: <${env.BUILD_URL}|${env.JOB_NAME}-${env.BUILD_NUMBER}> *failed*
+            
+            |""".stripMargin()
+        slackSend(channel: "#activity-justice-server-sdks", color: '#FF0000', message: message)
+      }
+    }
+  }
+}
