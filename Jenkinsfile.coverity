@@ -16,7 +16,7 @@ pipeline {
     stage('Coverity') {
       agent {
         docker {
-          image 'rbs1518/cov-analysis:2022.6-1'
+          image 'rbs1518/cov-analysis:2022.6-jenkins'
           reuseNode true
         }
       }
