@@ -186,7 +186,7 @@ namespace AccelByte.Sdk.Core
         }
     }
 
-    public class AccelByteSdkBuilder
+    public partial class AccelByteSdkBuilder
     {
         private IHttpClient? _Client = null;
 
