@@ -30,11 +30,15 @@ namespace AccelByte.Sdk.Core
 
         public abstract string ServiceEndpoint { get; }
 
+        public Action<string>? OnRawMessageReceived { get; set; } = null;
+
         public Action<Message>? OnMessageReceived { get; set; } = null;
 
         public Action<string>? OnReceiveError { get; set; } = null;
 
         public bool RedirectAllReceivedMessagesToMessageReceivedEvent { get; set; } = false;
+
+        public bool ProcessRawMessage { get; set; } = true;
 
         public WebSocketService(AccelByteConfig abConfig)
         {
@@ -89,32 +93,36 @@ namespace AccelByte.Sdk.Core
                     using (StreamReader reader = new StreamReader(ms, Encoding.UTF8))
                     {
                         string rawMessage = reader.ReadToEnd();
-                        //Console.WriteLine("RECEIVED MESSAGE: {0}", rawMessage);
-                        try
+                        OnRawMessageReceived?.Invoke(rawMessage);
+
+                        if (ProcessRawMessage)
                         {
-                            Message message = new Message(rawMessage);
-                            if (RedirectAllReceivedMessagesToMessageReceivedEvent)
-                                OnMessageReceived?.Invoke(message);
-                            else
+                            try
                             {
-                                if (!_EventActions.ContainsKey(message.MessageType))
-                                    throw new Exception("Unknown message type.");
-
-                                PropertyInfo pInfo = _EventActions[message.MessageType];
-                                Type modelType = pInfo.PropertyType.GetGenericArguments().First();
-
-                                var aEvent = pInfo.GetValue(this);
-                                if (aEvent != null)
+                                Message message = new Message(rawMessage);
+                                if (RedirectAllReceivedMessagesToMessageReceivedEvent)
+                                    OnMessageReceived?.Invoke(message);
+                                else
                                 {
-                                    object respModelObj = message.To(modelType);
-                                    aEvent!.GetType().GetMethod("Invoke")!.Invoke(aEvent, new object[] { respModelObj });
+                                    if (!_EventActions.ContainsKey(message.MessageType))
+                                        throw new Exception("Unknown message type.");
+
+                                    PropertyInfo pInfo = _EventActions[message.MessageType];
+                                    Type modelType = pInfo.PropertyType.GetGenericArguments().First();
+
+                                    var aEvent = pInfo.GetValue(this);
+                                    if (aEvent != null)
+                                    {
+                                        object respModelObj = message.To(modelType);
+                                        aEvent!.GetType().GetMethod("Invoke")!.Invoke(aEvent, new object[] { respModelObj });
+                                    }
                                 }
                             }
-                        }
-                        catch (Exception ex)
-                        {
-                            OnReceiveError?.Invoke(ex.Message);
-                        }
+                            catch (Exception ex)
+                            {
+                                OnReceiveError?.Invoke(ex.Message);
+                            }
+                        }                        
                     }
                 }
             }
