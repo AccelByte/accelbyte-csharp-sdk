@@ -1,0 +1,67 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Transform": "AWS::Serverless-2016-10-31",
+  "Description": "AccelByte C# Server SDK Title Matchmaking Sample",
+  "Globals": {
+    "Function": {
+      "Runtime": "dotnet6",
+      "CodeUri": "bin/Release/net6.0/publish",
+      "MemorySize": 512,
+      "Timeout": 30,
+      "Environment": {
+        "Variables": {
+          "AB_BASE_URL": "",
+          "AB_CLIENT_ID": "",
+          "AB_CLIENT_SECRET": "",
+          "AB_APP_NAME": "",
+          "AB_NAMESPACE": "",
+          "AB_TRACEID_VERSION": "1",
+          "AB_ENABLE_TRACEID": "1",
+          "AB_ENABLE_USERAGENT": "1",
+          "AB_REDIS_HOST": "",
+          "AB_REDIS_PORT": "6379"
+        }
+      }
+    }
+  },
+  "Resources": {
+    "GetTest": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "AccelByte.Sdk.Sample.TitleMatchmaking.Aws::AccelByte.Sdk.Sample.TitleMatchmaking.Aws.Functions::GetTest",
+        "Events": {
+          "RootGet": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/",
+              "Method": "GET"
+            }
+          }
+        }
+      }
+    },
+    "PostTitleMatchmaking": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "AccelByte.Sdk.Sample.TitleMatchmaking.Aws::AccelByte.Sdk.Sample.TitleMatchmaking.Aws.Functions::PostTitleMatchmaking",
+        "Events": {
+          "RootGet": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/",
+              "Method": "POST"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "ApiURL": {
+      "Description": "API endpoint URL for Prod environment",
+      "Value": {
+        "Fn::Sub": "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+	"base_url": "",
+	"client_id": "",
+	"client_secret": "",
+	"app_name": "",
+	"namespace": "",
+	"trace_id_ver": "1",
+	"enable_trace_id": true,
+	"enable_user_agent": true
+}
