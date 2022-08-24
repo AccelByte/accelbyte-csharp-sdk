@@ -94,12 +94,7 @@ public class Functions
             MatchmakingResult mResult = mm.CreateMatchmakingRequest(authzParts[1]);
 
             if (!mResult.IsFirstMember)
-            {
-                Task t = Task.Run(() =>
-                {
-                    mm.CreateSessionAndClaimServer(mResult);
-                });
-            }
+                mm.CreateSessionAndClaimServer(mResult);
 
             return new APIGatewayProxyResponse
             {
