@@ -81,6 +81,9 @@ namespace AccelByte.Sdk.Sample.Cli.Command
 
         public string Execute(string serviceName, string payload)
         {
+            _IsError = false;
+            _ReceivedMessage = null;
+
             WebSocketService wsObj = InitializeService(_Config, serviceName);
             wsObj.RedirectAllReceivedMessagesToMessageReceivedEvent = true;
             wsObj.OnMessageReceived = (aMsg) =>
@@ -124,6 +127,9 @@ namespace AccelByte.Sdk.Sample.Cli.Command
 
         public string Execute(string serviceName, object payload)
         {
+            _IsError = false;
+            _ReceivedMessage = null;
+
             WebSocketService wsObj = InitializeService(_Config, serviceName);
             wsObj.RedirectAllReceivedMessagesToMessageReceivedEvent = true;
             wsObj.OnMessageReceived = (aMsg) =>
