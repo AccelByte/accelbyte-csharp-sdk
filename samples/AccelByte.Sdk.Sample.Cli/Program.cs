@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Reflection;
 
 using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Awesome;
 using AccelByte.Sdk.Sample.Cli.Command;
 
 namespace AccelByte.Sdk.Sample.Cli
@@ -33,11 +34,53 @@ namespace AccelByte.Sdk.Sample.Cli
                         wsCmd.Listen(cArgs.ServiceName);
                     else
                     {
-                        string response = wsCmd.Execute(cArgs.ServiceName, cArgs.WebSocketPayload);
-                        if (response == String.Empty)
-                            return 2;
-                            
-                        Console.Write("Response:\n{0}", response);
+                        if (cArgs.IsInteractive)
+                        {
+                            CommandMenu iMenu = new CommandMenu()
+                            {
+                                MainMenu = "WebSocket Message",
+                                MenuQuestion = "Select message type to send"
+                            };
+
+                            List<Type> wsqTypes = wsCmd.GetModelTypes(cArgs.ServiceName, true);
+
+                            int counter = 1;
+                            foreach (Type t in wsqTypes)
+                            {
+                                iMenu.Add(counter.ToString(), t.Name, () =>
+                                {
+                                    object wsModelObj = SdkHelper.CreateWSModelObject(t, (fName, pi, wsObj) =>
+                                    {
+                                        Console.Write("\t{0} ? ", fName);
+                                        string value = Console.ReadLine()!.Trim();
+                                        Console.WriteLine();
+                                        return value;
+                                    });
+
+                                    string response = wsCmd.Execute(cArgs.ServiceName, wsModelObj);
+                                    if (response == String.Empty)
+                                        Console.WriteLine("EMPTY RESPONSE!");
+                                    else
+                                        Console.WriteLine("Response:\n{0}", response);
+
+                                    Console.Write("<ENTER> to continue");
+                                    Console.ReadLine();
+                                    Console.WriteLine();
+                                });
+                                counter++;
+                            }
+                            iMenu.AddExitItem("x", "Exit", true);
+                            iMenu.Run();
+                            return 0;
+                        }
+                        else
+                        {
+                            string response = wsCmd.Execute(cArgs.ServiceName, cArgs.WebSocketPayload);
+                            if (response == String.Empty)
+                                return 2;
+
+                            Console.Write("Response:\n{0}", response);
+                        }
                     }                    
                 }
                 else if (cArgs.OperationName == "")

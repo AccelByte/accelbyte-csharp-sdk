@@ -49,7 +49,80 @@ namespace AccelByte.Sdk.Sample.Cli.Command
             return newObj;
         }
 
+        public List<Type> GetModelTypes(string serviceName,bool isRequestTypeOnly)
+        {
+            if (!_ServiceTypes.ContainsKey(serviceName))
+                throw new Exception("WebSocket '" + serviceName + "' does not exists.");
+            Type wsType = _ServiceTypes[serviceName];
+            Type wsmBaseType = typeof(AccelByte.Sdk.Core.WSModel);
+
+            string wsModelNs = (wsType.Namespace + ".WSModel");
+            int nspCount = wsModelNs.Length;
+
+            List<Type> modelTypes = new List<Type>();
+            foreach (Type t in wsType.Assembly.GetTypes())
+            {
+                if (t.Namespace == null)
+                    continue;
+                if (t.Namespace == wsModelNs)
+                {
+                    if (isRequestTypeOnly)
+                    {
+                        if (t.Name.ToLower()[^7..] == "request")
+                            modelTypes.Add(t);
+                    }
+                    else
+                        modelTypes.Add(t);
+                }                    
+            }
+
+            return modelTypes;
+        }
+
         public string Execute(string serviceName, string payload)
+        {
+            WebSocketService wsObj = InitializeService(_Config, serviceName);
+            wsObj.RedirectAllReceivedMessagesToMessageReceivedEvent = true;
+            wsObj.OnMessageReceived = (aMsg) =>
+            {
+                _ReceivedMessage = aMsg;
+            };
+            wsObj.OnReceiveError = (eMsg) =>
+            {
+                _IsError = true;
+                Console.WriteLine("Error: {0}", eMsg);
+            };
+
+            Task connectTak = wsObj.Connect(false);
+            connectTak.Wait();
+
+            Task listenTask = Task.Run(() => wsObj.Listen());
+
+            Task sendTask = wsObj.Send(payload);
+            sendTask.Wait();
+
+            //Now wait for the response message...
+            while (true)
+            {
+                if (_IsError == true)
+                    break;
+
+                if (_ReceivedMessage == null)
+                    Thread.Sleep(100);
+                else
+                    break;
+            }
+
+            Task disconnectTask = wsObj.Disconnect();
+            disconnectTask.Wait();
+
+            if (_IsError || (_ReceivedMessage == null))
+                return String.Empty;
+            else
+                return _ReceivedMessage.ToString();
+        }
+
+        public string Execute(string serviceName, object payload)
         {
             WebSocketService wsObj = InitializeService(_Config, serviceName);
             wsObj.RedirectAllReceivedMessagesToMessageReceivedEvent = true;

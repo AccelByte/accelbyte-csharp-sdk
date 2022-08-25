@@ -76,11 +76,28 @@ Just hit Build in the main menu, or right click in "AccelByte.Sdk.Sample.Cli", t
 
     `AccelByte.Sdk.Sample.Cli.exe --list-all`
 
+10. Listen to web socket service:
+
+    `AccelByte.Sdk.Sample.Cli.exe --sn <service_name> --ws --ws-listen`
+
+11. Sending web socket message using JSON file payload:
+
+    `AccelByte.Sdk.Sample.Cli.exe --sn <service_name> --ws --ws-payload-file <path_to_json_file>`
+
+12. Use interactive mode to send web socket message:
+
+    `AccelByte.Sdk.Sample.Cli.exe --sn <service_name> --ws --interactive`
+
 Other optional arguments:
 - `--enable-log` , enable logging for http requests. Log file (`http_log.txt`) will be stored in current directory.
 - `--ws` , enable web socket mode. Put this option first before using any web socket related options.
 - `--ws-listen` , enable web socket listening mode.
 - `--ws-payload "<json_content>"` , put web socket request payload using this option.
 - `--ws-payload-file "<path_to_json_file>"`, upload a file as web socket request payload.
+- `--interactive`, use interactive mode to send web socket message.
 
-For Visual Studio 2022 users, you can define multiple debug profiles in which each of the profiles can have different command-line arguments.
+Notes:
+- You cannot mix `--ws-listen` with `--ws-payload`, `--ws-payload-file`, or `--interactive`.
+- You cannot use `--reqfile` and `--reqbody` together. Choose only one.
+- You cannot use `--ws-payload`, `--ws-payload-file`, and/or `--interactive` together. Choose only one.
+- For Visual Studio 2022 users, you can define multiple debug profiles in which each of the profiles can have different command-line arguments.

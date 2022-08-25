@@ -52,6 +52,8 @@ namespace AccelByte.Sdk.Sample.Cli
 
         public bool IsLogEnabled { get; private set; } = false;
 
+        public bool IsInteractive { get; private set; } = false;
+
         public CommandArguments(string[] args)
         {
             _Parameters = new Dictionary<string, string>();
@@ -199,6 +201,10 @@ namespace AccelByte.Sdk.Sample.Cli
                         {
                             IsWebSocketListenMode = true;
                         }
+                        else if (aKey == "interactive")
+                        {
+                            IsInteractive = true;
+                        }
                         else if (aKey == "enable-log")
                         {
                             IsLogEnabled = true;
@@ -231,6 +237,7 @@ namespace AccelByte.Sdk.Sample.Cli
                 + "\t--ws-payload\tSet web socket data payload to send\n"
                 + "\t--ws-payload-file\tSpecify a file to be loaded as web socket data payload\n"
                 + "\t--ws-listen\tStart listening mode for web socket service\n"
+                + "\t--interactive\tUse interactive mode for sending web socket data.\n"
                 + "\nUser Login:\n"
                 + "\tAccelByte.Sdk.Sample.CLI.exe --op login --user <username> --password <password>\n\n"
                 + "Client Login:\n"
