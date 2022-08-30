@@ -59,6 +59,8 @@
 | `models.Channel` | [ModelsChannel](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsChannel.cs) |
 | `models.ChannelRequest` | [ModelsChannelRequest](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsChannelRequest.cs) |
 | `models.ChannelV1` | [ModelsChannelV1](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsChannelV1.cs) |
+| `models.Combination` | [ModelsCombination](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsCombination.cs) |
+| `models.Combination.alliances` | [ModelsCombinationAlliances](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsCombinationAlliances.cs) |
 | `models.CreateChannelResponse` | [ModelsCreateChannelResponse](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsCreateChannelResponse.cs) |
 | `models.DequeueRequest` | [ModelsDequeueRequest](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsDequeueRequest.cs) |
 | `models.FlexingRule` | [ModelsFlexingRule](../AccelByte.Sdk/Api/Matchmaking/Model/ModelsFlexingRule.cs) |

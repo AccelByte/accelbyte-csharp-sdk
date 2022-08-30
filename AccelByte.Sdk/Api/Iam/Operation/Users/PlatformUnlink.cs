@@ -16,6 +16,25 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PlatformUnlink
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId} [DELETE]
+    /// 
+    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all [DELETE]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required permission 'NAMESPACE:{namespace}:USER:{userId} [UPDATE]'.
     /// 
     /// 
@@ -65,6 +84,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Unlinking justice platform will enable password token grant and password update.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class PlatformUnlink : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

@@ -19,6 +19,30 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
 
         #region Operation Builders
+        public ListItemTypeConfigs.ListItemTypeConfigsBuilder ListItemTypeConfigsOp
+        {
+            get { return Operation.ListItemTypeConfigs.Builder.SetWrapperObject(this); }
+        }
+        public CreateItemTypeConfig.CreateItemTypeConfigBuilder CreateItemTypeConfigOp
+        {
+            get { return Operation.CreateItemTypeConfig.Builder.SetWrapperObject(this); }
+        }
+        public SearchItemTypeConfig.SearchItemTypeConfigBuilder SearchItemTypeConfigOp
+        {
+            get { return Operation.SearchItemTypeConfig.Builder.SetWrapperObject(this); }
+        }
+        public GetItemTypeConfig.GetItemTypeConfigBuilder GetItemTypeConfigOp
+        {
+            get { return Operation.GetItemTypeConfig.Builder.SetWrapperObject(this); }
+        }
+        public UpdateItemTypeConfig.UpdateItemTypeConfigBuilder UpdateItemTypeConfigOp
+        {
+            get { return Operation.UpdateItemTypeConfig.Builder.SetWrapperObject(this); }
+        }
+        public DeleteItemTypeConfig.DeleteItemTypeConfigBuilder DeleteItemTypeConfigOp
+        {
+            get { return Operation.DeleteItemTypeConfig.Builder.SetWrapperObject(this); }
+        }
         public SyncInGameItem.SyncInGameItemBuilder SyncInGameItemOp
         {
             get { return Operation.SyncInGameItem.Builder.SetWrapperObject(this); }
@@ -167,8 +191,60 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.PublicGetItem.Builder.SetWrapperObject(this); }
         }
+        public QueryItems1.QueryItems1Builder QueryItems1Op
+        {
+            get { return Operation.QueryItems1.Builder.SetWrapperObject(this); }
+        }
         #endregion
         
+        public List<Model.ItemTypeConfigInfo>? ListItemTypeConfigs(ListItemTypeConfigs input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void CreateItemTypeConfig(CreateItemTypeConfig input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ItemTypeConfigInfo? SearchItemTypeConfig(SearchItemTypeConfig input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ItemTypeConfigInfo? GetItemTypeConfig(GetItemTypeConfig input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ItemTypeConfigInfo? UpdateItemTypeConfig(UpdateItemTypeConfig input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeleteItemTypeConfig(DeleteItemTypeConfig input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.FullItemInfo? SyncInGameItem(SyncInGameItem input) {
             var response = _sdk.RunRequest(input);
 
@@ -458,6 +534,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.PopulatedItemInfo? PublicGetItem(PublicGetItem input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FullItemPagingSlicedResult? QueryItems1(QueryItems1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

@@ -24,6 +24,17 @@ namespace AccelByte.Sdk.Core
         }
         private FulfillmentScript? _FulfillmentScript = null;
 
+        public Item Item
+        {
+            get
+            {
+                if (_Item == null)
+                    _Item = new Item(_SdkObject);
+                return _Item;
+            }
+        }
+        private Item? _Item = null;
+
         public Campaign Campaign
         {
             get
@@ -100,17 +111,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private IAP? _IAP = null;
-
-        public Item Item
-        {
-            get
-            {
-                if (_Item == null)
-                    _Item = new Item(_SdkObject);
-                return _Item;
-            }
-        }
-        private Item? _Item = null;
 
         public KeyGroup KeyGroup
         {

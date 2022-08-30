@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
 {
     public class ModelsAllianceFlexingRule : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("combination")]
+        public ModelsCombination? Combination { get; set; }
+
         [JsonPropertyName("duration")]
         public long? Duration { get; set; }
 

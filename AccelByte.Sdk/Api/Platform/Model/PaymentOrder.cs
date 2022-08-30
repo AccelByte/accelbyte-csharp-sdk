@@ -256,6 +256,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentOrderItemType COINS
             = new PaymentOrderItemType("COINS");
 
+        public static readonly PaymentOrderItemType EXTENSION
+            = new PaymentOrderItemType("EXTENSION");
+
         public static readonly PaymentOrderItemType INGAMEITEM
             = new PaymentOrderItemType("INGAMEITEM");
 

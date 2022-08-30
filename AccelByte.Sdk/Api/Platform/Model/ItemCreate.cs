@@ -201,6 +201,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly ItemCreateItemType COINS
             = new ItemCreateItemType("COINS");
 
+        public static readonly ItemCreateItemType EXTENSION
+            = new ItemCreateItemType("EXTENSION");
+
         public static readonly ItemCreateItemType INGAMEITEM
             = new ItemCreateItemType("INGAMEITEM");
 

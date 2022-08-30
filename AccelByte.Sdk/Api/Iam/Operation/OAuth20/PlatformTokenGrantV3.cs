@@ -25,6 +25,17 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    /// 
+    /// ## 2FA remember device
+    /// 
+    /// 
+    /// 
+    /// 
+    /// To remember device for 2FA, should provide cookie: device_token or header: Device-Token
+    /// 
+    /// 
+    /// 
+    /// 
     /// ## Supported platforms:
     /// 
     /// 

@@ -295,6 +295,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly PublicQueryItemsItemType COINS
             = new PublicQueryItemsItemType("COINS");
 
+        public static readonly PublicQueryItemsItemType EXTENSION
+            = new PublicQueryItemsItemType("EXTENSION");
+
         public static readonly PublicQueryItemsItemType INGAMEITEM
             = new PublicQueryItemsItemType("INGAMEITEM");
 

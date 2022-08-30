@@ -16,6 +16,27 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetAdminUsersByRoleID
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint(Public): /iam/v3/admin/namespaces/{namespace}/roles/{roleId}/users [GET]
+    /// 
+    /// 
+    /// 
+    ///   * Note:
+    ///     difference in V3 response, format difference: Pascal case => Camel case
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER [READ]'
     /// 
     /// 
@@ -29,6 +50,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Notes : this endpoint only accept admin role. Admin Role is role which have admin status and members.
     /// Use endpoint [GET] /roles/{roleId}/admin to check the role status
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetAdminUsersByRoleID : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

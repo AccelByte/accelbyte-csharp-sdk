@@ -111,6 +111,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly CatalogChangeInfoItemType COINS
             = new CatalogChangeInfoItemType("COINS");
 
+        public static readonly CatalogChangeInfoItemType EXTENSION
+            = new CatalogChangeInfoItemType("EXTENSION");
+
         public static readonly CatalogChangeInfoItemType INGAMEITEM
             = new CatalogChangeInfoItemType("INGAMEITEM");
 

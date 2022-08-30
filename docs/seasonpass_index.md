@@ -14,6 +14,7 @@
 | `/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}` | DELETE | DeleteSeason | [DeleteSeason](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/DeleteSeason.cs) | [DeleteSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/DeleteSeason.cs) |
 | `/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}` | PATCH | UpdateSeason | [UpdateSeason](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/UpdateSeason.cs) | [UpdateSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/UpdateSeason.cs) |
 | `/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}/clone` | POST | CloneSeason | [CloneSeason](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/CloneSeason.cs) | [CloneSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/CloneSeason.cs) |
+| `/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}/full` | GET | GetFullSeason | [GetFullSeason](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/GetFullSeason.cs) | [GetFullSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/GetFullSeason.cs) |
 | `/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}/publish` | PUT | PublishSeason | [PublishSeason](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/PublishSeason.cs) | [PublishSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/PublishSeason.cs) |
 | `/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}/retire` | PUT | RetireSeason | [RetireSeason](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/RetireSeason.cs) | [RetireSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/RetireSeason.cs) |
 | `/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}/unpublish` | PUT | UnpublishSeason | [UnpublishSeason](../AccelByte.Sdk/Api/Seasonpass/Operation/Season/UnpublishSeason.cs) | [UnpublishSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/UnpublishSeason.cs) |
@@ -75,6 +76,7 @@
 | `ExpGrantHistoryInfo` | [ExpGrantHistoryInfo](../AccelByte.Sdk/Api/Seasonpass/Model/ExpGrantHistoryInfo.cs) |
 | `ExpGrantHistoryPagingSlicedResult` | [ExpGrantHistoryPagingSlicedResult](../AccelByte.Sdk/Api/Seasonpass/Model/ExpGrantHistoryPagingSlicedResult.cs) |
 | `FieldValidationError` | [FieldValidationError](../AccelByte.Sdk/Api/Seasonpass/Model/FieldValidationError.cs) |
+| `FullSeasonInfo` | [FullSeasonInfo](../AccelByte.Sdk/Api/Seasonpass/Model/FullSeasonInfo.cs) |
 | `Image` | [Image](../AccelByte.Sdk/Api/Seasonpass/Model/Image.cs) |
 | `ListSeasonInfo` | [ListSeasonInfo](../AccelByte.Sdk/Api/Seasonpass/Model/ListSeasonInfo.cs) |
 | `ListSeasonInfoPagingSlicedResult` | [ListSeasonInfoPagingSlicedResult](../AccelByte.Sdk/Api/Seasonpass/Model/ListSeasonInfoPagingSlicedResult.cs) |

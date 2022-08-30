@@ -252,6 +252,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PopulatedItemInfoItemType COINS
             = new PopulatedItemInfoItemType("COINS");
 
+        public static readonly PopulatedItemInfoItemType EXTENSION
+            = new PopulatedItemInfoItemType("EXTENSION");
+
         public static readonly PopulatedItemInfoItemType INGAMEITEM
             = new PopulatedItemInfoItemType("INGAMEITEM");
 

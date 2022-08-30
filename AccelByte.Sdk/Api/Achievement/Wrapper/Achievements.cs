@@ -55,6 +55,10 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
         {
             get { return Operation.AdminListUserAchievements.Builder.SetWrapperObject(this); }
         }
+        public AdminResetAchievement.AdminResetAchievementBuilder AdminResetAchievementOp
+        {
+            get { return Operation.AdminResetAchievement.Builder.SetWrapperObject(this); }
+        }
         public AdminUnlockAchievement.AdminUnlockAchievementBuilder AdminUnlockAchievementOp
         {
             get { return Operation.AdminUnlockAchievement.Builder.SetWrapperObject(this); }
@@ -145,6 +149,14 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminResetAchievement(AdminResetAchievement input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

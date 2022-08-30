@@ -55,6 +55,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly FulfillmentItemItemType COINS
             = new FulfillmentItemItemType("COINS");
 
+        public static readonly FulfillmentItemItemType EXTENSION
+            = new FulfillmentItemItemType("EXTENSION");
+
         public static readonly FulfillmentItemItemType INGAMEITEM
             = new FulfillmentItemItemType("INGAMEITEM");
 

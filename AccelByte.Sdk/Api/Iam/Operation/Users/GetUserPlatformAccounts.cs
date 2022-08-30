@@ -16,6 +16,21 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetUserPlatformAccounts
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/{userId}/platforms [GET]
+    /// 
+    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms [GET]
+    /// 
+    /// 
+    /// 
+    /// 
     /// 
     /// 
     /// 
@@ -31,6 +46,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// The permission âADMIN:NAMESPACE:{namespace}:JUSTICE:USER:{userId}â [READ] is required in order to read the UserID who linked with the user.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetUserPlatformAccounts : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

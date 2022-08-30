@@ -1,3 +1,11 @@
+<a name="v0.16.0"></a>
+## [v0.16.0]
+- Fixed bug on web socket execute routing in CLI sample app
+- Added web socket interactive mode in CLI sample app
+- Added Title Matchmaking sample apps (AWS Lambda, Local Server, and Client)
+- Added Json file configuration and credential repository
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.15.0"></a>
 ## [v0.15.0]
 - Added integration test for SeasonPass
@@ -6,7 +14,8 @@
 - **POSSIBLE BREAKING CHANGE** Moved all deprecated operations back from its own namespace respective to each service.
 - Update APIs. See what's changes [here](spec/APICHANGES.md)
 
-## v0.14.0
+<a name="v0.14.0"></a>
+## [v0.14.0]
 - Updated APIs
 	- achievement
 		- updated endpoints
@@ -40,7 +49,8 @@
 		- updated endpoints
 		- added new endpoints
 
-## v0.13.0
+<a name="v0.13.0"></a>
+## [v0.13.0]
 - Fixed automatic token refresh performance issue.
 - Added scheduled token refresh as an alternative to automatic token refresh.
 - Added Platform login feature.
@@ -50,7 +60,8 @@
 - Added new endpoints in Platform service.
 - Updated CLI sample app due to token refresh support and deprecation change.
 
-## v0.12.0
+<a name="v0.12.0"></a>
+## [v0.12.0]
 - Fixed basic user profile integration tests
 - Updated gametelemetry integration test
 - Updated APIs
@@ -80,7 +91,8 @@
 		- updated model
 		- updated endpoints
 
-## v0.11.0
+<a name="v0.11.0"></a>
+## [v0.11.0]
 - Implemented token auto refresh
 - Updated APIs
 	- achievement
@@ -102,7 +114,8 @@
 		- updated models
 		- updated endpoints
 
-## v0.10.0
+<a name="v0.10.0"></a>
+## [v0.10.0]
 - Implemented enum patches in operation's parameter
 	- Possible **BREAKING CHANGES**
 - Updated operation indexes
@@ -111,8 +124,9 @@
 		- updated endpoints
 		- **BREAKING CHANGES**
 			- `ModelRequestFriendsRequest` replaced by `ModelUserRequestFriendRequest`
-		
-## v0.9.0
+
+<a name="v0.9.0"></a>		
+## [v0.9.0]
 - Implemented enum in operation's parameter
 	- Possible **BREAKING CHANGES**.
 - `StringEnum::Create` function is renamed to `StringEnum::NewValue`.
@@ -130,7 +144,8 @@
 	- ugc
 		- updated endpoint
 
-## v0.8.0
+<a name="v0.8.0"></a>
+## [v0.8.0]
 - Updated core unit tests.
 - Moved cli tests to cli project's folder.
 - Updated APIs.
@@ -149,7 +164,8 @@
 	- ugc
 		- updated endpoints
 
-## v0.7.0
+<a name="v0.7.0"></a>
+## [v0.7.0]
 - Added support for cookie parameters
 - Added fluent interface as an alternative way to access operations and wrappers object directly from sdk object.
 - Updated integration tests.
@@ -166,7 +182,8 @@
 	- ugc
 		- added new endpoint.
 
-## v0.6.0
+<a name="v0.6.0"></a>
+## [v0.6.0]
 - Updated integration tests.
 - Renamed some operation wrappers for better clarity.
 - Updated readme file.
@@ -202,7 +219,8 @@
 		- updated endpoints.
 		- added new endpoints.
 
-## v0.5.0
+<a name="v0.5.0"></a>
+## [v0.5.0]
 - Fixed some of integration tests.
 - Added new integration tests for legal service.
 - Updated APIs.
@@ -233,7 +251,8 @@
 	- ugc
 		- updated endpoints.
 
-## v0.4.0
+<a name="v0.4.0"></a>
+## [v0.4.0]
 - Added AWS Lambda sample app. See it's README in samples/AccelByte.Sdk.Sample.Aws.Lambda
 - Added integration tests.
 - Enabled builder pattern for creating AccelByteSDK object.
@@ -247,7 +266,8 @@
 	- lobby: updated endpoints.
 	- platform: updated endpoints.
 
-## v0.3.0
+<a name="v0.3.0"></a>
+## [v0.3.0]
 - Added lobby service feature.
 - Added amazon trace id in every request.
 - Added user agent info in every request.
@@ -257,7 +277,8 @@
 	- dsmc: added new endpoints.
 	- platform: added new endpoints
 
-## v0.2.0
+<a name="v0.2.0"></a>
+## [v0.2.0]
 - Added CLI sample application.
 - Updated tests.
 - Added file extension to MIME type converter for file upload.
@@ -271,8 +292,8 @@
 	- seasonpass: added new endpoint.
 	- social: added new endpoint.
 
-
-## v0.1.0
+<a name="v0.1.0"></a>
+## [v0.1.0]
 
 Initial release of C# SDK for AccelByte platform.
 

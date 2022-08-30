@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.CreateUser.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public GetAdminUsersByRoleID.GetAdminUsersByRoleIDBuilder GetAdminUsersByRoleIDOp
         {
             get { return Operation.GetAdminUsersByRoleID.Builder.SetWrapperObject(this); }
@@ -108,6 +109,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.EnableUser.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public GetUserInformation.GetUserInformationBuilder GetUserInformationOp
         {
             get { return Operation.GetUserInformation.Builder.SetWrapperObject(this); }
@@ -117,6 +119,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.DeleteUserInformation.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public GetUserLoginHistories.GetUserLoginHistoriesBuilder GetUserLoginHistoriesOp
         {
             get { return Operation.GetUserLoginHistories.Builder.SetWrapperObject(this); }
@@ -141,10 +144,12 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.DeleteUserPermission.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public GetUserPlatformAccounts.GetUserPlatformAccountsBuilder GetUserPlatformAccountsOp
         {
             get { return Operation.GetUserPlatformAccounts.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public GetUserMapping.GetUserMappingBuilder GetUserMappingOp
         {
             get { return Operation.GetUserMapping.Builder.SetWrapperObject(this); }
@@ -154,10 +159,12 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.GetUserJusticePlatformAccount.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public PlatformLink.PlatformLinkBuilder PlatformLinkOp
         {
             get { return Operation.PlatformLink.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public PlatformUnlink.PlatformUnlinkBuilder PlatformUnlinkOp
         {
             get { return Operation.PlatformUnlink.Builder.SetWrapperObject(this); }
@@ -182,10 +189,12 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.DeleteUserRole.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public UpgradeHeadlessAccount.UpgradeHeadlessAccountBuilder UpgradeHeadlessAccountOp
         {
             get { return Operation.UpgradeHeadlessAccount.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public UpgradeHeadlessAccountWithVerificationCode.UpgradeHeadlessAccountWithVerificationCodeBuilder UpgradeHeadlessAccountWithVerificationCodeOp
         {
             get { return Operation.UpgradeHeadlessAccountWithVerificationCode.Builder.SetWrapperObject(this); }
@@ -432,6 +441,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminGetListJusticePlatformAccounts.Builder.SetWrapperObject(this); }
         }
+        public AdminGetUserMapping.AdminGetUserMappingBuilder AdminGetUserMappingOp
+        {
+            get { return Operation.AdminGetUserMapping.Builder.SetWrapperObject(this); }
+        }
         public AdminCreateJusticeUser.AdminCreateJusticeUserBuilder AdminCreateJusticeUserOp
         {
             get { return Operation.AdminCreateJusticeUser.Builder.SetWrapperObject(this); }
@@ -568,6 +581,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicPlatformUnlinkAllV3.Builder.SetWrapperObject(this); }
         }
+        public PublicForcePlatformLinkV3.PublicForcePlatformLinkV3Builder PublicForcePlatformLinkV3Op
+        {
+            get { return Operation.PublicForcePlatformLinkV3.Builder.SetWrapperObject(this); }
+        }
         public PublicWebLinkPlatform.PublicWebLinkPlatformBuilder PublicWebLinkPlatformOp
         {
             get { return Operation.PublicWebLinkPlatform.Builder.SetWrapperObject(this); }
@@ -591,6 +608,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public PublicListUserAllPlatformAccountsDistinctV3.PublicListUserAllPlatformAccountsDistinctV3Builder PublicListUserAllPlatformAccountsDistinctV3Op
         {
             get { return Operation.PublicListUserAllPlatformAccountsDistinctV3.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetUserInformationV3.PublicGetUserInformationV3Builder PublicGetUserInformationV3Op
+        {
+            get { return Operation.PublicGetUserInformationV3.Builder.SetWrapperObject(this); }
         }
         public PublicGetUserLoginHistoriesV3.PublicGetUserLoginHistoriesV3Builder PublicGetUserLoginHistoriesV3Op
         {
@@ -620,6 +641,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicGetMyUserV3.Builder.SetWrapperObject(this); }
         }
+        public PublicSendVerificationLinkV3.PublicSendVerificationLinkV3Builder PublicSendVerificationLinkV3Op
+        {
+            get { return Operation.PublicSendVerificationLinkV3.Builder.SetWrapperObject(this); }
+        }
+        public PublicVerifyUserByLinkV3.PublicVerifyUserByLinkV3Builder PublicVerifyUserByLinkV3Op
+        {
+            get { return Operation.PublicVerifyUserByLinkV3.Builder.SetWrapperObject(this); }
+        }
         #endregion
         
         #pragma warning disable ab_deprecated_operation
@@ -633,6 +662,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelGetAdminUsersResponse? GetAdminUsersByRoleID(GetAdminUsersByRoleID input) {
             var response = _sdk.RunRequest(input);
 
@@ -641,6 +672,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelPublicUserResponse? GetUserByLoginID(GetUserByLoginID input) {
@@ -817,6 +849,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelUserInformation? GetUserInformation(GetUserInformation input) {
             var response = _sdk.RunRequest(input);
 
@@ -825,6 +859,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void DeleteUserInformation(DeleteUserInformation input) {
@@ -836,6 +871,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelLoginHistoriesResponse? GetUserLoginHistories(GetUserLoginHistories input) {
             var response = _sdk.RunRequest(input);
 
@@ -844,6 +881,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void UpdatePassword(UpdatePassword input) {
@@ -888,6 +926,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public List<Model.AccountcommonUserLinkedPlatform>? GetUserPlatformAccounts(GetUserPlatformAccounts input) {
             var response = _sdk.RunRequest(input);
 
@@ -896,6 +936,9 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelGetUserMapping? GetUserMapping(GetUserMapping input) {
             var response = _sdk.RunRequest(input);
 
@@ -904,6 +947,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelGetUserJusticePlatformAccountResponse? GetUserJusticePlatformAccount(GetUserJusticePlatformAccount input) {
@@ -915,6 +959,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void PlatformLink(PlatformLink input) {
             var response = _sdk.RunRequest(input);
 
@@ -923,6 +969,9 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void PlatformUnlink(PlatformUnlink input) {
             var response = _sdk.RunRequest(input);
 
@@ -931,6 +980,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelGetPublisherUserResponse? GetPublisherUser(GetPublisherUser input) {
@@ -975,6 +1025,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelUserResponse? UpgradeHeadlessAccount(UpgradeHeadlessAccount input) {
             var response = _sdk.RunRequest(input);
 
@@ -983,6 +1035,9 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelUserResponse? UpgradeHeadlessAccountWithVerificationCode(UpgradeHeadlessAccountWithVerificationCode input) {
             var response = _sdk.RunRequest(input);
 
@@ -991,6 +1046,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public void UserVerification(UserVerification input) {
@@ -1477,6 +1533,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.ModelGetUserMappingV3? AdminGetUserMapping(AdminGetUserMapping input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelCreateJusticeUserResponse? AdminCreateJusticeUser(AdminCreateJusticeUser input) {
             var response = _sdk.RunRequest(input);
 
@@ -1749,6 +1813,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public void PublicForcePlatformLinkV3(PublicForcePlatformLinkV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelWebLinkingResponse? PublicWebLinkPlatform(PublicWebLinkPlatform input) {
             var response = _sdk.RunRequest(input);
 
@@ -1790,6 +1862,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public Model.AccountcommonDistinctPlatformResponseV3? PublicListUserAllPlatformAccountsDistinctV3(PublicListUserAllPlatformAccountsDistinctV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.AccountcommonUserInformationV3? PublicGetUserInformationV3(PublicGetUserInformationV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1846,6 +1926,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public Model.ModelUserResponseV3? PublicGetMyUserV3(PublicGetMyUserV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicSendVerificationLinkV3(PublicSendVerificationLinkV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public string PublicVerifyUserByLinkV3(PublicVerifyUserByLinkV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

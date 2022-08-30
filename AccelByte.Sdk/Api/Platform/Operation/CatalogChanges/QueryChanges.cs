@@ -286,6 +286,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryChangesItemType COINS
             = new QueryChangesItemType("COINS");
 
+        public static readonly QueryChangesItemType EXTENSION
+            = new QueryChangesItemType("EXTENSION");
+
         public static readonly QueryChangesItemType INGAMEITEM
             = new QueryChangesItemType("INGAMEITEM");
 

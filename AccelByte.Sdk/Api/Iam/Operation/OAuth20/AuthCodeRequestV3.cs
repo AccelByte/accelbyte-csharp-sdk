@@ -60,6 +60,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// This endpoint redirects to snapchat login page, then redirect back to platform
     /// authenticate endpoint after successfully authenticating snapchat user.
     /// 
+    ///   * discord
+    /// This endpoint redirects to discord login page, then redirect back to platform
+    /// authenticate endpoint after successfully authenticating discord user.
+    /// 
     /// action code : 10702'
     /// </summary>
     public class AuthCodeRequestV3 : AccelByte.Sdk.Core.Operation

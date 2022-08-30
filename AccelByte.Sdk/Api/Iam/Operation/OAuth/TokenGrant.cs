@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///   * Substitute endpoint: /iam/v3/oauth/platforms/{platformId}/token [POST]
+    ///   * Substitute endpoint: /iam/v3/oauth/token [POST]
     /// 
     /// 
     ///   * Note: difference in V3 response:

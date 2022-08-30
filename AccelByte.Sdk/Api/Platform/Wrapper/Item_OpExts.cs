@@ -12,6 +12,74 @@ namespace AccelByte.Sdk.Api
 {
     public static class PlatformItem_OpExts
     {
+        public static List<Platform.Model.ItemTypeConfigInfo>? Execute(
+            this ListItemTypeConfigs.ListItemTypeConfigsBuilder builder
+        )
+        {
+            ListItemTypeConfigs op = builder.Build(
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).ListItemTypeConfigs(op);
+        }
+
+        public static void Execute(
+            this CreateItemTypeConfig.CreateItemTypeConfigBuilder builder
+        )
+        {
+            CreateItemTypeConfig op = builder.Build(
+            );
+
+            ((Platform.Wrapper.Item)builder.WrapperObject!).CreateItemTypeConfig(op);
+        }
+
+        public static Platform.Model.ItemTypeConfigInfo? Execute(
+            this SearchItemTypeConfig.SearchItemTypeConfigBuilder builder,
+            string itemType
+        )
+        {
+            SearchItemTypeConfig op = builder.Build(
+                itemType
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).SearchItemTypeConfig(op);
+        }
+
+        public static Platform.Model.ItemTypeConfigInfo? Execute(
+            this GetItemTypeConfig.GetItemTypeConfigBuilder builder,
+            string id
+        )
+        {
+            GetItemTypeConfig op = builder.Build(
+                id
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).GetItemTypeConfig(op);
+        }
+
+        public static Platform.Model.ItemTypeConfigInfo? Execute(
+            this UpdateItemTypeConfig.UpdateItemTypeConfigBuilder builder,
+            string id
+        )
+        {
+            UpdateItemTypeConfig op = builder.Build(
+                id
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).UpdateItemTypeConfig(op);
+        }
+
+        public static void Execute(
+            this DeleteItemTypeConfig.DeleteItemTypeConfigBuilder builder,
+            string id
+        )
+        {
+            DeleteItemTypeConfig op = builder.Build(
+                id
+            );
+
+            ((Platform.Wrapper.Item)builder.WrapperObject!).DeleteItemTypeConfig(op);
+        }
+
         public static Platform.Model.FullItemInfo? Execute(
             this SyncInGameItem.SyncInGameItemBuilder builder,
             string namespace_,
@@ -536,6 +604,18 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Item)builder.WrapperObject!).PublicGetItem(op);
+        }
+
+        public static Platform.Model.FullItemPagingSlicedResult? Execute(
+            this QueryItems1.QueryItems1Builder builder,
+            string namespace_
+        )
+        {
+            QueryItems1 op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).QueryItems1(op);
         }
 
     }

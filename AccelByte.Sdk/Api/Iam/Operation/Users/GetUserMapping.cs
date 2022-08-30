@@ -16,6 +16,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetUserMapping
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace} [GET]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// This endpoint requires the client access token as the bearer token. Required permission 'ADMIN:NAMESPACE:{namespace}:JUSTICE:USER:{userId} [READ]'
     /// 
     /// 
@@ -33,6 +49,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// If targetNamespace filled with game namespace then this endpoint will return its publisher user id and publisher namespace
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetUserMapping : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

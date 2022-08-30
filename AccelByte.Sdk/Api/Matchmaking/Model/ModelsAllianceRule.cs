@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
 {
     public class ModelsAllianceRule : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("combination")]
+        public ModelsCombination? Combination { get; set; }
+
         [JsonPropertyName("max_number")]
         public int? MaxNumber { get; set; }
 

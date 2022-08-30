@@ -16,12 +16,21 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetUserJusticePlatformAccount
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace} [GET]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// This endpoint requires the client access token as the bearer token. Required permission 'ADMIN:NAMESPACE:{namespace}:JUSTICE:USER:{userId} [UPDATE]'
-    /// 
-    /// 
-    /// 
-    /// 
-    ///  It is going to be removed on November 26th, 2018
     /// 
     /// 
     /// 

@@ -69,6 +69,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Snapchat login page will redirects to this endpoint after login success
     /// as previously defined on authorize request parameter `redirect_uri`
     /// 
+    ///   * discord
+    /// Discord login page will redirects to this endpoint after login success
+    /// as previously defined on authorize request parameter `redirect_uri`
+    /// 
     /// action code : 10709
     /// </summary>
     public class PlatformAuthenticationV3 : AccelByte.Sdk.Core.Operation

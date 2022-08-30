@@ -216,6 +216,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    /// ## 2FA remember device
+    /// 
+    /// 
+    /// 
+    /// 
+    /// To remember device for 2FA, should provide cookie: device_token or header: Device-Token
+    /// 
+    /// 
+    /// 
+    /// 
     /// action code: 10703
     /// </summary>
     public class TokenGrantV3 : AccelByte.Sdk.Core.Operation

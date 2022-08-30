@@ -229,6 +229,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly GetStatisticItemType COINS
             = new GetStatisticItemType("COINS");
 
+        public static readonly GetStatisticItemType EXTENSION
+            = new GetStatisticItemType("EXTENSION");
+
         public static readonly GetStatisticItemType INGAMEITEM
             = new GetStatisticItemType("INGAMEITEM");
 

@@ -26,6 +26,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<EntitlementSummary>? EntitlementSummaries { get; set; }
 
+        [JsonPropertyName("extensionFulfillmentSummaries")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ExtensionFulfillmentSummary>? ExtensionFulfillmentSummaries { get; set; }
+
         [JsonPropertyName("fulfillItems")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<FulfillmentItem>? FulfillItems { get; set; }

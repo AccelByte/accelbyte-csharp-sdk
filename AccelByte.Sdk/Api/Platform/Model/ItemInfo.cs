@@ -248,6 +248,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly ItemInfoItemType COINS
             = new ItemInfoItemType("COINS");
 
+        public static readonly ItemInfoItemType EXTENSION
+            = new ItemInfoItemType("EXTENSION");
+
         public static readonly ItemInfoItemType INGAMEITEM
             = new ItemInfoItemType("INGAMEITEM");
 

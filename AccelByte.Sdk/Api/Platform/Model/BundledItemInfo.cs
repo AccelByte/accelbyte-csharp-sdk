@@ -252,6 +252,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly BundledItemInfoItemType COINS
             = new BundledItemInfoItemType("COINS");
 
+        public static readonly BundledItemInfoItemType EXTENSION
+            = new BundledItemInfoItemType("EXTENSION");
+
         public static readonly BundledItemInfoItemType INGAMEITEM
             = new BundledItemInfoItemType("INGAMEITEM");
 

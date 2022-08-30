@@ -24,6 +24,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("name")]
         public string? Name { get; set; }
 
+        [JsonPropertyName("unlimited")]
+        public bool? Unlimited { get; set; }
+
         [JsonPropertyName("use_buffer_percent")]
         public bool? UseBufferPercent { get; set; }
 

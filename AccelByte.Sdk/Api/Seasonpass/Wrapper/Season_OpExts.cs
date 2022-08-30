@@ -104,6 +104,20 @@ namespace AccelByte.Sdk.Api
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).CloneSeason(op);
         }
 
+        public static Seasonpass.Model.FullSeasonInfo? Execute(
+            this GetFullSeason.GetFullSeasonBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            GetFullSeason op = builder.Build(
+                namespace_,
+                seasonId
+            );
+
+            return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetFullSeason(op);
+        }
+
         public static Seasonpass.Model.SeasonInfo? Execute(
             this PublishSeason.PublishSeasonBuilder builder,
             string namespace_,

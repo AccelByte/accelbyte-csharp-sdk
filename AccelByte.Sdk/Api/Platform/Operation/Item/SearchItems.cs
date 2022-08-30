@@ -200,6 +200,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly SearchItemsItemType COINS
             = new SearchItemsItemType("COINS");
 
+        public static readonly SearchItemsItemType EXTENSION
+            = new SearchItemsItemType("EXTENSION");
+
         public static readonly SearchItemsItemType INGAMEITEM
             = new SearchItemsItemType("INGAMEITEM");
 

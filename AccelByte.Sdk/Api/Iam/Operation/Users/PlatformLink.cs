@@ -16,6 +16,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PlatformLink
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId} [POST]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required permission 'NAMESPACE:{namespace}:USER:{userId} [UPDATE]'.
     /// 
     /// 
@@ -64,6 +80,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     ///   * discord : The ticketâs value is the authorization code returned by Discord OAuth.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class PlatformLink : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

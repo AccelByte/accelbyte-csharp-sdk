@@ -137,6 +137,22 @@ namespace AccelByte.Sdk.Api
         }
 
         public static void Execute(
+            this AdminResetAchievement.AdminResetAchievementBuilder builder,
+            string achievementCode,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminResetAchievement op = builder.Build(
+                achievementCode,
+                namespace_,
+                userId
+            );
+
+            ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminResetAchievement(op);
+        }
+
+        public static void Execute(
             this AdminUnlockAchievement.AdminUnlockAchievementBuilder builder,
             string achievementCode,
             string namespace_,

@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.Users)builder.WrapperObject!).CreateUser(op);
         }
 
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelGetAdminUsersResponse? Execute(
             this GetAdminUsersByRoleID.GetAdminUsersByRoleIDBuilder builder,
             string namespace_
@@ -287,6 +288,7 @@ namespace AccelByte.Sdk.Api
             ((Iam.Wrapper.Users)builder.WrapperObject!).EnableUser(op);
         }
 
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserInformation? Execute(
             this GetUserInformation.GetUserInformationBuilder builder,
             string namespace_,
@@ -316,6 +318,7 @@ namespace AccelByte.Sdk.Api
             ((Iam.Wrapper.Users)builder.WrapperObject!).DeleteUserInformation(op);
         }
 
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelLoginHistoriesResponse? Execute(
             this GetUserLoginHistories.GetUserLoginHistoriesBuilder builder,
             string namespace_,
@@ -404,6 +407,7 @@ namespace AccelByte.Sdk.Api
             ((Iam.Wrapper.Users)builder.WrapperObject!).DeleteUserPermission(op);
         }
 
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.AccountcommonUserLinkedPlatform>? Execute(
             this GetUserPlatformAccounts.GetUserPlatformAccountsBuilder builder,
             string namespace_,
@@ -418,6 +422,7 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserPlatformAccounts(op);
         }
 
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelGetUserMapping? Execute(
             this GetUserMapping.GetUserMappingBuilder builder,
             string namespace_,
@@ -451,6 +456,7 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserJusticePlatformAccount(op);
         }
 
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PlatformLink.PlatformLinkBuilder builder,
             string ticket,
@@ -469,6 +475,7 @@ namespace AccelByte.Sdk.Api
             ((Iam.Wrapper.Users)builder.WrapperObject!).PlatformLink(op);
         }
 
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PlatformUnlink.PlatformUnlinkBuilder builder,
             string namespace_,
@@ -551,6 +558,7 @@ namespace AccelByte.Sdk.Api
             ((Iam.Wrapper.Users)builder.WrapperObject!).DeleteUserRole(op);
         }
 
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this UpgradeHeadlessAccount.UpgradeHeadlessAccountBuilder builder,
             ModelUpgradeHeadlessAccountRequest body,
@@ -567,6 +575,7 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.Users)builder.WrapperObject!).UpgradeHeadlessAccount(op);
         }
 
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this UpgradeHeadlessAccountWithVerificationCode.UpgradeHeadlessAccountWithVerificationCodeBuilder builder,
             ModelUpgradeHeadlessAccountWithVerificationCodeRequest body,
@@ -1469,6 +1478,22 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetListJusticePlatformAccounts(op);
         }
 
+        public static Iam.Model.ModelGetUserMappingV3? Execute(
+            this AdminGetUserMapping.AdminGetUserMappingBuilder builder,
+            string namespace_,
+            string targetNamespace,
+            string userId
+        )
+        {
+            AdminGetUserMapping op = builder.Build(
+                namespace_,
+                targetNamespace,
+                userId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserMapping(op);
+        }
+
         public static Iam.Model.ModelCreateJusticeUserResponse? Execute(
             this AdminCreateJusticeUser.AdminCreateJusticeUserBuilder builder,
             string namespace_,
@@ -1973,6 +1998,22 @@ namespace AccelByte.Sdk.Api
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicPlatformUnlinkAllV3(op);
         }
 
+        public static void Execute(
+            this PublicForcePlatformLinkV3.PublicForcePlatformLinkV3Builder builder,
+            string ticket,
+            string namespace_,
+            string platformId
+        )
+        {
+            PublicForcePlatformLinkV3 op = builder.Build(
+                ticket,
+                namespace_,
+                platformId
+            );
+
+            ((Iam.Wrapper.Users)builder.WrapperObject!).PublicForcePlatformLinkV3(op);
+        }
+
         public static Iam.Model.ModelWebLinkingResponse? Execute(
             this PublicWebLinkPlatform.PublicWebLinkPlatformBuilder builder,
             string namespace_,
@@ -2057,6 +2098,20 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicListUserAllPlatformAccountsDistinctV3(op);
+        }
+
+        public static Iam.Model.AccountcommonUserInformationV3? Execute(
+            this PublicGetUserInformationV3.PublicGetUserInformationV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetUserInformationV3 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserInformationV3(op);
         }
 
         public static Iam.Model.ModelLoginHistoriesResponse? Execute(
@@ -2157,6 +2212,28 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetMyUserV3(op);
+        }
+
+        public static void Execute(
+            this PublicSendVerificationLinkV3.PublicSendVerificationLinkV3Builder builder,
+            ModelSendVerificationLinkRequest body
+        )
+        {
+            PublicSendVerificationLinkV3 op = builder.Build(
+                body
+            );
+
+            ((Iam.Wrapper.Users)builder.WrapperObject!).PublicSendVerificationLinkV3(op);
+        }
+
+        public static string Execute(
+            this PublicVerifyUserByLinkV3.PublicVerifyUserByLinkV3Builder builder
+        )
+        {
+            PublicVerifyUserByLinkV3 op = builder.Build(
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicVerifyUserByLinkV3(op);
         }
 
     }

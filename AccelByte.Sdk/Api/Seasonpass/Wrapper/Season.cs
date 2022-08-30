@@ -47,6 +47,10 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         {
             get { return Operation.CloneSeason.Builder.SetWrapperObject(this); }
         }
+        public GetFullSeason.GetFullSeasonBuilder GetFullSeasonOp
+        {
+            get { return Operation.GetFullSeason.Builder.SetWrapperObject(this); }
+        }
         public PublishSeason.PublishSeasonBuilder PublishSeasonOp
         {
             get { return Operation.PublishSeason.Builder.SetWrapperObject(this); }
@@ -154,6 +158,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public Model.SeasonInfo? CloneSeason(CloneSeason input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FullSeasonInfo? GetFullSeason(GetFullSeason input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
