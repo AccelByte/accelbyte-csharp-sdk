@@ -184,7 +184,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe
             SendNotificationToUser(mData.P2UserId, WSTOPIC_UPDATE, mUpdate);
             //
 
-            int win = DeductWinner(mData.BoardData!, mData.BoardSize);
+            int win = DeduceWinner(mData.BoardData!, mData.BoardSize);
             if (win == 1)
             {
                 mData.WinnerUserId = mData.P1UserId;
@@ -238,7 +238,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe
             return matches;
         }
 
-        public int DeductWinner(Dictionary<(int, int), char> board, int size)
+        public int DeduceWinner(Dictionary<(int, int), char> board, int size)
         {
             double a1 = 6.0;
             double a2 = 13.0;
