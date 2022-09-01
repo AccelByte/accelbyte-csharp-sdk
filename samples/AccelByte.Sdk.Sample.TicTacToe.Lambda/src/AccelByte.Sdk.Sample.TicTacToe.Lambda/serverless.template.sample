@@ -1,0 +1,112 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Transform": "AWS::Serverless-2016-10-31",
+  "Description": "AccelByte C# Server SDK TicTacToe AWS Lambda Sample",
+  "Globals": {
+    "Function": {
+      "Runtime": "dotnet6",
+      "CodeUri": "bin/Release/net6.0/publish",
+      "MemorySize": 512,
+      "Timeout": 30,
+      "Environment": {
+        "Variables": {
+          "AB_BASE_URL": "",
+          "AB_CLIENT_ID": "",
+          "AB_CLIENT_SECRET": "",
+          "AB_APP_NAME": "",
+          "AB_NAMESPACE": "",
+          "AB_TRACEID_VERSION": "1",
+          "AB_ENABLE_TRACEID": "1",
+          "AB_ENABLE_USERAGENT": "1",
+          "AB_REDIS_HOST": "",
+          "AB_REDIS_PORT": "6379"
+        }
+      }
+    }
+  },
+  "Resources": {
+    "Get": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "AccelByte.Sdk.Sample.TicTacToe.Lambda::AccelByte.Sdk.Sample.TicTacToe.Lambda.Functions::Get",
+        "Events": {
+          "RootGet": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/",
+              "Method": "GET"
+            }
+          }
+        }
+      }
+    },
+    "GetMatches": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "AccelByte.Sdk.Sample.TicTacToe.Lambda::AccelByte.Sdk.Sample.TicTacToe.Lambda.Functions::GetMatches",
+        "Events": {
+          "RootGet": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/matches",
+              "Method": "GET"
+            }
+          }
+        }
+      }
+    },
+    "StartMatch": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "AccelByte.Sdk.Sample.TicTacToe.Lambda::AccelByte.Sdk.Sample.TicTacToe.Lambda.Functions::StartMatch",
+        "Events": {
+          "RootGet": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/match/start",
+              "Method": "POST"
+            }
+          }
+        }
+      }
+    },
+    "JoinMatch": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "AccelByte.Sdk.Sample.TicTacToe.Lambda::AccelByte.Sdk.Sample.TicTacToe.Lambda.Functions::JoinMatch",
+        "Events": {
+          "RootGet": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/match/join",
+              "Method": "POST"
+            }
+          }
+        }
+      }
+    },
+    "MakeAMove": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "AccelByte.Sdk.Sample.TicTacToe.Lambda::AccelByte.Sdk.Sample.TicTacToe.Lambda.Functions::MakeAMove",
+        "Events": {
+          "RootGet": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/match/move",
+              "Method": "POST"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "ApiURL": {
+      "Description": "API endpoint URL for Prod environment",
+      "Value": {
+        "Fn::Sub": "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+      }
+    }
+  }
+}
