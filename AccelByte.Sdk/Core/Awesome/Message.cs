@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Core.Awesome
 
             foreach (string line in inputString.TrimEnd('\n').Split('\n'))
             {
-                string[] parts = line.Split(':');
+                string[] parts = line.Split(':', 2, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
                 if (parts.Length <= 0)
                     throw new MessageException(ErrorCode.MessageFormatInvalid);
 
