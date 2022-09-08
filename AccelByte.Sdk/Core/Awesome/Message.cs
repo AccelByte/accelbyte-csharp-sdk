@@ -76,12 +76,12 @@ namespace AccelByte.Sdk.Core.Awesome
 
             foreach (string line in inputString.TrimEnd('\n').Split('\n'))
             {
-                string[] parts = line.Split(':', 2, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+                string[] parts = line.Split(':', 2, StringSplitOptions.TrimEntries);
                 if (parts.Length <= 0)
                     throw new MessageException(ErrorCode.MessageFormatInvalid);
 
-                var key = parts[0].Trim();
-                var value = (parts.Length > 1 ? parts[1].Trim() : String.Empty);
+                var key = parts[0];
+                var value = (parts.Length > 1 ? parts[1] : String.Empty);
 
                 if (string.IsNullOrEmpty(key))
                     throw new MessageException(ErrorCode.MessageFormatInvalid);
