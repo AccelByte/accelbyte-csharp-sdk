@@ -1,43 +1,26 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using NUnit.Framework;
 
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Api;
+using AccelByte.Sdk.Core.Util;
 
 using AccelByte.Sdk.Api.Legal.Model;
 
-namespace AccelByte.Sdk.Tests.Integration
+using AccelByte.Sdk.Tests.Model;
+
+namespace AccelByte.Sdk.Tests.Services
 {
     [TestFixture(Category = "FluentIntegration")]
     [Explicit]
-    public class FLegalIntegrationTests : BaseIntegrationTest
+    public class LegalTests : BaseServiceTests
     {
-        [OneTimeSetUp]
-        public void Startup()
-        {
-            _Sdk = AccelByteSDK.Builder
-                .UseDefaultHttpClient()
-                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
-                .UseDefaultTokenRepository()
-                .SetCredentialRepository(IntegrationTestCredentialRepository.Admin)
-                .EnableLog()
-                .Build();
-
-            _Sdk.LoginUser();
-        }
-
-        [OneTimeTearDown]
-        public void End()
-        {
-            _Sdk?.Logout();
-        }
-
-        [Test]
         public void CreateMarketingPreferencePolicyAndAcceptTest()
         {
             Assert.IsNotNull(_Sdk);
@@ -50,7 +33,9 @@ namespace AccelByte.Sdk.Tests.Integration
             string targetPolicyVersionId;
             string targetLocalizedPolicyId;
 
+            #region Get all legal policies
             List<RetrieveBasePolicyResponse>? bPolicies = _Sdk.Legal.BaseLegalPolicies.RetrieveAllLegalPoliciesOp.Execute();
+            #endregion
             Assert.IsNotNull(bPolicies);
 
             //Try to find existing policy with specified name.
@@ -80,7 +65,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 }
                 Assert.IsNotEmpty(marketingPrefPolicyTypeId, "Marketing preference policy type not found.");
 
-                //Create a policy for marketing preference.
+                #region Create a policy for marketing preference.
                 CreateBasePolicyRequest createPolicy = new CreateBasePolicyRequest()
                 {
                     TypeId = marketingPrefPolicyTypeId,
@@ -95,12 +80,15 @@ namespace AccelByte.Sdk.Tests.Integration
                 CreateBasePolicyResponse? bPolResp = _Sdk.Legal.BaseLegalPolicies.CreatePolicyOp
                     .SetBody(createPolicy)
                     .Execute();
+                #endregion
                 Assert.IsNotNull(bPolResp);
                 targetPolicyId = bPolResp!.PolicyId!;
             }
 
+            #region Get single policy by policy id
             List<RetrievePolicyVersionResponse>? polVers = _Sdk.Legal.PolicyVersions.RetrieveSinglePolicyVersionOp
                 .Execute(targetPolicyId);
+            #endregion
             Assert.IsNotNull(polVers);
             if (polVers!.Count <= 0)
             {
@@ -112,9 +100,11 @@ namespace AccelByte.Sdk.Tests.Integration
                     IsCommitted = false
                 };
 
+                #region Create policy version
                 CreatePolicyVersionResponse? polVerResp = _Sdk.Legal.PolicyVersions.CreatePolicyVersionOp
                     .SetBody(policyVersion)
                     .Execute(targetPolicyId);
+                #endregion
                 Assert.IsNotNull(polVerResp);
                 targetPolicyVersionId = polVerResp!.Id!;
             }
@@ -147,6 +137,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 targetLocalizedPolicyId = locPolVers![0].Id!;
             }
 
+            #region Accepting an aggrement policy
             List<AcceptAgreementRequest> aggreementRequests = new List<AcceptAgreementRequest>()
             {
                 new AcceptAgreementRequest()
@@ -163,6 +154,7 @@ namespace AccelByte.Sdk.Tests.Integration
             _Sdk.Legal.Agreement.ChangePreferenceConsentOp
                 .SetBody(aggreementRequests)
                 .Execute(_Sdk.Namespace, userId);
+            #endregion
         }
 
         [Test]
@@ -171,9 +163,11 @@ namespace AccelByte.Sdk.Tests.Integration
             Assert.IsNotNull(_Sdk);
             if (_Sdk == null)
                 return;
-            
+
+            #region Get aggrements
             List<RetrieveAcceptedAgreementResponse>? aggrs = _Sdk.Legal.Agreement.RetrieveAgreementsPublicOp
                 .Execute();
+            #endregion
             Assert.IsNotNull(aggrs);
         }
     }
