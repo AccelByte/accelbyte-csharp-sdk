@@ -240,7 +240,9 @@ NOTE: Don not use `.UseAutoTokenRefresh()` together with `.UseScheduledTokenRefr
 
 ## Samples
 
-Sample apps are available in the [samples](samples) directory
+See common use cases [here](docs/common_use_cases.md).
+
+Sample apps are available in the [samples](samples) directory.
 
 ## Documentation
 Reference about AccelByte service endpoints and their corresponding SDK API is available in [docs](docs) directory.
