@@ -16,6 +16,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeletePlatformLinkV2
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId} [DELETE]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [DELETE]'.
     /// 
     /// 
@@ -65,6 +81,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Delete link of justice platform will enable password token grant and password update.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class AdminDeletePlatformLinkV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

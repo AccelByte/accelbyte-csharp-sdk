@@ -66,6 +66,34 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminGetBannedUsersV3(op);
         }
 
+        public static Iam.Model.ModelListBulkUserBanResponseV3? Execute(
+            this AdminBanUserBulkV3.AdminBanUserBulkV3Builder builder,
+            ModelBulkBanCreateRequestV3 body,
+            string namespace_
+        )
+        {
+            AdminBanUserBulkV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminBanUserBulkV3(op);
+        }
+
+        public static Iam.Model.ModelListBulkUserBanResponseV3? Execute(
+            this AdminUnbanUserBulkV3.AdminUnbanUserBulkV3Builder builder,
+            ModelBulkUnbanCreateRequestV3 body,
+            string namespace_
+        )
+        {
+            AdminUnbanUserBulkV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminUnbanUserBulkV3(op);
+        }
+
         public static Iam.Model.AccountcommonBansV3? Execute(
             this AdminGetBansTypeWithNamespaceV3.AdminGetBansTypeWithNamespaceV3Builder builder,
             string namespace_

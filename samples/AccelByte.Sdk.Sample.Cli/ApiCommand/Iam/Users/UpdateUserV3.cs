@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Body                
             );            
             
-            List<AccelByte.Sdk.Api.Iam.Model.ModelUserResponseV3>? response = wrapper.UpdateUserV3(operation);
+            AccelByte.Sdk.Api.Iam.Model.ModelUserResponseV3? response = wrapper.UpdateUserV3(operation);
             if (response == null)
                 return "No response from server.";
 

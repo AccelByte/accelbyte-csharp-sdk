@@ -31,6 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Password { get; set; }
 
         [JsonPropertyName("validateOnly")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? ValidateOnly { get; set; }
 
     }

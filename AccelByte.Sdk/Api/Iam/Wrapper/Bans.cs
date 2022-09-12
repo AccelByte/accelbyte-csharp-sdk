@@ -41,6 +41,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminGetBannedUsersV3.Builder.SetWrapperObject(this); }
         }
+        public AdminBanUserBulkV3.AdminBanUserBulkV3Builder AdminBanUserBulkV3Op
+        {
+            get { return Operation.AdminBanUserBulkV3.Builder.SetWrapperObject(this); }
+        }
+        public AdminUnbanUserBulkV3.AdminUnbanUserBulkV3Builder AdminUnbanUserBulkV3Op
+        {
+            get { return Operation.AdminUnbanUserBulkV3.Builder.SetWrapperObject(this); }
+        }
         public AdminGetBansTypeWithNamespaceV3.AdminGetBansTypeWithNamespaceV3Builder AdminGetBansTypeWithNamespaceV3Op
         {
             get { return Operation.AdminGetBansTypeWithNamespaceV3.Builder.SetWrapperObject(this); }
@@ -86,6 +94,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public Model.ModelGetUserBanV3Response? AdminGetBannedUsersV3(AdminGetBannedUsersV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelListBulkUserBanResponseV3? AdminBanUserBulkV3(AdminBanUserBulkV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelListBulkUserBanResponseV3? AdminUnbanUserBulkV3(AdminUnbanUserBulkV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

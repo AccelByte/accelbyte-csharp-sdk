@@ -16,9 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? ContactType { get; set; }
 
         [JsonPropertyName("languageTag")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LanguageTag { get; set; }
 
         [JsonPropertyName("validateOnly")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? ValidateOnly { get; set; }
 
     }

@@ -112,6 +112,17 @@ namespace AccelByte.Sdk.Core
         }
         private IAP? _IAP = null;
 
+        public Invoice Invoice
+        {
+            get
+            {
+                if (_Invoice == null)
+                    _Invoice = new Invoice(_SdkObject);
+                return _Invoice;
+            }
+        }
+        private Invoice? _Invoice = null;
+
         public KeyGroup KeyGroup
         {
             get

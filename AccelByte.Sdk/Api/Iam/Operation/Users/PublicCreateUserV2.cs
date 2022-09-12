@@ -16,6 +16,28 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicCreateUserV2
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   *  Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users [POST]
+    /// 
+    ///   *  Substitute endpoint: /iam/v4/public/namespaces/{namespace}/users [POST]
+    /// 
+    /// 
+    /// 
+    ///   *  Note:
+    ///      1. v3 & v4 introduce optional verification code
+    /// 
+    ///      2. format differenceï¼Pascal case => Camel case)
+    /// 
+    /// 
+    /// 
+    /// 
     /// 
     /// 
     /// 
@@ -34,6 +56,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Country use ISO3166-1 alpha-2 two letter, e.g. US.
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class PublicCreateUserV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

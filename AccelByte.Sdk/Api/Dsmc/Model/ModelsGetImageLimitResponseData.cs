@@ -18,5 +18,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("non_persistent_image_number")]
         public int? NonPersistentImageNumber { get; set; }
 
+        [JsonPropertyName("non_persistent_image_used_in_deployment_number")]
+        public int? NonPersistentImageUsedInDeploymentNumber { get; set; }
+
     }
 }

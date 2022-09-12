@@ -39,6 +39,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///   * username
     /// 
     /// 
+    ///   * email
+    /// 
+    /// 
     /// 
     /// 
     /// 
@@ -90,6 +93,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// `minCharType` is used to identify how many required criteria in the regex. The supported criteria are number, letter, special character, and letter case. If set to 0 or 1 means all criteria are optional. It can be set as much as the number of criteria enabled.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// If `blockedWord` is set by admin, any input from user which contain kind of blocked word(s) will be blocked for create/upgrade/update account
     /// </summary>
     public class AdminUpdateInputValidations : AccelByte.Sdk.Core.Operation
     {

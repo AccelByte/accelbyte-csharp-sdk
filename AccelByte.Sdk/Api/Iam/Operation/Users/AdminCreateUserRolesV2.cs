@@ -16,8 +16,23 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminCreateUserRolesV2
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/roles [PATCH]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:ROLE:USER:{userId} [UPDATE]'
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class AdminCreateUserRolesV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

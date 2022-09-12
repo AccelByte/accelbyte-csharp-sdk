@@ -67,6 +67,10 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         {
             get { return Operation.GetImagePatchDetail.Builder.SetWrapperObject(this); }
         }
+        public ImageLimitClient.ImageLimitClientBuilder ImageLimitClientOp
+        {
+            get { return Operation.ImageLimitClient.Builder.SetWrapperObject(this); }
+        }
         public ImageDetailClient.ImageDetailClientBuilder ImageDetailClientOp
         {
             get { return Operation.ImageDetailClient.Builder.SetWrapperObject(this); }
@@ -162,6 +166,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public Model.ModelsGetImagePatchDetailResponse? GetImagePatchDetail(GetImagePatchDetail input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetImageLimitResponse? ImageLimitClient(ImageLimitClient input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

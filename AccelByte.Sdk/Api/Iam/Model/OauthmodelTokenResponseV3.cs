@@ -16,6 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<AccountcommonJWTBanV3>? Bans { get; set; }
 
         [JsonPropertyName("display_name")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DisplayName { get; set; }
 
         [JsonPropertyName("expires_in")]
@@ -47,9 +48,11 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? PlatformUserId { get; set; }
 
         [JsonPropertyName("refresh_expires_in")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? RefreshExpiresIn { get; set; }
 
         [JsonPropertyName("refresh_token")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? RefreshToken { get; set; }
 
         [JsonPropertyName("roles")]
@@ -62,9 +65,11 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? TokenType { get; set; }
 
         [JsonPropertyName("user_id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserId { get; set; }
 
         [JsonPropertyName("xuid")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Xuid { get; set; }
 
     }

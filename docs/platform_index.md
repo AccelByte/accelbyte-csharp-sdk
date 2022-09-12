@@ -219,6 +219,12 @@
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/twitch/sync` | PUT | SyncTwitchDropsEntitlement | [SyncTwitchDropsEntitlement](../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncTwitchDropsEntitlement.cs) | [SyncTwitchDropsEntitlement](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncTwitchDropsEntitlement.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/xbl/sync` | PUT | SyncXboxInventory | [SyncXboxInventory](../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncXboxInventory.cs) | [SyncXboxInventory](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncXboxInventory.cs) |
 
+### Invoice Wrapper:  [Invoice](../AccelByte.Sdk/Api/Platform/Wrapper/Invoice.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/invoice/details.csv` | GET | DownloadInvoiceDetails | [DownloadInvoiceDetails](../AccelByte.Sdk/Api/Platform/Operation/Invoice/DownloadInvoiceDetails.cs) | [DownloadInvoiceDetails](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Invoice/DownloadInvoiceDetails.cs) |
+| `/platform/admin/namespaces/{namespace}/invoice/summary` | GET | GenerateInvoiceSummary | [GenerateInvoiceSummary](../AccelByte.Sdk/Api/Platform/Operation/Invoice/GenerateInvoiceSummary.cs) | [GenerateInvoiceSummary](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Invoice/GenerateInvoiceSummary.cs) |
+
 ### KeyGroup Wrapper:  [KeyGroup](../AccelByte.Sdk/Api/Platform/Wrapper/KeyGroup.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -576,6 +582,8 @@
 | `IAPOrderPagingSlicedResult` | [IAPOrderPagingSlicedResult](../AccelByte.Sdk/Api/Platform/Model/IAPOrderPagingSlicedResult.cs) |
 | `Image` | [Image](../AccelByte.Sdk/Api/Platform/Model/Image.cs) |
 | `InGameItemSync` | [InGameItemSync](../AccelByte.Sdk/Api/Platform/Model/InGameItemSync.cs) |
+| `InvoiceCurrencySummary` | [InvoiceCurrencySummary](../AccelByte.Sdk/Api/Platform/Model/InvoiceCurrencySummary.cs) |
+| `InvoiceSummary` | [InvoiceSummary](../AccelByte.Sdk/Api/Platform/Model/InvoiceSummary.cs) |
 | `ItemAcquireRequest` | [ItemAcquireRequest](../AccelByte.Sdk/Api/Platform/Model/ItemAcquireRequest.cs) |
 | `ItemAcquireResult` | [ItemAcquireResult](../AccelByte.Sdk/Api/Platform/Model/ItemAcquireResult.cs) |
 | `ItemCreate` | [ItemCreate](../AccelByte.Sdk/Api/Platform/Model/ItemCreate.cs) |

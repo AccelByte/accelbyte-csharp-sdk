@@ -178,6 +178,18 @@ namespace AccelByte.Sdk.Api
             return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).GetImagePatchDetail(op);
         }
 
+        public static Dsmc.Model.ModelsGetImageLimitResponse? Execute(
+            this ImageLimitClient.ImageLimitClientBuilder builder,
+            string namespace_
+        )
+        {
+            ImageLimitClient op = builder.Build(
+                namespace_
+            );
+
+            return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).ImageLimitClient(op);
+        }
+
         public static Dsmc.Model.ModelsGetImageDetailResponse? Execute(
             this ImageDetailClient.ImageDetailClientBuilder builder,
             string namespace_,

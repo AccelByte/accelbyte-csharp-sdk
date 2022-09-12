@@ -31,12 +31,14 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Password { get; set; }
 
         [JsonPropertyName("reachMinimumAge")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? ReachMinimumAge { get; set; }
 
         [JsonPropertyName("username")]
         public string? Username { get; set; }
 
         [JsonPropertyName("validateOnly")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? ValidateOnly { get; set; }
 
     }

@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
 
         #region Operation Builders
+        public BulkGetPlayerRecordSizeHandlerV1.BulkGetPlayerRecordSizeHandlerV1Builder BulkGetPlayerRecordSizeHandlerV1Op
+        {
+            get { return Operation.BulkGetPlayerRecordSizeHandlerV1.Builder.SetWrapperObject(this); }
+        }
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public ListPlayerRecordHandlerV1.ListPlayerRecordHandlerV1Builder ListPlayerRecordHandlerV1Op
         {
@@ -60,8 +64,20 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         {
             get { return Operation.AdminDeletePlayerPublicRecordHandlerV1.Builder.SetWrapperObject(this); }
         }
+        public AdminGetPlayerRecordSizeHandlerV1.AdminGetPlayerRecordSizeHandlerV1Builder AdminGetPlayerRecordSizeHandlerV1Op
+        {
+            get { return Operation.AdminGetPlayerRecordSizeHandlerV1.Builder.SetWrapperObject(this); }
+        }
         #endregion
         
+        public Model.ModelsBulkGetPlayerRecordSizeResponse? BulkGetPlayerRecordSizeHandlerV1(BulkGetPlayerRecordSizeHandlerV1 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public Model.ModelsListPlayerRecordKeysResponse? ListPlayerRecordHandlerV1(ListPlayerRecordHandlerV1 input) {
@@ -141,6 +157,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPlayerRecordSizeResponse? AdminGetPlayerRecordSizeHandlerV1(AdminGetPlayerRecordSizeHandlerV1 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

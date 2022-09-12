@@ -78,6 +78,20 @@ namespace AccelByte.Sdk.Api
             ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).Logout(op);
         }
 
+        public static Iam.Model.OauthmodelGameTokenCodeResponse? Execute(
+            this RequestGameTokenCodeResponseV3.RequestGameTokenCodeResponseV3Builder builder,
+            string clientId,
+            string namespace_
+        )
+        {
+            RequestGameTokenCodeResponseV3 op = builder.Build(
+                clientId,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestGameTokenCodeResponseV3(op);
+        }
+
         public static string Execute(
             this PlatformAuthenticationV3.PlatformAuthenticationV3Builder builder,
             string platformId,
@@ -90,6 +104,18 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).PlatformAuthenticationV3(op);
+        }
+
+        public static Iam.Model.OauthmodelTokenResponseV3? Execute(
+            this RequestGameTokenResponseV3.RequestGameTokenResponseV3Builder builder,
+            string code
+        )
+        {
+            RequestGameTokenResponseV3 op = builder.Build(
+                code
+            );
+
+            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestGameTokenResponseV3(op);
         }
 
     }

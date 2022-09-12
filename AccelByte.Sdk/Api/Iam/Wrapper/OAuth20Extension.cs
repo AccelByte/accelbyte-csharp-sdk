@@ -39,9 +39,17 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.Logout.Builder.SetWrapperObject(this); }
         }
+        public RequestGameTokenCodeResponseV3.RequestGameTokenCodeResponseV3Builder RequestGameTokenCodeResponseV3Op
+        {
+            get { return Operation.RequestGameTokenCodeResponseV3.Builder.SetWrapperObject(this); }
+        }
         public PlatformAuthenticationV3.PlatformAuthenticationV3Builder PlatformAuthenticationV3Op
         {
             get { return Operation.PlatformAuthenticationV3.Builder.SetWrapperObject(this); }
+        }
+        public RequestGameTokenResponseV3.RequestGameTokenResponseV3Builder RequestGameTokenResponseV3Op
+        {
+            get { return Operation.RequestGameTokenResponseV3.Builder.SetWrapperObject(this); }
         }
         #endregion
         
@@ -85,7 +93,23 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.OauthmodelGameTokenCodeResponse? RequestGameTokenCodeResponseV3(RequestGameTokenCodeResponseV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public string PlatformAuthenticationV3(PlatformAuthenticationV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OauthmodelTokenResponseV3? RequestGameTokenResponseV3(RequestGameTokenResponseV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

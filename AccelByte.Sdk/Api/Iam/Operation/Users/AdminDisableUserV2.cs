@@ -16,6 +16,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDisableUserV2
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/status [PATCH]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required permissions 'ADMIN:NAMESPACE:{namespace}:USERSTATUS:USER:{userId} [UPDATE]'
     /// 
     /// 
@@ -31,6 +45,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     ///   * AdminDeactivateAccount : if your deletion request comes from admin
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class AdminDisableUserV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

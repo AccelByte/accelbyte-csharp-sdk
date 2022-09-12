@@ -16,8 +16,29 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetAgeRestrictionStatusV2
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/agerestrictions [GET]
+    /// 
+    /// 
+    /// 
+    ///   * Note:
+    ///     difference in V3 response, format difference: Pascal case => Camel case
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:AGERESTRICTION [READ]'
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class AdminGetAgeRestrictionStatusV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

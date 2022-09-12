@@ -15,7 +15,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
     /// PublicGetCountryAgeRestriction
+    ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/agerestrictions/countries/{countryCode} [GET]
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class PublicGetCountryAgeRestriction : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -97,7 +108,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
         
-        public List<Model.AccountcommonCountryAgeRestriction>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.AccountcommonCountry? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            
             if (code == (HttpStatusCode)204)
             {
@@ -105,11 +116,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.AccountcommonCountryAgeRestriction>>(payload);
+                return JsonSerializer.Deserialize<Model.AccountcommonCountry>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.AccountcommonCountryAgeRestriction>>(payload);
+                return JsonSerializer.Deserialize<Model.AccountcommonCountry>(payload);
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

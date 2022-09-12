@@ -16,8 +16,23 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicUpdatePasswordV2
     ///
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/password [PUT]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// This endpoint need a valid user access token
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class PublicUpdatePasswordV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

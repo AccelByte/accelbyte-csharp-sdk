@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public long? GeneratedAt { get; set; }
 
         [JsonPropertyName("invalidCodes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? InvalidCodes { get; set; }
 
         [JsonPropertyName("validCodes")]

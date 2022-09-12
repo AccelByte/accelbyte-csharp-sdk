@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public AccountCreateUserRequestV4AuthType? AuthType { get; set; }
 
         [JsonPropertyName("code")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Code { get; set; }
 
         [JsonPropertyName("country")]
@@ -30,18 +31,22 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? DateOfBirth { get; set; }
 
         [JsonPropertyName("displayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DisplayName { get; set; }
 
         [JsonPropertyName("emailAddress")]
         public string? EmailAddress { get; set; }
 
         [JsonPropertyName("password")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Password { get; set; }
 
         [JsonPropertyName("passwordMD5Sum")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PasswordMD5Sum { get; set; }
 
         [JsonPropertyName("reachMinimumAge")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? ReachMinimumAge { get; set; }
 
         [JsonPropertyName("username")]

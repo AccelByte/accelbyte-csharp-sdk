@@ -96,7 +96,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///   *  Substitute endpoint: /iam/v3/oauth/authorize [GET]
+    ///   *  Substitute endpoint (for: basic header style): /iam/v3/oauth/authorize [GET]
+    /// 
+    /// 
+    ///   *  Substitute endpoint (for: bearer header style):
+    ///     step1: /iam/v3/namespace/{namespace}/token/request [POST] => get code
+    ///     step2: /iam/v3/token/exchange [POST] => get token by step1's code
+    /// 
     /// 
     /// 
     ///   *  Note:

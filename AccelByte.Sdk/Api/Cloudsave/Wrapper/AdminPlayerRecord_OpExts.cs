@@ -12,6 +12,20 @@ namespace AccelByte.Sdk.Api
 {
     public static class CloudsaveAdminPlayerRecord_OpExts
     {
+        public static Cloudsave.Model.ModelsBulkGetPlayerRecordSizeResponse? Execute(
+            this BulkGetPlayerRecordSizeHandlerV1.BulkGetPlayerRecordSizeHandlerV1Builder builder,
+            ModelsBulkUserKeyRequest body,
+            string namespace_
+        )
+        {
+            BulkGetPlayerRecordSizeHandlerV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).BulkGetPlayerRecordSizeHandlerV1(op);
+        }
+
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Cloudsave.Model.ModelsListPlayerRecordKeysResponse? Execute(
             this ListPlayerRecordHandlerV1.ListPlayerRecordHandlerV1Builder builder,
@@ -173,6 +187,22 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminDeletePlayerPublicRecordHandlerV1(op);
+        }
+
+        public static Cloudsave.Model.ModelsPlayerRecordSizeResponse? Execute(
+            this AdminGetPlayerRecordSizeHandlerV1.AdminGetPlayerRecordSizeHandlerV1Builder builder,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetPlayerRecordSizeHandlerV1 op = builder.Build(
+                key,
+                namespace_,
+                userId
+            );
+
+            return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminGetPlayerRecordSizeHandlerV1(op);
         }
 
     }
