@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","admingetbulkuserbyemailaddressv3")]
-    public class AdminGetBulkUserByEmailAddressV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "admingetbulkuserbyemailaddressv3")]
+    public class AdminGetBulkUserByEmailAddressV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminGetBulkUserByEmailAddressV3"; } }
+        public string OperationName { get { return "AdminGetBulkUserByEmailAddressV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelListEmailAddressRequest Body { get; set; } = new ModelListEmailAddressRequest();
-                
+
         public AdminGetBulkUserByEmailAddressV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             AdminGetBulkUserByEmailAddressV3 operation = new AdminGetBulkUserByEmailAddressV3(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelListUserResponseV3? response = wrapper.AdminGetBulkUserByEmailAddressV3(operation);
             if (response == null)
                 return "No response from server.";

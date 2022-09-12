@@ -7,7 +7,7 @@ using System;
 namespace AccelByte.Sdk.Sample.TicTacToe.Model
 {
     public class LoginResponse
-    {   
+    {
         public string AccessToken { get; set; } = String.Empty;
 
         public string access_token { get => AccessToken; }

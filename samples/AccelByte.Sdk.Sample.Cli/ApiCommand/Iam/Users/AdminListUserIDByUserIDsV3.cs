@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","adminlistuseridbyuseridsv3")]
-    public class AdminListUserIDByUserIDsV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "adminlistuseridbyuseridsv3")]
+    public class AdminListUserIDByUserIDsV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminListUserIDByUserIDsV3"; } }
+        public string OperationName { get { return "AdminListUserIDByUserIDsV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelUserIDsRequest Body { get; set; } = new ModelUserIDsRequest();
-                
+
         public AdminListUserIDByUserIDsV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             AdminListUserIDByUserIDsV3 operation = new AdminListUserIDByUserIDsV3(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelListUserInformationResult? response = wrapper.AdminListUserIDByUserIDsV3(operation);
             if (response == null)
                 return "No response from server.";

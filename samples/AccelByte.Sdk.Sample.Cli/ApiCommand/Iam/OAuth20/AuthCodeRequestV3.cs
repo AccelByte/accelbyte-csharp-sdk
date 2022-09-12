@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","authcoderequestv3")]
-    public class AuthCodeRequestV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "authcoderequestv3")]
+    public class AuthCodeRequestV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AuthCodeRequestV3"; } }
+        public string OperationName { get { return "AuthCodeRequestV3"; } }
 
         [SdkCommandArgument("platformId")]
         public string PlatformId { get; set; } = String.Empty;
@@ -48,16 +48,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20(_SDK);
 
             AuthCodeRequestV3 operation = new AuthCodeRequestV3(
-                PlatformId,                
-                ClientId,                
-                RedirectUri,                
-                RequestId                
-            );            
-            
+                PlatformId,
+                ClientId,
+                RedirectUri,
+                RequestId
+            );
+
             string? response = wrapper.AuthCodeRequestV3(operation);
             if (response == null)
                 return "No response from server.";
-            return response!;            
+            return response!;
         }
     }
 }

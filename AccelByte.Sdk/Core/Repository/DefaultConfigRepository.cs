@@ -27,13 +27,13 @@ namespace AccelByte.Sdk.Core.Repository
 
         public string BaseUrl
         {
-            get => Environment.GetEnvironmentVariable(BASE_URL) ?? 
+            get => Environment.GetEnvironmentVariable(BASE_URL) ??
                     throw new Exception($"Environment variable not found (variable: {BASE_URL})");
         }
 
         public string ClientId
         {
-            get => Environment.GetEnvironmentVariable(CLIENT_ID) ?? 
+            get => Environment.GetEnvironmentVariable(CLIENT_ID) ??
                     throw new Exception($"Environment variable not found (variable: {CLIENT_ID})");
         }
 

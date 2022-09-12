@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","shutdownserver")]
-    public class ShutdownServerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "shutdownserver")]
+    public class ShutdownServerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "ShutdownServer"; } }
+        public string OperationName { get { return "ShutdownServer"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsShutdownServerRequest Body { get; set; } = new ModelsShutdownServerRequest();
-                
+
         public ShutdownServerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Server wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Server(_SDK);
 
             ShutdownServer operation = new ShutdownServer(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             wrapper.ShutdownServer(operation);
             return String.Empty;
         }

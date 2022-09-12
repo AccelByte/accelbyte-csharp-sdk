@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","change2famethod")]
-    public class Change2faMethodCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "change2famethod")]
+    public class Change2faMethodCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "Change2faMethod"; } }
+        public string OperationName { get { return "Change2faMethod"; } }
 
         [SdkCommandArgument("factor")]
         public string Factor { get; set; } = String.Empty;
-                    
+
         [SdkCommandArgument("mfaToken")]
         public string MfaToken { get; set; } = String.Empty;
-                    
+
         public Change2faMethodCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20(_SDK);
 
             Change2faMethod operation = new Change2faMethod(
-                Factor,                
-                MfaToken                
-            );            
-            
+                Factor,
+                MfaToken
+            );
+
             wrapper.Change2faMethod(operation);
             return String.Empty;
         }

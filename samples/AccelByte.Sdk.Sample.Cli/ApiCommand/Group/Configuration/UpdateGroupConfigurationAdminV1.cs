@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group","updategroupconfigurationadminv1")]
-    public class UpdateGroupConfigurationAdminV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("group", "updategroupconfigurationadminv1")]
+    public class UpdateGroupConfigurationAdminV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Group"; } }
+        public string ServiceName { get { return "Group"; } }
 
-        public string OperationName{ get { return "UpdateGroupConfigurationAdminV1"; } }
+        public string OperationName { get { return "UpdateGroupConfigurationAdminV1"; } }
 
         [SdkCommandArgument("configurationCode")]
         public string ConfigurationCode { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 
         [SdkCommandData("body")]
         public ModelsUpdateGroupConfigurationRequestV1 Body { get; set; } = new ModelsUpdateGroupConfigurationRequestV1();
-                
+
         public UpdateGroupConfigurationAdminV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.Configuration wrapper = new AccelByte.Sdk.Api.Group.Wrapper.Configuration(_SDK);
 
             UpdateGroupConfigurationAdminV1 operation = new UpdateGroupConfigurationAdminV1(
-                ConfigurationCode,                
-                Namespace,                
-                Body                
-            );            
-            
+                ConfigurationCode,
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Group.Model.ModelsUpdateGroupConfigurationResponseV1? response = wrapper.UpdateGroupConfigurationAdminV1(operation);
             if (response == null)
                 return "No response from server.";

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group","getgroupinvitationrequestpublicv1")]
-    public class GetGroupInvitationRequestPublicV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("group", "getgroupinvitationrequestpublicv1")]
+    public class GetGroupInvitationRequestPublicV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Group"; } }
+        public string ServiceName { get { return "Group"; } }
 
-        public string OperationName{ get { return "GetGroupInvitationRequestPublicV1"; } }
+        public string OperationName { get { return "GetGroupInvitationRequestPublicV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.MemberRequest wrapper = new AccelByte.Sdk.Api.Group.Wrapper.MemberRequest(_SDK);
 
             GetGroupInvitationRequestPublicV1 operation = new GetGroupInvitationRequestPublicV1(
-                Namespace,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Group.Model.ModelsGetMemberRequestsListResponseV1? response = wrapper.GetGroupInvitationRequestPublicV1(operation);
             if (response == null)
                 return "No response from server.";

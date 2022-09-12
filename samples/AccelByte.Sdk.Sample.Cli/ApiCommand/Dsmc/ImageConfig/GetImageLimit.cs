@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","getimagelimit")]
-    public class GetImageLimitCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "getimagelimit")]
+    public class GetImageLimitCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "GetImageLimit"; } }
+        public string OperationName { get { return "GetImageLimit"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig(_SDK);
 
             GetImageLimit operation = new GetImageLimit(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsGetImageLimitResponse? response = wrapper.GetImageLimit(operation);
             if (response == null)
                 return "No response from server.";

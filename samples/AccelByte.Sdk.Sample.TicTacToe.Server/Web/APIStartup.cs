@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe.Server.Web
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app                
+            app
                 .UseMiddleware<APIMiddleware>()
                 .Run((context) =>
                 {

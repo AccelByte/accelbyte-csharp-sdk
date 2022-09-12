@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","deleterewardconditionrecord")]
-    public class DeleteRewardConditionRecordCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "deleterewardconditionrecord")]
+    public class DeleteRewardConditionRecordCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "DeleteRewardConditionRecord"; } }
+        public string OperationName { get { return "DeleteRewardConditionRecord"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public DeleteRewardConditionRequest Body { get; set; } = new DeleteRewardConditionRequest();
-                
+
         public DeleteRewardConditionRecordCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Reward wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Reward(_SDK);
 
             DeleteRewardConditionRecord operation = new DeleteRewardConditionRecord(
-                Namespace,                
-                RewardId,                
-                Body                
-            );            
-            
+                Namespace,
+                RewardId,
+                Body
+            );
+
             wrapper.DeleteRewardConditionRecord(operation);
             return String.Empty;
         }

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","queryredeemhistory")]
-    public class QueryRedeemHistoryCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "queryredeemhistory")]
+    public class QueryRedeemHistoryCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "QueryRedeemHistory"; } }
+        public string OperationName { get { return "QueryRedeemHistory"; } }
 
         [SdkCommandArgument("campaignId")]
         public string CampaignId { get; set; } = String.Empty;
@@ -54,14 +54,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Campaign wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Campaign(_SDK);
 
             QueryRedeemHistory operation = new QueryRedeemHistory(
-                CampaignId,                
-                Namespace,                
-                Code,                
-                Limit,                
-                Offset,                
-                UserId                
-            );            
-            
+                CampaignId,
+                Namespace,
+                Code,
+                Limit,
+                Offset,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.RedeemHistoryPagingSlicedResult? response = wrapper.QueryRedeemHistory(operation);
             if (response == null)
                 return "No response from server.";

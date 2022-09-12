@@ -80,124 +80,139 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
             get { return Operation.PublicUnlockAchievement.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public Model.ModelsPaginatedAchievementResponse? AdminListAchievements(AdminListAchievements input) {
+
+        public Model.ModelsPaginatedAchievementResponse? AdminListAchievements(AdminListAchievements input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsAchievementResponse? AdminCreateNewAchievement(AdminCreateNewAchievement input) {
+        public Model.ModelsAchievementResponse? AdminCreateNewAchievement(AdminCreateNewAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelsAchievement>? ExportAchievements(ExportAchievements input) {
+        public List<Model.ModelsAchievement>? ExportAchievements(ExportAchievements input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ServiceImportConfigResponse? ImportAchievements(ImportAchievements input) {
+        public Model.ServiceImportConfigResponse? ImportAchievements(ImportAchievements input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsAchievementResponse? AdminGetAchievement(AdminGetAchievement input) {
+        public Model.ModelsAchievementResponse? AdminGetAchievement(AdminGetAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsAchievementResponse? AdminUpdateAchievement(AdminUpdateAchievement input) {
+        public Model.ModelsAchievementResponse? AdminUpdateAchievement(AdminUpdateAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteAchievement(AdminDeleteAchievement input) {
+        public void AdminDeleteAchievement(AdminDeleteAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminUpdateAchievementListOrder(AdminUpdateAchievementListOrder input) {
+        public void AdminUpdateAchievementListOrder(AdminUpdateAchievementListOrder input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedUserAchievementResponse? AdminListUserAchievements(AdminListUserAchievements input) {
+        public Model.ModelsPaginatedUserAchievementResponse? AdminListUserAchievements(AdminListUserAchievements input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminResetAchievement(AdminResetAchievement input) {
+        public void AdminResetAchievement(AdminResetAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminUnlockAchievement(AdminUnlockAchievement input) {
+        public void AdminUnlockAchievement(AdminUnlockAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPublicAchievementsResponse? PublicListAchievements(PublicListAchievements input) {
+        public Model.ModelsPublicAchievementsResponse? PublicListAchievements(PublicListAchievements input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPublicAchievementResponse? PublicGetAchievement(PublicGetAchievement input) {
+        public Model.ModelsPublicAchievementResponse? PublicGetAchievement(PublicGetAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedUserAchievementResponse? PublicListUserAchievements(PublicListUserAchievements input) {
+        public Model.ModelsPaginatedUserAchievementResponse? PublicListUserAchievements(PublicListUserAchievements input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicUnlockAchievement(PublicUnlockAchievement input) {
+        public void PublicUnlockAchievement(PublicUnlockAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

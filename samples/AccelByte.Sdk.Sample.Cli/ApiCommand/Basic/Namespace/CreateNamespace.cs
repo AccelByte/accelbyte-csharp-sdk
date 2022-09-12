@@ -17,18 +17,18 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic","createnamespace")]
-    public class CreateNamespaceCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("basic", "createnamespace")]
+    public class CreateNamespaceCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Basic"; } }
+        public string ServiceName { get { return "Basic"; } }
 
-        public string OperationName{ get { return "CreateNamespace"; } }
+        public string OperationName { get { return "CreateNamespace"; } }
 
         [SdkCommandData("body")]
         public NamespaceCreate Body { get; set; } = new NamespaceCreate();
-                
+
         public CreateNamespaceCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.Namespace wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.Namespace(_SDK);
 
             CreateNamespace operation = new CreateNamespace(
-                Body                
-            );            
-            
+                Body
+            );
+
             AccelByte.Sdk.Api.Basic.Model.NamespaceInfo? response = wrapper.CreateNamespace(operation);
             if (response == null)
                 return "No response from server.";

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass","publicbulkclaimuserrewards")]
-    public class PublicBulkClaimUserRewardsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass", "publicbulkclaimuserrewards")]
+    public class PublicBulkClaimUserRewardsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Seasonpass"; } }
+        public string ServiceName { get { return "Seasonpass"; } }
 
-        public string OperationName{ get { return "PublicBulkClaimUserRewards"; } }
+        public string OperationName { get { return "PublicBulkClaimUserRewards"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Reward wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Reward(_SDK);
 
             PublicBulkClaimUserRewards operation = new PublicBulkClaimUserRewards(
-                Namespace,                
-                UserId                
-            );            
-            
+                Namespace,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Seasonpass.Model.ClaimableRewards? response = wrapper.PublicBulkClaimUserRewards(operation);
             if (response == null)
                 return "No response from server.";

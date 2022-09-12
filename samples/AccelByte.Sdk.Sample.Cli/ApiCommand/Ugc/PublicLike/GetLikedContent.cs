@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","getlikedcontent")]
-    public class GetLikedContentCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "getlikedcontent")]
+    public class GetLikedContentCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "GetLikedContent"; } }
+        public string OperationName { get { return "GetLikedContent"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -66,18 +66,18 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicLike wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicLike(_SDK);
 
             GetLikedContent operation = new GetLikedContent(
-                Namespace,                
-                Isofficial,                
-                Limit,                
-                Name,                
-                Offset,                
-                Orderby,                
-                Sortby,                
-                Subtype,                
-                Tags,                
-                Type                
-            );            
-            
+                Namespace,
+                Isofficial,
+                Limit,
+                Name,
+                Offset,
+                Orderby,
+                Sortby,
+                Subtype,
+                Tags,
+                Type
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedContentDownloadResponse? response = wrapper.GetLikedContent(operation);
             if (response == null)
                 return "No response from server.";

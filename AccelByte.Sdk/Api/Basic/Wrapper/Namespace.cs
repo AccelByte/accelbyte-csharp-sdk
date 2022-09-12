@@ -56,76 +56,85 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
             get { return Operation.PublicGetNamespacePublisher.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public List<Model.NamespaceInfo>? GetNamespaces(GetNamespaces input) {
+
+        public List<Model.NamespaceInfo>? GetNamespaces(GetNamespaces input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.NamespaceInfo? CreateNamespace(CreateNamespace input) {
+        public Model.NamespaceInfo? CreateNamespace(CreateNamespace input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.NamespaceInfo? GetNamespace(GetNamespace input) {
+        public Model.NamespaceInfo? GetNamespace(GetNamespace input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.NamespaceInfo? DeleteNamespace(DeleteNamespace input) {
+        public Model.NamespaceInfo? DeleteNamespace(DeleteNamespace input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.NamespaceInfo? UpdateNamespace(UpdateNamespace input) {
+        public Model.NamespaceInfo? UpdateNamespace(UpdateNamespace input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.NamespacePublisherInfo? GetNamespacePublisher(GetNamespacePublisher input) {
+        public Model.NamespacePublisherInfo? GetNamespacePublisher(GetNamespacePublisher input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.NamespaceInfo? ChangeNamespaceStatus(ChangeNamespaceStatus input) {
+        public Model.NamespaceInfo? ChangeNamespaceStatus(ChangeNamespaceStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.NamespaceInfo>? PublicGetNamespaces(PublicGetNamespaces input) {
+        public List<Model.NamespaceInfo>? PublicGetNamespaces(PublicGetNamespaces input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.NamespacePublisherInfo? PublicGetNamespacePublisher(PublicGetNamespacePublisher input) {
+        public Model.NamespacePublisherInfo? PublicGetNamespacePublisher(PublicGetNamespacePublisher input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

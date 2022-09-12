@@ -72,108 +72,121 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.PublicListStores.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public List<Model.StoreInfo>? ListStores(ListStores input) {
+
+        public List<Model.StoreInfo>? ListStores(ListStores input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StoreInfo? CreateStore(CreateStore input) {
+        public Model.StoreInfo? CreateStore(CreateStore input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StoreInfo? ImportStore(ImportStore input) {
+        public Model.StoreInfo? ImportStore(ImportStore input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StoreInfo? GetPublishedStore(GetPublishedStore input) {
+        public Model.StoreInfo? GetPublishedStore(GetPublishedStore input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StoreInfo? DeletePublishedStore(DeletePublishedStore input) {
+        public Model.StoreInfo? DeletePublishedStore(DeletePublishedStore input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StoreBackupInfo? GetPublishedStoreBackup(GetPublishedStoreBackup input) {
+        public Model.StoreBackupInfo? GetPublishedStoreBackup(GetPublishedStoreBackup input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StoreInfo? RollbackPublishedStore(RollbackPublishedStore input) {
+        public Model.StoreInfo? RollbackPublishedStore(RollbackPublishedStore input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StoreInfo? GetStore(GetStore input) {
+        public Model.StoreInfo? GetStore(GetStore input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StoreInfo? UpdateStore(UpdateStore input) {
+        public Model.StoreInfo? UpdateStore(UpdateStore input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StoreInfo? DeleteStore(DeleteStore input) {
+        public Model.StoreInfo? DeleteStore(DeleteStore input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StoreInfo? CloneStore(CloneStore input) {
+        public Model.StoreInfo? CloneStore(CloneStore input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void ExportStore(ExportStore input) {
+        public void ExportStore(ExportStore input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.StoreInfo>? PublicListStores(PublicListStores input) {
+        public List<Model.StoreInfo>? PublicListStores(PublicListStores input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

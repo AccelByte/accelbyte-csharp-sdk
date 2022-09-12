@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Sample.TitleMatchmaking.LocalServer
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app                
+            app
                 .UseMiddleware<SampleAPIMiddleware>()
                 .Run((context) =>
                 {

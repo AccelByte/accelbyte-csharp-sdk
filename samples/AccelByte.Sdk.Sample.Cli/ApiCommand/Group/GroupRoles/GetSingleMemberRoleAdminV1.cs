@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group","getsinglememberroleadminv1")]
-    public class GetSingleMemberRoleAdminV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("group", "getsinglememberroleadminv1")]
+    public class GetSingleMemberRoleAdminV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Group"; } }
+        public string ServiceName { get { return "Group"; } }
 
-        public string OperationName{ get { return "GetSingleMemberRoleAdminV1"; } }
+        public string OperationName { get { return "GetSingleMemberRoleAdminV1"; } }
 
         [SdkCommandArgument("memberRoleId")]
         public string MemberRoleId { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.GroupRoles wrapper = new AccelByte.Sdk.Api.Group.Wrapper.GroupRoles(_SDK);
 
             GetSingleMemberRoleAdminV1 operation = new GetSingleMemberRoleAdminV1(
-                MemberRoleId,                
-                Namespace                
-            );            
-            
+                MemberRoleId,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Group.Model.ModelsGetMemberRoleResponseV1? response = wrapper.GetSingleMemberRoleAdminV1(operation);
             if (response == null)
                 return "No response from server.";

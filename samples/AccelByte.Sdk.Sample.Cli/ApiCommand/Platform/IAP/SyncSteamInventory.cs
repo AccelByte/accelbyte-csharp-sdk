@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","syncsteaminventory")]
-    public class SyncSteamInventoryCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "syncsteaminventory")]
+    public class SyncSteamInventoryCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "SyncSteamInventory"; } }
+        public string OperationName { get { return "SyncSteamInventory"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public SteamSyncRequest Body { get; set; } = new SteamSyncRequest();
-                
+
         public SyncSteamInventoryCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             SyncSteamInventory operation = new SyncSteamInventory(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             wrapper.SyncSteamInventory(operation);
             return String.Empty;
         }

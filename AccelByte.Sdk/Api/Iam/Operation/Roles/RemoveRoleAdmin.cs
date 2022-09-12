@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     ///   * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [DELETE]
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class RemoveRoleAdmin : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -53,7 +53,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 RemoveRoleAdmin op = new RemoveRoleAdmin(this,
-                    roleId                    
+                    roleId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -66,28 +66,28 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["roleId"] = roleId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public RemoveRoleAdmin(
-            string roleId            
+            string roleId
         )
         {
             PathParams["roleId"] = roleId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -102,16 +102,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

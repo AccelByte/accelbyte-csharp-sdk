@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Achievement.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
-    [SdkConsoleCommand("achievement","admingetachievement")]
-    public class AdminGetAchievementCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("achievement", "admingetachievement")]
+    public class AdminGetAchievementCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Achievement"; } }
+        public string ServiceName { get { return "Achievement"; } }
 
-        public string OperationName{ get { return "AdminGetAchievement"; } }
+        public string OperationName { get { return "AdminGetAchievement"; } }
 
         [SdkCommandArgument("achievementCode")]
         public string AchievementCode { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             AccelByte.Sdk.Api.Achievement.Wrapper.Achievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.Achievements(_SDK);
 
             AdminGetAchievement operation = new AdminGetAchievement(
-                AchievementCode,                
-                Namespace                
-            );            
-            
+                AchievementCode,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Achievement.Model.ModelsAchievementResponse? response = wrapper.AdminGetAchievement(operation);
             if (response == null)
                 return "No response from server.";

@@ -138,9 +138,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             )
             {
                 AdminPutGameRecordConcurrentHandlerV1 op = new AdminPutGameRecordConcurrentHandlerV1(this,
-                    body,                    
-                    key,                    
-                    namespace_                    
+                    body,
+                    key,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -156,33 +156,33 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         {
             PathParams["key"] = key;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminPutGameRecordConcurrentHandlerV1(
-            string key,            
-            string namespace_,            
-            Model.ModelsAdminConcurrentRecordRequest body            
+            string key,
+            string namespace_,
+            Model.ModelsAdminConcurrentRecordRequest body
         )
         {
             PathParams["key"] = key;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -197,16 +197,16 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

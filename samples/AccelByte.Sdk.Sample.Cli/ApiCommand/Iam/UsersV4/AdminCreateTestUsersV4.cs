@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","admincreatetestusersv4")]
-    public class AdminCreateTestUsersV4Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "admincreatetestusersv4")]
+    public class AdminCreateTestUsersV4Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminCreateTestUsersV4"; } }
+        public string OperationName { get { return "AdminCreateTestUsersV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public AccountCreateTestUsersRequestV4 Body { get; set; } = new AccountCreateTestUsersRequestV4();
-                
+
         public AdminCreateTestUsersV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             AdminCreateTestUsersV4 operation = new AdminCreateTestUsersV4(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.AccountCreateTestUsersResponseV4? response = wrapper.AdminCreateTestUsersV4(operation);
             if (response == null)
                 return "No response from server.";

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","createoverrideregionoverride")]
-    public class CreateOverrideRegionOverrideCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "createoverrideregionoverride")]
+    public class CreateOverrideRegionOverrideCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "CreateOverrideRegionOverride"; } }
+        public string OperationName { get { return "CreateOverrideRegionOverride"; } }
 
         [SdkCommandArgument("deployment")]
         public string Deployment { get; set; } = String.Empty;
@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
         [SdkCommandData("body")]
         public ModelsCreateRegionOverrideRequest Body { get; set; } = new ModelsCreateRegionOverrideRequest();
-                
+
         public CreateOverrideRegionOverrideCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -51,13 +51,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig(_SDK);
 
             CreateOverrideRegionOverride operation = new CreateOverrideRegionOverride(
-                Deployment,                
-                Namespace,                
-                Region,                
-                Version,                
-                Body                
-            );            
-            
+                Deployment,
+                Namespace,
+                Region,
+                Version,
+                Body
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDeploymentWithOverride? response = wrapper.CreateOverrideRegionOverride(operation);
             if (response == null)
                 return "No response from server.";

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","deletesession")]
-    public class DeleteSessionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "deletesession")]
+    public class DeleteSessionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "DeleteSession"; } }
+        public string OperationName { get { return "DeleteSession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Admin(_SDK);
 
             DeleteSession operation = new DeleteSession(
-                Namespace,                
-                SessionID                
-            );            
-            
+                Namespace,
+                SessionID
+            );
+
             wrapper.DeleteSession(operation);
             return String.Empty;
         }

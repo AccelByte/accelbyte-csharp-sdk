@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","getuserincomingfriends")]
-    public class GetUserIncomingFriendsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "getuserincomingfriends")]
+    public class GetUserIncomingFriendsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "GetUserIncomingFriends"; } }
+        public string OperationName { get { return "GetUserIncomingFriends"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Friends wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Friends(_SDK);
 
             GetUserIncomingFriends operation = new GetUserIncomingFriends(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             List<AccelByte.Sdk.Api.Lobby.Model.ModelGetUserIncomingFriendsResponse>? response = wrapper.GetUserIncomingFriends(operation);
             if (response == null)
                 return "No response from server.";

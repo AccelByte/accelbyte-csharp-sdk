@@ -34,5 +34,5 @@ namespace AccelByte.Sdk.Sample.OIDC.Web
 
             return 0;
         }
-    }   
+    }
 }

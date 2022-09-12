@@ -49,8 +49,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             )
             {
                 GetPersonalChatHistoryV1Public op = new GetPersonalChatHistoryV1Public(this,
-                    friendId,                    
-                    namespace_                    
+                    friendId,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -65,30 +65,30 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         {
             PathParams["friendId"] = friendId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetPersonalChatHistoryV1Public(
-            string friendId,            
-            string namespace_            
+            string friendId,
+            string namespace_
         )
         {
             PathParams["friendId"] = friendId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -103,9 +103,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.ModelChatMessageResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -118,9 +118,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.ModelChatMessageResponse>>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser","deletesession")]
-    public class DeleteSessionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser", "deletesession")]
+    public class DeleteSessionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Sessionbrowser"; } }
+        public string ServiceName { get { return "Sessionbrowser"; } }
 
-        public string OperationName{ get { return "DeleteSession"; } }
+        public string OperationName { get { return "DeleteSession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
             DeleteSession operation = new DeleteSession(
-                Namespace,                
-                SessionID                
-            );            
-            
+                Namespace,
+                SessionID
+            );
+
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsSessionResponse? response = wrapper.DeleteSession(operation);
             if (response == null)
                 return "No response from server.";

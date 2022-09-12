@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publicgetuserbyuseridv3")]
-    public class PublicGetUserByUserIdV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicgetuserbyuseridv3")]
+    public class PublicGetUserByUserIdV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicGetUserByUserIdV3"; } }
+        public string OperationName { get { return "PublicGetUserByUserIdV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicGetUserByUserIdV3 operation = new PublicGetUserByUserIdV3(
-                Namespace,                
-                UserId                
-            );            
-            
+                Namespace,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelPublicUserResponseV3? response = wrapper.PublicGetUserByUserIdV3(operation);
             if (response == null)
                 return "No response from server.";

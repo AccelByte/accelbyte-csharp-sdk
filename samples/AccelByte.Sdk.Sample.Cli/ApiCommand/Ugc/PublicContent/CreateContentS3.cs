@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","createcontents3")]
-    public class CreateContentS3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "createcontents3")]
+    public class CreateContentS3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "CreateContentS3"; } }
+        public string OperationName { get { return "CreateContentS3"; } }
 
         [SdkCommandArgument("channelId")]
         public string ChannelId { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
         [SdkCommandData("body")]
         public ModelsCreateContentRequestS3 Body { get; set; } = new ModelsCreateContentRequestS3();
-                
+
         public CreateContentS3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicContent(_SDK);
 
             CreateContentS3 operation = new CreateContentS3(
-                ChannelId,                
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                ChannelId,
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateContentResponse? response = wrapper.CreateContentS3(operation);
             if (response == null)
                 return "No response from server.";

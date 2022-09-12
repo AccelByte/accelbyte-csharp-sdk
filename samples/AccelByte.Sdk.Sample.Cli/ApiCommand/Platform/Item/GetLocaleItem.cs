@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getlocaleitem")]
-    public class GetLocaleItemCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getlocaleitem")]
+    public class GetLocaleItemCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetLocaleItem"; } }
+        public string OperationName { get { return "GetLocaleItem"; } }
 
         [SdkCommandArgument("itemId")]
         public string ItemId { get; set; } = String.Empty;
@@ -57,15 +57,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             GetLocaleItem operation = new GetLocaleItem(
-                ItemId,                
-                Namespace,                
-                ActiveOnly,                
-                Language,                
-                PopulateBundle,                
-                Region,                
-                StoreId                
-            );            
-            
+                ItemId,
+                Namespace,
+                ActiveOnly,
+                Language,
+                PopulateBundle,
+                Region,
+                StoreId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PopulatedItemInfo? response = wrapper.GetLocaleItem(operation);
             if (response == null)
                 return "No response from server.";

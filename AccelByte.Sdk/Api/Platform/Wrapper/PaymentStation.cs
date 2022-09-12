@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
 
         #region Operation Builders
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public GetPaymentCustomization.GetPaymentCustomizationBuilder GetPaymentCustomizationOp
         {
             get { return Operation.GetPaymentCustomization.Builder.SetWrapperObject(this); }
@@ -61,87 +61,97 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.GetPaymentTaxValue.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.Customization? GetPaymentCustomization(GetPaymentCustomization input) {
+
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        public Model.Customization? GetPaymentCustomization(GetPaymentCustomization input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
-        public Model.PaymentUrl? PublicGetPaymentUrl(PublicGetPaymentUrl input) {
+#pragma warning restore ab_deprecated_operation
+        public Model.PaymentUrl? PublicGetPaymentUrl(PublicGetPaymentUrl input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.PaymentMethod>? PublicGetPaymentMethods(PublicGetPaymentMethods input) {
+        public List<Model.PaymentMethod>? PublicGetPaymentMethods(PublicGetPaymentMethods input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentOrderDetails? PublicGetUnpaidPaymentOrder(PublicGetUnpaidPaymentOrder input) {
+        public Model.PaymentOrderDetails? PublicGetUnpaidPaymentOrder(PublicGetUnpaidPaymentOrder input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentProcessResult? Pay(Pay input) {
+        public Model.PaymentProcessResult? Pay(Pay input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentOrderPaidResult? PublicCheckPaymentOrderPaidStatus(PublicCheckPaymentOrderPaidStatus input) {
+        public Model.PaymentOrderPaidResult? PublicCheckPaymentOrderPaidStatus(PublicCheckPaymentOrderPaidStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<string, object>? GetPaymentPublicConfig(GetPaymentPublicConfig input) {
+        public Dictionary<string, object>? GetPaymentPublicConfig(GetPaymentPublicConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public byte[]? PublicGetQRCode(PublicGetQRCode input) {
+        public byte[]? PublicGetQRCode(PublicGetQRCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicNormalizePaymentReturnUrl(PublicNormalizePaymentReturnUrl input) {
+        public void PublicNormalizePaymentReturnUrl(PublicNormalizePaymentReturnUrl input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.TaxResult? GetPaymentTaxValue(GetPaymentTaxValue input) {
+        public Model.TaxResult? GetPaymentTaxValue(GetPaymentTaxValue input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

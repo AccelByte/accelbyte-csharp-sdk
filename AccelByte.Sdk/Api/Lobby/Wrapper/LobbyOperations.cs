@@ -32,28 +32,31 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             get { return Operation.PublicGetMessages.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public Model.ModelsPartyData? AdminUpdatePartyAttributesV1(AdminUpdatePartyAttributesV1 input) {
+
+        public Model.ModelsPartyData? AdminUpdatePartyAttributesV1(AdminUpdatePartyAttributesV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminJoinPartyV1(AdminJoinPartyV1 input) {
+        public void AdminJoinPartyV1(AdminJoinPartyV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.LogAppMessageDeclaration>? PublicGetMessages(PublicGetMessages input) {
+        public List<Model.LogAppMessageDeclaration>? PublicGetMessages(PublicGetMessages input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

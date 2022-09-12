@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass","existsanypassbypasscodes")]
-    public class ExistsAnyPassByPassCodesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass", "existsanypassbypasscodes")]
+    public class ExistsAnyPassByPassCodesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Seasonpass"; } }
+        public string ServiceName { get { return "Seasonpass"; } }
 
-        public string OperationName{ get { return "ExistsAnyPassByPassCodes"; } }
+        public string OperationName { get { return "ExistsAnyPassByPassCodes"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Season wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Season(_SDK);
 
             ExistsAnyPassByPassCodes operation = new ExistsAnyPassByPassCodes(
-                Namespace,                
-                UserId,                
-                PassCodes                
-            );            
-            
+                Namespace,
+                UserId,
+                PassCodes
+            );
+
             AccelByte.Sdk.Api.Seasonpass.Model.Ownership? response = wrapper.ExistsAnyPassByPassCodes(operation);
             if (response == null)
                 return "No response from server.";

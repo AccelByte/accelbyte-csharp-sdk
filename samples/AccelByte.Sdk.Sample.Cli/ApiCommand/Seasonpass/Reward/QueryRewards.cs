@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass","queryrewards")]
-    public class QueryRewardsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass", "queryrewards")]
+    public class QueryRewardsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Seasonpass"; } }
+        public string ServiceName { get { return "Seasonpass"; } }
 
-        public string OperationName{ get { return "QueryRewards"; } }
+        public string OperationName { get { return "QueryRewards"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Reward wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Reward(_SDK);
 
             QueryRewards operation = new QueryRewards(
-                Namespace,                
-                SeasonId,                
-                Q                
-            );            
-            
+                Namespace,
+                SeasonId,
+                Q
+            );
+
             List<AccelByte.Sdk.Api.Seasonpass.Model.RewardInfo>? response = wrapper.QueryRewards(operation);
             if (response == null)
                 return "No response from server.";

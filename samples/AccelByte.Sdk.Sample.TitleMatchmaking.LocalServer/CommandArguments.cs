@@ -69,7 +69,7 @@ namespace AccelByte.Sdk.Sample.TitleMatchmaking.LocalServer
                                     aValue = aValue.Substring(1, aValue.Length - 2);
                             }
                         }
-                        
+
                         if (aKey == "sdk-config")
                         {
                             if (aValue == String.Empty)

@@ -121,7 +121,7 @@ namespace AccelByte.Sdk.Sample.TitleMatchmaking.LocalServer
                 context.Response.StatusCode = 500;
                 context.Response.ContentType = "text/plain";
                 await context.Response.WriteAsync(ex.Message);
-            }            
+            }
         }
     }
 }

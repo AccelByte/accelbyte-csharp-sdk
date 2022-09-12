@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Tests.Integration
             _Sdk?.Logout();
         }
 
-        [Test]        
+        [Test]
         public void SocialServiceUserStatTests()
         {
             Assert.IsNotNull(_Sdk);
@@ -56,7 +56,7 @@ namespace AccelByte.Sdk.Tests.Integration
             string? user_login_id = Environment.GetEnvironmentVariable("AB_USERNAME");
             if (user_login_id == null)
                 throw new Exception("This test requires the value of AB_USERNAME env var. Please specify one.");
-            
+
             user_login_id = UnQuote(user_login_id);
             string stat_code = "cs-server-sdk-test";
 
@@ -69,7 +69,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 .SetLoginId(user_login_id)
                 .Build(_Sdk.Namespace));
             Assert.IsNotNull(uResp);
-            string user_id = uResp!.UserId!;    
+            string user_id = uResp!.UserId!;
 
             wUserStat.CreateUserStatItem(CreateUserStatItem.Builder
                 .Build(_Sdk.Namespace, stat_code, user_id));

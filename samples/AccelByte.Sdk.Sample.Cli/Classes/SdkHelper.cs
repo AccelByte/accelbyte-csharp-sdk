@@ -29,9 +29,9 @@ namespace AccelByte.Sdk.Sample.Cli
             if (cArgs.IsLogEnabled)
             {
                 IHttpLogger dLogger = new DefaultHttpLogger();
-                httpClient.SetLogger(dLogger);                
+                httpClient.SetLogger(dLogger);
             }
-            
+
             AccelByteConfig config = new AccelByteConfig(httpClient, tokenRepo, cRepo);
             AccelByteSDK sdk = new AccelByteSDK(config);
 

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal","getuserinfostatus")]
-    public class GetUserInfoStatusCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("legal", "getuserinfostatus")]
+    public class GetUserInfoStatusCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Legal"; } }
+        public string ServiceName { get { return "Legal"; } }
 
-        public string OperationName{ get { return "GetUserInfoStatus"; } }
+        public string OperationName { get { return "GetUserInfoStatus"; } }
 
         [SdkCommandArgument("namespaces")]
         public string? Namespaces { get; set; }
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.UserInfo wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.UserInfo(_SDK);
 
             GetUserInfoStatus operation = new GetUserInfoStatus(
-                Namespaces                
-            );            
-            
+                Namespaces
+            );
+
             List<AccelByte.Sdk.Api.Legal.Model.RetrieveUserInfoCacheStatusResponse>? response = wrapper.GetUserInfoStatus(operation);
             if (response == null)
                 return "No response from server.";

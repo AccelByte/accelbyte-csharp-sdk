@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publicbulkgetitems")]
-    public class PublicBulkGetItemsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "publicbulkgetitems")]
+    public class PublicBulkGetItemsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicBulkGetItems"; } }
+        public string OperationName { get { return "PublicBulkGetItems"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -51,13 +51,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             PublicBulkGetItems operation = new PublicBulkGetItems(
-                Namespace,                
-                Language,                
-                Region,                
-                StoreId,                
-                ItemIds                
-            );            
-            
+                Namespace,
+                Language,
+                Region,
+                StoreId,
+                ItemIds
+            );
+
             List<AccelByte.Sdk.Api.Platform.Model.ItemInfo>? response = wrapper.PublicBulkGetItems(operation);
             if (response == null)
                 return "No response from server.";

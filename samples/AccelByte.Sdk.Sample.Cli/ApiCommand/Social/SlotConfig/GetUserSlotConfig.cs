@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","getuserslotconfig")]
-    public class GetUserSlotConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "getuserslotconfig")]
+    public class GetUserSlotConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "GetUserSlotConfig"; } }
+        public string OperationName { get { return "GetUserSlotConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.SlotConfig wrapper = new AccelByte.Sdk.Api.Social.Wrapper.SlotConfig(_SDK);
 
             GetUserSlotConfig operation = new GetUserSlotConfig(
-                Namespace,                
-                UserId                
-            );            
-            
+                Namespace,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Social.Model.UserSlotConfigInfo? response = wrapper.GetUserSlotConfig(operation);
             if (response == null)
                 return "No response from server.";

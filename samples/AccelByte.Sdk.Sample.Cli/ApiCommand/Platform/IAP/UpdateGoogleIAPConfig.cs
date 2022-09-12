@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updategoogleiapconfig")]
-    public class UpdateGoogleIAPConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updategoogleiapconfig")]
+    public class UpdateGoogleIAPConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateGoogleIAPConfig"; } }
+        public string OperationName { get { return "UpdateGoogleIAPConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public GoogleIAPConfigRequest Body { get; set; } = new GoogleIAPConfigRequest();
-                
+
         public UpdateGoogleIAPConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             UpdateGoogleIAPConfig operation = new UpdateGoogleIAPConfig(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.GoogleIAPConfigInfo? response = wrapper.UpdateGoogleIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

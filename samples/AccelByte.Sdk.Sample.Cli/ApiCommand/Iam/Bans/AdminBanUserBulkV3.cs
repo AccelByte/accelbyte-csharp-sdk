@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","adminbanuserbulkv3")]
-    public class AdminBanUserBulkV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "adminbanuserbulkv3")]
+    public class AdminBanUserBulkV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminBanUserBulkV3"; } }
+        public string OperationName { get { return "AdminBanUserBulkV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelBulkBanCreateRequestV3 Body { get; set; } = new ModelBulkBanCreateRequestV3();
-                
+
         public AdminBanUserBulkV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Bans wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Bans(_SDK);
 
             AdminBanUserBulkV3 operation = new AdminBanUserBulkV3(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelListBulkUserBanResponseV3? response = wrapper.AdminBanUserBulkV3(operation);
             if (response == null)
                 return "No response from server.";

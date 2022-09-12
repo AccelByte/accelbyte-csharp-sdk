@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publicforgotpasswordv2")]
-    public class PublicForgotPasswordV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicforgotpasswordv2")]
+    public class PublicForgotPasswordV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicForgotPasswordV2"; } }
+        public string OperationName { get { return "PublicForgotPasswordV2"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelSendVerificationCodeRequest Body { get; set; } = new ModelSendVerificationCodeRequest();
-                
+
         public PublicForgotPasswordV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -41,17 +41,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             PublicForgotPasswordV2 operation = new PublicForgotPasswordV2(
-                Namespace,                
-                Body                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                Namespace,
+                Body
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.PublicForgotPasswordV2(operation);
             return String.Empty;
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

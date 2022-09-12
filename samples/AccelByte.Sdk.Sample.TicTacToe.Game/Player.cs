@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe.Game
             return ((resp.StatusCode == HttpStatusCode.OK) || (resp.StatusCode == HttpStatusCode.NoContent));
         }
 
-        protected R SendRequest<R>(HttpMethod method, string endpoint, Dictionary<string,string>? data)
+        protected R SendRequest<R>(HttpMethod method, string endpoint, Dictionary<string, string>? data)
         {
             string url = _ServerUrl + endpoint;
 
@@ -133,7 +133,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe.Game
                     if (msg.MessageType == "messageNotif")
                     {
                         string topic = msg.Data["topic"].Trim();
-                        string payload = msg.Data["payload"].Trim();                        
+                        string payload = msg.Data["payload"].Trim();
 
                         if (topic == TicTacToeServer.WSTOPIC_START)
                         {

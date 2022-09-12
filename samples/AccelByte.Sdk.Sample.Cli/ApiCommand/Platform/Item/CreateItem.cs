@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","createitem")]
-    public class CreateItemCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "createitem")]
+    public class CreateItemCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "CreateItem"; } }
+        public string OperationName { get { return "CreateItem"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public ItemCreate Body { get; set; } = new ItemCreate();
-                
+
         public CreateItemCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             CreateItem operation = new CreateItem(
-                Namespace,                
-                StoreId,                
-                Body                
-            );            
-            
+                Namespace,
+                StoreId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.FullItemInfo? response = wrapper.CreateItem(operation);
             if (response == null)
                 return "No response from server.";

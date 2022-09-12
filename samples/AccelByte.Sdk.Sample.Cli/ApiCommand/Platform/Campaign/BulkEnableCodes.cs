@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","bulkenablecodes")]
-    public class BulkEnableCodesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "bulkenablecodes")]
+    public class BulkEnableCodesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "BulkEnableCodes"; } }
+        public string OperationName { get { return "BulkEnableCodes"; } }
 
         [SdkCommandArgument("campaignId")]
         public string CampaignId { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Campaign wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Campaign(_SDK);
 
             BulkEnableCodes operation = new BulkEnableCodes(
-                CampaignId,                
-                Namespace,                
-                BatchNo                
-            );            
-            
+                CampaignId,
+                Namespace,
+                BatchNo
+            );
+
             AccelByte.Sdk.Api.Platform.Model.BulkOperationResult? response = wrapper.BulkEnableCodes(operation);
             if (response == null)
                 return "No response from server.";

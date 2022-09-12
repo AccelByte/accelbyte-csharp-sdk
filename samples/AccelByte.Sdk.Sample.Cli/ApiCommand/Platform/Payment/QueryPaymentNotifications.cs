@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","querypaymentnotifications")]
-    public class QueryPaymentNotificationsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "querypaymentnotifications")]
+    public class QueryPaymentNotificationsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "QueryPaymentNotifications"; } }
+        public string OperationName { get { return "QueryPaymentNotifications"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -66,18 +66,18 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Payment wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Payment(_SDK);
 
             QueryPaymentNotifications operation = new QueryPaymentNotifications(
-                Namespace,                
-                EndDate,                
-                ExternalId,                
-                Limit,                
-                (NotificationSource is null ? null : QueryPaymentNotificationsNotificationSource.NewValue(NotificationSource)),                
-                NotificationType,                
-                Offset,                
-                PaymentOrderNo,                
-                StartDate,                
-                (Status is null ? null : QueryPaymentNotificationsStatus.NewValue(Status))                
-            );            
-            
+                Namespace,
+                EndDate,
+                ExternalId,
+                Limit,
+                (NotificationSource is null ? null : QueryPaymentNotificationsNotificationSource.NewValue(NotificationSource)),
+                NotificationType,
+                Offset,
+                PaymentOrderNo,
+                StartDate,
+                (Status is null ? null : QueryPaymentNotificationsStatus.NewValue(Status))
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PaymentNotificationPagingSlicedResult? response = wrapper.QueryPaymentNotifications(operation);
             if (response == null)
                 return "No response from server.";

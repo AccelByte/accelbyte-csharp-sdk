@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","debugmatchedpaymentmerchantconfig")]
-    public class DebugMatchedPaymentMerchantConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "debugmatchedpaymentmerchantconfig")]
+    public class DebugMatchedPaymentMerchantConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "DebugMatchedPaymentMerchantConfig"; } }
+        public string OperationName { get { return "DebugMatchedPaymentMerchantConfig"; } }
 
         [SdkCommandArgument("namespace_")]
         public string? Namespace { get; set; }
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             DebugMatchedPaymentMerchantConfig operation = new DebugMatchedPaymentMerchantConfig(
-                Namespace,                
-                Region                
-            );            
-            
+                Namespace,
+                Region
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PaymentMerchantConfigInfo? response = wrapper.DebugMatchedPaymentMerchantConfig(operation);
             if (response == null)
                 return "No response from server.";

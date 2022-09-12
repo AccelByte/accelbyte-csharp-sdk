@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","getdefaultprovider")]
-    public class GetDefaultProviderCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "getdefaultprovider")]
+    public class GetDefaultProviderCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "GetDefaultProvider"; } }
+        public string OperationName { get { return "GetDefaultProvider"; } }
 
         public GetDefaultProviderCommand(AccelByteSDK sdk)
         {
@@ -36,8 +36,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Public wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Public(_SDK);
 
             GetDefaultProvider operation = new GetDefaultProvider(
-            );            
-            
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDefaultProvider? response = wrapper.GetDefaultProvider(operation);
             if (response == null)
                 return "No response from server.";

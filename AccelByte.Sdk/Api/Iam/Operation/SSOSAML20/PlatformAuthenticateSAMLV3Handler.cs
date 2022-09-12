@@ -71,8 +71,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 PlatformAuthenticateSAMLV3Handler op = new PlatformAuthenticateSAMLV3Handler(this,
-                    platformId,                    
-                    state                    
+                    platformId,
+                    state
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -86,15 +86,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["platformId"] = platformId;
-            
+
             if (builder.Code is not null) QueryParams["code"] = builder.Code;
             if (builder.Error is not null) QueryParams["error"] = builder.Error;
             if (state is not null) QueryParams["state"] = state;
-            
 
-            
-            
-            
+
+
+
+
             LocationQuery = "PLACEHOLDER";
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -102,22 +102,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public PlatformAuthenticateSAMLV3Handler(
-            string platformId,            
-            string? code,            
-            string? error,            
-            string state            
+            string platformId,
+            string? code,
+            string? error,
+            string state
         )
         {
             PathParams["platformId"] = platformId;
-            
+
             if (code is not null) QueryParams["code"] = code;
             if (error is not null) QueryParams["error"] = error;
             if (state is not null) QueryParams["state"] = state;
-            
 
-            
-            
-            
+
+
+
+
             LocationQuery = "PLACEHOLDER";
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -129,20 +129,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Consumes => new string[] { "application/x-www-form-urlencoded" };
 
-        public override string[] Produces => new string[] {  };
+        public override string[] Produces => new string[] { };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public string ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             if (code == (HttpStatusCode)302)
             {
-              return payloadString;
+                return payloadString;
             }
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

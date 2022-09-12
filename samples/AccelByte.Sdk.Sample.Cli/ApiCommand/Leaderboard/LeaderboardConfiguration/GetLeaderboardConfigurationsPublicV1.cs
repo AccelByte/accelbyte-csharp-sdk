@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard","getleaderboardconfigurationspublicv1")]
-    public class GetLeaderboardConfigurationsPublicV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard", "getleaderboardconfigurationspublicv1")]
+    public class GetLeaderboardConfigurationsPublicV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Leaderboard"; } }
+        public string ServiceName { get { return "Leaderboard"; } }
 
-        public string OperationName{ get { return "GetLeaderboardConfigurationsPublicV1"; } }
+        public string OperationName { get { return "GetLeaderboardConfigurationsPublicV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -51,13 +51,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardConfiguration wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardConfiguration(_SDK);
 
             GetLeaderboardConfigurationsPublicV1 operation = new GetLeaderboardConfigurationsPublicV1(
-                Namespace,                
-                IsArchived,                
-                IsDeleted,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                IsArchived,
+                IsDeleted,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsGetAllLeaderboardConfigsPublicResp? response = wrapper.GetLeaderboardConfigurationsPublicV1(operation);
             if (response == null)
                 return "No response from server.";

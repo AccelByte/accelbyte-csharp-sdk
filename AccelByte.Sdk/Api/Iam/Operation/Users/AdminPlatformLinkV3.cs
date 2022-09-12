@@ -104,10 +104,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminPlatformLinkV3 op = new AdminPlatformLinkV3(this,
-                    ticket,                    
-                    namespace_,                    
-                    platformId,                    
-                    userId                    
+                    ticket,
+                    namespace_,
+                    platformId,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -125,35 +125,35 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
             PathParams["userId"] = userId;
-            
-            
+
+
             if (ticket is not null) FormParams["ticket"] = ticket;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminPlatformLinkV3(
-            string namespace_,            
-            string platformId,            
-            string userId,            
-            string ticket            
+            string namespace_,
+            string platformId,
+            string userId,
+            string ticket
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
             PathParams["userId"] = userId;
-            
-            
+
+
             if (ticket is not null) FormParams["ticket"] = ticket;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -168,16 +168,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

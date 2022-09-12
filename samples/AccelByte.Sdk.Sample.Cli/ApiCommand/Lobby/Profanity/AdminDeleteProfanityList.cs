@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","admindeleteprofanitylist")]
-    public class AdminDeleteProfanityListCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "admindeleteprofanitylist")]
+    public class AdminDeleteProfanityListCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminDeleteProfanityList"; } }
+        public string OperationName { get { return "AdminDeleteProfanityList"; } }
 
         [SdkCommandArgument("list")]
         public string List { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Profanity wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Profanity(_SDK);
 
             AdminDeleteProfanityList operation = new AdminDeleteProfanityList(
-                List,                
-                Namespace                
-            );            
-            
+                List,
+                Namespace
+            );
+
             wrapper.AdminDeleteProfanityList(operation);
             return String.Empty;
         }

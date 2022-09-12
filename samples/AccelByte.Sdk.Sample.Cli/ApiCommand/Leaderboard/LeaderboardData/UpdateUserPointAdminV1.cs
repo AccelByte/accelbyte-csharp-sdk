@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard","updateuserpointadminv1")]
-    public class UpdateUserPointAdminV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard", "updateuserpointadminv1")]
+    public class UpdateUserPointAdminV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Leaderboard"; } }
+        public string ServiceName { get { return "Leaderboard"; } }
 
-        public string OperationName{ get { return "UpdateUserPointAdminV1"; } }
+        public string OperationName { get { return "UpdateUserPointAdminV1"; } }
 
         [SdkCommandArgument("leaderboardCode")]
         public string LeaderboardCode { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 
         [SdkCommandData("body")]
         public ModelsUpdateUserPointAdminV1Request Body { get; set; } = new ModelsUpdateUserPointAdminV1Request();
-                
+
         public UpdateUserPointAdminV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardData wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardData(_SDK);
 
             UpdateUserPointAdminV1 operation = new UpdateUserPointAdminV1(
-                LeaderboardCode,                
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                LeaderboardCode,
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsUpdateUserPointAdminV1Response? response = wrapper.UpdateUserPointAdminV1(operation);
             if (response == null)
                 return "No response from server.";

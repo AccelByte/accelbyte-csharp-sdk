@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","publicsearchcreator")]
-    public class PublicSearchCreatorCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "publicsearchcreator")]
+    public class PublicSearchCreatorCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "PublicSearchCreator"; } }
+        public string OperationName { get { return "PublicSearchCreator"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -51,13 +51,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicCreator wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicCreator(_SDK);
 
             PublicSearchCreator operation = new PublicSearchCreator(
-                Namespace,                
-                Limit,                
-                Offset,                
-                Orderby,                
-                Sortby                
-            );            
-            
+                Namespace,
+                Limit,
+                Offset,
+                Orderby,
+                Sortby
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedCreatorOverviewResponse? response = wrapper.PublicSearchCreator(operation);
             if (response == null)
                 return "No response from server.";

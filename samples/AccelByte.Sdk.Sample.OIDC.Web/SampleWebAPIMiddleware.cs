@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.OIDC.Web
                 {"redirect_uri", "http://localhost:9090/callback" },
                 {"code", authorizationToken }
             });
-            
+
             HttpResponseMessage response = client.Send(req);
             string jsonString = Helper.ConvertInputStreamToString(response.Content.ReadAsStream());
 
@@ -88,7 +88,7 @@ namespace AccelByte.Sdk.Sample.OIDC.Web
                     string output = String.Empty;
                     sdk.LoginPlatform(spec.ABPlatformId, tokens.ID, (otr) =>
                       {
-                          output = JsonSerializer.Serialize(otr);                          
+                          output = JsonSerializer.Serialize(otr);
                       });
 
                     context.Response.StatusCode = 200;

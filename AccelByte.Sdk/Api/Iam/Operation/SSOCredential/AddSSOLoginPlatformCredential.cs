@@ -57,9 +57,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AddSSOLoginPlatformCredential op = new AddSSOLoginPlatformCredential(this,
-                    body,                    
-                    namespace_,                    
-                    platformId                    
+                    body,
+                    namespace_,
+                    platformId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -75,33 +75,33 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AddSSOLoginPlatformCredential(
-            string namespace_,            
-            string platformId,            
-            Model.ModelSSOPlatformCredentialRequest body            
+            string namespace_,
+            string platformId,
+            Model.ModelSSOPlatformCredentialRequest body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -116,9 +116,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelSSOPlatformCredentialResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -131,9 +131,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelSSOPlatformCredentialResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

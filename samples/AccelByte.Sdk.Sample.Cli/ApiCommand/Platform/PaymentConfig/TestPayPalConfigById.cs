@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","testpaypalconfigbyid")]
-    public class TestPayPalConfigByIdCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "testpaypalconfigbyid")]
+    public class TestPayPalConfigByIdCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "TestPayPalConfigById"; } }
+        public string OperationName { get { return "TestPayPalConfigById"; } }
 
         [SdkCommandArgument("id")]
         public string Id { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             TestPayPalConfigById operation = new TestPayPalConfigById(
-                Id,                
-                Sandbox                
-            );            
-            
+                Id,
+                Sandbox
+            );
+
             AccelByte.Sdk.Api.Platform.Model.TestResult? response = wrapper.TestPayPalConfigById(operation);
             if (response == null)
                 return "No response from server.";

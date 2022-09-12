@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","sendspecificuserfreeformnotificationv1admin")]
-    public class SendSpecificUserFreeformNotificationV1AdminCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "sendspecificuserfreeformnotificationv1admin")]
+    public class SendSpecificUserFreeformNotificationV1AdminCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "SendSpecificUserFreeformNotificationV1Admin"; } }
+        public string OperationName { get { return "SendSpecificUserFreeformNotificationV1Admin"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelFreeFormNotificationRequestV1 Body { get; set; } = new ModelFreeFormNotificationRequestV1();
-                
+
         public SendSpecificUserFreeformNotificationV1AdminCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             SendSpecificUserFreeformNotificationV1Admin operation = new SendSpecificUserFreeformNotificationV1Admin(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             wrapper.SendSpecificUserFreeformNotificationV1Admin(operation);
             return String.Empty;
         }

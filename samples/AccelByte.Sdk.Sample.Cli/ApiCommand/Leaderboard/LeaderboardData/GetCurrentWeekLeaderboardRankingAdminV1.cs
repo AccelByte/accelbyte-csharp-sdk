@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard","getcurrentweekleaderboardrankingadminv1")]
-    public class GetCurrentWeekLeaderboardRankingAdminV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard", "getcurrentweekleaderboardrankingadminv1")]
+    public class GetCurrentWeekLeaderboardRankingAdminV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Leaderboard"; } }
+        public string ServiceName { get { return "Leaderboard"; } }
 
-        public string OperationName{ get { return "GetCurrentWeekLeaderboardRankingAdminV1"; } }
+        public string OperationName { get { return "GetCurrentWeekLeaderboardRankingAdminV1"; } }
 
         [SdkCommandArgument("leaderboardCode")]
         public string LeaderboardCode { get; set; } = String.Empty;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardData wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardData(_SDK);
 
             GetCurrentWeekLeaderboardRankingAdminV1 operation = new GetCurrentWeekLeaderboardRankingAdminV1(
-                LeaderboardCode,                
-                Namespace,                
-                Limit,                
-                Offset                
-            );            
-            
+                LeaderboardCode,
+                Namespace,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsGetLeaderboardRankingResp? response = wrapper.GetCurrentWeekLeaderboardRankingAdminV1(operation);
             if (response == null)
                 return "No response from server.";

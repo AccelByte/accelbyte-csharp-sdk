@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","resetpasswordv3")]
-    public class ResetPasswordV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "resetpasswordv3")]
+    public class ResetPasswordV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "ResetPasswordV3"; } }
+        public string OperationName { get { return "ResetPasswordV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelResetPasswordRequestV3 Body { get; set; } = new ModelResetPasswordRequestV3();
-                
+
         public ResetPasswordV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             ResetPasswordV3 operation = new ResetPasswordV3(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             wrapper.ResetPasswordV3(operation);
             return String.Empty;
         }

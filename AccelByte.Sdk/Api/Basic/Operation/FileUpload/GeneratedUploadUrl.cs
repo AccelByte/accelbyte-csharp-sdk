@@ -50,9 +50,9 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             )
             {
                 GeneratedUploadUrl op = new GeneratedUploadUrl(this,
-                    folder,                    
-                    namespace_,                    
-                    fileType                    
+                    folder,
+                    namespace_,
+                    fileType
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -68,33 +68,33 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
             PathParams["folder"] = folder;
             PathParams["namespace"] = namespace_;
-            
-            if (fileType is not null) QueryParams["fileType"] = fileType;
-            
 
-            
-            
-            
+            if (fileType is not null) QueryParams["fileType"] = fileType;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GeneratedUploadUrl(
-            string folder,            
-            string namespace_,            
-            string fileType            
+            string folder,
+            string namespace_,
+            string fileType
         )
         {
             PathParams["folder"] = folder;
             PathParams["namespace"] = namespace_;
-            
-            if (fileType is not null) QueryParams["fileType"] = fileType;
-            
 
-            
-            
-            
+            if (fileType is not null) QueryParams["fileType"] = fileType;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -103,15 +103,15 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         public override HttpMethod Method => HttpMethod.Post;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.FileUploadUrlInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -124,9 +124,9 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             {
                 return JsonSerializer.Deserialize<Model.FileUploadUrlInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

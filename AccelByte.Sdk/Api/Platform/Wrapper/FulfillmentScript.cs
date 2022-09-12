@@ -44,52 +44,58 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.UpdateFulfillmentScript.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public List<Model.FulfillmentScriptInfo>? ListFulfillmentScripts(ListFulfillmentScripts input) {
+
+        public List<Model.FulfillmentScriptInfo>? ListFulfillmentScripts(ListFulfillmentScripts input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentScriptEvalTestResult? TestFulfillmentScriptEval(TestFulfillmentScriptEval input) {
+        public Model.FulfillmentScriptEvalTestResult? TestFulfillmentScriptEval(TestFulfillmentScriptEval input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentScriptInfo? GetFulfillmentScript(GetFulfillmentScript input) {
+        public Model.FulfillmentScriptInfo? GetFulfillmentScript(GetFulfillmentScript input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentScriptInfo? CreateFulfillmentScript(CreateFulfillmentScript input) {
+        public Model.FulfillmentScriptInfo? CreateFulfillmentScript(CreateFulfillmentScript input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteFulfillmentScript(DeleteFulfillmentScript input) {
+        public void DeleteFulfillmentScript(DeleteFulfillmentScript input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentScriptInfo? UpdateFulfillmentScript(UpdateFulfillmentScript input) {
+        public Model.FulfillmentScriptInfo? UpdateFulfillmentScript(UpdateFulfillmentScript input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -75,7 +75,7 @@ public class Functions
                 throw new Exception("user id is not specified.");
 
             context.Logger.LogInformation("TargetUserId: " + user_id);
-                      
+
             _Sdk.LoginClient();
 
             object? responseObj = action.Invoke(user_id, request.Body);
@@ -97,7 +97,7 @@ public class Functions
     public APIGatewayProxyResponse GetStatConfigurations(APIGatewayProxyRequest request, ILambdaContext context)
     {
         context.Logger.LogInformation("GetUserStat Request\n");
-        
+
         _Sdk.LoginClient();
 
         StatConfiguration wStatConfig = new StatConfiguration(_Sdk);
@@ -137,7 +137,7 @@ public class Functions
             UserStatistic wUserStatistic = new UserStatistic(_Sdk);
 
             wUserStatistic.CreateUserStatItem(CreateUserStatItem.Builder
-                .Build(_Sdk.Namespace,_ActiveStatCode, user_id));
+                .Build(_Sdk.Namespace, _ActiveStatCode, user_id));
 
             return null;
         });

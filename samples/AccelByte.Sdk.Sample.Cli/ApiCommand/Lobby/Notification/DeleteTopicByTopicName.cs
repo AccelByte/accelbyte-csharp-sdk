@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","deletetopicbytopicname")]
-    public class DeleteTopicByTopicNameCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "deletetopicbytopicname")]
+    public class DeleteTopicByTopicNameCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "DeleteTopicByTopicName"; } }
+        public string OperationName { get { return "DeleteTopicByTopicName"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             DeleteTopicByTopicName operation = new DeleteTopicByTopicName(
-                Namespace,                
-                Topic                
-            );            
-            
+                Namespace,
+                Topic
+            );
+
             wrapper.DeleteTopicByTopicName(operation);
             return String.Empty;
         }

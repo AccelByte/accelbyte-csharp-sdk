@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publiclistjusticeplatformaccountsv3")]
-    public class PublicListJusticePlatformAccountsV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publiclistjusticeplatformaccountsv3")]
+    public class PublicListJusticePlatformAccountsV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicListJusticePlatformAccountsV3"; } }
+        public string OperationName { get { return "PublicListJusticePlatformAccountsV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicListJusticePlatformAccountsV3 operation = new PublicListJusticePlatformAccountsV3(
-                Namespace,                
-                UserId                
-            );            
-            
+                Namespace,
+                UserId
+            );
+
             List<AccelByte.Sdk.Api.Iam.Model.ModelGetUserMappingV3>? response = wrapper.PublicListJusticePlatformAccountsV3(operation);
             if (response == null)
                 return "No response from server.";

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getusersubscription")]
-    public class GetUserSubscriptionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getusersubscription")]
+    public class GetUserSubscriptionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetUserSubscription"; } }
+        public string OperationName { get { return "GetUserSubscription"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Subscription wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Subscription(_SDK);
 
             GetUserSubscription operation = new GetUserSubscription(
-                Namespace,                
-                SubscriptionId,                
-                UserId                
-            );            
-            
+                Namespace,
+                SubscriptionId,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.SubscriptionInfo? response = wrapper.GetUserSubscription(operation);
             if (response == null)
                 return "No response from server.";

@@ -40,44 +40,49 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.PublicRedeemCode.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public Model.FulfillmentHistoryPagingSlicedResult? QueryFulfillmentHistories(QueryFulfillmentHistories input) {
+
+        public Model.FulfillmentHistoryPagingSlicedResult? QueryFulfillmentHistories(QueryFulfillmentHistories input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentResult? FulfillItem(FulfillItem input) {
+        public Model.FulfillmentResult? FulfillItem(FulfillItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentResult? RedeemCode(RedeemCode input) {
+        public Model.FulfillmentResult? RedeemCode(RedeemCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void FulfillRewards(FulfillRewards input) {
+        public void FulfillRewards(FulfillRewards input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentResult? PublicRedeemCode(PublicRedeemCode input) {
+        public Model.FulfillmentResult? PublicRedeemCode(PublicRedeemCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Eventlog.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","geteventbyuseridandeventtypehandler")]
-    public class GetEventByUserIDAndEventTypeHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog", "geteventbyuseridandeventtypehandler")]
+    public class GetEventByUserIDAndEventTypeHandlerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Eventlog"; } }
+        public string ServiceName { get { return "Eventlog"; } }
 
-        public string OperationName{ get { return "GetEventByUserIDAndEventTypeHandler"; } }
+        public string OperationName { get { return "GetEventByUserIDAndEventTypeHandler"; } }
 
         [SdkCommandArgument("eventType")]
         public double EventType { get; set; } = 0;
@@ -56,25 +56,25 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         {
             AccelByte.Sdk.Api.Eventlog.Wrapper.Event wrapper = new AccelByte.Sdk.Api.Eventlog.Wrapper.Event(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             GetEventByUserIDAndEventTypeHandler operation = new GetEventByUserIDAndEventTypeHandler(
-                EventType,                
-                Namespace,                
-                UserId,                
-                Offset,                
-                EndDate,                
-                PageSize,                
-                StartDate                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                EventType,
+                Namespace,
+                UserId,
+                Offset,
+                EndDate,
+                PageSize,
+                StartDate
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Eventlog.Model.ModelsEventResponse? response = wrapper.GetEventByUserIDAndEventTypeHandler(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

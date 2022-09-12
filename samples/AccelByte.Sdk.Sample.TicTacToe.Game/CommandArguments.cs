@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe.Game
 
         public string SdkConfigFile { get; private set; } = String.Empty;
 
-        public string SdkCredentialFile { get;private set; } = String.Empty;
+        public string SdkCredentialFile { get; private set; } = String.Empty;
 
         public bool IsHelpAsked { get; private set; } = false;
 

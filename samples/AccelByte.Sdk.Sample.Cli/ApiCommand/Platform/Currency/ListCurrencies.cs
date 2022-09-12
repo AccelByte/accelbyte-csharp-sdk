@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","listcurrencies")]
-    public class ListCurrenciesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "listcurrencies")]
+    public class ListCurrenciesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "ListCurrencies"; } }
+        public string OperationName { get { return "ListCurrencies"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Currency wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Currency(_SDK);
 
             ListCurrencies operation = new ListCurrencies(
-                Namespace,                
-                (CurrencyType is null ? null : ListCurrenciesCurrencyType.NewValue(CurrencyType))                
-            );            
-            
+                Namespace,
+                (CurrencyType is null ? null : ListCurrenciesCurrencyType.NewValue(CurrencyType))
+            );
+
             List<AccelByte.Sdk.Api.Platform.Model.CurrencyInfo>? response = wrapper.ListCurrencies(operation);
             if (response == null)
                 return "No response from server.";

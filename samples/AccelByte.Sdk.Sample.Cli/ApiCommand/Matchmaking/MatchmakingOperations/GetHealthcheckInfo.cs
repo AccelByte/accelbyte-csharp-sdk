@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking","gethealthcheckinfo")]
-    public class GetHealthcheckInfoCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking", "gethealthcheckinfo")]
+    public class GetHealthcheckInfoCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Matchmaking"; } }
 
-        public string OperationName{ get { return "GetHealthcheckInfo"; } }
+        public string OperationName { get { return "GetHealthcheckInfo"; } }
 
         public GetHealthcheckInfoCommand(AccelByteSDK sdk)
         {
@@ -36,8 +36,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.MatchmakingOperations wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.MatchmakingOperations(_SDK);
 
             GetHealthcheckInfo operation = new GetHealthcheckInfo(
-            );            
-            
+            );
+
             wrapper.GetHealthcheckInfo(operation);
             return String.Empty;
         }

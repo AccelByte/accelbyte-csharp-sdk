@@ -47,8 +47,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 PublicGetQRCode op = new PublicGetQRCode(this,
-                    namespace_,                    
-                    code                    
+                    namespace_,
+                    code
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -62,30 +62,30 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (code is not null) QueryParams["code"] = code;
-            
 
-            
-            
-            
+            if (code is not null) QueryParams["code"] = code;
+
+
+
+
+
 
         }
         #endregion
 
         public PublicGetQRCode(
-            string namespace_,            
-            string code            
+            string namespace_,
+            string code
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (code is not null) QueryParams["code"] = code;
-            
 
-            
-            
-            
+            if (code is not null) QueryParams["code"] = code;
+
+
+
+
+
 
         }
 
@@ -93,15 +93,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "image/png" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public byte[]? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -122,9 +122,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                     return ms.ToArray();
                 }
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

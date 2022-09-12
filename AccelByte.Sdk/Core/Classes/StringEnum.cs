@@ -14,7 +14,7 @@ namespace AccelByte.Sdk.Core
     {
         private readonly string _Value;
 
-        public static object? NewValue(Type targetType,string value)
+        public static object? NewValue(Type targetType, string value)
         {
             if (!typeof(StringEnum).IsAssignableFrom(targetType))
                 throw new ArgumentException("Target type does not inherit from AbstractStringEnum");

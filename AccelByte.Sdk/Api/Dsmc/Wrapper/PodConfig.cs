@@ -40,44 +40,49 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             get { return Operation.UpdatePodConfig.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public Model.ModelsListPodConfigResponse? GetAllPodConfig(GetAllPodConfig input) {
+
+        public Model.ModelsListPodConfigResponse? GetAllPodConfig(GetAllPodConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPodConfigRecord? GetPodConfig(GetPodConfig input) {
+        public Model.ModelsPodConfigRecord? GetPodConfig(GetPodConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPodConfigRecord? CreatePodConfig(CreatePodConfig input) {
+        public Model.ModelsPodConfigRecord? CreatePodConfig(CreatePodConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeletePodConfig(DeletePodConfig input) {
+        public void DeletePodConfig(DeletePodConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPodConfigRecord? UpdatePodConfig(UpdatePodConfig input) {
+        public Model.ModelsPodConfigRecord? UpdatePodConfig(UpdatePodConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

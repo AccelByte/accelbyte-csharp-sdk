@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Gdpr.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
 {
-    [SdkConsoleCommand("gdpr","publicgetuserpersonaldatarequests")]
-    public class PublicGetUserPersonalDataRequestsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("gdpr", "publicgetuserpersonaldatarequests")]
+    public class PublicGetUserPersonalDataRequestsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Gdpr"; } }
+        public string ServiceName { get { return "Gdpr"; } }
 
-        public string OperationName{ get { return "PublicGetUserPersonalDataRequests"; } }
+        public string OperationName { get { return "PublicGetUserPersonalDataRequests"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
             AccelByte.Sdk.Api.Gdpr.Wrapper.DataRetrieval wrapper = new AccelByte.Sdk.Api.Gdpr.Wrapper.DataRetrieval(_SDK);
 
             PublicGetUserPersonalDataRequests operation = new PublicGetUserPersonalDataRequests(
-                Namespace,                
-                UserId,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                UserId,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Gdpr.Model.ModelsUserPersonalDataResponse? response = wrapper.PublicGetUserPersonalDataRequests(operation);
             if (response == null)
                 return "No response from server.";

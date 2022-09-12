@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","exportrewards")]
-    public class ExportRewardsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "exportrewards")]
+    public class ExportRewardsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "ExportRewards"; } }
+        public string OperationName { get { return "ExportRewards"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Reward wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Reward(_SDK);
 
             ExportRewards operation = new ExportRewards(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             wrapper.ExportRewards(operation);
             return String.Empty;
         }

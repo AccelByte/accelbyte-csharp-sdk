@@ -45,15 +45,15 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                 lock (_ROPLock)
                 {
                     return _IsRefreshInProgress;
-                }                
+                }
             }
             set
             {
-                lock(_ROPLock)
+                lock (_ROPLock)
                 {
                     _IsRefreshInProgress = value;
                 }
-            }            
+            }
         }
 
         public bool TryToSetRefreshOnProgressToTrue()

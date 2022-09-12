@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking","adduserintosessioninchannel")]
-    public class AddUserIntoSessionInChannelCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking", "adduserintosessioninchannel")]
+    public class AddUserIntoSessionInChannelCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Matchmaking"; } }
 
-        public string OperationName{ get { return "AddUserIntoSessionInChannel"; } }
+        public string OperationName { get { return "AddUserIntoSessionInChannel"; } }
 
         [SdkCommandArgument("channelName")]
         public string ChannelName { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 
         [SdkCommandData("body")]
         public ModelsMatchAddUserIntoSessionRequest Body { get; set; } = new ModelsMatchAddUserIntoSessionRequest();
-                
+
         public AddUserIntoSessionInChannelCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
             AddUserIntoSessionInChannel operation = new AddUserIntoSessionInChannel(
-                ChannelName,                
-                MatchID,                
-                Namespace,                
-                Body                
-            );            
-            
+                ChannelName,
+                MatchID,
+                Namespace,
+                Body
+            );
+
             wrapper.AddUserIntoSessionInChannel(operation);
             return String.Empty;
         }

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group","deletegroupconfigurationglobalruleadminv1")]
-    public class DeleteGroupConfigurationGlobalRuleAdminV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("group", "deletegroupconfigurationglobalruleadminv1")]
+    public class DeleteGroupConfigurationGlobalRuleAdminV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Group"; } }
+        public string ServiceName { get { return "Group"; } }
 
-        public string OperationName{ get { return "DeleteGroupConfigurationGlobalRuleAdminV1"; } }
+        public string OperationName { get { return "DeleteGroupConfigurationGlobalRuleAdminV1"; } }
 
         [SdkCommandArgument("allowedAction")]
         public string AllowedAction { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.Configuration wrapper = new AccelByte.Sdk.Api.Group.Wrapper.Configuration(_SDK);
 
             DeleteGroupConfigurationGlobalRuleAdminV1 operation = new DeleteGroupConfigurationGlobalRuleAdminV1(
-                AllowedAction,                
-                ConfigurationCode,                
-                Namespace                
-            );            
-            
+                AllowedAction,
+                ConfigurationCode,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Group.Model.ModelsUpdateGroupConfigurationResponseV1? response = wrapper.DeleteGroupConfigurationGlobalRuleAdminV1(operation);
             if (response == null)
                 return "No response from server.";

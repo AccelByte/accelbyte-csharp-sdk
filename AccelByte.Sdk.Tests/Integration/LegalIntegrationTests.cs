@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 {
                     Assert.Greater(bPolicy!.Policies!.Count, 0);
                     targetPolicyId = bPolicy!.Policies![0].Id!;
-                }   
+                }
             }
 
             if (targetPolicyId == String.Empty)
@@ -168,7 +168,7 @@ namespace AccelByte.Sdk.Tests.Integration
             {
                 targetLocalizedPolicyId = locPolVers![0].Id!;
             }
-           
+
             List<AcceptAgreementRequest> aggreementRequests = new List<AcceptAgreementRequest>()
             {
                 new AcceptAgreementRequest()

@@ -69,5 +69,5 @@ namespace AccelByte.Sdk.Api.Social.Model
         {
 
         }
-    }    
+    }
 }

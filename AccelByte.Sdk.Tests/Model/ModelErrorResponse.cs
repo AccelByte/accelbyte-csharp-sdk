@@ -13,7 +13,7 @@ namespace AccelByte.Sdk.Tests.Model
 {
     public class ModelErrorResponse
     {
-        [JsonPropertyName("errorCode")]        
+        [JsonPropertyName("errorCode")]
         public int ErrorCode { get; set; } = 0;
 
         [JsonPropertyName("errorMessage")]

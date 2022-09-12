@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publiclistuserallplatformaccountsdistinctv3")]
-    public class PublicListUserAllPlatformAccountsDistinctV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publiclistuserallplatformaccountsdistinctv3")]
+    public class PublicListUserAllPlatformAccountsDistinctV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicListUserAllPlatformAccountsDistinctV3"; } }
+        public string OperationName { get { return "PublicListUserAllPlatformAccountsDistinctV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicListUserAllPlatformAccountsDistinctV3 operation = new PublicListUserAllPlatformAccountsDistinctV3(
-                Namespace,                
-                UserId                
-            );            
-            
+                Namespace,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Iam.Model.AccountcommonDistinctPlatformResponseV3? response = wrapper.PublicListUserAllPlatformAccountsDistinctV3(operation);
             if (response == null)
                 return "No response from server.";

@@ -17,18 +17,18 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","requestgametokenresponsev3")]
-    public class RequestGameTokenResponseV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "requestgametokenresponsev3")]
+    public class RequestGameTokenResponseV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "RequestGameTokenResponseV3"; } }
+        public string OperationName { get { return "RequestGameTokenResponseV3"; } }
 
         [SdkCommandArgument("code")]
         public string Code { get; set; } = String.Empty;
-                    
+
         public RequestGameTokenResponseV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension(_SDK);
 
             RequestGameTokenResponseV3 operation = new RequestGameTokenResponseV3(
-                Code                
-            );            
-            
+                Code
+            );
+
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenResponseV3? response = wrapper.RequestGameTokenResponseV3(operation);
             if (response == null)
                 return "No response from server.";

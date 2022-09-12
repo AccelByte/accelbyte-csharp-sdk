@@ -24,12 +24,13 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Wrapper
             get { return Operation.GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public void GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet(GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet input) {
+
+        public void GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet(GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

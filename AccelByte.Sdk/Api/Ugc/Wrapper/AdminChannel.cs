@@ -48,60 +48,67 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
             get { return Operation.AdminDeleteChannel.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public Model.ModelsPaginatedGetChannelResponse? SingleAdminGetChannel(SingleAdminGetChannel input) {
+
+        public Model.ModelsPaginatedGetChannelResponse? SingleAdminGetChannel(SingleAdminGetChannel input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsChannelResponse? AdminCreateChannel(AdminCreateChannel input) {
+        public Model.ModelsChannelResponse? AdminCreateChannel(AdminCreateChannel input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsChannelResponse? SingleAdminUpdateChannel(SingleAdminUpdateChannel input) {
+        public Model.ModelsChannelResponse? SingleAdminUpdateChannel(SingleAdminUpdateChannel input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void SingleAdminDeleteChannel(SingleAdminDeleteChannel input) {
+        public void SingleAdminDeleteChannel(SingleAdminDeleteChannel input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedGetChannelResponse? AdminGetChannel(AdminGetChannel input) {
+        public Model.ModelsPaginatedGetChannelResponse? AdminGetChannel(AdminGetChannel input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsChannelResponse? AdminUpdateChannel(AdminUpdateChannel input) {
+        public Model.ModelsChannelResponse? AdminUpdateChannel(AdminUpdateChannel input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteChannel(AdminDeleteChannel input) {
+        public void AdminDeleteChannel(AdminDeleteChannel input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

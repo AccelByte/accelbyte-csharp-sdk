@@ -197,7 +197,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class TradeNotificationStatus : StringEnum<TradeNotificationStatus>
     {
@@ -251,5 +251,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

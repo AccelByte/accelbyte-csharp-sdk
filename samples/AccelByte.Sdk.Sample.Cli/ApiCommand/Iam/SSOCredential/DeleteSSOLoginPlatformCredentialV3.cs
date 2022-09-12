@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","deletessologinplatformcredentialv3")]
-    public class DeleteSSOLoginPlatformCredentialV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "deletessologinplatformcredentialv3")]
+    public class DeleteSSOLoginPlatformCredentialV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "DeleteSSOLoginPlatformCredentialV3"; } }
+        public string OperationName { get { return "DeleteSSOLoginPlatformCredentialV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.SSOCredential wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.SSOCredential(_SDK);
 
             DeleteSSOLoginPlatformCredentialV3 operation = new DeleteSSOLoginPlatformCredentialV3(
-                Namespace,                
-                PlatformId                
-            );            
-            
+                Namespace,
+                PlatformId
+            );
+
             wrapper.DeleteSSOLoginPlatformCredentialV3(operation);
             return String.Empty;
         }

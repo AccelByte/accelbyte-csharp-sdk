@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group","updatememberrolepublicv1")]
-    public class UpdateMemberRolePublicV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("group", "updatememberrolepublicv1")]
+    public class UpdateMemberRolePublicV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Group"; } }
+        public string ServiceName { get { return "Group"; } }
 
-        public string OperationName{ get { return "UpdateMemberRolePublicV1"; } }
+        public string OperationName { get { return "UpdateMemberRolePublicV1"; } }
 
         [SdkCommandArgument("memberRoleId")]
         public string MemberRoleId { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 
         [SdkCommandData("body")]
         public ModelsAssignRoleToMemberRequestV1 Body { get; set; } = new ModelsAssignRoleToMemberRequestV1();
-                
+
         public UpdateMemberRolePublicV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.GroupRoles wrapper = new AccelByte.Sdk.Api.Group.Wrapper.GroupRoles(_SDK);
 
             UpdateMemberRolePublicV1 operation = new UpdateMemberRolePublicV1(
-                MemberRoleId,                
-                Namespace,                
-                Body                
-            );            
-            
+                MemberRoleId,
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Group.Model.ModelsGetUserGroupInformationResponseV1? response = wrapper.UpdateMemberRolePublicV1(operation);
             if (response == null)
                 return "No response from server.";

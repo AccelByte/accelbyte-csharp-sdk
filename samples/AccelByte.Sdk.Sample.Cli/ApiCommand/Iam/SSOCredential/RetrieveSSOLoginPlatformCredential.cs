@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","retrievessologinplatformcredential")]
-    public class RetrieveSSOLoginPlatformCredentialCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "retrievessologinplatformcredential")]
+    public class RetrieveSSOLoginPlatformCredentialCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "RetrieveSSOLoginPlatformCredential"; } }
+        public string OperationName { get { return "RetrieveSSOLoginPlatformCredential"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.SSOCredential wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.SSOCredential(_SDK);
 
             RetrieveSSOLoginPlatformCredential operation = new RetrieveSSOLoginPlatformCredential(
-                Namespace,                
-                PlatformId                
-            );            
-            
+                Namespace,
+                PlatformId
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelSSOPlatformCredentialResponse? response = wrapper.RetrieveSSOLoginPlatformCredential(operation);
             if (response == null)
                 return "No response from server.";

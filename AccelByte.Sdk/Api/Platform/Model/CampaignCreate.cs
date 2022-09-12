@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class CampaignCreateStatus : StringEnum<CampaignCreateStatus>
     {
@@ -104,7 +104,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class CampaignCreateType : StringEnum<CampaignCreateType>
     {
@@ -122,5 +122,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

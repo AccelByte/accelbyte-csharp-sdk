@@ -16,26 +16,26 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("from")]
         [JsonPropertyName("from")]
         public string? From { get; set; }
-        
+
         [AwesomeProperty("id")]
         [JsonPropertyName("id")]
         public string? Id { get; set; }
-        
+
         [AwesomeProperty("payload")]
         [JsonPropertyName("payload")]
         public string? Payload { get; set; }
-        
+
         [AwesomeProperty("sentAt")]
         [JsonPropertyName("sentAt")]
         public long? SentAt { get; set; }
-        
+
         [AwesomeProperty("to")]
         [JsonPropertyName("to")]
         public string? To { get; set; }
-        
+
         [AwesomeProperty("topic")]
         [JsonPropertyName("topic")]
         public string? Topic { get; set; }
-        
+
     }
 }

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Gametelemetry.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
 {
-    [SdkConsoleCommand("gametelemetry","protectedgetplaytimegametelemetryv1protectedsteamidssteamidplaytimeget")]
-    public class ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("gametelemetry", "protectedgetplaytimegametelemetryv1protectedsteamidssteamidplaytimeget")]
+    public class ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Gametelemetry"; } }
+        public string ServiceName { get { return "Gametelemetry"; } }
 
-        public string OperationName{ get { return "ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet"; } }
+        public string OperationName { get { return "ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet"; } }
 
         [SdkCommandArgument("steamId")]
         public string SteamId { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
             AccelByte.Sdk.Api.Gametelemetry.Wrapper.GametelemetryOperations wrapper = new AccelByte.Sdk.Api.Gametelemetry.Wrapper.GametelemetryOperations(_SDK);
 
             ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet operation = new ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(
-                SteamId,                
-                AccessToken                
-            );            
-            
+                SteamId,
+                AccessToken
+            );
+
             Dictionary<string, object>? response = wrapper.ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(operation);
             if (response == null)
                 return "No response from server.";

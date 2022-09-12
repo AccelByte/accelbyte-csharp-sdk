@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal","createlocalizedpolicyversion")]
-    public class CreateLocalizedPolicyVersionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("legal", "createlocalizedpolicyversion")]
+    public class CreateLocalizedPolicyVersionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Legal"; } }
+        public string ServiceName { get { return "Legal"; } }
 
-        public string OperationName{ get { return "CreateLocalizedPolicyVersion"; } }
+        public string OperationName { get { return "CreateLocalizedPolicyVersion"; } }
 
         [SdkCommandArgument("policyVersionId")]
         public string PolicyVersionId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public CreateLocalizedPolicyVersionRequest Body { get; set; } = new CreateLocalizedPolicyVersionRequest();
-                
+
         public CreateLocalizedPolicyVersionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.LocalizedPolicyVersions wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.LocalizedPolicyVersions(_SDK);
 
             CreateLocalizedPolicyVersion operation = new CreateLocalizedPolicyVersion(
-                PolicyVersionId,                
-                Body                
-            );            
-            
+                PolicyVersionId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Legal.Model.CreateLocalizedPolicyVersionResponse? response = wrapper.CreateLocalizedPolicyVersion(operation);
             if (response == null)
                 return "No response from server.";

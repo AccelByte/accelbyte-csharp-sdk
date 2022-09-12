@@ -87,7 +87,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class PaymentNotificationInfoStatus : StringEnum<PaymentNotificationInfoStatus>
     {
@@ -114,5 +114,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

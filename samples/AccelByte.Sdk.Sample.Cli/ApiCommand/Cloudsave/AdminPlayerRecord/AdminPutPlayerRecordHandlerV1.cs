@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave","adminputplayerrecordhandlerv1")]
-    public class AdminPutPlayerRecordHandlerV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave", "adminputplayerrecordhandlerv1")]
+    public class AdminPutPlayerRecordHandlerV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Cloudsave"; } }
+        public string ServiceName { get { return "Cloudsave"; } }
 
-        public string OperationName{ get { return "AdminPutPlayerRecordHandlerV1"; } }
+        public string OperationName { get { return "AdminPutPlayerRecordHandlerV1"; } }
 
         [SdkCommandArgument("key")]
         public string Key { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 
         [SdkCommandData("body")]
         public ModelsPlayerRecordRequest Body { get; set; } = new ModelsPlayerRecordRequest();
-                
+
         public AdminPutPlayerRecordHandlerV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminPlayerRecord wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminPlayerRecord(_SDK);
 
             AdminPutPlayerRecordHandlerV1 operation = new AdminPutPlayerRecordHandlerV1(
-                Key,                
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Key,
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Cloudsave.Model.ModelsPlayerRecordResponse? response = wrapper.AdminPutPlayerRecordHandlerV1(operation);
             if (response == null)
                 return "No response from server.";

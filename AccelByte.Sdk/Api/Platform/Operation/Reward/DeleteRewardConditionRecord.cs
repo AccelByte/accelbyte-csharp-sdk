@@ -57,8 +57,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 DeleteRewardConditionRecord op = new DeleteRewardConditionRecord(this,
-                    namespace_,                    
-                    rewardId                    
+                    namespace_,
+                    rewardId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -73,33 +73,33 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["rewardId"] = rewardId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = builder.Body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteRewardConditionRecord(
-            string namespace_,            
-            string rewardId,            
-            Model.DeleteRewardConditionRequest body            
+            string namespace_,
+            string rewardId,
+            Model.DeleteRewardConditionRequest body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["rewardId"] = rewardId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -114,16 +114,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

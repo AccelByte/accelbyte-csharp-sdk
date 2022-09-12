@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave","adminpostgamerecordhandlerv1")]
-    public class AdminPostGameRecordHandlerV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave", "adminpostgamerecordhandlerv1")]
+    public class AdminPostGameRecordHandlerV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Cloudsave"; } }
+        public string ServiceName { get { return "Cloudsave"; } }
 
-        public string OperationName{ get { return "AdminPostGameRecordHandlerV1"; } }
+        public string OperationName { get { return "AdminPostGameRecordHandlerV1"; } }
 
         [SdkCommandArgument("key")]
         public string Key { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 
         [SdkCommandData("body")]
         public ModelsGameRecordRequest Body { get; set; } = new ModelsGameRecordRequest();
-                
+
         public AdminPostGameRecordHandlerV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminGameRecord wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminGameRecord(_SDK);
 
             AdminPostGameRecordHandlerV1 operation = new AdminPostGameRecordHandlerV1(
-                Key,                
-                Namespace,                
-                Body                
-            );            
-            
+                Key,
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Cloudsave.Model.ModelsGameRecordResponse? response = wrapper.AdminPostGameRecordHandlerV1(operation);
             if (response == null)
                 return "No response from server.";

@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","admindebugprofanityfilters")]
-    public class AdminDebugProfanityFiltersCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "admindebugprofanityfilters")]
+    public class AdminDebugProfanityFiltersCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminDebugProfanityFilters"; } }
+        public string OperationName { get { return "AdminDebugProfanityFilters"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsDebugProfanityFilterRequest Body { get; set; } = new ModelsDebugProfanityFilterRequest();
-                
+
         public AdminDebugProfanityFiltersCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Profanity wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Profanity(_SDK);
 
             AdminDebugProfanityFilters operation = new AdminDebugProfanityFilters(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             List<AccelByte.Sdk.Api.Lobby.Model.ModelsProfanityFilter>? response = wrapper.AdminDebugProfanityFilters(operation);
             if (response == null)
                 return "No response from server.";

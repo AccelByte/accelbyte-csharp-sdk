@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getpublishedstore")]
-    public class GetPublishedStoreCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getpublishedstore")]
+    public class GetPublishedStoreCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetPublishedStore"; } }
+        public string OperationName { get { return "GetPublishedStore"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Store wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Store(_SDK);
 
             GetPublishedStore operation = new GetPublishedStore(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Platform.Model.StoreInfo? response = wrapper.GetPublishedStore(operation);
             if (response == null)
                 return "No response from server.";

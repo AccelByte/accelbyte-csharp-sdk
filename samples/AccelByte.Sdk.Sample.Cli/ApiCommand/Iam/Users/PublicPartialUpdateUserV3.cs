@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publicpartialupdateuserv3")]
-    public class PublicPartialUpdateUserV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicpartialupdateuserv3")]
+    public class PublicPartialUpdateUserV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicPartialUpdateUserV3"; } }
+        public string OperationName { get { return "PublicPartialUpdateUserV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelUserUpdateRequestV3 Body { get; set; } = new ModelUserUpdateRequestV3();
-                
+
         public PublicPartialUpdateUserV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicPartialUpdateUserV3 operation = new PublicPartialUpdateUserV3(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelUserResponseV3? response = wrapper.PublicPartialUpdateUserV3(operation);
             if (response == null)
                 return "No response from server.";

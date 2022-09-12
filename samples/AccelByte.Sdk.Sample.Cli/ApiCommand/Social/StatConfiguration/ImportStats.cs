@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","importstats")]
-    public class ImportStatsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "importstats")]
+    public class ImportStatsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "ImportStats"; } }
+        public string OperationName { get { return "ImportStats"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
         [SdkCommandFile("file")]
         public Stream? File { get; set; }
-                    
+
         public ImportStatsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.StatConfiguration wrapper = new AccelByte.Sdk.Api.Social.Wrapper.StatConfiguration(_SDK);
 
             ImportStats operation = new ImportStats(
-                Namespace,                
-                ReplaceExisting,                
-                File                
-            );            
-            
+                Namespace,
+                ReplaceExisting,
+                File
+            );
+
             AccelByte.Sdk.Api.Social.Model.StatImportInfo? response = wrapper.ImportStats(operation);
             if (response == null)
                 return "No response from server.";

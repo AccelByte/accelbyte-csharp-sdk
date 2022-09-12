@@ -95,7 +95,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class EntitlementSummaryType : StringEnum<EntitlementSummaryType>
     {
@@ -116,5 +116,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

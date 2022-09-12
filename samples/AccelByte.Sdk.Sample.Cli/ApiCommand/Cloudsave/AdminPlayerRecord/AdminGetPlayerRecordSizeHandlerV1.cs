@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave","admingetplayerrecordsizehandlerv1")]
-    public class AdminGetPlayerRecordSizeHandlerV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave", "admingetplayerrecordsizehandlerv1")]
+    public class AdminGetPlayerRecordSizeHandlerV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Cloudsave"; } }
+        public string ServiceName { get { return "Cloudsave"; } }
 
-        public string OperationName{ get { return "AdminGetPlayerRecordSizeHandlerV1"; } }
+        public string OperationName { get { return "AdminGetPlayerRecordSizeHandlerV1"; } }
 
         [SdkCommandArgument("key")]
         public string Key { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminPlayerRecord wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminPlayerRecord(_SDK);
 
             AdminGetPlayerRecordSizeHandlerV1 operation = new AdminGetPlayerRecordSizeHandlerV1(
-                Key,                
-                Namespace,                
-                UserId                
-            );            
-            
+                Key,
+                Namespace,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Cloudsave.Model.ModelsPlayerRecordSizeResponse? response = wrapper.AdminGetPlayerRecordSizeHandlerV1(operation);
             if (response == null)
                 return "No response from server.";

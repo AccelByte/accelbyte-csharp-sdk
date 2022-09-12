@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getavailablepredicatetypes")]
-    public class GetAvailablePredicateTypesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getavailablepredicatetypes")]
+    public class GetAvailablePredicateTypesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetAvailablePredicateTypes"; } }
+        public string OperationName { get { return "GetAvailablePredicateTypes"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             GetAvailablePredicateTypes operation = new GetAvailablePredicateTypes(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             List<AccelByte.Sdk.Api.Platform.Model.AvailablePredicateObject>? response = wrapper.GetAvailablePredicateTypes(operation);
             if (response == null)
                 return "No response from server.";

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","createdeployment")]
-    public class CreateDeploymentCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "createdeployment")]
+    public class CreateDeploymentCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "CreateDeployment"; } }
+        public string OperationName { get { return "CreateDeployment"; } }
 
         [SdkCommandArgument("deployment")]
         public string Deployment { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
         [SdkCommandData("body")]
         public ModelsCreateDeploymentRequest Body { get; set; } = new ModelsCreateDeploymentRequest();
-                
+
         public CreateDeploymentCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig(_SDK);
 
             CreateDeployment operation = new CreateDeployment(
-                Deployment,                
-                Namespace,                
-                Body                
-            );            
-            
+                Deployment,
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDeploymentWithOverride? response = wrapper.CreateDeployment(operation);
             if (response == null)
                 return "No response from server.";

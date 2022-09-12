@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic","deleteconfig")]
-    public class DeleteConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("basic", "deleteconfig")]
+    public class DeleteConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Basic"; } }
+        public string ServiceName { get { return "Basic"; } }
 
-        public string OperationName{ get { return "DeleteConfig"; } }
+        public string OperationName { get { return "DeleteConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.EQU8Config wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.EQU8Config(_SDK);
 
             DeleteConfig operation = new DeleteConfig(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             wrapper.DeleteConfig(operation);
             return String.Empty;
         }

@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","admincreateprofanitylist")]
-    public class AdminCreateProfanityListCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "admincreateprofanitylist")]
+    public class AdminCreateProfanityListCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminCreateProfanityList"; } }
+        public string OperationName { get { return "AdminCreateProfanityList"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsAdminCreateProfanityListRequest Body { get; set; } = new ModelsAdminCreateProfanityListRequest();
-                
+
         public AdminCreateProfanityListCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Profanity wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Profanity(_SDK);
 
             AdminCreateProfanityList operation = new AdminCreateProfanityList(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             wrapper.AdminCreateProfanityList(operation);
             return String.Empty;
         }

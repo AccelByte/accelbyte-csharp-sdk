@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Core.Client
         public IHttpLogger? Logger { get; set; } = null;
 
         public LoggingHandler(HttpMessageHandler handler)
-            :base(handler)
+            : base(handler)
         {
 
         }
@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Core.Client
         protected override HttpResponseMessage Send(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             long reqTimestamp = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-            Logger?.LogRequest(request,reqTimestamp);
+            Logger?.LogRequest(request, reqTimestamp);
             HttpResponseMessage response = base.Send(request, cancellationToken);
             long respTimestamp = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             Logger?.LogResponse(response, respTimestamp, reqTimestamp);

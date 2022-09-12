@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getuserentitlementownershipbyitemid")]
-    public class GetUserEntitlementOwnershipByItemIdCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getuserentitlementownershipbyitemid")]
+    public class GetUserEntitlementOwnershipByItemIdCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetUserEntitlementOwnershipByItemId"; } }
+        public string OperationName { get { return "GetUserEntitlementOwnershipByItemId"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             GetUserEntitlementOwnershipByItemId operation = new GetUserEntitlementOwnershipByItemId(
-                Namespace,                
-                UserId,                
-                (EntitlementClazz is null ? null : GetUserEntitlementOwnershipByItemIdEntitlementClazz.NewValue(EntitlementClazz)),                
-                ItemId                
-            );            
-            
+                Namespace,
+                UserId,
+                (EntitlementClazz is null ? null : GetUserEntitlementOwnershipByItemIdEntitlementClazz.NewValue(EntitlementClazz)),
+                ItemId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.TimedOwnership? response = wrapper.GetUserEntitlementOwnershipByItemId(operation);
             if (response == null)
                 return "No response from server.";

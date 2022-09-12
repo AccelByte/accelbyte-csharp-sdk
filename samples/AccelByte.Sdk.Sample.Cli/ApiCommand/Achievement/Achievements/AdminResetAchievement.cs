@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Achievement.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
-    [SdkConsoleCommand("achievement","adminresetachievement")]
-    public class AdminResetAchievementCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("achievement", "adminresetachievement")]
+    public class AdminResetAchievementCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Achievement"; } }
+        public string ServiceName { get { return "Achievement"; } }
 
-        public string OperationName{ get { return "AdminResetAchievement"; } }
+        public string OperationName { get { return "AdminResetAchievement"; } }
 
         [SdkCommandArgument("achievementCode")]
         public string AchievementCode { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             AccelByte.Sdk.Api.Achievement.Wrapper.Achievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.Achievements(_SDK);
 
             AdminResetAchievement operation = new AdminResetAchievement(
-                AchievementCode,                
-                Namespace,                
-                UserId                
-            );            
-            
+                AchievementCode,
+                Namespace,
+                UserId
+            );
+
             wrapper.AdminResetAchievement(operation);
             return String.Empty;
         }

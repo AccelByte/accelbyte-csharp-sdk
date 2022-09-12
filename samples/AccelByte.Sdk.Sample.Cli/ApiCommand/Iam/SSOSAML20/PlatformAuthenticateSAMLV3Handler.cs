@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","platformauthenticatesamlv3handler")]
-    public class PlatformAuthenticateSAMLV3HandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "platformauthenticatesamlv3handler")]
+    public class PlatformAuthenticateSAMLV3HandlerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PlatformAuthenticateSAMLV3Handler"; } }
+        public string OperationName { get { return "PlatformAuthenticateSAMLV3Handler"; } }
 
         [SdkCommandArgument("platformId")]
         public string PlatformId { get; set; } = String.Empty;
@@ -48,16 +48,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.SSOSAML20 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.SSOSAML20(_SDK);
 
             PlatformAuthenticateSAMLV3Handler operation = new PlatformAuthenticateSAMLV3Handler(
-                PlatformId,                
-                Code,                
-                Error,                
-                State                
-            );            
-            
+                PlatformId,
+                Code,
+                Error,
+                State
+            );
+
             string? response = wrapper.PlatformAuthenticateSAMLV3Handler(operation);
             if (response == null)
                 return "No response from server.";
-            return response!;            
+            return response!;
         }
     }
 }

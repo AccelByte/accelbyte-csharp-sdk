@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updatexbluserachievement")]
-    public class UpdateXblUserAchievementCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updatexbluserachievement")]
+    public class UpdateXblUserAchievementCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateXblUserAchievement"; } }
+        public string OperationName { get { return "UpdateXblUserAchievement"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public ADTOObjectForUpdateXboxAchievementCompletePercentageAPI Body { get; set; } = new ADTOObjectForUpdateXboxAchievementCompletePercentageAPI();
-                
+
         public UpdateXblUserAchievementCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.AchievementPlatform wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.AchievementPlatform(_SDK);
 
             UpdateXblUserAchievement operation = new UpdateXblUserAchievement(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             wrapper.UpdateXblUserAchievement(operation);
             return String.Empty;
         }

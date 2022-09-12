@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","listsession")]
-    public class ListSessionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "listsession")]
+    public class ListSessionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "ListSession"; } }
+        public string OperationName { get { return "ListSession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -51,13 +51,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Admin(_SDK);
 
             ListSession operation = new ListSession(
-                Namespace,                
-                Region,                
-                WithServer,                
-                Count,                
-                Offset                
-            );            
-            
+                Namespace,
+                Region,
+                WithServer,
+                Count,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListSessionResponse? response = wrapper.ListSession(operation);
             if (response == null)
                 return "No response from server.";

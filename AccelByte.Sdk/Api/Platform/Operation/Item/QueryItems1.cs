@@ -164,7 +164,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 QueryItems1 op = new QueryItems1(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -177,7 +177,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.AppType is not null) QueryParams["appType"] = builder.AppType.Value;
             if (builder.AvailableDate is not null) QueryParams["availableDate"] = builder.AvailableDate;
             if (builder.BaseAppId is not null) QueryParams["baseAppId"] = builder.BaseAppId;
@@ -192,36 +192,36 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             if (builder.TargetNamespace is not null) QueryParams["targetNamespace"] = builder.TargetNamespace;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public QueryItems1(
-            string namespace_,            
-            QueryItems1AppType? appType,            
-            string? availableDate,            
-            string? baseAppId,            
-            string? categoryPath,            
-            string? features,            
-            QueryItems1ItemStatus? itemStatus,            
-            QueryItems1ItemType? itemType,            
-            int? limit,            
-            int? offset,            
-            string? region,            
-            string? sortBy,            
-            string? storeId,            
-            string? tags,            
-            string? targetNamespace            
+            string namespace_,
+            QueryItems1AppType? appType,
+            string? availableDate,
+            string? baseAppId,
+            string? categoryPath,
+            string? features,
+            QueryItems1ItemStatus? itemStatus,
+            QueryItems1ItemType? itemType,
+            int? limit,
+            int? offset,
+            string? region,
+            string? sortBy,
+            string? storeId,
+            string? tags,
+            string? targetNamespace
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (appType is not null) QueryParams["appType"] = appType.Value;
             if (availableDate is not null) QueryParams["availableDate"] = availableDate;
             if (baseAppId is not null) QueryParams["baseAppId"] = baseAppId;
@@ -236,11 +236,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (storeId is not null) QueryParams["storeId"] = storeId;
             if (tags is not null) QueryParams["tags"] = tags;
             if (targetNamespace is not null) QueryParams["targetNamespace"] = targetNamespace;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -249,15 +249,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.FullItemPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -270,9 +270,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.FullItemPagingSlicedResult>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

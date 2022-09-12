@@ -50,10 +50,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             )
             {
                 AddUserIntoSessionInChannel op = new AddUserIntoSessionInChannel(this,
-                    body,                    
-                    channelName,                    
-                    matchID,                    
-                    namespace_                    
+                    body,
+                    channelName,
+                    matchID,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -71,35 +71,35 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             PathParams["channelName"] = channelName;
             PathParams["matchID"] = matchID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AddUserIntoSessionInChannel(
-            string channelName,            
-            string matchID,            
-            string namespace_,            
-            Model.ModelsMatchAddUserIntoSessionRequest body            
+            string channelName,
+            string matchID,
+            string namespace_,
+            Model.ModelsMatchAddUserIntoSessionRequest body
         )
         {
             PathParams["channelName"] = channelName;
             PathParams["matchID"] = matchID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -114,16 +114,16 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

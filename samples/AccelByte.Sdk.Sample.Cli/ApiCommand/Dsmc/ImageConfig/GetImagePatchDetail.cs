@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","getimagepatchdetail")]
-    public class GetImagePatchDetailCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "getimagepatchdetail")]
+    public class GetImagePatchDetailCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "GetImagePatchDetail"; } }
+        public string OperationName { get { return "GetImagePatchDetail"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig(_SDK);
 
             GetImagePatchDetail operation = new GetImagePatchDetail(
-                Namespace,                
-                Version,                
-                VersionPatch                
-            );            
-            
+                Namespace,
+                Version,
+                VersionPatch
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsGetImagePatchDetailResponse? response = wrapper.GetImagePatchDetail(operation);
             if (response == null)
                 return "No response from server.";

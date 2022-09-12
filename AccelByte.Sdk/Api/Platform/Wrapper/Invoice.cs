@@ -28,20 +28,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.GenerateInvoiceSummary.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public void DownloadInvoiceDetails(DownloadInvoiceDetails input) {
+
+        public void DownloadInvoiceDetails(DownloadInvoiceDetails input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.InvoiceSummary? GenerateInvoiceSummary(GenerateInvoiceSummary input) {
+        public Model.InvoiceSummary? GenerateInvoiceSummary(GenerateInvoiceSummary input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

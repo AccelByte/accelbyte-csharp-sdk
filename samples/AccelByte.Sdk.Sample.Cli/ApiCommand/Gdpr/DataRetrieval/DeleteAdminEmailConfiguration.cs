@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Gdpr.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
 {
-    [SdkConsoleCommand("gdpr","deleteadminemailconfiguration")]
-    public class DeleteAdminEmailConfigurationCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("gdpr", "deleteadminemailconfiguration")]
+    public class DeleteAdminEmailConfigurationCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Gdpr"; } }
+        public string ServiceName { get { return "Gdpr"; } }
 
-        public string OperationName{ get { return "DeleteAdminEmailConfiguration"; } }
+        public string OperationName { get { return "DeleteAdminEmailConfiguration"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
             AccelByte.Sdk.Api.Gdpr.Wrapper.DataRetrieval wrapper = new AccelByte.Sdk.Api.Gdpr.Wrapper.DataRetrieval(_SDK);
 
             DeleteAdminEmailConfiguration operation = new DeleteAdminEmailConfiguration(
-                Namespace,                
-                Emails                
-            );            
-            
+                Namespace,
+                Emails
+            );
+
             wrapper.DeleteAdminEmailConfiguration(operation);
             return String.Empty;
         }

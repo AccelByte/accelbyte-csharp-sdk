@@ -32,28 +32,31 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
             get { return Operation.SetServerAlias.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public void UpdateServerConfig(UpdateServerConfig input) {
+
+        public void UpdateServerConfig(UpdateServerConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteServer(DeleteServer input) {
+        public void DeleteServer(DeleteServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void SetServerAlias(SetServerAlias input) {
+        public void SetServerAlias(SetServerAlias input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -69,7 +69,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             )
             {
                 RetrieveAllUsersByPolicyVersion op = new RetrieveAllUsersByPolicyVersion(this,
-                    policyVersionId                    
+                    policyVersionId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -81,38 +81,38 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             string policyVersionId
         )
         {
-            
+
             if (builder.Keyword is not null) QueryParams["keyword"] = builder.Keyword;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (policyVersionId is not null) QueryParams["policyVersionId"] = policyVersionId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public RetrieveAllUsersByPolicyVersion(
-            string? keyword,            
-            int? limit,            
-            int? offset,            
-            string policyVersionId            
+            string? keyword,
+            int? limit,
+            int? offset,
+            string policyVersionId
         )
         {
-            
+
             if (keyword is not null) QueryParams["keyword"] = keyword;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (policyVersionId is not null) QueryParams["policyVersionId"] = policyVersionId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -121,15 +121,15 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.PagedRetrieveUserAcceptedAgreementResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -142,9 +142,9 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.PagedRetrieveUserAcceptedAgreementResponse>>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

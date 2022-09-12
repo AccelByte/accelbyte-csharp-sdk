@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Tests.Integration
     [TestFixture(Category = "RefreshTokenIntegration")]
     [Explicit]
     public class RefreshTokenIntegrationTests : BaseIntegrationTest
-    {        
+    {
         [Test]
         public void GetLegalAgreementTestWithAutoRefreshToken()
         {

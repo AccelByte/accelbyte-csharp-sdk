@@ -17,24 +17,24 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking","importchannels")]
-    public class ImportChannelsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking", "importchannels")]
+    public class ImportChannelsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Matchmaking"; } }
 
-        public string OperationName{ get { return "ImportChannels"; } }
+        public string OperationName { get { return "ImportChannels"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandFile("file")]
         public Stream? File { get; set; }
-                    
+
         [SdkCommandArgument("strategy")]
         public string Strategy { get; set; } = String.Empty;
-                    
+
         public ImportChannelsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
             ImportChannels operation = new ImportChannels(
-                Namespace,                
-                File,                
-                Strategy                
-            );            
-            
+                Namespace,
+                File,
+                Strategy
+            );
+
             AccelByte.Sdk.Api.Matchmaking.Model.ModelsImportConfigResponse? response = wrapper.ImportChannels(operation);
             if (response == null)
                 return "No response from server.";

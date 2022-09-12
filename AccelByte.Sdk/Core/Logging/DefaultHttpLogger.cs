@@ -28,13 +28,13 @@ namespace AccelByte.Sdk.Core.Logging
                 return;
 
             Dictionary<string, object> logs = new Dictionary<string, object>();
-            logs.Add("url",request.RequestUri!.ToString());
-            logs.Add("method",request.Method.ToString());
-            
+            logs.Add("url", request.RequestUri!.ToString());
+            logs.Add("method", request.Method.ToString());
+
             Dictionary<string, object> headers = new Dictionary<string, object>();
             foreach (var header in request.Headers)
                 headers.Add(header.Key, String.Join(",", header.Value));
-            
+
             if (headers.ContainsKey("X-Amzn-Trace-Id"))
                 logs.Add("trace_id", headers["X-Amzn-Trace-Id"].ToString()!);
             logs.Add("headers", headers);
@@ -79,7 +79,7 @@ namespace AccelByte.Sdk.Core.Logging
 
             Dictionary<string, object> headers = new Dictionary<string, object>();
             foreach (var header in response.Headers)
-                headers.Add(header.Key, String.Join(",", header.Value));            
+                headers.Add(header.Key, String.Join(",", header.Value));
 
             if (response.Content != null)
             {
@@ -90,7 +90,7 @@ namespace AccelByte.Sdk.Core.Logging
 
                 string contentType = String.Empty;
                 IEnumerable<string>? ctValues = null;
-                if (respHeaders.TryGetValues("Content-Type",out ctValues))
+                if (respHeaders.TryGetValues("Content-Type", out ctValues))
                     contentType = String.Join(",", ctValues).Trim();
 
                 if (contentType != String.Empty)
@@ -99,7 +99,7 @@ namespace AccelByte.Sdk.Core.Logging
                     if (ctSplits.Length > 0)
                         contentType = ctSplits[0].Trim();
                 }
-                
+
                 if ((contentType == "application/json") || (contentType == "text/json")
                         || (contentType == "text/plain"))
                 {

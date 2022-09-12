@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","getprofile")]
-    public class GetProfileCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "getprofile")]
+    public class GetProfileCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "GetProfile"; } }
+        public string OperationName { get { return "GetProfile"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.GameProfile wrapper = new AccelByte.Sdk.Api.Social.Wrapper.GameProfile(_SDK);
 
             GetProfile operation = new GetProfile(
-                Namespace,                
-                ProfileId,                
-                UserId                
-            );            
-            
+                Namespace,
+                ProfileId,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Social.Model.GameProfileInfo? response = wrapper.GetProfile(operation);
             if (response == null)
                 return "No response from server.";

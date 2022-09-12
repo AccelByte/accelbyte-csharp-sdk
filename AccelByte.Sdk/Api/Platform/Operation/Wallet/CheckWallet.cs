@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class CheckWallet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -50,10 +50,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 CheckWallet op = new CheckWallet(this,
-                    currencyCode,                    
-                    namespace_,                    
-                    userId,                    
-                    origin                    
+                    currencyCode,
+                    namespace_,
+                    userId,
+                    origin
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -71,35 +71,35 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["currencyCode"] = currencyCode;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            if (origin is not null) QueryParams["origin"] = origin.Value;
-            
 
-            
-            
-            
+            if (origin is not null) QueryParams["origin"] = origin.Value;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CheckWallet(
-            string currencyCode,            
-            string namespace_,            
-            string userId,            
-            CheckWalletOrigin origin            
+            string currencyCode,
+            string namespace_,
+            string userId,
+            CheckWalletOrigin origin
         )
         {
             PathParams["currencyCode"] = currencyCode;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            if (origin is not null) QueryParams["origin"] = origin.Value;
-            
 
-            
-            
-            
+            if (origin is not null) QueryParams["origin"] = origin.Value;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -114,16 +114,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

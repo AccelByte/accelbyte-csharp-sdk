@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","selectallrecords")]
-    public class SelectAllRecordsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "selectallrecords")]
+    public class SelectAllRecordsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "SelectAllRecords"; } }
+        public string OperationName { get { return "SelectAllRecords"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.CatalogChanges wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.CatalogChanges(_SDK);
 
             SelectAllRecords operation = new SelectAllRecords(
-                Namespace,                
-                StoreId                
-            );            
-            
+                Namespace,
+                StoreId
+            );
+
             wrapper.SelectAllRecords(operation);
             return String.Empty;
         }

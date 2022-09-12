@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             )
             {
                 BulkGetSessions op = new BulkGetSessions(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -68,31 +68,31 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (builder.MatchIDs is not null) QueryParams["matchIDs"] = builder.MatchIDs;
-            
 
-            
-            
-            
+            if (builder.MatchIDs is not null) QueryParams["matchIDs"] = builder.MatchIDs;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public BulkGetSessions(
-            string namespace_,            
-            string? matchIDs            
+            string namespace_,
+            string? matchIDs
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (matchIDs is not null) QueryParams["matchIDs"] = matchIDs;
-            
 
-            
-            
-            
+            if (matchIDs is not null) QueryParams["matchIDs"] = matchIDs;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -107,9 +107,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.ModelsMatchmakingResult>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -122,9 +122,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.ModelsMatchmakingResult>>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

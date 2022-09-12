@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updateitemtypeconfig")]
-    public class UpdateItemTypeConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updateitemtypeconfig")]
+    public class UpdateItemTypeConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateItemTypeConfig"; } }
+        public string OperationName { get { return "UpdateItemTypeConfig"; } }
 
         [SdkCommandArgument("id")]
         public string Id { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ItemTypeConfigUpdate Body { get; set; } = new ItemTypeConfigUpdate();
-                
+
         public UpdateItemTypeConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             UpdateItemTypeConfig operation = new UpdateItemTypeConfig(
-                Id,                
-                Body                
-            );            
-            
+                Id,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.ItemTypeConfigInfo? response = wrapper.UpdateItemTypeConfig(operation);
             if (response == null)
                 return "No response from server.";

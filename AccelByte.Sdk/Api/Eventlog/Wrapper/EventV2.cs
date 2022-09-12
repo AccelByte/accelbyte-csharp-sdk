@@ -36,36 +36,40 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
             get { return Operation.GetUserEventsV2Public.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public Model.ModelsEventResponseV2? QueryEventStreamHandler(QueryEventStreamHandler input) {
+
+        public Model.ModelsEventResponseV2? QueryEventStreamHandler(QueryEventStreamHandler input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsEventResponseV2? GetEventSpecificUserV2Handler(GetEventSpecificUserV2Handler input) {
+        public Model.ModelsEventResponseV2? GetEventSpecificUserV2Handler(GetEventSpecificUserV2Handler input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsEventResponseV2? GetPublicEditHistory(GetPublicEditHistory input) {
+        public Model.ModelsEventResponseV2? GetPublicEditHistory(GetPublicEditHistory input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsEventResponseV2? GetUserEventsV2Public(GetUserEventsV2Public input) {
+        public Model.ModelsEventResponseV2? GetUserEventsV2Public(GetUserEventsV2Public input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

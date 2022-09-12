@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Tests
         public string Data { get; set; } = string.Empty;
 
         [JsonPropertyName("files")]
-        public Dictionary<string,string>? Files { get; set; }
+        public Dictionary<string, string>? Files { get; set; }
     }
 
     public class HttpbinAnythingResponse<TArgs, TData> : AccelByte.Sdk.Core.Model

@@ -40,44 +40,49 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.AcquireUserTicket.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public Model.TicketDynamicInfo? GetTicketDynamic(GetTicketDynamic input) {
+
+        public Model.TicketDynamicInfo? GetTicketDynamic(GetTicketDynamic input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DecreaseTicketSale(DecreaseTicketSale input) {
+        public void DecreaseTicketSale(DecreaseTicketSale input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.TicketBoothID? GetTicketBoothID(GetTicketBoothID input) {
+        public Model.TicketBoothID? GetTicketBoothID(GetTicketBoothID input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.TicketSaleIncrementResult? IncreaseTicketSale(IncreaseTicketSale input) {
+        public Model.TicketSaleIncrementResult? IncreaseTicketSale(IncreaseTicketSale input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.TicketAcquireResult? AcquireUserTicket(AcquireUserTicket input) {
+        public Model.TicketAcquireResult? AcquireUserTicket(AcquireUserTicket input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

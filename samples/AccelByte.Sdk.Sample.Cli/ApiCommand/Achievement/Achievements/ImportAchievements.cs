@@ -17,24 +17,24 @@ using AccelByte.Sdk.Api.Achievement.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
-    [SdkConsoleCommand("achievement","importachievements")]
-    public class ImportAchievementsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("achievement", "importachievements")]
+    public class ImportAchievementsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Achievement"; } }
+        public string ServiceName { get { return "Achievement"; } }
 
-        public string OperationName{ get { return "ImportAchievements"; } }
+        public string OperationName { get { return "ImportAchievements"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandFile("file")]
         public Stream? File { get; set; }
-                    
+
         [SdkCommandArgument("strategy")]
         public string Strategy { get; set; } = String.Empty;
-                    
+
         public ImportAchievementsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             AccelByte.Sdk.Api.Achievement.Wrapper.Achievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.Achievements(_SDK);
 
             ImportAchievements operation = new ImportAchievements(
-                Namespace,                
-                File,                
-                Strategy                
-            );            
-            
+                Namespace,
+                File,
+                Strategy
+            );
+
             AccelByte.Sdk.Api.Achievement.Model.ServiceImportConfigResponse? response = wrapper.ImportAchievements(operation);
             if (response == null)
                 return "No response from server.";

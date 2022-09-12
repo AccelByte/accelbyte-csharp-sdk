@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Core.Repository
         {
             get
             {
-                lock(_InstanceLock)
+                lock (_InstanceLock)
                 {
                     if (_Instance == null)
                         _Instance = new SharedTokenRepository();

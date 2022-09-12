@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Gdpr.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
 {
-    [SdkConsoleCommand("gdpr","publicgeneratepersonaldataurl")]
-    public class PublicGeneratePersonalDataURLCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("gdpr", "publicgeneratepersonaldataurl")]
+    public class PublicGeneratePersonalDataURLCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Gdpr"; } }
+        public string ServiceName { get { return "Gdpr"; } }
 
-        public string OperationName{ get { return "PublicGeneratePersonalDataURL"; } }
+        public string OperationName { get { return "PublicGeneratePersonalDataURL"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
 
         [SdkCommandArgument("password")]
         public string Password { get; set; } = String.Empty;
-                    
+
         public PublicGeneratePersonalDataURLCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
             AccelByte.Sdk.Api.Gdpr.Wrapper.DataRetrieval wrapper = new AccelByte.Sdk.Api.Gdpr.Wrapper.DataRetrieval(_SDK);
 
             PublicGeneratePersonalDataURL operation = new PublicGeneratePersonalDataURL(
-                Namespace,                
-                RequestDate,                
-                UserId,                
-                Password                
-            );            
-            
+                Namespace,
+                RequestDate,
+                UserId,
+                Password
+            );
+
             AccelByte.Sdk.Api.Gdpr.Model.ModelsUserDataURL? response = wrapper.PublicGeneratePersonalDataURL(operation);
             if (response == null)
                 return "No response from server.";

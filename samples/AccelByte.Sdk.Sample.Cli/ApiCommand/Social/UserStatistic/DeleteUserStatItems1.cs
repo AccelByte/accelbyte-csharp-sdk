@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","deleteuserstatitems1")]
-    public class DeleteUserStatItems1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "deleteuserstatitems1")]
+    public class DeleteUserStatItems1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "DeleteUserStatItems1"; } }
+        public string OperationName { get { return "DeleteUserStatItems1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.UserStatistic wrapper = new AccelByte.Sdk.Api.Social.Wrapper.UserStatistic(_SDK);
 
             DeleteUserStatItems1 operation = new DeleteUserStatItems1(
-                Namespace,                
-                StatCode,                
-                UserId                
-            );            
-            
+                Namespace,
+                StatCode,
+                UserId
+            );
+
             wrapper.DeleteUserStatItems1(operation);
             return String.Empty;
         }

@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publicupgradeheadlessaccountwithverificationcodev4")]
-    public class PublicUpgradeHeadlessAccountWithVerificationCodeV4Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicupgradeheadlessaccountwithverificationcodev4")]
+    public class PublicUpgradeHeadlessAccountWithVerificationCodeV4Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicUpgradeHeadlessAccountWithVerificationCodeV4"; } }
+        public string OperationName { get { return "PublicUpgradeHeadlessAccountWithVerificationCodeV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4 Body { get; set; } = new AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4();
-                
+
         public PublicUpgradeHeadlessAccountWithVerificationCodeV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             PublicUpgradeHeadlessAccountWithVerificationCodeV4 operation = new PublicUpgradeHeadlessAccountWithVerificationCodeV4(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.AccountUserResponseV4? response = wrapper.PublicUpgradeHeadlessAccountWithVerificationCodeV4(operation);
             if (response == null)
                 return "No response from server.";

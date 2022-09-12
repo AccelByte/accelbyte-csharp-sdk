@@ -11,7 +11,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe.Model
     public class MatchData
     {
         [JsonPropertyName("match_id")]
-        public string MatchId { get; set; } = String.Empty;           
+        public string MatchId { get; set; } = String.Empty;
 
         [JsonPropertyName("p1_user_id")]
         public string P1UserId { get; set; } = String.Empty;

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","createpodconfig")]
-    public class CreatePodConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "createpodconfig")]
+    public class CreatePodConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "CreatePodConfig"; } }
+        public string OperationName { get { return "CreatePodConfig"; } }
 
         [SdkCommandArgument("name")]
         public string Name { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
         [SdkCommandData("body")]
         public ModelsCreatePodConfigRequest Body { get; set; } = new ModelsCreatePodConfigRequest();
-                
+
         public CreatePodConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.PodConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.PodConfig(_SDK);
 
             CreatePodConfig operation = new CreatePodConfig(
-                Name,                
-                Namespace,                
-                Body                
-            );            
-            
+                Name,
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsPodConfigRecord? response = wrapper.CreatePodConfig(operation);
             if (response == null)
                 return "No response from server.";

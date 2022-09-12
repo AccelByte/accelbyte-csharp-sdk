@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getpaymentorderchargestatus")]
-    public class GetPaymentOrderChargeStatusCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getpaymentorderchargestatus")]
+    public class GetPaymentOrderChargeStatusCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetPaymentOrderChargeStatus"; } }
+        public string OperationName { get { return "GetPaymentOrderChargeStatus"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Payment wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Payment(_SDK);
 
             GetPaymentOrderChargeStatus operation = new GetPaymentOrderChargeStatus(
-                Namespace,                
-                PaymentOrderNo                
-            );            
-            
+                Namespace,
+                PaymentOrderNo
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PaymentOrderChargeStatus? response = wrapper.GetPaymentOrderChargeStatus(operation);
             if (response == null)
                 return "No response from server.";

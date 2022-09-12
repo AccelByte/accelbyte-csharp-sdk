@@ -94,7 +94,7 @@ namespace AccelByte.Sdk.Core.Awesome
             return fields;
         }
 
-        protected Dictionary<string,string> GrabValues(object modelObject)
+        protected Dictionary<string, string> GrabValues(object modelObject)
         {
             Dictionary<string, string> result = new Dictionary<string, string>();
 
@@ -123,7 +123,7 @@ namespace AccelByte.Sdk.Core.Awesome
                     aValue = String.Format("{0:0}", inputValue);
                 }
                 else
-                    aValue = String.Format("{0:G}",prop.GetValue(modelObject));
+                    aValue = String.Format("{0:G}", prop.GetValue(modelObject));
 
                 result.Add(attr.Name, aValue);
             }
@@ -297,7 +297,7 @@ namespace AccelByte.Sdk.Core.Awesome
         public T To<T>() where T : class, new()
         {
             T newObj = new T();
-            return (T)To(typeof(T));            
+            return (T)To(typeof(T));
         }
 
         public override string ToString()
@@ -312,7 +312,7 @@ namespace AccelByte.Sdk.Core.Awesome
             {
                 if ((pair.Key != "type") && (pair.Key != "id") && (pair.Key != "code"))
                     sb.AppendFormat("\n{0}: {1}", pair.Key, pair.Value);
-            }   
+            }
             return sb.ToString();
         }
 

@@ -13,7 +13,7 @@ using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Tests
 {
-    public class HttpbinHtmlOperation: Operation
+    public class HttpbinHtmlOperation : Operation
     {
         public HttpbinHtmlOperation()
         {

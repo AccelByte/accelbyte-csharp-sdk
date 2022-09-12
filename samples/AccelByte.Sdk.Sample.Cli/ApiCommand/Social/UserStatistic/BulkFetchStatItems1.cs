@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","bulkfetchstatitems1")]
-    public class BulkFetchStatItems1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "bulkfetchstatitems1")]
+    public class BulkFetchStatItems1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "BulkFetchStatItems1"; } }
+        public string OperationName { get { return "BulkFetchStatItems1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.UserStatistic wrapper = new AccelByte.Sdk.Api.Social.Wrapper.UserStatistic(_SDK);
 
             BulkFetchStatItems1 operation = new BulkFetchStatItems1(
-                Namespace,                
-                StatCode,                
-                UserIds                
-            );            
-            
+                Namespace,
+                StatCode,
+                UserIds
+            );
+
             List<AccelByte.Sdk.Api.Social.Model.UserStatItemInfo>? response = wrapper.BulkFetchStatItems1(operation);
             if (response == null)
                 return "No response from server.";

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking","searchsessionsv2")]
-    public class SearchSessionsV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking", "searchsessionsv2")]
+    public class SearchSessionsV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Matchmaking"; } }
 
-        public string OperationName{ get { return "SearchSessionsV2"; } }
+        public string OperationName { get { return "SearchSessionsV2"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -60,16 +60,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
             SearchSessionsV2 operation = new SearchSessionsV2(
-                Namespace,                
-                Channel,                
-                Deleted,                
-                MatchID,                
-                PartyID,                
-                UserID,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                Channel,
+                Deleted,
+                MatchID,
+                PartyID,
+                UserID,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Matchmaking.Model.ServiceGetSessionHistorySearchResponseV2? response = wrapper.SearchSessionsV2(operation);
             if (response == null)
                 return "No response from server.";

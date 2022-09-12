@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Tests.Services
 
                 defaultAdminRoleId = iConfigResp!.GroupAdminRoleId!;
                 defaultMemberRoleId = iConfigResp!.GroupMemberRoleId!;
-            }            
+            }
 
             try
             {
@@ -85,7 +85,7 @@ namespace AccelByte.Sdk.Tests.Services
                     throw new Exception("Failed to parse error response. Payload was `" + x.Message + "`.");
                 if (mer.ErrorCode != 73130)
                     throw new Exception(mer.ErrorMessage, x);
-            }            
+            }
 
             #region Create a group
             ModelsPublicCreateNewGroupRequestV1 createGroup = new ModelsPublicCreateNewGroupRequestV1()

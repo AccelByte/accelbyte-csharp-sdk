@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publicdisablemybackupcodesv4")]
-    public class PublicDisableMyBackupCodesV4Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicdisablemybackupcodesv4")]
+    public class PublicDisableMyBackupCodesV4Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicDisableMyBackupCodesV4"; } }
+        public string OperationName { get { return "PublicDisableMyBackupCodesV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             PublicDisableMyBackupCodesV4 operation = new PublicDisableMyBackupCodesV4(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             wrapper.PublicDisableMyBackupCodesV4(operation);
             return String.Empty;
         }

@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic","admingetuserprofilepublicinfobyids")]
-    public class AdminGetUserProfilePublicInfoByIdsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("basic", "admingetuserprofilepublicinfobyids")]
+    public class AdminGetUserProfilePublicInfoByIdsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Basic"; } }
+        public string ServiceName { get { return "Basic"; } }
 
-        public string OperationName{ get { return "AdminGetUserProfilePublicInfoByIds"; } }
+        public string OperationName { get { return "AdminGetUserProfilePublicInfoByIds"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public UserProfileBulkRequest Body { get; set; } = new UserProfileBulkRequest();
-                
+
         public AdminGetUserProfilePublicInfoByIdsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.UserProfile wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.UserProfile(_SDK);
 
             AdminGetUserProfilePublicInfoByIds operation = new AdminGetUserProfilePublicInfoByIds(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             List<AccelByte.Sdk.Api.Basic.Model.UserProfilePublicInfo>? response = wrapper.AdminGetUserProfilePublicInfoByIds(operation);
             if (response == null)
                 return "No response from server.";

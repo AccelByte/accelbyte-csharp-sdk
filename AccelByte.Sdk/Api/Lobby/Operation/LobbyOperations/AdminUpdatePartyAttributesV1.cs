@@ -47,9 +47,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             )
             {
                 AdminUpdatePartyAttributesV1 op = new AdminUpdatePartyAttributesV1(this,
-                    body,                    
-                    namespace_,                    
-                    partyId                    
+                    body,
+                    namespace_,
+                    partyId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -65,33 +65,33 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["partyId"] = partyId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminUpdatePartyAttributesV1(
-            string namespace_,            
-            string partyId,            
-            Model.ModelsPartyPUTCustomAttributesRequest body            
+            string namespace_,
+            string partyId,
+            Model.ModelsPartyPUTCustomAttributesRequest body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["partyId"] = partyId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,9 +106,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsPartyData? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -121,9 +121,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsPartyData>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

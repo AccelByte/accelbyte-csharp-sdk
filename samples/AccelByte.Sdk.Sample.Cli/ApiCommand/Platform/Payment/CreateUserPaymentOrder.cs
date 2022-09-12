@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","createuserpaymentorder")]
-    public class CreateUserPaymentOrderCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "createuserpaymentorder")]
+    public class CreateUserPaymentOrderCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "CreateUserPaymentOrder"; } }
+        public string OperationName { get { return "CreateUserPaymentOrder"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public PaymentOrderCreate Body { get; set; } = new PaymentOrderCreate();
-                
+
         public CreateUserPaymentOrderCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Payment wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Payment(_SDK);
 
             CreateUserPaymentOrder operation = new CreateUserPaymentOrder(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PaymentOrderInfo? response = wrapper.CreateUserPaymentOrder(operation);
             if (response == null)
                 return "No response from server.";

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","countsession")]
-    public class CountSessionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "countsession")]
+    public class CountSessionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "CountSession"; } }
+        public string OperationName { get { return "CountSession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Admin(_SDK);
 
             CountSession operation = new CountSession(
-                Namespace,                
-                Region                
-            );            
-            
+                Namespace,
+                Region
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsCountSessionResponse? response = wrapper.CountSession(operation);
             if (response == null)
                 return "No response from server.";

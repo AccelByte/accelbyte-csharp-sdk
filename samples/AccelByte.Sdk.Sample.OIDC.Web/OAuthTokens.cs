@@ -21,5 +21,5 @@ namespace AccelByte.Sdk.Sample.OIDC.Web
 
         [JsonPropertyName("token_type")]
         public string Type { get; set; } = String.Empty;
-    }    
+    }
 }

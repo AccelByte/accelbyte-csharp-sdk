@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass","updatetier")]
-    public class UpdateTierCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass", "updatetier")]
+    public class UpdateTierCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Seasonpass"; } }
+        public string ServiceName { get { return "Seasonpass"; } }
 
-        public string OperationName{ get { return "UpdateTier"; } }
+        public string OperationName { get { return "UpdateTier"; } }
 
         [SdkCommandArgument("id")]
         public string Id { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 
         [SdkCommandData("body")]
         public TierInput Body { get; set; } = new TierInput();
-                
+
         public UpdateTierCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Tier wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Tier(_SDK);
 
             UpdateTier operation = new UpdateTier(
-                Id,                
-                Namespace,                
-                SeasonId,                
-                Body                
-            );            
-            
+                Id,
+                Namespace,
+                SeasonId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Seasonpass.Model.Tier? response = wrapper.UpdateTier(operation);
             if (response == null)
                 return "No response from server.";

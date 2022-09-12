@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","admingetprofanityrule")]
-    public class AdminGetProfanityRuleCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "admingetprofanityrule")]
+    public class AdminGetProfanityRuleCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminGetProfanityRule"; } }
+        public string OperationName { get { return "AdminGetProfanityRule"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Profanity wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Profanity(_SDK);
 
             AdminGetProfanityRule operation = new AdminGetProfanityRule(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Lobby.Model.ModelsProfanityRule? response = wrapper.AdminGetProfanityRule(operation);
             if (response == null)
                 return "No response from server.";

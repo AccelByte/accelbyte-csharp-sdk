@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","admindeletethirdpartyconfig")]
-    public class AdminDeleteThirdPartyConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "admindeletethirdpartyconfig")]
+    public class AdminDeleteThirdPartyConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminDeleteThirdPartyConfig"; } }
+        public string OperationName { get { return "AdminDeleteThirdPartyConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.ThirdParty wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.ThirdParty(_SDK);
 
             AdminDeleteThirdPartyConfig operation = new AdminDeleteThirdPartyConfig(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             string? response = wrapper.AdminDeleteThirdPartyConfig(operation);
             if (response == null)
                 return "No response from server.";

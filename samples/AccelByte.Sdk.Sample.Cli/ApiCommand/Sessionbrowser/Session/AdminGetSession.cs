@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser","admingetsession")]
-    public class AdminGetSessionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser", "admingetsession")]
+    public class AdminGetSessionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Sessionbrowser"; } }
+        public string ServiceName { get { return "Sessionbrowser"; } }
 
-        public string OperationName{ get { return "AdminGetSession"; } }
+        public string OperationName { get { return "AdminGetSession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
             AdminGetSession operation = new AdminGetSession(
-                Namespace,                
-                SessionID                
-            );            
-            
+                Namespace,
+                SessionID
+            );
+
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsAdminSessionResponse? response = wrapper.AdminGetSession(operation);
             if (response == null)
                 return "No response from server.";

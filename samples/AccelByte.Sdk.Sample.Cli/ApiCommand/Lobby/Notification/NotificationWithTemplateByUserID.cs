@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","notificationwithtemplatebyuserid")]
-    public class NotificationWithTemplateByUserIDCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "notificationwithtemplatebyuserid")]
+    public class NotificationWithTemplateByUserIDCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "NotificationWithTemplateByUserID"; } }
+        public string OperationName { get { return "NotificationWithTemplateByUserID"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelNotificationWithTemplateRequest Body { get; set; } = new ModelNotificationWithTemplateRequest();
-                
+
         public NotificationWithTemplateByUserIDCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             NotificationWithTemplateByUserID operation = new NotificationWithTemplateByUserID(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             wrapper.NotificationWithTemplateByUserID(operation);
             return String.Empty;
         }

@@ -15,7 +15,7 @@ namespace AccelByte.Sdk.Tests.Model
         public ModelWithEnumListAggregate? Aggregate { get; set; }
 
         public string? Namespace { get; set; }
-        
+
         public string? Region { get; set; }
 
         [JsonStringEnum]

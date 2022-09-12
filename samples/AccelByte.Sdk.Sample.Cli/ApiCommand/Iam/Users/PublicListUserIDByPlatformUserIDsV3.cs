@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publiclistuseridbyplatformuseridsv3")]
-    public class PublicListUserIDByPlatformUserIDsV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publiclistuseridbyplatformuseridsv3")]
+    public class PublicListUserIDByPlatformUserIDsV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicListUserIDByPlatformUserIDsV3"; } }
+        public string OperationName { get { return "PublicListUserIDByPlatformUserIDsV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelPlatformUserIDRequest Body { get; set; } = new ModelPlatformUserIDRequest();
-                
+
         public PublicListUserIDByPlatformUserIDsV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicListUserIDByPlatformUserIDsV3 operation = new PublicListUserIDByPlatformUserIDsV3(
-                Namespace,                
-                PlatformId,                
-                Body                
-            );            
-            
+                Namespace,
+                PlatformId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.AccountcommonUserPlatforms? response = wrapper.PublicListUserIDByPlatformUserIDsV3(operation);
             if (response == null)
                 return "No response from server.";

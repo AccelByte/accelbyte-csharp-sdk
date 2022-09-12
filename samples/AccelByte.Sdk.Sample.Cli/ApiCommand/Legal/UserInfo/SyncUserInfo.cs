@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal","syncuserinfo")]
-    public class SyncUserInfoCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("legal", "syncuserinfo")]
+    public class SyncUserInfoCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Legal"; } }
+        public string ServiceName { get { return "Legal"; } }
 
-        public string OperationName{ get { return "SyncUserInfo"; } }
+        public string OperationName { get { return "SyncUserInfo"; } }
 
         [SdkCommandArgument("namespace_")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.UserInfo wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.UserInfo(_SDK);
 
             SyncUserInfo operation = new SyncUserInfo(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             wrapper.SyncUserInfo(operation);
             return String.Empty;
         }

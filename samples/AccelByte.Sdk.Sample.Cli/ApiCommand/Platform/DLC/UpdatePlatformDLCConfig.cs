@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updateplatformdlcconfig")]
-    public class UpdatePlatformDLCConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updateplatformdlcconfig")]
+    public class UpdatePlatformDLCConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdatePlatformDLCConfig"; } }
+        public string OperationName { get { return "UpdatePlatformDLCConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public PlatformDLCConfigUpdate Body { get; set; } = new PlatformDLCConfigUpdate();
-                
+
         public UpdatePlatformDLCConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.DLC wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.DLC(_SDK);
 
             UpdatePlatformDLCConfig operation = new UpdatePlatformDLCConfig(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PlatformDLCConfigInfo? response = wrapper.UpdatePlatformDLCConfig(operation);
             if (response == null)
                 return "No response from server.";

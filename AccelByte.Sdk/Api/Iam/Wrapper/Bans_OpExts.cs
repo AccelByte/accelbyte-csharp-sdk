@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class IamBans_OpExts
     {
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.AccountcommonBans? Execute(
             this GetBansType.GetBansTypeBuilder builder
         )
@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.Bans)builder.WrapperObject!).GetBansType(op);
         }
 
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.AccountcommonBanReasons? Execute(
             this GetListBanReason.GetListBanReasonBuilder builder
         )

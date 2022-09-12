@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Tests
     {
 
         [Test]
-        [TestCase(TestName = "Empty Parameter")]        
+        [TestCase(TestName = "Empty Parameter")]
         public void NoParameterCommandArgumentTest(params string[] args)
         {
             CommandArguments cArgs = new CommandArguments(args);
@@ -66,7 +66,7 @@ namespace AccelByte.Sdk.Tests
                 Assert.True((cArgs.Parameters["namespace"] == "test")
                     && (cArgs.Parameters["action"] == "test1")
                     && (cArgs.Parameters["param"] == "test2"));
-                
+
                 Assert.True(cArgs.LoginType == CommandArguments.LoginTypeUser);
                 Assert.True(cArgs.RequestFileContent == String.Empty);
                 Assert.True(cArgs.LoginUsername == String.Empty);
@@ -118,7 +118,7 @@ namespace AccelByte.Sdk.Tests
                 Assert.True(cArgs.LoginType == CommandArguments.LoginTypeUser);
                 Assert.True(cArgs.RequestFileContent == String.Empty);
                 Assert.True(cArgs.LoginUsername == "user");
-                Assert.True(cArgs.LoginPassword == "pass");                
+                Assert.True(cArgs.LoginPassword == "pass");
             });
         }
 

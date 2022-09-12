@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Tests
         }
 
         public string BaseUrl { get; init; }
-        
+
         public string ClientId { get; init; }
 
         public string ClientSecret { get; init; }
@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Tests
 
         public string Namespace { get; set; } = "unit_test";
 
-        public string TraceIdVersion{ get; } = "1";
+        public string TraceIdVersion { get; } = "1";
 
         public bool EnableTraceId { get; } = true;
 

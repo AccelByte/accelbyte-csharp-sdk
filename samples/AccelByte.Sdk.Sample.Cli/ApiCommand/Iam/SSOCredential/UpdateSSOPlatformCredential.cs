@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","updatessoplatformcredential")]
-    public class UpdateSSOPlatformCredentialCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "updatessoplatformcredential")]
+    public class UpdateSSOPlatformCredentialCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "UpdateSSOPlatformCredential"; } }
+        public string OperationName { get { return "UpdateSSOPlatformCredential"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelSSOPlatformCredentialRequest Body { get; set; } = new ModelSSOPlatformCredentialRequest();
-                
+
         public UpdateSSOPlatformCredentialCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.SSOCredential wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.SSOCredential(_SDK);
 
             UpdateSSOPlatformCredential operation = new UpdateSSOPlatformCredential(
-                Namespace,                
-                PlatformId,                
-                Body                
-            );            
-            
+                Namespace,
+                PlatformId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelSSOPlatformCredentialResponse? response = wrapper.UpdateSSOPlatformCredential(operation);
             if (response == null)
                 return "No response from server.";

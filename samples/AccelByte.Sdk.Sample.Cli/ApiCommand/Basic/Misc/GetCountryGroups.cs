@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic","getcountrygroups")]
-    public class GetCountryGroupsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("basic", "getcountrygroups")]
+    public class GetCountryGroupsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Basic"; } }
+        public string ServiceName { get { return "Basic"; } }
 
-        public string OperationName{ get { return "GetCountryGroups"; } }
+        public string OperationName { get { return "GetCountryGroups"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.Misc wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.Misc(_SDK);
 
             GetCountryGroups operation = new GetCountryGroups(
-                Namespace,                
-                GroupCode                
-            );            
-            
+                Namespace,
+                GroupCode
+            );
+
             List<AccelByte.Sdk.Api.Basic.Model.RetrieveCountryGroupResponse>? response = wrapper.GetCountryGroups(operation);
             if (response == null)
                 return "No response from server.";

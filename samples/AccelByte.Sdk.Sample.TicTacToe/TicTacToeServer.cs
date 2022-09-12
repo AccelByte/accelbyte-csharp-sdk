@@ -102,7 +102,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe
             };
         }
 
-        public NewGameResult JoinGame(string userId,string matchId)
+        public NewGameResult JoinGame(string userId, string matchId)
         {
             string? strMData = _Cache.Load(matchId);
             if (strMData == null)
@@ -164,7 +164,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe
             {
                 board[(row, col)] = P1Symbol;
                 isPlayer1NextTurn = false;
-            }                
+            }
             else if (userId == mData.P2UserId)
             {
                 board[(row, col)] = P2Symbol;

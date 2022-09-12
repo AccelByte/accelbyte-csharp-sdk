@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","adminupdatecontents3")]
-    public class AdminUpdateContentS3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "adminupdatecontents3")]
+    public class AdminUpdateContentS3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "AdminUpdateContentS3"; } }
+        public string OperationName { get { return "AdminUpdateContentS3"; } }
 
         [SdkCommandArgument("channelId")]
         public string ChannelId { get; set; } = String.Empty;
@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
         [SdkCommandData("body")]
         public ModelsCreateContentRequestS3 Body { get; set; } = new ModelsCreateContentRequestS3();
-                
+
         public AdminUpdateContentS3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -51,13 +51,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent(_SDK);
 
             AdminUpdateContentS3 operation = new AdminUpdateContentS3(
-                ChannelId,                
-                ContentId,                
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                ChannelId,
+                ContentId,
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateContentResponse? response = wrapper.AdminUpdateContentS3(operation);
             if (response == null)
                 return "No response from server.";

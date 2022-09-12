@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publiccancelsubscription")]
-    public class PublicCancelSubscriptionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "publiccancelsubscription")]
+    public class PublicCancelSubscriptionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicCancelSubscription"; } }
+        public string OperationName { get { return "PublicCancelSubscription"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public CancelRequest Body { get; set; } = new CancelRequest();
-                
+
         public PublicCancelSubscriptionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Subscription wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Subscription(_SDK);
 
             PublicCancelSubscription operation = new PublicCancelSubscription(
-                Namespace,                
-                SubscriptionId,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                SubscriptionId,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.SubscriptionInfo? response = wrapper.PublicCancelSubscription(operation);
             if (response == null)
                 return "No response from server.";

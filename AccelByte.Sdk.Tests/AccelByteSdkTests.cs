@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.RunRequest(op);
 
-            var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
+            var result = op.ParseResponse<Dictionary<string, string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
@@ -96,7 +96,7 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.RunRequest(op);
 
-            var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
+            var result = op.ParseResponse<Dictionary<string, string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             var basePath = sdk.Configuration.ConfigRepository.BaseUrl;
@@ -126,7 +126,7 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.RunRequest(op);
 
-            var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
+            var result = op.ParseResponse<Dictionary<string, string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             var args = result.Args ?? throw new AssertionException("Args is null");
@@ -151,7 +151,7 @@ namespace AccelByte.Sdk.Tests
                         { key, value }
                     },
                     collectionFormatMap: new Dictionary<string, string>() {
-                        {key, collectionFormat } 
+                        {key, collectionFormat }
                     });
             op.WrapQueryParamValueWithQuote = true;
 
@@ -159,7 +159,7 @@ namespace AccelByte.Sdk.Tests
 
             if (collectionFormat == Operation.COLLECTION_FORMAT_MULTI)
             {
-                var result = op.ParseResponse<Dictionary<string,List<string>>>(response.Code, response.ContentType, response.Payload) ??
+                var result = op.ParseResponse<Dictionary<string, List<string>>>(response.Code, response.ContentType, response.Payload) ??
                         throw new AssertionException("Result is null");
 
                 var args = result.Args ?? throw new AssertionException("Args is null");
@@ -169,7 +169,7 @@ namespace AccelByte.Sdk.Tests
             }
             else if (collectionFormat == Operation.COLLECTION_FORMAT_CSV)
             {
-                var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
+                var result = op.ParseResponse<Dictionary<string, string>>(response.Code, response.ContentType, response.Payload) ??
                         throw new AssertionException("Result is null");
 
                 var args = result.Args ?? throw new AssertionException("Args is null");
@@ -185,7 +185,8 @@ namespace AccelByte.Sdk.Tests
                 Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
                 Assert.AreEqual(expected.ToString(), args[key], $"Query value assert failed: {args[key]}");
             }
-            else {
+            else
+            {
                 throw new NotSupportedException($"Unsupported test collection format (format: {collectionFormat})");
             }
         }
@@ -204,7 +205,7 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.RunRequest(op);
 
-            var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
+            var result = op.ParseResponse<Dictionary<string, string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             var form = result.Form ?? throw new AssertionException("Form is null");
@@ -227,7 +228,7 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.RunRequest(op);
 
-            var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
+            var result = op.ParseResponse<Dictionary<string, string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             var form = result.Form ?? throw new AssertionException("Form is null");
@@ -259,7 +260,7 @@ namespace AccelByte.Sdk.Tests
 
             var response = sdk.RunRequest(op);
 
-            var result = op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload) ??
+            var result = op.ParseResponse<Dictionary<string, string>>(response.Code, response.ContentType, response.Payload) ??
                     throw new AssertionException("Result is null");
 
             Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
@@ -290,7 +291,7 @@ namespace AccelByte.Sdk.Tests
 
             Assert.Throws<HttpResponseException>(() =>
             {
-                op.ParseResponse<Dictionary<string,string>>(response.Code, response.ContentType, response.Payload);
+                op.ParseResponse<Dictionary<string, string>>(response.Code, response.ContentType, response.Payload);
             });
         }
 
@@ -322,7 +323,7 @@ namespace AccelByte.Sdk.Tests
             Assert.AreEqual(cookieValue, HttpUtility.UrlDecode(result.Cookies!["test_token"]));
         }
 
-        [Test]        
+        [Test]
         [Ignore("This test already exists in CLI unit test")]
         public void LoginLogoutClient()
         {

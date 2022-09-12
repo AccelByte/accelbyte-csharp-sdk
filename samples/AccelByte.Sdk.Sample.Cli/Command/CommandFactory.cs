@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Sample.Cli.Command
     {
         Dictionary<string, Dictionary<string, Type>> _CommandTypes;
 
-        protected void AttachParameterValuesToCommandObject(CommandArguments cArgs,ISdkConsoleCommand cmd)
+        protected void AttachParameterValuesToCommandObject(CommandArguments cArgs, ISdkConsoleCommand cmd)
         {
             Type t = cmd.GetType();
             foreach (PropertyInfo pi in t.GetProperties())
@@ -154,19 +154,19 @@ namespace AccelByte.Sdk.Sample.Cli.Command
                 if (obj == null)
                     continue;
                 Console.WriteLine("\t- {0}", obj.ServiceName);
-            }            
-        }        
+            }
+        }
 
         public void EchoAllOperationInService(AccelByteSDK sdk, string serviceName)
         {
             if (!_CommandTypes.ContainsKey(serviceName))
-            { 
+            {
                 Console.WriteLine("No operation within {0} service.", serviceName);
                 return;
             }
 
             Console.WriteLine("Available operation(s):");
-            foreach (KeyValuePair<string,Type> pair in _CommandTypes[serviceName])
+            foreach (KeyValuePair<string, Type> pair in _CommandTypes[serviceName])
             {
                 ISdkConsoleCommand? obj = (Activator.CreateInstance(pair.Value, sdk) as ISdkConsoleCommand);
                 if (obj == null)
@@ -186,7 +186,7 @@ namespace AccelByte.Sdk.Sample.Cli.Command
                     if (obj == null)
                         continue;
                     Console.WriteLine("\t- {0} - {1}", obj.ServiceName, obj.OperationName);
-                }                              
+                }
             }
         }
     }

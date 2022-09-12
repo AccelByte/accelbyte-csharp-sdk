@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal","retrievelatestpoliciesbynamespaceandcountrypublic")]
-    public class RetrieveLatestPoliciesByNamespaceAndCountryPublicCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("legal", "retrievelatestpoliciesbynamespaceandcountrypublic")]
+    public class RetrieveLatestPoliciesByNamespaceAndCountryPublicCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Legal"; } }
+        public string ServiceName { get { return "Legal"; } }
 
-        public string OperationName{ get { return "RetrieveLatestPoliciesByNamespaceAndCountryPublic"; } }
+        public string OperationName { get { return "RetrieveLatestPoliciesByNamespaceAndCountryPublic"; } }
 
         [SdkCommandArgument("countryCode")]
         public string CountryCode { get; set; } = String.Empty;
@@ -54,14 +54,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.Policies wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.Policies(_SDK);
 
             RetrieveLatestPoliciesByNamespaceAndCountryPublic operation = new RetrieveLatestPoliciesByNamespaceAndCountryPublic(
-                CountryCode,                
-                Namespace,                
-                AlwaysIncludeDefault,                
-                DefaultOnEmpty,                
-                (PolicyType is null ? null : RetrieveLatestPoliciesByNamespaceAndCountryPublicPolicyType.NewValue(PolicyType)),                
-                Tags                
-            );            
-            
+                CountryCode,
+                Namespace,
+                AlwaysIncludeDefault,
+                DefaultOnEmpty,
+                (PolicyType is null ? null : RetrieveLatestPoliciesByNamespaceAndCountryPublicPolicyType.NewValue(PolicyType)),
+                Tags
+            );
+
             List<AccelByte.Sdk.Api.Legal.Model.RetrievePolicyPublicResponse>? response = wrapper.RetrieveLatestPoliciesByNamespaceAndCountryPublic(operation);
             if (response == null)
                 return "No response from server.";

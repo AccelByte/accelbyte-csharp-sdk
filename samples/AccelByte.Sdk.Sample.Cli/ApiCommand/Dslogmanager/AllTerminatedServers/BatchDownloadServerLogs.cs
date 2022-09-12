@@ -17,18 +17,18 @@ using AccelByte.Sdk.Api.Dslogmanager.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
 {
-    [SdkConsoleCommand("dslogmanager","batchdownloadserverlogs")]
-    public class BatchDownloadServerLogsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dslogmanager", "batchdownloadserverlogs")]
+    public class BatchDownloadServerLogsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dslogmanager"; } }
+        public string ServiceName { get { return "Dslogmanager"; } }
 
-        public string OperationName{ get { return "BatchDownloadServerLogs"; } }
+        public string OperationName { get { return "BatchDownloadServerLogs"; } }
 
         [SdkCommandData("body")]
         public ModelsBatchDownloadLogsRequest Body { get; set; } = new ModelsBatchDownloadLogsRequest();
-                
+
         public BatchDownloadServerLogsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
             AccelByte.Sdk.Api.Dslogmanager.Wrapper.AllTerminatedServers wrapper = new AccelByte.Sdk.Api.Dslogmanager.Wrapper.AllTerminatedServers(_SDK);
 
             BatchDownloadServerLogs operation = new BatchDownloadServerLogs(
-                Body                
-            );            
-            
+                Body
+            );
+
             wrapper.BatchDownloadServerLogs(operation);
             return String.Empty;
         }

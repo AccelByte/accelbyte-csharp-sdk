@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","deletestadiaiapconfig")]
-    public class DeleteStadiaIAPConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "deletestadiaiapconfig")]
+    public class DeleteStadiaIAPConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "DeleteStadiaIAPConfig"; } }
+        public string OperationName { get { return "DeleteStadiaIAPConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             DeleteStadiaIAPConfig operation = new DeleteStadiaIAPConfig(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             wrapper.DeleteStadiaIAPConfig(operation);
             return String.Empty;
         }

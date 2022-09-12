@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Core
 {
     public abstract class Operation
     {
-       public const string SECURITY_BASIC = "Basic";
+        public const string SECURITY_BASIC = "Basic";
 
         public const string SECURITY_BEARER = "Bearer";
 
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Core
         public string? LocationQuery { get; init; }
 
         public HttpClientPolicy? HttpClientPolicy { get; set; } = null;
-        
+
         protected string EncodeQueryString(string value)
         {
             return (DoNotEncodeQueryParams ? value : HttpUtility.UrlEncode(value));
@@ -73,15 +73,15 @@ namespace AccelByte.Sdk.Core
         {
             return BuildUrl(baseUrl, Path, PathParams, QueryParams);
         }
-        
+
         private string BuildUrl(string baseUrl, string path, Dictionary<string, string> pathParams, Dictionary<string, dynamic> queryParams) // TODO Move to helper
         {
-            if (path == null) 
+            if (path == null)
             {
                 throw new ArgumentNullException(nameof(path));
             }
-            
-            if (baseUrl == null) 
+
+            if (baseUrl == null)
             {
                 throw new ArgumentNullException(nameof(baseUrl));
             }

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass","reordertier")]
-    public class ReorderTierCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass", "reordertier")]
+    public class ReorderTierCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Seasonpass"; } }
+        public string ServiceName { get { return "Seasonpass"; } }
 
-        public string OperationName{ get { return "ReorderTier"; } }
+        public string OperationName { get { return "ReorderTier"; } }
 
         [SdkCommandArgument("id")]
         public string Id { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 
         [SdkCommandData("body")]
         public TierReorder Body { get; set; } = new TierReorder();
-                
+
         public ReorderTierCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Tier wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Tier(_SDK);
 
             ReorderTier operation = new ReorderTier(
-                Id,                
-                Namespace,                
-                SeasonId,                
-                Body                
-            );            
-            
+                Id,
+                Namespace,
+                SeasonId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Seasonpass.Model.Tier? response = wrapper.ReorderTier(operation);
             if (response == null)
                 return "No response from server.";

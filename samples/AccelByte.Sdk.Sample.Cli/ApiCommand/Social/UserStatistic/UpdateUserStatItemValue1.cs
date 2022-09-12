@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","updateuserstatitemvalue1")]
-    public class UpdateUserStatItemValue1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "updateuserstatitemvalue1")]
+    public class UpdateUserStatItemValue1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "UpdateUserStatItemValue1"; } }
+        public string OperationName { get { return "UpdateUserStatItemValue1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
         [SdkCommandData("body")]
         public StatItemUpdate Body { get; set; } = new StatItemUpdate();
-                
+
         public UpdateUserStatItemValue1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -51,13 +51,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.UserStatistic wrapper = new AccelByte.Sdk.Api.Social.Wrapper.UserStatistic(_SDK);
 
             UpdateUserStatItemValue1 operation = new UpdateUserStatItemValue1(
-                Namespace,                
-                StatCode,                
-                UserId,                
-                AdditionalKey,                
-                Body                
-            );            
-            
+                Namespace,
+                StatCode,
+                UserId,
+                AdditionalKey,
+                Body
+            );
+
             AccelByte.Sdk.Api.Social.Model.StatItemIncResult? response = wrapper.UpdateUserStatItemValue1(operation);
             if (response == null)
                 return "No response from server.";

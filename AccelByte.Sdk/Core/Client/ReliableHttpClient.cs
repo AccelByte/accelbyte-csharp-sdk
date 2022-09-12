@@ -251,7 +251,7 @@ namespace AccelByte.Sdk.Core.Client
 
                     HttpResponseMessage response;
                     using (var cts = new CancellationTokenSource(policy.RequestTimeOut!.Value * 1000))
-                    {                        
+                    {
                         Task<HttpResponseMessage> sendTask = Http.SendAsync(request, cts.Token);
                         sendTask.Wait();
                         response = sendTask.Result;

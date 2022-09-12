@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updateuserentitlement")]
-    public class UpdateUserEntitlementCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updateuserentitlement")]
+    public class UpdateUserEntitlementCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateUserEntitlement"; } }
+        public string OperationName { get { return "UpdateUserEntitlement"; } }
 
         [SdkCommandArgument("entitlementId")]
         public string EntitlementId { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public EntitlementUpdate Body { get; set; } = new EntitlementUpdate();
-                
+
         public UpdateUserEntitlementCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             UpdateUserEntitlement operation = new UpdateUserEntitlement(
-                EntitlementId,                
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                EntitlementId,
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.EntitlementInfo? response = wrapper.UpdateUserEntitlement(operation);
             if (response == null)
                 return "No response from server.";

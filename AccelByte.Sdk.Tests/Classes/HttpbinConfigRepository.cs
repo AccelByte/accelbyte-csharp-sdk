@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Tests
                 BaseUrl = temp;
             else
                 throw new Exception($"Environment variable not found (variable: AB_HTTPBIN_URL)");
-                
+
             ClientId = type;
             ClientSecret = type;
             AppName = "CSharpSDKUnitTests";

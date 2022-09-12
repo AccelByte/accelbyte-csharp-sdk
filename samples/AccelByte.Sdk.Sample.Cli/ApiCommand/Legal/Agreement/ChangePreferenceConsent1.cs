@@ -17,18 +17,18 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal","changepreferenceconsent1")]
-    public class ChangePreferenceConsent1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("legal", "changepreferenceconsent1")]
+    public class ChangePreferenceConsent1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Legal"; } }
+        public string ServiceName { get { return "Legal"; } }
 
-        public string OperationName{ get { return "ChangePreferenceConsent1"; } }
+        public string OperationName { get { return "ChangePreferenceConsent1"; } }
 
         [SdkCommandData("body")]
         public List<AcceptAgreementRequest> Body { get; set; } = new List<AcceptAgreementRequest>();
-                
+
         public ChangePreferenceConsent1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.Agreement wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.Agreement(_SDK);
 
             ChangePreferenceConsent1 operation = new ChangePreferenceConsent1(
-                Body                
-            );            
-            
+                Body
+            );
+
             wrapper.ChangePreferenceConsent1(operation);
             return String.Empty;
         }

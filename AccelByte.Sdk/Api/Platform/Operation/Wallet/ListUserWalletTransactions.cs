@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
     ///   *  Returns : wallet transaction info
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class ListUserWalletTransactions : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -66,9 +66,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 ListUserWalletTransactions op = new ListUserWalletTransactions(this,
-                    namespace_,                    
-                    userId,                    
-                    walletId                    
+                    namespace_,
+                    userId,
+                    walletId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -85,38 +85,38 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             PathParams["walletId"] = walletId;
-            
+
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ListUserWalletTransactions(
-            string namespace_,            
-            string userId,            
-            string walletId,            
-            int? limit,            
-            int? offset            
+            string namespace_,
+            string userId,
+            string walletId,
+            int? limit,
+            int? offset
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             PathParams["walletId"] = walletId;
-            
+
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -131,9 +131,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.DetailedWalletTransactionPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -146,9 +146,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.DetailedWalletTransactionPagingSlicedResult>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

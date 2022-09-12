@@ -14,6 +14,6 @@ namespace AccelByte.Sdk.Core.Repository
 {
     public class InMemoryTokenRepository : DefaultTokenRepository
     {
-        
+
     }
 }

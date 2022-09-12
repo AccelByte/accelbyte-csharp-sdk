@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","rollbackpublishedstore")]
-    public class RollbackPublishedStoreCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "rollbackpublishedstore")]
+    public class RollbackPublishedStoreCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "RollbackPublishedStore"; } }
+        public string OperationName { get { return "RollbackPublishedStore"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Store wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Store(_SDK);
 
             RollbackPublishedStore operation = new RollbackPublishedStore(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Platform.Model.StoreInfo? response = wrapper.RollbackPublishedStore(operation);
             if (response == null)
                 return "No response from server.";

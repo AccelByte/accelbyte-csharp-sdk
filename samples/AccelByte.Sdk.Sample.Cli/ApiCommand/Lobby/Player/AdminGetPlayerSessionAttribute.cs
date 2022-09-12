@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","admingetplayersessionattribute")]
-    public class AdminGetPlayerSessionAttributeCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "admingetplayersessionattribute")]
+    public class AdminGetPlayerSessionAttributeCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminGetPlayerSessionAttribute"; } }
+        public string OperationName { get { return "AdminGetPlayerSessionAttribute"; } }
 
         [SdkCommandArgument("attribute")]
         public string Attribute { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Player wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Player(_SDK);
 
             AdminGetPlayerSessionAttribute operation = new AdminGetPlayerSessionAttribute(
-                Attribute,                
-                Namespace,                
-                UserId                
-            );            
-            
+                Attribute,
+                Namespace,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Lobby.Model.ModelsGetPlayerSessionAttributeResponse? response = wrapper.AdminGetPlayerSessionAttribute(operation);
             if (response == null)
                 return "No response from server.";

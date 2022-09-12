@@ -317,7 +317,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 TokenGrantV3 op = new TokenGrantV3(this,
-                    grantType                    
+                    grantType
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -329,8 +329,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             TokenGrantV3GrantType grantType
         )
         {
-            
-            
+
+
             if (builder.ClientId is not null) FormParams["client_id"] = builder.ClientId;
             if (builder.Code is not null) FormParams["code"] = builder.Code;
             if (builder.CodeVerifier is not null) FormParams["code_verifier"] = builder.CodeVerifier;
@@ -341,28 +341,28 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.Username is not null) FormParams["username"] = builder.Username;
             if (grantType is not null) FormParams["grant_type"] = grantType.Value;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
         #endregion
 
         public TokenGrantV3(
-            string? clientId,            
-            string? code,            
-            string? codeVerifier,            
-            bool? extendExp,            
-            string? password,            
-            string? redirectUri,            
-            string? refreshToken,            
-            string? username,            
-            TokenGrantV3GrantType grantType            
+            string? clientId,
+            string? code,
+            string? codeVerifier,
+            bool? extendExp,
+            string? password,
+            string? redirectUri,
+            string? refreshToken,
+            string? username,
+            TokenGrantV3GrantType grantType
         )
         {
-            
-            
+
+
             if (clientId is not null) FormParams["client_id"] = clientId;
             if (code is not null) FormParams["code"] = code;
             if (codeVerifier is not null) FormParams["code_verifier"] = codeVerifier;
@@ -373,9 +373,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (username is not null) FormParams["username"] = username;
             if (grantType is not null) FormParams["grant_type"] = grantType.Value;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
@@ -390,9 +390,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Basic";
-        
+
         public Model.OauthmodelTokenResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -405,9 +405,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.OauthmodelTokenResponseV3>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

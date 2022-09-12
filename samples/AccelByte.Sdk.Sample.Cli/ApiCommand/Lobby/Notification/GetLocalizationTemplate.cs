@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","getlocalizationtemplate")]
-    public class GetLocalizationTemplateCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "getlocalizationtemplate")]
+    public class GetLocalizationTemplateCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "GetLocalizationTemplate"; } }
+        public string OperationName { get { return "GetLocalizationTemplate"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             GetLocalizationTemplate operation = new GetLocalizationTemplate(
-                Namespace,                
-                TemplateLanguage,                
-                TemplateSlug                
-            );            
-            
+                Namespace,
+                TemplateLanguage,
+                TemplateSlug
+            );
+
             AccelByte.Sdk.Api.Lobby.Model.ModelTemplateLocalization? response = wrapper.GetLocalizationTemplate(operation);
             if (response == null)
                 return "No response from server.";

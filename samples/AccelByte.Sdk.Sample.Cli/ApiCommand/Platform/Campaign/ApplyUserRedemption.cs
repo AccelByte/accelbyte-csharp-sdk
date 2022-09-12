@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","applyuserredemption")]
-    public class ApplyUserRedemptionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "applyuserredemption")]
+    public class ApplyUserRedemptionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "ApplyUserRedemption"; } }
+        public string OperationName { get { return "ApplyUserRedemption"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public RedeemRequest Body { get; set; } = new RedeemRequest();
-                
+
         public ApplyUserRedemptionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Campaign wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Campaign(_SDK);
 
             ApplyUserRedemption operation = new ApplyUserRedemption(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.RedeemResult? response = wrapper.ApplyUserRedemption(operation);
             if (response == null)
                 return "No response from server.";

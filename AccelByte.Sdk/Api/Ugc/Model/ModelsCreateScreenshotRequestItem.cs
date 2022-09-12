@@ -54,5 +54,5 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         {
 
         }
-    }    
+    }
 }

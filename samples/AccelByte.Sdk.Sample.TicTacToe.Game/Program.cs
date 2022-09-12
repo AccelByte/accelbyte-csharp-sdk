@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe.Game
             if (matchIds.Count <= 0)
                 return false;
 
-            for (int i=0;i<matchIds.Count;i++)
+            for (int i = 0; i < matchIds.Count; i++)
                 Console.WriteLine("[{0}] {1}", i + 1, matchIds[i]);
 
             int tIndex = 0;
@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe.Game
                     Console.WriteLine("Invalid value");
                     continue;
                 }
-                
+
                 if ((tIndex < 1) || (tIndex > matchIds.Count))
                 {
                     Console.WriteLine("Selection is out of bounds.");
@@ -243,7 +243,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe.Game
 
                         GameInput(player);
                     })
-                    .Add("3","Join Game", () =>
+                    .Add("3", "Join Game", () =>
                     {
                         if (SelectAndJoinMatch(player))
                             GameInput(player);

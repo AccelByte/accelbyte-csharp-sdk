@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking","deleteuserfromsessioninchannel")]
-    public class DeleteUserFromSessionInChannelCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking", "deleteuserfromsessioninchannel")]
+    public class DeleteUserFromSessionInChannelCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Matchmaking"; } }
 
-        public string OperationName{ get { return "DeleteUserFromSessionInChannel"; } }
+        public string OperationName { get { return "DeleteUserFromSessionInChannel"; } }
 
         [SdkCommandArgument("channelName")]
         public string ChannelName { get; set; } = String.Empty;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
             DeleteUserFromSessionInChannel operation = new DeleteUserFromSessionInChannel(
-                ChannelName,                
-                MatchID,                
-                Namespace,                
-                UserID                
-            );            
-            
+                ChannelName,
+                MatchID,
+                Namespace,
+                UserID
+            );
+
             wrapper.DeleteUserFromSessionInChannel(operation);
             return String.Empty;
         }

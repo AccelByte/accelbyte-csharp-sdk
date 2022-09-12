@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Tests
     {
         private string[] _Consumes;
 
-        public HttpbinOperation(HttpMethod method, 
+        public HttpbinOperation(HttpMethod method,
                 string path = "/anything",
                 Dictionary<string, string> pathParams = null!,
                 Dictionary<string, dynamic> queryParams = null!,
@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Tests
                     CollectionFormatMap.Add(p.Key, p.Value);
                 }
             }
-            
+
 
             BodyParams = bodyParams;
 

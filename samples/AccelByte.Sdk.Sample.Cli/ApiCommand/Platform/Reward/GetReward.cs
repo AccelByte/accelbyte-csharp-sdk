@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getreward")]
-    public class GetRewardCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getreward")]
+    public class GetRewardCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetReward"; } }
+        public string OperationName { get { return "GetReward"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Reward wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Reward(_SDK);
 
             GetReward operation = new GetReward(
-                Namespace,                
-                RewardId                
-            );            
-            
+                Namespace,
+                RewardId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.RewardInfo? response = wrapper.GetReward(operation);
             if (response == null)
                 return "No response from server.";

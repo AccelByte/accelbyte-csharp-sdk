@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","deletethirdpartyloginplatformdomainv3")]
-    public class DeleteThirdPartyLoginPlatformDomainV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "deletethirdpartyloginplatformdomainv3")]
+    public class DeleteThirdPartyLoginPlatformDomainV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "DeleteThirdPartyLoginPlatformDomainV3"; } }
+        public string OperationName { get { return "DeleteThirdPartyLoginPlatformDomainV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelPlatformDomainDeleteRequest Body { get; set; } = new ModelPlatformDomainDeleteRequest();
-                
+
         public DeleteThirdPartyLoginPlatformDomainV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.ThirdPartyCredential wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.ThirdPartyCredential(_SDK);
 
             DeleteThirdPartyLoginPlatformDomainV3 operation = new DeleteThirdPartyLoginPlatformDomainV3(
-                Namespace,                
-                PlatformId,                
-                Body                
-            );            
-            
+                Namespace,
+                PlatformId,
+                Body
+            );
+
             wrapper.DeleteThirdPartyLoginPlatformDomainV3(operation);
             return String.Empty;
         }

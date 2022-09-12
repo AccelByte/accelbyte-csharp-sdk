@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","adminupdatethirdpartyconfig")]
-    public class AdminUpdateThirdPartyConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "adminupdatethirdpartyconfig")]
+    public class AdminUpdateThirdPartyConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminUpdateThirdPartyConfig"; } }
+        public string OperationName { get { return "AdminUpdateThirdPartyConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsUpdateConfigRequest Body { get; set; } = new ModelsUpdateConfigRequest();
-                
+
         public AdminUpdateThirdPartyConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.ThirdParty wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.ThirdParty(_SDK);
 
             AdminUpdateThirdPartyConfig operation = new AdminUpdateThirdPartyConfig(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Lobby.Model.ModelsUpdateConfigResponse? response = wrapper.AdminUpdateThirdPartyConfig(operation);
             if (response == null)
                 return "No response from server.";

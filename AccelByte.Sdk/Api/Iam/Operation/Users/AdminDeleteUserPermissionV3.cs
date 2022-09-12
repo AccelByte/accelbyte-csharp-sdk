@@ -46,10 +46,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminDeleteUserPermissionV3 op = new AdminDeleteUserPermissionV3(this,
-                    action,                    
-                    namespace_,                    
-                    resource,                    
-                    userId                    
+                    action,
+                    namespace_,
+                    resource,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -68,34 +68,34 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             PathParams["resource"] = resource;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminDeleteUserPermissionV3(
-            long action,            
-            string namespace_,            
-            string resource,            
-            string userId            
+            long action,
+            string namespace_,
+            string resource,
+            string userId
         )
         {
             PathParams["action"] = Convert.ToString(action);
             PathParams["namespace"] = namespace_;
             PathParams["resource"] = resource;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -104,22 +104,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

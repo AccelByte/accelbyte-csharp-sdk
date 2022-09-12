@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","deleteitem")]
-    public class DeleteItemCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "deleteitem")]
+    public class DeleteItemCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "DeleteItem"; } }
+        public string OperationName { get { return "DeleteItem"; } }
 
         [SdkCommandArgument("itemId")]
         public string ItemId { get; set; } = String.Empty;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             DeleteItem operation = new DeleteItem(
-                ItemId,                
-                Namespace,                
-                Force,                
-                StoreId                
-            );            
-            
+                ItemId,
+                Namespace,
+                Force,
+                StoreId
+            );
+
             wrapper.DeleteItem(operation);
             return String.Empty;
         }

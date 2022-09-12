@@ -200,7 +200,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe.Server.Web
                 context.Response.StatusCode = 500;
                 context.Response.ContentType = "text/plain";
                 await context.Response.WriteAsync(ex.Message);
-            }            
+            }
         }
     }
 }

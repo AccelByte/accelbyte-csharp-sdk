@@ -65,29 +65,29 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         private AdminEnableMyAuthenticatorV4(AdminEnableMyAuthenticatorV4Builder builder
         )
         {
-            
-            
+
+
             if (builder.Code is not null) FormParams["code"] = builder.Code;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminEnableMyAuthenticatorV4(
-            string? code            
+            string? code
         )
         {
-            
-            
+
+
             if (code is not null) FormParams["code"] = code;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -102,16 +102,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

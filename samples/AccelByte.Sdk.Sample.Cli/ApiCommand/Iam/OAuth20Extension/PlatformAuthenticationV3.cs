@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","platformauthenticationv3")]
-    public class PlatformAuthenticationV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "platformauthenticationv3")]
+    public class PlatformAuthenticationV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PlatformAuthenticationV3"; } }
+        public string OperationName { get { return "PlatformAuthenticationV3"; } }
 
         [SdkCommandArgument("platformId")]
         public string PlatformId { get; set; } = String.Empty;
@@ -78,26 +78,26 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension(_SDK);
 
             PlatformAuthenticationV3 operation = new PlatformAuthenticationV3(
-                PlatformId,                
-                Code,                
-                Error,                
-                OpenidAssocHandle,                
-                OpenidClaimedId,                
-                OpenidIdentity,                
-                OpenidMode,                
-                OpenidNs,                
-                OpenidOpEndpoint,                
-                OpenidResponseNonce,                
-                OpenidReturnTo,                
-                OpenidSig,                
-                OpenidSigned,                
-                State                
-            );            
-            
+                PlatformId,
+                Code,
+                Error,
+                OpenidAssocHandle,
+                OpenidClaimedId,
+                OpenidIdentity,
+                OpenidMode,
+                OpenidNs,
+                OpenidOpEndpoint,
+                OpenidResponseNonce,
+                OpenidReturnTo,
+                OpenidSig,
+                OpenidSigned,
+                State
+            );
+
             string? response = wrapper.PlatformAuthenticationV3(operation);
             if (response == null)
                 return "No response from server.";
-            return response!;            
+            return response!;
         }
     }
 }

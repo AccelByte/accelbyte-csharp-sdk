@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","listkeys")]
-    public class ListKeysCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "listkeys")]
+    public class ListKeysCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "ListKeys"; } }
+        public string OperationName { get { return "ListKeys"; } }
 
         [SdkCommandArgument("keyGroupId")]
         public string KeyGroupId { get; set; } = String.Empty;
@@ -51,13 +51,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.KeyGroup wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.KeyGroup(_SDK);
 
             ListKeys operation = new ListKeys(
-                KeyGroupId,                
-                Namespace,                
-                Limit,                
-                Offset,                
-                (Status is null ? null : ListKeysStatus.NewValue(Status))                
-            );            
-            
+                KeyGroupId,
+                Namespace,
+                Limit,
+                Offset,
+                (Status is null ? null : ListKeysStatus.NewValue(Status))
+            );
+
             AccelByte.Sdk.Api.Platform.Model.KeyPagingSliceResult? response = wrapper.ListKeys(operation);
             if (response == null)
                 return "No response from server.";

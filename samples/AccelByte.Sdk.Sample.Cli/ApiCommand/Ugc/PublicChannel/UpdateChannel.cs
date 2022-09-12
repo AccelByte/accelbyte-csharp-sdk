@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","updatechannel")]
-    public class UpdateChannelCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "updatechannel")]
+    public class UpdateChannelCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "UpdateChannel"; } }
+        public string OperationName { get { return "UpdateChannel"; } }
 
         [SdkCommandArgument("channelId")]
         public string ChannelId { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
         [SdkCommandData("body")]
         public ModelsChannelRequest Body { get; set; } = new ModelsChannelRequest();
-                
+
         public UpdateChannelCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicChannel wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicChannel(_SDK);
 
             UpdateChannel operation = new UpdateChannel(
-                ChannelId,                
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                ChannelId,
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsChannelResponse? response = wrapper.UpdateChannel(operation);
             if (response == null)
                 return "No response from server.";

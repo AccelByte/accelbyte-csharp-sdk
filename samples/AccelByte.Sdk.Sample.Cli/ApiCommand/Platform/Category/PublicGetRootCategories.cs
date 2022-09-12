@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publicgetrootcategories")]
-    public class PublicGetRootCategoriesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "publicgetrootcategories")]
+    public class PublicGetRootCategoriesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicGetRootCategories"; } }
+        public string OperationName { get { return "PublicGetRootCategories"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Category wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Category(_SDK);
 
             PublicGetRootCategories operation = new PublicGetRootCategories(
-                Namespace,                
-                Language,                
-                StoreId                
-            );            
-            
+                Namespace,
+                Language,
+                StoreId
+            );
+
             List<AccelByte.Sdk.Api.Platform.Model.CategoryInfo>? response = wrapper.PublicGetRootCategories(operation);
             if (response == null)
                 return "No response from server.";

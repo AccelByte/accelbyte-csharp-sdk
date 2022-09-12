@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","updatethirdpartyloginplatformcredentialv3")]
-    public class UpdateThirdPartyLoginPlatformCredentialV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "updatethirdpartyloginplatformcredentialv3")]
+    public class UpdateThirdPartyLoginPlatformCredentialV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "UpdateThirdPartyLoginPlatformCredentialV3"; } }
+        public string OperationName { get { return "UpdateThirdPartyLoginPlatformCredentialV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelThirdPartyLoginPlatformCredentialRequest Body { get; set; } = new ModelThirdPartyLoginPlatformCredentialRequest();
-                
+
         public UpdateThirdPartyLoginPlatformCredentialV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.ThirdPartyCredential wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.ThirdPartyCredential(_SDK);
 
             UpdateThirdPartyLoginPlatformCredentialV3 operation = new UpdateThirdPartyLoginPlatformCredentialV3(
-                Namespace,                
-                PlatformId,                
-                Body                
-            );            
-            
+                Namespace,
+                PlatformId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse? response = wrapper.UpdateThirdPartyLoginPlatformCredentialV3(operation);
             if (response == null)
                 return "No response from server.";

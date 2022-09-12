@@ -52,68 +52,76 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.AnonymizeWallet.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public void AnonymizeCampaign(AnonymizeCampaign input) {
+
+        public void AnonymizeCampaign(AnonymizeCampaign input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AnonymizeEntitlement(AnonymizeEntitlement input) {
+        public void AnonymizeEntitlement(AnonymizeEntitlement input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AnonymizeFulfillment(AnonymizeFulfillment input) {
+        public void AnonymizeFulfillment(AnonymizeFulfillment input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AnonymizeIntegration(AnonymizeIntegration input) {
+        public void AnonymizeIntegration(AnonymizeIntegration input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AnonymizeOrder(AnonymizeOrder input) {
+        public void AnonymizeOrder(AnonymizeOrder input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AnonymizePayment(AnonymizePayment input) {
+        public void AnonymizePayment(AnonymizePayment input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AnonymizeSubscription(AnonymizeSubscription input) {
+        public void AnonymizeSubscription(AnonymizeSubscription input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AnonymizeWallet(AnonymizeWallet input) {
+        public void AnonymizeWallet(AnonymizeWallet input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminCreateRoleV4 op = new AdminCreateRoleV4(this,
-                    body                    
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -63,29 +63,29 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             ModelRoleV4Request body
         )
         {
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminCreateRoleV4(
-            Model.ModelRoleV4Request body            
+            Model.ModelRoleV4Request body
         )
         {
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -100,9 +100,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelRoleV4Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -115,9 +115,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelRoleV4Response>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

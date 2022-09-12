@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","testpaypalconfig")]
-    public class TestPayPalConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "testpaypalconfig")]
+    public class TestPayPalConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "TestPayPalConfig"; } }
+        public string OperationName { get { return "TestPayPalConfig"; } }
 
         [SdkCommandArgument("sandbox")]
         public bool? Sandbox { get; set; }
 
         [SdkCommandData("body")]
         public PayPalConfig Body { get; set; } = new PayPalConfig();
-                
+
         public TestPayPalConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             TestPayPalConfig operation = new TestPayPalConfig(
-                Sandbox,                
-                Body                
-            );            
-            
+                Sandbox,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.TestResult? response = wrapper.TestPayPalConfig(operation);
             if (response == null)
                 return "No response from server.";

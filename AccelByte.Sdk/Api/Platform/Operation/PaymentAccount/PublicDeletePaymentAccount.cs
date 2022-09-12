@@ -50,10 +50,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 PublicDeletePaymentAccount op = new PublicDeletePaymentAccount(this,
-                    id,                    
-                    namespace_,                    
-                    type,                    
-                    userId                    
+                    id,
+                    namespace_,
+                    type,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -72,34 +72,34 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["type"] = type.Value;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicDeletePaymentAccount(
-            string id,            
-            string namespace_,            
-            PublicDeletePaymentAccountType type,            
-            string userId            
+            string id,
+            string namespace_,
+            PublicDeletePaymentAccountType type,
+            string userId
         )
         {
             PathParams["id"] = id;
             PathParams["namespace"] = namespace_;
             PathParams["type"] = type.Value;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -114,16 +114,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

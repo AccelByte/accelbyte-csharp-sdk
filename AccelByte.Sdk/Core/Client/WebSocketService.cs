@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Core
         private void _MapEventActions()
         {
             _EventActions.Clear();
-            foreach(PropertyInfo pInfo in this.GetType().GetProperties())
+            foreach (PropertyInfo pInfo in this.GetType().GetProperties())
             {
                 WebSocketEventAttribute? attr = pInfo.GetCustomAttribute<WebSocketEventAttribute>();
                 if (attr != null)
@@ -122,7 +122,7 @@ namespace AccelByte.Sdk.Core
                             {
                                 OnReceiveError?.Invoke(ex.Message);
                             }
-                        }                        
+                        }
                     }
                 }
             }

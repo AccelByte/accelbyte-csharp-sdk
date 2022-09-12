@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard","getarchivedleaderboardrankingdatav1handler")]
-    public class GetArchivedLeaderboardRankingDataV1HandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard", "getarchivedleaderboardrankingdatav1handler")]
+    public class GetArchivedLeaderboardRankingDataV1HandlerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Leaderboard"; } }
+        public string ServiceName { get { return "Leaderboard"; } }
 
-        public string OperationName{ get { return "GetArchivedLeaderboardRankingDataV1Handler"; } }
+        public string OperationName { get { return "GetArchivedLeaderboardRankingDataV1Handler"; } }
 
         [SdkCommandArgument("leaderboardCode")]
         public string LeaderboardCode { get; set; } = String.Empty;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardData wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardData(_SDK);
 
             GetArchivedLeaderboardRankingDataV1Handler operation = new GetArchivedLeaderboardRankingDataV1Handler(
-                LeaderboardCode,                
-                Namespace,                
-                Slug,                
-                LeaderboardCodes                
-            );            
-            
+                LeaderboardCode,
+                Namespace,
+                Slug,
+                LeaderboardCodes
+            );
+
             List<AccelByte.Sdk.Api.Leaderboard.Model.ModelsArchiveLeaderboardSignedURLResponse>? response = wrapper.GetArchivedLeaderboardRankingDataV1Handler(operation);
             if (response == null)
                 return "No response from server.";

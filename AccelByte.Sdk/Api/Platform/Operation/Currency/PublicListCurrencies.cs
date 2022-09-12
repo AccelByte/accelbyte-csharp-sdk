@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 PublicListCurrencies op = new PublicListCurrencies(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,30 +67,30 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (builder.CurrencyType is not null) QueryParams["currencyType"] = builder.CurrencyType.Value;
-            
 
-            
-            
-            
+            if (builder.CurrencyType is not null) QueryParams["currencyType"] = builder.CurrencyType.Value;
+
+
+
+
+
 
         }
         #endregion
 
         public PublicListCurrencies(
-            string namespace_,            
-            PublicListCurrenciesCurrencyType? currencyType            
+            string namespace_,
+            PublicListCurrenciesCurrencyType? currencyType
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (currencyType is not null) QueryParams["currencyType"] = currencyType.Value;
-            
 
-            
-            
-            
+            if (currencyType is not null) QueryParams["currencyType"] = currencyType.Value;
+
+
+
+
+
 
         }
 
@@ -104,9 +104,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.CurrencyInfo>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -119,9 +119,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.CurrencyInfo>>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

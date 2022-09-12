@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Eventlog.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","queryeventstreamhandler")]
-    public class QueryEventStreamHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog", "queryeventstreamhandler")]
+    public class QueryEventStreamHandlerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Eventlog"; } }
+        public string ServiceName { get { return "Eventlog"; } }
 
-        public string OperationName{ get { return "QueryEventStreamHandler"; } }
+        public string OperationName { get { return "QueryEventStreamHandler"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 
         [SdkCommandData("body")]
         public ModelsGenericQueryPayload Body { get; set; } = new ModelsGenericQueryPayload();
-                
+
         public QueryEventStreamHandlerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -54,14 +54,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
             AccelByte.Sdk.Api.Eventlog.Wrapper.EventV2 wrapper = new AccelByte.Sdk.Api.Eventlog.Wrapper.EventV2(_SDK);
 
             QueryEventStreamHandler operation = new QueryEventStreamHandler(
-                Namespace,                
-                EndDate,                
-                Offset,                
-                PageSize,                
-                StartDate,                
-                Body                
-            );            
-            
+                Namespace,
+                EndDate,
+                Offset,
+                PageSize,
+                StartDate,
+                Body
+            );
+
             AccelByte.Sdk.Api.Eventlog.Model.ModelsEventResponseV2? response = wrapper.QueryEventStreamHandler(operation);
             if (response == null)
                 return "No response from server.";

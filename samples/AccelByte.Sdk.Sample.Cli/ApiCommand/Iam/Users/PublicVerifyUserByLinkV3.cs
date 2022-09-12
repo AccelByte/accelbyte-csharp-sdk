@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publicverifyuserbylinkv3")]
-    public class PublicVerifyUserByLinkV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicverifyuserbylinkv3")]
+    public class PublicVerifyUserByLinkV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicVerifyUserByLinkV3"; } }
+        public string OperationName { get { return "PublicVerifyUserByLinkV3"; } }
 
         [SdkCommandArgument("code")]
         public string? Code { get; set; }
@@ -39,13 +39,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicVerifyUserByLinkV3 operation = new PublicVerifyUserByLinkV3(
-                Code                
-            );            
-            
+                Code
+            );
+
             string? response = wrapper.PublicVerifyUserByLinkV3(operation);
             if (response == null)
                 return "No response from server.";
-            return response!;            
+            return response!;
         }
     }
 }

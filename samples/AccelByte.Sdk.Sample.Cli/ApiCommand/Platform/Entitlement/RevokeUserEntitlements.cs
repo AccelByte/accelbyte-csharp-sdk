@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","revokeuserentitlements")]
-    public class RevokeUserEntitlementsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "revokeuserentitlements")]
+    public class RevokeUserEntitlementsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "RevokeUserEntitlements"; } }
+        public string OperationName { get { return "RevokeUserEntitlements"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             RevokeUserEntitlements operation = new RevokeUserEntitlements(
-                Namespace,                
-                UserId,                
-                EntitlementIds                
-            );            
-            
+                Namespace,
+                UserId,
+                EntitlementIds
+            );
+
             AccelByte.Sdk.Api.Platform.Model.BulkOperationResult? response = wrapper.RevokeUserEntitlements(operation);
             if (response == null)
                 return "No response from server.";

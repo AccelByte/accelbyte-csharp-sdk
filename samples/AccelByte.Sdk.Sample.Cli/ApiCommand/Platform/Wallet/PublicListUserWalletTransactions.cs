@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publiclistuserwallettransactions")]
-    public class PublicListUserWalletTransactionsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "publiclistuserwallettransactions")]
+    public class PublicListUserWalletTransactionsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicListUserWalletTransactions"; } }
+        public string OperationName { get { return "PublicListUserWalletTransactions"; } }
 
         [SdkCommandArgument("currencyCode")]
         public string CurrencyCode { get; set; } = String.Empty;
@@ -51,13 +51,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
 
             PublicListUserWalletTransactions operation = new PublicListUserWalletTransactions(
-                CurrencyCode,                
-                Namespace,                
-                UserId,                
-                Limit,                
-                Offset                
-            );            
-            
+                CurrencyCode,
+                Namespace,
+                UserId,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Platform.Model.WalletTransactionPagingSlicedResult? response = wrapper.PublicListUserWalletTransactions(operation);
             if (response == null)
                 return "No response from server.";

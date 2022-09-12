@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publicgetmyentitlementownershipbysku")]
-    public class PublicGetMyEntitlementOwnershipBySkuCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "publicgetmyentitlementownershipbysku")]
+    public class PublicGetMyEntitlementOwnershipBySkuCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicGetMyEntitlementOwnershipBySku"; } }
+        public string OperationName { get { return "PublicGetMyEntitlementOwnershipBySku"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             PublicGetMyEntitlementOwnershipBySku operation = new PublicGetMyEntitlementOwnershipBySku(
-                Namespace,                
-                (EntitlementClazz is null ? null : PublicGetMyEntitlementOwnershipBySkuEntitlementClazz.NewValue(EntitlementClazz)),                
-                Sku                
-            );            
-            
+                Namespace,
+                (EntitlementClazz is null ? null : PublicGetMyEntitlementOwnershipBySkuEntitlementClazz.NewValue(EntitlementClazz)),
+                Sku
+            );
+
             AccelByte.Sdk.Api.Platform.Model.TimedOwnership? response = wrapper.PublicGetMyEntitlementOwnershipBySku(operation);
             if (response == null)
                 return "No response from server.";

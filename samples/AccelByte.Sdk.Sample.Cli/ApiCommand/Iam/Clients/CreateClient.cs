@@ -17,18 +17,18 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","createclient")]
-    public class CreateClientCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "createclient")]
+    public class CreateClientCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "CreateClient"; } }
+        public string OperationName { get { return "CreateClient"; } }
 
         [SdkCommandData("body")]
         public ClientmodelClientCreateRequest Body { get; set; } = new ClientmodelClientCreateRequest();
-                
+
         public CreateClientCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -38,19 +38,19 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Clients wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Clients(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             CreateClient operation = new CreateClient(
-                Body                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                Body
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Iam.Model.ClientmodelClientCreationResponse? response = wrapper.CreateClient(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

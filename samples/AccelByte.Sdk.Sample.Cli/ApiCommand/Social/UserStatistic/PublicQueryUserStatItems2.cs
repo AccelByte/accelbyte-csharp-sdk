@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","publicqueryuserstatitems2")]
-    public class PublicQueryUserStatItems2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "publicqueryuserstatitems2")]
+    public class PublicQueryUserStatItems2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "PublicQueryUserStatItems2"; } }
+        public string OperationName { get { return "PublicQueryUserStatItems2"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -51,13 +51,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.UserStatistic wrapper = new AccelByte.Sdk.Api.Social.Wrapper.UserStatistic(_SDK);
 
             PublicQueryUserStatItems2 operation = new PublicQueryUserStatItems2(
-                Namespace,                
-                UserId,                
-                AdditionalKey,                
-                StatCodes,                
-                Tags                
-            );            
-            
+                Namespace,
+                UserId,
+                AdditionalKey,
+                StatCodes,
+                Tags
+            );
+
             List<AccelByte.Sdk.Api.Social.Model.ADTOObjectForUserStatItemValue>? response = wrapper.PublicQueryUserStatItems2(operation);
             if (response == null)
                 return "No response from server.";

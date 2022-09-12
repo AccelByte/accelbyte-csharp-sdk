@@ -53,7 +53,7 @@ namespace AccelByte.Sdk.Core.Util
             return new String(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        private static string RandomizeChar(Random random, string source,int length)
+        private static string RandomizeChar(Random random, string source, int length)
         {
             string result = String.Empty;
             for (int i = 0; i < length; i++)
@@ -82,7 +82,7 @@ namespace AccelByte.Sdk.Core.Util
 
             final += RandomizeChar(random, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", pCount);
             final += RandomizeChar(random, "abcdefghijklmnopqrstuvwxyz", pCount);
-            
+
             int fCount = (length - (pCount * 2));
             final += RandomizeChar(random, "0123456789!@#$%^&*()", fCount);
 

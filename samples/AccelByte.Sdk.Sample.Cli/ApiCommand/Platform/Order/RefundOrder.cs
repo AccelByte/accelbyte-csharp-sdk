@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","refundorder")]
-    public class RefundOrderCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "refundorder")]
+    public class RefundOrderCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "RefundOrder"; } }
+        public string OperationName { get { return "RefundOrder"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public OrderRefundCreate Body { get; set; } = new OrderRefundCreate();
-                
+
         public RefundOrderCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Order wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Order(_SDK);
 
             RefundOrder operation = new RefundOrder(
-                Namespace,                
-                OrderNo,                
-                Body                
-            );            
-            
+                Namespace,
+                OrderNo,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.OrderInfo? response = wrapper.RefundOrder(operation);
             if (response == null)
                 return "No response from server.";

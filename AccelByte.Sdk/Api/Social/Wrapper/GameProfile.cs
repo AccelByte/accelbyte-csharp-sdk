@@ -60,84 +60,94 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             get { return Operation.PublicUpdateAttribute.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public List<Model.GameProfileHeader>? GetUserProfiles(GetUserProfiles input) {
+
+        public List<Model.GameProfileHeader>? GetUserProfiles(GetUserProfiles input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.GameProfileInfo? GetProfile(GetProfile input) {
+        public Model.GameProfileInfo? GetProfile(GetProfile input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.UserGameProfiles>? PublicGetUserGameProfiles(PublicGetUserGameProfiles input) {
+        public List<Model.UserGameProfiles>? PublicGetUserGameProfiles(PublicGetUserGameProfiles input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.GameProfileHeader>? PublicGetUserProfiles(PublicGetUserProfiles input) {
+        public List<Model.GameProfileHeader>? PublicGetUserProfiles(PublicGetUserProfiles input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicCreateProfile(PublicCreateProfile input) {
+        public void PublicCreateProfile(PublicCreateProfile input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.GameProfileInfo? PublicGetProfile(PublicGetProfile input) {
+        public Model.GameProfileInfo? PublicGetProfile(PublicGetProfile input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.GameProfileInfo? PublicUpdateProfile(PublicUpdateProfile input) {
+        public Model.GameProfileInfo? PublicUpdateProfile(PublicUpdateProfile input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicDeleteProfile(PublicDeleteProfile input) {
+        public void PublicDeleteProfile(PublicDeleteProfile input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.Attribute? PublicGetProfileAttribute(PublicGetProfileAttribute input) {
+        public Model.Attribute? PublicGetProfileAttribute(PublicGetProfileAttribute input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.GameProfileInfo? PublicUpdateAttribute(PublicUpdateAttribute input) {
+        public Model.GameProfileInfo? PublicUpdateAttribute(PublicUpdateAttribute input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

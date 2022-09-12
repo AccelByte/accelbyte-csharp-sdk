@@ -52,9 +52,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             )
             {
                 AdminUploadContentScreenshot op = new AdminUploadContentScreenshot(this,
-                    body,                    
-                    contentId,                    
-                    namespace_                    
+                    body,
+                    contentId,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -70,33 +70,33 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         {
             PathParams["contentId"] = contentId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminUploadContentScreenshot(
-            string contentId,            
-            string namespace_,            
-            Model.ModelsCreateScreenshotRequest body            
+            string contentId,
+            string namespace_,
+            Model.ModelsCreateScreenshotRequest body
         )
         {
             PathParams["contentId"] = contentId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -111,9 +111,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsCreateScreenshotResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -126,9 +126,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsCreateScreenshotResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

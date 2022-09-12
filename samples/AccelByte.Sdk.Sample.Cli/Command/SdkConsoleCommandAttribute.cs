@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Sample.Cli.Command
 
         public string OperationName { get; private set; }
 
-        public SdkConsoleCommandAttribute(string serviceName,string opName)
+        public SdkConsoleCommandAttribute(string serviceName, string opName)
         {
             ServiceName = serviceName;
             OperationName = opName;

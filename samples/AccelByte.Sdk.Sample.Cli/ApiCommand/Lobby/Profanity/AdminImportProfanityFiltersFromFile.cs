@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","adminimportprofanityfiltersfromfile")]
-    public class AdminImportProfanityFiltersFromFileCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "adminimportprofanityfiltersfromfile")]
+    public class AdminImportProfanityFiltersFromFileCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminImportProfanityFiltersFromFile"; } }
+        public string OperationName { get { return "AdminImportProfanityFiltersFromFile"; } }
 
         [SdkCommandArgument("list")]
         public string List { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public List<long> Body { get; set; } = new List<long>();
-                
+
         public AdminImportProfanityFiltersFromFileCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Profanity wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Profanity(_SDK);
 
             AdminImportProfanityFiltersFromFile operation = new AdminImportProfanityFiltersFromFile(
-                List,                
-                Namespace,                
-                Body                
-            );            
-            
+                List,
+                Namespace,
+                Body
+            );
+
             wrapper.AdminImportProfanityFiltersFromFile(operation);
             return String.Empty;
         }

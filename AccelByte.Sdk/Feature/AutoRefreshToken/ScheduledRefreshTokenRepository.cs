@@ -45,7 +45,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
         public float RefreshThreshold { get => _RefreshThreshold; }
 
-        public bool IsRefreshOnProgress { get; set; } = false;        
+        public bool IsRefreshOnProgress { get; set; } = false;
 
         private void _TimerCallback(object? state)
         {

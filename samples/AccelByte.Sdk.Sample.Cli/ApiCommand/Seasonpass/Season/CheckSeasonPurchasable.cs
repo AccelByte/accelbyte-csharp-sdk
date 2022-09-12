@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass","checkseasonpurchasable")]
-    public class CheckSeasonPurchasableCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass", "checkseasonpurchasable")]
+    public class CheckSeasonPurchasableCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Seasonpass"; } }
+        public string ServiceName { get { return "Seasonpass"; } }
 
-        public string OperationName{ get { return "CheckSeasonPurchasable"; } }
+        public string OperationName { get { return "CheckSeasonPurchasable"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 
         [SdkCommandData("body")]
         public UserPurchasable Body { get; set; } = new UserPurchasable();
-                
+
         public CheckSeasonPurchasableCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Season wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Season(_SDK);
 
             CheckSeasonPurchasable operation = new CheckSeasonPurchasable(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             wrapper.CheckSeasonPurchasable(operation);
             return String.Empty;
         }

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","deleteuserpermission")]
-    public class DeleteUserPermissionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "deleteuserpermission")]
+    public class DeleteUserPermissionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "DeleteUserPermission"; } }
+        public string OperationName { get { return "DeleteUserPermission"; } }
 
         [SdkCommandArgument("action")]
         public long Action { get; set; } = 0;
@@ -47,19 +47,19 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             DeleteUserPermission operation = new DeleteUserPermission(
-                Action,                
-                Namespace,                
-                Resource,                
-                UserId                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                Action,
+                Namespace,
+                Resource,
+                UserId
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.DeleteUserPermission(operation);
             return String.Empty;
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

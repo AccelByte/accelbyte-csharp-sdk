@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","deregisterlocalserver")]
-    public class DeregisterLocalServerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "deregisterlocalserver")]
+    public class DeregisterLocalServerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "DeregisterLocalServer"; } }
+        public string OperationName { get { return "DeregisterLocalServer"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsDeregisterLocalServerRequest Body { get; set; } = new ModelsDeregisterLocalServerRequest();
-                
+
         public DeregisterLocalServerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Server wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Server(_SDK);
 
             DeregisterLocalServer operation = new DeregisterLocalServer(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             wrapper.DeregisterLocalServer(operation);
             return String.Empty;
         }

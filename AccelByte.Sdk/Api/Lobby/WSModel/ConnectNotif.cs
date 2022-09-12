@@ -16,6 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("lobbySessionId")]
         [JsonPropertyName("lobbySessionId")]
         public string? LobbySessionId { get; set; }
-        
+
     }
 }

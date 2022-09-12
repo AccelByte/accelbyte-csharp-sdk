@@ -40,44 +40,49 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             get { return Operation.AdminImportConfigV1.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public Model.ModelsConfigList? AdminGetAllConfigV1(AdminGetAllConfigV1 input) {
+
+        public Model.ModelsConfigList? AdminGetAllConfigV1(AdminGetAllConfigV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsConfigReq? AdminGetConfigV1(AdminGetConfigV1 input) {
+        public Model.ModelsConfigReq? AdminGetConfigV1(AdminGetConfigV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsConfigReq? AdminUpdateConfigV1(AdminUpdateConfigV1 input) {
+        public Model.ModelsConfigReq? AdminUpdateConfigV1(AdminUpdateConfigV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsConfigExport? AdminExportConfigV1(AdminExportConfigV1 input) {
+        public Model.ModelsConfigExport? AdminExportConfigV1(AdminExportConfigV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsImportConfigResponse? AdminImportConfigV1(AdminImportConfigV1 input) {
+        public Model.ModelsImportConfigResponse? AdminImportConfigV1(AdminImportConfigV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

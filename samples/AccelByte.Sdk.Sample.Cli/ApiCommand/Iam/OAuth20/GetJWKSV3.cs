@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","getjwksv3")]
-    public class GetJWKSV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "getjwksv3")]
+    public class GetJWKSV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "GetJWKSV3"; } }
+        public string OperationName { get { return "GetJWKSV3"; } }
 
         public GetJWKSV3Command(AccelByteSDK sdk)
         {
@@ -36,8 +36,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20(_SDK);
 
             GetJWKSV3 operation = new GetJWKSV3(
-            );            
-            
+            );
+
             AccelByte.Sdk.Api.Iam.Model.OauthcommonJWKSet? response = wrapper.GetJWKSV3(operation);
             if (response == null)
                 return "No response from server.";

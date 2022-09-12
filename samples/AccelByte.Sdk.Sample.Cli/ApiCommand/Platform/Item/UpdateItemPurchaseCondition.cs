@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updateitempurchasecondition")]
-    public class UpdateItemPurchaseConditionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updateitempurchasecondition")]
+    public class UpdateItemPurchaseConditionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateItemPurchaseCondition"; } }
+        public string OperationName { get { return "UpdateItemPurchaseCondition"; } }
 
         [SdkCommandArgument("itemId")]
         public string ItemId { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public PurchaseConditionUpdate Body { get; set; } = new PurchaseConditionUpdate();
-                
+
         public UpdateItemPurchaseConditionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             UpdateItemPurchaseCondition operation = new UpdateItemPurchaseCondition(
-                ItemId,                
-                Namespace,                
-                StoreId,                
-                Body                
-            );            
-            
+                ItemId,
+                Namespace,
+                StoreId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.FullItemInfo? response = wrapper.UpdateItemPurchaseCondition(operation);
             if (response == null)
                 return "No response from server.";

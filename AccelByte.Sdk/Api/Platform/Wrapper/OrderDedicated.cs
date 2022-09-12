@@ -24,12 +24,13 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.SyncOrders.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public Model.OrderSyncResult? SyncOrders(SyncOrders input) {
+
+        public Model.OrderSyncResult? SyncOrders(SyncOrders input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","addssologinplatformcredential")]
-    public class AddSSOLoginPlatformCredentialCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "addssologinplatformcredential")]
+    public class AddSSOLoginPlatformCredentialCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AddSSOLoginPlatformCredential"; } }
+        public string OperationName { get { return "AddSSOLoginPlatformCredential"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelSSOPlatformCredentialRequest Body { get; set; } = new ModelSSOPlatformCredentialRequest();
-                
+
         public AddSSOLoginPlatformCredentialCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.SSOCredential wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.SSOCredential(_SDK);
 
             AddSSOLoginPlatformCredential operation = new AddSSOLoginPlatformCredential(
-                Namespace,                
-                PlatformId,                
-                Body                
-            );            
-            
+                Namespace,
+                PlatformId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelSSOPlatformCredentialResponse? response = wrapper.AddSSOLoginPlatformCredential(operation);
             if (response == null)
                 return "No response from server.";

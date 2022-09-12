@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publicupdatepasswordv3")]
-    public class PublicUpdatePasswordV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicupdatepasswordv3")]
+    public class PublicUpdatePasswordV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicUpdatePasswordV3"; } }
+        public string OperationName { get { return "PublicUpdatePasswordV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelUserPasswordUpdateV3Request Body { get; set; } = new ModelUserPasswordUpdateV3Request();
-                
+
         public PublicUpdatePasswordV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicUpdatePasswordV3 operation = new PublicUpdatePasswordV3(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             wrapper.PublicUpdatePasswordV3(operation);
             return String.Empty;
         }

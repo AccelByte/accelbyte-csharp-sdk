@@ -48,8 +48,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             )
             {
                 GetUserProfileInfoByPublicId op = new GetUserProfileInfoByPublicId(this,
-                    namespace_,                    
-                    publicId                    
+                    namespace_,
+                    publicId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -63,31 +63,31 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (publicId is not null) QueryParams["publicId"] = publicId;
-            
 
-            
-            
-            
+            if (publicId is not null) QueryParams["publicId"] = publicId;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetUserProfileInfoByPublicId(
-            string namespace_,            
-            string publicId            
+            string namespace_,
+            string publicId
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (publicId is not null) QueryParams["publicId"] = publicId;
-            
 
-            
-            
-            
+            if (publicId is not null) QueryParams["publicId"] = publicId;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -96,15 +96,15 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.UserProfileInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -117,9 +117,9 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             {
                 return JsonSerializer.Deserialize<Model.UserProfileInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

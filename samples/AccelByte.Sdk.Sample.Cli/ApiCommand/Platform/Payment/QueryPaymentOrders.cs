@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","querypaymentorders")]
-    public class QueryPaymentOrdersCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "querypaymentorders")]
+    public class QueryPaymentOrdersCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "QueryPaymentOrders"; } }
+        public string OperationName { get { return "QueryPaymentOrders"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -54,14 +54,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Payment wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Payment(_SDK);
 
             QueryPaymentOrders operation = new QueryPaymentOrders(
-                Namespace,                
-                (Channel is null ? null : QueryPaymentOrdersChannel.NewValue(Channel)),                
-                ExtTxId,                
-                Limit,                
-                Offset,                
-                (Status is null ? null : QueryPaymentOrdersStatus.NewValue(Status))                
-            );            
-            
+                Namespace,
+                (Channel is null ? null : QueryPaymentOrdersChannel.NewValue(Channel)),
+                ExtTxId,
+                Limit,
+                Offset,
+                (Status is null ? null : QueryPaymentOrdersStatus.NewValue(Status))
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PaymentOrderPagingSlicedResult? response = wrapper.QueryPaymentOrders(operation);
             if (response == null)
                 return "No response from server.";

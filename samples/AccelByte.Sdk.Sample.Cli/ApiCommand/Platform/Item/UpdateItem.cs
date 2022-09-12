@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updateitem")]
-    public class UpdateItemCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updateitem")]
+    public class UpdateItemCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateItem"; } }
+        public string OperationName { get { return "UpdateItem"; } }
 
         [SdkCommandArgument("itemId")]
         public string ItemId { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public ItemUpdate Body { get; set; } = new ItemUpdate();
-                
+
         public UpdateItemCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             UpdateItem operation = new UpdateItem(
-                ItemId,                
-                Namespace,                
-                StoreId,                
-                Body                
-            );            
-            
+                ItemId,
+                Namespace,
+                StoreId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.FullItemInfo? response = wrapper.UpdateItem(operation);
             if (response == null)
                 return "No response from server.";

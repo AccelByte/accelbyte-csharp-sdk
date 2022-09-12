@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","deleterootregionoverride")]
-    public class DeleteRootRegionOverrideCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "deleterootregionoverride")]
+    public class DeleteRootRegionOverrideCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "DeleteRootRegionOverride"; } }
+        public string OperationName { get { return "DeleteRootRegionOverride"; } }
 
         [SdkCommandArgument("deployment")]
         public string Deployment { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig(_SDK);
 
             DeleteRootRegionOverride operation = new DeleteRootRegionOverride(
-                Deployment,                
-                Namespace,                
-                Region                
-            );            
-            
+                Deployment,
+                Namespace,
+                Region
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDeploymentWithOverride? response = wrapper.DeleteRootRegionOverride(operation);
             if (response == null)
                 return "No response from server.";

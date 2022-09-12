@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic","publicgettimezones")]
-    public class PublicGetTimeZonesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("basic", "publicgettimezones")]
+    public class PublicGetTimeZonesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Basic"; } }
+        public string ServiceName { get { return "Basic"; } }
 
-        public string OperationName{ get { return "PublicGetTimeZones"; } }
+        public string OperationName { get { return "PublicGetTimeZones"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.Misc wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.Misc(_SDK);
 
             PublicGetTimeZones operation = new PublicGetTimeZones(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             List<string>? response = wrapper.PublicGetTimeZones(operation);
             if (response == null)
                 return "No response from server.";

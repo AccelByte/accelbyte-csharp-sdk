@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Core.Client
         });
 
         public static readonly System.Net.Http.HttpClient Http = new System.Net.Http.HttpClient(Handler);
-        
+
         private static object HttpLock = new object();
 
         public IHttpClient SetLogger(IHttpLogger logger)

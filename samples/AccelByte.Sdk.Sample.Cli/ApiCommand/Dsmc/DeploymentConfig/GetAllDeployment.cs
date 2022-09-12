@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","getalldeployment")]
-    public class GetAllDeploymentCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "getalldeployment")]
+    public class GetAllDeploymentCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "GetAllDeployment"; } }
+        public string OperationName { get { return "GetAllDeployment"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig(_SDK);
 
             GetAllDeployment operation = new GetAllDeployment(
-                Namespace,                
-                Name,                
-                Count,                
-                Offset                
-            );            
-            
+                Namespace,
+                Name,
+                Count,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListDeploymentResponse? response = wrapper.GetAllDeployment(operation);
             if (response == null)
                 return "No response from server.";

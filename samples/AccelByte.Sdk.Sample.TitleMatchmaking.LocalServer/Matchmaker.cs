@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Sample.TitleMatchmaking.LocalServer
 
         public string SessionType { get; set; } = "p2p";
 
-        public string TargetDeployment { get; set; } = "default";        
+        public string TargetDeployment { get; set; } = "default";
 
         /// <summary>
         /// Max duration for waiting other users (in milliseconds)
@@ -161,7 +161,7 @@ namespace AccelByte.Sdk.Sample.TitleMatchmaking.LocalServer
                 .Execute(authToken);
             if (oauthToken == null)
                 throw new Exception("NULL oauthToken");
-            string cUserId = oauthToken.UserId!;            
+            string cUserId = oauthToken.UserId!;
 
             // # 2. Create matchmaking request
             ModelsChannel channel = new ModelsChannel()
@@ -195,7 +195,7 @@ namespace AccelByte.Sdk.Sample.TitleMatchmaking.LocalServer
                 Slug = ChannelSlug,
                 SocialMatchmaking = false,
                 UpdatedAt = "",
-                UseSubGamemode = false                
+                UseSubGamemode = false
             };
 
             _Cache.Save(ChannelListKey, channel.Slug);

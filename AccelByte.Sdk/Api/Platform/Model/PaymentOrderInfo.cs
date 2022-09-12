@@ -211,7 +211,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class PaymentOrderInfoItemType : StringEnum<PaymentOrderInfoItemType>
     {
@@ -256,7 +256,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class PaymentOrderInfoPaymentProvider : StringEnum<PaymentOrderInfoPaymentProvider>
     {
@@ -295,7 +295,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class PaymentOrderInfoStatus : StringEnum<PaymentOrderInfoStatus>
     {
@@ -349,5 +349,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

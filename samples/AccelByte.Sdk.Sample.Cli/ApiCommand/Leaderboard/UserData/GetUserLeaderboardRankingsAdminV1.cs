@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard","getuserleaderboardrankingsadminv1")]
-    public class GetUserLeaderboardRankingsAdminV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard", "getuserleaderboardrankingsadminv1")]
+    public class GetUserLeaderboardRankingsAdminV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Leaderboard"; } }
+        public string ServiceName { get { return "Leaderboard"; } }
 
-        public string OperationName{ get { return "GetUserLeaderboardRankingsAdminV1"; } }
+        public string OperationName { get { return "GetUserLeaderboardRankingsAdminV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.UserData wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.UserData(_SDK);
 
             GetUserLeaderboardRankingsAdminV1 operation = new GetUserLeaderboardRankingsAdminV1(
-                Namespace,                
-                UserId,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                UserId,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsGetAllUserLeaderboardsResp? response = wrapper.GetUserLeaderboardRankingsAdminV1(operation);
             if (response == null)
                 return "No response from server.";

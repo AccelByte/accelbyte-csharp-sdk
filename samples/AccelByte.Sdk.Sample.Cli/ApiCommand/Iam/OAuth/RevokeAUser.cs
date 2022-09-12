@@ -17,18 +17,18 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","revokeauser")]
-    public class RevokeAUserCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "revokeauser")]
+    public class RevokeAUserCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "RevokeAUser"; } }
+        public string OperationName { get { return "RevokeAUser"; } }
 
         [SdkCommandArgument("userID")]
         public string UserID { get; set; } = String.Empty;
-                    
+
         public RevokeAUserCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -38,16 +38,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             RevokeAUser operation = new RevokeAUser(
-                UserID                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                UserID
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.RevokeAUser(operation);
             return String.Empty;
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

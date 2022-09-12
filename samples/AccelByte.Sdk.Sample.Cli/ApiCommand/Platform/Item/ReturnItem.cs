@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","returnitem")]
-    public class ReturnItemCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "returnitem")]
+    public class ReturnItemCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "ReturnItem"; } }
+        public string OperationName { get { return "ReturnItem"; } }
 
         [SdkCommandArgument("itemId")]
         public string ItemId { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public ItemReturnRequest Body { get; set; } = new ItemReturnRequest();
-                
+
         public ReturnItemCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             ReturnItem operation = new ReturnItem(
-                ItemId,                
-                Namespace,                
-                Body                
-            );            
-            
+                ItemId,
+                Namespace,
+                Body
+            );
+
             wrapper.ReturnItem(operation);
             return String.Empty;
         }

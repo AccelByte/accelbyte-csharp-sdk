@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave","listgamerecordshandlerv1")]
-    public class ListGameRecordsHandlerV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave", "listgamerecordshandlerv1")]
+    public class ListGameRecordsHandlerV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Cloudsave"; } }
+        public string ServiceName { get { return "Cloudsave"; } }
 
-        public string OperationName{ get { return "ListGameRecordsHandlerV1"; } }
+        public string OperationName { get { return "ListGameRecordsHandlerV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminGameRecord wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminGameRecord(_SDK);
 
             ListGameRecordsHandlerV1 operation = new ListGameRecordsHandlerV1(
-                Namespace,                
-                Query,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                Query,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Cloudsave.Model.ModelsListGameRecordKeysResponse? response = wrapper.ListGameRecordsHandlerV1(operation);
             if (response == null)
                 return "No response from server.";

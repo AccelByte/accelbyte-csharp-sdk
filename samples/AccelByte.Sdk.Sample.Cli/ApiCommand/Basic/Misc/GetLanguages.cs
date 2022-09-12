@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic","getlanguages")]
-    public class GetLanguagesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("basic", "getlanguages")]
+    public class GetLanguagesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Basic"; } }
+        public string ServiceName { get { return "Basic"; } }
 
-        public string OperationName{ get { return "GetLanguages"; } }
+        public string OperationName { get { return "GetLanguages"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.Misc wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.Misc(_SDK);
 
             GetLanguages operation = new GetLanguages(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             Dictionary<string, object>? response = wrapper.GetLanguages(operation);
             if (response == null)
                 return "No response from server.";

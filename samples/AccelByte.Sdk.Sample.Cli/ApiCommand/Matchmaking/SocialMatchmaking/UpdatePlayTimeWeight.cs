@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking","updateplaytimeweight")]
-    public class UpdatePlayTimeWeightCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking", "updateplaytimeweight")]
+    public class UpdatePlayTimeWeightCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Matchmaking"; } }
 
-        public string OperationName{ get { return "UpdatePlayTimeWeight"; } }
+        public string OperationName { get { return "UpdatePlayTimeWeight"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsUpdatePlayTimeWeightRequest Body { get; set; } = new ModelsUpdatePlayTimeWeightRequest();
-                
+
         public UpdatePlayTimeWeightCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.SocialMatchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.SocialMatchmaking(_SDK);
 
             UpdatePlayTimeWeight operation = new UpdatePlayTimeWeight(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Matchmaking.Model.ModelsUpdatePlayerPlaytimeWeightResponse? response = wrapper.UpdatePlayTimeWeight(operation);
             if (response == null)
                 return "No response from server.";

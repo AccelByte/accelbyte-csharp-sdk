@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","deleteiapitemconfig")]
-    public class DeleteIAPItemConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "deleteiapitemconfig")]
+    public class DeleteIAPItemConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "DeleteIAPItemConfig"; } }
+        public string OperationName { get { return "DeleteIAPItemConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             DeleteIAPItemConfig operation = new DeleteIAPItemConfig(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             wrapper.DeleteIAPItemConfig(operation);
             return String.Empty;
         }

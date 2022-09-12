@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","admingetpartydatav1")]
-    public class AdminGetPartyDataV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "admingetpartydatav1")]
+    public class AdminGetPartyDataV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminGetPartyDataV1"; } }
+        public string OperationName { get { return "AdminGetPartyDataV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Party wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Party(_SDK);
 
             AdminGetPartyDataV1 operation = new AdminGetPartyDataV1(
-                Namespace,                
-                PartyId                
-            );            
-            
+                Namespace,
+                PartyId
+            );
+
             AccelByte.Sdk.Api.Lobby.Model.ModelsPartyData? response = wrapper.AdminGetPartyDataV1(operation);
             if (response == null)
                 return "No response from server.";

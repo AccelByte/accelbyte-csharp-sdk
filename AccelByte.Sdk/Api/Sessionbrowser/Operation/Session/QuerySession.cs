@@ -120,8 +120,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             )
             {
                 QuerySession op = new QuerySession(this,
-                    namespace_,                    
-                    sessionType                    
+                    namespace_,
+                    sessionType
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -135,7 +135,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.GameMode is not null) QueryParams["game_mode"] = builder.GameMode;
             if (builder.GameVersion is not null) QueryParams["game_version"] = builder.GameVersion;
             if (builder.Joinable is not null) QueryParams["joinable"] = builder.Joinable;
@@ -146,32 +146,32 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             if (builder.ServerStatus is not null) QueryParams["server_status"] = builder.ServerStatus;
             if (builder.UserId is not null) QueryParams["user_id"] = builder.UserId;
             if (sessionType is not null) QueryParams["session_type"] = sessionType;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public QuerySession(
-            string namespace_,            
-            string? gameMode,            
-            string? gameVersion,            
-            string? joinable,            
-            long? limit,            
-            string? matchExist,            
-            string? matchId,            
-            long? offset,            
-            string? serverStatus,            
-            string? userId,            
-            string sessionType            
+            string namespace_,
+            string? gameMode,
+            string? gameVersion,
+            string? joinable,
+            long? limit,
+            string? matchExist,
+            string? matchId,
+            long? offset,
+            string? serverStatus,
+            string? userId,
+            string sessionType
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (gameMode is not null) QueryParams["game_mode"] = gameMode;
             if (gameVersion is not null) QueryParams["game_version"] = gameVersion;
             if (joinable is not null) QueryParams["joinable"] = joinable;
@@ -182,11 +182,11 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             if (serverStatus is not null) QueryParams["server_status"] = serverStatus;
             if (userId is not null) QueryParams["user_id"] = userId;
             if (sessionType is not null) QueryParams["session_type"] = sessionType;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -201,9 +201,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsSessionQueryResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -216,9 +216,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsSessionQueryResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

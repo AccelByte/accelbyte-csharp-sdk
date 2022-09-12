@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","grantuserentitlement")]
-    public class GrantUserEntitlementCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "grantuserentitlement")]
+    public class GrantUserEntitlementCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GrantUserEntitlement"; } }
+        public string OperationName { get { return "GrantUserEntitlement"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public List<EntitlementGrant> Body { get; set; } = new List<EntitlementGrant>();
-                
+
         public GrantUserEntitlementCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             GrantUserEntitlement operation = new GrantUserEntitlement(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             List<AccelByte.Sdk.Api.Platform.Model.StackableEntitlementInfo>? response = wrapper.GrantUserEntitlement(operation);
             if (response == null)
                 return "No response from server.";

@@ -64,92 +64,103 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             get { return Operation.DeleteSession.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public Model.ModelsListServerResponse? ListServer(ListServer input) {
+
+        public Model.ModelsListServerResponse? ListServer(ListServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCountServerResponse? CountServer(CountServer input) {
+        public Model.ModelsCountServerResponse? CountServer(CountServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDetailedCountServerResponse? CountServerDetailed(CountServerDetailed input) {
+        public Model.ModelsDetailedCountServerResponse? CountServerDetailed(CountServerDetailed input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsListServerResponse? ListLocalServer(ListLocalServer input) {
+        public Model.ModelsListServerResponse? ListLocalServer(ListLocalServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteLocalServer(DeleteLocalServer input) {
+        public void DeleteLocalServer(DeleteLocalServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsServer? GetServer(GetServer input) {
+        public Model.ModelsServer? GetServer(GetServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteServer(DeleteServer input) {
+        public void DeleteServer(DeleteServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsServerLogs? GetServerLogs(GetServerLogs input) {
+        public Model.ModelsServerLogs? GetServerLogs(GetServerLogs input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsListSessionResponse? ListSession(ListSession input) {
+        public Model.ModelsListSessionResponse? ListSession(ListSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCountSessionResponse? CountSession(CountSession input) {
+        public Model.ModelsCountSessionResponse? CountSession(CountSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteSession(DeleteSession input) {
+        public void DeleteSession(DeleteSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

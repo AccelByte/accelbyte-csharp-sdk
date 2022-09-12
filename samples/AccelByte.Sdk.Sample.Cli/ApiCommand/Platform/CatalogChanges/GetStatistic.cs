@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getstatistic")]
-    public class GetStatisticCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getstatistic")]
+    public class GetStatisticCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetStatistic"; } }
+        public string OperationName { get { return "GetStatistic"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -60,16 +60,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.CatalogChanges wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.CatalogChanges(_SDK);
 
             GetStatistic operation = new GetStatistic(
-                Namespace,                
-                StoreId,                
-                (Action is null ? null : GetStatisticAction.NewValue(Action)),                
-                ItemSku,                
-                (ItemType is null ? null : GetStatisticItemType.NewValue(ItemType)),                
-                (Type is null ? null : GetStatisticType.NewValue(Type)),                
-                UpdatedAtEnd,                
-                UpdatedAtStart                
-            );            
-            
+                Namespace,
+                StoreId,
+                (Action is null ? null : GetStatisticAction.NewValue(Action)),
+                ItemSku,
+                (ItemType is null ? null : GetStatisticItemType.NewValue(ItemType)),
+                (Type is null ? null : GetStatisticType.NewValue(Type)),
+                UpdatedAtEnd,
+                UpdatedAtStart
+            );
+
             AccelByte.Sdk.Api.Platform.Model.CatalogChangeStatistics? response = wrapper.GetStatistic(operation);
             if (response == null)
                 return "No response from server.";

@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking","storematchresults")]
-    public class StoreMatchResultsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking", "storematchresults")]
+    public class StoreMatchResultsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Matchmaking"; } }
 
-        public string OperationName{ get { return "StoreMatchResults"; } }
+        public string OperationName { get { return "StoreMatchResults"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsMatchResultRequest Body { get; set; } = new ModelsMatchResultRequest();
-                
+
         public StoreMatchResultsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
             StoreMatchResults operation = new StoreMatchResults(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Matchmaking.Model.ModelsMatchResultResponse? response = wrapper.StoreMatchResults(operation);
             if (response == null)
                 return "No response from server.";

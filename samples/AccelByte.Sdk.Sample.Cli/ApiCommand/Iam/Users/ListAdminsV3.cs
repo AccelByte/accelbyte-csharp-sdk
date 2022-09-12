@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","listadminsv3")]
-    public class ListAdminsV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "listadminsv3")]
+    public class ListAdminsV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "ListAdminsV3"; } }
+        public string OperationName { get { return "ListAdminsV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             ListAdminsV3 operation = new ListAdminsV3(
-                Namespace,                
-                After,                
-                Before,                
-                Limit                
-            );            
-            
+                Namespace,
+                After,
+                Before,
+                Limit
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelGetUsersResponseWithPaginationV3? response = wrapper.ListAdminsV3(operation);
             if (response == null)
                 return "No response from server.";

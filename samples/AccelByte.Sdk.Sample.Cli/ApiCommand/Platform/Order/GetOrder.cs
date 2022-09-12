@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getorder")]
-    public class GetOrderCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getorder")]
+    public class GetOrderCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetOrder"; } }
+        public string OperationName { get { return "GetOrder"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Order wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Order(_SDK);
 
             GetOrder operation = new GetOrder(
-                Namespace,                
-                OrderNo                
-            );            
-            
+                Namespace,
+                OrderNo
+            );
+
             AccelByte.Sdk.Api.Platform.Model.OrderInfo? response = wrapper.GetOrder(operation);
             if (response == null)
                 return "No response from server.";

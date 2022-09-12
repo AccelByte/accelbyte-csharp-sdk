@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","admingetroleadminstatusv3")]
-    public class AdminGetRoleAdminStatusV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "admingetroleadminstatusv3")]
+    public class AdminGetRoleAdminStatusV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminGetRoleAdminStatusV3"; } }
+        public string OperationName { get { return "AdminGetRoleAdminStatusV3"; } }
 
         [SdkCommandArgument("roleId")]
         public string RoleId { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Roles wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Roles(_SDK);
 
             AdminGetRoleAdminStatusV3 operation = new AdminGetRoleAdminStatusV3(
-                RoleId                
-            );            
-            
+                RoleId
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelRoleAdminStatusResponseV3? response = wrapper.AdminGetRoleAdminStatusV3(operation);
             if (response == null)
                 return "No response from server.";

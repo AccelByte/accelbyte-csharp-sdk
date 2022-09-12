@@ -104,8 +104,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 QueryUserSubscriptions op = new QueryUserSubscriptions(this,
-                    namespace_,                    
-                    userId                    
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -120,7 +120,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
+
             if (builder.ChargeStatus is not null) QueryParams["chargeStatus"] = builder.ChargeStatus.Value;
             if (builder.ItemId is not null) QueryParams["itemId"] = builder.ItemId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
@@ -128,31 +128,31 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Sku is not null) QueryParams["sku"] = builder.Sku;
             if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
             if (builder.SubscribedBy is not null) QueryParams["subscribedBy"] = builder.SubscribedBy.Value;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public QueryUserSubscriptions(
-            string namespace_,            
-            string userId,            
-            QueryUserSubscriptionsChargeStatus? chargeStatus,            
-            string? itemId,            
-            int? limit,            
-            int? offset,            
-            string? sku,            
-            QueryUserSubscriptionsStatus? status,            
-            QueryUserSubscriptionsSubscribedBy? subscribedBy            
+            string namespace_,
+            string userId,
+            QueryUserSubscriptionsChargeStatus? chargeStatus,
+            string? itemId,
+            int? limit,
+            int? offset,
+            string? sku,
+            QueryUserSubscriptionsStatus? status,
+            QueryUserSubscriptionsSubscribedBy? subscribedBy
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
+
             if (chargeStatus is not null) QueryParams["chargeStatus"] = chargeStatus.Value;
             if (itemId is not null) QueryParams["itemId"] = itemId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
@@ -160,11 +160,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (sku is not null) QueryParams["sku"] = sku;
             if (status is not null) QueryParams["status"] = status.Value;
             if (subscribedBy is not null) QueryParams["subscribedBy"] = subscribedBy.Value;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -179,9 +179,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.SubscriptionPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -194,9 +194,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.SubscriptionPagingSlicedResult>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

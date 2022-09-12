@@ -269,7 +269,7 @@ namespace AccelByte.Sdk.Tests
                 Assert.AreEqual("replace", result.Form!["strategy"]);
                 Assert.AreEqual("ABC123", result.Files!["file"]);
             }
-        }        
+        }
 
         [Test]
         public void EmptyResponseBodyTest()

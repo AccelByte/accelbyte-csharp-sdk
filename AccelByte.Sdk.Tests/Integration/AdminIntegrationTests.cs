@@ -172,7 +172,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 return;
 
             UserProfile wProfile = new UserProfile(_Sdk);
-            
+
             try
             {
                 //Get user's own profile info, will throw an exception if profile does not exists which is expected.
@@ -368,7 +368,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
             string steamId = "76561199259217491";
             string playTime = "4";
-            
+
             Api.Gametelemetry.Wrapper.GametelemetryOperations wGametelemetryOperations = new Api.Gametelemetry.Wrapper.GametelemetryOperations(_Sdk);
 
             wGametelemetryOperations.ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(
@@ -459,7 +459,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
             Api.Group.Wrapper.Configuration wConfig = new Api.Group.Wrapper.Configuration(_Sdk);
             Api.Group.Wrapper.Group wGroup = new Api.Group.Wrapper.Group(_Sdk);
-            
+
             try
             {
                 Api.Group.Model.ModelsGetGroupConfigurationResponseV1? gConfigCheck = wConfig.GetGroupConfigurationAdminV1(
@@ -720,7 +720,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 .Build(leaderboard_code, _Sdk.Namespace));
             Assert.IsNotNull(dcLeaderboard);
             Assert.IsTrue(dcLeaderboard!.IsDeleted!);
-        }        
+        }
 
         [Test]
         public void PlatformServiceTests()

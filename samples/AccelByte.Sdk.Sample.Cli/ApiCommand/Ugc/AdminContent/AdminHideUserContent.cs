@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","adminhideusercontent")]
-    public class AdminHideUserContentCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "adminhideusercontent")]
+    public class AdminHideUserContentCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "AdminHideUserContent"; } }
+        public string OperationName { get { return "AdminHideUserContent"; } }
 
         [SdkCommandArgument("contentId")]
         public string ContentId { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
         [SdkCommandData("body")]
         public ModelsHideContentRequest Body { get; set; } = new ModelsHideContentRequest();
-                
+
         public AdminHideUserContentCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent(_SDK);
 
             AdminHideUserContent operation = new AdminHideUserContent(
-                ContentId,                
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                ContentId,
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateContentResponse? response = wrapper.AdminHideUserContent(operation);
             if (response == null)
                 return "No response from server.";

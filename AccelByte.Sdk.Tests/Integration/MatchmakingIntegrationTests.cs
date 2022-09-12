@@ -81,7 +81,7 @@ namespace AccelByte.Sdk.Tests.Integration
             Assert.IsNotNull(serverResp);
         }
 
-        [Test]        
+        [Test]
         public void DSMCServiceTests()
         {
             Assert.IsNotNull(_Sdk);
@@ -101,7 +101,7 @@ namespace AccelByte.Sdk.Tests.Integration
             Session wSession = new Session(_Sdk);
             Admin wDsmcAdmin = new Admin(_Sdk);
 
-            Api.Sessionbrowser.Wrapper.Session wSBSession = new Api.Sessionbrowser.Wrapper.Session(_Sdk);            
+            Api.Sessionbrowser.Wrapper.Session wSBSession = new Api.Sessionbrowser.Wrapper.Session(_Sdk);
 
             //Create a session
             Api.Sessionbrowser.Model.ModelsCreateSessionRequest createSession = new Api.Sessionbrowser.Model.ModelsCreateSessionRequest()

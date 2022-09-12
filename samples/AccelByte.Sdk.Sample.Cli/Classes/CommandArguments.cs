@@ -88,13 +88,13 @@ namespace AccelByte.Sdk.Sample.Cli
                         else
                         {
                             cIndex += 1;
-                        }                        
+                        }
 
-                        if (aValue != String.Empty) 
+                        if (aValue != String.Empty)
                         {
                             if (aValue.Length > 2)
                             {
-                                if ((aValue.Substring(0,1) == "'") && (aValue.Substring(aValue.Length -1,1) == "'"))
+                                if ((aValue.Substring(0, 1) == "'") && (aValue.Substring(aValue.Length - 1, 1) == "'"))
                                     aValue = aValue.Substring(1, aValue.Length - 2);
                             }
                         }
@@ -182,7 +182,7 @@ namespace AccelByte.Sdk.Sample.Cli
                         else if (aKey == "ws")
                         {
                             IsWebSocket = true;
-                        }                        
+                        }
                         else if (aKey == "ws-payload")
                         {
                             if (aValue == String.Empty)

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","adminuploadcontentscreenshot")]
-    public class AdminUploadContentScreenshotCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "adminuploadcontentscreenshot")]
+    public class AdminUploadContentScreenshotCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "AdminUploadContentScreenshot"; } }
+        public string OperationName { get { return "AdminUploadContentScreenshot"; } }
 
         [SdkCommandArgument("contentId")]
         public string ContentId { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
         [SdkCommandData("body")]
         public ModelsCreateScreenshotRequest Body { get; set; } = new ModelsCreateScreenshotRequest();
-                
+
         public AdminUploadContentScreenshotCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent(_SDK);
 
             AdminUploadContentScreenshot operation = new AdminUploadContentScreenshot(
-                ContentId,                
-                Namespace,                
-                Body                
-            );            
-            
+                ContentId,
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateScreenshotResponse? response = wrapper.AdminUploadContentScreenshot(operation);
             if (response == null)
                 return "No response from server.";

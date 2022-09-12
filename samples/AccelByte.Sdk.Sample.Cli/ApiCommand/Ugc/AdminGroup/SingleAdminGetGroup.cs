@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","singleadmingetgroup")]
-    public class SingleAdminGetGroupCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "singleadmingetgroup")]
+    public class SingleAdminGetGroupCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "SingleAdminGetGroup"; } }
+        public string OperationName { get { return "SingleAdminGetGroup"; } }
 
         [SdkCommandArgument("groupId")]
         public string GroupId { get; set; } = String.Empty;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminGroup wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminGroup(_SDK);
 
             SingleAdminGetGroup operation = new SingleAdminGetGroup(
-                GroupId,                
-                Namespace                
-            );            
-            
+                GroupId,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateGroupResponse? response = wrapper.SingleAdminGetGroup(operation);
             if (response == null)
                 return "No response from server.";

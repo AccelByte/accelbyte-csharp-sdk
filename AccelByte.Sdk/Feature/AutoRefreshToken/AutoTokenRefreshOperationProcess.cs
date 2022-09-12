@@ -48,10 +48,10 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                                 {
                                     sdk.LoginClient(true, refreshTokenRepo.RefreshThreshold);
                                 }
-                            }                            
+                            }
                         }
                     }
-                }                
+                }
             }
 
             return operation;

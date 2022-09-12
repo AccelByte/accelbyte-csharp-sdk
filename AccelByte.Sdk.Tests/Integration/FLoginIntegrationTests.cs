@@ -20,7 +20,7 @@ using AccelByte.Sdk.Core.Client;
 using AccelByte.Sdk.Tests.Model;
 
 namespace AccelByte.Sdk.Tests.Integration
-{    
+{
     [TestFixture(Category = "FluentIntegration")]
     [Explicit]
     public class FLoginIntegrationTests : BaseIntegrationTest
@@ -43,19 +43,19 @@ namespace AccelByte.Sdk.Tests.Integration
             _Sdk?.Logout();
         }
 
-        protected string GetPhantauthToken(string username,string tokenType)
+        protected string GetPhantauthToken(string username, string tokenType)
         {
             string url = String.Format(@"https://phantauth.net/user/{0}/token/{1}", username.Trim(), tokenType.Trim().ToLower());
 
             HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Get, url);
             if (DefaultHttpClient.Http == null)
                 return String.Empty;
-            
+
             HttpResponseMessage response = DefaultHttpClient.Http.Send(req);
             return Helper.ConvertInputStreamToString(response.Content.ReadAsStream());
         }
 
-        protected PhantauthTokens GetPhantauthAuthorizedToken(string clientId,string clientSecret,string authorizationToken)
+        protected PhantauthTokens GetPhantauthAuthorizedToken(string clientId, string clientSecret, string authorizationToken)
         {
             string url = "https://phantauth.net/auth/token";
 

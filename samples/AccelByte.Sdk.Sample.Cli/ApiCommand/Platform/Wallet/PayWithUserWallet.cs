@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","paywithuserwallet")]
-    public class PayWithUserWalletCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "paywithuserwallet")]
+    public class PayWithUserWalletCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PayWithUserWallet"; } }
+        public string OperationName { get { return "PayWithUserWallet"; } }
 
         [SdkCommandArgument("currencyCode")]
         public string CurrencyCode { get; set; } = String.Empty;
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public PaymentRequest Body { get; set; } = new PaymentRequest();
-                
+
         public PayWithUserWalletCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
 
             PayWithUserWallet operation = new PayWithUserWallet(
-                CurrencyCode,                
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                CurrencyCode,
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PlatformWallet? response = wrapper.PayWithUserWallet(operation);
             if (response == null)
                 return "No response from server.";

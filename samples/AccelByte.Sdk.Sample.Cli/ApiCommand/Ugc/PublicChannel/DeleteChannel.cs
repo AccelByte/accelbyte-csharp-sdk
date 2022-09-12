@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","deletechannel")]
-    public class DeleteChannelCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "deletechannel")]
+    public class DeleteChannelCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "DeleteChannel"; } }
+        public string OperationName { get { return "DeleteChannel"; } }
 
         [SdkCommandArgument("channelId")]
         public string ChannelId { get; set; } = String.Empty;
@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicChannel wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicChannel(_SDK);
 
             DeleteChannel operation = new DeleteChannel(
-                ChannelId,                
-                Namespace,                
-                UserId                
-            );            
-            
+                ChannelId,
+                Namespace,
+                UserId
+            );
+
             wrapper.DeleteChannel(operation);
             return String.Empty;
         }

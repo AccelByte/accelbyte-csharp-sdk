@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass","getuserparticipatedseasons")]
-    public class GetUserParticipatedSeasonsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass", "getuserparticipatedseasons")]
+    public class GetUserParticipatedSeasonsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Seasonpass"; } }
+        public string ServiceName { get { return "Seasonpass"; } }
 
-        public string OperationName{ get { return "GetUserParticipatedSeasons"; } }
+        public string OperationName { get { return "GetUserParticipatedSeasons"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -48,12 +48,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Season wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Season(_SDK);
 
             GetUserParticipatedSeasons operation = new GetUserParticipatedSeasons(
-                Namespace,                
-                UserId,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                UserId,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Seasonpass.Model.ListUserSeasonInfoPagingSlicedResult? response = wrapper.GetUserParticipatedSeasons(operation);
             if (response == null)
                 return "No response from server.";

@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","publiccreateusernamespaceslot")]
-    public class PublicCreateUserNamespaceSlotCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "publiccreateusernamespaceslot")]
+    public class PublicCreateUserNamespaceSlotCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "PublicCreateUserNamespaceSlot"; } }
+        public string OperationName { get { return "PublicCreateUserNamespaceSlot"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,13 +40,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
         [SdkCommandArgument("checksum")]
         public string Checksum { get; set; } = String.Empty;
-                    
+
         [SdkCommandArgument("customAttribute")]
         public string CustomAttribute { get; set; } = String.Empty;
-                    
+
         [SdkCommandFile("file")]
         public Stream? File { get; set; }
-                    
+
         public PublicCreateUserNamespaceSlotCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -57,15 +57,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.Slot wrapper = new AccelByte.Sdk.Api.Social.Wrapper.Slot(_SDK);
 
             PublicCreateUserNamespaceSlot operation = new PublicCreateUserNamespaceSlot(
-                Namespace,                
-                UserId,                
-                Label,                
-                Tags,                
-                Checksum,                
-                CustomAttribute,                
-                File                
-            );            
-            
+                Namespace,
+                UserId,
+                Label,
+                Tags,
+                Checksum,
+                CustomAttribute,
+                File
+            );
+
             wrapper.PublicCreateUserNamespaceSlot(operation);
             return String.Empty;
         }

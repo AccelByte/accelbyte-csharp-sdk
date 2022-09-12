@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","clearcache")]
-    public class ClearCacheCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "clearcache")]
+    public class ClearCacheCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "ClearCache"; } }
+        public string OperationName { get { return "ClearCache"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,9 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Config(_SDK);
 
             ClearCache operation = new ClearCache(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             wrapper.ClearCache(operation);
             return String.Empty;
         }

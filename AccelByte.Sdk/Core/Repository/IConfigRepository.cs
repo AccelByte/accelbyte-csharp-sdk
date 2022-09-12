@@ -14,9 +14,9 @@ namespace AccelByte.Sdk.Core.Repository
 
         string ClientSecret { get; }
 
-        string AppName{ get; }
+        string AppName { get; }
 
-        string TraceIdVersion{ get; }
+        string TraceIdVersion { get; }
 
         string Namespace { get; }
 

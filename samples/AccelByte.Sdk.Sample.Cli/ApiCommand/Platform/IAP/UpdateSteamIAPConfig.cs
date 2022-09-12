@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updatesteamiapconfig")]
-    public class UpdateSteamIAPConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updatesteamiapconfig")]
+    public class UpdateSteamIAPConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateSteamIAPConfig"; } }
+        public string OperationName { get { return "UpdateSteamIAPConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public SteamIAPConfigRequest Body { get; set; } = new SteamIAPConfigRequest();
-                
+
         public UpdateSteamIAPConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             UpdateSteamIAPConfig operation = new UpdateSteamIAPConfig(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.SteamIAPConfigInfo? response = wrapper.UpdateSteamIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

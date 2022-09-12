@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","gettemplatesluglocalizationstemplatev1admin")]
-    public class GetTemplateSlugLocalizationsTemplateV1AdminCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "gettemplatesluglocalizationstemplatev1admin")]
+    public class GetTemplateSlugLocalizationsTemplateV1AdminCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "GetTemplateSlugLocalizationsTemplateV1Admin"; } }
+        public string OperationName { get { return "GetTemplateSlugLocalizationsTemplateV1Admin"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -51,13 +51,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             GetTemplateSlugLocalizationsTemplateV1Admin operation = new GetTemplateSlugLocalizationsTemplateV1Admin(
-                Namespace,                
-                TemplateSlug,                
-                After,                
-                Before,                
-                Limit                
-            );            
-            
+                Namespace,
+                TemplateSlug,
+                After,
+                Before,
+                Limit
+            );
+
             AccelByte.Sdk.Api.Lobby.Model.ModelGetAllNotificationTemplateSlugResp? response = wrapper.GetTemplateSlugLocalizationsTemplateV1Admin(operation);
             if (response == null)
                 return "No response from server.";

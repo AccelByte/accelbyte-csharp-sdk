@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","pay")]
-    public class PayCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "pay")]
+    public class PayCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "Pay"; } }
+        public string OperationName { get { return "Pay"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public PaymentToken Body { get; set; } = new PaymentToken();
-                
+
         public PayCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -51,13 +51,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentStation wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentStation(_SDK);
 
             Pay operation = new Pay(
-                Namespace,                
-                PaymentOrderNo,                
-                (PaymentProvider is null ? null : PayPaymentProvider.NewValue(PaymentProvider)),                
-                ZipCode,                
-                Body                
-            );            
-            
+                Namespace,
+                PaymentOrderNo,
+                (PaymentProvider is null ? null : PayPaymentProvider.NewValue(PaymentProvider)),
+                ZipCode,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PaymentProcessResult? response = wrapper.Pay(operation);
             if (response == null)
                 return "No response from server.";

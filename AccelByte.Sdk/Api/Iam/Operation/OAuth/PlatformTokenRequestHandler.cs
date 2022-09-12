@@ -53,7 +53,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     ///   * Substitute endpoint: /iam/v3/oauth/platforms/{platformId}/token [POST]
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PlatformTokenRequestHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -96,8 +96,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 PlatformTokenRequestHandler op = new PlatformTokenRequestHandler(this,
-                    namespace_,                    
-                    platformId                    
+                    namespace_,
+                    platformId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -112,36 +112,36 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
-            
-            
+
+
             if (builder.DeviceId is not null) FormParams["device_id"] = builder.DeviceId;
             if (builder.PlatformToken is not null) FormParams["platform_token"] = builder.PlatformToken;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PlatformTokenRequestHandler(
-            string namespace_,            
-            string platformId,            
-            string? deviceId,            
-            string? platformToken            
+            string namespace_,
+            string platformId,
+            string? deviceId,
+            string? platformToken
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
-            
-            
+
+
             if (deviceId is not null) FormParams["device_id"] = deviceId;
             if (platformToken is not null) FormParams["platform_token"] = platformToken;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -156,9 +156,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.OauthmodelTokenResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -171,9 +171,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.OauthmodelTokenResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

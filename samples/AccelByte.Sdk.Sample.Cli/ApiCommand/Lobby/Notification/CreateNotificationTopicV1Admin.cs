@@ -17,21 +17,21 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","createnotificationtopicv1admin")]
-    public class CreateNotificationTopicV1AdminCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "createnotificationtopicv1admin")]
+    public class CreateNotificationTopicV1AdminCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "CreateNotificationTopicV1Admin"; } }
+        public string OperationName { get { return "CreateNotificationTopicV1Admin"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelCreateTopicRequestV1 Body { get; set; } = new ModelCreateTopicRequestV1();
-                
+
         public CreateNotificationTopicV1AdminCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,10 +42,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             CreateNotificationTopicV1Admin operation = new CreateNotificationTopicV1Admin(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             wrapper.CreateNotificationTopicV1Admin(operation);
             return String.Empty;
         }

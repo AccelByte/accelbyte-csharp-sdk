@@ -81,7 +81,7 @@ namespace AccelByte.Sdk.Sample.Cli
 
                             Console.Write("Response:\n{0}", response);
                         }
-                    }                    
+                    }
                 }
                 else if (cArgs.OperationName == "")
                 {
@@ -106,7 +106,7 @@ namespace AccelByte.Sdk.Sample.Cli
                 else if (cArgs.OperationName == "login")
                 {
                     AccelByteSDK sdk = SdkHelper.CreateSdkAndLogin(cArgs);
-                }                
+                }
                 else
                 {
                     AccelByteSDK sdk = SdkHelper.CreateSdkAndLogin(cArgs);
@@ -120,16 +120,16 @@ namespace AccelByte.Sdk.Sample.Cli
                     {
                         string response = cmd.Run();
                         Console.WriteLine("Response:\n{0}", response);
-                    }                    
-                } 
+                    }
+                }
 
-		        return 0;               
+                return 0;
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine("Exception: {0}", ex.Message);
-		        return 2;
+                return 2;
             }
         }
     }

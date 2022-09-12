@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class EventlogEventDescriptions_OpExts
     {
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleAgentType? Execute(
             this AgentTypeDescriptionHandler.AgentTypeDescriptionHandlerBuilder builder
         )
@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).AgentTypeDescriptionHandler(op);
         }
 
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleAgentType? Execute(
             this SpecificAgentTypeDescriptionHandler.SpecificAgentTypeDescriptionHandlerBuilder builder
         )
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificAgentTypeDescriptionHandler(op);
         }
 
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleEventID? Execute(
             this EventIDDescriptionHandler.EventIDDescriptionHandlerBuilder builder
         )
@@ -45,7 +45,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).EventIDDescriptionHandler(op);
         }
 
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleEventID? Execute(
             this SpecificEventIDDescriptionHandler.SpecificEventIDDescriptionHandlerBuilder builder
         )
@@ -56,7 +56,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificEventIDDescriptionHandler(op);
         }
 
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleEventLevel? Execute(
             this EventLevelDescriptionHandler.EventLevelDescriptionHandlerBuilder builder
         )
@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).EventLevelDescriptionHandler(op);
         }
 
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleEventLevel? Execute(
             this SpecificEventLevelDescriptionHandler.SpecificEventLevelDescriptionHandlerBuilder builder
         )
@@ -78,7 +78,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificEventLevelDescriptionHandler(op);
         }
 
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleEventType? Execute(
             this EventTypeDescriptionHandler.EventTypeDescriptionHandlerBuilder builder
         )
@@ -89,7 +89,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).EventTypeDescriptionHandler(op);
         }
 
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleEventType? Execute(
             this SpecificEventTypeDescriptionHandler.SpecificEventTypeDescriptionHandlerBuilder builder
         )
@@ -100,7 +100,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificEventTypeDescriptionHandler(op);
         }
 
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleUX? Execute(
             this UXNameDescriptionHandler.UXNameDescriptionHandlerBuilder builder
         )
@@ -111,7 +111,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).UXNameDescriptionHandler(op);
         }
 
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleUX? Execute(
             this SpecificUXDescriptionHandler.SpecificUXDescriptionHandlerBuilder builder
         )

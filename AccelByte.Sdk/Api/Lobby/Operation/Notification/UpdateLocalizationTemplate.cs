@@ -48,10 +48,10 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             )
             {
                 UpdateLocalizationTemplate op = new UpdateLocalizationTemplate(this,
-                    body,                    
-                    namespace_,                    
-                    templateLanguage,                    
-                    templateSlug                    
+                    body,
+                    namespace_,
+                    templateLanguage,
+                    templateSlug
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -69,35 +69,35 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             PathParams["templateLanguage"] = templateLanguage;
             PathParams["templateSlug"] = templateSlug;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateLocalizationTemplate(
-            string namespace_,            
-            string templateLanguage,            
-            string templateSlug,            
-            Model.ModelUpdateTemplateRequest body            
+            string namespace_,
+            string templateLanguage,
+            string templateSlug,
+            Model.ModelUpdateTemplateRequest body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["templateLanguage"] = templateLanguage;
             PathParams["templateSlug"] = templateSlug;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -112,16 +112,16 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

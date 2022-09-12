@@ -17,14 +17,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal","checkreadiness")]
-    public class CheckReadinessCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("legal", "checkreadiness")]
+    public class CheckReadinessCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Legal"; } }
+        public string ServiceName { get { return "Legal"; } }
 
-        public string OperationName{ get { return "CheckReadiness"; } }
+        public string OperationName { get { return "CheckReadiness"; } }
 
         public CheckReadinessCommand(AccelByteSDK sdk)
         {
@@ -36,8 +36,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.Utility wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.Utility(_SDK);
 
             CheckReadiness operation = new CheckReadiness(
-            );            
-            
+            );
+
             AccelByte.Sdk.Api.Legal.Model.LegalReadinessStatusResponse? response = wrapper.CheckReadiness(operation);
             if (response == null)
                 return "No response from server.";

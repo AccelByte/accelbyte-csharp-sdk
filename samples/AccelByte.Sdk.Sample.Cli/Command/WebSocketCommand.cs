@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Sample.Cli.Command
             return newObj;
         }
 
-        public List<Type> GetModelTypes(string serviceName,bool isRequestTypeOnly)
+        public List<Type> GetModelTypes(string serviceName, bool isRequestTypeOnly)
         {
             if (!_ServiceTypes.ContainsKey(serviceName))
                 throw new Exception("WebSocket '" + serviceName + "' does not exists.");
@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Sample.Cli.Command
                     }
                     else
                         modelTypes.Add(t);
-                }                    
+                }
             }
 
             return modelTypes;

@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Tests
         [Obsolete]
         public override string? Security { get; set; } = Operation.SECURITY_BASIC;
 
-        public HttpbinAnythingOperation AddPathParam(string key,string value)
+        public HttpbinAnythingOperation AddPathParam(string key, string value)
         {
             PathParams.Add(key, value);
             return this;

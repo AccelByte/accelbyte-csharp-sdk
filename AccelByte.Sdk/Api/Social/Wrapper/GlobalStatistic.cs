@@ -24,12 +24,13 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             get { return Operation.GetGlobalStatItems.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public Model.GlobalStatItemPagingSlicedResult? GetGlobalStatItems(GetGlobalStatItems input) {
+
+        public Model.GlobalStatItemPagingSlicedResult? GetGlobalStatItems(GetGlobalStatItems input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
