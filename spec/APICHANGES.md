@@ -1,3 +1,163 @@
+# C# Server SDK v0.17.0
+
+## cloudsave Service
+
+### What's New
+---
+* `POST` /cloudsave/v1/admin/namespaces/{namespace}/users/bulk/records/size Bulk get player records size
+* `GET` /cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}/size Get player record size
+
+## dsmc Service
+
+### What's New
+---
+* `GET` /dsmcontroller/namespaces/{namespace}/images/limit DS Image Limit for Client
+
+### What's Changed
+---
+`GET` /dsmcontroller/admin/namespaces/{namespace}/images/limit DS Image Limit  
+    Return Type
+
+        Insert data.non_persistent_image_used_in_deployment_number
+
+## gametelemetry Service
+
+### What's Changed
+---
+`GET` /game-telemetry/v1/admin/namespaces/{namespace}/events Get Events  
+    Parameters
+
+        Modify startTime //Start time of data to be queried. Default: Current time in UTC minus 1 day.
+        Modify endTime //End time of data to be queried. Default: Current time in UTC.
+
+## iam Service
+
+### What's New
+---
+* `PATCH` /iam/v3/admin/namespaces/{namespace}/bans/users/disabled Bulk unban user
+* `PUT` /iam/v3/admin/namespaces/{namespace}/users/{userId}/password Update User Password
+* `POST` /iam/v3/namespace/{namespace}/token/request Request code to get game token
+* `GET` /iam/v3/public/namespaces/{namespace}/agerestrictions/countries/{countryCode} Public get age restriction by country code
+* `GET` /iam/v3/public/namespaces/{namespace}/users/{userId}/platforms/justice Get User Justice Platform Accounts
+* `POST` /iam/v3/token/exchange Generate game token by code
+* `POST` /iam/v3/admin/namespaces/{namespace}/bans/users Bulk ban user
+
+### What's Changed
+---
+`GET` /iam/v2/public/namespaces/{namespace}/countries/{countryCode}/agerestrictions Public get age restriction by country code  
+    Return Type
+
+        Insert Namespace
+`GET` /iam/v3/admin/inputValidations Admin Get Input Validations  
+    Return Type
+
+        Insert data.validation.blockedWord
+`PUT` /iam/v3/admin/inputValidations Admin Update Input Validations  
+    Parameters
+
+        Insert body.validation.blockedWord
+`POST` /iam/v3/admin/namespaces/{namespace}/users/{userId}/headless/code/verify Verify or consume verification code.   
+    Parameters
+
+        Modify body.validateOnly
+`POST` /iam/v3/authenticateWithLink Authentication with platform link  
+    Return Type
+
+        Modify display_name
+        Modify refresh_expires_in
+        Modify refresh_token
+        Modify user_id
+        Modify xuid
+`POST` /iam/v3/headless/token Create headless account and response token  
+    Return Type
+
+        Modify display_name
+        Modify refresh_expires_in
+        Modify refresh_token
+        Modify user_id
+        Modify xuid
+`POST` /iam/v3/oauth/mfa/verify Verify 2FA code  
+    Return Type
+
+        Modify display_name
+        Modify refresh_expires_in
+        Modify refresh_token
+        Modify user_id
+        Modify xuid
+`POST` /iam/v3/oauth/token OAuth2 access token generation endpoint  
+    Return Type
+
+        Modify display_name
+        Modify refresh_expires_in
+        Modify refresh_token
+        Modify user_id
+        Modify xuid
+`POST` /iam/v3/oauth/verify OAuth2 token verification API  
+    Return Type
+
+        Modify display_name
+        Modify refresh_expires_in
+        Modify refresh_token
+        Modify user_id
+        Modify xuid
+`GET` /iam/v3/public/inputValidations Public Get Input Validations  
+    Return Type
+
+        Insert data.validation.blockedWord
+`POST` /iam/v3/public/namespaces/{namespace}/users/me/code/verify Validate or consume verification code sent to user  
+    Parameters
+
+        Modify body.languageTag
+        Modify body.validateOnly
+`POST` /iam/v3/public/namespaces/{namespace}/users/me/headless/code/verify Verify or consume verification code.  
+    Parameters
+
+        Modify body.validateOnly
+`POST` /iam/v4/admin/users/me/mfa/backupCode Generate backup codes  
+    Return Type
+
+        Modify invalidCodes
+`GET` /iam/v4/admin/users/me/mfa/backupCode Get backup codes  
+    Return Type
+
+        Modify invalidCodes
+`POST` /iam/v4/admin/users/me/mfa/backupCode/enable Enable 2FA backup codes  
+    Return Type
+
+        Modify invalidCodes
+`POST` /iam/v4/public/namespaces/{namespace}/users Create User  
+    Parameters
+
+        Modify body.code
+        Modify body.displayName
+        Modify body.password
+        Modify body.passwordMD5Sum
+        Modify body.reachMinimumAge
+`POST` /iam/v4/public/namespaces/{namespace}/users/me/headless/code/verify Upgrade headless account and automatically verified the email address if it is succeeded  
+    Parameters
+
+        Modify body.reachMinimumAge
+        Modify body.validateOnly
+`POST` /iam/v4/public/namespaces/{namespace}/users/me/mfa/backupCode Generate backup codes  
+    Return Type
+
+        Modify invalidCodes
+`GET` /iam/v4/public/namespaces/{namespace}/users/me/mfa/backupCode Get backup codes  
+    Return Type
+
+        Modify invalidCodes
+`POST` /iam/v4/public/namespaces/{namespace}/users/me/mfa/backupCode/enable Enable 2FA backup codes  
+    Return Type
+
+        Modify invalidCodes
+
+## platform Service
+
+### What's New
+---
+* `GET` /platform/admin/namespaces/{namespace}/invoice/details.csv Download invoice details
+* `GET` /platform/admin/namespaces/{namespace}/invoice/summary Generate invoice summary
+
 # C# Server SDK v0.16.0
 
 ## achievement Service

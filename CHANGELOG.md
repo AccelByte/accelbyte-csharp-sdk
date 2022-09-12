@@ -1,3 +1,11 @@
+<a name="v0.17.0"></a>
+## [v0.17.0]
+- Added Tic Tac Toe sample apps (Local Server, Game Client, and AWS Lambda)
+- Fixed awesome message parsing
+- Moved integration tests into different classes respective to AB Cloud service name
+- Added common use cases documents [here](docs/common_use_cases.md)
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.16.0"></a>
 ## [v0.16.0]
 - Fixed bug on web socket execute routing in CLI sample app
