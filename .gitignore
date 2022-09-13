@@ -402,5 +402,9 @@ FodyWeavers.xsd
 .local/*
 .nuget/*
 
+*/.dotnet/*
+*/.local/*
+*/.nuget/*
+
 # TAP test results
 *.tap
