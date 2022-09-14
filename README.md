@@ -7,7 +7,9 @@ This SDK was generated from OpenAPI spec included in the [spec](spec) directory.
 ## Setup
 This SDK requires .NET 6.0 SDK to be installed.
 
-### Import SDK Project
+## Installation
+
+### 1. Import SDK Project
 
 ```
 cd /path/to/your_solution
@@ -21,6 +23,14 @@ dotnet add reference ../AccelByte.Sdk/AccelByte.Sdk.csproj
 
 Or open the solution and build the project, then use the compiled binary in your project.
 
+### 2. Add Package from Nuget
+```
+cd /path/to/your_solution/your_project
+dotnet add package AccelByte.Sdk
+```
+
+## Usage
+
 ### Environment Variables
 
 The following environment variables need to be set when using `DefaultConfigRepository`.
@@ -31,8 +41,6 @@ The following environment variables need to be set when using `DefaultConfigRepo
 | `AB_CLIENT_ID`     | Yes                                              | abcdef0123456789abcdef0123456789 |
 | `AB_CLIENT_SECRET` | Yes, but only if you use a private `AB_CLIENT_ID`| ab#c,d)ef(ab#c,d)ef(ab#c,d)ef(ab |
 | `AB_NAMESPACE`     | Yes                                              | accelbyte                        |
-
-## Usage
 
 ### Instantiation
     
