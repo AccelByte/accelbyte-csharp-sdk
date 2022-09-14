@@ -74,13 +74,19 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
         {
             _RefreshToken = refreshToken;
             _RefreshThreshold = refreshThreshold;
-            _IsRefreshInProgress = false;
+            lock (_ROPLock)
+            {
+                _IsRefreshInProgress = false;
+            }            
         }
 
         public void UpdateRefreshToken(string refreshToken)
         {
             _RefreshToken = refreshToken;
-            _IsRefreshInProgress = false;
+            lock (_ROPLock)
+            {
+                _IsRefreshInProgress = false;
+            }            
         }
     }
 }

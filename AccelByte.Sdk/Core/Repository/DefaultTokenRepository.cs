@@ -67,15 +67,27 @@ namespace AccelByte.Sdk.Core.Repository
         }
 
         private LoginType _LoginType = LoginType.User;
-        public LoginType LoginType { get => _LoginType; }
+        public LoginType LoginType
+        {
+            get
+            {
+                lock (_TokenLock)
+                {
+                    return _LoginType;
+                }
+            }
+        }
 
 
         public string GetToken()
         {
-            if (_Token != null)
-                return _Token;
-            else
-                throw new Exception("No token stored.");
+            lock (_TokenLock)
+            {
+                if (_Token != null)
+                    return _Token;
+                else
+                    throw new Exception("No token stored.");
+            }
         }
 
         public virtual void RemoveToken()
@@ -134,7 +146,10 @@ namespace AccelByte.Sdk.Core.Repository
 
         public void StoreToken(string token)
         {
-            _Token = token;
+            lock (_TokenLock)
+            {
+                _Token = token;
+            }            
         }
 
         public void SetTokenExpiry(int value)

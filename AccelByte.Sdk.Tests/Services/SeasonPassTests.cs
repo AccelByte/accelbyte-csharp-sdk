@@ -33,9 +33,14 @@ namespace AccelByte.Sdk.Tests.Services
 
             // Arrange store
             List<StoreInfo>? listStores = _Sdk.Platform.Store.ListStoresOp.Execute(_Sdk.Namespace);
+            if (listStores == null)
+            {
+                Assert.Fail("List stores is null");
+                return;
+            }
 
             // Check list of stores
-            if (listStores!.Count > 0)
+            if (listStores.Count > 0)
             {
                 // Draft store is exist. Grab the storeId from the first store on list
                 defaultDraftStoreId = listStores[0].StoreId!;
@@ -189,10 +194,15 @@ namespace AccelByte.Sdk.Tests.Services
                 return;
 
             List<StoreInfo>? listStores = _Sdk.Platform.Store.ListStoresOp.Execute(_Sdk.Namespace);
+            if (listStores == null)
+            {
+                Assert.Fail("List stores is null");
+                return;
+            }
 
             // Check list of stores
             String defaultDraftStoreId;
-            if (listStores!.Count > 0)
+            if (listStores.Count > 0)
             {
                 // Draft store is exist. Grab the storeId from the first store on list
                 defaultDraftStoreId = listStores[0].StoreId!;

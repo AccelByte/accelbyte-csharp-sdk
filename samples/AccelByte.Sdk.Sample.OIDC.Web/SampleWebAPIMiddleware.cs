@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Http;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Api;
 using AccelByte.Sdk.Core.Util;
+using AccelByte.Sdk.Core.Client;
 
 namespace AccelByte.Sdk.Sample.OIDC.Web
 {
@@ -26,8 +27,7 @@ namespace AccelByte.Sdk.Sample.OIDC.Web
 
         protected OAuthTokens GetAuthorizedToken(ProviderSpecification spec, string authorizationToken)
         {
-            HttpClient client = new HttpClient();
-            DiscoveryData dData = DiscoveryData.Retrieve(client, spec.DiscoveryUrl);
+            DiscoveryData dData = DiscoveryData.Retrieve(DefaultHttpClient.Http, spec.DiscoveryUrl);
 
             HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, dData.TokenEndpoint);
             req.Content = new FormUrlEncodedContent(new Dictionary<string, string>()
@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.OIDC.Web
                 {"code", authorizationToken }
             });
 
-            HttpResponseMessage response = client.Send(req);
+            HttpResponseMessage response = DefaultHttpClient.Http.Send(req);
             string jsonString = Helper.ConvertInputStreamToString(response.Content.ReadAsStream());
 
             return JsonSerializer.Deserialize<OAuthTokens>(jsonString)!;

@@ -84,7 +84,13 @@ namespace AccelByte.Sdk.Sample.Cli
 
         public int TokenExpiryIn
         {
-            get => (_Store != null ? _Store.TokenExpiryIn : 0);
+            get
+            {
+                lock (_TokenLock)
+                {
+                    return (_Store != null ? _Store.TokenExpiryIn : 0);
+                }
+            }
         }
 
         public int SecondsUntilExpiry
@@ -94,11 +100,20 @@ namespace AccelByte.Sdk.Sample.Cli
 
         public long IssuedTimestamp
         {
-            get => (_Store != null ? _Store.IssuedTimestamp : 0);
+            get
+            {
+                lock (_TokenLock)
+                {
+                    return (_Store != null ? _Store.IssuedTimestamp : 0);
+                }                
+            }
             set
             {
-                if (_Store != null)
-                    _Store.IssuedTimestamp = value;
+                lock (_TokenLock)
+                {
+                    if (_Store != null)
+                        _Store.IssuedTimestamp = value;
+                }                
             }
         }
 

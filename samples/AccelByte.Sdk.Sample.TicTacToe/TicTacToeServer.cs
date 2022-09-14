@@ -184,7 +184,10 @@ namespace AccelByte.Sdk.Sample.TicTacToe
             SendNotificationToUser(mData.P2UserId, WSTOPIC_UPDATE, mUpdate);
             //
 
-            int win = DeduceWinner(mData.BoardData!, mData.BoardSize);
+            if (mData.BoardData == null)
+                return;
+
+            int win = DeduceWinner(mData.BoardData, mData.BoardSize);
             if (win == 1)
             {
                 mData.WinnerUserId = mData.P1UserId;

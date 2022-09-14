@@ -465,10 +465,14 @@ namespace AccelByte.Sdk.Tests.Integration
                 Api.Group.Model.ModelsGetGroupConfigurationResponseV1? gConfigCheck = wConfig.GetGroupConfigurationAdminV1(
                     Api.Group.Operation.GetGroupConfigurationAdminV1.Builder
                     .Build(initialConfigCode, _Sdk.Namespace));
-
-                //Initial config exists. Grab the role identifiers.
-                defaultAdminRoleId = gConfigCheck!.GroupAdminRoleId!;
-                defaultMemberRoleId = gConfigCheck!.GroupMemberRoleId!;
+                if (gConfigCheck != null)
+                {
+                    //Initial config exists. Grab the role identifiers.
+                    defaultAdminRoleId = gConfigCheck.GroupAdminRoleId!;
+                    defaultMemberRoleId = gConfigCheck.GroupMemberRoleId!;
+                }
+                else
+                    Assert.Fail("ModelsGetGroupConfigurationResponseV1 null");
             }
             catch (Exception x)
             {
