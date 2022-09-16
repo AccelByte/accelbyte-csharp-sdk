@@ -80,6 +80,7 @@ namespace AccelByte.Sdk.Tests.Services
             //Finally, recheck if the data is truly deleted.
             HttpResponseException? hrx = Assert.Throws<HttpResponseException>(() =>
             {
+                DisableRetry();
                 ModelUserResponse? gUser = _Sdk.Iam.Users.GetUserByUserIDOp
                     .Execute(_Sdk.Namespace, user_id);
             });

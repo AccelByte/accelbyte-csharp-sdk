@@ -15,17 +15,19 @@ namespace AccelByte.Sdk.Tests.Services
 {
     public abstract class BaseServiceTests : BaseIntegrationTest
     {
+        HttpClientPolicy? _RetryPolicy = null;
+
         [OneTimeSetUp]
         public void Startup()
         {
-            HttpClientPolicy policy = HttpClientPolicy.Default;
-            policy.MaxRetryCount = 1000;
-            policy.RetryInterval = 1000;
-            policy.RetryLogicHandler = new ResponseCodeCheckLogicHandler("425");
+            _RetryPolicy = HttpClientPolicy.Default;
+            _RetryPolicy.MaxRetryCount = 1000;
+            _RetryPolicy.RetryInterval = 1000;
+            _RetryPolicy.RetryLogicHandler = new ResponseCodeCheckLogicHandler("425");
 
             _Sdk = AccelByteSDK.Builder
                 .SetHttpClient(ReliableHttpClient.Builder
-                    .SetDefaultPolicy(policy)
+                    .SetDefaultPolicy(_RetryPolicy)
                     .Build())
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()
@@ -40,6 +42,19 @@ namespace AccelByte.Sdk.Tests.Services
         public void End()
         {
             _Sdk?.Logout();
+        }
+
+        [SetUp]
+        public void ResetPolicy()
+        {
+            if (_RetryPolicy != null)
+                _RetryPolicy.RetryOnException = true;
+        }
+
+        public void DisableRetry()
+        {
+            if (_RetryPolicy != null)
+                _RetryPolicy.RetryOnException = false;
         }
     }
 }

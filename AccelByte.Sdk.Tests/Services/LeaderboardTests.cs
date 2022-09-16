@@ -89,6 +89,7 @@ namespace AccelByte.Sdk.Tests.Services
             #endregion
 
             //Finally, recheck if the data is truly deleted.
+            DisableRetry();
             ModelsGetLeaderboardConfigResp? dcLeaderboard = _Sdk.Leaderboard.LeaderboardConfiguration.GetLeaderboardConfigurationAdminV1Op
                 .Execute(leaderboard_code, _Sdk.Namespace);
             Assert.IsNotNull(dcLeaderboard);

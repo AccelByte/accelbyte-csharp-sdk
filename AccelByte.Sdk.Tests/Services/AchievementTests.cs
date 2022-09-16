@@ -104,6 +104,7 @@ namespace AccelByte.Sdk.Tests.Services
             //Finally, recheck if the data is truly deleted.
             HttpResponseException? hrx = Assert.Throws<HttpResponseException>(() =>
             {
+                DisableRetry();
                 ModelsAchievementResponse? dResp = _Sdk.Achievement.Achievements.AdminGetAchievementOp
                     .Execute("csharp-sdk-test", _Sdk.Namespace);
             });

@@ -82,6 +82,7 @@ namespace AccelByte.Sdk.Tests.Services
             //Finally, recheck if the data is truly deleted.
             HttpResponseException? hrx = Assert.Throws<HttpResponseException>(() =>
             {
+                DisableRetry();
                 gRecord = _Sdk.Cloudsave.PublicGameRecord.GetGameRecordHandlerV1Op
                     .Execute("foo_bar_record", _Sdk.Namespace);
             });

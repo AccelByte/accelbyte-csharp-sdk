@@ -27,6 +27,8 @@ namespace AccelByte.Sdk.Tests.Services
 
             try
             {
+                DisableRetry();
+                
                 //Get user's own profile info, will throw an exception if profile does not exists which is expected.
                 UserProfilePrivateInfo? check = _Sdk.Basic.UserProfile.GetMyProfileInfoOp
                     .Execute(_Sdk.Namespace);

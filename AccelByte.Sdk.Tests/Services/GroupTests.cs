@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Tests.Services
 
             try
             {
+                DisableRetry();
                 ModelsGetGroupConfigurationResponseV1? gConfigCheck = _Sdk.Group.Configuration.GetGroupConfigurationAdminV1Op
                     .Execute(initialConfigCode, _Sdk.Namespace);
                 if (gConfigCheck != null)
@@ -66,6 +67,7 @@ namespace AccelByte.Sdk.Tests.Services
 
             try
             {
+                DisableRetry();
                 #region Create group configuration
                 ModelsCreateGroupConfigurationRequestV1 gcRequest = new ModelsCreateGroupConfigurationRequestV1()
                 {
@@ -143,6 +145,7 @@ namespace AccelByte.Sdk.Tests.Services
             //Finally, recheck if the data is truly deleted.
             HttpResponseException? hrx = Assert.Throws<HttpResponseException>(() =>
             {
+                DisableRetry();
                 ModelsGroupResponseV1? gGroup = _Sdk.Group.Group.GetSingleGroupPublicV1Op
                     .Execute(group_id, _Sdk.Namespace);
             });

@@ -45,6 +45,7 @@ namespace AccelByte.Sdk.Tests.Services
                 });
             #endregion
 
+            DisableRetry();
             #region Update steam's playtime
             try
             {

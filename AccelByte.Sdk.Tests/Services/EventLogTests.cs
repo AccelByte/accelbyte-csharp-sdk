@@ -42,6 +42,7 @@ namespace AccelByte.Sdk.Tests.Services
 
             try
             {
+                DisableRetry();
                 #region Get specific user's event
                 ModelsEventResponseV2? cResp = _Sdk.Eventlog.EventV2.GetEventSpecificUserV2HandlerOp
                     .SetOffset(0)

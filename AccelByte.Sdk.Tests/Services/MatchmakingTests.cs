@@ -107,6 +107,7 @@ namespace AccelByte.Sdk.Tests.Services
             //Finally, recheck if the data is truly deleted.
             HttpResponseException? hrx = Assert.Throws<HttpResponseException>(() =>
             {
+                DisableRetry();
                 ModelsChannelV1? gResp = _Sdk.Matchmaking.Matchmaking.GetSingleMatchmakingChannelOp
                     .Execute(channel_name, _Sdk.Namespace);
             });
