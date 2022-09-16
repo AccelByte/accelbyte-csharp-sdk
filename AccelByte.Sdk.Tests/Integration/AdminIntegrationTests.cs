@@ -618,35 +618,35 @@ namespace AccelByte.Sdk.Tests.Integration
             }
 
             //Get the user
-            Api.Iam.Model.ModelUserResponse? gUser = wIamUser.GetUserByUserID(
-                Api.Iam.Operation.GetUserByUserID.Builder
+            Api.Iam.Model.ModelUserResponseV3? gUser = wIamUser.AdminGetUserByUserIdV3(
+                Api.Iam.Operation.AdminGetUserByUserIdV3.Builder
                 .Build(_Sdk.Namespace, user_id));
             Assert.IsNotNull(gUser);
             Assert.AreEqual("CSharp Server SDK Test", gUser!.DisplayName);
 
             //Update user
-            Api.Iam.Model.ModelUserUpdateRequest updateUser = new Api.Iam.Model.ModelUserUpdateRequest()
+            Api.Iam.Model.ModelUserUpdateRequestV3 updateUser = new Api.Iam.Model.ModelUserUpdateRequestV3()
             {
                 DateOfBirth = "1996-01-10"
             };
 
-            Api.Iam.Model.ModelUserResponse? uuResp = wIamUser.UpdateUser(
-                Api.Iam.Operation.UpdateUser.Builder
+            Api.Iam.Model.ModelUserResponseV3? uuResp = wIamUserV4.AdminUpdateUserV4(
+                Api.Iam.Operation.AdminUpdateUserV4.Builder
                 .Build(updateUser, _Sdk.Namespace, user_id));
             Assert.IsNotNull(uuResp);
             if (uuResp != null)
                 Assert.AreEqual("1996-01-10", uuResp.DateOfBirth?.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
 
             //Delete user
-            wIamUser.DeleteUser(
-                Api.Iam.Operation.DeleteUser.Builder
+            wIamUser.AdminDeleteUserInformationV3(
+                Api.Iam.Operation.AdminDeleteUserInformationV3.Builder
                 .Build(_Sdk.Namespace, user_id));
 
             //Finally, recheck if the data is truly deleted.
             HttpResponseException? hrx = Assert.Throws<HttpResponseException>(() =>
             {
-                Api.Iam.Model.ModelUserResponse? gUser = wIamUser.GetUserByUserID(
-                    Api.Iam.Operation.GetUserByUserID.Builder
+                Api.Iam.Model.ModelUserResponseV3? gUser = wIamUser.AdminGetUserByUserIdV3(
+                    Api.Iam.Operation.AdminGetUserByUserIdV3.Builder
                     .Build(_Sdk.Namespace, user_id));
             });
         }

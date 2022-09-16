@@ -54,19 +54,19 @@ namespace AccelByte.Sdk.Tests.Services
             }
 
             #region Get user data by user id
-            ModelUserResponse? gUser = _Sdk.Iam.Users.GetUserByUserIDOp
+            ModelUserResponseV3? gUser = _Sdk.Iam.Users.AdminGetUserByUserIdV3Op
                 .Execute(_Sdk.Namespace, user_id);
             #endregion
             Assert.IsNotNull(gUser);
             Assert.AreEqual("CSharp Server SDK Test", gUser!.DisplayName);
 
             #region Update a user
-            ModelUserUpdateRequest updateUser = new ModelUserUpdateRequest()
+            ModelUserUpdateRequestV3 updateUser = new ModelUserUpdateRequestV3()
             {
                 DateOfBirth = "1996-01-10"
             };
 
-            ModelUserResponse? uuResp = _Sdk.Iam.Users.UpdateUserOp
+            ModelUserResponseV3? uuResp = _Sdk.Iam.UsersV4.AdminUpdateUserV4Op
                 .Execute(updateUser, _Sdk.Namespace, user_id);
             #endregion
             Assert.IsNotNull(uuResp);
@@ -74,14 +74,14 @@ namespace AccelByte.Sdk.Tests.Services
                 Assert.AreEqual("1996-01-10", uuResp.DateOfBirth?.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
 
             #region Delete a user
-            _Sdk.Iam.Users.DeleteUserOp.Execute(_Sdk.Namespace, user_id);
+            _Sdk.Iam.Users.AdminDeleteUserInformationV3Op.Execute(_Sdk.Namespace, user_id);
             #endregion
 
             //Finally, recheck if the data is truly deleted.
             HttpResponseException? hrx = Assert.Throws<HttpResponseException>(() =>
             {
                 DisableRetry();
-                ModelUserResponse? gUser = _Sdk.Iam.Users.GetUserByUserIDOp
+                ModelUserResponseV3? gUser = _Sdk.Iam.Users.AdminGetUserByUserIdV3Op
                     .Execute(_Sdk.Namespace, user_id);
             });
         }
