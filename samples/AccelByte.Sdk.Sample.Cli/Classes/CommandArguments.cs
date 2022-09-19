@@ -11,6 +11,7 @@ using System.IO;
 
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
+using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli
 {
@@ -53,6 +54,8 @@ namespace AccelByte.Sdk.Sample.Cli
         public bool IsLogEnabled { get; private set; } = false;
 
         public bool IsInteractive { get; private set; } = false;
+
+        public bool IsRetryOnWSMessageError { get; private set; } = false;
 
         public CommandArguments(string[] args)
         {
@@ -209,6 +212,10 @@ namespace AccelByte.Sdk.Sample.Cli
                         {
                             IsLogEnabled = true;
                         }
+                        else if (aKey == "retry-on-ws-message-error")
+                        {
+                            IsRetryOnWSMessageError = true;
+                        }
                         else
                             _Parameters.Add(aKey, aValue);
                     }
@@ -237,7 +244,8 @@ namespace AccelByte.Sdk.Sample.Cli
                 + "\t--ws-payload\tSet web socket data payload to send\n"
                 + "\t--ws-payload-file\tSpecify a file to be loaded as web socket data payload\n"
                 + "\t--ws-listen\tStart listening mode for web socket service\n"
-                + "\t--interactive\tUse interactive mode for sending web socket data.\n"
+                + "\t--interactive\tUse interactive mode for sending web socket data\n"
+                + "\t--retry-on-ws-message-error\tRetry sending ws message on 'invalid control message' or 'compressed frame' exception\n"
                 + "\nUser Login:\n"
                 + "\tAccelByte.Sdk.Sample.CLI.exe --op login --user <username> --password <password>\n\n"
                 + "Client Login:\n"

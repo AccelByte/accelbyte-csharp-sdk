@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Sample.Cli
                         throw new Exception("Unspecified service name for websocket service.");
 
                     AccelByteSDK sdk = SdkHelper.CreateSdkAndLogin(cArgs);
-                    WebSocketCommand wsCmd = new WebSocketCommand(sdk.Configuration);
+                    WebSocketCommand wsCmd = new WebSocketCommand(sdk.Configuration, cArgs.IsRetryOnWSMessageError);
                     if (cArgs.IsWebSocketListenMode)
                         wsCmd.Listen(cArgs.ServiceName);
                     else

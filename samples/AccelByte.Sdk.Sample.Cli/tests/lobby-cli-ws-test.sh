@@ -58,6 +58,7 @@ printf 'type: acceptFriendsNotif\nfriendId: Z2diy49m' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 2 'AcceptFriendsNotif' test.out
@@ -68,6 +69,7 @@ printf 'type: acceptFriendsRequest\nid: mey8RVLu\nfriendId: 7n0mO6Cm' > $TEMP_FI
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 3 'AcceptFriendsRequest' test.out
@@ -78,6 +80,7 @@ printf 'type: acceptFriendsResponse\nid: H2BGnP4D\ncode: 0' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 4 'AcceptFriendsResponse' test.out
@@ -88,6 +91,7 @@ printf 'type: blockPlayerNotif\nblockedUserId: MnCmUzGU\nuserId: kuPYt3mh' > $TE
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 5 'BlockPlayerNotif' test.out
@@ -98,6 +102,7 @@ printf 'type: blockPlayerRequest\nid: f4X99eeX\nblockUserId: P2BFHyg9\nnamespace
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 6 'BlockPlayerRequest' test.out
@@ -108,6 +113,7 @@ printf 'type: blockPlayerResponse\nid: Ax3Zh9U5\nblockUserId: 5AhThvlg\ncode: 96
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 7 'BlockPlayerResponse' test.out
@@ -118,6 +124,7 @@ printf 'type: cancelFriendsNotif\nuserId: 0j1RLZM0' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 8 'CancelFriendsNotif' test.out
@@ -128,6 +135,7 @@ printf 'type: cancelFriendsRequest\nid: R2yTlDze\nfriendId: ITcLJy0w' > $TEMP_FI
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 9 'CancelFriendsRequest' test.out
@@ -138,6 +146,7 @@ printf 'type: cancelFriendsResponse\nid: NqDXKbsu\ncode: 3' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 10 'CancelFriendsResponse' test.out
@@ -148,6 +157,7 @@ printf 'type: cancelMatchmakingRequest\nid: huJqtUct\ngameMode: zmYACFbA\nisTemp
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 11 'CancelMatchmakingRequest' test.out
@@ -158,6 +168,7 @@ printf 'type: cancelMatchmakingResponse\nid: 86gUTT18\ncode: 17' > $TEMP_FILE_UP
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 12 'CancelMatchmakingResponse' test.out
@@ -168,6 +179,7 @@ printf 'type: channelChatNotif\nchannelSlug: w2fzd2pE\nfrom: x7evmiCY\npayload: 
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 13 'ChannelChatNotif' test.out
@@ -178,6 +190,7 @@ printf 'type: clientResetRequest\nnamespace: EvInv16X\nuserId: l9hTCrse' > $TEMP
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 14 'ClientResetRequest' test.out
@@ -188,6 +201,7 @@ printf 'type: connectNotif\nlobbySessionId: KnXspSyG' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 15 'ConnectNotif' test.out
@@ -198,6 +212,7 @@ printf 'type: disconnectNotif\nconnectionId: D13CeN6X\nnamespace: SivW1z4A' > $T
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 16 'DisconnectNotif' test.out
@@ -208,6 +223,7 @@ printf 'type: dsNotif\nalternateIps: [bvAJD8vA,7N7U0xrc,8MfSmJLW]\ncustomAttribu
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 17 'DsNotif' test.out
@@ -218,6 +234,7 @@ printf 'type: errorNotif\nmessage: F8wxSFWv' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 18 'ErrorNotif' test.out
@@ -228,6 +245,7 @@ printf 'type: exitAllChannel\nnamespace: je6HMPIo\nuserId: 1sMBoMVu' > $TEMP_FIL
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 19 'ExitAllChannel' test.out
@@ -238,6 +256,7 @@ printf 'type: friendsStatusRequest\nid: crJu2DVE' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 20 'FriendsStatusRequest' test.out
@@ -248,6 +267,7 @@ printf 'type: friendsStatusResponse\nid: qbLMQIE7\nactivity: [yysaDWHs,Af9iM20U,
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 21 'FriendsStatusResponse' test.out
@@ -258,6 +278,7 @@ printf 'type: getAllSessionAttributeRequest\nid: nG3572gI' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 22 'GetAllSessionAttributeRequest' test.out
@@ -268,6 +289,7 @@ printf 'type: getAllSessionAttributeResponse\nid: ovsdcZQu\nattributes: {"i1dOu5
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 23 'GetAllSessionAttributeResponse' test.out
@@ -278,6 +300,7 @@ printf 'type: getFriendshipStatusRequest\nid: KoHaWPYj\nfriendId: WPDMt4oY' > $T
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 24 'GetFriendshipStatusRequest' test.out
@@ -288,6 +311,7 @@ printf 'type: getFriendshipStatusResponse\nid: QaKxFXSP\ncode: 15\nfriendshipSta
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 25 'GetFriendshipStatusResponse' test.out
@@ -298,6 +322,7 @@ printf 'type: getSessionAttributeRequest\nid: DxGQ4r3E\nkey: k72Oarqo' > $TEMP_F
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 26 'GetSessionAttributeRequest' test.out
@@ -308,6 +333,7 @@ printf 'type: getSessionAttributeResponse\nid: avDsz363\ncode: 12\nvalue: oiYwMz
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 27 'GetSessionAttributeResponse' test.out
@@ -318,6 +344,7 @@ printf 'type: heartbeat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 28 'Heartbeat' test.out
@@ -328,6 +355,7 @@ printf 'type: joinDefaultChannelRequest\nid: bTbiz5gT' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 29 'JoinDefaultChannelRequest' test.out
@@ -338,6 +366,7 @@ printf 'type: joinDefaultChannelResponse\nid: 0jYbCIeD\nchannelSlug: h25HIPPk\nc
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 30 'JoinDefaultChannelResponse' test.out
@@ -348,6 +377,7 @@ printf 'type: listIncomingFriendsRequest\nid: wcYJvp3y' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 31 'ListIncomingFriendsRequest' test.out
@@ -358,6 +388,7 @@ printf 'type: listIncomingFriendsResponse\nid: 67IRQLlD\ncode: 53\nuserIds: [xAC
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 32 'ListIncomingFriendsResponse' test.out
@@ -368,6 +399,7 @@ printf 'type: listOfFriendsRequest\nid: cYFkjncW\nfriendId: szXiNKoM' > $TEMP_FI
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 33 'ListOfFriendsRequest' test.out
@@ -378,6 +410,7 @@ printf 'type: listOfFriendsResponse\nid: VsaBjYIa\ncode: 20\nfriendIds: [TyOzjm1
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 34 'ListOfFriendsResponse' test.out
@@ -388,6 +421,7 @@ printf 'type: listOnlineFriendsRequest\nid: 8mCAyzpH' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 35 'ListOnlineFriendsRequest' test.out
@@ -398,6 +432,7 @@ printf 'type: listOutgoingFriendsRequest\nid: Ie6W9oLy' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 36 'ListOutgoingFriendsRequest' test.out
@@ -408,6 +443,7 @@ printf 'type: listOutgoingFriendsResponse\nid: OhTbN7N5\ncode: 90\nfriendIds: [x
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 37 'ListOutgoingFriendsResponse' test.out
@@ -418,6 +454,7 @@ printf 'type: matchmakingNotif\ncounterPartyMember: [CdgbaBc7,LROXFdAe,1INknfBB]
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 38 'MatchmakingNotif' test.out
@@ -428,6 +465,7 @@ printf 'type: messageNotif\nid: d6o16j7b\nfrom: PoxS3t5y\npayload: 1jayhLo5\nsen
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 39 'MessageNotif' test.out
@@ -438,6 +476,7 @@ printf 'type: offlineNotificationRequest\nid: M4agqxzY' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 40 'OfflineNotificationRequest' test.out
@@ -448,6 +487,7 @@ printf 'type: offlineNotificationResponse\nid: yiJ13Z5v\ncode: 36' > $TEMP_FILE_
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 41 'OfflineNotificationResponse' test.out
@@ -458,6 +498,7 @@ printf 'type: onlineFriends\nid: NavuxECx\ncode: 32\nonlineFriendIds: [lUbgQ7U6,
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 42 'OnlineFriends' test.out
@@ -468,6 +509,7 @@ printf 'type: partyChatNotif\nid: Kk4G7oFg\nfrom: namHLIxI\npayload: mrAPHFDP\nr
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 43 'PartyChatNotif' test.out
@@ -478,6 +520,7 @@ printf 'type: partyChatRequest\nid: PzhRuZjC\nfrom: SAeppm5y\npayload: RZkj4CCe\
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 44 'PartyChatRequest' test.out
@@ -488,6 +531,7 @@ printf 'type: partyChatResponse\nid: R9XWXPrA\ncode: 91' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 45 'PartyChatResponse' test.out
@@ -498,6 +542,7 @@ printf 'type: partyCreateRequest\nid: B8aUWFrb' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 46 'PartyCreateRequest' test.out
@@ -508,6 +553,7 @@ printf 'type: partyCreateResponse\nid: 29cjFJD1\ncode: 3\ninvitationToken: kzV1X
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 47 'PartyCreateResponse' test.out
@@ -518,6 +564,7 @@ printf 'type: partyDataUpdateNotif\ncustomAttributes: {"QNYsjGDO":{},"H0K3cBOG":
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 48 'PartyDataUpdateNotif' test.out
@@ -528,6 +575,7 @@ printf 'type: partyGetInvitedNotif\nfrom: 7BktAvQT\ninvitationToken: XnycMSm8\np
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 49 'PartyGetInvitedNotif' test.out
@@ -538,6 +586,7 @@ printf 'type: partyInfoRequest\nid: m4tpqUZf' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 50 'PartyInfoRequest' test.out
@@ -548,6 +597,7 @@ printf 'type: partyInfoResponse\nid: iwK2Ctq6\ncode: 80\ncustomAttributes: {"de2
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 51 'PartyInfoResponse' test.out
@@ -558,6 +608,7 @@ printf 'type: partyInviteNotif\ninviteeId: kaGm2quE\ninviterId: 2tjQzdMT' > $TEM
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 52 'PartyInviteNotif' test.out
@@ -568,6 +619,7 @@ printf 'type: partyInviteRequest\nid: h3XGTnjD\nfriendId: aCKnQOlV' > $TEMP_FILE
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 53 'PartyInviteRequest' test.out
@@ -578,6 +630,7 @@ printf 'type: partyInviteResponse\nid: ag4kPsMo\ncode: 45' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 54 'PartyInviteResponse' test.out
@@ -588,6 +641,7 @@ printf 'type: partyJoinNotif\nuserId: XnTJVEvD' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 55 'PartyJoinNotif' test.out
@@ -598,6 +652,7 @@ printf 'type: partyJoinRequest\nid: X1CqMSnr\ninvitationToken: 2fHGWRgA\npartyId
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 56 'PartyJoinRequest' test.out
@@ -608,6 +663,7 @@ printf 'type: partyJoinResponse\nid: 27sSok1h\ncode: 48\ninvitationToken: 9Ukrdf
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 57 'PartyJoinResponse' test.out
@@ -618,6 +674,7 @@ printf 'type: partyKickNotif\nleaderId: pf7kBZOo\npartyId: 6j8hrE1v\nuserId: gcI
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 58 'PartyKickNotif' test.out
@@ -628,6 +685,7 @@ printf 'type: partyKickRequest\nid: gOY4hFVT\nmemberId: DDcrQrew' > $TEMP_FILE_U
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 59 'PartyKickRequest' test.out
@@ -638,6 +696,7 @@ printf 'type: partyKickResponse\nid: 8ioOhcqy\ncode: 60' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 60 'PartyKickResponse' test.out
@@ -648,6 +707,7 @@ printf 'type: partyLeaveNotif\nleaderId: 1lsmi3kb\nuserId: e8K79Ym0' > $TEMP_FIL
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 61 'PartyLeaveNotif' test.out
@@ -658,6 +718,7 @@ printf 'type: partyLeaveRequest\nid: 1G313poy\nignoreUserRegistry: True' > $TEMP
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 62 'PartyLeaveRequest' test.out
@@ -668,6 +729,7 @@ printf 'type: partyLeaveResponse\nid: bwIhSfSU\ncode: 80' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 63 'PartyLeaveResponse' test.out
@@ -678,6 +740,7 @@ printf 'type: partyPromoteLeaderRequest\nid: 1yEAvBrZ\nnewLeaderUserId: 0jUoVJCT
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 64 'PartyPromoteLeaderRequest' test.out
@@ -688,6 +751,7 @@ printf 'type: partyPromoteLeaderResponse\nid: W6lGZhaZ\ncode: 52\ninvitationToke
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 65 'PartyPromoteLeaderResponse' test.out
@@ -698,6 +762,7 @@ printf 'type: partyRejectNotif\nleaderId: tWJBkcgB\npartyId: OrkzTSDO\nuserId: r
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 66 'PartyRejectNotif' test.out
@@ -708,6 +773,7 @@ printf 'type: partyRejectRequest\nid: vl6Xmu6W\ninvitationToken: 3ihxs6Ct\nparty
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 67 'PartyRejectRequest' test.out
@@ -718,6 +784,7 @@ printf 'type: partyRejectResponse\nid: fOOgkH4h\ncode: 76\npartyId: 2S2OGkeS' > 
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 68 'PartyRejectResponse' test.out
@@ -728,6 +795,7 @@ printf 'type: personalChatHistoryRequest\nid: xp1CIxNg\nfriendId: Cs3kmRLf' > $T
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 69 'PersonalChatHistoryRequest' test.out
@@ -738,6 +806,7 @@ printf 'type: personalChatHistoryResponse\nid: ZdJMluqg\nchat: G3AQ19e1\ncode: 9
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 70 'PersonalChatHistoryResponse' test.out
@@ -748,6 +817,7 @@ printf 'type: personalChatNotif\nid: 11Ahqono\nfrom: XngDRDh6\npayload: UxyprjKt
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 71 'PersonalChatNotif' test.out
@@ -758,6 +828,7 @@ printf 'type: personalChatRequest\nid: 1iYSnvSD\nfrom: zTeAW4h5\npayload: PEXyTr
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 72 'PersonalChatRequest' test.out
@@ -768,6 +839,7 @@ printf 'type: personalChatResponse\nid: YYsMyv5E\ncode: 48' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 73 'PersonalChatResponse' test.out
@@ -778,6 +850,7 @@ printf 'type: rejectFriendsNotif\nuserId: yVPPMBIE' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 74 'RejectFriendsNotif' test.out
@@ -788,6 +861,7 @@ printf 'type: rejectFriendsRequest\nid: Vmj8A2wm\nfriendId: KX0e4e8C' > $TEMP_FI
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 75 'RejectFriendsRequest' test.out
@@ -798,6 +872,7 @@ printf 'type: rejectFriendsResponse\nid: ocMfSVmo\ncode: 16' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 76 'RejectFriendsResponse' test.out
@@ -808,6 +883,7 @@ printf 'type: rematchmakingNotif\nbanDuration: 34' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 77 'RematchmakingNotif' test.out
@@ -818,6 +894,7 @@ printf 'type: requestFriendsNotif\nfriendId: 6szFcr1l' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 78 'RequestFriendsNotif' test.out
@@ -828,6 +905,7 @@ printf 'type: requestFriendsRequest\nid: GLUO5FIH\nfriendId: SdL7Ak6R' > $TEMP_F
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 79 'RequestFriendsRequest' test.out
@@ -838,6 +916,7 @@ printf 'type: requestFriendsResponse\nid: dsIeodAh\ncode: 0' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 80 'RequestFriendsResponse' test.out
@@ -848,6 +927,7 @@ printf 'type: sendChannelChatRequest\nid: n3LboM2U\nchannelSlug: 2v7E99C7\npaylo
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 81 'SendChannelChatRequest' test.out
@@ -858,6 +938,7 @@ printf 'type: sendChannelChatResponse\nid: eBCzViaM\ncode: 11' > $TEMP_FILE_UPLO
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 82 'SendChannelChatResponse' test.out
@@ -868,6 +949,7 @@ printf 'type: setReadyConsentNotif\nmatchId: PBuYrn2Q\nuserId: q5Yb2sEL' > $TEMP
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 83 'SetReadyConsentNotif' test.out
@@ -878,6 +960,7 @@ printf 'type: setReadyConsentRequest\nid: I33THZ8b\nmatchId: iVTX8S5Q' > $TEMP_F
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 84 'SetReadyConsentRequest' test.out
@@ -888,6 +971,7 @@ printf 'type: setReadyConsentResponse\nid: hxCJEe1n\ncode: 82' > $TEMP_FILE_UPLO
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 85 'SetReadyConsentResponse' test.out
@@ -898,6 +982,7 @@ printf 'type: setSessionAttributeRequest\nid: psaG6aog\nkey: VW7JlNCD\nnamespace
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 86 'SetSessionAttributeRequest' test.out
@@ -908,6 +993,7 @@ printf 'type: setSessionAttributeResponse\nid: aTHeri8b\ncode: 9' > $TEMP_FILE_U
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 87 'SetSessionAttributeResponse' test.out
@@ -918,6 +1004,7 @@ printf 'type: setUserStatusRequest\nid: 8pyqb3WA\nactivity: OgRSKIWW\navailabili
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 88 'SetUserStatusRequest' test.out
@@ -928,6 +1015,7 @@ printf 'type: setUserStatusResponse\nid: lYaFRQcj\ncode: 39' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 89 'SetUserStatusResponse' test.out
@@ -938,6 +1026,7 @@ printf 'type: shutdownNotif\nmessage: mx45y1Ja' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 90 'ShutdownNotif' test.out
@@ -948,6 +1037,7 @@ printf 'type: signalingP2PNotif\ndestinationId: yo3UPVkV\nmessage: msMXrlvj' > $
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 91 'SignalingP2PNotif' test.out
@@ -958,6 +1048,7 @@ printf 'type: startMatchmakingRequest\nid: XQGoo0We\nextraAttributes: KQKhu8B2\n
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 92 'StartMatchmakingRequest' test.out
@@ -968,6 +1059,7 @@ printf 'type: startMatchmakingResponse\nid: LLYPN206\ncode: 7' > $TEMP_FILE_UPLO
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 93 'StartMatchmakingResponse' test.out
@@ -978,6 +1070,7 @@ printf 'type: systemComponentsStatus\ncomponents: {"ZszcQ2bW":true,"Si2v6GgY":fa
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 94 'SystemComponentsStatus' test.out
@@ -988,6 +1081,7 @@ printf 'type: unblockPlayerNotif\nunblockedUserId: uEsRbuNb\nuserId: fjCryBpN' >
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 95 'UnblockPlayerNotif' test.out
@@ -998,6 +1092,7 @@ printf 'type: unblockPlayerRequest\nid: xJ0BQmhh\nnamespace: B6jefgkP\nunblocked
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 96 'UnblockPlayerRequest' test.out
@@ -1008,6 +1103,7 @@ printf 'type: unblockPlayerResponse\nid: XYw0mXVW\ncode: 26\nnamespace: 4ZPdyOb7
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 97 'UnblockPlayerResponse' test.out
@@ -1018,6 +1114,7 @@ printf 'type: unfriendNotif\nfriendId: f8aYFQBo' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 98 'UnfriendNotif' test.out
@@ -1028,6 +1125,7 @@ printf 'type: unfriendRequest\nid: T7yjqKzn\nfriendId: PR2UTrKu' > $TEMP_FILE_UP
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 99 'UnfriendRequest' test.out
@@ -1038,6 +1136,7 @@ printf 'type: unfriendResponse\nid: FK2qpfoU\ncode: 21' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 100 'UnfriendResponse' test.out
@@ -1048,6 +1147,7 @@ printf 'type: userBannedNotification' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 101 'UserBannedNotification' test.out
@@ -1058,6 +1158,7 @@ printf 'type: userMetricRequest\nid: jdQ4zsky' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 102 'UserMetricRequest' test.out
@@ -1068,6 +1169,7 @@ printf 'type: userMetricResponse\nid: mJPOeTaS\ncode: 93\nplayerCount: 88' > $TE
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 103 'UserMetricResponse' test.out
@@ -1078,6 +1180,7 @@ printf 'type: userStatusNotif\nactivity: q13DShys\navailability: 14\nlastSeenAt:
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 104 'UserStatusNotif' test.out

@@ -18,6 +18,14 @@ namespace AccelByte.Sdk.Core
 {
     public abstract class WebSocketService
     {
+        public const int ERROR_PROCESS_MESSAGE = 1;
+
+        public const int ERROR_WEB_SOCKET_RECEIVE = 2;
+
+        public const int ERROR_INVALID_CONTROL_MESSAGE = 11;
+
+        public const int ERROR_COMPRESSED_FRAME_RECEIVED = 12;
+
         private ClientWebSocket _Socket;
 
         private AccelByteConfig? _Config = null;
@@ -34,7 +42,7 @@ namespace AccelByte.Sdk.Core
 
         public Action<Message>? OnMessageReceived { get; set; } = null;
 
-        public Action<string>? OnReceiveError { get; set; } = null;
+        public Action<string, int>? OnReceiveError { get; set; } = null;
 
         public bool RedirectAllReceivedMessagesToMessageReceivedEvent { get; set; } = false;
 
@@ -76,18 +84,41 @@ namespace AccelByte.Sdk.Core
             var buffer = new ArraySegment<byte>(new byte[2048]);
             do
             {
-                WebSocketReceiveResult result;
+                WebSocketReceiveResult? result;
                 using (MemoryStream ms = new MemoryStream())
                 {
                     do
                     {
-                        result = await _Socket.ReceiveAsync(buffer, cancelToken);
-                        ms.Write(buffer.Array!, buffer.Offset, result.Count);
-                    }
-                    while (!result.EndOfMessage);
+                        try
+                        {
+                            result = await _Socket.ReceiveAsync(buffer, cancelToken);
+                            ms.Write(buffer.Array!, buffer.Offset, result.Count);
+                        }
+                        catch (Exception x)
+                        {
+                            if (x.Message == "The WebSocket received an invalid control message.")
+                                OnReceiveError?.Invoke(x.Message, ERROR_INVALID_CONTROL_MESSAGE);
+                            else if (x.Message == "The WebSocket received compressed frame when compression is not enabled.")
+                                OnReceiveError?.Invoke(x.Message, ERROR_COMPRESSED_FRAME_RECEIVED);
+                            else
+                                OnReceiveError?.Invoke(x.Message, ERROR_WEB_SOCKET_RECEIVE);
 
-                    if (result.MessageType == WebSocketMessageType.Close)
-                        break;
+                            result = null;
+                            break;
+                        }                        
+                    }
+                    while ((result != null) && (!result.EndOfMessage));
+
+                    if (result != null)
+                    {
+                        if (result.MessageType == WebSocketMessageType.Close)
+                            break;
+                    }
+                    else
+                    {
+                        if (ms.Length == 0)
+                            break;
+                    }
 
                     ms.Seek(0, SeekOrigin.Begin);
                     using (StreamReader reader = new StreamReader(ms, Encoding.UTF8))
@@ -120,7 +151,7 @@ namespace AccelByte.Sdk.Core
                             }
                             catch (Exception ex)
                             {
-                                OnReceiveError?.Invoke(ex.Message);
+                                OnReceiveError?.Invoke(ex.Message, ERROR_PROCESS_MESSAGE);
                             }
                         }
                     }
@@ -158,6 +189,7 @@ namespace AccelByte.Sdk.Core
 
         public async Task Disconnect()
         {
+            _ListenCts.Cancel();
             if (_Socket.State == WebSocketState.Open)
                 await _Socket.CloseAsync(WebSocketCloseStatus.NormalClosure, "", CancellationToken.None);
         }

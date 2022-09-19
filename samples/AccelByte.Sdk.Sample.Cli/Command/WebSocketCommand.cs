@@ -27,13 +27,20 @@ namespace AccelByte.Sdk.Sample.Cli.Command
 
         private AccelByteConfig _Config;
 
+        private object _RMELock = new object();
+
         private volatile Message? _ReceivedMessage = null;
 
         private volatile bool _IsError = false;
 
-        public WebSocketCommand(AccelByteConfig abConfig)
+        private volatile int _ErrorCode = 0;
+
+        private bool _RetryOnWSMessageException = false;
+
+        public WebSocketCommand(AccelByteConfig abConfig, bool retryOnWSMessageException)
         {
             _Config = abConfig;
+            _RetryOnWSMessageException = retryOnWSMessageException;
         }
 
         public WebSocketService InitializeService(AccelByteConfig abConfig, string serviceName)
@@ -81,43 +88,78 @@ namespace AccelByte.Sdk.Sample.Cli.Command
 
         public string Execute(string serviceName, string payload)
         {
-            _IsError = false;
-            _ReceivedMessage = null;
-
-            WebSocketService wsObj = InitializeService(_Config, serviceName);
-            wsObj.RedirectAllReceivedMessagesToMessageReceivedEvent = true;
-            wsObj.OnMessageReceived = (aMsg) =>
-            {
-                _ReceivedMessage = aMsg;
-            };
-            wsObj.OnReceiveError = (eMsg) =>
-            {
-                _IsError = true;
-                Console.WriteLine("Error: {0}", eMsg);
-            };
-
-            Task connectTak = wsObj.Connect(false);
-            connectTak.Wait();
-
-            Task listenTask = Task.Run(() => wsObj.Listen());
-
-            Task sendTask = wsObj.Send(payload);
-            sendTask.Wait();
-
-            //Now wait for the response message...
+            int tryCount = 1;
             while (true)
             {
-                if (_IsError == true)
-                    break;
+                WebSocketService wsObj = InitializeService(_Config, serviceName);
+                wsObj.RedirectAllReceivedMessagesToMessageReceivedEvent = true;
+                wsObj.OnMessageReceived = (aMsg) =>
+                {
+                    lock (_RMELock)
+                    {
+                        _ReceivedMessage = aMsg;
+                    }
+                };
+                wsObj.OnReceiveError = (eMsg, eCode) =>
+                {
+                    lock (_RMELock)
+                    {
+                        _IsError = true;
+                        _ErrorCode = eCode;                        
+                    }
+                    Console.WriteLine("Error: {0}", eMsg);
+                };
 
-                if (_ReceivedMessage == null)
-                    Thread.Sleep(100);
+                lock (_RMELock)
+                {
+                    _IsError = false;
+                    _ErrorCode = 0;
+                    _ReceivedMessage = null;
+                }
+
+                Task connectTak = wsObj.Connect(false);
+                connectTak.Wait();
+
+                Task listenTask = Task.Run(() => wsObj.Listen());
+
+                Task sendTask = wsObj.Send(payload);
+                sendTask.Wait();
+
+                //Now wait for the response message...
+                while (true)
+                {
+                    lock (_RMELock)
+                    {
+                        if (_IsError == true)
+                            break;
+                    }
+
+                    bool isMessageReceived = false;
+                    lock (_RMELock)
+                    {
+                        isMessageReceived = (_ReceivedMessage != null);
+                    }
+
+                    if (!isMessageReceived)
+                        Thread.Sleep(100);
+                    else
+                        break;
+                }
+
+                Task disconnectTask = wsObj.Disconnect();
+                disconnectTask.Wait();
+
+                if (_RetryOnWSMessageException)
+                {
+                    if ((_ErrorCode != WebSocketService.ERROR_INVALID_CONTROL_MESSAGE)
+                        && (_ErrorCode != WebSocketService.ERROR_COMPRESSED_FRAME_RECEIVED))
+                        break;
+
+                    tryCount++;
+                }
                 else
                     break;
             }
-
-            Task disconnectTask = wsObj.Disconnect();
-            disconnectTask.Wait();
 
             if (_IsError || (_ReceivedMessage == null))
                 return String.Empty;
@@ -127,43 +169,78 @@ namespace AccelByte.Sdk.Sample.Cli.Command
 
         public string Execute(string serviceName, object payload)
         {
-            _IsError = false;
-            _ReceivedMessage = null;
-
-            WebSocketService wsObj = InitializeService(_Config, serviceName);
-            wsObj.RedirectAllReceivedMessagesToMessageReceivedEvent = true;
-            wsObj.OnMessageReceived = (aMsg) =>
-            {
-                _ReceivedMessage = aMsg;
-            };
-            wsObj.OnReceiveError = (eMsg) =>
-            {
-                _IsError = true;
-                Console.WriteLine("Error: {0}", eMsg);
-            };
-
-            Task connectTak = wsObj.Connect(false);
-            connectTak.Wait();
-
-            Task listenTask = Task.Run(() => wsObj.Listen());
-
-            Task sendTask = wsObj.Send(payload);
-            sendTask.Wait();
-
-            //Now wait for the response message...
+            int tryCount = 1;
             while (true)
             {
-                if (_IsError == true)
-                    break;
+                WebSocketService wsObj = InitializeService(_Config, serviceName);
+                wsObj.RedirectAllReceivedMessagesToMessageReceivedEvent = true;
+                wsObj.OnMessageReceived = (aMsg) =>
+                {
+                    lock (_RMELock)
+                    {
+                        _ReceivedMessage = aMsg;
+                    }
+                };
+                wsObj.OnReceiveError = (eMsg, eCode) =>
+                {
+                    lock (_RMELock)
+                    {
+                        _IsError = true;
+                        _ErrorCode = eCode;
+                    }
+                    Console.WriteLine("Error: {0}", eMsg);
+                };
 
-                if (_ReceivedMessage == null)
-                    Thread.Sleep(100);
+                lock (_RMELock)
+                {
+                    _IsError = false;
+                    _ErrorCode = 0;
+                    _ReceivedMessage = null;
+                }
+
+                Task connectTak = wsObj.Connect(false);
+                connectTak.Wait();
+
+                Task listenTask = Task.Run(() => wsObj.Listen());
+
+                Task sendTask = wsObj.Send(payload);
+                sendTask.Wait();
+
+                //Now wait for the response message...
+                while (true)
+                {
+                    lock (_RMELock)
+                    {
+                        if (_IsError == true)
+                            break;
+                    }
+
+                    bool isMessageReceived = false;
+                    lock (_RMELock)
+                    {
+                        isMessageReceived = (_ReceivedMessage != null);
+                    }
+
+                    if (!isMessageReceived)
+                        Thread.Sleep(100);
+                    else
+                        break;
+                }
+
+                Task disconnectTask = wsObj.Disconnect();
+                disconnectTask.Wait();
+
+                if (_RetryOnWSMessageException)
+                {
+                    if ((_ErrorCode != WebSocketService.ERROR_INVALID_CONTROL_MESSAGE)
+                        && (_ErrorCode != WebSocketService.ERROR_COMPRESSED_FRAME_RECEIVED))
+                        break;
+
+                    tryCount++;
+                }
                 else
                     break;
             }
-
-            Task disconnectTask = wsObj.Disconnect();
-            disconnectTask.Wait();
 
             if (_IsError || (_ReceivedMessage == null))
                 return String.Empty;
