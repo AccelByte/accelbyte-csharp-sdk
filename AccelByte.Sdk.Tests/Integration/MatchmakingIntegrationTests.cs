@@ -311,7 +311,7 @@ namespace AccelByte.Sdk.Tests.Integration
             bool? is_response_received = null;
 
             LobbyService lobby = new LobbyService(_Sdk.Configuration);
-            lobby.OnReceiveError = (eMessage) =>
+            lobby.OnReceiveError = (eMessage, eCode) =>
             {
                 is_error = true;
             };
