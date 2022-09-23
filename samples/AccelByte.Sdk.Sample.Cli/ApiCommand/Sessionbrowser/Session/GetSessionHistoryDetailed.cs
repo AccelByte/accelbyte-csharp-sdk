@@ -11,18 +11,18 @@ using System.Collections.Generic;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Sample.Cli.Command;
 
-using AccelByte.Sdk.Api.Matchmaking.Wrapper;
-using AccelByte.Sdk.Api.Matchmaking.Model;
-using AccelByte.Sdk.Api.Matchmaking.Operation;
+using AccelByte.Sdk.Api.Sessionbrowser.Wrapper;
+using AccelByte.Sdk.Api.Sessionbrowser.Model;
+using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
-namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("matchmaking", "getsessionhistorydetailed")]
+    [SdkConsoleCommand("sessionbrowser", "getsessionhistorydetailed")]
     public class GetSessionHistoryDetailedCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Sessionbrowser"; } }
 
         public string OperationName { get { return "GetSessionHistoryDetailed"; } }
 
@@ -39,22 +39,18 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
+            AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
-#pragma warning disable ab_deprecated_operation
             GetSessionHistoryDetailed operation = new GetSessionHistoryDetailed(
                 MatchID,
                 Namespace
             );
-#pragma warning restore ab_deprecated_operation
 
-#pragma warning disable ab_deprecated_operation_wrapper
-            List<AccelByte.Sdk.Api.Matchmaking.Model.ServiceGetSessionHistoryDetailedResponseItem>? response = wrapper.GetSessionHistoryDetailed(operation);
+            List<AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsGetSessionHistoryDetailedResponseItem>? response = wrapper.GetSessionHistoryDetailed(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

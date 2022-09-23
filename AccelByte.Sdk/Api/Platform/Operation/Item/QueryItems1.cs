@@ -46,6 +46,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public string? Features { get; set; }
 
+            public bool? IncludeSubCategoryItem { get; set; }
+
             public QueryItems1ItemStatus? ItemStatus { get; set; }
 
             public QueryItems1ItemType? ItemType { get; set; }
@@ -56,7 +58,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public string? Region { get; set; }
 
-            public string? SortBy { get; set; }
+            public List<QueryItems1SortBy>? SortBy { get; set; }
 
             public string? StoreId { get; set; }
 
@@ -101,6 +103,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
+            public QueryItems1Builder SetIncludeSubCategoryItem(bool _includeSubCategoryItem)
+            {
+                IncludeSubCategoryItem = _includeSubCategoryItem;
+                return this;
+            }
+
             public QueryItems1Builder SetItemStatus(QueryItems1ItemStatus _itemStatus)
             {
                 ItemStatus = _itemStatus;
@@ -131,7 +139,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryItems1Builder SetSortBy(string _sortBy)
+            public QueryItems1Builder SetSortBy(List<QueryItems1SortBy> _sortBy)
             {
                 SortBy = _sortBy;
                 return this;
@@ -183,6 +191,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.BaseAppId is not null) QueryParams["baseAppId"] = builder.BaseAppId;
             if (builder.CategoryPath is not null) QueryParams["categoryPath"] = builder.CategoryPath;
             if (builder.Features is not null) QueryParams["features"] = builder.Features;
+            if (builder.IncludeSubCategoryItem != null) QueryParams["includeSubCategoryItem"] = Convert.ToString(builder.IncludeSubCategoryItem)!;
             if (builder.ItemStatus is not null) QueryParams["itemStatus"] = builder.ItemStatus.Value;
             if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType.Value;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
@@ -195,6 +204,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+            CollectionFormatMap["sortBy"] = "csv";
 
 
 
@@ -209,12 +219,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string? baseAppId,
             string? categoryPath,
             string? features,
+            bool? includeSubCategoryItem,
             QueryItems1ItemStatus? itemStatus,
             QueryItems1ItemType? itemType,
             int? limit,
             int? offset,
             string? region,
-            string? sortBy,
+            List<QueryItems1SortBy>? sortBy,
             string? storeId,
             string? tags,
             string? targetNamespace
@@ -227,6 +238,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (baseAppId is not null) QueryParams["baseAppId"] = baseAppId;
             if (categoryPath is not null) QueryParams["categoryPath"] = categoryPath;
             if (features is not null) QueryParams["features"] = features;
+            if (includeSubCategoryItem != null) QueryParams["includeSubCategoryItem"] = Convert.ToString(includeSubCategoryItem)!;
             if (itemStatus is not null) QueryParams["itemStatus"] = itemStatus.Value;
             if (itemType is not null) QueryParams["itemType"] = itemType.Value;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
@@ -239,6 +251,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+            CollectionFormatMap["sortBy"] = "csv";
 
 
 
@@ -364,6 +377,57 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         public QueryItems1ItemType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class QueryItems1SortBy : StringEnum<QueryItems1SortBy>
+    {
+        public static readonly QueryItems1SortBy Name
+            = new QueryItems1SortBy("name");
+
+        public static readonly QueryItems1SortBy Nameasc
+            = new QueryItems1SortBy("name:asc");
+
+        public static readonly QueryItems1SortBy Namedesc
+            = new QueryItems1SortBy("name:desc");
+
+        public static readonly QueryItems1SortBy CreatedAt
+            = new QueryItems1SortBy("createdAt");
+
+        public static readonly QueryItems1SortBy CreatedAtasc
+            = new QueryItems1SortBy("createdAt:asc");
+
+        public static readonly QueryItems1SortBy CreatedAtdesc
+            = new QueryItems1SortBy("createdAt:desc");
+
+        public static readonly QueryItems1SortBy UpdatedAt
+            = new QueryItems1SortBy("updatedAt");
+
+        public static readonly QueryItems1SortBy UpdatedAtasc
+            = new QueryItems1SortBy("updatedAt:asc");
+
+        public static readonly QueryItems1SortBy UpdatedAtdesc
+            = new QueryItems1SortBy("updatedAt:desc");
+
+        public static readonly QueryItems1SortBy DisplayOrder
+            = new QueryItems1SortBy("displayOrder");
+
+        public static readonly QueryItems1SortBy DisplayOrderasc
+            = new QueryItems1SortBy("displayOrder:asc");
+
+        public static readonly QueryItems1SortBy DisplayOrderdesc
+            = new QueryItems1SortBy("displayOrder:desc");
+
+
+        public static implicit operator QueryItems1SortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryItems1SortBy(string enumValue)
             : base(enumValue)
         {
 

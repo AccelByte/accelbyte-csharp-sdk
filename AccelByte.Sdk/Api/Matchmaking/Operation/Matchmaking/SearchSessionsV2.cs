@@ -16,6 +16,25 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// SearchSessionsV2
     ///
+    /// 
+    /// 
+    /// 
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
+    /// Endpoint migration guide
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * Substitute endpoint: /sessionbrowser/admin/namespaces/{namespace}/sessions/history/search [GET]
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
     /// 
     /// Required Scope: social
@@ -23,6 +42,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// Search sessions. Optimize the query by differentiating query with filter namespace only and filter with namespace & other filter (partyID, userID, matchID).
     /// Query with filter namespace only will not group whole session data while query with filter namespace & other filter will include session data.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class SearchSessionsV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

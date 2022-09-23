@@ -1,3 +1,11 @@
+<a name="v0.18.0"></a>
+## [v0.18.0]
+- Fixed issues detected by coverity scan
+- Fixed service integration tests due to retry policy used by all request that expect exception.
+- Replaced deprecated operations in IAM service integration tests.
+- Fixed WS CLI issues when running on specific AMI image used by jenkins worker.
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.17.0"></a>
 ## [v0.17.0]
 - Added Tic Tac Toe sample apps (Local Server, Game Client, and AWS Lambda)

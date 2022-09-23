@@ -7,10 +7,10 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Sessionbrowser.Model
 {
-    public class ModelsUpdateSessionRequest : AccelByte.Sdk.Core.Model
+    public class ModelsMatchAttributes : AccelByte.Sdk.Core.Model
     {
-        [JsonPropertyName("game_max_player")]
-        public int? GameMaxPlayer { get; set; }
+        [JsonPropertyName("first_ticket_created_at")]
+        public long? FirstTicketCreatedAt { get; set; }
 
     }
 }

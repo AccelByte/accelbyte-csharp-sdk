@@ -62,6 +62,36 @@ namespace AccelByte.Sdk.Api
             return ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).AdminGetSession(op);
         }
 
+        public static Sessionbrowser.Model.ModelsGetSessionHistorySearchResponseV2? Execute(
+            this AdminSearchSessionsV2.AdminSearchSessionsV2Builder builder,
+            string namespace_,
+            long limit,
+            long offset
+        )
+        {
+            AdminSearchSessionsV2 op = builder.Build(
+                namespace_,
+                limit,
+                offset
+            );
+
+            return ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).AdminSearchSessionsV2(op);
+        }
+
+        public static List<Sessionbrowser.Model.ModelsGetSessionHistoryDetailedResponseItem>? Execute(
+            this GetSessionHistoryDetailed.GetSessionHistoryDetailedBuilder builder,
+            string matchID,
+            string namespace_
+        )
+        {
+            GetSessionHistoryDetailed op = builder.Build(
+                matchID,
+                namespace_
+            );
+
+            return ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).GetSessionHistoryDetailed(op);
+        }
+
         public static Sessionbrowser.Model.ModelsSessionQueryResponse? Execute(
             this QuerySession.QuerySessionBuilder builder,
             string namespace_,

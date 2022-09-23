@@ -105,7 +105,7 @@ namespace AccelByte.Sdk.Sample.Cli
                 lock (_TokenLock)
                 {
                     return (_Store != null ? _Store.IssuedTimestamp : 0);
-                }                
+                }
             }
             set
             {
@@ -113,7 +113,7 @@ namespace AccelByte.Sdk.Sample.Cli
                 {
                     if (_Store != null)
                         _Store.IssuedTimestamp = value;
-                }                
+                }
             }
         }
 

@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
 {
     public class ModelsMatchingParty : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("match_attributes")]
+        public ModelsMatchAttributes? MatchAttributes { get; set; }
+
         [JsonPropertyName("party_attributes")]
         public Dictionary<string, object>? PartyAttributes { get; set; }
 

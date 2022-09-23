@@ -59,6 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
         {
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             SearchSessionsV2 operation = new SearchSessionsV2(
                 Namespace,
                 Channel,
@@ -69,12 +70,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 Limit,
                 Offset
             );
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Matchmaking.Model.ServiceGetSessionHistorySearchResponseV2? response = wrapper.SearchSessionsV2(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

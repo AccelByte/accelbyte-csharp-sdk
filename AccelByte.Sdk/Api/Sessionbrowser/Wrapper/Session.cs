@@ -35,6 +35,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         {
             get { return Operation.AdminGetSession.Builder.SetWrapperObject(this); }
         }
+        public AdminSearchSessionsV2.AdminSearchSessionsV2Builder AdminSearchSessionsV2Op
+        {
+            get { return Operation.AdminSearchSessionsV2.Builder.SetWrapperObject(this); }
+        }
+        public GetSessionHistoryDetailed.GetSessionHistoryDetailedBuilder GetSessionHistoryDetailedOp
+        {
+            get { return Operation.GetSessionHistoryDetailed.Builder.SetWrapperObject(this); }
+        }
         public QuerySession.QuerySessionBuilder QuerySessionOp
         {
             get { return Operation.QuerySession.Builder.SetWrapperObject(this); }
@@ -113,6 +121,24 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.Payload);
         }
         public Model.ModelsAdminSessionResponse? AdminGetSession(AdminGetSession input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetSessionHistorySearchResponseV2? AdminSearchSessionsV2(AdminSearchSessionsV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ModelsGetSessionHistoryDetailedResponseItem>? GetSessionHistoryDetailed(GetSessionHistoryDetailed input)
         {
             var response = _sdk.RunRequest(input);
 

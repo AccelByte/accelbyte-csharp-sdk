@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
 
         [JsonPropertyName("error")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public RestErrorResponse? Error { get; set; }
+        public RestErrorResponseWithConflictedUserPlatformAccounts? Error { get; set; }
 
         [JsonPropertyName("expiration")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

@@ -7,38 +7,16 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Matchmaking.Model;
+using AccelByte.Sdk.Api.Sessionbrowser.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Matchmaking.Operation
+namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 {
     /// <summary>
     /// GetSessionHistoryDetailed
     ///
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /sessionbrowser/admin/namespaces/{namespace}/sessions/{sessionId}/history/detailed [GET]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [Read]
     /// 
     /// Required Scope: social
     /// 
@@ -46,7 +24,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// 
     /// if party_id value empty/null, field will not show in response body.
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetSessionHistoryDetailed : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -117,7 +94,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/matchmaking/v1/admin/namespaces/{namespace}/sessions/{matchID}/history/detailed";
+        public override string Path => "/sessionbrowser/admin/namespaces/{namespace}/sessions/{matchID}/history/detailed";
 
         public override HttpMethod Method => HttpMethod.Get;
 
@@ -128,7 +105,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public List<Model.ServiceGetSessionHistoryDetailedResponseItem>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public List<Model.ModelsGetSessionHistoryDetailedResponseItem>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -136,11 +113,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.ServiceGetSessionHistoryDetailedResponseItem>>(payload);
+                return JsonSerializer.Deserialize<List<Model.ModelsGetSessionHistoryDetailedResponseItem>>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ServiceGetSessionHistoryDetailedResponseItem>>(payload);
+                return JsonSerializer.Deserialize<List<Model.ModelsGetSessionHistoryDetailedResponseItem>>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

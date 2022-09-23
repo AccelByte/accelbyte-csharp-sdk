@@ -77,7 +77,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
             lock (_ROPLock)
             {
                 _IsRefreshInProgress = false;
-            }            
+            }
         }
 
         public void UpdateRefreshToken(string refreshToken)
@@ -86,7 +86,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
             lock (_ROPLock)
             {
                 _IsRefreshInProgress = false;
-            }            
+            }
         }
     }
 }

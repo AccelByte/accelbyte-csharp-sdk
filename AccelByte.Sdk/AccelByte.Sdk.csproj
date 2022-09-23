@@ -7,8 +7,8 @@
     <Product>AccelByte.Sdk</Product>
     <PackageId>AccelByte.Sdk</PackageId>
     <Authors>AccelByte Developers</Authors>
-    <Version>0.17.0</Version>
-    <AssemblyVersion>0.17.0</AssemblyVersion>
+    <Version>0.18.0</Version>
+    <AssemblyVersion>0.18.0</AssemblyVersion>
     <Company>AccelByte</Company>
     <Copyright>Copyright(c) AccelByte 2022</Copyright>
     <Description>AccelByte .NET (C#) SDK
@@ -18,7 +18,12 @@ A software development kit (SDK) for interacting with AccelByte services.</Descr
     <RepositoryType>git</RepositoryType>
     <PackageTags>accelbyte;sdk</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>release.md</PackageReleaseNotes>
+    <PackageReleaseNotes>[v0.18.0]
+- Fixed issues detected by coverity scan
+- Fixed service integration tests due to retry policy used by all request that expect exception.
+- Replaced deprecated operations in IAM service integration tests.
+- Fixed WS CLI issues when running on specific AMI image used by jenkins worker.
+- Update APIs. See what's changes [here](spec/APICHANGES.md)</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>icon.png</PackageIcon>
@@ -30,10 +35,6 @@ A software development kit (SDK) for interacting with AccelByte services.</Descr
       <PackagePath>\</PackagePath>
     </None>
     <None Include="..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\package\release.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

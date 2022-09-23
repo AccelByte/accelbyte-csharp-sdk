@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Iam.Model
 {
-    public class RestErrorResponse : AccelByte.Sdk.Core.Model
+    public class RestErrorResponseWithConflictedUserPlatformAccounts : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("errorCode")]
         public int? ErrorCode { get; set; }
@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
 
         [JsonPropertyName("messageVariables")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public Dictionary<string, string>? MessageVariables { get; set; }
+        public AccountcommonConflictedUserPlatformAccounts? MessageVariables { get; set; }
 
     }
 }

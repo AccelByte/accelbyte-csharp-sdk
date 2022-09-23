@@ -1,3 +1,220 @@
+# C# Server SDK v0.18.0
+
+## gametelemetry Service
+
+### What's Changed
+---
+`GET` /game-telemetry/v1/admin/namespaces/{namespace}/events Get Events  
+    Parameters
+
+        Modify endTime //End time of data to be queried. Default: Current time in UTC.
+        Modify startTime //Start time of data to be queried. Default: Current time in UTC minus 1 day.
+
+## iam Service
+
+### What's Changed
+---
+`DELETE` /iam/v3/admin/inputValidations/{field} Admin Reset Input Validations  
+    Parameters
+
+        field Notes Name of the input validation field to reset: username, displayName, or password change into Name of the input validation field to reset: email, username, displayName, or password
+        Modify field //Name of the input validation field to reset: email, username, displayName, or password
+`GET` /iam/v3/admin/namespaces/{namespace}/users/search Search User  
+    Parameters
+
+        platformId Notes Platform Id that want to be searched, supported values: steam, steamopenid, psn, xbox, epicgames, stadia, nintendo, oculus, aws cognito, facebook, google, discord, twitch, or snapchat change into Platform Id that want to be searched, supported values: steam, steamopenid, psn, xbox, epicgames, stadia, nintendo, oculus, aws cognito, facebook, google, discord, twitch, snapchat or amazon
+        Modify platformId //Platform Id that want to be searched, supported values: steam, steamopenid, psn, xbox, epicgames, stadia, nintendo, oculus, aws cognito, facebook, google, discord, twitch, snapchat or amazon
+
+## matchmaking Service
+
+### What's Changed
+---
+`POST` /matchmaking/namespaces/{namespace}/channels Create a channel  
+    Parameters
+
+        Insert body.rule_set.alliance.combination.role_flexing_enable
+        Insert body.rule_set.alliance.combination.role_flexing_player
+        Insert body.rule_set.alliance.combination.role_flexing_second
+        Insert body.rule_set.alliance_flexing_rule.combination.role_flexing_enable
+        Insert body.rule_set.alliance_flexing_rule.combination.role_flexing_player
+        Insert body.rule_set.alliance_flexing_rule.combination.role_flexing_second
+`GET` /matchmaking/namespaces/{namespace}/channels Get all channels  
+    Return Type
+
+        Insert data.ruleset.alliance.combination.role_flexing_enable
+        Insert data.ruleset.alliance.combination.role_flexing_player
+        Insert data.ruleset.alliance.combination.role_flexing_second
+        Insert data.ruleset.alliance_flexing_rule.combination.role_flexing_enable
+        Insert data.ruleset.alliance_flexing_rule.combination.role_flexing_player
+        Insert data.ruleset.alliance_flexing_rule.combination.role_flexing_second
+`POST` /matchmaking/namespaces/{namespace}/rebalance Rebalance Matchmaking based on MMR  
+    Return Type
+
+        Insert matching_allies.matching_parties.ticket_id
+`POST` /matchmaking/namespaces/{namespace}/sessions Queue joinable session  
+    Parameters
+
+        Insert body.ticket_id
+        Insert body.matching_allies.matching_parties.ticket_id
+`GET` /matchmaking/namespaces/{namespace}/sessions/{matchID}/status Query joinable session status  
+    Return Type
+
+        Insert ticket_id
+        Insert matching_allies.matching_parties.ticket_id
+`GET` /matchmaking/v1/admin/namespaces/{namespace}/channels/all/sessions/bulk Bulk get sessions  
+    Return Type
+
+        Insert ticket_id
+        Insert matching_allies.matching_parties.ticket_id
+`GET` /matchmaking/v1/admin/namespaces/{namespace}/channels/export Export channels  
+    Return Type
+
+        Insert ruleSet.alliance.combination.role_flexing_enable
+        Insert ruleSet.alliance.combination.role_flexing_player
+        Insert ruleSet.alliance.combination.role_flexing_second
+        Insert ruleSet.alliance_flexing_rule.combination.role_flexing_enable
+        Insert ruleSet.alliance_flexing_rule.combination.role_flexing_player
+        Insert ruleSet.alliance_flexing_rule.combination.role_flexing_second
+`PATCH` /matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName} Update a channel  
+    Parameters
+
+        Insert body.ruleSet.alliance.combination.role_flexing_enable
+        Insert body.ruleSet.alliance.combination.role_flexing_player
+        Insert body.ruleSet.alliance.combination.role_flexing_second
+        Insert body.ruleSet.alliance_flexing_rule.combination.role_flexing_enable
+        Insert body.ruleSet.alliance_flexing_rule.combination.role_flexing_player
+        Insert body.ruleSet.alliance_flexing_rule.combination.role_flexing_second
+`GET` /matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName} Get single channel  
+    Return Type
+
+        Insert ruleSet.alliance.combination.role_flexing_enable
+        Insert ruleSet.alliance.combination.role_flexing_player
+        Insert ruleSet.alliance.combination.role_flexing_second
+        Insert ruleSet.alliance_flexing_rule.combination.role_flexing_enable
+        Insert ruleSet.alliance_flexing_rule.combination.role_flexing_player
+        Insert ruleSet.alliance_flexing_rule.combination.role_flexing_second
+`GET` /matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/parties Get all party in a channel  
+    Return Type
+
+        Insert ticket_id
+`GET` /matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions Get all channel sessions  
+    Return Type
+
+        Insert ticket_id
+        Insert matching_allies.matching_parties.ticket_id
+`GET` /matchmaking/v1/admin/namespaces/{namespace}/sessions/{matchID}/history/detailed Get session history detailed  
+    Return Type
+
+        Insert matching_allies.matching_parties.ticket_id
+`GET` /matchmaking/v1/public/namespaces/{namespace}/channels Get all channels  
+    Return Type
+
+        Insert ruleSet.alliance.combination.role_flexing_enable
+        Insert ruleSet.alliance.combination.role_flexing_player
+        Insert ruleSet.alliance.combination.role_flexing_second
+        Insert ruleSet.alliance_flexing_rule.combination.role_flexing_enable
+        Insert ruleSet.alliance_flexing_rule.combination.role_flexing_player
+        Insert ruleSet.alliance_flexing_rule.combination.role_flexing_second
+`GET` /matchmaking/v1/public/namespaces/{namespace}/channels/{channelName} Get single channel  
+    Return Type
+
+        Insert ruleSet.alliance.combination.role_flexing_enable
+        Insert ruleSet.alliance.combination.role_flexing_player
+        Insert ruleSet.alliance.combination.role_flexing_second
+        Insert ruleSet.alliance_flexing_rule.combination.role_flexing_enable
+        Insert ruleSet.alliance_flexing_rule.combination.role_flexing_player
+        Insert ruleSet.alliance_flexing_rule.combination.role_flexing_second
+
+## platform Service
+
+### What's Changed
+---
+`GET` /platform/admin/namespaces/{namespace}/items/byCriteria Query items by criteria  
+    Parameters
+
+        Add includeSubCategoryItem //default is false, only available when search by category path, it will return all of the items(includes sub category path) under this category path
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/payment Pay with user wallet by currency code and client platform  
+    Return Type
+
+        Insert status //status
+        Modify walletStatus
+`GET` /platform/public/namespaces/{namespace}/items/byCriteria Query items by criteria  
+    Parameters
+
+        Add includeSubCategoryItem //default is false, only available when search by category path, it will return all of the items(includes sub category path) under this category path
+`GET` /platform/public/namespaces/{namespace}/users/me/wallets/{currencyCode} Get my wallet by currency code and namespace  
+    Return Type
+
+        Insert status //status
+        Modify walletStatus
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode} Get a wallet by currency code  
+    Return Type
+
+        Insert status //status
+        Modify walletStatus
+`GET` /platform/v2/admin/namespaces/{namespace}/items/byCriteria Query items by criteria  
+    Parameters
+
+        Add includeSubCategoryItem //default is false, only available when search by category path, it will return all of the items(includes sub category path) under this category path
+        Modify sortBy //default is name:asc,displayOrder:asc, allow values: [name, name:asc, name:desc, createdAt, createdAt:asc, createdAt:desc, updatedAt, updatedAt:asc, updatedAt:desc, displayOrder, displayOrder:asc, displayOrder:desc],and support sort group, eg: sortBy=name:asc,createdAt:desc. Make sure to always use more than one sort if the first sort is not an unique valuefor example, if you wish to sort by displayOrder, make sure to include other sort such as name or createdAt after the first sort, eg: displayOrder:asc,name:asc
+
+## sessionbrowser Service
+
+### What's New
+---
+* `GET` /sessionbrowser/admin/namespaces/{namespace}/sessions/history/search Search sessions
+* `GET` /sessionbrowser/admin/namespaces/{namespace}/sessions/{matchID}/history/detailed Get session history detailed
+
+### What's Changed
+---
+`GET` /sessionbrowser/admin/namespaces/{namespace}/gamesession/active/matchmaking-game Get all active session for matchmaking game, this return only dedicated session type  
+    Return Type
+
+        Insert sessions.match.matching_allies.matching_parties.match_attributes
+`GET` /sessionbrowser/admin/namespaces/{namespace}/gamesession/{sessionID} Admin get specified session by session ID  
+    Return Type
+
+        Insert match.matching_allies.matching_parties.match_attributes
+`POST` /sessionbrowser/namespaces/{namespace}/gamesession Register a new game session  
+    Return Type
+
+        Insert match.matching_allies.matching_parties.match_attributes
+`GET` /sessionbrowser/namespaces/{namespace}/gamesession Query to available game session  
+    Return Type
+
+        Insert sessions.match.matching_allies.matching_parties.match_attributes
+`GET` /sessionbrowser/namespaces/{namespace}/gamesession/bulk Query game sessions by comma separated user ids  
+    Return Type
+
+        Insert data.match.matching_allies.matching_parties.match_attributes
+`GET` /sessionbrowser/namespaces/{namespace}/gamesession/{sessionID} Get specified session by session ID  
+    Return Type
+
+        Insert match.matching_allies.matching_parties.match_attributes
+`PUT` /sessionbrowser/namespaces/{namespace}/gamesession/{sessionID} Update session  
+    Parameters
+
+        Delete body.game_current_player
+    Return Type
+
+        Insert match.matching_allies.matching_parties.match_attributes
+`DELETE` /sessionbrowser/namespaces/{namespace}/gamesession/{sessionID} Delete specified session by session ID  
+    Return Type
+
+        Insert match.matching_allies.matching_parties.match_attributes
+`POST` /sessionbrowser/namespaces/{namespace}/gamesession/{sessionID}/join Join specified session by session ID  
+    Return Type
+
+        Insert match.matching_allies.matching_parties.match_attributes
+`DELETE` /sessionbrowser/namespaces/{namespace}/gamesession/{sessionID}/localds Only use for local DS entry, will error when calling non local DS entry  
+    Return Type
+
+        Insert match.matching_allies.matching_parties.match_attributes
+`PUT` /sessionbrowser/namespaces/{namespace}/gamesession/{sessionID}/settings Update settings  
+    Return Type
+
+        Insert match.matching_allies.matching_parties.match_attributes
+
 # C# Server SDK v0.17.0
 
 ## cloudsave Service

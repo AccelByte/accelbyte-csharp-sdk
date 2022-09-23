@@ -44,6 +44,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public string? Features { get; set; }
 
+            public bool? IncludeSubCategoryItem { get; set; }
+
             public QueryItemsItemType? ItemType { get; set; }
 
             public int? Limit { get; set; }
@@ -100,6 +102,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public QueryItemsBuilder SetFeatures(string _features)
             {
                 Features = _features;
+                return this;
+            }
+
+            public QueryItemsBuilder SetIncludeSubCategoryItem(bool _includeSubCategoryItem)
+            {
+                IncludeSubCategoryItem = _includeSubCategoryItem;
                 return this;
             }
 
@@ -180,6 +188,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.BaseAppId is not null) QueryParams["baseAppId"] = builder.BaseAppId;
             if (builder.CategoryPath is not null) QueryParams["categoryPath"] = builder.CategoryPath;
             if (builder.Features is not null) QueryParams["features"] = builder.Features;
+            if (builder.IncludeSubCategoryItem != null) QueryParams["includeSubCategoryItem"] = Convert.ToString(builder.IncludeSubCategoryItem)!;
             if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType.Value;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
@@ -207,6 +216,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string? baseAppId,
             string? categoryPath,
             string? features,
+            bool? includeSubCategoryItem,
             QueryItemsItemType? itemType,
             int? limit,
             int? offset,
@@ -225,6 +235,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (baseAppId is not null) QueryParams["baseAppId"] = baseAppId;
             if (categoryPath is not null) QueryParams["categoryPath"] = categoryPath;
             if (features is not null) QueryParams["features"] = features;
+            if (includeSubCategoryItem != null) QueryParams["includeSubCategoryItem"] = Convert.ToString(includeSubCategoryItem)!;
             if (itemType is not null) QueryParams["itemType"] = itemType.Value;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;

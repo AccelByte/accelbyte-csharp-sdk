@@ -11,6 +11,8 @@
 | `/sessionbrowser/admin/namespaces/{namespace}/gamesession/active/custom-game` | GET | GetActiveCustomGameSessions | [GetActiveCustomGameSessions](../AccelByte.Sdk/Api/Sessionbrowser/Operation/Session/GetActiveCustomGameSessions.cs) | [GetActiveCustomGameSessions](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionbrowser/Session/GetActiveCustomGameSessions.cs) |
 | `/sessionbrowser/admin/namespaces/{namespace}/gamesession/active/matchmaking-game` | GET | GetActiveMatchmakingGameSessions | [GetActiveMatchmakingGameSessions](../AccelByte.Sdk/Api/Sessionbrowser/Operation/Session/GetActiveMatchmakingGameSessions.cs) | [GetActiveMatchmakingGameSessions](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionbrowser/Session/GetActiveMatchmakingGameSessions.cs) |
 | `/sessionbrowser/admin/namespaces/{namespace}/gamesession/{sessionID}` | GET | AdminGetSession | [AdminGetSession](../AccelByte.Sdk/Api/Sessionbrowser/Operation/Session/AdminGetSession.cs) | [AdminGetSession](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionbrowser/Session/AdminGetSession.cs) |
+| `/sessionbrowser/admin/namespaces/{namespace}/sessions/history/search` | GET | AdminSearchSessionsV2 | [AdminSearchSessionsV2](../AccelByte.Sdk/Api/Sessionbrowser/Operation/Session/AdminSearchSessionsV2.cs) | [AdminSearchSessionsV2](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionbrowser/Session/AdminSearchSessionsV2.cs) |
+| `/sessionbrowser/admin/namespaces/{namespace}/sessions/{matchID}/history/detailed` | GET | GetSessionHistoryDetailed | [GetSessionHistoryDetailed](../AccelByte.Sdk/Api/Sessionbrowser/Operation/Session/GetSessionHistoryDetailed.cs) | [GetSessionHistoryDetailed](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionbrowser/Session/GetSessionHistoryDetailed.cs) |
 | `/sessionbrowser/namespaces/{namespace}/gamesession` | GET | QuerySession | [QuerySession](../AccelByte.Sdk/Api/Sessionbrowser/Operation/Session/QuerySession.cs) | [QuerySession](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionbrowser/Session/QuerySession.cs) |
 | `/sessionbrowser/namespaces/{namespace}/gamesession` | POST | CreateSession | [CreateSession](../AccelByte.Sdk/Api/Sessionbrowser/Operation/Session/CreateSession.cs) | [CreateSession](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionbrowser/Session/CreateSession.cs) |
 | `/sessionbrowser/namespaces/{namespace}/gamesession/bulk` | GET | GetSessionByUserIDs | [GetSessionByUserIDs](../AccelByte.Sdk/Api/Sessionbrowser/Operation/Session/GetSessionByUserIDs.cs) | [GetSessionByUserIDs](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionbrowser/Session/GetSessionByUserIDs.cs) |
@@ -41,10 +43,15 @@
 | `models.CustomGameResponse` | [ModelsCustomGameResponse](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsCustomGameResponse.cs) |
 | `models.GameSession` | [ModelsGameSession](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsGameSession.cs) |
 | `models.GameSessionSetting` | [ModelsGameSessionSetting](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsGameSessionSetting.cs) |
+| `models.GetSessionHistoryDetailedResponseItem` | [ModelsGetSessionHistoryDetailedResponseItem](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsGetSessionHistoryDetailedResponseItem.cs) |
+| `models.GetSessionHistorySearchResponseItemV2` | [ModelsGetSessionHistorySearchResponseItemV2](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsGetSessionHistorySearchResponseItemV2.cs) |
+| `models.GetSessionHistorySearchResponseV2` | [ModelsGetSessionHistorySearchResponseV2](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsGetSessionHistorySearchResponseV2.cs) |
 | `models.JoinGameSessionRequest` | [ModelsJoinGameSessionRequest](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsJoinGameSessionRequest.cs) |
+| `models.MatchAttributes` | [ModelsMatchAttributes](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsMatchAttributes.cs) |
 | `models.MatchMaking` | [ModelsMatchMaking](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsMatchMaking.cs) |
 | `models.MatchingAlly` | [ModelsMatchingAlly](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsMatchingAlly.cs) |
 | `models.MatchingParty` | [ModelsMatchingParty](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsMatchingParty.cs) |
+| `models.Pagination` | [ModelsPagination](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsPagination.cs) |
 | `models.PagingCursor` | [ModelsPagingCursor](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsPagingCursor.cs) |
 | `models.PartyMember` | [ModelsPartyMember](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsPartyMember.cs) |
 | `models.RecentPlayerHistory` | [ModelsRecentPlayerHistory](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsRecentPlayerHistory.cs) |
@@ -58,3 +65,4 @@
 | `models.UpdateSettingsRequest` | [ModelsUpdateSettingsRequest](../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsUpdateSettingsRequest.cs) |
 | `response.Error` | [ResponseError](../AccelByte.Sdk/Api/Sessionbrowser/Model/ResponseError.cs) |
 | `restapi.ErrorResponseV2` | [RestapiErrorResponseV2](../AccelByte.Sdk/Api/Sessionbrowser/Model/RestapiErrorResponseV2.cs) |
+| `restapi.ErrorV1` | [RestapiErrorV1](../AccelByte.Sdk/Api/Sessionbrowser/Model/RestapiErrorV1.cs) |

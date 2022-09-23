@@ -44,6 +44,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("features")]
         public string? Features { get; set; }
 
+        [SdkCommandArgument("includeSubCategoryItem")]
+        public bool? IncludeSubCategoryItem { get; set; }
+
         [SdkCommandArgument("itemStatus")]
         public string? ItemStatus { get; set; }
 
@@ -60,7 +63,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string? Region { get; set; }
 
         [SdkCommandArgument("sortBy")]
-        public string? SortBy { get; set; }
+        public List<string>? SortBy { get; set; }
 
         [SdkCommandArgument("storeId")]
         public string? StoreId { get; set; }
@@ -87,12 +90,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 BaseAppId,
                 CategoryPath,
                 Features,
+                IncludeSubCategoryItem,
                 (ItemStatus is null ? null : QueryItems1ItemStatus.NewValue(ItemStatus)),
                 (ItemType is null ? null : QueryItems1ItemType.NewValue(ItemType)),
                 Limit,
                 Offset,
                 Region,
-                SortBy,
+                (SortBy is null ? null : QueryItems1SortBy.NewValue(SortBy)),
                 StoreId,
                 Tags,
                 TargetNamespace

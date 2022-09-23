@@ -7,10 +7,13 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Sessionbrowser.Model
 {
-    public class ModelsUpdateSessionRequest : AccelByte.Sdk.Core.Model
+    public class ModelsGetSessionHistorySearchResponseV2 : AccelByte.Sdk.Core.Model
     {
-        [JsonPropertyName("game_max_player")]
-        public int? GameMaxPlayer { get; set; }
+        [JsonPropertyName("data")]
+        public List<ModelsGetSessionHistorySearchResponseItemV2>? Data { get; set; }
+
+        [JsonPropertyName("pagination")]
+        public ModelsPagination? Pagination { get; set; }
 
     }
 }

@@ -149,7 +149,7 @@ namespace AccelByte.Sdk.Core.Repository
             lock (_TokenLock)
             {
                 _Token = token;
-            }            
+            }
         }
 
         public void SetTokenExpiry(int value)

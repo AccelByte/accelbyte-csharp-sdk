@@ -47,6 +47,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("features")]
         public string? Features { get; set; }
 
+        [SdkCommandArgument("includeSubCategoryItem")]
+        public bool? IncludeSubCategoryItem { get; set; }
+
         [SdkCommandArgument("itemType")]
         public string? ItemType { get; set; }
 
@@ -88,6 +91,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 BaseAppId,
                 CategoryPath,
                 Features,
+                IncludeSubCategoryItem,
                 (ItemType is null ? null : QueryItemsItemType.NewValue(ItemType)),
                 Limit,
                 Offset,

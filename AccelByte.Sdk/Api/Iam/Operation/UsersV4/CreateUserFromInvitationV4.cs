@@ -30,9 +30,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// - authType: possible value is EMAILPASSWD (see above)
     /// - country: ISO3166-1 alpha-2 two letter, e.g. US.
     /// - dateOfBirth: YYYY-MM-DD, e.g. 1990-01-01. valid values are between 1905-01-01 until current date.
-    /// - displayName: case insensitive, alphanumeric with allowed symbols dash (-), comma (,), and dot (.)
-    /// - password: 8 to 32 characters, satisfy at least 3 out of 4 conditions(uppercase, lowercase letters, numbers and special characters) and should not have more than 2 equal characters in a row.
-    /// - username: case insensitive, alphanumeric with allowed symbols underscore (_) and dot (.)
+    /// - displayName: Please refer to the rule from /v3/public/inputValidations API.
+    /// - password: Please refer to the rule from /v3/public/inputValidations API.
+    /// - username: Please refer to the rule from /v3/public/inputValidations API.
     /// </summary>
     public class CreateUserFromInvitationV4 : AccelByte.Sdk.Core.Operation
     {

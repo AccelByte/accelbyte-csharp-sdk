@@ -105,7 +105,7 @@ namespace AccelByte.Sdk.Sample.Cli.Command
                     lock (_RMELock)
                     {
                         _IsError = true;
-                        _ErrorCode = eCode;                        
+                        _ErrorCode = eCode;
                     }
                     Console.WriteLine("Error: {0}", eMsg);
                 };

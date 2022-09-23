@@ -27,6 +27,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public PlatformWalletStatus? Status { get; set; }
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
 
@@ -39,6 +44,27 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonStringEnum]
         public PlatformWalletWalletStatus? WalletStatus { get; set; }
 
+    }
+
+    public class PlatformWalletStatus : StringEnum<PlatformWalletStatus>
+    {
+        public static readonly PlatformWalletStatus ACTIVE
+            = new PlatformWalletStatus("ACTIVE");
+
+        public static readonly PlatformWalletStatus INACTIVE
+            = new PlatformWalletStatus("INACTIVE");
+
+
+        public static implicit operator PlatformWalletStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PlatformWalletStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
     }
 
     public class PlatformWalletWalletStatus : StringEnum<PlatformWalletWalletStatus>

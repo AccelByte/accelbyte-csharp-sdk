@@ -15,5 +15,14 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("has_combination")]
         public bool? HasCombination { get; set; }
 
+        [JsonPropertyName("role_flexing_enable")]
+        public bool? RoleFlexingEnable { get; set; }
+
+        [JsonPropertyName("role_flexing_player")]
+        public int? RoleFlexingPlayer { get; set; }
+
+        [JsonPropertyName("role_flexing_second")]
+        public int? RoleFlexingSecond { get; set; }
+
     }
 }

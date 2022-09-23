@@ -7,51 +7,29 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Matchmaking.Model;
+using AccelByte.Sdk.Api.Sessionbrowser.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Matchmaking.Operation
+namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 {
     /// <summary>
-    /// SearchSessions
+    /// AdminSearchSessionsV2
     ///
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /sessionbrowser/admin/namespaces/{namespace}/sessions/history/search [GET]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:SESSION [Read]
     /// 
     /// Required Scope: social
     /// 
-    /// Search sessions.
+    /// Search sessions. Optimize the query by differentiating query with filter namespace only and filter with namespace & other filter (partyID, userID, matchID).
+    /// Query with filter namespace only will not group whole session data while query with filter namespace & other filter will include session data.
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
-    public class SearchSessions : AccelByte.Sdk.Core.Operation
+    public class AdminSearchSessionsV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SearchSessionsBuilder Builder = new SearchSessionsBuilder();
+        public static AdminSearchSessionsV2Builder Builder = new AdminSearchSessionsV2Builder();
 
-        public class SearchSessionsBuilder
-            : OperationBuilder<SearchSessionsBuilder>
+        public class AdminSearchSessionsV2Builder
+            : OperationBuilder<AdminSearchSessionsV2Builder>
         {
 
             public string? Channel { get; set; }
@@ -68,34 +46,34 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
 
 
-            internal SearchSessionsBuilder() { }
+            internal AdminSearchSessionsV2Builder() { }
 
 
-            public SearchSessionsBuilder SetChannel(string _channel)
+            public AdminSearchSessionsV2Builder SetChannel(string _channel)
             {
                 Channel = _channel;
                 return this;
             }
 
-            public SearchSessionsBuilder SetDeleted(bool _deleted)
+            public AdminSearchSessionsV2Builder SetDeleted(bool _deleted)
             {
                 Deleted = _deleted;
                 return this;
             }
 
-            public SearchSessionsBuilder SetMatchID(string _matchID)
+            public AdminSearchSessionsV2Builder SetMatchID(string _matchID)
             {
                 MatchID = _matchID;
                 return this;
             }
 
-            public SearchSessionsBuilder SetPartyID(string _partyID)
+            public AdminSearchSessionsV2Builder SetPartyID(string _partyID)
             {
                 PartyID = _partyID;
                 return this;
             }
 
-            public SearchSessionsBuilder SetUserID(string _userID)
+            public AdminSearchSessionsV2Builder SetUserID(string _userID)
             {
                 UserID = _userID;
                 return this;
@@ -105,13 +83,13 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
 
 
-            public SearchSessions Build(
+            public AdminSearchSessionsV2 Build(
                 string namespace_,
                 long limit,
                 long offset
             )
             {
-                SearchSessions op = new SearchSessions(this,
+                AdminSearchSessionsV2 op = new AdminSearchSessionsV2(this,
                     namespace_,
                     limit,
                     offset
@@ -122,7 +100,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             }
         }
 
-        private SearchSessions(SearchSessionsBuilder builder,
+        private AdminSearchSessionsV2(AdminSearchSessionsV2Builder builder,
             string namespace_,
             long limit,
             long offset
@@ -147,7 +125,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         }
         #endregion
 
-        public SearchSessions(
+        public AdminSearchSessionsV2(
             string namespace_,
             string? channel,
             bool? deleted,
@@ -176,7 +154,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/matchmaking/v1/admin/namespaces/{namespace}/sessions/history/search";
+        public override string Path => "/sessionbrowser/admin/namespaces/{namespace}/sessions/history/search";
 
         public override HttpMethod Method => HttpMethod.Get;
 
@@ -187,7 +165,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ServiceGetSessionHistorySearchResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsGetSessionHistorySearchResponseV2? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -195,11 +173,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ServiceGetSessionHistorySearchResponse>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsGetSessionHistorySearchResponseV2>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ServiceGetSessionHistorySearchResponse>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsGetSessionHistorySearchResponseV2>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

@@ -105,7 +105,7 @@ namespace AccelByte.Sdk.Core
 
                             result = null;
                             break;
-                        }                        
+                        }
                     }
                     while ((result != null) && (!result.EndOfMessage));
 

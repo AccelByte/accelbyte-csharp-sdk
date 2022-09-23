@@ -11,20 +11,20 @@ using System.Collections.Generic;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Sample.Cli.Command;
 
-using AccelByte.Sdk.Api.Matchmaking.Wrapper;
-using AccelByte.Sdk.Api.Matchmaking.Model;
-using AccelByte.Sdk.Api.Matchmaking.Operation;
+using AccelByte.Sdk.Api.Sessionbrowser.Wrapper;
+using AccelByte.Sdk.Api.Sessionbrowser.Model;
+using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
-namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("matchmaking", "searchsessions")]
-    public class SearchSessionsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser", "adminsearchsessionsv2")]
+    public class AdminSearchSessionsV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Sessionbrowser"; } }
 
-        public string OperationName { get { return "SearchSessions"; } }
+        public string OperationName { get { return "AdminSearchSessionsV2"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -50,17 +50,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
         [SdkCommandArgument("offset")]
         public long Offset { get; set; } = 0;
 
-        public SearchSessionsCommand(AccelByteSDK sdk)
+        public AdminSearchSessionsV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
+            AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
-#pragma warning disable ab_deprecated_operation
-            SearchSessions operation = new SearchSessions(
+            AdminSearchSessionsV2 operation = new AdminSearchSessionsV2(
                 Namespace,
                 Channel,
                 Deleted,
@@ -70,15 +69,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 Limit,
                 Offset
             );
-#pragma warning restore ab_deprecated_operation
 
-#pragma warning disable ab_deprecated_operation_wrapper
-            AccelByte.Sdk.Api.Matchmaking.Model.ServiceGetSessionHistorySearchResponse? response = wrapper.SearchSessions(operation);
+            AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsGetSessionHistorySearchResponseV2? response = wrapper.AdminSearchSessionsV2(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }
