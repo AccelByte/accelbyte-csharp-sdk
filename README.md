@@ -253,5 +253,8 @@ See common use cases [here](docs/common_use_cases.md).
 Sample apps are available in the [samples](samples) directory.
 
 ## Documentation
-Reference about AccelByte service endpoints and their corresponding SDK API is available in [docs](docs) directory.
+Reference about AccelByte service endpoints and their corresponding SDK API is available in [docs/operations](docs/operations) directory.
+
+Sample app documentations are available in the [docs/samples](docs/samples/) directory.
+
 For documentation about AccelByte services and SDK, see [docs.accelbyte.io](https://docs.accelbyte.io/)
