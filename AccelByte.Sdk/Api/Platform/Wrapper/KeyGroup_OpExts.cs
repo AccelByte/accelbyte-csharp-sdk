@@ -37,6 +37,20 @@ namespace AccelByte.Sdk.Api
         }
 
         public static Platform.Model.KeyGroupInfo? Execute(
+            this GetKeyGroupByBoothName.GetKeyGroupByBoothNameBuilder builder,
+            string namespace_,
+            string boothName
+        )
+        {
+            GetKeyGroupByBoothName op = builder.Build(
+                namespace_,
+                boothName
+            );
+
+            return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).GetKeyGroupByBoothName(op);
+        }
+
+        public static Platform.Model.KeyGroupInfo? Execute(
             this GetKeyGroup.GetKeyGroupBuilder builder,
             string keyGroupId,
             string namespace_

@@ -45,5 +45,8 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("scopes")]
         public List<string>? Scopes { get; set; }
 
+        [JsonPropertyName("twoFactorEnabled")]
+        public bool? TwoFactorEnabled { get; set; }
+
     }
 }

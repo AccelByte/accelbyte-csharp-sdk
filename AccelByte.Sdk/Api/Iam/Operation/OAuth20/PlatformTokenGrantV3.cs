@@ -300,6 +300,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public string? DeviceId { get; set; }
 
+            public string? MacAddress { get; set; }
+
             public string? PlatformToken { get; set; }
 
 
@@ -324,6 +326,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public PlatformTokenGrantV3Builder SetDeviceId(string _deviceId)
             {
                 DeviceId = _deviceId;
+                return this;
+            }
+
+            public PlatformTokenGrantV3Builder SetMacAddress(string _macAddress)
+            {
+                MacAddress = _macAddress;
                 return this;
             }
 
@@ -358,6 +366,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.ClientId is not null) FormParams["client_id"] = builder.ClientId;
             if (builder.CreateHeadless != null) FormParams["createHeadless"] = Convert.ToString(builder.CreateHeadless)!;
             if (builder.DeviceId is not null) FormParams["device_id"] = builder.DeviceId;
+            if (builder.MacAddress is not null) FormParams["macAddress"] = builder.MacAddress;
             if (builder.PlatformToken is not null) FormParams["platform_token"] = builder.PlatformToken;
 
 
@@ -373,6 +382,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string? clientId,
             bool? createHeadless,
             string? deviceId,
+            string? macAddress,
             string? platformToken
         )
         {
@@ -382,6 +392,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (clientId is not null) FormParams["client_id"] = clientId;
             if (createHeadless != null) FormParams["createHeadless"] = Convert.ToString(createHeadless)!;
             if (deviceId is not null) FormParams["device_id"] = deviceId;
+            if (macAddress is not null) FormParams["macAddress"] = macAddress;
             if (platformToken is not null) FormParams["platform_token"] = platformToken;
 
 

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteUserInformationV3
     ///
-    /// Required permissions 'ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [DELETE]'.
+    /// [WARNING] This endpoint is deleting user data from database directly by skipping GDPR flow.Required permissions 'ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [DELETE]'.
     /// </summary>
     public class AdminDeleteUserInformationV3 : AccelByte.Sdk.Core.Operation
     {

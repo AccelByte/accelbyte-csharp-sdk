@@ -79,6 +79,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         {
             get { return Operation.CreateMyProfile.Builder.SetWrapperObject(this); }
         }
+        public GetMyPrivateCustomAttributesInfo.GetMyPrivateCustomAttributesInfoBuilder GetMyPrivateCustomAttributesInfoOp
+        {
+            get { return Operation.GetMyPrivateCustomAttributesInfo.Builder.SetWrapperObject(this); }
+        }
+        public UpdateMyPrivateCustomAttributesPartially.UpdateMyPrivateCustomAttributesPartiallyBuilder UpdateMyPrivateCustomAttributesPartiallyOp
+        {
+            get { return Operation.UpdateMyPrivateCustomAttributesPartially.Builder.SetWrapperObject(this); }
+        }
         public GetMyZipCode.GetMyZipCodeBuilder GetMyZipCodeOp
         {
             get { return Operation.GetMyZipCode.Builder.SetWrapperObject(this); }
@@ -244,6 +252,24 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.Payload);
         }
         public Model.UserProfilePrivateInfo? CreateMyProfile(CreateMyProfile input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Dictionary<string, object>? GetMyPrivateCustomAttributesInfo(GetMyPrivateCustomAttributesInfo input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Dictionary<string, object>? UpdateMyPrivateCustomAttributesPartially(UpdateMyPrivateCustomAttributesPartially input)
         {
             var response = _sdk.RunRequest(input);
 

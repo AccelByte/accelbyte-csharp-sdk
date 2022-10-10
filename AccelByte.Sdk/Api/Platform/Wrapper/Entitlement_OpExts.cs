@@ -270,7 +270,7 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).UpdateUserEntitlement(op);
         }
 
-        public static Platform.Model.EntitlementInfo? Execute(
+        public static Platform.Model.TrackedEntitlementInfo? Execute(
             this ConsumeUserEntitlement.ConsumeUserEntitlementBuilder builder,
             string entitlementId,
             string namespace_,
@@ -586,7 +586,7 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlement(op);
         }
 
-        public static Platform.Model.EntitlementInfo? Execute(
+        public static Platform.Model.TrackedEntitlementInfo? Execute(
             this PublicConsumeUserEntitlement.PublicConsumeUserEntitlementBuilder builder,
             string entitlementId,
             string namespace_,

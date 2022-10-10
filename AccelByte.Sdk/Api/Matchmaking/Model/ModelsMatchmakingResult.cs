@@ -18,6 +18,12 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("deployment")]
         public string? Deployment { get; set; }
 
+        [JsonPropertyName("error_code")]
+        public int? ErrorCode { get; set; }
+
+        [JsonPropertyName("error_message")]
+        public string? ErrorMessage { get; set; }
+
         [JsonPropertyName("game_mode")]
         public string? GameMode { get; set; }
 

@@ -7,8 +7,8 @@
     <Product>AccelByte.Sdk</Product>
     <PackageId>AccelByte.Sdk</PackageId>
     <Authors>AccelByte Developers</Authors>
-    <Version>0.18.0</Version>
-    <AssemblyVersion>0.18.0</AssemblyVersion>
+    <Version>0.19.0</Version>
+    <AssemblyVersion>0.19.0</AssemblyVersion>
     <Company>AccelByte</Company>
     <Copyright>Copyright(c) AccelByte 2022</Copyright>
     <Description>AccelByte .NET (C#) SDK
@@ -18,11 +18,8 @@ A software development kit (SDK) for interacting with AccelByte services.</Descr
     <RepositoryType>git</RepositoryType>
     <PackageTags>accelbyte;sdk</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>[v0.18.0]
-- Fixed issues detected by coverity scan
-- Fixed service integration tests due to retry policy used by all request that expect exception.
-- Replaced deprecated operations in IAM service integration tests.
-- Fixed WS CLI issues when running on specific AMI image used by jenkins worker.
+    <PackageReleaseNotes>[v0.19.0]
+- Changed doc folder structure.
 - Update APIs. See what's changes [here](spec/APICHANGES.md)</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>

@@ -40,6 +40,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public int? Offset { get; set; }
 
+            public string? SortBy { get; set; }
+
             public string? StoreId { get; set; }
 
 
@@ -70,6 +72,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public SearchItemsBuilder SetOffset(int _offset)
             {
                 Offset = _offset;
+                return this;
+            }
+
+            public SearchItemsBuilder SetSortBy(string _sortBy)
+            {
+                SortBy = _sortBy;
                 return this;
             }
 
@@ -112,6 +120,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType.Value;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
             if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
             if (keyword is not null) QueryParams["keyword"] = keyword;
             if (language is not null) QueryParams["language"] = language;
@@ -131,6 +140,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             SearchItemsItemType? itemType,
             int? limit,
             int? offset,
+            string? sortBy,
             string? storeId,
             string keyword,
             string language
@@ -142,6 +152,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (itemType is not null) QueryParams["itemType"] = itemType.Value;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
             if (storeId is not null) QueryParams["storeId"] = storeId;
             if (keyword is not null) QueryParams["keyword"] = keyword;
             if (language is not null) QueryParams["language"] = language;

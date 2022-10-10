@@ -27,5 +27,8 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("Secret")]
         public string? Secret { get; set; }
 
+        [JsonPropertyName("TwoFactorEnabled")]
+        public bool? TwoFactorEnabled { get; set; }
+
     }
 }

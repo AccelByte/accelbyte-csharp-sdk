@@ -51,6 +51,10 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.UpdateStat.Builder.SetWrapperObject(this); }
         }
+        public DeleteTiedStat.DeleteTiedStatBuilder DeleteTiedStatOp
+        {
+            get { return Operation.DeleteTiedStat.Builder.SetWrapperObject(this); }
+        }
         public CreateStat1.CreateStat1Builder CreateStat1Op
         {
             get { return Operation.CreateStat1.Builder.SetWrapperObject(this); }
@@ -125,6 +129,15 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeleteTiedStat(DeleteTiedStat input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

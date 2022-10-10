@@ -116,6 +116,20 @@ namespace AccelByte.Sdk.Api
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).UpdateStat(op);
         }
 
+        public static void Execute(
+            this DeleteTiedStat.DeleteTiedStatBuilder builder,
+            string namespace_,
+            string statCode
+        )
+        {
+            DeleteTiedStat op = builder.Build(
+                namespace_,
+                statCode
+            );
+
+            ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).DeleteTiedStat(op);
+        }
+
         public static Social.Model.StatInfo? Execute(
             this CreateStat1.CreateStat1Builder builder,
             string namespace_

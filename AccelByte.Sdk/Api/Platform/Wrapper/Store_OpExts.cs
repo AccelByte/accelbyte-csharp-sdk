@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Store)builder.WrapperObject!).CreateStore(op);
         }
 
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.StoreInfo? Execute(
             this ImportStore.ImportStoreBuilder builder,
             string namespace_
@@ -152,6 +153,7 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Store)builder.WrapperObject!).CloneStore(op);
         }
 
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this ExportStore.ExportStoreBuilder builder,
             string namespace_,
@@ -176,6 +178,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).PublicListStores(op);
+        }
+
+        public static Platform.Model.ImportStoreResult? Execute(
+            this ImportStore1.ImportStore1Builder builder,
+            string namespace_
+        )
+        {
+            ImportStore1 op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Store)builder.WrapperObject!).ImportStore1(op);
+        }
+
+        public static void Execute(
+            this ExportStore1.ExportStore1Builder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            ExportStore1 op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStore1(op);
         }
 
     }

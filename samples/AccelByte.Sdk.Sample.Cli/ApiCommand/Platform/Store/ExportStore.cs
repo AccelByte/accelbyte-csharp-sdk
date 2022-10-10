@@ -41,13 +41,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.Store wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Store(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             ExportStore operation = new ExportStore(
                 Namespace,
                 StoreId
             );
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.ExportStore(operation);
             return String.Empty;
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

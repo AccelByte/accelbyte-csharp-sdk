@@ -201,12 +201,32 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    /// ## Device Cookie Validation
+    /// 
+    /// 
+    /// 
+    /// 
+    /// For grant type "password" only
+    /// 
+    /// 
+    /// 
+    /// 
+    /// Device Cookie is used to protect the user account from brute force login attack, [more detail from OWASP.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// This endpoint will read device cookie from request header Auth-Trust-Id. If device cookie not found, it will generate a new one and set it into response body auth_trust_id when successfully login.
+    /// 
+    /// 
+    /// 
+    /// 
     /// ## Track Login History
     /// 
     /// 
     /// 
     /// 
-    /// This endpoint will track login history to detect suspicious login activity, please provide "device_id" (alphanumeric) in request header parameter otherwise we will set to "unknown".
+    /// This endpoint will track login history to detect suspicious login activity, please provide Device-Id (alphanumeric) in request header parameter otherwise it will set to "unknown".
     /// 
     /// 
     /// 
@@ -391,7 +411,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Basic";
 
-        public Model.OauthmodelTokenResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.OauthmodelTokenWithDeviceCookieResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -399,11 +419,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.OauthmodelTokenResponseV3>(payload);
+                return JsonSerializer.Deserialize<Model.OauthmodelTokenWithDeviceCookieResponseV3>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.OauthmodelTokenResponseV3>(payload);
+                return JsonSerializer.Deserialize<Model.OauthmodelTokenWithDeviceCookieResponseV3>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

@@ -24,5 +24,8 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("RedirectUri")]
         public string? RedirectUri { get; set; }
 
+        [JsonPropertyName("TwoFactorEnabled")]
+        public bool? TwoFactorEnabled { get; set; }
+
     }
 }

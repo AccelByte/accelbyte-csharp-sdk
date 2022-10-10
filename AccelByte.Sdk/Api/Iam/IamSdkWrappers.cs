@@ -145,6 +145,17 @@ namespace AccelByte.Sdk.Core
         }
         private SSO? _SSO = null;
 
+        public DevicesV4 DevicesV4
+        {
+            get
+            {
+                if (_DevicesV4 == null)
+                    _DevicesV4 = new DevicesV4(_SdkObject);
+                return _DevicesV4;
+            }
+        }
+        private DevicesV4? _DevicesV4 = null;
+
         public UsersV4 UsersV4
         {
             get

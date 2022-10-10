@@ -74,7 +74,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 TokenGrantV3GrantType.NewValue(GrantType)
             );
 
-            AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenResponseV3? response = wrapper.TokenGrantV3(operation);
+            AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenWithDeviceCookieResponseV3? response = wrapper.TokenGrantV3(operation);
             if (response == null)
                 return "No response from server.";
 

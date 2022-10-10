@@ -40,5 +40,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? RedirectUri { get; set; }
 
+        [JsonPropertyName("twoFactorEnabled")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? TwoFactorEnabled { get; set; }
+
     }
 }

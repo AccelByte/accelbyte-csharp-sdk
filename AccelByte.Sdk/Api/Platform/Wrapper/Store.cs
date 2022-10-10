@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.CreateStore.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public ImportStore.ImportStoreBuilder ImportStoreOp
         {
             get { return Operation.ImportStore.Builder.SetWrapperObject(this); }
@@ -63,6 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.CloneStore.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public ExportStore.ExportStoreBuilder ExportStoreOp
         {
             get { return Operation.ExportStore.Builder.SetWrapperObject(this); }
@@ -70,6 +72,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public PublicListStores.PublicListStoresBuilder PublicListStoresOp
         {
             get { return Operation.PublicListStores.Builder.SetWrapperObject(this); }
+        }
+        public ImportStore1.ImportStore1Builder ImportStore1Op
+        {
+            get { return Operation.ImportStore1.Builder.SetWrapperObject(this); }
+        }
+        public ExportStore1.ExportStore1Builder ExportStore1Op
+        {
+            get { return Operation.ExportStore1.Builder.SetWrapperObject(this); }
         }
         #endregion
 
@@ -91,6 +101,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.StoreInfo? ImportStore(ImportStore input)
         {
             var response = _sdk.RunRequest(input);
@@ -100,6 +112,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public Model.StoreInfo? GetPublishedStore(GetPublishedStore input)
         {
             var response = _sdk.RunRequest(input);
@@ -172,6 +185,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void ExportStore(ExportStore input)
         {
             var response = _sdk.RunRequest(input);
@@ -181,11 +196,30 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public List<Model.StoreInfo>? PublicListStores(PublicListStores input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ImportStoreResult? ImportStore1(ImportStore1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void ExportStore1(ExportStore1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

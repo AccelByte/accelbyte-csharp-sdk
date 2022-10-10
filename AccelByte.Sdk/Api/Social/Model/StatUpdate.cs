@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Social.Model
 {
     public class StatUpdate : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("defaultValue")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public double? DefaultValue { get; set; }
+
         [JsonPropertyName("description")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }

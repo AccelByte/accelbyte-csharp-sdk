@@ -1,3 +1,8 @@
+<a name="v0.19.0"></a>
+## [v0.19.0]
+- Changed doc folder structure.
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.18.0"></a>
 ## [v0.18.0]
 - Fixed issues detected by coverity scan

@@ -185,7 +185,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.OauthmodelTokenResponseV3? TokenGrantV3(TokenGrantV3 input)
+        public Model.OauthmodelTokenWithDeviceCookieResponseV3? TokenGrantV3(TokenGrantV3 input)
         {
             var response = _sdk.RunRequest(input);
 

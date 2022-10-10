@@ -116,6 +116,7 @@
 | Model | Class |
 |---|---|
 | `log.AppMessageDeclaration` | [LogAppMessageDeclaration](../../AccelByte.Sdk/Api/Dsmc/Model/LogAppMessageDeclaration.cs) |
+| `models.AllocationEvent` | [ModelsAllocationEvent](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsAllocationEvent.cs) |
 | `models.ClaimSessionRequest` | [ModelsClaimSessionRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsClaimSessionRequest.cs) |
 | `models.CountServerResponse` | [ModelsCountServerResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsCountServerResponse.cs) |
 | `models.CountSessionResponse` | [ModelsCountSessionResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsCountSessionResponse.cs) |

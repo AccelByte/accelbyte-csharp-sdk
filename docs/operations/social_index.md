@@ -99,6 +99,7 @@
 | `/social/v1/admin/namespaces/{namespace}/stats/{statCode}` | GET | GetStat | [GetStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/GetStat.cs) | [GetStat](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/GetStat.cs) |
 | `/social/v1/admin/namespaces/{namespace}/stats/{statCode}` | DELETE | DeleteStat | [DeleteStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/DeleteStat.cs) | [DeleteStat](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/DeleteStat.cs) |
 | `/social/v1/admin/namespaces/{namespace}/stats/{statCode}` | PATCH | UpdateStat | [UpdateStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/UpdateStat.cs) | [UpdateStat](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/UpdateStat.cs) |
+| `/social/v1/admin/namespaces/{namespace}/stats/{statCode}/tied` | DELETE | DeleteTiedStat | [DeleteTiedStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/DeleteTiedStat.cs) | [DeleteTiedStat](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/DeleteTiedStat.cs) |
 | `/social/v1/public/namespaces/{namespace}/stats` | POST | CreateStat1 | [CreateStat1](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/CreateStat1.cs) | [CreateStat1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/CreateStat1.cs) |
 
 

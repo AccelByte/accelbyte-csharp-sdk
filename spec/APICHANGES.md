@@ -1,3 +1,227 @@
+# C# Server SDK v0.19.0
+
+## basic Service
+
+### What's New
+---
+* `GET` /basic/v1/public/namespaces/{namespace}/users/me/profiles/privateCustomAttributes Get my private custom attributes
+* `PUT` /basic/v1/public/namespaces/{namespace}/users/me/profiles/privateCustomAttributes Update partially private custom attributes tied to me
+
+## dslogmanager Service
+
+### What's Changed
+---
+`GET` /dslogmanager/namespaces/{namespace}/servers/search Retrieve All Terminated Servers  
+    Return Type
+
+        Insert data.server.allocation_events
+`GET` /dslogmanager/servers/search Retrieve All Terminated Servers  
+    Return Type
+
+        Insert data.server.allocation_events
+
+## dsmc Service
+
+### What's Changed
+---
+`GET` /dsmcontroller/admin/namespaces/{namespace}/servers List all managed servers in a region  
+    Return Type
+
+        Insert servers.allocation_events
+`GET` /dsmcontroller/admin/namespaces/{namespace}/servers/local List all managed local servers  
+    Return Type
+
+        Insert servers.allocation_events
+`GET` /dsmcontroller/admin/namespaces/{namespace}/servers/{podName} Query a server in a region  
+    Return Type
+
+        Insert allocation_events
+`GET` /dsmcontroller/admin/namespaces/{namespace}/sessions List all managed sessions in a region  
+    Return Type
+
+        Insert sessions.Server.allocation_events
+`POST` /dsmcontroller/namespaces/{namespace}/servers/local/register Register a local DS  
+    Return Type
+
+        Insert allocation_events
+`POST` /dsmcontroller/namespaces/{namespace}/servers/register Register a DS  
+    Return Type
+
+        Insert allocation_events
+`POST` /dsmcontroller/namespaces/{namespace}/sessions Register a new game session  
+    Return Type
+
+        Insert session.Server.allocation_events
+`GET` /dsmcontroller/namespaces/{namespace}/sessions/{sessionID} Query specified session  
+    Return Type
+
+        Insert session.Server.allocation_events
+
+## gametelemetry Service
+
+### What's Changed
+---
+`GET` /game-telemetry/v1/admin/namespaces/{namespace}/events Get Events  
+    Parameters
+
+        Modify startTime //Start time of data to be queried. Default: Current time in UTC minus 1 day.
+        Modify endTime //End time of data to be queried. Default: Current time in UTC.
+
+
+## iam Service
+
+### What's New
+---
+* `GET` /iam/v4/admin/namespaces/{namespace}/devices Admin get devices by user id
+* `GET` /iam/v4/admin/namespaces/{namespace}/devices/banned Admin get banned devices
+* `GET` /iam/v4/admin/namespaces/{namespace}/devices/bans Admin get device bans of user
+* `POST` /iam/v4/admin/namespaces/{namespace}/devices/bans Admin Ban a device
+* `GET` /iam/v4/admin/namespaces/{namespace}/devices/bans/{banId} Admin get device ban config
+* `PUT` /iam/v4/admin/namespaces/{namespace}/devices/bans/{banId} Admin update device ban config
+* `GET` /iam/v4/admin/namespaces/{namespace}/devices/report Admin generate device report
+* `GET` /iam/v4/admin/namespaces/{namespace}/devices/types Admin get device types
+* `GET` /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/bans Admin get device ban list
+* `GET` /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/decrypt Admin decrypt device id
+* `PUT` /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/unban Admin unban device
+* `GET` /iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/users Admin get users by device id
+
+### What's Changed
+---
+`POST` /iam/clients Create Client  
+    Parameters
+
+        Insert body.TwoFactorEnabled
+`GET` /iam/clients Get All Clients  
+    Return Type
+
+        Insert TwoFactorEnabled
+`GET` /iam/clients/{clientId} Get Client  
+    Return Type
+
+        Insert TwoFactorEnabled
+`PUT` /iam/clients/{clientId} Update Client  
+    Parameters
+
+        Insert body.TwoFactorEnabled
+    Return Type
+
+        Insert TwoFactorEnabled
+`POST` /iam/namespaces/{namespace}/clients Create Client  
+    Parameters
+
+        Insert body.TwoFactorEnabled
+`GET` /iam/namespaces/{namespace}/clients Get clients by namespace  
+    Return Type
+
+        Insert TwoFactorEnabled
+`POST` /iam/oauth/namespaces/{namespace}/platforms/{platformId}/token OAuth2 access token generation specific to platform  
+    Parameters
+
+        Add macAddress //Mac address of device
+`POST` /iam/v3/admin/namespaces/{namespace}/clients Create Client  
+    Parameters
+
+        Insert body.twoFactorEnabled
+`GET` /iam/v3/admin/namespaces/{namespace}/clients Get clients by namespace  
+    Return Type
+
+        Insert data.twoFactorEnabled
+`GET` /iam/v3/admin/namespaces/{namespace}/clients/{clientId} Get clients by namespace and client id  
+    Return Type
+
+        Insert twoFactorEnabled
+`PATCH` /iam/v3/admin/namespaces/{namespace}/clients/{clientId} Update Client  
+    Parameters
+
+        Insert body.twoFactorEnabled
+    Return Type
+
+        Insert twoFactorEnabled
+`POST` /iam/v3/oauth/platforms/{platformId}/token OAuth2 access token generation specific to platform  
+    Parameters
+
+        Add macAddress //Mac address of device
+`POST` /iam/v3/oauth/token OAuth2 access token generation endpoint  
+    Parameters
+
+        Add Auth-Trust-Id //Auth-Trust-Id for Device Cookie Validation (Used on grant type 'password')
+    Return Type
+
+        Insert auth_trust_id //Authentication Trust Id for device cookie validation. Only exist when login using grant_type=password and no existing Auth-Trust-Id given from request header
+`GET` /iam/v3/public/namespaces/{namespace}/requests/{requestId}/async/status Get Linking Progress Status  
+    Return Type
+
+        Insert refreshToken
+
+## matchmaking Service
+
+### What's Changed
+---
+`POST` /matchmaking/namespaces/{namespace}/sessions Queue joinable session  
+    Parameters
+
+        Insert body.error_code
+        Insert body.error_message
+`GET` /matchmaking/namespaces/{namespace}/sessions/{matchID}/status Query joinable session status  
+    Return Type
+
+        Insert error_code
+        Insert error_message
+`GET` /matchmaking/v1/admin/namespaces/{namespace}/channels/all/sessions/bulk Bulk get sessions  
+    Return Type
+
+        Insert error_code
+        Insert error_message
+`GET` /matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions Get all channel sessions  
+    Return Type
+
+        Insert error_code
+        Insert error_message
+
+## platform Service
+
+### What's New
+---
+* `GET` /platform/admin/namespaces/{namespace}/keygroups/byBoothName Get key group by booth name
+* `PUT` /platform/v2/admin/namespaces/{namespace}/stores/import Import a store
+* `POST` /platform/v2/admin/namespaces/{namespace}/stores/{storeId}/export Export a store
+
+### What's Changed
+---
+`GET` /platform/admin/namespaces/{namespace}/items/search Search items by keyword  
+    Parameters
+
+        Add sortBy //default is name:asc,createdAt:asc, allow values: [name, name:asc, name:desc, createdAt, createdAt:asc, createdAt:desc, updatedAt, updatedAt:asc, updatedAt:desc, displayOrder, displayOrder:asc, displayOrder:desc],and support sort group, eg: sortBy=name:asc,createdAt:desc. Make sure to always use more than one sort if the first sort is not an unique valuefor example, if you wish to sort by displayOrder, make sure to include other sort such as name or createdAt after the first sort, eg: displayOrder:asc,name:asc
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/decrement Consume user entitlement  
+    Parameters
+
+        Insert body.requestId //Request id(Optional), client should provide a unique request id to perform at most once execution, When a request id is resubmitted, it will return original successful response
+    Return Type
+
+        Insert replayed //replayed, if true,the response is original successful response. This will not be included in response if client have not pass request id.
+        Insert requestId //request id
+`PUT` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/decrement Consume user entitlement  
+    Parameters
+
+        Insert body.requestId //Request id(Optional), client should provide a unique request id to perform at most once execution, When a request id is resubmitted, it will return original successful response
+    Return Type
+
+        Insert replayed //replayed, if true,the response is original successful response. This will not be included in response if client have not pass request id.
+        Insert requestId //request id
+
+## social Service
+
+### What's New
+---
+* `DELETE` /social/v1/admin/namespaces/{namespace}/stats/{statCode}/tied Deletes tied stat
+
+### What's Changed
+---
+`PATCH` /social/v1/admin/namespaces/{namespace}/stats/{statCode} Update stat  
+    Parameters
+
+        Insert body.defaultValue
+
 # C# Server SDK v0.18.0
 
 ## gametelemetry Service

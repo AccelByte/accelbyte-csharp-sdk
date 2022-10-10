@@ -18,10 +18,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///
     /// This API is used to export a store.
     /// 
+    /// This api has been deprecated, pls use /v2/admin/namespaces/{namespace}/stores/export to export store.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class ExportStore : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

@@ -174,7 +174,7 @@ namespace AccelByte.Sdk.Api
             ((Iam.Wrapper.OAuth20)builder.WrapperObject!).TokenRevocationV3(op);
         }
 
-        public static Iam.Model.OauthmodelTokenResponseV3? Execute(
+        public static Iam.Model.OauthmodelTokenWithDeviceCookieResponseV3? Execute(
             this TokenGrantV3.TokenGrantV3Builder builder,
             string grantType
         )

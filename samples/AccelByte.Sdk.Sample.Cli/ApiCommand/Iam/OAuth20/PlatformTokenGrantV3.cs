@@ -38,6 +38,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("device_id")]
         public string DeviceId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("macAddress")]
+        public string MacAddress { get; set; } = String.Empty;
+
         [SdkCommandArgument("platform_token")]
         public string PlatformToken { get; set; } = String.Empty;
 
@@ -55,6 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 ClientId,
                 CreateHeadless,
                 DeviceId,
+                MacAddress,
                 PlatformToken
             );
 

@@ -67,6 +67,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public string? DeviceId { get; set; }
 
+            public string? MacAddress { get; set; }
+
             public string? PlatformToken { get; set; }
 
 
@@ -79,6 +81,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public PlatformTokenRequestHandlerBuilder SetDeviceId(string _deviceId)
             {
                 DeviceId = _deviceId;
+                return this;
+            }
+
+            public PlatformTokenRequestHandlerBuilder SetMacAddress(string _macAddress)
+            {
+                MacAddress = _macAddress;
                 return this;
             }
 
@@ -115,6 +123,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
             if (builder.DeviceId is not null) FormParams["device_id"] = builder.DeviceId;
+            if (builder.MacAddress is not null) FormParams["macAddress"] = builder.MacAddress;
             if (builder.PlatformToken is not null) FormParams["platform_token"] = builder.PlatformToken;
 
 
@@ -129,6 +138,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string namespace_,
             string platformId,
             string? deviceId,
+            string? macAddress,
             string? platformToken
         )
         {
@@ -137,6 +147,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
             if (deviceId is not null) FormParams["device_id"] = deviceId;
+            if (macAddress is not null) FormParams["macAddress"] = macAddress;
             if (platformToken is not null) FormParams["platform_token"] = platformToken;
 
 

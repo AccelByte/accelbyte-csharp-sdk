@@ -230,6 +230,7 @@
 |---|---|---|---|---|
 | `/platform/admin/namespaces/{namespace}/keygroups` | GET | QueryKeyGroups | [QueryKeyGroups](../../AccelByte.Sdk/Api/Platform/Operation/KeyGroup/QueryKeyGroups.cs) | [QueryKeyGroups](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/KeyGroup/QueryKeyGroups.cs) |
 | `/platform/admin/namespaces/{namespace}/keygroups` | POST | CreateKeyGroup | [CreateKeyGroup](../../AccelByte.Sdk/Api/Platform/Operation/KeyGroup/CreateKeyGroup.cs) | [CreateKeyGroup](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/KeyGroup/CreateKeyGroup.cs) |
+| `/platform/admin/namespaces/{namespace}/keygroups/byBoothName` | GET | GetKeyGroupByBoothName | [GetKeyGroupByBoothName](../../AccelByte.Sdk/Api/Platform/Operation/KeyGroup/GetKeyGroupByBoothName.cs) | [GetKeyGroupByBoothName](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/KeyGroup/GetKeyGroupByBoothName.cs) |
 | `/platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}` | GET | GetKeyGroup | [GetKeyGroup](../../AccelByte.Sdk/Api/Platform/Operation/KeyGroup/GetKeyGroup.cs) | [GetKeyGroup](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/KeyGroup/GetKeyGroup.cs) |
 | `/platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}` | PUT | UpdateKeyGroup | [UpdateKeyGroup](../../AccelByte.Sdk/Api/Platform/Operation/KeyGroup/UpdateKeyGroup.cs) | [UpdateKeyGroup](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/KeyGroup/UpdateKeyGroup.cs) |
 | `/platform/admin/namespaces/{namespace}/keygroups/{keyGroupId}/dynamic` | GET | GetKeyGroupDynamic | [GetKeyGroupDynamic](../../AccelByte.Sdk/Api/Platform/Operation/KeyGroup/GetKeyGroupDynamic.cs) | [GetKeyGroupDynamic](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/KeyGroup/GetKeyGroupDynamic.cs) |
@@ -340,6 +341,8 @@
 | `/platform/admin/namespaces/{namespace}/stores/{storeId}/clone` | PUT | CloneStore | [CloneStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/CloneStore.cs) | [CloneStore](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/CloneStore.cs) |
 | `/platform/admin/namespaces/{namespace}/stores/{storeId}/export` | GET | ExportStore | [ExportStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/ExportStore.cs) | [ExportStore](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ExportStore.cs) |
 | `/platform/public/namespaces/{namespace}/stores` | GET | PublicListStores | [PublicListStores](../../AccelByte.Sdk/Api/Platform/Operation/Store/PublicListStores.cs) | [PublicListStores](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/PublicListStores.cs) |
+| `/platform/v2/admin/namespaces/{namespace}/stores/import` | PUT | ImportStore1 | [ImportStore1](../../AccelByte.Sdk/Api/Platform/Operation/Store/ImportStore1.cs) | [ImportStore1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ImportStore1.cs) |
+| `/platform/v2/admin/namespaces/{namespace}/stores/{storeId}/export` | POST | ExportStore1 | [ExportStore1](../../AccelByte.Sdk/Api/Platform/Operation/Store/ExportStore1.cs) | [ExportStore1](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ExportStore1.cs) |
 
 ### CatalogChanges Wrapper:  [CatalogChanges](../../AccelByte.Sdk/Api/Platform/Wrapper/CatalogChanges.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -549,6 +552,7 @@
 | `EpicGamesReconcileResult` | [EpicGamesReconcileResult](../../AccelByte.Sdk/Api/Platform/Model/EpicGamesReconcileResult.cs) |
 | `ErrorEntity` | [ErrorEntity](../../AccelByte.Sdk/Api/Platform/Model/ErrorEntity.cs) |
 | `EventPayload` | [EventPayload](../../AccelByte.Sdk/Api/Platform/Model/EventPayload.cs) |
+| `ExportStoreRequest` | [ExportStoreRequest](../../AccelByte.Sdk/Api/Platform/Model/ExportStoreRequest.cs) |
 | `ExtensionFulfillmentSummary` | [ExtensionFulfillmentSummary](../../AccelByte.Sdk/Api/Platform/Model/ExtensionFulfillmentSummary.cs) |
 | `ExternalPaymentOrderCreate` | [ExternalPaymentOrderCreate](../../AccelByte.Sdk/Api/Platform/Model/ExternalPaymentOrderCreate.cs) |
 | `FieldValidationError` | [FieldValidationError](../../AccelByte.Sdk/Api/Platform/Model/FieldValidationError.cs) |
@@ -581,6 +585,10 @@
 | `IAPOrderInfo` | [IAPOrderInfo](../../AccelByte.Sdk/Api/Platform/Model/IAPOrderInfo.cs) |
 | `IAPOrderPagingSlicedResult` | [IAPOrderPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/IAPOrderPagingSlicedResult.cs) |
 | `Image` | [Image](../../AccelByte.Sdk/Api/Platform/Model/Image.cs) |
+| `ImportErrorDetails` | [ImportErrorDetails](../../AccelByte.Sdk/Api/Platform/Model/ImportErrorDetails.cs) |
+| `ImportStoreError` | [ImportStoreError](../../AccelByte.Sdk/Api/Platform/Model/ImportStoreError.cs) |
+| `ImportStoreItemInfo` | [ImportStoreItemInfo](../../AccelByte.Sdk/Api/Platform/Model/ImportStoreItemInfo.cs) |
+| `ImportStoreResult` | [ImportStoreResult](../../AccelByte.Sdk/Api/Platform/Model/ImportStoreResult.cs) |
 | `InGameItemSync` | [InGameItemSync](../../AccelByte.Sdk/Api/Platform/Model/InGameItemSync.cs) |
 | `InvoiceCurrencySummary` | [InvoiceCurrencySummary](../../AccelByte.Sdk/Api/Platform/Model/InvoiceCurrencySummary.cs) |
 | `InvoiceSummary` | [InvoiceSummary](../../AccelByte.Sdk/Api/Platform/Model/InvoiceSummary.cs) |
@@ -725,6 +733,7 @@
 | `TicketSaleIncrementResult` | [TicketSaleIncrementResult](../../AccelByte.Sdk/Api/Platform/Model/TicketSaleIncrementResult.cs) |
 | `Time-limited balance` | [TimeLimitedBalance](../../AccelByte.Sdk/Api/Platform/Model/TimeLimitedBalance.cs) |
 | `TimedOwnership` | [TimedOwnership](../../AccelByte.Sdk/Api/Platform/Model/TimedOwnership.cs) |
+| `TrackedEntitlementInfo` | [TrackedEntitlementInfo](../../AccelByte.Sdk/Api/Platform/Model/TrackedEntitlementInfo.cs) |
 | `TradeNotification` | [TradeNotification](../../AccelByte.Sdk/Api/Platform/Model/TradeNotification.cs) |
 | `Transaction` | [Transaction](../../AccelByte.Sdk/Api/Platform/Model/Transaction.cs) |
 | `TransactionAmountDetails` | [TransactionAmountDetails](../../AccelByte.Sdk/Api/Platform/Model/TransactionAmountDetails.cs) |

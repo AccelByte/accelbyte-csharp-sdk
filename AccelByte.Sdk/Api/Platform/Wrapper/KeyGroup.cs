@@ -27,6 +27,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.CreateKeyGroup.Builder.SetWrapperObject(this); }
         }
+        public GetKeyGroupByBoothName.GetKeyGroupByBoothNameBuilder GetKeyGroupByBoothNameOp
+        {
+            get { return Operation.GetKeyGroupByBoothName.Builder.SetWrapperObject(this); }
+        }
         public GetKeyGroup.GetKeyGroupBuilder GetKeyGroupOp
         {
             get { return Operation.GetKeyGroup.Builder.SetWrapperObject(this); }
@@ -59,6 +63,15 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.KeyGroupInfo? CreateKeyGroup(CreateKeyGroup input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.KeyGroupInfo? GetKeyGroupByBoothName(GetKeyGroupByBoothName input)
         {
             var response = _sdk.RunRequest(input);
 

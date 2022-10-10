@@ -214,6 +214,30 @@ namespace AccelByte.Sdk.Api
             return ((Basic.Wrapper.UserProfile)builder.WrapperObject!).CreateMyProfile(op);
         }
 
+        public static Dictionary<string, object>? Execute(
+            this GetMyPrivateCustomAttributesInfo.GetMyPrivateCustomAttributesInfoBuilder builder,
+            string namespace_
+        )
+        {
+            GetMyPrivateCustomAttributesInfo op = builder.Build(
+                namespace_
+            );
+
+            return ((Basic.Wrapper.UserProfile)builder.WrapperObject!).GetMyPrivateCustomAttributesInfo(op);
+        }
+
+        public static Dictionary<string, object>? Execute(
+            this UpdateMyPrivateCustomAttributesPartially.UpdateMyPrivateCustomAttributesPartiallyBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateMyPrivateCustomAttributesPartially op = builder.Build(
+                namespace_
+            );
+
+            return ((Basic.Wrapper.UserProfile)builder.WrapperObject!).UpdateMyPrivateCustomAttributesPartially(op);
+        }
+
         public static Basic.Model.UserZipCode? Execute(
             this GetMyZipCode.GetMyZipCodeBuilder builder,
             string namespace_

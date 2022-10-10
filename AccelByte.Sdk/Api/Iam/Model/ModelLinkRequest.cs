@@ -56,6 +56,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("redirect_uri")]
         public string? RedirectUri { get; set; }
 
+        [JsonPropertyName("refreshToken")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? RefreshToken { get; set; }
+
         [JsonPropertyName("request_id")]
         public string? RequestId { get; set; }
 

@@ -89,6 +89,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     ///     * Nintendo
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * twoFactorEnabled : The flag to indicate whether 2FA validation is enable for this client. default value: false
     /// </summary>
     public class AdminCreateClientV3 : AccelByte.Sdk.Core.Operation
     {

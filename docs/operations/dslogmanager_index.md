@@ -30,6 +30,7 @@
 | Model | Class |
 |---|---|
 | `log.AppMessageDeclaration` | [LogAppMessageDeclaration](../../AccelByte.Sdk/Api/Dslogmanager/Model/LogAppMessageDeclaration.cs) |
+| `models.AllocationEvent` | [ModelsAllocationEvent](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsAllocationEvent.cs) |
 | `models.BatchDownloadLogsRequest` | [ModelsBatchDownloadLogsRequest](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsBatchDownloadLogsRequest.cs) |
 | `models.DownloadLogsRequest` | [ModelsDownloadLogsRequest](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsDownloadLogsRequest.cs) |
 | `models.ListTerminatedServersResponse` | [ModelsListTerminatedServersResponse](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsListTerminatedServersResponse.cs) |

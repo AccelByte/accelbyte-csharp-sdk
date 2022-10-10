@@ -41,6 +41,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("offset")]
         public int? Offset { get; set; }
 
+        [SdkCommandArgument("sortBy")]
+        public string? SortBy { get; set; }
+
         [SdkCommandArgument("storeId")]
         public string? StoreId { get; set; }
 
@@ -65,6 +68,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 (ItemType is null ? null : SearchItemsItemType.NewValue(ItemType)),
                 Limit,
                 Offset,
+                SortBy,
                 StoreId,
                 Keyword,
                 Language

@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
 {
     public class ModelsServer : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("allocation_events")]
+        public List<ModelsAllocationEvent>? AllocationEvents { get; set; }
+
         [JsonPropertyName("allocation_id")]
         public string? AllocationId { get; set; }
 

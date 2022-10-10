@@ -13,6 +13,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Options { get; set; }
 
+        [JsonPropertyName("requestId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? RequestId { get; set; }
+
         [JsonPropertyName("useCount")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? UseCount { get; set; }
