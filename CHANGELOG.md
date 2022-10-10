@@ -1,6 +1,8 @@
 <a name="v0.19.0"></a>
 ## [v0.19.0]
 - Changed doc folder structure.
+- **BREAKING CHANGE** IAM TokenGrantV3 operation's response has changed from `OauthmodelTokenResponseV3` to `OauthmodelTokenWithDeviceCookieResponseV3`.
+- **BREAKING CHANGE** `ITokenRepository` interface introduce new methods to accomodate `OauthmodelTokenWithDeviceCookieResponseV3`.
 - Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.18.0"></a>

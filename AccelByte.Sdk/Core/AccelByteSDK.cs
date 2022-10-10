@@ -53,7 +53,7 @@ namespace AccelByte.Sdk.Core
             return LoginUser(cred.Username, cred.Password, null);
         }
 
-        public bool LoginUser(Action<OauthmodelTokenResponseV3>? onTokenReceived)
+        public bool LoginUser(Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
         {
             if (Configuration.Credential == null)
                 throw new Exception("Null credential repository");
@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Core
             return LoginUser(username, password, null);
         }
 
-        public bool LoginUser(string username, string password, Action<OauthmodelTokenResponseV3>? onTokenReceived)
+        public bool LoginUser(string username, string password, Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
         {
             Configuration.TokenRepository.RemoveToken();
 
@@ -120,7 +120,7 @@ namespace AccelByte.Sdk.Core
             return LoginClient(null);
         }
 
-        public bool LoginClient(Action<OauthmodelTokenResponseV3>? onTokenReceived)
+        public bool LoginClient(Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
         {
             Configuration.TokenRepository.RemoveToken();
 
@@ -164,7 +164,7 @@ namespace AccelByte.Sdk.Core
             return RefreshAccessToken(refreshToken, null);
         }
 
-        public bool RefreshAccessToken(string refreshToken, Action<OauthmodelTokenResponseV3>? onTokenReceived)
+        public bool RefreshAccessToken(string refreshToken, Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
         {
             TokenGrantV3 op = TokenGrantV3.Builder
                 .SetRefreshToken(refreshToken)

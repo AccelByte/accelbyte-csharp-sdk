@@ -130,7 +130,36 @@ namespace AccelByte.Sdk.Core.Repository
             }
         }
 
+        public void StoreToken(LoginType loginType, OauthmodelTokenWithDeviceCookieResponseV3 tokenResponse)
+        {
+            if (tokenResponse.AccessToken == null)
+                throw new Exception("Access token is null");
+
+            lock (_TokenLock)
+            {
+                _Token = tokenResponse.AccessToken;
+                _LoginType = loginType;
+                IssuedTimestamp = CurrentTimestamp;
+                if (tokenResponse.ExpiresIn != null)
+                    _TokenExpiryIn = tokenResponse.ExpiresIn.Value;
+            }
+        }
+
         public void UpdateToken(OauthmodelTokenResponseV3 tokenResponse)
+        {
+            if (tokenResponse.AccessToken == null)
+                throw new Exception("Access token is null");
+
+            lock (_TokenLock)
+            {
+                _Token = tokenResponse.AccessToken;
+                IssuedTimestamp = CurrentTimestamp;
+                if (tokenResponse.ExpiresIn != null)
+                    _TokenExpiryIn = tokenResponse.ExpiresIn.Value;
+            }
+        }
+
+        public void UpdateToken(OauthmodelTokenWithDeviceCookieResponseV3 tokenResponse)
         {
             if (tokenResponse.AccessToken == null)
                 throw new Exception("Access token is null");
