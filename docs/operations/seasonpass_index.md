@@ -10,6 +10,7 @@
 | `/seasonpass/admin/namespaces/{namespace}/seasons` | GET | QuerySeasons | [QuerySeasons](../../AccelByte.Sdk/Api/Seasonpass/Operation/Season/QuerySeasons.cs) | [QuerySeasons](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/QuerySeasons.cs) |
 | `/seasonpass/admin/namespaces/{namespace}/seasons` | POST | CreateSeason | [CreateSeason](../../AccelByte.Sdk/Api/Seasonpass/Operation/Season/CreateSeason.cs) | [CreateSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/CreateSeason.cs) |
 | `/seasonpass/admin/namespaces/{namespace}/seasons/current` | GET | GetCurrentSeason | [GetCurrentSeason](../../AccelByte.Sdk/Api/Seasonpass/Operation/Season/GetCurrentSeason.cs) | [GetCurrentSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/GetCurrentSeason.cs) |
+| `/seasonpass/admin/namespaces/{namespace}/seasons/current/users/bulk/progression` | POST | BulkGetUserSeasonProgression | [BulkGetUserSeasonProgression](../../AccelByte.Sdk/Api/Seasonpass/Operation/Season/BulkGetUserSeasonProgression.cs) | [BulkGetUserSeasonProgression](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/BulkGetUserSeasonProgression.cs) |
 | `/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}` | GET | GetSeason | [GetSeason](../../AccelByte.Sdk/Api/Seasonpass/Operation/Season/GetSeason.cs) | [GetSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/GetSeason.cs) |
 | `/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}` | DELETE | DeleteSeason | [DeleteSeason](../../AccelByte.Sdk/Api/Seasonpass/Operation/Season/DeleteSeason.cs) | [DeleteSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/DeleteSeason.cs) |
 | `/seasonpass/admin/namespaces/{namespace}/seasons/{seasonId}` | PATCH | UpdateSeason | [UpdateSeason](../../AccelByte.Sdk/Api/Seasonpass/Operation/Season/UpdateSeason.cs) | [UpdateSeason](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/UpdateSeason.cs) |
@@ -69,6 +70,7 @@
 
 | Model | Class |
 |---|---|
+| `BulkUserProgressionRequest` | [BulkUserProgressionRequest](../../AccelByte.Sdk/Api/Seasonpass/Model/BulkUserProgressionRequest.cs) |
 | `ClaimableRewards` | [ClaimableRewards](../../AccelByte.Sdk/Api/Seasonpass/Model/ClaimableRewards.cs) |
 | `ClaimableUserSeasonInfo` | [ClaimableUserSeasonInfo](../../AccelByte.Sdk/Api/Seasonpass/Model/ClaimableUserSeasonInfo.cs) |
 | `ErrorEntity` | [ErrorEntity](../../AccelByte.Sdk/Api/Seasonpass/Model/ErrorEntity.cs) |

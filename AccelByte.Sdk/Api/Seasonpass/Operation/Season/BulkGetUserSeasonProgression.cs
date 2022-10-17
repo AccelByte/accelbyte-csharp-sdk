@@ -7,41 +7,42 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Platform.Model;
+using AccelByte.Sdk.Api.Seasonpass.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Platform.Operation
+namespace AccelByte.Sdk.Api.Seasonpass.Operation
 {
     /// <summary>
-    /// exportStore_1
+    /// bulkGetUserSeasonProgression
     ///
-    /// This API is used to export a whole or partial store.
+    /// This API is used to bulk get user current season progression, season only located in non-publisher namespace.
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS, action=2 (READ)
+    ///   *  Returns : user season progression
     /// </summary>
-    public class ExportStore1 : AccelByte.Sdk.Core.Operation
+    public class BulkGetUserSeasonProgression : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ExportStore1Builder Builder = new ExportStore1Builder();
+        public static BulkGetUserSeasonProgressionBuilder Builder = new BulkGetUserSeasonProgressionBuilder();
 
-        public class ExportStore1Builder
-            : OperationBuilder<ExportStore1Builder>
+        public class BulkGetUserSeasonProgressionBuilder
+            : OperationBuilder<BulkGetUserSeasonProgressionBuilder>
         {
 
 
-            public Model.ExportStoreRequest? Body { get; set; }
+            public Model.BulkUserProgressionRequest? Body { get; set; }
 
 
 
 
-            internal ExportStore1Builder() { }
+            internal BulkGetUserSeasonProgressionBuilder() { }
 
 
 
-            public ExportStore1Builder SetBody(Model.ExportStoreRequest _body)
+            public BulkGetUserSeasonProgressionBuilder SetBody(Model.BulkUserProgressionRequest _body)
             {
                 Body = _body;
                 return this;
@@ -50,14 +51,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public ExportStore1 Build(
-                string namespace_,
-                string storeId
+            public BulkGetUserSeasonProgression Build(
+                string namespace_
             )
             {
-                ExportStore1 op = new ExportStore1(this,
-                    namespace_,
-                    storeId
+                BulkGetUserSeasonProgression op = new BulkGetUserSeasonProgression(this,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -65,13 +64,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private ExportStore1(ExportStore1Builder builder,
-            string namespace_,
-            string storeId
+        private BulkGetUserSeasonProgression(BulkGetUserSeasonProgressionBuilder builder,
+            string namespace_
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["storeId"] = storeId;
 
 
 
@@ -84,14 +81,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
         #endregion
 
-        public ExportStore1(
+        public BulkGetUserSeasonProgression(
             string namespace_,
-            string storeId,
-            Model.ExportStoreRequest body
+            Model.BulkUserProgressionRequest body
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["storeId"] = storeId;
 
 
 
@@ -103,18 +98,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/platform/v2/admin/namespaces/{namespace}/stores/{storeId}/export";
+        public override string Path => "/seasonpass/admin/namespaces/{namespace}/seasons/current/users/bulk/progression";
 
         public override HttpMethod Method => HttpMethod.Post;
 
         public override string[] Consumes => new string[] { "application/json" };
 
-        public override string[] Produces => new string[] { "application/zip" };
+        public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Stream? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public List<Model.UserSeasonSummary>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -122,11 +117,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return payload;
+                return JsonSerializer.Deserialize<List<Model.UserSeasonSummary>>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return payload;
+                return JsonSerializer.Deserialize<List<Model.UserSeasonSummary>>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

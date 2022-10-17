@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         {
             get { return Operation.GetCurrentSeason.Builder.SetWrapperObject(this); }
         }
+        public BulkGetUserSeasonProgression.BulkGetUserSeasonProgressionBuilder BulkGetUserSeasonProgressionOp
+        {
+            get { return Operation.BulkGetUserSeasonProgression.Builder.SetWrapperObject(this); }
+        }
         public GetSeason.GetSeasonBuilder GetSeasonOp
         {
             get { return Operation.GetSeason.Builder.SetWrapperObject(this); }
@@ -128,6 +132,15 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.Payload);
         }
         public Model.SeasonSummary? GetCurrentSeason(GetCurrentSeason input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.UserSeasonSummary>? BulkGetUserSeasonProgression(BulkGetUserSeasonProgression input)
         {
             var response = _sdk.RunRequest(input);
 

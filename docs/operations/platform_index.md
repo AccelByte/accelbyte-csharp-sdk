@@ -209,6 +209,7 @@
 | `/platform/admin/namespaces/{namespace}/iap/config/xbl/cert` | PUT | UpdateXblBPCertFile | [UpdateXblBPCertFile](../../AccelByte.Sdk/Api/Platform/Operation/IAP/UpdateXblBPCertFile.cs) | [UpdateXblBPCertFile](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/UpdateXblBPCertFile.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/iap` | GET | QueryUserIAPOrders | [QueryUserIAPOrders](../../AccelByte.Sdk/Api/Platform/Operation/IAP/QueryUserIAPOrders.cs) | [QueryUserIAPOrders](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/QueryUserIAPOrders.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/iap/all` | GET | QueryAllUserIAPOrders | [QueryAllUserIAPOrders](../../AccelByte.Sdk/Api/Platform/Operation/IAP/QueryAllUserIAPOrders.cs) | [QueryAllUserIAPOrders](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/QueryAllUserIAPOrders.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/iap/consume/history` | GET | QueryUserIAPConsumeHistory | [QueryUserIAPConsumeHistory](../../AccelByte.Sdk/Api/Platform/Operation/IAP/QueryUserIAPConsumeHistory.cs) | [QueryUserIAPConsumeHistory](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/QueryUserIAPConsumeHistory.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/iap/mock/receipt` | PUT | MockFulfillIAPItem | [MockFulfillIAPItem](../../AccelByte.Sdk/Api/Platform/Operation/IAP/MockFulfillIAPItem.cs) | [MockFulfillIAPItem](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/MockFulfillIAPItem.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/apple/receipt` | PUT | PublicFulfillAppleIAPItem | [PublicFulfillAppleIAPItem](../../AccelByte.Sdk/Api/Platform/Operation/IAP/PublicFulfillAppleIAPItem.cs) | [PublicFulfillAppleIAPItem](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/PublicFulfillAppleIAPItem.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/epicgames/sync` | PUT | SyncEpicGamesInventory | [SyncEpicGamesInventory](../../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncEpicGamesInventory.cs) | [SyncEpicGamesInventory](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncEpicGamesInventory.cs) |
@@ -514,6 +515,7 @@
 | `CategoryInfo` | [CategoryInfo](../../AccelByte.Sdk/Api/Platform/Model/CategoryInfo.cs) |
 | `CategoryUpdate` | [CategoryUpdate](../../AccelByte.Sdk/Api/Platform/Model/CategoryUpdate.cs) |
 | `CheckoutConfig` | [CheckoutConfig](../../AccelByte.Sdk/Api/Platform/Model/CheckoutConfig.cs) |
+| `ClientRequestParameter` | [ClientRequestParameter](../../AccelByte.Sdk/Api/Platform/Model/ClientRequestParameter.cs) |
 | `CodeCreate` | [CodeCreate](../../AccelByte.Sdk/Api/Platform/Model/CodeCreate.cs) |
 | `CodeCreateResult` | [CodeCreateResult](../../AccelByte.Sdk/Api/Platform/Model/CodeCreateResult.cs) |
 | `CodeInfo` | [CodeInfo](../../AccelByte.Sdk/Api/Platform/Model/CodeInfo.cs) |
@@ -521,6 +523,7 @@
 | `ConditionGroup` | [ConditionGroup](../../AccelByte.Sdk/Api/Platform/Model/ConditionGroup.cs) |
 | `ConditionGroupValidateResult` | [ConditionGroupValidateResult](../../AccelByte.Sdk/Api/Platform/Model/ConditionGroupValidateResult.cs) |
 | `ConditionMatchResult` | [ConditionMatchResult](../../AccelByte.Sdk/Api/Platform/Model/ConditionMatchResult.cs) |
+| `ConsumeItem` | [ConsumeItem](../../AccelByte.Sdk/Api/Platform/Model/ConsumeItem.cs) |
 | `CreditRequest` | [CreditRequest](../../AccelByte.Sdk/Api/Platform/Model/CreditRequest.cs) |
 | `CreditSummary` | [CreditSummary](../../AccelByte.Sdk/Api/Platform/Model/CreditSummary.cs) |
 | `CurrencyConfig` | [CurrencyConfig](../../AccelByte.Sdk/Api/Platform/Model/CurrencyConfig.cs) |
@@ -579,6 +582,8 @@
 | `GoogleReceiptResolveResult` | [GoogleReceiptResolveResult](../../AccelByte.Sdk/Api/Platform/Model/GoogleReceiptResolveResult.cs) |
 | `GrantSubscriptionDaysRequest` | [GrantSubscriptionDaysRequest](../../AccelByte.Sdk/Api/Platform/Model/GrantSubscriptionDaysRequest.cs) |
 | `HierarchicalCategoryInfo` | [HierarchicalCategoryInfo](../../AccelByte.Sdk/Api/Platform/Model/HierarchicalCategoryInfo.cs) |
+| `IAPConsumeHistoryInfo` | [IAPConsumeHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/IAPConsumeHistoryInfo.cs) |
+| `IAPConsumeHistoryPagingSlicedResult` | [IAPConsumeHistoryPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/IAPConsumeHistoryPagingSlicedResult.cs) |
 | `IAPItemConfigInfo` | [IAPItemConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/IAPItemConfigInfo.cs) |
 | `IAPItemConfigUpdate` | [IAPItemConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/IAPItemConfigUpdate.cs) |
 | `IAPItemEntry` | [IAPItemEntry](../../AccelByte.Sdk/Api/Platform/Model/IAPItemEntry.cs) |
@@ -693,6 +698,7 @@
 | `RedeemResult` | [RedeemResult](../../AccelByte.Sdk/Api/Platform/Model/RedeemResult.cs) |
 | `RedeemableItem` | [RedeemableItem](../../AccelByte.Sdk/Api/Platform/Model/RedeemableItem.cs) |
 | `RegionDataItem` | [RegionDataItem](../../AccelByte.Sdk/Api/Platform/Model/RegionDataItem.cs) |
+| `RequestHistory` | [RequestHistory](../../AccelByte.Sdk/Api/Platform/Model/RequestHistory.cs) |
 | `Requirement` | [Requirement](../../AccelByte.Sdk/Api/Platform/Model/Requirement.cs) |
 | `RewardCondition` | [RewardCondition](../../AccelByte.Sdk/Api/Platform/Model/RewardCondition.cs) |
 | `RewardCreate` | [RewardCreate](../../AccelByte.Sdk/Api/Platform/Model/RewardCreate.cs) |

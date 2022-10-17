@@ -95,6 +95,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     ///   * twoFactorEnabled : The flag to indicate whether 2FA validation is enable for this client. default value: false
+    /// 
+    /// 
+    ///   * oauthAccessTokenExpiration : a configurable expiration time for access_token , default value: 0 (mean fetch value from environment variable)
+    /// 
+    /// 
+    ///   * oauthRefreshTokenExpiration : a configurable expiration time for refresh_token , default value: 0 (mean fetch value from environment variable)
     /// </summary>
     public class AdminCreateClientV3 : AccelByte.Sdk.Core.Operation
     {

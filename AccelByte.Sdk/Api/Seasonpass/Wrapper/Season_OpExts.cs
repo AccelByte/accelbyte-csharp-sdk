@@ -48,6 +48,18 @@ namespace AccelByte.Sdk.Api
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetCurrentSeason(op);
         }
 
+        public static List<Seasonpass.Model.UserSeasonSummary>? Execute(
+            this BulkGetUserSeasonProgression.BulkGetUserSeasonProgressionBuilder builder,
+            string namespace_
+        )
+        {
+            BulkGetUserSeasonProgression op = builder.Build(
+                namespace_
+            );
+
+            return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).BulkGetUserSeasonProgression(op);
+        }
+
         public static Seasonpass.Model.SeasonInfo? Execute(
             this GetSeason.GetSeasonBuilder builder,
             string namespace_,

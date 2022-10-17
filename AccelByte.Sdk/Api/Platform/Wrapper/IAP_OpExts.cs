@@ -388,6 +388,20 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryAllUserIAPOrders(op);
         }
 
+        public static Platform.Model.IAPConsumeHistoryPagingSlicedResult? Execute(
+            this QueryUserIAPConsumeHistory.QueryUserIAPConsumeHistoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            QueryUserIAPConsumeHistory op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryUserIAPConsumeHistory(op);
+        }
+
         public static void Execute(
             this MockFulfillIAPItem.MockFulfillIAPItemBuilder builder,
             string namespace_,

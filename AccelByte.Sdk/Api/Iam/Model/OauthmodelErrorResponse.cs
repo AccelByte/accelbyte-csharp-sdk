@@ -36,6 +36,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LinkingToken { get; set; }
 
+        [JsonPropertyName("messageVariables")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, string>? MessageVariables { get; set; }
+
         [JsonPropertyName("mfa_token")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? MfaToken { get; set; }

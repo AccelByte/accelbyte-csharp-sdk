@@ -50,8 +50,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Body
             );
 
-            wrapper.ExportStore1(operation);
-            return String.Empty;
+            Stream? response = wrapper.ExportStore1(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

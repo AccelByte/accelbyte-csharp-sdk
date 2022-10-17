@@ -72,6 +72,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    /// flexible special character non words with `allowAllSpecialCharacters`
+    /// 
+    /// 
+    /// 
+    /// if `allowAllSpecialCharacters` is set to true `specialCharacters` will forced to empty.
+    /// 
+    /// 
     /// Supported `specialCharacterLocation`:
     /// 
     /// 

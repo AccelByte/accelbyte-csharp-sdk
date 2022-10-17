@@ -62,6 +62,20 @@ namespace AccelByte.Sdk.Api
             return ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).AdminGetSession(op);
         }
 
+        public static Sessionbrowser.Model.ModelsAdminSessionResponse? Execute(
+            this AdminDeleteSession.AdminDeleteSessionBuilder builder,
+            string namespace_,
+            string sessionID
+        )
+        {
+            AdminDeleteSession op = builder.Build(
+                namespace_,
+                sessionID
+            );
+
+            return ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).AdminDeleteSession(op);
+        }
+
         public static Sessionbrowser.Model.ModelsGetSessionHistorySearchResponseV2? Execute(
             this AdminSearchSessionsV2.AdminSearchSessionsV2Builder builder,
             string namespace_,

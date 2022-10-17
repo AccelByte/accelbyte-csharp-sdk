@@ -34,8 +34,16 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("oauthAccessTokenExpiration")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? OauthAccessTokenExpiration { get; set; }
+
         [JsonPropertyName("oauthClientType")]
         public string? OauthClientType { get; set; }
+
+        [JsonPropertyName("oauthRefreshTokenExpiration")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? OauthRefreshTokenExpiration { get; set; }
 
         [JsonPropertyName("redirectUri")]
         public string? RedirectUri { get; set; }

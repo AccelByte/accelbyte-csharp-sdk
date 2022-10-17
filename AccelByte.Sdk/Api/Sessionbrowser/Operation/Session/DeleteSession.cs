@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// 
     /// Required scope: social
     /// 
-    /// Delete the session by session ID
+    /// Delete the session (p2p) by session ID
     /// </summary>
     public class DeleteSession : AccelByte.Sdk.Core.Operation
     {

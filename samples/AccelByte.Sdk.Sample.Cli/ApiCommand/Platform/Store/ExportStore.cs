@@ -49,8 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 #pragma warning restore ab_deprecated_operation
 
 #pragma warning disable ab_deprecated_operation_wrapper
-            wrapper.ExportStore(operation);
-            return String.Empty;
+            Stream? response = wrapper.ExportStore(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
 #pragma warning restore ab_deprecated_operation_wrapper
         }
     }

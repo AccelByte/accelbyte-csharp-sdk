@@ -24,6 +24,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("matching_rule")]
         public List<ModelsMatchingRule>? MatchingRule { get; set; }
 
+        [JsonPropertyName("rebalance_enable")]
+        public bool? RebalanceEnable { get; set; }
+
         [JsonPropertyName("sub_game_modes")]
         public Dictionary<string, ModelsSubGameMode>? SubGameModes { get; set; }
 

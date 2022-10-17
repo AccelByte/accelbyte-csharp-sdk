@@ -143,6 +143,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.QueryAllUserIAPOrders.Builder.SetWrapperObject(this); }
         }
+        public QueryUserIAPConsumeHistory.QueryUserIAPConsumeHistoryBuilder QueryUserIAPConsumeHistoryOp
+        {
+            get { return Operation.QueryUserIAPConsumeHistory.Builder.SetWrapperObject(this); }
+        }
         public MockFulfillIAPItem.MockFulfillIAPItemBuilder MockFulfillIAPItemOp
         {
             get { return Operation.MockFulfillIAPItem.Builder.SetWrapperObject(this); }
@@ -452,6 +456,15 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.IAPOrderPagingSlicedResult? QueryAllUserIAPOrders(QueryAllUserIAPOrders input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.IAPConsumeHistoryPagingSlicedResult? QueryUserIAPConsumeHistory(QueryUserIAPConsumeHistory input)
         {
             var response = _sdk.RunRequest(input);
 

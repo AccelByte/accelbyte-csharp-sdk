@@ -42,8 +42,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 Namespace
             );
 
-            wrapper.ExportStats(operation);
-            return String.Empty;
+            Stream? response = wrapper.ExportStats(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

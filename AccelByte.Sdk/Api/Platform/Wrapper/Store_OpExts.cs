@@ -154,7 +154,7 @@ namespace AccelByte.Sdk.Api
         }
 
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public static void Execute(
+        public static Stream? Execute(
             this ExportStore.ExportStoreBuilder builder,
             string namespace_,
             string storeId
@@ -165,7 +165,7 @@ namespace AccelByte.Sdk.Api
                 storeId
             );
 
-            ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStore(op);
+            return ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStore(op);
         }
 
         public static List<Platform.Model.StoreInfo>? Execute(
@@ -192,7 +192,7 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ImportStore1(op);
         }
 
-        public static void Execute(
+        public static Stream? Execute(
             this ExportStore1.ExportStore1Builder builder,
             string namespace_,
             string storeId
@@ -203,7 +203,7 @@ namespace AccelByte.Sdk.Api
                 storeId
             );
 
-            ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStore1(op);
+            return ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStore1(op);
         }
 
     }

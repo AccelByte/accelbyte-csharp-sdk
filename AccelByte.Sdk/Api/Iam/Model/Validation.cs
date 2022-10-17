@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class Validation : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("allowAllSpecialCharacters")]
+        public bool? AllowAllSpecialCharacters { get; set; }
+
         [JsonPropertyName("allowDigit")]
         public bool? AllowDigit { get; set; }
 

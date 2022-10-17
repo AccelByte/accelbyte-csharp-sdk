@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
     /// 
     /// Format of the event:
     /// 
-    /// - **EventNamespace (required)**: namespace of the relevant game with domain name format.
+    /// - **EventNamespace (required)**: Namespace of the relevant game with domain name format.
     /// 
     /// 
     /// Only accept input with valid characters. Allowed characters: Aa-Zz0-9_.-
@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
     /// 
     /// 
     /// 
-    /// - **EventName (required)**: name of the event.
+    /// - **EventName (required)**: Name of the event.
     /// 
     /// 
     /// Only accept input with valid characters. Allowed characters: Aa-Zz0-9_.-
@@ -58,7 +58,10 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
     /// 
     /// 
     /// 
-    /// - **Payload (required)**: an arbitrary json with the payload of the said event
+    /// - **Payload (required)**: An arbitrary json with the payload of the said event.
+    /// 
+    /// 
+    /// Default maximum payload size is 1MB
     /// </summary>
     public class ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost : AccelByte.Sdk.Core.Operation
     {

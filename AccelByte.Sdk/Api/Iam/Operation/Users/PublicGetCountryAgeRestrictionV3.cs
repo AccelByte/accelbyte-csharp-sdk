@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// PublicGetCountryAgeRestrictionV3
     ///
     /// Get age restriction by country code. It will always get by publisher namespace
-    /// 
-    /// 
-    /// Requires valid user access token
     /// </summary>
     public class PublicGetCountryAgeRestrictionV3 : AccelByte.Sdk.Core.Operation
     {

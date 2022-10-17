@@ -204,7 +204,7 @@ namespace AccelByte.Sdk.Api
             ((Platform.Wrapper.Order)builder.WrapperObject!).ProcessUserOrderNotification(op);
         }
 
-        public static void Execute(
+        public static Stream? Execute(
             this DownloadUserOrderReceipt.DownloadUserOrderReceiptBuilder builder,
             string namespace_,
             string orderNo,
@@ -217,7 +217,7 @@ namespace AccelByte.Sdk.Api
                 userId
             );
 
-            ((Platform.Wrapper.Order)builder.WrapperObject!).DownloadUserOrderReceipt(op);
+            return ((Platform.Wrapper.Order)builder.WrapperObject!).DownloadUserOrderReceipt(op);
         }
 
         public static Platform.Model.OrderPagingSlicedResult? Execute(
@@ -296,7 +296,7 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Order)builder.WrapperObject!).PublicGetUserOrderHistories(op);
         }
 
-        public static void Execute(
+        public static Stream? Execute(
             this PublicDownloadUserOrderReceipt.PublicDownloadUserOrderReceiptBuilder builder,
             string namespace_,
             string orderNo,
@@ -309,7 +309,7 @@ namespace AccelByte.Sdk.Api
                 userId
             );
 
-            ((Platform.Wrapper.Order)builder.WrapperObject!).PublicDownloadUserOrderReceipt(op);
+            return ((Platform.Wrapper.Order)builder.WrapperObject!).PublicDownloadUserOrderReceipt(op);
         }
 
     }

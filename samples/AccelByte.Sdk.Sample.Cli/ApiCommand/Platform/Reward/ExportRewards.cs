@@ -42,8 +42,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace
             );
 
-            wrapper.ExportRewards(operation);
-            return String.Empty;
+            Stream? response = wrapper.ExportRewards(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

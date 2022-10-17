@@ -187,11 +187,11 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
 #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public void ExportStore(ExportStore input)
+        public Stream? ExportStore(ExportStore input)
         {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);
@@ -215,11 +215,11 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void ExportStore1(ExportStore1 input)
+        public Stream? ExportStore1(ExportStore1 input)
         {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

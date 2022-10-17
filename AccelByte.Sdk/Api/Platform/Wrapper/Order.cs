@@ -218,11 +218,11 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void DownloadUserOrderReceipt(DownloadUserOrderReceipt input)
+        public Stream? DownloadUserOrderReceipt(DownloadUserOrderReceipt input)
         {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);
@@ -272,11 +272,11 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicDownloadUserOrderReceipt(PublicDownloadUserOrderReceipt input)
+        public Stream? PublicDownloadUserOrderReceipt(PublicDownloadUserOrderReceipt input)
         {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

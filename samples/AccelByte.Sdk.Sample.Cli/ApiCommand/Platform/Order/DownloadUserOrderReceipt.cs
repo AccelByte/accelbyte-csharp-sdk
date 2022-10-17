@@ -50,8 +50,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 UserId
             );
 
-            wrapper.DownloadUserOrderReceipt(operation);
-            return String.Empty;
+            Stream? response = wrapper.DownloadUserOrderReceipt(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }
