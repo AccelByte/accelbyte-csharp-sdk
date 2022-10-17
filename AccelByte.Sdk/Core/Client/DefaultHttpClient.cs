@@ -96,17 +96,20 @@ namespace AccelByte.Sdk.Core.Client
                                 {
                                     content.Add(new StringContent(str), kvp.Key);
                                 }
-                                else if (kvp.Value is FileUploadStream fusStream)
-                                {
-                                    StreamContent fsStream = new StreamContent(fusStream);
-                                    fsStream.Headers.ContentType = new MediaTypeHeaderValue(fusStream.MimeType);
-                                    content.Add(fsStream, kvp.Key, fusStream.FileName);
-                                }
                                 else if (kvp.Value is Stream stream)
                                 {
                                     StreamContent fsStream = new StreamContent(stream);
-                                    fsStream.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-                                    content.Add(fsStream, kvp.Key, "name.bin");
+                                    if (kvp.Value is IUploadStream)
+                                    {
+                                        IUploadStream uploadStream = (IUploadStream)kvp.Value;
+                                        fsStream.Headers.ContentType = new MediaTypeHeaderValue(uploadStream.MimeType);
+                                        content.Add(fsStream, kvp.Key, uploadStream.FileName);
+                                    }
+                                    else
+                                    {
+                                        fsStream.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                                        content.Add(fsStream, kvp.Key, "name.bin");
+                                    }                                    
                                 }
                                 else
                                 {
