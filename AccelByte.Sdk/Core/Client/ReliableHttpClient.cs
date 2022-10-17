@@ -185,7 +185,7 @@ namespace AccelByte.Sdk.Core.Client
                                 {
                                     fsStream.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
                                     content.Add(fsStream, kvp.Key, "name.bin");
-                                }                                    
+                                }
                             }
                             else
                             {

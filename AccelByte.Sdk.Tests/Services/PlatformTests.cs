@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using NUnit.Framework;
 
 using AccelByte.Sdk.Core;
@@ -74,6 +75,65 @@ namespace AccelByte.Sdk.Tests.Services
                 .Execute(_Sdk.Namespace, store_id);
             #endregion
             Assert.IsNotNull(dStore);
+        }
+
+        [Test]
+        public void StoreExportImportTests()
+        {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
+            string store_id = String.Empty;
+
+            StoreCreate createStore = new StoreCreate()
+            {
+                Title = "CSharp SDK Store Test",
+                Description = "Description for CSharp Server SDK store service integration test.",
+                DefaultLanguage = "en",
+                DefaultRegion = "US",
+                SupportedLanguages = new List<string>() { "en", "id" },
+                SupportedRegions = new List<string>() { "US", "ID" }
+            };
+
+            DisableRetry();
+            StoreInfo? cStore = _Sdk.Platform.Store.CreateStoreOp
+                .SetBody(createStore)
+                .Execute(_Sdk.Namespace);
+            Assert.IsNotNull(cStore);
+            if (cStore != null)
+            {
+                Assert.AreEqual("CSharp SDK Store Test", cStore.Title);
+                store_id = cStore.StoreId!;
+            }
+
+            #region Export a store
+            ExportStoreRequest xRequest = new ExportStoreRequest();
+            Stream? stream = _Sdk.Platform.Store.ExportStore1Op
+                .SetBody(xRequest)
+                .Execute(_Sdk.Namespace, store_id);
+            #endregion
+            if (stream == null)
+            {
+                Assert.Fail("response stream is null.");
+                return;
+            }
+
+            MemoryUploadStream uploadStream = MemoryUploadStream.FromStream(stream, "temp.zip");
+
+            DisableRetry();
+            #region Import store
+            ImportStoreResult? result = _Sdk.Platform.Store.ImportStore1Op
+                .SetFile(uploadStream)
+                .SetStoreId(store_id)
+                .Execute(_Sdk.Namespace);
+            #endregion
+            Assert.IsNotNull(result);
+
+            //Delete draft store
+            StoreInfo? dStoreAgain = _Sdk.Platform.Store.DeleteStoreOp
+                .Execute(_Sdk.Namespace, store_id);
+            Assert.IsNotNull(dStoreAgain);
         }
     }
 }

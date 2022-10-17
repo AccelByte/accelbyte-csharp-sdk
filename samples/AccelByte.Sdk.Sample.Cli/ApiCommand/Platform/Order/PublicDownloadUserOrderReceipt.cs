@@ -9,6 +9,7 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Platform.Wrapper;
@@ -54,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             if (response == null)
                 return "No response from server.";
 
-            return SdkHelper.SerializeToJson(response);
+            return Helper.ConvertInputStreamToString(response);
         }
     }
 }

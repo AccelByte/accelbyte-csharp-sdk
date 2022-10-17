@@ -9,6 +9,7 @@ using System.IO;
 using System.Collections.Generic;
 
 using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Sample.Cli.Command;
 
 using AccelByte.Sdk.Api.Basic.Wrapper;
