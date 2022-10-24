@@ -1,3 +1,9 @@
+<a name="v0.20.0"></a>
+## [v0.20.0]
+- Fixed HTTP Clients to handle upload stream handling.
+- **BREAKING CHANGE** Fixed operation's response to output `Stream` object for most of export endpoints.
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.19.0"></a>
 ## [v0.19.0]
 - Changed doc folder structure.

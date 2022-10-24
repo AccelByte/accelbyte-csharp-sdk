@@ -87,7 +87,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Stream? ExportRewards(ExportRewards input)
+        public List<Model.ConfigInfo>? ExportRewards(ExportRewards input)
         {
             var response = _sdk.RunRequest(input);
 

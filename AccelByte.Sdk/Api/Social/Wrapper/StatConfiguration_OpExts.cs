@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).CreateStat(op);
         }
 
-        public static Stream? Execute(
+        public static List<Social.Model.ConfigInfo>? Execute(
             this ExportStats.ExportStatsBuilder builder,
             string namespace_
         )

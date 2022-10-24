@@ -523,6 +523,7 @@
 | `ConditionGroup` | [ConditionGroup](../../AccelByte.Sdk/Api/Platform/Model/ConditionGroup.cs) |
 | `ConditionGroupValidateResult` | [ConditionGroupValidateResult](../../AccelByte.Sdk/Api/Platform/Model/ConditionGroupValidateResult.cs) |
 | `ConditionMatchResult` | [ConditionMatchResult](../../AccelByte.Sdk/Api/Platform/Model/ConditionMatchResult.cs) |
+| `ConfigInfo` | [ConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/ConfigInfo.cs) |
 | `ConsumeItem` | [ConsumeItem](../../AccelByte.Sdk/Api/Platform/Model/ConsumeItem.cs) |
 | `CreditRequest` | [CreditRequest](../../AccelByte.Sdk/Api/Platform/Model/CreditRequest.cs) |
 | `CreditSummary` | [CreditSummary](../../AccelByte.Sdk/Api/Platform/Model/CreditSummary.cs) |

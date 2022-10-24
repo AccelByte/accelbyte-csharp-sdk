@@ -7,8 +7,8 @@
     <Product>AccelByte.Sdk</Product>
     <PackageId>AccelByte.Sdk</PackageId>
     <Authors>AccelByte Developers</Authors>
-    <Version>0.19.0</Version>
-    <AssemblyVersion>0.19.0</AssemblyVersion>
+    <Version>0.20.0</Version>
+    <AssemblyVersion>0.20.0</AssemblyVersion>
     <Company>AccelByte</Company>
     <Copyright>Copyright(c) AccelByte 2022</Copyright>
     <Description>AccelByte .NET (C#) SDK
@@ -18,10 +18,9 @@ A software development kit (SDK) for interacting with AccelByte services.</Descr
     <RepositoryType>git</RepositoryType>
     <PackageTags>accelbyte;sdk</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>[v0.19.0]
-- Changed doc folder structure.
-- **BREAKING CHANGE** IAM TokenGrantV3 operation's response has changed from `OauthmodelTokenResponseV3` to `OauthmodelTokenWithDeviceCookieResponseV3`.
-- **BREAKING CHANGE** `ITokenRepository` interface introduce new methods to accomodate `OauthmodelTokenWithDeviceCookieResponseV3`.
+    <PackageReleaseNotes>[v0.20.0]
+- Fixed HTTP Clients to handle upload stream handling.
+- **BREAKING CHANGE** Fixed operation's response to output `Stream` object for most of export endpoints.
 - Update APIs. See what's changes [here](spec/APICHANGES.md)</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>

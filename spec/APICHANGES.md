@@ -1,3 +1,15 @@
+# C# Server SDK v0.20.0
+
+## gametelemetry Service
+
+### What's Changed
+---
+`GET` /game-telemetry/v1/admin/namespaces/{namespace}/events Get Events  
+    Parameters
+
+        Modify startTime //Start time of data to be queried. Default: Current time in UTC minus 1 day.
+        Modify endTime //End time of data to be queried. Default: Current time in UTC.
+
 # C# Server SDK v0.19.0
 
 ## basic Service
