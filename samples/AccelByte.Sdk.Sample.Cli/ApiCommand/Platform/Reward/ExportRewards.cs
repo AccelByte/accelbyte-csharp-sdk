@@ -43,11 +43,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace
             );
 
-            List<AccelByte.Sdk.Api.Platform.Model.ConfigInfo>? response = wrapper.ExportRewards(operation);
+            Stream? response = wrapper.ExportRewards(operation);
             if (response == null)
                 return "No response from server.";
 
-            return SdkHelper.SerializeToJson(response);
+            return Helper.ConvertInputStreamToString(response);
         }
     }
 }

@@ -120,7 +120,6 @@
 | `BulkUserStatItemInc` | [BulkUserStatItemInc](../../AccelByte.Sdk/Api/Social/Model/BulkUserStatItemInc.cs) |
 | `BulkUserStatItemReset` | [BulkUserStatItemReset](../../AccelByte.Sdk/Api/Social/Model/BulkUserStatItemReset.cs) |
 | `BulkUserStatItemUpdate` | [BulkUserStatItemUpdate](../../AccelByte.Sdk/Api/Social/Model/BulkUserStatItemUpdate.cs) |
-| `ConfigInfo` | [ConfigInfo](../../AccelByte.Sdk/Api/Social/Model/ConfigInfo.cs) |
 | `ErrorEntity` | [ErrorEntity](../../AccelByte.Sdk/Api/Social/Model/ErrorEntity.cs) |
 | `FieldValidationError` | [FieldValidationError](../../AccelByte.Sdk/Api/Social/Model/FieldValidationError.cs) |
 | `GameProfileHeader` | [GameProfileHeader](../../AccelByte.Sdk/Api/Social/Model/GameProfileHeader.cs) |

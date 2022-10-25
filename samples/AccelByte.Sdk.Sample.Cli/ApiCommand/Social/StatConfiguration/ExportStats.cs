@@ -43,11 +43,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 Namespace
             );
 
-            List<AccelByte.Sdk.Api.Social.Model.ConfigInfo>? response = wrapper.ExportStats(operation);
+            Stream? response = wrapper.ExportStats(operation);
             if (response == null)
                 return "No response from server.";
 
-            return SdkHelper.SerializeToJson(response);
+            return Helper.ConvertInputStreamToString(response);
         }
     }
 }

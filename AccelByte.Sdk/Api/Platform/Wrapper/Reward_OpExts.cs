@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Reward)builder.WrapperObject!).QueryRewards(op);
         }
 
-        public static List<Platform.Model.ConfigInfo>? Execute(
+        public static Stream? Execute(
             this ExportRewards.ExportRewardsBuilder builder,
             string namespace_
         )

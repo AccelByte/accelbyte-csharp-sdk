@@ -9065,10 +9065,7 @@
           "200": {
             "description": "successful export of reward configs",
             "schema": {
-              "items": {
-                "$ref": "#/definitions/ConfigInfo"
-              },
-              "type": "array"
+              "type": "file"
             }
           }
         },
@@ -26676,9 +26673,6 @@
           "type": "string"
         }
       },
-      "type": "object"
-    },
-    "ConfigInfo": {
       "type": "object"
     },
     "ConsumeItem": {
