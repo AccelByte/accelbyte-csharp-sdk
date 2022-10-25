@@ -33,6 +33,7 @@ namespace AccelByte.Sdk.Tests.Services
         }
 
         [Test]
+        [Ignore("temporary disabled")]
         public void DSMCServiceTests()
         {
             Assert.IsNotNull(_Sdk);
