@@ -123,12 +123,6 @@ namespace AccelByte.Sdk.Core.Client
                             throw new NotSupportedException($"Unsupported form content type (content type: {contentType})");
                     }
                 }
-                else
-                {
-                    if (contentType == String.Empty)
-                        contentType = "text/plain";
-                    request.Content = new StringContent(string.Empty, Encoding.UTF8, contentType);
-                }
 
                 //request.Content.Headers.Clear();
                 foreach (var h in headers)

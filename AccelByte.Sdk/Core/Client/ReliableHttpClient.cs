@@ -199,12 +199,6 @@ namespace AccelByte.Sdk.Core.Client
                         throw new NotSupportedException($"Unsupported form content type (content type: {reqContentType})");
                 }
             }
-            else
-            {
-                if (reqContentType == String.Empty)
-                    reqContentType = "text/plain";
-                request.Content = new StringContent(string.Empty, Encoding.UTF8, reqContentType);
-            }
 
             foreach (var h in headers)
             {
