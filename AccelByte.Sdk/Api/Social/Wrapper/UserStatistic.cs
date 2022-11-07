@@ -176,355 +176,316 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             get { return Operation.UpdateUserStatItemValue1.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public List<Model.UserStatItemInfo>? BulkFetchStatItems(BulkFetchStatItems input)
-        {
+        
+        public List<Model.UserStatItemInfo>? BulkFetchStatItems(BulkFetchStatItems input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItem(BulkIncUserStatItem input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItem(BulkIncUserStatItem input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItemValue(BulkIncUserStatItemValue input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItemValue(BulkIncUserStatItemValue input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ADTOObjectForUserStatItemValue>? BulkFetchOrDefaultStatItems(BulkFetchOrDefaultStatItems input)
-        {
+        public List<Model.ADTOObjectForUserStatItemValue>? BulkFetchOrDefaultStatItems(BulkFetchOrDefaultStatItems input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItem(BulkResetUserStatItem input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItem(BulkResetUserStatItem input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserStatItemPagingSlicedResult? GetUserStatItems(GetUserStatItems input)
-        {
+        public Model.UserStatItemPagingSlicedResult? GetUserStatItems(GetUserStatItems input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkCreateUserStatItems(BulkCreateUserStatItems input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkCreateUserStatItems(BulkCreateUserStatItems input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItem1(BulkIncUserStatItem1 input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItem1(BulkIncUserStatItem1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItemValue1(BulkIncUserStatItemValue1 input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItemValue1(BulkIncUserStatItemValue1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItem1(BulkResetUserStatItem1 input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItem1(BulkResetUserStatItem1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void CreateUserStatItem(CreateUserStatItem input)
-        {
+        public void CreateUserStatItem(CreateUserStatItem input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteUserStatItems(DeleteUserStatItems input)
-        {
+        public void DeleteUserStatItems(DeleteUserStatItems input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StatItemIncResult? IncUserStatItemValue(IncUserStatItemValue input)
-        {
+        public Model.StatItemIncResult? IncUserStatItemValue(IncUserStatItemValue input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StatItemIncResult? ResetUserStatItemValue(ResetUserStatItemValue input)
-        {
+        public Model.StatItemIncResult? ResetUserStatItemValue(ResetUserStatItemValue input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.UserStatItemInfo>? BulkFetchStatItems1(BulkFetchStatItems1 input)
-        {
+        public List<Model.UserStatItemInfo>? BulkFetchStatItems1(BulkFetchStatItems1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? PublicBulkIncUserStatItem(PublicBulkIncUserStatItem input)
-        {
+        public List<Model.BulkStatItemOperationResult>? PublicBulkIncUserStatItem(PublicBulkIncUserStatItem input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? PublicBulkIncUserStatItemValue(PublicBulkIncUserStatItemValue input)
-        {
+        public List<Model.BulkStatItemOperationResult>? PublicBulkIncUserStatItemValue(PublicBulkIncUserStatItemValue input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItem2(BulkResetUserStatItem2 input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItem2(BulkResetUserStatItem2 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserStatItemPagingSlicedResult? PublicQueryUserStatItems(PublicQueryUserStatItems input)
-        {
+        public Model.UserStatItemPagingSlicedResult? PublicQueryUserStatItems(PublicQueryUserStatItems input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? PublicBulkCreateUserStatItems(PublicBulkCreateUserStatItems input)
-        {
+        public List<Model.BulkStatItemOperationResult>? PublicBulkCreateUserStatItems(PublicBulkCreateUserStatItems input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ADTOObjectForUserStatItemValue>? PublicQueryUserStatItems1(PublicQueryUserStatItems1 input)
-        {
+        public List<Model.ADTOObjectForUserStatItemValue>? PublicQueryUserStatItems1(PublicQueryUserStatItems1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? PublicBulkIncUserStatItem1(PublicBulkIncUserStatItem1 input)
-        {
+        public List<Model.BulkStatItemOperationResult>? PublicBulkIncUserStatItem1(PublicBulkIncUserStatItem1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItemValue2(BulkIncUserStatItemValue2 input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItemValue2(BulkIncUserStatItemValue2 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItem3(BulkResetUserStatItem3 input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItem3(BulkResetUserStatItem3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicCreateUserStatItem(PublicCreateUserStatItem input)
-        {
+        public void PublicCreateUserStatItem(PublicCreateUserStatItem input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteUserStatItems1(DeleteUserStatItems1 input)
-        {
+        public void DeleteUserStatItems1(DeleteUserStatItems1 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StatItemIncResult? PublicIncUserStatItem(PublicIncUserStatItem input)
-        {
+        public Model.StatItemIncResult? PublicIncUserStatItem(PublicIncUserStatItem input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StatItemIncResult? PublicIncUserStatItemValue(PublicIncUserStatItemValue input)
-        {
+        public Model.StatItemIncResult? PublicIncUserStatItemValue(PublicIncUserStatItemValue input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StatItemIncResult? ResetUserStatItemValue1(ResetUserStatItemValue1 input)
-        {
+        public Model.StatItemIncResult? ResetUserStatItemValue1(ResetUserStatItemValue1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItemV2(BulkUpdateUserStatItemV2 input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItemV2(BulkUpdateUserStatItemV2 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ADTOObjectForUserStatItemValue>? BulkFetchOrDefaultStatItems1(BulkFetchOrDefaultStatItems1 input)
-        {
+        public List<Model.ADTOObjectForUserStatItemValue>? BulkFetchOrDefaultStatItems1(BulkFetchOrDefaultStatItems1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItem(BulkUpdateUserStatItem input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItem(BulkUpdateUserStatItem input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItemValues(BulkResetUserStatItemValues input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItemValues(BulkResetUserStatItemValues input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteUserStatItems2(DeleteUserStatItems2 input)
-        {
+        public void DeleteUserStatItems2(DeleteUserStatItems2 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StatItemIncResult? UpdateUserStatItemValue(UpdateUserStatItemValue input)
-        {
+        public Model.StatItemIncResult? UpdateUserStatItemValue(UpdateUserStatItemValue input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItem1(BulkUpdateUserStatItem1 input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItem1(BulkUpdateUserStatItem1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ADTOObjectForUserStatItemValue>? PublicQueryUserStatItems2(PublicQueryUserStatItems2 input)
-        {
+        public List<Model.ADTOObjectForUserStatItemValue>? PublicQueryUserStatItems2(PublicQueryUserStatItems2 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItem2(BulkUpdateUserStatItem2 input)
-        {
+        public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItem2(BulkUpdateUserStatItem2 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StatItemIncResult? UpdateUserStatItemValue1(UpdateUserStatItemValue1 input)
-        {
+        public Model.StatItemIncResult? UpdateUserStatItemValue1(UpdateUserStatItemValue1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

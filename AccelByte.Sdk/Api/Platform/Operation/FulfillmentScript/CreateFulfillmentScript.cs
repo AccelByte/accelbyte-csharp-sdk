@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 CreateFulfillmentScript op = new CreateFulfillmentScript(this,
-                    id
+                    id                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -71,31 +71,31 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["id"] = id;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = builder.Body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CreateFulfillmentScript(
-            string id,
-            Model.FulfillmentScriptCreate body
+            string id,            
+            Model.FulfillmentScriptCreate body            
         )
         {
             PathParams["id"] = id;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,13 +106,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Consumes => new string[] { "application/json" };
 
-        public override string[] Produces => new string[] { };
+        public override string[] Produces => new string[] {  };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.FulfillmentScriptInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -125,9 +125,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.FulfillmentScriptInfo>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

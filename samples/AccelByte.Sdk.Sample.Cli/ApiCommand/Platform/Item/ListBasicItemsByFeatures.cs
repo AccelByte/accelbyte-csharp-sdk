@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "listbasicitemsbyfeatures")]
-    public class ListBasicItemsByFeaturesCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","listbasicitemsbyfeatures")]
+    public class ListBasicItemsByFeaturesCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "ListBasicItemsByFeatures"; } }
+        public string OperationName{ get { return "ListBasicItemsByFeatures"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             ListBasicItemsByFeatures operation = new ListBasicItemsByFeatures(
-                Namespace,
-                ActiveOnly,
-                Features
-            );
-
+                Namespace,                
+                ActiveOnly,                
+                Features                
+            );            
+            
             List<AccelByte.Sdk.Api.Platform.Model.BasicItem>? response = wrapper.ListBasicItemsByFeatures(operation);
             if (response == null)
                 return "No response from server.";

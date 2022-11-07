@@ -81,7 +81,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Delete link of justice platform will enable password token grant and password update.
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class AdminDeletePlatformLinkV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -117,9 +117,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminDeletePlatformLinkV2 op = new AdminDeletePlatformLinkV2(this,
-                    namespace_,
-                    platformId,
-                    userId
+                    namespace_,                    
+                    platformId,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -136,35 +136,35 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
             PathParams["userId"] = userId;
-
-
+            
+            
             if (builder.PlatformNamespace is not null) FormParams["platform_namespace"] = builder.PlatformNamespace;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminDeletePlatformLinkV2(
-            string namespace_,
-            string platformId,
-            string userId,
-            string? platformNamespace
+            string namespace_,            
+            string platformId,            
+            string userId,            
+            string? platformNamespace            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
             PathParams["userId"] = userId;
-
-
+            
+            
             if (platformNamespace is not null) FormParams["platform_namespace"] = platformNamespace;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -173,22 +173,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] { "application/x-www-form-urlencoded", "text/plain" };
+        public override string[] Consumes => new string[] { "application/x-www-form-urlencoded","text/plain" };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

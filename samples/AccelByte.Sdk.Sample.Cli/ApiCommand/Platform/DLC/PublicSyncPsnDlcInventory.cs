@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publicsyncpsndlcinventory")]
-    public class PublicSyncPsnDlcInventoryCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publicsyncpsndlcinventory")]
+    public class PublicSyncPsnDlcInventoryCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicSyncPsnDlcInventory"; } }
+        public string OperationName{ get { return "PublicSyncPsnDlcInventory"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public PlayStationDLCSyncRequest Body { get; set; } = new PlayStationDLCSyncRequest();
-
+                
         public PublicSyncPsnDlcInventoryCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.DLC wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.DLC(_SDK);
 
             PublicSyncPsnDlcInventory operation = new PublicSyncPsnDlcInventory(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             wrapper.PublicSyncPsnDlcInventory(operation);
             return String.Empty;
         }

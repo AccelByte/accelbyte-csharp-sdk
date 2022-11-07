@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// userID, display name, and on the specified namespace. If the query is not defined, then it searches all users on the specified namespace.
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:* [READ]'
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class SearchUser : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -69,7 +69,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 SearchUser op = new SearchUser(this,
-                    namespace_
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -82,31 +82,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (builder.Query is not null) QueryParams["query"] = builder.Query;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public SearchUser(
-            string namespace_,
-            string? query
+            string namespace_,            
+            string? query            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (query is not null) QueryParams["query"] = query;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -121,9 +121,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelSearchUsersResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -136,9 +136,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelSearchUsersResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

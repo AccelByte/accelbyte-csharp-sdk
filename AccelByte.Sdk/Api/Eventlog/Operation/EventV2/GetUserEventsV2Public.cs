@@ -84,8 +84,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             )
             {
                 GetUserEventsV2Public op = new GetUserEventsV2Public(this,
-                    namespace_,
-                    userId
+                    namespace_,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -100,45 +100,45 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-
+            
             if (builder.EndDate is not null) QueryParams["endDate"] = builder.EndDate;
             if (builder.EventName is not null) QueryParams["eventName"] = builder.EventName;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.PageSize != null) QueryParams["pageSize"] = Convert.ToString(builder.PageSize)!;
             if (builder.StartDate is not null) QueryParams["startDate"] = builder.StartDate;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetUserEventsV2Public(
-            string namespace_,
-            string userId,
-            string? endDate,
-            string? eventName,
-            long? offset,
-            long? pageSize,
-            string? startDate
+            string namespace_,            
+            string userId,            
+            string? endDate,            
+            string? eventName,            
+            long? offset,            
+            long? pageSize,            
+            string? startDate            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-
+            
             if (endDate is not null) QueryParams["endDate"] = endDate;
             if (eventName is not null) QueryParams["eventName"] = eventName;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (pageSize != null) QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             if (startDate is not null) QueryParams["startDate"] = startDate;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -147,15 +147,15 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsEventResponseV2? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -168,9 +168,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsEventResponseV2>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

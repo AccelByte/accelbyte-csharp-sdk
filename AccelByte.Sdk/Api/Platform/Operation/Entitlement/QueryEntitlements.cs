@@ -112,7 +112,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 QueryEntitlements op = new QueryEntitlements(this,
-                    namespace_
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -125,7 +125,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
             if (builder.AppType is not null) QueryParams["appType"] = builder.AppType.Value;
             if (builder.EntitlementClazz is not null) QueryParams["entitlementClazz"] = builder.EntitlementClazz.Value;
@@ -134,31 +134,31 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
+            
 
-
-
+            
             CollectionFormatMap["itemId"] = "multi";
-
-
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public QueryEntitlements(
-            string namespace_,
-            bool? activeOnly,
-            QueryEntitlementsAppType? appType,
-            QueryEntitlementsEntitlementClazz? entitlementClazz,
-            string? entitlementName,
-            List<string>? itemId,
-            int? limit,
-            int? offset,
-            string? userId
+            string namespace_,            
+            bool? activeOnly,            
+            QueryEntitlementsAppType? appType,            
+            QueryEntitlementsEntitlementClazz? entitlementClazz,            
+            string? entitlementName,            
+            List<string>? itemId,            
+            int? limit,            
+            int? offset,            
+            string? userId            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
             if (appType is not null) QueryParams["appType"] = appType.Value;
             if (entitlementClazz is not null) QueryParams["entitlementClazz"] = entitlementClazz.Value;
@@ -167,12 +167,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (userId is not null) QueryParams["userId"] = userId;
+            
 
-
-
+            
             CollectionFormatMap["itemId"] = "multi";
-
-
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -181,15 +181,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.EntitlementPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -202,9 +202,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.EntitlementPagingSlicedResult>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

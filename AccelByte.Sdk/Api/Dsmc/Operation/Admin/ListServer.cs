@@ -59,9 +59,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             )
             {
                 ListServer op = new ListServer(this,
-                    namespace_,
-                    count,
-                    offset
+                    namespace_,                    
+                    count,                    
+                    offset                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -76,37 +76,37 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
             QueryParams["count"] = Convert.ToString(count)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ListServer(
-            string namespace_,
-            string? region,
-            long count,
-            long offset
+            string namespace_,            
+            string? region,            
+            long count,            
+            long offset            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (region is not null) QueryParams["region"] = region;
             QueryParams["count"] = Convert.ToString(count)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -121,9 +121,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsListServerResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -136,9 +136,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsListServerResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

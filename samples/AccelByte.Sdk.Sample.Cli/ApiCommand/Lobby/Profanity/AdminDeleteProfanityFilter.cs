@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "admindeleteprofanityfilter")]
-    public class AdminDeleteProfanityFilterCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","admindeleteprofanityfilter")]
+    public class AdminDeleteProfanityFilterCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "AdminDeleteProfanityFilter"; } }
+        public string OperationName{ get { return "AdminDeleteProfanityFilter"; } }
 
         [SdkCommandArgument("list")]
         public string List { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelsAdminDeleteProfanityFilterRequest Body { get; set; } = new ModelsAdminDeleteProfanityFilterRequest();
-
+                
         public AdminDeleteProfanityFilterCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Profanity wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Profanity(_SDK);
 
             AdminDeleteProfanityFilter operation = new AdminDeleteProfanityFilter(
-                List,
-                Namespace,
-                Body
-            );
-
+                List,                
+                Namespace,                
+                Body                
+            );            
+            
             List<AccelByte.Sdk.Api.Lobby.Model.ModelsProfanityFilter>? response = wrapper.AdminDeleteProfanityFilter(operation);
             if (response == null)
                 return "No response from server.";

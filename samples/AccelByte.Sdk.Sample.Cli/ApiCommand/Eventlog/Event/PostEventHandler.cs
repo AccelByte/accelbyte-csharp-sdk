@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Eventlog.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog", "posteventhandler")]
-    public class PostEventHandlerCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog","posteventhandler")]
+    public class PostEventHandlerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Eventlog"; } }
+        public string ServiceName{ get { return "Eventlog"; } }
 
-        public string OperationName { get { return "PostEventHandler"; } }
+        public string OperationName{ get { return "PostEventHandler"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsEvent Body { get; set; } = new ModelsEvent();
-
+                
         public PostEventHandlerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,17 +42,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         {
             AccelByte.Sdk.Api.Eventlog.Wrapper.Event wrapper = new AccelByte.Sdk.Api.Eventlog.Wrapper.Event(_SDK);
 
-#pragma warning disable ab_deprecated_operation
+            #pragma warning disable ab_deprecated_operation
             PostEventHandler operation = new PostEventHandler(
-                Namespace,
-                Body
-            );
-#pragma warning restore ab_deprecated_operation
-
-#pragma warning disable ab_deprecated_operation_wrapper
+                Namespace,                
+                Body                
+            );            
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             wrapper.PostEventHandler(operation);
             return String.Empty;
-#pragma warning restore ab_deprecated_operation_wrapper
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

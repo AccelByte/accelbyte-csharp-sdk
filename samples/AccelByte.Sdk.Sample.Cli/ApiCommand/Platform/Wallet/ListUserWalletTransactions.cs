@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "listuserwallettransactions")]
-    public class ListUserWalletTransactionsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","listuserwallettransactions")]
+    public class ListUserWalletTransactionsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "ListUserWalletTransactions"; } }
+        public string OperationName{ get { return "ListUserWalletTransactions"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -51,23 +51,23 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
 
-#pragma warning disable ab_deprecated_operation
+            #pragma warning disable ab_deprecated_operation
             ListUserWalletTransactions operation = new ListUserWalletTransactions(
-                Namespace,
-                UserId,
-                WalletId,
-                Limit,
-                Offset
-            );
-#pragma warning restore ab_deprecated_operation
-
-#pragma warning disable ab_deprecated_operation_wrapper
+                Namespace,                
+                UserId,                
+                WalletId,                
+                Limit,                
+                Offset                
+            );            
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Platform.Model.DetailedWalletTransactionPagingSlicedResult? response = wrapper.ListUserWalletTransactions(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-#pragma warning restore ab_deprecated_operation_wrapper
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

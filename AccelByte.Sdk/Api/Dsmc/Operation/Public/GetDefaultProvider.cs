@@ -52,12 +52,12 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         private GetDefaultProvider(GetDefaultProviderBuilder builder
         )
         {
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -66,12 +66,12 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         public GetDefaultProvider(
         )
         {
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -86,9 +86,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsDefaultProvider? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -101,9 +101,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsDefaultProvider>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

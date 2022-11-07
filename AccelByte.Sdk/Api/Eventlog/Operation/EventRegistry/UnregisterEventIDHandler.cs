@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     ///
     /// Required permission `ADMIN:NAMESPACE:{namespace}:EVENT [DELETE]`and scope `analytics`
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class UnregisterEventIDHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             )
             {
                 UnregisterEventIDHandler op = new UnregisterEventIDHandler(this,
-                    eventId
+                    eventId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -57,28 +57,28 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             PathParams["eventId"] = eventId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UnregisterEventIDHandler(
-            string eventId
+            string eventId            
         )
         {
             PathParams["eventId"] = eventId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -87,22 +87,22 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

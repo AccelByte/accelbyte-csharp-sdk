@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc", "publicdownloadcontentpreview")]
-    public class PublicDownloadContentPreviewCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","publicdownloadcontentpreview")]
+    public class PublicDownloadContentPreviewCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ugc"; } }
+        public string ServiceName{ get { return "Ugc"; } }
 
-        public string OperationName { get { return "PublicDownloadContentPreview"; } }
+        public string OperationName{ get { return "PublicDownloadContentPreview"; } }
 
         [SdkCommandArgument("contentId")]
         public string ContentId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicContent(_SDK);
 
             PublicDownloadContentPreview operation = new PublicDownloadContentPreview(
-                ContentId,
-                Namespace
-            );
-
+                ContentId,                
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsGetContentPreviewResponse? response = wrapper.PublicDownloadContentPreview(operation);
             if (response == null)
                 return "No response from server.";

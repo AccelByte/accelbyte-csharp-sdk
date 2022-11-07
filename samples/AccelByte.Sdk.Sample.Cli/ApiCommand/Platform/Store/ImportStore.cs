@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "importstore")]
-    public class ImportStoreCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","importstore")]
+    public class ImportStoreCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "ImportStore"; } }
+        public string OperationName{ get { return "ImportStore"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandFile("file")]
         public Stream? File { get; set; }
-
+                    
         public ImportStoreCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,21 +45,21 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.Store wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Store(_SDK);
 
-#pragma warning disable ab_deprecated_operation
+            #pragma warning disable ab_deprecated_operation
             ImportStore operation = new ImportStore(
-                Namespace,
-                StoreId,
-                File
-            );
-#pragma warning restore ab_deprecated_operation
-
-#pragma warning disable ab_deprecated_operation_wrapper
+                Namespace,                
+                StoreId,                
+                File                
+            );            
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Platform.Model.StoreInfo? response = wrapper.ImportStore(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-#pragma warning restore ab_deprecated_operation_wrapper
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

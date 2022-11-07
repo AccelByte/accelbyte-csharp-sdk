@@ -61,6 +61,34 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// 
     /// 
     /// 
+    /// ## Restriction
+    /// 
+    /// 
+    /// This is the restriction of Key Naming for the record:
+    /// 1. Cannot use "." as the key name
+    /// -
+    /// 
+    /// 
+    ///     { "data.2": "value" }
+    /// 
+    /// 
+    /// 2. Cannot use "$" as the prefix in key names
+    /// -
+    /// 
+    /// 
+    ///     { "$data": "value" }
+    /// 
+    /// 
+    /// 3. Cannot use empty string in key names
+    /// -
+    /// 
+    /// 
+    ///     { "": "value" }
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// 
     /// ## Warning: This endpoint is going to deprecate
     /// 
@@ -101,10 +129,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             )
             {
                 AdminPutPlayerPublicRecordHandlerV1 op = new AdminPutPlayerPublicRecordHandlerV1(this,
-                    body,
-                    key,
-                    namespace_,
-                    userId
+                    body,                    
+                    key,                    
+                    namespace_,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -122,35 +150,35 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             PathParams["key"] = key;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminPutPlayerPublicRecordHandlerV1(
-            string key,
-            string namespace_,
-            string userId,
-            Model.ModelsPlayerRecordRequest body
+            string key,            
+            string namespace_,            
+            string userId,            
+            Model.ModelsPlayerRecordRequest body            
         )
         {
             PathParams["key"] = key;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -165,9 +193,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsPlayerRecordResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -180,9 +208,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsPlayerRecordResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

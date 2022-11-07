@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave", "adminputplayerpublicrecordconcurrenthandlerv1")]
-    public class AdminPutPlayerPublicRecordConcurrentHandlerV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave","adminputplayerpublicrecordconcurrenthandlerv1")]
+    public class AdminPutPlayerPublicRecordConcurrentHandlerV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Cloudsave"; } }
+        public string ServiceName{ get { return "Cloudsave"; } }
 
-        public string OperationName { get { return "AdminPutPlayerPublicRecordConcurrentHandlerV1"; } }
+        public string OperationName{ get { return "AdminPutPlayerPublicRecordConcurrentHandlerV1"; } }
 
         [SdkCommandArgument("key")]
         public string Key { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 
         [SdkCommandData("body")]
         public ModelsAdminConcurrentRecordRequest Body { get; set; } = new ModelsAdminConcurrentRecordRequest();
-
+                
         public AdminPutPlayerPublicRecordConcurrentHandlerV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminConcurrentRecord wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminConcurrentRecord(_SDK);
 
             AdminPutPlayerPublicRecordConcurrentHandlerV1 operation = new AdminPutPlayerPublicRecordConcurrentHandlerV1(
-                Key,
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Key,                
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             wrapper.AdminPutPlayerPublicRecordConcurrentHandlerV1(operation);
             return String.Empty;
         }

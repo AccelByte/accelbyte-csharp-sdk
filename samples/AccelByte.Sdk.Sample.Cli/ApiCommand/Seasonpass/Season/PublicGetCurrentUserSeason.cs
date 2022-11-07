@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass", "publicgetcurrentuserseason")]
-    public class PublicGetCurrentUserSeasonCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass","publicgetcurrentuserseason")]
+    public class PublicGetCurrentUserSeasonCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Seasonpass"; } }
+        public string ServiceName{ get { return "Seasonpass"; } }
 
-        public string OperationName { get { return "PublicGetCurrentUserSeason"; } }
+        public string OperationName{ get { return "PublicGetCurrentUserSeason"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Season wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Season(_SDK);
 
             PublicGetCurrentUserSeason operation = new PublicGetCurrentUserSeason(
-                Namespace,
-                UserId
-            );
-
+                Namespace,                
+                UserId                
+            );            
+            
             AccelByte.Sdk.Api.Seasonpass.Model.ClaimableUserSeasonInfo? response = wrapper.PublicGetCurrentUserSeason(operation);
             if (response == null)
                 return "No response from server.";

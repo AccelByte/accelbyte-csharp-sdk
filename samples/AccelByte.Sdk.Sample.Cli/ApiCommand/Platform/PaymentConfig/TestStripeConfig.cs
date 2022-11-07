@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "teststripeconfig")]
-    public class TestStripeConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","teststripeconfig")]
+    public class TestStripeConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "TestStripeConfig"; } }
+        public string OperationName{ get { return "TestStripeConfig"; } }
 
         [SdkCommandArgument("sandbox")]
         public bool? Sandbox { get; set; }
 
         [SdkCommandData("body")]
         public StripeConfig Body { get; set; } = new StripeConfig();
-
+                
         public TestStripeConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             TestStripeConfig operation = new TestStripeConfig(
-                Sandbox,
-                Body
-            );
-
+                Sandbox,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.TestResult? response = wrapper.TestStripeConfig(operation);
             if (response == null)
                 return "No response from server.";

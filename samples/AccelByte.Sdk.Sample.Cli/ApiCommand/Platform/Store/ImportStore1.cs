@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "importstore1")]
-    public class ImportStore1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","importstore1")]
+    public class ImportStore1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "ImportStore1"; } }
+        public string OperationName{ get { return "ImportStore1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandFile("file")]
         public Stream? File { get; set; }
-
+                    
         public ImportStore1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Store wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Store(_SDK);
 
             ImportStore1 operation = new ImportStore1(
-                Namespace,
-                StoreId,
-                File
-            );
-
+                Namespace,                
+                StoreId,                
+                File                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.ImportStoreResult? response = wrapper.ImportStore1(operation);
             if (response == null)
                 return "No response from server.";

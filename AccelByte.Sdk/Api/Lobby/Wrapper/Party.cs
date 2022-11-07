@@ -40,49 +40,44 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             get { return Operation.PublicSetPartyLimitV1.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public Model.ModelsPartyData? AdminGetPartyDataV1(AdminGetPartyDataV1 input)
-        {
+        
+        public Model.ModelsPartyData? AdminGetPartyDataV1(AdminGetPartyDataV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPartyData? AdminGetUserPartyV1(AdminGetUserPartyV1 input)
-        {
+        public Model.ModelsPartyData? AdminGetUserPartyV1(AdminGetUserPartyV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPartyData? PublicGetPartyDataV1(PublicGetPartyDataV1 input)
-        {
+        public Model.ModelsPartyData? PublicGetPartyDataV1(PublicGetPartyDataV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPartyData? PublicUpdatePartyAttributesV1(PublicUpdatePartyAttributesV1 input)
-        {
+        public Model.ModelsPartyData? PublicUpdatePartyAttributesV1(PublicUpdatePartyAttributesV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicSetPartyLimitV1(PublicSetPartyLimitV1 input)
-        {
+        public void PublicSetPartyLimitV1(PublicSetPartyLimitV1 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

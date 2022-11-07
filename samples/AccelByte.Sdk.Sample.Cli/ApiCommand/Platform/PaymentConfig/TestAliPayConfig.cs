@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "testalipayconfig")]
-    public class TestAliPayConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","testalipayconfig")]
+    public class TestAliPayConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "TestAliPayConfig"; } }
+        public string OperationName{ get { return "TestAliPayConfig"; } }
 
         [SdkCommandArgument("sandbox")]
         public bool? Sandbox { get; set; }
 
         [SdkCommandData("body")]
         public AliPayConfig Body { get; set; } = new AliPayConfig();
-
+                
         public TestAliPayConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             TestAliPayConfig operation = new TestAliPayConfig(
-                Sandbox,
-                Body
-            );
-
+                Sandbox,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.TestResult? response = wrapper.TestAliPayConfig(operation);
             if (response == null)
                 return "No response from server.";

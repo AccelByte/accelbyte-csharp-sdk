@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "publiccreateuserprofile")]
-    public class PublicCreateUserProfileCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","publiccreateuserprofile")]
+    public class PublicCreateUserProfileCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "PublicCreateUserProfile"; } }
+        public string OperationName{ get { return "PublicCreateUserProfile"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 
         [SdkCommandData("body")]
         public UserProfileCreate Body { get; set; } = new UserProfileCreate();
-
+                
         public PublicCreateUserProfileCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.UserProfile wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.UserProfile(_SDK);
 
             PublicCreateUserProfile operation = new PublicCreateUserProfile(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Basic.Model.UserProfileInfo? response = wrapper.PublicCreateUserProfile(operation);
             if (response == null)
                 return "No response from server.";

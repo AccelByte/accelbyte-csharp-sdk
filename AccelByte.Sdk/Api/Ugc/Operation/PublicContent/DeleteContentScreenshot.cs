@@ -46,10 +46,10 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             )
             {
                 DeleteContentScreenshot op = new DeleteContentScreenshot(this,
-                    contentId,
-                    namespace_,
-                    screenshotId,
-                    userId
+                    contentId,                    
+                    namespace_,                    
+                    screenshotId,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -68,34 +68,34 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["namespace"] = namespace_;
             PathParams["screenshotId"] = screenshotId;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteContentScreenshot(
-            string contentId,
-            string namespace_,
-            string screenshotId,
-            string userId
+            string contentId,            
+            string namespace_,            
+            string screenshotId,            
+            string userId            
         )
         {
             PathParams["contentId"] = contentId;
             PathParams["namespace"] = namespace_;
             PathParams["screenshotId"] = screenshotId;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -104,22 +104,22 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] { "application/json", "application/octet-stream" };
+        public override string[] Consumes => new string[] { "application/json","application/octet-stream" };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

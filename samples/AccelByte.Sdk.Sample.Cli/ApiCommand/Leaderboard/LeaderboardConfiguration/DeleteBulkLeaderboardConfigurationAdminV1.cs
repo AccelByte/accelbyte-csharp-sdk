@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard", "deletebulkleaderboardconfigurationadminv1")]
-    public class DeleteBulkLeaderboardConfigurationAdminV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard","deletebulkleaderboardconfigurationadminv1")]
+    public class DeleteBulkLeaderboardConfigurationAdminV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Leaderboard"; } }
+        public string ServiceName{ get { return "Leaderboard"; } }
 
-        public string OperationName { get { return "DeleteBulkLeaderboardConfigurationAdminV1"; } }
+        public string OperationName{ get { return "DeleteBulkLeaderboardConfigurationAdminV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsDeleteBulkLeaderboardsReq Body { get; set; } = new ModelsDeleteBulkLeaderboardsReq();
-
+                
         public DeleteBulkLeaderboardConfigurationAdminV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardConfiguration wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardConfiguration(_SDK);
 
             DeleteBulkLeaderboardConfigurationAdminV1 operation = new DeleteBulkLeaderboardConfigurationAdminV1(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsDeleteBulkLeaderboardsResp? response = wrapper.DeleteBulkLeaderboardConfigurationAdminV1(operation);
             if (response == null)
                 return "No response from server.";

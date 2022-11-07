@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Achievement.Model
     public class ModelsUserAchievementResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("achievedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? AchievedAt { get; set; }
 
         [JsonPropertyName("achievementCode")]

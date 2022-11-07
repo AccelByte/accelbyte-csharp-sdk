@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "admingetbanstypev3")]
-    public class AdminGetBansTypeV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","admingetbanstypev3")]
+    public class AdminGetBansTypeV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminGetBansTypeV3"; } }
+        public string OperationName{ get { return "AdminGetBansTypeV3"; } }
 
         public AdminGetBansTypeV3Command(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Bans wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Bans(_SDK);
 
             AdminGetBansTypeV3 operation = new AdminGetBansTypeV3(
-            );
-
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.AccountcommonBansV3? response = wrapper.AdminGetBansTypeV3(operation);
             if (response == null)
                 return "No response from server.";

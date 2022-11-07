@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "publicupdatepartyattributesv1")]
-    public class PublicUpdatePartyAttributesV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","publicupdatepartyattributesv1")]
+    public class PublicUpdatePartyAttributesV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "PublicUpdatePartyAttributesV1"; } }
+        public string OperationName{ get { return "PublicUpdatePartyAttributesV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelsPartyPUTCustomAttributesRequest Body { get; set; } = new ModelsPartyPUTCustomAttributesRequest();
-
+                
         public PublicUpdatePartyAttributesV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Party wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Party(_SDK);
 
             PublicUpdatePartyAttributesV1 operation = new PublicUpdatePartyAttributesV1(
-                Namespace,
-                PartyId,
-                Body
-            );
-
+                Namespace,                
+                PartyId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsPartyData? response = wrapper.PublicUpdatePartyAttributesV1(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publicreconcileplaystationstore")]
-    public class PublicReconcilePlayStationStoreCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publicreconcileplaystationstore")]
+    public class PublicReconcilePlayStationStoreCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicReconcilePlayStationStore"; } }
+        public string OperationName{ get { return "PublicReconcilePlayStationStore"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public PlayStationReconcileRequest Body { get; set; } = new PlayStationReconcileRequest();
-
+                
         public PublicReconcilePlayStationStoreCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             PublicReconcilePlayStationStore operation = new PublicReconcilePlayStationStore(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             List<AccelByte.Sdk.Api.Platform.Model.PlayStationReconcileResult>? response = wrapper.PublicReconcilePlayStationStore(operation);
             if (response == null)
                 return "No response from server.";

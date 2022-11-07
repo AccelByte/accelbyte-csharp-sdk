@@ -44,8 +44,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             )
             {
                 AdminGetUserContentByShareCode op = new AdminGetUserContentByShareCode(this,
-                    namespace_,
-                    shareCode
+                    namespace_,                    
+                    shareCode                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -60,30 +60,30 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["shareCode"] = shareCode;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminGetUserContentByShareCode(
-            string namespace_,
-            string shareCode
+            string namespace_,            
+            string shareCode            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["shareCode"] = shareCode;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -98,9 +98,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsContentDownloadResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -113,9 +113,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsContentDownloadResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

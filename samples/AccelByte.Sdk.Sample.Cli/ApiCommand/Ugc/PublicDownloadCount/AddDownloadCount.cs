@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc", "adddownloadcount")]
-    public class AddDownloadCountCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","adddownloadcount")]
+    public class AddDownloadCountCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ugc"; } }
+        public string ServiceName{ get { return "Ugc"; } }
 
-        public string OperationName { get { return "AddDownloadCount"; } }
+        public string OperationName{ get { return "AddDownloadCount"; } }
 
         [SdkCommandArgument("contentId")]
         public string ContentId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicDownloadCount wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicDownloadCount(_SDK);
 
             AddDownloadCount operation = new AddDownloadCount(
-                ContentId,
-                Namespace
-            );
-
+                ContentId,                
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsAddDownloadCountResponse? response = wrapper.AddDownloadCount(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking", "getsessionhistorydetailed")]
-    public class GetSessionHistoryDetailedCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking","getsessionhistorydetailed")]
+    public class GetSessionHistoryDetailedCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Matchmaking"; } }
+        public string ServiceName{ get { return "Matchmaking"; } }
 
-        public string OperationName { get { return "GetSessionHistoryDetailed"; } }
+        public string OperationName{ get { return "GetSessionHistoryDetailed"; } }
 
         [SdkCommandArgument("matchID")]
         public string MatchID { get; set; } = String.Empty;
@@ -42,20 +42,20 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
         {
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
-#pragma warning disable ab_deprecated_operation
+            #pragma warning disable ab_deprecated_operation
             GetSessionHistoryDetailed operation = new GetSessionHistoryDetailed(
-                MatchID,
-                Namespace
-            );
-#pragma warning restore ab_deprecated_operation
-
-#pragma warning disable ab_deprecated_operation_wrapper
+                MatchID,                
+                Namespace                
+            );            
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             List<AccelByte.Sdk.Api.Matchmaking.Model.ServiceGetSessionHistoryDetailedResponseItem>? response = wrapper.GetSessionHistoryDetailed(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-#pragma warning restore ab_deprecated_operation_wrapper
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

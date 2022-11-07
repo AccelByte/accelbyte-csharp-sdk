@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking", "getallpartyinallchannel")]
-    public class GetAllPartyInAllChannelCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking","getallpartyinallchannel")]
+    public class GetAllPartyInAllChannelCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Matchmaking"; } }
+        public string ServiceName{ get { return "Matchmaking"; } }
 
-        public string OperationName { get { return "GetAllPartyInAllChannel"; } }
+        public string OperationName{ get { return "GetAllPartyInAllChannel"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
             GetAllPartyInAllChannel operation = new GetAllPartyInAllChannel(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             Dictionary<string, object>? response = wrapper.GetAllPartyInAllChannel(operation);
             if (response == null)
                 return "No response from server.";

@@ -49,8 +49,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             )
             {
                 PublicGetUserGameProfiles op = new PublicGetUserGameProfiles(this,
-                    namespace_,
-                    userIds
+                    namespace_,                    
+                    userIds                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -64,33 +64,33 @@ namespace AccelByte.Sdk.Api.Social.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (userIds is not null) QueryParams["userIds"] = userIds;
+            
 
-
-
+            
             CollectionFormatMap["userIds"] = "multi";
-
-
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicGetUserGameProfiles(
-            string namespace_,
-            List<string> userIds
+            string namespace_,            
+            List<string> userIds            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (userIds is not null) QueryParams["userIds"] = userIds;
+            
 
-
-
+            
             CollectionFormatMap["userIds"] = "multi";
-
-
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -99,15 +99,15 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public List<Model.UserGameProfiles>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -120,9 +120,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.UserGameProfiles>>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

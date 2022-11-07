@@ -65,7 +65,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class PlatformWalletWalletStatus : StringEnum<PlatformWalletWalletStatus>
     {
@@ -86,5 +86,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 }

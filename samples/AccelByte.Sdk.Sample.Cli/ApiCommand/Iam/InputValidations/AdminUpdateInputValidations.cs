@@ -18,18 +18,18 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "adminupdateinputvalidations")]
-    public class AdminUpdateInputValidationsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","adminupdateinputvalidations")]
+    public class AdminUpdateInputValidationsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminUpdateInputValidations"; } }
+        public string OperationName{ get { return "AdminUpdateInputValidations"; } }
 
         [SdkCommandData("body")]
         public List<ModelInputValidationUpdatePayload> Body { get; set; } = new List<ModelInputValidationUpdatePayload>();
-
+                
         public AdminUpdateInputValidationsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.InputValidations wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.InputValidations(_SDK);
 
             AdminUpdateInputValidations operation = new AdminUpdateInputValidations(
-                Body
-            );
-
+                Body                
+            );            
+            
             wrapper.AdminUpdateInputValidations(operation);
             return String.Empty;
         }

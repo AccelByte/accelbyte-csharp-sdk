@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 LoginSSOClient op = new LoginSSOClient(this,
-                    platformId
+                    platformId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -62,31 +62,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["platformId"] = platformId;
-
+            
             if (builder.Payload is not null) QueryParams["payload"] = builder.Payload;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public LoginSSOClient(
-            string platformId,
-            string? payload
+            string platformId,            
+            string? payload            
         )
         {
             PathParams["platformId"] = platformId;
-
+            
             if (payload is not null) QueryParams["payload"] = payload;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -95,22 +95,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

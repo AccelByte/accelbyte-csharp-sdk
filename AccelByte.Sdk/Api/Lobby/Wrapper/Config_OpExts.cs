@@ -48,7 +48,7 @@ namespace AccelByte.Sdk.Api
             return ((Lobby.Wrapper.Config)builder.WrapperObject!).AdminUpdateConfigV1(op);
         }
 
-        public static Lobby.Model.ModelsConfigExport? Execute(
+        public static Stream? Execute(
             this AdminExportConfigV1.AdminExportConfigV1Builder builder,
             string namespace_
         )

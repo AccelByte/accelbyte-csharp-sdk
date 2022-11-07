@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             )
             {
                 RequestPresignedURL op = new RequestPresignedURL(this,
-                    localizedPolicyVersionId
+                    localizedPolicyVersionId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,31 +67,31 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             PathParams["localizedPolicyVersionId"] = localizedPolicyVersionId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = builder.Body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public RequestPresignedURL(
-            string localizedPolicyVersionId,
-            Model.UploadPolicyVersionAttachmentRequest body
+            string localizedPolicyVersionId,            
+            Model.UploadPolicyVersionAttachmentRequest body            
         )
         {
             PathParams["localizedPolicyVersionId"] = localizedPolicyVersionId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,9 +106,9 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.UploadLocalizedPolicyVersionAttachmentResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -121,9 +121,9 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             {
                 return JsonSerializer.Deserialize<Model.UploadLocalizedPolicyVersionAttachmentResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

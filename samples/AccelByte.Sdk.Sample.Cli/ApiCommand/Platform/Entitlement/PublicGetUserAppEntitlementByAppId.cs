@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publicgetuserappentitlementbyappid")]
-    public class PublicGetUserAppEntitlementByAppIdCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publicgetuserappentitlementbyappid")]
+    public class PublicGetUserAppEntitlementByAppIdCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicGetUserAppEntitlementByAppId"; } }
+        public string OperationName{ get { return "PublicGetUserAppEntitlementByAppId"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             PublicGetUserAppEntitlementByAppId operation = new PublicGetUserAppEntitlementByAppId(
-                Namespace,
-                UserId,
-                AppId
-            );
-
+                Namespace,                
+                UserId,                
+                AppId                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.AppEntitlementInfo? response = wrapper.PublicGetUserAppEntitlementByAppId(operation);
             if (response == null)
                 return "No response from server.";

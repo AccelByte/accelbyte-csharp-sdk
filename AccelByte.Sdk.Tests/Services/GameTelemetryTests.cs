@@ -33,10 +33,8 @@ namespace AccelByte.Sdk.Tests.Services
                 {
                     new TelemetryBody
                     {
-                        EventId = "csharpsdk",
                         EventName = "CsharpEvent",
                         EventNamespace = "test",
-                        EventTimestamp = DateTime.Now,
                         Payload = new Dictionary<string, object>
                         {
                             {"foo", "bar"}

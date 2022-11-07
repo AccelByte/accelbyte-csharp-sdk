@@ -42,8 +42,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             )
             {
                 UserGetFriendshipStatus op = new UserGetFriendshipStatus(this,
-                    friendId,
-                    namespace_
+                    friendId,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -58,30 +58,30 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         {
             PathParams["friendId"] = friendId;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UserGetFriendshipStatus(
-            string friendId,
-            string namespace_
+            string friendId,            
+            string namespace_            
         )
         {
             PathParams["friendId"] = friendId;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -90,15 +90,15 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelUserGetFriendshipStatusResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -111,9 +111,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelUserGetFriendshipStatusResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

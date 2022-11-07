@@ -169,7 +169,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class ItemUpdateEntitlementType : StringEnum<ItemUpdateEntitlementType>
     {
@@ -190,7 +190,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class ItemUpdateItemType : StringEnum<ItemUpdateItemType>
     {
@@ -235,7 +235,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class ItemUpdateSeasonType : StringEnum<ItemUpdateSeasonType>
     {
@@ -256,7 +256,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class ItemUpdateStatus : StringEnum<ItemUpdateStatus>
     {
@@ -277,5 +277,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 }

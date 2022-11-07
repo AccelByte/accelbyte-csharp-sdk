@@ -44,58 +44,52 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             get { return Operation.GrantUserPass.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public List<Model.PassInfo>? QueryPasses(QueryPasses input)
-        {
+        
+        public List<Model.PassInfo>? QueryPasses(QueryPasses input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PassInfo? CreatePass(CreatePass input)
-        {
+        public Model.PassInfo? CreatePass(CreatePass input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PassInfo? GetPass(GetPass input)
-        {
+        public Model.PassInfo? GetPass(GetPass input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeletePass(DeletePass input)
-        {
+        public void DeletePass(DeletePass input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PassInfo? UpdatePass(UpdatePass input)
-        {
+        public Model.PassInfo? UpdatePass(UpdatePass input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserSeasonSummary? GrantUserPass(GrantUserPass input)
-        {
+        public Model.UserSeasonSummary? GrantUserPass(GrantUserPass input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

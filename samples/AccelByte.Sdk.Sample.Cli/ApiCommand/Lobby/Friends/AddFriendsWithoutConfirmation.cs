@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "addfriendswithoutconfirmation")]
-    public class AddFriendsWithoutConfirmationCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","addfriendswithoutconfirmation")]
+    public class AddFriendsWithoutConfirmationCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "AddFriendsWithoutConfirmation"; } }
+        public string OperationName{ get { return "AddFriendsWithoutConfirmation"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelBulkAddFriendsRequest Body { get; set; } = new ModelBulkAddFriendsRequest();
-
+                
         public AddFriendsWithoutConfirmationCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Friends wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Friends(_SDK);
 
             AddFriendsWithoutConfirmation operation = new AddFriendsWithoutConfirmation(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             wrapper.AddFriendsWithoutConfirmation(operation);
             return String.Empty;
         }

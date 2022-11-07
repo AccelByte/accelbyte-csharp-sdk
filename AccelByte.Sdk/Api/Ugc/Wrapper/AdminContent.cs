@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
 
         #region Operation Builders
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public AdminUploadContentDirect.AdminUploadContentDirectBuilder AdminUploadContentDirectOp
         {
             get { return Operation.AdminUploadContentDirect.Builder.SetWrapperObject(this); }
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         {
             get { return Operation.AdminSearchChannelSpecificContent.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public SingleAdminUpdateContentDirect.SingleAdminUpdateContentDirectBuilder SingleAdminUpdateContentDirectOp
         {
             get { return Operation.SingleAdminUpdateContentDirect.Builder.SetWrapperObject(this); }
@@ -81,7 +81,7 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         {
             get { return Operation.AdminUpdateContentS3.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public AdminUpdateContentDirect.AdminUpdateContentDirectBuilder AdminUpdateContentDirectOp
         {
             get { return Operation.AdminUpdateContentDirect.Builder.SetWrapperObject(this); }
@@ -99,184 +99,165 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
             get { return Operation.AdminHideUserContent.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.ModelsCreateContentResponse? AdminUploadContentDirect(AdminUploadContentDirect input)
-        {
+        
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public Model.ModelsCreateContentResponse? AdminUploadContentDirect(AdminUploadContentDirect input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-        public Model.ModelsCreateContentResponse? AdminUploadContentS3(AdminUploadContentS3 input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        public Model.ModelsCreateContentResponse? AdminUploadContentS3(AdminUploadContentS3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateContentResponse? SingleAdminUpdateContentS3(SingleAdminUpdateContentS3 input)
-        {
+        public Model.ModelsCreateContentResponse? SingleAdminUpdateContentS3(SingleAdminUpdateContentS3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedContentDownloadResponse? AdminSearchChannelSpecificContent(AdminSearchChannelSpecificContent input)
-        {
+        public Model.ModelsPaginatedContentDownloadResponse? AdminSearchChannelSpecificContent(AdminSearchChannelSpecificContent input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.ModelsCreateContentResponse? SingleAdminUpdateContentDirect(SingleAdminUpdateContentDirect input)
-        {
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public Model.ModelsCreateContentResponse? SingleAdminUpdateContentDirect(SingleAdminUpdateContentDirect input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-        public void SingleAdminDeleteContent(SingleAdminDeleteContent input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        public void SingleAdminDeleteContent(SingleAdminDeleteContent input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedContentDownloadResponse? SingleAdminGetContent(SingleAdminGetContent input)
-        {
+        public Model.ModelsPaginatedContentDownloadResponse? SingleAdminGetContent(SingleAdminGetContent input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedContentDownloadResponse? AdminSearchContent(AdminSearchContent input)
-        {
+        public Model.ModelsPaginatedContentDownloadResponse? AdminSearchContent(AdminSearchContent input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsContentDownloadResponse? AdminGetUserContentByShareCode(AdminGetUserContentByShareCode input)
-        {
+        public Model.ModelsContentDownloadResponse? AdminGetUserContentByShareCode(AdminGetUserContentByShareCode input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsContentDownloadResponse? AdminGetSpecificContent(AdminGetSpecificContent input)
-        {
+        public Model.ModelsContentDownloadResponse? AdminGetSpecificContent(AdminGetSpecificContent input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetContentPreviewResponse? AdminDownloadContentPreview(AdminDownloadContentPreview input)
-        {
+        public Model.ModelsGetContentPreviewResponse? AdminDownloadContentPreview(AdminDownloadContentPreview input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsUpdateScreenshotResponse? AdminUpdateScreenshots(AdminUpdateScreenshots input)
-        {
+        public Model.ModelsUpdateScreenshotResponse? AdminUpdateScreenshots(AdminUpdateScreenshots input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateScreenshotResponse? AdminUploadContentScreenshot(AdminUploadContentScreenshot input)
-        {
+        public Model.ModelsCreateScreenshotResponse? AdminUploadContentScreenshot(AdminUploadContentScreenshot input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteContentScreenshot(AdminDeleteContentScreenshot input)
-        {
+        public void AdminDeleteContentScreenshot(AdminDeleteContentScreenshot input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateContentResponse? AdminUpdateContentS3(AdminUpdateContentS3 input)
-        {
+        public Model.ModelsCreateContentResponse? AdminUpdateContentS3(AdminUpdateContentS3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.ModelsCreateContentResponse? AdminUpdateContentDirect(AdminUpdateContentDirect input)
-        {
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public Model.ModelsCreateContentResponse? AdminUpdateContentDirect(AdminUpdateContentDirect input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-        public void AdminDeleteContent(AdminDeleteContent input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        public void AdminDeleteContent(AdminDeleteContent input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedContentDownloadResponse? AdminGetContent(AdminGetContent input)
-        {
+        public Model.ModelsPaginatedContentDownloadResponse? AdminGetContent(AdminGetContent input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateContentResponse? AdminHideUserContent(AdminHideUserContent input)
-        {
+        public Model.ModelsCreateContentResponse? AdminHideUserContent(AdminHideUserContent input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

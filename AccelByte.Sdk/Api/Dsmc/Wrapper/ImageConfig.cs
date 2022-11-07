@@ -76,130 +76,116 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             get { return Operation.ImageDetailClient.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public void UpdateImage(UpdateImage input)
-        {
+        
+        public void UpdateImage(UpdateImage input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void CreateImage(CreateImage input)
-        {
+        public void CreateImage(CreateImage input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsImportResponse? ImportImages(ImportImages input)
-        {
+        public Model.ModelsImportResponse? ImportImages(ImportImages input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void CreateImagePatch(CreateImagePatch input)
-        {
+        public void CreateImagePatch(CreateImagePatch input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsListImageResponse? ListImages(ListImages input)
-        {
+        public Model.ModelsListImageResponse? ListImages(ListImages input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteImage(DeleteImage input)
-        {
+        public void DeleteImage(DeleteImage input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelsImageRecord>? ExportImages(ExportImages input)
-        {
+        public List<Model.ModelsImageRecord>? ExportImages(ExportImages input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetImageLimitResponse? GetImageLimit(GetImageLimit input)
-        {
+        public Model.ModelsGetImageLimitResponse? GetImageLimit(GetImageLimit input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteImagePatch(DeleteImagePatch input)
-        {
+        public void DeleteImagePatch(DeleteImagePatch input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetImageDetailResponse? GetImageDetail(GetImageDetail input)
-        {
+        public Model.ModelsGetImageDetailResponse? GetImageDetail(GetImageDetail input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsListImagePatchesResponse? GetImagePatches(GetImagePatches input)
-        {
+        public Model.ModelsListImagePatchesResponse? GetImagePatches(GetImagePatches input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetImagePatchDetailResponse? GetImagePatchDetail(GetImagePatchDetail input)
-        {
+        public Model.ModelsGetImagePatchDetailResponse? GetImagePatchDetail(GetImagePatchDetail input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetImageLimitResponse? ImageLimitClient(ImageLimitClient input)
-        {
+        public Model.ModelsGetImageLimitResponse? ImageLimitClient(ImageLimitClient input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetImageDetailResponse? ImageDetailClient(ImageDetailClient input)
-        {
+        public Model.ModelsGetImageDetailResponse? ImageDetailClient(ImageDetailClient input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

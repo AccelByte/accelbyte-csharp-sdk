@@ -1,3 +1,9 @@
+<a name="v0.21.0"></a>
+## [v0.21.0]
+- Updated getting started document.
+- Fixed HTTP Clients that always send empty body on GET request.
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.20.0"></a>
 ## [v0.20.0]
 - Fixed HTTP Clients to handle upload stream handling.

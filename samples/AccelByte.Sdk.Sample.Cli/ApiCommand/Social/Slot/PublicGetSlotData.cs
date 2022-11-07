@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "publicgetslotdata")]
-    public class PublicGetSlotDataCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("social","publicgetslotdata")]
+    public class PublicGetSlotDataCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "PublicGetSlotData"; } }
+        public string OperationName{ get { return "PublicGetSlotData"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.Slot wrapper = new AccelByte.Sdk.Api.Social.Wrapper.Slot(_SDK);
 
             PublicGetSlotData operation = new PublicGetSlotData(
-                Namespace,
-                SlotId,
-                UserId
-            );
-
+                Namespace,                
+                SlotId,                
+                UserId                
+            );            
+            
             byte[]? response = wrapper.PublicGetSlotData(operation);
             if (response == null)
                 return "No response from server.";

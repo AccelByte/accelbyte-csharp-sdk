@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "updateprivatecustomattributespartially")]
-    public class UpdatePrivateCustomAttributesPartiallyCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","updateprivatecustomattributespartially")]
+    public class UpdatePrivateCustomAttributesPartiallyCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "UpdatePrivateCustomAttributesPartially"; } }
+        public string OperationName{ get { return "UpdatePrivateCustomAttributesPartially"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 
         [SdkCommandData("body")]
         public Dictionary<string, object> Body { get; set; } = new Dictionary<string, object>();
-
+                
         public UpdatePrivateCustomAttributesPartiallyCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.UserProfile wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.UserProfile(_SDK);
 
             UpdatePrivateCustomAttributesPartially operation = new UpdatePrivateCustomAttributesPartially(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             Dictionary<string, object>? response = wrapper.UpdatePrivateCustomAttributesPartially(operation);
             if (response == null)
                 return "No response from server.";

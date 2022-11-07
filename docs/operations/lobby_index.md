@@ -193,7 +193,6 @@
 | `models.BlockedByPlayerData` | [ModelsBlockedByPlayerData](../../AccelByte.Sdk/Api/Lobby/Model/ModelsBlockedByPlayerData.cs) |
 | `models.BlockedPlayerData` | [ModelsBlockedPlayerData](../../AccelByte.Sdk/Api/Lobby/Model/ModelsBlockedPlayerData.cs) |
 | `models.Config` | [ModelsConfig](../../AccelByte.Sdk/Api/Lobby/Model/ModelsConfig.cs) |
-| `models.ConfigExport` | [ModelsConfigExport](../../AccelByte.Sdk/Api/Lobby/Model/ModelsConfigExport.cs) |
 | `models.ConfigList` | [ModelsConfigList](../../AccelByte.Sdk/Api/Lobby/Model/ModelsConfigList.cs) |
 | `models.ConfigReq` | [ModelsConfigReq](../../AccelByte.Sdk/Api/Lobby/Model/ModelsConfigReq.cs) |
 | `models.CreateConfigRequest` | [ModelsCreateConfigRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelsCreateConfigRequest.cs) |

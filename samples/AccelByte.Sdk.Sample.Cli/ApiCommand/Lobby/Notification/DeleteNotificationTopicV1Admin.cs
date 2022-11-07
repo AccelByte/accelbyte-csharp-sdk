@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "deletenotificationtopicv1admin")]
-    public class DeleteNotificationTopicV1AdminCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","deletenotificationtopicv1admin")]
+    public class DeleteNotificationTopicV1AdminCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "DeleteNotificationTopicV1Admin"; } }
+        public string OperationName{ get { return "DeleteNotificationTopicV1Admin"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             DeleteNotificationTopicV1Admin operation = new DeleteNotificationTopicV1Admin(
-                Namespace,
-                TopicName
-            );
-
+                Namespace,                
+                TopicName                
+            );            
+            
             wrapper.DeleteNotificationTopicV1Admin(operation);
             return String.Empty;
         }

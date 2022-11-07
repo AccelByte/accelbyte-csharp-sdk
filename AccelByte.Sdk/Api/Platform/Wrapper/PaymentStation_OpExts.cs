@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class PlatformPaymentStation_OpExts
     {
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Platform.Model.Customization? Execute(
             this GetPaymentCustomization.GetPaymentCustomizationBuilder builder,
             string namespace_,

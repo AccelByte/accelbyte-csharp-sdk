@@ -53,11 +53,11 @@ fi
 
 #- 2 AdminPutGameRecordConcurrentHandlerV1
 # body param: body
-echo '{"set_by": "FMolqZl8", "updatedAt": "Db5kuNZd", "value": {"lA4rcJqZ": {}, "jUJBktkB": {}, "xBwuU5ry": {}}}' > $TEMP_JSON_INPUT
+echo '{"set_by": "qoYqhe2J", "updatedAt": "Losna2Cj", "value": {"XmRqEQVw": {}, "62HQZQtF": {}, "gkRLxXeS": {}}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op AdminPutGameRecordConcurrentHandlerV1 \
-    --key 'AIV0nJzB' \
+    --key 'clhsE3iK' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -68,9 +68,9 @@ $CLI_EXE \
     --sn cloudsave \
     --op ListGameRecordsHandlerV1 \
     --namespace $AB_NAMESPACE \
-    --query '2ShAg8Gb' \
-    --limit '27' \
-    --offset '12' \
+    --query 'DjzFTIJf' \
+    --limit '57' \
+    --offset '23' \
     > test.out 2>&1
 eval_tap $? 3 'ListGameRecordsHandlerV1' test.out
 
@@ -78,7 +78,7 @@ eval_tap $? 3 'ListGameRecordsHandlerV1' test.out
 $CLI_EXE \
     --sn cloudsave \
     --op AdminGetGameRecordHandlerV1 \
-    --key 'cMIKqMBo' \
+    --key 'mqNqIHAP' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 4 'AdminGetGameRecordHandlerV1' test.out
@@ -89,7 +89,7 @@ echo '{}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op AdminPutGameRecordHandlerV1 \
-    --key 'NBrun4Ug' \
+    --key 'lH0bfJ2D' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -101,7 +101,7 @@ echo '{}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op AdminPostGameRecordHandlerV1 \
-    --key 'VKT3URlb' \
+    --key 'UtsNO8VI' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -111,14 +111,14 @@ eval_tap $? 6 'AdminPostGameRecordHandlerV1' test.out
 $CLI_EXE \
     --sn cloudsave \
     --op AdminDeleteGameRecordHandlerV1 \
-    --key 'Gd3AhbUv' \
+    --key 'waptebcR' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 7 'AdminDeleteGameRecordHandlerV1' test.out
 
 #- 8 BulkGetPlayerRecordSizeHandlerV1
 # body param: body
-echo '{"data": [{"keys": ["ETlD5Mz8", "jAzGvJXe", "dS1XTOUt"], "user_id": "Vz3ROz5O"}, {"keys": ["o50JwFxg", "zZsZejEs", "lcP8lAZJ"], "user_id": "M3LkrvLG"}, {"keys": ["dFapbt3d", "0mVasHWp", "EYHlOZld"], "user_id": "EJKtJeFL"}]}' > $TEMP_JSON_INPUT
+echo '{"data": [{"keys": ["z0tj4ERQ", "iD1t6uBw", "Sv75y5kl"], "user_id": "dBbImzry"}, {"keys": ["O00tz6TF", "Kbd6ohIP", "lCM9ZayJ"], "user_id": "GqnDcHiU"}, {"keys": ["lr1yLsMP", "jzYpfmZV", "UUuKyZgz"], "user_id": "wcuxHia5"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op BulkGetPlayerRecordSizeHandlerV1 \
@@ -132,26 +132,26 @@ eval_tap 0 9 'ListPlayerRecordHandlerV1 # SKIP deprecated' test.out
 
 #- 10 AdminPutPlayerRecordConcurrentHandlerV1
 # body param: body
-echo '{"set_by": "5saqmEUD", "updatedAt": "V6V8G8SC", "value": {"fHHXihFZ": {}, "uvtjvMFh": {}, "hDLuTUUa": {}}}' > $TEMP_JSON_INPUT
+echo '{"set_by": "srLvLNs5", "updatedAt": "0O4Hm1Xk", "value": {"04DnWpy2": {}, "OVMmK3JW": {}, "8I6qhZqS": {}}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op AdminPutPlayerRecordConcurrentHandlerV1 \
-    --key 'X6rSofMj' \
+    --key 'gD9gOTgO' \
     --namespace $AB_NAMESPACE \
-    --userId 'uqoMWTex' \
+    --userId 'kxNzoDA5' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 10 'AdminPutPlayerRecordConcurrentHandlerV1' test.out
 
 #- 11 AdminPutPlayerPublicRecordConcurrentHandlerV1
 # body param: body
-echo '{"set_by": "Oq7xLQzF", "updatedAt": "6TDLYsTC", "value": {"yuOLf253": {}, "vzaZRZtD": {}, "7tSXOPn4": {}}}' > $TEMP_JSON_INPUT
+echo '{"set_by": "3G2J9rvq", "updatedAt": "kTyVZRDg", "value": {"eagFNqB0": {}, "pLA4ZBPq": {}, "zZduRDAz": {}}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op AdminPutPlayerPublicRecordConcurrentHandlerV1 \
-    --key 'NzdJXZsG' \
+    --key 'N9rigYXM' \
     --namespace $AB_NAMESPACE \
-    --userId 'RIDWs6Jb' \
+    --userId 'x1FrjPFO' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 11 'AdminPutPlayerPublicRecordConcurrentHandlerV1' test.out
@@ -161,9 +161,9 @@ $CLI_EXE \
     --sn cloudsave \
     --op AdminRetrievePlayerRecords \
     --namespace $AB_NAMESPACE \
-    --userId 'i4gVGQIT' \
-    --limit '1' \
-    --offset '81' \
+    --userId '5sqDMvvz' \
+    --limit '52' \
+    --offset '55' \
     > test.out 2>&1
 eval_tap $? 12 'AdminRetrievePlayerRecords' test.out
 
@@ -171,9 +171,9 @@ eval_tap $? 12 'AdminRetrievePlayerRecords' test.out
 $CLI_EXE \
     --sn cloudsave \
     --op AdminGetPlayerRecordHandlerV1 \
-    --key '0cYnR41p' \
+    --key 'mIAO9AP7' \
     --namespace $AB_NAMESPACE \
-    --userId 'wnfwU0Bg' \
+    --userId 'Pl3BNJ9Q' \
     > test.out 2>&1
 eval_tap $? 13 'AdminGetPlayerRecordHandlerV1' test.out
 
@@ -183,9 +183,9 @@ echo '{}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op AdminPutPlayerRecordHandlerV1 \
-    --key 'dqwpfEah' \
+    --key 'eX58CR7R' \
     --namespace $AB_NAMESPACE \
-    --userId 'vfS64nVN' \
+    --userId 'bGsiRJiu' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 14 'AdminPutPlayerRecordHandlerV1' test.out
@@ -196,9 +196,9 @@ echo '{}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op AdminPostPlayerRecordHandlerV1 \
-    --key 'hz3XzUs9' \
+    --key '0GHbnwD5' \
     --namespace $AB_NAMESPACE \
-    --userId 'QkO2xxKF' \
+    --userId 'PnDwZsvQ' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 15 'AdminPostPlayerRecordHandlerV1' test.out
@@ -207,9 +207,9 @@ eval_tap $? 15 'AdminPostPlayerRecordHandlerV1' test.out
 $CLI_EXE \
     --sn cloudsave \
     --op AdminDeletePlayerRecordHandlerV1 \
-    --key 'sFGTCthO' \
+    --key '5NVXHW2s' \
     --namespace $AB_NAMESPACE \
-    --userId 'ory5mkRg' \
+    --userId '2RgrvmQ7' \
     > test.out 2>&1
 eval_tap $? 16 'AdminDeletePlayerRecordHandlerV1' test.out
 
@@ -217,9 +217,9 @@ eval_tap $? 16 'AdminDeletePlayerRecordHandlerV1' test.out
 $CLI_EXE \
     --sn cloudsave \
     --op AdminGetPlayerPublicRecordHandlerV1 \
-    --key 'QVlzW4ic' \
+    --key 'FCsPS34y' \
     --namespace $AB_NAMESPACE \
-    --userId 'M0xL98sD' \
+    --userId '9Y2P2T4B' \
     > test.out 2>&1
 eval_tap $? 17 'AdminGetPlayerPublicRecordHandlerV1' test.out
 
@@ -229,9 +229,9 @@ echo '{}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op AdminPutPlayerPublicRecordHandlerV1 \
-    --key 'C7DevDe6' \
+    --key 'WQSXE0Rx' \
     --namespace $AB_NAMESPACE \
-    --userId 'aQ1gfoVU' \
+    --userId 'KvJ7KT78' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 18 'AdminPutPlayerPublicRecordHandlerV1' test.out
@@ -242,9 +242,9 @@ echo '{}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op AdminPostPlayerPublicRecordHandlerV1 \
-    --key 'tKiPWpcw' \
+    --key 'tsDeBOX4' \
     --namespace $AB_NAMESPACE \
-    --userId 's8z7gdDM' \
+    --userId '0TiCHib0' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 19 'AdminPostPlayerPublicRecordHandlerV1' test.out
@@ -253,9 +253,9 @@ eval_tap $? 19 'AdminPostPlayerPublicRecordHandlerV1' test.out
 $CLI_EXE \
     --sn cloudsave \
     --op AdminDeletePlayerPublicRecordHandlerV1 \
-    --key 'ErfMPmVe' \
+    --key 'WoHLTgx7' \
     --namespace $AB_NAMESPACE \
-    --userId 'RIWEqRGs' \
+    --userId 'JCQ6fr9l' \
     > test.out 2>&1
 eval_tap $? 20 'AdminDeletePlayerPublicRecordHandlerV1' test.out
 
@@ -263,19 +263,19 @@ eval_tap $? 20 'AdminDeletePlayerPublicRecordHandlerV1' test.out
 $CLI_EXE \
     --sn cloudsave \
     --op AdminGetPlayerRecordSizeHandlerV1 \
-    --key 'jOwXclbL' \
+    --key 'TYRoiNv3' \
     --namespace $AB_NAMESPACE \
-    --userId 'ilaQyxbX' \
+    --userId 'BXjGNI4u' \
     > test.out 2>&1
 eval_tap $? 21 'AdminGetPlayerRecordSizeHandlerV1' test.out
 
 #- 22 PutGameRecordConcurrentHandlerV1
 # body param: body
-echo '{"updatedAt": "qnyzFrYg", "value": {"aWXMPyLu": {}, "3M0ktntQ": {}, "jA6O5O4k": {}}}' > $TEMP_JSON_INPUT
+echo '{"updatedAt": "jAVLjtTE", "value": {"IXEC5rfa": {}, "L8FjuNMC": {}, "qkNLVoqX": {}}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op PutGameRecordConcurrentHandlerV1 \
-    --key 'lbR0UQ42' \
+    --key 'noLovd1K' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -285,7 +285,7 @@ eval_tap $? 22 'PutGameRecordConcurrentHandlerV1' test.out
 $CLI_EXE \
     --sn cloudsave \
     --op GetGameRecordHandlerV1 \
-    --key 'fHOzgCKy' \
+    --key 'VZm0NtcH' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 23 'GetGameRecordHandlerV1' test.out
@@ -296,7 +296,7 @@ echo '{}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op PutGameRecordHandlerV1 \
-    --key 'SN5T8a4s' \
+    --key 'PurpSkBG' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -308,7 +308,7 @@ echo '{}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op PostGameRecordHandlerV1 \
-    --key 'MocWHFmZ' \
+    --key 'hJwWUwnl' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -318,18 +318,18 @@ eval_tap $? 25 'PostGameRecordHandlerV1' test.out
 $CLI_EXE \
     --sn cloudsave \
     --op DeleteGameRecordHandlerV1 \
-    --key 'coWPyQNx' \
+    --key 'svvZY4B5' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 26 'DeleteGameRecordHandlerV1' test.out
 
 #- 27 BulkGetPlayerPublicRecordHandlerV1
 # body param: body
-echo '{"userIds": ["WAgbAbYf", "8yTDqrNA", "2ie2EjxO"]}' > $TEMP_JSON_INPUT
+echo '{"userIds": ["0HfHkJbp", "6ctig6SE", "qLinDI56"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op BulkGetPlayerPublicRecordHandlerV1 \
-    --key '9P4su5ZD' \
+    --key 'B2RuEy0h' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -339,33 +339,33 @@ eval_tap $? 27 'BulkGetPlayerPublicRecordHandlerV1' test.out
 $CLI_EXE \
     --sn cloudsave \
     --op PublicDeletePlayerPublicRecordHandlerV1 \
-    --key 'x3AG5YIX' \
+    --key 'aV4OaRQg' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 28 'PublicDeletePlayerPublicRecordHandlerV1' test.out
 
 #- 29 PutPlayerRecordConcurrentHandlerV1
 # body param: body
-echo '{"updatedAt": "Md5jGNRS", "value": {"gAprZv27": {}, "vGSJPqNt": {}, "i0EPyTDA": {}}}' > $TEMP_JSON_INPUT
+echo '{"updatedAt": "OvC6rjHq", "value": {"MIPuUInt": {}, "ukWoBvDK": {}, "J7SQBtSN": {}}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op PutPlayerRecordConcurrentHandlerV1 \
-    --key 'mpE7gULd' \
+    --key 'Pf5k8BaP' \
     --namespace $AB_NAMESPACE \
-    --userId 'gD5ePMNj' \
+    --userId '0V4kP7Yl' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 29 'PutPlayerRecordConcurrentHandlerV1' test.out
 
 #- 30 PutPlayerPublicRecordConcurrentHandlerV1
 # body param: body
-echo '{"updatedAt": "61q0Qv9g", "value": {"po2q4ifS": {}, "4aOBeKNN": {}, "44aQTyBH": {}}}' > $TEMP_JSON_INPUT
+echo '{"updatedAt": "KXIE5jRC", "value": {"PTQl9Mab": {}, "yhx6EWKL": {}, "w9Xp8AD7": {}}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op PutPlayerPublicRecordConcurrentHandlerV1 \
-    --key 'yjLDr4DR' \
+    --key 'mY2hGo5m' \
     --namespace $AB_NAMESPACE \
-    --userId 'qKeyu0Oz' \
+    --userId 'rZNKsMJG' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 30 'PutPlayerPublicRecordConcurrentHandlerV1' test.out
@@ -374,9 +374,9 @@ eval_tap $? 30 'PutPlayerPublicRecordConcurrentHandlerV1' test.out
 $CLI_EXE \
     --sn cloudsave \
     --op GetPlayerRecordHandlerV1 \
-    --key '0wEGpNCc' \
+    --key 'fpQROz73' \
     --namespace $AB_NAMESPACE \
-    --userId '9QaR6M4m' \
+    --userId 'kOefIdMN' \
     > test.out 2>&1
 eval_tap $? 31 'GetPlayerRecordHandlerV1' test.out
 
@@ -386,9 +386,9 @@ echo '{}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op PutPlayerRecordHandlerV1 \
-    --key 'NiO5UGXz' \
+    --key '8k21QmzR' \
     --namespace $AB_NAMESPACE \
-    --userId 'H7WLj103' \
+    --userId 'gpotSx6A' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 32 'PutPlayerRecordHandlerV1' test.out
@@ -399,9 +399,9 @@ echo '{}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op PostPlayerRecordHandlerV1 \
-    --key 'NVILqLdP' \
+    --key 'oXsaQrYD' \
     --namespace $AB_NAMESPACE \
-    --userId 'oWcdZCYe' \
+    --userId 'SgzTjRS4' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 33 'PostPlayerRecordHandlerV1' test.out
@@ -410,9 +410,9 @@ eval_tap $? 33 'PostPlayerRecordHandlerV1' test.out
 $CLI_EXE \
     --sn cloudsave \
     --op DeletePlayerRecordHandlerV1 \
-    --key 'HjPdmg1T' \
+    --key 'rZgcCYJb' \
     --namespace $AB_NAMESPACE \
-    --userId '8lbqrkrN' \
+    --userId 'VKJrTzwO' \
     > test.out 2>&1
 eval_tap $? 34 'DeletePlayerRecordHandlerV1' test.out
 
@@ -420,9 +420,9 @@ eval_tap $? 34 'DeletePlayerRecordHandlerV1' test.out
 $CLI_EXE \
     --sn cloudsave \
     --op GetPlayerPublicRecordHandlerV1 \
-    --key 'kk9EnCxA' \
+    --key 'oVLx1Fgt' \
     --namespace $AB_NAMESPACE \
-    --userId 'D12zl7Wx' \
+    --userId 'yjEGCHvc' \
     > test.out 2>&1
 eval_tap $? 35 'GetPlayerPublicRecordHandlerV1' test.out
 
@@ -432,9 +432,9 @@ echo '{}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op PutPlayerPublicRecordHandlerV1 \
-    --key 'SmMR6DSY' \
+    --key 'uHp6C3uV' \
     --namespace $AB_NAMESPACE \
-    --userId 'qmxEHcFJ' \
+    --userId 'NVJBJlB1' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 36 'PutPlayerPublicRecordHandlerV1' test.out
@@ -445,9 +445,9 @@ echo '{}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn cloudsave \
     --op PostPlayerPublicRecordHandlerV1 \
-    --key '7mERHKR8' \
+    --key '4ChBHmLI' \
     --namespace $AB_NAMESPACE \
-    --userId 'r34qMj2r' \
+    --userId '15mYUIg9' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 37 'PostPlayerPublicRecordHandlerV1' test.out

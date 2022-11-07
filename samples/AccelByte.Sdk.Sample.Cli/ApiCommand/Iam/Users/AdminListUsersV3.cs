@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "adminlistusersv3")]
-    public class AdminListUsersV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","adminlistusersv3")]
+    public class AdminListUsersV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminListUsersV3"; } }
+        public string OperationName{ get { return "AdminListUsersV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             AdminListUsersV3 operation = new AdminListUsersV3(
-                Namespace,
-                Limit,
-                Offset
-            );
-
+                Namespace,                
+                Limit,                
+                Offset                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.AccountcommonListUsersWithPlatformAccountsResponse? response = wrapper.AdminListUsersV3(operation);
             if (response == null)
                 return "No response from server.";

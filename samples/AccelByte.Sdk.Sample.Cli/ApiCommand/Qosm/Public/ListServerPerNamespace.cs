@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Qosm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
 {
-    [SdkConsoleCommand("qosm", "listserverpernamespace")]
-    public class ListServerPerNamespaceCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("qosm","listserverpernamespace")]
+    public class ListServerPerNamespaceCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Qosm"; } }
+        public string ServiceName{ get { return "Qosm"; } }
 
-        public string OperationName { get { return "ListServerPerNamespace"; } }
+        public string OperationName{ get { return "ListServerPerNamespace"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
             AccelByte.Sdk.Api.Qosm.Wrapper.Public wrapper = new AccelByte.Sdk.Api.Qosm.Wrapper.Public(_SDK);
 
             ListServerPerNamespace operation = new ListServerPerNamespace(
-                Namespace,
-                Status
-            );
-
+                Namespace,                
+                Status                
+            );            
+            
             AccelByte.Sdk.Api.Qosm.Model.ModelsListServerResponse? response = wrapper.ListServerPerNamespace(operation);
             if (response == null)
                 return "No response from server.";

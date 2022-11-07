@@ -30,7 +30,6 @@
 
 | Model | Class |
 |---|---|
-| `models.Achievement` | [ModelsAchievement](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAchievement.cs) |
 | `models.AchievementOrderUpdateRequest` | [ModelsAchievementOrderUpdateRequest](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAchievementOrderUpdateRequest.cs) |
 | `models.AchievementRequest` | [ModelsAchievementRequest](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAchievementRequest.cs) |
 | `models.AchievementResponse` | [ModelsAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAchievementResponse.cs) |

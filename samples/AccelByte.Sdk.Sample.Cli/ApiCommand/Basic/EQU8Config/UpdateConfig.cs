@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "updateconfig")]
-    public class UpdateConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","updateconfig")]
+    public class UpdateConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "UpdateConfig"; } }
+        public string OperationName{ get { return "UpdateConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ADTOForUpdateEqu8ConfigAPICall Body { get; set; } = new ADTOForUpdateEqu8ConfigAPICall();
-
+                
         public UpdateConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.EQU8Config wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.EQU8Config(_SDK);
 
             UpdateConfig operation = new UpdateConfig(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Basic.Model.Equ8Config? response = wrapper.UpdateConfig(operation);
             if (response == null)
                 return "No response from server.";

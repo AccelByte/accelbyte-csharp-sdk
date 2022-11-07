@@ -50,9 +50,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminUpdateClientPermissionV3 op = new AdminUpdateClientPermissionV3(this,
-                    body,
-                    clientId,
-                    namespace_
+                    body,                    
+                    clientId,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -68,33 +68,33 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["clientId"] = clientId;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminUpdateClientPermissionV3(
-            string clientId,
-            string namespace_,
-            Model.AccountcommonClientPermissionsV3 body
+            string clientId,            
+            string namespace_,            
+            Model.AccountcommonClientPermissionsV3 body            
         )
         {
             PathParams["clientId"] = clientId;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -109,16 +109,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

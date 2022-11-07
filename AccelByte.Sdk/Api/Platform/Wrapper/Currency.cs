@@ -48,67 +48,60 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.PublicListCurrencies.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public List<Model.CurrencyInfo>? ListCurrencies(ListCurrencies input)
-        {
+        
+        public List<Model.CurrencyInfo>? ListCurrencies(ListCurrencies input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CurrencyInfo? CreateCurrency(CreateCurrency input)
-        {
+        public Model.CurrencyInfo? CreateCurrency(CreateCurrency input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CurrencyInfo? UpdateCurrency(UpdateCurrency input)
-        {
+        public Model.CurrencyInfo? UpdateCurrency(UpdateCurrency input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CurrencyInfo? DeleteCurrency(DeleteCurrency input)
-        {
+        public Model.CurrencyInfo? DeleteCurrency(DeleteCurrency input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CurrencyConfig? GetCurrencyConfig(GetCurrencyConfig input)
-        {
+        public Model.CurrencyConfig? GetCurrencyConfig(GetCurrencyConfig input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CurrencySummary? GetCurrencySummary(GetCurrencySummary input)
-        {
+        public Model.CurrencySummary? GetCurrencySummary(GetCurrencySummary input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.CurrencyInfo>? PublicListCurrencies(PublicListCurrencies input)
-        {
+        public List<Model.CurrencyInfo>? PublicListCurrencies(PublicListCurrencies input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

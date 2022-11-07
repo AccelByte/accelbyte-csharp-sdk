@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser", "addplayertosession")]
-    public class AddPlayerToSessionCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser","addplayertosession")]
+    public class AddPlayerToSessionCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Sessionbrowser"; } }
+        public string ServiceName{ get { return "Sessionbrowser"; } }
 
-        public string OperationName { get { return "AddPlayerToSession"; } }
+        public string OperationName{ get { return "AddPlayerToSession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 
         [SdkCommandData("body")]
         public ModelsAddPlayerRequest Body { get; set; } = new ModelsAddPlayerRequest();
-
+                
         public AddPlayerToSessionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
             AddPlayerToSession operation = new AddPlayerToSession(
-                Namespace,
-                SessionID,
-                Body
-            );
-
+                Namespace,                
+                SessionID,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsAddPlayerResponse? response = wrapper.AddPlayerToSession(operation);
             if (response == null)
                 return "No response from server.";

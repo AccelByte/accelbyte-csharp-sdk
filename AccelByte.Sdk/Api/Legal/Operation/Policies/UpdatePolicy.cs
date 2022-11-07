@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             )
             {
                 UpdatePolicy op = new UpdatePolicy(this,
-                    policyId
+                    policyId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,31 +67,31 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             PathParams["policyId"] = policyId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = builder.Body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdatePolicy(
-            string policyId,
-            Model.UpdatePolicyRequest body
+            string policyId,            
+            Model.UpdatePolicyRequest body            
         )
         {
             PathParams["policyId"] = policyId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,16 +106,16 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

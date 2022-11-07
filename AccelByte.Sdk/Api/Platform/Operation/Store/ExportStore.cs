@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class ExportStore : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -50,8 +50,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 ExportStore op = new ExportStore(this,
-                    namespace_,
-                    storeId
+                    namespace_,                    
+                    storeId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -66,30 +66,30 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["storeId"] = storeId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ExportStore(
-            string namespace_,
-            string storeId
+            string namespace_,            
+            string storeId            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["storeId"] = storeId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -98,15 +98,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/zip" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Stream? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -119,9 +119,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return payload;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

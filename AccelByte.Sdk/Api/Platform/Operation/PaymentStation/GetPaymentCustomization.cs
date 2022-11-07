@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///   * Returns : customization
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetPaymentCustomization : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -57,9 +57,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 GetPaymentCustomization op = new GetPaymentCustomization(this,
-                    namespace_,
-                    paymentProvider,
-                    region
+                    namespace_,                    
+                    paymentProvider,                    
+                    region                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -74,36 +74,36 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
             if (paymentProvider is not null) QueryParams["paymentProvider"] = paymentProvider.Value;
             if (region is not null) QueryParams["region"] = region;
+            
 
-
-
-
-
+            
+            
+            
 
         }
         #endregion
 
         public GetPaymentCustomization(
-            string namespace_,
-            bool? sandbox,
-            GetPaymentCustomizationPaymentProvider paymentProvider,
-            string region
+            string namespace_,            
+            bool? sandbox,            
+            GetPaymentCustomizationPaymentProvider paymentProvider,            
+            string region            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (sandbox != null) QueryParams["sandbox"] = Convert.ToString(sandbox)!;
             if (paymentProvider is not null) QueryParams["paymentProvider"] = paymentProvider.Value;
             if (region is not null) QueryParams["region"] = region;
+            
 
-
-
-
-
+            
+            
+            
 
         }
 
@@ -117,9 +117,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.Customization? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -132,9 +132,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.Customization>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

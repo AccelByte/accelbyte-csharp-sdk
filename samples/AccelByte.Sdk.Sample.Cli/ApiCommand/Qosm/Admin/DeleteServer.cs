@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Qosm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
 {
-    [SdkConsoleCommand("qosm", "deleteserver")]
-    public class DeleteServerCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("qosm","deleteserver")]
+    public class DeleteServerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Qosm"; } }
+        public string ServiceName{ get { return "Qosm"; } }
 
-        public string OperationName { get { return "DeleteServer"; } }
+        public string OperationName{ get { return "DeleteServer"; } }
 
         [SdkCommandArgument("region")]
         public string Region { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
             AccelByte.Sdk.Api.Qosm.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Qosm.Wrapper.Admin(_SDK);
 
             DeleteServer operation = new DeleteServer(
-                Region
-            );
-
+                Region                
+            );            
+            
             wrapper.DeleteServer(operation);
             return String.Empty;
         }

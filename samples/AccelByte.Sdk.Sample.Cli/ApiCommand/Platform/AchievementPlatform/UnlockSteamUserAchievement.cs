@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "unlocksteamuserachievement")]
-    public class UnlockSteamUserAchievementCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","unlocksteamuserachievement")]
+    public class UnlockSteamUserAchievementCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "UnlockSteamUserAchievement"; } }
+        public string OperationName{ get { return "UnlockSteamUserAchievement"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public ADTOObjectForUnlockSteamAchievementAPI Body { get; set; } = new ADTOObjectForUnlockSteamAchievementAPI();
-
+                
         public UnlockSteamUserAchievementCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.AchievementPlatform wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.AchievementPlatform(_SDK);
 
             UnlockSteamUserAchievement operation = new UnlockSteamUserAchievement(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             wrapper.UnlockSteamUserAchievement(operation);
             return String.Empty;
         }

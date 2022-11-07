@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "adminupdateagerestrictionconfigv2")]
-    public class AdminUpdateAgeRestrictionConfigV2Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","adminupdateagerestrictionconfigv2")]
+    public class AdminUpdateAgeRestrictionConfigV2Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminUpdateAgeRestrictionConfigV2"; } }
+        public string OperationName{ get { return "AdminUpdateAgeRestrictionConfigV2"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelAgeRestrictionRequest Body { get; set; } = new ModelAgeRestrictionRequest();
-
+                
         public AdminUpdateAgeRestrictionConfigV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,20 +42,20 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
-#pragma warning disable ab_deprecated_operation
+            #pragma warning disable ab_deprecated_operation
             AdminUpdateAgeRestrictionConfigV2 operation = new AdminUpdateAgeRestrictionConfigV2(
-                Namespace,
-                Body
-            );
-#pragma warning restore ab_deprecated_operation
-
-#pragma warning disable ab_deprecated_operation_wrapper
+                Namespace,                
+                Body                
+            );            
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Iam.Model.ModelAgeRestrictionResponse? response = wrapper.AdminUpdateAgeRestrictionConfigV2(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-#pragma warning restore ab_deprecated_operation_wrapper
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

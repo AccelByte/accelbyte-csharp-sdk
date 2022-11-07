@@ -28,22 +28,20 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
             get { return Operation.UpdateContentLikeStatus.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public Model.ModelsPaginatedContentDownloadResponse? GetLikedContent(GetLikedContent input)
-        {
+        
+        public Model.ModelsPaginatedContentDownloadResponse? GetLikedContent(GetLikedContent input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsContentLikeResponse? UpdateContentLikeStatus(UpdateContentLikeStatus input)
-        {
+        public Model.ModelsContentLikeResponse? UpdateContentLikeStatus(UpdateContentLikeStatus input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

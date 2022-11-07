@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publicgetpaymenturl")]
-    public class PublicGetPaymentUrlCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publicgetpaymenturl")]
+    public class PublicGetPaymentUrlCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicGetPaymentUrl"; } }
+        public string OperationName{ get { return "PublicGetPaymentUrl"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public PaymentUrlCreate Body { get; set; } = new PaymentUrlCreate();
-
+                
         public PublicGetPaymentUrlCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentStation wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentStation(_SDK);
 
             PublicGetPaymentUrl operation = new PublicGetPaymentUrl(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentUrl? response = wrapper.PublicGetPaymentUrl(operation);
             if (response == null)
                 return "No response from server.";

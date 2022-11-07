@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getplatformdlcconfig")]
-    public class GetPlatformDLCConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","getplatformdlcconfig")]
+    public class GetPlatformDLCConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "GetPlatformDLCConfig"; } }
+        public string OperationName{ get { return "GetPlatformDLCConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.DLC wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.DLC(_SDK);
 
             GetPlatformDLCConfig operation = new GetPlatformDLCConfig(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.PlatformDLCConfigInfo? response = wrapper.GetPlatformDLCConfig(operation);
             if (response == null)
                 return "No response from server.";

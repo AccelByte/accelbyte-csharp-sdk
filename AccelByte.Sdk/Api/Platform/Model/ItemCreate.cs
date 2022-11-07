@@ -164,7 +164,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class ItemCreateEntitlementType : StringEnum<ItemCreateEntitlementType>
     {
@@ -185,7 +185,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class ItemCreateItemType : StringEnum<ItemCreateItemType>
     {
@@ -230,7 +230,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class ItemCreateSeasonType : StringEnum<ItemCreateSeasonType>
     {
@@ -251,7 +251,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class ItemCreateStatus : StringEnum<ItemCreateStatus>
     {
@@ -272,5 +272,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 }

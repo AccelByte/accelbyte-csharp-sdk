@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking", "getallchannelshandler")]
-    public class GetAllChannelsHandlerCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking","getallchannelshandler")]
+    public class GetAllChannelsHandlerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Matchmaking"; } }
+        public string ServiceName{ get { return "Matchmaking"; } }
 
-        public string OperationName { get { return "GetAllChannelsHandler"; } }
+        public string OperationName{ get { return "GetAllChannelsHandler"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
             GetAllChannelsHandler operation = new GetAllChannelsHandler(
-                Namespace,
-                Limit,
-                Offset
-            );
-
+                Namespace,                
+                Limit,                
+                Offset                
+            );            
+            
             AccelByte.Sdk.Api.Matchmaking.Model.ModelsGetChannelsResponse? response = wrapper.GetAllChannelsHandler(operation);
             if (response == null)
                 return "No response from server.";

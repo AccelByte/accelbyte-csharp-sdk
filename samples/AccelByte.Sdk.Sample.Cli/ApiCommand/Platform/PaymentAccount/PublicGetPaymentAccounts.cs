@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publicgetpaymentaccounts")]
-    public class PublicGetPaymentAccountsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publicgetpaymentaccounts")]
+    public class PublicGetPaymentAccountsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicGetPaymentAccounts"; } }
+        public string OperationName{ get { return "PublicGetPaymentAccounts"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentAccount wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentAccount(_SDK);
 
             PublicGetPaymentAccounts operation = new PublicGetPaymentAccounts(
-                Namespace,
-                UserId
-            );
-
+                Namespace,                
+                UserId                
+            );            
+            
             List<AccelByte.Sdk.Api.Platform.Model.PaymentAccount>? response = wrapper.PublicGetPaymentAccounts(operation);
             if (response == null)
                 return "No response from server.";

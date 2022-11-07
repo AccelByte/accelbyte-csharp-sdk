@@ -36,40 +36,36 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             get { return Operation.DeleteGameRecordHandlerV1.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public Model.ModelsGameRecordResponse? GetGameRecordHandlerV1(GetGameRecordHandlerV1 input)
-        {
+        
+        public Model.ModelsGameRecordResponse? GetGameRecordHandlerV1(GetGameRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGameRecordResponse? PutGameRecordHandlerV1(PutGameRecordHandlerV1 input)
-        {
+        public Model.ModelsGameRecordResponse? PutGameRecordHandlerV1(PutGameRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGameRecordResponse? PostGameRecordHandlerV1(PostGameRecordHandlerV1 input)
-        {
+        public Model.ModelsGameRecordResponse? PostGameRecordHandlerV1(PostGameRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteGameRecordHandlerV1(DeleteGameRecordHandlerV1 input)
-        {
+        public void DeleteGameRecordHandlerV1(DeleteGameRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

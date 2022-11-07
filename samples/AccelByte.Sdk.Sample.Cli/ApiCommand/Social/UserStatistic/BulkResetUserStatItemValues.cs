@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "bulkresetuserstatitemvalues")]
-    public class BulkResetUserStatItemValuesCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("social","bulkresetuserstatitemvalues")]
+    public class BulkResetUserStatItemValuesCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "BulkResetUserStatItemValues"; } }
+        public string OperationName{ get { return "BulkResetUserStatItemValues"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
         [SdkCommandData("body")]
         public List<ADTOObjectForResettingUserStatItems> Body { get; set; } = new List<ADTOObjectForResettingUserStatItems>();
-
+                
         public BulkResetUserStatItemValuesCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.UserStatistic wrapper = new AccelByte.Sdk.Api.Social.Wrapper.UserStatistic(_SDK);
 
             BulkResetUserStatItemValues operation = new BulkResetUserStatItemValues(
-                Namespace,
-                UserId,
-                AdditionalKey,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                AdditionalKey,                
+                Body                
+            );            
+            
             List<AccelByte.Sdk.Api.Social.Model.BulkStatItemOperationResult>? response = wrapper.BulkResetUserStatItemValues(operation);
             if (response == null)
                 return "No response from server.";

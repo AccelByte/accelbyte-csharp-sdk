@@ -16,6 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("id")]
         [JsonPropertyName("id")]
         public string? Id { get; set; }
-
+        
     }
 }

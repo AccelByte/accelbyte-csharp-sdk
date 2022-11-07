@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publicconsumeuserentitlement")]
-    public class PublicConsumeUserEntitlementCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publicconsumeuserentitlement")]
+    public class PublicConsumeUserEntitlementCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicConsumeUserEntitlement"; } }
+        public string OperationName{ get { return "PublicConsumeUserEntitlement"; } }
 
         [SdkCommandArgument("entitlementId")]
         public string EntitlementId { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public EntitlementDecrement Body { get; set; } = new EntitlementDecrement();
-
+                
         public PublicConsumeUserEntitlementCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             PublicConsumeUserEntitlement operation = new PublicConsumeUserEntitlement(
-                EntitlementId,
-                Namespace,
-                UserId,
-                Body
-            );
-
+                EntitlementId,                
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.TrackedEntitlementInfo? response = wrapper.PublicConsumeUserEntitlement(operation);
             if (response == null)
                 return "No response from server.";

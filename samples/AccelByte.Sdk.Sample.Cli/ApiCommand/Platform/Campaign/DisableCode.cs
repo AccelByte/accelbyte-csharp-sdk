@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "disablecode")]
-    public class DisableCodeCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","disablecode")]
+    public class DisableCodeCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "DisableCode"; } }
+        public string OperationName{ get { return "DisableCode"; } }
 
         [SdkCommandArgument("code")]
         public string Code { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Campaign wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Campaign(_SDK);
 
             DisableCode operation = new DisableCode(
-                Code,
-                Namespace
-            );
-
+                Code,                
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.CodeInfo? response = wrapper.DisableCode(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser", "getsessionhistorydetailed")]
-    public class GetSessionHistoryDetailedCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser","getsessionhistorydetailed")]
+    public class GetSessionHistoryDetailedCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Sessionbrowser"; } }
+        public string ServiceName{ get { return "Sessionbrowser"; } }
 
-        public string OperationName { get { return "GetSessionHistoryDetailed"; } }
+        public string OperationName{ get { return "GetSessionHistoryDetailed"; } }
 
         [SdkCommandArgument("matchID")]
         public string MatchID { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
             GetSessionHistoryDetailed operation = new GetSessionHistoryDetailed(
-                MatchID,
-                Namespace
-            );
-
+                MatchID,                
+                Namespace                
+            );            
+            
             List<AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsGetSessionHistoryDetailedResponseItem>? response = wrapper.GetSessionHistoryDetailed(operation);
             if (response == null)
                 return "No response from server.";

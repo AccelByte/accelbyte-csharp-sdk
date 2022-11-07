@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "createtopic")]
-    public class CreateTopicCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","createtopic")]
+    public class CreateTopicCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "CreateTopic"; } }
+        public string OperationName{ get { return "CreateTopic"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelCreateTopicRequest Body { get; set; } = new ModelCreateTopicRequest();
-
+                
         public CreateTopicCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             CreateTopic operation = new CreateTopic(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             wrapper.CreateTopic(operation);
             return String.Empty;
         }

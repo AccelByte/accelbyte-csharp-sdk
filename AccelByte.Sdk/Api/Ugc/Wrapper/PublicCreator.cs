@@ -28,22 +28,20 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
             get { return Operation.PublicGetCreator.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public Model.ModelsPaginatedCreatorOverviewResponse? PublicSearchCreator(PublicSearchCreator input)
-        {
+        
+        public Model.ModelsPaginatedCreatorOverviewResponse? PublicSearchCreator(PublicSearchCreator input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreatorResponse? PublicGetCreator(PublicGetCreator input)
-        {
+        public Model.ModelsCreatorResponse? PublicGetCreator(PublicGetCreator input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

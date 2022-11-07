@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "syncepicgamedlc")]
-    public class SyncEpicGameDLCCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","syncepicgamedlc")]
+    public class SyncEpicGameDLCCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "SyncEpicGameDLC"; } }
+        public string OperationName{ get { return "SyncEpicGameDLC"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public EpicGamesDLCSyncRequest Body { get; set; } = new EpicGamesDLCSyncRequest();
-
+                
         public SyncEpicGameDLCCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.DLC wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.DLC(_SDK);
 
             SyncEpicGameDLC operation = new SyncEpicGameDLC(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             wrapper.SyncEpicGameDLC(operation);
             return String.Empty;
         }

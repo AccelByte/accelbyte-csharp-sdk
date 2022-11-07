@@ -50,8 +50,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             )
             {
                 GetAllSessionsInChannel op = new GetAllSessionsInChannel(this,
-                    channelName,
-                    namespace_
+                    channelName,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -66,30 +66,30 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         {
             PathParams["channelName"] = channelName;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetAllSessionsInChannel(
-            string channelName,
-            string namespace_
+            string channelName,            
+            string namespace_            
         )
         {
             PathParams["channelName"] = channelName;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -104,9 +104,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public List<Model.ModelsMatchmakingResult>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -119,9 +119,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.ModelsMatchmakingResult>>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

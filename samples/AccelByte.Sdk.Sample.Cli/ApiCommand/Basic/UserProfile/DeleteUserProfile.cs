@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "deleteuserprofile")]
-    public class DeleteUserProfileCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","deleteuserprofile")]
+    public class DeleteUserProfileCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "DeleteUserProfile"; } }
+        public string OperationName{ get { return "DeleteUserProfile"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.UserProfile wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.UserProfile(_SDK);
 
             DeleteUserProfile operation = new DeleteUserProfile(
-                Namespace,
-                UserId
-            );
-
+                Namespace,                
+                UserId                
+            );            
+            
             AccelByte.Sdk.Api.Basic.Model.UserProfilePrivateInfo? response = wrapper.DeleteUserProfile(operation);
             if (response == null)
                 return "No response from server.";

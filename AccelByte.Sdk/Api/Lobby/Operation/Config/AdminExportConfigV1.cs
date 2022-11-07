@@ -48,7 +48,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             )
             {
                 AdminExportConfigV1 op = new AdminExportConfigV1(this,
-                    namespace_
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -61,28 +61,28 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         )
         {
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminExportConfigV1(
-            string namespace_
+            string namespace_            
         )
         {
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -91,30 +91,30 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
-        public Model.ModelsConfigExport? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        
+        public Stream? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ModelsConfigExport>(payload);
+                return payload;
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsConfigExport>(payload);
+                return payload;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

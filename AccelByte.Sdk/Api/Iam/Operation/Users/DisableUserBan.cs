@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Other scenarios are not supported and will return 403: Forbidden.
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class DisableUserBan : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -82,9 +82,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 DisableUserBan op = new DisableUserBan(this,
-                    banId,
-                    namespace_,
-                    userId
+                    banId,                    
+                    namespace_,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -101,32 +101,32 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["banId"] = banId;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DisableUserBan(
-            string banId,
-            string namespace_,
-            string userId
+            string banId,            
+            string namespace_,            
+            string userId            
         )
         {
             PathParams["banId"] = banId;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -141,9 +141,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelUserBanResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -156,9 +156,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelUserBanResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

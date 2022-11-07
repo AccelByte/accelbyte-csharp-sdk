@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave", "bulkgetplayerrecordsizehandlerv1")]
-    public class BulkGetPlayerRecordSizeHandlerV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave","bulkgetplayerrecordsizehandlerv1")]
+    public class BulkGetPlayerRecordSizeHandlerV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Cloudsave"; } }
+        public string ServiceName{ get { return "Cloudsave"; } }
 
-        public string OperationName { get { return "BulkGetPlayerRecordSizeHandlerV1"; } }
+        public string OperationName{ get { return "BulkGetPlayerRecordSizeHandlerV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsBulkUserKeyRequest Body { get; set; } = new ModelsBulkUserKeyRequest();
-
+                
         public BulkGetPlayerRecordSizeHandlerV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminPlayerRecord wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminPlayerRecord(_SDK);
 
             BulkGetPlayerRecordSizeHandlerV1 operation = new BulkGetPlayerRecordSizeHandlerV1(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Cloudsave.Model.ModelsBulkGetPlayerRecordSizeResponse? response = wrapper.BulkGetPlayerRecordSizeHandlerV1(operation);
             if (response == null)
                 return "No response from server.";

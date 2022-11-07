@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "resetuserstatitemvalue1")]
-    public class ResetUserStatItemValue1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("social","resetuserstatitemvalue1")]
+    public class ResetUserStatItemValue1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "ResetUserStatItemValue1"; } }
+        public string OperationName{ get { return "ResetUserStatItemValue1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.UserStatistic wrapper = new AccelByte.Sdk.Api.Social.Wrapper.UserStatistic(_SDK);
 
             ResetUserStatItemValue1 operation = new ResetUserStatItemValue1(
-                Namespace,
-                StatCode,
-                UserId
-            );
-
+                Namespace,                
+                StatCode,                
+                UserId                
+            );            
+            
             AccelByte.Sdk.Api.Social.Model.StatItemIncResult? response = wrapper.ResetUserStatItemValue1(operation);
             if (response == null)
                 return "No response from server.";

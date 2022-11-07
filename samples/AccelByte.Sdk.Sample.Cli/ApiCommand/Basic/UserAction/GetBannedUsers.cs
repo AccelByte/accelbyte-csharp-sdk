@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "getbannedusers")]
-    public class GetBannedUsersCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","getbannedusers")]
+    public class GetBannedUsersCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "GetBannedUsers"; } }
+        public string OperationName{ get { return "GetBannedUsers"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.UserAction wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.UserAction(_SDK);
 
             GetBannedUsers operation = new GetBannedUsers(
-                Namespace,
-                UserIds
-            );
-
+                Namespace,                
+                UserIds                
+            );            
+            
             List<AccelByte.Sdk.Api.Basic.Model.ADTOObjectForEqu8UserBanStatus>? response = wrapper.GetBannedUsers(operation);
             if (response == null)
                 return "No response from server.";

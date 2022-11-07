@@ -19,87 +19,87 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
 
         #region Operation Builders
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public GetRoles.GetRolesBuilder GetRolesOp
         {
             get { return Operation.GetRoles.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public CreateRole.CreateRoleBuilder CreateRoleOp
         {
             get { return Operation.CreateRole.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public GetRole.GetRoleBuilder GetRoleOp
         {
             get { return Operation.GetRole.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public UpdateRole.UpdateRoleBuilder UpdateRoleOp
         {
             get { return Operation.UpdateRole.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public DeleteRole.DeleteRoleBuilder DeleteRoleOp
         {
             get { return Operation.DeleteRole.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public GetRoleAdminStatus.GetRoleAdminStatusBuilder GetRoleAdminStatusOp
         {
             get { return Operation.GetRoleAdminStatus.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public SetRoleAsAdmin.SetRoleAsAdminBuilder SetRoleAsAdminOp
         {
             get { return Operation.SetRoleAsAdmin.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public RemoveRoleAdmin.RemoveRoleAdminBuilder RemoveRoleAdminOp
         {
             get { return Operation.RemoveRoleAdmin.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public GetRoleManagers.GetRoleManagersBuilder GetRoleManagersOp
         {
             get { return Operation.GetRoleManagers.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public AddRoleManagers.AddRoleManagersBuilder AddRoleManagersOp
         {
             get { return Operation.AddRoleManagers.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public RemoveRoleManagers.RemoveRoleManagersBuilder RemoveRoleManagersOp
         {
             get { return Operation.RemoveRoleManagers.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public GetRoleMembers.GetRoleMembersBuilder GetRoleMembersOp
         {
             get { return Operation.GetRoleMembers.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public AddRoleMembers.AddRoleMembersBuilder AddRoleMembersOp
         {
             get { return Operation.AddRoleMembers.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public RemoveRoleMembers.RemoveRoleMembersBuilder RemoveRoleMembersOp
         {
             get { return Operation.RemoveRoleMembers.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public UpdateRolePermissions.UpdateRolePermissionsBuilder UpdateRolePermissionsOp
         {
             get { return Operation.UpdateRolePermissions.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public AddRolePermission.AddRolePermissionBuilder AddRolePermissionOp
         {
             get { return Operation.AddRolePermission.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public DeleteRolePermission.DeleteRolePermissionBuilder DeleteRolePermissionOp
         {
             get { return Operation.DeleteRolePermission.Builder.SetWrapperObject(this); }
@@ -229,487 +229,439 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             get { return Operation.AdminRevokeUserFromRoleV4.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public List<Model.ModelRoleResponseWithManagers>? GetRoles(GetRoles input)
-        {
+        
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public List<Model.ModelRoleResponseWithManagers>? GetRoles(GetRoles input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.AccountcommonRole? CreateRole(CreateRole input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public Model.AccountcommonRole? CreateRole(CreateRole input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.ModelRoleResponse? GetRole(GetRole input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public Model.ModelRoleResponse? GetRole(GetRole input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.ModelRoleResponse? UpdateRole(UpdateRole input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public Model.ModelRoleResponse? UpdateRole(UpdateRole input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public void DeleteRole(DeleteRole input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public void DeleteRole(DeleteRole input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.ModelRoleAdminStatusResponse? GetRoleAdminStatus(GetRoleAdminStatus input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public Model.ModelRoleAdminStatusResponse? GetRoleAdminStatus(GetRoleAdminStatus input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public void SetRoleAsAdmin(SetRoleAsAdmin input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public void SetRoleAsAdmin(SetRoleAsAdmin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public void RemoveRoleAdmin(RemoveRoleAdmin input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public void RemoveRoleAdmin(RemoveRoleAdmin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.ModelRoleManagersResponse? GetRoleManagers(GetRoleManagers input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public Model.ModelRoleManagersResponse? GetRoleManagers(GetRoleManagers input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public void AddRoleManagers(AddRoleManagers input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public void AddRoleManagers(AddRoleManagers input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public void RemoveRoleManagers(RemoveRoleManagers input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public void RemoveRoleManagers(RemoveRoleManagers input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.ModelRoleMembersResponse? GetRoleMembers(GetRoleMembers input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public Model.ModelRoleMembersResponse? GetRoleMembers(GetRoleMembers input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public void AddRoleMembers(AddRoleMembers input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public void AddRoleMembers(AddRoleMembers input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public void RemoveRoleMembers(RemoveRoleMembers input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public void RemoveRoleMembers(RemoveRoleMembers input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public void UpdateRolePermissions(UpdateRolePermissions input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public void UpdateRolePermissions(UpdateRolePermissions input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public void AddRolePermission(AddRolePermission input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public void AddRolePermission(AddRolePermission input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public void DeleteRolePermission(DeleteRolePermission input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public void DeleteRolePermission(DeleteRolePermission input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-        public Model.ModelRoleResponseWithManagersAndPaginationV3? AdminGetRolesV3(AdminGetRolesV3 input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        public Model.ModelRoleResponseWithManagersAndPaginationV3? AdminGetRolesV3(AdminGetRolesV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountcommonRoleV3? AdminCreateRoleV3(AdminCreateRoleV3 input)
-        {
+        public Model.AccountcommonRoleV3? AdminCreateRoleV3(AdminCreateRoleV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleResponseV3? AdminGetRoleV3(AdminGetRoleV3 input)
-        {
+        public Model.ModelRoleResponseV3? AdminGetRoleV3(AdminGetRoleV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteRoleV3(AdminDeleteRoleV3 input)
-        {
+        public void AdminDeleteRoleV3(AdminDeleteRoleV3 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleResponseV3? AdminUpdateRoleV3(AdminUpdateRoleV3 input)
-        {
+        public Model.ModelRoleResponseV3? AdminUpdateRoleV3(AdminUpdateRoleV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleAdminStatusResponseV3? AdminGetRoleAdminStatusV3(AdminGetRoleAdminStatusV3 input)
-        {
+        public Model.ModelRoleAdminStatusResponseV3? AdminGetRoleAdminStatusV3(AdminGetRoleAdminStatusV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminUpdateAdminRoleStatusV3(AdminUpdateAdminRoleStatusV3 input)
-        {
+        public void AdminUpdateAdminRoleStatusV3(AdminUpdateAdminRoleStatusV3 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminRemoveRoleAdminV3(AdminRemoveRoleAdminV3 input)
-        {
+        public void AdminRemoveRoleAdminV3(AdminRemoveRoleAdminV3 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleManagersResponsesV3? AdminGetRoleManagersV3(AdminGetRoleManagersV3 input)
-        {
+        public Model.ModelRoleManagersResponsesV3? AdminGetRoleManagersV3(AdminGetRoleManagersV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminAddRoleManagersV3(AdminAddRoleManagersV3 input)
-        {
+        public void AdminAddRoleManagersV3(AdminAddRoleManagersV3 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminRemoveRoleManagersV3(AdminRemoveRoleManagersV3 input)
-        {
+        public void AdminRemoveRoleManagersV3(AdminRemoveRoleManagersV3 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleMembersResponseV3? AdminGetRoleMembersV3(AdminGetRoleMembersV3 input)
-        {
+        public Model.ModelRoleMembersResponseV3? AdminGetRoleMembersV3(AdminGetRoleMembersV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminAddRoleMembersV3(AdminAddRoleMembersV3 input)
-        {
+        public void AdminAddRoleMembersV3(AdminAddRoleMembersV3 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminRemoveRoleMembersV3(AdminRemoveRoleMembersV3 input)
-        {
+        public void AdminRemoveRoleMembersV3(AdminRemoveRoleMembersV3 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminUpdateRolePermissionsV3(AdminUpdateRolePermissionsV3 input)
-        {
+        public void AdminUpdateRolePermissionsV3(AdminUpdateRolePermissionsV3 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminAddRolePermissionsV3(AdminAddRolePermissionsV3 input)
-        {
+        public void AdminAddRolePermissionsV3(AdminAddRolePermissionsV3 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteRolePermissionsV3(AdminDeleteRolePermissionsV3 input)
-        {
+        public void AdminDeleteRolePermissionsV3(AdminDeleteRolePermissionsV3 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteRolePermissionV3(AdminDeleteRolePermissionV3 input)
-        {
+        public void AdminDeleteRolePermissionV3(AdminDeleteRolePermissionV3 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleNamesResponseV3? PublicGetRolesV3(PublicGetRolesV3 input)
-        {
+        public Model.ModelRoleNamesResponseV3? PublicGetRolesV3(PublicGetRolesV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleResponse? PublicGetRoleV3(PublicGetRoleV3 input)
-        {
+        public Model.ModelRoleResponse? PublicGetRoleV3(PublicGetRoleV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListRoleV4Response? AdminGetRolesV4(AdminGetRolesV4 input)
-        {
+        public Model.ModelListRoleV4Response? AdminGetRolesV4(AdminGetRolesV4 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleV4Response? AdminCreateRoleV4(AdminCreateRoleV4 input)
-        {
+        public Model.ModelRoleV4Response? AdminCreateRoleV4(AdminCreateRoleV4 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleV4Response? AdminGetRoleV4(AdminGetRoleV4 input)
-        {
+        public Model.ModelRoleV4Response? AdminGetRoleV4(AdminGetRoleV4 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteRoleV4(AdminDeleteRoleV4 input)
-        {
+        public void AdminDeleteRoleV4(AdminDeleteRoleV4 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleV4Response? AdminUpdateRoleV4(AdminUpdateRoleV4 input)
-        {
+        public Model.ModelRoleV4Response? AdminUpdateRoleV4(AdminUpdateRoleV4 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleV4Response? AdminUpdateRolePermissionsV4(AdminUpdateRolePermissionsV4 input)
-        {
+        public Model.ModelRoleV4Response? AdminUpdateRolePermissionsV4(AdminUpdateRolePermissionsV4 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleV4Response? AdminAddRolePermissionsV4(AdminAddRolePermissionsV4 input)
-        {
+        public Model.ModelRoleV4Response? AdminAddRolePermissionsV4(AdminAddRolePermissionsV4 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteRolePermissionsV4(AdminDeleteRolePermissionsV4 input)
-        {
+        public void AdminDeleteRolePermissionsV4(AdminDeleteRolePermissionsV4 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListAssignedUsersV4Response? AdminListAssignedUsersV4(AdminListAssignedUsersV4 input)
-        {
+        public Model.ModelListAssignedUsersV4Response? AdminListAssignedUsersV4(AdminListAssignedUsersV4 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelAssignedUserV4Response? AdminAssignUserToRoleV4(AdminAssignUserToRoleV4 input)
-        {
+        public Model.ModelAssignedUserV4Response? AdminAssignUserToRoleV4(AdminAssignUserToRoleV4 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminRevokeUserFromRoleV4(AdminRevokeUserFromRoleV4 input)
-        {
+        public void AdminRevokeUserFromRoleV4(AdminRevokeUserFromRoleV4 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

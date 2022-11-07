@@ -47,8 +47,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             )
             {
                 DeleteAdminEmailConfiguration op = new DeleteAdminEmailConfiguration(this,
-                    namespace_,
-                    emails
+                    namespace_,                    
+                    emails                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -62,33 +62,33 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (emails is not null) QueryParams["emails"] = emails;
+            
 
-
-
+            
             CollectionFormatMap["emails"] = "csv";
-
-
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteAdminEmailConfiguration(
-            string namespace_,
-            List<string> emails
+            string namespace_,            
+            List<string> emails            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (emails is not null) QueryParams["emails"] = emails;
+            
 
-
-
+            
             CollectionFormatMap["emails"] = "csv";
-
-
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -103,16 +103,16 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

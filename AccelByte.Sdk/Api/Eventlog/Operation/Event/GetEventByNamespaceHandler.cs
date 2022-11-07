@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     ///
     /// Required permission `NAMESPACE:{namespace}:EVENT [UPDATE]` and scope `analytics`
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetEventByNamespaceHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -55,10 +55,10 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             )
             {
                 GetEventByNamespaceHandler op = new GetEventByNamespaceHandler(this,
-                    namespace_,
-                    endDate,
-                    pageSize,
-                    startDate
+                    namespace_,                    
+                    endDate,                    
+                    pageSize,                    
+                    startDate                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -74,40 +74,40 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (endDate is not null) QueryParams["endDate"] = endDate;
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             if (startDate is not null) QueryParams["startDate"] = startDate;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetEventByNamespaceHandler(
-            string namespace_,
-            long? offset,
-            string endDate,
-            long pageSize,
-            string startDate
+            string namespace_,            
+            long? offset,            
+            string endDate,            
+            long pageSize,            
+            string startDate            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (endDate is not null) QueryParams["endDate"] = endDate;
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             if (startDate is not null) QueryParams["startDate"] = startDate;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -116,15 +116,15 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsEventResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -137,9 +137,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsEventResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

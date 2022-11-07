@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "updatecheckoutconfig")]
-    public class UpdateCheckoutConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","updatecheckoutconfig")]
+    public class UpdateCheckoutConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "UpdateCheckoutConfig"; } }
+        public string OperationName{ get { return "UpdateCheckoutConfig"; } }
 
         [SdkCommandArgument("id")]
         public string Id { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public CheckoutConfig Body { get; set; } = new CheckoutConfig();
-
+                
         public UpdateCheckoutConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             UpdateCheckoutConfig operation = new UpdateCheckoutConfig(
-                Id,
-                Sandbox,
-                Validate,
-                Body
-            );
-
+                Id,                
+                Sandbox,                
+                Validate,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.PaymentMerchantConfigInfo? response = wrapper.UpdateCheckoutConfig(operation);
             if (response == null)
                 return "No response from server.";

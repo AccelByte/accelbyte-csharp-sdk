@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass", "createtier")]
-    public class CreateTierCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass","createtier")]
+    public class CreateTierCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Seasonpass"; } }
+        public string ServiceName{ get { return "Seasonpass"; } }
 
-        public string OperationName { get { return "CreateTier"; } }
+        public string OperationName{ get { return "CreateTier"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 
         [SdkCommandData("body")]
         public TierCreate Body { get; set; } = new TierCreate();
-
+                
         public CreateTierCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Tier wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Tier(_SDK);
 
             CreateTier operation = new CreateTier(
-                Namespace,
-                SeasonId,
-                Body
-            );
-
+                Namespace,                
+                SeasonId,                
+                Body                
+            );            
+            
             List<AccelByte.Sdk.Api.Seasonpass.Model.Tier>? response = wrapper.CreateTier(operation);
             if (response == null)
                 return "No response from server.";

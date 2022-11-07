@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getspecialpaymentproviders")]
-    public class GetSpecialPaymentProvidersCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","getspecialpaymentproviders")]
+    public class GetSpecialPaymentProvidersCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "GetSpecialPaymentProviders"; } }
+        public string OperationName{ get { return "GetSpecialPaymentProviders"; } }
 
         public GetSpecialPaymentProvidersCommand(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             GetSpecialPaymentProviders operation = new GetSpecialPaymentProviders(
-            );
-
+            );            
+            
             List<string>? response = wrapper.GetSpecialPaymentProviders(operation);
             if (response == null)
                 return "No response from server.";

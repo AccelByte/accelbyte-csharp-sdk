@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicverifyheadlessaccountv3")]
-    public class PublicVerifyHeadlessAccountV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","publicverifyheadlessaccountv3")]
+    public class PublicVerifyHeadlessAccountV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicVerifyHeadlessAccountV3"; } }
+        public string OperationName{ get { return "PublicVerifyHeadlessAccountV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelUpgradeHeadlessAccountV3Request Body { get; set; } = new ModelUpgradeHeadlessAccountV3Request();
-
+                
         public PublicVerifyHeadlessAccountV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicVerifyHeadlessAccountV3 operation = new PublicVerifyHeadlessAccountV3(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.ModelUserResponseV3? response = wrapper.PublicVerifyHeadlessAccountV3(operation);
             if (response == null)
                 return "No response from server.";

@@ -19,12 +19,12 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
 
         #region Operation Builders
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public GetBansType.GetBansTypeBuilder GetBansTypeOp
         {
             get { return Operation.GetBansType.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public GetListBanReason.GetListBanReasonBuilder GetListBanReasonOp
         {
             get { return Operation.GetListBanReason.Builder.SetWrapperObject(this); }
@@ -54,82 +54,74 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             get { return Operation.AdminGetBansTypeWithNamespaceV3.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.AccountcommonBans? GetBansType(GetBansType input)
-        {
+        
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public Model.AccountcommonBans? GetBansType(GetBansType input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.AccountcommonBanReasons? GetListBanReason(GetListBanReason input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public Model.AccountcommonBanReasons? GetListBanReason(GetListBanReason input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-        public Model.AccountcommonBansV3? AdminGetBansTypeV3(AdminGetBansTypeV3 input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        public Model.AccountcommonBansV3? AdminGetBansTypeV3(AdminGetBansTypeV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountcommonBanReasonsV3? AdminGetListBanReasonV3(AdminGetListBanReasonV3 input)
-        {
+        public Model.AccountcommonBanReasonsV3? AdminGetListBanReasonV3(AdminGetListBanReasonV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelGetUserBanV3Response? AdminGetBannedUsersV3(AdminGetBannedUsersV3 input)
-        {
+        public Model.ModelGetUserBanV3Response? AdminGetBannedUsersV3(AdminGetBannedUsersV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListBulkUserBanResponseV3? AdminBanUserBulkV3(AdminBanUserBulkV3 input)
-        {
+        public Model.ModelListBulkUserBanResponseV3? AdminBanUserBulkV3(AdminBanUserBulkV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListBulkUserBanResponseV3? AdminUnbanUserBulkV3(AdminUnbanUserBulkV3 input)
-        {
+        public Model.ModelListBulkUserBanResponseV3? AdminUnbanUserBulkV3(AdminUnbanUserBulkV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountcommonBansV3? AdminGetBansTypeWithNamespaceV3(AdminGetBansTypeWithNamespaceV3 input)
-        {
+        public Model.AccountcommonBansV3? AdminGetBansTypeWithNamespaceV3(AdminGetBansTypeWithNamespaceV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

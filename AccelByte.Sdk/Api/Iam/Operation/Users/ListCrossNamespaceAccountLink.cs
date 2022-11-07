@@ -42,7 +42,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// When platformID (device platfom ID) is specified, platform login method for that specific platform ID is removed.
     /// This means to protect account from second hand device usage.
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class ListCrossNamespaceAccountLink : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -78,9 +78,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 ListCrossNamespaceAccountLink op = new ListCrossNamespaceAccountLink(this,
-                    linkingToken,
-                    namespace_,
-                    userId
+                    linkingToken,                    
+                    namespace_,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -96,36 +96,36 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-
-
+            
+            
             if (builder.PlatformId is not null) FormParams["platformId"] = builder.PlatformId;
             if (linkingToken is not null) FormParams["linkingToken"] = linkingToken;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ListCrossNamespaceAccountLink(
-            string namespace_,
-            string userId,
-            string? platformId,
-            string linkingToken
+            string namespace_,            
+            string userId,            
+            string? platformId,            
+            string linkingToken            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-
-
+            
+            
             if (platformId is not null) FormParams["platformId"] = platformId;
             if (linkingToken is not null) FormParams["linkingToken"] = linkingToken;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -140,16 +140,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

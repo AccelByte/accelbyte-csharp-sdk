@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class EventlogEvent_OpExts
     {
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByNamespaceHandler.GetEventByNamespaceHandlerBuilder builder,
             string namespace_,
@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByNamespaceHandler(op);
         }
 
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PostEventHandler.PostEventHandlerBuilder builder,
             ModelsEvent body,
@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Api
             ((Eventlog.Wrapper.Event)builder.WrapperObject!).PostEventHandler(op);
         }
 
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByEventIDHandler.GetEventByEventIDHandlerBuilder builder,
             double eventId,
@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByEventIDHandler(op);
         }
 
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByEventTypeHandler.GetEventByEventTypeHandlerBuilder builder,
             double eventType,
@@ -88,7 +88,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByEventTypeHandler(op);
         }
 
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByEventTypeAndEventIDHandler.GetEventByEventTypeAndEventIDHandlerBuilder builder,
             double eventId,
@@ -111,7 +111,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByEventTypeAndEventIDHandler(op);
         }
 
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByUserIDHandler.GetEventByUserIDHandlerBuilder builder,
             string namespace_,
@@ -132,7 +132,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByUserIDHandler(op);
         }
 
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByUserIDAndEventIDHandler.GetEventByUserIDAndEventIDHandlerBuilder builder,
             double eventId,
@@ -155,7 +155,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByUserIDAndEventIDHandler(op);
         }
 
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByUserIDAndEventTypeHandler.GetEventByUserIDAndEventTypeHandlerBuilder builder,
             double eventType,
@@ -178,7 +178,7 @@ namespace AccelByte.Sdk.Api
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByUserIDAndEventTypeHandler(op);
         }
 
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByUserEventIDAndEventTypeHandler.GetEventByUserEventIDAndEventTypeHandlerBuilder builder,
             double eventId,

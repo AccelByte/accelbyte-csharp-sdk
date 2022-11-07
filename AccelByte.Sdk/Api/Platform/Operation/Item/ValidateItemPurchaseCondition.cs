@@ -52,8 +52,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 ValidateItemPurchaseCondition op = new ValidateItemPurchaseCondition(this,
-                    namespace_,
-                    userId
+                    namespace_,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,34 +67,34 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (userId is not null) QueryParams["userId"] = userId;
+            
 
-
-
-
+            
+            
             BodyParams = builder.Body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ValidateItemPurchaseCondition(
-            string namespace_,
-            string userId,
-            Model.ItemPurchaseConditionValidateRequest body
+            string namespace_,            
+            string userId,            
+            Model.ItemPurchaseConditionValidateRequest body            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (userId is not null) QueryParams["userId"] = userId;
+            
 
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -109,9 +109,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public List<Model.ItemPurchaseConditionValidateResult>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -124,9 +124,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.ItemPurchaseConditionValidateResult>>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

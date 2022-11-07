@@ -49,8 +49,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             )
             {
                 QueryPasses op = new QueryPasses(this,
-                    namespace_,
-                    seasonId
+                    namespace_,                    
+                    seasonId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -65,30 +65,30 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["seasonId"] = seasonId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public QueryPasses(
-            string namespace_,
-            string seasonId
+            string namespace_,            
+            string seasonId            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["seasonId"] = seasonId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -97,15 +97,15 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public List<Model.PassInfo>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -118,9 +118,9 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.PassInfo>>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

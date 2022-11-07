@@ -32,31 +32,28 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
             get { return Operation.CheckServerLogs.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public Model.ModelsListTerminatedServersResponse? ListTerminatedServers(ListTerminatedServers input)
-        {
+        
+        public Model.ModelsListTerminatedServersResponse? ListTerminatedServers(ListTerminatedServers input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DownloadServerLogs(DownloadServerLogs input)
-        {
+        public void DownloadServerLogs(DownloadServerLogs input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsLogFileStatus? CheckServerLogs(CheckServerLogs input)
-        {
+        public Model.ModelsLogFileStatus? CheckServerLogs(CheckServerLogs input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc", "countserverdetailed")]
-    public class CountServerDetailedCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc","countserverdetailed")]
+    public class CountServerDetailedCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dsmc"; } }
+        public string ServiceName{ get { return "Dsmc"; } }
 
-        public string OperationName { get { return "CountServerDetailed"; } }
+        public string OperationName{ get { return "CountServerDetailed"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Admin(_SDK);
 
             CountServerDetailed operation = new CountServerDetailed(
-                Namespace,
-                Region
-            );
-
+                Namespace,                
+                Region                
+            );            
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDetailedCountServerResponse? response = wrapper.CountServerDetailed(operation);
             if (response == null)
                 return "No response from server.";

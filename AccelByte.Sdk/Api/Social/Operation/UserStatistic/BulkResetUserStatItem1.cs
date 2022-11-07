@@ -55,8 +55,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             )
             {
                 BulkResetUserStatItem1 op = new BulkResetUserStatItem1(this,
-                    namespace_,
-                    userId
+                    namespace_,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -71,33 +71,33 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = builder.Body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public BulkResetUserStatItem1(
-            string namespace_,
-            string userId,
-            List<Model.BulkStatItemReset> body
+            string namespace_,            
+            string userId,            
+            List<Model.BulkStatItemReset> body            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -112,9 +112,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public List<Model.BulkStatItemOperationResult>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -127,9 +127,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.BulkStatItemOperationResult>>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

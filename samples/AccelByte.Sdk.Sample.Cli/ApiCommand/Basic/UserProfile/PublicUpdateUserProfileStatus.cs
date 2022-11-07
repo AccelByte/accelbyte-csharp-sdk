@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "publicupdateuserprofilestatus")]
-    public class PublicUpdateUserProfileStatusCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","publicupdateuserprofilestatus")]
+    public class PublicUpdateUserProfileStatusCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "PublicUpdateUserProfileStatus"; } }
+        public string OperationName{ get { return "PublicUpdateUserProfileStatus"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 
         [SdkCommandData("body")]
         public UserProfileStatusUpdate Body { get; set; } = new UserProfileStatusUpdate();
-
+                
         public PublicUpdateUserProfileStatusCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.UserProfile wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.UserProfile(_SDK);
 
             PublicUpdateUserProfileStatus operation = new PublicUpdateUserProfileStatus(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Basic.Model.UserProfileInfo? response = wrapper.PublicUpdateUserProfileStatus(operation);
             if (response == null)
                 return "No response from server.";

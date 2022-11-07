@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
     ///   *  Returns : key group info
     /// </summary>
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetKeyGroupByBoothName : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -48,8 +49,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 GetKeyGroupByBoothName op = new GetKeyGroupByBoothName(this,
-                    namespace_,
-                    boothName
+                    namespace_,                    
+                    boothName                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -63,31 +64,31 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (boothName is not null) QueryParams["boothName"] = boothName;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetKeyGroupByBoothName(
-            string namespace_,
-            string boothName
+            string namespace_,            
+            string boothName            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (boothName is not null) QueryParams["boothName"] = boothName;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -96,15 +97,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.KeyGroupInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -117,9 +118,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.KeyGroupInfo>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

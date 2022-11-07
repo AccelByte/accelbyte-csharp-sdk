@@ -18,18 +18,18 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "adminenablemyauthenticatorv4")]
-    public class AdminEnableMyAuthenticatorV4Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","adminenablemyauthenticatorv4")]
+    public class AdminEnableMyAuthenticatorV4Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminEnableMyAuthenticatorV4"; } }
+        public string OperationName{ get { return "AdminEnableMyAuthenticatorV4"; } }
 
         [SdkCommandArgument("code")]
         public string Code { get; set; } = String.Empty;
-
+                    
         public AdminEnableMyAuthenticatorV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             AdminEnableMyAuthenticatorV4 operation = new AdminEnableMyAuthenticatorV4(
-                Code
-            );
-
+                Code                
+            );            
+            
             wrapper.AdminEnableMyAuthenticatorV4(operation);
             return String.Empty;
         }

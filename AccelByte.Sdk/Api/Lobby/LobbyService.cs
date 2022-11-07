@@ -18,13 +18,13 @@ namespace AccelByte.Sdk.Api.Lobby
         public LobbyService(AccelByteConfig abConfig)
             : base(abConfig)
         {
-
+            
         }
 
         public LobbyService(string baseUrl)
             : base(baseUrl)
         {
-
+            
         }
 
         [WebSocketEvent("acceptFriendsNotif")]

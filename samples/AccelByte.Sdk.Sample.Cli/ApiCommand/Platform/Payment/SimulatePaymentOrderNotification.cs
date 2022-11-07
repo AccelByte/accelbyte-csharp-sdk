@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "simulatepaymentordernotification")]
-    public class SimulatePaymentOrderNotificationCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","simulatepaymentordernotification")]
+    public class SimulatePaymentOrderNotificationCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "SimulatePaymentOrderNotification"; } }
+        public string OperationName{ get { return "SimulatePaymentOrderNotification"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public PaymentOrderNotifySimulation Body { get; set; } = new PaymentOrderNotifySimulation();
-
+                
         public SimulatePaymentOrderNotificationCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Payment wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Payment(_SDK);
 
             SimulatePaymentOrderNotification operation = new SimulatePaymentOrderNotification(
-                Namespace,
-                PaymentOrderNo,
-                Body
-            );
-
+                Namespace,                
+                PaymentOrderNo,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.NotificationProcessResult? response = wrapper.SimulatePaymentOrderNotification(operation);
             if (response == null)
                 return "No response from server.";

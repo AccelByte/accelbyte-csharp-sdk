@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getiapitemconfig")]
-    public class GetIAPItemConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","getiapitemconfig")]
+    public class GetIAPItemConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "GetIAPItemConfig"; } }
+        public string OperationName{ get { return "GetIAPItemConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             GetIAPItemConfig operation = new GetIAPItemConfig(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.IAPItemConfigInfo? response = wrapper.GetIAPItemConfig(operation);
             if (response == null)
                 return "No response from server.";

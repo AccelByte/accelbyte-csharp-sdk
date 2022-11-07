@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicforceplatformlinkv3")]
-    public class PublicForcePlatformLinkV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","publicforceplatformlinkv3")]
+    public class PublicForcePlatformLinkV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicForcePlatformLinkV3"; } }
+        public string OperationName{ get { return "PublicForcePlatformLinkV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandArgument("ticket")]
         public string Ticket { get; set; } = String.Empty;
-
+                    
         public PublicForcePlatformLinkV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicForcePlatformLinkV3 operation = new PublicForcePlatformLinkV3(
-                Namespace,
-                PlatformId,
-                Ticket
-            );
-
+                Namespace,                
+                PlatformId,                
+                Ticket                
+            );            
+            
             wrapper.PublicForcePlatformLinkV3(operation);
             return String.Empty;
         }

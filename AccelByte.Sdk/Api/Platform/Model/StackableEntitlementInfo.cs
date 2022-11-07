@@ -130,7 +130,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class StackableEntitlementInfoClazz : StringEnum<StackableEntitlementInfoClazz>
     {
@@ -163,7 +163,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class StackableEntitlementInfoSource : StringEnum<StackableEntitlementInfoSource>
     {
@@ -205,7 +205,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class StackableEntitlementInfoStatus : StringEnum<StackableEntitlementInfoStatus>
     {
@@ -232,7 +232,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class StackableEntitlementInfoType : StringEnum<StackableEntitlementInfoType>
     {
@@ -253,5 +253,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 }

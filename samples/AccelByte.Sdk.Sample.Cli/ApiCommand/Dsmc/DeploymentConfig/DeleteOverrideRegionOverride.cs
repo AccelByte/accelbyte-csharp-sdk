@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc", "deleteoverrideregionoverride")]
-    public class DeleteOverrideRegionOverrideCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc","deleteoverrideregionoverride")]
+    public class DeleteOverrideRegionOverrideCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dsmc"; } }
+        public string ServiceName{ get { return "Dsmc"; } }
 
-        public string OperationName { get { return "DeleteOverrideRegionOverride"; } }
+        public string OperationName{ get { return "DeleteOverrideRegionOverride"; } }
 
         [SdkCommandArgument("deployment")]
         public string Deployment { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig(_SDK);
 
             DeleteOverrideRegionOverride operation = new DeleteOverrideRegionOverride(
-                Deployment,
-                Namespace,
-                Region,
-                Version
-            );
-
+                Deployment,                
+                Namespace,                
+                Region,                
+                Version                
+            );            
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDeploymentWithOverride? response = wrapper.DeleteOverrideRegionOverride(operation);
             if (response == null)
                 return "No response from server.";

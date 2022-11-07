@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc", "getchannels")]
-    public class GetChannelsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","getchannels")]
+    public class GetChannelsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ugc"; } }
+        public string ServiceName{ get { return "Ugc"; } }
 
-        public string OperationName { get { return "GetChannels"; } }
+        public string OperationName{ get { return "GetChannels"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicChannel wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicChannel(_SDK);
 
             GetChannels operation = new GetChannels(
-                Namespace,
-                UserId,
-                Limit,
-                Offset
-            );
-
+                Namespace,                
+                UserId,                
+                Limit,                
+                Offset                
+            );            
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedGetChannelResponse? response = wrapper.GetChannels(operation);
             if (response == null)
                 return "No response from server.";

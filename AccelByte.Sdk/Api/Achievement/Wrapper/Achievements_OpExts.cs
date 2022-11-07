@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Api
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminCreateNewAchievement(op);
         }
 
-        public static List<Achievement.Model.ModelsAchievement>? Execute(
+        public static Stream? Execute(
             this ExportAchievements.ExportAchievementsBuilder builder,
             string namespace_
         )

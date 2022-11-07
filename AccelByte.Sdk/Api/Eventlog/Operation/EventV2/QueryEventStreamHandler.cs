@@ -87,8 +87,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             )
             {
                 QueryEventStreamHandler op = new QueryEventStreamHandler(this,
-                    body,
-                    namespace_
+                    body,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -102,43 +102,43 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (builder.EndDate is not null) QueryParams["endDate"] = builder.EndDate;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.PageSize != null) QueryParams["pageSize"] = Convert.ToString(builder.PageSize)!;
             if (builder.StartDate is not null) QueryParams["startDate"] = builder.StartDate;
+            
 
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public QueryEventStreamHandler(
-            string namespace_,
-            string? endDate,
-            long? offset,
-            long? pageSize,
-            string? startDate,
-            Model.ModelsGenericQueryPayload body
+            string namespace_,            
+            string? endDate,            
+            long? offset,            
+            long? pageSize,            
+            string? startDate,            
+            Model.ModelsGenericQueryPayload body            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (endDate is not null) QueryParams["endDate"] = endDate;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (pageSize != null) QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             if (startDate is not null) QueryParams["startDate"] = startDate;
+            
 
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -153,9 +153,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsEventResponseV2? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -168,9 +168,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsEventResponseV2>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

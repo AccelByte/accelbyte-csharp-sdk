@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicplatformunlinkv3")]
-    public class PublicPlatformUnlinkV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","publicplatformunlinkv3")]
+    public class PublicPlatformUnlinkV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicPlatformUnlinkV3"; } }
+        public string OperationName{ get { return "PublicPlatformUnlinkV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelUnlinkUserPlatformRequest Body { get; set; } = new ModelUnlinkUserPlatformRequest();
-
+                
         public PublicPlatformUnlinkV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicPlatformUnlinkV3 operation = new PublicPlatformUnlinkV3(
-                Namespace,
-                PlatformId,
-                Body
-            );
-
+                Namespace,                
+                PlatformId,                
+                Body                
+            );            
+            
             wrapper.PublicPlatformUnlinkV3(operation);
             return String.Empty;
         }

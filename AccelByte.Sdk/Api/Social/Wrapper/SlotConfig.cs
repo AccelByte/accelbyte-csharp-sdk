@@ -44,58 +44,52 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             get { return Operation.DeleteUserSlotConfig.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public Model.NamespaceSlotConfigInfo? GetNamespaceSlotConfig(GetNamespaceSlotConfig input)
-        {
+        
+        public Model.NamespaceSlotConfigInfo? GetNamespaceSlotConfig(GetNamespaceSlotConfig input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.NamespaceSlotConfigInfo? UpdateNamespaceSlotConfig(UpdateNamespaceSlotConfig input)
-        {
+        public Model.NamespaceSlotConfigInfo? UpdateNamespaceSlotConfig(UpdateNamespaceSlotConfig input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteNamespaceSlotConfig(DeleteNamespaceSlotConfig input)
-        {
+        public void DeleteNamespaceSlotConfig(DeleteNamespaceSlotConfig input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserSlotConfigInfo? GetUserSlotConfig(GetUserSlotConfig input)
-        {
+        public Model.UserSlotConfigInfo? GetUserSlotConfig(GetUserSlotConfig input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserSlotConfigInfo? UpdateUserSlotConfig(UpdateUserSlotConfig input)
-        {
+        public Model.UserSlotConfigInfo? UpdateUserSlotConfig(UpdateUserSlotConfig input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteUserSlotConfig(DeleteUserSlotConfig input)
-        {
+        public void DeleteUserSlotConfig(DeleteUserSlotConfig input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

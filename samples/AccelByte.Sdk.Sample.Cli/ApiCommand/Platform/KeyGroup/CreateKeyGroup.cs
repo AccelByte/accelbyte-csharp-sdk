@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "createkeygroup")]
-    public class CreateKeyGroupCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","createkeygroup")]
+    public class CreateKeyGroupCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "CreateKeyGroup"; } }
+        public string OperationName{ get { return "CreateKeyGroup"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public KeyGroupCreate Body { get; set; } = new KeyGroupCreate();
-
+                
         public CreateKeyGroupCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.KeyGroup wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.KeyGroup(_SDK);
 
             CreateKeyGroup operation = new CreateKeyGroup(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.KeyGroupInfo? response = wrapper.CreateKeyGroup(operation);
             if (response == null)
                 return "No response from server.";

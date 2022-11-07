@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api
             return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).BulkGetPlayerRecordSizeHandlerV1(op);
         }
 
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Cloudsave.Model.ModelsListPlayerRecordKeysResponse? Execute(
             this ListPlayerRecordHandlerV1.ListPlayerRecordHandlerV1Builder builder,
             string namespace_

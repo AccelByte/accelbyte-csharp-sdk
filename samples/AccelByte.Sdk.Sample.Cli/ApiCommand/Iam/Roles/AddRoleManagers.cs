@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "addrolemanagers")]
-    public class AddRoleManagersCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","addrolemanagers")]
+    public class AddRoleManagersCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AddRoleManagers"; } }
+        public string OperationName{ get { return "AddRoleManagers"; } }
 
         [SdkCommandArgument("roleId")]
         public string RoleId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelRoleManagersRequest Body { get; set; } = new ModelRoleManagersRequest();
-
+                
         public AddRoleManagersCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,17 +42,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Roles wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Roles(_SDK);
 
-#pragma warning disable ab_deprecated_operation
+            #pragma warning disable ab_deprecated_operation
             AddRoleManagers operation = new AddRoleManagers(
-                RoleId,
-                Body
-            );
-#pragma warning restore ab_deprecated_operation
-
-#pragma warning disable ab_deprecated_operation_wrapper
+                RoleId,                
+                Body                
+            );            
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             wrapper.AddRoleManagers(operation);
             return String.Empty;
-#pragma warning restore ab_deprecated_operation_wrapper
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

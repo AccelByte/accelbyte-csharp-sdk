@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "generatetokenbynewheadlessaccountv3")]
-    public class GenerateTokenByNewHeadlessAccountV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","generatetokenbynewheadlessaccountv3")]
+    public class GenerateTokenByNewHeadlessAccountV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "GenerateTokenByNewHeadlessAccountV3"; } }
+        public string OperationName{ get { return "GenerateTokenByNewHeadlessAccountV3"; } }
 
         [SdkCommandArgument("extend_exp")]
         public bool ExtendExp { get; set; } = false;
-
+                    
         [SdkCommandArgument("linkingToken")]
         public string LinkingToken { get; set; } = String.Empty;
-
+                    
         public GenerateTokenByNewHeadlessAccountV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension(_SDK);
 
             GenerateTokenByNewHeadlessAccountV3 operation = new GenerateTokenByNewHeadlessAccountV3(
-                ExtendExp,
-                LinkingToken
-            );
-
+                ExtendExp,                
+                LinkingToken                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenResponseV3? response = wrapper.GenerateTokenByNewHeadlessAccountV3(operation);
             if (response == null)
                 return "No response from server.";

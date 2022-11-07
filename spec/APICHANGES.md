@@ -1,3 +1,124 @@
+# C# Server SDK v0.21.0
+
+## achievement Service
+
+### What's Changed
+---
+`GET` /achievement/v1/admin/namespaces/{namespace}/achievements/export Export achievements configuration into a json file  
+    Return Type
+
+        Delete AchievementCode
+        Delete CreatedAt
+        Delete DefaultLanguage
+        Delete Description
+        Delete GoalValue
+        Delete Hidden
+        Delete ID
+        Delete Incremental
+        Delete ListOrder
+        Delete LockedIcons
+        Delete Name
+        Delete Namespace
+        Delete StatCode
+        Delete Tags
+        Delete UnlockedIcons
+        Delete UpdatedAt
+`GET` /achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements Query user achievements [include achieved and in-progress]  
+    Return Type
+
+        Modify data.achievedAt
+`GET` /achievement/v1/public/namespaces/{namespace}/users/{userId}/achievements Query user achievements [include achieved and in-progress]  
+    Return Type
+
+        Modify data.achievedAt
+
+## gametelemetry Service
+
+### What's Changed
+---
+`GET` /game-telemetry/v1/admin/namespaces/{namespace}/events Get Events  
+    Parameters
+
+        Modify endTime //End time of data to be queried. Default: Current time in UTC.
+        Modify startTime //Start time of data to be queried. Default: Current time in UTC minus 1 day.
+`POST` /game-telemetry/v1/protected/events Protected Save Events  
+    Parameters
+
+        Delete body.EventId
+        Delete body.EventTimestamp
+
+## iam Service
+
+### What's Changed
+---
+`GET` /iam/oauth/revocationlist OAuth2 revocation list API  
+    Return Type
+
+        Modify revoked_tokens.bits
+`GET` /iam/v3/admin/namespaces/{namespace}/platforms/all/clients Get All Third Party Platform Credential  
+    Return Type
+
+        Insert scopes //scopes for generic OAuth Authorization code flow
+`GET` /iam/v3/admin/namespaces/{namespace}/platforms/all/clients/active Get All Active Third Party Platform Active Credential  
+    Return Type
+
+        Insert scopes //scopes for generic OAuth Authorization code flow
+`POST` /iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/clients Add Third Party Platform Credential  
+    Parameters
+
+        Insert body.scopes //scopes for generic OAuth Authorization code flow. Default is [openid, profile, email]
+`GET` /iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/clients Retrieve Third Party Platform Credential  
+    Return Type
+
+        Insert scopes //scopes for generic OAuth Authorization code flow
+`PATCH` /iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/clients Update Third Party Platform Credential  
+    Parameters
+
+        Insert body.scopes //scopes for generic OAuth Authorization code flow. Default is [openid, profile, email]
+    Return Type
+
+        Insert scopes //scopes for generic OAuth Authorization code flow
+`GET` /iam/v3/oauth/authorize OAuth2 authorize API  
+    Parameters
+
+        Add useRedirectUriAsLoginUrlWhenLocked //Use Redirect URI as the Login URL after resetting password when got locked
+`GET` /iam/v3/oauth/revocationlist OAuth2 revocation list API  
+    Return Type
+
+        Modify revoked_tokens.bits
+`POST` /iam/v3/public/namespaces/{namespace}/users/bulk/basic Bulk get users' basic info by user Id  
+    Return Type
+
+        Insert data.username
+
+## lobby Service
+
+### What's Changed
+---
+`GET` /lobby/v1/admin/config/namespaces/{namespace}/export Export lobby config to a json file.  
+    Return Type
+
+        Delete allowInviteNonConnectedUser
+        Delete allowJoinPartyDuringMatchmaking
+        Delete autoKickOnDisconnect
+        Delete autoKickOnDisconnectDelay
+        Delete cancelTicketOnDisconnect
+        Delete chatRateLimitBurst
+        Delete chatRateLimitDuration
+        Delete concurrentUsersLimit
+        Delete disableInvitationOnJoinParty
+        Delete enableChat
+        Delete entitlementCheck
+        Delete entitlementItemID
+        Delete generalRateLimitBurst
+        Delete generalRateLimitDuration
+        Delete keepPresenceActivityOnDisconnect
+        Delete maxDSWaitTime
+        Delete maxPartyMember
+        Delete namespace
+        Delete profanityFilter
+        Delete readyConsentTimeout
+
 # C# Server SDK v0.20.0
 
 ## gametelemetry Service

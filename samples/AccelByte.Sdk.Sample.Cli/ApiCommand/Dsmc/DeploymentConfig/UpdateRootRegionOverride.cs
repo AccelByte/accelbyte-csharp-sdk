@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc", "updaterootregionoverride")]
-    public class UpdateRootRegionOverrideCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc","updaterootregionoverride")]
+    public class UpdateRootRegionOverrideCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dsmc"; } }
+        public string ServiceName{ get { return "Dsmc"; } }
 
-        public string OperationName { get { return "UpdateRootRegionOverride"; } }
+        public string OperationName{ get { return "UpdateRootRegionOverride"; } }
 
         [SdkCommandArgument("deployment")]
         public string Deployment { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
         [SdkCommandData("body")]
         public ModelsUpdateRegionOverrideRequest Body { get; set; } = new ModelsUpdateRegionOverrideRequest();
-
+                
         public UpdateRootRegionOverrideCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig(_SDK);
 
             UpdateRootRegionOverride operation = new UpdateRootRegionOverride(
-                Deployment,
-                Namespace,
-                Region,
-                Body
-            );
-
+                Deployment,                
+                Namespace,                
+                Region,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDeploymentWithOverride? response = wrapper.UpdateRootRegionOverride(operation);
             if (response == null)
                 return "No response from server.";

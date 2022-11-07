@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "admingetthirdpartyconfig")]
-    public class AdminGetThirdPartyConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","admingetthirdpartyconfig")]
+    public class AdminGetThirdPartyConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "AdminGetThirdPartyConfig"; } }
+        public string OperationName{ get { return "AdminGetThirdPartyConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.ThirdParty wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.ThirdParty(_SDK);
 
             AdminGetThirdPartyConfig operation = new AdminGetThirdPartyConfig(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsGetConfigResponse? response = wrapper.AdminGetThirdPartyConfig(operation);
             if (response == null)
                 return "No response from server.";

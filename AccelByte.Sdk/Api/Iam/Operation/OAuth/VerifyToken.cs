@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///   * Note: difference in V3 response:
     ///     1. format differenceï¼Pascal case => Camel case): permissions field from Action => action, Resource => resource
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class VerifyToken : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -57,7 +57,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 VerifyToken op = new VerifyToken(this,
-                    token
+                    token                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -69,29 +69,29 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string token
         )
         {
-
-
+            
+            
             if (token is not null) FormParams["token"] = token;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
         #endregion
 
         public VerifyToken(
-            string token
+            string token            
         )
         {
-
-
+            
+            
             if (token is not null) FormParams["token"] = token;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
@@ -106,9 +106,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Basic";
-
+        
         public Model.OauthmodelTokenResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -121,9 +121,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.OauthmodelTokenResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

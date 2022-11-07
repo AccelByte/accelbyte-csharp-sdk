@@ -36,40 +36,36 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             get { return Operation.AdminDeleteThirdPartyConfig.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public Model.ModelsGetConfigResponse? AdminGetThirdPartyConfig(AdminGetThirdPartyConfig input)
-        {
+        
+        public Model.ModelsGetConfigResponse? AdminGetThirdPartyConfig(AdminGetThirdPartyConfig input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsUpdateConfigResponse? AdminUpdateThirdPartyConfig(AdminUpdateThirdPartyConfig input)
-        {
+        public Model.ModelsUpdateConfigResponse? AdminUpdateThirdPartyConfig(AdminUpdateThirdPartyConfig input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateConfigResponse? AdminCreateThirdPartyConfig(AdminCreateThirdPartyConfig input)
-        {
+        public Model.ModelsCreateConfigResponse? AdminCreateThirdPartyConfig(AdminCreateThirdPartyConfig input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public string? AdminDeleteThirdPartyConfig(AdminDeleteThirdPartyConfig input)
-        {
+        public string? AdminDeleteThirdPartyConfig(AdminDeleteThirdPartyConfig input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

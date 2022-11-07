@@ -646,4 +646,3 @@
 | `oauthmodel.TokenWithDeviceCookieResponseV3` | [OauthmodelTokenWithDeviceCookieResponseV3](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenWithDeviceCookieResponseV3.cs) |
 | `rest.ErrorResponse` | [RestErrorResponse](../../AccelByte.Sdk/Api/Iam/Model/RestErrorResponse.cs) |
 | `rest.ErrorResponseWithConflictedUserPlatformAccounts` | [RestErrorResponseWithConflictedUserPlatformAccounts](../../AccelByte.Sdk/Api/Iam/Model/RestErrorResponseWithConflictedUserPlatformAccounts.cs) |
-| `restapi.ErrorResponse` | [RestapiErrorResponse](../../AccelByte.Sdk/Api/Iam/Model/RestapiErrorResponse.cs) |

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// The password reset code will be sent to the publisher account's email address.
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class ForgotPassword : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -66,8 +66,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 ForgotPassword op = new ForgotPassword(this,
-                    body,
-                    namespace_
+                    body,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -81,13 +81,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
@@ -95,18 +95,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public ForgotPassword(
-            string namespace_,
-            Model.ModelSendVerificationCodeRequest body
+            string namespace_,            
+            Model.ModelSendVerificationCodeRequest body            
         )
         {
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
@@ -122,16 +122,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Basic";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Achievement.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
-    [SdkConsoleCommand("achievement", "publicunlockachievement")]
-    public class PublicUnlockAchievementCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("achievement","publicunlockachievement")]
+    public class PublicUnlockAchievementCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Achievement"; } }
+        public string ServiceName{ get { return "Achievement"; } }
 
-        public string OperationName { get { return "PublicUnlockAchievement"; } }
+        public string OperationName{ get { return "PublicUnlockAchievement"; } }
 
         [SdkCommandArgument("achievementCode")]
         public string AchievementCode { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             AccelByte.Sdk.Api.Achievement.Wrapper.Achievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.Achievements(_SDK);
 
             PublicUnlockAchievement operation = new PublicUnlockAchievement(
-                AchievementCode,
-                Namespace,
-                UserId
-            );
-
+                AchievementCode,                
+                Namespace,                
+                UserId                
+            );            
+            
             wrapper.PublicUnlockAchievement(operation);
             return String.Empty;
         }

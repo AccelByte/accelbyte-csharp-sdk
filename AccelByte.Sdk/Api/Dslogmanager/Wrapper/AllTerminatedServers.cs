@@ -28,22 +28,20 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
             get { return Operation.ListAllTerminatedServers.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public void BatchDownloadServerLogs(BatchDownloadServerLogs input)
-        {
+        
+        public void BatchDownloadServerLogs(BatchDownloadServerLogs input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsListTerminatedServersResponse? ListAllTerminatedServers(ListAllTerminatedServers input)
-        {
+        public Model.ModelsListTerminatedServersResponse? ListAllTerminatedServers(ListAllTerminatedServers input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

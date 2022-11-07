@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "publicupdateattribute")]
-    public class PublicUpdateAttributeCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("social","publicupdateattribute")]
+    public class PublicUpdateAttributeCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "PublicUpdateAttribute"; } }
+        public string OperationName{ get { return "PublicUpdateAttribute"; } }
 
         [SdkCommandArgument("attributeName")]
         public string AttributeName { get; set; } = String.Empty;
@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
         [SdkCommandData("body")]
         public AccelByte.Sdk.Api.Social.Model.Attribute Body { get; set; } = new AccelByte.Sdk.Api.Social.Model.Attribute();
-
+                
         public PublicUpdateAttributeCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.GameProfile wrapper = new AccelByte.Sdk.Api.Social.Wrapper.GameProfile(_SDK);
 
             PublicUpdateAttribute operation = new PublicUpdateAttribute(
-                AttributeName,
-                Namespace,
-                ProfileId,
-                UserId,
-                Body
-            );
-
+                AttributeName,                
+                Namespace,                
+                ProfileId,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Social.Model.GameProfileInfo? response = wrapper.PublicUpdateAttribute(operation);
             if (response == null)
                 return "No response from server.";

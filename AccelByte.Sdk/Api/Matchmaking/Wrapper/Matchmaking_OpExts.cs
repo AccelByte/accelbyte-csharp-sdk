@@ -280,7 +280,7 @@ namespace AccelByte.Sdk.Api
             ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).DeleteUserFromSessionInChannel(op);
         }
 
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ServiceGetSessionHistorySearchResponse? Execute(
             this SearchSessions.SearchSessionsBuilder builder,
             string namespace_,
@@ -297,7 +297,7 @@ namespace AccelByte.Sdk.Api
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).SearchSessions(op);
         }
 
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static List<Matchmaking.Model.ServiceGetSessionHistoryDetailedResponseItem>? Execute(
             this GetSessionHistoryDetailed.GetSessionHistoryDetailedBuilder builder,
             string matchID,
@@ -338,7 +338,7 @@ namespace AccelByte.Sdk.Api
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).PublicGetSingleMatchmakingChannel(op);
         }
 
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ServiceGetSessionHistorySearchResponseV2? Execute(
             this SearchSessionsV2.SearchSessionsV2Builder builder,
             string namespace_,

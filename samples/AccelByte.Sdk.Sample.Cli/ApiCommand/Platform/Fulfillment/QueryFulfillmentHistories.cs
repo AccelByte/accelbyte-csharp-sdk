@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "queryfulfillmenthistories")]
-    public class QueryFulfillmentHistoriesCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","queryfulfillmenthistories")]
+    public class QueryFulfillmentHistoriesCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "QueryFulfillmentHistories"; } }
+        public string OperationName{ get { return "QueryFulfillmentHistories"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Fulfillment wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Fulfillment(_SDK);
 
             QueryFulfillmentHistories operation = new QueryFulfillmentHistories(
-                Namespace,
-                Limit,
-                Offset,
-                (Status is null ? null : QueryFulfillmentHistoriesStatus.NewValue(Status)),
-                UserId
-            );
-
+                Namespace,                
+                Limit,                
+                Offset,                
+                (Status is null ? null : QueryFulfillmentHistoriesStatus.NewValue(Status)),                
+                UserId                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.FulfillmentHistoryPagingSlicedResult? response = wrapper.QueryFulfillmentHistories(operation);
             if (response == null)
                 return "No response from server.";

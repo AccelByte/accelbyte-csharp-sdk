@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "deletecountrygroup")]
-    public class DeleteCountryGroupCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","deletecountrygroup")]
+    public class DeleteCountryGroupCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "DeleteCountryGroup"; } }
+        public string OperationName{ get { return "DeleteCountryGroup"; } }
 
         [SdkCommandArgument("countryGroupCode")]
         public string CountryGroupCode { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.Misc wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.Misc(_SDK);
 
             DeleteCountryGroup operation = new DeleteCountryGroup(
-                CountryGroupCode,
-                Namespace
-            );
-
+                CountryGroupCode,                
+                Namespace                
+            );            
+            
             wrapper.DeleteCountryGroup(operation);
             return String.Empty;
         }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "getsingletemplatelocalizationv1admin")]
-    public class GetSingleTemplateLocalizationV1AdminCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","getsingletemplatelocalizationv1admin")]
+    public class GetSingleTemplateLocalizationV1AdminCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "GetSingleTemplateLocalizationV1Admin"; } }
+        public string OperationName{ get { return "GetSingleTemplateLocalizationV1Admin"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             GetSingleTemplateLocalizationV1Admin operation = new GetSingleTemplateLocalizationV1Admin(
-                Namespace,
-                TemplateLanguage,
-                TemplateSlug
-            );
-
+                Namespace,                
+                TemplateLanguage,                
+                TemplateSlug                
+            );            
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelLocalization? response = wrapper.GetSingleTemplateLocalizationV1Admin(operation);
             if (response == null)
                 return "No response from server.";

@@ -61,10 +61,10 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             )
             {
                 UpdateUserPointAdminV1 op = new UpdateUserPointAdminV1(this,
-                    body,
-                    leaderboardCode,
-                    namespace_,
-                    userId
+                    body,                    
+                    leaderboardCode,                    
+                    namespace_,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -82,35 +82,35 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["leaderboardCode"] = leaderboardCode;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateUserPointAdminV1(
-            string leaderboardCode,
-            string namespace_,
-            string userId,
-            Model.ModelsUpdateUserPointAdminV1Request body
+            string leaderboardCode,            
+            string namespace_,            
+            string userId,            
+            Model.ModelsUpdateUserPointAdminV1Request body            
         )
         {
             PathParams["leaderboardCode"] = leaderboardCode;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -125,9 +125,9 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsUpdateUserPointAdminV1Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -140,9 +140,9 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsUpdateUserPointAdminV1Response>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

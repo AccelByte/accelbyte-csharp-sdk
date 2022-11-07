@@ -66,29 +66,29 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         private CreateNamespace(CreateNamespaceBuilder builder
         )
         {
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = builder.Body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CreateNamespace(
-            Model.NamespaceCreate body
+            Model.NamespaceCreate body            
         )
         {
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -103,9 +103,9 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.NamespaceInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -118,9 +118,9 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             {
                 return JsonSerializer.Deserialize<Model.NamespaceInfo>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

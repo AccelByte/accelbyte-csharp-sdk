@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "gettopicbytopicname")]
-    public class GetTopicByTopicNameCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","gettopicbytopicname")]
+    public class GetTopicByTopicNameCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "GetTopicByTopicName"; } }
+        public string OperationName{ get { return "GetTopicByTopicName"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             GetTopicByTopicName operation = new GetTopicByTopicName(
-                Namespace,
-                Topic
-            );
-
+                Namespace,                
+                Topic                
+            );            
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelNotificationTopicResponse? response = wrapper.GetTopicByTopicName(operation);
             if (response == null)
                 return "No response from server.";

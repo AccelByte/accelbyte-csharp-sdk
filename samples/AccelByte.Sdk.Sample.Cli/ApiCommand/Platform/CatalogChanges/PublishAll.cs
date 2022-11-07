@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publishall")]
-    public class PublishAllCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publishall")]
+    public class PublishAllCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublishAll"; } }
+        public string OperationName{ get { return "PublishAll"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.CatalogChanges wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.CatalogChanges(_SDK);
 
             PublishAll operation = new PublishAll(
-                Namespace,
-                StoreId
-            );
-
+                Namespace,                
+                StoreId                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.StoreInfo? response = wrapper.PublishAll(operation);
             if (response == null)
                 return "No response from server.";

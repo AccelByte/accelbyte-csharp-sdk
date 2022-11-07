@@ -46,8 +46,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             )
             {
                 AdminGetPlayerBlockedByPlayersV1 op = new AdminGetPlayerBlockedByPlayersV1(this,
-                    namespace_,
-                    userId
+                    namespace_,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -62,30 +62,30 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminGetPlayerBlockedByPlayersV1(
-            string namespace_,
-            string userId
+            string namespace_,            
+            string userId            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -100,9 +100,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsGetAllPlayerBlockedByUsersResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -115,9 +115,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsGetAllPlayerBlockedByUsersResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

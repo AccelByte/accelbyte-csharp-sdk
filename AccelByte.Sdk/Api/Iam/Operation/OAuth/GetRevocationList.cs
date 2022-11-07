@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     ///   * Substitute endpoint: /iam/v3/oauth/revocationlist [GET]
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetRevocationList : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -71,12 +71,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         private GetRevocationList(GetRevocationListBuilder builder
         )
         {
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
@@ -85,12 +85,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public GetRevocationList(
         )
         {
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
@@ -105,9 +105,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Basic";
-
+        
         public Model.OauthapiRevocationList? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -120,9 +120,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.OauthapiRevocationList>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

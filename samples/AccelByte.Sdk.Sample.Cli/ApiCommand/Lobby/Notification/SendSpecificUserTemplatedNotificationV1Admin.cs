@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "sendspecificusertemplatednotificationv1admin")]
-    public class SendSpecificUserTemplatedNotificationV1AdminCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","sendspecificusertemplatednotificationv1admin")]
+    public class SendSpecificUserTemplatedNotificationV1AdminCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "SendSpecificUserTemplatedNotificationV1Admin"; } }
+        public string OperationName{ get { return "SendSpecificUserTemplatedNotificationV1Admin"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelNotificationWithTemplateRequestV1 Body { get; set; } = new ModelNotificationWithTemplateRequestV1();
-
+                
         public SendSpecificUserTemplatedNotificationV1AdminCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             SendSpecificUserTemplatedNotificationV1Admin operation = new SendSpecificUserTemplatedNotificationV1Admin(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             wrapper.SendSpecificUserTemplatedNotificationV1Admin(operation);
             return String.Empty;
         }

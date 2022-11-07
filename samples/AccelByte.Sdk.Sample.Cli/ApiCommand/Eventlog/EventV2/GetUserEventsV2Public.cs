@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Eventlog.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog", "getusereventsv2public")]
-    public class GetUserEventsV2PublicCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog","getusereventsv2public")]
+    public class GetUserEventsV2PublicCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Eventlog"; } }
+        public string ServiceName{ get { return "Eventlog"; } }
 
-        public string OperationName { get { return "GetUserEventsV2Public"; } }
+        public string OperationName{ get { return "GetUserEventsV2Public"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -58,15 +58,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
             AccelByte.Sdk.Api.Eventlog.Wrapper.EventV2 wrapper = new AccelByte.Sdk.Api.Eventlog.Wrapper.EventV2(_SDK);
 
             GetUserEventsV2Public operation = new GetUserEventsV2Public(
-                Namespace,
-                UserId,
-                EndDate,
-                EventName,
-                Offset,
-                PageSize,
-                StartDate
-            );
-
+                Namespace,                
+                UserId,                
+                EndDate,                
+                EventName,                
+                Offset,                
+                PageSize,                
+                StartDate                
+            );            
+            
             AccelByte.Sdk.Api.Eventlog.Model.ModelsEventResponseV2? response = wrapper.GetUserEventsV2Public(operation);
             if (response == null)
                 return "No response from server.";

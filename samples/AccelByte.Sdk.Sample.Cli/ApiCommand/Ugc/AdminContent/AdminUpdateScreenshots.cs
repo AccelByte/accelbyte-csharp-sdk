@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc", "adminupdatescreenshots")]
-    public class AdminUpdateScreenshotsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","adminupdatescreenshots")]
+    public class AdminUpdateScreenshotsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ugc"; } }
+        public string ServiceName{ get { return "Ugc"; } }
 
-        public string OperationName { get { return "AdminUpdateScreenshots"; } }
+        public string OperationName{ get { return "AdminUpdateScreenshots"; } }
 
         [SdkCommandArgument("contentId")]
         public string ContentId { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
         [SdkCommandData("body")]
         public ModelsUpdateScreenshotRequest Body { get; set; } = new ModelsUpdateScreenshotRequest();
-
+                
         public AdminUpdateScreenshotsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent(_SDK);
 
             AdminUpdateScreenshots operation = new AdminUpdateScreenshots(
-                ContentId,
-                Namespace,
-                Body
-            );
-
+                ContentId,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsUpdateScreenshotResponse? response = wrapper.AdminUpdateScreenshots(operation);
             if (response == null)
                 return "No response from server.";

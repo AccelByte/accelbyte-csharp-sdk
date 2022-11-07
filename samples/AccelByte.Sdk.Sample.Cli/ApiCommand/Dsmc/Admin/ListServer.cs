@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc", "listserver")]
-    public class ListServerCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc","listserver")]
+    public class ListServerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dsmc"; } }
+        public string ServiceName{ get { return "Dsmc"; } }
 
-        public string OperationName { get { return "ListServer"; } }
+        public string OperationName{ get { return "ListServer"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Admin(_SDK);
 
             ListServer operation = new ListServer(
-                Namespace,
-                Region,
-                Count,
-                Offset
-            );
-
+                Namespace,                
+                Region,                
+                Count,                
+                Offset                
+            );            
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListServerResponse? response = wrapper.ListServer(operation);
             if (response == null)
                 return "No response from server.";

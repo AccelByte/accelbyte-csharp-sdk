@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass", "retireseason")]
-    public class RetireSeasonCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass","retireseason")]
+    public class RetireSeasonCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Seasonpass"; } }
+        public string ServiceName{ get { return "Seasonpass"; } }
 
-        public string OperationName { get { return "RetireSeason"; } }
+        public string OperationName{ get { return "RetireSeason"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Season wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Season(_SDK);
 
             RetireSeason operation = new RetireSeason(
-                Namespace,
-                SeasonId,
-                Force
-            );
-
+                Namespace,                
+                SeasonId,                
+                Force                
+            );            
+            
             AccelByte.Sdk.Api.Seasonpass.Model.SeasonInfo? response = wrapper.RetireSeason(operation);
             if (response == null)
                 return "No response from server.";

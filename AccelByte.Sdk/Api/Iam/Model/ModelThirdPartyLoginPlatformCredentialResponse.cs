@@ -90,5 +90,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("registeredDomains")]
         public List<AccountcommonRegisteredDomain>? RegisteredDomains { get; set; }
 
+        [JsonPropertyName("scopes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Scopes { get; set; }
+
     }
 }

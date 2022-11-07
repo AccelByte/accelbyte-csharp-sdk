@@ -76,8 +76,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             )
             {
                 PublicListUserAchievements op = new PublicListUserAchievements(this,
-                    namespace_,
-                    userId
+                    namespace_,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -92,39 +92,39 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-
+            
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.PreferUnlocked != null) QueryParams["preferUnlocked"] = Convert.ToString(builder.PreferUnlocked)!;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicListUserAchievements(
-            string namespace_,
-            string userId,
-            long? limit,
-            long? offset,
-            bool? preferUnlocked
+            string namespace_,            
+            string userId,            
+            long? limit,            
+            long? offset,            
+            bool? preferUnlocked            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-
+            
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (preferUnlocked != null) QueryParams["preferUnlocked"] = Convert.ToString(preferUnlocked)!;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -139,9 +139,9 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsPaginatedUserAchievementResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -154,9 +154,9 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsPaginatedUserAchievementResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

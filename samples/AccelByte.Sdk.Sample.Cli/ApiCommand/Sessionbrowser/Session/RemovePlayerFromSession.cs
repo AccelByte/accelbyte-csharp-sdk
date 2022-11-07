@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser", "removeplayerfromsession")]
-    public class RemovePlayerFromSessionCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser","removeplayerfromsession")]
+    public class RemovePlayerFromSessionCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Sessionbrowser"; } }
+        public string ServiceName{ get { return "Sessionbrowser"; } }
 
-        public string OperationName { get { return "RemovePlayerFromSession"; } }
+        public string OperationName{ get { return "RemovePlayerFromSession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
             RemovePlayerFromSession operation = new RemovePlayerFromSession(
-                Namespace,
-                SessionID,
-                UserID
-            );
-
+                Namespace,                
+                SessionID,                
+                UserID                
+            );            
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsAddPlayerResponse? response = wrapper.RemovePlayerFromSession(operation);
             if (response == null)
                 return "No response from server.";

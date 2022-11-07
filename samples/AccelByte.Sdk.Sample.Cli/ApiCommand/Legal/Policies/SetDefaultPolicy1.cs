@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal", "setdefaultpolicy1")]
-    public class SetDefaultPolicy1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("legal","setdefaultpolicy1")]
+    public class SetDefaultPolicy1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Legal"; } }
+        public string ServiceName{ get { return "Legal"; } }
 
-        public string OperationName { get { return "SetDefaultPolicy1"; } }
+        public string OperationName{ get { return "SetDefaultPolicy1"; } }
 
         [SdkCommandArgument("policyId")]
         public string PolicyId { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.Policies wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.Policies(_SDK);
 
             SetDefaultPolicy1 operation = new SetDefaultPolicy1(
-                PolicyId
-            );
-
+                PolicyId                
+            );            
+            
             wrapper.SetDefaultPolicy1(operation);
             return String.Empty;
         }

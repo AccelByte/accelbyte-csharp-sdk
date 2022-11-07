@@ -95,12 +95,12 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         {
             get { return Operation.DeleteUserFromSessionInChannel.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public SearchSessions.SearchSessionsBuilder SearchSessionsOp
         {
             get { return Operation.SearchSessions.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public GetSessionHistoryDetailed.GetSessionHistoryDetailedBuilder GetSessionHistoryDetailedOp
         {
             get { return Operation.GetSessionHistoryDetailed.Builder.SetWrapperObject(this); }
@@ -113,237 +113,213 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         {
             get { return Operation.PublicGetSingleMatchmakingChannel.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public SearchSessionsV2.SearchSessionsV2Builder SearchSessionsV2Op
         {
             get { return Operation.SearchSessionsV2.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public Model.ModelsGetChannelsResponse? GetAllChannelsHandler(GetAllChannelsHandler input)
-        {
+        
+        public Model.ModelsGetChannelsResponse? GetAllChannelsHandler(GetAllChannelsHandler input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateChannelResponse? CreateChannelHandler(CreateChannelHandler input)
-        {
+        public Model.ModelsCreateChannelResponse? CreateChannelHandler(CreateChannelHandler input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteChannelHandler(DeleteChannelHandler input)
-        {
+        public void DeleteChannelHandler(DeleteChannelHandler input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsMatchResultResponse? StoreMatchResults(StoreMatchResults input)
-        {
+        public Model.ModelsMatchResultResponse? StoreMatchResults(StoreMatchResults input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsRebalanceResponse? Rebalance(Rebalance input)
-        {
+        public Model.ModelsRebalanceResponse? Rebalance(Rebalance input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void QueueSessionHandler(QueueSessionHandler input)
-        {
+        public void QueueSessionHandler(QueueSessionHandler input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DequeueSessionHandler(DequeueSessionHandler input)
-        {
+        public void DequeueSessionHandler(DequeueSessionHandler input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsMatchmakingResult? QuerySessionHandler(QuerySessionHandler input)
-        {
+        public Model.ModelsMatchmakingResult? QuerySessionHandler(QuerySessionHandler input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<string, object>? GetAllPartyInAllChannel(GetAllPartyInAllChannel input)
-        {
+        public Dictionary<string, object>? GetAllPartyInAllChannel(GetAllPartyInAllChannel input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelsMatchmakingResult>? BulkGetSessions(BulkGetSessions input)
-        {
+        public List<Model.ModelsMatchmakingResult>? BulkGetSessions(BulkGetSessions input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelsChannelV1>? ExportChannels(ExportChannels input)
-        {
+        public List<Model.ModelsChannelV1>? ExportChannels(ExportChannels input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsImportConfigResponse? ImportChannels(ImportChannels input)
-        {
+        public Model.ModelsImportConfigResponse? ImportChannels(ImportChannels input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsChannelV1? GetSingleMatchmakingChannel(GetSingleMatchmakingChannel input)
-        {
+        public Model.ModelsChannelV1? GetSingleMatchmakingChannel(GetSingleMatchmakingChannel input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void UpdateMatchmakingChannel(UpdateMatchmakingChannel input)
-        {
+        public void UpdateMatchmakingChannel(UpdateMatchmakingChannel input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelsMatchingParty>? GetAllPartyInChannel(GetAllPartyInChannel input)
-        {
+        public List<Model.ModelsMatchingParty>? GetAllPartyInChannel(GetAllPartyInChannel input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelsMatchmakingResult>? GetAllSessionsInChannel(GetAllSessionsInChannel input)
-        {
+        public List<Model.ModelsMatchmakingResult>? GetAllSessionsInChannel(GetAllSessionsInChannel input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AddUserIntoSessionInChannel(AddUserIntoSessionInChannel input)
-        {
+        public void AddUserIntoSessionInChannel(AddUserIntoSessionInChannel input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteSessionInChannel(DeleteSessionInChannel input)
-        {
+        public void DeleteSessionInChannel(DeleteSessionInChannel input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteUserFromSessionInChannel(DeleteUserFromSessionInChannel input)
-        {
+        public void DeleteUserFromSessionInChannel(DeleteUserFromSessionInChannel input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.ServiceGetSessionHistorySearchResponse? SearchSessions(SearchSessions input)
-        {
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public Model.ServiceGetSessionHistorySearchResponse? SearchSessions(SearchSessions input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public List<Model.ServiceGetSessionHistoryDetailedResponseItem>? GetSessionHistoryDetailed(GetSessionHistoryDetailed input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public List<Model.ServiceGetSessionHistoryDetailedResponseItem>? GetSessionHistoryDetailed(GetSessionHistoryDetailed input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
-        public List<Model.ModelsChannelV1>? PublicGetAllMatchmakingChannel(PublicGetAllMatchmakingChannel input)
-        {
+        #pragma warning restore ab_deprecated_operation
+        public List<Model.ModelsChannelV1>? PublicGetAllMatchmakingChannel(PublicGetAllMatchmakingChannel input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsChannelV1? PublicGetSingleMatchmakingChannel(PublicGetSingleMatchmakingChannel input)
-        {
+        public Model.ModelsChannelV1? PublicGetSingleMatchmakingChannel(PublicGetSingleMatchmakingChannel input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.ServiceGetSessionHistorySearchResponseV2? SearchSessionsV2(SearchSessionsV2 input)
-        {
+        #pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        public Model.ServiceGetSessionHistorySearchResponseV2? SearchSessionsV2(SearchSessionsV2 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning restore ab_deprecated_operation
+        #pragma warning restore ab_deprecated_operation
     }
 }

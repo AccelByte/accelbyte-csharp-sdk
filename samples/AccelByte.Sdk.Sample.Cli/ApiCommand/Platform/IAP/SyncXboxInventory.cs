@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "syncxboxinventory")]
-    public class SyncXboxInventoryCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","syncxboxinventory")]
+    public class SyncXboxInventoryCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "SyncXboxInventory"; } }
+        public string OperationName{ get { return "SyncXboxInventory"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public XblReconcileRequest Body { get; set; } = new XblReconcileRequest();
-
+                
         public SyncXboxInventoryCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             SyncXboxInventory operation = new SyncXboxInventory(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             List<AccelByte.Sdk.Api.Platform.Model.XblReconcileResult>? response = wrapper.SyncXboxInventory(operation);
             if (response == null)
                 return "No response from server.";

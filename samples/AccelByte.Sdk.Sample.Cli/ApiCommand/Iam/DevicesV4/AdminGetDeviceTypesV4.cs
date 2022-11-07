@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "admingetdevicetypesv4")]
-    public class AdminGetDeviceTypesV4Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","admingetdevicetypesv4")]
+    public class AdminGetDeviceTypesV4Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminGetDeviceTypesV4"; } }
+        public string OperationName{ get { return "AdminGetDeviceTypesV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.DevicesV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.DevicesV4(_SDK);
 
             AdminGetDeviceTypesV4 operation = new AdminGetDeviceTypesV4(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.ModelDeviceTypesResponseV4? response = wrapper.AdminGetDeviceTypesV4(operation);
             if (response == null)
                 return "No response from server.";

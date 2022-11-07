@@ -91,7 +91,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class CampaignInfoStatus : StringEnum<CampaignInfoStatus>
     {
@@ -112,7 +112,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class CampaignInfoType : StringEnum<CampaignInfoType>
     {
@@ -130,5 +130,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 }

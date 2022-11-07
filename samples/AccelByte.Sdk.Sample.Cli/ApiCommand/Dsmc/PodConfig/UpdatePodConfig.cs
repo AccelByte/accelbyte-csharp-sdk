@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc", "updatepodconfig")]
-    public class UpdatePodConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc","updatepodconfig")]
+    public class UpdatePodConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dsmc"; } }
+        public string ServiceName{ get { return "Dsmc"; } }
 
-        public string OperationName { get { return "UpdatePodConfig"; } }
+        public string OperationName{ get { return "UpdatePodConfig"; } }
 
         [SdkCommandArgument("name")]
         public string Name { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
         [SdkCommandData("body")]
         public ModelsUpdatePodConfigRequest Body { get; set; } = new ModelsUpdatePodConfigRequest();
-
+                
         public UpdatePodConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.PodConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.PodConfig(_SDK);
 
             UpdatePodConfig operation = new UpdatePodConfig(
-                Name,
-                Namespace,
-                Body
-            );
-
+                Name,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsPodConfigRecord? response = wrapper.UpdatePodConfig(operation);
             if (response == null)
                 return "No response from server.";

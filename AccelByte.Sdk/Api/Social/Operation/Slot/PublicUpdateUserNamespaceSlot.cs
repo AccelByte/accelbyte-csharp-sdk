@@ -89,9 +89,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             )
             {
                 PublicUpdateUserNamespaceSlot op = new PublicUpdateUserNamespaceSlot(this,
-                    namespace_,
-                    slotId,
-                    userId
+                    namespace_,                    
+                    slotId,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -108,49 +108,49 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["slotId"] = slotId;
             PathParams["userId"] = userId;
-
+            
             if (builder.Label is not null) QueryParams["label"] = builder.Label;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
-
+            
             if (builder.Checksum is not null) FormParams["checksum"] = builder.Checksum;
             if (builder.CustomAttribute is not null) FormParams["customAttribute"] = builder.CustomAttribute;
             if (builder.File is not null) FormParams["file"] = builder.File;
 
-
+            
             CollectionFormatMap["tags"] = "multi";
-
-
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicUpdateUserNamespaceSlot(
-            string namespace_,
-            string slotId,
-            string userId,
-            string? label,
-            List<string>? tags,
-            string? checksum,
-            string? customAttribute,
-            Stream? file
+            string namespace_,            
+            string slotId,            
+            string userId,            
+            string? label,            
+            List<string>? tags,            
+            string? checksum,            
+            string? customAttribute,            
+            Stream? file            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["slotId"] = slotId;
             PathParams["userId"] = userId;
-
+            
             if (label is not null) QueryParams["label"] = label;
             if (tags is not null) QueryParams["tags"] = tags;
-
+            
             if (checksum is not null) FormParams["checksum"] = checksum;
             if (customAttribute is not null) FormParams["customAttribute"] = customAttribute;
             if (file is not null) FormParams["file"] = file;
 
-
+            
             CollectionFormatMap["tags"] = "multi";
-
-
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -165,9 +165,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.SlotInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -180,9 +180,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             {
                 return JsonSerializer.Deserialize<Model.SlotInfo>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

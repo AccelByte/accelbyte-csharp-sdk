@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "publicupdateprofile")]
-    public class PublicUpdateProfileCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("social","publicupdateprofile")]
+    public class PublicUpdateProfileCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "PublicUpdateProfile"; } }
+        public string OperationName{ get { return "PublicUpdateProfile"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
         [SdkCommandData("body")]
         public GameProfileRequest Body { get; set; } = new GameProfileRequest();
-
+                
         public PublicUpdateProfileCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.GameProfile wrapper = new AccelByte.Sdk.Api.Social.Wrapper.GameProfile(_SDK);
 
             PublicUpdateProfile operation = new PublicUpdateProfile(
-                Namespace,
-                ProfileId,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                ProfileId,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Social.Model.GameProfileInfo? response = wrapper.PublicUpdateProfile(operation);
             if (response == null)
                 return "No response from server.";
