@@ -7,8 +7,8 @@
     <Product>AccelByte.Sdk</Product>
     <PackageId>AccelByte.Sdk</PackageId>
     <Authors>AccelByte Developers</Authors>
-    <Version>0.21.0</Version>
-    <AssemblyVersion>0.21.0</AssemblyVersion>
+    <Version>0.21.1</Version>
+    <AssemblyVersion>0.21.1</AssemblyVersion>
     <Company>AccelByte</Company>
     <Copyright>Copyright(c) AccelByte 2022</Copyright>
     <Description>AccelByte .NET (C#) SDK
@@ -18,10 +18,8 @@ A software development kit (SDK) for interacting with AccelByte services.</Descr
     <RepositoryType>git</RepositoryType>
     <PackageTags>accelbyte;sdk</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>[v0.21.0]
-- Updated getting started document.
-- Fixed HTTP Clients that always send empty body on GET request.
-- Update APIs. See what's changes [here](spec/APICHANGES.md)</PackageReleaseNotes>
+    <PackageReleaseNotes>[v0.21.1]
+- Hotfix: revert breaking change on `ModelsUserAchievementResponse` model in achievement API.</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>icon.png</PackageIcon>
