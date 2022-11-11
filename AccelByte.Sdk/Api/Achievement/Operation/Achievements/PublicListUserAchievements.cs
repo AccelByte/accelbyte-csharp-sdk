@@ -22,9 +22,17 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// 
     /// 
     /// 
-    /// Note: user achievement status value mean: `status = 1 (in progress)` and `status = 2 (unlocked)
+    /// Note:
     /// 
-    /// `
+    /// 
+    /// 
+    /// 
+    /// User Achievement status value mean: `status = 1 (in progress)` and `status = 2 (unlocked)`
+    /// 
+    /// 
+    /// 
+    /// 
+    /// `achievedAt` value will return default value: `0001-01-01T00:00:00Z` for user achievement that locked or in progress
     /// </summary>
     public class PublicListUserAchievements : AccelByte.Sdk.Core.Operation
     {
