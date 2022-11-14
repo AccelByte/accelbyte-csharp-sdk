@@ -1,3 +1,7 @@
+<a name="v0.21.2"></a>
+## [v0.21.2]
+- Hotfix: revert breaking change on `TelemetryBody` model in gametelemetry API.
+
 <a name="v0.21.1"></a>
 ## [v0.21.1]
 - Hotfix: revert breaking change on `ModelsUserAchievementResponse` model in achievement API.

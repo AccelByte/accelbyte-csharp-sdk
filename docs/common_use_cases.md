@@ -298,10 +298,8 @@ _Sdk.Gametelemetry.GametelemetryOperations.ProtectedSaveEventsGameTelemetryV1Pro
     {
         new TelemetryBody
         {
-            EventId = "csharpsdk",
             EventName = "CsharpEvent",
             EventNamespace = "test",
-            EventTimestamp = DateTime.Now,
             Payload = new Dictionary<string, object>
             {
                 {"foo", "bar"}
@@ -466,26 +464,26 @@ AccountCreateUserResponseV4? cuResp = _Sdk.Iam.UsersV4.PublicCreateUserV4Op
 ### Get user data by user id
 
 ```csharp
-ModelUserResponse? gUser = _Sdk.Iam.Users.GetUserByUserIDOp
+ModelUserResponseV3? gUser = _Sdk.Iam.Users.AdminGetUserByUserIdV3Op
     .Execute(_Sdk.Namespace, user_id);
 ```
 
 ### Update a user
 
 ```csharp
-ModelUserUpdateRequest updateUser = new ModelUserUpdateRequest()
+ModelUserUpdateRequestV3 updateUser = new ModelUserUpdateRequestV3()
 {
     DateOfBirth = "1996-01-10"
 };
 
-ModelUserResponse? uuResp = _Sdk.Iam.Users.UpdateUserOp
+ModelUserResponseV3? uuResp = _Sdk.Iam.UsersV4.AdminUpdateUserV4Op
     .Execute(updateUser, _Sdk.Namespace, user_id);
 ```
 
 ### Delete a user
 
 ```csharp
-_Sdk.Iam.Users.DeleteUserOp.Execute(_Sdk.Namespace, user_id);
+_Sdk.Iam.Users.AdminDeleteUserInformationV3Op.Execute(_Sdk.Namespace, user_id);
 ```
 
 ## Leaderboard
@@ -762,6 +760,24 @@ StoreInfo? cStoreUpdate = _Sdk.Platform.Store.UpdateStoreOp
 ```csharp
 StoreInfo? dStore = _Sdk.Platform.Store.DeleteStoreOp
     .Execute(_Sdk.Namespace, store_id);
+```
+
+### Export a store
+
+```csharp
+ExportStoreRequest xRequest = new ExportStoreRequest();
+Stream? stream = _Sdk.Platform.Store.ExportStore1Op
+    .SetBody(xRequest)
+    .Execute(_Sdk.Namespace, store_id);
+```
+
+### Import store
+
+```csharp
+ImportStoreResult? result = _Sdk.Platform.Store.ImportStore1Op
+    .SetFile(uploadStream)
+    .SetStoreId(store_id)
+    .Execute(_Sdk.Namespace);
 ```
 
 ## QOSM
