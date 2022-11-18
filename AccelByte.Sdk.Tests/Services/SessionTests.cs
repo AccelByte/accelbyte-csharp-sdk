@@ -18,6 +18,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class SessionTests : BaseServiceTests
     {
+        public SessionTests() : base(false) { }
+
         [Test]
         public void QueryGameSessions()
         {

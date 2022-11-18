@@ -18,6 +18,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class MatchV2Tests : BaseServiceTests
     {
+        public MatchV2Tests() : base(false) { }
+
         [Test]
         public void HealthCheckTest()
         {

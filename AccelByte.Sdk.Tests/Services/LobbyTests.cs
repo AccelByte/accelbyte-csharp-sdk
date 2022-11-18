@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class LobbyTests : BaseServiceTests
     {
+        public LobbyTests() : base(true) { }
+
         [Test]
         public void LobbyAPIServiceTests()
         {

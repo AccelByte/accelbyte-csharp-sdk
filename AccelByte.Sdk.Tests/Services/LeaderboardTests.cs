@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class LeaderboardTests : BaseServiceTests
     {
+        public LeaderboardTests() : base(true) { }
+
         [Test]
         public void LeaderboardServiceTests()
         {

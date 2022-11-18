@@ -19,6 +19,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class IAMTests : BaseServiceTests
     {
+        public IAMTests() : base(true) { }
+
         [Test]
         public void IamServiceTests()
         {

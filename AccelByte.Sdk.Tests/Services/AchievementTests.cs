@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class AchievementTests : BaseServiceTests
     {
+        public AchievementTests() : base(true) { }
+
         [Test]
         public void AchievementServiceTests()
         {

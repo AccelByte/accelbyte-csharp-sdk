@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class UgcTests : BaseServiceTests
     {
+        public UgcTests() : base(true) { }
+
         [Test]
         public void UGCServiceTests()
         {

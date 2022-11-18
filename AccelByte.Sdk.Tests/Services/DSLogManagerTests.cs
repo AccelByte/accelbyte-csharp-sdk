@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class DSLogManagerTests : BaseServiceTests
     {
+        public DSLogManagerTests() : base(true) { }
+
         [Test]
         public void DSLogManagerServiceTests()
         {

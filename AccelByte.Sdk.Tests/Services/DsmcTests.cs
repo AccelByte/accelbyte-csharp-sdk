@@ -18,6 +18,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class DsmcTests : BaseServiceTests
     {
+        public DsmcTests() : base(true) { }
+
         [Test]
         public void DSMCListLocalServerTest()
         {

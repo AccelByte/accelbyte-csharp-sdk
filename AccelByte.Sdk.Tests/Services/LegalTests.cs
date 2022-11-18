@@ -21,6 +21,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class LegalTests : BaseServiceTests
     {
+        public LegalTests() : base(true) { }
+
         public void CreateMarketingPreferencePolicyAndAcceptTest()
         {
             Assert.IsNotNull(_Sdk);

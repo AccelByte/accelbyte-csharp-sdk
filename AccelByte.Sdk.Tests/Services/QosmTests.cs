@@ -21,6 +21,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class QosmTests : BaseServiceTests
     {
+        public QosmTests() : base(true) { }
+
         [Test]
         public void ListServerTest()
         {

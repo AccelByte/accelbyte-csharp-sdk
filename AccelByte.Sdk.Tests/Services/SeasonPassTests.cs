@@ -18,6 +18,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class SeasonPassTests : BaseServiceTests
     {
+        public SeasonPassTests() : base(true) { }
+
         [Test]
         public void SeasonPassTest()
         {

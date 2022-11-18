@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class GameTelemetryTests : BaseServiceTests
     {
+        public GameTelemetryTests() : base(true) { }
+
         [Test]
         public void GametelemetryServiceTests()
         {

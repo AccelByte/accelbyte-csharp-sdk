@@ -19,6 +19,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class EventLogTests : BaseServiceTests
     {
+        public EventLogTests() : base(true) { }
+
         [Test]
         public void EventLogServiceTests()
         {

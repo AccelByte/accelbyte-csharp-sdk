@@ -18,6 +18,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class PlatformTests : BaseServiceTests
     {
+        public PlatformTests() : base(true) { }
+
         [Test]
         public void PlatformServiceTests()
         {

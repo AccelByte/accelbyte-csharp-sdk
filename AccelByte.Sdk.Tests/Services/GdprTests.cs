@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class GdprTests : BaseServiceTests
     {
+        public GdprTests() : base(true) { }
+
         [Test]
         public void GdprServiceTests()
         {

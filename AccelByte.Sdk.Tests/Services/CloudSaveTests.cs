@@ -19,6 +19,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class CloudSaveTests : BaseServiceTests
     {
+        public CloudSaveTests() : base(true) { }
+
         [Test]
         public void CloudSaveServiceTests()
         {

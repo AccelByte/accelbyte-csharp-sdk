@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class SocialTests : BaseServiceTests
     {
+        public SocialTests() : base(true) { }
+
         [Test]
         public void SocialServiceTests()
         {

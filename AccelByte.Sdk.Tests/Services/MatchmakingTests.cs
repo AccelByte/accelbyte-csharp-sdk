@@ -20,6 +20,8 @@ namespace AccelByte.Sdk.Tests.Services
     {
         private string _GameModePrefix = "csharp_sdk_gm_";
 
+        public MatchmakingTests() : base(true) { }
+
         [Test]
         public void MatchmakingServiceApiTests()
         {
