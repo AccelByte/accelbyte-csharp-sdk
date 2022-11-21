@@ -91,6 +91,18 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminEnableMyBackupCodesV4.Builder.SetWrapperObject(this); }
         }
+        public AdminSendMyMFAEmailCodeV4.AdminSendMyMFAEmailCodeV4Builder AdminSendMyMFAEmailCodeV4Op
+        {
+            get { return Operation.AdminSendMyMFAEmailCodeV4.Builder.SetWrapperObject(this); }
+        }
+        public AdminDisableMyEmailV4.AdminDisableMyEmailV4Builder AdminDisableMyEmailV4Op
+        {
+            get { return Operation.AdminDisableMyEmailV4.Builder.SetWrapperObject(this); }
+        }
+        public AdminEnableMyEmailV4.AdminEnableMyEmailV4Builder AdminEnableMyEmailV4Op
+        {
+            get { return Operation.AdminEnableMyEmailV4.Builder.SetWrapperObject(this); }
+        }
         public AdminGetMyEnabledFactorsV4.AdminGetMyEnabledFactorsV4Builder AdminGetMyEnabledFactorsV4Op
         {
             get { return Operation.AdminGetMyEnabledFactorsV4.Builder.SetWrapperObject(this); }
@@ -166,6 +178,18 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public PublicRemoveTrustedDeviceV4.PublicRemoveTrustedDeviceV4Builder PublicRemoveTrustedDeviceV4Op
         {
             get { return Operation.PublicRemoveTrustedDeviceV4.Builder.SetWrapperObject(this); }
+        }
+        public PublicSendMyMFAEmailCodeV4.PublicSendMyMFAEmailCodeV4Builder PublicSendMyMFAEmailCodeV4Op
+        {
+            get { return Operation.PublicSendMyMFAEmailCodeV4.Builder.SetWrapperObject(this); }
+        }
+        public PublicDisableMyEmailV4.PublicDisableMyEmailV4Builder PublicDisableMyEmailV4Op
+        {
+            get { return Operation.PublicDisableMyEmailV4.Builder.SetWrapperObject(this); }
+        }
+        public PublicEnableMyEmailV4.PublicEnableMyEmailV4Builder PublicEnableMyEmailV4Op
+        {
+            get { return Operation.PublicEnableMyEmailV4.Builder.SetWrapperObject(this); }
         }
         public PublicGetMyEnabledFactorsV4.PublicGetMyEnabledFactorsV4Builder PublicGetMyEnabledFactorsV4Op
         {
@@ -305,10 +329,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDownloadMyBackupCodesV4(AdminDownloadMyBackupCodesV4 input) {
+        public Stream? AdminDownloadMyBackupCodesV4(AdminDownloadMyBackupCodesV4 input) {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -317,6 +341,30 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminSendMyMFAEmailCodeV4(AdminSendMyMFAEmailCodeV4 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminDisableMyEmailV4(AdminDisableMyEmailV4 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminEnableMyEmailV4(AdminEnableMyEmailV4 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -449,10 +497,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicDownloadMyBackupCodesV4(PublicDownloadMyBackupCodesV4 input) {
+        public Stream? PublicDownloadMyBackupCodesV4(PublicDownloadMyBackupCodesV4 input) {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -466,6 +514,30 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public void PublicRemoveTrustedDeviceV4(PublicRemoveTrustedDeviceV4 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicSendMyMFAEmailCodeV4(PublicSendMyMFAEmailCodeV4 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicDisableMyEmailV4(PublicDisableMyEmailV4 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicEnableMyEmailV4(PublicEnableMyEmailV4 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(

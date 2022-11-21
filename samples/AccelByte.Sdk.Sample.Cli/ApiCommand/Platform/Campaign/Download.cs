@@ -51,8 +51,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 BatchNo                
             );            
             
-            wrapper.Download(operation);
-            return String.Empty;
+            Stream? response = wrapper.Download(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return Helper.ConvertInputStreamToString(response);
         }
     }
 }

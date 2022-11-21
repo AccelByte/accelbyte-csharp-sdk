@@ -150,6 +150,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly SearchItemTypeConfigItemType INGAMEITEM
             = new SearchItemTypeConfigItemType("INGAMEITEM");
 
+        public static readonly SearchItemTypeConfigItemType LOOTBOX
+            = new SearchItemTypeConfigItemType("LOOTBOX");
+
         public static readonly SearchItemTypeConfigItemType MEDIA
             = new SearchItemTypeConfigItemType("MEDIA");
 

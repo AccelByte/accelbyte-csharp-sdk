@@ -63,8 +63,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 StartTime                
             );            
             
-            wrapper.DownloadInvoiceDetails(operation);
-            return String.Empty;
+            Stream? response = wrapper.DownloadInvoiceDetails(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return Helper.ConvertInputStreamToString(response);
         }
     }
 }

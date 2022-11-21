@@ -97,11 +97,19 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
         
-        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
-            if (code == (HttpStatusCode)200)
+        public Stream? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        {            
+            if (code == (HttpStatusCode)204)
             {
-                return;
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                return payload;
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return payload;
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

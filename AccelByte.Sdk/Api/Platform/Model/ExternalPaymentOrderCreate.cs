@@ -116,6 +116,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly ExternalPaymentOrderCreateItemType INGAMEITEM
             = new ExternalPaymentOrderCreateItemType("INGAMEITEM");
 
+        public static readonly ExternalPaymentOrderCreateItemType LOOTBOX
+            = new ExternalPaymentOrderCreateItemType("LOOTBOX");
+
         public static readonly ExternalPaymentOrderCreateItemType MEDIA
             = new ExternalPaymentOrderCreateItemType("MEDIA");
 

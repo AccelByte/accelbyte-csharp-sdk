@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api
             return ((Dslogmanager.Wrapper.TerminatedServers)builder.WrapperObject!).ListTerminatedServers(op);
         }
 
-        public static void Execute(
+        public static Stream? Execute(
             this DownloadServerLogs.DownloadServerLogsBuilder builder,
             string namespace_,
             string podName
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api
                 podName
             );
 
-            ((Dslogmanager.Wrapper.TerminatedServers)builder.WrapperObject!).DownloadServerLogs(op);
+            return ((Dslogmanager.Wrapper.TerminatedServers)builder.WrapperObject!).DownloadServerLogs(op);
         }
 
         public static Dslogmanager.Model.ModelsLogFileStatus? Execute(

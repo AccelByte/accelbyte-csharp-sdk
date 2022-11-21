@@ -83,6 +83,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     ///   * oauthRefreshTokenExpiration : a configurable expiration time for refresh_token , default value: 0 (mean fetch value from environment variable)
+    /// 
+    /// 
+    ///   * oauthAccessTokenExpirationTimeUnit : a configurable expiration time unit for access_token , will use previous value if not specified
+    /// 
+    /// 
+    ///   * oauthRefreshTokenExpirationTimeUnit : a configurable expiration time unit for refresh_token , will use previous value if not specified
     /// </summary>
     public class AdminUpdateClientV3 : AccelByte.Sdk.Core.Operation
     {

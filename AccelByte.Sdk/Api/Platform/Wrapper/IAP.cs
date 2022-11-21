@@ -167,6 +167,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.PublicReconcilePlayStationStore.Builder.SetWrapperObject(this); }
         }
+        public PublicReconcilePlayStationStoreWithMultipleServiceLabels.PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder PublicReconcilePlayStationStoreWithMultipleServiceLabelsOp
+        {
+            get { return Operation.PublicReconcilePlayStationStoreWithMultipleServiceLabels.Builder.SetWrapperObject(this); }
+        }
         public SyncStadiaEntitlement.SyncStadiaEntitlementBuilder SyncStadiaEntitlementOp
         {
             get { return Operation.SyncStadiaEntitlement.Builder.SetWrapperObject(this); }
@@ -473,10 +477,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.PlayStationReconcileResult>? PublicReconcilePlayStationStore(PublicReconcilePlayStationStore input) {
+        public void PublicReconcilePlayStationStore(PublicReconcilePlayStationStore input) {
             var response = _sdk.RunRequest(input);
 
-            return input.ParseResponse(
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicReconcilePlayStationStoreWithMultipleServiceLabels(PublicReconcilePlayStationStoreWithMultipleServiceLabels input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

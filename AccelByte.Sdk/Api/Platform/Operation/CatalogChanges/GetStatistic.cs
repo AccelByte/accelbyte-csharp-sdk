@@ -235,6 +235,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly GetStatisticItemType INGAMEITEM
             = new GetStatisticItemType("INGAMEITEM");
 
+        public static readonly GetStatisticItemType LOOTBOX
+            = new GetStatisticItemType("LOOTBOX");
+
         public static readonly GetStatisticItemType MEDIA
             = new GetStatisticItemType("MEDIA");
 

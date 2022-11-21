@@ -255,6 +255,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryUserEntitlementsEntitlementClazz ENTITLEMENT
             = new QueryUserEntitlementsEntitlementClazz("ENTITLEMENT");
 
+        public static readonly QueryUserEntitlementsEntitlementClazz LOOTBOX
+            = new QueryUserEntitlementsEntitlementClazz("LOOTBOX");
+
         public static readonly QueryUserEntitlementsEntitlementClazz MEDIA
             = new QueryUserEntitlementsEntitlementClazz("MEDIA");
 

@@ -458,7 +458,7 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicFulfillGoogleIAPItem(op);
         }
 
-        public static List<Platform.Model.PlayStationReconcileResult>? Execute(
+        public static void Execute(
             this PublicReconcilePlayStationStore.PublicReconcilePlayStationStoreBuilder builder,
             string namespace_,
             string userId
@@ -469,7 +469,21 @@ namespace AccelByte.Sdk.Api
                 userId
             );
 
-            return ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicReconcilePlayStationStore(op);
+            ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicReconcilePlayStationStore(op);
+        }
+
+        public static void Execute(
+            this PublicReconcilePlayStationStoreWithMultipleServiceLabels.PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicReconcilePlayStationStoreWithMultipleServiceLabels op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicReconcilePlayStationStoreWithMultipleServiceLabels(op);
         }
 
         public static void Execute(

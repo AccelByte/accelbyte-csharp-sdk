@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
-    public class OptionBoxItem : AccelByte.Sdk.Core.Model
+    public class BoxItem : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("count")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -20,6 +20,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("itemSku")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemSku { get; set; }
+
+        [JsonPropertyName("itemType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ItemType { get; set; }
 
     }
 }

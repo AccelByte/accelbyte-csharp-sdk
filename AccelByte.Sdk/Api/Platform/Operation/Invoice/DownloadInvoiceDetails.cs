@@ -142,11 +142,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
         
-        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
-            if (code == (HttpStatusCode)200)
+        public Stream? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        {            
+            if (code == (HttpStatusCode)204)
             {
-                return;
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                return payload;
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return payload;
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);
@@ -174,6 +182,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public static readonly DownloadInvoiceDetailsItemType INGAMEITEM
             = new DownloadInvoiceDetailsItemType("INGAMEITEM");
+
+        public static readonly DownloadInvoiceDetailsItemType LOOTBOX
+            = new DownloadInvoiceDetailsItemType("LOOTBOX");
 
         public static readonly DownloadInvoiceDetailsItemType MEDIA
             = new DownloadInvoiceDetailsItemType("MEDIA");

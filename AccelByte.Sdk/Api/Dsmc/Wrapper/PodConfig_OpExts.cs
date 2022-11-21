@@ -12,6 +12,16 @@ namespace AccelByte.Sdk.Api
 {
     public static class DsmcPodConfig_OpExts
     {
+        public static Dsmc.Model.ModelsInstanceSpec? Execute(
+            this GetLowestInstanceSpec.GetLowestInstanceSpecBuilder builder
+        )
+        {
+            GetLowestInstanceSpec op = builder.Build(
+            );
+
+            return ((Dsmc.Wrapper.PodConfig)builder.WrapperObject!).GetLowestInstanceSpec(op);
+        }
+
         public static Dsmc.Model.ModelsListPodConfigResponse? Execute(
             this GetAllPodConfig.GetAllPodConfigBuilder builder,
             string namespace_,

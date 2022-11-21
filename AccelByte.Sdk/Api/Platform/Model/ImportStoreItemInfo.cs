@@ -53,6 +53,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly ImportStoreItemInfoItemType INGAMEITEM
             = new ImportStoreItemInfoItemType("INGAMEITEM");
 
+        public static readonly ImportStoreItemInfoItemType LOOTBOX
+            = new ImportStoreItemInfoItemType("LOOTBOX");
+
         public static readonly ImportStoreItemInfoItemType MEDIA
             = new ImportStoreItemInfoItemType("MEDIA");
 

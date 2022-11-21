@@ -113,6 +113,20 @@ namespace AccelByte.Sdk.Api
         }
 
         public static void Execute(
+            this PublicSyncPsnDlcInventoryWithMultipleServiceLabels.PublicSyncPsnDlcInventoryWithMultipleServiceLabelsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicSyncPsnDlcInventoryWithMultipleServiceLabels op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            ((Platform.Wrapper.DLC)builder.WrapperObject!).PublicSyncPsnDlcInventoryWithMultipleServiceLabels(op);
+        }
+
+        public static void Execute(
             this SyncSteamDLC.SyncSteamDLCBuilder builder,
             string namespace_,
             string userId

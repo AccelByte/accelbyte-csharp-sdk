@@ -74,6 +74,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("localizations")]
         public Dictionary<string, Localization>? Localizations { get; set; }
 
+        [JsonPropertyName("lootBoxConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public LootBoxConfig? LootBoxConfig { get; set; }
+
         [JsonPropertyName("maxCount")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxCount { get; set; }
@@ -206,6 +210,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly ItemCreateItemType INGAMEITEM
             = new ItemCreateItemType("INGAMEITEM");
+
+        public static readonly ItemCreateItemType LOOTBOX
+            = new ItemCreateItemType("LOOTBOX");
 
         public static readonly ItemCreateItemType MEDIA
             = new ItemCreateItemType("MEDIA");

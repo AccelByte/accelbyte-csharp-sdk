@@ -30,6 +30,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("clientId")]
+        public string? ClientId { get; set; }
+
+        [SdkCommandArgument("clientName")]
+        public string? ClientName { get; set; }
+
+        [SdkCommandArgument("clientType")]
+        public string? ClientType { get; set; }
+
         [SdkCommandArgument("limit")]
         public long? Limit { get; set; }
 
@@ -47,6 +56,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             AdminGetClientsByNamespaceV3 operation = new AdminGetClientsByNamespaceV3(
                 Namespace,                
+                ClientId,                
+                ClientName,                
+                ClientType,                
                 Limit,                
                 Offset                
             );            

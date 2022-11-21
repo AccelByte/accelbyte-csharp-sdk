@@ -39,8 +39,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AdminDownloadMyBackupCodesV4 operation = new AdminDownloadMyBackupCodesV4(
             );            
             
-            wrapper.AdminDownloadMyBackupCodesV4(operation);
-            return String.Empty;
+            Stream? response = wrapper.AdminDownloadMyBackupCodesV4(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return Helper.ConvertInputStreamToString(response);
         }
     }
 }

@@ -43,11 +43,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 Namespace                
             );            
             
-            List<AccelByte.Sdk.Api.Matchmaking.Model.ModelsChannelV1>? response = wrapper.ExportChannels(operation);
+            Stream? response = wrapper.ExportChannels(operation);
             if (response == null)
                 return "No response from server.";
 
-            return SdkHelper.SerializeToJson(response);
+            return Helper.ConvertInputStreamToString(response);
         }
     }
 }

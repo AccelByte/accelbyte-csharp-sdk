@@ -142,6 +142,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly BasicItemItemType INGAMEITEM
             = new BasicItemItemType("INGAMEITEM");
 
+        public static readonly BasicItemItemType LOOTBOX
+            = new BasicItemItemType("LOOTBOX");
+
         public static readonly BasicItemItemType MEDIA
             = new BasicItemItemType("MEDIA");
 

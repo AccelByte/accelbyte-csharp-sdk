@@ -31,12 +31,19 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Deletable { get; set; }
 
+        [JsonPropertyName("description")]
+        public string? Description { get; set; }
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("oauthAccessTokenExpiration")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? OauthAccessTokenExpiration { get; set; }
+
+        [JsonPropertyName("oauthAccessTokenExpirationTimeUnit")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? OauthAccessTokenExpirationTimeUnit { get; set; }
 
         [JsonPropertyName("oauthClientType")]
         public string? OauthClientType { get; set; }
@@ -45,8 +52,16 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? OauthRefreshTokenExpiration { get; set; }
 
+        [JsonPropertyName("oauthRefreshTokenExpirationTimeUnit")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? OauthRefreshTokenExpirationTimeUnit { get; set; }
+
         [JsonPropertyName("redirectUri")]
         public string? RedirectUri { get; set; }
+
+        [JsonPropertyName("scopes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Scopes { get; set; }
 
         [JsonPropertyName("secret")]
         public string? Secret { get; set; }

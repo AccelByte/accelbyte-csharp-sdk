@@ -38,6 +38,16 @@
 | `/dsmcontroller/namespaces/{namespace}/images/limit` | GET | ImageLimitClient | [ImageLimitClient](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/ImageLimitClient.cs) | [ImageLimitClient](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/ImageLimitClient.cs) |
 | `/dsmcontroller/namespaces/{namespace}/images/versions/{version}` | GET | ImageDetailClient | [ImageDetailClient](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/ImageDetailClient.cs) | [ImageDetailClient](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/ImageDetailClient.cs) |
 
+### Pod Config Wrapper:  [PodConfig](../../AccelByte.Sdk/Api/Dsmc/Wrapper/PodConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/dsmcontroller/admin/instances/spec/lowest` | GET | GetLowestInstanceSpec | [GetLowestInstanceSpec](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/GetLowestInstanceSpec.cs) | [GetLowestInstanceSpec](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/GetLowestInstanceSpec.cs) |
+| `/dsmcontroller/admin/namespaces/{namespace}/configs/pods` | GET | GetAllPodConfig | [GetAllPodConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/GetAllPodConfig.cs) | [GetAllPodConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/GetAllPodConfig.cs) |
+| `/dsmcontroller/admin/namespaces/{namespace}/configs/pods/{name}` | GET | GetPodConfig | [GetPodConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/GetPodConfig.cs) | [GetPodConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/GetPodConfig.cs) |
+| `/dsmcontroller/admin/namespaces/{namespace}/configs/pods/{name}` | POST | CreatePodConfig | [CreatePodConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/CreatePodConfig.cs) | [CreatePodConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/CreatePodConfig.cs) |
+| `/dsmcontroller/admin/namespaces/{namespace}/configs/pods/{name}` | DELETE | DeletePodConfig | [DeletePodConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/DeletePodConfig.cs) | [DeletePodConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/DeletePodConfig.cs) |
+| `/dsmcontroller/admin/namespaces/{namespace}/configs/pods/{name}` | PATCH | UpdatePodConfig | [UpdatePodConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/UpdatePodConfig.cs) | [UpdatePodConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/UpdatePodConfig.cs) |
+
 ### Deployment Config Wrapper:  [DeploymentConfig](../../AccelByte.Sdk/Api/Dsmc/Wrapper/DeploymentConfig.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -55,15 +65,6 @@
 | `/dsmcontroller/admin/namespaces/{namespace}/configs/deployments/{deployment}/overrides/versions/{version}/regions/{region}` | POST | CreateOverrideRegionOverride | [CreateOverrideRegionOverride](../../AccelByte.Sdk/Api/Dsmc/Operation/DeploymentConfig/CreateOverrideRegionOverride.cs) | [CreateOverrideRegionOverride](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/DeploymentConfig/CreateOverrideRegionOverride.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/configs/deployments/{deployment}/overrides/versions/{version}/regions/{region}` | DELETE | DeleteOverrideRegionOverride | [DeleteOverrideRegionOverride](../../AccelByte.Sdk/Api/Dsmc/Operation/DeploymentConfig/DeleteOverrideRegionOverride.cs) | [DeleteOverrideRegionOverride](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/DeploymentConfig/DeleteOverrideRegionOverride.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/configs/deployments/{deployment}/overrides/versions/{version}/regions/{region}` | PATCH | UpdateOverrideRegionOverride | [UpdateOverrideRegionOverride](../../AccelByte.Sdk/Api/Dsmc/Operation/DeploymentConfig/UpdateOverrideRegionOverride.cs) | [UpdateOverrideRegionOverride](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/DeploymentConfig/UpdateOverrideRegionOverride.cs) |
-
-### Pod Config Wrapper:  [PodConfig](../../AccelByte.Sdk/Api/Dsmc/Wrapper/PodConfig.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/dsmcontroller/admin/namespaces/{namespace}/configs/pods` | GET | GetAllPodConfig | [GetAllPodConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/GetAllPodConfig.cs) | [GetAllPodConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/GetAllPodConfig.cs) |
-| `/dsmcontroller/admin/namespaces/{namespace}/configs/pods/{name}` | GET | GetPodConfig | [GetPodConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/GetPodConfig.cs) | [GetPodConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/GetPodConfig.cs) |
-| `/dsmcontroller/admin/namespaces/{namespace}/configs/pods/{name}` | POST | CreatePodConfig | [CreatePodConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/CreatePodConfig.cs) | [CreatePodConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/CreatePodConfig.cs) |
-| `/dsmcontroller/admin/namespaces/{namespace}/configs/pods/{name}` | DELETE | DeletePodConfig | [DeletePodConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/DeletePodConfig.cs) | [DeletePodConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/DeletePodConfig.cs) |
-| `/dsmcontroller/admin/namespaces/{namespace}/configs/pods/{name}` | PATCH | UpdatePodConfig | [UpdatePodConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/UpdatePodConfig.cs) | [UpdatePodConfig](../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/UpdatePodConfig.cs) |
 
 ### Admin Wrapper:  [Admin](../../AccelByte.Sdk/Api/Dsmc/Wrapper/Admin.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -129,7 +130,6 @@
 | `models.CreatePortRequest` | [ModelsCreatePortRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsCreatePortRequest.cs) |
 | `models.CreateRegionOverrideRequest` | [ModelsCreateRegionOverrideRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsCreateRegionOverrideRequest.cs) |
 | `models.CreateSessionRequest` | [ModelsCreateSessionRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsCreateSessionRequest.cs) |
-| `models.DSMConfigExport` | [ModelsDSMConfigExport](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsDSMConfigExport.cs) |
 | `models.DSMConfigRecord` | [ModelsDSMConfigRecord](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsDSMConfigRecord.cs) |
 | `models.DefaultProvider` | [ModelsDefaultProvider](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsDefaultProvider.cs) |
 | `models.DeploymentConfigOverride` | [ModelsDeploymentConfigOverride](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsDeploymentConfigOverride.cs) |
@@ -143,6 +143,7 @@
 | `models.ImageRecord` | [ModelsImageRecord](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsImageRecord.cs) |
 | `models.ImageRecordUpdate` | [ModelsImageRecordUpdate](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsImageRecordUpdate.cs) |
 | `models.ImportResponse` | [ModelsImportResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsImportResponse.cs) |
+| `models.InstanceSpec` | [ModelsInstanceSpec](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsInstanceSpec.cs) |
 | `models.ListConfigResponse` | [ModelsListConfigResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsListConfigResponse.cs) |
 | `models.ListDeploymentResponse` | [ModelsListDeploymentResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsListDeploymentResponse.cs) |
 | `models.ListImagePatchesResponse` | [ModelsListImagePatchesResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsListImagePatchesResponse.cs) |

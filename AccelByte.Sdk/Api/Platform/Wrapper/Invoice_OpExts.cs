@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class PlatformInvoice_OpExts
     {
-        public static void Execute(
+        public static Stream? Execute(
             this DownloadInvoiceDetails.DownloadInvoiceDetailsBuilder builder,
             string namespace_,
             string endTime,
@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api
                 startTime
             );
 
-            ((Platform.Wrapper.Invoice)builder.WrapperObject!).DownloadInvoiceDetails(op);
+            return ((Platform.Wrapper.Invoice)builder.WrapperObject!).DownloadInvoiceDetails(op);
         }
 
         public static Platform.Model.InvoiceSummary? Execute(

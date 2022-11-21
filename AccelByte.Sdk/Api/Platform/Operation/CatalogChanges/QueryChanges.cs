@@ -292,6 +292,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryChangesItemType INGAMEITEM
             = new QueryChangesItemType("INGAMEITEM");
 
+        public static readonly QueryChangesItemType LOOTBOX
+            = new QueryChangesItemType("LOOTBOX");
+
         public static readonly QueryChangesItemType MEDIA
             = new QueryChangesItemType("MEDIA");
 

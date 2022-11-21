@@ -69,6 +69,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly ExtensionFulfillmentSummaryItemType INGAMEITEM
             = new ExtensionFulfillmentSummaryItemType("INGAMEITEM");
 
+        public static readonly ExtensionFulfillmentSummaryItemType LOOTBOX
+            = new ExtensionFulfillmentSummaryItemType("LOOTBOX");
+
         public static readonly ExtensionFulfillmentSummaryItemType MEDIA
             = new ExtensionFulfillmentSummaryItemType("MEDIA");
 

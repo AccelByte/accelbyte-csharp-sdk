@@ -153,7 +153,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDSMConfigExport? ExportConfigV1(ExportConfigV1 input) {
+        public Stream? ExportConfigV1(ExportConfigV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

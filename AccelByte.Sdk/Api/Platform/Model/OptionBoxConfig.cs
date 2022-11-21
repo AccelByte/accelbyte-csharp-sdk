@@ -11,7 +11,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("boxItems")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public List<OptionBoxItem>? BoxItems { get; set; }
+        public List<BoxItem>? BoxItems { get; set; }
 
     }
 }

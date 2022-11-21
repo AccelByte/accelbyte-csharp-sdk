@@ -47,8 +47,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
                 PodName                
             );            
             
-            wrapper.DownloadServerLogs(operation);
-            return String.Empty;
+            Stream? response = wrapper.DownloadServerLogs(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return Helper.ConvertInputStreamToString(response);
         }
     }
 }

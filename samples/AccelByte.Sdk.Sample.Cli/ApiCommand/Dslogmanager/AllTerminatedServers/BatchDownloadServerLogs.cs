@@ -43,8 +43,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
                 Body                
             );            
             
-            wrapper.BatchDownloadServerLogs(operation);
-            return String.Empty;
+            Stream? response = wrapper.BatchDownloadServerLogs(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return Helper.ConvertInputStreamToString(response);
         }
     }
 }

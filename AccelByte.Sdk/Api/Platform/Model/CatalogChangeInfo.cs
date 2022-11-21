@@ -117,6 +117,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly CatalogChangeInfoItemType INGAMEITEM
             = new CatalogChangeInfoItemType("INGAMEITEM");
 
+        public static readonly CatalogChangeInfoItemType LOOTBOX
+            = new CatalogChangeInfoItemType("LOOTBOX");
+
         public static readonly CatalogChangeInfoItemType MEDIA
             = new CatalogChangeInfoItemType("MEDIA");
 

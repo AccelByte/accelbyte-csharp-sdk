@@ -207,6 +207,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly PublicSearchItemsItemType INGAMEITEM
             = new PublicSearchItemsItemType("INGAMEITEM");
 
+        public static readonly PublicSearchItemsItemType LOOTBOX
+            = new PublicSearchItemsItemType("LOOTBOX");
+
         public static readonly PublicSearchItemsItemType MEDIA
             = new PublicSearchItemsItemType("MEDIA");
 

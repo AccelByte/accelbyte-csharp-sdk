@@ -183,6 +183,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly GenerateInvoiceSummaryItemType INGAMEITEM
             = new GenerateInvoiceSummaryItemType("INGAMEITEM");
 
+        public static readonly GenerateInvoiceSummaryItemType LOOTBOX
+            = new GenerateInvoiceSummaryItemType("LOOTBOX");
+
         public static readonly GenerateInvoiceSummaryItemType MEDIA
             = new GenerateInvoiceSummaryItemType("MEDIA");
 

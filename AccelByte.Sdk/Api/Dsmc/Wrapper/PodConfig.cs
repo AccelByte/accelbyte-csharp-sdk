@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         }
 
         #region Operation Builders
+        public GetLowestInstanceSpec.GetLowestInstanceSpecBuilder GetLowestInstanceSpecOp
+        {
+            get { return Operation.GetLowestInstanceSpec.Builder.SetWrapperObject(this); }
+        }
         public GetAllPodConfig.GetAllPodConfigBuilder GetAllPodConfigOp
         {
             get { return Operation.GetAllPodConfig.Builder.SetWrapperObject(this); }
@@ -41,6 +45,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         }
         #endregion
         
+        public Model.ModelsInstanceSpec? GetLowestInstanceSpec(GetLowestInstanceSpec input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsListPodConfigResponse? GetAllPodConfig(GetAllPodConfig input) {
             var response = _sdk.RunRequest(input);
 

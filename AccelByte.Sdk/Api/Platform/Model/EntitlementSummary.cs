@@ -75,6 +75,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly EntitlementSummaryClazz ENTITLEMENT
             = new EntitlementSummaryClazz("ENTITLEMENT");
 
+        public static readonly EntitlementSummaryClazz LOOTBOX
+            = new EntitlementSummaryClazz("LOOTBOX");
+
         public static readonly EntitlementSummaryClazz MEDIA
             = new EntitlementSummaryClazz("MEDIA");
 

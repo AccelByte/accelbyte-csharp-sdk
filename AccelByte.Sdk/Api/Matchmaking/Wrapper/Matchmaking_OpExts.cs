@@ -146,7 +146,7 @@ namespace AccelByte.Sdk.Api
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).BulkGetSessions(op);
         }
 
-        public static List<Matchmaking.Model.ModelsChannelV1>? Execute(
+        public static Stream? Execute(
             this ExportChannels.ExportChannelsBuilder builder,
             string namespace_
         )

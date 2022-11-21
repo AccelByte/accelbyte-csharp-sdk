@@ -17,6 +17,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DefaultFactor { get; set; }
 
+        [JsonPropertyName("email")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Email { get; set; }
+
         [JsonPropertyName("error")]
         public string? Error { get; set; }
 

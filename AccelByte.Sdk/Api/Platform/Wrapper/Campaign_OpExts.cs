@@ -106,7 +106,7 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).CreateCodes(op);
         }
 
-        public static void Execute(
+        public static Stream? Execute(
             this Download.DownloadBuilder builder,
             string campaignId,
             string namespace_
@@ -117,7 +117,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            ((Platform.Wrapper.Campaign)builder.WrapperObject!).Download(op);
+            return ((Platform.Wrapper.Campaign)builder.WrapperObject!).Download(op);
         }
 
         public static Platform.Model.BulkOperationResult? Execute(

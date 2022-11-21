@@ -152,6 +152,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly GetUserEntitlementOwnershipByItemIdEntitlementClazz ENTITLEMENT
             = new GetUserEntitlementOwnershipByItemIdEntitlementClazz("ENTITLEMENT");
 
+        public static readonly GetUserEntitlementOwnershipByItemIdEntitlementClazz LOOTBOX
+            = new GetUserEntitlementOwnershipByItemIdEntitlementClazz("LOOTBOX");
+
         public static readonly GetUserEntitlementOwnershipByItemIdEntitlementClazz MEDIA
             = new GetUserEntitlementOwnershipByItemIdEntitlementClazz("MEDIA");
 

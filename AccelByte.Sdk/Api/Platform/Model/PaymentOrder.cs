@@ -262,6 +262,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentOrderItemType INGAMEITEM
             = new PaymentOrderItemType("INGAMEITEM");
 
+        public static readonly PaymentOrderItemType LOOTBOX
+            = new PaymentOrderItemType("LOOTBOX");
+
         public static readonly PaymentOrderItemType MEDIA
             = new PaymentOrderItemType("MEDIA");
 

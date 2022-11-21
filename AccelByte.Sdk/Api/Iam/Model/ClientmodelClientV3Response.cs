@@ -30,6 +30,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonPropertyName("description")]
+        public string? Description { get; set; }
+
         [JsonPropertyName("modifiedAt")]
         public DateTime? ModifiedAt { get; set; }
 
@@ -40,12 +43,20 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? OauthAccessTokenExpiration { get; set; }
 
+        [JsonPropertyName("oauthAccessTokenExpirationTimeUnit")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? OauthAccessTokenExpirationTimeUnit { get; set; }
+
         [JsonPropertyName("oauthClientType")]
         public string? OauthClientType { get; set; }
 
         [JsonPropertyName("oauthRefreshTokenExpiration")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? OauthRefreshTokenExpiration { get; set; }
+
+        [JsonPropertyName("oauthRefreshTokenExpirationTimeUnit")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? OauthRefreshTokenExpirationTimeUnit { get; set; }
 
         [JsonPropertyName("redirectUri")]
         public string? RedirectUri { get; set; }

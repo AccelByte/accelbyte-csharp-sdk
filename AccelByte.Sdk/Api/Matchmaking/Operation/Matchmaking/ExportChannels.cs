@@ -99,7 +99,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
         
-        public List<Model.ModelsChannelV1>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Stream? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            
             if (code == (HttpStatusCode)204)
             {
@@ -107,11 +107,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelsChannelV1>>(payload);
+                return payload;
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelsChannelV1>>(payload);
+                return payload;
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

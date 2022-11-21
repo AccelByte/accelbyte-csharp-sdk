@@ -29,10 +29,10 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
         }
         #endregion
         
-        public void BatchDownloadServerLogs(BatchDownloadServerLogs input) {
+        public Stream? BatchDownloadServerLogs(BatchDownloadServerLogs input) {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

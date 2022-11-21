@@ -51,6 +51,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.PublicSyncPsnDlcInventory.Builder.SetWrapperObject(this); }
         }
+        public PublicSyncPsnDlcInventoryWithMultipleServiceLabels.PublicSyncPsnDlcInventoryWithMultipleServiceLabelsBuilder PublicSyncPsnDlcInventoryWithMultipleServiceLabelsOp
+        {
+            get { return Operation.PublicSyncPsnDlcInventoryWithMultipleServiceLabels.Builder.SetWrapperObject(this); }
+        }
         public SyncSteamDLC.SyncSteamDLCBuilder SyncSteamDLCOp
         {
             get { return Operation.SyncSteamDLC.Builder.SetWrapperObject(this); }
@@ -118,6 +122,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public void PublicSyncPsnDlcInventory(PublicSyncPsnDlcInventory input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicSyncPsnDlcInventoryWithMultipleServiceLabels(PublicSyncPsnDlcInventoryWithMultipleServiceLabels input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(

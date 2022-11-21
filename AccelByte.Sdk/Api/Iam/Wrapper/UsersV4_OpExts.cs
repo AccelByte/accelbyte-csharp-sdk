@@ -220,14 +220,14 @@ namespace AccelByte.Sdk.Api
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDisableMyBackupCodesV4(op);
         }
 
-        public static void Execute(
+        public static Stream? Execute(
             this AdminDownloadMyBackupCodesV4.AdminDownloadMyBackupCodesV4Builder builder
         )
         {
             AdminDownloadMyBackupCodesV4 op = builder.Build(
             );
 
-            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDownloadMyBackupCodesV4(op);
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDownloadMyBackupCodesV4(op);
         }
 
         public static Iam.Model.ModelBackupCodesResponseV4? Execute(
@@ -238,6 +238,38 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminEnableMyBackupCodesV4(op);
+        }
+
+        public static void Execute(
+            this AdminSendMyMFAEmailCodeV4.AdminSendMyMFAEmailCodeV4Builder builder
+        )
+        {
+            AdminSendMyMFAEmailCodeV4 op = builder.Build(
+            );
+
+            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminSendMyMFAEmailCodeV4(op);
+        }
+
+        public static void Execute(
+            this AdminDisableMyEmailV4.AdminDisableMyEmailV4Builder builder
+        )
+        {
+            AdminDisableMyEmailV4 op = builder.Build(
+            );
+
+            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDisableMyEmailV4(op);
+        }
+
+        public static void Execute(
+            this AdminEnableMyEmailV4.AdminEnableMyEmailV4Builder builder,
+            string code
+        )
+        {
+            AdminEnableMyEmailV4 op = builder.Build(
+                code
+            );
+
+            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminEnableMyEmailV4(op);
         }
 
         public static Iam.Model.ModelEnabledFactorsResponseV4? Execute(
@@ -446,7 +478,7 @@ namespace AccelByte.Sdk.Api
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicDisableMyBackupCodesV4(op);
         }
 
-        public static void Execute(
+        public static Stream? Execute(
             this PublicDownloadMyBackupCodesV4.PublicDownloadMyBackupCodesV4Builder builder,
             string namespace_
         )
@@ -455,7 +487,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicDownloadMyBackupCodesV4(op);
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicDownloadMyBackupCodesV4(op);
         }
 
         public static Iam.Model.ModelBackupCodesResponseV4? Execute(
@@ -482,6 +514,44 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicRemoveTrustedDeviceV4(op);
+        }
+
+        public static void Execute(
+            this PublicSendMyMFAEmailCodeV4.PublicSendMyMFAEmailCodeV4Builder builder,
+            string namespace_
+        )
+        {
+            PublicSendMyMFAEmailCodeV4 op = builder.Build(
+                namespace_
+            );
+
+            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicSendMyMFAEmailCodeV4(op);
+        }
+
+        public static void Execute(
+            this PublicDisableMyEmailV4.PublicDisableMyEmailV4Builder builder,
+            string namespace_
+        )
+        {
+            PublicDisableMyEmailV4 op = builder.Build(
+                namespace_
+            );
+
+            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicDisableMyEmailV4(op);
+        }
+
+        public static void Execute(
+            this PublicEnableMyEmailV4.PublicEnableMyEmailV4Builder builder,
+            string code,
+            string namespace_
+        )
+        {
+            PublicEnableMyEmailV4 op = builder.Build(
+                code,
+                namespace_
+            );
+
+            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicEnableMyEmailV4(op);
         }
 
         public static Iam.Model.ModelEnabledFactorsResponseV4? Execute(

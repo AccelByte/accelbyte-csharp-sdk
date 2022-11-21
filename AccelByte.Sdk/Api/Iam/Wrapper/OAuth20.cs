@@ -39,6 +39,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.GetJWKSV3.Builder.SetWrapperObject(this); }
         }
+        public SendMFAAuthenticationCode.SendMFAAuthenticationCodeBuilder SendMFAAuthenticationCodeOp
+        {
+            get { return Operation.SendMFAAuthenticationCode.Builder.SetWrapperObject(this); }
+        }
         public Change2faMethod.Change2faMethodBuilder Change2faMethodOp
         {
             get { return Operation.Change2faMethod.Builder.SetWrapperObject(this); }
@@ -113,6 +117,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void SendMFAAuthenticationCode(SendMFAAuthenticationCode input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

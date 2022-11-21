@@ -35,17 +35,6 @@ namespace AccelByte.Sdk.Core
         }
         private ImageConfig? _ImageConfig = null;
 
-        public DeploymentConfig DeploymentConfig
-        {
-            get
-            {
-                if (_DeploymentConfig == null)
-                    _DeploymentConfig = new DeploymentConfig(_SdkObject);
-                return _DeploymentConfig;
-            }
-        }
-        private DeploymentConfig? _DeploymentConfig = null;
-
         public PodConfig PodConfig
         {
             get
@@ -56,6 +45,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private PodConfig? _PodConfig = null;
+
+        public DeploymentConfig DeploymentConfig
+        {
+            get
+            {
+                if (_DeploymentConfig == null)
+                    _DeploymentConfig = new DeploymentConfig(_SdkObject);
+                return _DeploymentConfig;
+            }
+        }
+        private DeploymentConfig? _DeploymentConfig = null;
 
         public Admin Admin
         {

@@ -29,10 +29,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public void DownloadInvoiceDetails(DownloadInvoiceDetails input) {
+        public Stream? DownloadInvoiceDetails(DownloadInvoiceDetails input) {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

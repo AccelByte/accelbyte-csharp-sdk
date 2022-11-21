@@ -61,6 +61,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly FulfillmentItemItemType INGAMEITEM
             = new FulfillmentItemItemType("INGAMEITEM");
 
+        public static readonly FulfillmentItemItemType LOOTBOX
+            = new FulfillmentItemItemType("LOOTBOX");
+
         public static readonly FulfillmentItemItemType MEDIA
             = new FulfillmentItemItemType("MEDIA");
 

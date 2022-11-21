@@ -79,6 +79,22 @@ namespace AccelByte.Sdk.Api
         }
 
         public static void Execute(
+            this SendMFAAuthenticationCode.SendMFAAuthenticationCodeBuilder builder,
+            string clientId,
+            string factor,
+            string mfaToken
+        )
+        {
+            SendMFAAuthenticationCode op = builder.Build(
+                clientId,
+                factor,
+                mfaToken
+            );
+
+            ((Iam.Wrapper.OAuth20)builder.WrapperObject!).SendMFAAuthenticationCode(op);
+        }
+
+        public static void Execute(
             this Change2faMethod.Change2faMethodBuilder builder,
             string factor,
             string mfaToken

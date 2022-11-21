@@ -41,10 +41,10 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void DownloadServerLogs(DownloadServerLogs input) {
+        public Stream? DownloadServerLogs(DownloadServerLogs input) {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

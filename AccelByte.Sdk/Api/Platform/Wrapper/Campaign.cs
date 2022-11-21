@@ -137,10 +137,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void Download(Download input) {
+        public Stream? Download(Download input) {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

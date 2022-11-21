@@ -52,6 +52,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly ItemTypeConfigCreateItemType INGAMEITEM
             = new ItemTypeConfigCreateItemType("INGAMEITEM");
 
+        public static readonly ItemTypeConfigCreateItemType LOOTBOX
+            = new ItemTypeConfigCreateItemType("LOOTBOX");
+
         public static readonly ItemTypeConfigCreateItemType MEDIA
             = new ItemTypeConfigCreateItemType("MEDIA");
 

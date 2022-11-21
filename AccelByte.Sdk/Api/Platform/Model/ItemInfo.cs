@@ -100,6 +100,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LongDescription { get; set; }
 
+        [JsonPropertyName("lootBoxConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public LootBoxConfig? LootBoxConfig { get; set; }
+
         [JsonPropertyName("maxCount")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxCount { get; set; }
@@ -253,6 +257,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly ItemInfoItemType INGAMEITEM
             = new ItemInfoItemType("INGAMEITEM");
+
+        public static readonly ItemInfoItemType LOOTBOX
+            = new ItemInfoItemType("LOOTBOX");
 
         public static readonly ItemInfoItemType MEDIA
             = new ItemInfoItemType("MEDIA");

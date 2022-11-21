@@ -69,8 +69,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public static readonly RewardInfoItemType COINS
             = new RewardInfoItemType("COINS");
 
+        public static readonly RewardInfoItemType EXTENSION
+            = new RewardInfoItemType("EXTENSION");
+
         public static readonly RewardInfoItemType INGAMEITEM
             = new RewardInfoItemType("INGAMEITEM");
+
+        public static readonly RewardInfoItemType LOOTBOX
+            = new RewardInfoItemType("LOOTBOX");
 
         public static readonly RewardInfoItemType MEDIA
             = new RewardInfoItemType("MEDIA");

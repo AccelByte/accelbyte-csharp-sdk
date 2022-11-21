@@ -313,7 +313,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.TrackedEntitlementInfo? ConsumeUserEntitlement(ConsumeUserEntitlement input) {
+        public Model.EntitlementDecrementResult? ConsumeUserEntitlement(ConsumeUserEntitlement input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -481,7 +481,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.TrackedEntitlementInfo? PublicConsumeUserEntitlement(PublicConsumeUserEntitlement input) {
+        public Model.EntitlementDecrementResult? PublicConsumeUserEntitlement(PublicConsumeUserEntitlement input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

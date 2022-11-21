@@ -48,6 +48,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public bool? IncludeSubCategoryItem { get; set; }
 
+            public string? ItemName { get; set; }
+
             public QueryItems1ItemStatus? ItemStatus { get; set; }
 
             public QueryItems1ItemType? ItemType { get; set; }
@@ -106,6 +108,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public QueryItems1Builder SetIncludeSubCategoryItem(bool _includeSubCategoryItem)
             {
                 IncludeSubCategoryItem = _includeSubCategoryItem;
+                return this;
+            }
+
+            public QueryItems1Builder SetItemName(string _itemName)
+            {
+                ItemName = _itemName;
                 return this;
             }
 
@@ -192,6 +200,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.CategoryPath is not null) QueryParams["categoryPath"] = builder.CategoryPath;
             if (builder.Features is not null) QueryParams["features"] = builder.Features;
             if (builder.IncludeSubCategoryItem != null) QueryParams["includeSubCategoryItem"] = Convert.ToString(builder.IncludeSubCategoryItem)!;
+            if (builder.ItemName is not null) QueryParams["itemName"] = builder.ItemName;
             if (builder.ItemStatus is not null) QueryParams["itemStatus"] = builder.ItemStatus.Value;
             if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType.Value;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
@@ -220,6 +229,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string? categoryPath,            
             string? features,            
             bool? includeSubCategoryItem,            
+            string? itemName,            
             QueryItems1ItemStatus? itemStatus,            
             QueryItems1ItemType? itemType,            
             int? limit,            
@@ -239,6 +249,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (categoryPath is not null) QueryParams["categoryPath"] = categoryPath;
             if (features is not null) QueryParams["features"] = features;
             if (includeSubCategoryItem != null) QueryParams["includeSubCategoryItem"] = Convert.ToString(includeSubCategoryItem)!;
+            if (itemName is not null) QueryParams["itemName"] = itemName;
             if (itemStatus is not null) QueryParams["itemStatus"] = itemStatus.Value;
             if (itemType is not null) QueryParams["itemType"] = itemType.Value;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
@@ -357,6 +368,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public static readonly QueryItems1ItemType INGAMEITEM
             = new QueryItems1ItemType("INGAMEITEM");
+
+        public static readonly QueryItems1ItemType LOOTBOX
+            = new QueryItems1ItemType("LOOTBOX");
 
         public static readonly QueryItems1ItemType MEDIA
             = new QueryItems1ItemType("MEDIA");

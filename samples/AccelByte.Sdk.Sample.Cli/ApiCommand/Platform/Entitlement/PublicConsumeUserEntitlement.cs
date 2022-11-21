@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Body                
             );            
             
-            AccelByte.Sdk.Api.Platform.Model.TrackedEntitlementInfo? response = wrapper.PublicConsumeUserEntitlement(operation);
+            AccelByte.Sdk.Api.Platform.Model.EntitlementDecrementResult? response = wrapper.PublicConsumeUserEntitlement(operation);
             if (response == null)
                 return "No response from server.";
 

@@ -200,7 +200,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelsChannelV1>? ExportChannels(ExportChannels input) {
+        public Stream? ExportChannels(ExportChannels input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

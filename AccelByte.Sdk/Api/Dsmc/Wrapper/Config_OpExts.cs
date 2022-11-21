@@ -145,7 +145,7 @@ namespace AccelByte.Sdk.Api
             return ((Dsmc.Wrapper.Config)builder.WrapperObject!).UpdatePort(op);
         }
 
-        public static Dsmc.Model.ModelsDSMConfigExport? Execute(
+        public static Stream? Execute(
             this ExportConfigV1.ExportConfigV1Builder builder,
             string namespace_
         )

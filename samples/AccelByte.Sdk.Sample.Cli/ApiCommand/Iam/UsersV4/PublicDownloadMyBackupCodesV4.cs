@@ -43,8 +43,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 Namespace                
             );            
             
-            wrapper.PublicDownloadMyBackupCodesV4(operation);
-            return String.Empty;
+            Stream? response = wrapper.PublicDownloadMyBackupCodesV4(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return Helper.ConvertInputStreamToString(response);
         }
     }
 }

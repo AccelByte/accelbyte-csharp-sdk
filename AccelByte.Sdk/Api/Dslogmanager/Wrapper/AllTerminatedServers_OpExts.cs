@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class DslogmanagerAllTerminatedServers_OpExts
     {
-        public static void Execute(
+        public static Stream? Execute(
             this BatchDownloadServerLogs.BatchDownloadServerLogsBuilder builder,
             ModelsBatchDownloadLogsRequest body
         )
@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api
                 body
             );
 
-            ((Dslogmanager.Wrapper.AllTerminatedServers)builder.WrapperObject!).BatchDownloadServerLogs(op);
+            return ((Dslogmanager.Wrapper.AllTerminatedServers)builder.WrapperObject!).BatchDownloadServerLogs(op);
         }
 
         public static Dslogmanager.Model.ModelsListTerminatedServersResponse? Execute(
