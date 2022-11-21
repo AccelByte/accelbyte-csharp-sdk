@@ -1,3 +1,26 @@
+<a name="v0.22.0"></a>
+## [v0.22.0]
+- Added new Matchmaking V2 API
+- Added new Session API
+- Added integration tests for both Matchmaking V2 and Session API.
+- Updated APIs
+	- dslogmanager:
+		- updated endpoints
+	- dsmc
+		- updated endpoints
+		- updated model
+	- iam
+		- added new endpoints
+		- updated endpoints
+	- matchmaking
+		- updated endpoints
+	- platform
+		- updated models
+		- **BREAKING CHANGE** `OptionBoxItem` changed to `EntitlementLootBoxReward`
+		- updated endpoints
+	- seasonpass
+		- updated model
+
 <a name="v0.21.2"></a>
 ## [v0.21.2]
 - Hotfix: revert breaking change on `TelemetryBody` model in gametelemetry API.

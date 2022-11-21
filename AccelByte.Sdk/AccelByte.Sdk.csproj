@@ -7,8 +7,8 @@
     <Product>AccelByte.Sdk</Product>
     <PackageId>AccelByte.Sdk</PackageId>
     <Authors>AccelByte Developers</Authors>
-    <Version>0.21.2</Version>
-    <AssemblyVersion>0.21.2</AssemblyVersion>
+    <Version>0.22.0</Version>
+    <AssemblyVersion>0.22.0</AssemblyVersion>
     <Company>AccelByte</Company>
     <Copyright>Copyright(c) AccelByte 2022</Copyright>
     <Description>AccelByte .NET (C#) SDK
@@ -18,8 +18,12 @@ A software development kit (SDK) for interacting with AccelByte services.</Descr
     <RepositoryType>git</RepositoryType>
     <PackageTags>accelbyte;sdk</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>[v0.21.2]
-- Hotfix: revert breaking change on `TelemetryBody` model in gametelemetry API.</PackageReleaseNotes>
+    <PackageReleaseNotes>[v0.22.0]
+- Added new Matchmaking V2 API
+- Added new Session API
+- Added integration tests for both Matchmaking V2 and Session API.
+- Update APIs
+- **BREAKING CHANGE** `OptionBoxItem` changed to `EntitlementLootBoxReward`</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>icon.png</PackageIcon>
