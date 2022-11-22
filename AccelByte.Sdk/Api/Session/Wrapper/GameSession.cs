@@ -165,10 +165,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsGameSessionResponse? LeaveGameSession(LeaveGameSession input) {
+        public void LeaveGameSession(LeaveGameSession input) {
             var response = _sdk.RunRequest(input);
 
-            return input.ParseResponse(
+            input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

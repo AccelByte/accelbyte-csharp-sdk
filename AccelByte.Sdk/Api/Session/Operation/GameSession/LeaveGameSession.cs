@@ -99,19 +99,11 @@ namespace AccelByte.Sdk.Api.Session.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
         
-        public Model.ApimodelsGameSessionResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        {
             if (code == (HttpStatusCode)204)
             {
-                return null;
-            }
-            else if (code == (HttpStatusCode)201)
-            {
-                return JsonSerializer.Deserialize<Model.ApimodelsGameSessionResponse>(payload);
-            }
-            else if (code == (HttpStatusCode)200)
-            {
-                return JsonSerializer.Deserialize<Model.ApimodelsGameSessionResponse>(payload);
+                return;
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

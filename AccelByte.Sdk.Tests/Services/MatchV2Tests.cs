@@ -38,8 +38,7 @@ namespace AccelByte.Sdk.Tests.Services
             });
         }
 
-        [Test]
-        [Ignore("There still are some mismatch api response")]
+        [Test]        
         public void MatchPoolTests()
         {
             Assert.IsNotNull(_Sdk);

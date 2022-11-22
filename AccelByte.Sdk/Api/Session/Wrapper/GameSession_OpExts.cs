@@ -174,7 +174,7 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.GameSession)builder.WrapperObject!).JoinGameSession(op);
         }
 
-        public static Session.Model.ApimodelsGameSessionResponse? Execute(
+        public static void Execute(
             this LeaveGameSession.LeaveGameSessionBuilder builder,
             string namespace_,
             string sessionId
@@ -185,7 +185,7 @@ namespace AccelByte.Sdk.Api
                 sessionId
             );
 
-            return ((Session.Wrapper.GameSession)builder.WrapperObject!).LeaveGameSession(op);
+            ((Session.Wrapper.GameSession)builder.WrapperObject!).LeaveGameSession(op);
         }
 
         public static void Execute(
