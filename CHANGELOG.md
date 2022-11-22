@@ -17,6 +17,8 @@
 	- platform
 		- updated models
 		- **BREAKING CHANGE** `OptionBoxItem` changed to `EntitlementLootBoxReward`
+		- **BREAKING CHANGE** `TrackedEntitlementInfo` changed to `EntitlementDecrementResult`
+		- **BREAKING CHANGE** `PlayStationReconcileResult` changed to `LootBoxReward`
 		- updated endpoints
 	- seasonpass
 		- updated model

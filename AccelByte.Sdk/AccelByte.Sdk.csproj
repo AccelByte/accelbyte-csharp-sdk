@@ -23,7 +23,9 @@ A software development kit (SDK) for interacting with AccelByte services.</Descr
 - Added new Session API
 - Added integration tests for both Matchmaking V2 and Session API.
 - Update APIs
-- **BREAKING CHANGE** `OptionBoxItem` changed to `EntitlementLootBoxReward`</PackageReleaseNotes>
+- **BREAKING CHANGE** `OptionBoxItem` changed to `EntitlementLootBoxReward`
+- **BREAKING CHANGE** `TrackedEntitlementInfo` changed to `EntitlementDecrementResult`
+- **BREAKING CHANGE** `PlayStationReconcileResult` changed to `LootBoxReward`</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>icon.png</PackageIcon>
