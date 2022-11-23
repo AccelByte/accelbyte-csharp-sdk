@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.TicTac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.TicTacToe", "samples\AccelByte.Sdk.Sample.TicTacToe\AccelByte.Sdk.Sample.TicTacToe.csproj", "{15EB4B0F-1CF0-4D88-B1EE-454DE87E9861}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.GettingStarted", "samples\AccelByte.Sdk.Sample.GettingStarted\AccelByte.Sdk.Sample.GettingStarted.csproj", "{134E3E4C-0F90-4154-8A90-85AB5B3CA7AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +121,10 @@ Global
 		{15EB4B0F-1CF0-4D88-B1EE-454DE87E9861}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15EB4B0F-1CF0-4D88-B1EE-454DE87E9861}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15EB4B0F-1CF0-4D88-B1EE-454DE87E9861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{134E3E4C-0F90-4154-8A90-85AB5B3CA7AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{134E3E4C-0F90-4154-8A90-85AB5B3CA7AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{134E3E4C-0F90-4154-8A90-85AB5B3CA7AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{134E3E4C-0F90-4154-8A90-85AB5B3CA7AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +152,7 @@ Global
 		{64957C7E-6F56-42E5-9647-2D71A7685486} = {A93E44E1-B9F3-409F-AAFA-766995DFADDA}
 		{CC66006A-F119-45C3-A75A-B20082C755D9} = {64957C7E-6F56-42E5-9647-2D71A7685486}
 		{15EB4B0F-1CF0-4D88-B1EE-454DE87E9861} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
+		{134E3E4C-0F90-4154-8A90-85AB5B3CA7AF} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0683A376-6097-43C6-B3B5-3820D97D171F}
