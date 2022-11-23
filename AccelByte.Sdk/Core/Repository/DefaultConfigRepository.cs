@@ -45,8 +45,14 @@ namespace AccelByte.Sdk.Core.Repository
 
         public string AppName
         {
-            get => Environment.GetEnvironmentVariable(CLIENT_APPNAME) ??
-                     throw new Exception($"Environment variable not found (variable: {CLIENT_APPNAME})");
+            get
+            {
+                string? aAppname = Environment.GetEnvironmentVariable(CLIENT_APPNAME);
+                if (aAppname != null)
+                    return aAppname;
+                else
+                    return "UntitledApp";
+            }
         }
 
         public string Namespace
