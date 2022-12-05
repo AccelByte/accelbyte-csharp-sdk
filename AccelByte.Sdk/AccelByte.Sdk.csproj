@@ -7,8 +7,8 @@
     <Product>AccelByte.Sdk</Product>
     <PackageId>AccelByte.Sdk</PackageId>
     <Authors>AccelByte Developers</Authors>
-    <Version>0.22.0</Version>
-    <AssemblyVersion>0.22.0</AssemblyVersion>
+    <Version>0.23.0</Version>
+    <AssemblyVersion>0.23.0</AssemblyVersion>
     <Company>AccelByte</Company>
     <Copyright>Copyright(c) AccelByte 2022</Copyright>
     <Description>AccelByte .NET (C#) SDK
@@ -18,14 +18,11 @@ A software development kit (SDK) for interacting with AccelByte services.</Descr
     <RepositoryType>git</RepositoryType>
     <PackageTags>accelbyte;sdk</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>[v0.22.0]
-- Added new Matchmaking V2 API
-- Added new Session API
-- Added integration tests for both Matchmaking V2 and Session API.
-- Update APIs
-- **BREAKING CHANGE** `OptionBoxItem` changed to `EntitlementLootBoxReward`
-- **BREAKING CHANGE** `TrackedEntitlementInfo` changed to `EntitlementDecrementResult`
-- **BREAKING CHANGE** `PlayStationReconcileResult` changed to `LootBoxReward`</PackageReleaseNotes>
+    <PackageReleaseNotes>[v0.23.0]
+- Added getting started sample app.
+- Added OpenAPI 2.0 vendor extension information.
+- Make `AB_APP_NAME` optional in `DefaultConfigRepository`.
+- Update APIs.</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>icon.png</PackageIcon>

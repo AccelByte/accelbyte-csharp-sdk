@@ -1,3 +1,155 @@
+# C# Server SDK v0.23.0
+
+## gametelemetry Service
+
+### What's Changed
+---
+`GET` /game-telemetry/v1/admin/namespaces/{namespace}/events Get Events  
+    Parameters
+
+        Modify startTime //Start time of data to be queried. Default: Current time in UTC minus 1 day.
+        Modify endTime //End time of data to be queried. Default: Current time in UTC.
+
+## iam Service
+
+### What's New
+---
+* `POST` /iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/linkStatus Admin get the link status of the third party platform token with user id.
+
+## platform Service
+
+### What's New
+---
+* `GET` /platform/admin/namespaces/{namespace}/users/{userId}/dlc Get user dlc by platform
+* `GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byItemIds Get user entitlements by itemIds
+
+### What's Changed
+---
+`PUT` /platform/public/namespaces/{namespace}/users/{userId}/iap/psn/sync Synchronize with entitlements in PSN Store.  
+    Return Type
+
+        Insert itemId
+        Insert psnItemId
+        Insert sku
+        Insert status
+        Insert transactionId
+`PUT` /platform/public/namespaces/{namespace}/users/{userId}/iap/psn/sync/multiServiceLabels Synchronize with entitlements in PSN Store with multiple service labels.  
+    Return Type
+
+        Insert itemId
+        Insert psnItemId
+        Insert sku
+        Insert status
+        Insert transactionId
+
+## session Service
+
+### What's Changed
+---
+`POST` /session/v1/admin/namespaces/{namespace}/configuration Create configuration template. Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [CREATE]  
+    Parameters
+
+        Insert body.textChat
+`GET` /session/v1/admin/namespaces/{namespace}/configurations Get configuration templates. Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [READ]  
+    Return Type
+
+        Insert data.textChat
+`PUT` /session/v1/admin/namespaces/{namespace}/configurations/{name} Update configuration template. Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [CREATE]  
+    Parameters
+
+        Insert body.textChat
+    Return Type
+
+        Insert textChat
+`GET` /session/v1/admin/namespaces/{namespace}/configurations/{name} Get configuration template. Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [READ]  
+    Return Type
+
+        Insert textChat
+`GET` /session/v1/admin/namespaces/{namespace}/gamesessions Get all game sessions.  
+    Return Type
+
+        Insert data.configuration.textChat
+`GET` /session/v1/admin/namespaces/{namespace}/parties Query parties. Requires ADMIN:NAMESPACE:{namespace}:SESSION:PARTY [READ]  
+    Return Type
+
+        Insert data.configuration.textChat
+`POST` /session/v1/public/namespaces/{namespace}/gamesession Create a game session. Requires NAMESPACE:{namespace}:SESSION:GAME [CREATE]  
+    Parameters
+
+        Insert body.textChat
+`POST` /session/v1/public/namespaces/{namespace}/gamesessions Query game sessions  
+    Return Type
+
+        Insert data.configuration.textChat
+`GET` /session/v1/public/namespaces/{namespace}/gamesessions/servers/{podName} Get game session detail. Requires NAMESPACE:{namespace}:SESSION:GAME [READ]  
+    Return Type
+
+        Insert configuration.textChat
+`PUT` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId} Update a game session. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE]  
+    Return Type
+
+        Insert configuration.textChat
+`PATCH` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId} Patch update a game session. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE]  
+    Return Type
+
+        Insert configuration.textChat
+`GET` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId} Get game session detail. Requires NAMESPACE:{namespace}:SESSION:GAME [READ]  
+    Return Type
+
+        Insert configuration.textChat
+`POST` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/join Join a game session. Requires NAMESPACE:{namespace}:SESSION:GAME:PLAYER [CREATE]  
+    Return Type
+
+        Insert configuration.textChat
+`POST` /session/v1/public/namespaces/{namespace}/parties/users/me/join/code Join a party by code. Requires NAMESPACE:{namespace}:SESSION:PARTY:PLAYER [CREATE]  
+    Return Type
+
+        Insert configuration.textChat
+`PUT` /session/v1/public/namespaces/{namespace}/parties/{partyId} Update a party. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Insert configuration.textChat
+`PATCH` /session/v1/public/namespaces/{namespace}/parties/{partyId} Patch update a party. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Insert configuration.textChat
+`GET` /session/v1/public/namespaces/{namespace}/parties/{partyId} Get party details. Requires NAMESPACE:{namespace}:SESSION:PARTY [READ]  
+    Return Type
+
+        Insert configuration.textChat
+`POST` /session/v1/public/namespaces/{namespace}/parties/{partyId}/code Generate party code. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Insert configuration.textChat
+`DELETE` /session/v1/public/namespaces/{namespace}/parties/{partyId}/code Revoke party code. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Insert configuration.textChat
+`POST` /session/v1/public/namespaces/{namespace}/parties/{partyId}/leader Promote new party leader. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Insert configuration.textChat
+`POST` /session/v1/public/namespaces/{namespace}/parties/{partyId}/users/me/join Join a party. Requires NAMESPACE:{namespace}:SESSION:PARTY:PLAYER [CREATE]  
+    Return Type
+
+        Insert configuration.textChat
+`POST` /session/v1/public/namespaces/{namespace}/party Create a party. Requires NAMESPACE:{namespace}:SESSION:PARTY [CREATE]  
+    Parameters
+
+        Insert body.textChat
+    Return Type
+
+        Insert configuration.textChat
+`GET` /session/v1/public/namespaces/{namespace}/users/me/gamesessions Query user's game sessions  
+    Return Type
+
+        Insert configuration.textChat
+`GET` /session/v1/public/namespaces/{namespace}/users/me/parties Query my parties. Require valid JWT.  
+    Return Type
+
+        Insert configuration.textChat
+
+
 # C# Server SDK v0.21.0
 
 ## achievement Service

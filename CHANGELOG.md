@@ -1,3 +1,11 @@
+<a name="v0.23.0"></a>
+## [v0.23.0]
+- Added [getting started](samples/AccelByte.Sdk.Sample.GettingStarted) sample app.
+- Added OpenAPI 2.0 vendor extension [information](spec/openapi-2.0-vendor-extensions.md).
+- Make `AB_APP_NAME` optional in `DefaultConfigRepository`.
+- Updated OIDC integration test.
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.22.0"></a>
 ## [v0.22.0]
 - Added new Matchmaking V2 API
