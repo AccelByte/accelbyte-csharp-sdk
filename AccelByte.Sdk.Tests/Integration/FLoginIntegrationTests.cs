@@ -25,6 +25,8 @@ namespace AccelByte.Sdk.Tests.Integration
     [Explicit]
     public class FLoginIntegrationTests : BaseIntegrationTest
     {
+        private string _PhantauthBaseUrl = "https://phantauth.net";
+
         [OneTimeSetUp]
         public void Startup()
         {
@@ -35,6 +37,9 @@ namespace AccelByte.Sdk.Tests.Integration
                 .SetCredentialRepository(IntegrationTestCredentialRepository.Admin)
                 .EnableLog()
                 .Build();
+
+            _PhantauthBaseUrl = Environment.GetEnvironmentVariable("AB_PHANTAUTH_BASE_URL")
+                ?? "https://phantauth.net";
         }
 
         [OneTimeTearDown]
@@ -45,7 +50,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
         protected string GetPhantauthToken(string username, string tokenType)
         {
-            string url = String.Format(@"https://phantauth.net/user/{0}/token/{1}", username.Trim(), tokenType.Trim().ToLower());
+            string url = $"{_PhantauthBaseUrl}/user/{username.Trim()}/token/{tokenType.Trim().ToLower()}";
 
             HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Get, url);
             if (DefaultHttpClient.Http == null)
@@ -57,7 +62,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
         protected PhantauthTokens GetPhantauthAuthorizedToken(string clientId, string clientSecret, string authorizationToken)
         {
-            string url = "https://phantauth.net/auth/token";
+            string url = $"{_PhantauthBaseUrl}/auth/token";
 
             HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, url);
             req.Content = new FormUrlEncodedContent(new Dictionary<string, string>()
