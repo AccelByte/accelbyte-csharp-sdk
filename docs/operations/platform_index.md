@@ -118,6 +118,7 @@
 | `/platform/admin/namespaces/{namespace}/dlc/config/platformMap` | GET | GetPlatformDLCConfig | [GetPlatformDLCConfig](../../AccelByte.Sdk/Api/Platform/Operation/DLC/GetPlatformDLCConfig.cs) | [GetPlatformDLCConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/GetPlatformDLCConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/dlc/config/platformMap` | PUT | UpdatePlatformDLCConfig | [UpdatePlatformDLCConfig](../../AccelByte.Sdk/Api/Platform/Operation/DLC/UpdatePlatformDLCConfig.cs) | [UpdatePlatformDLCConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/UpdatePlatformDLCConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/dlc/config/platformMap` | DELETE | DeletePlatformDLCConfig | [DeletePlatformDLCConfig](../../AccelByte.Sdk/Api/Platform/Operation/DLC/DeletePlatformDLCConfig.cs) | [DeletePlatformDLCConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/DeletePlatformDLCConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/dlc` | GET | GetUserDLC | [GetUserDLC](../../AccelByte.Sdk/Api/Platform/Operation/DLC/GetUserDLC.cs) | [GetUserDLC](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/GetUserDLC.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/dlc/epicgames/sync` | PUT | SyncEpicGameDLC | [SyncEpicGameDLC](../../AccelByte.Sdk/Api/Platform/Operation/DLC/SyncEpicGameDLC.cs) | [SyncEpicGameDLC](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/SyncEpicGameDLC.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/dlc/psn/sync` | PUT | PublicSyncPsnDlcInventory | [PublicSyncPsnDlcInventory](../../AccelByte.Sdk/Api/Platform/Operation/DLC/PublicSyncPsnDlcInventory.cs) | [PublicSyncPsnDlcInventory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/PublicSyncPsnDlcInventory.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/dlc/psn/sync/multiServiceLabels` | PUT | PublicSyncPsnDlcInventoryWithMultipleServiceLabels | [PublicSyncPsnDlcInventoryWithMultipleServiceLabels](../../AccelByte.Sdk/Api/Platform/Operation/DLC/PublicSyncPsnDlcInventoryWithMultipleServiceLabels.cs) | [PublicSyncPsnDlcInventoryWithMultipleServiceLabels](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/PublicSyncPsnDlcInventoryWithMultipleServiceLabels.cs) |
@@ -134,6 +135,7 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byAppId` | GET | GetUserAppEntitlementByAppId | [GetUserAppEntitlementByAppId](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserAppEntitlementByAppId.cs) | [GetUserAppEntitlementByAppId](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserAppEntitlementByAppId.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byAppType` | GET | QueryUserEntitlementsByAppType | [QueryUserEntitlementsByAppType](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/QueryUserEntitlementsByAppType.cs) | [QueryUserEntitlementsByAppType](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/QueryUserEntitlementsByAppType.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byItemId` | GET | GetUserEntitlementByItemId | [GetUserEntitlementByItemId](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserEntitlementByItemId.cs) | [GetUserEntitlementByItemId](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserEntitlementByItemId.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byItemIds` | GET | GetUserActiveEntitlementsByItemIds | [GetUserActiveEntitlementsByItemIds](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserActiveEntitlementsByItemIds.cs) | [GetUserActiveEntitlementsByItemIds](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserActiveEntitlementsByItemIds.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/bySku` | GET | GetUserEntitlementBySku | [GetUserEntitlementBySku](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserEntitlementBySku.cs) | [GetUserEntitlementBySku](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserEntitlementBySku.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/any` | GET | ExistsAnyUserActiveEntitlement | [ExistsAnyUserActiveEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/ExistsAnyUserActiveEntitlement.cs) | [ExistsAnyUserActiveEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/ExistsAnyUserActiveEntitlement.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/anyOf` | GET | ExistsAnyUserActiveEntitlementByItemIds | [ExistsAnyUserActiveEntitlementByItemIds](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/ExistsAnyUserActiveEntitlementByItemIds.cs) | [ExistsAnyUserActiveEntitlementByItemIds](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/ExistsAnyUserActiveEntitlementByItemIds.cs) |
@@ -539,6 +541,7 @@
 | `DLCItem` | [DLCItem](../../AccelByte.Sdk/Api/Platform/Model/DLCItem.cs) |
 | `DLCItemConfigInfo` | [DLCItemConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/DLCItemConfigInfo.cs) |
 | `DLCItemConfigUpdate` | [DLCItemConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/DLCItemConfigUpdate.cs) |
+| `DLCRecord` | [DLCRecord](../../AccelByte.Sdk/Api/Platform/Model/DLCRecord.cs) |
 | `DebitRequest` | [DebitRequest](../../AccelByte.Sdk/Api/Platform/Model/DebitRequest.cs) |
 | `DeleteRewardConditionRequest` | [DeleteRewardConditionRequest](../../AccelByte.Sdk/Api/Platform/Model/DeleteRewardConditionRequest.cs) |
 | `DetailedWalletTransactionInfo` | [DetailedWalletTransactionInfo](../../AccelByte.Sdk/Api/Platform/Model/DetailedWalletTransactionInfo.cs) |
@@ -691,6 +694,7 @@
 | `PlayStationIAPConfigInfo` | [PlayStationIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/PlayStationIAPConfigInfo.cs) |
 | `PlayStationMultiServiceLabelsReconcileRequest` | [PlayStationMultiServiceLabelsReconcileRequest](../../AccelByte.Sdk/Api/Platform/Model/PlayStationMultiServiceLabelsReconcileRequest.cs) |
 | `PlayStationReconcileRequest` | [PlayStationReconcileRequest](../../AccelByte.Sdk/Api/Platform/Model/PlayStationReconcileRequest.cs) |
+| `PlayStationReconcileResult` | [PlayStationReconcileResult](../../AccelByte.Sdk/Api/Platform/Model/PlayStationReconcileResult.cs) |
 | `PlaystationIAPConfigRequest` | [PlaystationIAPConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/PlaystationIAPConfigRequest.cs) |
 | `PopulatedItemInfo` | [PopulatedItemInfo](../../AccelByte.Sdk/Api/Platform/Model/PopulatedItemInfo.cs) |
 | `PredicateValidateResult` | [PredicateValidateResult](../../AccelByte.Sdk/Api/Platform/Model/PredicateValidateResult.cs) |
@@ -707,6 +711,8 @@
 | `RegionDataItem` | [RegionDataItem](../../AccelByte.Sdk/Api/Platform/Model/RegionDataItem.cs) |
 | `RequestHistory` | [RequestHistory](../../AccelByte.Sdk/Api/Platform/Model/RequestHistory.cs) |
 | `Requirement` | [Requirement](../../AccelByte.Sdk/Api/Platform/Model/Requirement.cs) |
+| `RevokeItemSummary` | [RevokeItemSummary](../../AccelByte.Sdk/Api/Platform/Model/RevokeItemSummary.cs) |
+| `RevokeResult` | [RevokeResult](../../AccelByte.Sdk/Api/Platform/Model/RevokeResult.cs) |
 | `RewardCondition` | [RewardCondition](../../AccelByte.Sdk/Api/Platform/Model/RewardCondition.cs) |
 | `RewardCreate` | [RewardCreate](../../AccelByte.Sdk/Api/Platform/Model/RewardCreate.cs) |
 | `RewardInfo` | [RewardInfo](../../AccelByte.Sdk/Api/Platform/Model/RewardInfo.cs) |
@@ -752,6 +758,7 @@
 | `TwitchIAPConfigInfo` | [TwitchIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/TwitchIAPConfigInfo.cs) |
 | `TwitchIAPConfigRequest` | [TwitchIAPConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/TwitchIAPConfigRequest.cs) |
 | `TwitchSyncRequest` | [TwitchSyncRequest](../../AccelByte.Sdk/Api/Platform/Model/TwitchSyncRequest.cs) |
+| `UserDLC` | [UserDLC](../../AccelByte.Sdk/Api/Platform/Model/UserDLC.cs) |
 | `ValidationErrorEntity` | [ValidationErrorEntity](../../AccelByte.Sdk/Api/Platform/Model/ValidationErrorEntity.cs) |
 | `WalletInfo` | [WalletInfo](../../AccelByte.Sdk/Api/Platform/Model/WalletInfo.cs) |
 | `WalletPagingSlicedResult` | [WalletPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/WalletPagingSlicedResult.cs) |

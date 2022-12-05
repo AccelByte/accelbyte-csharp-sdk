@@ -45,6 +45,9 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("requestedRegions")]
         public List<string>? RequestedRegions { get; set; }
 
+        [JsonPropertyName("textChat")]
+        public bool? TextChat { get; set; }
+
         [JsonPropertyName("type")]
         public string? Type { get; set; }
 

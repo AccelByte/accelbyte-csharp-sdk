@@ -47,6 +47,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.GetUserEntitlementByItemId.Builder.SetWrapperObject(this); }
         }
+        public GetUserActiveEntitlementsByItemIds.GetUserActiveEntitlementsByItemIdsBuilder GetUserActiveEntitlementsByItemIdsOp
+        {
+            get { return Operation.GetUserActiveEntitlementsByItemIds.Builder.SetWrapperObject(this); }
+        }
         public GetUserEntitlementBySku.GetUserEntitlementBySkuBuilder GetUserEntitlementBySkuOp
         {
             get { return Operation.GetUserEntitlementBySku.Builder.SetWrapperObject(this); }
@@ -226,6 +230,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.EntitlementInfo? GetUserEntitlementByItemId(GetUserEntitlementByItemId input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.EntitlementInfo>? GetUserActiveEntitlementsByItemIds(GetUserActiveEntitlementsByItemIds input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

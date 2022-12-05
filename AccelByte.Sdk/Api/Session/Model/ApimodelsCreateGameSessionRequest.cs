@@ -51,6 +51,9 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("teams")]
         public List<ModelsTeam>? Teams { get; set; }
 
+        [JsonPropertyName("textChat")]
+        public bool? TextChat { get; set; }
+
         [JsonPropertyName("ticketIDs")]
         public List<string>? TicketIDs { get; set; }
 

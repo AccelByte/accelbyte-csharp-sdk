@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publicreconcileplaystationstorewithmultipleservicelabels")]
-    public class PublicReconcilePlayStationStoreWithMultipleServiceLabelsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform","getuserdlc")]
+    public class GetUserDLCCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicReconcilePlayStationStoreWithMultipleServiceLabels"; } }
+        public string OperationName{ get { return "GetUserDLC"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -33,25 +33,25 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
-        [SdkCommandData("body")]
-        public PlayStationMultiServiceLabelsReconcileRequest Body { get; set; } = new PlayStationMultiServiceLabelsReconcileRequest();
-                
-        public PublicReconcilePlayStationStoreWithMultipleServiceLabelsCommand(AccelByteSDK sdk)
+        [SdkCommandArgument("type")]
+        public string Type { get; set; } = String.Empty;
+
+        public GetUserDLCCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
+            AccelByte.Sdk.Api.Platform.Wrapper.DLC wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.DLC(_SDK);
 
-            PublicReconcilePlayStationStoreWithMultipleServiceLabels operation = new PublicReconcilePlayStationStoreWithMultipleServiceLabels(
+            GetUserDLC operation = new GetUserDLC(
                 Namespace,                
                 UserId,                
-                Body                
+                GetUserDLCType.NewValue(Type)                
             );            
             
-            List<AccelByte.Sdk.Api.Platform.Model.PlayStationReconcileResult>? response = wrapper.PublicReconcilePlayStationStoreWithMultipleServiceLabels(operation);
+            AccelByte.Sdk.Api.Platform.Model.UserDLC? response = wrapper.GetUserDLC(operation);
             if (response == null)
                 return "No response from server.";
 

@@ -33,6 +33,9 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("minPlayers")]
         public int? MinPlayers { get; set; }
 
+        [JsonPropertyName("textChat")]
+        public bool? TextChat { get; set; }
+
         [JsonPropertyName("type")]
         public string? Type { get; set; }
 

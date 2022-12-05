@@ -114,6 +114,20 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementByItemId(op);
         }
 
+        public static List<Platform.Model.EntitlementInfo>? Execute(
+            this GetUserActiveEntitlementsByItemIds.GetUserActiveEntitlementsByItemIdsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserActiveEntitlementsByItemIds op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserActiveEntitlementsByItemIds(op);
+        }
+
         public static Platform.Model.EntitlementInfo? Execute(
             this GetUserEntitlementBySku.GetUserEntitlementBySkuBuilder builder,
             string namespace_,

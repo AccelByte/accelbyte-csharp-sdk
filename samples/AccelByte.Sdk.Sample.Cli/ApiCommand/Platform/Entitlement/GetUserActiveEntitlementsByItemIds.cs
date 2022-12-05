@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publicreconcileplaystationstorewithmultipleservicelabels")]
-    public class PublicReconcilePlayStationStoreWithMultipleServiceLabelsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform","getuseractiveentitlementsbyitemids")]
+    public class GetUserActiveEntitlementsByItemIdsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicReconcilePlayStationStoreWithMultipleServiceLabels"; } }
+        public string OperationName{ get { return "GetUserActiveEntitlementsByItemIds"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -33,25 +33,25 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
-        [SdkCommandData("body")]
-        public PlayStationMultiServiceLabelsReconcileRequest Body { get; set; } = new PlayStationMultiServiceLabelsReconcileRequest();
-                
-        public PublicReconcilePlayStationStoreWithMultipleServiceLabelsCommand(AccelByteSDK sdk)
+        [SdkCommandArgument("ids")]
+        public List<string>? Ids { get; set; }
+
+        public GetUserActiveEntitlementsByItemIdsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
+            AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
-            PublicReconcilePlayStationStoreWithMultipleServiceLabels operation = new PublicReconcilePlayStationStoreWithMultipleServiceLabels(
+            GetUserActiveEntitlementsByItemIds operation = new GetUserActiveEntitlementsByItemIds(
                 Namespace,                
                 UserId,                
-                Body                
+                Ids                
             );            
             
-            List<AccelByte.Sdk.Api.Platform.Model.PlayStationReconcileResult>? response = wrapper.PublicReconcilePlayStationStoreWithMultipleServiceLabels(operation);
+            List<AccelByte.Sdk.Api.Platform.Model.EntitlementInfo>? response = wrapper.GetUserActiveEntitlementsByItemIds(operation);
             if (response == null)
                 return "No response from server.";
 

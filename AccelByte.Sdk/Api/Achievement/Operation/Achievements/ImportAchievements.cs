@@ -21,10 +21,10 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// 
     /// Required Scope: social
     /// 
-    /// Import channels configuration from file. It will merge with existing channels.
+    /// Import achievement configuration from file. It will merge with existing achievement.
     /// Available import strategy:
-    /// - leaveOut: if channel with same key exist, the existing will be used and imported one will be ignored (default)
-    /// - replace: if channel with same key exist, the imported channel will be used and existing one will be removed
+    /// - leaveOut: if achievement with same key exist, the existing will be used and imported one will be ignored (default)
+    /// - replace: if achievement with same key exist, the imported achievement will be used and existing one will be removed
     /// </summary>
     public class ImportAchievements : AccelByte.Sdk.Core.Operation
     {

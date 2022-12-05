@@ -1604,6 +1604,24 @@ namespace AccelByte.Sdk.Api
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminPlatformLinkV3(op);
         }
 
+        public static Iam.Model.ModelTokenThirdPartyLinkStatusResponse? Execute(
+            this AdminGetThirdPartyPlatformTokenLinkStatusV3.AdminGetThirdPartyPlatformTokenLinkStatusV3Builder builder,
+            string platformToken,
+            string namespace_,
+            string platformId,
+            string userId
+        )
+        {
+            AdminGetThirdPartyPlatformTokenLinkStatusV3 op = builder.Build(
+                platformToken,
+                namespace_,
+                platformId,
+                userId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetThirdPartyPlatformTokenLinkStatusV3(op);
+        }
+
         public static void Execute(
             this AdminDeleteUserRolesV3.AdminDeleteUserRolesV3Builder builder,
             List<string> body,

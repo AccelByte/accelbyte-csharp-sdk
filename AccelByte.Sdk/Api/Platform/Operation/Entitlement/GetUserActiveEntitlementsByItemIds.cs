@@ -14,49 +14,48 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
     /// <summary>
-    /// publicReconcilePlayStationStoreWithMultipleServiceLabels
+    /// getUserActiveEntitlementsByItemIds
     ///
-    /// Synchronize with entitlements in PSN Store with multiple service labels.
+    /// Get user entitlements by itemIds.
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
-    ///   *  Returns : result of synchronization
+    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
     /// </summary>
-    public class PublicReconcilePlayStationStoreWithMultipleServiceLabels : AccelByte.Sdk.Core.Operation
+    public class GetUserActiveEntitlementsByItemIds : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder Builder = new PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder();
+        public static GetUserActiveEntitlementsByItemIdsBuilder Builder = new GetUserActiveEntitlementsByItemIdsBuilder();
 
-        public class PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder
-            : OperationBuilder<PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder>
+        public class GetUserActiveEntitlementsByItemIdsBuilder
+            : OperationBuilder<GetUserActiveEntitlementsByItemIdsBuilder>
         {
 
-
-            public Model.PlayStationMultiServiceLabelsReconcileRequest? Body { get; set; }
-
+            public List<string>? Ids { get; set; }
 
 
 
-            internal PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder() { }
 
 
+            internal GetUserActiveEntitlementsByItemIdsBuilder() { }
 
-            public PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder SetBody(Model.PlayStationMultiServiceLabelsReconcileRequest _body)
+
+            public GetUserActiveEntitlementsByItemIdsBuilder SetIds(List<string> _ids)
             {
-                Body = _body;
+                Ids = _ids;
                 return this;
             }
 
 
 
 
-            public PublicReconcilePlayStationStoreWithMultipleServiceLabels Build(
+
+            public GetUserActiveEntitlementsByItemIds Build(
                 string namespace_,
                 string userId
             )
             {
-                PublicReconcilePlayStationStoreWithMultipleServiceLabels op = new PublicReconcilePlayStationStoreWithMultipleServiceLabels(this,
+                GetUserActiveEntitlementsByItemIds op = new GetUserActiveEntitlementsByItemIds(this,
                     namespace_,                    
                     userId                    
                 );
@@ -66,7 +65,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private PublicReconcilePlayStationStoreWithMultipleServiceLabels(PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder builder,
+        private GetUserActiveEntitlementsByItemIds(GetUserActiveEntitlementsByItemIdsBuilder builder,
             string namespace_,
             string userId
         )
@@ -74,48 +73,50 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
+            if (builder.Ids is not null) QueryParams["ids"] = builder.Ids;
             
 
             
+            CollectionFormatMap["ids"] = "multi";
             
-            BodyParams = builder.Body;
             
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public PublicReconcilePlayStationStoreWithMultipleServiceLabels(
+        public GetUserActiveEntitlementsByItemIds(
             string namespace_,            
             string userId,            
-            Model.PlayStationMultiServiceLabelsReconcileRequest body            
+            List<string>? ids            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             
+            if (ids is not null) QueryParams["ids"] = ids;
             
 
             
+            CollectionFormatMap["ids"] = "multi";
             
-            BodyParams = body;
             
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/platform/public/namespaces/{namespace}/users/{userId}/iap/psn/sync/multiServiceLabels";
+        public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byItemIds";
 
-        public override HttpMethod Method => HttpMethod.Put;
+        public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { "application/json" };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
         
-        public List<Model.PlayStationReconcileResult>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public List<Model.EntitlementInfo>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            
             if (code == (HttpStatusCode)204)
             {
@@ -123,11 +124,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.PlayStationReconcileResult>>(payload);
+                return JsonSerializer.Deserialize<List<Model.EntitlementInfo>>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.PlayStationReconcileResult>>(payload);
+                return JsonSerializer.Deserialize<List<Model.EntitlementInfo>>(payload);
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

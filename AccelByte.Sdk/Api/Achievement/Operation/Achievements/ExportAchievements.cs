@@ -17,9 +17,11 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// ExportAchievements
     ///
     /// 
-    /// Required permission ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [READ]
+    /// Required permission `ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [READ]`
     /// 
-    /// Required Scope: social
+    /// Required Scope: `social`
+    /// 
+    /// Successful response header will contain: `content-disposition: attachment; filename=achievement__config.json`
     /// </summary>
     public class ExportAchievements : AccelByte.Sdk.Core.Operation
     {

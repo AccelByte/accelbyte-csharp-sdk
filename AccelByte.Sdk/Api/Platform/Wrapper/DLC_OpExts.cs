@@ -84,6 +84,22 @@ namespace AccelByte.Sdk.Api
             ((Platform.Wrapper.DLC)builder.WrapperObject!).DeletePlatformDLCConfig(op);
         }
 
+        public static Platform.Model.UserDLC? Execute(
+            this GetUserDLC.GetUserDLCBuilder builder,
+            string namespace_,
+            string userId,
+            string type
+        )
+        {
+            GetUserDLC op = builder.Build(
+                namespace_,
+                userId,
+                type
+            );
+
+            return ((Platform.Wrapper.DLC)builder.WrapperObject!).GetUserDLC(op);
+        }
+
         public static void Execute(
             this SyncEpicGameDLC.SyncEpicGameDLCBuilder builder,
             string namespace_,

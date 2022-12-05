@@ -51,8 +51,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Body                
             );            
             
-            wrapper.PublicReconcilePlayStationStore(operation);
-            return String.Empty;
+            List<AccelByte.Sdk.Api.Platform.Model.PlayStationReconcileResult>? response = wrapper.PublicReconcilePlayStationStore(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }
