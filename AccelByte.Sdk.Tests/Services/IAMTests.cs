@@ -22,6 +22,46 @@ namespace AccelByte.Sdk.Tests.Services
         public IAMTests() : base(true) { }
 
         [Test]
+        public void CreateUserV3Tests()
+        {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
+            string user_name = ("csharpsdk_" + Helper.GenerateRandomId(8));
+            string user_password = Helper.GenerateRandomPassword(10);
+            string user_email = (user_name + "@dummy.com");
+            string user_id = String.Empty;
+
+            DisableRetry();
+
+            #region Create a user (V3)
+            ModelUserCreateRequestV3 newUser = new ModelUserCreateRequestV3()
+            {
+                AuthType = "EMAILPASSWD",
+                EmailAddress = user_email,
+                Password = user_password,
+                DisplayName = "CSharp Server SDK Test",
+                Country = "ID",
+                DateOfBirth = "1995-01-10"
+            };
+
+            ModelUserCreateResponseV3? cuResp = _Sdk.Iam.Users.PublicCreateUserV3Op
+                .Execute(newUser, _Sdk.Namespace);
+            #endregion
+            Assert.IsNotNull(cuResp);
+            if (cuResp != null)
+            {
+                Assert.AreEqual(user_email, cuResp.EmailAddress);
+                user_id = cuResp.UserId!;
+            }
+
+            _Sdk.Iam.Users.AdminDeleteUserInformationV3Op.Execute(_Sdk.Namespace, user_id);
+
+            ResetPolicy();
+        }
+
+        [Test]
         public void IamServiceTests()
         {
             Assert.IsNotNull(_Sdk);
