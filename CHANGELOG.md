@@ -1,3 +1,9 @@
+<a name="v0.24.0"></a>
+## [v0.24.0]
+- Added Create User V3 integration test.
+- Namespace changed for some endpoints. See affected endpoint's [here](docs/migration-guides/migration-guide-v0.23-to-v0.24.md)
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.23.0"></a>
 ## [v0.23.0]
 - Added [getting started](samples/AccelByte.Sdk.Sample.GettingStarted) sample app.

@@ -1,3 +1,110 @@
+# C# Server SDK v0.24.0
+
+## achievement Service
+
+### What's New
+---
+* `GET` /achievement/v1/admin/namespaces/{namespace}/tags Query tags
+* `DELETE` /achievement/v1/admin/namespaces/{namespace}/users/{userId}/anonymization/achievements Anonymize user's achievement
+* `GET` /achievement/v1/public/namespaces/{namespace}/tags Query tags
+
+### What's Changed
+---
+`GET` /achievement/v1/admin/namespaces/{namespace}/achievements Query achievements  
+    Parameters
+
+        Add tags //tags
+`GET` /achievement/v1/admin/namespaces/{namespace}/achievements/export Export achievements configuration into a json file  
+    Parameters
+
+        Add tags //tags
+`GET` /achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements Query user achievements [include achieved and in-progress]  
+    Parameters
+
+        Add tags //tags
+`GET` /achievement/v1/public/namespaces/{namespace}/achievements Query achievements  
+    Parameters
+
+        Add tags //tags
+`GET` /achievement/v1/public/namespaces/{namespace}/users/{userId}/achievements Query user achievements [include achieved and in-progress]  
+    Parameters
+
+        Add tags //tags
+
+## basic Service
+
+### What's New
+---
+* `GET` /basic/v1/admin/namespaces/{namespace}/game Get game namespaces
+
+### What's Changed
+---
+`GET` /basic/v1/admin/namespaces Get all namespaces  
+    Return Type
+
+        Insert parentNamespace //parentNamespace is only present in multi tenant mode
+`GET` /basic/v1/admin/namespaces/{namespace} Get a namespace  
+    Return Type
+
+        Insert parentNamespace //parentNamespace is only present in multi tenant mode
+`DELETE` /basic/v1/admin/namespaces/{namespace} Delete a namespace  
+    Return Type
+
+        Insert parentNamespace //parentNamespace is only present in multi tenant mode
+`PATCH` /basic/v1/admin/namespaces/{namespace}/basic Update namespace basic info  
+    Return Type
+
+        Insert parentNamespace //parentNamespace is only present in multi tenant mode
+`PATCH` /basic/v1/admin/namespaces/{namespace}/status Change namespace status  
+    Return Type
+
+        Insert parentNamespace //parentNamespace is only present in multi tenant mode
+`GET` /basic/v1/public/namespaces Get all namespaces  
+    Return Type
+
+        Insert parentNamespace //parentNamespace is only present in multi tenant mode
+
+## dslogmanager Service
+
+### What's New
+---
+* `GET` /dslogmanager/admin/namespaces/{namespace}/servers/{podName}/logs Queries server logs
+
+## dsmc Service
+
+### What's Deprecated
+---
+* `GET` /dsmcontroller/admin/namespaces/{namespace}/servers/{podName}/logs Queries server logs
+
+## gametelemetry Service
+
+### What's Changed
+---
+`GET` /game-telemetry/v1/admin/namespaces/{namespace}/events Get Events  
+    Parameters
+
+        Modify endTime //End time of data to be queried. Default: Current time in UTC.
+        Modify startTime //Start time of data to be queried. Default: Current time in UTC minus 1 day.
+
+## iam Service
+
+### What's New
+---
+* `GET` /iam/v3/admin/namespaces/{namespace}/users/linkhistories Search linking history of the query platform with platform user id
+* `POST` /iam/v3/link/code/request Generate one time linking code
+* `POST` /iam/v3/link/code/validate Validate one time linking code
+* `POST` /iam/v3/link/token/exchange Generate publisher token by headless account's one time link code
+* `GET` /iam/v3/public/users/me/headless/link/conflict Get conflict result when link headless account to current full account by one time code
+* `POST` /iam/v3/public/users/me/headless/linkWithProgression Link headless account to current full account
+
+### What's Changed
+---
+`GET` /iam/v3/oauth/authorize OAuth2 authorize API  
+    Parameters
+
+        Add oneTimeLinkCode //One time link code for headless account to link. Can get from [/iam/v3/link/code/request]
+
+
 # C# Server SDK v0.23.0
 
 ## gametelemetry Service
