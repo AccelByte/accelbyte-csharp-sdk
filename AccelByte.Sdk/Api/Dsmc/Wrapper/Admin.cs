@@ -47,10 +47,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         {
             get { return Operation.DeleteServer.Builder.SetWrapperObject(this); }
         }
-        public GetServerLogs.GetServerLogsBuilder GetServerLogsOp
-        {
-            get { return Operation.GetServerLogs.Builder.SetWrapperObject(this); }
-        }
         public ListSession.ListSessionBuilder ListSessionOp
         {
             get { return Operation.ListSession.Builder.SetWrapperObject(this); }
@@ -117,14 +113,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ModelsServerLogs? GetServerLogs(GetServerLogs input) {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

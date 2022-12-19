@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     ///
     /// Create a namespace.
     /// By default the namespace is enabled.
+    /// In multi tenant mode, parentNamespace will be automatically filled with requester namespace.
     /// Other detail info:
     /// 
     ///   * Required permission : resource= "ADMIN:NAMESPACE" , action=1 (CREATE)

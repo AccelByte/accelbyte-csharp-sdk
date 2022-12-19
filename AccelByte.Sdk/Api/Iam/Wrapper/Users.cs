@@ -379,6 +379,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminInviteUserV3.Builder.SetWrapperObject(this); }
         }
+        public AdminQueryThirdPlatformLinkHistoryV3.AdminQueryThirdPlatformLinkHistoryV3Builder AdminQueryThirdPlatformLinkHistoryV3Op
+        {
+            get { return Operation.AdminQueryThirdPlatformLinkHistoryV3.Builder.SetWrapperObject(this); }
+        }
         public AdminListUsersV3.AdminListUsersV3Builder AdminListUsersV3Op
         {
             get { return Operation.AdminListUsersV3.Builder.SetWrapperObject(this); }
@@ -682,6 +686,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public PublicGetMyUserV3.PublicGetMyUserV3Builder PublicGetMyUserV3Op
         {
             get { return Operation.PublicGetMyUserV3.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetLinkHeadlessAccountToMyAccountConflictV3.PublicGetLinkHeadlessAccountToMyAccountConflictV3Builder PublicGetLinkHeadlessAccountToMyAccountConflictV3Op
+        {
+            get { return Operation.PublicGetLinkHeadlessAccountToMyAccountConflictV3.Builder.SetWrapperObject(this); }
+        }
+        public LinkHeadlessAccountToMyAccountV3.LinkHeadlessAccountToMyAccountV3Builder LinkHeadlessAccountToMyAccountV3Op
+        {
+            get { return Operation.LinkHeadlessAccountToMyAccountV3.Builder.SetWrapperObject(this); }
         }
         public PublicSendVerificationLinkV3.PublicSendVerificationLinkV3Builder PublicSendVerificationLinkV3Op
         {
@@ -1477,6 +1489,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.ModelLinkingHistoryResponseWithPaginationV3? AdminQueryThirdPlatformLinkHistoryV3(AdminQueryThirdPlatformLinkHistoryV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.AccountcommonListUsersWithPlatformAccountsResponse? AdminListUsersV3(AdminListUsersV3 input) {
             var response = _sdk.RunRequest(input);
 
@@ -2081,6 +2101,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelGetLinkHeadlessAccountConflictResponse? PublicGetLinkHeadlessAccountToMyAccountConflictV3(PublicGetLinkHeadlessAccountToMyAccountConflictV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void LinkHeadlessAccountToMyAccountV3(LinkHeadlessAccountToMyAccountV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

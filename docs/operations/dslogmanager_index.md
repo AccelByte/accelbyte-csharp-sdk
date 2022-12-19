@@ -4,6 +4,11 @@
 
 ## Operations
 
+### Admin Wrapper:  [Admin](../../AccelByte.Sdk/Api/Dslogmanager/Wrapper/Admin.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/dslogmanager/admin/namespaces/{namespace}/servers/{podName}/logs` | GET | GetServerLogs | [GetServerLogs](../../AccelByte.Sdk/Api/Dslogmanager/Operation/Admin/GetServerLogs.cs) | [GetServerLogs](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dslogmanager/Admin/GetServerLogs.cs) |
+
 ### Terminated Servers Wrapper:  [TerminatedServers](../../AccelByte.Sdk/Api/Dslogmanager/Wrapper/TerminatedServers.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -42,5 +47,6 @@
 | `models.RequestMatchParty` | [ModelsRequestMatchParty](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsRequestMatchParty.cs) |
 | `models.RequestMatchingAlly` | [ModelsRequestMatchingAlly](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsRequestMatchingAlly.cs) |
 | `models.Server` | [ModelsServer](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsServer.cs) |
+| `models.ServerLogs` | [ModelsServerLogs](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsServerLogs.cs) |
 | `models.StatusHistory` | [ModelsStatusHistory](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsStatusHistory.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Dslogmanager/Model/ResponseError.cs) |

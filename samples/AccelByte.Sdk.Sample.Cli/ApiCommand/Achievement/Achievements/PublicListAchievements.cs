@@ -39,6 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
         [SdkCommandArgument("sortBy")]
         public string? SortBy { get; set; }
 
+        [SdkCommandArgument("tags")]
+        public List<string>? Tags { get; set; }
+
         [SdkCommandArgument("language")]
         public string Language { get; set; } = String.Empty;
 
@@ -56,6 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 Limit,                
                 Offset,                
                 (SortBy is null ? null : PublicListAchievementsSortBy.NewValue(SortBy)),                
+                Tags,                
                 Language                
             );            
             

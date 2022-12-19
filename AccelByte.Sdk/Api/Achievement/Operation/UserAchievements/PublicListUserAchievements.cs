@@ -14,10 +14,10 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Achievement.Operation
 {
     /// <summary>
-    /// AdminListUserAchievements
+    /// PublicListUserAchievements
     ///
     /// Required permission
-    /// `ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]` and scope `social`
+    /// `NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]` and scope `social`
     /// 
     /// 
     /// 
@@ -34,13 +34,13 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// 
     /// `achievedAt` value will return default value: `0001-01-01T00:00:00Z` for user achievement that locked or in progress
     /// </summary>
-    public class AdminListUserAchievements : AccelByte.Sdk.Core.Operation
+    public class PublicListUserAchievements : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminListUserAchievementsBuilder Builder = new AdminListUserAchievementsBuilder();
+        public static PublicListUserAchievementsBuilder Builder = new PublicListUserAchievementsBuilder();
 
-        public class AdminListUserAchievementsBuilder
-            : OperationBuilder<AdminListUserAchievementsBuilder>
+        public class PublicListUserAchievementsBuilder
+            : OperationBuilder<PublicListUserAchievementsBuilder>
         {
 
             public long? Limit { get; set; }
@@ -49,28 +49,36 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
             public bool? PreferUnlocked { get; set; }
 
+            public List<string>? Tags { get; set; }
 
 
 
 
-            internal AdminListUserAchievementsBuilder() { }
+
+            internal PublicListUserAchievementsBuilder() { }
 
 
-            public AdminListUserAchievementsBuilder SetLimit(long _limit)
+            public PublicListUserAchievementsBuilder SetLimit(long _limit)
             {
                 Limit = _limit;
                 return this;
             }
 
-            public AdminListUserAchievementsBuilder SetOffset(long _offset)
+            public PublicListUserAchievementsBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
                 return this;
             }
 
-            public AdminListUserAchievementsBuilder SetPreferUnlocked(bool _preferUnlocked)
+            public PublicListUserAchievementsBuilder SetPreferUnlocked(bool _preferUnlocked)
             {
                 PreferUnlocked = _preferUnlocked;
+                return this;
+            }
+
+            public PublicListUserAchievementsBuilder SetTags(List<string> _tags)
+            {
+                Tags = _tags;
                 return this;
             }
 
@@ -78,12 +86,12 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
 
 
-            public AdminListUserAchievements Build(
+            public PublicListUserAchievements Build(
                 string namespace_,
                 string userId
             )
             {
-                AdminListUserAchievements op = new AdminListUserAchievements(this,
+                PublicListUserAchievements op = new PublicListUserAchievements(this,
                     namespace_,                    
                     userId                    
                 );
@@ -93,7 +101,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             }
         }
 
-        private AdminListUserAchievements(AdminListUserAchievementsBuilder builder,
+        private PublicListUserAchievements(PublicListUserAchievementsBuilder builder,
             string namespace_,
             string userId
         )
@@ -104,9 +112,11 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.PreferUnlocked != null) QueryParams["preferUnlocked"] = Convert.ToString(builder.PreferUnlocked)!;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             
 
             
+            CollectionFormatMap["tags"] = "csv";
             
             
 
@@ -114,12 +124,13 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         }
         #endregion
 
-        public AdminListUserAchievements(
+        public PublicListUserAchievements(
             string namespace_,            
             string userId,            
             long? limit,            
             long? offset,            
-            bool? preferUnlocked            
+            bool? preferUnlocked,            
+            List<string>? tags            
         )
         {
             PathParams["namespace"] = namespace_;
@@ -128,16 +139,18 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (preferUnlocked != null) QueryParams["preferUnlocked"] = Convert.ToString(preferUnlocked)!;
+            if (tags is not null) QueryParams["tags"] = tags;
             
 
             
+            CollectionFormatMap["tags"] = "csv";
             
             
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements";
+        public override string Path => "/achievement/v1/public/namespaces/{namespace}/users/{userId}/achievements";
 
         public override HttpMethod Method => HttpMethod.Get;
 

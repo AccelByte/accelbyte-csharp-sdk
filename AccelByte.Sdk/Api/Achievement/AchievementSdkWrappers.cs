@@ -24,6 +24,39 @@ namespace AccelByte.Sdk.Core
         }
         private Achievements? _Achievements = null;
 
+        public Tags Tags
+        {
+            get
+            {
+                if (_Tags == null)
+                    _Tags = new Tags(_SdkObject);
+                return _Tags;
+            }
+        }
+        private Tags? _Tags = null;
+
+        public UserAchievements UserAchievements
+        {
+            get
+            {
+                if (_UserAchievements == null)
+                    _UserAchievements = new UserAchievements(_SdkObject);
+                return _UserAchievements;
+            }
+        }
+        private UserAchievements? _UserAchievements = null;
+
+        public Anonymization Anonymization
+        {
+            get
+            {
+                if (_Anonymization == null)
+                    _Anonymization = new Anonymization(_SdkObject);
+                return _Anonymization;
+            }
+        }
+        private Anonymization? _Anonymization = null;
+
         internal AchievementSdkWrappers(AccelByteSDK sdk)
         {
             _SdkObject = sdk;

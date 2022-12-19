@@ -7,11 +7,11 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Dsmc.Model;
+using AccelByte.Sdk.Api.Dslogmanager.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Dsmc.Operation
+namespace AccelByte.Sdk.Api.Dslogmanager.Operation
 {
     /// <summary>
     /// getServerLogs
@@ -31,12 +31,36 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             : OperationBuilder<GetServerLogsBuilder>
         {
 
+            public string? LogType { get; set; }
+
+            public long? Offset { get; set; }
+
+            public string? Origin { get; set; }
+
 
 
 
 
             internal GetServerLogsBuilder() { }
 
+
+            public GetServerLogsBuilder SetLogType(string _logType)
+            {
+                LogType = _logType;
+                return this;
+            }
+
+            public GetServerLogsBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public GetServerLogsBuilder SetOrigin(string _origin)
+            {
+                Origin = _origin;
+                return this;
+            }
 
 
 
@@ -65,6 +89,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             PathParams["namespace"] = namespace_;
             PathParams["podName"] = podName;
             
+            if (builder.LogType is not null) QueryParams["logType"] = builder.LogType;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Origin is not null) QueryParams["origin"] = builder.Origin;
             
 
             
@@ -77,12 +104,18 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public GetServerLogs(
             string namespace_,            
-            string podName            
+            string podName,            
+            string? logType,            
+            long? offset,            
+            string? origin            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["podName"] = podName;
             
+            if (logType is not null) QueryParams["logType"] = logType;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (origin is not null) QueryParams["origin"] = origin;
             
 
             
@@ -92,7 +125,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/dsmcontroller/admin/namespaces/{namespace}/servers/{podName}/logs";
+        public override string Path => "/dslogmanager/admin/namespaces/{namespace}/servers/{podName}/logs";
 
         public override HttpMethod Method => HttpMethod.Get;
 

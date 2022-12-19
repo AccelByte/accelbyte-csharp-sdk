@@ -76,7 +76,6 @@
 | `/dsmcontroller/admin/namespaces/{namespace}/servers/local/{name}` | DELETE | DeleteLocalServer | [DeleteLocalServer](../../AccelByte.Sdk/Api/Dsmc/Operation/Admin/DeleteLocalServer.cs) | [DeleteLocalServer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Admin/DeleteLocalServer.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/servers/{podName}` | GET | GetServer | [GetServer](../../AccelByte.Sdk/Api/Dsmc/Operation/Admin/GetServer.cs) | [GetServer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Admin/GetServer.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/servers/{podName}` | DELETE | DeleteServer | [DeleteServer](../../AccelByte.Sdk/Api/Dsmc/Operation/Admin/DeleteServer.cs) | [DeleteServer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Admin/DeleteServer.cs) |
-| `/dsmcontroller/admin/namespaces/{namespace}/servers/{podName}/logs` | GET | GetServerLogs | [GetServerLogs](../../AccelByte.Sdk/Api/Dsmc/Operation/Admin/GetServerLogs.cs) | [GetServerLogs](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Admin/GetServerLogs.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/sessions` | GET | ListSession | [ListSession](../../AccelByte.Sdk/Api/Dsmc/Operation/Admin/ListSession.cs) | [ListSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Admin/ListSession.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/sessions/count` | GET | CountSession | [CountSession](../../AccelByte.Sdk/Api/Dsmc/Operation/Admin/CountSession.cs) | [CountSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Admin/CountSession.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/sessions/{sessionID}` | DELETE | DeleteSession | [DeleteSession](../../AccelByte.Sdk/Api/Dsmc/Operation/Admin/DeleteSession.cs) | [DeleteSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Admin/DeleteSession.cs) |
@@ -162,7 +161,6 @@
 | `models.RequestMatchParty` | [ModelsRequestMatchParty](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsRequestMatchParty.cs) |
 | `models.RequestMatchingAlly` | [ModelsRequestMatchingAlly](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsRequestMatchingAlly.cs) |
 | `models.Server` | [ModelsServer](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsServer.cs) |
-| `models.ServerLogs` | [ModelsServerLogs](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsServerLogs.cs) |
 | `models.ServerSessionResponse` | [ModelsServerSessionResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsServerSessionResponse.cs) |
 | `models.Session` | [ModelsSession](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsSession.cs) |
 | `models.SessionResponse` | [ModelsSessionResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsSessionResponse.cs) |

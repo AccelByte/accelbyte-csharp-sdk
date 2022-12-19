@@ -18,48 +18,48 @@ using AccelByte.Sdk.Api.Achievement.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
-    [SdkConsoleCommand("achievement","adminlistuserachievements")]
-    public class AdminListUserAchievementsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("achievement","publiclisttags")]
+    public class PublicListTagsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName{ get { return "Achievement"; } }
 
-        public string OperationName{ get { return "AdminListUserAchievements"; } }
+        public string OperationName{ get { return "PublicListTags"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("userId")]
-        public string UserId { get; set; } = String.Empty;
-
         [SdkCommandArgument("limit")]
         public long? Limit { get; set; }
+
+        [SdkCommandArgument("name")]
+        public string? Name { get; set; }
 
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
 
-        [SdkCommandArgument("preferUnlocked")]
-        public bool? PreferUnlocked { get; set; }
+        [SdkCommandArgument("sortBy")]
+        public string? SortBy { get; set; }
 
-        public AdminListUserAchievementsCommand(AccelByteSDK sdk)
+        public PublicListTagsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Achievement.Wrapper.Achievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.Achievements(_SDK);
+            AccelByte.Sdk.Api.Achievement.Wrapper.Tags wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.Tags(_SDK);
 
-            AdminListUserAchievements operation = new AdminListUserAchievements(
+            PublicListTags operation = new PublicListTags(
                 Namespace,                
-                UserId,                
                 Limit,                
+                Name,                
                 Offset,                
-                PreferUnlocked                
+                SortBy                
             );            
             
-            AccelByte.Sdk.Api.Achievement.Model.ModelsPaginatedUserAchievementResponse? response = wrapper.AdminListUserAchievements(operation);
+            AccelByte.Sdk.Api.Achievement.Model.ModelsPaginatedTagResponse? response = wrapper.PublicListTags(operation);
             if (response == null)
                 return "No response from server.";
 

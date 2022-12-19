@@ -36,6 +36,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("createHeadless")]
         public bool? CreateHeadless { get; set; }
 
+        [SdkCommandArgument("oneTimeLinkCode")]
+        public string? OneTimeLinkCode { get; set; }
+
         [SdkCommandArgument("redirectUri")]
         public string? RedirectUri { get; set; }
 
@@ -70,6 +73,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 CodeChallenge,                
                 (CodeChallengeMethod is null ? null : AuthorizeV3CodeChallengeMethod.NewValue(CodeChallengeMethod)),                
                 CreateHeadless,                
+                OneTimeLinkCode,                
                 RedirectUri,                
                 Scope,                
                 State,                

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Achievement.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
-    [SdkConsoleCommand("achievement","adminunlockachievement")]
-    public class AdminUnlockAchievementCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("achievement","adminresetachievement")]
+    public class AdminResetAchievementCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName{ get { return "Achievement"; } }
 
-        public string OperationName{ get { return "AdminUnlockAchievement"; } }
+        public string OperationName{ get { return "AdminResetAchievement"; } }
 
         [SdkCommandArgument("achievementCode")]
         public string AchievementCode { get; set; } = String.Empty;
@@ -36,22 +36,22 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
-        public AdminUnlockAchievementCommand(AccelByteSDK sdk)
+        public AdminResetAchievementCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Achievement.Wrapper.Achievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.Achievements(_SDK);
+            AccelByte.Sdk.Api.Achievement.Wrapper.UserAchievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.UserAchievements(_SDK);
 
-            AdminUnlockAchievement operation = new AdminUnlockAchievement(
+            AdminResetAchievement operation = new AdminResetAchievement(
                 AchievementCode,                
                 Namespace,                
                 UserId                
             );            
             
-            wrapper.AdminUnlockAchievement(operation);
+            wrapper.AdminResetAchievement(operation);
             return String.Empty;
         }
     }

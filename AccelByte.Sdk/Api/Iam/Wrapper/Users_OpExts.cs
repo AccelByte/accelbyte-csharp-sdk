@@ -1174,6 +1174,20 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminInviteUserV3(op);
         }
 
+        public static Iam.Model.ModelLinkingHistoryResponseWithPaginationV3? Execute(
+            this AdminQueryThirdPlatformLinkHistoryV3.AdminQueryThirdPlatformLinkHistoryV3Builder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            AdminQueryThirdPlatformLinkHistoryV3 op = builder.Build(
+                namespace_,
+                platformId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminQueryThirdPlatformLinkHistoryV3(op);
+        }
+
         public static Iam.Model.AccountcommonListUsersWithPlatformAccountsResponse? Execute(
             this AdminListUsersV3.AdminListUsersV3Builder builder,
             string namespace_
@@ -2300,6 +2314,30 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetMyUserV3(op);
+        }
+
+        public static Iam.Model.ModelGetLinkHeadlessAccountConflictResponse? Execute(
+            this PublicGetLinkHeadlessAccountToMyAccountConflictV3.PublicGetLinkHeadlessAccountToMyAccountConflictV3Builder builder,
+            string oneTimeLinkCode
+        )
+        {
+            PublicGetLinkHeadlessAccountToMyAccountConflictV3 op = builder.Build(
+                oneTimeLinkCode
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetLinkHeadlessAccountToMyAccountConflictV3(op);
+        }
+
+        public static void Execute(
+            this LinkHeadlessAccountToMyAccountV3.LinkHeadlessAccountToMyAccountV3Builder builder,
+            ModelLinkHeadlessAccountRequest body
+        )
+        {
+            LinkHeadlessAccountToMyAccountV3 op = builder.Build(
+                body
+            );
+
+            ((Iam.Wrapper.Users)builder.WrapperObject!).LinkHeadlessAccountToMyAccountV3(op);
         }
 
         public static void Execute(

@@ -51,18 +51,6 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
         {
             get { return Operation.AdminUpdateAchievementListOrder.Builder.SetWrapperObject(this); }
         }
-        public AdminListUserAchievements.AdminListUserAchievementsBuilder AdminListUserAchievementsOp
-        {
-            get { return Operation.AdminListUserAchievements.Builder.SetWrapperObject(this); }
-        }
-        public AdminResetAchievement.AdminResetAchievementBuilder AdminResetAchievementOp
-        {
-            get { return Operation.AdminResetAchievement.Builder.SetWrapperObject(this); }
-        }
-        public AdminUnlockAchievement.AdminUnlockAchievementBuilder AdminUnlockAchievementOp
-        {
-            get { return Operation.AdminUnlockAchievement.Builder.SetWrapperObject(this); }
-        }
         public PublicListAchievements.PublicListAchievementsBuilder PublicListAchievementsOp
         {
             get { return Operation.PublicListAchievements.Builder.SetWrapperObject(this); }
@@ -70,14 +58,6 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
         public PublicGetAchievement.PublicGetAchievementBuilder PublicGetAchievementOp
         {
             get { return Operation.PublicGetAchievement.Builder.SetWrapperObject(this); }
-        }
-        public PublicListUserAchievements.PublicListUserAchievementsBuilder PublicListUserAchievementsOp
-        {
-            get { return Operation.PublicListUserAchievements.Builder.SetWrapperObject(this); }
-        }
-        public PublicUnlockAchievement.PublicUnlockAchievementBuilder PublicUnlockAchievementOp
-        {
-            get { return Operation.PublicUnlockAchievement.Builder.SetWrapperObject(this); }
         }
         #endregion
         
@@ -145,30 +125,6 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedUserAchievementResponse? AdminListUserAchievements(AdminListUserAchievements input) {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code, 
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void AdminResetAchievement(AdminResetAchievement input) {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code, 
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void AdminUnlockAchievement(AdminUnlockAchievement input) {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code, 
-                    response.ContentType,
-                    response.Payload);
-        }
         public Model.ModelsPublicAchievementsResponse? PublicListAchievements(PublicListAchievements input) {
             var response = _sdk.RunRequest(input);
 
@@ -181,22 +137,6 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ModelsPaginatedUserAchievementResponse? PublicListUserAchievements(PublicListUserAchievements input) {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code, 
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void PublicUnlockAchievement(PublicUnlockAchievement input) {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

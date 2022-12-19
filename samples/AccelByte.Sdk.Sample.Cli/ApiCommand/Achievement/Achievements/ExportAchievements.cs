@@ -30,6 +30,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("tags")]
+        public List<string>? Tags { get; set; }
+
         public ExportAchievementsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,7 +43,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             AccelByte.Sdk.Api.Achievement.Wrapper.Achievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.Achievements(_SDK);
 
             ExportAchievements operation = new ExportAchievements(
-                Namespace                
+                Namespace,                
+                Tags                
             );            
             
             Stream? response = wrapper.ExportAchievements(operation);

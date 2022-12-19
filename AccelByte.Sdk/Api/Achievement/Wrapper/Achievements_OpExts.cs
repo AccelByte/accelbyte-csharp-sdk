@@ -122,52 +122,6 @@ namespace AccelByte.Sdk.Api
             ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminUpdateAchievementListOrder(op);
         }
 
-        public static Achievement.Model.ModelsPaginatedUserAchievementResponse? Execute(
-            this AdminListUserAchievements.AdminListUserAchievementsBuilder builder,
-            string namespace_,
-            string userId
-        )
-        {
-            AdminListUserAchievements op = builder.Build(
-                namespace_,
-                userId
-            );
-
-            return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminListUserAchievements(op);
-        }
-
-        public static void Execute(
-            this AdminResetAchievement.AdminResetAchievementBuilder builder,
-            string achievementCode,
-            string namespace_,
-            string userId
-        )
-        {
-            AdminResetAchievement op = builder.Build(
-                achievementCode,
-                namespace_,
-                userId
-            );
-
-            ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminResetAchievement(op);
-        }
-
-        public static void Execute(
-            this AdminUnlockAchievement.AdminUnlockAchievementBuilder builder,
-            string achievementCode,
-            string namespace_,
-            string userId
-        )
-        {
-            AdminUnlockAchievement op = builder.Build(
-                achievementCode,
-                namespace_,
-                userId
-            );
-
-            ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminUnlockAchievement(op);
-        }
-
         public static Achievement.Model.ModelsPublicAchievementsResponse? Execute(
             this PublicListAchievements.PublicListAchievementsBuilder builder,
             string namespace_,
@@ -196,36 +150,6 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).PublicGetAchievement(op);
-        }
-
-        public static Achievement.Model.ModelsPaginatedUserAchievementResponse? Execute(
-            this PublicListUserAchievements.PublicListUserAchievementsBuilder builder,
-            string namespace_,
-            string userId
-        )
-        {
-            PublicListUserAchievements op = builder.Build(
-                namespace_,
-                userId
-            );
-
-            return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).PublicListUserAchievements(op);
-        }
-
-        public static void Execute(
-            this PublicUnlockAchievement.PublicUnlockAchievementBuilder builder,
-            string achievementCode,
-            string namespace_,
-            string userId
-        )
-        {
-            PublicUnlockAchievement op = builder.Build(
-                achievementCode,
-                namespace_,
-                userId
-            );
-
-            ((Achievement.Wrapper.Achievements)builder.WrapperObject!).PublicUnlockAchievement(op);
         }
 
     }

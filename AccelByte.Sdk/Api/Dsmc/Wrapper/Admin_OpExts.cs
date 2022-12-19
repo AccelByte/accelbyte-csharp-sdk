@@ -106,20 +106,6 @@ namespace AccelByte.Sdk.Api
             ((Dsmc.Wrapper.Admin)builder.WrapperObject!).DeleteServer(op);
         }
 
-        public static Dsmc.Model.ModelsServerLogs? Execute(
-            this GetServerLogs.GetServerLogsBuilder builder,
-            string namespace_,
-            string podName
-        )
-        {
-            GetServerLogs op = builder.Build(
-                namespace_,
-                podName
-            );
-
-            return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).GetServerLogs(op);
-        }
-
         public static Dsmc.Model.ModelsListSessionResponse? Execute(
             this ListSession.ListSessionBuilder builder,
             string namespace_,

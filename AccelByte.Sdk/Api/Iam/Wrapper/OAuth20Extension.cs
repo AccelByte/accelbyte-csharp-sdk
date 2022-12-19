@@ -31,6 +31,18 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.GenerateTokenByNewHeadlessAccountV3.Builder.SetWrapperObject(this); }
         }
+        public RequestOneTimeLinkingCodeV3.RequestOneTimeLinkingCodeV3Builder RequestOneTimeLinkingCodeV3Op
+        {
+            get { return Operation.RequestOneTimeLinkingCodeV3.Builder.SetWrapperObject(this); }
+        }
+        public ValidateOneTimeLinkingCodeV3.ValidateOneTimeLinkingCodeV3Builder ValidateOneTimeLinkingCodeV3Op
+        {
+            get { return Operation.ValidateOneTimeLinkingCodeV3.Builder.SetWrapperObject(this); }
+        }
+        public RequestTokenByOneTimeLinkCodeResponseV3.RequestTokenByOneTimeLinkCodeResponseV3Builder RequestTokenByOneTimeLinkCodeResponseV3Op
+        {
+            get { return Operation.RequestTokenByOneTimeLinkCodeResponseV3.Builder.SetWrapperObject(this); }
+        }
         public GetCountryLocationV3.GetCountryLocationV3Builder GetCountryLocationV3Op
         {
             get { return Operation.GetCountryLocationV3.Builder.SetWrapperObject(this); }
@@ -70,6 +82,30 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public Model.OauthmodelTokenResponseV3? GenerateTokenByNewHeadlessAccountV3(GenerateTokenByNewHeadlessAccountV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OauthmodelOneTimeLinkingCodeResponse? RequestOneTimeLinkingCodeV3(RequestOneTimeLinkingCodeV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OauthmodelOneTimeLinkingCodeValidationResponse? ValidateOneTimeLinkingCodeV3(ValidateOneTimeLinkingCodeV3 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OauthmodelTokenResponseV3? RequestTokenByOneTimeLinkCodeResponseV3(RequestTokenByOneTimeLinkCodeResponseV3 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

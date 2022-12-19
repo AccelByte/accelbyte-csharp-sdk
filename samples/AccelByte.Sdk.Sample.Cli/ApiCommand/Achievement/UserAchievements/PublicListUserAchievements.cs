@@ -42,6 +42,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
         [SdkCommandArgument("preferUnlocked")]
         public bool? PreferUnlocked { get; set; }
 
+        [SdkCommandArgument("tags")]
+        public List<string>? Tags { get; set; }
+
         public PublicListUserAchievementsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,14 +52,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Achievement.Wrapper.Achievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.Achievements(_SDK);
+            AccelByte.Sdk.Api.Achievement.Wrapper.UserAchievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.UserAchievements(_SDK);
 
             PublicListUserAchievements operation = new PublicListUserAchievements(
                 Namespace,                
                 UserId,                
                 Limit,                
                 Offset,                
-                PreferUnlocked                
+                PreferUnlocked,                
+                Tags                
             );            
             
             AccelByte.Sdk.Api.Achievement.Model.ModelsPaginatedUserAchievementResponse? response = wrapper.PublicListUserAchievements(operation);

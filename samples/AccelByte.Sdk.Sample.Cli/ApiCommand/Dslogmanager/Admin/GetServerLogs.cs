@@ -12,18 +12,18 @@ using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Sample.Cli.Command;
 
-using AccelByte.Sdk.Api.Dsmc.Wrapper;
-using AccelByte.Sdk.Api.Dsmc.Model;
-using AccelByte.Sdk.Api.Dsmc.Operation;
+using AccelByte.Sdk.Api.Dslogmanager.Wrapper;
+using AccelByte.Sdk.Api.Dslogmanager.Model;
+using AccelByte.Sdk.Api.Dslogmanager.Operation;
 
-namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
 {
-    [SdkConsoleCommand("dsmc","getserverlogs")]
+    [SdkConsoleCommand("dslogmanager","getserverlogs")]
     public class GetServerLogsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName{ get { return "Dslogmanager"; } }
 
         public string OperationName{ get { return "GetServerLogs"; } }
 
@@ -33,6 +33,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
         [SdkCommandArgument("podName")]
         public string PodName { get; set; } = String.Empty;
 
+        [SdkCommandArgument("logType")]
+        public string? LogType { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public long? Offset { get; set; }
+
+        [SdkCommandArgument("origin")]
+        public string? Origin { get; set; }
+
         public GetServerLogsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,14 +49,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Dsmc.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Admin(_SDK);
+            AccelByte.Sdk.Api.Dslogmanager.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Dslogmanager.Wrapper.Admin(_SDK);
 
             GetServerLogs operation = new GetServerLogs(
                 Namespace,                
-                PodName                
+                PodName,                
+                LogType,                
+                Offset,                
+                Origin                
             );            
             
-            AccelByte.Sdk.Api.Dsmc.Model.ModelsServerLogs? response = wrapper.GetServerLogs(operation);
+            AccelByte.Sdk.Api.Dslogmanager.Model.ModelsServerLogs? response = wrapper.GetServerLogs(operation);
             if (response == null)
                 return "No response from server.";
 

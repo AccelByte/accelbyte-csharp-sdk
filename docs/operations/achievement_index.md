@@ -4,7 +4,7 @@
 
 ## Operations
 
-### achievements Wrapper:  [Achievements](../../AccelByte.Sdk/Api/Achievement/Wrapper/Achievements.cs)
+### Achievements Wrapper:  [Achievements](../../AccelByte.Sdk/Api/Achievement/Wrapper/Achievements.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/achievement/v1/admin/namespaces/{namespace}/achievements` | GET | AdminListAchievements | [AdminListAchievements](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/AdminListAchievements.cs) | [AdminListAchievements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/AdminListAchievements.cs) |
@@ -15,13 +15,28 @@
 | `/achievement/v1/admin/namespaces/{namespace}/achievements/{achievementCode}` | PUT | AdminUpdateAchievement | [AdminUpdateAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/AdminUpdateAchievement.cs) | [AdminUpdateAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/AdminUpdateAchievement.cs) |
 | `/achievement/v1/admin/namespaces/{namespace}/achievements/{achievementCode}` | DELETE | AdminDeleteAchievement | [AdminDeleteAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/AdminDeleteAchievement.cs) | [AdminDeleteAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/AdminDeleteAchievement.cs) |
 | `/achievement/v1/admin/namespaces/{namespace}/achievements/{achievementCode}` | PATCH | AdminUpdateAchievementListOrder | [AdminUpdateAchievementListOrder](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/AdminUpdateAchievementListOrder.cs) | [AdminUpdateAchievementListOrder](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/AdminUpdateAchievementListOrder.cs) |
-| `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements` | GET | AdminListUserAchievements | [AdminListUserAchievements](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/AdminListUserAchievements.cs) | [AdminListUserAchievements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/AdminListUserAchievements.cs) |
-| `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements/{achievementCode}/reset` | DELETE | AdminResetAchievement | [AdminResetAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/AdminResetAchievement.cs) | [AdminResetAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/AdminResetAchievement.cs) |
-| `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements/{achievementCode}/unlock` | PUT | AdminUnlockAchievement | [AdminUnlockAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/AdminUnlockAchievement.cs) | [AdminUnlockAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/AdminUnlockAchievement.cs) |
 | `/achievement/v1/public/namespaces/{namespace}/achievements` | GET | PublicListAchievements | [PublicListAchievements](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/PublicListAchievements.cs) | [PublicListAchievements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/PublicListAchievements.cs) |
 | `/achievement/v1/public/namespaces/{namespace}/achievements/{achievementCode}` | GET | PublicGetAchievement | [PublicGetAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/PublicGetAchievement.cs) | [PublicGetAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/PublicGetAchievement.cs) |
-| `/achievement/v1/public/namespaces/{namespace}/users/{userId}/achievements` | GET | PublicListUserAchievements | [PublicListUserAchievements](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/PublicListUserAchievements.cs) | [PublicListUserAchievements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/PublicListUserAchievements.cs) |
-| `/achievement/v1/public/namespaces/{namespace}/users/{userId}/achievements/{achievementCode}/unlock` | PUT | PublicUnlockAchievement | [PublicUnlockAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/PublicUnlockAchievement.cs) | [PublicUnlockAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/PublicUnlockAchievement.cs) |
+
+### Tags Wrapper:  [Tags](../../AccelByte.Sdk/Api/Achievement/Wrapper/Tags.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/achievement/v1/admin/namespaces/{namespace}/tags` | GET | AdminListTags | [AdminListTags](../../AccelByte.Sdk/Api/Achievement/Operation/Tags/AdminListTags.cs) | [AdminListTags](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Tags/AdminListTags.cs) |
+| `/achievement/v1/public/namespaces/{namespace}/tags` | GET | PublicListTags | [PublicListTags](../../AccelByte.Sdk/Api/Achievement/Operation/Tags/PublicListTags.cs) | [PublicListTags](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Tags/PublicListTags.cs) |
+
+### User Achievements Wrapper:  [UserAchievements](../../AccelByte.Sdk/Api/Achievement/Wrapper/UserAchievements.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements` | GET | AdminListUserAchievements | [AdminListUserAchievements](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/AdminListUserAchievements.cs) | [AdminListUserAchievements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/AdminListUserAchievements.cs) |
+| `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements/{achievementCode}/reset` | DELETE | AdminResetAchievement | [AdminResetAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/AdminResetAchievement.cs) | [AdminResetAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/AdminResetAchievement.cs) |
+| `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements/{achievementCode}/unlock` | PUT | AdminUnlockAchievement | [AdminUnlockAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/AdminUnlockAchievement.cs) | [AdminUnlockAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/AdminUnlockAchievement.cs) |
+| `/achievement/v1/public/namespaces/{namespace}/users/{userId}/achievements` | GET | PublicListUserAchievements | [PublicListUserAchievements](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/PublicListUserAchievements.cs) | [PublicListUserAchievements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/PublicListUserAchievements.cs) |
+| `/achievement/v1/public/namespaces/{namespace}/users/{userId}/achievements/{achievementCode}/unlock` | PUT | PublicUnlockAchievement | [PublicUnlockAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/PublicUnlockAchievement.cs) | [PublicUnlockAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/PublicUnlockAchievement.cs) |
+
+### Anonymization Wrapper:  [Anonymization](../../AccelByte.Sdk/Api/Achievement/Wrapper/Anonymization.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/anonymization/achievements` | DELETE | AdminAnonymizeUserAchievement | [AdminAnonymizeUserAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/Anonymization/AdminAnonymizeUserAchievement.cs) | [AdminAnonymizeUserAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Anonymization/AdminAnonymizeUserAchievement.cs) |
 
 
 &nbsp;  
@@ -37,10 +52,12 @@
 | `models.AdditionalInfo` | [ModelsAdditionalInfo](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAdditionalInfo.cs) |
 | `models.Icon` | [ModelsIcon](../../AccelByte.Sdk/Api/Achievement/Model/ModelsIcon.cs) |
 | `models.PaginatedAchievementResponse` | [ModelsPaginatedAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPaginatedAchievementResponse.cs) |
+| `models.PaginatedTagResponse` | [ModelsPaginatedTagResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPaginatedTagResponse.cs) |
 | `models.PaginatedUserAchievementResponse` | [ModelsPaginatedUserAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPaginatedUserAchievementResponse.cs) |
 | `models.Pagination` | [ModelsPagination](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPagination.cs) |
 | `models.PublicAchievementResponse` | [ModelsPublicAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPublicAchievementResponse.cs) |
 | `models.PublicAchievementsResponse` | [ModelsPublicAchievementsResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPublicAchievementsResponse.cs) |
+| `models.TagResponse` | [ModelsTagResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsTagResponse.cs) |
 | `models.UserAchievementResponse` | [ModelsUserAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsUserAchievementResponse.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Achievement/Model/ResponseError.cs) |
 | `service.ImportConfigResponse` | [ServiceImportConfigResponse](../../AccelByte.Sdk/Api/Achievement/Model/ServiceImportConfigResponse.cs) |

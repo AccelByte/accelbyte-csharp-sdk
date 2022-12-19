@@ -58,6 +58,44 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).GenerateTokenByNewHeadlessAccountV3(op);
         }
 
+        public static Iam.Model.OauthmodelOneTimeLinkingCodeResponse? Execute(
+            this RequestOneTimeLinkingCodeV3.RequestOneTimeLinkingCodeV3Builder builder,
+            string platformId
+        )
+        {
+            RequestOneTimeLinkingCodeV3 op = builder.Build(
+                platformId
+            );
+
+            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestOneTimeLinkingCodeV3(op);
+        }
+
+        public static Iam.Model.OauthmodelOneTimeLinkingCodeValidationResponse? Execute(
+            this ValidateOneTimeLinkingCodeV3.ValidateOneTimeLinkingCodeV3Builder builder,
+            string oneTimeLinkCode
+        )
+        {
+            ValidateOneTimeLinkingCodeV3 op = builder.Build(
+                oneTimeLinkCode
+            );
+
+            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).ValidateOneTimeLinkingCodeV3(op);
+        }
+
+        public static Iam.Model.OauthmodelTokenResponseV3? Execute(
+            this RequestTokenByOneTimeLinkCodeResponseV3.RequestTokenByOneTimeLinkCodeResponseV3Builder builder,
+            string clientId,
+            string oneTimeLinkCode
+        )
+        {
+            RequestTokenByOneTimeLinkCodeResponseV3 op = builder.Build(
+                clientId,
+                oneTimeLinkCode
+            );
+
+            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestTokenByOneTimeLinkCodeResponseV3(op);
+        }
+
         public static Iam.Model.OauthmodelCountryLocationResponse? Execute(
             this GetCountryLocationV3.GetCountryLocationV3Builder builder
         )

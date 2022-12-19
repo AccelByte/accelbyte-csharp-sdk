@@ -34,6 +34,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
             public PublicListAchievementsSortBy? SortBy { get; set; }
 
+            public List<string>? Tags { get; set; }
+
 
 
 
@@ -56,6 +58,12 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             public PublicListAchievementsBuilder SetSortBy(PublicListAchievementsSortBy _sortBy)
             {
                 SortBy = _sortBy;
+                return this;
+            }
+
+            public PublicListAchievementsBuilder SetTags(List<string> _tags)
+            {
+                Tags = _tags;
                 return this;
             }
 
@@ -88,10 +96,12 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             if (language is not null) QueryParams["language"] = language;
             
 
             
+            CollectionFormatMap["tags"] = "csv";
             
             
 
@@ -104,6 +114,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             long? limit,            
             long? offset,            
             PublicListAchievementsSortBy? sortBy,            
+            List<string>? tags,            
             string language            
         )
         {
@@ -112,10 +123,12 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
+            if (tags is not null) QueryParams["tags"] = tags;
             if (language is not null) QueryParams["language"] = language;
             
 
             
+            CollectionFormatMap["tags"] = "csv";
             
             
 

@@ -32,12 +32,20 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             : OperationBuilder<ExportAchievementsBuilder>
         {
 
+            public List<string>? Tags { get; set; }
+
 
 
 
 
             internal ExportAchievementsBuilder() { }
 
+
+            public ExportAchievementsBuilder SetTags(List<string> _tags)
+            {
+                Tags = _tags;
+                return this;
+            }
 
 
 
@@ -62,9 +70,11 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         {
             PathParams["namespace"] = namespace_;
             
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             
 
             
+            CollectionFormatMap["tags"] = "csv";
             
             
 
@@ -73,14 +83,17 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         #endregion
 
         public ExportAchievements(
-            string namespace_            
+            string namespace_,            
+            List<string>? tags            
         )
         {
             PathParams["namespace"] = namespace_;
             
+            if (tags is not null) QueryParams["tags"] = tags;
             
 
             
+            CollectionFormatMap["tags"] = "csv";
             
             
 

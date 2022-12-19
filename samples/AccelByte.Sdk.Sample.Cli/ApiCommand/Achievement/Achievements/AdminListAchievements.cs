@@ -39,6 +39,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
         [SdkCommandArgument("sortBy")]
         public string? SortBy { get; set; }
 
+        [SdkCommandArgument("tags")]
+        public List<string>? Tags { get; set; }
+
         public AdminListAchievementsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -52,7 +55,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 Namespace,                
                 Limit,                
                 Offset,                
-                (SortBy is null ? null : AdminListAchievementsSortBy.NewValue(SortBy))                
+                (SortBy is null ? null : AdminListAchievementsSortBy.NewValue(SortBy)),                
+                Tags                
             );            
             
             AccelByte.Sdk.Api.Achievement.Model.ModelsPaginatedAchievementResponse? response = wrapper.AdminListAchievements(operation);

@@ -34,6 +34,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
             public AdminListAchievementsSortBy? SortBy { get; set; }
 
+            public List<string>? Tags { get; set; }
+
 
 
 
@@ -56,6 +58,12 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             public AdminListAchievementsBuilder SetSortBy(AdminListAchievementsSortBy _sortBy)
             {
                 SortBy = _sortBy;
+                return this;
+            }
+
+            public AdminListAchievementsBuilder SetTags(List<string> _tags)
+            {
+                Tags = _tags;
                 return this;
             }
 
@@ -85,9 +93,11 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             
 
             
+            CollectionFormatMap["tags"] = "csv";
             
             
 
@@ -99,7 +109,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             string namespace_,            
             long? limit,            
             long? offset,            
-            AdminListAchievementsSortBy? sortBy            
+            AdminListAchievementsSortBy? sortBy,            
+            List<string>? tags            
         )
         {
             PathParams["namespace"] = namespace_;
@@ -107,9 +118,11 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
+            if (tags is not null) QueryParams["tags"] = tags;
             
 
             
+            CollectionFormatMap["tags"] = "csv";
             
             
 

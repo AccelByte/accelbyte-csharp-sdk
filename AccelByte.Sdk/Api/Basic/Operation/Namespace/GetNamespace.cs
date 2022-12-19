@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// getNamespace
     ///
     /// Get a namespace.
+    /// In multi tenant mode, parentNamespace will be returned.
     /// Other detail info:
     /// 
     ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:NAMESPACE" , action=2 (READ)

@@ -68,6 +68,18 @@ namespace AccelByte.Sdk.Api
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).UpdateNamespace(op);
         }
 
+        public static List<Basic.Model.NamespaceInfo>? Execute(
+            this GetGameNamespaces.GetGameNamespacesBuilder builder,
+            string namespace_
+        )
+        {
+            GetGameNamespaces op = builder.Build(
+                namespace_
+            );
+
+            return ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetGameNamespaces(op);
+        }
+
         public static Basic.Model.NamespacePublisherInfo? Execute(
             this GetNamespacePublisher.GetNamespacePublisherBuilder builder,
             string namespace_

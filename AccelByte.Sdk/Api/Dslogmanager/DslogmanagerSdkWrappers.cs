@@ -13,6 +13,17 @@ namespace AccelByte.Sdk.Core
     {
         private AccelByteSDK _SdkObject;
 
+        public Admin Admin
+        {
+            get
+            {
+                if (_Admin == null)
+                    _Admin = new Admin(_SdkObject);
+                return _Admin;
+            }
+        }
+        private Admin? _Admin = null;
+
         public TerminatedServers TerminatedServers
         {
             get
