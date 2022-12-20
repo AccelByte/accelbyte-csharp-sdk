@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Tests.Services
         public EventLogTests() : base(true) { }
 
         [Test]
+        [Ignore("Eventlog service is planned for deprecation")]
         public void EventLogServiceTests()
         {
             Assert.IsNotNull(_Sdk);
