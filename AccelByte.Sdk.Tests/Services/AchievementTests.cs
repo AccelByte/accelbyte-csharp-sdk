@@ -26,7 +26,8 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
-            string achievement_code = "csharp-sdk-test";
+            string achievement_code = "csharp-sdk-test-3";
+            string achievement_name = "CSharp Server SDK Test 3";
 
             #region Create an achievement
             ModelsAchievementRequest newAchievement = new ModelsAchievementRequest()
@@ -35,7 +36,7 @@ namespace AccelByte.Sdk.Tests.Services
                 DefaultLanguage = "en",
                 Name = new Dictionary<string, string>()
                 {
-                    {"en", "CSharp Server SDK Test" }
+                    {"en", achievement_name }
                 },
                 Description = new Dictionary<string, string>
                 {
@@ -73,7 +74,16 @@ namespace AccelByte.Sdk.Tests.Services
             #region Updating achievement
             ModelsAchievementUpdateRequest updateAchievement = new ModelsAchievementUpdateRequest()
             {
-                GoalValue = 2000.0
+                GoalValue = 2000.0,
+                DefaultLanguage = "en",
+                Name = new Dictionary<string, string>()
+                {
+                    {"en", achievement_name }
+                },
+                Description = new Dictionary<string, string>
+                {
+                    {"en", "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." }
+                }
             };
 
             ModelsAchievementResponse? uResp = _Sdk.Achievement.Achievements.AdminUpdateAchievementOp
@@ -88,7 +98,7 @@ namespace AccelByte.Sdk.Tests.Services
             Assert.IsNotNull(rResp);
             #endregion
             Assert.AreEqual(rResp?.GoalValue!, 2000.0);
-            Assert.AreEqual(rResp?.Name!["en"], "CSharp Server SDK Test");
+            Assert.AreEqual(rResp?.Name!["en"], achievement_name);
 
             #region Get all achievements
             ModelsPaginatedAchievementResponse? gaResp = _Sdk.Achievement.Achievements.AdminListAchievementsOp
@@ -108,7 +118,7 @@ namespace AccelByte.Sdk.Tests.Services
             {
                 DisableRetry();
                 ModelsAchievementResponse? dResp = _Sdk.Achievement.Achievements.AdminGetAchievementOp
-                    .Execute("csharp-sdk-test", _Sdk.Namespace);
+                    .Execute(achievement_code, _Sdk.Namespace);
             });
         }
     }
