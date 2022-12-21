@@ -8,7 +8,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/dsmcontroller/admin/configs` | GET | ListConfig | [ListConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/Config/ListConfig.cs) | [ListConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Config/ListConfig.cs) |
-| `/dsmcontroller/admin/configs` | POST | SaveConfig | [SaveConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/Config/SaveConfig.cs) | [SaveConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Config/SaveConfig.cs) |
+| [DEPRECATED] `/dsmcontroller/admin/configs` | POST | SaveConfig | [SaveConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/Config/SaveConfig.cs) | [SaveConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Config/SaveConfig.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/configs` | GET | GetConfig | [GetConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/Config/GetConfig.cs) | [GetConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Config/GetConfig.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/configs` | POST | CreateConfig | [CreateConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/Config/CreateConfig.cs) | [CreateConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Config/CreateConfig.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/configs` | DELETE | DeleteConfig | [DeleteConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/Config/DeleteConfig.cs) | [DeleteConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Config/DeleteConfig.cs) |
