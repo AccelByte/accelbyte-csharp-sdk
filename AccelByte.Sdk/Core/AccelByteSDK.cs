@@ -232,7 +232,7 @@ namespace AccelByte.Sdk.Core
             return this;
         }
 
-        [Obsolete("Use default token repository instead.", DiagnosticId = "AB_TOKEN_REPO_DEPRECATED_METHOD")]
+        [Obsolete("# Deprecated(2023-02-13): Please use default token repository instead.", DiagnosticId = "AB_TOKEN_REPO_DEPRECATED_METHOD")]
         public AccelByteSdkBuilder UseInMemoryTokenRepository()
         {
             _TokenRepository = new InMemoryTokenRepository();

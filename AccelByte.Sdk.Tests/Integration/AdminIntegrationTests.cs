@@ -54,6 +54,7 @@ namespace AccelByte.Sdk.Tests.Integration
 {
     [TestFixture(Category = "Integration")]
     [Explicit]
+    [Obsolete("# Deprecated(2023-02-13): Already replaced with Services/*.cs integration tests. No need for redundant tests.")]
     public class AdminIntegrationTests : BaseIntegrationTest
     {
         [OneTimeSetUp]

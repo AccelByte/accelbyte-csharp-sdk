@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Tests.Integration
 {
     [TestFixture(Category = "Integration")]
     [Explicit]
+    [Obsolete("# Deprecated(2023-02-13): Already replaced with Services/Matchmaking.cs integration tests. No need for redundant tests.")]
     public class MatchmakingIntegrationTests : BaseIntegrationTest
     {
         private string _GameModePrefix = "csharp_sdk_gm_";
