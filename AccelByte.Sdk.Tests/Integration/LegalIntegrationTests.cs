@@ -22,6 +22,7 @@ using AccelByte.Sdk.Api.Legal.Wrapper;
 
 namespace AccelByte.Sdk.Tests.Integration
 {
+    // Deprecated(2023-02-13): Already replaced with Services/LegalTests.cs integration tests. No need for redundant tests.
     [TestFixture(Category = "Integration")]
     [Explicit]
     [Obsolete("# Deprecated(2023-02-13): Already replaced with Services/LegalTests.cs integration tests. No need for redundant tests.")]

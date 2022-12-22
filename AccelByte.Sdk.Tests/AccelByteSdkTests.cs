@@ -39,6 +39,7 @@ namespace AccelByte.Sdk.Tests
             "admin",
             "CSharpTests");
 
+        // Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.
         [Test]
         [Ignore("This test is replaced by HttpBinRequestTests.")]
         [Obsolete("# Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.")]
@@ -62,6 +63,7 @@ namespace AccelByte.Sdk.Tests
             Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
         }
 
+        // Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.
         [Test]
         [Ignore("This test is replaced by HttpBinRequestTests.")]
         [Obsolete("# Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.")]
@@ -81,6 +83,7 @@ namespace AccelByte.Sdk.Tests
             Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
         }
 
+        // Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.
         [Test]
         [Ignore("This test is replaced by HttpBinRequestTests.")]
         [Obsolete("# Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.")]
@@ -115,6 +118,7 @@ namespace AccelByte.Sdk.Tests
             Assert.False(args.Any(), $"Args assert failed: {args.Count}");
         }
 
+        // Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.
         [Test]
         [Ignore("This test is replaced by HttpBinRequestTests.")]
         [Obsolete("# Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.")]
@@ -195,6 +199,7 @@ namespace AccelByte.Sdk.Tests
             }
         }
 
+        // Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.
         [Test]
         [Ignore("This test is replaced by HttpBinRequestTests.")]
         [Obsolete("# Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.")]
@@ -244,7 +249,7 @@ namespace AccelByte.Sdk.Tests
             //Assert.AreEqual(headers["Content-Type"], "multipart/form-data", $"Form value assert failed: {headers["Content-Type"]}");    // XXX Assertion need to be improved
         }
 
-
+        // Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.
         [Test]
         [Ignore("This test is replaced by HttpBinRequestTests.")]
         [Obsolete("# Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.")]
@@ -280,6 +285,7 @@ namespace AccelByte.Sdk.Tests
             CollectionAssert.AreEqual(request.Dimensions, data.Dimensions);
         }
 
+        // Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.
         [Test]
         [Ignore("This test is replaced by HttpBinRequestTests.")]
         [Obsolete("# Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.")]
@@ -302,6 +308,7 @@ namespace AccelByte.Sdk.Tests
             });
         }
 
+        // Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.
         [Test]
         [Ignore("This test is replaced by HttpBinRequestTests.")]
         [Obsolete("# Deprecated(2023-02-13): This test is replaced by HttpBinRequestTests.")]
@@ -331,6 +338,7 @@ namespace AccelByte.Sdk.Tests
             Assert.AreEqual(cookieValue, HttpUtility.UrlDecode(result.Cookies!["test_token"]));
         }
 
+        // # Deprecated(2023-02-13): This test already exists in CLI unit test.
         [Test]
         [Ignore("This test already exists in CLI unit test")]
         [Obsolete("# Deprecated(2023-02-13): This test already exists in CLI unit test.")]
@@ -350,6 +358,7 @@ namespace AccelByte.Sdk.Tests
             Assert.IsTrue(string.IsNullOrEmpty(sdk.Configuration.TokenRepository.Token));
         }
 
+        // # Deprecated(2023-02-13): This test already exists in CLI unit test.
         [Test]
         [Ignore("This test already exists in CLI unit test")]
         [Obsolete("# Deprecated(2023-02-13): This test already exists in CLI unit test.")]

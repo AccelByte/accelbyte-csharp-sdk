@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Core
 
         public abstract string[] Produces { get; }
 
+        // Deprecated(2023-02-13): Please use 'Securities' property instead.
         [Obsolete("# Deprecated(2023-02-13): Please use 'Securities' property instead.")]
         public abstract string? Security { get; set; }
 

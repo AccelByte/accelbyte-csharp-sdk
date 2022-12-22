@@ -33,10 +33,11 @@ namespace AccelByte.Sdk.Core.Repository
 
         void UpdateToken(OauthmodelTokenWithDeviceCookieResponseV3 tokenResponse);
 
-
+        // Deprecated(2023-02-13): Please use `StoreToken` with `OauthmodelTokenResponseV3` or `OauthmodelTokenWithDeviceCookieResponseV3` parameter.
         [Obsolete("# Deprecated(2023-02-13): Please use `StoreToken` with `OauthmodelTokenResponseV3` or `OauthmodelTokenWithDeviceCookieResponseV3` parameter.", DiagnosticId = "AB_TOKEN_REPO_DEPRECATED_METHOD")]
         void StoreToken(string token);
 
+        // Deprecated(2023-02-13): Please use `Token` property instead.
         [Obsolete("# Deprecated(2023-02-13): Please use `Token` property instead.", DiagnosticId = "AB_TOKEN_REPO_DEPRECATED_METHOD")]
         string GetToken();
     }

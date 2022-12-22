@@ -52,6 +52,7 @@ using AccelByte.Sdk.Tests.Model;
 
 namespace AccelByte.Sdk.Tests.Integration
 {
+    // Deprecated(2023-02-13): Already replaced with Services/*.cs integration tests. No need for redundant tests.
     [TestFixture(Category = "Integration")]
     [Explicit]
     [Obsolete("# Deprecated(2023-02-13): Already replaced with Services/*.cs integration tests. No need for redundant tests.")]
