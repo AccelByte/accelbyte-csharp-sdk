@@ -1,3 +1,8 @@
+<a name="v0.25.0"></a>
+## [v0.25.0]
+- Fixed deprecated messages.
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.24.0"></a>
 ## [v0.24.0]
 - Added Create User V3 integration test.

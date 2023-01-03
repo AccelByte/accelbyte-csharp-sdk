@@ -1,3 +1,107 @@
+# C# Server SDK v0.25.0
+
+## achievement Service
+
+### What's Changed
+---
+`GET` /achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements Query user achievements [include achieved and in-progress]  
+    Parameters
+
+        Add sortBy //sort by, allow values: [achievedAt, achievedAt:asc, achievedAt:desc, createdAt, createdAt:asc, createdAt:desc]
+`GET` /achievement/v1/public/namespaces/{namespace}/users/{userId}/achievements Query user achievements [include achieved and in-progress]  
+    Parameters
+
+        Add sortBy //sort by, allow values: [achievedAt, achievedAt:asc, achievedAt:desc, createdAt, createdAt:asc, createdAt:desc]
+
+## gametelemetry Service
+
+### What's Changed
+---
+`GET` /game-telemetry/v1/admin/namespaces/{namespace}/events Get Events  
+    Parameters
+
+        Modify endTime //End time of data to be queried. Default: Current time in UTC.
+        Modify startTime //Start time of data to be queried. Default: Current time in UTC minus 1 day.
+
+## lobby Service
+
+### What's Changed
+---
+`GET` /lobby/v1/public/presence/namespaces/{namespace}/users/presence Query users presence  
+    Return Type
+
+        Insert away
+
+## platform Service
+
+### What's New
+---
+* `GET` /platform/admin/namespaces/{namespace}/sections List sections
+* `POST` /platform/admin/namespaces/{namespace}/sections Create a section
+* `DELETE` /platform/admin/namespaces/{namespace}/sections/purge/expired purge expired section
+* `GET` /platform/admin/namespaces/{namespace}/sections/{sectionId} Get a section
+* `PUT` /platform/admin/namespaces/{namespace}/sections/{sectionId} Update s section
+* `DELETE` /platform/admin/namespaces/{namespace}/sections/{sectionId} Delete a section
+* `GET` /platform/admin/namespaces/{namespace}/views List all views
+* `POST` /platform/admin/namespaces/{namespace}/views Create a view
+* `GET` /platform/admin/namespaces/{namespace}/views/{viewId} Get a view
+* `PUT` /platform/admin/namespaces/{namespace}/views/{viewId} Update a view
+* `DELETE` /platform/admin/namespaces/{namespace}/views/{viewId} Delete a view
+* `GET` /platform/public/namespaces/{namespace}/users/{userId}/sections List active section contents
+* `GET` /platform/public/namespaces/{namespace}/users/{userId}/views Get all views
+
+### What's Changed
+---
+`GET` /platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/byCriteria Query catalog changes  
+    Parameters
+
+        Modify type
+    Return Type
+
+        Insert data.sectionId //section id, only exists when change type is section
+        Insert data.viewId //view id, only exists when change type is view
+        Modify data.type //change type
+`GET` /platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/statistics Get catalog changes statistics  
+    Parameters
+
+        Modify type
+
+## sessionbrowser Service
+
+### What's Changed
+---
+`GET` /sessionbrowser/admin/namespaces/{namespace}/gamesession/active/custom-game Get all active session for custom game, this return only dedicated session type  
+    Parameters
+
+        Add limit //max item to be returned
+        Add offset //skip some item(s), offset=3, will skip 3 first items
+`GET` /sessionbrowser/admin/namespaces/{namespace}/gamesession/active/matchmaking-game Get all active session for matchmaking game, this return only dedicated session type  
+    Parameters
+
+        Add limit //max item to be returned
+        Add offset //skip some item(s), offset=3, will skip 3 first items
+`GET` /sessionbrowser/namespaces/{namespace}/gamesession Query to available game session  
+    Parameters
+
+        Modify offset //skip some item(s), offset=3, will skip 3 first items
+        Modify limit //max item to be returned
+
+## social Service
+
+### What's New
+---
+* `GET` /social/v1/admin/namespaces/{namespace}/globalstatitems/{statCode} Get global statItem by stat code
+* `GET` /social/v1/public/namespaces/{namespace}/globalstatitems List global statItems
+* `GET` /social/v1/public/namespaces/{namespace}/globalstatitems/{statCode} Get global statItem by stat code
+
+### What's Changed
+---
+`GET` /social/v1/admin/namespaces/{namespace}/globalstatitems List global statItems  
+    Parameters
+
+        Add statCodes //comma separated stat codes
+
+
 # C# Server SDK v0.24.0
 
 ## achievement Service
