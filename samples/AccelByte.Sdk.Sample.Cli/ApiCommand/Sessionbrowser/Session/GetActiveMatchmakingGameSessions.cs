@@ -30,8 +30,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("limit")]
+        public long? Limit { get; set; }
+
         [SdkCommandArgument("matchId")]
         public string? MatchId { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public long? Offset { get; set; }
 
         [SdkCommandArgument("serverRegion")]
         public string? ServerRegion { get; set; }
@@ -50,7 +56,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 
             GetActiveMatchmakingGameSessions operation = new GetActiveMatchmakingGameSessions(
                 Namespace,                
+                Limit,                
                 MatchId,                
+                Offset,                
                 ServerRegion,                
                 SessionId                
             );            

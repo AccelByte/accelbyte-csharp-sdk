@@ -200,6 +200,17 @@ namespace AccelByte.Sdk.Core
         }
         private Reward? _Reward = null;
 
+        public Section Section
+        {
+            get
+            {
+                if (_Section == null)
+                    _Section = new Section(_SdkObject);
+                return _Section;
+            }
+        }
+        private Section? _Section = null;
+
         public Store Store
         {
             get
@@ -265,6 +276,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private Anonymization? _Anonymization = null;
+
+        public View View
+        {
+            get
+            {
+                if (_View == null)
+                    _View = new View(_SdkObject);
+                return _View;
+            }
+        }
+        private View? _View = null;
 
         public OrderDedicated OrderDedicated
         {

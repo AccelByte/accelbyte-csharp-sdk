@@ -271,8 +271,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly GetStatisticType ITEM
             = new GetStatisticType("ITEM");
 
+        public static readonly GetStatisticType SECTION
+            = new GetStatisticType("SECTION");
+
         public static readonly GetStatisticType STORE
             = new GetStatisticType("STORE");
+
+        public static readonly GetStatisticType VIEW
+            = new GetStatisticType("VIEW");
 
 
         public static implicit operator GetStatisticType(string value)

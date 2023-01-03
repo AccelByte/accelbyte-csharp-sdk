@@ -36,6 +36,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         [SdkCommandArgument("offset")]
         public int? Offset { get; set; }
 
+        [SdkCommandArgument("statCodes")]
+        public string? StatCodes { get; set; }
+
         public GetGlobalStatItemsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,7 +51,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             GetGlobalStatItems operation = new GetGlobalStatItems(
                 Namespace,                
                 Limit,                
-                Offset                
+                Offset,                
+                StatCodes                
             );            
             
             AccelByte.Sdk.Api.Social.Model.GlobalStatItemPagingSlicedResult? response = wrapper.GetGlobalStatItems(operation);

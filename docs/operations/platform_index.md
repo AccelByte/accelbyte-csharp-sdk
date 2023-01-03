@@ -330,6 +330,17 @@
 | `/platform/public/namespaces/{namespace}/rewards/byCriteria` | GET | QueryRewards1 | [QueryRewards1](../../AccelByte.Sdk/Api/Platform/Operation/Reward/QueryRewards1.cs) | [QueryRewards1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Reward/QueryRewards1.cs) |
 | `/platform/public/namespaces/{namespace}/rewards/{rewardId}` | GET | GetReward1 | [GetReward1](../../AccelByte.Sdk/Api/Platform/Operation/Reward/GetReward1.cs) | [GetReward1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Reward/GetReward1.cs) |
 
+### Section Wrapper:  [Section](../../AccelByte.Sdk/Api/Platform/Wrapper/Section.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/sections` | GET | QuerySections | [QuerySections](../../AccelByte.Sdk/Api/Platform/Operation/Section/QuerySections.cs) | [QuerySections](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Section/QuerySections.cs) |
+| `/platform/admin/namespaces/{namespace}/sections` | POST | CreateSection | [CreateSection](../../AccelByte.Sdk/Api/Platform/Operation/Section/CreateSection.cs) | [CreateSection](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Section/CreateSection.cs) |
+| `/platform/admin/namespaces/{namespace}/sections/purge/expired` | DELETE | PurgeExpiredSection | [PurgeExpiredSection](../../AccelByte.Sdk/Api/Platform/Operation/Section/PurgeExpiredSection.cs) | [PurgeExpiredSection](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Section/PurgeExpiredSection.cs) |
+| `/platform/admin/namespaces/{namespace}/sections/{sectionId}` | GET | GetSection | [GetSection](../../AccelByte.Sdk/Api/Platform/Operation/Section/GetSection.cs) | [GetSection](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Section/GetSection.cs) |
+| `/platform/admin/namespaces/{namespace}/sections/{sectionId}` | PUT | UpdateSection | [UpdateSection](../../AccelByte.Sdk/Api/Platform/Operation/Section/UpdateSection.cs) | [UpdateSection](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Section/UpdateSection.cs) |
+| `/platform/admin/namespaces/{namespace}/sections/{sectionId}` | DELETE | DeleteSection | [DeleteSection](../../AccelByte.Sdk/Api/Platform/Operation/Section/DeleteSection.cs) | [DeleteSection](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Section/DeleteSection.cs) |
+| `/platform/public/namespaces/{namespace}/users/{userId}/sections` | GET | PublicListActiveSections | [PublicListActiveSections](../../AccelByte.Sdk/Api/Platform/Operation/Section/PublicListActiveSections.cs) | [PublicListActiveSections](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Section/PublicListActiveSections.cs) |
+
 ### Store Wrapper:  [Store](../../AccelByte.Sdk/Api/Platform/Wrapper/Store.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -411,6 +422,16 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/anonymization/payment` | DELETE | AnonymizePayment | [AnonymizePayment](../../AccelByte.Sdk/Api/Platform/Operation/Anonymization/AnonymizePayment.cs) | [AnonymizePayment](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Anonymization/AnonymizePayment.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/anonymization/subscriptions` | DELETE | AnonymizeSubscription | [AnonymizeSubscription](../../AccelByte.Sdk/Api/Platform/Operation/Anonymization/AnonymizeSubscription.cs) | [AnonymizeSubscription](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Anonymization/AnonymizeSubscription.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/anonymization/wallets` | DELETE | AnonymizeWallet | [AnonymizeWallet](../../AccelByte.Sdk/Api/Platform/Operation/Anonymization/AnonymizeWallet.cs) | [AnonymizeWallet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Anonymization/AnonymizeWallet.cs) |
+
+### View Wrapper:  [View](../../AccelByte.Sdk/Api/Platform/Wrapper/View.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/views` | GET | ListViews | [ListViews](../../AccelByte.Sdk/Api/Platform/Operation/View/ListViews.cs) | [ListViews](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/View/ListViews.cs) |
+| `/platform/admin/namespaces/{namespace}/views` | POST | CreateView | [CreateView](../../AccelByte.Sdk/Api/Platform/Operation/View/CreateView.cs) | [CreateView](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/View/CreateView.cs) |
+| `/platform/admin/namespaces/{namespace}/views/{viewId}` | GET | GetView | [GetView](../../AccelByte.Sdk/Api/Platform/Operation/View/GetView.cs) | [GetView](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/View/GetView.cs) |
+| `/platform/admin/namespaces/{namespace}/views/{viewId}` | PUT | UpdateView | [UpdateView](../../AccelByte.Sdk/Api/Platform/Operation/View/UpdateView.cs) | [UpdateView](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/View/UpdateView.cs) |
+| `/platform/admin/namespaces/{namespace}/views/{viewId}` | DELETE | DeleteView | [DeleteView](../../AccelByte.Sdk/Api/Platform/Operation/View/DeleteView.cs) | [DeleteView](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/View/DeleteView.cs) |
+| `/platform/public/namespaces/{namespace}/users/{userId}/views` | GET | PublicListViews | [PublicListViews](../../AccelByte.Sdk/Api/Platform/Operation/View/PublicListViews.cs) | [PublicListViews](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/View/PublicListViews.cs) |
 
 ### Order(Dedicated) Wrapper:  [OrderDedicated](../../AccelByte.Sdk/Api/Platform/Wrapper/OrderDedicated.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -567,6 +588,7 @@
 | `ExtensionFulfillmentSummary` | [ExtensionFulfillmentSummary](../../AccelByte.Sdk/Api/Platform/Model/ExtensionFulfillmentSummary.cs) |
 | `ExternalPaymentOrderCreate` | [ExternalPaymentOrderCreate](../../AccelByte.Sdk/Api/Platform/Model/ExternalPaymentOrderCreate.cs) |
 | `FieldValidationError` | [FieldValidationError](../../AccelByte.Sdk/Api/Platform/Model/FieldValidationError.cs) |
+| `FixedPeriodRotationConfig` | [FixedPeriodRotationConfig](../../AccelByte.Sdk/Api/Platform/Model/FixedPeriodRotationConfig.cs) |
 | `FulfillCodeRequest` | [FulfillCodeRequest](../../AccelByte.Sdk/Api/Platform/Model/FulfillCodeRequest.cs) |
 | `FulfillmentError` | [FulfillmentError](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentError.cs) |
 | `FulfillmentHistoryInfo` | [FulfillmentHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentHistoryInfo.cs) |
@@ -584,6 +606,8 @@
 | `FullCategoryInfo` | [FullCategoryInfo](../../AccelByte.Sdk/Api/Platform/Model/FullCategoryInfo.cs) |
 | `FullItemInfo` | [FullItemInfo](../../AccelByte.Sdk/Api/Platform/Model/FullItemInfo.cs) |
 | `FullItemPagingSlicedResult` | [FullItemPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/FullItemPagingSlicedResult.cs) |
+| `FullSectionInfo` | [FullSectionInfo](../../AccelByte.Sdk/Api/Platform/Model/FullSectionInfo.cs) |
+| `FullViewInfo` | [FullViewInfo](../../AccelByte.Sdk/Api/Platform/Model/FullViewInfo.cs) |
 | `GoogleIAPConfigInfo` | [GoogleIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/GoogleIAPConfigInfo.cs) |
 | `GoogleIAPConfigRequest` | [GoogleIAPConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/GoogleIAPConfigRequest.cs) |
 | `GoogleIAPReceipt` | [GoogleIAPReceipt](../../AccelByte.Sdk/Api/Platform/Model/GoogleIAPReceipt.cs) |
@@ -611,6 +635,7 @@
 | `ItemDynamicDataInfo` | [ItemDynamicDataInfo](../../AccelByte.Sdk/Api/Platform/Model/ItemDynamicDataInfo.cs) |
 | `ItemId` | [ItemId](../../AccelByte.Sdk/Api/Platform/Model/ItemId.cs) |
 | `ItemInfo` | [ItemInfo](../../AccelByte.Sdk/Api/Platform/Model/ItemInfo.cs) |
+| `ItemNaming` | [ItemNaming](../../AccelByte.Sdk/Api/Platform/Model/ItemNaming.cs) |
 | `ItemPagingSlicedResult` | [ItemPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/ItemPagingSlicedResult.cs) |
 | `ItemPurchaseConditionValidateRequest` | [ItemPurchaseConditionValidateRequest](../../AccelByte.Sdk/Api/Platform/Model/ItemPurchaseConditionValidateRequest.cs) |
 | `ItemPurchaseConditionValidateResult` | [ItemPurchaseConditionValidateResult](../../AccelByte.Sdk/Api/Platform/Model/ItemPurchaseConditionValidateResult.cs) |
@@ -627,6 +652,7 @@
 | `KeyGroupUpdate` | [KeyGroupUpdate](../../AccelByte.Sdk/Api/Platform/Model/KeyGroupUpdate.cs) |
 | `KeyInfo` | [KeyInfo](../../AccelByte.Sdk/Api/Platform/Model/KeyInfo.cs) |
 | `KeyPagingSliceResult` | [KeyPagingSliceResult](../../AccelByte.Sdk/Api/Platform/Model/KeyPagingSliceResult.cs) |
+| `ListViewInfo` | [ListViewInfo](../../AccelByte.Sdk/Api/Platform/Model/ListViewInfo.cs) |
 | `Localization` | [Localization](../../AccelByte.Sdk/Api/Platform/Model/Localization.cs) |
 | `LootBoxConfig` | [LootBoxConfig](../../AccelByte.Sdk/Api/Platform/Model/LootBoxConfig.cs) |
 | `LootBoxReward` | [LootBoxReward](../../AccelByte.Sdk/Api/Platform/Model/LootBoxReward.cs) |
@@ -720,6 +746,11 @@
 | `RewardPagingSlicedResult` | [RewardPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/RewardPagingSlicedResult.cs) |
 | `RewardUpdate` | [RewardUpdate](../../AccelByte.Sdk/Api/Platform/Model/RewardUpdate.cs) |
 | `RewardsRequest` | [RewardsRequest](../../AccelByte.Sdk/Api/Platform/Model/RewardsRequest.cs) |
+| `SectionCreate` | [SectionCreate](../../AccelByte.Sdk/Api/Platform/Model/SectionCreate.cs) |
+| `SectionInfo` | [SectionInfo](../../AccelByte.Sdk/Api/Platform/Model/SectionInfo.cs) |
+| `SectionItem` | [SectionItem](../../AccelByte.Sdk/Api/Platform/Model/SectionItem.cs) |
+| `SectionPagingSlicedResult` | [SectionPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/SectionPagingSlicedResult.cs) |
+| `SectionUpdate` | [SectionUpdate](../../AccelByte.Sdk/Api/Platform/Model/SectionUpdate.cs) |
 | `Slide` | [Slide](../../AccelByte.Sdk/Api/Platform/Model/Slide.cs) |
 | `StackableEntitlementInfo` | [StackableEntitlementInfo](../../AccelByte.Sdk/Api/Platform/Model/StackableEntitlementInfo.cs) |
 | `StadiaIAPConfigInfo` | [StadiaIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/StadiaIAPConfigInfo.cs) |
@@ -760,6 +791,9 @@
 | `TwitchSyncRequest` | [TwitchSyncRequest](../../AccelByte.Sdk/Api/Platform/Model/TwitchSyncRequest.cs) |
 | `UserDLC` | [UserDLC](../../AccelByte.Sdk/Api/Platform/Model/UserDLC.cs) |
 | `ValidationErrorEntity` | [ValidationErrorEntity](../../AccelByte.Sdk/Api/Platform/Model/ValidationErrorEntity.cs) |
+| `ViewCreate` | [ViewCreate](../../AccelByte.Sdk/Api/Platform/Model/ViewCreate.cs) |
+| `ViewInfo` | [ViewInfo](../../AccelByte.Sdk/Api/Platform/Model/ViewInfo.cs) |
+| `ViewUpdate` | [ViewUpdate](../../AccelByte.Sdk/Api/Platform/Model/ViewUpdate.cs) |
 | `WalletInfo` | [WalletInfo](../../AccelByte.Sdk/Api/Platform/Model/WalletInfo.cs) |
 | `WalletPagingSlicedResult` | [WalletPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/WalletPagingSlicedResult.cs) |
 | `WalletTransactionInfo` | [WalletTransactionInfo](../../AccelByte.Sdk/Api/Platform/Model/WalletTransactionInfo.cs) |

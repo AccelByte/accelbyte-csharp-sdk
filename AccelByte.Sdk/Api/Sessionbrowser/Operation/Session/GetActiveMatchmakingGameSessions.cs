@@ -29,7 +29,11 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             : OperationBuilder<GetActiveMatchmakingGameSessionsBuilder>
         {
 
+            public long? Limit { get; set; }
+
             public string? MatchId { get; set; }
+
+            public long? Offset { get; set; }
 
             public string? ServerRegion { get; set; }
 
@@ -42,9 +46,21 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             internal GetActiveMatchmakingGameSessionsBuilder() { }
 
 
+            public GetActiveMatchmakingGameSessionsBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
             public GetActiveMatchmakingGameSessionsBuilder SetMatchId(string _matchId)
             {
                 MatchId = _matchId;
+                return this;
+            }
+
+            public GetActiveMatchmakingGameSessionsBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
                 return this;
             }
 
@@ -83,7 +99,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         {
             PathParams["namespace"] = namespace_;
             
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.MatchId is not null) QueryParams["match_id"] = builder.MatchId;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.ServerRegion is not null) QueryParams["server_region"] = builder.ServerRegion;
             if (builder.SessionId is not null) QueryParams["session_id"] = builder.SessionId;
             
@@ -98,14 +116,18 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
         public GetActiveMatchmakingGameSessions(
             string namespace_,            
+            long? limit,            
             string? matchId,            
+            long? offset,            
             string? serverRegion,            
             string? sessionId            
         )
         {
             PathParams["namespace"] = namespace_;
             
+            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (matchId is not null) QueryParams["match_id"] = matchId;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (serverRegion is not null) QueryParams["server_region"] = serverRegion;
             if (sessionId is not null) QueryParams["session_id"] = sessionId;
             

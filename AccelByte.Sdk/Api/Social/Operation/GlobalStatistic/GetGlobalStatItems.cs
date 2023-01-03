@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// 
     ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=2 (READ)
     ///   *  Returns : stat items
-    /// ul
     /// </summary>
     public class GetGlobalStatItems : AccelByte.Sdk.Core.Operation
     {
@@ -35,6 +34,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             public int? Limit { get; set; }
 
             public int? Offset { get; set; }
+
+            public string? StatCodes { get; set; }
 
 
 
@@ -52,6 +53,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
             public GetGlobalStatItemsBuilder SetOffset(int _offset)
             {
                 Offset = _offset;
+                return this;
+            }
+
+            public GetGlobalStatItemsBuilder SetStatCodes(string _statCodes)
+            {
+                StatCodes = _statCodes;
                 return this;
             }
 
@@ -80,6 +87,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.StatCodes is not null) QueryParams["statCodes"] = builder.StatCodes;
             
 
             
@@ -93,13 +101,15 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public GetGlobalStatItems(
             string namespace_,            
             int? limit,            
-            int? offset            
+            int? offset,            
+            string? statCodes            
         )
         {
             PathParams["namespace"] = namespace_;
             
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (statCodes is not null) QueryParams["statCodes"] = statCodes;
             
 
             

@@ -24,5 +24,45 @@ namespace AccelByte.Sdk.Api
             return ((Social.Wrapper.GlobalStatistic)builder.WrapperObject!).GetGlobalStatItems(op);
         }
 
+        public static Social.Model.GlobalStatItemInfo? Execute(
+            this GetGlobalStatItemByStatCode.GetGlobalStatItemByStatCodeBuilder builder,
+            string namespace_,
+            string statCode
+        )
+        {
+            GetGlobalStatItemByStatCode op = builder.Build(
+                namespace_,
+                statCode
+            );
+
+            return ((Social.Wrapper.GlobalStatistic)builder.WrapperObject!).GetGlobalStatItemByStatCode(op);
+        }
+
+        public static Social.Model.GlobalStatItemPagingSlicedResult? Execute(
+            this GetGlobalStatItems1.GetGlobalStatItems1Builder builder,
+            string namespace_
+        )
+        {
+            GetGlobalStatItems1 op = builder.Build(
+                namespace_
+            );
+
+            return ((Social.Wrapper.GlobalStatistic)builder.WrapperObject!).GetGlobalStatItems1(op);
+        }
+
+        public static Social.Model.GlobalStatItemInfo? Execute(
+            this GetGlobalStatItemByStatCode1.GetGlobalStatItemByStatCode1Builder builder,
+            string namespace_,
+            string statCode
+        )
+        {
+            GetGlobalStatItemByStatCode1 op = builder.Build(
+                namespace_,
+                statCode
+            );
+
+            return ((Social.Wrapper.GlobalStatistic)builder.WrapperObject!).GetGlobalStatItemByStatCode1(op);
+        }
+
     }
 }

@@ -30,6 +30,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("limit")]
+        public long? Limit { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public long? Offset { get; set; }
+
         [SdkCommandArgument("serverRegion")]
         public string? ServerRegion { get; set; }
 
@@ -47,6 +53,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 
             GetActiveCustomGameSessions operation = new GetActiveCustomGameSessions(
                 Namespace,                
+                Limit,                
+                Offset,                
                 ServerRegion,                
                 SessionId                
             );            

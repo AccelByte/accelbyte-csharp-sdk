@@ -45,6 +45,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? PublishedAt { get; set; }
 
+        [JsonPropertyName("sectionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? SectionId { get; set; }
+
         [JsonPropertyName("selected")]
         public bool? Selected { get; set; }
 
@@ -70,6 +74,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
+
+        [JsonPropertyName("viewId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ViewId { get; set; }
 
     }
 
@@ -174,8 +182,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly CatalogChangeInfoType ITEM
             = new CatalogChangeInfoType("ITEM");
 
+        public static readonly CatalogChangeInfoType SECTION
+            = new CatalogChangeInfoType("SECTION");
+
         public static readonly CatalogChangeInfoType STORE
             = new CatalogChangeInfoType("STORE");
+
+        public static readonly CatalogChangeInfoType VIEW
+            = new CatalogChangeInfoType("VIEW");
 
 
         public static implicit operator CatalogChangeInfoType(string value)

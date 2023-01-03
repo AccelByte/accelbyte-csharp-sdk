@@ -382,8 +382,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryChangesType ITEM
             = new QueryChangesType("ITEM");
 
+        public static readonly QueryChangesType SECTION
+            = new QueryChangesType("SECTION");
+
         public static readonly QueryChangesType STORE
             = new QueryChangesType("STORE");
+
+        public static readonly QueryChangesType VIEW
+            = new QueryChangesType("VIEW");
 
 
         public static implicit operator QueryChangesType(string value)

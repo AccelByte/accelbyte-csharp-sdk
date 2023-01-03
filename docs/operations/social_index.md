@@ -44,6 +44,9 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/social/v1/admin/namespaces/{namespace}/globalstatitems` | GET | GetGlobalStatItems | [GetGlobalStatItems](../../AccelByte.Sdk/Api/Social/Operation/GlobalStatistic/GetGlobalStatItems.cs) | [GetGlobalStatItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/GlobalStatistic/GetGlobalStatItems.cs) |
+| `/social/v1/admin/namespaces/{namespace}/globalstatitems/{statCode}` | GET | GetGlobalStatItemByStatCode | [GetGlobalStatItemByStatCode](../../AccelByte.Sdk/Api/Social/Operation/GlobalStatistic/GetGlobalStatItemByStatCode.cs) | [GetGlobalStatItemByStatCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/GlobalStatistic/GetGlobalStatItemByStatCode.cs) |
+| `/social/v1/public/namespaces/{namespace}/globalstatitems` | GET | GetGlobalStatItems1 | [GetGlobalStatItems1](../../AccelByte.Sdk/Api/Social/Operation/GlobalStatistic/GetGlobalStatItems1.cs) | [GetGlobalStatItems1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/GlobalStatistic/GetGlobalStatItems1.cs) |
+| `/social/v1/public/namespaces/{namespace}/globalstatitems/{statCode}` | GET | GetGlobalStatItemByStatCode1 | [GetGlobalStatItemByStatCode1](../../AccelByte.Sdk/Api/Social/Operation/GlobalStatistic/GetGlobalStatItemByStatCode1.cs) | [GetGlobalStatItemByStatCode1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/GlobalStatistic/GetGlobalStatItemByStatCode1.cs) |
 
 ### UserStatistic Wrapper:  [UserStatistic](../../AccelByte.Sdk/Api/Social/Wrapper/UserStatistic.cs)
 | Endpoint | Method | ID | Class | Example |

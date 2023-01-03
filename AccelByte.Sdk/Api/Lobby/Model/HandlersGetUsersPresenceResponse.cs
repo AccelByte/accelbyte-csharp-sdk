@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
 {
     public class HandlersGetUsersPresenceResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("away")]
+        public int? Away { get; set; }
+
         [JsonPropertyName("busy")]
         public int? Busy { get; set; }
 

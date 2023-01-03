@@ -42,6 +42,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
         [SdkCommandArgument("preferUnlocked")]
         public bool? PreferUnlocked { get; set; }
 
+        [SdkCommandArgument("sortBy")]
+        public string? SortBy { get; set; }
+
         [SdkCommandArgument("tags")]
         public List<string>? Tags { get; set; }
 
@@ -60,6 +63,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
                 Limit,                
                 Offset,                
                 PreferUnlocked,                
+                SortBy,                
                 Tags                
             );            
             
