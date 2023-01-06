@@ -65,3 +65,12 @@ test_broken_link:
 	done)
 	DOCKER_SKIP_BUILD=1 bash "$(SDK_MD_CRAWLER_PATH)/md-crawler.sh" -i "https://docs.accelbyte.io/guides/customization/csharp-sdk-guide.html"
 	[ ! -f test.err ]
+
+version:
+	if [ -n "$$MAJOR" ]; then VERSION_PART=1; elif [ -n "$$PATCH" ]; then VERSION_PART=3; else VERSION_PART=2; fi &&	# Bump minor version if MAJOR or MINOR is not set \
+			VERSION_OLD=$$(cat version.txt | tr -d '\n') && \
+			VERSION_NEW=$$(awk -v part=$$VERSION_PART -F. "{OFS=\".\"; \$$part+=1; print \$$0}" version.txt) && \
+			echo $${VERSION_NEW} > version.txt &&	# Bump version.txt \
+			sed -i "s@<Version>[0-9]\+\.[0-9]\+\.[0-9]\+</Version>@<Version>$$VERSION_NEW</Version>@" AccelByte.Sdk/AccelByte.Sdk.csproj &&		# Bump SDK \
+			sed -i "s@<AssemblyVersion>[0-9]\+\.[0-9]\+\.[0-9]\+</AssemblyVersion>@<AssemblyVersion>$$VERSION_NEW</AssemblyVersion>@" AccelByte.Sdk/AccelByte.Sdk.csproj &&		# Bump SDK \
+			sed -i "s@Include="AccelByte.Sdk" Version="[0-9]\+\.[0-9]\+\.[0-9]\+"@Include="AccelByte.Sdk" Version="$$VERSION_OLD"@" AccelByte.Sdk/AccelByte.Sdk.csproj			# Bump getting-started sample app

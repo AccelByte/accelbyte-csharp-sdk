@@ -18,9 +18,7 @@ A software development kit (SDK) for interacting with AccelByte services.</Descr
     <RepositoryType>git</RepositoryType>
     <PackageTags>accelbyte;sdk</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>[v0.25.0]
-- Fixed deprecated messages.
-- Update APIs.</PackageReleaseNotes>
+    <PackageReleaseNotes>Please refer to the CHANGELOG.md</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>icon.png</PackageIcon>
