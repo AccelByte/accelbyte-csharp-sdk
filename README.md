@@ -5,25 +5,11 @@ A software development kit (SDK) for interacting with AccelByte services written
 This SDK was generated from OpenAPI spec included in the [spec](spec) directory.
 
 ## Setup
+
 This SDK requires .NET 6.0 SDK to be installed.
 
-## Installation
+## Adding to Your Project
 
-### 1. Import SDK Project
-
-```
-cd /path/to/your_solution
-dotnet sln add AccelByte.Sdk/AccelByte.Sdk.csproj
-```
-
-```
-cd /path/to/your_solution/your_project
-dotnet add reference ../AccelByte.Sdk/AccelByte.Sdk.csproj
-```
-
-Or open the solution and build the project, then use the compiled binary in your project.
-
-### 2. Add Package from Nuget
 ```
 cd /path/to/your_solution/your_project
 dotnet add package AccelByte.Sdk
