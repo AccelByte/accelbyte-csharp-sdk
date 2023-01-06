@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AccelByte.Sdk\AccelByte.Sdk.csproj" />
+    <PackageReference Include="AccelByte.Sdk" Version="0.25.0" />
   </ItemGroup>
 
   <PropertyGroup>
