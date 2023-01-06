@@ -30,8 +30,6 @@ $ dotnet sln add myproject/myproject.csproj     # Add myproject to mysolution
 
 ### 2. Add to Project Dependency
 
-- From Repository
-
 Get a release version of [AccelByte C# Server SDK](https://github.com/AccelByte/accelbyte-csharp-sdk) and add it as C# project dependency. 
 
 Replace `{VERSION}` with a specific release version tag from [releases](https://github.com/AccelByte/accelbyte-csharp-sdk/releases).
@@ -39,19 +37,8 @@ Replace `{VERSION}` with a specific release version tag from [releases](https://
 It is recommended to use the matching C# (.NET) Server SDK version for the given AccelByte Cloud version.
 
 ```bash
-$ git clone https://github.com/AccelByte/accelbyte-csharp-sdk.git   # Clone AccelByte C# Server SDK
-$ cd accelbyte-csharp-sdk
-$ git checkout {VERSION}                                            # Switch to a specific release {VERSION} 
-$ cp -rv AccelByte.Sdk /path/to/mysolution/AccelByte.Sdk            # Copy AccelByte C# Server SDK source code
-$ cd /path/to/mysolution
-$ dotnet sln add AccelByte.Sdk/AccelByte.Sdk.csproj             # Add AccelByte C# Server SDK to solution
-$ cd myproject
-$ dotnet add reference ../AccelByte.Sdk/AccelByte.Sdk.csproj    # Add AccelByte C# Server SDK as a dependency of C# project
-```
-- Using Nuget
-```bash
-$ cd /path/to/mysolution/myproject # Go to project
-$ dotnet add package AccelByte.Sdk # Add AccelByte C# Server SDK Package from Nuget
+$ cd /path/to/mysolution/myproject
+$ dotnet add package AccelByte.Sdk -v {VERSION}      # Add AccelByte C# Server SDK Package from Nuget
 ```
 
 ### 3. Use in Code
