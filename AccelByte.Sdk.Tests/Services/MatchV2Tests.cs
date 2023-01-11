@@ -110,17 +110,29 @@ namespace AccelByte.Sdk.Tests.Services
             ITestPlayer player1 = new NewTestPlayer(_Sdk, true);
             player1.Run((sdk, player) =>
             {
-                string gameSessionId = String.Empty;
-                var newGSResponse = sdk.Session.GameSession.CreateGameSessionOp
-                    .Execute(new() { ConfigurationName = cfgTemplateName }, sdk.Namespace);
-                if (newGSResponse != null)
-                    gameSessionId = newGSResponse.Id!;
+                ApimodelsCreatePartyRequest partyRequest = new ApimodelsCreatePartyRequest()
+                {
+                    ConfigurationName = cfgTemplateName,
+                    Members = new List<ApimodelsRequestMember>()
+                    {
+                        new ApimodelsRequestMember()
+                        {
+                            ID = player.UserId
+                        }
+                    }
+                };
+
+                string partyId = String.Empty;
+                ApimodelsPartySessionResponse? partyResponse = sdk.Session.Party.PublicCreatePartyOp
+                    .Execute(partyRequest, sdk.Namespace);
+                if (partyResponse != null)
+                    partyId = partyResponse.Id!;
 
                 #region User create a match ticket
                 ApiMatchTicketRequest ticketRequest = new ApiMatchTicketRequest()
                 {
                     MatchPool = poolName,
-                    SessionID = gameSessionId
+                    SessionID = partyId
                 };
 
                 ApiMatchTicketResponse? nTicketResponse = sdk.Match2.MatchTickets.CreateMatchTicketOp
@@ -134,8 +146,8 @@ namespace AccelByte.Sdk.Tests.Services
                     .Execute(sdk.Namespace, ticketId);
                 #endregion
 
-                sdk.Session.GameSession.DeleteGameSessionOp
-                    .Execute(sdk.Namespace, gameSessionId);
+                sdk.Session.Party.PublicPartyLeaveOp
+                    .Execute(sdk.Namespace, partyId);
             });
 
             player1.Logout();
