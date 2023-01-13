@@ -38,4 +38,9 @@ A software development kit (SDK) for interacting with AccelByte services.</Descr
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="murmurhash-signed" Version="1.0.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.25.1" />
+  </ItemGroup>
 </Project>
