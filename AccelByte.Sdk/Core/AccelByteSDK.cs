@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2023 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -18,7 +18,7 @@ using AccelByte.Sdk.Api.Iam.Model;
 
 namespace AccelByte.Sdk.Core
 {
-    public partial class AccelByteSDK
+    public partial class AccelByteSDK : IDisposable
     {
         public static AccelByteSdkBuilder Builder = new AccelByteSdkBuilder();
 
@@ -29,11 +29,54 @@ namespace AccelByte.Sdk.Core
 
         public string Namespace { get => Configuration.ConfigRepository.Namespace; }
 
+        private List<ISdkService> _Services = new List<ISdkService>();
+
+        public SdkLocalData LocalData = new SdkLocalData();
+
         public AccelByteSDK(AccelByteConfig config)
         {
             Configuration = config;
+
             _OpProcess = new OperationProcessPipeline();
             _OpProcess.AppendToChain(new SdkMandatoryOperationProcess());
+        }
+
+        public AccelByteSDK(AccelByteConfig config, List<ISdkService> services)
+        {
+            Configuration = config;
+
+            _OpProcess = new OperationProcessPipeline();
+            _OpProcess.AppendToChain(new SdkMandatoryOperationProcess());
+
+            _Services = services;
+            foreach (var service in _Services)
+                service.Start(this);
+        }
+
+        public void Dispose()
+        {
+            foreach (var service in _Services)
+            {
+                service.Stop();
+                if (service is IDisposable)
+                    ((IDisposable)service).Dispose();
+            }
+        }
+
+        public void StopServices()
+        {
+            foreach (var service in _Services)
+                service.Stop();
+        }
+
+        public T? GetService<T>() where T : ISdkService
+        {
+            foreach (var service in _Services)
+            {
+                if (service is T)
+                    return (T)service;
+            }
+            return default(T);
         }
 
         public HttpResponse RunRequest(Operation operation)
@@ -202,6 +245,8 @@ namespace AccelByte.Sdk.Core
 
         private List<IOperationProcessPipeline> _OpProcesses = new List<IOperationProcessPipeline>();
 
+        private List<ISdkService> _Services = new List<ISdkService>();
+
         public AccelByteSdkBuilder SetHttpClient(IHttpClient client)
         {
             _Client = client;
@@ -282,6 +327,11 @@ namespace AccelByte.Sdk.Core
             return this;
         }
 
+        public void RegisterService(ISdkService service)
+        {
+            _Services.Add(service);
+        }
+
         public AccelByteSDK Build()
         {
             if (_Client == null)
@@ -306,7 +356,11 @@ namespace AccelByte.Sdk.Core
             if (_Credential != null)
                 config.Credential = _Credential;
 
-            AccelByteSDK sdk = new AccelByteSDK(config);
+            AccelByteSDK sdk;
+            if (_Services.Count > 0)
+                sdk = new AccelByteSDK(config, _Services);
+            else
+                sdk = new AccelByteSDK(config);
 
             if (_TokenRepository is ISdkConsumerRepository)
                 ((ISdkConsumerRepository)_TokenRepository).SetSdkObject(sdk);

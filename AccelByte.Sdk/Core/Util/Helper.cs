@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2023 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -44,6 +44,13 @@ namespace AccelByte.Sdk.Core.Util
             }
 
             return Convert.ToBase64String(data).TrimEnd('=').Replace('+', '-').Replace('/', '_');
+        }
+
+        public static byte[] DecodeBase64Url(string source)
+        {
+            string temp = (source.Length % 4 == 0 ? source : source + "====".Substring(source.Length % 4))
+                .Replace("_", "/").Replace("-", "+");
+            return Convert.FromBase64String(temp);
         }
 
         public static string GenerateRandomId(int length)
