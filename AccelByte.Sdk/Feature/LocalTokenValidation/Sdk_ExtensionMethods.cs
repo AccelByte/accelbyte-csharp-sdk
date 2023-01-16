@@ -14,12 +14,63 @@ using AccelByte.Sdk.Core.Repository;
 using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Api;
 using AccelByte.Sdk.Api.Iam.Model;
-using System.Text.RegularExpressions;
 
 namespace AccelByte.Sdk.Feature.LocalTokenValidation
 {
     public static class Sdk_ExtensionMethods
     {
+        private static bool IsResourceAllowed(string accessPermissionResource, string requiredPermissionResource)
+        {
+            string[] requiredPermResSections = requiredPermissionResource.Split(':');
+            int requiredPermResSectionLen = requiredPermResSections.Length;
+            string[] accessPermResSections = accessPermissionResource.Split(':');
+            int accessPermResSectionLen = accessPermResSections.Length;
+
+            int minSectionLen = accessPermResSectionLen;
+
+            if (minSectionLen > requiredPermResSectionLen)
+                minSectionLen = requiredPermResSectionLen;
+
+            for (int i = 0; i < minSectionLen; i++)
+            {
+                string userSection = accessPermResSections[i];
+                string requiredSection = requiredPermResSections[i];
+
+
+                if ((userSection != requiredSection) && (userSection != "*"))
+                    return false;
+            }
+
+            if (accessPermResSectionLen == requiredPermResSectionLen)
+                return true;
+
+            if (accessPermResSectionLen < requiredPermResSectionLen)
+            {
+                if (accessPermResSections[accessPermResSectionLen - 1] == "*")
+                {
+                    if (accessPermResSectionLen < 2)
+                        return true;
+
+                    string segment = accessPermResSections[accessPermResSectionLen - 2];
+
+                    if ((segment == "NAMESPACE") || (segment == "USER"))
+                        return false;
+
+                    return true;
+                }
+
+                return false;
+            }
+
+            for (int i = requiredPermResSectionLen; i < accessPermResSectionLen; i++)
+            {
+                if (accessPermResSections[i] != "*")
+                    return false;
+            }
+
+            return true;
+        }
+
         public static void FetchJWKS(this AccelByteSDK sdk)
         {
             OauthcommonJWKSet? tempResp = sdk.Iam.OAuth20.GetJWKSV3Op
@@ -118,14 +169,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
             bool foundMatchingPermission = false;
             foreach (var p in payload.Permissions)
             {
-                Regex validator = new Regex(p.Resource
-                    .Split(':', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
-                    .AsEnumerable()
-                    .Select((part, i) => part == "*" ? "([^:]+)" : part)
-                    .Aggregate((current, next) => current + ":" + next)
-                );
-
-                if (validator.IsMatch(permission))
+                if (IsResourceAllowed(p.Resource, permission))
                 {
                     if (PermissionAction.Has(p.Action, action))
                     {
