@@ -108,7 +108,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
         public static bool ValidateToken(this AccelByteSDK sdk, string accessToken, string permission, int action)
         {
             sdk.ValidateToken(accessToken, out JwtSecurityToken rawJwt);
-            AccessTokenPayload payload = AccessTokenPayload.FromToken(rawJwt);
+            AccessTokenPayload payload = AccessTokenPayload.FromToken(rawJwt);            
 
             if (payload.Permissions == null)
                 return false;
@@ -118,11 +118,11 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
             {
                 if (p.Resource == permission)
                 {
-                    if (p.Action == action)
+                    if (PermissionAction.Has(p.Action, action))
                     {
                         foundMatchingPermission = true;
                         break;
-                    }                    
+                    }
                 }
             }
 
