@@ -14,6 +14,7 @@ using AccelByte.Sdk.Core.Repository;
 using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Api;
 using AccelByte.Sdk.Api.Iam.Model;
+using System.Text.RegularExpressions;
 
 namespace AccelByte.Sdk.Feature.LocalTokenValidation
 {
@@ -105,6 +106,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
                 return false;
             }
         }
+
         public static bool ValidateToken(this AccelByteSDK sdk, string accessToken, string permission, int action)
         {
             sdk.ValidateToken(accessToken, out JwtSecurityToken rawJwt);
@@ -116,7 +118,14 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
             bool foundMatchingPermission = false;
             foreach (var p in payload.Permissions)
             {
-                if (p.Resource == permission)
+                Regex validator = new Regex(p.Resource
+                    .Split(':', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                    .AsEnumerable()
+                    .Select((part, i) => part == "*" ? "([^:]+)" : part)
+                    .Aggregate((current, next) => current + ":" + next)
+                );
+
+                if (validator.IsMatch(permission))
                 {
                     if (PermissionAction.Has(p.Action, action))
                     {
