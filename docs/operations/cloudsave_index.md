@@ -46,6 +46,7 @@
 ### PublicGameRecord Wrapper:  [PublicGameRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/PublicGameRecord.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/cloudsave/v1/namespaces/{namespace}/records/bulk` | POST | GetGameRecordsBulk | [GetGameRecordsBulk](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/GetGameRecordsBulk.cs) | [GetGameRecordsBulk](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/GetGameRecordsBulk.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | GET | GetGameRecordHandlerV1 | [GetGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/GetGameRecordHandlerV1.cs) | [GetGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/GetGameRecordHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | PUT | PutGameRecordHandlerV1 | [PutGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/PutGameRecordHandlerV1.cs) | [PutGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/PutGameRecordHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | POST | PostGameRecordHandlerV1 | [PostGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/PostGameRecordHandlerV1.cs) | [PostGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/PostGameRecordHandlerV1.cs) |
@@ -55,6 +56,8 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/cloudsave/v1/namespaces/{namespace}/users/bulk/records/{key}/public` | POST | BulkGetPlayerPublicRecordHandlerV1 | [BulkGetPlayerPublicRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerRecord/BulkGetPlayerPublicRecordHandlerV1.cs) | [BulkGetPlayerPublicRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerRecord/BulkGetPlayerPublicRecordHandlerV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/me/records` | GET | RetrievePlayerRecords | [RetrievePlayerRecords](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerRecord/RetrievePlayerRecords.cs) | [RetrievePlayerRecords](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerRecord/RetrievePlayerRecords.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/me/records/bulk` | POST | GetPlayerRecordsBulkHandlerV1 | [GetPlayerRecordsBulkHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerRecord/GetPlayerRecordsBulkHandlerV1.cs) | [GetPlayerRecordsBulkHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerRecord/GetPlayerRecordsBulkHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/users/me/records/{key}/public` | DELETE | PublicDeletePlayerPublicRecordHandlerV1 | [PublicDeletePlayerPublicRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerRecord/PublicDeletePlayerPublicRecordHandlerV1.cs) | [PublicDeletePlayerPublicRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerRecord/PublicDeletePlayerPublicRecordHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}` | GET | GetPlayerRecordHandlerV1 | [GetPlayerRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerRecord/GetPlayerRecordHandlerV1.cs) | [GetPlayerRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerRecord/GetPlayerRecordHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}` | PUT | PutPlayerRecordHandlerV1 | [PutPlayerRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerRecord/PutPlayerRecordHandlerV1.cs) | [PutPlayerRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerRecord/PutPlayerRecordHandlerV1.cs) |
@@ -72,8 +75,11 @@
 | Model | Class |
 |---|---|
 | `models.AdminConcurrentRecordRequest` | [ModelsAdminConcurrentRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsAdminConcurrentRecordRequest.cs) |
+| `models.BulkGetGameRecordRequest` | [ModelsBulkGetGameRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetGameRecordRequest.cs) |
+| `models.BulkGetGameRecordResponse` | [ModelsBulkGetGameRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetGameRecordResponse.cs) |
 | `models.BulkGetPlayerRecordResponse` | [ModelsBulkGetPlayerRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetPlayerRecordResponse.cs) |
 | `models.BulkGetPlayerRecordSizeResponse` | [ModelsBulkGetPlayerRecordSizeResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetPlayerRecordSizeResponse.cs) |
+| `models.BulkGetPlayerRecordsRequest` | [ModelsBulkGetPlayerRecordsRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetPlayerRecordsRequest.cs) |
 | `models.BulkUserIDsRequest` | [ModelsBulkUserIDsRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkUserIDsRequest.cs) |
 | `models.BulkUserKeyRequest` | [ModelsBulkUserKeyRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkUserKeyRequest.cs) |
 | `models.ConcurrentRecordRequest` | [ModelsConcurrentRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsConcurrentRecordRequest.cs) |

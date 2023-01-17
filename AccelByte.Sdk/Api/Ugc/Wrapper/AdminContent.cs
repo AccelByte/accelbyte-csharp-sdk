@@ -49,6 +49,10 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         {
             get { return Operation.SingleAdminGetContent.Builder.SetWrapperObject(this); }
         }
+        public AdminGetContentBulk.AdminGetContentBulkBuilder AdminGetContentBulkOp
+        {
+            get { return Operation.AdminGetContentBulk.Builder.SetWrapperObject(this); }
+        }
         public AdminSearchContent.AdminSearchContentBuilder AdminSearchContentOp
         {
             get { return Operation.AdminSearchContent.Builder.SetWrapperObject(this); }
@@ -155,6 +159,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsPaginatedContentDownloadResponse? SingleAdminGetContent(SingleAdminGetContent input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ModelsContentDownloadResponse>? AdminGetContentBulk(AdminGetContentBulk input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

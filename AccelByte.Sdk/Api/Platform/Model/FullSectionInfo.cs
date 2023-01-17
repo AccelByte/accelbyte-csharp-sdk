@@ -66,10 +66,16 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("viewId")]
         public string? ViewId { get; set; }
 
+        [JsonPropertyName("viewName")]
+        public string? ViewName { get; set; }
+
     }
 
     public class FullSectionInfoRotationType : StringEnum<FullSectionInfoRotationType>
     {
+        public static readonly FullSectionInfoRotationType CUSTOM
+            = new FullSectionInfoRotationType("CUSTOM");
+
         public static readonly FullSectionInfoRotationType FIXEDPERIOD
             = new FullSectionInfoRotationType("FIXED_PERIOD");
 

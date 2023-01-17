@@ -34,6 +34,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("endDate")]
         public DateTime? EndDate { get; set; }
 
+        [JsonPropertyName("ext")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? Ext { get; set; }
+
         [JsonPropertyName("localExt")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? LocalExt { get; set; }

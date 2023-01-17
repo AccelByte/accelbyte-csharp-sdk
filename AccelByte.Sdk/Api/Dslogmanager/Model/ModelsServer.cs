@@ -81,5 +81,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         [JsonPropertyName("status_history")]
         public List<ModelsStatusHistory>? StatusHistory { get; set; }
 
+        [JsonPropertyName("termination_reason")]
+        public string? TerminationReason { get; set; }
+
     }
 }

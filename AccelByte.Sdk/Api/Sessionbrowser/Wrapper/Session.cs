@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         }
 
         #region Operation Builders
+        public AdminQuerySession.AdminQuerySessionBuilder AdminQuerySessionOp
+        {
+            get { return Operation.AdminQuerySession.Builder.SetWrapperObject(this); }
+        }
         public GetTotalActiveSession.GetTotalActiveSessionBuilder GetTotalActiveSessionOp
         {
             get { return Operation.GetTotalActiveSession.Builder.SetWrapperObject(this); }
@@ -47,9 +51,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         {
             get { return Operation.GetSessionHistoryDetailed.Builder.SetWrapperObject(this); }
         }
-        public QuerySession.QuerySessionBuilder QuerySessionOp
+        public UserQuerySession.UserQuerySessionBuilder UserQuerySessionOp
         {
-            get { return Operation.QuerySession.Builder.SetWrapperObject(this); }
+            get { return Operation.UserQuerySession.Builder.SetWrapperObject(this); }
         }
         public CreateSession.CreateSessionBuilder CreateSessionOp
         {
@@ -97,6 +101,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         }
         #endregion
         
+        public Model.ModelsSessionQueryResponse? AdminQuerySession(AdminQuerySession input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsCountActiveSessionResponse? GetTotalActiveSession(GetTotalActiveSession input) {
             var response = _sdk.RunRequest(input);
 
@@ -153,7 +165,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsSessionQueryResponse? QuerySession(QuerySession input) {
+        public Model.ModelsSessionQueryResponse? UserQuerySession(UserQuerySession input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

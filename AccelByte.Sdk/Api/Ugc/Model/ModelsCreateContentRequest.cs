@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Ugc.Model
 {
     public class ModelsCreateContentRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("customAttributes")]
+        public Dictionary<string, object>? CustomAttributes { get; set; }
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
 

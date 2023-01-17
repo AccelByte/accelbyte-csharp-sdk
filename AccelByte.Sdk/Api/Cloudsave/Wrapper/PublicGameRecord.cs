@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
 
         #region Operation Builders
+        public GetGameRecordsBulk.GetGameRecordsBulkBuilder GetGameRecordsBulkOp
+        {
+            get { return Operation.GetGameRecordsBulk.Builder.SetWrapperObject(this); }
+        }
         public GetGameRecordHandlerV1.GetGameRecordHandlerV1Builder GetGameRecordHandlerV1Op
         {
             get { return Operation.GetGameRecordHandlerV1.Builder.SetWrapperObject(this); }
@@ -37,6 +41,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
         #endregion
         
+        public Model.ModelsBulkGetGameRecordResponse? GetGameRecordsBulk(GetGameRecordsBulk input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsGameRecordResponse? GetGameRecordHandlerV1(GetGameRecordHandlerV1 input) {
             var response = _sdk.RunRequest(input);
 

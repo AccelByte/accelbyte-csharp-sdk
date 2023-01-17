@@ -84,5 +84,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("status_history")]
         public List<ModelsStatusHistory>? StatusHistory { get; set; }
 
+        [JsonPropertyName("termination_reason")]
+        public string? TerminationReason { get; set; }
+
     }
 }

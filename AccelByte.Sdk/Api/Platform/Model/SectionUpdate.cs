@@ -56,6 +56,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class SectionUpdateRotationType : StringEnum<SectionUpdateRotationType>
     {
+        public static readonly SectionUpdateRotationType CUSTOM
+            = new SectionUpdateRotationType("CUSTOM");
+
         public static readonly SectionUpdateRotationType FIXEDPERIOD
             = new SectionUpdateRotationType("FIXED_PERIOD");
 

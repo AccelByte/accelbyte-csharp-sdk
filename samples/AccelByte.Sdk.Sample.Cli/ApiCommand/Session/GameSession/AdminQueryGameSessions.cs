@@ -69,6 +69,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
         [SdkCommandArgument("status")]
         public string? Status { get; set; }
 
+        [SdkCommandArgument("statusV2")]
+        public string? StatusV2 { get; set; }
+
         [SdkCommandArgument("toTime")]
         public string? ToTime { get; set; }
 
@@ -96,6 +99,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
                 OrderBy,                
                 SessionID,                
                 Status,                
+                StatusV2,                
                 ToTime                
             );            
             

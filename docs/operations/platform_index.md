@@ -98,6 +98,13 @@
 | `/platform/public/namespaces/{namespace}/categories/{categoryPath}/children` | GET | PublicGetChildCategories | [PublicGetChildCategories](../../AccelByte.Sdk/Api/Platform/Operation/Category/PublicGetChildCategories.cs) | [PublicGetChildCategories](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Category/PublicGetChildCategories.cs) |
 | `/platform/public/namespaces/{namespace}/categories/{categoryPath}/descendants` | GET | PublicGetDescendantCategories | [PublicGetDescendantCategories](../../AccelByte.Sdk/Api/Platform/Operation/Category/PublicGetDescendantCategories.cs) | [PublicGetDescendantCategories](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Category/PublicGetDescendantCategories.cs) |
 
+### ServicePluginConfig Wrapper:  [ServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/ServicePluginConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/configs/servicePlugin` | GET | GetServicePluginConfig | [GetServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/GetServicePluginConfig.cs) | [GetServicePluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/GetServicePluginConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/configs/servicePlugin` | PUT | UpdateServicePluginConfig | [UpdateServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/UpdateServicePluginConfig.cs) | [UpdateServicePluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/UpdateServicePluginConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/configs/servicePlugin` | DELETE | DeleteServicePluginConfig | [DeleteServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/DeleteServicePluginConfig.cs) | [DeleteServicePluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/DeleteServicePluginConfig.cs) |
+
 ### Currency Wrapper:  [Currency](../../AccelByte.Sdk/Api/Platform/Wrapper/Currency.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -751,6 +758,8 @@
 | `SectionItem` | [SectionItem](../../AccelByte.Sdk/Api/Platform/Model/SectionItem.cs) |
 | `SectionPagingSlicedResult` | [SectionPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/SectionPagingSlicedResult.cs) |
 | `SectionUpdate` | [SectionUpdate](../../AccelByte.Sdk/Api/Platform/Model/SectionUpdate.cs) |
+| `ServicePluginConfigInfo` | [ServicePluginConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/ServicePluginConfigInfo.cs) |
+| `ServicePluginConfigUpdate` | [ServicePluginConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/ServicePluginConfigUpdate.cs) |
 | `Slide` | [Slide](../../AccelByte.Sdk/Api/Platform/Model/Slide.cs) |
 | `StackableEntitlementInfo` | [StackableEntitlementInfo](../../AccelByte.Sdk/Api/Platform/Model/StackableEntitlementInfo.cs) |
 | `StadiaIAPConfigInfo` | [StadiaIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/StadiaIAPConfigInfo.cs) |

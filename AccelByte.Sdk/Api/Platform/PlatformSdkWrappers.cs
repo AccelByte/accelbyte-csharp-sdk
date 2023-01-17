@@ -57,6 +57,17 @@ namespace AccelByte.Sdk.Core
         }
         private Category? _Category = null;
 
+        public ServicePluginConfig ServicePluginConfig
+        {
+            get
+            {
+                if (_ServicePluginConfig == null)
+                    _ServicePluginConfig = new ServicePluginConfig(_SdkObject);
+                return _ServicePluginConfig;
+            }
+        }
+        private ServicePluginConfig? _ServicePluginConfig = null;
+
         public Currency Currency
         {
             get

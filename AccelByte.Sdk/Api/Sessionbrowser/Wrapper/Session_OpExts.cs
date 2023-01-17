@@ -12,6 +12,20 @@ namespace AccelByte.Sdk.Api
 {
     public static class SessionbrowserSession_OpExts
     {
+        public static Sessionbrowser.Model.ModelsSessionQueryResponse? Execute(
+            this AdminQuerySession.AdminQuerySessionBuilder builder,
+            string namespace_,
+            string sessionType
+        )
+        {
+            AdminQuerySession op = builder.Build(
+                namespace_,
+                sessionType
+            );
+
+            return ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).AdminQuerySession(op);
+        }
+
         public static Sessionbrowser.Model.ModelsCountActiveSessionResponse? Execute(
             this GetTotalActiveSession.GetTotalActiveSessionBuilder builder,
             string namespace_
@@ -107,17 +121,17 @@ namespace AccelByte.Sdk.Api
         }
 
         public static Sessionbrowser.Model.ModelsSessionQueryResponse? Execute(
-            this QuerySession.QuerySessionBuilder builder,
+            this UserQuerySession.UserQuerySessionBuilder builder,
             string namespace_,
             string sessionType
         )
         {
-            QuerySession op = builder.Build(
+            UserQuerySession op = builder.Build(
                 namespace_,
                 sessionType
             );
 
-            return ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).QuerySession(op);
+            return ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).UserQuerySession(op);
         }
 
         public static Sessionbrowser.Model.ModelsSessionResponse? Execute(

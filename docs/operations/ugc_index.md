@@ -25,6 +25,7 @@
 | [DEPRECATED] `/ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/{contentId}` | PUT | SingleAdminUpdateContentDirect | [SingleAdminUpdateContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/SingleAdminUpdateContentDirect.cs) | [SingleAdminUpdateContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/SingleAdminUpdateContentDirect.cs) |
 | `/ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/{contentId}` | DELETE | SingleAdminDeleteContent | [SingleAdminDeleteContent](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/SingleAdminDeleteContent.cs) | [SingleAdminDeleteContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/SingleAdminDeleteContent.cs) |
 | `/ugc/v1/admin/namespaces/{namespace}/contents` | GET | SingleAdminGetContent | [SingleAdminGetContent](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/SingleAdminGetContent.cs) | [SingleAdminGetContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/SingleAdminGetContent.cs) |
+| `/ugc/v1/admin/namespaces/{namespace}/contents/bulk` | POST | AdminGetContentBulk | [AdminGetContentBulk](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/AdminGetContentBulk.cs) | [AdminGetContentBulk](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/AdminGetContentBulk.cs) |
 | `/ugc/v1/admin/namespaces/{namespace}/contents/search` | GET | AdminSearchContent | [AdminSearchContent](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/AdminSearchContent.cs) | [AdminSearchContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/AdminSearchContent.cs) |
 | `/ugc/v1/admin/namespaces/{namespace}/contents/sharecodes/{shareCode}` | GET | AdminGetUserContentByShareCode | [AdminGetUserContentByShareCode](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/AdminGetUserContentByShareCode.cs) | [AdminGetUserContentByShareCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/AdminGetUserContentByShareCode.cs) |
 | `/ugc/v1/admin/namespaces/{namespace}/contents/{contentId}` | GET | AdminGetSpecificContent | [AdminGetSpecificContent](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/AdminGetSpecificContent.cs) | [AdminGetSpecificContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/AdminGetSpecificContent.cs) |
@@ -162,6 +163,7 @@
 | Model | Class |
 |---|---|
 | `models.AddDownloadCountResponse` | [ModelsAddDownloadCountResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsAddDownloadCountResponse.cs) |
+| `models.AdminGetContentBulkRequest` | [ModelsAdminGetContentBulkRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsAdminGetContentBulkRequest.cs) |
 | `models.ChannelRequest` | [ModelsChannelRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsChannelRequest.cs) |
 | `models.ChannelResponse` | [ModelsChannelResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsChannelResponse.cs) |
 | `models.ContentDownloadResponse` | [ModelsContentDownloadResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentDownloadResponse.cs) |

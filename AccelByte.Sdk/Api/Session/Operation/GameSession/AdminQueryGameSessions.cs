@@ -53,6 +53,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
             public string? Status { get; set; }
 
+            public string? StatusV2 { get; set; }
+
             public string? ToTime { get; set; }
 
 
@@ -140,6 +142,12 @@ namespace AccelByte.Sdk.Api.Session.Operation
                 return this;
             }
 
+            public AdminQueryGameSessionsBuilder SetStatusV2(string _statusV2)
+            {
+                StatusV2 = _statusV2;
+                return this;
+            }
+
             public AdminQueryGameSessionsBuilder SetToTime(string _toTime)
             {
                 ToTime = _toTime;
@@ -182,6 +190,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (builder.OrderBy is not null) QueryParams["orderBy"] = builder.OrderBy;
             if (builder.SessionID is not null) QueryParams["sessionID"] = builder.SessionID;
             if (builder.Status is not null) QueryParams["status"] = builder.Status;
+            if (builder.StatusV2 is not null) QueryParams["statusV2"] = builder.StatusV2;
             if (builder.ToTime is not null) QueryParams["toTime"] = builder.ToTime;
             
 
@@ -208,6 +217,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             string? orderBy,            
             string? sessionID,            
             string? status,            
+            string? statusV2,            
             string? toTime            
         )
         {
@@ -226,6 +236,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (orderBy is not null) QueryParams["orderBy"] = orderBy;
             if (sessionID is not null) QueryParams["sessionID"] = sessionID;
             if (status is not null) QueryParams["status"] = status;
+            if (statusV2 is not null) QueryParams["statusV2"] = statusV2;
             if (toTime is not null) QueryParams["toTime"] = toTime;
             
 

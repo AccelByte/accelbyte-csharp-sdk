@@ -28,6 +28,32 @@ namespace AccelByte.Sdk.Api
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).BulkGetPlayerPublicRecordHandlerV1(op);
         }
 
+        public static Cloudsave.Model.ModelsListPlayerRecordKeysResponse? Execute(
+            this RetrievePlayerRecords.RetrievePlayerRecordsBuilder builder,
+            string namespace_
+        )
+        {
+            RetrievePlayerRecords op = builder.Build(
+                namespace_
+            );
+
+            return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).RetrievePlayerRecords(op);
+        }
+
+        public static Cloudsave.Model.ModelsBulkGetPlayerRecordResponse? Execute(
+            this GetPlayerRecordsBulkHandlerV1.GetPlayerRecordsBulkHandlerV1Builder builder,
+            ModelsBulkGetPlayerRecordsRequest body,
+            string namespace_
+        )
+        {
+            GetPlayerRecordsBulkHandlerV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetPlayerRecordsBulkHandlerV1(op);
+        }
+
         public static void Execute(
             this PublicDeletePlayerPublicRecordHandlerV1.PublicDeletePlayerPublicRecordHandlerV1Builder builder,
             string key,

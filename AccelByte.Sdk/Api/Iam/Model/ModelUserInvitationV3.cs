@@ -19,6 +19,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
 
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
         [JsonPropertyName("roles")]
         public List<AccountcommonNamespaceRole>? Roles { get; set; }
 

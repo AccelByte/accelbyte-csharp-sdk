@@ -15,6 +15,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("isAdmin")]
         public bool? IsAdmin { get; set; }
 
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
         [JsonPropertyName("roles")]
         public List<string>? Roles { get; set; }
 

@@ -11,6 +11,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class FixedPeriodRotationConfig : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("backfillType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public FixedPeriodRotationConfigBackfillType? BackfillType { get; set; }
+
         [JsonPropertyName("duration")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Duration { get; set; }
@@ -25,6 +30,27 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public FixedPeriodRotationConfigRule? Rule { get; set; }
 
     }
+
+    public class FixedPeriodRotationConfigBackfillType : StringEnum<FixedPeriodRotationConfigBackfillType>
+    {
+        public static readonly FixedPeriodRotationConfigBackfillType CUSTOM
+            = new FixedPeriodRotationConfigBackfillType("CUSTOM");
+
+        public static readonly FixedPeriodRotationConfigBackfillType NONE
+            = new FixedPeriodRotationConfigBackfillType("NONE");
+
+
+        public static implicit operator FixedPeriodRotationConfigBackfillType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public FixedPeriodRotationConfigBackfillType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }    
 
     public class FixedPeriodRotationConfigRule : StringEnum<FixedPeriodRotationConfigRule>
     {

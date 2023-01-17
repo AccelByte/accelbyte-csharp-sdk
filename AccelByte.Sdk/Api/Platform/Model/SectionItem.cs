@@ -12,5 +12,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 
+        [JsonPropertyName("sku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Sku { get; set; }
+
     }
 }

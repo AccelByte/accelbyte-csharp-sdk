@@ -124,6 +124,20 @@ namespace AccelByte.Sdk.Api
             return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).SingleAdminGetContent(op);
         }
 
+        public static List<Ugc.Model.ModelsContentDownloadResponse>? Execute(
+            this AdminGetContentBulk.AdminGetContentBulkBuilder builder,
+            ModelsAdminGetContentBulkRequest body,
+            string namespace_
+        )
+        {
+            AdminGetContentBulk op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).AdminGetContentBulk(op);
+        }
+
         public static Ugc.Model.ModelsPaginatedContentDownloadResponse? Execute(
             this AdminSearchContent.AdminSearchContentBuilder builder,
             string namespace_

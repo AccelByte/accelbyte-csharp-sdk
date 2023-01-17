@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser","querysession")]
-    public class QuerySessionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser","userquerysession")]
+    public class UserQuerySessionCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName{ get { return "Sessionbrowser"; } }
 
-        public string OperationName{ get { return "QuerySession"; } }
+        public string OperationName{ get { return "UserQuerySession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -60,7 +60,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         [SdkCommandArgument("sessionType")]
         public string SessionType { get; set; } = String.Empty;
 
-        public QuerySessionCommand(AccelByteSDK sdk)
+        public UserQuerySessionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
@@ -69,7 +69,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         {
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
-            QuerySession operation = new QuerySession(
+            UserQuerySession operation = new UserQuerySession(
                 Namespace,                
                 GameMode,                
                 GameVersion,                
@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
                 SessionType                
             );            
             
-            AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsSessionQueryResponse? response = wrapper.QuerySession(operation);
+            AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsSessionQueryResponse? response = wrapper.UserQuerySession(operation);
             if (response == null)
                 return "No response from server.";
 

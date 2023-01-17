@@ -14,21 +14,19 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 {
     /// <summary>
-    /// QuerySession
+    /// AdminQuerySession
     ///
-    /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
     /// 
     /// Required scope: social
-    /// 
-    /// Query available game session
     /// </summary>
-    public class QuerySession : AccelByte.Sdk.Core.Operation
+    public class AdminQuerySession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QuerySessionBuilder Builder = new QuerySessionBuilder();
+        public static AdminQuerySessionBuilder Builder = new AdminQuerySessionBuilder();
 
-        public class QuerySessionBuilder
-            : OperationBuilder<QuerySessionBuilder>
+        public class AdminQuerySessionBuilder
+            : OperationBuilder<AdminQuerySessionBuilder>
         {
 
             public string? GameMode { get; set; }
@@ -53,58 +51,58 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
 
 
-            internal QuerySessionBuilder() { }
+            internal AdminQuerySessionBuilder() { }
 
 
-            public QuerySessionBuilder SetGameMode(string _gameMode)
+            public AdminQuerySessionBuilder SetGameMode(string _gameMode)
             {
                 GameMode = _gameMode;
                 return this;
             }
 
-            public QuerySessionBuilder SetGameVersion(string _gameVersion)
+            public AdminQuerySessionBuilder SetGameVersion(string _gameVersion)
             {
                 GameVersion = _gameVersion;
                 return this;
             }
 
-            public QuerySessionBuilder SetJoinable(string _joinable)
+            public AdminQuerySessionBuilder SetJoinable(string _joinable)
             {
                 Joinable = _joinable;
                 return this;
             }
 
-            public QuerySessionBuilder SetLimit(long _limit)
+            public AdminQuerySessionBuilder SetLimit(long _limit)
             {
                 Limit = _limit;
                 return this;
             }
 
-            public QuerySessionBuilder SetMatchExist(string _matchExist)
+            public AdminQuerySessionBuilder SetMatchExist(string _matchExist)
             {
                 MatchExist = _matchExist;
                 return this;
             }
 
-            public QuerySessionBuilder SetMatchId(string _matchId)
+            public AdminQuerySessionBuilder SetMatchId(string _matchId)
             {
                 MatchId = _matchId;
                 return this;
             }
 
-            public QuerySessionBuilder SetOffset(long _offset)
+            public AdminQuerySessionBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
                 return this;
             }
 
-            public QuerySessionBuilder SetServerStatus(string _serverStatus)
+            public AdminQuerySessionBuilder SetServerStatus(string _serverStatus)
             {
                 ServerStatus = _serverStatus;
                 return this;
             }
 
-            public QuerySessionBuilder SetUserId(string _userId)
+            public AdminQuerySessionBuilder SetUserId(string _userId)
             {
                 UserId = _userId;
                 return this;
@@ -114,12 +112,12 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
 
 
-            public QuerySession Build(
+            public AdminQuerySession Build(
                 string namespace_,
                 string sessionType
             )
             {
-                QuerySession op = new QuerySession(this,
+                AdminQuerySession op = new AdminQuerySession(this,
                     namespace_,                    
                     sessionType                    
                 );
@@ -129,7 +127,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             }
         }
 
-        private QuerySession(QuerySessionBuilder builder,
+        private AdminQuerySession(AdminQuerySessionBuilder builder,
             string namespace_,
             string sessionType
         )
@@ -156,7 +154,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         }
         #endregion
 
-        public QuerySession(
+        public AdminQuerySession(
             string namespace_,            
             string? gameMode,            
             string? gameVersion,            
@@ -191,11 +189,11 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/sessionbrowser/namespaces/{namespace}/gamesession";
+        public override string Path => "/sessionbrowser/admin/namespaces/{namespace}/gamesession";
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { "application/json" };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 

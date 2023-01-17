@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         [JsonPropertyName("contentType")]
         public string? ContentType { get; set; }
 
+        [JsonPropertyName("customAttributes")]
+        public Dictionary<string, object>? CustomAttributes { get; set; }
+
         [JsonPropertyName("fileExtension")]
         public string? FileExtension { get; set; }
 

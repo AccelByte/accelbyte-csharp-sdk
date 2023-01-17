@@ -12,5 +12,8 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("UserIDs")]
         public List<string>? UserIDs { get; set; }
 
+        [JsonPropertyName("parties")]
+        public List<ModelsPartyMembers>? Parties { get; set; }
+
     }
 }

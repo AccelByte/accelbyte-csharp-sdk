@@ -12,6 +12,20 @@ namespace AccelByte.Sdk.Api
 {
     public static class CloudsavePublicGameRecord_OpExts
     {
+        public static Cloudsave.Model.ModelsBulkGetGameRecordResponse? Execute(
+            this GetGameRecordsBulk.GetGameRecordsBulkBuilder builder,
+            ModelsBulkGetGameRecordRequest body,
+            string namespace_
+        )
+        {
+            GetGameRecordsBulk op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Cloudsave.Wrapper.PublicGameRecord)builder.WrapperObject!).GetGameRecordsBulk(op);
+        }
+
         public static Cloudsave.Model.ModelsGameRecordResponse? Execute(
             this GetGameRecordHandlerV1.GetGameRecordHandlerV1Builder builder,
             string key,

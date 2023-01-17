@@ -56,14 +56,14 @@ $CLI_EXE \
     --sn group \
     --op ListGroupConfigurationAdminV1 \
     --namespace $AB_NAMESPACE \
-    --limit '53' \
-    --offset '19' \
+    --limit '12' \
+    --offset '49' \
     > test.out 2>&1
 eval_tap $? 2 'ListGroupConfigurationAdminV1' test.out
 
 #- 3 CreateGroupConfigurationAdminV1
 # body param: body
-echo '{"configurationCode": "B1UDfCIe", "description": "dettYBgU", "globalRules": [{"allowedAction": "99VXWfak", "ruleDetail": [{"ruleAttribute": "BhqRD4nI", "ruleCriteria": "MAXIMUM", "ruleValue": 0.9718293113838132}, {"ruleAttribute": "s3QMaIcL", "ruleCriteria": "MAXIMUM", "ruleValue": 0.000791676153182097}, {"ruleAttribute": "ZGMNpnfQ", "ruleCriteria": "MINIMUM", "ruleValue": 0.014365547569119674}]}, {"allowedAction": "2LFtUgQU", "ruleDetail": [{"ruleAttribute": "UD0v0YiV", "ruleCriteria": "MAXIMUM", "ruleValue": 0.9663145403508462}, {"ruleAttribute": "sfUvl6KQ", "ruleCriteria": "EQUAL", "ruleValue": 0.9269831231189261}, {"ruleAttribute": "mDK5fgy0", "ruleCriteria": "MINIMUM", "ruleValue": 0.581377247274261}]}, {"allowedAction": "OUscHfLl", "ruleDetail": [{"ruleAttribute": "YXxWbwfK", "ruleCriteria": "MINIMUM", "ruleValue": 0.06498398556481777}, {"ruleAttribute": "oapZ6y24", "ruleCriteria": "MINIMUM", "ruleValue": 0.7263007286465413}, {"ruleAttribute": "gp79l0H4", "ruleCriteria": "MAXIMUM", "ruleValue": 0.5774232718471846}]}], "groupAdminRoleId": "uJuOMfYN", "groupMaxMember": 51, "groupMemberRoleId": "Icw6k8dQ", "name": "vAJkpU9Z"}' > $TEMP_JSON_INPUT
+echo '{"configurationCode": "B0PZxX2U", "description": "Jc5alEFd", "globalRules": [{"allowedAction": "WwYFqtJu", "ruleDetail": [{"ruleAttribute": "0h6k5hKu", "ruleCriteria": "MAXIMUM", "ruleValue": 0.2448055946839952}, {"ruleAttribute": "hxi7vB17", "ruleCriteria": "EQUAL", "ruleValue": 0.08654193266751387}, {"ruleAttribute": "6RaViUHZ", "ruleCriteria": "EQUAL", "ruleValue": 0.38170320167231375}]}, {"allowedAction": "M4NoWZuw", "ruleDetail": [{"ruleAttribute": "XsLy3s0B", "ruleCriteria": "MINIMUM", "ruleValue": 0.9018992838357623}, {"ruleAttribute": "sMeDXPys", "ruleCriteria": "EQUAL", "ruleValue": 0.6158813745244555}, {"ruleAttribute": "UQMcSnHA", "ruleCriteria": "EQUAL", "ruleValue": 0.32267622302584076}]}, {"allowedAction": "WyiufNnF", "ruleDetail": [{"ruleAttribute": "RUHyNCNG", "ruleCriteria": "MINIMUM", "ruleValue": 0.6437012853011435}, {"ruleAttribute": "vha5mK3K", "ruleCriteria": "MAXIMUM", "ruleValue": 0.4296960812823084}, {"ruleAttribute": "DEEeSLwF", "ruleCriteria": "MAXIMUM", "ruleValue": 0.48319462062295726}]}], "groupAdminRoleId": "hDONAmKV", "groupMaxMember": 44, "groupMemberRoleId": "zT5E00CK", "name": "OfTePNDf"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op CreateGroupConfigurationAdminV1 \
@@ -84,7 +84,7 @@ eval_tap $? 4 'InitiateGroupConfigurationAdminV1' test.out
 $CLI_EXE \
     --sn group \
     --op GetGroupConfigurationAdminV1 \
-    --configurationCode 'SP6qlll0' \
+    --configurationCode 'S9NJpqvt' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 5 'GetGroupConfigurationAdminV1' test.out
@@ -93,18 +93,18 @@ eval_tap $? 5 'GetGroupConfigurationAdminV1' test.out
 $CLI_EXE \
     --sn group \
     --op DeleteGroupConfigurationV1 \
-    --configurationCode 'w3iBmQok' \
+    --configurationCode 'iSmfk8KN' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 6 'DeleteGroupConfigurationV1' test.out
 
 #- 7 UpdateGroupConfigurationAdminV1
 # body param: body
-echo '{"description": "vdu2RckM", "groupMaxMember": 89, "name": "5BrUPCzX"}' > $TEMP_JSON_INPUT
+echo '{"description": "Bg3CRAk0", "groupMaxMember": 90, "name": "YNEuUByH"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op UpdateGroupConfigurationAdminV1 \
-    --configurationCode 'mLiFBZzY' \
+    --configurationCode 'UTCEeUDd' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -112,12 +112,12 @@ eval_tap $? 7 'UpdateGroupConfigurationAdminV1' test.out
 
 #- 8 UpdateGroupConfigurationGlobalRuleAdminV1
 # body param: body
-echo '{"ruleDetail": [{"ruleAttribute": "t71qWkQc", "ruleCriteria": "MAXIMUM", "ruleValue": 0.4587253862670172}, {"ruleAttribute": "mmOfuzsg", "ruleCriteria": "MAXIMUM", "ruleValue": 0.1751252987805355}, {"ruleAttribute": "kz8iajTi", "ruleCriteria": "MAXIMUM", "ruleValue": 0.852316360431204}]}' > $TEMP_JSON_INPUT
+echo '{"ruleDetail": [{"ruleAttribute": "4JOm20Im", "ruleCriteria": "MAXIMUM", "ruleValue": 0.9566253740599991}, {"ruleAttribute": "NuQ3Kqsx", "ruleCriteria": "EQUAL", "ruleValue": 0.9839761643488281}, {"ruleAttribute": "tbDA9q8M", "ruleCriteria": "MAXIMUM", "ruleValue": 0.027122737557352283}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op UpdateGroupConfigurationGlobalRuleAdminV1 \
-    --allowedAction 'IQIdKbvN' \
-    --configurationCode 'y0U4WyhR' \
+    --allowedAction '5nIoysfR' \
+    --configurationCode 'EZltBgrq' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -127,8 +127,8 @@ eval_tap $? 8 'UpdateGroupConfigurationGlobalRuleAdminV1' test.out
 $CLI_EXE \
     --sn group \
     --op DeleteGroupConfigurationGlobalRuleAdminV1 \
-    --allowedAction 'MHKaWDTn' \
-    --configurationCode '37hS4HeS' \
+    --allowedAction '1dbpvOtK' \
+    --configurationCode 'RdD0reN2' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 9 'DeleteGroupConfigurationGlobalRuleAdminV1' test.out
@@ -138,11 +138,11 @@ $CLI_EXE \
     --sn group \
     --op GetGroupListAdminV1 \
     --namespace $AB_NAMESPACE \
-    --configurationCode 'nkoG4EmC' \
-    --groupName 'neLuj3Az' \
-    --groupRegion 'L2pGWWON' \
-    --limit '80' \
-    --offset '45' \
+    --configurationCode 'U2DobNpJ' \
+    --groupName 'hAjKTwQh' \
+    --groupRegion 'g9LpsohD' \
+    --limit '13' \
+    --offset '86' \
     > test.out 2>&1
 eval_tap $? 10 'GetGroupListAdminV1' test.out
 
@@ -150,7 +150,7 @@ eval_tap $? 10 'GetGroupListAdminV1' test.out
 $CLI_EXE \
     --sn group \
     --op GetSingleGroupAdminV1 \
-    --groupId 'E4uRJgFm' \
+    --groupId 'z2DV8GdD' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 11 'GetSingleGroupAdminV1' test.out
@@ -159,7 +159,7 @@ eval_tap $? 11 'GetSingleGroupAdminV1' test.out
 $CLI_EXE \
     --sn group \
     --op DeleteGroupAdminV1 \
-    --groupId '4dSlXdDL' \
+    --groupId '8cYlb5f8' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 12 'DeleteGroupAdminV1' test.out
@@ -168,11 +168,11 @@ eval_tap $? 12 'DeleteGroupAdminV1' test.out
 $CLI_EXE \
     --sn group \
     --op GetGroupMembersListAdminV1 \
-    --groupId 'yY42CNTA' \
+    --groupId '6q8mx475' \
     --namespace $AB_NAMESPACE \
-    --limit '21' \
-    --offset '17' \
-    --order 'I82Df25S' \
+    --limit '65' \
+    --offset '1' \
+    --order 'W8jH6MdS' \
     > test.out 2>&1
 eval_tap $? 13 'GetGroupMembersListAdminV1' test.out
 
@@ -181,14 +181,14 @@ $CLI_EXE \
     --sn group \
     --op GetMemberRolesListAdminV1 \
     --namespace $AB_NAMESPACE \
-    --limit '15' \
-    --offset '6' \
+    --limit '83' \
+    --offset '71' \
     > test.out 2>&1
 eval_tap $? 14 'GetMemberRolesListAdminV1' test.out
 
 #- 15 CreateMemberRoleAdminV1
 # body param: body
-echo '{"memberRoleName": "hkalydRT", "memberRolePermissions": [{"action": 50, "resourceName": "3ONiE8mv"}, {"action": 12, "resourceName": "273xAxzd"}, {"action": 79, "resourceName": "8Nf6PCFf"}]}' > $TEMP_JSON_INPUT
+echo '{"memberRoleName": "6G5ttODf", "memberRolePermissions": [{"action": 44, "resourceName": "Jw0aAQxc"}, {"action": 48, "resourceName": "ScDVjt89"}, {"action": 13, "resourceName": "MEEF1u3j"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op CreateMemberRoleAdminV1 \
@@ -201,7 +201,7 @@ eval_tap $? 15 'CreateMemberRoleAdminV1' test.out
 $CLI_EXE \
     --sn group \
     --op GetSingleMemberRoleAdminV1 \
-    --memberRoleId 'qg9HpC5Y' \
+    --memberRoleId 'LogGO8uQ' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 16 'GetSingleMemberRoleAdminV1' test.out
@@ -210,18 +210,18 @@ eval_tap $? 16 'GetSingleMemberRoleAdminV1' test.out
 $CLI_EXE \
     --sn group \
     --op DeleteMemberRoleAdminV1 \
-    --memberRoleId 'MmxDLR8i' \
+    --memberRoleId 'hnvA1bWi' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 17 'DeleteMemberRoleAdminV1' test.out
 
 #- 18 UpdateMemberRoleAdminV1
 # body param: body
-echo '{"memberRoleName": "yolsZl2k"}' > $TEMP_JSON_INPUT
+echo '{"memberRoleName": "Wj1xWUVt"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op UpdateMemberRoleAdminV1 \
-    --memberRoleId 'nbMhhzMr' \
+    --memberRoleId 'fEFTx0I8' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -229,11 +229,11 @@ eval_tap $? 18 'UpdateMemberRoleAdminV1' test.out
 
 #- 19 UpdateMemberRolePermissionAdminV1
 # body param: body
-echo '{"memberRolePermissions": [{"action": 14, "resourceName": "HKMI9xdH"}, {"action": 87, "resourceName": "orswQfxd"}, {"action": 90, "resourceName": "YjrGEeAs"}]}' > $TEMP_JSON_INPUT
+echo '{"memberRolePermissions": [{"action": 52, "resourceName": "kObS89Cg"}, {"action": 4, "resourceName": "1nSvabSr"}, {"action": 14, "resourceName": "4RE4DaYM"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op UpdateMemberRolePermissionAdminV1 \
-    --memberRoleId 'LVyGZGUc' \
+    --memberRoleId 'HgCX644U' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -244,16 +244,16 @@ $CLI_EXE \
     --sn group \
     --op GetGroupListPublicV1 \
     --namespace $AB_NAMESPACE \
-    --groupName 'bOMNkEfh' \
-    --groupRegion 't5tKvcJv' \
-    --limit '99' \
-    --offset '14' \
+    --groupName 'lTZNKLju' \
+    --groupRegion 'gwVq8qI4' \
+    --limit '16' \
+    --offset '98' \
     > test.out 2>&1
 eval_tap $? 20 'GetGroupListPublicV1' test.out
 
 #- 21 CreateNewGroupPublicV1
 # body param: body
-echo '{"configurationCode": "DXW1g1R9", "customAttributes": {"9TyZlfP9": {}, "vV89Qj3q": {}, "8tU7ENzp": {}}, "groupDescription": "MX2PpXny", "groupIcon": "2VVkflWR", "groupMaxMember": 27, "groupName": "izhCwx7L", "groupRegion": "T4YxEPg4", "groupRules": {"groupCustomRule": {}, "groupPredefinedRules": [{"allowedAction": "QYrsrYNn", "ruleDetail": [{"ruleAttribute": "J8bk9HBm", "ruleCriteria": "MINIMUM", "ruleValue": 0.24989247818312987}, {"ruleAttribute": "a8A9Ys1x", "ruleCriteria": "MINIMUM", "ruleValue": 0.28726377736006037}, {"ruleAttribute": "CJdkHl4z", "ruleCriteria": "MINIMUM", "ruleValue": 0.9007088628762814}]}, {"allowedAction": "SOUPSf9w", "ruleDetail": [{"ruleAttribute": "lDBcPYSM", "ruleCriteria": "EQUAL", "ruleValue": 0.6380290975536446}, {"ruleAttribute": "1rMgXs0T", "ruleCriteria": "MAXIMUM", "ruleValue": 0.8943849631944076}, {"ruleAttribute": "BKNESGqr", "ruleCriteria": "EQUAL", "ruleValue": 0.40015863664114326}]}, {"allowedAction": "xMsOTxIG", "ruleDetail": [{"ruleAttribute": "4VJsm0tL", "ruleCriteria": "MINIMUM", "ruleValue": 0.6574701354876274}, {"ruleAttribute": "rOJdab7v", "ruleCriteria": "MAXIMUM", "ruleValue": 0.5333743814427094}, {"ruleAttribute": "aLklAJiZ", "ruleCriteria": "EQUAL", "ruleValue": 0.24260346190992288}]}]}, "groupType": "ekbDOR9y"}' > $TEMP_JSON_INPUT
+echo '{"configurationCode": "aNmhsxbL", "customAttributes": {"7MlOm0Jj": {}, "OdvOLZ7f": {}, "82o5wIr6": {}}, "groupDescription": "s0lyFal4", "groupIcon": "p1pfn82x", "groupMaxMember": 78, "groupName": "Bik3VXwc", "groupRegion": "WShnYuxQ", "groupRules": {"groupCustomRule": {}, "groupPredefinedRules": [{"allowedAction": "5HmKRNKw", "ruleDetail": [{"ruleAttribute": "cNWHZXwk", "ruleCriteria": "MINIMUM", "ruleValue": 0.5077342898104273}, {"ruleAttribute": "DyGcrHuK", "ruleCriteria": "EQUAL", "ruleValue": 0.6663270794059316}, {"ruleAttribute": "FcFi0JZO", "ruleCriteria": "MINIMUM", "ruleValue": 0.003419910970483997}]}, {"allowedAction": "T72AAk1U", "ruleDetail": [{"ruleAttribute": "p0t5aRf5", "ruleCriteria": "EQUAL", "ruleValue": 0.3883702322696101}, {"ruleAttribute": "c3fgDb78", "ruleCriteria": "MAXIMUM", "ruleValue": 0.6277646604680046}, {"ruleAttribute": "wheRKGED", "ruleCriteria": "MAXIMUM", "ruleValue": 0.1449464959490906}]}, {"allowedAction": "usryW72Z", "ruleDetail": [{"ruleAttribute": "MCqrTqQu", "ruleCriteria": "EQUAL", "ruleValue": 0.03699336430782563}, {"ruleAttribute": "ikFToalY", "ruleCriteria": "MAXIMUM", "ruleValue": 0.08856680680407247}, {"ruleAttribute": "hqt9ce3X", "ruleCriteria": "MINIMUM", "ruleValue": 0.940541757061757}]}]}, "groupType": "lZMpsN7T"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op CreateNewGroupPublicV1 \
@@ -266,18 +266,18 @@ eval_tap $? 21 'CreateNewGroupPublicV1' test.out
 $CLI_EXE \
     --sn group \
     --op GetSingleGroupPublicV1 \
-    --groupId 'HTOkpkaz' \
+    --groupId 'eIhUjc0c' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 22 'GetSingleGroupPublicV1' test.out
 
 #- 23 UpdateSingleGroupV1
 # body param: body
-echo '{"customAttributes": {}, "groupDescription": "dAOHqIgm", "groupIcon": "YtTpZnxu", "groupName": "FjQVa2Ds", "groupRegion": "quu4oyGA", "groupType": "oLYuGf3U"}' > $TEMP_JSON_INPUT
+echo '{"customAttributes": {}, "groupDescription": "ZonxH9PI", "groupIcon": "7PqIRGVp", "groupName": "wH1c27Bw", "groupRegion": "tAI2srXK", "groupType": "FZzP48vj"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op UpdateSingleGroupV1 \
-    --groupId '1eV1tny4' \
+    --groupId '5CLdxFfa' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -287,18 +287,18 @@ eval_tap $? 23 'UpdateSingleGroupV1' test.out
 $CLI_EXE \
     --sn group \
     --op DeleteGroupPublicV1 \
-    --groupId '7llGzSw0' \
+    --groupId 'Yee7Yf8X' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 24 'DeleteGroupPublicV1' test.out
 
 #- 25 UpdatePatchSingleGroupPublicV1
 # body param: body
-echo '{"customAttributes": {}, "groupDescription": "cyc1DOf8", "groupIcon": "2pLbBC9o", "groupName": "8YhHzZcr", "groupRegion": "ODmoEsoj", "groupType": "qC6ZvRfb"}' > $TEMP_JSON_INPUT
+echo '{"customAttributes": {}, "groupDescription": "Vy2DnlmG", "groupIcon": "cPaaJGyq", "groupName": "jfpnoWi3", "groupRegion": "gqaAvoEz", "groupType": "Af4YLpsB"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op UpdatePatchSingleGroupPublicV1 \
-    --groupId '7k1ufygG' \
+    --groupId 'kFpOfSV5' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -306,11 +306,11 @@ eval_tap $? 25 'UpdatePatchSingleGroupPublicV1' test.out
 
 #- 26 UpdateGroupCustomAttributesPublicV1
 # body param: body
-echo '{"customAttributes": {"FojvVp9w": {}, "jWqnQ9wL": {}, "A0iCUryD": {}}}' > $TEMP_JSON_INPUT
+echo '{"customAttributes": {"KEMmVoRJ": {}, "1gAzC9FG": {}, "IHZL5RqE": {}}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op UpdateGroupCustomAttributesPublicV1 \
-    --groupId 'cwzKn8U1' \
+    --groupId 'cAGfA10A' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -320,7 +320,7 @@ eval_tap $? 26 'UpdateGroupCustomAttributesPublicV1' test.out
 $CLI_EXE \
     --sn group \
     --op AcceptGroupInvitationPublicV1 \
-    --groupId 'M2leov6G' \
+    --groupId 'KMl4ofPK' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 27 'AcceptGroupInvitationPublicV1' test.out
@@ -329,7 +329,7 @@ eval_tap $? 27 'AcceptGroupInvitationPublicV1' test.out
 $CLI_EXE \
     --sn group \
     --op RejectGroupInvitationPublicV1 \
-    --groupId 'cChM4djB' \
+    --groupId 'rAdK8rLp' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 28 'RejectGroupInvitationPublicV1' test.out
@@ -338,7 +338,7 @@ eval_tap $? 28 'RejectGroupInvitationPublicV1' test.out
 $CLI_EXE \
     --sn group \
     --op JoinGroupV1 \
-    --groupId 'qMpP9wv6' \
+    --groupId 'YIfAELlG' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 29 'JoinGroupV1' test.out
@@ -347,7 +347,7 @@ eval_tap $? 29 'JoinGroupV1' test.out
 $CLI_EXE \
     --sn group \
     --op CancelGroupJoinRequestV1 \
-    --groupId 'TyTddjw0' \
+    --groupId 'ZssU6cV4' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 30 'CancelGroupJoinRequestV1' test.out
@@ -356,10 +356,10 @@ eval_tap $? 30 'CancelGroupJoinRequestV1' test.out
 $CLI_EXE \
     --sn group \
     --op GetGroupJoinRequestPublicV1 \
-    --groupId '66t3Znj7' \
+    --groupId 'f3duIO0T' \
     --namespace $AB_NAMESPACE \
-    --limit '45' \
-    --offset '74' \
+    --limit '65' \
+    --offset '56' \
     > test.out 2>&1
 eval_tap $? 31 'GetGroupJoinRequestPublicV1' test.out
 
@@ -367,21 +367,21 @@ eval_tap $? 31 'GetGroupJoinRequestPublicV1' test.out
 $CLI_EXE \
     --sn group \
     --op GetGroupMembersListPublicV1 \
-    --groupId 'mTMroaST' \
+    --groupId 'WQsAsQdE' \
     --namespace $AB_NAMESPACE \
-    --limit '28' \
-    --offset '21' \
-    --order '5YiSDvC4' \
+    --limit '7' \
+    --offset '98' \
+    --order 'ZH8uSLvP' \
     > test.out 2>&1
 eval_tap $? 32 'GetGroupMembersListPublicV1' test.out
 
 #- 33 UpdateGroupCustomRulePublicV1
 # body param: body
-echo '{"groupCustomRule": {"6gti3WHu": {}, "znAkxdBd": {}, "zuxtZUMx": {}}}' > $TEMP_JSON_INPUT
+echo '{"groupCustomRule": {"mSS2FJmb": {}, "tXFsKuHn": {}, "lZOZLOzL": {}}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op UpdateGroupCustomRulePublicV1 \
-    --groupId 'yy74LLuv' \
+    --groupId 'q0PmmDDz' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -389,12 +389,12 @@ eval_tap $? 33 'UpdateGroupCustomRulePublicV1' test.out
 
 #- 34 UpdateGroupPredefinedRulePublicV1
 # body param: body
-echo '{"ruleDetail": [{"ruleAttribute": "x7ZROIki", "ruleCriteria": "MAXIMUM", "ruleValue": 0.5887692386107635}, {"ruleAttribute": "RQEQZBsL", "ruleCriteria": "MINIMUM", "ruleValue": 0.7053988053241256}, {"ruleAttribute": "gKtyEN3J", "ruleCriteria": "EQUAL", "ruleValue": 0.7428060579101665}]}' > $TEMP_JSON_INPUT
+echo '{"ruleDetail": [{"ruleAttribute": "ECa8Jchz", "ruleCriteria": "EQUAL", "ruleValue": 0.8901862752133152}, {"ruleAttribute": "QsQOA1oM", "ruleCriteria": "MAXIMUM", "ruleValue": 0.6212160451404198}, {"ruleAttribute": "udzYfCx1", "ruleCriteria": "MINIMUM", "ruleValue": 0.19905202201939876}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op UpdateGroupPredefinedRulePublicV1 \
-    --allowedAction 'JcUW41G2' \
-    --groupId 'z9nFc5y6' \
+    --allowedAction 'm22obTUl' \
+    --groupId 'vefKs7LX' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -404,8 +404,8 @@ eval_tap $? 34 'UpdateGroupPredefinedRulePublicV1' test.out
 $CLI_EXE \
     --sn group \
     --op DeleteGroupPredefinedRulePublicV1 \
-    --allowedAction 'mpy1gR45' \
-    --groupId '9QXmrwAu' \
+    --allowedAction 'TEDLUKjU' \
+    --groupId 'GDMHK21Y' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 35 'DeleteGroupPredefinedRulePublicV1' test.out
@@ -423,18 +423,18 @@ $CLI_EXE \
     --sn group \
     --op GetMemberRolesListPublicV1 \
     --namespace $AB_NAMESPACE \
-    --limit '66' \
-    --offset '54' \
+    --limit '2' \
+    --offset '35' \
     > test.out 2>&1
 eval_tap $? 37 'GetMemberRolesListPublicV1' test.out
 
 #- 38 UpdateMemberRolePublicV1
 # body param: body
-echo '{"userId": "Xcse5nk5"}' > $TEMP_JSON_INPUT
+echo '{"userId": "sNlPy8ls"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op UpdateMemberRolePublicV1 \
-    --memberRoleId 'amkdJWnQ' \
+    --memberRoleId 't5WXLkXU' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -442,11 +442,11 @@ eval_tap $? 38 'UpdateMemberRolePublicV1' test.out
 
 #- 39 DeleteMemberRolePublicV1
 # body param: body
-echo '{"userId": "DULI2ZeS"}' > $TEMP_JSON_INPUT
+echo '{"userId": "Q4X7VaM4"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn group \
     --op DeleteMemberRolePublicV1 \
-    --memberRoleId 'HK5OjpBb' \
+    --memberRoleId 'E7U3287l' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -457,8 +457,8 @@ $CLI_EXE \
     --sn group \
     --op GetGroupInvitationRequestPublicV1 \
     --namespace $AB_NAMESPACE \
-    --limit '16' \
-    --offset '8' \
+    --limit '43' \
+    --offset '58' \
     > test.out 2>&1
 eval_tap $? 40 'GetGroupInvitationRequestPublicV1' test.out
 
@@ -467,7 +467,7 @@ $CLI_EXE \
     --sn group \
     --op GetUserGroupInformationPublicV1 \
     --namespace $AB_NAMESPACE \
-    --userId 'NtzQ2b7j' \
+    --userId 'kKN3Pxu6' \
     > test.out 2>&1
 eval_tap $? 41 'GetUserGroupInformationPublicV1' test.out
 
@@ -476,7 +476,7 @@ $CLI_EXE \
     --sn group \
     --op InviteGroupPublicV1 \
     --namespace $AB_NAMESPACE \
-    --userId 'pi0sZfbH' \
+    --userId 'cPpe7tBy' \
     > test.out 2>&1
 eval_tap $? 42 'InviteGroupPublicV1' test.out
 
@@ -485,7 +485,7 @@ $CLI_EXE \
     --sn group \
     --op AcceptGroupJoinRequestPublicV1 \
     --namespace $AB_NAMESPACE \
-    --userId 'HSBZFRu2' \
+    --userId 'yxY3k5Qn' \
     > test.out 2>&1
 eval_tap $? 43 'AcceptGroupJoinRequestPublicV1' test.out
 
@@ -494,7 +494,7 @@ $CLI_EXE \
     --sn group \
     --op RejectGroupJoinRequestPublicV1 \
     --namespace $AB_NAMESPACE \
-    --userId 'U9m5CB2k' \
+    --userId 'fhvIRjVI' \
     > test.out 2>&1
 eval_tap $? 44 'RejectGroupJoinRequestPublicV1' test.out
 
@@ -503,7 +503,7 @@ $CLI_EXE \
     --sn group \
     --op KickGroupMemberPublicV1 \
     --namespace $AB_NAMESPACE \
-    --userId 'OpR6UoO4' \
+    --userId 'dHxsI6mw' \
     > test.out 2>&1
 eval_tap $? 45 'KickGroupMemberPublicV1' test.out
 

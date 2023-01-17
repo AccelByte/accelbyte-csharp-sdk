@@ -21,6 +21,9 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         [JsonPropertyName("creatorName")]
         public string? CreatorName { get; set; }
 
+        [JsonPropertyName("customAttributes")]
+        public Dictionary<string, object>? CustomAttributes { get; set; }
+
         [JsonPropertyName("downloadCount")]
         public int? DownloadCount { get; set; }
 

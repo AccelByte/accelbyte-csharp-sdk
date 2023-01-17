@@ -63,6 +63,7 @@
 | `api.ListMatchPoolsResponse` | [ApiListMatchPoolsResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListMatchPoolsResponse.cs) |
 | `api.ListRuleSetsResponse` | [ApiListRuleSetsResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListRuleSetsResponse.cs) |
 | `api.MatchFunctionConfig` | [ApiMatchFunctionConfig](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchFunctionConfig.cs) |
+| `api.MatchFunctionOverride` | [ApiMatchFunctionOverride](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchFunctionOverride.cs) |
 | `api.MatchFunctionRequest` | [ApiMatchFunctionRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchFunctionRequest.cs) |
 | `api.MatchPool` | [ApiMatchPool](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchPool.cs) |
 | `api.MatchPoolConfig` | [ApiMatchPoolConfig](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchPoolConfig.cs) |
