@@ -1,3 +1,464 @@
+# C# Server SDK v0.26.0
+
+## cloudsave Service
+
+### What's New
+---
+* `POST` /cloudsave/v1/namespaces/{namespace}/records/bulk Bulk get game records
+* `GET` /cloudsave/v1/namespaces/{namespace}/users/me/records Query player records key
+* `POST` /cloudsave/v1/namespaces/{namespace}/users/me/records/bulk Get player records bulk
+
+## dslogmanager Service
+
+### What's Changed
+---
+`GET` /dslogmanager/namespaces/{namespace}/servers/search Retrieve All Terminated Servers  
+    Return Type
+
+        Insert data.server.termination_reason
+`GET` /dslogmanager/servers/search Retrieve All Terminated Servers  
+    Return Type
+
+        Insert data.server.termination_reason
+
+## dsmc Service
+
+### What's Changed
+---
+`GET` /dsmcontroller/admin/namespaces/{namespace}/servers List all managed servers in a region  
+    Return Type
+
+        Insert servers.termination_reason
+`GET` /dsmcontroller/admin/namespaces/{namespace}/servers/local List all managed local servers  
+    Return Type
+
+        Insert servers.termination_reason
+`GET` /dsmcontroller/admin/namespaces/{namespace}/servers/{podName} Query a server in a region  
+    Return Type
+
+        Insert termination_reason
+`GET` /dsmcontroller/admin/namespaces/{namespace}/sessions List all managed sessions in a region  
+    Return Type
+
+        Insert sessions.Server.termination_reason
+`POST` /dsmcontroller/namespaces/{namespace}/servers/local/register Register a local DS  
+    Return Type
+
+        Insert termination_reason
+`POST` /dsmcontroller/namespaces/{namespace}/servers/register Register a DS  
+    Return Type
+
+        Insert termination_reason
+`POST` /dsmcontroller/namespaces/{namespace}/sessions Register a new game session  
+    Return Type
+
+        Insert session.Server.termination_reason
+`GET` /dsmcontroller/namespaces/{namespace}/sessions/{sessionID} Query specified session  
+    Return Type
+
+        Insert session.Server.termination_reason
+
+## gametelemetry Service
+
+### What's Changed
+---
+`GET` /game-telemetry/v1/admin/namespaces/{namespace}/events Get Events  
+    Parameters
+
+        Modify endTime //End time of data to be queried. Default: Current time in UTC.
+        Modify startTime //Start time of data to be queried. Default: Current time in UTC minus 1 day.
+
+## iam Service
+
+### What's Changed
+---
+`GET` /iam/v3/admin/namespaces/{namespace}/clients Get clients by namespace  
+    Return Type
+
+        Insert data.parentNamespace
+`POST` /iam/v3/admin/namespaces/{namespace}/clients Create Client  
+    Parameters
+
+        Insert body.parentNamespace
+`PATCH` /iam/v3/admin/namespaces/{namespace}/clients/{clientId} Update Client  
+    Return Type
+
+        Insert parentNamespace
+`GET` /iam/v3/admin/namespaces/{namespace}/clients/{clientId} Get clients by namespace and client id. Multi tenant mode allows admin portal client to be accessible regardless of namespace path.  
+    Return Type
+
+        Insert parentNamespace
+`POST` /iam/v3/admin/namespaces/{namespace}/users/invite Invite User  
+    Parameters
+
+        Insert body.namespace //multi tenant studio namespace
+`GET` /iam/v3/public/namespaces/{namespace}/users/invite/{invitationId} Get User Invitation  
+    Return Type
+
+        Insert namespace
+`POST` /iam/v4/admin/users/users/invite Admin invite User v4  
+    Parameters
+
+        Insert body.namespace //multi tenant studio namespace
+
+## match2 Service
+
+### What's Changed
+---
+`POST` /match2/v1/namespaces/{namespace}/match-pools Create a match pool  
+    Parameters
+
+        Insert body.match_function_override
+`GET` /match2/v1/namespaces/{namespace}/match-pools List match pools  
+    Return Type
+
+        Insert data.match_function_override
+`GET` /match2/v1/namespaces/{namespace}/match-pools/{pool} Get details for a specific match pool  
+    Return Type
+
+        Insert match_function_override
+`PUT` /match2/v1/namespaces/{namespace}/match-pools/{pool} Update a match pool  
+    Parameters
+
+        Insert body.match_function_override
+    Return Type
+
+        Insert match_function_override
+
+## platform Service
+
+### What's New
+---
+* `GET` /platform/admin/namespaces/{namespace}/configs/servicePlugin Get service plugin config
+* `PUT` /platform/admin/namespaces/{namespace}/configs/servicePlugin Update service plugin config service
+* `DELETE` /platform/admin/namespaces/{namespace}/configs/servicePlugin Delete service plugin config
+
+### What's Changed
+---
+`POST` /platform/admin/namespaces/{namespace}/sections Create a section  
+    Parameters
+
+        Insert body.fixedPeriodRotationConfig.backfillType //backfill type: NONE/CUSTOM, default is NONE
+        Insert body.items.sku //item sku
+        Modify body.fixedPeriodRotationConfig.itemCount //rotation item count, min is 1, default is 1
+        Modify body.rotationType //rotation type, default is NONE
+`GET` /platform/admin/namespaces/{namespace}/sections List sections  
+    Return Type
+
+        Insert data.viewName //view name
+        Insert data.fixedPeriodRotationConfig.backfillType //backfill type: NONE/CUSTOM, default is NONE
+        Insert data.items.sku //item sku
+        Modify data.fixedPeriodRotationConfig.itemCount //rotation item count, min is 1, default is 1
+        Modify data.rotationType //rotation type, default is NONE
+`PUT` /platform/admin/namespaces/{namespace}/sections/{sectionId} Update s section  
+    Parameters
+
+        Insert body.fixedPeriodRotationConfig.backfillType //backfill type: NONE/CUSTOM, default is NONE
+        Insert body.items.sku //item sku
+        Modify body.fixedPeriodRotationConfig.itemCount //rotation item count, min is 1, default is 1
+        Modify body.rotationType //rotation type, default is NONE
+    Return Type
+
+        Insert viewName //view name
+        Insert fixedPeriodRotationConfig.backfillType //backfill type: NONE/CUSTOM, default is NONE
+        Insert items.sku //item sku
+        Modify fixedPeriodRotationConfig.itemCount //rotation item count, min is 1, default is 1
+        Modify rotationType //rotation type, default is NONE
+`GET` /platform/admin/namespaces/{namespace}/sections/{sectionId} Get a section  
+    Return Type
+
+        Insert viewName //view name
+        Insert fixedPeriodRotationConfig.backfillType //backfill type: NONE/CUSTOM, default is NONE
+        Insert items.sku //item sku
+        Modify fixedPeriodRotationConfig.itemCount //rotation item count, min is 1, default is 1
+        Modify rotationType //rotation type, default is NONE
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/sections List active section contents  
+    Return Type
+
+        Insert ext //customized section properties
+        Modify createdAt //view created time
+        Modify updatedAt //view updated time
+
+## session Service
+
+### What's Changed
+---
+`GET` /session/v1/admin/namespaces/{namespace}/gamesessions Get all game sessions.  
+    Parameters
+
+        Add statusV2 //game session status to filter. supported status: NEED_TO_REQUEST,REQUESTED,AVAILABLE,FAILED_TO_REQUEST,UNKNOWN,ENDED
+    Return Type
+
+        Insert data.DSInformation.StatusV2
+        Insert data.members.statusV2
+        Insert data.teams.parties
+`PUT` /session/v1/admin/namespaces/{namespace}/gamesessions/{sessionId}/members/{memberId}/status/{statusType} Update status of a game session member. Requires ADMIN:NAMESPACE:{namespace}:SESSION:GAME [UPDATE]  
+    Return Type
+
+        Insert statusV2
+`GET` /session/v1/admin/namespaces/{namespace}/parties Query parties. Requires ADMIN:NAMESPACE:{namespace}:SESSION:PARTY [READ]  
+    Return Type
+
+        Insert data.members.statusV2
+`POST` /session/v1/public/namespaces/{namespace}/gamesession Create a game session. Requires NAMESPACE:{namespace}:SESSION:GAME [CREATE]  
+    Parameters
+
+        Insert body.teams.parties
+`POST` /session/v1/public/namespaces/{namespace}/gamesessions Query game sessions  
+    Return Type
+
+        Insert data.DSInformation.StatusV2
+        Insert data.members.statusV2
+        Insert data.teams.parties
+`GET` /session/v1/public/namespaces/{namespace}/gamesessions/servers/{podName} Get game session detail. Requires NAMESPACE:{namespace}:SESSION:GAME [READ]  
+    Return Type
+
+        Insert DSInformation.StatusV2
+        Insert members.statusV2
+        Insert teams.parties
+`PUT` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId} Update a game session. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE]  
+    Parameters
+
+        Insert body.teams.parties
+    Return Type
+
+        Insert DSInformation.StatusV2
+        Insert members.statusV2
+        Insert teams.parties
+`PATCH` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId} Patch update a game session. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE]  
+    Parameters
+
+        Insert body.teams.parties
+    Return Type
+
+        Insert DSInformation.StatusV2
+        Insert members.statusV2
+        Insert teams.parties
+`GET` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId} Get game session detail. Requires NAMESPACE:{namespace}:SESSION:GAME [READ]  
+    Return Type
+
+        Insert DSInformation.StatusV2
+        Insert members.statusV2
+        Insert teams.parties
+`POST` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/join Join a game session. Requires NAMESPACE:{namespace}:SESSION:GAME:PLAYER [CREATE]  
+    Return Type
+
+        Insert DSInformation.StatusV2
+        Insert members.statusV2
+        Insert teams.parties
+`POST` /session/v1/public/namespaces/{namespace}/parties/users/me/join/code Join a party by code. Requires NAMESPACE:{namespace}:SESSION:PARTY:PLAYER [CREATE]  
+    Return Type
+
+        Insert members.statusV2
+`PUT` /session/v1/public/namespaces/{namespace}/parties/{partyId} Update a party. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Insert members.statusV2
+`PATCH` /session/v1/public/namespaces/{namespace}/parties/{partyId} Patch update a party. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Insert members.statusV2
+`GET` /session/v1/public/namespaces/{namespace}/parties/{partyId} Get party details. Requires NAMESPACE:{namespace}:SESSION:PARTY [READ]  
+    Return Type
+
+        Insert members.statusV2
+`POST` /session/v1/public/namespaces/{namespace}/parties/{partyId}/code Generate party code. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Insert members.statusV2
+`DELETE` /session/v1/public/namespaces/{namespace}/parties/{partyId}/code Revoke party code. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Insert members.statusV2
+`POST` /session/v1/public/namespaces/{namespace}/parties/{partyId}/leader Promote new party leader. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Insert members.statusV2
+`POST` /session/v1/public/namespaces/{namespace}/parties/{partyId}/users/me/join Join a party. Requires NAMESPACE:{namespace}:SESSION:PARTY:PLAYER [CREATE]  
+    Return Type
+
+        Insert members.statusV2
+`DELETE` /session/v1/public/namespaces/{namespace}/parties/{partyId}/users/{userId}/kick Kick a player from a party. Requires NAMESPACE:{namespace}:SESSION:PARTY:PLAYER [DELETE]  
+    Return Type
+
+        Insert members.statusV2
+`POST` /session/v1/public/namespaces/{namespace}/party Create a party. Requires NAMESPACE:{namespace}:SESSION:PARTY [CREATE]  
+    Return Type
+
+        Insert members.statusV2
+`GET` /session/v1/public/namespaces/{namespace}/users/me/gamesessions Query user's game sessions  
+    Return Type
+
+        Insert DSInformation.StatusV2
+        Insert members.statusV2
+        Insert teams.parties
+`GET` /session/v1/public/namespaces/{namespace}/users/me/parties Query my parties. Require valid JWT.  
+    Return Type
+
+        Insert members.statusV2
+
+## sessionbrowser Service
+
+### What's New
+---
+* `GET` /sessionbrowser/admin/namespaces/{namespace}/gamesession Query to available game session
+
+## ugc Service
+
+### What's New
+---
+* `POST` /ugc/v1/admin/namespaces/{namespace}/contents/bulk Bulk get content by content IDs
+
+### What's Changed
+---
+`POST` /ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents Upload content to a channel  
+    Parameters
+
+        Insert body.customAttributes
+`POST` /ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/s3 Upload content to S3 bucket  
+    Parameters
+
+        Insert body.customAttributes
+`PUT` /ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/s3/{contentId} Update content to S3 bucket  
+    Parameters
+
+        Insert body.customAttributes
+    Return Type
+
+        Insert customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/search Search contents specific to a channel  
+    Return Type
+
+        Insert data.customAttributes
+`PUT` /ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/{contentId} Update content to a channel  
+    Parameters
+
+        Insert body.customAttributes
+    Return Type
+
+        Insert customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/contents Get user's generated contents  
+    Return Type
+
+        Insert data.customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/contents/search Search contents  
+    Return Type
+
+        Insert data.customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/contents/sharecodes/{shareCode} Get content by sharecode  
+    Return Type
+
+        Insert customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/contents/{contentId} Get user specific content  
+    Return Type
+
+        Insert customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/groups/{groupId}/contents Get contents belong to a group  
+    Return Type
+
+        Insert data.customAttributes
+`PUT` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3/{contentId} Update content to S3 bucket  
+    Parameters
+
+        Insert body.customAttributes
+    Return Type
+
+        Insert customAttributes
+`PUT` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId} Update content to a channel  
+    Parameters
+
+        Insert body.customAttributes
+    Return Type
+
+        Insert customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/contents Get user's generated contents  
+    Return Type
+
+        Insert data.customAttributes
+`PUT` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/contents/{contentId}/hide Hide/Unhide user's generated contents  
+    Return Type
+
+        Insert customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/groups/{groupId}/contents Get contents belong to a group  
+    Return Type
+
+        Insert data.customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/channels/{channelId}/contents Search contents specific to a channel  
+    Return Type
+
+        Insert data.customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/contents Search contents  
+    Return Type
+
+        Insert data.customAttributes
+`POST` /ugc/v1/public/namespaces/{namespace}/contents/bulk Get contents by content Ids   
+    Return Type
+
+        Insert customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/contents/followed Get contents from followed creators  
+    Return Type
+
+        Insert data.customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/contents/liked Get liked contents  
+    Return Type
+
+        Insert data.customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/contents/sharecodes/{shareCode} Get content by sharecode  
+    Return Type
+
+        Insert customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/contents/{contentId} Get user specific content  
+    Return Type
+
+        Insert customAttributes
+`POST` /ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents Upload content to a channel  
+    Parameters
+
+        Insert body.customAttributes
+`POST` /ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3 Upload content to S3 bucket  
+    Parameters
+
+        Insert body.customAttributes
+`PUT` /ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3/{contentId} Update content to S3 bucket  
+    Parameters
+
+        Insert body.customAttributes
+    Return Type
+
+        Insert customAttributes
+`PUT` /ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId} Update content to a channel  
+    Parameters
+
+        Insert body.customAttributes
+    Return Type
+
+        Insert customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/users/{userId}/contents Get user's generated contents  
+    Return Type
+
+        Insert data.customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/contents Get contents belong to a group  
+    Return Type
+
+        Insert data.customAttributes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # C# Server SDK v0.25.0
 
 ## achievement Service

@@ -1,3 +1,9 @@
+<a name="v0.26.0"></a>
+## [v0.26.0]
+- Fixed MatchV2 integration test for MatchPool.
+- Added local OAuth Client token validation (PREVIEW FEATURE).
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.25.0"></a>
 ## [v0.25.0]
 - Fixed deprecated messages.
