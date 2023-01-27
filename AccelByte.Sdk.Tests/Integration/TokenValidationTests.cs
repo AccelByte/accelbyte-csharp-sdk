@@ -27,13 +27,70 @@ namespace AccelByte.Sdk.Tests.Integration
     public class TokenValidationTests
     {
         [Test]
-        public void LocalTokenValidationTest()
+        public void TokenValidationTestUsingDefaultValidator()
+        {
+            AccelByteSDK sdk = AccelByteSDK.Builder
+                .UseDefaultHttpClient()
+                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
+                .UseDefaultTokenRepository()
+                .UseDefaultCredentialRepository()                
+                .EnableLog()
+                .Build();
+
+            string accessToken = String.Empty;
+            sdk.LoginClient((tokenResp) =>
+            {
+                accessToken = tokenResp.AccessToken!;
+            });
+
+            Thread.Sleep(2000);
+
+            bool b = sdk.ValidateToken(accessToken);
+            Assert.IsTrue(b);
+
+            sdk.Iam.OAuth20.TokenRevocationV3Op.Execute(accessToken);
+            Thread.Sleep(3000);
+
+            b = sdk.ValidateToken(accessToken);
+            Assert.IsFalse(b);
+        }
+
+        [Test]
+        public void PermissionValidationTestUsingDefaultValidator()
         {
             AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
+                .EnableLog()
+                .Build();
+
+            string accessToken = String.Empty;
+            sdk.LoginClient((tokenResp) =>
+            {
+                accessToken = tokenResp.AccessToken!;
+            });
+
+            Thread.Sleep(2000);
+
+            string tPermission = $"NAMESPACE:{sdk.Namespace}:PROFILE";
+            int tAction = 15;
+
+            bool b = sdk.ValidateToken(accessToken, tPermission, tAction);
+            Assert.IsTrue(b);
+        }
+
+
+        [Test]
+        public void TokenValidationTestUsingLocalValidator()
+        {
+            AccelByteSDK sdk = AccelByteSDK.Builder
+                .UseDefaultHttpClient()
+                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
+                .UseDefaultTokenRepository()
+                .UseDefaultCredentialRepository()
+                .UseLocalTokenValidator()
                 .UseAutoRefreshForTokenRevocationList(2000) //refresh revocation every 2s
                 .EnableLog()
                 .Build();
@@ -57,13 +114,14 @@ namespace AccelByte.Sdk.Tests.Integration
         }
 
         [Test]
-        public void LocalPermissionValidationTest()
+        public void PermissionValidationTestUsingLocalValidator()
         {
             AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
+                .UseLocalTokenValidator()
                 .UseAutoRefreshForTokenRevocationList()
                 .EnableLog()
                 .Build();

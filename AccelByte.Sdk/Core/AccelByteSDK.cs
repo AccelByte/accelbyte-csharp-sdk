@@ -22,6 +22,8 @@ namespace AccelByte.Sdk.Core
     {
         public static AccelByteSdkBuilder Builder = new AccelByteSdkBuilder();
 
+        private List<ISdkService> _Services = new List<ISdkService>();
+
         public OperationProcessPipeline OpProcess { get => _OpProcess; }
         private OperationProcessPipeline _OpProcess;
 
@@ -29,13 +31,12 @@ namespace AccelByte.Sdk.Core
 
         public string Namespace { get => Configuration.ConfigRepository.Namespace; }
 
-        private List<ISdkService> _Services = new List<ISdkService>();
-
-        public SdkLocalData LocalData = new SdkLocalData();
+        public SdkLocalData LocalData { get; } = new SdkLocalData();
 
         public AccelByteSDK(AccelByteConfig config)
         {
             Configuration = config;
+            LocalData = new SdkLocalData();
 
             _OpProcess = new OperationProcessPipeline();
             _OpProcess.AppendToChain(new SdkMandatoryOperationProcess());
@@ -44,6 +45,7 @@ namespace AccelByte.Sdk.Core
         public AccelByteSDK(AccelByteConfig config, List<ISdkService> services)
         {
             Configuration = config;
+            LocalData = new SdkLocalData();
 
             _OpProcess = new OperationProcessPipeline();
             _OpProcess.AppendToChain(new SdkMandatoryOperationProcess());
@@ -227,6 +229,22 @@ namespace AccelByte.Sdk.Core
             Configuration.TokenRepository.RemoveToken();
             return true;
         }
+
+        public bool ValidateToken(string accessToken)
+        {
+            if (Configuration.TokenValidator != null)
+                return Configuration.TokenValidator.Validate(this, accessToken);
+            else
+                throw new Exception("Could not validate token. No token validator assigned.");
+        }
+
+        public bool ValidateToken(string accessToken, string permission, int action)
+        {
+            if (Configuration.TokenValidator != null)
+                return Configuration.TokenValidator.Validate(this, accessToken, permission, action);
+            else
+                throw new Exception("Could not validate token. No token validator assigned.");
+        }
     }
 
     public partial class AccelByteSdkBuilder
@@ -240,6 +258,8 @@ namespace AccelByte.Sdk.Core
         private ICredentialRepository? _Credential = null;
 
         private IHttpLogger? _Logger = null;
+
+        private ITokenValidator? _TokenValidator = null;
 
         private bool _EnableLogging = false;
 
@@ -321,6 +341,12 @@ namespace AccelByte.Sdk.Core
             return this;
         }
 
+        public AccelByteSdkBuilder SetTokenValidator(ITokenValidator tokenValidator)
+        {
+            _TokenValidator = tokenValidator;
+            return this;
+        }
+
         public AccelByteSdkBuilder AddOperationProcess(IOperationProcessPipeline opProcess)
         {
             _OpProcesses.Add(opProcess);
@@ -355,6 +381,10 @@ namespace AccelByte.Sdk.Core
             AccelByteConfig config = new AccelByteConfig(_Client, _TokenRepository, _ConfigRepository);
             if (_Credential != null)
                 config.Credential = _Credential;
+            if (_TokenValidator != null)
+                config.TokenValidator = _TokenValidator;
+            else
+                config.TokenValidator = new DefaultTokenValidator();
 
             AccelByteSDK sdk;
             if (_Services.Count > 0)
