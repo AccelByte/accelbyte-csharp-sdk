@@ -12,6 +12,10 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonPropertyName("matchFound")]
         public bool? MatchFound { get; set; }
 
+        [JsonPropertyName("proposedProposal")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ApiProposedProposal? ProposedProposal { get; set; }
+
         [JsonPropertyName("sessionID")]
         public string? SessionID { get; set; }
 

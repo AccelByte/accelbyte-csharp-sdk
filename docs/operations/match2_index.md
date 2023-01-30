@@ -15,6 +15,9 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/match2/v1/namespaces/{namespace}/backfill` | POST | CreateBackfill | [CreateBackfill](../../AccelByte.Sdk/Api/Match2/Operation/Backfill/CreateBackfill.cs) | [CreateBackfill](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Backfill/CreateBackfill.cs) |
+| `/match2/v1/namespaces/{namespace}/backfill/proposal` | GET | GetBackfillProposal | [GetBackfillProposal](../../AccelByte.Sdk/Api/Match2/Operation/Backfill/GetBackfillProposal.cs) | [GetBackfillProposal](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Backfill/GetBackfillProposal.cs) |
+| `/match2/v1/namespaces/{namespace}/backfill/{backfillID}` | GET | GetBackfill | [GetBackfill](../../AccelByte.Sdk/Api/Match2/Operation/Backfill/GetBackfill.cs) | [GetBackfill](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Backfill/GetBackfill.cs) |
+| `/match2/v1/namespaces/{namespace}/backfill/{backfillID}` | DELETE | DeleteBackfill | [DeleteBackfill](../../AccelByte.Sdk/Api/Match2/Operation/Backfill/DeleteBackfill.cs) | [DeleteBackfill](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Backfill/DeleteBackfill.cs) |
 | `/match2/v1/namespaces/{namespace}/backfill/{backfillID}/proposal/accept` | PUT | AcceptBackfill | [AcceptBackfill](../../AccelByte.Sdk/Api/Match2/Operation/Backfill/AcceptBackfill.cs) | [AcceptBackfill](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Backfill/AcceptBackfill.cs) |
 | `/match2/v1/namespaces/{namespace}/backfill/{backfillID}/proposal/reject` | PUT | RejectBackfill | [RejectBackfill](../../AccelByte.Sdk/Api/Match2/Operation/Backfill/RejectBackfill.cs) | [RejectBackfill](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Backfill/RejectBackfill.cs) |
 
@@ -59,9 +62,12 @@
 |---|---|
 | `api.BackFillAcceptRequest` | [ApiBackFillAcceptRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiBackFillAcceptRequest.cs) |
 | `api.BackFillCreateRequest` | [ApiBackFillCreateRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiBackFillCreateRequest.cs) |
+| `api.BackfillGetResponse` | [ApiBackfillGetResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiBackfillGetResponse.cs) |
+| `api.BackfillProposalResponse` | [ApiBackfillProposalResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiBackfillProposalResponse.cs) |
 | `api.ListMatchFunctionsResponse` | [ApiListMatchFunctionsResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListMatchFunctionsResponse.cs) |
 | `api.ListMatchPoolsResponse` | [ApiListMatchPoolsResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListMatchPoolsResponse.cs) |
 | `api.ListRuleSetsResponse` | [ApiListRuleSetsResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListRuleSetsResponse.cs) |
+| `api.Match` | [ApiMatch](../../AccelByte.Sdk/Api/Match2/Model/ApiMatch.cs) |
 | `api.MatchFunctionConfig` | [ApiMatchFunctionConfig](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchFunctionConfig.cs) |
 | `api.MatchFunctionOverride` | [ApiMatchFunctionOverride](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchFunctionOverride.cs) |
 | `api.MatchFunctionRequest` | [ApiMatchFunctionRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchFunctionRequest.cs) |
@@ -73,6 +79,11 @@
 | `api.MatchTicketRequest` | [ApiMatchTicketRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchTicketRequest.cs) |
 | `api.MatchTicketResponse` | [ApiMatchTicketResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchTicketResponse.cs) |
 | `api.MatchTicketStatus` | [ApiMatchTicketStatus](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchTicketStatus.cs) |
+| `api.Party` | [ApiParty](../../AccelByte.Sdk/Api/Match2/Model/ApiParty.cs) |
+| `api.PlayerData` | [ApiPlayerData](../../AccelByte.Sdk/Api/Match2/Model/ApiPlayerData.cs) |
+| `api.ProposedProposal` | [ApiProposedProposal](../../AccelByte.Sdk/Api/Match2/Model/ApiProposedProposal.cs) |
+| `api.Team` | [ApiTeam](../../AccelByte.Sdk/Api/Match2/Model/ApiTeam.cs) |
+| `api.Ticket` | [ApiTicket](../../AccelByte.Sdk/Api/Match2/Model/ApiTicket.cs) |
 | `api.backFillRejectRequest` | [ApiBackFillRejectRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiBackFillRejectRequest.cs) |
 | `models.Pagination` | [ModelsPagination](../../AccelByte.Sdk/Api/Match2/Model/ModelsPagination.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Match2/Model/ResponseError.cs) |

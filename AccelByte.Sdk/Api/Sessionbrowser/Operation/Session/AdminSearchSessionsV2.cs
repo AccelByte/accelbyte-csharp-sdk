@@ -40,6 +40,10 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
             public string? PartyID { get; set; }
 
+            public string? SessionType { get; set; }
+
+            public string? Status { get; set; }
+
             public string? UserID { get; set; }
 
 
@@ -70,6 +74,18 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             public AdminSearchSessionsV2Builder SetPartyID(string _partyID)
             {
                 PartyID = _partyID;
+                return this;
+            }
+
+            public AdminSearchSessionsV2Builder SetSessionType(string _sessionType)
+            {
+                SessionType = _sessionType;
+                return this;
+            }
+
+            public AdminSearchSessionsV2Builder SetStatus(string _status)
+            {
+                Status = _status;
                 return this;
             }
 
@@ -112,6 +128,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             if (builder.Deleted != null) QueryParams["deleted"] = Convert.ToString(builder.Deleted)!;
             if (builder.MatchID is not null) QueryParams["matchID"] = builder.MatchID;
             if (builder.PartyID is not null) QueryParams["partyID"] = builder.PartyID;
+            if (builder.SessionType is not null) QueryParams["sessionType"] = builder.SessionType;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status;
             if (builder.UserID is not null) QueryParams["userID"] = builder.UserID;
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
@@ -131,6 +149,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             bool? deleted,            
             string? matchID,            
             string? partyID,            
+            string? sessionType,            
+            string? status,            
             string? userID,            
             long limit,            
             long offset            
@@ -142,6 +162,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             if (deleted != null) QueryParams["deleted"] = Convert.ToString(deleted)!;
             if (matchID is not null) QueryParams["matchID"] = matchID;
             if (partyID is not null) QueryParams["partyID"] = partyID;
+            if (sessionType is not null) QueryParams["sessionType"] = sessionType;
+            if (status is not null) QueryParams["status"] = status;
             if (userID is not null) QueryParams["userID"] = userID;
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;

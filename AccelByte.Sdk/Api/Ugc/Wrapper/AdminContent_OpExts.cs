@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Api
 
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this SingleAdminUpdateContentS3.SingleAdminUpdateContentS3Builder builder,
-            ModelsCreateContentRequestS3 body,
+            ModelsContentRequest body,
             string channelId,
             string contentId,
             string namespace_
@@ -242,7 +242,7 @@ namespace AccelByte.Sdk.Api
 
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this AdminUpdateContentS3.AdminUpdateContentS3Builder builder,
-            ModelsCreateContentRequestS3 body,
+            ModelsContentRequest body,
             string channelId,
             string contentId,
             string namespace_,

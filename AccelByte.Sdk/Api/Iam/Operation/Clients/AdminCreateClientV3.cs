@@ -20,6 +20,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// A new client automatically granted with these scopes: commerce, account, analytics, publishing, social.
     /// 
+    /// In multi tenant mode, new confidential client will have default client role assigned to it. The role will have all
+    /// permissions to access all APIs that's supported by game server SDK and DS uploader.
+    /// 
     /// action code: 10301
     /// 
     /// 

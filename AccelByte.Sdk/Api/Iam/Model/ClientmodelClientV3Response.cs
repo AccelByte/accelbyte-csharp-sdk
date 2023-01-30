@@ -65,6 +65,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("redirectUri")]
         public string? RedirectUri { get; set; }
 
+        [JsonPropertyName("roles")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Roles { get; set; }
+
         [JsonPropertyName("scopes")]
         public List<string>? Scopes { get; set; }
 

@@ -30,6 +30,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("deployment")]
         public string? Deployment { get; set; }
 
+        [JsonPropertyName("deployment_override")]
+        public string? DeploymentOverride { get; set; }
+
         [JsonPropertyName("game_version")]
         public string? GameVersion { get; set; }
 

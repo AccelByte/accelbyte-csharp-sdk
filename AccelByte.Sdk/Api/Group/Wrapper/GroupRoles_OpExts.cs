@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api
             return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).GetMemberRolesListAdminV1(op);
         }
 
-        public static Group.Model.ModelsCreateMemberRoleResponseV1? Execute(
+        public static Group.Model.ModelsMemberRoleResponseV1? Execute(
             this CreateMemberRoleAdminV1.CreateMemberRoleAdminV1Builder builder,
             ModelsCreateMemberRoleRequestV1 body,
             string namespace_
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Api
             return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).CreateMemberRoleAdminV1(op);
         }
 
-        public static Group.Model.ModelsGetMemberRoleResponseV1? Execute(
+        public static Group.Model.ModelsMemberRoleResponseV1? Execute(
             this GetSingleMemberRoleAdminV1.GetSingleMemberRoleAdminV1Builder builder,
             string memberRoleId,
             string namespace_
@@ -66,7 +66,7 @@ namespace AccelByte.Sdk.Api
             ((Group.Wrapper.GroupRoles)builder.WrapperObject!).DeleteMemberRoleAdminV1(op);
         }
 
-        public static Group.Model.ModelsUpdateMemberRoleResponseV1? Execute(
+        public static Group.Model.ModelsMemberRoleResponseV1? Execute(
             this UpdateMemberRoleAdminV1.UpdateMemberRoleAdminV1Builder builder,
             ModelsUpdateMemberRoleRequestV1 body,
             string memberRoleId,
@@ -82,7 +82,7 @@ namespace AccelByte.Sdk.Api
             return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).UpdateMemberRoleAdminV1(op);
         }
 
-        public static Group.Model.ModelsUpdateMemberRoleResponseV1? Execute(
+        public static Group.Model.ModelsMemberRoleResponseV1? Execute(
             this UpdateMemberRolePermissionAdminV1.UpdateMemberRolePermissionAdminV1Builder builder,
             ModelsUpdateMemberRolePermissionsRequestV1 body,
             string memberRoleId,
@@ -140,6 +140,54 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Group.Wrapper.GroupRoles)builder.WrapperObject!).DeleteMemberRolePublicV1(op);
+        }
+
+        public static Group.Model.ModelsGetMemberRolesListResponseV1? Execute(
+            this GetMemberRolesListPublicV2.GetMemberRolesListPublicV2Builder builder,
+            string namespace_
+        )
+        {
+            GetMemberRolesListPublicV2 op = builder.Build(
+                namespace_
+            );
+
+            return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).GetMemberRolesListPublicV2(op);
+        }
+
+        public static Group.Model.ModelsGetUserGroupInformationResponseV1? Execute(
+            this UpdateMemberRolePublicV2.UpdateMemberRolePublicV2Builder builder,
+            ModelsAssignRoleToMemberRequestV1 body,
+            string groupId,
+            string memberRoleId,
+            string namespace_
+        )
+        {
+            UpdateMemberRolePublicV2 op = builder.Build(
+                body,
+                groupId,
+                memberRoleId,
+                namespace_
+            );
+
+            return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).UpdateMemberRolePublicV2(op);
+        }
+
+        public static void Execute(
+            this DeleteMemberRolePublicV2.DeleteMemberRolePublicV2Builder builder,
+            ModelsRemoveRoleFromMemberRequestV1 body,
+            string groupId,
+            string memberRoleId,
+            string namespace_
+        )
+        {
+            DeleteMemberRolePublicV2 op = builder.Build(
+                body,
+                groupId,
+                memberRoleId,
+                namespace_
+            );
+
+            ((Group.Wrapper.GroupRoles)builder.WrapperObject!).DeleteMemberRolePublicV2(op);
         }
 
     }

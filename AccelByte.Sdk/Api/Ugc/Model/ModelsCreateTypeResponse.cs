@@ -15,6 +15,9 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("parentNamespace")]
+        public string? ParentNamespace { get; set; }
+
         [JsonPropertyName("subtype")]
         public List<string>? Subtype { get; set; }
 

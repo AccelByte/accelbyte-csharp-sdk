@@ -17,7 +17,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// updateGameSession
     ///
     /// Updates a game session, this endpoint will override stored gamesession data.
-    /// To update only specified fields, please use ` PATCH /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}` endpoint.
+    /// To update only specified fields, please use following endpoint:
+    /// method : PATCH
+    /// API : /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}
     /// </summary>
     public class UpdateGameSession : AccelByte.Sdk.Core.Operation
     {

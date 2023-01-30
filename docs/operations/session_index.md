@@ -56,6 +56,15 @@
 | `/session/v1/public/namespaces/{namespace}/party` | POST | PublicCreateParty | [PublicCreateParty](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicCreateParty.cs) | [PublicCreateParty](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicCreateParty.cs) |
 | `/session/v1/public/namespaces/{namespace}/users/me/parties` | GET | PublicQueryMyParties | [PublicQueryMyParties](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicQueryMyParties.cs) | [PublicQueryMyParties](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicQueryMyParties.cs) |
 
+### Player Wrapper:  [Player](../../AccelByte.Sdk/Api/Session/Wrapper/Player.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/session/v1/admin/namespaces/{namespace}/users/attributes` | GET | AdminQueryPlayerAttributes | [AdminQueryPlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/AdminQueryPlayerAttributes.cs) | [AdminQueryPlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/AdminQueryPlayerAttributes.cs) |
+| `/session/v1/admin/namespaces/{namespace}/users/{userId}/attributes` | GET | AdminGetPlayerAttributes | [AdminGetPlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/AdminGetPlayerAttributes.cs) | [AdminGetPlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/AdminGetPlayerAttributes.cs) |
+| `/session/v1/public/namespaces/{namespace}/users/me/attributes` | GET | PublicGetPlayerAttributes | [PublicGetPlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/PublicGetPlayerAttributes.cs) | [PublicGetPlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/PublicGetPlayerAttributes.cs) |
+| `/session/v1/public/namespaces/{namespace}/users/me/attributes` | POST | PublicStorePlayerAttributes | [PublicStorePlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/PublicStorePlayerAttributes.cs) | [PublicStorePlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/PublicStorePlayerAttributes.cs) |
+| `/session/v1/public/namespaces/{namespace}/users/me/attributes` | DELETE | PublicDeletePlayerAttributes | [PublicDeletePlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/PublicDeletePlayerAttributes.cs) | [PublicDeletePlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/PublicDeletePlayerAttributes.cs) |
+
 
 &nbsp;  
 
@@ -76,6 +85,8 @@
 | `apimodels.Pagination` | [ApimodelsPagination](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPagination.cs) |
 | `apimodels.PartyQueryResponse` | [ApimodelsPartyQueryResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPartyQueryResponse.cs) |
 | `apimodels.PartySessionResponse` | [ApimodelsPartySessionResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPartySessionResponse.cs) |
+| `apimodels.PlayerAttributesRequestBody` | [ApimodelsPlayerAttributesRequestBody](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPlayerAttributesRequestBody.cs) |
+| `apimodels.PlayerAttributesResponseBody` | [ApimodelsPlayerAttributesResponseBody](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPlayerAttributesResponseBody.cs) |
 | `apimodels.PromoteLeaderRequest` | [ApimodelsPromoteLeaderRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPromoteLeaderRequest.cs) |
 | `apimodels.PublicConfiguration` | [ApimodelsPublicConfiguration](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPublicConfiguration.cs) |
 | `apimodels.RequestMember` | [ApimodelsRequestMember](../../AccelByte.Sdk/Api/Session/Model/ApimodelsRequestMember.cs) |
@@ -88,4 +99,5 @@
 | `models.GameServer` | [ModelsGameServer](../../AccelByte.Sdk/Api/Session/Model/ModelsGameServer.cs) |
 | `models.PartyMembers` | [ModelsPartyMembers](../../AccelByte.Sdk/Api/Session/Model/ModelsPartyMembers.cs) |
 | `models.Team` | [ModelsTeam](../../AccelByte.Sdk/Api/Session/Model/ModelsTeam.cs) |
+| `models.UserPlatformInfo` | [ModelsUserPlatformInfo](../../AccelByte.Sdk/Api/Session/Model/ModelsUserPlatformInfo.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Session/Model/ResponseError.cs) |

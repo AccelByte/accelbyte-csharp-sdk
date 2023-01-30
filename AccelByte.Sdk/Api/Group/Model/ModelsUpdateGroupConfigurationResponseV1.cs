@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Group.Model
 {
     public class ModelsUpdateGroupConfigurationResponseV1 : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("allowMultiple")]
+        public bool? AllowMultiple { get; set; }
+
         [JsonPropertyName("configurationCode")]
         public string? ConfigurationCode { get; set; }
 
@@ -16,7 +19,7 @@ namespace AccelByte.Sdk.Api.Group.Model
         public string? Description { get; set; }
 
         [JsonPropertyName("globalRules")]
-        public List<ModelsRule>? GlobalRules { get; set; }
+        public List<ModelsRuleResponseV1>? GlobalRules { get; set; }
 
         [JsonPropertyName("groupAdminRoleId")]
         public string? GroupAdminRoleId { get; set; }

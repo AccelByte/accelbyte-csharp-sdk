@@ -11,6 +11,10 @@ namespace AccelByte.Sdk.Api.Basic.Model
 {
     public class NamespaceInfo : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("clientId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ClientId { get; set; }
+
         [JsonPropertyName("createdAt")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }

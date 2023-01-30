@@ -26,6 +26,48 @@ namespace AccelByte.Sdk.Api
             ((Match2.Wrapper.Backfill)builder.WrapperObject!).CreateBackfill(op);
         }
 
+        public static Match2.Model.ApiBackfillProposalResponse? Execute(
+            this GetBackfillProposal.GetBackfillProposalBuilder builder,
+            string namespace_,
+            string sessionID
+        )
+        {
+            GetBackfillProposal op = builder.Build(
+                namespace_,
+                sessionID
+            );
+
+            return ((Match2.Wrapper.Backfill)builder.WrapperObject!).GetBackfillProposal(op);
+        }
+
+        public static Match2.Model.ApiBackfillGetResponse? Execute(
+            this GetBackfill.GetBackfillBuilder builder,
+            string backfillID,
+            string namespace_
+        )
+        {
+            GetBackfill op = builder.Build(
+                backfillID,
+                namespace_
+            );
+
+            return ((Match2.Wrapper.Backfill)builder.WrapperObject!).GetBackfill(op);
+        }
+
+        public static void Execute(
+            this DeleteBackfill.DeleteBackfillBuilder builder,
+            string backfillID,
+            string namespace_
+        )
+        {
+            DeleteBackfill op = builder.Build(
+                backfillID,
+                namespace_
+            );
+
+            ((Match2.Wrapper.Backfill)builder.WrapperObject!).DeleteBackfill(op);
+        }
+
         public static void Execute(
             this AcceptBackfill.AcceptBackfillBuilder builder,
             ApiBackFillAcceptRequest body,

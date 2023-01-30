@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Group.Model
 {
-    public class ModelsCreateMemberRoleResponseV1 : AccelByte.Sdk.Core.Model
+    public class ModelsMemberRoleResponseV1 : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("memberRoleId")]
         public string? MemberRoleId { get; set; }

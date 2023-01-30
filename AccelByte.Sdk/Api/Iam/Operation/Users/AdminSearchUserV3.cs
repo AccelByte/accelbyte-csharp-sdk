@@ -55,6 +55,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    /// 
+    /// In multi tenant mode :
+    /// 
+    /// 
+    /// 
+    /// 
+    ///   * if super admin search in super admin namespace, the result will be all game admin user
+    /// 
+    /// 
+    ///   * if super admin search in game studio namespace, the result will be all game admin user and players under the game studio namespace
+    /// 
+    /// 
+    ///   * if super admin search in game namespace, the result will be all game admin users and players under the game namespace
+    /// 
+    /// 
+    ///   * if game admin search in their game studio namespace, the result will be all game admin user in the studio namespace
+    /// 
+    /// 
+    ///   * if game admin search in their game namespace, the result will be all player in the game namespace
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
     /// action code : 10133
     /// </summary>
     public class AdminSearchUserV3 : AccelByte.Sdk.Core.Operation

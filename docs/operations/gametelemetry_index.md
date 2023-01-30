@@ -4,10 +4,10 @@
 
 ## Operations
 
-### Operations Wrapper:  [Operations](../../AccelByte.Sdk/Api/Gametelemetry/Wrapper/Operations.cs)
+### telemetry Wrapper:  [Telemetry](../../AccelByte.Sdk/Api/Gametelemetry/Wrapper/Telemetry.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/game-telemetry/v1/admin/namespaces/{namespace}/events` | GET | GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet | [GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet](../../AccelByte.Sdk/Api/Gametelemetry/Operation/Operations/GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.cs) | [GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gametelemetry/Operations/GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.cs) |
+| `/game-telemetry/v1/admin/namespaces/{namespace}/events` | GET | GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet | [GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet](../../AccelByte.Sdk/Api/Gametelemetry/Operation/Telemetry/GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.cs) | [GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gametelemetry/Telemetry/GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.cs) |
 
 ### Gametelemetry Operations Wrapper:  [GametelemetryOperations](../../AccelByte.Sdk/Api/Gametelemetry/Wrapper/GametelemetryOperations.cs)
 | Endpoint | Method | ID | Class | Example |

@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? CreatorName { get; set; }
 
         [JsonPropertyName("customAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? CustomAttributes { get; set; }
 
         [JsonPropertyName("fileExtension")]
@@ -42,6 +43,9 @@ namespace AccelByte.Sdk.Api.Ugc.Model
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
+
+        [JsonPropertyName("parentNamespace")]
+        public string? ParentNamespace { get; set; }
 
         [JsonPropertyName("payloadURL")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

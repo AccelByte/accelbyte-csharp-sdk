@@ -204,5 +204,145 @@ namespace AccelByte.Sdk.Api
             ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupPredefinedRulePublicV1(op);
         }
 
+        public static Group.Model.ModelsGroupResponseV1? Execute(
+            this CreateNewGroupPublicV2.CreateNewGroupPublicV2Builder builder,
+            ModelsPublicCreateNewGroupRequestV1 body,
+            string namespace_
+        )
+        {
+            CreateNewGroupPublicV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Group.Wrapper.Group)builder.WrapperObject!).CreateNewGroupPublicV2(op);
+        }
+
+        public static Group.Model.ModelsGetGroupsResponseV1? Execute(
+            this GetListGroupByIDsV2.GetListGroupByIDsV2Builder builder,
+            ModelsPublicGetGroupListRequestV2 body,
+            string namespace_
+        )
+        {
+            GetListGroupByIDsV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Group.Wrapper.Group)builder.WrapperObject!).GetListGroupByIDsV2(op);
+        }
+
+        public static Group.Model.ModelsGroupResponseV1? Execute(
+            this UpdatePutSingleGroupPublicV2.UpdatePutSingleGroupPublicV2Builder builder,
+            ModelsUpdateGroupRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdatePutSingleGroupPublicV2 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePutSingleGroupPublicV2(op);
+        }
+
+        public static void Execute(
+            this DeleteGroupPublicV2.DeleteGroupPublicV2Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            DeleteGroupPublicV2 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupPublicV2(op);
+        }
+
+        public static Group.Model.ModelsGroupResponseV1? Execute(
+            this UpdatePatchSingleGroupPublicV2.UpdatePatchSingleGroupPublicV2Builder builder,
+            ModelsUpdateGroupRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdatePatchSingleGroupPublicV2 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePatchSingleGroupPublicV2(op);
+        }
+
+        public static Group.Model.ModelsGroupResponseV1? Execute(
+            this UpdateGroupCustomAttributesPublicV2.UpdateGroupCustomAttributesPublicV2Builder builder,
+            ModelsUpdateGroupCustomAttributesRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupCustomAttributesPublicV2 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomAttributesPublicV2(op);
+        }
+
+        public static Group.Model.ModelsGroupResponseV1? Execute(
+            this UpdateGroupCustomRulePublicV2.UpdateGroupCustomRulePublicV2Builder builder,
+            ModelsUpdateGroupCustomRuleRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupCustomRulePublicV2 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomRulePublicV2(op);
+        }
+
+        public static Group.Model.ModelsGroupResponseV1? Execute(
+            this UpdateGroupPredefinedRulePublicV2.UpdateGroupPredefinedRulePublicV2Builder builder,
+            ModelsUpdateGroupPredefinedRuleRequestV1 body,
+            string allowedAction,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupPredefinedRulePublicV2 op = builder.Build(
+                body,
+                allowedAction,
+                groupId,
+                namespace_
+            );
+
+            return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupPredefinedRulePublicV2(op);
+        }
+
+        public static void Execute(
+            this DeleteGroupPredefinedRulePublicV2.DeleteGroupPredefinedRulePublicV2Builder builder,
+            string allowedAction,
+            string groupId,
+            string namespace_
+        )
+        {
+            DeleteGroupPredefinedRulePublicV2 op = builder.Build(
+                allowedAction,
+                groupId,
+                namespace_
+            );
+
+            ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupPredefinedRulePublicV2(op);
+        }
+
     }
 }

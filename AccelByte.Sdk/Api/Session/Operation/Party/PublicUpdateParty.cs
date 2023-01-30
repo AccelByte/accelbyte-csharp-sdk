@@ -17,8 +17,11 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// publicUpdateParty
     ///
     /// Updates party blob, this endpoint will override stored party data.
-    /// To update only specified fields, please use `PATCH /session/v1/public/namespaces/{namespace}/parties/{partyId}` endpoint.
-    /// Note: Join type can only be updated by the party's leader.
+    /// 
+    /// Join type can only be updated by the party's leader.
+    /// To update only specified fields, please use following endpoint:
+    /// method : PATCH
+    /// API : /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}
     /// </summary>
     public class PublicUpdateParty : AccelByte.Sdk.Core.Operation
     {

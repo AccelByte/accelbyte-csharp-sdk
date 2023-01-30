@@ -133,7 +133,7 @@ namespace AccelByte.Sdk.Api
 
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this UpdateContentS3.UpdateContentS3Builder builder,
-            ModelsCreateContentRequestS3 body,
+            ModelsContentRequest body,
             string channelId,
             string contentId,
             string namespace_,

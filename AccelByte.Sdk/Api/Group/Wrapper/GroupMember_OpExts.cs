@@ -178,5 +178,167 @@ namespace AccelByte.Sdk.Api
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).KickGroupMemberPublicV1(op);
         }
 
+        public static Group.Model.ModelsGetGroupMemberListResponseV1? Execute(
+            this GetUserJoinedGroupInformationPublicV2.GetUserJoinedGroupInformationPublicV2Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserJoinedGroupInformationPublicV2 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Group.Wrapper.GroupMember)builder.WrapperObject!).GetUserJoinedGroupInformationPublicV2(op);
+        }
+
+        public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
+            this AcceptGroupInvitationPublicV2.AcceptGroupInvitationPublicV2Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            AcceptGroupInvitationPublicV2 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return ((Group.Wrapper.GroupMember)builder.WrapperObject!).AcceptGroupInvitationPublicV2(op);
+        }
+
+        public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
+            this RejectGroupInvitationPublicV2.RejectGroupInvitationPublicV2Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            RejectGroupInvitationPublicV2 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return ((Group.Wrapper.GroupMember)builder.WrapperObject!).RejectGroupInvitationPublicV2(op);
+        }
+
+        public static Group.Model.ModelsJoinGroupResponseV1? Execute(
+            this JoinGroupV2.JoinGroupV2Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            JoinGroupV2 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return ((Group.Wrapper.GroupMember)builder.WrapperObject!).JoinGroupV2(op);
+        }
+
+        public static Group.Model.ModelsLeaveGroupResponseV1? Execute(
+            this LeaveGroupPublicV2.LeaveGroupPublicV2Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            LeaveGroupPublicV2 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return ((Group.Wrapper.GroupMember)builder.WrapperObject!).LeaveGroupPublicV2(op);
+        }
+
+        public static Group.Model.ModelsGetGroupMemberListResponseV1? Execute(
+            this GetUserGroupInformationPublicV2.GetUserGroupInformationPublicV2Builder builder,
+            string namespace_
+        )
+        {
+            GetUserGroupInformationPublicV2 op = builder.Build(
+                namespace_
+            );
+
+            return ((Group.Wrapper.GroupMember)builder.WrapperObject!).GetUserGroupInformationPublicV2(op);
+        }
+
+        public static Group.Model.ModelsUserInvitationResponseV1? Execute(
+            this InviteGroupPublicV2.InviteGroupPublicV2Builder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            InviteGroupPublicV2 op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return ((Group.Wrapper.GroupMember)builder.WrapperObject!).InviteGroupPublicV2(op);
+        }
+
+        public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
+            this AcceptGroupJoinRequestPublicV2.AcceptGroupJoinRequestPublicV2Builder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            AcceptGroupJoinRequestPublicV2 op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return ((Group.Wrapper.GroupMember)builder.WrapperObject!).AcceptGroupJoinRequestPublicV2(op);
+        }
+
+        public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
+            this RejectGroupJoinRequestPublicV2.RejectGroupJoinRequestPublicV2Builder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            RejectGroupJoinRequestPublicV2 op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return ((Group.Wrapper.GroupMember)builder.WrapperObject!).RejectGroupJoinRequestPublicV2(op);
+        }
+
+        public static Group.Model.ModelsKickGroupMemberResponseV1? Execute(
+            this KickGroupMemberPublicV2.KickGroupMemberPublicV2Builder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            KickGroupMemberPublicV2 op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return ((Group.Wrapper.GroupMember)builder.WrapperObject!).KickGroupMemberPublicV2(op);
+        }
+
+        public static Group.Model.ModelsGetUserGroupInformationResponseV1? Execute(
+            this GetUserGroupStatusInformationV2.GetUserGroupStatusInformationV2Builder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserGroupStatusInformationV2 op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return ((Group.Wrapper.GroupMember)builder.WrapperObject!).GetUserGroupStatusInformationV2(op);
+        }
+
     }
 }

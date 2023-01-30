@@ -42,6 +42,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
         [SdkCommandArgument("gameMode")]
         public string? GameMode { get; set; }
 
+        [SdkCommandArgument("isSoftDeleted")]
+        public string? IsSoftDeleted { get; set; }
+
         [SdkCommandArgument("joinability")]
         public string? Joinability { get; set; }
 
@@ -90,6 +93,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
                 DsPodName,                
                 FromTime,                
                 GameMode,                
+                IsSoftDeleted,                
                 Joinability,                
                 Limit,                
                 MatchPool,                

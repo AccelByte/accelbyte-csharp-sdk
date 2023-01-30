@@ -665,5 +665,6 @@
 | `oauthmodel.TokenResponseV3` | [OauthmodelTokenResponseV3](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenResponseV3.cs) |
 | `oauthmodel.TokenThirdPartyResponse` | [OauthmodelTokenThirdPartyResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenThirdPartyResponse.cs) |
 | `oauthmodel.TokenWithDeviceCookieResponseV3` | [OauthmodelTokenWithDeviceCookieResponseV3](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenWithDeviceCookieResponseV3.cs) |
+| `oauthmodel.UserBan` | [OauthmodelUserBan](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelUserBan.cs) |
 | `rest.ErrorResponse` | [RestErrorResponse](../../AccelByte.Sdk/Api/Iam/Model/RestErrorResponse.cs) |
 | `rest.ErrorResponseWithConflictedUserPlatformAccounts` | [RestErrorResponseWithConflictedUserPlatformAccounts](../../AccelByte.Sdk/Api/Iam/Model/RestErrorResponseWithConflictedUserPlatformAccounts.cs) |

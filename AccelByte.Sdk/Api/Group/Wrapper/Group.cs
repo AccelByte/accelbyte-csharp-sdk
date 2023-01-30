@@ -71,6 +71,42 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         {
             get { return Operation.DeleteGroupPredefinedRulePublicV1.Builder.SetWrapperObject(this); }
         }
+        public CreateNewGroupPublicV2.CreateNewGroupPublicV2Builder CreateNewGroupPublicV2Op
+        {
+            get { return Operation.CreateNewGroupPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public GetListGroupByIDsV2.GetListGroupByIDsV2Builder GetListGroupByIDsV2Op
+        {
+            get { return Operation.GetListGroupByIDsV2.Builder.SetWrapperObject(this); }
+        }
+        public UpdatePutSingleGroupPublicV2.UpdatePutSingleGroupPublicV2Builder UpdatePutSingleGroupPublicV2Op
+        {
+            get { return Operation.UpdatePutSingleGroupPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public DeleteGroupPublicV2.DeleteGroupPublicV2Builder DeleteGroupPublicV2Op
+        {
+            get { return Operation.DeleteGroupPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public UpdatePatchSingleGroupPublicV2.UpdatePatchSingleGroupPublicV2Builder UpdatePatchSingleGroupPublicV2Op
+        {
+            get { return Operation.UpdatePatchSingleGroupPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public UpdateGroupCustomAttributesPublicV2.UpdateGroupCustomAttributesPublicV2Builder UpdateGroupCustomAttributesPublicV2Op
+        {
+            get { return Operation.UpdateGroupCustomAttributesPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public UpdateGroupCustomRulePublicV2.UpdateGroupCustomRulePublicV2Builder UpdateGroupCustomRulePublicV2Op
+        {
+            get { return Operation.UpdateGroupCustomRulePublicV2.Builder.SetWrapperObject(this); }
+        }
+        public UpdateGroupPredefinedRulePublicV2.UpdateGroupPredefinedRulePublicV2Builder UpdateGroupPredefinedRulePublicV2Op
+        {
+            get { return Operation.UpdateGroupPredefinedRulePublicV2.Builder.SetWrapperObject(this); }
+        }
+        public DeleteGroupPredefinedRulePublicV2.DeleteGroupPredefinedRulePublicV2Builder DeleteGroupPredefinedRulePublicV2Op
+        {
+            get { return Operation.DeleteGroupPredefinedRulePublicV2.Builder.SetWrapperObject(this); }
+        }
         #endregion
         
         public Model.ModelsGetGroupsListResponseV1? GetGroupListAdminV1(GetGroupListAdminV1 input) {
@@ -170,6 +206,78 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.Payload);
         }
         public void DeleteGroupPredefinedRulePublicV1(DeleteGroupPredefinedRulePublicV1 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? CreateNewGroupPublicV2(CreateNewGroupPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetGroupsResponseV1? GetListGroupByIDsV2(GetListGroupByIDsV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? UpdatePutSingleGroupPublicV2(UpdatePutSingleGroupPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeleteGroupPublicV2(DeleteGroupPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? UpdatePatchSingleGroupPublicV2(UpdatePatchSingleGroupPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? UpdateGroupCustomAttributesPublicV2(UpdateGroupCustomAttributesPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? UpdateGroupCustomRulePublicV2(UpdateGroupCustomRulePublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? UpdateGroupPredefinedRulePublicV2(UpdateGroupPredefinedRulePublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeleteGroupPredefinedRulePublicV2(DeleteGroupPredefinedRulePublicV2 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(

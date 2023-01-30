@@ -131,7 +131,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
         
-        public Model.ModelsCreateMemberRoleResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsMemberRoleResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {            
             if (code == (HttpStatusCode)204)
             {
@@ -139,11 +139,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ModelsCreateMemberRoleResponseV1>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsMemberRoleResponseV1>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsCreateMemberRoleResponseV1>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsMemberRoleResponseV1>(payload);
             }
             
             var payloadString = Helper.ConvertInputStreamToString(payload);

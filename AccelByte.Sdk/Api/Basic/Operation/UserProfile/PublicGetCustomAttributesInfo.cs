@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Get custom attributes info.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=2 (READ)
-    ///   *  Action code : 11404
+    ///   * Action code : 11404
     ///   *  Returns : user custom attributes
     /// </summary>
     public class PublicGetCustomAttributesInfo : AccelByte.Sdk.Core.Operation
@@ -72,7 +71,6 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
 
-            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -90,7 +88,6 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             
             
 
-            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/basic/v1/public/namespaces/{namespace}/users/{userId}/profiles/customAttributes";

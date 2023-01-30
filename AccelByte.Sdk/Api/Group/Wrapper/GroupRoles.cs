@@ -55,6 +55,18 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         {
             get { return Operation.DeleteMemberRolePublicV1.Builder.SetWrapperObject(this); }
         }
+        public GetMemberRolesListPublicV2.GetMemberRolesListPublicV2Builder GetMemberRolesListPublicV2Op
+        {
+            get { return Operation.GetMemberRolesListPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public UpdateMemberRolePublicV2.UpdateMemberRolePublicV2Builder UpdateMemberRolePublicV2Op
+        {
+            get { return Operation.UpdateMemberRolePublicV2.Builder.SetWrapperObject(this); }
+        }
+        public DeleteMemberRolePublicV2.DeleteMemberRolePublicV2Builder DeleteMemberRolePublicV2Op
+        {
+            get { return Operation.DeleteMemberRolePublicV2.Builder.SetWrapperObject(this); }
+        }
         #endregion
         
         public Model.ModelsGetMemberRolesListResponseV1? GetMemberRolesListAdminV1(GetMemberRolesListAdminV1 input) {
@@ -65,7 +77,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateMemberRoleResponseV1? CreateMemberRoleAdminV1(CreateMemberRoleAdminV1 input) {
+        public Model.ModelsMemberRoleResponseV1? CreateMemberRoleAdminV1(CreateMemberRoleAdminV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -73,7 +85,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetMemberRoleResponseV1? GetSingleMemberRoleAdminV1(GetSingleMemberRoleAdminV1 input) {
+        public Model.ModelsMemberRoleResponseV1? GetSingleMemberRoleAdminV1(GetSingleMemberRoleAdminV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -89,7 +101,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsUpdateMemberRoleResponseV1? UpdateMemberRoleAdminV1(UpdateMemberRoleAdminV1 input) {
+        public Model.ModelsMemberRoleResponseV1? UpdateMemberRoleAdminV1(UpdateMemberRoleAdminV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -97,7 +109,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsUpdateMemberRoleResponseV1? UpdateMemberRolePermissionAdminV1(UpdateMemberRolePermissionAdminV1 input) {
+        public Model.ModelsMemberRoleResponseV1? UpdateMemberRolePermissionAdminV1(UpdateMemberRolePermissionAdminV1 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -122,6 +134,30 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.Payload);
         }
         public void DeleteMemberRolePublicV1(DeleteMemberRolePublicV1 input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetMemberRolesListResponseV1? GetMemberRolesListPublicV2(GetMemberRolesListPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetUserGroupInformationResponseV1? UpdateMemberRolePublicV2(UpdateMemberRolePublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeleteMemberRolePublicV2(DeleteMemberRolePublicV2 input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(

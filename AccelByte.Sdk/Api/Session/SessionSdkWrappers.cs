@@ -57,6 +57,17 @@ namespace AccelByte.Sdk.Core
         }
         private Party? _Party = null;
 
+        public Player Player
+        {
+            get
+            {
+                if (_Player == null)
+                    _Player = new Player(_SdkObject);
+                return _Player;
+            }
+        }
+        private Player? _Player = null;
+
         internal SessionSdkWrappers(AccelByteSDK sdk)
         {
             _SdkObject = sdk;

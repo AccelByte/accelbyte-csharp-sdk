@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     ///
     /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
     /// 
-    /// All request body are required except preview and tags.
+    /// All request body are required except preview, tags and customAttributes.
     /// </summary>
     [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class UpdateContentDirect : AccelByte.Sdk.Core.Operation

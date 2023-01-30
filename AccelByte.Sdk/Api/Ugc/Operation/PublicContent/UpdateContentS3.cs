@@ -17,10 +17,10 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// UpdateContentS3
     ///
     /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
-    /// 
-    /// All request body are required except payload, preview, tags, and contentType.
+    /// All request body are required except payload, preview, tags, contentType, updateContentFile and customAttributes.
     /// contentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
     /// If not specified, it will use fileExtension value.
+    /// To update content's file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
     /// 
     /// 
     /// 
@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
             public UpdateContentS3 Build(
-                ModelsCreateContentRequestS3 body,
+                ModelsContentRequest body,
                 string channelId,
                 string contentId,
                 string namespace_,
@@ -68,7 +68,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         }
 
         private UpdateContentS3(UpdateContentS3Builder builder,
-            ModelsCreateContentRequestS3 body,
+            ModelsContentRequest body,
             string channelId,
             string contentId,
             string namespace_,
@@ -96,7 +96,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             string contentId,            
             string namespace_,            
             string userId,            
-            Model.ModelsCreateContentRequestS3 body            
+            Model.ModelsContentRequest body            
         )
         {
             PathParams["channelId"] = channelId;

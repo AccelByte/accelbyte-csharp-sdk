@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Group.Model
         public string? GroupRegion { get; set; }
 
         [JsonPropertyName("groupRules")]
-        public ModelsGroupRule? GroupRules { get; set; }
+        public ModelsGroupRuleResponseV1? GroupRules { get; set; }
 
         [JsonPropertyName("groupType")]
         public string? GroupType { get; set; }

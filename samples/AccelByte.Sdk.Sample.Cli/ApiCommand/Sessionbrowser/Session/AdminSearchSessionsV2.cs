@@ -42,6 +42,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         [SdkCommandArgument("partyID")]
         public string? PartyID { get; set; }
 
+        [SdkCommandArgument("sessionType")]
+        public string? SessionType { get; set; }
+
+        [SdkCommandArgument("status")]
+        public string? Status { get; set; }
+
         [SdkCommandArgument("userID")]
         public string? UserID { get; set; }
 
@@ -66,6 +72,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
                 Deleted,                
                 MatchID,                
                 PartyID,                
+                SessionType,                
+                Status,                
                 UserID,                
                 Limit,                
                 Offset                

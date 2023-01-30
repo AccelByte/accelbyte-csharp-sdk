@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Group.Model
 {
     public class ModelsCreateGroupConfigurationRequestV1 : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("allowMultiple")]
+        public bool? AllowMultiple { get; set; }
+
         [JsonPropertyName("configurationCode")]
         public string? ConfigurationCode { get; set; }
 

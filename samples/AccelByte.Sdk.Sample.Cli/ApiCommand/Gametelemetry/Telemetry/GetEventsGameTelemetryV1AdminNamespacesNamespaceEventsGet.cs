@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Gametelemetry.Wrapper.Operations wrapper = new AccelByte.Sdk.Api.Gametelemetry.Wrapper.Operations(_SDK);
+            AccelByte.Sdk.Api.Gametelemetry.Wrapper.Telemetry wrapper = new AccelByte.Sdk.Api.Gametelemetry.Wrapper.Telemetry(_SDK);
 
             GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet operation = new GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet(
                 Namespace,                

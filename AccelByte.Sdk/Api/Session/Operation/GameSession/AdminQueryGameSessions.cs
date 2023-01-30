@@ -35,6 +35,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
             public string? GameMode { get; set; }
 
+            public string? IsSoftDeleted { get; set; }
+
             public string? Joinability { get; set; }
 
             public long? Limit { get; set; }
@@ -85,6 +87,12 @@ namespace AccelByte.Sdk.Api.Session.Operation
             public AdminQueryGameSessionsBuilder SetGameMode(string _gameMode)
             {
                 GameMode = _gameMode;
+                return this;
+            }
+
+            public AdminQueryGameSessionsBuilder SetIsSoftDeleted(string _isSoftDeleted)
+            {
+                IsSoftDeleted = _isSoftDeleted;
                 return this;
             }
 
@@ -181,6 +189,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (builder.DsPodName is not null) QueryParams["dsPodName"] = builder.DsPodName;
             if (builder.FromTime is not null) QueryParams["fromTime"] = builder.FromTime;
             if (builder.GameMode is not null) QueryParams["gameMode"] = builder.GameMode;
+            if (builder.IsSoftDeleted is not null) QueryParams["isSoftDeleted"] = builder.IsSoftDeleted;
             if (builder.Joinability is not null) QueryParams["joinability"] = builder.Joinability;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.MatchPool is not null) QueryParams["matchPool"] = builder.MatchPool;
@@ -208,6 +217,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             string? dsPodName,            
             string? fromTime,            
             string? gameMode,            
+            string? isSoftDeleted,            
             string? joinability,            
             long? limit,            
             string? matchPool,            
@@ -227,6 +237,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (dsPodName is not null) QueryParams["dsPodName"] = dsPodName;
             if (fromTime is not null) QueryParams["fromTime"] = fromTime;
             if (gameMode is not null) QueryParams["gameMode"] = gameMode;
+            if (isSoftDeleted is not null) QueryParams["isSoftDeleted"] = isSoftDeleted;
             if (joinability is not null) QueryParams["joinability"] = joinability;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (matchPool is not null) QueryParams["matchPool"] = matchPool;

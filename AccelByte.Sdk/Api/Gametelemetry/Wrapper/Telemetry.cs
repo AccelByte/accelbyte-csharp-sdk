@@ -9,11 +9,11 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Gametelemetry.Wrapper
 {
-    public class Operations
+    public class Telemetry
     {
         private readonly AccelByteSDK _sdk;
 
-        public Operations(AccelByteSDK sdk)
+        public Telemetry(AccelByteSDK sdk)
         {
             _sdk = sdk;
         }

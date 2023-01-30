@@ -23,6 +23,18 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         {
             get { return Operation.CreateBackfill.Builder.SetWrapperObject(this); }
         }
+        public GetBackfillProposal.GetBackfillProposalBuilder GetBackfillProposalOp
+        {
+            get { return Operation.GetBackfillProposal.Builder.SetWrapperObject(this); }
+        }
+        public GetBackfill.GetBackfillBuilder GetBackfillOp
+        {
+            get { return Operation.GetBackfill.Builder.SetWrapperObject(this); }
+        }
+        public DeleteBackfill.DeleteBackfillBuilder DeleteBackfillOp
+        {
+            get { return Operation.DeleteBackfill.Builder.SetWrapperObject(this); }
+        }
         public AcceptBackfill.AcceptBackfillBuilder AcceptBackfillOp
         {
             get { return Operation.AcceptBackfill.Builder.SetWrapperObject(this); }
@@ -34,6 +46,30 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         #endregion
         
         public void CreateBackfill(CreateBackfill input) {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApiBackfillProposalResponse? GetBackfillProposal(GetBackfillProposal input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApiBackfillGetResponse? GetBackfill(GetBackfill input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeleteBackfill(DeleteBackfill input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(

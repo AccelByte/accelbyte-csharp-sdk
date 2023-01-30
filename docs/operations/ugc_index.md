@@ -169,6 +169,7 @@
 | `models.ContentDownloadResponse` | [ModelsContentDownloadResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentDownloadResponse.cs) |
 | `models.ContentLikeRequest` | [ModelsContentLikeRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentLikeRequest.cs) |
 | `models.ContentLikeResponse` | [ModelsContentLikeResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentLikeResponse.cs) |
+| `models.ContentRequest` | [ModelsContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentRequest.cs) |
 | `models.CreateContentRequest` | [ModelsCreateContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateContentRequest.cs) |
 | `models.CreateContentRequestS3` | [ModelsCreateContentRequestS3](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateContentRequestS3.cs) |
 | `models.CreateContentResponse` | [ModelsCreateContentResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateContentResponse.cs) |

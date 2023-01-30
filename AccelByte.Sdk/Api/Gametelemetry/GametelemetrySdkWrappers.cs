@@ -13,16 +13,16 @@ namespace AccelByte.Sdk.Core
     {
         private AccelByteSDK _SdkObject;
 
-        public Operations Operations
+        public Telemetry Telemetry
         {
             get
             {
-                if (_Operations == null)
-                    _Operations = new Operations(_SdkObject);
-                return _Operations;
+                if (_Telemetry == null)
+                    _Telemetry = new Telemetry(_SdkObject);
+                return _Telemetry;
             }
         }
-        private Operations? _Operations = null;
+        private Telemetry? _Telemetry = null;
 
         public GametelemetryOperations GametelemetryOperations
         {

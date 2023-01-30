@@ -10,7 +10,7 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api
 {
-    public static class GametelemetryOperations_OpExts
+    public static class GametelemetryTelemetry_OpExts
     {
         public static void Execute(
             this GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder builder,
@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            ((Gametelemetry.Wrapper.Operations)builder.WrapperObject!).GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet(op);
+            ((Gametelemetry.Wrapper.Telemetry)builder.WrapperObject!).GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet(op);
         }
 
     }

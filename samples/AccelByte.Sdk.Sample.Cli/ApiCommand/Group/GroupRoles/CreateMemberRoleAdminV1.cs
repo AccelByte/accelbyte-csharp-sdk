@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
                 Body                
             );            
             
-            AccelByte.Sdk.Api.Group.Model.ModelsCreateMemberRoleResponseV1? response = wrapper.CreateMemberRoleAdminV1(operation);
+            AccelByte.Sdk.Api.Group.Model.ModelsMemberRoleResponseV1? response = wrapper.CreateMemberRoleAdminV1(operation);
             if (response == null)
                 return "No response from server.";
 

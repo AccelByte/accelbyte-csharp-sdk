@@ -9,6 +9,12 @@ namespace AccelByte.Sdk.Api.Match2.Model
 {
     public class ApiMatchPool : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("auto_accept_backfill_proposal")]
+        public bool? AutoAcceptBackfillProposal { get; set; }
+
+        [JsonPropertyName("backfill_proposal_expiration_seconds")]
+        public int? BackfillProposalExpirationSeconds { get; set; }
+
         [JsonPropertyName("backfill_ticket_expiration_seconds")]
         public int? BackfillTicketExpirationSeconds { get; set; }
 

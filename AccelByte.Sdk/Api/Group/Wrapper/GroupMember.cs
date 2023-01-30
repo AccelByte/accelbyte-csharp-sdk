@@ -67,6 +67,50 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         {
             get { return Operation.KickGroupMemberPublicV1.Builder.SetWrapperObject(this); }
         }
+        public GetUserJoinedGroupInformationPublicV2.GetUserJoinedGroupInformationPublicV2Builder GetUserJoinedGroupInformationPublicV2Op
+        {
+            get { return Operation.GetUserJoinedGroupInformationPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public AcceptGroupInvitationPublicV2.AcceptGroupInvitationPublicV2Builder AcceptGroupInvitationPublicV2Op
+        {
+            get { return Operation.AcceptGroupInvitationPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public RejectGroupInvitationPublicV2.RejectGroupInvitationPublicV2Builder RejectGroupInvitationPublicV2Op
+        {
+            get { return Operation.RejectGroupInvitationPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public JoinGroupV2.JoinGroupV2Builder JoinGroupV2Op
+        {
+            get { return Operation.JoinGroupV2.Builder.SetWrapperObject(this); }
+        }
+        public LeaveGroupPublicV2.LeaveGroupPublicV2Builder LeaveGroupPublicV2Op
+        {
+            get { return Operation.LeaveGroupPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public GetUserGroupInformationPublicV2.GetUserGroupInformationPublicV2Builder GetUserGroupInformationPublicV2Op
+        {
+            get { return Operation.GetUserGroupInformationPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public InviteGroupPublicV2.InviteGroupPublicV2Builder InviteGroupPublicV2Op
+        {
+            get { return Operation.InviteGroupPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public AcceptGroupJoinRequestPublicV2.AcceptGroupJoinRequestPublicV2Builder AcceptGroupJoinRequestPublicV2Op
+        {
+            get { return Operation.AcceptGroupJoinRequestPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public RejectGroupJoinRequestPublicV2.RejectGroupJoinRequestPublicV2Builder RejectGroupJoinRequestPublicV2Op
+        {
+            get { return Operation.RejectGroupJoinRequestPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public KickGroupMemberPublicV2.KickGroupMemberPublicV2Builder KickGroupMemberPublicV2Op
+        {
+            get { return Operation.KickGroupMemberPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public GetUserGroupStatusInformationV2.GetUserGroupStatusInformationV2Builder GetUserGroupStatusInformationV2Op
+        {
+            get { return Operation.GetUserGroupStatusInformationV2.Builder.SetWrapperObject(this); }
+        }
         #endregion
         
         public Model.ModelsGetGroupMemberListResponseV1? GetGroupMembersListAdminV1(GetGroupMembersListAdminV1 input) {
@@ -158,6 +202,94 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.Payload);
         }
         public Model.ModelsKickGroupMemberResponseV1? KickGroupMemberPublicV1(KickGroupMemberPublicV1 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetGroupMemberListResponseV1? GetUserJoinedGroupInformationPublicV2(GetUserJoinedGroupInformationPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsMemberRequestGroupResponseV1? AcceptGroupInvitationPublicV2(AcceptGroupInvitationPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsMemberRequestGroupResponseV1? RejectGroupInvitationPublicV2(RejectGroupInvitationPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsJoinGroupResponseV1? JoinGroupV2(JoinGroupV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsLeaveGroupResponseV1? LeaveGroupPublicV2(LeaveGroupPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetGroupMemberListResponseV1? GetUserGroupInformationPublicV2(GetUserGroupInformationPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsUserInvitationResponseV1? InviteGroupPublicV2(InviteGroupPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsMemberRequestGroupResponseV1? AcceptGroupJoinRequestPublicV2(AcceptGroupJoinRequestPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsMemberRequestGroupResponseV1? RejectGroupJoinRequestPublicV2(RejectGroupJoinRequestPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsKickGroupMemberResponseV1? KickGroupMemberPublicV2(KickGroupMemberPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetUserGroupInformationResponseV1? GetUserGroupStatusInformationV2(GetUserGroupStatusInformationV2 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

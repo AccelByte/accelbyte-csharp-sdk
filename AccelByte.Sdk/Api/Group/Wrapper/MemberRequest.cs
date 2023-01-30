@@ -27,6 +27,22 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         {
             get { return Operation.GetGroupInvitationRequestPublicV1.Builder.SetWrapperObject(this); }
         }
+        public GetGroupInviteRequestPublicV2.GetGroupInviteRequestPublicV2Builder GetGroupInviteRequestPublicV2Op
+        {
+            get { return Operation.GetGroupInviteRequestPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public GetGroupJoinRequestPublicV2.GetGroupJoinRequestPublicV2Builder GetGroupJoinRequestPublicV2Op
+        {
+            get { return Operation.GetGroupJoinRequestPublicV2.Builder.SetWrapperObject(this); }
+        }
+        public GetMyGroupJoinRequestV2.GetMyGroupJoinRequestV2Builder GetMyGroupJoinRequestV2Op
+        {
+            get { return Operation.GetMyGroupJoinRequestV2.Builder.SetWrapperObject(this); }
+        }
+        public CancelInvitationGroupMemberV2.CancelInvitationGroupMemberV2Builder CancelInvitationGroupMemberV2Op
+        {
+            get { return Operation.CancelInvitationGroupMemberV2.Builder.SetWrapperObject(this); }
+        }
         #endregion
         
         public Model.ModelsGetMemberRequestsListResponseV1? GetGroupJoinRequestPublicV1(GetGroupJoinRequestPublicV1 input) {
@@ -38,6 +54,38 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.Payload);
         }
         public Model.ModelsGetMemberRequestsListResponseV1? GetGroupInvitationRequestPublicV1(GetGroupInvitationRequestPublicV1 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetMemberRequestsListResponseV1? GetGroupInviteRequestPublicV2(GetGroupInviteRequestPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetMemberRequestsListResponseV1? GetGroupJoinRequestPublicV2(GetGroupJoinRequestPublicV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetMemberRequestsListResponseV1? GetMyGroupJoinRequestV2(GetMyGroupJoinRequestV2 input) {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsCancelInvitationGroupResponseV2? CancelInvitationGroupMemberV2(CancelInvitationGroupMemberV2 input) {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
