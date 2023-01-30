@@ -232,6 +232,38 @@ AccelByteSDK sdk = AccelByteSDK.Builder
 ```
 NOTE: Do not use `.UseAutoTokenRefresh()` together with `.UseScheduledTokenRefresh()`. It will introduce unnecessary overhead and possibility of unexpected behaviour.
 
+## Local Token Validation
+Local token validation is available since version 0.27. Currently only support for oauth client token.
+To enable it, include `AccelByte.Sdk.Feature.LocalTokenValidation` and instantiate the sdk with following code.
+```csharp
+//Add core namespace
+using AccelByte.Sdk.Core;
+
+//Add feature namespace
+using AccelByte.Sdk.Feature.LocalTokenValidation;
+
+AccelByteSDK sdk = AccelByteSDK.Builder
+    .UseDefaultHttpClient()
+    // Using DefaultConfigRepository, make sure the required environment variables are set
+    .UseDefaultConfigRepository()
+    // Credential repository is required for auto refresh token to works
+    .UseDefaultCredentialRepository()
+    // call this to enable the feature
+    .UseLocalTokenValidator()
+    // call this to enable auto refresh for token revocation list
+    .UseAutoRefreshForTokenRevocationList()
+    .Build();
+```
+
+And then use following method to validate access token.
+```csharp
+bool isValid = sdk.ValidateToken(accessTokenStr);
+```
+Or, if you need to validate permission and action, use following method.
+```csharp
+bool isValid = sdk.ValidateToken(accessTokenStr, permissionStr, actionInt);
+```
+
 ## Samples
 
 See common use cases [here](docs/common_use_cases.md).
