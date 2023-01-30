@@ -1,3 +1,738 @@
+# C# Server SDK v0.27.0
+
+## basic Service
+
+### What's Changed
+---
+`GET` /basic/v1/admin/namespaces Get all namespaces  
+    Return Type
+
+        Insert clientId //clientId is only present on multi tenant mode with namespace is not publisher namespace
+`GET` /basic/v1/admin/namespaces/{namespace} Get a namespace  
+    Return Type
+
+        Insert clientId //clientId is only present on multi tenant mode with namespace is not publisher namespace
+`DELETE` /basic/v1/admin/namespaces/{namespace} Delete a namespace  
+    Return Type
+
+        Insert clientId //clientId is only present on multi tenant mode with namespace is not publisher namespace
+`PATCH` /basic/v1/admin/namespaces/{namespace}/basic Update namespace basic info  
+    Return Type
+
+        Insert clientId //clientId is only present on multi tenant mode with namespace is not publisher namespace
+`GET` /basic/v1/admin/namespaces/{namespace}/game Get game namespaces  
+    Return Type
+
+        Insert clientId //clientId is only present on multi tenant mode with namespace is not publisher namespace
+`PATCH` /basic/v1/admin/namespaces/{namespace}/status Change namespace status  
+    Return Type
+
+        Insert clientId //clientId is only present on multi tenant mode with namespace is not publisher namespace
+`GET` /basic/v1/public/namespaces Get all namespaces  
+    Return Type
+
+        Insert clientId //clientId is only present on multi tenant mode with namespace is not publisher namespace
+
+## dsmc Service
+
+### What's Changed
+---
+`GET` /dsmcontroller/admin/namespaces/{namespace}/servers List all managed servers in a region  
+    Return Type
+
+        Insert servers.deployment_override
+`GET` /dsmcontroller/admin/namespaces/{namespace}/servers/local List all managed local servers  
+    Return Type
+
+        Insert servers.deployment_override
+`GET` /dsmcontroller/admin/namespaces/{namespace}/servers/{podName} Query a server in a region  
+    Return Type
+
+        Insert deployment_override
+`GET` /dsmcontroller/admin/namespaces/{namespace}/sessions List all managed sessions in a region  
+    Return Type
+
+        Insert sessions.Server.deployment_override
+`POST` /dsmcontroller/namespaces/{namespace}/servers/local/register Register a local DS  
+    Return Type
+
+        Insert deployment_override
+`POST` /dsmcontroller/namespaces/{namespace}/servers/register Register a DS  
+    Return Type
+
+        Insert deployment_override
+`POST` /dsmcontroller/namespaces/{namespace}/sessions Register a new game session  
+    Return Type
+
+        Insert session.Server.deployment_override
+`GET` /dsmcontroller/namespaces/{namespace}/sessions/{sessionID} Query specified session  
+    Return Type
+
+        Insert session.Server.deployment_override
+
+## gametelemetry Service
+
+### What's Changed
+---
+`GET` /game-telemetry/v1/admin/namespaces/{namespace}/events Get Events  
+    Parameters
+
+        Modify endTime //End time of data to be queried. Default: Current time in UTC.
+        Modify startTime //Start time of data to be queried. Default: Current time in UTC minus 1 day.
+
+## group Service
+
+### What's New
+---
+* `GET` /group/v2/admin/namespaces/{namespace}/users/{userId}/groups Get User Joined Group Information
+* `POST` /group/v2/public/namespaces/{namespace}/groups create new group
+* `POST` /group/v2/public/namespaces/{namespace}/groups/bulk get list of groups by group Ids
+* `PUT` /group/v2/public/namespaces/{namespace}/groups/{groupId} update existing group
+* `DELETE` /group/v2/public/namespaces/{namespace}/groups/{groupId} Delete existing group
+* `PATCH` /group/v2/public/namespaces/{namespace}/groups/{groupId} update existing group
+* `PUT` /group/v2/public/namespaces/{namespace}/groups/{groupId}/attributes/custom Update group custom attributes
+* `POST` /group/v2/public/namespaces/{namespace}/groups/{groupId}/invite/accept Accept Group Invitation
+* `POST` /group/v2/public/namespaces/{namespace}/groups/{groupId}/invite/reject Reject Group Invitation
+* `GET` /group/v2/public/namespaces/{namespace}/groups/{groupId}/invite/request Get Group Invite Request List
+* `POST` /group/v2/public/namespaces/{namespace}/groups/{groupId}/join Join to group
+* `GET` /group/v2/public/namespaces/{namespace}/groups/{groupId}/join/request Get Group Join Request List
+* `POST` /group/v2/public/namespaces/{namespace}/groups/{groupId}/leave Leave group
+* `PUT` /group/v2/public/namespaces/{namespace}/groups/{groupId}/rules/custom update group custom rule
+* `PUT` /group/v2/public/namespaces/{namespace}/groups/{groupId}/rules/defined/{allowedAction} update predefined group rule
+* `DELETE` /group/v2/public/namespaces/{namespace}/groups/{groupId}/rules/defined/{allowedAction} Delete group predefined rule
+* `GET` /group/v2/public/namespaces/{namespace}/roles get all list of member roles
+* `POST` /group/v2/public/namespaces/{namespace}/roles/{memberRoleId}/groups/{groupId}/members Assign role to group member
+* `DELETE` /group/v2/public/namespaces/{namespace}/roles/{memberRoleId}/groups/{groupId}/members Remove role from group member
+* `GET` /group/v2/public/namespaces/{namespace}/users/me/groups Get User Joined Group Information
+* `GET` /group/v2/public/namespaces/{namespace}/users/me/join/request Get My Join Request To The Groups
+* `POST` /group/v2/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/invite Invite user to group
+* `POST` /group/v2/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/invite/cancel Cancel Invitation Group Member
+* `POST` /group/v2/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/join/accept Accept Group Join Request
+* `POST` /group/v2/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/join/reject Reject Group Join Request
+* `POST` /group/v2/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/kick Kick Group Member
+* `GET` /group/v2/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/status User Group Status Information
+
+### What's Changed
+---
+`POST` /group/v1/admin/namespaces/{namespace}/configuration create new configuration  
+    Parameters
+
+        Insert body.allowMultiple
+`GET` /group/v1/admin/namespaces/{namespace}/configuration List Group Configuration  
+    Return Type
+
+        Insert data.allowMultiple
+`PATCH` /group/v1/admin/namespaces/{namespace}/configuration/{configurationCode} update existing configuration  
+    Return Type
+
+        Insert allowMultiple
+`GET` /group/v1/admin/namespaces/{namespace}/configuration/{configurationCode} get existing configuration  
+    Return Type
+
+        Insert allowMultiple
+`PUT` /group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}/rules/{allowedAction} update existing configuration global rule  
+    Return Type
+
+        Insert allowMultiple
+`DELETE` /group/v1/admin/namespaces/{namespace}/configuration/{configurationCode}/rules/{allowedAction} delete existing configuration global rule based on allowed action  
+    Return Type
+
+        Insert allowMultiple
+`GET` /group/v1/admin/namespaces/{namespace}/roles get all list of member roles  
+    Return Type
+
+        Delete data.memberRoleId
+        Delete data.memberRoleName
+        Delete data.memberRolePermissions
+`GET` /group/v1/public/namespaces/{namespace}/roles get all list of member roles  
+    Return Type
+
+        Delete data.memberRoleId
+        Delete data.memberRoleName
+        Delete data.memberRolePermissions
+
+## iam Service
+
+### What's Changed
+---
+`GET` /iam/v3/admin/namespaces/{namespace}/clients Get clients by namespace  
+    Return Type
+
+        Insert data.roles
+`PATCH` /iam/v3/admin/namespaces/{namespace}/clients/{clientId} Update Client  
+    Return Type
+
+        Insert roles
+`GET` /iam/v3/admin/namespaces/{namespace}/clients/{clientId} Get clients by namespace and client id. Multi tenant mode allows admin portal client to be accessible regardless of namespace path.  
+    Return Type
+
+        Insert roles
+
+## match2 Service
+
+### What's New
+---
+* `GET` /match2/v1/namespaces/{namespace}/backfill/proposal Get backfill proposal
+* `GET` /match2/v1/namespaces/{namespace}/backfill/{backfillID} Get a backfill ticket
+* `DELETE` /match2/v1/namespaces/{namespace}/backfill/{backfillID} Delete a backfill ticket
+
+### What's Changed
+---
+`POST` /match2/v1/namespaces/{namespace}/match-pools Create a match pool  
+    Parameters
+
+        Insert body.auto_accept_backfill_proposal
+        Insert body.backfill_proposal_expiration_seconds
+`GET` /match2/v1/namespaces/{namespace}/match-pools List match pools  
+    Return Type
+
+        Insert data.auto_accept_backfill_proposal
+        Insert data.backfill_proposal_expiration_seconds
+`GET` /match2/v1/namespaces/{namespace}/match-pools/{pool} Get details for a specific match pool  
+    Return Type
+
+        Insert auto_accept_backfill_proposal
+        Insert backfill_proposal_expiration_seconds
+`PUT` /match2/v1/namespaces/{namespace}/match-pools/{pool} Update a match pool  
+    Parameters
+
+        Insert body.auto_accept_backfill_proposal
+        Insert body.backfill_proposal_expiration_seconds
+    Return Type
+
+        Insert auto_accept_backfill_proposal
+        Insert backfill_proposal_expiration_seconds
+`GET` /match2/v1/namespaces/{namespace}/match-tickets/{ticketid} Get details for a specific match ticket  
+    Return Type
+
+        Insert proposedProposal
+
+## platform Service
+
+### What's Changed
+---
+`POST` /platform/admin/fulfillment/scripts/tests/eval Test eval fulfillment script  
+    Parameters
+
+        Insert body.context.item.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/entitlements Query entitlements  
+    Return Type
+
+        Insert data.itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/entitlements/{entitlementId} Get entitlement  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`POST` /platform/admin/namespaces/{namespace}/items Create an Item  
+    Parameters
+
+        Insert body.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/items Sync an in game item  
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/items/byAppId Get item by appId  
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/items/byCriteria Query items by criteria  
+    Return Type
+
+        Insert data.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/items/bySku Get item by sku  
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/items/bySku/locale Get an item by sku in locale  
+    Return Type
+
+        Insert items.lootBoxConfig.rollFunction //roll function
+        Insert lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/items/locale/byIds Bulk get locale items  
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/items/search Search items by keyword  
+    Return Type
+
+        Insert data.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/items/uncategorized Query uncategorized items  
+    Return Type
+
+        Insert data.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/items/{itemId} Update an item  
+    Parameters
+
+        Insert body.lootBoxConfig.rollFunction //roll function
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/items/{itemId} Get an item  
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/items/{itemId}/disable Disable an item  
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/items/{itemId}/enable Enable an item  
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`DELETE` /platform/admin/namespaces/{namespace}/items/{itemId}/features/{feature} Defeature an item  
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/items/{itemId}/features/{feature} Feature an item  
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/items/{itemId}/locale Get an item in locale  
+    Return Type
+
+        Insert items.lootBoxConfig.rollFunction //roll function
+        Insert lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/items/{itemId}/purchase/condition Update item purchase condition  
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/orders Query orders  
+    Return Type
+
+        Insert data.itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/orders/{orderNo} Get order  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/orders/{orderNo}/refund Refund order  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/subscriptions Query subscriptions  
+    Return Type
+
+        Insert data.itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements Query user entitlements  
+    Return Type
+
+        Insert data.itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byAppId Get user app entitlement by appId  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byAppType Query app entitlements by appType  
+    Return Type
+
+        Insert data.itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byItemId Get user entitlement by itemId  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byItemIds Get user entitlements by itemIds  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/bySku Get user entitlement by sku  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId} Update user entitlement  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId} Get user entitlement  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/decrement Consume user entitlement  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/disable Disable user entitlement  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/enable Enable user entitlement  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke Revoke user entitlement  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/orders Query user orders  
+    Return Type
+
+        Insert data.itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo} Update order status  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo} Get an order  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/fulfill Fulfill an order  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/subscriptions Query user subscriptions  
+    Return Type
+
+        Insert data.itemSnapshot.lootBoxConfig.rollFunction //roll function
+`POST` /platform/admin/namespaces/{namespace}/users/{userId}/subscriptions/platformSubscribe Free subscribe by platform  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/subscriptions/{subscriptionId} Get user subscription  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/subscriptions/{subscriptionId}/cancel Cancel a subscription  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/subscriptions/{subscriptionId}/grant Grant days to a subscription  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/admin/orders Sync orders  
+    Return Type
+
+        Insert orders.itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/items/byAppId Get item by appId  
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/items/byCriteria Query items by criteria  
+    Return Type
+
+        Insert data.lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/items/bySku Get item by sku  
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/items/locale/byIds Bulk get locale items  
+    Return Type
+
+        Insert lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/items/search Search items by keyword  
+    Return Type
+
+        Insert data.lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/items/{itemId}/locale Get an item in locale  
+    Return Type
+
+        Insert items.lootBoxConfig.rollFunction //roll function
+        Insert lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/entitlements Query user entitlements  
+    Return Type
+
+        Insert data.itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byAppId Get user app entitlement by appId  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byAppType Query app entitlements by appType  
+    Return Type
+
+        Insert data.itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byItemId Get user entitlement by itemId  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/bySku Get user entitlement by sku  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId} Get user entitlement  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/decrement Consume user entitlement  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/orders Query user orders  
+    Return Type
+
+        Insert data.itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo} Get user order  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}/cancel Cancel user order  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/sections List active section contents  
+    Return Type
+
+        Insert currentRotationItems.lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/subscriptions Query user subscriptions  
+    Return Type
+
+        Insert data.itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/subscriptions/{subscriptionId} Get user subscription  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/public/namespaces/{namespace}/users/{userId}/subscriptions/{subscriptionId}/billingAccount Request to change a subscription billing account  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`PUT` /platform/public/namespaces/{namespace}/users/{userId}/subscriptions/{subscriptionId}/cancel Cancel a subscription  
+    Return Type
+
+        Insert itemSnapshot.lootBoxConfig.rollFunction //roll function
+`GET` /platform/v2/admin/namespaces/{namespace}/items/byCriteria Query items by criteria  
+    Return Type
+
+        Insert data.lootBoxConfig.rollFunction //roll function
+
+## session Service
+
+### What's New
+---
+* `GET` /session/v1/admin/namespaces/{namespace}/users/attributes Query player attributes. Requires ADMIN:NAMESPACE:{namespace}:SESSION:PLAYER:{userId} [READ]
+* `GET` /session/v1/admin/namespaces/{namespace}/users/{userId}/attributes Get player attributes. Requires ADMIN:NAMESPACE:{namespace}:SESSION:PLAYER:{userId} [READ]
+* `GET` /session/v1/public/namespaces/{namespace}/users/me/attributes Get player attributes. Requires NAMESPACE:{namespace}:SESSION:PLAYER [READ]
+* `POST` /session/v1/public/namespaces/{namespace}/users/me/attributes Store player attributes. Requires NAMESPACE:{namespace}:SESSION:PLAYER [CREATE]
+* `DELETE` /session/v1/public/namespaces/{namespace}/users/me/attributes Remove player attributes. Requires NAMESPACE:{namespace}:SESSION:PLAYER [DELETE]
+
+### What's Changed
+---
+`GET` /session/v1/admin/namespaces/{namespace}/gamesessions Get all game sessions.  
+    Parameters
+
+        Add isSoftDeleted //game session is soft deleted. supported: TRUE, FALSE
+
+## sessionbrowser Service
+
+### What's Changed
+---
+`GET` /sessionbrowser/admin/namespaces/{namespace}/sessions/history/search Search sessions  
+    Parameters
+
+        Add sessionType //Type of the session, value must be 'p2p' or 'dedicated'
+        Add status //Status of the session, value must be 'active' or 'deleted'. Only work with p2p session type
+
+## ugc Service
+
+### What's Changed
+---
+`GET` /ugc/v1/admin/namespaces/{namespace}/channels Get Channels  
+    Return Type
+
+        Insert data.parentNamespace
+`PUT` /ugc/v1/admin/namespaces/{namespace}/channels/{channelId} Update Channel  
+    Return Type
+
+        Insert parentNamespace
+`PUT` /ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/s3/{contentId} Update content to S3 bucket  
+    Parameters
+
+        Insert body.payload
+        Insert body.updateContentFile
+    Return Type
+
+        Insert parentNamespace
+        Modify customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/search Search contents specific to a channel  
+    Return Type
+
+        Modify data.customAttributes
+`PUT` /ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/{contentId} Update content to a channel  
+    Return Type
+
+        Insert parentNamespace
+        Modify customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/contents Get user's generated contents  
+    Return Type
+
+        Modify data.customAttributes
+`POST` /ugc/v1/admin/namespaces/{namespace}/contents/bulk Bulk get content by content IDs  
+    Return Type
+
+        Modify customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/contents/search Search contents  
+    Return Type
+
+        Modify data.customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/contents/sharecodes/{shareCode} Get content by sharecode  
+    Return Type
+
+        Modify customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/contents/{contentId} Get user specific content  
+    Return Type
+
+        Modify customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/groups Get all user groups  
+    Return Type
+
+        Insert data.parentNamespace
+`GET` /ugc/v1/admin/namespaces/{namespace}/groups/{groupId} Get specific user group  
+    Return Type
+
+        Insert parentNamespace
+`PUT` /ugc/v1/admin/namespaces/{namespace}/groups/{groupId} Update group  
+    Return Type
+
+        Insert parentNamespace
+`GET` /ugc/v1/admin/namespaces/{namespace}/groups/{groupId}/contents Get contents belong to a group  
+    Return Type
+
+        Modify data.customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/types Get types  
+    Return Type
+
+        Insert data.parentNamespace
+`PUT` /ugc/v1/admin/namespaces/{namespace}/types/{typeId} Update types  
+    Return Type
+
+        Insert parentNamespace
+`GET` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/channels Get Channels  
+    Return Type
+
+        Insert data.parentNamespace
+`PUT` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/channels/{channelId} Update Channel  
+    Return Type
+
+        Insert parentNamespace
+`PUT` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3/{contentId} Update content to S3 bucket  
+    Parameters
+
+        Insert body.payload
+        Insert body.updateContentFile
+    Return Type
+
+        Insert parentNamespace
+        Modify customAttributes
+`PUT` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId} Update content to a channel  
+    Return Type
+
+        Insert parentNamespace
+        Modify customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/contents Get user's generated contents  
+    Return Type
+
+        Modify data.customAttributes
+`PUT` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/contents/{contentId}/hide Hide/Unhide user's generated contents  
+    Return Type
+
+        Insert parentNamespace
+        Modify customAttributes
+`GET` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/groups Get all user groups  
+    Return Type
+
+        Insert data.parentNamespace
+`GET` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/groups/{groupId} Get specific user group  
+    Return Type
+
+        Insert parentNamespace
+`PUT` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/groups/{groupId} Update group  
+    Return Type
+
+        Insert parentNamespace
+`GET` /ugc/v1/admin/namespaces/{namespace}/users/{userId}/groups/{groupId}/contents Get contents belong to a group  
+    Return Type
+
+        Modify data.customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/channels/{channelId}/contents Search contents specific to a channel  
+    Return Type
+
+        Modify data.customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/contents Search contents  
+    Return Type
+
+        Modify data.customAttributes
+`POST` /ugc/v1/public/namespaces/{namespace}/contents/bulk Get contents by content Ids   
+    Return Type
+
+        Modify customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/contents/followed Get contents from followed creators  
+    Return Type
+
+        Modify data.customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/contents/liked Get liked contents  
+    Return Type
+
+        Modify data.customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/contents/sharecodes/{shareCode} Get content by sharecode  
+    Return Type
+
+        Modify customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/contents/{contentId} Get user specific content  
+    Return Type
+
+        Modify customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/types Get types  
+    Return Type
+
+        Insert data.parentNamespace
+`GET` /ugc/v1/public/namespaces/{namespace}/users Search creator  
+    Return Type
+
+        Insert data.parentNamespace
+`GET` /ugc/v1/public/namespaces/{namespace}/users/followed Get followed creators  
+    Return Type
+
+        Insert data.parentNamespace
+`GET` /ugc/v1/public/namespaces/{namespace}/users/{userId} Get creator stats: number of total like by other user, number of total following and follower user  
+    Return Type
+
+        Insert parentNamespace
+`GET` /ugc/v1/public/namespaces/{namespace}/users/{userId}/channels Get Channels  
+    Return Type
+
+        Insert data.parentNamespace
+`PUT` /ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId} Update Channel  
+    Return Type
+
+        Insert parentNamespace
+`PUT` /ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3/{contentId} Update content to S3 bucket  
+    Parameters
+
+        Insert body.payload
+        Insert body.updateContentFile
+    Return Type
+
+        Insert parentNamespace
+        Modify customAttributes
+`PUT` /ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId} Update content to a channel  
+    Return Type
+
+        Insert parentNamespace
+        Modify customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/users/{userId}/contents Get user's generated contents  
+    Return Type
+
+        Modify data.customAttributes
+`GET` /ugc/v1/public/namespaces/{namespace}/users/{userId}/followers Get list of followers  
+    Return Type
+
+        Insert data.parentNamespace
+`GET` /ugc/v1/public/namespaces/{namespace}/users/{userId}/following Get list of following  
+    Return Type
+
+        Insert data.parentNamespace
+`GET` /ugc/v1/public/namespaces/{namespace}/users/{userId}/groups Get all user groups  
+    Return Type
+
+        Insert data.parentNamespace
+`GET` /ugc/v1/public/namespaces/{namespace}/users/{userId}/groups/{groupId} Get user's groups  
+    Return Type
+
+        Insert parentNamespace
+`PUT` /ugc/v1/public/namespaces/{namespace}/users/{userId}/groups/{groupId} Update group  
+    Return Type
+
+        Insert parentNamespace
+`GET` /ugc/v1/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/contents Get contents belong to a group  
+    Return Type
+
+        Modify data.customAttributes
+
 # C# Server SDK v0.26.0
 
 ## cloudsave Service

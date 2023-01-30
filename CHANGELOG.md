@@ -1,3 +1,9 @@
+<a name="v0.27.0"></a>
+## [v0.27.0]
+- Updated local OAuth Client token validation.
+- Fixed Platform integration tests.
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.26.0"></a>
 ## [v0.26.0]
 - Fixed MatchV2 integration test for MatchPool.
