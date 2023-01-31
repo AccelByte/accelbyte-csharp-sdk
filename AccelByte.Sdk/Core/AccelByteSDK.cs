@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Core
 {
     public partial class AccelByteSDK : IDisposable
     {
-        public static AccelByteSdkBuilder Builder = new AccelByteSdkBuilder();
+        public static AccelByteSdkBuilder Builder { get => new AccelByteSdkBuilder(); }
 
         private List<ISdkService> _Services = new List<ISdkService>();
 
