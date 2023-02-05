@@ -1,7 +1,7 @@
 # Add Custom Operation into AccelByte SDK
 
 ## Background
-Majority of C# Server SDK codes are generated from [spec json files](/specs) using codegen tools. Any attemp to customize C# Server SDK must avoid editing files that are marked as `DO NOT EDIT`.
+Majority of C# Server SDK codes are generated from [spec json files](/spec) using codegen tools. Any attemp to customize C# Server SDK must avoid editing files that are marked as `DO NOT EDIT`.
 Also it is best practice to extend the functionality of C# Server SDk by inherit the base classes or add new implementation for partial classes to ensure less complications when upgrading C# Server SDK.
 
 ## How to Create a Custom Operation
