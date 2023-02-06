@@ -85,7 +85,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminSearchUserV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminSearchUserV3Builder Builder = new AdminSearchUserV3Builder();
+        public static AdminSearchUserV3Builder Builder { get => new AdminSearchUserV3Builder(); }
 
         public class AdminSearchUserV3Builder
             : OperationBuilder<AdminSearchUserV3Builder>

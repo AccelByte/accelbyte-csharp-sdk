@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     public class GetBackfill : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetBackfillBuilder Builder = new GetBackfillBuilder();
+        public static GetBackfillBuilder Builder { get => new GetBackfillBuilder(); }
 
         public class GetBackfillBuilder
             : OperationBuilder<GetBackfillBuilder>

@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetAdminInvitationV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetAdminInvitationV3Builder Builder = new GetAdminInvitationV3Builder();
+        public static GetAdminInvitationV3Builder Builder { get => new GetAdminInvitationV3Builder(); }
 
         public class GetAdminInvitationV3Builder
             : OperationBuilder<GetAdminInvitationV3Builder>

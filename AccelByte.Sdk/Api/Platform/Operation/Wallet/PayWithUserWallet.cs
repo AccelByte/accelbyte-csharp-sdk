@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PayWithUserWallet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PayWithUserWalletBuilder Builder = new PayWithUserWalletBuilder();
+        public static PayWithUserWalletBuilder Builder { get => new PayWithUserWalletBuilder(); }
 
         public class PayWithUserWalletBuilder
             : OperationBuilder<PayWithUserWalletBuilder>

@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetAdminUsersByRoleIdV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetAdminUsersByRoleIdV3Builder Builder = new GetAdminUsersByRoleIdV3Builder();
+        public static GetAdminUsersByRoleIdV3Builder Builder { get => new GetAdminUsersByRoleIdV3Builder(); }
 
         public class GetAdminUsersByRoleIdV3Builder
             : OperationBuilder<GetAdminUsersByRoleIdV3Builder>

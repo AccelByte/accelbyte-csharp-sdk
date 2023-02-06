@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetUserOrderGrant : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserOrderGrantBuilder Builder = new GetUserOrderGrantBuilder();
+        public static GetUserOrderGrantBuilder Builder { get => new GetUserOrderGrantBuilder(); }
 
         public class GetUserOrderGrantBuilder
             : OperationBuilder<GetUserOrderGrantBuilder>

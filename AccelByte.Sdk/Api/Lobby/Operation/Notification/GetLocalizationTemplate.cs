@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class GetLocalizationTemplate : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetLocalizationTemplateBuilder Builder = new GetLocalizationTemplateBuilder();
+        public static GetLocalizationTemplateBuilder Builder { get => new GetLocalizationTemplateBuilder(); }
 
         public class GetLocalizationTemplateBuilder
             : OperationBuilder<GetLocalizationTemplateBuilder>

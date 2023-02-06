@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class PublicGetUserContent : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetUserContentBuilder Builder = new PublicGetUserContentBuilder();
+        public static PublicGetUserContentBuilder Builder { get => new PublicGetUserContentBuilder(); }
 
         public class PublicGetUserContentBuilder
             : OperationBuilder<PublicGetUserContentBuilder>

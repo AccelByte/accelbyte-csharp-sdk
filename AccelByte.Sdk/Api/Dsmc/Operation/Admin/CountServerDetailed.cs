@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class CountServerDetailed : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CountServerDetailedBuilder Builder = new CountServerDetailedBuilder();
+        public static CountServerDetailedBuilder Builder { get => new CountServerDetailedBuilder(); }
 
         public class CountServerDetailedBuilder
             : OperationBuilder<CountServerDetailedBuilder>

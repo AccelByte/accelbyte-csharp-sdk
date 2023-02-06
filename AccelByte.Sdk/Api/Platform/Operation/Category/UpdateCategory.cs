@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateCategory : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateCategoryBuilder Builder = new UpdateCategoryBuilder();
+        public static UpdateCategoryBuilder Builder { get => new UpdateCategoryBuilder(); }
 
         public class UpdateCategoryBuilder
             : OperationBuilder<UpdateCategoryBuilder>

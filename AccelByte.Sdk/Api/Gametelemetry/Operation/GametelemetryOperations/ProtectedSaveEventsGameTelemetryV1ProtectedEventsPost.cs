@@ -66,7 +66,7 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
     public class ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder Builder = new ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder();
+        public static ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder Builder { get => new ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder(); }
 
         public class ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder
             : OperationBuilder<ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostBuilder>

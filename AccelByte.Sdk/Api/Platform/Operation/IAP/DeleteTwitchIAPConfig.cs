@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteTwitchIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteTwitchIAPConfigBuilder Builder = new DeleteTwitchIAPConfigBuilder();
+        public static DeleteTwitchIAPConfigBuilder Builder { get => new DeleteTwitchIAPConfigBuilder(); }
 
         public class DeleteTwitchIAPConfigBuilder
             : OperationBuilder<DeleteTwitchIAPConfigBuilder>

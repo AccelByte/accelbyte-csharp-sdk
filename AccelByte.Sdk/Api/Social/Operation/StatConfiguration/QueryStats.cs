@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class QueryStats : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryStatsBuilder Builder = new QueryStatsBuilder();
+        public static QueryStatsBuilder Builder { get => new QueryStatsBuilder(); }
 
         public class QueryStatsBuilder
             : OperationBuilder<QueryStatsBuilder>

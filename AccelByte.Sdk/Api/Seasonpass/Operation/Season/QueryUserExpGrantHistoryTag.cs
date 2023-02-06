@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class QueryUserExpGrantHistoryTag : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryUserExpGrantHistoryTagBuilder Builder = new QueryUserExpGrantHistoryTagBuilder();
+        public static QueryUserExpGrantHistoryTagBuilder Builder { get => new QueryUserExpGrantHistoryTagBuilder(); }
 
         public class QueryUserExpGrantHistoryTagBuilder
             : OperationBuilder<QueryUserExpGrantHistoryTagBuilder>

@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class TokenIntrospectionV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static TokenIntrospectionV3Builder Builder = new TokenIntrospectionV3Builder();
+        public static TokenIntrospectionV3Builder Builder { get => new TokenIntrospectionV3Builder(); }
 
         public class TokenIntrospectionV3Builder
             : OperationBuilder<TokenIntrospectionV3Builder>

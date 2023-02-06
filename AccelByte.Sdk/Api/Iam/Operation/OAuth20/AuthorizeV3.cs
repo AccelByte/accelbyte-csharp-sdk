@@ -109,7 +109,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AuthorizeV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AuthorizeV3Builder Builder = new AuthorizeV3Builder();
+        public static AuthorizeV3Builder Builder { get => new AuthorizeV3Builder(); }
 
         public class AuthorizeV3Builder
             : OperationBuilder<AuthorizeV3Builder>

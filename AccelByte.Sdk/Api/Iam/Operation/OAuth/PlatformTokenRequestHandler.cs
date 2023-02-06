@@ -57,7 +57,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PlatformTokenRequestHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PlatformTokenRequestHandlerBuilder Builder = new PlatformTokenRequestHandlerBuilder();
+        public static PlatformTokenRequestHandlerBuilder Builder { get => new PlatformTokenRequestHandlerBuilder(); }
 
         public class PlatformTokenRequestHandlerBuilder
             : OperationBuilder<PlatformTokenRequestHandlerBuilder>

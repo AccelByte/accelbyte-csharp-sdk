@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class UpdateRootRegionOverride : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateRootRegionOverrideBuilder Builder = new UpdateRootRegionOverrideBuilder();
+        public static UpdateRootRegionOverrideBuilder Builder { get => new UpdateRootRegionOverrideBuilder(); }
 
         public class UpdateRootRegionOverrideBuilder
             : OperationBuilder<UpdateRootRegionOverrideBuilder>

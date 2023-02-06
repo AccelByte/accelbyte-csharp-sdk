@@ -241,7 +241,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateItemBuilder Builder = new UpdateItemBuilder();
+        public static UpdateItemBuilder Builder { get => new UpdateItemBuilder(); }
 
         public class UpdateItemBuilder
             : OperationBuilder<UpdateItemBuilder>

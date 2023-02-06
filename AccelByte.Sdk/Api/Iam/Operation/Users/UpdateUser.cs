@@ -78,7 +78,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class UpdateUser : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateUserBuilder Builder = new UpdateUserBuilder();
+        public static UpdateUserBuilder Builder { get => new UpdateUserBuilder(); }
 
         public class UpdateUserBuilder
             : OperationBuilder<UpdateUserBuilder>

@@ -130,7 +130,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AddRolePermission : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AddRolePermissionBuilder Builder = new AddRolePermissionBuilder();
+        public static AddRolePermissionBuilder Builder { get => new AddRolePermissionBuilder(); }
 
         public class AddRolePermissionBuilder
             : OperationBuilder<AddRolePermissionBuilder>

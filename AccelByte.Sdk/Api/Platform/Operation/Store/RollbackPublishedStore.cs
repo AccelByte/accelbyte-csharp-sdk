@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class RollbackPublishedStore : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RollbackPublishedStoreBuilder Builder = new RollbackPublishedStoreBuilder();
+        public static RollbackPublishedStoreBuilder Builder { get => new RollbackPublishedStoreBuilder(); }
 
         public class RollbackPublishedStoreBuilder
             : OperationBuilder<RollbackPublishedStoreBuilder>

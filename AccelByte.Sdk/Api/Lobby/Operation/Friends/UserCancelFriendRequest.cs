@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class UserCancelFriendRequest : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UserCancelFriendRequestBuilder Builder = new UserCancelFriendRequestBuilder();
+        public static UserCancelFriendRequestBuilder Builder { get => new UserCancelFriendRequestBuilder(); }
 
         public class UserCancelFriendRequestBuilder
             : OperationBuilder<UserCancelFriendRequestBuilder>

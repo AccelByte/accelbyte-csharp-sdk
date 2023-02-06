@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     public class DeleteRuleSet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteRuleSetBuilder Builder = new DeleteRuleSetBuilder();
+        public static DeleteRuleSetBuilder Builder { get => new DeleteRuleSetBuilder(); }
 
         public class DeleteRuleSetBuilder
             : OperationBuilder<DeleteRuleSetBuilder>

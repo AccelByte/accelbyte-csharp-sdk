@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class GetActiveCustomGameSessions : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetActiveCustomGameSessionsBuilder Builder = new GetActiveCustomGameSessionsBuilder();
+        public static GetActiveCustomGameSessionsBuilder Builder { get => new GetActiveCustomGameSessionsBuilder(); }
 
         public class GetActiveCustomGameSessionsBuilder
             : OperationBuilder<GetActiveCustomGameSessionsBuilder>

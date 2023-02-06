@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetAvailablePredicateTypes : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetAvailablePredicateTypesBuilder Builder = new GetAvailablePredicateTypesBuilder();
+        public static GetAvailablePredicateTypesBuilder Builder { get => new GetAvailablePredicateTypesBuilder(); }
 
         public class GetAvailablePredicateTypesBuilder
             : OperationBuilder<GetAvailablePredicateTypesBuilder>

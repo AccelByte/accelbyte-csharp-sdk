@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UploadKeys : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UploadKeysBuilder Builder = new UploadKeysBuilder();
+        public static UploadKeysBuilder Builder { get => new UploadKeysBuilder(); }
 
         public class UploadKeysBuilder
             : OperationBuilder<UploadKeysBuilder>

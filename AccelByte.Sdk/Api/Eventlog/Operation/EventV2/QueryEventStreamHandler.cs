@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     public class QueryEventStreamHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryEventStreamHandlerBuilder Builder = new QueryEventStreamHandlerBuilder();
+        public static QueryEventStreamHandlerBuilder Builder { get => new QueryEventStreamHandlerBuilder(); }
 
         public class QueryEventStreamHandlerBuilder
             : OperationBuilder<QueryEventStreamHandlerBuilder>

@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class GetCountries : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetCountriesBuilder Builder = new GetCountriesBuilder();
+        public static GetCountriesBuilder Builder { get => new GetCountriesBuilder(); }
 
         public class GetCountriesBuilder
             : OperationBuilder<GetCountriesBuilder>

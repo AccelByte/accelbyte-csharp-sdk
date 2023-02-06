@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CreateCampaign : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateCampaignBuilder Builder = new CreateCampaignBuilder();
+        public static CreateCampaignBuilder Builder { get => new CreateCampaignBuilder(); }
 
         public class CreateCampaignBuilder
             : OperationBuilder<CreateCampaignBuilder>

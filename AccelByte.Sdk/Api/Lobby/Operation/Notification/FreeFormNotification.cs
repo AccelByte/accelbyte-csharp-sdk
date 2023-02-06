@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class FreeFormNotification : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static FreeFormNotificationBuilder Builder = new FreeFormNotificationBuilder();
+        public static FreeFormNotificationBuilder Builder { get => new FreeFormNotificationBuilder(); }
 
         public class FreeFormNotificationBuilder
             : OperationBuilder<FreeFormNotificationBuilder>

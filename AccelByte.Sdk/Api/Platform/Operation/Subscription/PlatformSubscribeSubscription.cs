@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PlatformSubscribeSubscription : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PlatformSubscribeSubscriptionBuilder Builder = new PlatformSubscribeSubscriptionBuilder();
+        public static PlatformSubscribeSubscriptionBuilder Builder { get => new PlatformSubscribeSubscriptionBuilder(); }
 
         public class PlatformSubscribeSubscriptionBuilder
             : OperationBuilder<PlatformSubscribeSubscriptionBuilder>

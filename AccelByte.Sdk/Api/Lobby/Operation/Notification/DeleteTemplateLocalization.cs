@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class DeleteTemplateLocalization : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteTemplateLocalizationBuilder Builder = new DeleteTemplateLocalizationBuilder();
+        public static DeleteTemplateLocalizationBuilder Builder { get => new DeleteTemplateLocalizationBuilder(); }
 
         public class DeleteTemplateLocalizationBuilder
             : OperationBuilder<DeleteTemplateLocalizationBuilder>

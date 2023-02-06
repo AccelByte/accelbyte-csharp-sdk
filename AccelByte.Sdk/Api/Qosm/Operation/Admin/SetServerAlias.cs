@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
     public class SetServerAlias : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SetServerAliasBuilder Builder = new SetServerAliasBuilder();
+        public static SetServerAliasBuilder Builder { get => new SetServerAliasBuilder(); }
 
         public class SetServerAliasBuilder
             : OperationBuilder<SetServerAliasBuilder>

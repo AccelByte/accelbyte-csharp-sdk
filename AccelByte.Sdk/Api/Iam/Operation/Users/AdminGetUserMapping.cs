@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGetUserMapping : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetUserMappingBuilder Builder = new AdminGetUserMappingBuilder();
+        public static AdminGetUserMappingBuilder Builder { get => new AdminGetUserMappingBuilder(); }
 
         public class AdminGetUserMappingBuilder
             : OperationBuilder<AdminGetUserMappingBuilder>

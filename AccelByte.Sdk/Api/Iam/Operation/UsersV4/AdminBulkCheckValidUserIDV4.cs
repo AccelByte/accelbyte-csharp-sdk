@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminBulkCheckValidUserIDV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminBulkCheckValidUserIDV4Builder Builder = new AdminBulkCheckValidUserIDV4Builder();
+        public static AdminBulkCheckValidUserIDV4Builder Builder { get => new AdminBulkCheckValidUserIDV4Builder(); }
 
         public class AdminBulkCheckValidUserIDV4Builder
             : OperationBuilder<AdminBulkCheckValidUserIDV4Builder>

@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminRevokeUserFromRoleV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminRevokeUserFromRoleV4Builder Builder = new AdminRevokeUserFromRoleV4Builder();
+        public static AdminRevokeUserFromRoleV4Builder Builder { get => new AdminRevokeUserFromRoleV4Builder(); }
 
         public class AdminRevokeUserFromRoleV4Builder
             : OperationBuilder<AdminRevokeUserFromRoleV4Builder>

@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryItems1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryItems1Builder Builder = new QueryItems1Builder();
+        public static QueryItems1Builder Builder { get => new QueryItems1Builder(); }
 
         public class QueryItems1Builder
             : OperationBuilder<QueryItems1Builder>

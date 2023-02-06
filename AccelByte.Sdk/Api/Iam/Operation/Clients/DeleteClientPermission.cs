@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class DeleteClientPermission : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteClientPermissionBuilder Builder = new DeleteClientPermissionBuilder();
+        public static DeleteClientPermissionBuilder Builder { get => new DeleteClientPermissionBuilder(); }
 
         public class DeleteClientPermissionBuilder
             : OperationBuilder<DeleteClientPermissionBuilder>

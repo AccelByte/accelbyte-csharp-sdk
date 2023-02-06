@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class SyncEpicGamesInventory : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SyncEpicGamesInventoryBuilder Builder = new SyncEpicGamesInventoryBuilder();
+        public static SyncEpicGamesInventoryBuilder Builder { get => new SyncEpicGamesInventoryBuilder(); }
 
         public class SyncEpicGamesInventoryBuilder
             : OperationBuilder<SyncEpicGamesInventoryBuilder>

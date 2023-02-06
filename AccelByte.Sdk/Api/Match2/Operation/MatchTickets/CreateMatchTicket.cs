@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     public class CreateMatchTicket : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateMatchTicketBuilder Builder = new CreateMatchTicketBuilder();
+        public static CreateMatchTicketBuilder Builder { get => new CreateMatchTicketBuilder(); }
 
         public class CreateMatchTicketBuilder
             : OperationBuilder<CreateMatchTicketBuilder>

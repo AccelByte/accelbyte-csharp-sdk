@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class DeleteThirdPartyLoginPlatformDomainV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteThirdPartyLoginPlatformDomainV3Builder Builder = new DeleteThirdPartyLoginPlatformDomainV3Builder();
+        public static DeleteThirdPartyLoginPlatformDomainV3Builder Builder { get => new DeleteThirdPartyLoginPlatformDomainV3Builder(); }
 
         public class DeleteThirdPartyLoginPlatformDomainV3Builder
             : OperationBuilder<DeleteThirdPartyLoginPlatformDomainV3Builder>

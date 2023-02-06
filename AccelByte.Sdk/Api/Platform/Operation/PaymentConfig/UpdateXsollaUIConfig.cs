@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateXsollaUIConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateXsollaUIConfigBuilder Builder = new UpdateXsollaUIConfigBuilder();
+        public static UpdateXsollaUIConfigBuilder Builder { get => new UpdateXsollaUIConfigBuilder(); }
 
         public class UpdateXsollaUIConfigBuilder
             : OperationBuilder<UpdateXsollaUIConfigBuilder>

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteUserSubscription : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteUserSubscriptionBuilder Builder = new DeleteUserSubscriptionBuilder();
+        public static DeleteUserSubscriptionBuilder Builder { get => new DeleteUserSubscriptionBuilder(); }
 
         public class DeleteUserSubscriptionBuilder
             : OperationBuilder<DeleteUserSubscriptionBuilder>

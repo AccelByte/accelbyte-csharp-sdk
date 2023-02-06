@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetTwitchIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetTwitchIAPConfigBuilder Builder = new GetTwitchIAPConfigBuilder();
+        public static GetTwitchIAPConfigBuilder Builder { get => new GetTwitchIAPConfigBuilder(); }
 
         public class GetTwitchIAPConfigBuilder
             : OperationBuilder<GetTwitchIAPConfigBuilder>

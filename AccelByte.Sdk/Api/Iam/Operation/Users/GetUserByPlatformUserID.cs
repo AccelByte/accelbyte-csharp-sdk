@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetUserByPlatformUserID : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserByPlatformUserIDBuilder Builder = new GetUserByPlatformUserIDBuilder();
+        public static GetUserByPlatformUserIDBuilder Builder { get => new GetUserByPlatformUserIDBuilder(); }
 
         public class GetUserByPlatformUserIDBuilder
             : OperationBuilder<GetUserByPlatformUserIDBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class UserQuerySession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UserQuerySessionBuilder Builder = new UserQuerySessionBuilder();
+        public static UserQuerySessionBuilder Builder { get => new UserQuerySessionBuilder(); }
 
         public class UserQuerySessionBuilder
             : OperationBuilder<UserQuerySessionBuilder>

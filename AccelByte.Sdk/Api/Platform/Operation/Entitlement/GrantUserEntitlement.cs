@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GrantUserEntitlement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GrantUserEntitlementBuilder Builder = new GrantUserEntitlementBuilder();
+        public static GrantUserEntitlementBuilder Builder { get => new GrantUserEntitlementBuilder(); }
 
         public class GrantUserEntitlementBuilder
             : OperationBuilder<GrantUserEntitlementBuilder>

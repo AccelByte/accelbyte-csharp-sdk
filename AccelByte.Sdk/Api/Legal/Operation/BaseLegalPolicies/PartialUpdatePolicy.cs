@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class PartialUpdatePolicy : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PartialUpdatePolicyBuilder Builder = new PartialUpdatePolicyBuilder();
+        public static PartialUpdatePolicyBuilder Builder { get => new PartialUpdatePolicyBuilder(); }
 
         public class PartialUpdatePolicyBuilder
             : OperationBuilder<PartialUpdatePolicyBuilder>

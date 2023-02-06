@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class CreateUserStatItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateUserStatItemBuilder Builder = new CreateUserStatItemBuilder();
+        public static CreateUserStatItemBuilder Builder { get => new CreateUserStatItemBuilder(); }
 
         public class CreateUserStatItemBuilder
             : OperationBuilder<CreateUserStatItemBuilder>

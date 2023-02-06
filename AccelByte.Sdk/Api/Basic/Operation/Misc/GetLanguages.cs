@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class GetLanguages : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetLanguagesBuilder Builder = new GetLanguagesBuilder();
+        public static GetLanguagesBuilder Builder { get => new GetLanguagesBuilder(); }
 
         public class GetLanguagesBuilder
             : OperationBuilder<GetLanguagesBuilder>

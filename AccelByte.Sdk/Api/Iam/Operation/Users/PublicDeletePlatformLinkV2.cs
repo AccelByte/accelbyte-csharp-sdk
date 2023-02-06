@@ -82,7 +82,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicDeletePlatformLinkV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicDeletePlatformLinkV2Builder Builder = new PublicDeletePlatformLinkV2Builder();
+        public static PublicDeletePlatformLinkV2Builder Builder { get => new PublicDeletePlatformLinkV2Builder(); }
 
         public class PublicDeletePlatformLinkV2Builder
             : OperationBuilder<PublicDeletePlatformLinkV2Builder>

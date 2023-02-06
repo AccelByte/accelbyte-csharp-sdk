@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminDecryptDeviceV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDecryptDeviceV4Builder Builder = new AdminDecryptDeviceV4Builder();
+        public static AdminDecryptDeviceV4Builder Builder { get => new AdminDecryptDeviceV4Builder(); }
 
         public class AdminDecryptDeviceV4Builder
             : OperationBuilder<AdminDecryptDeviceV4Builder>

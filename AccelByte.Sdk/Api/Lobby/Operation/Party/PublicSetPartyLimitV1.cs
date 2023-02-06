@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class PublicSetPartyLimitV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicSetPartyLimitV1Builder Builder = new PublicSetPartyLimitV1Builder();
+        public static PublicSetPartyLimitV1Builder Builder { get => new PublicSetPartyLimitV1Builder(); }
 
         public class PublicSetPartyLimitV1Builder
             : OperationBuilder<PublicSetPartyLimitV1Builder>

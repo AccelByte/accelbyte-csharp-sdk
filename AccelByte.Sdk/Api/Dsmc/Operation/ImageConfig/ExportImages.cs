@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class ExportImages : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ExportImagesBuilder Builder = new ExportImagesBuilder();
+        public static ExportImagesBuilder Builder { get => new ExportImagesBuilder(); }
 
         public class ExportImagesBuilder
             : OperationBuilder<ExportImagesBuilder>

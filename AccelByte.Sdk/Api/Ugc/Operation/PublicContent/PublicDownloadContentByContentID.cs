@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class PublicDownloadContentByContentID : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicDownloadContentByContentIDBuilder Builder = new PublicDownloadContentByContentIDBuilder();
+        public static PublicDownloadContentByContentIDBuilder Builder { get => new PublicDownloadContentByContentIDBuilder(); }
 
         public class PublicDownloadContentByContentIDBuilder
             : OperationBuilder<PublicDownloadContentByContentIDBuilder>

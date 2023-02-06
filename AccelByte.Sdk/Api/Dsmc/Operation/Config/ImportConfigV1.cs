@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class ImportConfigV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ImportConfigV1Builder Builder = new ImportConfigV1Builder();
+        public static ImportConfigV1Builder Builder { get => new ImportConfigV1Builder(); }
 
         public class ImportConfigV1Builder
             : OperationBuilder<ImportConfigV1Builder>

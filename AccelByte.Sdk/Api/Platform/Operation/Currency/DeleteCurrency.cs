@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteCurrency : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteCurrencyBuilder Builder = new DeleteCurrencyBuilder();
+        public static DeleteCurrencyBuilder Builder { get => new DeleteCurrencyBuilder(); }
 
         public class DeleteCurrencyBuilder
             : OperationBuilder<DeleteCurrencyBuilder>

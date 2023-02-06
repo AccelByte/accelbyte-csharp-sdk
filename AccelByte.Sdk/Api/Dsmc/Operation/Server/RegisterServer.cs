@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class RegisterServer : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RegisterServerBuilder Builder = new RegisterServerBuilder();
+        public static RegisterServerBuilder Builder { get => new RegisterServerBuilder(); }
 
         public class RegisterServerBuilder
             : OperationBuilder<RegisterServerBuilder>

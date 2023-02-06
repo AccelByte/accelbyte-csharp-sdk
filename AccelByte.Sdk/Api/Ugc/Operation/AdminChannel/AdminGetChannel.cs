@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class AdminGetChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetChannelBuilder Builder = new AdminGetChannelBuilder();
+        public static AdminGetChannelBuilder Builder { get => new AdminGetChannelBuilder(); }
 
         public class AdminGetChannelBuilder
             : OperationBuilder<AdminGetChannelBuilder>

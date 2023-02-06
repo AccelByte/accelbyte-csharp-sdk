@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class PublicPromotePartyLeader : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicPromotePartyLeaderBuilder Builder = new PublicPromotePartyLeaderBuilder();
+        public static PublicPromotePartyLeaderBuilder Builder { get => new PublicPromotePartyLeaderBuilder(); }
 
         public class PublicPromotePartyLeaderBuilder
             : OperationBuilder<PublicPromotePartyLeaderBuilder>

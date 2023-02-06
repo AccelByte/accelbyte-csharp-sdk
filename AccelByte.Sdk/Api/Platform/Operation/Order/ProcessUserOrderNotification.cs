@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ProcessUserOrderNotification : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ProcessUserOrderNotificationBuilder Builder = new ProcessUserOrderNotificationBuilder();
+        public static ProcessUserOrderNotificationBuilder Builder { get => new ProcessUserOrderNotificationBuilder(); }
 
         public class ProcessUserOrderNotificationBuilder
             : OperationBuilder<ProcessUserOrderNotificationBuilder>

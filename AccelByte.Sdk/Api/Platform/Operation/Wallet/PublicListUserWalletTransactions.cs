@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicListUserWalletTransactions : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicListUserWalletTransactionsBuilder Builder = new PublicListUserWalletTransactionsBuilder();
+        public static PublicListUserWalletTransactionsBuilder Builder { get => new PublicListUserWalletTransactionsBuilder(); }
 
         public class PublicListUserWalletTransactionsBuilder
             : OperationBuilder<PublicListUserWalletTransactionsBuilder>

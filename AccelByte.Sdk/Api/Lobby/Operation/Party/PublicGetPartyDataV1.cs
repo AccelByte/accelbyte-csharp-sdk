@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class PublicGetPartyDataV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetPartyDataV1Builder Builder = new PublicGetPartyDataV1Builder();
+        public static PublicGetPartyDataV1Builder Builder { get => new PublicGetPartyDataV1Builder(); }
 
         public class PublicGetPartyDataV1Builder
             : OperationBuilder<PublicGetPartyDataV1Builder>

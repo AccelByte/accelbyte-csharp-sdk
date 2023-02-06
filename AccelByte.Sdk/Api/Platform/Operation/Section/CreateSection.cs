@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CreateSection : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateSectionBuilder Builder = new CreateSectionBuilder();
+        public static CreateSectionBuilder Builder { get => new CreateSectionBuilder(); }
 
         public class CreateSectionBuilder
             : OperationBuilder<CreateSectionBuilder>

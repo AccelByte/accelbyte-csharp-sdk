@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicListUserIDByPlatformUserIDsV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicListUserIDByPlatformUserIDsV3Builder Builder = new PublicListUserIDByPlatformUserIDsV3Builder();
+        public static PublicListUserIDByPlatformUserIDsV3Builder Builder { get => new PublicListUserIDByPlatformUserIDsV3Builder(); }
 
         public class PublicListUserIDByPlatformUserIDsV3Builder
             : OperationBuilder<PublicListUserIDByPlatformUserIDsV3Builder>

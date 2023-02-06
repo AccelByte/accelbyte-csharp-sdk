@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class UpgradeHeadlessAccount : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpgradeHeadlessAccountBuilder Builder = new UpgradeHeadlessAccountBuilder();
+        public static UpgradeHeadlessAccountBuilder Builder { get => new UpgradeHeadlessAccountBuilder(); }
 
         public class UpgradeHeadlessAccountBuilder
             : OperationBuilder<UpgradeHeadlessAccountBuilder>

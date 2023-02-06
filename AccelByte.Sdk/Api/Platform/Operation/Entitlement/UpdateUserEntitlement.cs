@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateUserEntitlement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateUserEntitlementBuilder Builder = new UpdateUserEntitlementBuilder();
+        public static UpdateUserEntitlementBuilder Builder { get => new UpdateUserEntitlementBuilder(); }
 
         public class UpdateUserEntitlementBuilder
             : OperationBuilder<UpdateUserEntitlementBuilder>

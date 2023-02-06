@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class RequestTokenByOneTimeLinkCodeResponseV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RequestTokenByOneTimeLinkCodeResponseV3Builder Builder = new RequestTokenByOneTimeLinkCodeResponseV3Builder();
+        public static RequestTokenByOneTimeLinkCodeResponseV3Builder Builder { get => new RequestTokenByOneTimeLinkCodeResponseV3Builder(); }
 
         public class RequestTokenByOneTimeLinkCodeResponseV3Builder
             : OperationBuilder<RequestTokenByOneTimeLinkCodeResponseV3Builder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class SimulatePaymentOrderNotification : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SimulatePaymentOrderNotificationBuilder Builder = new SimulatePaymentOrderNotificationBuilder();
+        public static SimulatePaymentOrderNotificationBuilder Builder { get => new SimulatePaymentOrderNotificationBuilder(); }
 
         public class SimulatePaymentOrderNotificationBuilder
             : OperationBuilder<SimulatePaymentOrderNotificationBuilder>

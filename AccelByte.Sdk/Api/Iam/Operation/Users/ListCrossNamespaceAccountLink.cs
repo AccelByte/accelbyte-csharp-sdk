@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class ListCrossNamespaceAccountLink : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListCrossNamespaceAccountLinkBuilder Builder = new ListCrossNamespaceAccountLinkBuilder();
+        public static ListCrossNamespaceAccountLinkBuilder Builder { get => new ListCrossNamespaceAccountLinkBuilder(); }
 
         public class ListCrossNamespaceAccountLinkBuilder
             : OperationBuilder<ListCrossNamespaceAccountLinkBuilder>

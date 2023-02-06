@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class BulkGetUserSeasonProgression : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static BulkGetUserSeasonProgressionBuilder Builder = new BulkGetUserSeasonProgressionBuilder();
+        public static BulkGetUserSeasonProgressionBuilder Builder { get => new BulkGetUserSeasonProgressionBuilder(); }
 
         public class BulkGetUserSeasonProgressionBuilder
             : OperationBuilder<BulkGetUserSeasonProgressionBuilder>

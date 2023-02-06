@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class PublicGetCountries : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetCountriesBuilder Builder = new PublicGetCountriesBuilder();
+        public static PublicGetCountriesBuilder Builder { get => new PublicGetCountriesBuilder(); }
 
         public class PublicGetCountriesBuilder
             : OperationBuilder<PublicGetCountriesBuilder>

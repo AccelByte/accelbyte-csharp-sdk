@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicGetPaymentAccounts : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetPaymentAccountsBuilder Builder = new PublicGetPaymentAccountsBuilder();
+        public static PublicGetPaymentAccountsBuilder Builder { get => new PublicGetPaymentAccountsBuilder(); }
 
         public class PublicGetPaymentAccountsBuilder
             : OperationBuilder<PublicGetPaymentAccountsBuilder>

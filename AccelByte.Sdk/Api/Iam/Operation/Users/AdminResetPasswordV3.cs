@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminResetPasswordV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminResetPasswordV3Builder Builder = new AdminResetPasswordV3Builder();
+        public static AdminResetPasswordV3Builder Builder { get => new AdminResetPasswordV3Builder(); }
 
         public class AdminResetPasswordV3Builder
             : OperationBuilder<AdminResetPasswordV3Builder>

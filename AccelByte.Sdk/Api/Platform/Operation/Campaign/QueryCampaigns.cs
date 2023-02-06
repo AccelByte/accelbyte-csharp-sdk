@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryCampaigns : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryCampaignsBuilder Builder = new QueryCampaignsBuilder();
+        public static QueryCampaignsBuilder Builder { get => new QueryCampaignsBuilder(); }
 
         public class QueryCampaignsBuilder
             : OperationBuilder<QueryCampaignsBuilder>

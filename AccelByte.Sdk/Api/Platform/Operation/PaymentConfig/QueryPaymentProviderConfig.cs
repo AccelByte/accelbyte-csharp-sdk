@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryPaymentProviderConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryPaymentProviderConfigBuilder Builder = new QueryPaymentProviderConfigBuilder();
+        public static QueryPaymentProviderConfigBuilder Builder { get => new QueryPaymentProviderConfigBuilder(); }
 
         public class QueryPaymentProviderConfigBuilder
             : OperationBuilder<QueryPaymentProviderConfigBuilder>

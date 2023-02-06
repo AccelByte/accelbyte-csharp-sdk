@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class UpdateSSOPlatformCredential : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateSSOPlatformCredentialBuilder Builder = new UpdateSSOPlatformCredentialBuilder();
+        public static UpdateSSOPlatformCredentialBuilder Builder { get => new UpdateSSOPlatformCredentialBuilder(); }
 
         public class UpdateSSOPlatformCredentialBuilder
             : OperationBuilder<UpdateSSOPlatformCredentialBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetPaymentMerchantConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPaymentMerchantConfigBuilder Builder = new GetPaymentMerchantConfigBuilder();
+        public static GetPaymentMerchantConfigBuilder Builder { get => new GetPaymentMerchantConfigBuilder(); }
 
         public class GetPaymentMerchantConfigBuilder
             : OperationBuilder<GetPaymentMerchantConfigBuilder>

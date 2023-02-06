@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class IndirectBulkAcceptVersionedPolicy : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static IndirectBulkAcceptVersionedPolicyBuilder Builder = new IndirectBulkAcceptVersionedPolicyBuilder();
+        public static IndirectBulkAcceptVersionedPolicyBuilder Builder { get => new IndirectBulkAcceptVersionedPolicyBuilder(); }
 
         public class IndirectBulkAcceptVersionedPolicyBuilder
             : OperationBuilder<IndirectBulkAcceptVersionedPolicyBuilder>

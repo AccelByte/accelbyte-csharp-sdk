@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteIAPItemConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteIAPItemConfigBuilder Builder = new DeleteIAPItemConfigBuilder();
+        public static DeleteIAPItemConfigBuilder Builder { get => new DeleteIAPItemConfigBuilder(); }
 
         public class DeleteIAPItemConfigBuilder
             : OperationBuilder<DeleteIAPItemConfigBuilder>

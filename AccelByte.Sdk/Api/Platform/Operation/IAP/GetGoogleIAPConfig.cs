@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetGoogleIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetGoogleIAPConfigBuilder Builder = new GetGoogleIAPConfigBuilder();
+        public static GetGoogleIAPConfigBuilder Builder { get => new GetGoogleIAPConfigBuilder(); }
 
         public class GetGoogleIAPConfigBuilder
             : OperationBuilder<GetGoogleIAPConfigBuilder>

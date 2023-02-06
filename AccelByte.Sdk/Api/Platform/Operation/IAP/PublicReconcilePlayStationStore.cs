@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicReconcilePlayStationStore : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicReconcilePlayStationStoreBuilder Builder = new PublicReconcilePlayStationStoreBuilder();
+        public static PublicReconcilePlayStationStoreBuilder Builder { get => new PublicReconcilePlayStationStoreBuilder(); }
 
         public class PublicReconcilePlayStationStoreBuilder
             : OperationBuilder<PublicReconcilePlayStationStoreBuilder>

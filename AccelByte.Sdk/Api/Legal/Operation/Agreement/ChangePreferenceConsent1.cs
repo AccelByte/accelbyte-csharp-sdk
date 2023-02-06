@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class ChangePreferenceConsent1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ChangePreferenceConsent1Builder Builder = new ChangePreferenceConsent1Builder();
+        public static ChangePreferenceConsent1Builder Builder { get => new ChangePreferenceConsent1Builder(); }
 
         public class ChangePreferenceConsent1Builder
             : OperationBuilder<ChangePreferenceConsent1Builder>

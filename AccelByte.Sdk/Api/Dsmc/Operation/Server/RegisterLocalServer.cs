@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class RegisterLocalServer : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RegisterLocalServerBuilder Builder = new RegisterLocalServerBuilder();
+        public static RegisterLocalServerBuilder Builder { get => new RegisterLocalServerBuilder(); }
 
         public class RegisterLocalServerBuilder
             : OperationBuilder<RegisterLocalServerBuilder>

@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class UpgradeHeadlessAccountWithVerificationCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpgradeHeadlessAccountWithVerificationCodeBuilder Builder = new UpgradeHeadlessAccountWithVerificationCodeBuilder();
+        public static UpgradeHeadlessAccountWithVerificationCodeBuilder Builder { get => new UpgradeHeadlessAccountWithVerificationCodeBuilder(); }
 
         public class UpgradeHeadlessAccountWithVerificationCodeBuilder
             : OperationBuilder<UpgradeHeadlessAccountWithVerificationCodeBuilder>

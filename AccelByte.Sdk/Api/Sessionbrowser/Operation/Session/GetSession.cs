@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class GetSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetSessionBuilder Builder = new GetSessionBuilder();
+        public static GetSessionBuilder Builder { get => new GetSessionBuilder(); }
 
         public class GetSessionBuilder
             : OperationBuilder<GetSessionBuilder>

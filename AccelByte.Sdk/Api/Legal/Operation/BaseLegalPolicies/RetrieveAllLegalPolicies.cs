@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class RetrieveAllLegalPolicies : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RetrieveAllLegalPoliciesBuilder Builder = new RetrieveAllLegalPoliciesBuilder();
+        public static RetrieveAllLegalPoliciesBuilder Builder { get => new RetrieveAllLegalPoliciesBuilder(); }
 
         public class RetrieveAllLegalPoliciesBuilder
             : OperationBuilder<RetrieveAllLegalPoliciesBuilder>

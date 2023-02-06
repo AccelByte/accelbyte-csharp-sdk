@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class LinkHeadlessAccountToMyAccountV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static LinkHeadlessAccountToMyAccountV3Builder Builder = new LinkHeadlessAccountToMyAccountV3Builder();
+        public static LinkHeadlessAccountToMyAccountV3Builder Builder { get => new LinkHeadlessAccountToMyAccountV3Builder(); }
 
         public class LinkHeadlessAccountToMyAccountV3Builder
             : OperationBuilder<LinkHeadlessAccountToMyAccountV3Builder>

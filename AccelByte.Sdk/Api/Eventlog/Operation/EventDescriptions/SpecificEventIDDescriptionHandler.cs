@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     public class SpecificEventIDDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SpecificEventIDDescriptionHandlerBuilder Builder = new SpecificEventIDDescriptionHandlerBuilder();
+        public static SpecificEventIDDescriptionHandlerBuilder Builder { get => new SpecificEventIDDescriptionHandlerBuilder(); }
 
         public class SpecificEventIDDescriptionHandlerBuilder
             : OperationBuilder<SpecificEventIDDescriptionHandlerBuilder>

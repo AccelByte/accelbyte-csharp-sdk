@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class AdminSearchContent : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminSearchContentBuilder Builder = new AdminSearchContentBuilder();
+        public static AdminSearchContentBuilder Builder { get => new AdminSearchContentBuilder(); }
 
         public class AdminSearchContentBuilder
             : OperationBuilder<AdminSearchContentBuilder>

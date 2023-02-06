@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class GetTotalActiveSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetTotalActiveSessionBuilder Builder = new GetTotalActiveSessionBuilder();
+        public static GetTotalActiveSessionBuilder Builder { get => new GetTotalActiveSessionBuilder(); }
 
         public class GetTotalActiveSessionBuilder
             : OperationBuilder<GetTotalActiveSessionBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ImportRewards : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ImportRewardsBuilder Builder = new ImportRewardsBuilder();
+        public static ImportRewardsBuilder Builder { get => new ImportRewardsBuilder(); }
 
         public class ImportRewardsBuilder
             : OperationBuilder<ImportRewardsBuilder>

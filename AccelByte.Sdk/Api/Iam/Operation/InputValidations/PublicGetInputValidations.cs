@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicGetInputValidations : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetInputValidationsBuilder Builder = new PublicGetInputValidationsBuilder();
+        public static PublicGetInputValidationsBuilder Builder { get => new PublicGetInputValidationsBuilder(); }
 
         public class PublicGetInputValidationsBuilder
             : OperationBuilder<PublicGetInputValidationsBuilder>

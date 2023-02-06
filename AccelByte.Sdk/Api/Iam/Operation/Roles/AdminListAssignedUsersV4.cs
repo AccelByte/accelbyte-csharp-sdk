@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminListAssignedUsersV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminListAssignedUsersV4Builder Builder = new AdminListAssignedUsersV4Builder();
+        public static AdminListAssignedUsersV4Builder Builder { get => new AdminListAssignedUsersV4Builder(); }
 
         public class AdminListAssignedUsersV4Builder
             : OperationBuilder<AdminListAssignedUsersV4Builder>

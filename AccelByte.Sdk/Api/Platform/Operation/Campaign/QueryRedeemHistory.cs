@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryRedeemHistory : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryRedeemHistoryBuilder Builder = new QueryRedeemHistoryBuilder();
+        public static QueryRedeemHistoryBuilder Builder { get => new QueryRedeemHistoryBuilder(); }
 
         public class QueryRedeemHistoryBuilder
             : OperationBuilder<QueryRedeemHistoryBuilder>

@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGetListBanReasonV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetListBanReasonV3Builder Builder = new AdminGetListBanReasonV3Builder();
+        public static AdminGetListBanReasonV3Builder Builder { get => new AdminGetListBanReasonV3Builder(); }
 
         public class AdminGetListBanReasonV3Builder
             : OperationBuilder<AdminGetListBanReasonV3Builder>

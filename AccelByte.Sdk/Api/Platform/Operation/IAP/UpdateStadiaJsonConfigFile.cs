@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateStadiaJsonConfigFile : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateStadiaJsonConfigFileBuilder Builder = new UpdateStadiaJsonConfigFileBuilder();
+        public static UpdateStadiaJsonConfigFileBuilder Builder { get => new UpdateStadiaJsonConfigFileBuilder(); }
 
         public class UpdateStadiaJsonConfigFileBuilder
             : OperationBuilder<UpdateStadiaJsonConfigFileBuilder>

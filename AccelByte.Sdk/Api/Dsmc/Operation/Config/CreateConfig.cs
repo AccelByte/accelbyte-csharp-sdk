@@ -53,7 +53,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class CreateConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateConfigBuilder Builder = new CreateConfigBuilder();
+        public static CreateConfigBuilder Builder { get => new CreateConfigBuilder(); }
 
         public class CreateConfigBuilder
             : OperationBuilder<CreateConfigBuilder>

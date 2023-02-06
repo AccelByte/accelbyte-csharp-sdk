@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class GetGameNamespaces : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetGameNamespacesBuilder Builder = new GetGameNamespacesBuilder();
+        public static GetGameNamespacesBuilder Builder { get => new GetGameNamespacesBuilder(); }
 
         public class GetGameNamespacesBuilder
             : OperationBuilder<GetGameNamespacesBuilder>

@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class UpdateGroupCustomAttributesPublicV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateGroupCustomAttributesPublicV1Builder Builder = new UpdateGroupCustomAttributesPublicV1Builder();
+        public static UpdateGroupCustomAttributesPublicV1Builder Builder { get => new UpdateGroupCustomAttributesPublicV1Builder(); }
 
         public class UpdateGroupCustomAttributesPublicV1Builder
             : OperationBuilder<UpdateGroupCustomAttributesPublicV1Builder>

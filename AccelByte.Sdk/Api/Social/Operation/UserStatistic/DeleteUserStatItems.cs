@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class DeleteUserStatItems : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteUserStatItemsBuilder Builder = new DeleteUserStatItemsBuilder();
+        public static DeleteUserStatItemsBuilder Builder { get => new DeleteUserStatItemsBuilder(); }
 
         public class DeleteUserStatItemsBuilder
             : OperationBuilder<DeleteUserStatItemsBuilder>

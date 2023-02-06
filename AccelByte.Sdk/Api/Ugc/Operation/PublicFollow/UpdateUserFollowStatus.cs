@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class UpdateUserFollowStatus : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateUserFollowStatusBuilder Builder = new UpdateUserFollowStatusBuilder();
+        public static UpdateUserFollowStatusBuilder Builder { get => new UpdateUserFollowStatusBuilder(); }
 
         public class UpdateUserFollowStatusBuilder
             : OperationBuilder<UpdateUserFollowStatusBuilder>

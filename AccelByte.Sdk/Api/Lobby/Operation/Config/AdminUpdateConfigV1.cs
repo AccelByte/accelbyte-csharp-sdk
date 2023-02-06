@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminUpdateConfigV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUpdateConfigV1Builder Builder = new AdminUpdateConfigV1Builder();
+        public static AdminUpdateConfigV1Builder Builder { get => new AdminUpdateConfigV1Builder(); }
 
         public class AdminUpdateConfigV1Builder
             : OperationBuilder<AdminUpdateConfigV1Builder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ResetPlatformWalletConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ResetPlatformWalletConfigBuilder Builder = new ResetPlatformWalletConfigBuilder();
+        public static ResetPlatformWalletConfigBuilder Builder { get => new ResetPlatformWalletConfigBuilder(); }
 
         public class ResetPlatformWalletConfigBuilder
             : OperationBuilder<ResetPlatformWalletConfigBuilder>

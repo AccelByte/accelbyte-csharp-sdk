@@ -116,7 +116,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGetThirdPartyPlatformTokenLinkStatusV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetThirdPartyPlatformTokenLinkStatusV3Builder Builder = new AdminGetThirdPartyPlatformTokenLinkStatusV3Builder();
+        public static AdminGetThirdPartyPlatformTokenLinkStatusV3Builder Builder { get => new AdminGetThirdPartyPlatformTokenLinkStatusV3Builder(); }
 
         public class AdminGetThirdPartyPlatformTokenLinkStatusV3Builder
             : OperationBuilder<AdminGetThirdPartyPlatformTokenLinkStatusV3Builder>

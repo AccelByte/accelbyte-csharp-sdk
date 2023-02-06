@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeletePlatformDLCConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeletePlatformDLCConfigBuilder Builder = new DeletePlatformDLCConfigBuilder();
+        public static DeletePlatformDLCConfigBuilder Builder { get => new DeletePlatformDLCConfigBuilder(); }
 
         public class DeletePlatformDLCConfigBuilder
             : OperationBuilder<DeletePlatformDLCConfigBuilder>

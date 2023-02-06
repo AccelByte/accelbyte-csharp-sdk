@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class UserGetFriendshipStatus : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UserGetFriendshipStatusBuilder Builder = new UserGetFriendshipStatusBuilder();
+        public static UserGetFriendshipStatusBuilder Builder { get => new UserGetFriendshipStatusBuilder(); }
 
         public class UserGetFriendshipStatusBuilder
             : OperationBuilder<UserGetFriendshipStatusBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ImportStore1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ImportStore1Builder Builder = new ImportStore1Builder();
+        public static ImportStore1Builder Builder { get => new ImportStore1Builder(); }
 
         public class ImportStore1Builder
             : OperationBuilder<ImportStore1Builder>

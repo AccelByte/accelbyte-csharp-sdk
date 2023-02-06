@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryUserCurrencyWallets : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryUserCurrencyWalletsBuilder Builder = new QueryUserCurrencyWalletsBuilder();
+        public static QueryUserCurrencyWalletsBuilder Builder { get => new QueryUserCurrencyWalletsBuilder(); }
 
         public class QueryUserCurrencyWalletsBuilder
             : OperationBuilder<QueryUserCurrencyWalletsBuilder>

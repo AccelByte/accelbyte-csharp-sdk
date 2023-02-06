@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetUserEntitlementBySku : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserEntitlementBySkuBuilder Builder = new GetUserEntitlementBySkuBuilder();
+        public static GetUserEntitlementBySkuBuilder Builder { get => new GetUserEntitlementBySkuBuilder(); }
 
         public class GetUserEntitlementBySkuBuilder
             : OperationBuilder<GetUserEntitlementBySkuBuilder>

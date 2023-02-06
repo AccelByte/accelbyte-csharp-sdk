@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     public class ListGameRecordsHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListGameRecordsHandlerV1Builder Builder = new ListGameRecordsHandlerV1Builder();
+        public static ListGameRecordsHandlerV1Builder Builder { get => new ListGameRecordsHandlerV1Builder(); }
 
         public class ListGameRecordsHandlerV1Builder
             : OperationBuilder<ListGameRecordsHandlerV1Builder>

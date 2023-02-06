@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetTicketDynamic : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetTicketDynamicBuilder Builder = new GetTicketDynamicBuilder();
+        public static GetTicketDynamicBuilder Builder { get => new GetTicketDynamicBuilder(); }
 
         public class GetTicketDynamicBuilder
             : OperationBuilder<GetTicketDynamicBuilder>

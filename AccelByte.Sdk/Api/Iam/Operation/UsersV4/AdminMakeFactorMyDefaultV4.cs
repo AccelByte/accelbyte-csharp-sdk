@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminMakeFactorMyDefaultV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminMakeFactorMyDefaultV4Builder Builder = new AdminMakeFactorMyDefaultV4Builder();
+        public static AdminMakeFactorMyDefaultV4Builder Builder { get => new AdminMakeFactorMyDefaultV4Builder(); }
 
         public class AdminMakeFactorMyDefaultV4Builder
             : OperationBuilder<AdminMakeFactorMyDefaultV4Builder>

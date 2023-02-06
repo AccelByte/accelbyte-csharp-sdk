@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class SyncEpicGameDLC : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SyncEpicGameDLCBuilder Builder = new SyncEpicGameDLCBuilder();
+        public static SyncEpicGameDLCBuilder Builder { get => new SyncEpicGameDLCBuilder(); }
 
         public class SyncEpicGameDLCBuilder
             : OperationBuilder<SyncEpicGameDLCBuilder>

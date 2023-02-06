@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class AnonymizePayment : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AnonymizePaymentBuilder Builder = new AnonymizePaymentBuilder();
+        public static AnonymizePaymentBuilder Builder { get => new AnonymizePaymentBuilder(); }
 
         public class AnonymizePaymentBuilder
             : OperationBuilder<AnonymizePaymentBuilder>

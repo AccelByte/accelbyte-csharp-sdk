@@ -239,7 +239,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CreateItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateItemBuilder Builder = new CreateItemBuilder();
+        public static CreateItemBuilder Builder { get => new CreateItemBuilder(); }
 
         public class CreateItemBuilder
             : OperationBuilder<CreateItemBuilder>

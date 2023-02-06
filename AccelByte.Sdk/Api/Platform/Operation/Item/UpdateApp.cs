@@ -113,7 +113,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateApp : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateAppBuilder Builder = new UpdateAppBuilder();
+        public static UpdateAppBuilder Builder { get => new UpdateAppBuilder(); }
 
         public class UpdateAppBuilder
             : OperationBuilder<UpdateAppBuilder>

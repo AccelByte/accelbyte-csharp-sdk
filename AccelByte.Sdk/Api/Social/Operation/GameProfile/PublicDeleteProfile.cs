@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class PublicDeleteProfile : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicDeleteProfileBuilder Builder = new PublicDeleteProfileBuilder();
+        public static PublicDeleteProfileBuilder Builder { get => new PublicDeleteProfileBuilder(); }
 
         public class PublicDeleteProfileBuilder
             : OperationBuilder<PublicDeleteProfileBuilder>

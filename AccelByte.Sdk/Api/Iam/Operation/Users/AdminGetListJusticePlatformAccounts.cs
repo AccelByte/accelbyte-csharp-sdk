@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGetListJusticePlatformAccounts : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetListJusticePlatformAccountsBuilder Builder = new AdminGetListJusticePlatformAccountsBuilder();
+        public static AdminGetListJusticePlatformAccountsBuilder Builder { get => new AdminGetListJusticePlatformAccountsBuilder(); }
 
         public class AdminGetListJusticePlatformAccountsBuilder
             : OperationBuilder<AdminGetListJusticePlatformAccountsBuilder>

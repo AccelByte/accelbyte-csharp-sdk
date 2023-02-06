@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class UpdatePort : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdatePortBuilder Builder = new UpdatePortBuilder();
+        public static UpdatePortBuilder Builder { get => new UpdatePortBuilder(); }
 
         public class UpdatePortBuilder
             : OperationBuilder<UpdatePortBuilder>

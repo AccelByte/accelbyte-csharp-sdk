@@ -119,7 +119,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     public class PostGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PostGameRecordHandlerV1Builder Builder = new PostGameRecordHandlerV1Builder();
+        public static PostGameRecordHandlerV1Builder Builder { get => new PostGameRecordHandlerV1Builder(); }
 
         public class PostGameRecordHandlerV1Builder
             : OperationBuilder<PostGameRecordHandlerV1Builder>

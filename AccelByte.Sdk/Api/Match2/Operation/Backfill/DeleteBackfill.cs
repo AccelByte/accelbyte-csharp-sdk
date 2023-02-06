@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     public class DeleteBackfill : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteBackfillBuilder Builder = new DeleteBackfillBuilder();
+        public static DeleteBackfillBuilder Builder { get => new DeleteBackfillBuilder(); }
 
         public class DeleteBackfillBuilder
             : OperationBuilder<DeleteBackfillBuilder>

@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class GetUserFriendsUpdated : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserFriendsUpdatedBuilder Builder = new GetUserFriendsUpdatedBuilder();
+        public static GetUserFriendsUpdatedBuilder Builder { get => new GetUserFriendsUpdatedBuilder(); }
 
         public class GetUserFriendsUpdatedBuilder
             : OperationBuilder<GetUserFriendsUpdatedBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetCurrencySummary : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetCurrencySummaryBuilder Builder = new GetCurrencySummaryBuilder();
+        public static GetCurrencySummaryBuilder Builder { get => new GetCurrencySummaryBuilder(); }
 
         public class GetCurrencySummaryBuilder
             : OperationBuilder<GetCurrencySummaryBuilder>

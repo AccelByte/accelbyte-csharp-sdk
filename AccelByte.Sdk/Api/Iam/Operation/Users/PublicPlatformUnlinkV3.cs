@@ -93,7 +93,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicPlatformUnlinkV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicPlatformUnlinkV3Builder Builder = new PublicPlatformUnlinkV3Builder();
+        public static PublicPlatformUnlinkV3Builder Builder { get => new PublicPlatformUnlinkV3Builder(); }
 
         public class PublicPlatformUnlinkV3Builder
             : OperationBuilder<PublicPlatformUnlinkV3Builder>

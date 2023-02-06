@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class ClaimServer : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ClaimServerBuilder Builder = new ClaimServerBuilder();
+        public static ClaimServerBuilder Builder { get => new ClaimServerBuilder(); }
 
         public class ClaimServerBuilder
             : OperationBuilder<ClaimServerBuilder>

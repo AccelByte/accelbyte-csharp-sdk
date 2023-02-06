@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class AdminGetType : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetTypeBuilder Builder = new AdminGetTypeBuilder();
+        public static AdminGetTypeBuilder Builder { get => new AdminGetTypeBuilder(); }
 
         public class AdminGetTypeBuilder
             : OperationBuilder<AdminGetTypeBuilder>

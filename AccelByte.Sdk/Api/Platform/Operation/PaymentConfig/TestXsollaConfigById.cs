@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class TestXsollaConfigById : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static TestXsollaConfigByIdBuilder Builder = new TestXsollaConfigByIdBuilder();
+        public static TestXsollaConfigByIdBuilder Builder { get => new TestXsollaConfigByIdBuilder(); }
 
         public class TestXsollaConfigByIdBuilder
             : OperationBuilder<TestXsollaConfigByIdBuilder>

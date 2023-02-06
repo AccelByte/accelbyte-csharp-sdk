@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdatePlaystationIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdatePlaystationIAPConfigBuilder Builder = new UpdatePlaystationIAPConfigBuilder();
+        public static UpdatePlaystationIAPConfigBuilder Builder { get => new UpdatePlaystationIAPConfigBuilder(); }
 
         public class UpdatePlaystationIAPConfigBuilder
             : OperationBuilder<UpdatePlaystationIAPConfigBuilder>

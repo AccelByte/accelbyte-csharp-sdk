@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetPublisherUser : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPublisherUserBuilder Builder = new GetPublisherUserBuilder();
+        public static GetPublisherUserBuilder Builder { get => new GetPublisherUserBuilder(); }
 
         public class GetPublisherUserBuilder
             : OperationBuilder<GetPublisherUserBuilder>

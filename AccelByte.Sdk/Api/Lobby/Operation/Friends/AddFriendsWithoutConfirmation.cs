@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AddFriendsWithoutConfirmation : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AddFriendsWithoutConfirmationBuilder Builder = new AddFriendsWithoutConfirmationBuilder();
+        public static AddFriendsWithoutConfirmationBuilder Builder { get => new AddFriendsWithoutConfirmationBuilder(); }
 
         public class AddFriendsWithoutConfirmationBuilder
             : OperationBuilder<AddFriendsWithoutConfirmationBuilder>

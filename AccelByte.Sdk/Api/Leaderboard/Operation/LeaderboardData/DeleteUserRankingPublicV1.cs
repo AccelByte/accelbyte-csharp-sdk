@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     public class DeleteUserRankingPublicV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteUserRankingPublicV1Builder Builder = new DeleteUserRankingPublicV1Builder();
+        public static DeleteUserRankingPublicV1Builder Builder { get => new DeleteUserRankingPublicV1Builder(); }
 
         public class DeleteUserRankingPublicV1Builder
             : OperationBuilder<DeleteUserRankingPublicV1Builder>

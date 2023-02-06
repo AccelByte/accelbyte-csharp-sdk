@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class AdminDeleteSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDeleteSessionBuilder Builder = new AdminDeleteSessionBuilder();
+        public static AdminDeleteSessionBuilder Builder { get => new AdminDeleteSessionBuilder(); }
 
         public class AdminDeleteSessionBuilder
             : OperationBuilder<AdminDeleteSessionBuilder>

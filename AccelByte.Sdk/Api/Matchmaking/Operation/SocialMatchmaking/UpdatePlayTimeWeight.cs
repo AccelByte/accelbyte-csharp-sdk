@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class UpdatePlayTimeWeight : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdatePlayTimeWeightBuilder Builder = new UpdatePlayTimeWeightBuilder();
+        public static UpdatePlayTimeWeightBuilder Builder { get => new UpdatePlayTimeWeightBuilder(); }
 
         public class UpdatePlayTimeWeightBuilder
             : OperationBuilder<UpdatePlayTimeWeightBuilder>

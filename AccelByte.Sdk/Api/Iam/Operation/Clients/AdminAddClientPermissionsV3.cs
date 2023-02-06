@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminAddClientPermissionsV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminAddClientPermissionsV3Builder Builder = new AdminAddClientPermissionsV3Builder();
+        public static AdminAddClientPermissionsV3Builder Builder { get => new AdminAddClientPermissionsV3Builder(); }
 
         public class AdminAddClientPermissionsV3Builder
             : OperationBuilder<AdminAddClientPermissionsV3Builder>

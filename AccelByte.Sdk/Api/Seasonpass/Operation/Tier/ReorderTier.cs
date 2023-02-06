@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class ReorderTier : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ReorderTierBuilder Builder = new ReorderTierBuilder();
+        public static ReorderTierBuilder Builder { get => new ReorderTierBuilder(); }
 
         public class ReorderTierBuilder
             : OperationBuilder<ReorderTierBuilder>

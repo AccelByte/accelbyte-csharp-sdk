@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteXblAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteXblAPConfigBuilder Builder = new DeleteXblAPConfigBuilder();
+        public static DeleteXblAPConfigBuilder Builder { get => new DeleteXblAPConfigBuilder(); }
 
         public class DeleteXblAPConfigBuilder
             : OperationBuilder<DeleteXblAPConfigBuilder>

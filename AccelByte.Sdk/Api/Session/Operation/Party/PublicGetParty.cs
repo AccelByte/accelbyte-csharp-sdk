@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class PublicGetParty : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetPartyBuilder Builder = new PublicGetPartyBuilder();
+        public static PublicGetPartyBuilder Builder { get => new PublicGetPartyBuilder(); }
 
         public class PublicGetPartyBuilder
             : OperationBuilder<PublicGetPartyBuilder>

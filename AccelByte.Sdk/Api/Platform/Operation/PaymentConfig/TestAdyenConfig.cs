@@ -42,7 +42,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class TestAdyenConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static TestAdyenConfigBuilder Builder = new TestAdyenConfigBuilder();
+        public static TestAdyenConfigBuilder Builder { get => new TestAdyenConfigBuilder(); }
 
         public class TestAdyenConfigBuilder
             : OperationBuilder<TestAdyenConfigBuilder>

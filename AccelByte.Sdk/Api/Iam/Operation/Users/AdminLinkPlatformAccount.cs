@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminLinkPlatformAccount : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminLinkPlatformAccountBuilder Builder = new AdminLinkPlatformAccountBuilder();
+        public static AdminLinkPlatformAccountBuilder Builder { get => new AdminLinkPlatformAccountBuilder(); }
 
         public class AdminLinkPlatformAccountBuilder
             : OperationBuilder<AdminLinkPlatformAccountBuilder>

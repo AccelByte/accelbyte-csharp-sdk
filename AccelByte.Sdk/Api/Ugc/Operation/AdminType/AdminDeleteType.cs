@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class AdminDeleteType : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDeleteTypeBuilder Builder = new AdminDeleteTypeBuilder();
+        public static AdminDeleteTypeBuilder Builder { get => new AdminDeleteTypeBuilder(); }
 
         public class AdminDeleteTypeBuilder
             : OperationBuilder<AdminDeleteTypeBuilder>

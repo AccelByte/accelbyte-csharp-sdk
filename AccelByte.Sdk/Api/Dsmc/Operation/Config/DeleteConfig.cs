@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class DeleteConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteConfigBuilder Builder = new DeleteConfigBuilder();
+        public static DeleteConfigBuilder Builder { get => new DeleteConfigBuilder(); }
 
         public class DeleteConfigBuilder
             : OperationBuilder<DeleteConfigBuilder>

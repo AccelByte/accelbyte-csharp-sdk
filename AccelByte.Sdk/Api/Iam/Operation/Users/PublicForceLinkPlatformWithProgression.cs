@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicForceLinkPlatformWithProgression : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicForceLinkPlatformWithProgressionBuilder Builder = new PublicForceLinkPlatformWithProgressionBuilder();
+        public static PublicForceLinkPlatformWithProgressionBuilder Builder { get => new PublicForceLinkPlatformWithProgressionBuilder(); }
 
         public class PublicForceLinkPlatformWithProgressionBuilder
             : OperationBuilder<PublicForceLinkPlatformWithProgressionBuilder>

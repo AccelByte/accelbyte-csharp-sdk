@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminDeleteClientPermissionV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDeleteClientPermissionV3Builder Builder = new AdminDeleteClientPermissionV3Builder();
+        public static AdminDeleteClientPermissionV3Builder Builder { get => new AdminDeleteClientPermissionV3Builder(); }
 
         public class AdminDeleteClientPermissionV3Builder
             : OperationBuilder<AdminDeleteClientPermissionV3Builder>

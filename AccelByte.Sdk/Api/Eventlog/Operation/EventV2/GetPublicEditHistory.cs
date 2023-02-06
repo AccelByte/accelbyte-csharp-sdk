@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     public class GetPublicEditHistory : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPublicEditHistoryBuilder Builder = new GetPublicEditHistoryBuilder();
+        public static GetPublicEditHistoryBuilder Builder { get => new GetPublicEditHistoryBuilder(); }
 
         public class GetPublicEditHistoryBuilder
             : OperationBuilder<GetPublicEditHistoryBuilder>

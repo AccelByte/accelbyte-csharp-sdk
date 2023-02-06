@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminVerifyAccountV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminVerifyAccountV3Builder Builder = new AdminVerifyAccountV3Builder();
+        public static AdminVerifyAccountV3Builder Builder { get => new AdminVerifyAccountV3Builder(); }
 
         public class AdminVerifyAccountV3Builder
             : OperationBuilder<AdminVerifyAccountV3Builder>

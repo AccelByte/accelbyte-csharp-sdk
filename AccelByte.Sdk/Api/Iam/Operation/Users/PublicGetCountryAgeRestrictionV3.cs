@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicGetCountryAgeRestrictionV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetCountryAgeRestrictionV3Builder Builder = new PublicGetCountryAgeRestrictionV3Builder();
+        public static PublicGetCountryAgeRestrictionV3Builder Builder { get => new PublicGetCountryAgeRestrictionV3Builder(); }
 
         public class PublicGetCountryAgeRestrictionV3Builder
             : OperationBuilder<PublicGetCountryAgeRestrictionV3Builder>

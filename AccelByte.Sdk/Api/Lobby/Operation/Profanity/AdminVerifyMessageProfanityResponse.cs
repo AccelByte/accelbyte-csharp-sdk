@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminVerifyMessageProfanityResponse : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminVerifyMessageProfanityResponseBuilder Builder = new AdminVerifyMessageProfanityResponseBuilder();
+        public static AdminVerifyMessageProfanityResponseBuilder Builder { get => new AdminVerifyMessageProfanityResponseBuilder(); }
 
         public class AdminVerifyMessageProfanityResponseBuilder
             : OperationBuilder<AdminVerifyMessageProfanityResponseBuilder>

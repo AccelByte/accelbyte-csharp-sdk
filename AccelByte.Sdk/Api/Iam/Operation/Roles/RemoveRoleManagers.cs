@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class RemoveRoleManagers : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RemoveRoleManagersBuilder Builder = new RemoveRoleManagersBuilder();
+        public static RemoveRoleManagersBuilder Builder { get => new RemoveRoleManagersBuilder(); }
 
         public class RemoveRoleManagersBuilder
             : OperationBuilder<RemoveRoleManagersBuilder>

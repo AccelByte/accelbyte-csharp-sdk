@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CreateCategory : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateCategoryBuilder Builder = new CreateCategoryBuilder();
+        public static CreateCategoryBuilder Builder { get => new CreateCategoryBuilder(); }
 
         public class CreateCategoryBuilder
             : OperationBuilder<CreateCategoryBuilder>

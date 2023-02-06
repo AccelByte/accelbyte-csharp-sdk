@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetDLCItemConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetDLCItemConfigBuilder Builder = new GetDLCItemConfigBuilder();
+        public static GetDLCItemConfigBuilder Builder { get => new GetDLCItemConfigBuilder(); }
 
         public class GetDLCItemConfigBuilder
             : OperationBuilder<GetDLCItemConfigBuilder>

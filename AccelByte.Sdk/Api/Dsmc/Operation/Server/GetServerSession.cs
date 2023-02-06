@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class GetServerSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetServerSessionBuilder Builder = new GetServerSessionBuilder();
+        public static GetServerSessionBuilder Builder { get => new GetServerSessionBuilder(); }
 
         public class GetServerSessionBuilder
             : OperationBuilder<GetServerSessionBuilder>

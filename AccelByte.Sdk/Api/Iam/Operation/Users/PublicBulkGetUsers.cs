@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicBulkGetUsers : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicBulkGetUsersBuilder Builder = new PublicBulkGetUsersBuilder();
+        public static PublicBulkGetUsersBuilder Builder { get => new PublicBulkGetUsersBuilder(); }
 
         public class PublicBulkGetUsersBuilder
             : OperationBuilder<PublicBulkGetUsersBuilder>

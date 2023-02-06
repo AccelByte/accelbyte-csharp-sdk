@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryUncategorizedItems : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryUncategorizedItemsBuilder Builder = new QueryUncategorizedItemsBuilder();
+        public static QueryUncategorizedItemsBuilder Builder { get => new QueryUncategorizedItemsBuilder(); }
 
         public class QueryUncategorizedItemsBuilder
             : OperationBuilder<QueryUncategorizedItemsBuilder>

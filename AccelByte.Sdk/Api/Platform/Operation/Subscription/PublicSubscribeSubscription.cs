@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicSubscribeSubscription : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicSubscribeSubscriptionBuilder Builder = new PublicSubscribeSubscriptionBuilder();
+        public static PublicSubscribeSubscriptionBuilder Builder { get => new PublicSubscribeSubscriptionBuilder(); }
 
         public class PublicSubscribeSubscriptionBuilder
             : OperationBuilder<PublicSubscribeSubscriptionBuilder>

@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class InvalidateUserInfoCache : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static InvalidateUserInfoCacheBuilder Builder = new InvalidateUserInfoCacheBuilder();
+        public static InvalidateUserInfoCacheBuilder Builder { get => new InvalidateUserInfoCacheBuilder(); }
 
         public class InvalidateUserInfoCacheBuilder
             : OperationBuilder<InvalidateUserInfoCacheBuilder>

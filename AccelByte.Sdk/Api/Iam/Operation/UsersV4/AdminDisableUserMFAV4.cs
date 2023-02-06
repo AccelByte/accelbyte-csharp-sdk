@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminDisableUserMFAV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDisableUserMFAV4Builder Builder = new AdminDisableUserMFAV4Builder();
+        public static AdminDisableUserMFAV4Builder Builder { get => new AdminDisableUserMFAV4Builder(); }
 
         public class AdminDisableUserMFAV4Builder
             : OperationBuilder<AdminDisableUserMFAV4Builder>

@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     public class DeleteUserActivitiesHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteUserActivitiesHandlerBuilder Builder = new DeleteUserActivitiesHandlerBuilder();
+        public static DeleteUserActivitiesHandlerBuilder Builder { get => new DeleteUserActivitiesHandlerBuilder(); }
 
         public class DeleteUserActivitiesHandlerBuilder
             : OperationBuilder<DeleteUserActivitiesHandlerBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicGetUserOrderHistories : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetUserOrderHistoriesBuilder Builder = new PublicGetUserOrderHistoriesBuilder();
+        public static PublicGetUserOrderHistoriesBuilder Builder { get => new PublicGetUserOrderHistoriesBuilder(); }
 
         public class PublicGetUserOrderHistoriesBuilder
             : OperationBuilder<PublicGetUserOrderHistoriesBuilder>

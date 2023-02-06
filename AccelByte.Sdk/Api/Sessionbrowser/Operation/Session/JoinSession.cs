@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class JoinSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static JoinSessionBuilder Builder = new JoinSessionBuilder();
+        public static JoinSessionBuilder Builder { get => new JoinSessionBuilder(); }
 
         public class JoinSessionBuilder
             : OperationBuilder<JoinSessionBuilder>

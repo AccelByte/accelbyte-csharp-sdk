@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class PersonalChatHistory : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PersonalChatHistoryBuilder Builder = new PersonalChatHistoryBuilder();
+        public static PersonalChatHistoryBuilder Builder { get => new PersonalChatHistoryBuilder(); }
 
         public class PersonalChatHistoryBuilder
             : OperationBuilder<PersonalChatHistoryBuilder>

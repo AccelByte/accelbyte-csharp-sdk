@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     public class MatchPoolDetails : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static MatchPoolDetailsBuilder Builder = new MatchPoolDetailsBuilder();
+        public static MatchPoolDetailsBuilder Builder { get => new MatchPoolDetailsBuilder(); }
 
         public class MatchPoolDetailsBuilder
             : OperationBuilder<MatchPoolDetailsBuilder>

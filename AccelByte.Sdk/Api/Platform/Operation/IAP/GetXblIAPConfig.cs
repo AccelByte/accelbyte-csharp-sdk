@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetXblIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetXblIAPConfigBuilder Builder = new GetXblIAPConfigBuilder();
+        public static GetXblIAPConfigBuilder Builder { get => new GetXblIAPConfigBuilder(); }
 
         public class GetXblIAPConfigBuilder
             : OperationBuilder<GetXblIAPConfigBuilder>

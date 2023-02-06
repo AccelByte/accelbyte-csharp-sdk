@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class PublicClaimUserReward : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicClaimUserRewardBuilder Builder = new PublicClaimUserRewardBuilder();
+        public static PublicClaimUserRewardBuilder Builder { get => new PublicClaimUserRewardBuilder(); }
 
         public class PublicClaimUserRewardBuilder
             : OperationBuilder<PublicClaimUserRewardBuilder>

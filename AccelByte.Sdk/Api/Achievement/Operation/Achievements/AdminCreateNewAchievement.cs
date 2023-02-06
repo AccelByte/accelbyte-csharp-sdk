@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     public class AdminCreateNewAchievement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminCreateNewAchievementBuilder Builder = new AdminCreateNewAchievementBuilder();
+        public static AdminCreateNewAchievementBuilder Builder { get => new AdminCreateNewAchievementBuilder(); }
 
         public class AdminCreateNewAchievementBuilder
             : OperationBuilder<AdminCreateNewAchievementBuilder>

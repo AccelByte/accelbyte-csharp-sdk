@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateEpicGamesIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateEpicGamesIAPConfigBuilder Builder = new UpdateEpicGamesIAPConfigBuilder();
+        public static UpdateEpicGamesIAPConfigBuilder Builder { get => new UpdateEpicGamesIAPConfigBuilder(); }
 
         public class UpdateEpicGamesIAPConfigBuilder
             : OperationBuilder<UpdateEpicGamesIAPConfigBuilder>

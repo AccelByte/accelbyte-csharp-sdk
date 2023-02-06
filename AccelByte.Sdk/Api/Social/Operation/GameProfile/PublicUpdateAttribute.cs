@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class PublicUpdateAttribute : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicUpdateAttributeBuilder Builder = new PublicUpdateAttributeBuilder();
+        public static PublicUpdateAttributeBuilder Builder { get => new PublicUpdateAttributeBuilder(); }
 
         public class PublicUpdateAttributeBuilder
             : OperationBuilder<PublicUpdateAttributeBuilder>

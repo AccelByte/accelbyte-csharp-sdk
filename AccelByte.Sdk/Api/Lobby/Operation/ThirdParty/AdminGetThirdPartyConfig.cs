@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminGetThirdPartyConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetThirdPartyConfigBuilder Builder = new AdminGetThirdPartyConfigBuilder();
+        public static AdminGetThirdPartyConfigBuilder Builder { get => new AdminGetThirdPartyConfigBuilder(); }
 
         public class AdminGetThirdPartyConfigBuilder
             : OperationBuilder<AdminGetThirdPartyConfigBuilder>

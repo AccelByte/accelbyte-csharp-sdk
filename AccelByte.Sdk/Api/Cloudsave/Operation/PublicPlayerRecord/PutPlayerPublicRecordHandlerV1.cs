@@ -116,7 +116,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     public class PutPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PutPlayerPublicRecordHandlerV1Builder Builder = new PutPlayerPublicRecordHandlerV1Builder();
+        public static PutPlayerPublicRecordHandlerV1Builder Builder { get => new PutPlayerPublicRecordHandlerV1Builder(); }
 
         public class PutPlayerPublicRecordHandlerV1Builder
             : OperationBuilder<PutPlayerPublicRecordHandlerV1Builder>

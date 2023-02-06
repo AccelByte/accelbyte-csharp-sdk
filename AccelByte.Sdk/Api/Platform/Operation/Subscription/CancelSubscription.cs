@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CancelSubscription : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CancelSubscriptionBuilder Builder = new CancelSubscriptionBuilder();
+        public static CancelSubscriptionBuilder Builder { get => new CancelSubscriptionBuilder(); }
 
         public class CancelSubscriptionBuilder
             : OperationBuilder<CancelSubscriptionBuilder>

@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     public class AdminUpdateAchievement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUpdateAchievementBuilder Builder = new AdminUpdateAchievementBuilder();
+        public static AdminUpdateAchievementBuilder Builder { get => new AdminUpdateAchievementBuilder(); }
 
         public class AdminUpdateAchievementBuilder
             : OperationBuilder<AdminUpdateAchievementBuilder>

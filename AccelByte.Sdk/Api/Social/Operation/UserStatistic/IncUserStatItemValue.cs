@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class IncUserStatItemValue : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static IncUserStatItemValueBuilder Builder = new IncUserStatItemValueBuilder();
+        public static IncUserStatItemValueBuilder Builder { get => new IncUserStatItemValueBuilder(); }
 
         public class IncUserStatItemValueBuilder
             : OperationBuilder<IncUserStatItemValueBuilder>

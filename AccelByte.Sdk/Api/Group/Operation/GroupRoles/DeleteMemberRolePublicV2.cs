@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class DeleteMemberRolePublicV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteMemberRolePublicV2Builder Builder = new DeleteMemberRolePublicV2Builder();
+        public static DeleteMemberRolePublicV2Builder Builder { get => new DeleteMemberRolePublicV2Builder(); }
 
         public class DeleteMemberRolePublicV2Builder
             : OperationBuilder<DeleteMemberRolePublicV2Builder>

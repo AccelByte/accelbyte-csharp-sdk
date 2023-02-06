@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class CreateOverrideRegionOverride : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateOverrideRegionOverrideBuilder Builder = new CreateOverrideRegionOverrideBuilder();
+        public static CreateOverrideRegionOverrideBuilder Builder { get => new CreateOverrideRegionOverrideBuilder(); }
 
         public class CreateOverrideRegionOverrideBuilder
             : OperationBuilder<CreateOverrideRegionOverrideBuilder>

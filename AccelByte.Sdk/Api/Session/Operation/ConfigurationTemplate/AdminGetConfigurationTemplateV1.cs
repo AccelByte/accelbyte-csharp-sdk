@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class AdminGetConfigurationTemplateV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetConfigurationTemplateV1Builder Builder = new AdminGetConfigurationTemplateV1Builder();
+        public static AdminGetConfigurationTemplateV1Builder Builder { get => new AdminGetConfigurationTemplateV1Builder(); }
 
         public class AdminGetConfigurationTemplateV1Builder
             : OperationBuilder<AdminGetConfigurationTemplateV1Builder>

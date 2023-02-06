@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetPaymentTaxValue : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPaymentTaxValueBuilder Builder = new GetPaymentTaxValueBuilder();
+        public static GetPaymentTaxValueBuilder Builder { get => new GetPaymentTaxValueBuilder(); }
 
         public class GetPaymentTaxValueBuilder
             : OperationBuilder<GetPaymentTaxValueBuilder>

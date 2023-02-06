@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class UpdateUserProfile : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateUserProfileBuilder Builder = new UpdateUserProfileBuilder();
+        public static UpdateUserProfileBuilder Builder { get => new UpdateUserProfileBuilder(); }
 
         public class UpdateUserProfileBuilder
             : OperationBuilder<UpdateUserProfileBuilder>

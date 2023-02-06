@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class DeleteLocalServer : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteLocalServerBuilder Builder = new DeleteLocalServerBuilder();
+        public static DeleteLocalServerBuilder Builder { get => new DeleteLocalServerBuilder(); }
 
         public class DeleteLocalServerBuilder
             : OperationBuilder<DeleteLocalServerBuilder>

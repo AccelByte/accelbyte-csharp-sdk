@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class AdminGetSpecificContent : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetSpecificContentBuilder Builder = new AdminGetSpecificContentBuilder();
+        public static AdminGetSpecificContentBuilder Builder { get => new AdminGetSpecificContentBuilder(); }
 
         public class AdminGetSpecificContentBuilder
             : OperationBuilder<AdminGetSpecificContentBuilder>

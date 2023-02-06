@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminDisableUserV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDisableUserV2Builder Builder = new AdminDisableUserV2Builder();
+        public static AdminDisableUserV2Builder Builder { get => new AdminDisableUserV2Builder(); }
 
         public class AdminDisableUserV2Builder
             : OperationBuilder<AdminDisableUserV2Builder>

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class DeleteCountryGroup : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteCountryGroupBuilder Builder = new DeleteCountryGroupBuilder();
+        public static DeleteCountryGroupBuilder Builder { get => new DeleteCountryGroupBuilder(); }
 
         public class DeleteCountryGroupBuilder
             : OperationBuilder<DeleteCountryGroupBuilder>

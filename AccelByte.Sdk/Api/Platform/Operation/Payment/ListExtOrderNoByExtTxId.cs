@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ListExtOrderNoByExtTxId : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListExtOrderNoByExtTxIdBuilder Builder = new ListExtOrderNoByExtTxIdBuilder();
+        public static ListExtOrderNoByExtTxIdBuilder Builder { get => new ListExtOrderNoByExtTxIdBuilder(); }
 
         public class ListExtOrderNoByExtTxIdBuilder
             : OperationBuilder<ListExtOrderNoByExtTxIdBuilder>

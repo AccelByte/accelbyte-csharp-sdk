@@ -263,7 +263,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class TokenGrant : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static TokenGrantBuilder Builder = new TokenGrantBuilder();
+        public static TokenGrantBuilder Builder { get => new TokenGrantBuilder(); }
 
         public class TokenGrantBuilder
             : OperationBuilder<TokenGrantBuilder>

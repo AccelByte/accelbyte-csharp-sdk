@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetPaymentCallbackConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPaymentCallbackConfigBuilder Builder = new GetPaymentCallbackConfigBuilder();
+        public static GetPaymentCallbackConfigBuilder Builder { get => new GetPaymentCallbackConfigBuilder(); }
 
         public class GetPaymentCallbackConfigBuilder
             : OperationBuilder<GetPaymentCallbackConfigBuilder>

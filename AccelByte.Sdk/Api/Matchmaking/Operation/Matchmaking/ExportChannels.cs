@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class ExportChannels : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ExportChannelsBuilder Builder = new ExportChannelsBuilder();
+        public static ExportChannelsBuilder Builder { get => new ExportChannelsBuilder(); }
 
         public class ExportChannelsBuilder
             : OperationBuilder<ExportChannelsBuilder>

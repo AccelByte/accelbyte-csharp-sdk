@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class DeleteSessionLocalDS : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteSessionLocalDSBuilder Builder = new DeleteSessionLocalDSBuilder();
+        public static DeleteSessionLocalDSBuilder Builder { get => new DeleteSessionLocalDSBuilder(); }
 
         public class DeleteSessionLocalDSBuilder
             : OperationBuilder<DeleteSessionLocalDSBuilder>

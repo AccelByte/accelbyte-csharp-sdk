@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class GetDefaultProvider : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetDefaultProviderBuilder Builder = new GetDefaultProviderBuilder();
+        public static GetDefaultProviderBuilder Builder { get => new GetDefaultProviderBuilder(); }
 
         public class GetDefaultProviderBuilder
             : OperationBuilder<GetDefaultProviderBuilder>

@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicGetUserInformationV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetUserInformationV3Builder Builder = new PublicGetUserInformationV3Builder();
+        public static PublicGetUserInformationV3Builder Builder { get => new PublicGetUserInformationV3Builder(); }
 
         public class PublicGetUserInformationV3Builder
             : OperationBuilder<PublicGetUserInformationV3Builder>

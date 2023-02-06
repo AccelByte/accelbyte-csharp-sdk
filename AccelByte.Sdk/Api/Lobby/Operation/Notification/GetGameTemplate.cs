@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class GetGameTemplate : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetGameTemplateBuilder Builder = new GetGameTemplateBuilder();
+        public static GetGameTemplateBuilder Builder { get => new GetGameTemplateBuilder(); }
 
         public class GetGameTemplateBuilder
             : OperationBuilder<GetGameTemplateBuilder>

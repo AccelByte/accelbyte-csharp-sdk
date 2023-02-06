@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ListCurrencies : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListCurrenciesBuilder Builder = new ListCurrenciesBuilder();
+        public static ListCurrenciesBuilder Builder { get => new ListCurrenciesBuilder(); }
 
         public class ListCurrenciesBuilder
             : OperationBuilder<ListCurrenciesBuilder>

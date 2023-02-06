@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class PublicGetProfileAttribute : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetProfileAttributeBuilder Builder = new PublicGetProfileAttributeBuilder();
+        public static PublicGetProfileAttributeBuilder Builder { get => new PublicGetProfileAttributeBuilder(); }
 
         public class PublicGetProfileAttributeBuilder
             : OperationBuilder<PublicGetProfileAttributeBuilder>

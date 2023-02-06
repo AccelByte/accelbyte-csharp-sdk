@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class GetUserGroupInformationPublicV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserGroupInformationPublicV2Builder Builder = new GetUserGroupInformationPublicV2Builder();
+        public static GetUserGroupInformationPublicV2Builder Builder { get => new GetUserGroupInformationPublicV2Builder(); }
 
         public class GetUserGroupInformationPublicV2Builder
             : OperationBuilder<GetUserGroupInformationPublicV2Builder>

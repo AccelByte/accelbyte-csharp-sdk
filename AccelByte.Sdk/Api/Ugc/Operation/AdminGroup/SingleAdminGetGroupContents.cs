@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class SingleAdminGetGroupContents : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SingleAdminGetGroupContentsBuilder Builder = new SingleAdminGetGroupContentsBuilder();
+        public static SingleAdminGetGroupContentsBuilder Builder { get => new SingleAdminGetGroupContentsBuilder(); }
 
         public class SingleAdminGetGroupContentsBuilder
             : OperationBuilder<SingleAdminGetGroupContentsBuilder>

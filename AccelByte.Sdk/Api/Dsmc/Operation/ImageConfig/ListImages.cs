@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class ListImages : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListImagesBuilder Builder = new ListImagesBuilder();
+        public static ListImagesBuilder Builder { get => new ListImagesBuilder(); }
 
         public class ListImagesBuilder
             : OperationBuilder<ListImagesBuilder>

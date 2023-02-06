@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicDeletePaymentAccount : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicDeletePaymentAccountBuilder Builder = new PublicDeletePaymentAccountBuilder();
+        public static PublicDeletePaymentAccountBuilder Builder { get => new PublicDeletePaymentAccountBuilder(); }
 
         public class PublicDeletePaymentAccountBuilder
             : OperationBuilder<PublicDeletePaymentAccountBuilder>

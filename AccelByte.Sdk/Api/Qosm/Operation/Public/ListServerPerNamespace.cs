@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
     public class ListServerPerNamespace : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListServerPerNamespaceBuilder Builder = new ListServerPerNamespaceBuilder();
+        public static ListServerPerNamespaceBuilder Builder { get => new ListServerPerNamespaceBuilder(); }
 
         public class ListServerPerNamespaceBuilder
             : OperationBuilder<ListServerPerNamespaceBuilder>

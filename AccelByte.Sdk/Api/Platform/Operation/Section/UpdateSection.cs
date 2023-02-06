@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateSection : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateSectionBuilder Builder = new UpdateSectionBuilder();
+        public static UpdateSectionBuilder Builder { get => new UpdateSectionBuilder(); }
 
         public class UpdateSectionBuilder
             : OperationBuilder<UpdateSectionBuilder>

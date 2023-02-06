@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateDLCItemConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateDLCItemConfigBuilder Builder = new UpdateDLCItemConfigBuilder();
+        public static UpdateDLCItemConfigBuilder Builder { get => new UpdateDLCItemConfigBuilder(); }
 
         public class UpdateDLCItemConfigBuilder
             : OperationBuilder<UpdateDLCItemConfigBuilder>

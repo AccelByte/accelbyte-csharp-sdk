@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     public class GetHiddenUsersV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetHiddenUsersV2Builder Builder = new GetHiddenUsersV2Builder();
+        public static GetHiddenUsersV2Builder Builder { get => new GetHiddenUsersV2Builder(); }
 
         public class GetHiddenUsersV2Builder
             : OperationBuilder<GetHiddenUsersV2Builder>

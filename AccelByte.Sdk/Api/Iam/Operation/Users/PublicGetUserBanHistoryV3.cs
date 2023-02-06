@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicGetUserBanHistoryV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetUserBanHistoryV3Builder Builder = new PublicGetUserBanHistoryV3Builder();
+        public static PublicGetUserBanHistoryV3Builder Builder { get => new PublicGetUserBanHistoryV3Builder(); }
 
         public class PublicGetUserBanHistoryV3Builder
             : OperationBuilder<PublicGetUserBanHistoryV3Builder>

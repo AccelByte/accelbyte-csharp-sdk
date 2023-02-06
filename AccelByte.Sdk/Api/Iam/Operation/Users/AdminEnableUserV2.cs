@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminEnableUserV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminEnableUserV2Builder Builder = new AdminEnableUserV2Builder();
+        public static AdminEnableUserV2Builder Builder { get => new AdminEnableUserV2Builder(); }
 
         public class AdminEnableUserV2Builder
             : OperationBuilder<AdminEnableUserV2Builder>

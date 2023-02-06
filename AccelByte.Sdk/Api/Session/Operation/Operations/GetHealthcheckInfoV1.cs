@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class GetHealthcheckInfoV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetHealthcheckInfoV1Builder Builder = new GetHealthcheckInfoV1Builder();
+        public static GetHealthcheckInfoV1Builder Builder { get => new GetHealthcheckInfoV1Builder(); }
 
         public class GetHealthcheckInfoV1Builder
             : OperationBuilder<GetHealthcheckInfoV1Builder>

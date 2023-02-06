@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminSendMyMFAEmailCodeV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminSendMyMFAEmailCodeV4Builder Builder = new AdminSendMyMFAEmailCodeV4Builder();
+        public static AdminSendMyMFAEmailCodeV4Builder Builder { get => new AdminSendMyMFAEmailCodeV4Builder(); }
 
         public class AdminSendMyMFAEmailCodeV4Builder
             : OperationBuilder<AdminSendMyMFAEmailCodeV4Builder>

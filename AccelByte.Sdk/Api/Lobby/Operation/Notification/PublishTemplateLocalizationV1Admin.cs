@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class PublishTemplateLocalizationV1Admin : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublishTemplateLocalizationV1AdminBuilder Builder = new PublishTemplateLocalizationV1AdminBuilder();
+        public static PublishTemplateLocalizationV1AdminBuilder Builder { get => new PublishTemplateLocalizationV1AdminBuilder(); }
 
         public class PublishTemplateLocalizationV1AdminBuilder
             : OperationBuilder<PublishTemplateLocalizationV1AdminBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class GetImagePatchDetail : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetImagePatchDetailBuilder Builder = new GetImagePatchDetailBuilder();
+        public static GetImagePatchDetailBuilder Builder { get => new GetImagePatchDetailBuilder(); }
 
         public class GetImagePatchDetailBuilder
             : OperationBuilder<GetImagePatchDetailBuilder>

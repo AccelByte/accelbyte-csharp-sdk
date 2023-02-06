@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class DeleteNotificationTopicV1Admin : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteNotificationTopicV1AdminBuilder Builder = new DeleteNotificationTopicV1AdminBuilder();
+        public static DeleteNotificationTopicV1AdminBuilder Builder { get => new DeleteNotificationTopicV1AdminBuilder(); }
 
         public class DeleteNotificationTopicV1AdminBuilder
             : OperationBuilder<DeleteNotificationTopicV1AdminBuilder>

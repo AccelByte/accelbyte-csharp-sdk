@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminCreateTestUsersV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminCreateTestUsersV4Builder Builder = new AdminCreateTestUsersV4Builder();
+        public static AdminCreateTestUsersV4Builder Builder { get => new AdminCreateTestUsersV4Builder(); }
 
         public class AdminCreateTestUsersV4Builder
             : OperationBuilder<AdminCreateTestUsersV4Builder>

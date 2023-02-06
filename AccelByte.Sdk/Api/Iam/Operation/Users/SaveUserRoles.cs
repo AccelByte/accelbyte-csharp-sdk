@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class SaveUserRoles : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SaveUserRolesBuilder Builder = new SaveUserRolesBuilder();
+        public static SaveUserRolesBuilder Builder { get => new SaveUserRolesBuilder(); }
 
         public class SaveUserRolesBuilder
             : OperationBuilder<SaveUserRolesBuilder>

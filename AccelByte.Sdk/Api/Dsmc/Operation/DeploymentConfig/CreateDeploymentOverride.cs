@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class CreateDeploymentOverride : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateDeploymentOverrideBuilder Builder = new CreateDeploymentOverrideBuilder();
+        public static CreateDeploymentOverrideBuilder Builder { get => new CreateDeploymentOverrideBuilder(); }
 
         public class CreateDeploymentOverrideBuilder
             : OperationBuilder<CreateDeploymentOverrideBuilder>

@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class AdminUploadContentS3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUploadContentS3Builder Builder = new AdminUploadContentS3Builder();
+        public static AdminUploadContentS3Builder Builder { get => new AdminUploadContentS3Builder(); }
 
         public class AdminUploadContentS3Builder
             : OperationBuilder<AdminUploadContentS3Builder>

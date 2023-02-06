@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class NotificationWithTemplate : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static NotificationWithTemplateBuilder Builder = new NotificationWithTemplateBuilder();
+        public static NotificationWithTemplateBuilder Builder { get => new NotificationWithTemplateBuilder(); }
 
         public class NotificationWithTemplateBuilder
             : OperationBuilder<NotificationWithTemplateBuilder>

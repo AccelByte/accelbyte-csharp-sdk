@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class SingleAdminDeleteContent : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SingleAdminDeleteContentBuilder Builder = new SingleAdminDeleteContentBuilder();
+        public static SingleAdminDeleteContentBuilder Builder { get => new SingleAdminDeleteContentBuilder(); }
 
         public class SingleAdminDeleteContentBuilder
             : OperationBuilder<SingleAdminDeleteContentBuilder>

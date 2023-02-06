@@ -95,7 +95,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class SaveConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SaveConfigBuilder Builder = new SaveConfigBuilder();
+        public static SaveConfigBuilder Builder { get => new SaveConfigBuilder(); }
 
         public class SaveConfigBuilder
             : OperationBuilder<SaveConfigBuilder>

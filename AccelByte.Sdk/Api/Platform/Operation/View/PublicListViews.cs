@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicListViews : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicListViewsBuilder Builder = new PublicListViewsBuilder();
+        public static PublicListViewsBuilder Builder { get => new PublicListViewsBuilder(); }
 
         public class PublicListViewsBuilder
             : OperationBuilder<PublicListViewsBuilder>

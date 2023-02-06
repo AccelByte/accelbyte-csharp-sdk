@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class DeleteImagePatch : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteImagePatchBuilder Builder = new DeleteImagePatchBuilder();
+        public static DeleteImagePatchBuilder Builder { get => new DeleteImagePatchBuilder(); }
 
         public class DeleteImagePatchBuilder
             : OperationBuilder<DeleteImagePatchBuilder>

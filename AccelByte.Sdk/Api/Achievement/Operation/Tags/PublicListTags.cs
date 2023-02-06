@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     public class PublicListTags : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicListTagsBuilder Builder = new PublicListTagsBuilder();
+        public static PublicListTagsBuilder Builder { get => new PublicListTagsBuilder(); }
 
         public class PublicListTagsBuilder
             : OperationBuilder<PublicListTagsBuilder>

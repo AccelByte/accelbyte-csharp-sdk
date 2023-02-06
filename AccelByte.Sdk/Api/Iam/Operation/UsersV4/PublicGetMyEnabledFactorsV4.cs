@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicGetMyEnabledFactorsV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetMyEnabledFactorsV4Builder Builder = new PublicGetMyEnabledFactorsV4Builder();
+        public static PublicGetMyEnabledFactorsV4Builder Builder { get => new PublicGetMyEnabledFactorsV4Builder(); }
 
         public class PublicGetMyEnabledFactorsV4Builder
             : OperationBuilder<PublicGetMyEnabledFactorsV4Builder>

@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicSendVerificationLinkV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicSendVerificationLinkV3Builder Builder = new PublicSendVerificationLinkV3Builder();
+        public static PublicSendVerificationLinkV3Builder Builder { get => new PublicSendVerificationLinkV3Builder(); }
 
         public class PublicSendVerificationLinkV3Builder
             : OperationBuilder<PublicSendVerificationLinkV3Builder>

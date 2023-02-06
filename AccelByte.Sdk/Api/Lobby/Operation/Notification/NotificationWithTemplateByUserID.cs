@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class NotificationWithTemplateByUserID : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static NotificationWithTemplateByUserIDBuilder Builder = new NotificationWithTemplateByUserIDBuilder();
+        public static NotificationWithTemplateByUserIDBuilder Builder { get => new NotificationWithTemplateByUserIDBuilder(); }
 
         public class NotificationWithTemplateByUserIDBuilder
             : OperationBuilder<NotificationWithTemplateByUserIDBuilder>

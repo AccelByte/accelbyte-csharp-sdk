@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class GetAllChannelsHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetAllChannelsHandlerBuilder Builder = new GetAllChannelsHandlerBuilder();
+        public static GetAllChannelsHandlerBuilder Builder { get => new GetAllChannelsHandlerBuilder(); }
 
         public class GetAllChannelsHandlerBuilder
             : OperationBuilder<GetAllChannelsHandlerBuilder>

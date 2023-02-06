@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     public class AdminGetListDeletionDataRequest : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetListDeletionDataRequestBuilder Builder = new AdminGetListDeletionDataRequestBuilder();
+        public static AdminGetListDeletionDataRequestBuilder Builder { get => new AdminGetListDeletionDataRequestBuilder(); }
 
         public class AdminGetListDeletionDataRequestBuilder
             : OperationBuilder<AdminGetListDeletionDataRequestBuilder>

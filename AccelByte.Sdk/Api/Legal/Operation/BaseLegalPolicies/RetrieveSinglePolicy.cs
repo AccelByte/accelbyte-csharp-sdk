@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class RetrieveSinglePolicy : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RetrieveSinglePolicyBuilder Builder = new RetrieveSinglePolicyBuilder();
+        public static RetrieveSinglePolicyBuilder Builder { get => new RetrieveSinglePolicyBuilder(); }
 
         public class RetrieveSinglePolicyBuilder
             : OperationBuilder<RetrieveSinglePolicyBuilder>

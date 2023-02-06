@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class QueueSessionHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueueSessionHandlerBuilder Builder = new QueueSessionHandlerBuilder();
+        public static QueueSessionHandlerBuilder Builder { get => new QueueSessionHandlerBuilder(); }
 
         public class QueueSessionHandlerBuilder
             : OperationBuilder<QueueSessionHandlerBuilder>

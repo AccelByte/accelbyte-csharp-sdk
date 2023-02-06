@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class AnonymizeWallet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AnonymizeWalletBuilder Builder = new AnonymizeWalletBuilder();
+        public static AnonymizeWalletBuilder Builder { get => new AnonymizeWalletBuilder(); }
 
         public class AnonymizeWalletBuilder
             : OperationBuilder<AnonymizeWalletBuilder>

@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class SingleAdminGetChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SingleAdminGetChannelBuilder Builder = new SingleAdminGetChannelBuilder();
+        public static SingleAdminGetChannelBuilder Builder { get => new SingleAdminGetChannelBuilder(); }
 
         public class SingleAdminGetChannelBuilder
             : OperationBuilder<SingleAdminGetChannelBuilder>

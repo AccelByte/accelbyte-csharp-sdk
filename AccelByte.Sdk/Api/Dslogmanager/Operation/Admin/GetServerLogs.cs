@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
     public class GetServerLogs : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetServerLogsBuilder Builder = new GetServerLogsBuilder();
+        public static GetServerLogsBuilder Builder { get => new GetServerLogsBuilder(); }
 
         public class GetServerLogsBuilder
             : OperationBuilder<GetServerLogsBuilder>

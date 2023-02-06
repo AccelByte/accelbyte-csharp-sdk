@@ -128,7 +128,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AddThirdPartyLoginPlatformCredentialV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AddThirdPartyLoginPlatformCredentialV3Builder Builder = new AddThirdPartyLoginPlatformCredentialV3Builder();
+        public static AddThirdPartyLoginPlatformCredentialV3Builder Builder { get => new AddThirdPartyLoginPlatformCredentialV3Builder(); }
 
         public class AddThirdPartyLoginPlatformCredentialV3Builder
             : OperationBuilder<AddThirdPartyLoginPlatformCredentialV3Builder>

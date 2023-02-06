@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicGetUserByUserIdV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetUserByUserIdV3Builder Builder = new PublicGetUserByUserIdV3Builder();
+        public static PublicGetUserByUserIdV3Builder Builder { get => new PublicGetUserByUserIdV3Builder(); }
 
         public class PublicGetUserByUserIdV3Builder
             : OperationBuilder<PublicGetUserByUserIdV3Builder>

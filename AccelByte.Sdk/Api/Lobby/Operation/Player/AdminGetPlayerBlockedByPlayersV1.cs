@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminGetPlayerBlockedByPlayersV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetPlayerBlockedByPlayersV1Builder Builder = new AdminGetPlayerBlockedByPlayersV1Builder();
+        public static AdminGetPlayerBlockedByPlayersV1Builder Builder { get => new AdminGetPlayerBlockedByPlayersV1Builder(); }
 
         public class AdminGetPlayerBlockedByPlayersV1Builder
             : OperationBuilder<AdminGetPlayerBlockedByPlayersV1Builder>

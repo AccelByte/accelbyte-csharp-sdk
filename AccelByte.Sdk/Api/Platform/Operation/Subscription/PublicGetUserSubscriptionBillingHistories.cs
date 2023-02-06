@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicGetUserSubscriptionBillingHistories : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetUserSubscriptionBillingHistoriesBuilder Builder = new PublicGetUserSubscriptionBillingHistoriesBuilder();
+        public static PublicGetUserSubscriptionBillingHistoriesBuilder Builder { get => new PublicGetUserSubscriptionBillingHistoriesBuilder(); }
 
         public class PublicGetUserSubscriptionBillingHistoriesBuilder
             : OperationBuilder<PublicGetUserSubscriptionBillingHistoriesBuilder>

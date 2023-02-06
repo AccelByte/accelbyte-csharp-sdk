@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class ShutdownServer : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ShutdownServerBuilder Builder = new ShutdownServerBuilder();
+        public static ShutdownServerBuilder Builder { get => new ShutdownServerBuilder(); }
 
         public class ShutdownServerBuilder
             : OperationBuilder<ShutdownServerBuilder>

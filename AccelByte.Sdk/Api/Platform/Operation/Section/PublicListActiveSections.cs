@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicListActiveSections : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicListActiveSectionsBuilder Builder = new PublicListActiveSectionsBuilder();
+        public static PublicListActiveSectionsBuilder Builder { get => new PublicListActiveSectionsBuilder(); }
 
         public class PublicListActiveSectionsBuilder
             : OperationBuilder<PublicListActiveSectionsBuilder>

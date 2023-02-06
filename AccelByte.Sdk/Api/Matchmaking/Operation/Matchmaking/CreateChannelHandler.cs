@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class CreateChannelHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateChannelHandlerBuilder Builder = new CreateChannelHandlerBuilder();
+        public static CreateChannelHandlerBuilder Builder { get => new CreateChannelHandlerBuilder(); }
 
         public class CreateChannelHandlerBuilder
             : OperationBuilder<CreateChannelHandlerBuilder>

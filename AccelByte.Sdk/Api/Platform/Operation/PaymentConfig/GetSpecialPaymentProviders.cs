@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetSpecialPaymentProviders : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetSpecialPaymentProvidersBuilder Builder = new GetSpecialPaymentProvidersBuilder();
+        public static GetSpecialPaymentProvidersBuilder Builder { get => new GetSpecialPaymentProvidersBuilder(); }
 
         public class GetSpecialPaymentProvidersBuilder
             : OperationBuilder<GetSpecialPaymentProvidersBuilder>

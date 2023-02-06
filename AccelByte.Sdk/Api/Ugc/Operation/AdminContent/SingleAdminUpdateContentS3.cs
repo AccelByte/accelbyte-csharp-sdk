@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class SingleAdminUpdateContentS3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SingleAdminUpdateContentS3Builder Builder = new SingleAdminUpdateContentS3Builder();
+        public static SingleAdminUpdateContentS3Builder Builder { get => new SingleAdminUpdateContentS3Builder(); }
 
         public class SingleAdminUpdateContentS3Builder
             : OperationBuilder<SingleAdminUpdateContentS3Builder>

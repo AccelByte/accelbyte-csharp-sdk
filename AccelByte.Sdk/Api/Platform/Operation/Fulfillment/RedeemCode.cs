@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class RedeemCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RedeemCodeBuilder Builder = new RedeemCodeBuilder();
+        public static RedeemCodeBuilder Builder { get => new RedeemCodeBuilder(); }
 
         public class RedeemCodeBuilder
             : OperationBuilder<RedeemCodeBuilder>

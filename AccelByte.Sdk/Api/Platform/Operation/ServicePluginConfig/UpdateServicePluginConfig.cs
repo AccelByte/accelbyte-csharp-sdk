@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateServicePluginConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateServicePluginConfigBuilder Builder = new UpdateServicePluginConfigBuilder();
+        public static UpdateServicePluginConfigBuilder Builder { get => new UpdateServicePluginConfigBuilder(); }
 
         public class UpdateServicePluginConfigBuilder
             : OperationBuilder<UpdateServicePluginConfigBuilder>

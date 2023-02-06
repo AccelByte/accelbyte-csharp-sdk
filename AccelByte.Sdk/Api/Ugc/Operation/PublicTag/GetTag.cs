@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class GetTag : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetTagBuilder Builder = new GetTagBuilder();
+        public static GetTagBuilder Builder { get => new GetTagBuilder(); }
 
         public class GetTagBuilder
             : OperationBuilder<GetTagBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class PublicGetCustomAttributesInfo : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetCustomAttributesInfoBuilder Builder = new PublicGetCustomAttributesInfoBuilder();
+        public static PublicGetCustomAttributesInfoBuilder Builder { get => new PublicGetCustomAttributesInfoBuilder(); }
 
         public class PublicGetCustomAttributesInfoBuilder
             : OperationBuilder<PublicGetCustomAttributesInfoBuilder>

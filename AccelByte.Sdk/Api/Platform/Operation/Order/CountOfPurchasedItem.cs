@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CountOfPurchasedItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CountOfPurchasedItemBuilder Builder = new CountOfPurchasedItemBuilder();
+        public static CountOfPurchasedItemBuilder Builder { get => new CountOfPurchasedItemBuilder(); }
 
         public class CountOfPurchasedItemBuilder
             : OperationBuilder<CountOfPurchasedItemBuilder>

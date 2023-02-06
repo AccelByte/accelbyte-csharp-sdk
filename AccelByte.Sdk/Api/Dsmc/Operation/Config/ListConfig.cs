@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class ListConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListConfigBuilder Builder = new ListConfigBuilder();
+        public static ListConfigBuilder Builder { get => new ListConfigBuilder(); }
 
         public class ListConfigBuilder
             : OperationBuilder<ListConfigBuilder>

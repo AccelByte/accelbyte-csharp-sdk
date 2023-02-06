@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class Rebalance : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RebalanceBuilder Builder = new RebalanceBuilder();
+        public static RebalanceBuilder Builder { get => new RebalanceBuilder(); }
 
         public class RebalanceBuilder
             : OperationBuilder<RebalanceBuilder>

@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetUserByLoginID : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserByLoginIDBuilder Builder = new GetUserByLoginIDBuilder();
+        public static GetUserByLoginIDBuilder Builder { get => new GetUserByLoginIDBuilder(); }
 
         public class GetUserByLoginIDBuilder
             : OperationBuilder<GetUserByLoginIDBuilder>

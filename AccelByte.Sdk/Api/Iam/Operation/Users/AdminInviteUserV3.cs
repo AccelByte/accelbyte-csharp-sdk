@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminInviteUserV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminInviteUserV3Builder Builder = new AdminInviteUserV3Builder();
+        public static AdminInviteUserV3Builder Builder { get => new AdminInviteUserV3Builder(); }
 
         public class AdminInviteUserV3Builder
             : OperationBuilder<AdminInviteUserV3Builder>

@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetRootCategories : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetRootCategoriesBuilder Builder = new GetRootCategoriesBuilder();
+        public static GetRootCategoriesBuilder Builder { get => new GetRootCategoriesBuilder(); }
 
         public class GetRootCategoriesBuilder
             : OperationBuilder<GetRootCategoriesBuilder>

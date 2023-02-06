@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class UserUnfriendRequest : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UserUnfriendRequestBuilder Builder = new UserUnfriendRequestBuilder();
+        public static UserUnfriendRequestBuilder Builder { get => new UserUnfriendRequestBuilder(); }
 
         public class UserUnfriendRequestBuilder
             : OperationBuilder<UserUnfriendRequestBuilder>

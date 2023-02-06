@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class FulfillItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static FulfillItemBuilder Builder = new FulfillItemBuilder();
+        public static FulfillItemBuilder Builder { get => new FulfillItemBuilder(); }
 
         public class FulfillItemBuilder
             : OperationBuilder<FulfillItemBuilder>

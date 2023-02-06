@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class PublicGetCreator : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetCreatorBuilder Builder = new PublicGetCreatorBuilder();
+        public static PublicGetCreatorBuilder Builder { get => new PublicGetCreatorBuilder(); }
 
         public class PublicGetCreatorBuilder
             : OperationBuilder<PublicGetCreatorBuilder>

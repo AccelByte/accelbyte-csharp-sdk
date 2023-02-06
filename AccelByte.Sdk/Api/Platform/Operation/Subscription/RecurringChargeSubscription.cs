@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class RecurringChargeSubscription : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RecurringChargeSubscriptionBuilder Builder = new RecurringChargeSubscriptionBuilder();
+        public static RecurringChargeSubscriptionBuilder Builder { get => new RecurringChargeSubscriptionBuilder(); }
 
         public class RecurringChargeSubscriptionBuilder
             : OperationBuilder<RecurringChargeSubscriptionBuilder>

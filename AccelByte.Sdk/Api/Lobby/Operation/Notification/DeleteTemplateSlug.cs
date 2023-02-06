@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class DeleteTemplateSlug : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteTemplateSlugBuilder Builder = new DeleteTemplateSlugBuilder();
+        public static DeleteTemplateSlugBuilder Builder { get => new DeleteTemplateSlugBuilder(); }
 
         public class DeleteTemplateSlugBuilder
             : OperationBuilder<DeleteTemplateSlugBuilder>

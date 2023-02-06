@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class AnonymizeIntegration : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AnonymizeIntegrationBuilder Builder = new AnonymizeIntegrationBuilder();
+        public static AnonymizeIntegrationBuilder Builder { get => new AnonymizeIntegrationBuilder(); }
 
         public class AnonymizeIntegrationBuilder
             : OperationBuilder<AnonymizeIntegrationBuilder>

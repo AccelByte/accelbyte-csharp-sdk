@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DefeatureItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DefeatureItemBuilder Builder = new DefeatureItemBuilder();
+        public static DefeatureItemBuilder Builder { get => new DefeatureItemBuilder(); }
 
         public class DefeatureItemBuilder
             : OperationBuilder<DefeatureItemBuilder>

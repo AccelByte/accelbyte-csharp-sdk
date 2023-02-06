@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ChargePaymentOrder : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ChargePaymentOrderBuilder Builder = new ChargePaymentOrderBuilder();
+        public static ChargePaymentOrderBuilder Builder { get => new ChargePaymentOrderBuilder(); }
 
         public class ChargePaymentOrderBuilder
             : OperationBuilder<ChargePaymentOrderBuilder>

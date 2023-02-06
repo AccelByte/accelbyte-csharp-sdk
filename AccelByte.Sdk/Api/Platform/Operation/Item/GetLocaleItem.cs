@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetLocaleItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetLocaleItemBuilder Builder = new GetLocaleItemBuilder();
+        public static GetLocaleItemBuilder Builder { get => new GetLocaleItemBuilder(); }
 
         public class GetLocaleItemBuilder
             : OperationBuilder<GetLocaleItemBuilder>

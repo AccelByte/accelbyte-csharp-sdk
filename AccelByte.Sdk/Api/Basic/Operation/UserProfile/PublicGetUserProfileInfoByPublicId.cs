@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class PublicGetUserProfileInfoByPublicId : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetUserProfileInfoByPublicIdBuilder Builder = new PublicGetUserProfileInfoByPublicIdBuilder();
+        public static PublicGetUserProfileInfoByPublicIdBuilder Builder { get => new PublicGetUserProfileInfoByPublicIdBuilder(); }
 
         public class PublicGetUserProfileInfoByPublicIdBuilder
             : OperationBuilder<PublicGetUserProfileInfoByPublicIdBuilder>

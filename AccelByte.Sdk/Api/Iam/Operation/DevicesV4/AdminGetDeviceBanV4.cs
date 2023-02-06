@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGetDeviceBanV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetDeviceBanV4Builder Builder = new AdminGetDeviceBanV4Builder();
+        public static AdminGetDeviceBanV4Builder Builder { get => new AdminGetDeviceBanV4Builder(); }
 
         public class AdminGetDeviceBanV4Builder
             : OperationBuilder<AdminGetDeviceBanV4Builder>

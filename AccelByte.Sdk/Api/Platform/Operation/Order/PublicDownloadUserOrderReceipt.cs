@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicDownloadUserOrderReceipt : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicDownloadUserOrderReceiptBuilder Builder = new PublicDownloadUserOrderReceiptBuilder();
+        public static PublicDownloadUserOrderReceiptBuilder Builder { get => new PublicDownloadUserOrderReceiptBuilder(); }
 
         public class PublicDownloadUserOrderReceiptBuilder
             : OperationBuilder<PublicDownloadUserOrderReceiptBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryKeyGroups : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryKeyGroupsBuilder Builder = new QueryKeyGroupsBuilder();
+        public static QueryKeyGroupsBuilder Builder { get => new QueryKeyGroupsBuilder(); }
 
         public class QueryKeyGroupsBuilder
             : OperationBuilder<QueryKeyGroupsBuilder>

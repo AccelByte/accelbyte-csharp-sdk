@@ -71,7 +71,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class CreateNewGroupPublicV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateNewGroupPublicV1Builder Builder = new CreateNewGroupPublicV1Builder();
+        public static CreateNewGroupPublicV1Builder Builder { get => new CreateNewGroupPublicV1Builder(); }
 
         public class CreateNewGroupPublicV1Builder
             : OperationBuilder<CreateNewGroupPublicV1Builder>

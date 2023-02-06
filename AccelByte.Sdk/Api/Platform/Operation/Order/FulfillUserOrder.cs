@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class FulfillUserOrder : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static FulfillUserOrderBuilder Builder = new FulfillUserOrderBuilder();
+        public static FulfillUserOrderBuilder Builder { get => new FulfillUserOrderBuilder(); }
 
         public class FulfillUserOrderBuilder
             : OperationBuilder<FulfillUserOrderBuilder>

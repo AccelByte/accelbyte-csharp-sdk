@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class PublicSearchContent : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicSearchContentBuilder Builder = new PublicSearchContentBuilder();
+        public static PublicSearchContentBuilder Builder { get => new PublicSearchContentBuilder(); }
 
         public class PublicSearchContentBuilder
             : OperationBuilder<PublicSearchContentBuilder>

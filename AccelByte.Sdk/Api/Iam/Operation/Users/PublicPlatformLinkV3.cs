@@ -89,7 +89,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicPlatformLinkV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicPlatformLinkV3Builder Builder = new PublicPlatformLinkV3Builder();
+        public static PublicPlatformLinkV3Builder Builder { get => new PublicPlatformLinkV3Builder(); }
 
         public class PublicPlatformLinkV3Builder
             : OperationBuilder<PublicPlatformLinkV3Builder>

@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetListCountryAgeRestriction : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetListCountryAgeRestrictionBuilder Builder = new GetListCountryAgeRestrictionBuilder();
+        public static GetListCountryAgeRestrictionBuilder Builder { get => new GetListCountryAgeRestrictionBuilder(); }
 
         public class GetListCountryAgeRestrictionBuilder
             : OperationBuilder<GetListCountryAgeRestrictionBuilder>

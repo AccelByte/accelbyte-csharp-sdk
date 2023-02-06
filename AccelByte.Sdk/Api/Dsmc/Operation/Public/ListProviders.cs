@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class ListProviders : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListProvidersBuilder Builder = new ListProvidersBuilder();
+        public static ListProvidersBuilder Builder { get => new ListProvidersBuilder(); }
 
         public class ListProvidersBuilder
             : OperationBuilder<ListProvidersBuilder>

@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class DeleteGroupConfigurationGlobalRuleAdminV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteGroupConfigurationGlobalRuleAdminV1Builder Builder = new DeleteGroupConfigurationGlobalRuleAdminV1Builder();
+        public static DeleteGroupConfigurationGlobalRuleAdminV1Builder Builder { get => new DeleteGroupConfigurationGlobalRuleAdminV1Builder(); }
 
         public class DeleteGroupConfigurationGlobalRuleAdminV1Builder
             : OperationBuilder<DeleteGroupConfigurationGlobalRuleAdminV1Builder>

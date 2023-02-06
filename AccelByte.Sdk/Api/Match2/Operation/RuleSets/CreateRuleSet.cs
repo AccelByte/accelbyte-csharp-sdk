@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     public class CreateRuleSet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateRuleSetBuilder Builder = new CreateRuleSetBuilder();
+        public static CreateRuleSetBuilder Builder { get => new CreateRuleSetBuilder(); }
 
         public class CreateRuleSetBuilder
             : OperationBuilder<CreateRuleSetBuilder>

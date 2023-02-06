@@ -78,7 +78,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PlatformAuthenticationV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PlatformAuthenticationV3Builder Builder = new PlatformAuthenticationV3Builder();
+        public static PlatformAuthenticationV3Builder Builder { get => new PlatformAuthenticationV3Builder(); }
 
         public class PlatformAuthenticationV3Builder
             : OperationBuilder<PlatformAuthenticationV3Builder>

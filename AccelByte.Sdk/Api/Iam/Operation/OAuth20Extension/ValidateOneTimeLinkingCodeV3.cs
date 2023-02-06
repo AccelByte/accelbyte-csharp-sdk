@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class ValidateOneTimeLinkingCodeV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ValidateOneTimeLinkingCodeV3Builder Builder = new ValidateOneTimeLinkingCodeV3Builder();
+        public static ValidateOneTimeLinkingCodeV3Builder Builder { get => new ValidateOneTimeLinkingCodeV3Builder(); }
 
         public class ValidateOneTimeLinkingCodeV3Builder
             : OperationBuilder<ValidateOneTimeLinkingCodeV3Builder>

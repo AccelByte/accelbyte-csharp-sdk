@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class ImportImages : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ImportImagesBuilder Builder = new ImportImagesBuilder();
+        public static ImportImagesBuilder Builder { get => new ImportImagesBuilder(); }
 
         public class ImportImagesBuilder
             : OperationBuilder<ImportImagesBuilder>

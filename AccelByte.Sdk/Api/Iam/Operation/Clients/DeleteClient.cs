@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class DeleteClient : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteClientBuilder Builder = new DeleteClientBuilder();
+        public static DeleteClientBuilder Builder { get => new DeleteClientBuilder(); }
 
         public class DeleteClientBuilder
             : OperationBuilder<DeleteClientBuilder>

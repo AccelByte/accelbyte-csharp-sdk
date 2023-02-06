@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetClientsbyNamespace : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetClientsbyNamespaceBuilder Builder = new GetClientsbyNamespaceBuilder();
+        public static GetClientsbyNamespaceBuilder Builder { get => new GetClientsbyNamespaceBuilder(); }
 
         public class GetClientsbyNamespaceBuilder
             : OperationBuilder<GetClientsbyNamespaceBuilder>

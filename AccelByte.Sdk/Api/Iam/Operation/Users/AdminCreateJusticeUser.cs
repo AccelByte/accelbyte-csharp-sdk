@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminCreateJusticeUser : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminCreateJusticeUserBuilder Builder = new AdminCreateJusticeUserBuilder();
+        public static AdminCreateJusticeUserBuilder Builder { get => new AdminCreateJusticeUserBuilder(); }
 
         public class AdminCreateJusticeUserBuilder
             : OperationBuilder<AdminCreateJusticeUserBuilder>

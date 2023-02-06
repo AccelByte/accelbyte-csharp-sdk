@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class CheckSeasonPurchasable : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CheckSeasonPurchasableBuilder Builder = new CheckSeasonPurchasableBuilder();
+        public static CheckSeasonPurchasableBuilder Builder { get => new CheckSeasonPurchasableBuilder(); }
 
         public class CheckSeasonPurchasableBuilder
             : OperationBuilder<CheckSeasonPurchasableBuilder>

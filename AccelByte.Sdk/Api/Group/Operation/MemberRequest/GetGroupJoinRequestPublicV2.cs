@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class GetGroupJoinRequestPublicV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetGroupJoinRequestPublicV2Builder Builder = new GetGroupJoinRequestPublicV2Builder();
+        public static GetGroupJoinRequestPublicV2Builder Builder { get => new GetGroupJoinRequestPublicV2Builder(); }
 
         public class GetGroupJoinRequestPublicV2Builder
             : OperationBuilder<GetGroupJoinRequestPublicV2Builder>

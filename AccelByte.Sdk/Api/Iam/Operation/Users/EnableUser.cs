@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class EnableUser : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static EnableUserBuilder Builder = new EnableUserBuilder();
+        public static EnableUserBuilder Builder { get => new EnableUserBuilder(); }
 
         public class EnableUserBuilder
             : OperationBuilder<EnableUserBuilder>

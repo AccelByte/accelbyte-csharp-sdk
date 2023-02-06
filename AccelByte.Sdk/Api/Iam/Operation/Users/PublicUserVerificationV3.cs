@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicUserVerificationV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicUserVerificationV3Builder Builder = new PublicUserVerificationV3Builder();
+        public static PublicUserVerificationV3Builder Builder { get => new PublicUserVerificationV3Builder(); }
 
         public class PublicUserVerificationV3Builder
             : OperationBuilder<PublicUserVerificationV3Builder>

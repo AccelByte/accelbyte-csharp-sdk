@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class UserAuthenticationV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UserAuthenticationV3Builder Builder = new UserAuthenticationV3Builder();
+        public static UserAuthenticationV3Builder Builder { get => new UserAuthenticationV3Builder(); }
 
         public class UserAuthenticationV3Builder
             : OperationBuilder<UserAuthenticationV3Builder>

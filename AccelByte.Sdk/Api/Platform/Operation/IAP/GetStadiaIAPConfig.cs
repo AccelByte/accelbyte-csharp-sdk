@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetStadiaIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetStadiaIAPConfigBuilder Builder = new GetStadiaIAPConfigBuilder();
+        public static GetStadiaIAPConfigBuilder Builder { get => new GetStadiaIAPConfigBuilder(); }
 
         public class GetStadiaIAPConfigBuilder
             : OperationBuilder<GetStadiaIAPConfigBuilder>

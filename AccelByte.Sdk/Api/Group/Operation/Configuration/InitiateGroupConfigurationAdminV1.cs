@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class InitiateGroupConfigurationAdminV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static InitiateGroupConfigurationAdminV1Builder Builder = new InitiateGroupConfigurationAdminV1Builder();
+        public static InitiateGroupConfigurationAdminV1Builder Builder { get => new InitiateGroupConfigurationAdminV1Builder(); }
 
         public class InitiateGroupConfigurationAdminV1Builder
             : OperationBuilder<InitiateGroupConfigurationAdminV1Builder>

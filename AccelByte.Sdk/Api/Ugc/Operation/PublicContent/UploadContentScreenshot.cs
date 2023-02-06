@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class UploadContentScreenshot : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UploadContentScreenshotBuilder Builder = new UploadContentScreenshotBuilder();
+        public static UploadContentScreenshotBuilder Builder { get => new UploadContentScreenshotBuilder(); }
 
         public class UploadContentScreenshotBuilder
             : OperationBuilder<UploadContentScreenshotBuilder>

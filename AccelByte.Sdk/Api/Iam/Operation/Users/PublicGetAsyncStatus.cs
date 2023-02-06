@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicGetAsyncStatus : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetAsyncStatusBuilder Builder = new PublicGetAsyncStatusBuilder();
+        public static PublicGetAsyncStatusBuilder Builder { get => new PublicGetAsyncStatusBuilder(); }
 
         public class PublicGetAsyncStatusBuilder
             : OperationBuilder<PublicGetAsyncStatusBuilder>

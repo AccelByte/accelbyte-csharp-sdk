@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicVerifyRegistrationCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicVerifyRegistrationCodeBuilder Builder = new PublicVerifyRegistrationCodeBuilder();
+        public static PublicVerifyRegistrationCodeBuilder Builder { get => new PublicVerifyRegistrationCodeBuilder(); }
 
         public class PublicVerifyRegistrationCodeBuilder
             : OperationBuilder<PublicVerifyRegistrationCodeBuilder>

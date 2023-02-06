@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class PublicGetUserGameProfiles : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetUserGameProfilesBuilder Builder = new PublicGetUserGameProfilesBuilder();
+        public static PublicGetUserGameProfilesBuilder Builder { get => new PublicGetUserGameProfilesBuilder(); }
 
         public class PublicGetUserGameProfilesBuilder
             : OperationBuilder<PublicGetUserGameProfilesBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetAppleIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetAppleIAPConfigBuilder Builder = new GetAppleIAPConfigBuilder();
+        public static GetAppleIAPConfigBuilder Builder { get => new GetAppleIAPConfigBuilder(); }
 
         public class GetAppleIAPConfigBuilder
             : OperationBuilder<GetAppleIAPConfigBuilder>

@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminResetInputValidations : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminResetInputValidationsBuilder Builder = new AdminResetInputValidationsBuilder();
+        public static AdminResetInputValidationsBuilder Builder { get => new AdminResetInputValidationsBuilder(); }
 
         public class AdminResetInputValidationsBuilder
             : OperationBuilder<AdminResetInputValidationsBuilder>

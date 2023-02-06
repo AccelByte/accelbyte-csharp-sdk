@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class GetAllNotificationTemplatesV1Admin : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetAllNotificationTemplatesV1AdminBuilder Builder = new GetAllNotificationTemplatesV1AdminBuilder();
+        public static GetAllNotificationTemplatesV1AdminBuilder Builder { get => new GetAllNotificationTemplatesV1AdminBuilder(); }
 
         public class GetAllNotificationTemplatesV1AdminBuilder
             : OperationBuilder<GetAllNotificationTemplatesV1AdminBuilder>

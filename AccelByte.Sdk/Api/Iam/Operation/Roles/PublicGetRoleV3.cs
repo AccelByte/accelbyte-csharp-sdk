@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicGetRoleV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetRoleV3Builder Builder = new PublicGetRoleV3Builder();
+        public static PublicGetRoleV3Builder Builder { get => new PublicGetRoleV3Builder(); }
 
         public class PublicGetRoleV3Builder
             : OperationBuilder<PublicGetRoleV3Builder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QuerySubscriptions : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QuerySubscriptionsBuilder Builder = new QuerySubscriptionsBuilder();
+        public static QuerySubscriptionsBuilder Builder { get => new QuerySubscriptionsBuilder(); }
 
         public class QuerySubscriptionsBuilder
             : OperationBuilder<QuerySubscriptionsBuilder>

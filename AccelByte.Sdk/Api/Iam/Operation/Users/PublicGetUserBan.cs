@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicGetUserBan : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetUserBanBuilder Builder = new PublicGetUserBanBuilder();
+        public static PublicGetUserBanBuilder Builder { get => new PublicGetUserBanBuilder(); }
 
         public class PublicGetUserBanBuilder
             : OperationBuilder<PublicGetUserBanBuilder>

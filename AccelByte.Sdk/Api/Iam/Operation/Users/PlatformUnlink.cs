@@ -88,7 +88,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PlatformUnlink : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PlatformUnlinkBuilder Builder = new PlatformUnlinkBuilder();
+        public static PlatformUnlinkBuilder Builder { get => new PlatformUnlinkBuilder(); }
 
         public class PlatformUnlinkBuilder
             : OperationBuilder<PlatformUnlinkBuilder>

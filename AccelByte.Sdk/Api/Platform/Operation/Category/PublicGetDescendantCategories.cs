@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicGetDescendantCategories : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetDescendantCategoriesBuilder Builder = new PublicGetDescendantCategoriesBuilder();
+        public static PublicGetDescendantCategoriesBuilder Builder { get => new PublicGetDescendantCategoriesBuilder(); }
 
         public class PublicGetDescendantCategoriesBuilder
             : OperationBuilder<PublicGetDescendantCategoriesBuilder>

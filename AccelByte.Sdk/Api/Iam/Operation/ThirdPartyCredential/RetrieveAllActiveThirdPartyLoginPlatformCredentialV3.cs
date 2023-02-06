@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class RetrieveAllActiveThirdPartyLoginPlatformCredentialV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder Builder = new RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder();
+        public static RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder Builder { get => new RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder(); }
 
         public class RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder
             : OperationBuilder<RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder>

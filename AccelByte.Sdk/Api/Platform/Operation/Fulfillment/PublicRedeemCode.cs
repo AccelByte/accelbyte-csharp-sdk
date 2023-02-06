@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicRedeemCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicRedeemCodeBuilder Builder = new PublicRedeemCodeBuilder();
+        public static PublicRedeemCodeBuilder Builder { get => new PublicRedeemCodeBuilder(); }
 
         public class PublicRedeemCodeBuilder
             : OperationBuilder<PublicRedeemCodeBuilder>

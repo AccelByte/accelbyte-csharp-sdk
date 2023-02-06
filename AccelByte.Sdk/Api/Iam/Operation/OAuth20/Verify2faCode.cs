@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class Verify2faCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static Verify2faCodeBuilder Builder = new Verify2faCodeBuilder();
+        public static Verify2faCodeBuilder Builder { get => new Verify2faCodeBuilder(); }
 
         public class Verify2faCodeBuilder
             : OperationBuilder<Verify2faCodeBuilder>

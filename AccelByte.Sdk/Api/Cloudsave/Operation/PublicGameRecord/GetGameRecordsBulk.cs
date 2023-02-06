@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     public class GetGameRecordsBulk : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetGameRecordsBulkBuilder Builder = new GetGameRecordsBulkBuilder();
+        public static GetGameRecordsBulkBuilder Builder { get => new GetGameRecordsBulkBuilder(); }
 
         public class GetGameRecordsBulkBuilder
             : OperationBuilder<GetGameRecordsBulkBuilder>

@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminListUserIDByUserIDsV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminListUserIDByUserIDsV3Builder Builder = new AdminListUserIDByUserIDsV3Builder();
+        public static AdminListUserIDByUserIDsV3Builder Builder { get => new AdminListUserIDByUserIDsV3Builder(); }
 
         public class AdminListUserIDByUserIDsV3Builder
             : OperationBuilder<AdminListUserIDByUserIDsV3Builder>

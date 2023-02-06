@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class DeleteUserInformation : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteUserInformationBuilder Builder = new DeleteUserInformationBuilder();
+        public static DeleteUserInformationBuilder Builder { get => new DeleteUserInformationBuilder(); }
 
         public class DeleteUserInformationBuilder
             : OperationBuilder<DeleteUserInformationBuilder>

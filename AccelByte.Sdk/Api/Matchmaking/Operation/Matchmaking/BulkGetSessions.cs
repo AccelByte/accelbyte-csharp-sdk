@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class BulkGetSessions : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static BulkGetSessionsBuilder Builder = new BulkGetSessionsBuilder();
+        public static BulkGetSessionsBuilder Builder { get => new BulkGetSessionsBuilder(); }
 
         public class BulkGetSessionsBuilder
             : OperationBuilder<BulkGetSessionsBuilder>

@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class RetrieveLatestPoliciesByNamespaceAndCountryPublic : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder Builder = new RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder();
+        public static RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder Builder { get => new RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder(); }
 
         public class RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder
             : OperationBuilder<RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder>

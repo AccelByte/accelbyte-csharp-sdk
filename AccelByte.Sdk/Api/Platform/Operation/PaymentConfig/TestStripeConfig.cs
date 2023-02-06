@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class TestStripeConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static TestStripeConfigBuilder Builder = new TestStripeConfigBuilder();
+        public static TestStripeConfigBuilder Builder { get => new TestStripeConfigBuilder(); }
 
         public class TestStripeConfigBuilder
             : OperationBuilder<TestStripeConfigBuilder>

@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicUpdatePasswordV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicUpdatePasswordV2Builder Builder = new PublicUpdatePasswordV2Builder();
+        public static PublicUpdatePasswordV2Builder Builder { get => new PublicUpdatePasswordV2Builder(); }
 
         public class PublicUpdatePasswordV2Builder
             : OperationBuilder<PublicUpdatePasswordV2Builder>

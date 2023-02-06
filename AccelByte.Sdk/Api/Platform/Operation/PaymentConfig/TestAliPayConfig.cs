@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class TestAliPayConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static TestAliPayConfigBuilder Builder = new TestAliPayConfigBuilder();
+        public static TestAliPayConfigBuilder Builder { get => new TestAliPayConfigBuilder(); }
 
         public class TestAliPayConfigBuilder
             : OperationBuilder<TestAliPayConfigBuilder>

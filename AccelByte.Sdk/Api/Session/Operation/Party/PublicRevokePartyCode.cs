@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class PublicRevokePartyCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicRevokePartyCodeBuilder Builder = new PublicRevokePartyCodeBuilder();
+        public static PublicRevokePartyCodeBuilder Builder { get => new PublicRevokePartyCodeBuilder(); }
 
         public class PublicRevokePartyCodeBuilder
             : OperationBuilder<PublicRevokePartyCodeBuilder>

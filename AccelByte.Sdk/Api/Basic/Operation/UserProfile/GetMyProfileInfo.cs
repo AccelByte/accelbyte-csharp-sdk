@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class GetMyProfileInfo : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetMyProfileInfoBuilder Builder = new GetMyProfileInfoBuilder();
+        public static GetMyProfileInfoBuilder Builder { get => new GetMyProfileInfoBuilder(); }
 
         public class GetMyProfileInfoBuilder
             : OperationBuilder<GetMyProfileInfoBuilder>

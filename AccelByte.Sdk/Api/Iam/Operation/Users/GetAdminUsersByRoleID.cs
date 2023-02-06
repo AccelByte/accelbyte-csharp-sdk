@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetAdminUsersByRoleID : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetAdminUsersByRoleIDBuilder Builder = new GetAdminUsersByRoleIDBuilder();
+        public static GetAdminUsersByRoleIDBuilder Builder { get => new GetAdminUsersByRoleIDBuilder(); }
 
         public class GetAdminUsersByRoleIDBuilder
             : OperationBuilder<GetAdminUsersByRoleIDBuilder>

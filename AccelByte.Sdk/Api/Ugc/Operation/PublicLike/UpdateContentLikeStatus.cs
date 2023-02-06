@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class UpdateContentLikeStatus : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateContentLikeStatusBuilder Builder = new UpdateContentLikeStatusBuilder();
+        public static UpdateContentLikeStatusBuilder Builder { get => new UpdateContentLikeStatusBuilder(); }
 
         public class UpdateContentLikeStatusBuilder
             : OperationBuilder<UpdateContentLikeStatusBuilder>

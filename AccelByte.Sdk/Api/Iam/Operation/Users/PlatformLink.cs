@@ -84,7 +84,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PlatformLink : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PlatformLinkBuilder Builder = new PlatformLinkBuilder();
+        public static PlatformLinkBuilder Builder { get => new PlatformLinkBuilder(); }
 
         public class PlatformLinkBuilder
             : OperationBuilder<PlatformLinkBuilder>

@@ -42,7 +42,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGetAgeRestrictionStatusV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetAgeRestrictionStatusV2Builder Builder = new AdminGetAgeRestrictionStatusV2Builder();
+        public static AdminGetAgeRestrictionStatusV2Builder Builder { get => new AdminGetAgeRestrictionStatusV2Builder(); }
 
         public class AdminGetAgeRestrictionStatusV2Builder
             : OperationBuilder<AdminGetAgeRestrictionStatusV2Builder>

@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class DeleteGroup : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteGroupBuilder Builder = new DeleteGroupBuilder();
+        public static DeleteGroupBuilder Builder { get => new DeleteGroupBuilder(); }
 
         public class DeleteGroupBuilder
             : OperationBuilder<DeleteGroupBuilder>

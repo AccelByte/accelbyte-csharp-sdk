@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     public class BulkGetPlayerRecordSizeHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static BulkGetPlayerRecordSizeHandlerV1Builder Builder = new BulkGetPlayerRecordSizeHandlerV1Builder();
+        public static BulkGetPlayerRecordSizeHandlerV1Builder Builder { get => new BulkGetPlayerRecordSizeHandlerV1Builder(); }
 
         public class BulkGetPlayerRecordSizeHandlerV1Builder
             : OperationBuilder<BulkGetPlayerRecordSizeHandlerV1Builder>

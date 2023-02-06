@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetLocaleItemBySku : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetLocaleItemBySkuBuilder Builder = new GetLocaleItemBySkuBuilder();
+        public static GetLocaleItemBySkuBuilder Builder { get => new GetLocaleItemBySkuBuilder(); }
 
         public class GetLocaleItemBySkuBuilder
             : OperationBuilder<GetLocaleItemBySkuBuilder>

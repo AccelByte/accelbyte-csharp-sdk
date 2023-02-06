@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetPublishedStore : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPublishedStoreBuilder Builder = new GetPublishedStoreBuilder();
+        public static GetPublishedStoreBuilder Builder { get => new GetPublishedStoreBuilder(); }
 
         public class GetPublishedStoreBuilder
             : OperationBuilder<GetPublishedStoreBuilder>

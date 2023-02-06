@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class DeleteGroupPublicV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteGroupPublicV1Builder Builder = new DeleteGroupPublicV1Builder();
+        public static DeleteGroupPublicV1Builder Builder { get => new DeleteGroupPublicV1Builder(); }
 
         public class DeleteGroupPublicV1Builder
             : OperationBuilder<DeleteGroupPublicV1Builder>

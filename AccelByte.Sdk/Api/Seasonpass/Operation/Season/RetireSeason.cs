@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class RetireSeason : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RetireSeasonBuilder Builder = new RetireSeasonBuilder();
+        public static RetireSeasonBuilder Builder { get => new RetireSeasonBuilder(); }
 
         public class RetireSeasonBuilder
             : OperationBuilder<RetireSeasonBuilder>

@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicRemoveTrustedDeviceV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicRemoveTrustedDeviceV4Builder Builder = new PublicRemoveTrustedDeviceV4Builder();
+        public static PublicRemoveTrustedDeviceV4Builder Builder { get => new PublicRemoveTrustedDeviceV4Builder(); }
 
         public class PublicRemoveTrustedDeviceV4Builder
             : OperationBuilder<PublicRemoveTrustedDeviceV4Builder>

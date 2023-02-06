@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class UpdateClient : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateClientBuilder Builder = new UpdateClientBuilder();
+        public static UpdateClientBuilder Builder { get => new UpdateClientBuilder(); }
 
         public class UpdateClientBuilder
             : OperationBuilder<UpdateClientBuilder>

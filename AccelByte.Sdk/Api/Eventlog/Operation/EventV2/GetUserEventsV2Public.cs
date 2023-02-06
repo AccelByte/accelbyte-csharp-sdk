@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     public class GetUserEventsV2Public : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserEventsV2PublicBuilder Builder = new GetUserEventsV2PublicBuilder();
+        public static GetUserEventsV2PublicBuilder Builder { get => new GetUserEventsV2PublicBuilder(); }
 
         public class GetUserEventsV2PublicBuilder
             : OperationBuilder<GetUserEventsV2PublicBuilder>

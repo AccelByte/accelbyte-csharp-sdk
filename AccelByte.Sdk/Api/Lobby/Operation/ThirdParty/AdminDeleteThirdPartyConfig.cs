@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminDeleteThirdPartyConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDeleteThirdPartyConfigBuilder Builder = new AdminDeleteThirdPartyConfigBuilder();
+        public static AdminDeleteThirdPartyConfigBuilder Builder { get => new AdminDeleteThirdPartyConfigBuilder(); }
 
         public class AdminDeleteThirdPartyConfigBuilder
             : OperationBuilder<AdminDeleteThirdPartyConfigBuilder>

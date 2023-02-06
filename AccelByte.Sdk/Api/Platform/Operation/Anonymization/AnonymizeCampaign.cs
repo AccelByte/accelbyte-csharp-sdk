@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class AnonymizeCampaign : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AnonymizeCampaignBuilder Builder = new AnonymizeCampaignBuilder();
+        public static AnonymizeCampaignBuilder Builder { get => new AnonymizeCampaignBuilder(); }
 
         public class AnonymizeCampaignBuilder
             : OperationBuilder<AnonymizeCampaignBuilder>

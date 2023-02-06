@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class DeleteGroupPredefinedRulePublicV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteGroupPredefinedRulePublicV1Builder Builder = new DeleteGroupPredefinedRulePublicV1Builder();
+        public static DeleteGroupPredefinedRulePublicV1Builder Builder { get => new DeleteGroupPredefinedRulePublicV1Builder(); }
 
         public class DeleteGroupPredefinedRulePublicV1Builder
             : OperationBuilder<DeleteGroupPredefinedRulePublicV1Builder>

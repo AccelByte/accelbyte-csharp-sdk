@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicCreateUserV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicCreateUserV3Builder Builder = new PublicCreateUserV3Builder();
+        public static PublicCreateUserV3Builder Builder { get => new PublicCreateUserV3Builder(); }
 
         public class PublicCreateUserV3Builder
             : OperationBuilder<PublicCreateUserV3Builder>

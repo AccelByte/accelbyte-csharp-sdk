@@ -99,7 +99,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicGetEntitlementOwnershipToken : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetEntitlementOwnershipTokenBuilder Builder = new PublicGetEntitlementOwnershipTokenBuilder();
+        public static PublicGetEntitlementOwnershipTokenBuilder Builder { get => new PublicGetEntitlementOwnershipTokenBuilder(); }
 
         public class PublicGetEntitlementOwnershipTokenBuilder
             : OperationBuilder<PublicGetEntitlementOwnershipTokenBuilder>

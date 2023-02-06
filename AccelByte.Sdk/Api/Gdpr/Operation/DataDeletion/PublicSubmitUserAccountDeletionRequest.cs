@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     public class PublicSubmitUserAccountDeletionRequest : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicSubmitUserAccountDeletionRequestBuilder Builder = new PublicSubmitUserAccountDeletionRequestBuilder();
+        public static PublicSubmitUserAccountDeletionRequestBuilder Builder { get => new PublicSubmitUserAccountDeletionRequestBuilder(); }
 
         public class PublicSubmitUserAccountDeletionRequestBuilder
             : OperationBuilder<PublicSubmitUserAccountDeletionRequestBuilder>

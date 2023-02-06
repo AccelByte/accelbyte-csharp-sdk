@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdatePlatformDLCConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdatePlatformDLCConfigBuilder Builder = new UpdatePlatformDLCConfigBuilder();
+        public static UpdatePlatformDLCConfigBuilder Builder { get => new UpdatePlatformDLCConfigBuilder(); }
 
         public class UpdatePlatformDLCConfigBuilder
             : OperationBuilder<UpdatePlatformDLCConfigBuilder>

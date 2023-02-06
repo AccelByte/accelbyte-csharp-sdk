@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     public class SetUserLeaderboardVisibilityStatusV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SetUserLeaderboardVisibilityStatusV2Builder Builder = new SetUserLeaderboardVisibilityStatusV2Builder();
+        public static SetUserLeaderboardVisibilityStatusV2Builder Builder { get => new SetUserLeaderboardVisibilityStatusV2Builder(); }
 
         public class SetUserLeaderboardVisibilityStatusV2Builder
             : OperationBuilder<SetUserLeaderboardVisibilityStatusV2Builder>

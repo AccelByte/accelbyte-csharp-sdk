@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     public class VersionCheckHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static VersionCheckHandlerBuilder Builder = new VersionCheckHandlerBuilder();
+        public static VersionCheckHandlerBuilder Builder { get => new VersionCheckHandlerBuilder(); }
 
         public class VersionCheckHandlerBuilder
             : OperationBuilder<VersionCheckHandlerBuilder>

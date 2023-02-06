@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class UserAcceptFriendRequest : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UserAcceptFriendRequestBuilder Builder = new UserAcceptFriendRequestBuilder();
+        public static UserAcceptFriendRequestBuilder Builder { get => new UserAcceptFriendRequestBuilder(); }
 
         public class UserAcceptFriendRequestBuilder
             : OperationBuilder<UserAcceptFriendRequestBuilder>

@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class UpdateChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateChannelBuilder Builder = new UpdateChannelBuilder();
+        public static UpdateChannelBuilder Builder { get => new UpdateChannelBuilder(); }
 
         public class UpdateChannelBuilder
             : OperationBuilder<UpdateChannelBuilder>

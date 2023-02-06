@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class RefundUserPaymentOrder : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RefundUserPaymentOrderBuilder Builder = new RefundUserPaymentOrderBuilder();
+        public static RefundUserPaymentOrderBuilder Builder { get => new RefundUserPaymentOrderBuilder(); }
 
         public class RefundUserPaymentOrderBuilder
             : OperationBuilder<RefundUserPaymentOrderBuilder>

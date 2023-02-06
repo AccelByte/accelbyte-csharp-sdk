@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class FeatureItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static FeatureItemBuilder Builder = new FeatureItemBuilder();
+        public static FeatureItemBuilder Builder { get => new FeatureItemBuilder(); }
 
         public class FeatureItemBuilder
             : OperationBuilder<FeatureItemBuilder>

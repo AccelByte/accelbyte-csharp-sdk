@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class SyncUserInfo : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SyncUserInfoBuilder Builder = new SyncUserInfoBuilder();
+        public static SyncUserInfoBuilder Builder { get => new SyncUserInfoBuilder(); }
 
         public class SyncUserInfoBuilder
             : OperationBuilder<SyncUserInfoBuilder>

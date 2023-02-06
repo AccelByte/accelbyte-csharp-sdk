@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetItemDynamicData : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetItemDynamicDataBuilder Builder = new GetItemDynamicDataBuilder();
+        public static GetItemDynamicDataBuilder Builder { get => new GetItemDynamicDataBuilder(); }
 
         public class GetItemDynamicDataBuilder
             : OperationBuilder<GetItemDynamicDataBuilder>

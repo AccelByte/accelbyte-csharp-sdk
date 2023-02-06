@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class HandlerV3Healthz : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static HandlerV3HealthzBuilder Builder = new HandlerV3HealthzBuilder();
+        public static HandlerV3HealthzBuilder Builder { get => new HandlerV3HealthzBuilder(); }
 
         public class HandlerV3HealthzBuilder
             : OperationBuilder<HandlerV3HealthzBuilder>

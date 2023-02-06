@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class UpdateCountryGroup : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateCountryGroupBuilder Builder = new UpdateCountryGroupBuilder();
+        public static UpdateCountryGroupBuilder Builder { get => new UpdateCountryGroupBuilder(); }
 
         public class UpdateCountryGroupBuilder
             : OperationBuilder<UpdateCountryGroupBuilder>

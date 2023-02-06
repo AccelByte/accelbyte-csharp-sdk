@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DisableCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DisableCodeBuilder Builder = new DisableCodeBuilder();
+        public static DisableCodeBuilder Builder { get => new DisableCodeBuilder(); }
 
         public class DisableCodeBuilder
             : OperationBuilder<DisableCodeBuilder>

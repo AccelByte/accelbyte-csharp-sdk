@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class CreateGroup : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateGroupBuilder Builder = new CreateGroupBuilder();
+        public static CreateGroupBuilder Builder { get => new CreateGroupBuilder(); }
 
         public class CreateGroupBuilder
             : OperationBuilder<CreateGroupBuilder>

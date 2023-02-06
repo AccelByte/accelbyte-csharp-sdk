@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetUserPlatformAccounts : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserPlatformAccountsBuilder Builder = new GetUserPlatformAccountsBuilder();
+        public static GetUserPlatformAccountsBuilder Builder { get => new GetUserPlatformAccountsBuilder(); }
 
         public class GetUserPlatformAccountsBuilder
             : OperationBuilder<GetUserPlatformAccountsBuilder>

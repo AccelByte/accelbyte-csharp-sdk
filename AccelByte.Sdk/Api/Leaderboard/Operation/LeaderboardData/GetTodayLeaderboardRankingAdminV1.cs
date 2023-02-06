@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     public class GetTodayLeaderboardRankingAdminV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetTodayLeaderboardRankingAdminV1Builder Builder = new GetTodayLeaderboardRankingAdminV1Builder();
+        public static GetTodayLeaderboardRankingAdminV1Builder Builder { get => new GetTodayLeaderboardRankingAdminV1Builder(); }
 
         public class GetTodayLeaderboardRankingAdminV1Builder
             : OperationBuilder<GetTodayLeaderboardRankingAdminV1Builder>

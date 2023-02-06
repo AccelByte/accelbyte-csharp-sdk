@@ -101,7 +101,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class RequestOneTimeLinkingCodeV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RequestOneTimeLinkingCodeV3Builder Builder = new RequestOneTimeLinkingCodeV3Builder();
+        public static RequestOneTimeLinkingCodeV3Builder Builder { get => new RequestOneTimeLinkingCodeV3Builder(); }
 
         public class RequestOneTimeLinkingCodeV3Builder
             : OperationBuilder<RequestOneTimeLinkingCodeV3Builder>

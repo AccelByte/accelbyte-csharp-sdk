@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class CancelInvitationGroupMemberV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CancelInvitationGroupMemberV2Builder Builder = new CancelInvitationGroupMemberV2Builder();
+        public static CancelInvitationGroupMemberV2Builder Builder { get => new CancelInvitationGroupMemberV2Builder(); }
 
         public class CancelInvitationGroupMemberV2Builder
             : OperationBuilder<CancelInvitationGroupMemberV2Builder>

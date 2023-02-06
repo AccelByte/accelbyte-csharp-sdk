@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class UpdateClientPermission : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateClientPermissionBuilder Builder = new UpdateClientPermissionBuilder();
+        public static UpdateClientPermissionBuilder Builder { get => new UpdateClientPermissionBuilder(); }
 
         public class UpdateClientPermissionBuilder
             : OperationBuilder<UpdateClientPermissionBuilder>

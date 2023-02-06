@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicWebLinkPlatform : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicWebLinkPlatformBuilder Builder = new PublicWebLinkPlatformBuilder();
+        public static PublicWebLinkPlatformBuilder Builder { get => new PublicWebLinkPlatformBuilder(); }
 
         public class PublicWebLinkPlatformBuilder
             : OperationBuilder<PublicWebLinkPlatformBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class PublicUpdateUserNamespaceSlotMetadata : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicUpdateUserNamespaceSlotMetadataBuilder Builder = new PublicUpdateUserNamespaceSlotMetadataBuilder();
+        public static PublicUpdateUserNamespaceSlotMetadataBuilder Builder { get => new PublicUpdateUserNamespaceSlotMetadataBuilder(); }
 
         public class PublicUpdateUserNamespaceSlotMetadataBuilder
             : OperationBuilder<PublicUpdateUserNamespaceSlotMetadataBuilder>

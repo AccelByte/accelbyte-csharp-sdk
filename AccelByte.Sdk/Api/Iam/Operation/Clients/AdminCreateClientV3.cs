@@ -114,7 +114,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminCreateClientV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminCreateClientV3Builder Builder = new AdminCreateClientV3Builder();
+        public static AdminCreateClientV3Builder Builder { get => new AdminCreateClientV3Builder(); }
 
         public class AdminCreateClientV3Builder
             : OperationBuilder<AdminCreateClientV3Builder>

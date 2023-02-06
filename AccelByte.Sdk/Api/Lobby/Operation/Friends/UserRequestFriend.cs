@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class UserRequestFriend : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UserRequestFriendBuilder Builder = new UserRequestFriendBuilder();
+        public static UserRequestFriendBuilder Builder { get => new UserRequestFriendBuilder(); }
 
         public class UserRequestFriendBuilder
             : OperationBuilder<UserRequestFriendBuilder>

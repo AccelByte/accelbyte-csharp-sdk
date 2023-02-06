@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicPartialUpdateUserV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicPartialUpdateUserV3Builder Builder = new PublicPartialUpdateUserV3Builder();
+        public static PublicPartialUpdateUserV3Builder Builder { get => new PublicPartialUpdateUserV3Builder(); }
 
         public class PublicPartialUpdateUserV3Builder
             : OperationBuilder<PublicPartialUpdateUserV3Builder>

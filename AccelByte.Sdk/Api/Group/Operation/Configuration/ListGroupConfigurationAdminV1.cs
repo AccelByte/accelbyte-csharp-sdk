@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class ListGroupConfigurationAdminV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListGroupConfigurationAdminV1Builder Builder = new ListGroupConfigurationAdminV1Builder();
+        public static ListGroupConfigurationAdminV1Builder Builder { get => new ListGroupConfigurationAdminV1Builder(); }
 
         public class ListGroupConfigurationAdminV1Builder
             : OperationBuilder<ListGroupConfigurationAdminV1Builder>

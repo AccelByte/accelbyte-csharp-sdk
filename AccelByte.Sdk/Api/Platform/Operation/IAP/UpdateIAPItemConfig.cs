@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateIAPItemConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateIAPItemConfigBuilder Builder = new UpdateIAPItemConfigBuilder();
+        public static UpdateIAPItemConfigBuilder Builder { get => new UpdateIAPItemConfigBuilder(); }
 
         public class UpdateIAPItemConfigBuilder
             : OperationBuilder<UpdateIAPItemConfigBuilder>

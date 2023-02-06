@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminBanUserV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminBanUserV3Builder Builder = new AdminBanUserV3Builder();
+        public static AdminBanUserV3Builder Builder { get => new AdminBanUserV3Builder(); }
 
         public class AdminBanUserV3Builder
             : OperationBuilder<AdminBanUserV3Builder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     public class DeleteMatchFunction : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteMatchFunctionBuilder Builder = new DeleteMatchFunctionBuilder();
+        public static DeleteMatchFunctionBuilder Builder { get => new DeleteMatchFunctionBuilder(); }
 
         public class DeleteMatchFunctionBuilder
             : OperationBuilder<DeleteMatchFunctionBuilder>

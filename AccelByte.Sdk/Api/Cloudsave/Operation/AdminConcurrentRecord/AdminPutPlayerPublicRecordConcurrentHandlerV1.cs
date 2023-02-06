@@ -143,7 +143,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     public class AdminPutPlayerPublicRecordConcurrentHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminPutPlayerPublicRecordConcurrentHandlerV1Builder Builder = new AdminPutPlayerPublicRecordConcurrentHandlerV1Builder();
+        public static AdminPutPlayerPublicRecordConcurrentHandlerV1Builder Builder { get => new AdminPutPlayerPublicRecordConcurrentHandlerV1Builder(); }
 
         public class AdminPutPlayerPublicRecordConcurrentHandlerV1Builder
             : OperationBuilder<AdminPutPlayerPublicRecordConcurrentHandlerV1Builder>

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdatePaymentTaxConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdatePaymentTaxConfigBuilder Builder = new UpdatePaymentTaxConfigBuilder();
+        public static UpdatePaymentTaxConfigBuilder Builder { get => new UpdatePaymentTaxConfigBuilder(); }
 
         public class UpdatePaymentTaxConfigBuilder
             : OperationBuilder<UpdatePaymentTaxConfigBuilder>

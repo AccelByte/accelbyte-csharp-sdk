@@ -60,7 +60,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class JoinGroupV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static JoinGroupV2Builder Builder = new JoinGroupV2Builder();
+        public static JoinGroupV2Builder Builder { get => new JoinGroupV2Builder(); }
 
         public class JoinGroupV2Builder
             : OperationBuilder<JoinGroupV2Builder>

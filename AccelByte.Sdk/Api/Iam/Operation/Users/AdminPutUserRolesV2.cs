@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminPutUserRolesV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminPutUserRolesV2Builder Builder = new AdminPutUserRolesV2Builder();
+        public static AdminPutUserRolesV2Builder Builder { get => new AdminPutUserRolesV2Builder(); }
 
         public class AdminPutUserRolesV2Builder
             : OperationBuilder<AdminPutUserRolesV2Builder>

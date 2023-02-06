@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AuthCodeRequestV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AuthCodeRequestV3Builder Builder = new AuthCodeRequestV3Builder();
+        public static AuthCodeRequestV3Builder Builder { get => new AuthCodeRequestV3Builder(); }
 
         public class AuthCodeRequestV3Builder
             : OperationBuilder<AuthCodeRequestV3Builder>

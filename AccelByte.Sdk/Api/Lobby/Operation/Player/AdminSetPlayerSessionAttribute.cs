@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminSetPlayerSessionAttribute : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminSetPlayerSessionAttributeBuilder Builder = new AdminSetPlayerSessionAttributeBuilder();
+        public static AdminSetPlayerSessionAttributeBuilder Builder { get => new AdminSetPlayerSessionAttributeBuilder(); }
 
         public class AdminSetPlayerSessionAttributeBuilder
             : OperationBuilder<AdminSetPlayerSessionAttributeBuilder>

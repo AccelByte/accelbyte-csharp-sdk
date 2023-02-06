@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class ClearCache : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ClearCacheBuilder Builder = new ClearCacheBuilder();
+        public static ClearCacheBuilder Builder { get => new ClearCacheBuilder(); }
 
         public class ClearCacheBuilder
             : OperationBuilder<ClearCacheBuilder>

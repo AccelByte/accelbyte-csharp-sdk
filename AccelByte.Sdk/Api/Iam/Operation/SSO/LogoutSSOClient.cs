@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class LogoutSSOClient : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static LogoutSSOClientBuilder Builder = new LogoutSSOClientBuilder();
+        public static LogoutSSOClientBuilder Builder { get => new LogoutSSOClientBuilder(); }
 
         public class LogoutSSOClientBuilder
             : OperationBuilder<LogoutSSOClientBuilder>

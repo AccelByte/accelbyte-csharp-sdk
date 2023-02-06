@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class GetSlotData : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetSlotDataBuilder Builder = new GetSlotDataBuilder();
+        public static GetSlotDataBuilder Builder { get => new GetSlotDataBuilder(); }
 
         public class GetSlotDataBuilder
             : OperationBuilder<GetSlotDataBuilder>

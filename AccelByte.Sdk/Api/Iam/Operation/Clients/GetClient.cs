@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetClient : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetClientBuilder Builder = new GetClientBuilder();
+        public static GetClientBuilder Builder { get => new GetClientBuilder(); }
 
         public class GetClientBuilder
             : OperationBuilder<GetClientBuilder>

@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AddRoleManagers : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AddRoleManagersBuilder Builder = new AddRoleManagersBuilder();
+        public static AddRoleManagersBuilder Builder { get => new AddRoleManagersBuilder(); }
 
         public class AddRoleManagersBuilder
             : OperationBuilder<AddRoleManagersBuilder>

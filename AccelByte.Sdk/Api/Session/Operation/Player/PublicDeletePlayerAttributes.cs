@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class PublicDeletePlayerAttributes : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicDeletePlayerAttributesBuilder Builder = new PublicDeletePlayerAttributesBuilder();
+        public static PublicDeletePlayerAttributesBuilder Builder { get => new PublicDeletePlayerAttributesBuilder(); }
 
         public class PublicDeletePlayerAttributesBuilder
             : OperationBuilder<PublicDeletePlayerAttributesBuilder>

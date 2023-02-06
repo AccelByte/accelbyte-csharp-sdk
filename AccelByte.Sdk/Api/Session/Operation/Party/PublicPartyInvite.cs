@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class PublicPartyInvite : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicPartyInviteBuilder Builder = new PublicPartyInviteBuilder();
+        public static PublicPartyInviteBuilder Builder { get => new PublicPartyInviteBuilder(); }
 
         public class PublicPartyInviteBuilder
             : OperationBuilder<PublicPartyInviteBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class UpdateSettings : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateSettingsBuilder Builder = new UpdateSettingsBuilder();
+        public static UpdateSettingsBuilder Builder { get => new UpdateSettingsBuilder(); }
 
         public class UpdateSettingsBuilder
             : OperationBuilder<UpdateSettingsBuilder>

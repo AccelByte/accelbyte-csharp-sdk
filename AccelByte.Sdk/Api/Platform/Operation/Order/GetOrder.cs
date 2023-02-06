@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetOrder : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetOrderBuilder Builder = new GetOrderBuilder();
+        public static GetOrderBuilder Builder { get => new GetOrderBuilder(); }
 
         public class GetOrderBuilder
             : OperationBuilder<GetOrderBuilder>

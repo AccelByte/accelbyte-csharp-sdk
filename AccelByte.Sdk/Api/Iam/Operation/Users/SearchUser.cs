@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class SearchUser : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SearchUserBuilder Builder = new SearchUserBuilder();
+        public static SearchUserBuilder Builder { get => new SearchUserBuilder(); }
 
         public class SearchUserBuilder
             : OperationBuilder<SearchUserBuilder>

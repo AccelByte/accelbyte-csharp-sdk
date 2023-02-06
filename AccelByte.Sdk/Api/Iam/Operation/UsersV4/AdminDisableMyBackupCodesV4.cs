@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminDisableMyBackupCodesV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDisableMyBackupCodesV4Builder Builder = new AdminDisableMyBackupCodesV4Builder();
+        public static AdminDisableMyBackupCodesV4Builder Builder { get => new AdminDisableMyBackupCodesV4Builder(); }
 
         public class AdminDisableMyBackupCodesV4Builder
             : OperationBuilder<AdminDisableMyBackupCodesV4Builder>

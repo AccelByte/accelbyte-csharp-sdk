@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class PublicPartyKick : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicPartyKickBuilder Builder = new PublicPartyKickBuilder();
+        public static PublicPartyKickBuilder Builder { get => new PublicPartyKickBuilder(); }
 
         public class PublicPartyKickBuilder
             : OperationBuilder<PublicPartyKickBuilder>

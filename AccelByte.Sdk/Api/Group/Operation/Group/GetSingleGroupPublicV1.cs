@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class GetSingleGroupPublicV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetSingleGroupPublicV1Builder Builder = new GetSingleGroupPublicV1Builder();
+        public static GetSingleGroupPublicV1Builder Builder { get => new GetSingleGroupPublicV1Builder(); }
 
         public class GetSingleGroupPublicV1Builder
             : OperationBuilder<GetSingleGroupPublicV1Builder>

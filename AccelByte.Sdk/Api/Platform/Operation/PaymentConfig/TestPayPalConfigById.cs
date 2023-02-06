@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class TestPayPalConfigById : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static TestPayPalConfigByIdBuilder Builder = new TestPayPalConfigByIdBuilder();
+        public static TestPayPalConfigByIdBuilder Builder { get => new TestPayPalConfigByIdBuilder(); }
 
         public class TestPayPalConfigByIdBuilder
             : OperationBuilder<TestPayPalConfigByIdBuilder>

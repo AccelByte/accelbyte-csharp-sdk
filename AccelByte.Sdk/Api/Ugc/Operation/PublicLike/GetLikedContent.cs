@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class GetLikedContent : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetLikedContentBuilder Builder = new GetLikedContentBuilder();
+        public static GetLikedContentBuilder Builder { get => new GetLikedContentBuilder(); }
 
         public class GetLikedContentBuilder
             : OperationBuilder<GetLikedContentBuilder>

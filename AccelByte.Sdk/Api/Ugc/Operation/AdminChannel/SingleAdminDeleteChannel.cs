@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class SingleAdminDeleteChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SingleAdminDeleteChannelBuilder Builder = new SingleAdminDeleteChannelBuilder();
+        public static SingleAdminDeleteChannelBuilder Builder { get => new SingleAdminDeleteChannelBuilder(); }
 
         public class SingleAdminDeleteChannelBuilder
             : OperationBuilder<SingleAdminDeleteChannelBuilder>

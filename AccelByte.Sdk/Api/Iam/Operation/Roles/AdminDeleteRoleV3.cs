@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminDeleteRoleV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDeleteRoleV3Builder Builder = new AdminDeleteRoleV3Builder();
+        public static AdminDeleteRoleV3Builder Builder { get => new AdminDeleteRoleV3Builder(); }
 
         public class AdminDeleteRoleV3Builder
             : OperationBuilder<AdminDeleteRoleV3Builder>

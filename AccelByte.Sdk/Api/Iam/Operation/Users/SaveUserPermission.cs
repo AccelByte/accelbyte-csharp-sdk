@@ -129,7 +129,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class SaveUserPermission : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SaveUserPermissionBuilder Builder = new SaveUserPermissionBuilder();
+        public static SaveUserPermissionBuilder Builder { get => new SaveUserPermissionBuilder(); }
 
         public class SaveUserPermissionBuilder
             : OperationBuilder<SaveUserPermissionBuilder>

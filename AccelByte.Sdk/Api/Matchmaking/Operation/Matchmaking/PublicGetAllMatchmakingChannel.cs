@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class PublicGetAllMatchmakingChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetAllMatchmakingChannelBuilder Builder = new PublicGetAllMatchmakingChannelBuilder();
+        public static PublicGetAllMatchmakingChannelBuilder Builder { get => new PublicGetAllMatchmakingChannelBuilder(); }
 
         public class PublicGetAllMatchmakingChannelBuilder
             : OperationBuilder<PublicGetAllMatchmakingChannelBuilder>

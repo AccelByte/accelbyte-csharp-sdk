@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class ExistsAnyPassByPassCodes : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ExistsAnyPassByPassCodesBuilder Builder = new ExistsAnyPassByPassCodesBuilder();
+        public static ExistsAnyPassByPassCodesBuilder Builder { get => new ExistsAnyPassByPassCodesBuilder(); }
 
         public class ExistsAnyPassByPassCodesBuilder
             : OperationBuilder<ExistsAnyPassByPassCodesBuilder>

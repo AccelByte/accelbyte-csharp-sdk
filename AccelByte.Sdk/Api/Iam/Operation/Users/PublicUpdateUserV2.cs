@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicUpdateUserV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicUpdateUserV2Builder Builder = new PublicUpdateUserV2Builder();
+        public static PublicUpdateUserV2Builder Builder { get => new PublicUpdateUserV2Builder(); }
 
         public class PublicUpdateUserV2Builder
             : OperationBuilder<PublicUpdateUserV2Builder>

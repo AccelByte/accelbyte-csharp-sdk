@@ -115,7 +115,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminAddRolePermissionsV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminAddRolePermissionsV3Builder Builder = new AdminAddRolePermissionsV3Builder();
+        public static AdminAddRolePermissionsV3Builder Builder { get => new AdminAddRolePermissionsV3Builder(); }
 
         public class AdminAddRolePermissionsV3Builder
             : OperationBuilder<AdminAddRolePermissionsV3Builder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CheckWallet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CheckWalletBuilder Builder = new CheckWalletBuilder();
+        public static CheckWalletBuilder Builder { get => new CheckWalletBuilder(); }
 
         public class CheckWalletBuilder
             : OperationBuilder<CheckWalletBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class EnableCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static EnableCodeBuilder Builder = new EnableCodeBuilder();
+        public static EnableCodeBuilder Builder { get => new EnableCodeBuilder(); }
 
         public class EnableCodeBuilder
             : OperationBuilder<EnableCodeBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetUserOrder : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserOrderBuilder Builder = new GetUserOrderBuilder();
+        public static GetUserOrderBuilder Builder { get => new GetUserOrderBuilder(); }
 
         public class GetUserOrderBuilder
             : OperationBuilder<GetUserOrderBuilder>

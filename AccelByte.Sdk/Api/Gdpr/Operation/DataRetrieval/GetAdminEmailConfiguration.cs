@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     public class GetAdminEmailConfiguration : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetAdminEmailConfigurationBuilder Builder = new GetAdminEmailConfigurationBuilder();
+        public static GetAdminEmailConfigurationBuilder Builder { get => new GetAdminEmailConfigurationBuilder(); }
 
         public class GetAdminEmailConfigurationBuilder
             : OperationBuilder<GetAdminEmailConfigurationBuilder>

@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGetUserDeletionStatusV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetUserDeletionStatusV3Builder Builder = new AdminGetUserDeletionStatusV3Builder();
+        public static AdminGetUserDeletionStatusV3Builder Builder { get => new AdminGetUserDeletionStatusV3Builder(); }
 
         public class AdminGetUserDeletionStatusV3Builder
             : OperationBuilder<AdminGetUserDeletionStatusV3Builder>

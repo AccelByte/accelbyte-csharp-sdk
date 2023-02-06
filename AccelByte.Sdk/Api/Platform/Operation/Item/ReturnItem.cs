@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ReturnItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ReturnItemBuilder Builder = new ReturnItemBuilder();
+        public static ReturnItemBuilder Builder { get => new ReturnItemBuilder(); }
 
         public class ReturnItemBuilder
             : OperationBuilder<ReturnItemBuilder>

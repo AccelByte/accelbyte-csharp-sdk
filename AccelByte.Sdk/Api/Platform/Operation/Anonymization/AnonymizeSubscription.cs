@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class AnonymizeSubscription : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AnonymizeSubscriptionBuilder Builder = new AnonymizeSubscriptionBuilder();
+        public static AnonymizeSubscriptionBuilder Builder { get => new AnonymizeSubscriptionBuilder(); }
 
         public class AnonymizeSubscriptionBuilder
             : OperationBuilder<AnonymizeSubscriptionBuilder>

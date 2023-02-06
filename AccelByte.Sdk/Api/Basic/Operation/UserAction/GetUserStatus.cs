@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class GetUserStatus : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserStatusBuilder Builder = new GetUserStatusBuilder();
+        public static GetUserStatusBuilder Builder { get => new GetUserStatusBuilder(); }
 
         public class GetUserStatusBuilder
             : OperationBuilder<GetUserStatusBuilder>

@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryChanges : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryChangesBuilder Builder = new QueryChangesBuilder();
+        public static QueryChangesBuilder Builder { get => new QueryChangesBuilder(); }
 
         public class QueryChangesBuilder
             : OperationBuilder<QueryChangesBuilder>

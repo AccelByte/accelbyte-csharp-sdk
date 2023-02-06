@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicVerifyHeadlessAccountV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicVerifyHeadlessAccountV3Builder Builder = new PublicVerifyHeadlessAccountV3Builder();
+        public static PublicVerifyHeadlessAccountV3Builder Builder { get => new PublicVerifyHeadlessAccountV3Builder(); }
 
         public class PublicVerifyHeadlessAccountV3Builder
             : OperationBuilder<PublicVerifyHeadlessAccountV3Builder>

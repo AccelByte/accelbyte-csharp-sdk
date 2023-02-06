@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class PublicDownloadContentByShareCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicDownloadContentByShareCodeBuilder Builder = new PublicDownloadContentByShareCodeBuilder();
+        public static PublicDownloadContentByShareCodeBuilder Builder { get => new PublicDownloadContentByShareCodeBuilder(); }
 
         public class PublicDownloadContentByShareCodeBuilder
             : OperationBuilder<PublicDownloadContentByShareCodeBuilder>

@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class GetSlugTemplate : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetSlugTemplateBuilder Builder = new GetSlugTemplateBuilder();
+        public static GetSlugTemplateBuilder Builder { get => new GetSlugTemplateBuilder(); }
 
         public class GetSlugTemplateBuilder
             : OperationBuilder<GetSlugTemplateBuilder>

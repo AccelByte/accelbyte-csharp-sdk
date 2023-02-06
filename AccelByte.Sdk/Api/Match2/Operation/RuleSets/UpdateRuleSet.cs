@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     public class UpdateRuleSet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateRuleSetBuilder Builder = new UpdateRuleSetBuilder();
+        public static UpdateRuleSetBuilder Builder { get => new UpdateRuleSetBuilder(); }
 
         public class UpdateRuleSetBuilder
             : OperationBuilder<UpdateRuleSetBuilder>

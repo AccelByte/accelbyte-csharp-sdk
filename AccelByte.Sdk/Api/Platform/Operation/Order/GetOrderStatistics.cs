@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetOrderStatistics : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetOrderStatisticsBuilder Builder = new GetOrderStatisticsBuilder();
+        public static GetOrderStatisticsBuilder Builder { get => new GetOrderStatisticsBuilder(); }
 
         public class GetOrderStatisticsBuilder
             : OperationBuilder<GetOrderStatisticsBuilder>

@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminUpdateClientSecretV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUpdateClientSecretV3Builder Builder = new AdminUpdateClientSecretV3Builder();
+        public static AdminUpdateClientSecretV3Builder Builder { get => new AdminUpdateClientSecretV3Builder(); }
 
         public class AdminUpdateClientSecretV3Builder
             : OperationBuilder<AdminUpdateClientSecretV3Builder>

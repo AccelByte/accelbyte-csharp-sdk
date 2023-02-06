@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicQueryUserEntitlements : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicQueryUserEntitlementsBuilder Builder = new PublicQueryUserEntitlementsBuilder();
+        public static PublicQueryUserEntitlementsBuilder Builder { get => new PublicQueryUserEntitlementsBuilder(); }
 
         public class PublicQueryUserEntitlementsBuilder
             : OperationBuilder<PublicQueryUserEntitlementsBuilder>

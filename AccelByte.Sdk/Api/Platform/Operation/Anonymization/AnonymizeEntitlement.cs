@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class AnonymizeEntitlement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AnonymizeEntitlementBuilder Builder = new AnonymizeEntitlementBuilder();
+        public static AnonymizeEntitlementBuilder Builder { get => new AnonymizeEntitlementBuilder(); }
 
         public class AnonymizeEntitlementBuilder
             : OperationBuilder<AnonymizeEntitlementBuilder>

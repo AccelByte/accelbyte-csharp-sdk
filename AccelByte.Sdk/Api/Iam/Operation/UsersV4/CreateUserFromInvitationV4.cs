@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class CreateUserFromInvitationV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateUserFromInvitationV4Builder Builder = new CreateUserFromInvitationV4Builder();
+        public static CreateUserFromInvitationV4Builder Builder { get => new CreateUserFromInvitationV4Builder(); }
 
         public class CreateUserFromInvitationV4Builder
             : OperationBuilder<CreateUserFromInvitationV4Builder>

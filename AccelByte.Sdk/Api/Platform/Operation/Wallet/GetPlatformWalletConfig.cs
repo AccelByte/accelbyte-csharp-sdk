@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetPlatformWalletConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPlatformWalletConfigBuilder Builder = new GetPlatformWalletConfigBuilder();
+        public static GetPlatformWalletConfigBuilder Builder { get => new GetPlatformWalletConfigBuilder(); }
 
         public class GetPlatformWalletConfigBuilder
             : OperationBuilder<GetPlatformWalletConfigBuilder>

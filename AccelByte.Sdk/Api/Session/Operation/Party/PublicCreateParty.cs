@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class PublicCreateParty : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicCreatePartyBuilder Builder = new PublicCreatePartyBuilder();
+        public static PublicCreatePartyBuilder Builder { get => new PublicCreatePartyBuilder(); }
 
         public class PublicCreatePartyBuilder
             : OperationBuilder<PublicCreatePartyBuilder>

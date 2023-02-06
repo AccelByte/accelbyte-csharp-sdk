@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class RetrieveEligibilitiesPublicIndirect : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RetrieveEligibilitiesPublicIndirectBuilder Builder = new RetrieveEligibilitiesPublicIndirectBuilder();
+        public static RetrieveEligibilitiesPublicIndirectBuilder Builder { get => new RetrieveEligibilitiesPublicIndirectBuilder(); }
 
         public class RetrieveEligibilitiesPublicIndirectBuilder
             : OperationBuilder<RetrieveEligibilitiesPublicIndirectBuilder>

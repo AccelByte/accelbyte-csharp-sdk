@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class AnonymizeOrder : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AnonymizeOrderBuilder Builder = new AnonymizeOrderBuilder();
+        public static AnonymizeOrderBuilder Builder { get => new AnonymizeOrderBuilder(); }
 
         public class AnonymizeOrderBuilder
             : OperationBuilder<AnonymizeOrderBuilder>

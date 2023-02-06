@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class BulkEnableCodes : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static BulkEnableCodesBuilder Builder = new BulkEnableCodesBuilder();
+        public static BulkEnableCodesBuilder Builder { get => new BulkEnableCodesBuilder(); }
 
         public class BulkEnableCodesBuilder
             : OperationBuilder<BulkEnableCodesBuilder>

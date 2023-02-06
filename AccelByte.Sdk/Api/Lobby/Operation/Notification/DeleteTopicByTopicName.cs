@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class DeleteTopicByTopicName : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteTopicByTopicNameBuilder Builder = new DeleteTopicByTopicNameBuilder();
+        public static DeleteTopicByTopicNameBuilder Builder { get => new DeleteTopicByTopicNameBuilder(); }
 
         public class DeleteTopicByTopicNameBuilder
             : OperationBuilder<DeleteTopicByTopicNameBuilder>

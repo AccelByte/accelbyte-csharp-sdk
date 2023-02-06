@@ -85,7 +85,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminDeletePlatformLinkV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDeletePlatformLinkV2Builder Builder = new AdminDeletePlatformLinkV2Builder();
+        public static AdminDeletePlatformLinkV2Builder Builder { get => new AdminDeletePlatformLinkV2Builder(); }
 
         public class AdminDeletePlatformLinkV2Builder
             : OperationBuilder<AdminDeletePlatformLinkV2Builder>

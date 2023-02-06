@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class UpdateMemberRoleAdminV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateMemberRoleAdminV1Builder Builder = new UpdateMemberRoleAdminV1Builder();
+        public static UpdateMemberRoleAdminV1Builder Builder { get => new UpdateMemberRoleAdminV1Builder(); }
 
         public class UpdateMemberRoleAdminV1Builder
             : OperationBuilder<UpdateMemberRoleAdminV1Builder>

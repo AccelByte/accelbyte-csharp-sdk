@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryUserIAPOrders : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryUserIAPOrdersBuilder Builder = new QueryUserIAPOrdersBuilder();
+        public static QueryUserIAPOrdersBuilder Builder { get => new QueryUserIAPOrdersBuilder(); }
 
         public class QueryUserIAPOrdersBuilder
             : OperationBuilder<QueryUserIAPOrdersBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DebugMatchedPaymentProviderConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DebugMatchedPaymentProviderConfigBuilder Builder = new DebugMatchedPaymentProviderConfigBuilder();
+        public static DebugMatchedPaymentProviderConfigBuilder Builder { get => new DebugMatchedPaymentProviderConfigBuilder(); }
 
         public class DebugMatchedPaymentProviderConfigBuilder
             : OperationBuilder<DebugMatchedPaymentProviderConfigBuilder>

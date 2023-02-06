@@ -70,7 +70,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicSendVerificationCodeV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicSendVerificationCodeV3Builder Builder = new PublicSendVerificationCodeV3Builder();
+        public static PublicSendVerificationCodeV3Builder Builder { get => new PublicSendVerificationCodeV3Builder(); }
 
         public class PublicSendVerificationCodeV3Builder
             : OperationBuilder<PublicSendVerificationCodeV3Builder>

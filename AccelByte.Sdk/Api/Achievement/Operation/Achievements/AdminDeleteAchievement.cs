@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     public class AdminDeleteAchievement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDeleteAchievementBuilder Builder = new AdminDeleteAchievementBuilder();
+        public static AdminDeleteAchievementBuilder Builder { get => new AdminDeleteAchievementBuilder(); }
 
         public class AdminDeleteAchievementBuilder
             : OperationBuilder<AdminDeleteAchievementBuilder>

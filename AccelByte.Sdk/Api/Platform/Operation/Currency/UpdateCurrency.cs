@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateCurrency : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateCurrencyBuilder Builder = new UpdateCurrencyBuilder();
+        public static UpdateCurrencyBuilder Builder { get => new UpdateCurrencyBuilder(); }
 
         public class UpdateCurrencyBuilder
             : OperationBuilder<UpdateCurrencyBuilder>

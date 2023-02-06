@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicCancelSubscription : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicCancelSubscriptionBuilder Builder = new PublicCancelSubscriptionBuilder();
+        public static PublicCancelSubscriptionBuilder Builder { get => new PublicCancelSubscriptionBuilder(); }
 
         public class PublicCancelSubscriptionBuilder
             : OperationBuilder<PublicCancelSubscriptionBuilder>

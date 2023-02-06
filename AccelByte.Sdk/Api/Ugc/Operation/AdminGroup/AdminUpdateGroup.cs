@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class AdminUpdateGroup : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUpdateGroupBuilder Builder = new AdminUpdateGroupBuilder();
+        public static AdminUpdateGroupBuilder Builder { get => new AdminUpdateGroupBuilder(); }
 
         public class AdminUpdateGroupBuilder
             : OperationBuilder<AdminUpdateGroupBuilder>

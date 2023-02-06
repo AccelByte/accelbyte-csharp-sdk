@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class VerifyTokenV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static VerifyTokenV3Builder Builder = new VerifyTokenV3Builder();
+        public static VerifyTokenV3Builder Builder { get => new VerifyTokenV3Builder(); }
 
         public class VerifyTokenV3Builder
             : OperationBuilder<VerifyTokenV3Builder>

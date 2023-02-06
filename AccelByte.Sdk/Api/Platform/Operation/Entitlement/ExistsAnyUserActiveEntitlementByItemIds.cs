@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ExistsAnyUserActiveEntitlementByItemIds : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ExistsAnyUserActiveEntitlementByItemIdsBuilder Builder = new ExistsAnyUserActiveEntitlementByItemIdsBuilder();
+        public static ExistsAnyUserActiveEntitlementByItemIdsBuilder Builder { get => new ExistsAnyUserActiveEntitlementByItemIdsBuilder(); }
 
         public class ExistsAnyUserActiveEntitlementByItemIdsBuilder
             : OperationBuilder<ExistsAnyUserActiveEntitlementByItemIdsBuilder>

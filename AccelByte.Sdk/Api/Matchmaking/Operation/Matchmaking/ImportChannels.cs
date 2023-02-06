@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class ImportChannels : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ImportChannelsBuilder Builder = new ImportChannelsBuilder();
+        public static ImportChannelsBuilder Builder { get => new ImportChannelsBuilder(); }
 
         public class ImportChannelsBuilder
             : OperationBuilder<ImportChannelsBuilder>

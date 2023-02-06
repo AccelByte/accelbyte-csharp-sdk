@@ -65,7 +65,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class SendVerificationCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SendVerificationCodeBuilder Builder = new SendVerificationCodeBuilder();
+        public static SendVerificationCodeBuilder Builder { get => new SendVerificationCodeBuilder(); }
 
         public class SendVerificationCodeBuilder
             : OperationBuilder<SendVerificationCodeBuilder>

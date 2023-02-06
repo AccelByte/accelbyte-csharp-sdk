@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UnlockSteamUserAchievement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UnlockSteamUserAchievementBuilder Builder = new UnlockSteamUserAchievementBuilder();
+        public static UnlockSteamUserAchievementBuilder Builder { get => new UnlockSteamUserAchievementBuilder(); }
 
         public class UnlockSteamUserAchievementBuilder
             : OperationBuilder<UnlockSteamUserAchievementBuilder>

@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminVerifyUserWithoutVerificationCodeV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminVerifyUserWithoutVerificationCodeV3Builder Builder = new AdminVerifyUserWithoutVerificationCodeV3Builder();
+        public static AdminVerifyUserWithoutVerificationCodeV3Builder Builder { get => new AdminVerifyUserWithoutVerificationCodeV3Builder(); }
 
         public class AdminVerifyUserWithoutVerificationCodeV3Builder
             : OperationBuilder<AdminVerifyUserWithoutVerificationCodeV3Builder>

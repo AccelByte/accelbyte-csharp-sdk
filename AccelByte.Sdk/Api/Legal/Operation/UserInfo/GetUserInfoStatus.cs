@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class GetUserInfoStatus : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserInfoStatusBuilder Builder = new GetUserInfoStatusBuilder();
+        public static GetUserInfoStatusBuilder Builder { get => new GetUserInfoStatusBuilder(); }
 
         public class GetUserInfoStatusBuilder
             : OperationBuilder<GetUserInfoStatusBuilder>

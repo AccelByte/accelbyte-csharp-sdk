@@ -115,7 +115,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     public class PutGameRecordConcurrentHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PutGameRecordConcurrentHandlerV1Builder Builder = new PutGameRecordConcurrentHandlerV1Builder();
+        public static PutGameRecordConcurrentHandlerV1Builder Builder { get => new PutGameRecordConcurrentHandlerV1Builder(); }
 
         public class PutGameRecordConcurrentHandlerV1Builder
             : OperationBuilder<PutGameRecordConcurrentHandlerV1Builder>

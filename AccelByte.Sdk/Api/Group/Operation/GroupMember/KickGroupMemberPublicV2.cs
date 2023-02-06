@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class KickGroupMemberPublicV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static KickGroupMemberPublicV2Builder Builder = new KickGroupMemberPublicV2Builder();
+        public static KickGroupMemberPublicV2Builder Builder { get => new KickGroupMemberPublicV2Builder(); }
 
         public class KickGroupMemberPublicV2Builder
             : OperationBuilder<KickGroupMemberPublicV2Builder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateXblUserAchievement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateXblUserAchievementBuilder Builder = new UpdateXblUserAchievementBuilder();
+        public static UpdateXblUserAchievementBuilder Builder { get => new UpdateXblUserAchievementBuilder(); }
 
         public class UpdateXblUserAchievementBuilder
             : OperationBuilder<UpdateXblUserAchievementBuilder>

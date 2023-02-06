@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class AdminDeleteConfigurationTemplateV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDeleteConfigurationTemplateV1Builder Builder = new AdminDeleteConfigurationTemplateV1Builder();
+        public static AdminDeleteConfigurationTemplateV1Builder Builder { get => new AdminDeleteConfigurationTemplateV1Builder(); }
 
         public class AdminDeleteConfigurationTemplateV1Builder
             : OperationBuilder<AdminDeleteConfigurationTemplateV1Builder>

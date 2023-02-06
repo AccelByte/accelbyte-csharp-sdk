@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class AddPlayerToSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AddPlayerToSessionBuilder Builder = new AddPlayerToSessionBuilder();
+        public static AddPlayerToSessionBuilder Builder { get => new AddPlayerToSessionBuilder(); }
 
         public class AddPlayerToSessionBuilder
             : OperationBuilder<AddPlayerToSessionBuilder>

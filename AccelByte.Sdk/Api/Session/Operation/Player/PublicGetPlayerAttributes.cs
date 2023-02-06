@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class PublicGetPlayerAttributes : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetPlayerAttributesBuilder Builder = new PublicGetPlayerAttributesBuilder();
+        public static PublicGetPlayerAttributesBuilder Builder { get => new PublicGetPlayerAttributesBuilder(); }
 
         public class PublicGetPlayerAttributesBuilder
             : OperationBuilder<PublicGetPlayerAttributesBuilder>

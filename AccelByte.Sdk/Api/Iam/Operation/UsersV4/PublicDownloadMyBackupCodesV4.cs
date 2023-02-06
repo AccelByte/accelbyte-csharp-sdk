@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicDownloadMyBackupCodesV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicDownloadMyBackupCodesV4Builder Builder = new PublicDownloadMyBackupCodesV4Builder();
+        public static PublicDownloadMyBackupCodesV4Builder Builder { get => new PublicDownloadMyBackupCodesV4Builder(); }
 
         public class PublicDownloadMyBackupCodesV4Builder
             : OperationBuilder<PublicDownloadMyBackupCodesV4Builder>

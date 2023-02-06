@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class ReportUser : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ReportUserBuilder Builder = new ReportUserBuilder();
+        public static ReportUserBuilder Builder { get => new ReportUserBuilder(); }
 
         public class ReportUserBuilder
             : OperationBuilder<ReportUserBuilder>

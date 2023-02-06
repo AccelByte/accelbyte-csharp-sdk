@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicValidateUserByUserIDAndPasswordV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicValidateUserByUserIDAndPasswordV3Builder Builder = new PublicValidateUserByUserIDAndPasswordV3Builder();
+        public static PublicValidateUserByUserIDAndPasswordV3Builder Builder { get => new PublicValidateUserByUserIDAndPasswordV3Builder(); }
 
         public class PublicValidateUserByUserIDAndPasswordV3Builder
             : OperationBuilder<PublicValidateUserByUserIDAndPasswordV3Builder>

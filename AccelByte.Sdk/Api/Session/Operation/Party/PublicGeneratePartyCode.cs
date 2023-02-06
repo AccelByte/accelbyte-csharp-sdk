@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class PublicGeneratePartyCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGeneratePartyCodeBuilder Builder = new PublicGeneratePartyCodeBuilder();
+        public static PublicGeneratePartyCodeBuilder Builder { get => new PublicGeneratePartyCodeBuilder(); }
 
         public class PublicGeneratePartyCodeBuilder
             : OperationBuilder<PublicGeneratePartyCodeBuilder>

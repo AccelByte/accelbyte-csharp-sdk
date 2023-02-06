@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     public class AdminGetArchivedLeaderboardRankingDataV1Handler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder Builder = new AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder();
+        public static AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder Builder { get => new AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder(); }
 
         public class AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder
             : OperationBuilder<AdminGetArchivedLeaderboardRankingDataV1HandlerBuilder>

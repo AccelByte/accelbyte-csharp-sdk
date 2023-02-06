@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteEpicGamesIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteEpicGamesIAPConfigBuilder Builder = new DeleteEpicGamesIAPConfigBuilder();
+        public static DeleteEpicGamesIAPConfigBuilder Builder { get => new DeleteEpicGamesIAPConfigBuilder(); }
 
         public class DeleteEpicGamesIAPConfigBuilder
             : OperationBuilder<DeleteEpicGamesIAPConfigBuilder>

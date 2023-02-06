@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class SendUsersTemplatedNotificationV1Admin : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SendUsersTemplatedNotificationV1AdminBuilder Builder = new SendUsersTemplatedNotificationV1AdminBuilder();
+        public static SendUsersTemplatedNotificationV1AdminBuilder Builder { get => new SendUsersTemplatedNotificationV1AdminBuilder(); }
 
         public class SendUsersTemplatedNotificationV1AdminBuilder
             : OperationBuilder<SendUsersTemplatedNotificationV1AdminBuilder>

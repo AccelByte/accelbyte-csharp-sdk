@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class StoreMatchResults : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static StoreMatchResultsBuilder Builder = new StoreMatchResultsBuilder();
+        public static StoreMatchResultsBuilder Builder { get => new StoreMatchResultsBuilder(); }
 
         public class StoreMatchResultsBuilder
             : OperationBuilder<StoreMatchResultsBuilder>

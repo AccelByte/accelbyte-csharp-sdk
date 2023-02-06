@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CreateUserPaymentOrder : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateUserPaymentOrderBuilder Builder = new CreateUserPaymentOrderBuilder();
+        public static CreateUserPaymentOrderBuilder Builder { get => new CreateUserPaymentOrderBuilder(); }
 
         public class CreateUserPaymentOrderBuilder
             : OperationBuilder<CreateUserPaymentOrderBuilder>

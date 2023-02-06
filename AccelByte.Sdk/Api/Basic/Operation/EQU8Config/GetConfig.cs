@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class GetConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetConfigBuilder Builder = new GetConfigBuilder();
+        public static GetConfigBuilder Builder { get => new GetConfigBuilder(); }
 
         public class GetConfigBuilder
             : OperationBuilder<GetConfigBuilder>

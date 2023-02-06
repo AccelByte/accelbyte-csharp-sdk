@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminGetProfanityRule : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetProfanityRuleBuilder Builder = new AdminGetProfanityRuleBuilder();
+        public static AdminGetProfanityRuleBuilder Builder { get => new AdminGetProfanityRuleBuilder(); }
 
         public class AdminGetProfanityRuleBuilder
             : OperationBuilder<AdminGetProfanityRuleBuilder>

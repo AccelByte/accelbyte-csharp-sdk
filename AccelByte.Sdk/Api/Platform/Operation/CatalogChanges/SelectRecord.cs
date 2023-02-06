@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class SelectRecord : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SelectRecordBuilder Builder = new SelectRecordBuilder();
+        public static SelectRecordBuilder Builder { get => new SelectRecordBuilder(); }
 
         public class SelectRecordBuilder
             : OperationBuilder<SelectRecordBuilder>

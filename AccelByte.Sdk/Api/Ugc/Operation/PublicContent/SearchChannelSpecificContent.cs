@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class SearchChannelSpecificContent : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SearchChannelSpecificContentBuilder Builder = new SearchChannelSpecificContentBuilder();
+        public static SearchChannelSpecificContentBuilder Builder { get => new SearchChannelSpecificContentBuilder(); }
 
         public class SearchChannelSpecificContentBuilder
             : OperationBuilder<SearchChannelSpecificContentBuilder>

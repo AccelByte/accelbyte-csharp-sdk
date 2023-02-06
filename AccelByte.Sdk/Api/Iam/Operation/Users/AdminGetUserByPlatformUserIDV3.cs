@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGetUserByPlatformUserIDV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetUserByPlatformUserIDV3Builder Builder = new AdminGetUserByPlatformUserIDV3Builder();
+        public static AdminGetUserByPlatformUserIDV3Builder Builder { get => new AdminGetUserByPlatformUserIDV3Builder(); }
 
         public class AdminGetUserByPlatformUserIDV3Builder
             : OperationBuilder<AdminGetUserByPlatformUserIDV3Builder>

@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class CreateContentS3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateContentS3Builder Builder = new CreateContentS3Builder();
+        public static CreateContentS3Builder Builder { get => new CreateContentS3Builder(); }
 
         public class CreateContentS3Builder
             : OperationBuilder<CreateContentS3Builder>

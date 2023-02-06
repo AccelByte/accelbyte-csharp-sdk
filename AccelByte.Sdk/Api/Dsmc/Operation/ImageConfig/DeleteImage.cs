@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class DeleteImage : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteImageBuilder Builder = new DeleteImageBuilder();
+        public static DeleteImageBuilder Builder { get => new DeleteImageBuilder(); }
 
         public class DeleteImageBuilder
             : OperationBuilder<DeleteImageBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdatePayPalConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdatePayPalConfigBuilder Builder = new UpdatePayPalConfigBuilder();
+        public static UpdatePayPalConfigBuilder Builder { get => new UpdatePayPalConfigBuilder(); }
 
         public class UpdatePayPalConfigBuilder
             : OperationBuilder<UpdatePayPalConfigBuilder>

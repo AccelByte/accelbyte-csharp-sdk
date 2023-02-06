@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class ResetUserStatItemValue1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ResetUserStatItemValue1Builder Builder = new ResetUserStatItemValue1Builder();
+        public static ResetUserStatItemValue1Builder Builder { get => new ResetUserStatItemValue1Builder(); }
 
         public class ResetUserStatItemValue1Builder
             : OperationBuilder<ResetUserStatItemValue1Builder>

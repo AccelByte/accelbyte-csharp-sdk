@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateView : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateViewBuilder Builder = new UpdateViewBuilder();
+        public static UpdateViewBuilder Builder { get => new UpdateViewBuilder(); }
 
         public class UpdateViewBuilder
             : OperationBuilder<UpdateViewBuilder>

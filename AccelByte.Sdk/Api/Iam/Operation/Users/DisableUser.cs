@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class DisableUser : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DisableUserBuilder Builder = new DisableUserBuilder();
+        public static DisableUserBuilder Builder { get => new DisableUserBuilder(); }
 
         public class DisableUserBuilder
             : OperationBuilder<DisableUserBuilder>

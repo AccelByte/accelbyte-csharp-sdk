@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     public class PublicGetUserPersonalDataRequests : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetUserPersonalDataRequestsBuilder Builder = new PublicGetUserPersonalDataRequestsBuilder();
+        public static PublicGetUserPersonalDataRequestsBuilder Builder { get => new PublicGetUserPersonalDataRequestsBuilder(); }
 
         public class PublicGetUserPersonalDataRequestsBuilder
             : OperationBuilder<PublicGetUserPersonalDataRequestsBuilder>

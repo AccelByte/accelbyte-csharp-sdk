@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class AdminQueryGameSessions : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminQueryGameSessionsBuilder Builder = new AdminQueryGameSessionsBuilder();
+        public static AdminQueryGameSessionsBuilder Builder { get => new AdminQueryGameSessionsBuilder(); }
 
         public class AdminQueryGameSessionsBuilder
             : OperationBuilder<AdminQueryGameSessionsBuilder>

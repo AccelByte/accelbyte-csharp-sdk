@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     public class LastUserActivityTimeHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static LastUserActivityTimeHandlerBuilder Builder = new LastUserActivityTimeHandlerBuilder();
+        public static LastUserActivityTimeHandlerBuilder Builder { get => new LastUserActivityTimeHandlerBuilder(); }
 
         public class LastUserActivityTimeHandlerBuilder
             : OperationBuilder<LastUserActivityTimeHandlerBuilder>

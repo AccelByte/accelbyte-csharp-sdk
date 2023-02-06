@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteGoogleIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteGoogleIAPConfigBuilder Builder = new DeleteGoogleIAPConfigBuilder();
+        public static DeleteGoogleIAPConfigBuilder Builder { get => new DeleteGoogleIAPConfigBuilder(); }
 
         public class DeleteGoogleIAPConfigBuilder
             : OperationBuilder<DeleteGoogleIAPConfigBuilder>

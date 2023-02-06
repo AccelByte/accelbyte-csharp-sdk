@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminJoinPartyV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminJoinPartyV1Builder Builder = new AdminJoinPartyV1Builder();
+        public static AdminJoinPartyV1Builder Builder { get => new AdminJoinPartyV1Builder(); }
 
         public class AdminJoinPartyV1Builder
             : OperationBuilder<AdminJoinPartyV1Builder>

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicListJusticePlatformAccountsV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicListJusticePlatformAccountsV3Builder Builder = new PublicListJusticePlatformAccountsV3Builder();
+        public static PublicListJusticePlatformAccountsV3Builder Builder { get => new PublicListJusticePlatformAccountsV3Builder(); }
 
         public class PublicListJusticePlatformAccountsV3Builder
             : OperationBuilder<PublicListJusticePlatformAccountsV3Builder>

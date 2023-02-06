@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class GetFollowedUsers : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetFollowedUsersBuilder Builder = new GetFollowedUsersBuilder();
+        public static GetFollowedUsersBuilder Builder { get => new GetFollowedUsersBuilder(); }
 
         public class GetFollowedUsersBuilder
             : OperationBuilder<GetFollowedUsersBuilder>

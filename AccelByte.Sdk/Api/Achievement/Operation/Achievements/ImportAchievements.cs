@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     public class ImportAchievements : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ImportAchievementsBuilder Builder = new ImportAchievementsBuilder();
+        public static ImportAchievementsBuilder Builder { get => new ImportAchievementsBuilder(); }
 
         public class ImportAchievementsBuilder
             : OperationBuilder<ImportAchievementsBuilder>

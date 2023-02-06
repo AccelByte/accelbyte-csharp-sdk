@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class BulkUpdateUserStatItemV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static BulkUpdateUserStatItemV2Builder Builder = new BulkUpdateUserStatItemV2Builder();
+        public static BulkUpdateUserStatItemV2Builder Builder { get => new BulkUpdateUserStatItemV2Builder(); }
 
         public class BulkUpdateUserStatItemV2Builder
             : OperationBuilder<BulkUpdateUserStatItemV2Builder>

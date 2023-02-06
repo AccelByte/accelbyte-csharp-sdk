@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     public class UpdateEventRegistryHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateEventRegistryHandlerBuilder Builder = new UpdateEventRegistryHandlerBuilder();
+        public static UpdateEventRegistryHandlerBuilder Builder { get => new UpdateEventRegistryHandlerBuilder(); }
 
         public class UpdateEventRegistryHandlerBuilder
             : OperationBuilder<UpdateEventRegistryHandlerBuilder>

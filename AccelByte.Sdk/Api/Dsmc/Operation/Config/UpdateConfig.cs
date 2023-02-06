@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class UpdateConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateConfigBuilder Builder = new UpdateConfigBuilder();
+        public static UpdateConfigBuilder Builder { get => new UpdateConfigBuilder(); }
 
         public class UpdateConfigBuilder
             : OperationBuilder<UpdateConfigBuilder>

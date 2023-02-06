@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class GetGlobalStatItemByStatCode1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetGlobalStatItemByStatCode1Builder Builder = new GetGlobalStatItemByStatCode1Builder();
+        public static GetGlobalStatItemByStatCode1Builder Builder { get => new GetGlobalStatItemByStatCode1Builder(); }
 
         public class GetGlobalStatItemByStatCode1Builder
             : OperationBuilder<GetGlobalStatItemByStatCode1Builder>

@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetRoleAdminStatus : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetRoleAdminStatusBuilder Builder = new GetRoleAdminStatusBuilder();
+        public static GetRoleAdminStatusBuilder Builder { get => new GetRoleAdminStatusBuilder(); }
 
         public class GetRoleAdminStatusBuilder
             : OperationBuilder<GetRoleAdminStatusBuilder>

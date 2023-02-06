@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetUserEntitlementOwnershipByItemId : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserEntitlementOwnershipByItemIdBuilder Builder = new GetUserEntitlementOwnershipByItemIdBuilder();
+        public static GetUserEntitlementOwnershipByItemIdBuilder Builder { get => new GetUserEntitlementOwnershipByItemIdBuilder(); }
 
         public class GetUserEntitlementOwnershipByItemIdBuilder
             : OperationBuilder<GetUserEntitlementOwnershipByItemIdBuilder>

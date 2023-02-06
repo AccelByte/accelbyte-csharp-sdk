@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DecreaseTicketSale : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DecreaseTicketSaleBuilder Builder = new DecreaseTicketSaleBuilder();
+        public static DecreaseTicketSaleBuilder Builder { get => new DecreaseTicketSaleBuilder(); }
 
         public class DecreaseTicketSaleBuilder
             : OperationBuilder<DecreaseTicketSaleBuilder>

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class DeleteUserSlotConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteUserSlotConfigBuilder Builder = new DeleteUserSlotConfigBuilder();
+        public static DeleteUserSlotConfigBuilder Builder { get => new DeleteUserSlotConfigBuilder(); }
 
         public class DeleteUserSlotConfigBuilder
             : OperationBuilder<DeleteUserSlotConfigBuilder>

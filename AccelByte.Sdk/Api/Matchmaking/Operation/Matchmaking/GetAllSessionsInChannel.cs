@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class GetAllSessionsInChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetAllSessionsInChannelBuilder Builder = new GetAllSessionsInChannelBuilder();
+        public static GetAllSessionsInChannelBuilder Builder { get => new GetAllSessionsInChannelBuilder(); }
 
         public class GetAllSessionsInChannelBuilder
             : OperationBuilder<GetAllSessionsInChannelBuilder>

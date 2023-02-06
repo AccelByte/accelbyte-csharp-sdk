@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetSection : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetSectionBuilder Builder = new GetSectionBuilder();
+        public static GetSectionBuilder Builder { get => new GetSectionBuilder(); }
 
         public class GetSectionBuilder
             : OperationBuilder<GetSectionBuilder>

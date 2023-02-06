@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class RetrieveActiveOIDCClientsPublicV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RetrieveActiveOIDCClientsPublicV3Builder Builder = new RetrieveActiveOIDCClientsPublicV3Builder();
+        public static RetrieveActiveOIDCClientsPublicV3Builder Builder { get => new RetrieveActiveOIDCClientsPublicV3Builder(); }
 
         public class RetrieveActiveOIDCClientsPublicV3Builder
             : OperationBuilder<RetrieveActiveOIDCClientsPublicV3Builder>

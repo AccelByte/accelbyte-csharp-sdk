@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class SearchItemTypeConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SearchItemTypeConfigBuilder Builder = new SearchItemTypeConfigBuilder();
+        public static SearchItemTypeConfigBuilder Builder { get => new SearchItemTypeConfigBuilder(); }
 
         public class SearchItemTypeConfigBuilder
             : OperationBuilder<SearchItemTypeConfigBuilder>

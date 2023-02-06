@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetUserJusticePlatformAccount : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserJusticePlatformAccountBuilder Builder = new GetUserJusticePlatformAccountBuilder();
+        public static GetUserJusticePlatformAccountBuilder Builder { get => new GetUserJusticePlatformAccountBuilder(); }
 
         public class GetUserJusticePlatformAccountBuilder
             : OperationBuilder<GetUserJusticePlatformAccountBuilder>

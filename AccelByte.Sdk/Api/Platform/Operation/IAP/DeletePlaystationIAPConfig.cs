@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeletePlaystationIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeletePlaystationIAPConfigBuilder Builder = new DeletePlaystationIAPConfigBuilder();
+        public static DeletePlaystationIAPConfigBuilder Builder { get => new DeletePlaystationIAPConfigBuilder(); }
 
         public class DeletePlaystationIAPConfigBuilder
             : OperationBuilder<DeletePlaystationIAPConfigBuilder>

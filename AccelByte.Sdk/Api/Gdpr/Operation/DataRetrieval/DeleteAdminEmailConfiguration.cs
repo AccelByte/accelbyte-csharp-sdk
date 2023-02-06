@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     public class DeleteAdminEmailConfiguration : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteAdminEmailConfigurationBuilder Builder = new DeleteAdminEmailConfigurationBuilder();
+        public static DeleteAdminEmailConfigurationBuilder Builder { get => new DeleteAdminEmailConfigurationBuilder(); }
 
         public class DeleteAdminEmailConfigurationBuilder
             : OperationBuilder<DeleteAdminEmailConfigurationBuilder>

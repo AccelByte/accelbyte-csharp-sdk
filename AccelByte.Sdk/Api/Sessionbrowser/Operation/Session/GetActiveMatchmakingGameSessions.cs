@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class GetActiveMatchmakingGameSessions : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetActiveMatchmakingGameSessionsBuilder Builder = new GetActiveMatchmakingGameSessionsBuilder();
+        public static GetActiveMatchmakingGameSessionsBuilder Builder { get => new GetActiveMatchmakingGameSessionsBuilder(); }
 
         public class GetActiveMatchmakingGameSessionsBuilder
             : OperationBuilder<GetActiveMatchmakingGameSessionsBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class AddPort : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AddPortBuilder Builder = new AddPortBuilder();
+        public static AddPortBuilder Builder { get => new AddPortBuilder(); }
 
         public class AddPortBuilder
             : OperationBuilder<AddPortBuilder>

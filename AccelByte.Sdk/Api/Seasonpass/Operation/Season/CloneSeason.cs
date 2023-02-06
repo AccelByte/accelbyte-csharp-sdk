@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class CloneSeason : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CloneSeasonBuilder Builder = new CloneSeasonBuilder();
+        public static CloneSeasonBuilder Builder { get => new CloneSeasonBuilder(); }
 
         public class CloneSeasonBuilder
             : OperationBuilder<CloneSeasonBuilder>

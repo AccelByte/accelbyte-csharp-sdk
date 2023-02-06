@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ProcessUserSubscriptionNotification : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ProcessUserSubscriptionNotificationBuilder Builder = new ProcessUserSubscriptionNotificationBuilder();
+        public static ProcessUserSubscriptionNotificationBuilder Builder { get => new ProcessUserSubscriptionNotificationBuilder(); }
 
         public class ProcessUserSubscriptionNotificationBuilder
             : OperationBuilder<ProcessUserSubscriptionNotificationBuilder>

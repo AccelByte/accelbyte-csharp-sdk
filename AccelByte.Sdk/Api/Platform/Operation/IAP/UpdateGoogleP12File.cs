@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateGoogleP12File : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateGoogleP12FileBuilder Builder = new UpdateGoogleP12FileBuilder();
+        public static UpdateGoogleP12FileBuilder Builder { get => new UpdateGoogleP12FileBuilder(); }
 
         public class UpdateGoogleP12FileBuilder
             : OperationBuilder<UpdateGoogleP12FileBuilder>

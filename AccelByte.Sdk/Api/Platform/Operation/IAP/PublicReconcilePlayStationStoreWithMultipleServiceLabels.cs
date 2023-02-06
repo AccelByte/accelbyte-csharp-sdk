@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicReconcilePlayStationStoreWithMultipleServiceLabels : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder Builder = new PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder();
+        public static PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder Builder { get => new PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder(); }
 
         public class PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder
             : OperationBuilder<PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder>

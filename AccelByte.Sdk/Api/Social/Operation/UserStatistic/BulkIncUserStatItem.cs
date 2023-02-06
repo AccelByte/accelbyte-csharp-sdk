@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class BulkIncUserStatItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static BulkIncUserStatItemBuilder Builder = new BulkIncUserStatItemBuilder();
+        public static BulkIncUserStatItemBuilder Builder { get => new BulkIncUserStatItemBuilder(); }
 
         public class BulkIncUserStatItemBuilder
             : OperationBuilder<BulkIncUserStatItemBuilder>

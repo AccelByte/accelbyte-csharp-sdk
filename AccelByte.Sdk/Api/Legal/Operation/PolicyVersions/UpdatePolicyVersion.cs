@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class UpdatePolicyVersion : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdatePolicyVersionBuilder Builder = new UpdatePolicyVersionBuilder();
+        public static UpdatePolicyVersionBuilder Builder { get => new UpdatePolicyVersionBuilder(); }
 
         public class UpdatePolicyVersionBuilder
             : OperationBuilder<UpdatePolicyVersionBuilder>

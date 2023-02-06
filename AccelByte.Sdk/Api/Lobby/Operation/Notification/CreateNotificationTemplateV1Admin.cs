@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class CreateNotificationTemplateV1Admin : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateNotificationTemplateV1AdminBuilder Builder = new CreateNotificationTemplateV1AdminBuilder();
+        public static CreateNotificationTemplateV1AdminBuilder Builder { get => new CreateNotificationTemplateV1AdminBuilder(); }
 
         public class CreateNotificationTemplateV1AdminBuilder
             : OperationBuilder<CreateNotificationTemplateV1AdminBuilder>

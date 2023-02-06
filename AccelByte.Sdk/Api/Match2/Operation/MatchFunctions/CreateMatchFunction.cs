@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     public class CreateMatchFunction : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateMatchFunctionBuilder Builder = new CreateMatchFunctionBuilder();
+        public static CreateMatchFunctionBuilder Builder { get => new CreateMatchFunctionBuilder(); }
 
         public class CreateMatchFunctionBuilder
             : OperationBuilder<CreateMatchFunctionBuilder>

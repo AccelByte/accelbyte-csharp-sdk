@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminUpdateAgeRestrictionConfigV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUpdateAgeRestrictionConfigV2Builder Builder = new AdminUpdateAgeRestrictionConfigV2Builder();
+        public static AdminUpdateAgeRestrictionConfigV2Builder Builder { get => new AdminUpdateAgeRestrictionConfigV2Builder(); }
 
         public class AdminUpdateAgeRestrictionConfigV2Builder
             : OperationBuilder<AdminUpdateAgeRestrictionConfigV2Builder>

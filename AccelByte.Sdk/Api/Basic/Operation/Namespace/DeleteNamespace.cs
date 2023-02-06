@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class DeleteNamespace : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteNamespaceBuilder Builder = new DeleteNamespaceBuilder();
+        public static DeleteNamespaceBuilder Builder { get => new DeleteNamespaceBuilder(); }
 
         public class DeleteNamespaceBuilder
             : OperationBuilder<DeleteNamespaceBuilder>

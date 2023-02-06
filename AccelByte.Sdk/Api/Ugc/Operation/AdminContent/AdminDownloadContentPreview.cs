@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class AdminDownloadContentPreview : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDownloadContentPreviewBuilder Builder = new AdminDownloadContentPreviewBuilder();
+        public static AdminDownloadContentPreviewBuilder Builder { get => new AdminDownloadContentPreviewBuilder(); }
 
         public class AdminDownloadContentPreviewBuilder
             : OperationBuilder<AdminDownloadContentPreviewBuilder>

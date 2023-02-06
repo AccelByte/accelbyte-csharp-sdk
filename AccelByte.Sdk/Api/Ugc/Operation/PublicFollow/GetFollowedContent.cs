@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class GetFollowedContent : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetFollowedContentBuilder Builder = new GetFollowedContentBuilder();
+        public static GetFollowedContentBuilder Builder { get => new GetFollowedContentBuilder(); }
 
         public class GetFollowedContentBuilder
             : OperationBuilder<GetFollowedContentBuilder>

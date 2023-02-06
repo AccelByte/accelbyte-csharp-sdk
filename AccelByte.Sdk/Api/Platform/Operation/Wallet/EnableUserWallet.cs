@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class EnableUserWallet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static EnableUserWalletBuilder Builder = new EnableUserWalletBuilder();
+        public static EnableUserWalletBuilder Builder { get => new EnableUserWalletBuilder(); }
 
         public class EnableUserWalletBuilder
             : OperationBuilder<EnableUserWalletBuilder>

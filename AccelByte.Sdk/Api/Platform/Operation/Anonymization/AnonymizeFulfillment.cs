@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class AnonymizeFulfillment : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AnonymizeFulfillmentBuilder Builder = new AnonymizeFulfillmentBuilder();
+        public static AnonymizeFulfillmentBuilder Builder { get => new AnonymizeFulfillmentBuilder(); }
 
         public class AnonymizeFulfillmentBuilder
             : OperationBuilder<AnonymizeFulfillmentBuilder>

@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class SendPartyFreeformNotificationV1Admin : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SendPartyFreeformNotificationV1AdminBuilder Builder = new SendPartyFreeformNotificationV1AdminBuilder();
+        public static SendPartyFreeformNotificationV1AdminBuilder Builder { get => new SendPartyFreeformNotificationV1AdminBuilder(); }
 
         public class SendPartyFreeformNotificationV1AdminBuilder
             : OperationBuilder<SendPartyFreeformNotificationV1AdminBuilder>

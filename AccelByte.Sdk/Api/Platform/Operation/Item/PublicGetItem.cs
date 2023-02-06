@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicGetItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetItemBuilder Builder = new PublicGetItemBuilder();
+        public static PublicGetItemBuilder Builder { get => new PublicGetItemBuilder(); }
 
         public class PublicGetItemBuilder
             : OperationBuilder<PublicGetItemBuilder>

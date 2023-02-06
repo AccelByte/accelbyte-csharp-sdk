@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class RetrieveAcceptedAgreements : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RetrieveAcceptedAgreementsBuilder Builder = new RetrieveAcceptedAgreementsBuilder();
+        public static RetrieveAcceptedAgreementsBuilder Builder { get => new RetrieveAcceptedAgreementsBuilder(); }
 
         public class RetrieveAcceptedAgreementsBuilder
             : OperationBuilder<RetrieveAcceptedAgreementsBuilder>

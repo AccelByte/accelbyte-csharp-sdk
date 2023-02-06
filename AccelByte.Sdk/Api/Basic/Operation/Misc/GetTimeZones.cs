@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class GetTimeZones : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetTimeZonesBuilder Builder = new GetTimeZonesBuilder();
+        public static GetTimeZonesBuilder Builder { get => new GetTimeZonesBuilder(); }
 
         public class GetTimeZonesBuilder
             : OperationBuilder<GetTimeZonesBuilder>

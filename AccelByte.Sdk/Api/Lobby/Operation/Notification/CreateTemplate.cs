@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class CreateTemplate : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateTemplateBuilder Builder = new CreateTemplateBuilder();
+        public static CreateTemplateBuilder Builder { get => new CreateTemplateBuilder(); }
 
         public class CreateTemplateBuilder
             : OperationBuilder<CreateTemplateBuilder>

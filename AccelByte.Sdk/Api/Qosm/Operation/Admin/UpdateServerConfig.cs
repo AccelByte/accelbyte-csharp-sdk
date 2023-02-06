@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
     public class UpdateServerConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateServerConfigBuilder Builder = new UpdateServerConfigBuilder();
+        public static UpdateServerConfigBuilder Builder { get => new UpdateServerConfigBuilder(); }
 
         public class UpdateServerConfigBuilder
             : OperationBuilder<UpdateServerConfigBuilder>

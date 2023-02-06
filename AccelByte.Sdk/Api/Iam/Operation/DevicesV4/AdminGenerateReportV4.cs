@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGenerateReportV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGenerateReportV4Builder Builder = new AdminGenerateReportV4Builder();
+        public static AdminGenerateReportV4Builder Builder { get => new AdminGenerateReportV4Builder(); }
 
         public class AdminGenerateReportV4Builder
             : OperationBuilder<AdminGenerateReportV4Builder>

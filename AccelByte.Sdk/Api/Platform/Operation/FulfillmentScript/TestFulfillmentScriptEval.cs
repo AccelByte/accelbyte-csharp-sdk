@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class TestFulfillmentScriptEval : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static TestFulfillmentScriptEvalBuilder Builder = new TestFulfillmentScriptEvalBuilder();
+        public static TestFulfillmentScriptEvalBuilder Builder { get => new TestFulfillmentScriptEvalBuilder(); }
 
         public class TestFulfillmentScriptEvalBuilder
             : OperationBuilder<TestFulfillmentScriptEvalBuilder>

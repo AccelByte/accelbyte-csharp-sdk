@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminAddUserRoleV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminAddUserRoleV3Builder Builder = new AdminAddUserRoleV3Builder();
+        public static AdminAddUserRoleV3Builder Builder { get => new AdminAddUserRoleV3Builder(); }
 
         public class AdminAddUserRoleV3Builder
             : OperationBuilder<AdminAddUserRoleV3Builder>

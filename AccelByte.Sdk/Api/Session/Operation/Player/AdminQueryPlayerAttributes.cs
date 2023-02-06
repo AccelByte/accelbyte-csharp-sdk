@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class AdminQueryPlayerAttributes : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminQueryPlayerAttributesBuilder Builder = new AdminQueryPlayerAttributesBuilder();
+        public static AdminQueryPlayerAttributesBuilder Builder { get => new AdminQueryPlayerAttributesBuilder(); }
 
         public class AdminQueryPlayerAttributesBuilder
             : OperationBuilder<AdminQueryPlayerAttributesBuilder>

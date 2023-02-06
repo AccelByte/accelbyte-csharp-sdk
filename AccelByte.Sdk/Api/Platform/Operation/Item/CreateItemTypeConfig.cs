@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CreateItemTypeConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateItemTypeConfigBuilder Builder = new CreateItemTypeConfigBuilder();
+        public static CreateItemTypeConfigBuilder Builder { get => new CreateItemTypeConfigBuilder(); }
 
         public class CreateItemTypeConfigBuilder
             : OperationBuilder<CreateItemTypeConfigBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PurgeExpiredSection : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PurgeExpiredSectionBuilder Builder = new PurgeExpiredSectionBuilder();
+        public static PurgeExpiredSectionBuilder Builder { get => new PurgeExpiredSectionBuilder(); }
 
         public class PurgeExpiredSectionBuilder
             : OperationBuilder<PurgeExpiredSectionBuilder>

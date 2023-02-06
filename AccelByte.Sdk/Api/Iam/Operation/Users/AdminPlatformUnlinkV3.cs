@@ -96,7 +96,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminPlatformUnlinkV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminPlatformUnlinkV3Builder Builder = new AdminPlatformUnlinkV3Builder();
+        public static AdminPlatformUnlinkV3Builder Builder { get => new AdminPlatformUnlinkV3Builder(); }
 
         public class AdminPlatformUnlinkV3Builder
             : OperationBuilder<AdminPlatformUnlinkV3Builder>

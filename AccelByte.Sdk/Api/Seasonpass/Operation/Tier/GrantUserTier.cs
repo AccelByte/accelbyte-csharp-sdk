@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class GrantUserTier : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GrantUserTierBuilder Builder = new GrantUserTierBuilder();
+        public static GrantUserTierBuilder Builder { get => new GrantUserTierBuilder(); }
 
         public class GrantUserTierBuilder
             : OperationBuilder<GrantUserTierBuilder>

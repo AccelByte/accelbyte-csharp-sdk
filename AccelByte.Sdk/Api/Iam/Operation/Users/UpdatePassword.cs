@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class UpdatePassword : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdatePasswordBuilder Builder = new UpdatePasswordBuilder();
+        public static UpdatePasswordBuilder Builder { get => new UpdatePasswordBuilder(); }
 
         public class UpdatePasswordBuilder
             : OperationBuilder<UpdatePasswordBuilder>

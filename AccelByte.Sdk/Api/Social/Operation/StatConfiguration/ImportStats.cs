@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class ImportStats : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ImportStatsBuilder Builder = new ImportStatsBuilder();
+        public static ImportStatsBuilder Builder { get => new ImportStatsBuilder(); }
 
         public class ImportStatsBuilder
             : OperationBuilder<ImportStatsBuilder>

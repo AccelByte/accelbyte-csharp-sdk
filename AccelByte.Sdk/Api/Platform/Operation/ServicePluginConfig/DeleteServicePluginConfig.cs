@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteServicePluginConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteServicePluginConfigBuilder Builder = new DeleteServicePluginConfigBuilder();
+        public static DeleteServicePluginConfigBuilder Builder { get => new DeleteServicePluginConfigBuilder(); }
 
         public class DeleteServicePluginConfigBuilder
             : OperationBuilder<DeleteServicePluginConfigBuilder>

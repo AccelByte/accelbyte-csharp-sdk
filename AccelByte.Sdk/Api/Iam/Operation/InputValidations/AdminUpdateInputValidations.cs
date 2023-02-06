@@ -109,7 +109,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminUpdateInputValidations : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUpdateInputValidationsBuilder Builder = new AdminUpdateInputValidationsBuilder();
+        public static AdminUpdateInputValidationsBuilder Builder { get => new AdminUpdateInputValidationsBuilder(); }
 
         public class AdminUpdateInputValidationsBuilder
             : OperationBuilder<AdminUpdateInputValidationsBuilder>

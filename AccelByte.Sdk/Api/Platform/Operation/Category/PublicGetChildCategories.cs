@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicGetChildCategories : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetChildCategoriesBuilder Builder = new PublicGetChildCategoriesBuilder();
+        public static PublicGetChildCategoriesBuilder Builder { get => new PublicGetChildCategoriesBuilder(); }
 
         public class PublicGetChildCategoriesBuilder
             : OperationBuilder<PublicGetChildCategoriesBuilder>

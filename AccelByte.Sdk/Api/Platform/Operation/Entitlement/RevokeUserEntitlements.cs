@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class RevokeUserEntitlements : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RevokeUserEntitlementsBuilder Builder = new RevokeUserEntitlementsBuilder();
+        public static RevokeUserEntitlementsBuilder Builder { get => new RevokeUserEntitlementsBuilder(); }
 
         public class RevokeUserEntitlementsBuilder
             : OperationBuilder<RevokeUserEntitlementsBuilder>

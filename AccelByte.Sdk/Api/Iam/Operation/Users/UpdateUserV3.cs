@@ -70,7 +70,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class UpdateUserV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateUserV3Builder Builder = new UpdateUserV3Builder();
+        public static UpdateUserV3Builder Builder { get => new UpdateUserV3Builder(); }
 
         public class UpdateUserV3Builder
             : OperationBuilder<UpdateUserV3Builder>

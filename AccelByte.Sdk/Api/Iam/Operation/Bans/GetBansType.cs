@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetBansType : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetBansTypeBuilder Builder = new GetBansTypeBuilder();
+        public static GetBansTypeBuilder Builder { get => new GetBansTypeBuilder(); }
 
         public class GetBansTypeBuilder
             : OperationBuilder<GetBansTypeBuilder>

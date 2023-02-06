@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetReward1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetReward1Builder Builder = new GetReward1Builder();
+        public static GetReward1Builder Builder { get => new GetReward1Builder(); }
 
         public class GetReward1Builder
             : OperationBuilder<GetReward1Builder>

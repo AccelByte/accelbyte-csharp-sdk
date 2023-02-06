@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class CreateStat1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateStat1Builder Builder = new CreateStat1Builder();
+        public static CreateStat1Builder Builder { get => new CreateStat1Builder(); }
 
         public class CreateStat1Builder
             : OperationBuilder<CreateStat1Builder>

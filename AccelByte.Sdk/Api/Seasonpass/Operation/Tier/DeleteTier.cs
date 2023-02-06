@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class DeleteTier : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteTierBuilder Builder = new DeleteTierBuilder();
+        public static DeleteTierBuilder Builder { get => new DeleteTierBuilder(); }
 
         public class DeleteTierBuilder
             : OperationBuilder<DeleteTierBuilder>

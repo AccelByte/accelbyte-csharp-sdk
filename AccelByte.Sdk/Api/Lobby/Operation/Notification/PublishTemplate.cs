@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class PublishTemplate : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublishTemplateBuilder Builder = new PublishTemplateBuilder();
+        public static PublishTemplateBuilder Builder { get => new PublishTemplateBuilder(); }
 
         public class PublishTemplateBuilder
             : OperationBuilder<PublishTemplateBuilder>

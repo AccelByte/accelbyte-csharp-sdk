@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class UsersPresenceHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UsersPresenceHandlerV1Builder Builder = new UsersPresenceHandlerV1Builder();
+        public static UsersPresenceHandlerV1Builder Builder { get => new UsersPresenceHandlerV1Builder(); }
 
         public class UsersPresenceHandlerV1Builder
             : OperationBuilder<UsersPresenceHandlerV1Builder>

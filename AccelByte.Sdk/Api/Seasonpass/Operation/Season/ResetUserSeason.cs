@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class ResetUserSeason : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ResetUserSeasonBuilder Builder = new ResetUserSeasonBuilder();
+        public static ResetUserSeasonBuilder Builder { get => new ResetUserSeasonBuilder(); }
 
         public class ResetUserSeasonBuilder
             : OperationBuilder<ResetUserSeasonBuilder>

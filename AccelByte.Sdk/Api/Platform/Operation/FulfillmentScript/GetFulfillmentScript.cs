@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetFulfillmentScript : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetFulfillmentScriptBuilder Builder = new GetFulfillmentScriptBuilder();
+        public static GetFulfillmentScriptBuilder Builder { get => new GetFulfillmentScriptBuilder(); }
 
         public class GetFulfillmentScriptBuilder
             : OperationBuilder<GetFulfillmentScriptBuilder>

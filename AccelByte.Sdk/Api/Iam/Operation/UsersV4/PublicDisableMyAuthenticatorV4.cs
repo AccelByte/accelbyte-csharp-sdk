@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicDisableMyAuthenticatorV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicDisableMyAuthenticatorV4Builder Builder = new PublicDisableMyAuthenticatorV4Builder();
+        public static PublicDisableMyAuthenticatorV4Builder Builder { get => new PublicDisableMyAuthenticatorV4Builder(); }
 
         public class PublicDisableMyAuthenticatorV4Builder
             : OperationBuilder<PublicDisableMyAuthenticatorV4Builder>

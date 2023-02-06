@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class Change2faMethod : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static Change2faMethodBuilder Builder = new Change2faMethodBuilder();
+        public static Change2faMethodBuilder Builder { get => new Change2faMethodBuilder(); }
 
         public class Change2faMethodBuilder
             : OperationBuilder<Change2faMethodBuilder>

@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class PublicQueryUserStatItems1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicQueryUserStatItems1Builder Builder = new PublicQueryUserStatItems1Builder();
+        public static PublicQueryUserStatItems1Builder Builder { get => new PublicQueryUserStatItems1Builder(); }
 
         public class PublicQueryUserStatItems1Builder
             : OperationBuilder<PublicQueryUserStatItems1Builder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryPaymentNotifications : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryPaymentNotificationsBuilder Builder = new QueryPaymentNotificationsBuilder();
+        public static QueryPaymentNotificationsBuilder Builder { get => new QueryPaymentNotificationsBuilder(); }
 
         public class QueryPaymentNotificationsBuilder
             : OperationBuilder<QueryPaymentNotificationsBuilder>

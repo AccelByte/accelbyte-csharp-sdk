@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class TestCheckoutConfigById : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static TestCheckoutConfigByIdBuilder Builder = new TestCheckoutConfigByIdBuilder();
+        public static TestCheckoutConfigByIdBuilder Builder { get => new TestCheckoutConfigByIdBuilder(); }
 
         public class TestCheckoutConfigByIdBuilder
             : OperationBuilder<TestCheckoutConfigByIdBuilder>

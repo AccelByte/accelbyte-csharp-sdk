@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetUserEntitlementHistories : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserEntitlementHistoriesBuilder Builder = new GetUserEntitlementHistoriesBuilder();
+        public static GetUserEntitlementHistoriesBuilder Builder { get => new GetUserEntitlementHistoriesBuilder(); }
 
         public class GetUserEntitlementHistoriesBuilder
             : OperationBuilder<GetUserEntitlementHistoriesBuilder>

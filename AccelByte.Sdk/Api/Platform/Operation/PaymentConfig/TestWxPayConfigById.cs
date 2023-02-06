@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class TestWxPayConfigById : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static TestWxPayConfigByIdBuilder Builder = new TestWxPayConfigByIdBuilder();
+        public static TestWxPayConfigByIdBuilder Builder { get => new TestWxPayConfigByIdBuilder(); }
 
         public class TestWxPayConfigByIdBuilder
             : OperationBuilder<TestWxPayConfigByIdBuilder>

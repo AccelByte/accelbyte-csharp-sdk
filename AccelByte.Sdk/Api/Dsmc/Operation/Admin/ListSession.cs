@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class ListSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListSessionBuilder Builder = new ListSessionBuilder();
+        public static ListSessionBuilder Builder { get => new ListSessionBuilder(); }
 
         public class ListSessionBuilder
             : OperationBuilder<ListSessionBuilder>

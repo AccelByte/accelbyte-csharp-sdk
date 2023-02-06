@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class RetrieveSSOLoginPlatformCredential : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RetrieveSSOLoginPlatformCredentialBuilder Builder = new RetrieveSSOLoginPlatformCredentialBuilder();
+        public static RetrieveSSOLoginPlatformCredentialBuilder Builder { get => new RetrieveSSOLoginPlatformCredentialBuilder(); }
 
         public class RetrieveSSOLoginPlatformCredentialBuilder
             : OperationBuilder<RetrieveSSOLoginPlatformCredentialBuilder>

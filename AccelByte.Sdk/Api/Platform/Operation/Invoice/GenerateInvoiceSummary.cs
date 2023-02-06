@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GenerateInvoiceSummary : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GenerateInvoiceSummaryBuilder Builder = new GenerateInvoiceSummaryBuilder();
+        public static GenerateInvoiceSummaryBuilder Builder { get => new GenerateInvoiceSummaryBuilder(); }
 
         public class GenerateInvoiceSummaryBuilder
             : OperationBuilder<GenerateInvoiceSummaryBuilder>

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminGetConfigV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetConfigV1Builder Builder = new AdminGetConfigV1Builder();
+        public static AdminGetConfigV1Builder Builder { get => new AdminGetConfigV1Builder(); }
 
         public class AdminGetConfigV1Builder
             : OperationBuilder<AdminGetConfigV1Builder>

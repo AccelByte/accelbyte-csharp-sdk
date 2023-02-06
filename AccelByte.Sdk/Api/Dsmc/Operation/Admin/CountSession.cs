@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class CountSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CountSessionBuilder Builder = new CountSessionBuilder();
+        public static CountSessionBuilder Builder { get => new CountSessionBuilder(); }
 
         public class CountSessionBuilder
             : OperationBuilder<CountSessionBuilder>

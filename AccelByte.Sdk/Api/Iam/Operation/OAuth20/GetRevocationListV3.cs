@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetRevocationListV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetRevocationListV3Builder Builder = new GetRevocationListV3Builder();
+        public static GetRevocationListV3Builder Builder { get => new GetRevocationListV3Builder(); }
 
         public class GetRevocationListV3Builder
             : OperationBuilder<GetRevocationListV3Builder>

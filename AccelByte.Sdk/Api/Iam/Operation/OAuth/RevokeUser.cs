@@ -45,7 +45,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class RevokeUser : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RevokeUserBuilder Builder = new RevokeUserBuilder();
+        public static RevokeUserBuilder Builder { get => new RevokeUserBuilder(); }
 
         public class RevokeUserBuilder
             : OperationBuilder<RevokeUserBuilder>

@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetUserWallet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserWalletBuilder Builder = new GetUserWalletBuilder();
+        public static GetUserWalletBuilder Builder { get => new GetUserWalletBuilder(); }
 
         public class GetUserWalletBuilder
             : OperationBuilder<GetUserWalletBuilder>

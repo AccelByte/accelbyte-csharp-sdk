@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class AdminQueryParties : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminQueryPartiesBuilder Builder = new AdminQueryPartiesBuilder();
+        public static AdminQueryPartiesBuilder Builder { get => new AdminQueryPartiesBuilder(); }
 
         public class AdminQueryPartiesBuilder
             : OperationBuilder<AdminQueryPartiesBuilder>

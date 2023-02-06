@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     public class PublicListUserAchievements : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicListUserAchievementsBuilder Builder = new PublicListUserAchievementsBuilder();
+        public static PublicListUserAchievementsBuilder Builder { get => new PublicListUserAchievementsBuilder(); }
 
         public class PublicListUserAchievementsBuilder
             : OperationBuilder<PublicListUserAchievementsBuilder>

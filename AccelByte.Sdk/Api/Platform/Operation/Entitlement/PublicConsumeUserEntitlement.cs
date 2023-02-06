@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicConsumeUserEntitlement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicConsumeUserEntitlementBuilder Builder = new PublicConsumeUserEntitlementBuilder();
+        public static PublicConsumeUserEntitlementBuilder Builder { get => new PublicConsumeUserEntitlementBuilder(); }
 
         public class PublicConsumeUserEntitlementBuilder
             : OperationBuilder<PublicConsumeUserEntitlementBuilder>

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicGetLinkHeadlessAccountToMyAccountConflictV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetLinkHeadlessAccountToMyAccountConflictV3Builder Builder = new PublicGetLinkHeadlessAccountToMyAccountConflictV3Builder();
+        public static PublicGetLinkHeadlessAccountToMyAccountConflictV3Builder Builder { get => new PublicGetLinkHeadlessAccountToMyAccountConflictV3Builder(); }
 
         public class PublicGetLinkHeadlessAccountToMyAccountConflictV3Builder
             : OperationBuilder<PublicGetLinkHeadlessAccountToMyAccountConflictV3Builder>

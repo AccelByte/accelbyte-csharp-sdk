@@ -98,7 +98,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicForcePlatformLinkV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicForcePlatformLinkV3Builder Builder = new PublicForcePlatformLinkV3Builder();
+        public static PublicForcePlatformLinkV3Builder Builder { get => new PublicForcePlatformLinkV3Builder(); }
 
         public class PublicForcePlatformLinkV3Builder
             : OperationBuilder<PublicForcePlatformLinkV3Builder>

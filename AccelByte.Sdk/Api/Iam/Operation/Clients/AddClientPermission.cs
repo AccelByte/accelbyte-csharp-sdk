@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AddClientPermission : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AddClientPermissionBuilder Builder = new AddClientPermissionBuilder();
+        public static AddClientPermissionBuilder Builder { get => new AddClientPermissionBuilder(); }
 
         public class AddClientPermissionBuilder
             : OperationBuilder<AddClientPermissionBuilder>

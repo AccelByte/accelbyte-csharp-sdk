@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class CreateImage : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateImageBuilder Builder = new CreateImageBuilder();
+        public static CreateImageBuilder Builder { get => new CreateImageBuilder(); }
 
         public class CreateImageBuilder
             : OperationBuilder<CreateImageBuilder>

@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicSearchUserV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicSearchUserV3Builder Builder = new PublicSearchUserV3Builder();
+        public static PublicSearchUserV3Builder Builder { get => new PublicSearchUserV3Builder(); }
 
         public class PublicSearchUserV3Builder
             : OperationBuilder<PublicSearchUserV3Builder>

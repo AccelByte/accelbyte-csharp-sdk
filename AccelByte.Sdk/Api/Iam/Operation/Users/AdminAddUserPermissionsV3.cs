@@ -112,7 +112,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminAddUserPermissionsV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminAddUserPermissionsV3Builder Builder = new AdminAddUserPermissionsV3Builder();
+        public static AdminAddUserPermissionsV3Builder Builder { get => new AdminAddUserPermissionsV3Builder(); }
 
         public class AdminAddUserPermissionsV3Builder
             : OperationBuilder<AdminAddUserPermissionsV3Builder>

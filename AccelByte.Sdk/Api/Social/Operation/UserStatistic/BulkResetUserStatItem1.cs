@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class BulkResetUserStatItem1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static BulkResetUserStatItem1Builder Builder = new BulkResetUserStatItem1Builder();
+        public static BulkResetUserStatItem1Builder Builder { get => new BulkResetUserStatItem1Builder(); }
 
         public class BulkResetUserStatItem1Builder
             : OperationBuilder<BulkResetUserStatItem1Builder>

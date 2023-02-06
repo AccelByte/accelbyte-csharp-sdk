@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
     public class ListAllTerminatedServers : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListAllTerminatedServersBuilder Builder = new ListAllTerminatedServersBuilder();
+        public static ListAllTerminatedServersBuilder Builder { get => new ListAllTerminatedServersBuilder(); }
 
         public class ListAllTerminatedServersBuilder
             : OperationBuilder<ListAllTerminatedServersBuilder>

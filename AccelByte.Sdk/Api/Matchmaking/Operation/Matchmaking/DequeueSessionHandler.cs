@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class DequeueSessionHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DequeueSessionHandlerBuilder Builder = new DequeueSessionHandlerBuilder();
+        public static DequeueSessionHandlerBuilder Builder { get => new DequeueSessionHandlerBuilder(); }
 
         public class DequeueSessionHandlerBuilder
             : OperationBuilder<DequeueSessionHandlerBuilder>

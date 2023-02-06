@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class GetUserGroupInformationPublicV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserGroupInformationPublicV1Builder Builder = new GetUserGroupInformationPublicV1Builder();
+        public static GetUserGroupInformationPublicV1Builder Builder { get => new GetUserGroupInformationPublicV1Builder(); }
 
         public class GetUserGroupInformationPublicV1Builder
             : OperationBuilder<GetUserGroupInformationPublicV1Builder>

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGetBansTypeWithNamespaceV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetBansTypeWithNamespaceV3Builder Builder = new AdminGetBansTypeWithNamespaceV3Builder();
+        public static AdminGetBansTypeWithNamespaceV3Builder Builder { get => new AdminGetBansTypeWithNamespaceV3Builder(); }
 
         public class AdminGetBansTypeWithNamespaceV3Builder
             : OperationBuilder<AdminGetBansTypeWithNamespaceV3Builder>

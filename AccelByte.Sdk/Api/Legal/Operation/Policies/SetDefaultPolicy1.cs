@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class SetDefaultPolicy1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SetDefaultPolicy1Builder Builder = new SetDefaultPolicy1Builder();
+        public static SetDefaultPolicy1Builder Builder { get => new SetDefaultPolicy1Builder(); }
 
         public class SetDefaultPolicy1Builder
             : OperationBuilder<SetDefaultPolicy1Builder>

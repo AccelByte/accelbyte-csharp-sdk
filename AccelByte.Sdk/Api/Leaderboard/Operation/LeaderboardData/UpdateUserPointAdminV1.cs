@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     public class UpdateUserPointAdminV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateUserPointAdminV1Builder Builder = new UpdateUserPointAdminV1Builder();
+        public static UpdateUserPointAdminV1Builder Builder { get => new UpdateUserPointAdminV1Builder(); }
 
         public class UpdateUserPointAdminV1Builder
             : OperationBuilder<UpdateUserPointAdminV1Builder>

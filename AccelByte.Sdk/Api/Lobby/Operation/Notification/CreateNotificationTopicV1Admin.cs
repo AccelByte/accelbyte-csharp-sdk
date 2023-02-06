@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class CreateNotificationTopicV1Admin : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateNotificationTopicV1AdminBuilder Builder = new CreateNotificationTopicV1AdminBuilder();
+        public static CreateNotificationTopicV1AdminBuilder Builder { get => new CreateNotificationTopicV1AdminBuilder(); }
 
         public class CreateNotificationTopicV1AdminBuilder
             : OperationBuilder<CreateNotificationTopicV1AdminBuilder>

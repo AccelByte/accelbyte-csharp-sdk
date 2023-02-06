@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class LoginSSOClient : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static LoginSSOClientBuilder Builder = new LoginSSOClientBuilder();
+        public static LoginSSOClientBuilder Builder { get => new LoginSSOClientBuilder(); }
 
         public class LoginSSOClientBuilder
             : OperationBuilder<LoginSSOClientBuilder>

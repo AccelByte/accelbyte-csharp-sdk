@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class GetUserSlotConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserSlotConfigBuilder Builder = new GetUserSlotConfigBuilder();
+        public static GetUserSlotConfigBuilder Builder { get => new GetUserSlotConfigBuilder(); }
 
         public class GetUserSlotConfigBuilder
             : OperationBuilder<GetUserSlotConfigBuilder>

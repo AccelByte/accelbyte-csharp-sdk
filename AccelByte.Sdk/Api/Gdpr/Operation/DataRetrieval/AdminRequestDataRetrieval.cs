@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     public class AdminRequestDataRetrieval : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminRequestDataRetrievalBuilder Builder = new AdminRequestDataRetrievalBuilder();
+        public static AdminRequestDataRetrievalBuilder Builder { get => new AdminRequestDataRetrievalBuilder(); }
 
         public class AdminRequestDataRetrievalBuilder
             : OperationBuilder<AdminRequestDataRetrievalBuilder>

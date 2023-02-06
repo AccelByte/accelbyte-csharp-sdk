@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicCancelUserOrder : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicCancelUserOrderBuilder Builder = new PublicCancelUserOrderBuilder();
+        public static PublicCancelUserOrderBuilder Builder { get => new PublicCancelUserOrderBuilder(); }
 
         public class PublicCancelUserOrderBuilder
             : OperationBuilder<PublicCancelUserOrderBuilder>

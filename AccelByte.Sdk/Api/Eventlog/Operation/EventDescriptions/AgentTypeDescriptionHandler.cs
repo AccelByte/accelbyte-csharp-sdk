@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     public class AgentTypeDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AgentTypeDescriptionHandlerBuilder Builder = new AgentTypeDescriptionHandlerBuilder();
+        public static AgentTypeDescriptionHandlerBuilder Builder { get => new AgentTypeDescriptionHandlerBuilder(); }
 
         public class AgentTypeDescriptionHandlerBuilder
             : OperationBuilder<AgentTypeDescriptionHandlerBuilder>

@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class SyncTwitchDropsEntitlement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SyncTwitchDropsEntitlementBuilder Builder = new SyncTwitchDropsEntitlementBuilder();
+        public static SyncTwitchDropsEntitlementBuilder Builder { get => new SyncTwitchDropsEntitlementBuilder(); }
 
         public class SyncTwitchDropsEntitlementBuilder
             : OperationBuilder<SyncTwitchDropsEntitlementBuilder>

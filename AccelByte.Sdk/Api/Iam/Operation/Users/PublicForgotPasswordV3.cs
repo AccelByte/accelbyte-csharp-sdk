@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicForgotPasswordV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicForgotPasswordV3Builder Builder = new PublicForgotPasswordV3Builder();
+        public static PublicForgotPasswordV3Builder Builder { get => new PublicForgotPasswordV3Builder(); }
 
         public class PublicForgotPasswordV3Builder
             : OperationBuilder<PublicForgotPasswordV3Builder>

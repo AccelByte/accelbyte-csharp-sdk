@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class PublicUpdatePartyAttributesV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicUpdatePartyAttributesV1Builder Builder = new PublicUpdatePartyAttributesV1Builder();
+        public static PublicUpdatePartyAttributesV1Builder Builder { get => new PublicUpdatePartyAttributesV1Builder(); }
 
         public class PublicUpdatePartyAttributesV1Builder
             : OperationBuilder<PublicUpdatePartyAttributesV1Builder>

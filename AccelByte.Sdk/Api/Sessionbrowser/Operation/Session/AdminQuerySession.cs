@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class AdminQuerySession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminQuerySessionBuilder Builder = new AdminQuerySessionBuilder();
+        public static AdminQuerySessionBuilder Builder { get => new AdminQuerySessionBuilder(); }
 
         public class AdminQuerySessionBuilder
             : OperationBuilder<AdminQuerySessionBuilder>

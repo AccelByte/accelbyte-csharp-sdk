@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     public class ExportAchievements : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ExportAchievementsBuilder Builder = new ExportAchievementsBuilder();
+        public static ExportAchievementsBuilder Builder { get => new ExportAchievementsBuilder(); }
 
         public class ExportAchievementsBuilder
             : OperationBuilder<ExportAchievementsBuilder>

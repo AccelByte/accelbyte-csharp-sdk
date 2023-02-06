@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     public class PublicUnlockAchievement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicUnlockAchievementBuilder Builder = new PublicUnlockAchievementBuilder();
+        public static PublicUnlockAchievementBuilder Builder { get => new PublicUnlockAchievementBuilder(); }
 
         public class PublicUnlockAchievementBuilder
             : OperationBuilder<PublicUnlockAchievementBuilder>

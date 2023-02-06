@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class GetPodConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPodConfigBuilder Builder = new GetPodConfigBuilder();
+        public static GetPodConfigBuilder Builder { get => new GetPodConfigBuilder(); }
 
         public class GetPodConfigBuilder
             : OperationBuilder<GetPodConfigBuilder>

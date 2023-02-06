@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminImportConfigV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminImportConfigV1Builder Builder = new AdminImportConfigV1Builder();
+        public static AdminImportConfigV1Builder Builder { get => new AdminImportConfigV1Builder(); }
 
         public class AdminImportConfigV1Builder
             : OperationBuilder<AdminImportConfigV1Builder>

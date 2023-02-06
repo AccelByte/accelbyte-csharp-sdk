@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteView : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteViewBuilder Builder = new DeleteViewBuilder();
+        public static DeleteViewBuilder Builder { get => new DeleteViewBuilder(); }
 
         public class DeleteViewBuilder
             : OperationBuilder<DeleteViewBuilder>

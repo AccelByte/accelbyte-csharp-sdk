@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class GetBannedUsers : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetBannedUsersBuilder Builder = new GetBannedUsersBuilder();
+        public static GetBannedUsersBuilder Builder { get => new GetBannedUsersBuilder(); }
 
         public class GetBannedUsersBuilder
             : OperationBuilder<GetBannedUsersBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     public class RejectBackfill : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RejectBackfillBuilder Builder = new RejectBackfillBuilder();
+        public static RejectBackfillBuilder Builder { get => new RejectBackfillBuilder(); }
 
         public class RejectBackfillBuilder
             : OperationBuilder<RejectBackfillBuilder>

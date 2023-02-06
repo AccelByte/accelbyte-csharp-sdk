@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetBulkItemIdBySkus : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetBulkItemIdBySkusBuilder Builder = new GetBulkItemIdBySkusBuilder();
+        public static GetBulkItemIdBySkusBuilder Builder { get => new GetBulkItemIdBySkusBuilder(); }
 
         public class GetBulkItemIdBySkusBuilder
             : OperationBuilder<GetBulkItemIdBySkusBuilder>

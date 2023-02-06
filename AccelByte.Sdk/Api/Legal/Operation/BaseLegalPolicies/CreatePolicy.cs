@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class CreatePolicy : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreatePolicyBuilder Builder = new CreatePolicyBuilder();
+        public static CreatePolicyBuilder Builder { get => new CreatePolicyBuilder(); }
 
         public class CreatePolicyBuilder
             : OperationBuilder<CreatePolicyBuilder>

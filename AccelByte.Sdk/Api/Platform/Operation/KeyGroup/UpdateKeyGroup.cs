@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateKeyGroup : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateKeyGroupBuilder Builder = new UpdateKeyGroupBuilder();
+        public static UpdateKeyGroupBuilder Builder { get => new UpdateKeyGroupBuilder(); }
 
         public class UpdateKeyGroupBuilder
             : OperationBuilder<UpdateKeyGroupBuilder>

@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublishAll : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublishAllBuilder Builder = new PublishAllBuilder();
+        public static PublishAllBuilder Builder { get => new PublishAllBuilder(); }
 
         public class PublishAllBuilder
             : OperationBuilder<PublishAllBuilder>

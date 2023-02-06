@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class AdminSearchSessionsV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminSearchSessionsV2Builder Builder = new AdminSearchSessionsV2Builder();
+        public static AdminSearchSessionsV2Builder Builder { get => new AdminSearchSessionsV2Builder(); }
 
         public class AdminSearchSessionsV2Builder
             : OperationBuilder<AdminSearchSessionsV2Builder>

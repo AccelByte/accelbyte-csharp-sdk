@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class DisableUserBan : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DisableUserBanBuilder Builder = new DisableUserBanBuilder();
+        public static DisableUserBanBuilder Builder { get => new DisableUserBanBuilder(); }
 
         public class DisableUserBanBuilder
             : OperationBuilder<DisableUserBanBuilder>

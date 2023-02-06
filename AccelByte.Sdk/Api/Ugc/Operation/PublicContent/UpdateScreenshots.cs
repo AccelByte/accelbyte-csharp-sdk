@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class UpdateScreenshots : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateScreenshotsBuilder Builder = new UpdateScreenshotsBuilder();
+        public static UpdateScreenshotsBuilder Builder { get => new UpdateScreenshotsBuilder(); }
 
         public class UpdateScreenshotsBuilder
             : OperationBuilder<UpdateScreenshotsBuilder>

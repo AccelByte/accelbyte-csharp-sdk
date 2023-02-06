@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class UpdateTopicByTopicName : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateTopicByTopicNameBuilder Builder = new UpdateTopicByTopicNameBuilder();
+        public static UpdateTopicByTopicNameBuilder Builder { get => new UpdateTopicByTopicNameBuilder(); }
 
         public class UpdateTopicByTopicNameBuilder
             : OperationBuilder<UpdateTopicByTopicNameBuilder>

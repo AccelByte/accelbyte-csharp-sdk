@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     public class UpdateMatchPool : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateMatchPoolBuilder Builder = new UpdateMatchPoolBuilder();
+        public static UpdateMatchPoolBuilder Builder { get => new UpdateMatchPoolBuilder(); }
 
         public class UpdateMatchPoolBuilder
             : OperationBuilder<UpdateMatchPoolBuilder>

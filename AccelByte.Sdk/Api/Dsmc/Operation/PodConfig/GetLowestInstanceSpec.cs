@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class GetLowestInstanceSpec : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetLowestInstanceSpecBuilder Builder = new GetLowestInstanceSpecBuilder();
+        public static GetLowestInstanceSpecBuilder Builder { get => new GetLowestInstanceSpecBuilder(); }
 
         public class GetLowestInstanceSpecBuilder
             : OperationBuilder<GetLowestInstanceSpecBuilder>

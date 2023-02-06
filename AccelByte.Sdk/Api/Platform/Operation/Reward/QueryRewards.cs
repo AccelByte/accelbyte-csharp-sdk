@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryRewards : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryRewardsBuilder Builder = new QueryRewardsBuilder();
+        public static QueryRewardsBuilder Builder { get => new QueryRewardsBuilder(); }
 
         public class QueryRewardsBuilder
             : OperationBuilder<QueryRewardsBuilder>

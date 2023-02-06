@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class SearchSessionsV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SearchSessionsV2Builder Builder = new SearchSessionsV2Builder();
+        public static SearchSessionsV2Builder Builder { get => new SearchSessionsV2Builder(); }
 
         public class SearchSessionsV2Builder
             : OperationBuilder<SearchSessionsV2Builder>

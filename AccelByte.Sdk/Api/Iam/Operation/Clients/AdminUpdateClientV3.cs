@@ -93,7 +93,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminUpdateClientV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUpdateClientV3Builder Builder = new AdminUpdateClientV3Builder();
+        public static AdminUpdateClientV3Builder Builder { get => new AdminUpdateClientV3Builder(); }
 
         public class AdminUpdateClientV3Builder
             : OperationBuilder<AdminUpdateClientV3Builder>

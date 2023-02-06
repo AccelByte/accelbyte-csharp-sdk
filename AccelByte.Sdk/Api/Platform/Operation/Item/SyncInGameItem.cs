@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class SyncInGameItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SyncInGameItemBuilder Builder = new SyncInGameItemBuilder();
+        public static SyncInGameItemBuilder Builder { get => new SyncInGameItemBuilder(); }
 
         public class SyncInGameItemBuilder
             : OperationBuilder<SyncInGameItemBuilder>

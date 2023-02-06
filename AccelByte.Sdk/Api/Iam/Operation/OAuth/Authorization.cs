@@ -113,7 +113,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class Authorization : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AuthorizationBuilder Builder = new AuthorizationBuilder();
+        public static AuthorizationBuilder Builder { get => new AuthorizationBuilder(); }
 
         public class AuthorizationBuilder
             : OperationBuilder<AuthorizationBuilder>

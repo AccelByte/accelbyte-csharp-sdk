@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GrantDaysToSubscription : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GrantDaysToSubscriptionBuilder Builder = new GrantDaysToSubscriptionBuilder();
+        public static GrantDaysToSubscriptionBuilder Builder { get => new GrantDaysToSubscriptionBuilder(); }
 
         public class GrantDaysToSubscriptionBuilder
             : OperationBuilder<GrantDaysToSubscriptionBuilder>

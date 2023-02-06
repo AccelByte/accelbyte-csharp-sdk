@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminRemoveRoleMembersV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminRemoveRoleMembersV3Builder Builder = new AdminRemoveRoleMembersV3Builder();
+        public static AdminRemoveRoleMembersV3Builder Builder { get => new AdminRemoveRoleMembersV3Builder(); }
 
         public class AdminRemoveRoleMembersV3Builder
             : OperationBuilder<AdminRemoveRoleMembersV3Builder>

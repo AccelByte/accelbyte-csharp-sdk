@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class GetListOfFriends : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetListOfFriendsBuilder Builder = new GetListOfFriendsBuilder();
+        public static GetListOfFriendsBuilder Builder { get => new GetListOfFriendsBuilder(); }
 
         public class GetListOfFriendsBuilder
             : OperationBuilder<GetListOfFriendsBuilder>

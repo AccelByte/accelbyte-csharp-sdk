@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class GetTemplateSlugLocalizationsTemplateV1Admin : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetTemplateSlugLocalizationsTemplateV1AdminBuilder Builder = new GetTemplateSlugLocalizationsTemplateV1AdminBuilder();
+        public static GetTemplateSlugLocalizationsTemplateV1AdminBuilder Builder { get => new GetTemplateSlugLocalizationsTemplateV1AdminBuilder(); }
 
         public class GetTemplateSlugLocalizationsTemplateV1AdminBuilder
             : OperationBuilder<GetTemplateSlugLocalizationsTemplateV1AdminBuilder>

@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class SyncStadiaEntitlement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SyncStadiaEntitlementBuilder Builder = new SyncStadiaEntitlementBuilder();
+        public static SyncStadiaEntitlementBuilder Builder { get => new SyncStadiaEntitlementBuilder(); }
 
         public class SyncStadiaEntitlementBuilder
             : OperationBuilder<SyncStadiaEntitlementBuilder>

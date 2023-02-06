@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class RequestGameTokenResponseV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RequestGameTokenResponseV3Builder Builder = new RequestGameTokenResponseV3Builder();
+        public static RequestGameTokenResponseV3Builder Builder { get => new RequestGameTokenResponseV3Builder(); }
 
         public class RequestGameTokenResponseV3Builder
             : OperationBuilder<RequestGameTokenResponseV3Builder>

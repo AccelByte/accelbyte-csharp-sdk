@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminUpdateProfanityList : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUpdateProfanityListBuilder Builder = new AdminUpdateProfanityListBuilder();
+        public static AdminUpdateProfanityListBuilder Builder { get => new AdminUpdateProfanityListBuilder(); }
 
         public class AdminUpdateProfanityListBuilder
             : OperationBuilder<AdminUpdateProfanityListBuilder>

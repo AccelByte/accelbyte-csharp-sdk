@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GetJWKSV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetJWKSV3Builder Builder = new GetJWKSV3Builder();
+        public static GetJWKSV3Builder Builder { get => new GetJWKSV3Builder(); }
 
         public class GetJWKSV3Builder
             : OperationBuilder<GetJWKSV3Builder>

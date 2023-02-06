@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicSyncPsnDlcInventoryWithMultipleServiceLabels : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicSyncPsnDlcInventoryWithMultipleServiceLabelsBuilder Builder = new PublicSyncPsnDlcInventoryWithMultipleServiceLabelsBuilder();
+        public static PublicSyncPsnDlcInventoryWithMultipleServiceLabelsBuilder Builder { get => new PublicSyncPsnDlcInventoryWithMultipleServiceLabelsBuilder(); }
 
         public class PublicSyncPsnDlcInventoryWithMultipleServiceLabelsBuilder
             : OperationBuilder<PublicSyncPsnDlcInventoryWithMultipleServiceLabelsBuilder>

@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class PublicGetContentBulk : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetContentBulkBuilder Builder = new PublicGetContentBulkBuilder();
+        public static PublicGetContentBulkBuilder Builder { get => new PublicGetContentBulkBuilder(); }
 
         public class PublicGetContentBulkBuilder
             : OperationBuilder<PublicGetContentBulkBuilder>

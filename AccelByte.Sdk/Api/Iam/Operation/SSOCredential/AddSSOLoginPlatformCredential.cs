@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AddSSOLoginPlatformCredential : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AddSSOLoginPlatformCredentialBuilder Builder = new AddSSOLoginPlatformCredentialBuilder();
+        public static AddSSOLoginPlatformCredentialBuilder Builder { get => new AddSSOLoginPlatformCredentialBuilder(); }
 
         public class AddSSOLoginPlatformCredentialBuilder
             : OperationBuilder<AddSSOLoginPlatformCredentialBuilder>

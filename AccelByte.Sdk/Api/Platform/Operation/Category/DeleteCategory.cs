@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteCategory : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteCategoryBuilder Builder = new DeleteCategoryBuilder();
+        public static DeleteCategoryBuilder Builder { get => new DeleteCategoryBuilder(); }
 
         public class DeleteCategoryBuilder
             : OperationBuilder<DeleteCategoryBuilder>

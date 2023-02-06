@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class CreateImagePatch : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateImagePatchBuilder Builder = new CreateImagePatchBuilder();
+        public static CreateImagePatchBuilder Builder { get => new CreateImagePatchBuilder(); }
 
         public class CreateImagePatchBuilder
             : OperationBuilder<CreateImagePatchBuilder>

@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class GetGameSessionByPodName : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetGameSessionByPodNameBuilder Builder = new GetGameSessionByPodNameBuilder();
+        public static GetGameSessionByPodNameBuilder Builder { get => new GetGameSessionByPodNameBuilder(); }
 
         public class GetGameSessionByPodNameBuilder
             : OperationBuilder<GetGameSessionByPodNameBuilder>

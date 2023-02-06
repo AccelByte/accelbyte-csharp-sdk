@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetUserAppEntitlementByAppId : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserAppEntitlementByAppIdBuilder Builder = new GetUserAppEntitlementByAppIdBuilder();
+        public static GetUserAppEntitlementByAppIdBuilder Builder { get => new GetUserAppEntitlementByAppIdBuilder(); }
 
         public class GetUserAppEntitlementByAppIdBuilder
             : OperationBuilder<GetUserAppEntitlementByAppIdBuilder>

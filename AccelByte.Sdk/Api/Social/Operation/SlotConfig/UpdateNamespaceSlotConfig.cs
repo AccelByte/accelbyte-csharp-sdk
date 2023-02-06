@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class UpdateNamespaceSlotConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateNamespaceSlotConfigBuilder Builder = new UpdateNamespaceSlotConfigBuilder();
+        public static UpdateNamespaceSlotConfigBuilder Builder { get => new UpdateNamespaceSlotConfigBuilder(); }
 
         public class UpdateNamespaceSlotConfigBuilder
             : OperationBuilder<UpdateNamespaceSlotConfigBuilder>

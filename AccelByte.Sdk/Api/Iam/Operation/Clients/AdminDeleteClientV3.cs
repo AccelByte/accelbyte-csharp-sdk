@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminDeleteClientV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDeleteClientV3Builder Builder = new AdminDeleteClientV3Builder();
+        public static AdminDeleteClientV3Builder Builder { get => new AdminDeleteClientV3Builder(); }
 
         public class AdminDeleteClientV3Builder
             : OperationBuilder<AdminDeleteClientV3Builder>

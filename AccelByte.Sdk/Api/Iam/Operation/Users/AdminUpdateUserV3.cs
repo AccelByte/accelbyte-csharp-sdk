@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminUpdateUserV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUpdateUserV3Builder Builder = new AdminUpdateUserV3Builder();
+        public static AdminUpdateUserV3Builder Builder { get => new AdminUpdateUserV3Builder(); }
 
         public class AdminUpdateUserV3Builder
             : OperationBuilder<AdminUpdateUserV3Builder>

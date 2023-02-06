@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class PublicUpdateCustomAttributesPartially : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicUpdateCustomAttributesPartiallyBuilder Builder = new PublicUpdateCustomAttributesPartiallyBuilder();
+        public static PublicUpdateCustomAttributesPartiallyBuilder Builder { get => new PublicUpdateCustomAttributesPartiallyBuilder(); }
 
         public class PublicUpdateCustomAttributesPartiallyBuilder
             : OperationBuilder<PublicUpdateCustomAttributesPartiallyBuilder>

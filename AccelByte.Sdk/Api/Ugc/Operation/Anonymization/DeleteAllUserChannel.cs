@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class DeleteAllUserChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteAllUserChannelBuilder Builder = new DeleteAllUserChannelBuilder();
+        public static DeleteAllUserChannelBuilder Builder { get => new DeleteAllUserChannelBuilder(); }
 
         public class DeleteAllUserChannelBuilder
             : OperationBuilder<DeleteAllUserChannelBuilder>

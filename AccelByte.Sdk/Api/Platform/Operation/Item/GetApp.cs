@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetApp : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetAppBuilder Builder = new GetAppBuilder();
+        public static GetAppBuilder Builder { get => new GetAppBuilder(); }
 
         public class GetAppBuilder
             : OperationBuilder<GetAppBuilder>

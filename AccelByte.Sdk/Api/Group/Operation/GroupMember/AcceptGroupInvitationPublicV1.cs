@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class AcceptGroupInvitationPublicV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AcceptGroupInvitationPublicV1Builder Builder = new AcceptGroupInvitationPublicV1Builder();
+        public static AcceptGroupInvitationPublicV1Builder Builder { get => new AcceptGroupInvitationPublicV1Builder(); }
 
         public class AcceptGroupInvitationPublicV1Builder
             : OperationBuilder<AcceptGroupInvitationPublicV1Builder>

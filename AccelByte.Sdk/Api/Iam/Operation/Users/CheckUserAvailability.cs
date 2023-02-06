@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class CheckUserAvailability : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CheckUserAvailabilityBuilder Builder = new CheckUserAvailabilityBuilder();
+        public static CheckUserAvailabilityBuilder Builder { get => new CheckUserAvailabilityBuilder(); }
 
         public class CheckUserAvailabilityBuilder
             : OperationBuilder<CheckUserAvailabilityBuilder>

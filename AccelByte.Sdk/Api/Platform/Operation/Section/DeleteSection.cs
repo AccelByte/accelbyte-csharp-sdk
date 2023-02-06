@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteSection : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteSectionBuilder Builder = new DeleteSectionBuilder();
+        public static DeleteSectionBuilder Builder { get => new DeleteSectionBuilder(); }
 
         public class DeleteSectionBuilder
             : OperationBuilder<DeleteSectionBuilder>

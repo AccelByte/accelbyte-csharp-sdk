@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CheckEventCondition : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CheckEventConditionBuilder Builder = new CheckEventConditionBuilder();
+        public static CheckEventConditionBuilder Builder { get => new CheckEventConditionBuilder(); }
 
         public class CheckEventConditionBuilder
             : OperationBuilder<CheckEventConditionBuilder>

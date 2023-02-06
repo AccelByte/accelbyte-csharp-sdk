@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class VerifyToken : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static VerifyTokenBuilder Builder = new VerifyTokenBuilder();
+        public static VerifyTokenBuilder Builder { get => new VerifyTokenBuilder(); }
 
         public class VerifyTokenBuilder
             : OperationBuilder<VerifyTokenBuilder>

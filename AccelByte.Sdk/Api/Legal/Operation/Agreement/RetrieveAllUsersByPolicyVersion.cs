@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class RetrieveAllUsersByPolicyVersion : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RetrieveAllUsersByPolicyVersionBuilder Builder = new RetrieveAllUsersByPolicyVersionBuilder();
+        public static RetrieveAllUsersByPolicyVersionBuilder Builder { get => new RetrieveAllUsersByPolicyVersionBuilder(); }
 
         public class RetrieveAllUsersByPolicyVersionBuilder
             : OperationBuilder<RetrieveAllUsersByPolicyVersionBuilder>

@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class PublicPartyLeave : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicPartyLeaveBuilder Builder = new PublicPartyLeaveBuilder();
+        public static PublicPartyLeaveBuilder Builder { get => new PublicPartyLeaveBuilder(); }
 
         public class PublicPartyLeaveBuilder
             : OperationBuilder<PublicPartyLeaveBuilder>

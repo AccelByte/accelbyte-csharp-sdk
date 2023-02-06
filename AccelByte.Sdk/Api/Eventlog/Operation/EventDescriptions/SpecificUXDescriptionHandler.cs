@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     public class SpecificUXDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SpecificUXDescriptionHandlerBuilder Builder = new SpecificUXDescriptionHandlerBuilder();
+        public static SpecificUXDescriptionHandlerBuilder Builder { get => new SpecificUXDescriptionHandlerBuilder(); }
 
         public class SpecificUXDescriptionHandlerBuilder
             : OperationBuilder<SpecificUXDescriptionHandlerBuilder>

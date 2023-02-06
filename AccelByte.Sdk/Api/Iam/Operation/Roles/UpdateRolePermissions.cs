@@ -127,7 +127,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class UpdateRolePermissions : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateRolePermissionsBuilder Builder = new UpdateRolePermissionsBuilder();
+        public static UpdateRolePermissionsBuilder Builder { get => new UpdateRolePermissionsBuilder(); }
 
         public class UpdateRolePermissionsBuilder
             : OperationBuilder<UpdateRolePermissionsBuilder>

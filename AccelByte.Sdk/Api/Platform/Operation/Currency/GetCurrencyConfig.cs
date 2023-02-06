@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetCurrencyConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetCurrencyConfigBuilder Builder = new GetCurrencyConfigBuilder();
+        public static GetCurrencyConfigBuilder Builder { get => new GetCurrencyConfigBuilder(); }
 
         public class GetCurrencyConfigBuilder
             : OperationBuilder<GetCurrencyConfigBuilder>

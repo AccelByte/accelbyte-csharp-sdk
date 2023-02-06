@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminSetProfanityRuleForNamespace : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminSetProfanityRuleForNamespaceBuilder Builder = new AdminSetProfanityRuleForNamespaceBuilder();
+        public static AdminSetProfanityRuleForNamespaceBuilder Builder { get => new AdminSetProfanityRuleForNamespaceBuilder(); }
 
         public class AdminSetProfanityRuleForNamespaceBuilder
             : OperationBuilder<AdminSetProfanityRuleForNamespaceBuilder>

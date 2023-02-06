@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class SendPartyTemplatedNotificationV1Admin : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SendPartyTemplatedNotificationV1AdminBuilder Builder = new SendPartyTemplatedNotificationV1AdminBuilder();
+        public static SendPartyTemplatedNotificationV1AdminBuilder Builder { get => new SendPartyTemplatedNotificationV1AdminBuilder(); }
 
         public class SendPartyTemplatedNotificationV1AdminBuilder
             : OperationBuilder<SendPartyTemplatedNotificationV1AdminBuilder>

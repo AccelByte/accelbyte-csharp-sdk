@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetPlayStationIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPlayStationIAPConfigBuilder Builder = new GetPlayStationIAPConfigBuilder();
+        public static GetPlayStationIAPConfigBuilder Builder { get => new GetPlayStationIAPConfigBuilder(); }
 
         public class GetPlayStationIAPConfigBuilder
             : OperationBuilder<GetPlayStationIAPConfigBuilder>

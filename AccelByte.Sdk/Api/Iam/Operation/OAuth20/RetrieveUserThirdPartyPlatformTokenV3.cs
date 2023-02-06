@@ -56,7 +56,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class RetrieveUserThirdPartyPlatformTokenV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RetrieveUserThirdPartyPlatformTokenV3Builder Builder = new RetrieveUserThirdPartyPlatformTokenV3Builder();
+        public static RetrieveUserThirdPartyPlatformTokenV3Builder Builder { get => new RetrieveUserThirdPartyPlatformTokenV3Builder(); }
 
         public class RetrieveUserThirdPartyPlatformTokenV3Builder
             : OperationBuilder<RetrieveUserThirdPartyPlatformTokenV3Builder>

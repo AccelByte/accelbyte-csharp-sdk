@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class PublicPartyReject : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicPartyRejectBuilder Builder = new PublicPartyRejectBuilder();
+        public static PublicPartyRejectBuilder Builder { get => new PublicPartyRejectBuilder(); }
 
         public class PublicPartyRejectBuilder
             : OperationBuilder<PublicPartyRejectBuilder>

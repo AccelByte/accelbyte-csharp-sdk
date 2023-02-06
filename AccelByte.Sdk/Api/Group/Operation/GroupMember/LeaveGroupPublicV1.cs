@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class LeaveGroupPublicV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static LeaveGroupPublicV1Builder Builder = new LeaveGroupPublicV1Builder();
+        public static LeaveGroupPublicV1Builder Builder { get => new LeaveGroupPublicV1Builder(); }
 
         public class LeaveGroupPublicV1Builder
             : OperationBuilder<LeaveGroupPublicV1Builder>

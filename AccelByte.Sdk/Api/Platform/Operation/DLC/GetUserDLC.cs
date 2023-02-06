@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetUserDLC : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserDLCBuilder Builder = new GetUserDLCBuilder();
+        public static GetUserDLCBuilder Builder { get => new GetUserDLCBuilder(); }
 
         public class GetUserDLCBuilder
             : OperationBuilder<GetUserDLCBuilder>

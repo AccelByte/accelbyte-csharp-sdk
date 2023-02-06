@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CreateView : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateViewBuilder Builder = new CreateViewBuilder();
+        public static CreateViewBuilder Builder { get => new CreateViewBuilder(); }
 
         public class CreateViewBuilder
             : OperationBuilder<CreateViewBuilder>

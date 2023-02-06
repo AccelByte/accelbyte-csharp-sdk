@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
     public class GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder Builder = new GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder();
+        public static GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder Builder { get => new GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder(); }
 
         public class GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder
             : OperationBuilder<GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder>

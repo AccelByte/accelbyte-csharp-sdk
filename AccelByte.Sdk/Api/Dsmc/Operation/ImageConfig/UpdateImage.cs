@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class UpdateImage : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateImageBuilder Builder = new UpdateImageBuilder();
+        public static UpdateImageBuilder Builder { get => new UpdateImageBuilder(); }
 
         public class UpdateImageBuilder
             : OperationBuilder<UpdateImageBuilder>

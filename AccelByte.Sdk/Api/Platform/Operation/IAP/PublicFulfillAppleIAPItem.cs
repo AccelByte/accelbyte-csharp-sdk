@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicFulfillAppleIAPItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicFulfillAppleIAPItemBuilder Builder = new PublicFulfillAppleIAPItemBuilder();
+        public static PublicFulfillAppleIAPItemBuilder Builder { get => new PublicFulfillAppleIAPItemBuilder(); }
 
         public class PublicFulfillAppleIAPItemBuilder
             : OperationBuilder<PublicFulfillAppleIAPItemBuilder>

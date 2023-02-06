@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class UpdateGroupPredefinedRulePublicV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateGroupPredefinedRulePublicV2Builder Builder = new UpdateGroupPredefinedRulePublicV2Builder();
+        public static UpdateGroupPredefinedRulePublicV2Builder Builder { get => new UpdateGroupPredefinedRulePublicV2Builder(); }
 
         public class UpdateGroupPredefinedRulePublicV2Builder
             : OperationBuilder<UpdateGroupPredefinedRulePublicV2Builder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateWxPayConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateWxPayConfigBuilder Builder = new UpdateWxPayConfigBuilder();
+        public static UpdateWxPayConfigBuilder Builder { get => new UpdateWxPayConfigBuilder(); }
 
         public class UpdateWxPayConfigBuilder
             : OperationBuilder<UpdateWxPayConfigBuilder>

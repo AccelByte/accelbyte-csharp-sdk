@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     public class GetEventByEventTypeHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetEventByEventTypeHandlerBuilder Builder = new GetEventByEventTypeHandlerBuilder();
+        public static GetEventByEventTypeHandlerBuilder Builder { get => new GetEventByEventTypeHandlerBuilder(); }
 
         public class GetEventByEventTypeHandlerBuilder
             : OperationBuilder<GetEventByEventTypeHandlerBuilder>

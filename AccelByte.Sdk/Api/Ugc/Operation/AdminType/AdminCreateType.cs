@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class AdminCreateType : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminCreateTypeBuilder Builder = new AdminCreateTypeBuilder();
+        public static AdminCreateTypeBuilder Builder { get => new AdminCreateTypeBuilder(); }
 
         public class AdminCreateTypeBuilder
             : OperationBuilder<AdminCreateTypeBuilder>

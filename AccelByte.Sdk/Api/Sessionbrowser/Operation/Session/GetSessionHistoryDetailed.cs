@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class GetSessionHistoryDetailed : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetSessionHistoryDetailedBuilder Builder = new GetSessionHistoryDetailedBuilder();
+        public static GetSessionHistoryDetailedBuilder Builder { get => new GetSessionHistoryDetailedBuilder(); }
 
         public class GetSessionHistoryDetailedBuilder
             : OperationBuilder<GetSessionHistoryDetailedBuilder>

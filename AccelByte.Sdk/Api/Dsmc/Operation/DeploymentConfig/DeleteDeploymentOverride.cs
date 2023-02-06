@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class DeleteDeploymentOverride : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteDeploymentOverrideBuilder Builder = new DeleteDeploymentOverrideBuilder();
+        public static DeleteDeploymentOverrideBuilder Builder { get => new DeleteDeploymentOverrideBuilder(); }
 
         public class DeleteDeploymentOverrideBuilder
             : OperationBuilder<DeleteDeploymentOverrideBuilder>

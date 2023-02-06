@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class RequestPresignedURL : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RequestPresignedURLBuilder Builder = new RequestPresignedURLBuilder();
+        public static RequestPresignedURLBuilder Builder { get => new RequestPresignedURLBuilder(); }
 
         public class RequestPresignedURLBuilder
             : OperationBuilder<RequestPresignedURLBuilder>

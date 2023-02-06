@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class RetrieveSingleLocalizedPolicyVersion1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RetrieveSingleLocalizedPolicyVersion1Builder Builder = new RetrieveSingleLocalizedPolicyVersion1Builder();
+        public static RetrieveSingleLocalizedPolicyVersion1Builder Builder { get => new RetrieveSingleLocalizedPolicyVersion1Builder(); }
 
         public class RetrieveSingleLocalizedPolicyVersion1Builder
             : OperationBuilder<RetrieveSingleLocalizedPolicyVersion1Builder>

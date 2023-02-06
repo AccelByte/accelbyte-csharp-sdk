@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class DeleteUserFromSessionInChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteUserFromSessionInChannelBuilder Builder = new DeleteUserFromSessionInChannelBuilder();
+        public static DeleteUserFromSessionInChannelBuilder Builder { get => new DeleteUserFromSessionInChannelBuilder(); }
 
         public class DeleteUserFromSessionInChannelBuilder
             : OperationBuilder<DeleteUserFromSessionInChannelBuilder>

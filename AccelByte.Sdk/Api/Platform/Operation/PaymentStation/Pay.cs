@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class Pay : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PayBuilder Builder = new PayBuilder();
+        public static PayBuilder Builder { get => new PayBuilder(); }
 
         public class PayBuilder
             : OperationBuilder<PayBuilder>

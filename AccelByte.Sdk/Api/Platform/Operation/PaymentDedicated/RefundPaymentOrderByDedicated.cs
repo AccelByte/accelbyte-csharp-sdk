@@ -163,7 +163,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class RefundPaymentOrderByDedicated : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RefundPaymentOrderByDedicatedBuilder Builder = new RefundPaymentOrderByDedicatedBuilder();
+        public static RefundPaymentOrderByDedicatedBuilder Builder { get => new RefundPaymentOrderByDedicatedBuilder(); }
 
         public class RefundPaymentOrderByDedicatedBuilder
             : OperationBuilder<RefundPaymentOrderByDedicatedBuilder>

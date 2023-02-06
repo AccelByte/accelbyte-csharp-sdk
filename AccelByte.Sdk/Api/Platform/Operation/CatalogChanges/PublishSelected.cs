@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublishSelected : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublishSelectedBuilder Builder = new PublishSelectedBuilder();
+        public static PublishSelectedBuilder Builder { get => new PublishSelectedBuilder(); }
 
         public class PublishSelectedBuilder
             : OperationBuilder<PublishSelectedBuilder>

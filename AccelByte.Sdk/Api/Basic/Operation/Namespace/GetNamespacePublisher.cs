@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class GetNamespacePublisher : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetNamespacePublisherBuilder Builder = new GetNamespacePublisherBuilder();
+        public static GetNamespacePublisherBuilder Builder { get => new GetNamespacePublisherBuilder(); }
 
         public class GetNamespacePublisherBuilder
             : OperationBuilder<GetNamespacePublisherBuilder>

@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     public class AdminListTags : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminListTagsBuilder Builder = new AdminListTagsBuilder();
+        public static AdminListTagsBuilder Builder { get => new AdminListTagsBuilder(); }
 
         public class AdminListTagsBuilder
             : OperationBuilder<AdminListTagsBuilder>

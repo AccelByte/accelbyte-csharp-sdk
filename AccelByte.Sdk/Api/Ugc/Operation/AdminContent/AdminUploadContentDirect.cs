@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class AdminUploadContentDirect : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUploadContentDirectBuilder Builder = new AdminUploadContentDirectBuilder();
+        public static AdminUploadContentDirectBuilder Builder { get => new AdminUploadContentDirectBuilder(); }
 
         public class AdminUploadContentDirectBuilder
             : OperationBuilder<AdminUploadContentDirectBuilder>

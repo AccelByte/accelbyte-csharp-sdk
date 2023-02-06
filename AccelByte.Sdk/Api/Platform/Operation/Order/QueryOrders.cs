@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryOrders : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryOrdersBuilder Builder = new QueryOrdersBuilder();
+        public static QueryOrdersBuilder Builder { get => new QueryOrdersBuilder(); }
 
         public class QueryOrdersBuilder
             : OperationBuilder<QueryOrdersBuilder>

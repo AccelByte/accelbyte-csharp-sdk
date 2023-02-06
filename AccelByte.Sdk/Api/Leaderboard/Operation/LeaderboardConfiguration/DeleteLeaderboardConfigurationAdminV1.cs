@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     public class DeleteLeaderboardConfigurationAdminV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteLeaderboardConfigurationAdminV1Builder Builder = new DeleteLeaderboardConfigurationAdminV1Builder();
+        public static DeleteLeaderboardConfigurationAdminV1Builder Builder { get => new DeleteLeaderboardConfigurationAdminV1Builder(); }
 
         public class DeleteLeaderboardConfigurationAdminV1Builder
             : OperationBuilder<DeleteLeaderboardConfigurationAdminV1Builder>

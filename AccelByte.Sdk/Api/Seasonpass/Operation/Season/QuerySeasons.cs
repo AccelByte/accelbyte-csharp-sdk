@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class QuerySeasons : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QuerySeasonsBuilder Builder = new QuerySeasonsBuilder();
+        public static QuerySeasonsBuilder Builder { get => new QuerySeasonsBuilder(); }
 
         public class QuerySeasonsBuilder
             : OperationBuilder<QuerySeasonsBuilder>

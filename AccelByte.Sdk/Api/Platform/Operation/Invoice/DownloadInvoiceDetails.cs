@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DownloadInvoiceDetails : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DownloadInvoiceDetailsBuilder Builder = new DownloadInvoiceDetailsBuilder();
+        public static DownloadInvoiceDetailsBuilder Builder { get => new DownloadInvoiceDetailsBuilder(); }
 
         public class DownloadInvoiceDetailsBuilder
             : OperationBuilder<DownloadInvoiceDetailsBuilder>

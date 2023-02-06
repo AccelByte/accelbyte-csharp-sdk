@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicUpdatePasswordV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicUpdatePasswordV3Builder Builder = new PublicUpdatePasswordV3Builder();
+        public static PublicUpdatePasswordV3Builder Builder { get => new PublicUpdatePasswordV3Builder(); }
 
         public class PublicUpdatePasswordV3Builder
             : OperationBuilder<PublicUpdatePasswordV3Builder>

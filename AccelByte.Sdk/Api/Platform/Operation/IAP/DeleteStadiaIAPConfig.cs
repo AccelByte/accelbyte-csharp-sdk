@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteStadiaIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteStadiaIAPConfigBuilder Builder = new DeleteStadiaIAPConfigBuilder();
+        public static DeleteStadiaIAPConfigBuilder Builder { get => new DeleteStadiaIAPConfigBuilder(); }
 
         public class DeleteStadiaIAPConfigBuilder
             : OperationBuilder<DeleteStadiaIAPConfigBuilder>

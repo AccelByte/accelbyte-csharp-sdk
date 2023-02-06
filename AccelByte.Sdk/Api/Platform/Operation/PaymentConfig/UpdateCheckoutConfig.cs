@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateCheckoutConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateCheckoutConfigBuilder Builder = new UpdateCheckoutConfigBuilder();
+        public static UpdateCheckoutConfigBuilder Builder { get => new UpdateCheckoutConfigBuilder(); }
 
         public class UpdateCheckoutConfigBuilder
             : OperationBuilder<UpdateCheckoutConfigBuilder>

@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class PublicSearchCreator : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicSearchCreatorBuilder Builder = new PublicSearchCreatorBuilder();
+        public static PublicSearchCreatorBuilder Builder { get => new PublicSearchCreatorBuilder(); }
 
         public class PublicSearchCreatorBuilder
             : OperationBuilder<PublicSearchCreatorBuilder>

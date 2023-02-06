@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class TokenRevocationV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static TokenRevocationV3Builder Builder = new TokenRevocationV3Builder();
+        public static TokenRevocationV3Builder Builder { get => new TokenRevocationV3Builder(); }
 
         public class TokenRevocationV3Builder
             : OperationBuilder<TokenRevocationV3Builder>

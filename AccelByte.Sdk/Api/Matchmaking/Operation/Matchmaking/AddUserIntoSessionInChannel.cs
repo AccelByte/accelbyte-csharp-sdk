@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class AddUserIntoSessionInChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AddUserIntoSessionInChannelBuilder Builder = new AddUserIntoSessionInChannelBuilder();
+        public static AddUserIntoSessionInChannelBuilder Builder { get => new AddUserIntoSessionInChannelBuilder(); }
 
         public class AddUserIntoSessionInChannelBuilder
             : OperationBuilder<AddUserIntoSessionInChannelBuilder>

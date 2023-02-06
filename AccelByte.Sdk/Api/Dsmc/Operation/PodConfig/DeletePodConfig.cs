@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class DeletePodConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeletePodConfigBuilder Builder = new DeletePodConfigBuilder();
+        public static DeletePodConfigBuilder Builder { get => new DeletePodConfigBuilder(); }
 
         public class DeletePodConfigBuilder
             : OperationBuilder<DeletePodConfigBuilder>

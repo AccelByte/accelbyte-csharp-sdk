@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class AdminDeleteContentScreenshot : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDeleteContentScreenshotBuilder Builder = new AdminDeleteContentScreenshotBuilder();
+        public static AdminDeleteContentScreenshotBuilder Builder { get => new AdminDeleteContentScreenshotBuilder(); }
 
         public class AdminDeleteContentScreenshotBuilder
             : OperationBuilder<AdminDeleteContentScreenshotBuilder>

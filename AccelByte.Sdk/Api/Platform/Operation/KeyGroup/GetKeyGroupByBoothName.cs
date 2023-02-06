@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetKeyGroupByBoothName : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetKeyGroupByBoothNameBuilder Builder = new GetKeyGroupByBoothNameBuilder();
+        public static GetKeyGroupByBoothNameBuilder Builder { get => new GetKeyGroupByBoothNameBuilder(); }
 
         public class GetKeyGroupByBoothNameBuilder
             : OperationBuilder<GetKeyGroupByBoothNameBuilder>

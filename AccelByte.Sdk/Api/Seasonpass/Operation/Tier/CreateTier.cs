@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class CreateTier : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateTierBuilder Builder = new CreateTierBuilder();
+        public static CreateTierBuilder Builder { get => new CreateTierBuilder(); }
 
         public class CreateTierBuilder
             : OperationBuilder<CreateTierBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class Download : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DownloadBuilder Builder = new DownloadBuilder();
+        public static DownloadBuilder Builder { get => new DownloadBuilder(); }
 
         public class DownloadBuilder
             : OperationBuilder<DownloadBuilder>

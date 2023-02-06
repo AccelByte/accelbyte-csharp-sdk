@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CheckUserSubscriptionSubscribableByItemId : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CheckUserSubscriptionSubscribableByItemIdBuilder Builder = new CheckUserSubscriptionSubscribableByItemIdBuilder();
+        public static CheckUserSubscriptionSubscribableByItemIdBuilder Builder { get => new CheckUserSubscriptionSubscribableByItemIdBuilder(); }
 
         public class CheckUserSubscriptionSubscribableByItemIdBuilder
             : OperationBuilder<CheckUserSubscriptionSubscribableByItemIdBuilder>

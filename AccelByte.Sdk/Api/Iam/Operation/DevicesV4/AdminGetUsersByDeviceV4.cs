@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGetUsersByDeviceV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetUsersByDeviceV4Builder Builder = new AdminGetUsersByDeviceV4Builder();
+        public static AdminGetUsersByDeviceV4Builder Builder { get => new AdminGetUsersByDeviceV4Builder(); }
 
         public class AdminGetUsersByDeviceV4Builder
             : OperationBuilder<AdminGetUsersByDeviceV4Builder>

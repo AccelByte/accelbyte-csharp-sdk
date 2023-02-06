@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicPlatformUnlinkAllV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicPlatformUnlinkAllV3Builder Builder = new PublicPlatformUnlinkAllV3Builder();
+        public static PublicPlatformUnlinkAllV3Builder Builder { get => new PublicPlatformUnlinkAllV3Builder(); }
 
         public class PublicPlatformUnlinkAllV3Builder
             : OperationBuilder<PublicPlatformUnlinkAllV3Builder>

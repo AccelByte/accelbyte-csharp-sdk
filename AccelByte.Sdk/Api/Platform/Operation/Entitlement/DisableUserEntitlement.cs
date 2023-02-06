@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DisableUserEntitlement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DisableUserEntitlementBuilder Builder = new DisableUserEntitlementBuilder();
+        public static DisableUserEntitlementBuilder Builder { get => new DisableUserEntitlementBuilder(); }
 
         public class DisableUserEntitlementBuilder
             : OperationBuilder<DisableUserEntitlementBuilder>

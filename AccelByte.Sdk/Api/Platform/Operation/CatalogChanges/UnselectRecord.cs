@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UnselectRecord : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UnselectRecordBuilder Builder = new UnselectRecordBuilder();
+        public static UnselectRecordBuilder Builder { get => new UnselectRecordBuilder(); }
 
         public class UnselectRecordBuilder
             : OperationBuilder<UnselectRecordBuilder>

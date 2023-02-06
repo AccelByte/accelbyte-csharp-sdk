@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryUserIAPConsumeHistory : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryUserIAPConsumeHistoryBuilder Builder = new QueryUserIAPConsumeHistoryBuilder();
+        public static QueryUserIAPConsumeHistoryBuilder Builder { get => new QueryUserIAPConsumeHistoryBuilder(); }
 
         public class QueryUserIAPConsumeHistoryBuilder
             : OperationBuilder<QueryUserIAPConsumeHistoryBuilder>

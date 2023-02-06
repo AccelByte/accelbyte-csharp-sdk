@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryCodes : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryCodesBuilder Builder = new QueryCodesBuilder();
+        public static QueryCodesBuilder Builder { get => new QueryCodesBuilder(); }
 
         public class QueryCodesBuilder
             : OperationBuilder<QueryCodesBuilder>

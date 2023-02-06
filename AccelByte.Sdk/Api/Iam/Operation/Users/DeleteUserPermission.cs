@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class DeleteUserPermission : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteUserPermissionBuilder Builder = new DeleteUserPermissionBuilder();
+        public static DeleteUserPermissionBuilder Builder { get => new DeleteUserPermissionBuilder(); }
 
         public class DeleteUserPermissionBuilder
             : OperationBuilder<DeleteUserPermissionBuilder>

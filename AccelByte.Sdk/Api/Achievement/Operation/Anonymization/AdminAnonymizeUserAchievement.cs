@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     public class AdminAnonymizeUserAchievement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminAnonymizeUserAchievementBuilder Builder = new AdminAnonymizeUserAchievementBuilder();
+        public static AdminAnonymizeUserAchievementBuilder Builder { get => new AdminAnonymizeUserAchievementBuilder(); }
 
         public class AdminAnonymizeUserAchievementBuilder
             : OperationBuilder<AdminAnonymizeUserAchievementBuilder>

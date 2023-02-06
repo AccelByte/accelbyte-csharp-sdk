@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class CreateTopic : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateTopicBuilder Builder = new CreateTopicBuilder();
+        public static CreateTopicBuilder Builder { get => new CreateTopicBuilder(); }
 
         public class CreateTopicBuilder
             : OperationBuilder<CreateTopicBuilder>

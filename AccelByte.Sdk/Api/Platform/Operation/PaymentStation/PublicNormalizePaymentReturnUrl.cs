@@ -42,7 +42,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicNormalizePaymentReturnUrl : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicNormalizePaymentReturnUrlBuilder Builder = new PublicNormalizePaymentReturnUrlBuilder();
+        public static PublicNormalizePaymentReturnUrlBuilder Builder { get => new PublicNormalizePaymentReturnUrlBuilder(); }
 
         public class PublicNormalizePaymentReturnUrlBuilder
             : OperationBuilder<PublicNormalizePaymentReturnUrlBuilder>

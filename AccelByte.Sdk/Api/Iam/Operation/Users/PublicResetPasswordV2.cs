@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicResetPasswordV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicResetPasswordV2Builder Builder = new PublicResetPasswordV2Builder();
+        public static PublicResetPasswordV2Builder Builder { get => new PublicResetPasswordV2Builder(); }
 
         public class PublicResetPasswordV2Builder
             : OperationBuilder<PublicResetPasswordV2Builder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ListKeys : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListKeysBuilder Builder = new ListKeysBuilder();
+        public static ListKeysBuilder Builder { get => new ListKeysBuilder(); }
 
         public class ListKeysBuilder
             : OperationBuilder<ListKeysBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetCampaignDynamic : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetCampaignDynamicBuilder Builder = new GetCampaignDynamicBuilder();
+        public static GetCampaignDynamicBuilder Builder { get => new GetCampaignDynamicBuilder(); }
 
         public class GetCampaignDynamicBuilder
             : OperationBuilder<GetCampaignDynamicBuilder>

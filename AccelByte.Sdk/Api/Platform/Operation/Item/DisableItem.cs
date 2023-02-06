@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DisableItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DisableItemBuilder Builder = new DisableItemBuilder();
+        public static DisableItemBuilder Builder { get => new DisableItemBuilder(); }
 
         public class DisableItemBuilder
             : OperationBuilder<DisableItemBuilder>

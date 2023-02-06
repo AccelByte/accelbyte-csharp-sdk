@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class UpdateGroupCustomRulePublicV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateGroupCustomRulePublicV2Builder Builder = new UpdateGroupCustomRulePublicV2Builder();
+        public static UpdateGroupCustomRulePublicV2Builder Builder { get => new UpdateGroupCustomRulePublicV2Builder(); }
 
         public class UpdateGroupCustomRulePublicV2Builder
             : OperationBuilder<UpdateGroupCustomRulePublicV2Builder>

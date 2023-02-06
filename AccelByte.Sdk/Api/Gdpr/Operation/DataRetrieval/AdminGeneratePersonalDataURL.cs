@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     public class AdminGeneratePersonalDataURL : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGeneratePersonalDataURLBuilder Builder = new AdminGeneratePersonalDataURLBuilder();
+        public static AdminGeneratePersonalDataURLBuilder Builder { get => new AdminGeneratePersonalDataURLBuilder(); }
 
         public class AdminGeneratePersonalDataURLBuilder
             : OperationBuilder<AdminGeneratePersonalDataURLBuilder>

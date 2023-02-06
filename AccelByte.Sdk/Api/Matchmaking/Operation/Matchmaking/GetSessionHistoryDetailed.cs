@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class GetSessionHistoryDetailed : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetSessionHistoryDetailedBuilder Builder = new GetSessionHistoryDetailedBuilder();
+        public static GetSessionHistoryDetailedBuilder Builder { get => new GetSessionHistoryDetailedBuilder(); }
 
         public class GetSessionHistoryDetailedBuilder
             : OperationBuilder<GetSessionHistoryDetailedBuilder>

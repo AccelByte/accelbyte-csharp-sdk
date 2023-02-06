@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicCreateJusticeUser : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicCreateJusticeUserBuilder Builder = new PublicCreateJusticeUserBuilder();
+        public static PublicCreateJusticeUserBuilder Builder { get => new PublicCreateJusticeUserBuilder(); }
 
         public class PublicCreateJusticeUserBuilder
             : OperationBuilder<PublicCreateJusticeUserBuilder>

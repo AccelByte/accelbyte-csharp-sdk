@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class GetPublicFollowers : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPublicFollowersBuilder Builder = new GetPublicFollowersBuilder();
+        public static GetPublicFollowersBuilder Builder { get => new GetPublicFollowersBuilder(); }
 
         public class GetPublicFollowersBuilder
             : OperationBuilder<GetPublicFollowersBuilder>

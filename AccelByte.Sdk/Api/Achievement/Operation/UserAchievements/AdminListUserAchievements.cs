@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     public class AdminListUserAchievements : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminListUserAchievementsBuilder Builder = new AdminListUserAchievementsBuilder();
+        public static AdminListUserAchievementsBuilder Builder { get => new AdminListUserAchievementsBuilder(); }
 
         public class AdminListUserAchievementsBuilder
             : OperationBuilder<AdminListUserAchievementsBuilder>

@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CreateStore : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateStoreBuilder Builder = new CreateStoreBuilder();
+        public static CreateStoreBuilder Builder { get => new CreateStoreBuilder(); }
 
         public class CreateStoreBuilder
             : OperationBuilder<CreateStoreBuilder>

@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminUnbanUserBulkV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUnbanUserBulkV3Builder Builder = new AdminUnbanUserBulkV3Builder();
+        public static AdminUnbanUserBulkV3Builder Builder { get => new AdminUnbanUserBulkV3Builder(); }
 
         public class AdminUnbanUserBulkV3Builder
             : OperationBuilder<AdminUnbanUserBulkV3Builder>

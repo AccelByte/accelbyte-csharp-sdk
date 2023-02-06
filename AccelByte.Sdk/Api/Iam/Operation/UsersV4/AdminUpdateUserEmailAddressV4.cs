@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminUpdateUserEmailAddressV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUpdateUserEmailAddressV4Builder Builder = new AdminUpdateUserEmailAddressV4Builder();
+        public static AdminUpdateUserEmailAddressV4Builder Builder { get => new AdminUpdateUserEmailAddressV4Builder(); }
 
         public class AdminUpdateUserEmailAddressV4Builder
             : OperationBuilder<AdminUpdateUserEmailAddressV4Builder>

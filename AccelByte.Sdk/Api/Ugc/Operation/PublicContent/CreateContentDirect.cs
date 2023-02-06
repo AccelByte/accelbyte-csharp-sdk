@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class CreateContentDirect : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateContentDirectBuilder Builder = new CreateContentDirectBuilder();
+        public static CreateContentDirectBuilder Builder { get => new CreateContentDirectBuilder(); }
 
         public class CreateContentDirectBuilder
             : OperationBuilder<CreateContentDirectBuilder>

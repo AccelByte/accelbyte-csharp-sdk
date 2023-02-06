@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteRewardConditionRecord : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteRewardConditionRecordBuilder Builder = new DeleteRewardConditionRecordBuilder();
+        public static DeleteRewardConditionRecordBuilder Builder { get => new DeleteRewardConditionRecordBuilder(); }
 
         public class DeleteRewardConditionRecordBuilder
             : OperationBuilder<DeleteRewardConditionRecordBuilder>

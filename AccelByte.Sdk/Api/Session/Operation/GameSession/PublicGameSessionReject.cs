@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class PublicGameSessionReject : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGameSessionRejectBuilder Builder = new PublicGameSessionRejectBuilder();
+        public static PublicGameSessionRejectBuilder Builder { get => new PublicGameSessionRejectBuilder(); }
 
         public class PublicGameSessionRejectBuilder
             : OperationBuilder<PublicGameSessionRejectBuilder>

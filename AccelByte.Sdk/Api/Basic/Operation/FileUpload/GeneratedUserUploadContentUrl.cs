@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class GeneratedUserUploadContentUrl : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GeneratedUserUploadContentUrlBuilder Builder = new GeneratedUserUploadContentUrlBuilder();
+        public static GeneratedUserUploadContentUrlBuilder Builder { get => new GeneratedUserUploadContentUrlBuilder(); }
 
         public class GeneratedUserUploadContentUrlBuilder
             : OperationBuilder<GeneratedUserUploadContentUrlBuilder>

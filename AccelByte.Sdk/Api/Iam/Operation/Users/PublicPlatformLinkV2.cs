@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicPlatformLinkV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicPlatformLinkV2Builder Builder = new PublicPlatformLinkV2Builder();
+        public static PublicPlatformLinkV2Builder Builder { get => new PublicPlatformLinkV2Builder(); }
 
         public class PublicPlatformLinkV2Builder
             : OperationBuilder<PublicPlatformLinkV2Builder>

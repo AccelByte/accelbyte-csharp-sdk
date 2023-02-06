@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class LeaveGameSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static LeaveGameSessionBuilder Builder = new LeaveGameSessionBuilder();
+        public static LeaveGameSessionBuilder Builder { get => new LeaveGameSessionBuilder(); }
 
         public class LeaveGameSessionBuilder
             : OperationBuilder<LeaveGameSessionBuilder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateXblBPCertFile : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateXblBPCertFileBuilder Builder = new UpdateXblBPCertFileBuilder();
+        public static UpdateXblBPCertFileBuilder Builder { get => new UpdateXblBPCertFileBuilder(); }
 
         public class UpdateXblBPCertFileBuilder
             : OperationBuilder<UpdateXblBPCertFileBuilder>

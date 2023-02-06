@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGenerateMyAuthenticatorKeyV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGenerateMyAuthenticatorKeyV4Builder Builder = new AdminGenerateMyAuthenticatorKeyV4Builder();
+        public static AdminGenerateMyAuthenticatorKeyV4Builder Builder { get => new AdminGenerateMyAuthenticatorKeyV4Builder(); }
 
         public class AdminGenerateMyAuthenticatorKeyV4Builder
             : OperationBuilder<AdminGenerateMyAuthenticatorKeyV4Builder>

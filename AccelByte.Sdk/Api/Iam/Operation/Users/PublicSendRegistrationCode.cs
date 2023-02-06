@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicSendRegistrationCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicSendRegistrationCodeBuilder Builder = new PublicSendRegistrationCodeBuilder();
+        public static PublicSendRegistrationCodeBuilder Builder { get => new PublicSendRegistrationCodeBuilder(); }
 
         public class PublicSendRegistrationCodeBuilder
             : OperationBuilder<PublicSendRegistrationCodeBuilder>

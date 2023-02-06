@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGetClientsbyNamespacebyIDV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetClientsbyNamespacebyIDV3Builder Builder = new AdminGetClientsbyNamespacebyIDV3Builder();
+        public static AdminGetClientsbyNamespacebyIDV3Builder Builder { get => new AdminGetClientsbyNamespacebyIDV3Builder(); }
 
         public class AdminGetClientsbyNamespacebyIDV3Builder
             : OperationBuilder<AdminGetClientsbyNamespacebyIDV3Builder>

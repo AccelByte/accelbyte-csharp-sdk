@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateStripeConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateStripeConfigBuilder Builder = new UpdateStripeConfigBuilder();
+        public static UpdateStripeConfigBuilder Builder { get => new UpdateStripeConfigBuilder(); }
 
         public class UpdateStripeConfigBuilder
             : OperationBuilder<UpdateStripeConfigBuilder>

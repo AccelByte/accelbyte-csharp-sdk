@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class ListAdminsV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListAdminsV3Builder Builder = new ListAdminsV3Builder();
+        public static ListAdminsV3Builder Builder { get => new ListAdminsV3Builder(); }
 
         public class ListAdminsV3Builder
             : OperationBuilder<ListAdminsV3Builder>

@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     public class GetPlayerRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPlayerRecordHandlerV1Builder Builder = new GetPlayerRecordHandlerV1Builder();
+        public static GetPlayerRecordHandlerV1Builder Builder { get => new GetPlayerRecordHandlerV1Builder(); }
 
         public class GetPlayerRecordHandlerV1Builder
             : OperationBuilder<GetPlayerRecordHandlerV1Builder>

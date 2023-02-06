@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateSteamIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateSteamIAPConfigBuilder Builder = new UpdateSteamIAPConfigBuilder();
+        public static UpdateSteamIAPConfigBuilder Builder { get => new UpdateSteamIAPConfigBuilder(); }
 
         public class UpdateSteamIAPConfigBuilder
             : OperationBuilder<UpdateSteamIAPConfigBuilder>

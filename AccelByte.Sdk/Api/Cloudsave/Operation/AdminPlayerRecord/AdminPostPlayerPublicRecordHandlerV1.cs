@@ -121,7 +121,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     public class AdminPostPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminPostPlayerPublicRecordHandlerV1Builder Builder = new AdminPostPlayerPublicRecordHandlerV1Builder();
+        public static AdminPostPlayerPublicRecordHandlerV1Builder Builder { get => new AdminPostPlayerPublicRecordHandlerV1Builder(); }
 
         public class AdminPostPlayerPublicRecordHandlerV1Builder
             : OperationBuilder<AdminPostPlayerPublicRecordHandlerV1Builder>

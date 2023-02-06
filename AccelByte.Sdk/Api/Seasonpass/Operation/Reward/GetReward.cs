@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class GetReward : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetRewardBuilder Builder = new GetRewardBuilder();
+        public static GetRewardBuilder Builder { get => new GetRewardBuilder(); }
 
         public class GetRewardBuilder
             : OperationBuilder<GetRewardBuilder>

@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateAppleIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateAppleIAPConfigBuilder Builder = new UpdateAppleIAPConfigBuilder();
+        public static UpdateAppleIAPConfigBuilder Builder { get => new UpdateAppleIAPConfigBuilder(); }
 
         public class UpdateAppleIAPConfigBuilder
             : OperationBuilder<UpdateAppleIAPConfigBuilder>

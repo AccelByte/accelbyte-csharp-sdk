@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AuthenticationWithPlatformLinkV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AuthenticationWithPlatformLinkV3Builder Builder = new AuthenticationWithPlatformLinkV3Builder();
+        public static AuthenticationWithPlatformLinkV3Builder Builder { get => new AuthenticationWithPlatformLinkV3Builder(); }
 
         public class AuthenticationWithPlatformLinkV3Builder
             : OperationBuilder<AuthenticationWithPlatformLinkV3Builder>

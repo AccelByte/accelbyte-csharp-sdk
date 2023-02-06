@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicDisableMyEmailV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicDisableMyEmailV4Builder Builder = new PublicDisableMyEmailV4Builder();
+        public static PublicDisableMyEmailV4Builder Builder { get => new PublicDisableMyEmailV4Builder(); }
 
         public class PublicDisableMyEmailV4Builder
             : OperationBuilder<PublicDisableMyEmailV4Builder>

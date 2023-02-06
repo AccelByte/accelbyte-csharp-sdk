@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class CloneStore : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CloneStoreBuilder Builder = new CloneStoreBuilder();
+        public static CloneStoreBuilder Builder { get => new CloneStoreBuilder(); }
 
         public class CloneStoreBuilder
             : OperationBuilder<CloneStoreBuilder>

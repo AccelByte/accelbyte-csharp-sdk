@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminSaveUserRoleV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminSaveUserRoleV3Builder Builder = new AdminSaveUserRoleV3Builder();
+        public static AdminSaveUserRoleV3Builder Builder { get => new AdminSaveUserRoleV3Builder(); }
 
         public class AdminSaveUserRoleV3Builder
             : OperationBuilder<AdminSaveUserRoleV3Builder>

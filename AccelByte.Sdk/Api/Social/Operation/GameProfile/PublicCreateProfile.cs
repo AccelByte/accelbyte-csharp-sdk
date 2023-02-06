@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class PublicCreateProfile : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicCreateProfileBuilder Builder = new PublicCreateProfileBuilder();
+        public static PublicCreateProfileBuilder Builder { get => new PublicCreateProfileBuilder(); }
 
         public class PublicCreateProfileBuilder
             : OperationBuilder<PublicCreateProfileBuilder>

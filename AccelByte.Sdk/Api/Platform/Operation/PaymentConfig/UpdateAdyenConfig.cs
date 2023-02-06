@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class UpdateAdyenConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateAdyenConfigBuilder Builder = new UpdateAdyenConfigBuilder();
+        public static UpdateAdyenConfigBuilder Builder { get => new UpdateAdyenConfigBuilder(); }
 
         public class UpdateAdyenConfigBuilder
             : OperationBuilder<UpdateAdyenConfigBuilder>

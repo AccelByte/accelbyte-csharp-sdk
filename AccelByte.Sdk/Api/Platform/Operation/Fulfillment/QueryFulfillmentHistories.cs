@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QueryFulfillmentHistories : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryFulfillmentHistoriesBuilder Builder = new QueryFulfillmentHistoriesBuilder();
+        public static QueryFulfillmentHistoriesBuilder Builder { get => new QueryFulfillmentHistoriesBuilder(); }
 
         public class QueryFulfillmentHistoriesBuilder
             : OperationBuilder<QueryFulfillmentHistoriesBuilder>

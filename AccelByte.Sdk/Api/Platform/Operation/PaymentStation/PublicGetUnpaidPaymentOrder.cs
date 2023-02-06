@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicGetUnpaidPaymentOrder : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetUnpaidPaymentOrderBuilder Builder = new PublicGetUnpaidPaymentOrderBuilder();
+        public static PublicGetUnpaidPaymentOrderBuilder Builder { get => new PublicGetUnpaidPaymentOrderBuilder(); }
 
         public class PublicGetUnpaidPaymentOrderBuilder
             : OperationBuilder<PublicGetUnpaidPaymentOrderBuilder>

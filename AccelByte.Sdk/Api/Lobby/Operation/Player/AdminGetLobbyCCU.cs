@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminGetLobbyCCU : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetLobbyCCUBuilder Builder = new AdminGetLobbyCCUBuilder();
+        public static AdminGetLobbyCCUBuilder Builder { get => new AdminGetLobbyCCUBuilder(); }
 
         public class AdminGetLobbyCCUBuilder
             : OperationBuilder<AdminGetLobbyCCUBuilder>

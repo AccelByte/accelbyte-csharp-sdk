@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicGetUserPlatformAccountsV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetUserPlatformAccountsV3Builder Builder = new PublicGetUserPlatformAccountsV3Builder();
+        public static PublicGetUserPlatformAccountsV3Builder Builder { get => new PublicGetUserPlatformAccountsV3Builder(); }
 
         public class PublicGetUserPlatformAccountsV3Builder
             : OperationBuilder<PublicGetUserPlatformAccountsV3Builder>

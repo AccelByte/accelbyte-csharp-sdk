@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class AddCountryGroup : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AddCountryGroupBuilder Builder = new AddCountryGroupBuilder();
+        public static AddCountryGroupBuilder Builder { get => new AddCountryGroupBuilder(); }
 
         public class AddCountryGroupBuilder
             : OperationBuilder<AddCountryGroupBuilder>

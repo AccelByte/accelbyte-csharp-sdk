@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGetUserByEmailAddressV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetUserByEmailAddressV3Builder Builder = new AdminGetUserByEmailAddressV3Builder();
+        public static AdminGetUserByEmailAddressV3Builder Builder { get => new AdminGetUserByEmailAddressV3Builder(); }
 
         public class AdminGetUserByEmailAddressV3Builder
             : OperationBuilder<AdminGetUserByEmailAddressV3Builder>

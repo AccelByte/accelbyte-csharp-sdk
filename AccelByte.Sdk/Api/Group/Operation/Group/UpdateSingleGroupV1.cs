@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class UpdateSingleGroupV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateSingleGroupV1Builder Builder = new UpdateSingleGroupV1Builder();
+        public static UpdateSingleGroupV1Builder Builder { get => new UpdateSingleGroupV1Builder(); }
 
         public class UpdateSingleGroupV1Builder
             : OperationBuilder<UpdateSingleGroupV1Builder>

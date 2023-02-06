@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class DeleteSteamIAPConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteSteamIAPConfigBuilder Builder = new DeleteSteamIAPConfigBuilder();
+        public static DeleteSteamIAPConfigBuilder Builder { get => new DeleteSteamIAPConfigBuilder(); }
 
         public class DeleteSteamIAPConfigBuilder
             : OperationBuilder<DeleteSteamIAPConfigBuilder>

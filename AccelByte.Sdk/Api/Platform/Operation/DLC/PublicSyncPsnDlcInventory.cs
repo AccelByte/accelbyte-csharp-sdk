@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicSyncPsnDlcInventory : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicSyncPsnDlcInventoryBuilder Builder = new PublicSyncPsnDlcInventoryBuilder();
+        public static PublicSyncPsnDlcInventoryBuilder Builder { get => new PublicSyncPsnDlcInventoryBuilder(); }
 
         public class PublicSyncPsnDlcInventoryBuilder
             : OperationBuilder<PublicSyncPsnDlcInventoryBuilder>

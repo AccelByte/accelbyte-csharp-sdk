@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class SendMFAAuthenticationCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SendMFAAuthenticationCodeBuilder Builder = new SendMFAAuthenticationCodeBuilder();
+        public static SendMFAAuthenticationCodeBuilder Builder { get => new SendMFAAuthenticationCodeBuilder(); }
 
         public class SendMFAAuthenticationCodeBuilder
             : OperationBuilder<SendMFAAuthenticationCodeBuilder>

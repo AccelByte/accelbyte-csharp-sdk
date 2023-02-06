@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class UpdateThirdPartyLoginPlatformDomainV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateThirdPartyLoginPlatformDomainV3Builder Builder = new UpdateThirdPartyLoginPlatformDomainV3Builder();
+        public static UpdateThirdPartyLoginPlatformDomainV3Builder Builder { get => new UpdateThirdPartyLoginPlatformDomainV3Builder(); }
 
         public class UpdateThirdPartyLoginPlatformDomainV3Builder
             : OperationBuilder<UpdateThirdPartyLoginPlatformDomainV3Builder>

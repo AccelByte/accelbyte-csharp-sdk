@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     public class GetEventSpecificUserV2Handler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetEventSpecificUserV2HandlerBuilder Builder = new GetEventSpecificUserV2HandlerBuilder();
+        public static GetEventSpecificUserV2HandlerBuilder Builder { get => new GetEventSpecificUserV2HandlerBuilder(); }
 
         public class GetEventSpecificUserV2HandlerBuilder
             : OperationBuilder<GetEventSpecificUserV2HandlerBuilder>

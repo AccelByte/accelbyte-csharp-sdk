@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     public class AdminResetAchievement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminResetAchievementBuilder Builder = new AdminResetAchievementBuilder();
+        public static AdminResetAchievementBuilder Builder { get => new AdminResetAchievementBuilder(); }
 
         public class AdminResetAchievementBuilder
             : OperationBuilder<AdminResetAchievementBuilder>

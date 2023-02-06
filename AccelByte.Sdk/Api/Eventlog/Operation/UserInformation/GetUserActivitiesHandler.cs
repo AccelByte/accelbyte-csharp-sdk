@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     public class GetUserActivitiesHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserActivitiesHandlerBuilder Builder = new GetUserActivitiesHandlerBuilder();
+        public static GetUserActivitiesHandlerBuilder Builder { get => new GetUserActivitiesHandlerBuilder(); }
 
         public class GetUserActivitiesHandlerBuilder
             : OperationBuilder<GetUserActivitiesHandlerBuilder>

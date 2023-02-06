@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     public class CreateLeaderboardConfigurationPublicV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateLeaderboardConfigurationPublicV1Builder Builder = new CreateLeaderboardConfigurationPublicV1Builder();
+        public static CreateLeaderboardConfigurationPublicV1Builder Builder { get => new CreateLeaderboardConfigurationPublicV1Builder(); }
 
         public class CreateLeaderboardConfigurationPublicV1Builder
             : OperationBuilder<CreateLeaderboardConfigurationPublicV1Builder>

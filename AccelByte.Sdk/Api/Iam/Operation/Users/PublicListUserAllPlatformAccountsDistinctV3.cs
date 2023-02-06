@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicListUserAllPlatformAccountsDistinctV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicListUserAllPlatformAccountsDistinctV3Builder Builder = new PublicListUserAllPlatformAccountsDistinctV3Builder();
+        public static PublicListUserAllPlatformAccountsDistinctV3Builder Builder { get => new PublicListUserAllPlatformAccountsDistinctV3Builder(); }
 
         public class PublicListUserAllPlatformAccountsDistinctV3Builder
             : OperationBuilder<PublicListUserAllPlatformAccountsDistinctV3Builder>

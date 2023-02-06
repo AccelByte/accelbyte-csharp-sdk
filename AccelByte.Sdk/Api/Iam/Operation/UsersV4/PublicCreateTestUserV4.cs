@@ -42,7 +42,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicCreateTestUserV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicCreateTestUserV4Builder Builder = new PublicCreateTestUserV4Builder();
+        public static PublicCreateTestUserV4Builder Builder { get => new PublicCreateTestUserV4Builder(); }
 
         public class PublicCreateTestUserV4Builder
             : OperationBuilder<PublicCreateTestUserV4Builder>

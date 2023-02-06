@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminDeleteRolePermissionsV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDeleteRolePermissionsV4Builder Builder = new AdminDeleteRolePermissionsV4Builder();
+        public static AdminDeleteRolePermissionsV4Builder Builder { get => new AdminDeleteRolePermissionsV4Builder(); }
 
         public class AdminDeleteRolePermissionsV4Builder
             : OperationBuilder<AdminDeleteRolePermissionsV4Builder>

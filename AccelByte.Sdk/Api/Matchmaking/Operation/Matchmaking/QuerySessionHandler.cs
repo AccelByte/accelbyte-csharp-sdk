@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     public class QuerySessionHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QuerySessionHandlerBuilder Builder = new QuerySessionHandlerBuilder();
+        public static QuerySessionHandlerBuilder Builder { get => new QuerySessionHandlerBuilder(); }
 
         public class QuerySessionHandlerBuilder
             : OperationBuilder<QuerySessionHandlerBuilder>

@@ -68,7 +68,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminSendVerificationCodeV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminSendVerificationCodeV3Builder Builder = new AdminSendVerificationCodeV3Builder();
+        public static AdminSendVerificationCodeV3Builder Builder { get => new AdminSendVerificationCodeV3Builder(); }
 
         public class AdminSendVerificationCodeV3Builder
             : OperationBuilder<AdminSendVerificationCodeV3Builder>

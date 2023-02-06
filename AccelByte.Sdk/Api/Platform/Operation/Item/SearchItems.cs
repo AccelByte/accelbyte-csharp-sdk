@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class SearchItems : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SearchItemsBuilder Builder = new SearchItemsBuilder();
+        public static SearchItemsBuilder Builder { get => new SearchItemsBuilder(); }
 
         public class SearchItemsBuilder
             : OperationBuilder<SearchItemsBuilder>

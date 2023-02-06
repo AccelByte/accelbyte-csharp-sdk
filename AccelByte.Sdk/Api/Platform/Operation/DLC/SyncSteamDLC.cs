@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class SyncSteamDLC : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static SyncSteamDLCBuilder Builder = new SyncSteamDLCBuilder();
+        public static SyncSteamDLCBuilder Builder { get => new SyncSteamDLCBuilder(); }
 
         public class SyncSteamDLCBuilder
             : OperationBuilder<SyncSteamDLCBuilder>

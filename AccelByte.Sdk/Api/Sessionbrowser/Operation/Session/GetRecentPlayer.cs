@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     public class GetRecentPlayer : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetRecentPlayerBuilder Builder = new GetRecentPlayerBuilder();
+        public static GetRecentPlayerBuilder Builder { get => new GetRecentPlayerBuilder(); }
 
         public class GetRecentPlayerBuilder
             : OperationBuilder<GetRecentPlayerBuilder>

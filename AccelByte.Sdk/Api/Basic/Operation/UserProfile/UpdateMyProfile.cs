@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class UpdateMyProfile : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateMyProfileBuilder Builder = new UpdateMyProfileBuilder();
+        public static UpdateMyProfileBuilder Builder { get => new UpdateMyProfileBuilder(); }
 
         public class UpdateMyProfileBuilder
             : OperationBuilder<UpdateMyProfileBuilder>

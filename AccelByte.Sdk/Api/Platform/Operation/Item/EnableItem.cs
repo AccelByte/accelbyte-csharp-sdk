@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class EnableItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static EnableItemBuilder Builder = new EnableItemBuilder();
+        public static EnableItemBuilder Builder { get => new EnableItemBuilder(); }
 
         public class EnableItemBuilder
             : OperationBuilder<EnableItemBuilder>

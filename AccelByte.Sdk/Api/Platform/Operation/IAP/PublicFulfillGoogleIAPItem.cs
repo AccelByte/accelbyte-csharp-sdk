@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicFulfillGoogleIAPItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicFulfillGoogleIAPItemBuilder Builder = new PublicFulfillGoogleIAPItemBuilder();
+        public static PublicFulfillGoogleIAPItemBuilder Builder { get => new PublicFulfillGoogleIAPItemBuilder(); }
 
         public class PublicFulfillGoogleIAPItemBuilder
             : OperationBuilder<PublicFulfillGoogleIAPItemBuilder>

@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     public class UpdateUserStatItemValue1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateUserStatItemValue1Builder Builder = new UpdateUserStatItemValue1Builder();
+        public static UpdateUserStatItemValue1Builder Builder { get => new UpdateUserStatItemValue1Builder(); }
 
         public class UpdateUserStatItemValue1Builder
             : OperationBuilder<UpdateUserStatItemValue1Builder>

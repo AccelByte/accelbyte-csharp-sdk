@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ApplyUserRedemption : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ApplyUserRedemptionBuilder Builder = new ApplyUserRedemptionBuilder();
+        public static ApplyUserRedemptionBuilder Builder { get => new ApplyUserRedemptionBuilder(); }
 
         public class ApplyUserRedemptionBuilder
             : OperationBuilder<ApplyUserRedemptionBuilder>

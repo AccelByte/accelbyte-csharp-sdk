@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class GetTopicByTopicName : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetTopicByTopicNameBuilder Builder = new GetTopicByTopicNameBuilder();
+        public static GetTopicByTopicNameBuilder Builder { get => new GetTopicByTopicNameBuilder(); }
 
         public class GetTopicByTopicNameBuilder
             : OperationBuilder<GetTopicByTopicNameBuilder>

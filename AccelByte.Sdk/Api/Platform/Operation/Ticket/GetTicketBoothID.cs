@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetTicketBoothID : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetTicketBoothIDBuilder Builder = new GetTicketBoothIDBuilder();
+        public static GetTicketBoothIDBuilder Builder { get => new GetTicketBoothIDBuilder(); }
 
         public class GetTicketBoothIDBuilder
             : OperationBuilder<GetTicketBoothIDBuilder>

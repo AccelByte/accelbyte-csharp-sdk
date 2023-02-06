@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminGetClientsByNamespaceV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetClientsByNamespaceV3Builder Builder = new AdminGetClientsByNamespaceV3Builder();
+        public static AdminGetClientsByNamespaceV3Builder Builder { get => new AdminGetClientsByNamespaceV3Builder(); }
 
         public class AdminGetClientsByNamespaceV3Builder
             : OperationBuilder<AdminGetClientsByNamespaceV3Builder>

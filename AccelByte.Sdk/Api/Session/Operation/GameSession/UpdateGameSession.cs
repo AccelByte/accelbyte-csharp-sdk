@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     public class UpdateGameSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateGameSessionBuilder Builder = new UpdateGameSessionBuilder();
+        public static UpdateGameSessionBuilder Builder { get => new UpdateGameSessionBuilder(); }
 
         public class UpdateGameSessionBuilder
             : OperationBuilder<UpdateGameSessionBuilder>

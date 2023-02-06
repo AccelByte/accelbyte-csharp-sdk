@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     public class AnonymizeUserAgreement : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AnonymizeUserAgreementBuilder Builder = new AnonymizeUserAgreementBuilder();
+        public static AnonymizeUserAgreementBuilder Builder { get => new AnonymizeUserAgreementBuilder(); }
 
         public class AnonymizeUserAgreementBuilder
             : OperationBuilder<AnonymizeUserAgreementBuilder>

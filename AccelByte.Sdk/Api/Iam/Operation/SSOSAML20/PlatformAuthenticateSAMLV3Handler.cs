@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PlatformAuthenticateSAMLV3Handler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PlatformAuthenticateSAMLV3HandlerBuilder Builder = new PlatformAuthenticateSAMLV3HandlerBuilder();
+        public static PlatformAuthenticateSAMLV3HandlerBuilder Builder { get => new PlatformAuthenticateSAMLV3HandlerBuilder(); }
 
         public class PlatformAuthenticateSAMLV3HandlerBuilder
             : OperationBuilder<PlatformAuthenticateSAMLV3HandlerBuilder>

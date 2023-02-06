@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class GetType : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetTypeBuilder Builder = new GetTypeBuilder();
+        public static GetTypeBuilder Builder { get => new GetTypeBuilder(); }
 
         public class GetTypeBuilder
             : OperationBuilder<GetTypeBuilder>

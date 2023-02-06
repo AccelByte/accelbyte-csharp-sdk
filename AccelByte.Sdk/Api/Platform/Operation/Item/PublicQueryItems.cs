@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicQueryItems : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicQueryItemsBuilder Builder = new PublicQueryItemsBuilder();
+        public static PublicQueryItemsBuilder Builder { get => new PublicQueryItemsBuilder(); }
 
         public class PublicQueryItemsBuilder
             : OperationBuilder<PublicQueryItemsBuilder>

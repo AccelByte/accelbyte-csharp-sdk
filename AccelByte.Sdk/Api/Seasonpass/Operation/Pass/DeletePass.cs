@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class DeletePass : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeletePassBuilder Builder = new DeletePassBuilder();
+        public static DeletePassBuilder Builder { get => new DeletePassBuilder(); }
 
         public class DeletePassBuilder
             : OperationBuilder<DeletePassBuilder>

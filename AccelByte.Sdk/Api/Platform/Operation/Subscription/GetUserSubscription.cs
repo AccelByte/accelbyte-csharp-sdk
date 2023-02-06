@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetUserSubscription : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserSubscriptionBuilder Builder = new GetUserSubscriptionBuilder();
+        public static GetUserSubscriptionBuilder Builder { get => new GetUserSubscriptionBuilder(); }
 
         public class GetUserSubscriptionBuilder
             : OperationBuilder<GetUserSubscriptionBuilder>

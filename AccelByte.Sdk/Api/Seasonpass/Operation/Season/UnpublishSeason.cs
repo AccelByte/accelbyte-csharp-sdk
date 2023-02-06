@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class UnpublishSeason : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UnpublishSeasonBuilder Builder = new UnpublishSeasonBuilder();
+        public static UnpublishSeasonBuilder Builder { get => new UnpublishSeasonBuilder(); }
 
         public class UnpublishSeasonBuilder
             : OperationBuilder<UnpublishSeasonBuilder>

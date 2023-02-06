@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class GetPersonalChatHistoryV1Public : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPersonalChatHistoryV1PublicBuilder Builder = new GetPersonalChatHistoryV1PublicBuilder();
+        public static GetPersonalChatHistoryV1PublicBuilder Builder { get => new GetPersonalChatHistoryV1PublicBuilder(); }
 
         public class GetPersonalChatHistoryV1PublicBuilder
             : OperationBuilder<GetPersonalChatHistoryV1PublicBuilder>

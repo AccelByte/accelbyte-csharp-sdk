@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ListBasicItemsByFeatures : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListBasicItemsByFeaturesBuilder Builder = new ListBasicItemsByFeaturesBuilder();
+        public static ListBasicItemsByFeaturesBuilder Builder { get => new ListBasicItemsByFeaturesBuilder(); }
 
         public class ListBasicItemsByFeaturesBuilder
             : OperationBuilder<ListBasicItemsByFeaturesBuilder>

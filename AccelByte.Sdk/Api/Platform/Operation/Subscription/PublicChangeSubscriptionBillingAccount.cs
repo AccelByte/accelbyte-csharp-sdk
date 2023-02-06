@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicChangeSubscriptionBillingAccount : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicChangeSubscriptionBillingAccountBuilder Builder = new PublicChangeSubscriptionBillingAccountBuilder();
+        public static PublicChangeSubscriptionBillingAccountBuilder Builder { get => new PublicChangeSubscriptionBillingAccountBuilder(); }
 
         public class PublicChangeSubscriptionBillingAccountBuilder
             : OperationBuilder<PublicChangeSubscriptionBillingAccountBuilder>

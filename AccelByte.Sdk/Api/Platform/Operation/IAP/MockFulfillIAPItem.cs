@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class MockFulfillIAPItem : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static MockFulfillIAPItemBuilder Builder = new MockFulfillIAPItemBuilder();
+        public static MockFulfillIAPItemBuilder Builder { get => new MockFulfillIAPItemBuilder(); }
 
         public class MockFulfillIAPItemBuilder
             : OperationBuilder<MockFulfillIAPItemBuilder>

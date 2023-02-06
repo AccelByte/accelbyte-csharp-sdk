@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class ImageDetailClient : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ImageDetailClientBuilder Builder = new ImageDetailClientBuilder();
+        public static ImageDetailClientBuilder Builder { get => new ImageDetailClientBuilder(); }
 
         public class ImageDetailClientBuilder
             : OperationBuilder<ImageDetailClientBuilder>

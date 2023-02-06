@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class GetKeyGroupDynamic : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetKeyGroupDynamicBuilder Builder = new GetKeyGroupDynamicBuilder();
+        public static GetKeyGroupDynamicBuilder Builder { get => new GetKeyGroupDynamicBuilder(); }
 
         public class GetKeyGroupDynamicBuilder
             : OperationBuilder<GetKeyGroupDynamicBuilder>

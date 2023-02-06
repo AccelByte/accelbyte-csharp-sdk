@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class DeletePort : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeletePortBuilder Builder = new DeletePortBuilder();
+        public static DeletePortBuilder Builder { get => new DeletePortBuilder(); }
 
         public class DeletePortBuilder
             : OperationBuilder<DeletePortBuilder>

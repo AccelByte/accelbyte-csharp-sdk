@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class AdminUpdateTag : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminUpdateTagBuilder Builder = new AdminUpdateTagBuilder();
+        public static AdminUpdateTagBuilder Builder { get => new AdminUpdateTagBuilder(); }
 
         public class AdminUpdateTagBuilder
             : OperationBuilder<AdminUpdateTagBuilder>

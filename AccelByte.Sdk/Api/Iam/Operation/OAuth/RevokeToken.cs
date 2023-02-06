@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class RevokeToken : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static RevokeTokenBuilder Builder = new RevokeTokenBuilder();
+        public static RevokeTokenBuilder Builder { get => new RevokeTokenBuilder(); }
 
         public class RevokeTokenBuilder
             : OperationBuilder<RevokeTokenBuilder>

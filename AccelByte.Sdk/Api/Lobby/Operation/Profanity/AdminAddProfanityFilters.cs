@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     public class AdminAddProfanityFilters : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminAddProfanityFiltersBuilder Builder = new AdminAddProfanityFiltersBuilder();
+        public static AdminAddProfanityFiltersBuilder Builder { get => new AdminAddProfanityFiltersBuilder(); }
 
         public class AdminAddProfanityFiltersBuilder
             : OperationBuilder<AdminAddProfanityFiltersBuilder>

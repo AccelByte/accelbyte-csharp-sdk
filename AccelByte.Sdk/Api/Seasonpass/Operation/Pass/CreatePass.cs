@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     public class CreatePass : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreatePassBuilder Builder = new CreatePassBuilder();
+        public static CreatePassBuilder Builder { get => new CreatePassBuilder(); }
 
         public class CreatePassBuilder
             : OperationBuilder<CreatePassBuilder>

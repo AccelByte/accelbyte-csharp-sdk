@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     public class AdminGetUserContentByShareCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminGetUserContentByShareCodeBuilder Builder = new AdminGetUserContentByShareCodeBuilder();
+        public static AdminGetUserContentByShareCodeBuilder Builder { get => new AdminGetUserContentByShareCodeBuilder(); }
 
         public class AdminGetUserContentByShareCodeBuilder
             : OperationBuilder<AdminGetUserContentByShareCodeBuilder>

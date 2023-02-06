@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class QuerySections : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QuerySectionsBuilder Builder = new QuerySectionsBuilder();
+        public static QuerySectionsBuilder Builder { get => new QuerySectionsBuilder(); }
 
         public class QuerySectionsBuilder
             : OperationBuilder<QuerySectionsBuilder>

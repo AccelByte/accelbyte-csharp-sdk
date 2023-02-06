@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class DeregisterLocalServer : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeregisterLocalServerBuilder Builder = new DeregisterLocalServerBuilder();
+        public static DeregisterLocalServerBuilder Builder { get => new DeregisterLocalServerBuilder(); }
 
         public class DeregisterLocalServerBuilder
             : OperationBuilder<DeregisterLocalServerBuilder>

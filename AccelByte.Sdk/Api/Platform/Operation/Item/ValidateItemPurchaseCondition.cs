@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class ValidateItemPurchaseCondition : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ValidateItemPurchaseConditionBuilder Builder = new ValidateItemPurchaseConditionBuilder();
+        public static ValidateItemPurchaseConditionBuilder Builder { get => new ValidateItemPurchaseConditionBuilder(); }
 
         public class ValidateItemPurchaseConditionBuilder
             : OperationBuilder<ValidateItemPurchaseConditionBuilder>

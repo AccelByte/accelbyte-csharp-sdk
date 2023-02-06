@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     public class GetLeaderboardConfigurationsPublicV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetLeaderboardConfigurationsPublicV1Builder Builder = new GetLeaderboardConfigurationsPublicV1Builder();
+        public static GetLeaderboardConfigurationsPublicV1Builder Builder { get => new GetLeaderboardConfigurationsPublicV1Builder(); }
 
         public class GetLeaderboardConfigurationsPublicV1Builder
             : OperationBuilder<GetLeaderboardConfigurationsPublicV1Builder>

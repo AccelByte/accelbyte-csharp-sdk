@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class GetActions : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetActionsBuilder Builder = new GetActionsBuilder();
+        public static GetActionsBuilder Builder { get => new GetActionsBuilder(); }
 
         public class GetActionsBuilder
             : OperationBuilder<GetActionsBuilder>

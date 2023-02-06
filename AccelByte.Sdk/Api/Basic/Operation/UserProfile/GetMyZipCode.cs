@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class GetMyZipCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetMyZipCodeBuilder Builder = new GetMyZipCodeBuilder();
+        public static GetMyZipCodeBuilder Builder { get => new GetMyZipCodeBuilder(); }
 
         public class GetMyZipCodeBuilder
             : OperationBuilder<GetMyZipCodeBuilder>

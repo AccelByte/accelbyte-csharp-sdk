@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class CancelGroupJoinRequestV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CancelGroupJoinRequestV1Builder Builder = new CancelGroupJoinRequestV1Builder();
+        public static CancelGroupJoinRequestV1Builder Builder { get => new CancelGroupJoinRequestV1Builder(); }
 
         public class CancelGroupJoinRequestV1Builder
             : OperationBuilder<CancelGroupJoinRequestV1Builder>

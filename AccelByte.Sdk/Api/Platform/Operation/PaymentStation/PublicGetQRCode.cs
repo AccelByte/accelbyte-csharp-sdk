@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     public class PublicGetQRCode : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetQRCodeBuilder Builder = new PublicGetQRCodeBuilder();
+        public static PublicGetQRCodeBuilder Builder { get => new PublicGetQRCodeBuilder(); }
 
         public class PublicGetQRCodeBuilder
             : OperationBuilder<PublicGetQRCodeBuilder>

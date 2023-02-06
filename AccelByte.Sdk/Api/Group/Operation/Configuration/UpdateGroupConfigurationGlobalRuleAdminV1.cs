@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     public class UpdateGroupConfigurationGlobalRuleAdminV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateGroupConfigurationGlobalRuleAdminV1Builder Builder = new UpdateGroupConfigurationGlobalRuleAdminV1Builder();
+        public static UpdateGroupConfigurationGlobalRuleAdminV1Builder Builder { get => new UpdateGroupConfigurationGlobalRuleAdminV1Builder(); }
 
         public class UpdateGroupConfigurationGlobalRuleAdminV1Builder
             : OperationBuilder<UpdateGroupConfigurationGlobalRuleAdminV1Builder>

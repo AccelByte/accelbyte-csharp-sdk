@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class AnonymizeUserProfile : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AnonymizeUserProfileBuilder Builder = new AnonymizeUserProfileBuilder();
+        public static AnonymizeUserProfileBuilder Builder { get => new AnonymizeUserProfileBuilder(); }
 
         public class AnonymizeUserProfileBuilder
             : OperationBuilder<AnonymizeUserProfileBuilder>

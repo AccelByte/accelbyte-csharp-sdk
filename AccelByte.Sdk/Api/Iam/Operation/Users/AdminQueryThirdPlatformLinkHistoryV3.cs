@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class AdminQueryThirdPlatformLinkHistoryV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminQueryThirdPlatformLinkHistoryV3Builder Builder = new AdminQueryThirdPlatformLinkHistoryV3Builder();
+        public static AdminQueryThirdPlatformLinkHistoryV3Builder Builder { get => new AdminQueryThirdPlatformLinkHistoryV3Builder(); }
 
         public class AdminQueryThirdPlatformLinkHistoryV3Builder
             : OperationBuilder<AdminQueryThirdPlatformLinkHistoryV3Builder>

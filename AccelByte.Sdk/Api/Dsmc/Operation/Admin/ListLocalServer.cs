@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class ListLocalServer : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ListLocalServerBuilder Builder = new ListLocalServerBuilder();
+        public static ListLocalServerBuilder Builder { get => new ListLocalServerBuilder(); }
 
         public class ListLocalServerBuilder
             : OperationBuilder<ListLocalServerBuilder>

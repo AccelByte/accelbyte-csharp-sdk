@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class GetDeployment : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetDeploymentBuilder Builder = new GetDeploymentBuilder();
+        public static GetDeploymentBuilder Builder { get => new GetDeploymentBuilder(); }
 
         public class GetDeploymentBuilder
             : OperationBuilder<GetDeploymentBuilder>

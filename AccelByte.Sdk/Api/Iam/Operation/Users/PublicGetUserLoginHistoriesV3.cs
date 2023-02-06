@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class PublicGetUserLoginHistoriesV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicGetUserLoginHistoriesV3Builder Builder = new PublicGetUserLoginHistoriesV3Builder();
+        public static PublicGetUserLoginHistoriesV3Builder Builder { get => new PublicGetUserLoginHistoriesV3Builder(); }
 
         public class PublicGetUserLoginHistoriesV3Builder
             : OperationBuilder<PublicGetUserLoginHistoriesV3Builder>

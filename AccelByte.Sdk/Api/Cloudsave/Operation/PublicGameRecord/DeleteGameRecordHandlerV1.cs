@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     public class DeleteGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteGameRecordHandlerV1Builder Builder = new DeleteGameRecordHandlerV1Builder();
+        public static DeleteGameRecordHandlerV1Builder Builder { get => new DeleteGameRecordHandlerV1Builder(); }
 
         public class DeleteGameRecordHandlerV1Builder
             : OperationBuilder<DeleteGameRecordHandlerV1Builder>

@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     public class GetServer : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetServerBuilder Builder = new GetServerBuilder();
+        public static GetServerBuilder Builder { get => new GetServerBuilder(); }
 
         public class GetServerBuilder
             : OperationBuilder<GetServerBuilder>

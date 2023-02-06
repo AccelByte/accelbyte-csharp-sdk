@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     public class ChangeNamespaceStatus : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ChangeNamespaceStatusBuilder Builder = new ChangeNamespaceStatusBuilder();
+        public static ChangeNamespaceStatusBuilder Builder { get => new ChangeNamespaceStatusBuilder(); }
 
         public class ChangeNamespaceStatusBuilder
             : OperationBuilder<ChangeNamespaceStatusBuilder>

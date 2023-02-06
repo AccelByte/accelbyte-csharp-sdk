@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     public class GenerateTokenByNewHeadlessAccountV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GenerateTokenByNewHeadlessAccountV3Builder Builder = new GenerateTokenByNewHeadlessAccountV3Builder();
+        public static GenerateTokenByNewHeadlessAccountV3Builder Builder { get => new GenerateTokenByNewHeadlessAccountV3Builder(); }
 
         public class GenerateTokenByNewHeadlessAccountV3Builder
             : OperationBuilder<GenerateTokenByNewHeadlessAccountV3Builder>
