@@ -88,7 +88,7 @@ namespace AccelByte.Sdk.Tests.Services
             // Create an item tier in platform
             Int32 price = 1000;
             String itemName = "Item_SEASON_Tier1";
-            Dictionary<string, object> regionData = new Dictionary<string, Object>();
+            Dictionary<string, List<RegionDataItem>> regionData = new Dictionary<string, List<RegionDataItem>>();
             regionData.Add("US", new List<RegionDataItem>()
             {
                 new RegionDataItem()
