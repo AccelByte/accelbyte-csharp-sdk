@@ -41,6 +41,27 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Achievements Wrapper:  [Achievements](../../AccelByte.Sdk/Api/Achievement/Wrapper/Achievements.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Tags Wrapper:  [Tags](../../AccelByte.Sdk/Api/Achievement/Wrapper/Tags.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### User Achievements Wrapper:  [UserAchievements](../../AccelByte.Sdk/Api/Achievement/Wrapper/UserAchievements.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Anonymization Wrapper:  [Anonymization](../../AccelByte.Sdk/Api/Achievement/Wrapper/Anonymization.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

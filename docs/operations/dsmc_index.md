@@ -111,6 +111,47 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Config Wrapper:  [Config](../../AccelByte.Sdk/Api/Dsmc/Wrapper/Config.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Image Config Wrapper:  [ImageConfig](../../AccelByte.Sdk/Api/Dsmc/Wrapper/ImageConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Pod Config Wrapper:  [PodConfig](../../AccelByte.Sdk/Api/Dsmc/Wrapper/PodConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Deployment Config Wrapper:  [DeploymentConfig](../../AccelByte.Sdk/Api/Dsmc/Wrapper/DeploymentConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Admin Wrapper:  [Admin](../../AccelByte.Sdk/Api/Dsmc/Wrapper/Admin.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Server Wrapper:  [Server](../../AccelByte.Sdk/Api/Dsmc/Wrapper/Server.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Session Wrapper:  [Session](../../AccelByte.Sdk/Api/Dsmc/Wrapper/Session.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Public Wrapper:  [Public](../../AccelByte.Sdk/Api/Dsmc/Wrapper/Public.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Dsmc Operations Wrapper:  [DsmcOperations](../../AccelByte.Sdk/Api/Dsmc/Wrapper/DsmcOperations.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

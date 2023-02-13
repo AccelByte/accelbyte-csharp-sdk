@@ -506,6 +506,133 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### FulfillmentScript Wrapper:  [FulfillmentScript](../../AccelByte.Sdk/Api/Platform/Wrapper/FulfillmentScript.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/fulfillment/scripts/tests/eval` | POST | TestFulfillmentScriptEval | [TestFulfillmentScriptEval](../../AccelByte.Sdk/Api/Platform/Operation/FulfillmentScript/TestFulfillmentScriptEval.cs) | [TestFulfillmentScriptEval](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/FulfillmentScript/TestFulfillmentScriptEval.cs) |
+
+### Item Wrapper:  [Item](../../AccelByte.Sdk/Api/Platform/Wrapper/Item.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Campaign Wrapper:  [Campaign](../../AccelByte.Sdk/Api/Platform/Wrapper/Campaign.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Category Wrapper:  [Category](../../AccelByte.Sdk/Api/Platform/Wrapper/Category.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### ServicePluginConfig Wrapper:  [ServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/ServicePluginConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Currency Wrapper:  [Currency](../../AccelByte.Sdk/Api/Platform/Wrapper/Currency.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### DLC Wrapper:  [DLC](../../AccelByte.Sdk/Api/Platform/Wrapper/DLC.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Entitlement Wrapper:  [Entitlement](../../AccelByte.Sdk/Api/Platform/Wrapper/Entitlement.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Fulfillment Wrapper:  [Fulfillment](../../AccelByte.Sdk/Api/Platform/Wrapper/Fulfillment.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### IAP Wrapper:  [IAP](../../AccelByte.Sdk/Api/Platform/Wrapper/IAP.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Invoice Wrapper:  [Invoice](../../AccelByte.Sdk/Api/Platform/Wrapper/Invoice.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### KeyGroup Wrapper:  [KeyGroup](../../AccelByte.Sdk/Api/Platform/Wrapper/KeyGroup.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Order Wrapper:  [Order](../../AccelByte.Sdk/Api/Platform/Wrapper/Order.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### PaymentCallbackConfig Wrapper:  [PaymentCallbackConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/PaymentCallbackConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Payment Wrapper:  [Payment](../../AccelByte.Sdk/Api/Platform/Wrapper/Payment.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Payment(Dedicated) Wrapper:  [PaymentDedicated](../../AccelByte.Sdk/Api/Platform/Wrapper/PaymentDedicated.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Wallet Wrapper:  [Wallet](../../AccelByte.Sdk/Api/Platform/Wrapper/Wallet.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Reward Wrapper:  [Reward](../../AccelByte.Sdk/Api/Platform/Wrapper/Reward.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Section Wrapper:  [Section](../../AccelByte.Sdk/Api/Platform/Wrapper/Section.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Store Wrapper:  [Store](../../AccelByte.Sdk/Api/Platform/Wrapper/Store.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### CatalogChanges Wrapper:  [CatalogChanges](../../AccelByte.Sdk/Api/Platform/Wrapper/CatalogChanges.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Subscription Wrapper:  [Subscription](../../AccelByte.Sdk/Api/Platform/Wrapper/Subscription.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Ticket Wrapper:  [Ticket](../../AccelByte.Sdk/Api/Platform/Wrapper/Ticket.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Achievement(Platform) Wrapper:  [AchievementPlatform](../../AccelByte.Sdk/Api/Platform/Wrapper/AchievementPlatform.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Anonymization Wrapper:  [Anonymization](../../AccelByte.Sdk/Api/Platform/Wrapper/Anonymization.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### View Wrapper:  [View](../../AccelByte.Sdk/Api/Platform/Wrapper/View.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/public/namespaces/{namespace}/users/{userId}/views` | GET | PublicListViews | [PublicListViews](../../AccelByte.Sdk/Api/Platform/Operation/View/PublicListViews.cs) | [PublicListViews](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/View/PublicListViews.cs) |
+
+### Order(Dedicated) Wrapper:  [OrderDedicated](../../AccelByte.Sdk/Api/Platform/Wrapper/OrderDedicated.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### PaymentConfig Wrapper:  [PaymentConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/PaymentConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### PaymentStation Wrapper:  [PaymentStation](../../AccelByte.Sdk/Api/Platform/Wrapper/PaymentStation.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### PaymentAccount Wrapper:  [PaymentAccount](../../AccelByte.Sdk/Api/Platform/Wrapper/PaymentAccount.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

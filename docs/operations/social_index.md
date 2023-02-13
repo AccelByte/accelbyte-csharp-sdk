@@ -108,6 +108,54 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### SlotConfig Wrapper:  [SlotConfig](../../AccelByte.Sdk/Api/Social/Wrapper/SlotConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### GameProfile Wrapper:  [GameProfile](../../AccelByte.Sdk/Api/Social/Wrapper/GameProfile.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Slot Wrapper:  [Slot](../../AccelByte.Sdk/Api/Social/Wrapper/Slot.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### GlobalStatistic Wrapper:  [GlobalStatistic](../../AccelByte.Sdk/Api/Social/Wrapper/GlobalStatistic.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### UserStatistic Wrapper:  [UserStatistic](../../AccelByte.Sdk/Api/Social/Wrapper/UserStatistic.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/social/v1/admin/namespaces/{namespace}/statitems/value/bulk` | PUT | BulkIncUserStatItem | [BulkIncUserStatItem](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkIncUserStatItem.cs) | [BulkIncUserStatItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkIncUserStatItem.cs) |
+| `/social/v1/admin/namespaces/{namespace}/statitems/value/bulk` | PATCH | BulkIncUserStatItemValue | [BulkIncUserStatItemValue](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkIncUserStatItemValue.cs) | [BulkIncUserStatItemValue](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkIncUserStatItemValue.cs) |
+| `/social/v1/admin/namespaces/{namespace}/statitems/value/reset/bulk` | PUT | BulkResetUserStatItem | [BulkResetUserStatItem](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkResetUserStatItem.cs) | [BulkResetUserStatItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkResetUserStatItem.cs) |
+| `/social/v1/admin/namespaces/{namespace}/users/{userId}/statitems/bulk` | POST | BulkCreateUserStatItems | [BulkCreateUserStatItems](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkCreateUserStatItems.cs) | [BulkCreateUserStatItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkCreateUserStatItems.cs) |
+| `/social/v1/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk` | PUT | BulkIncUserStatItem1 | [BulkIncUserStatItem1](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkIncUserStatItem1.cs) | [BulkIncUserStatItem1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkIncUserStatItem1.cs) |
+| `/social/v1/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk` | PATCH | BulkIncUserStatItemValue1 | [BulkIncUserStatItemValue1](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkIncUserStatItemValue1.cs) | [BulkIncUserStatItemValue1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkIncUserStatItemValue1.cs) |
+| `/social/v1/admin/namespaces/{namespace}/users/{userId}/statitems/value/reset/bulk` | PUT | BulkResetUserStatItem1 | [BulkResetUserStatItem1](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkResetUserStatItem1.cs) | [BulkResetUserStatItem1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkResetUserStatItem1.cs) |
+| `/social/v1/public/namespaces/{namespace}/statitems/value/bulk` | PUT | PublicBulkIncUserStatItem | [PublicBulkIncUserStatItem](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/PublicBulkIncUserStatItem.cs) | [PublicBulkIncUserStatItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/PublicBulkIncUserStatItem.cs) |
+| `/social/v1/public/namespaces/{namespace}/statitems/value/bulk` | PATCH | PublicBulkIncUserStatItemValue | [PublicBulkIncUserStatItemValue](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/PublicBulkIncUserStatItemValue.cs) | [PublicBulkIncUserStatItemValue](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/PublicBulkIncUserStatItemValue.cs) |
+| `/social/v1/public/namespaces/{namespace}/statitems/value/reset/bulk` | PUT | BulkResetUserStatItem2 | [BulkResetUserStatItem2](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkResetUserStatItem2.cs) | [BulkResetUserStatItem2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkResetUserStatItem2.cs) |
+| `/social/v1/public/namespaces/{namespace}/users/{userId}/statitems/bulk` | POST | PublicBulkCreateUserStatItems | [PublicBulkCreateUserStatItems](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/PublicBulkCreateUserStatItems.cs) | [PublicBulkCreateUserStatItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/PublicBulkCreateUserStatItems.cs) |
+| `/social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk` | PUT | PublicBulkIncUserStatItem1 | [PublicBulkIncUserStatItem1](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/PublicBulkIncUserStatItem1.cs) | [PublicBulkIncUserStatItem1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/PublicBulkIncUserStatItem1.cs) |
+| `/social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk` | PATCH | BulkIncUserStatItemValue2 | [BulkIncUserStatItemValue2](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkIncUserStatItemValue2.cs) | [BulkIncUserStatItemValue2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkIncUserStatItemValue2.cs) |
+| `/social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/reset/bulk` | PUT | BulkResetUserStatItem3 | [BulkResetUserStatItem3](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkResetUserStatItem3.cs) | [BulkResetUserStatItem3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkResetUserStatItem3.cs) |
+| `/social/v2/admin/namespaces/{namespace}/statitems/value/bulk` | PUT | BulkUpdateUserStatItemV2 | [BulkUpdateUserStatItemV2](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkUpdateUserStatItemV2.cs) | [BulkUpdateUserStatItemV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkUpdateUserStatItemV2.cs) |
+| `/social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk` | PUT | BulkUpdateUserStatItem | [BulkUpdateUserStatItem](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkUpdateUserStatItem.cs) | [BulkUpdateUserStatItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkUpdateUserStatItem.cs) |
+| `/social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/reset/bulk` | PUT | BulkResetUserStatItemValues | [BulkResetUserStatItemValues](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkResetUserStatItemValues.cs) | [BulkResetUserStatItemValues](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkResetUserStatItemValues.cs) |
+| `/social/v2/public/namespaces/{namespace}/statitems/value/bulk` | PUT | BulkUpdateUserStatItem1 | [BulkUpdateUserStatItem1](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkUpdateUserStatItem1.cs) | [BulkUpdateUserStatItem1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkUpdateUserStatItem1.cs) |
+| `/social/v2/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk` | PUT | BulkUpdateUserStatItem2 | [BulkUpdateUserStatItem2](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkUpdateUserStatItem2.cs) | [BulkUpdateUserStatItem2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkUpdateUserStatItem2.cs) |
+
+### StatConfiguration Wrapper:  [StatConfiguration](../../AccelByte.Sdk/Api/Social/Wrapper/StatConfiguration.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

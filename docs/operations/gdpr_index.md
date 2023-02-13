@@ -35,6 +35,19 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Data Deletion Wrapper:  [DataDeletion](../../AccelByte.Sdk/Api/Gdpr/Wrapper/DataDeletion.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Data Retrieval Wrapper:  [DataRetrieval](../../AccelByte.Sdk/Api/Gdpr/Wrapper/DataRetrieval.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

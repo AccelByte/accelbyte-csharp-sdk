@@ -66,6 +66,32 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Season Wrapper:  [Season](../../AccelByte.Sdk/Api/Seasonpass/Wrapper/Season.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/seasonpass/admin/namespaces/{namespace}/users/{userId}/seasons/{seasonId}/data` | GET | GetUserSeason | [GetUserSeason](../../AccelByte.Sdk/Api/Seasonpass/Operation/Season/GetUserSeason.cs) | [GetUserSeason](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/GetUserSeason.cs) |
+| `/seasonpass/public/namespaces/{namespace}/users/{userId}/seasons/current/data` | GET | PublicGetCurrentUserSeason | [PublicGetCurrentUserSeason](../../AccelByte.Sdk/Api/Seasonpass/Operation/Season/PublicGetCurrentUserSeason.cs) | [PublicGetCurrentUserSeason](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/PublicGetCurrentUserSeason.cs) |
+| `/seasonpass/public/namespaces/{namespace}/users/{userId}/seasons/{seasonId}/data` | GET | PublicGetUserSeason | [PublicGetUserSeason](../../AccelByte.Sdk/Api/Seasonpass/Operation/Season/PublicGetUserSeason.cs) | [PublicGetUserSeason](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Season/PublicGetUserSeason.cs) |
+
+### Pass Wrapper:  [Pass](../../AccelByte.Sdk/Api/Seasonpass/Wrapper/Pass.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Reward Wrapper:  [Reward](../../AccelByte.Sdk/Api/Seasonpass/Wrapper/Reward.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/seasonpass/public/namespaces/{namespace}/users/{userId}/seasons/current/rewards` | POST | PublicClaimUserReward | [PublicClaimUserReward](../../AccelByte.Sdk/Api/Seasonpass/Operation/Reward/PublicClaimUserReward.cs) | [PublicClaimUserReward](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Reward/PublicClaimUserReward.cs) |
+| `/seasonpass/public/namespaces/{namespace}/users/{userId}/seasons/current/rewards/bulk` | POST | PublicBulkClaimUserRewards | [PublicBulkClaimUserRewards](../../AccelByte.Sdk/Api/Seasonpass/Operation/Reward/PublicBulkClaimUserRewards.cs) | [PublicBulkClaimUserRewards](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Reward/PublicBulkClaimUserRewards.cs) |
+
+### Tier Wrapper:  [Tier](../../AccelByte.Sdk/Api/Seasonpass/Wrapper/Tier.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

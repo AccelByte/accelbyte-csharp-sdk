@@ -19,6 +19,19 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### telemetry Wrapper:  [Telemetry](../../AccelByte.Sdk/Api/Gametelemetry/Wrapper/Telemetry.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Gametelemetry Operations Wrapper:  [GametelemetryOperations](../../AccelByte.Sdk/Api/Gametelemetry/Wrapper/GametelemetryOperations.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

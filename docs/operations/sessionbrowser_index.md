@@ -31,6 +31,15 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Session Wrapper:  [Session](../../AccelByte.Sdk/Api/Sessionbrowser/Wrapper/Session.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

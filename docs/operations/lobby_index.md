@@ -138,6 +138,56 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### friends Wrapper:  [Friends](../../AccelByte.Sdk/Api/Lobby/Wrapper/Friends.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### chat Wrapper:  [Chat](../../AccelByte.Sdk/Api/Lobby/Wrapper/Chat.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### config Wrapper:  [Config](../../AccelByte.Sdk/Api/Lobby/Wrapper/Config.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### notification Wrapper:  [Notification](../../AccelByte.Sdk/Api/Lobby/Wrapper/Notification.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### party Wrapper:  [Party](../../AccelByte.Sdk/Api/Lobby/Wrapper/Party.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/lobby/v1/admin/party/namespaces/{namespace}/parties/{partyId}` | GET | AdminGetPartyDataV1 | [AdminGetPartyDataV1](../../AccelByte.Sdk/Api/Lobby/Operation/Party/AdminGetPartyDataV1.cs) | [AdminGetPartyDataV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Party/AdminGetPartyDataV1.cs) |
+| `/lobby/v1/admin/party/namespaces/{namespace}/users/{userId}/party` | GET | AdminGetUserPartyV1 | [AdminGetUserPartyV1](../../AccelByte.Sdk/Api/Lobby/Operation/Party/AdminGetUserPartyV1.cs) | [AdminGetUserPartyV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Party/AdminGetUserPartyV1.cs) |
+| `/lobby/v1/public/party/namespaces/{namespace}/parties/{partyId}` | GET | PublicGetPartyDataV1 | [PublicGetPartyDataV1](../../AccelByte.Sdk/Api/Lobby/Operation/Party/PublicGetPartyDataV1.cs) | [PublicGetPartyDataV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Party/PublicGetPartyDataV1.cs) |
+| `/lobby/v1/public/party/namespaces/{namespace}/parties/{partyId}/attributes` | PUT | PublicUpdatePartyAttributesV1 | [PublicUpdatePartyAttributesV1](../../AccelByte.Sdk/Api/Lobby/Operation/Party/PublicUpdatePartyAttributesV1.cs) | [PublicUpdatePartyAttributesV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Party/PublicUpdatePartyAttributesV1.cs) |
+
+### Lobby Operations Wrapper:  [LobbyOperations](../../AccelByte.Sdk/Api/Lobby/Wrapper/LobbyOperations.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/lobby/v1/admin/party/namespaces/{namespace}/parties/{partyId}/attributes` | PUT | AdminUpdatePartyAttributesV1 | [AdminUpdatePartyAttributesV1](../../AccelByte.Sdk/Api/Lobby/Operation/LobbyOperations/AdminUpdatePartyAttributesV1.cs) | [AdminUpdatePartyAttributesV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/LobbyOperations/AdminUpdatePartyAttributesV1.cs) |
+
+### player Wrapper:  [Player](../../AccelByte.Sdk/Api/Lobby/Wrapper/Player.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### profanity Wrapper:  [Profanity](../../AccelByte.Sdk/Api/Lobby/Wrapper/Profanity.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### thirdParty Wrapper:  [ThirdParty](../../AccelByte.Sdk/Api/Lobby/Wrapper/ThirdParty.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### presence Wrapper:  [Presence](../../AccelByte.Sdk/Api/Lobby/Wrapper/Presence.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

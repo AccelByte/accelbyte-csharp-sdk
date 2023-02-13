@@ -409,6 +409,68 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Bans Wrapper:  [Bans](../../AccelByte.Sdk/Api/Iam/Wrapper/Bans.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Clients Wrapper:  [Clients](../../AccelByte.Sdk/Api/Iam/Wrapper/Clients.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Users Wrapper:  [Users](../../AccelByte.Sdk/Api/Iam/Wrapper/Users.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/iam/v3/public/namespaces/{namespace}/requests/{requestId}/async/status` | GET | PublicGetAsyncStatus | [PublicGetAsyncStatus](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetAsyncStatus.cs) | [PublicGetAsyncStatus](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetAsyncStatus.cs) |
+
+### OAuth Wrapper:  [OAuth](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Roles Wrapper:  [Roles](../../AccelByte.Sdk/Api/Iam/Wrapper/Roles.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### InputValidations Wrapper:  [InputValidations](../../AccelByte.Sdk/Api/Iam/Wrapper/InputValidations.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Third Party Credential Wrapper:  [ThirdPartyCredential](../../AccelByte.Sdk/Api/Iam/Wrapper/ThirdPartyCredential.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### SSO Credential Wrapper:  [SSOCredential](../../AccelByte.Sdk/Api/Iam/Wrapper/SSOCredential.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### OAuth2.0 - Extension Wrapper:  [OAuth20Extension](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20Extension.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### OAuth2.0 Wrapper:  [OAuth20](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### SSO SAML 2.0 Wrapper:  [SSOSAML20](../../AccelByte.Sdk/Api/Iam/Wrapper/SSOSAML20.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### SSO Wrapper:  [SSO](../../AccelByte.Sdk/Api/Iam/Wrapper/SSO.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Devices V4 Wrapper:  [DevicesV4](../../AccelByte.Sdk/Api/Iam/Wrapper/DevicesV4.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Users V4 Wrapper:  [UsersV4](../../AccelByte.Sdk/Api/Iam/Wrapper/UsersV4.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

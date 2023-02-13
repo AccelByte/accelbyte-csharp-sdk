@@ -98,6 +98,45 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Configuration Wrapper:  [Configuration](../../AccelByte.Sdk/Api/Group/Wrapper/Configuration.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Group Wrapper:  [Group](../../AccelByte.Sdk/Api/Group/Wrapper/Group.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/group/v1/admin/namespaces/{namespace}/groups/{groupId}` | GET | GetSingleGroupAdminV1 | [GetSingleGroupAdminV1](../../AccelByte.Sdk/Api/Group/Operation/Group/GetSingleGroupAdminV1.cs) | [GetSingleGroupAdminV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/GetSingleGroupAdminV1.cs) |
+| `/group/v1/public/namespaces/{namespace}/groups` | POST | CreateNewGroupPublicV1 | [CreateNewGroupPublicV1](../../AccelByte.Sdk/Api/Group/Operation/Group/CreateNewGroupPublicV1.cs) | [CreateNewGroupPublicV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/CreateNewGroupPublicV1.cs) |
+| `/group/v1/public/namespaces/{namespace}/groups/{groupId}` | GET | GetSingleGroupPublicV1 | [GetSingleGroupPublicV1](../../AccelByte.Sdk/Api/Group/Operation/Group/GetSingleGroupPublicV1.cs) | [GetSingleGroupPublicV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/GetSingleGroupPublicV1.cs) |
+| `/group/v1/public/namespaces/{namespace}/groups/{groupId}` | PUT | UpdateSingleGroupV1 | [UpdateSingleGroupV1](../../AccelByte.Sdk/Api/Group/Operation/Group/UpdateSingleGroupV1.cs) | [UpdateSingleGroupV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/UpdateSingleGroupV1.cs) |
+| `/group/v1/public/namespaces/{namespace}/groups/{groupId}` | PATCH | UpdatePatchSingleGroupPublicV1 | [UpdatePatchSingleGroupPublicV1](../../AccelByte.Sdk/Api/Group/Operation/Group/UpdatePatchSingleGroupPublicV1.cs) | [UpdatePatchSingleGroupPublicV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/UpdatePatchSingleGroupPublicV1.cs) |
+| `/group/v1/public/namespaces/{namespace}/groups/{groupId}/attributes/custom` | PUT | UpdateGroupCustomAttributesPublicV1 | [UpdateGroupCustomAttributesPublicV1](../../AccelByte.Sdk/Api/Group/Operation/Group/UpdateGroupCustomAttributesPublicV1.cs) | [UpdateGroupCustomAttributesPublicV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/UpdateGroupCustomAttributesPublicV1.cs) |
+| `/group/v1/public/namespaces/{namespace}/groups/{groupId}/rules/custom` | PUT | UpdateGroupCustomRulePublicV1 | [UpdateGroupCustomRulePublicV1](../../AccelByte.Sdk/Api/Group/Operation/Group/UpdateGroupCustomRulePublicV1.cs) | [UpdateGroupCustomRulePublicV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/UpdateGroupCustomRulePublicV1.cs) |
+| `/group/v1/public/namespaces/{namespace}/groups/{groupId}/rules/defined/{allowedAction}` | PUT | UpdateGroupPredefinedRulePublicV1 | [UpdateGroupPredefinedRulePublicV1](../../AccelByte.Sdk/Api/Group/Operation/Group/UpdateGroupPredefinedRulePublicV1.cs) | [UpdateGroupPredefinedRulePublicV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/UpdateGroupPredefinedRulePublicV1.cs) |
+| `/group/v2/public/namespaces/{namespace}/groups` | POST | CreateNewGroupPublicV2 | [CreateNewGroupPublicV2](../../AccelByte.Sdk/Api/Group/Operation/Group/CreateNewGroupPublicV2.cs) | [CreateNewGroupPublicV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/CreateNewGroupPublicV2.cs) |
+| `/group/v2/public/namespaces/{namespace}/groups/{groupId}` | PUT | UpdatePutSingleGroupPublicV2 | [UpdatePutSingleGroupPublicV2](../../AccelByte.Sdk/Api/Group/Operation/Group/UpdatePutSingleGroupPublicV2.cs) | [UpdatePutSingleGroupPublicV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/UpdatePutSingleGroupPublicV2.cs) |
+| `/group/v2/public/namespaces/{namespace}/groups/{groupId}` | PATCH | UpdatePatchSingleGroupPublicV2 | [UpdatePatchSingleGroupPublicV2](../../AccelByte.Sdk/Api/Group/Operation/Group/UpdatePatchSingleGroupPublicV2.cs) | [UpdatePatchSingleGroupPublicV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/UpdatePatchSingleGroupPublicV2.cs) |
+| `/group/v2/public/namespaces/{namespace}/groups/{groupId}/attributes/custom` | PUT | UpdateGroupCustomAttributesPublicV2 | [UpdateGroupCustomAttributesPublicV2](../../AccelByte.Sdk/Api/Group/Operation/Group/UpdateGroupCustomAttributesPublicV2.cs) | [UpdateGroupCustomAttributesPublicV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/UpdateGroupCustomAttributesPublicV2.cs) |
+| `/group/v2/public/namespaces/{namespace}/groups/{groupId}/rules/custom` | PUT | UpdateGroupCustomRulePublicV2 | [UpdateGroupCustomRulePublicV2](../../AccelByte.Sdk/Api/Group/Operation/Group/UpdateGroupCustomRulePublicV2.cs) | [UpdateGroupCustomRulePublicV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/UpdateGroupCustomRulePublicV2.cs) |
+| `/group/v2/public/namespaces/{namespace}/groups/{groupId}/rules/defined/{allowedAction}` | PUT | UpdateGroupPredefinedRulePublicV2 | [UpdateGroupPredefinedRulePublicV2](../../AccelByte.Sdk/Api/Group/Operation/Group/UpdateGroupPredefinedRulePublicV2.cs) | [UpdateGroupPredefinedRulePublicV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/UpdateGroupPredefinedRulePublicV2.cs) |
+
+### Group Member Wrapper:  [GroupMember](../../AccelByte.Sdk/Api/Group/Wrapper/GroupMember.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Group Roles Wrapper:  [GroupRoles](../../AccelByte.Sdk/Api/Group/Wrapper/GroupRoles.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Member Request Wrapper:  [MemberRequest](../../AccelByte.Sdk/Api/Group/Wrapper/MemberRequest.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

@@ -25,6 +25,23 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Admin Wrapper:  [Admin](../../AccelByte.Sdk/Api/Qosm/Wrapper/Admin.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Public Wrapper:  [Public](../../AccelByte.Sdk/Api/Qosm/Wrapper/Public.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Server Wrapper:  [Server](../../AccelByte.Sdk/Api/Qosm/Wrapper/Server.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

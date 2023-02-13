@@ -92,6 +92,59 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Agreement Wrapper:  [Agreement](../../AccelByte.Sdk/Api/Legal/Wrapper/Agreement.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/agreement/public/agreements/policies` | POST | BulkAcceptVersionedPolicy | [BulkAcceptVersionedPolicy](../../AccelByte.Sdk/Api/Legal/Operation/Agreement/BulkAcceptVersionedPolicy.cs) | [BulkAcceptVersionedPolicy](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Agreement/BulkAcceptVersionedPolicy.cs) |
+| `/agreement/public/agreements/policies/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}` | POST | IndirectBulkAcceptVersionedPolicyV2 | [IndirectBulkAcceptVersionedPolicyV2](../../AccelByte.Sdk/Api/Legal/Operation/Agreement/IndirectBulkAcceptVersionedPolicyV2.cs) | [IndirectBulkAcceptVersionedPolicyV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Agreement/IndirectBulkAcceptVersionedPolicyV2.cs) |
+| `/agreement/public/agreements/policies/users/{userId}` | POST | IndirectBulkAcceptVersionedPolicy1 | [IndirectBulkAcceptVersionedPolicy1](../../AccelByte.Sdk/Api/Legal/Operation/Agreement/IndirectBulkAcceptVersionedPolicy1.cs) | [IndirectBulkAcceptVersionedPolicy1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Agreement/IndirectBulkAcceptVersionedPolicy1.cs) |
+
+### Base Legal Policies Wrapper:  [BaseLegalPolicies](../../AccelByte.Sdk/Api/Legal/Wrapper/BaseLegalPolicies.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Localized Policy Versions Wrapper:  [LocalizedPolicyVersions](../../AccelByte.Sdk/Api/Legal/Wrapper/LocalizedPolicyVersions.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Admin User Agreement Wrapper:  [AdminUserAgreement](../../AccelByte.Sdk/Api/Legal/Wrapper/AdminUserAgreement.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/agreement/admin/namespaces/{namespace}/users/{userId}/agreements/policies` | POST | IndirectBulkAcceptVersionedPolicy | [IndirectBulkAcceptVersionedPolicy](../../AccelByte.Sdk/Api/Legal/Operation/AdminUserAgreement/IndirectBulkAcceptVersionedPolicy.cs) | [IndirectBulkAcceptVersionedPolicy](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/AdminUserAgreement/IndirectBulkAcceptVersionedPolicy.cs) |
+
+### Admin User Eligibilities Wrapper:  [AdminUserEligibilities](../../AccelByte.Sdk/Api/Legal/Wrapper/AdminUserEligibilities.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Policies Wrapper:  [Policies](../../AccelByte.Sdk/Api/Legal/Wrapper/Policies.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Policy Versions Wrapper:  [PolicyVersions](../../AccelByte.Sdk/Api/Legal/Wrapper/PolicyVersions.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### UserInfo Wrapper:  [UserInfo](../../AccelByte.Sdk/Api/Legal/Wrapper/UserInfo.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Anonymization Wrapper:  [Anonymization](../../AccelByte.Sdk/Api/Legal/Wrapper/Anonymization.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Eligibilities Wrapper:  [Eligibilities](../../AccelByte.Sdk/Api/Legal/Wrapper/Eligibilities.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Utility Wrapper:  [Utility](../../AccelByte.Sdk/Api/Legal/Wrapper/Utility.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

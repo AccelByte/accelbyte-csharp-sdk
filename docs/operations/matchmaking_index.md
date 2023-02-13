@@ -48,6 +48,28 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Matchmaking Operations Wrapper:  [MatchmakingOperations](../../AccelByte.Sdk/Api/Matchmaking/Wrapper/MatchmakingOperations.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Matchmaking Wrapper:  [Matchmaking](../../AccelByte.Sdk/Api/Matchmaking/Wrapper/Matchmaking.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/matchmaking/namespaces/{namespace}/sessions/{matchID}/status` | GET | QuerySessionHandler | [QuerySessionHandler](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/QuerySessionHandler.cs) | [QuerySessionHandler](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/QuerySessionHandler.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/all/parties` | GET | GetAllPartyInAllChannel | [GetAllPartyInAllChannel](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetAllPartyInAllChannel.cs) | [GetAllPartyInAllChannel](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/GetAllPartyInAllChannel.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/all/sessions/bulk` | GET | BulkGetSessions | [BulkGetSessions](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/BulkGetSessions.cs) | [BulkGetSessions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/BulkGetSessions.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/parties` | GET | GetAllPartyInChannel | [GetAllPartyInChannel](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetAllPartyInChannel.cs) | [GetAllPartyInChannel](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/GetAllPartyInChannel.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions` | GET | GetAllSessionsInChannel | [GetAllSessionsInChannel](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetAllSessionsInChannel.cs) | [GetAllSessionsInChannel](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/GetAllSessionsInChannel.cs) |
+
+### Social Matchmaking Wrapper:  [SocialMatchmaking](../../AccelByte.Sdk/Api/Matchmaking/Wrapper/SocialMatchmaking.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

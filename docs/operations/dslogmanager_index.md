@@ -30,6 +30,27 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Admin Wrapper:  [Admin](../../AccelByte.Sdk/Api/Dslogmanager/Wrapper/Admin.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Terminated Servers Wrapper:  [TerminatedServers](../../AccelByte.Sdk/Api/Dslogmanager/Wrapper/TerminatedServers.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### All Terminated Servers Wrapper:  [AllTerminatedServers](../../AccelByte.Sdk/Api/Dslogmanager/Wrapper/AllTerminatedServers.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Dslogmanager Operations Wrapper:  [DslogmanagerOperations](../../AccelByte.Sdk/Api/Dslogmanager/Wrapper/DslogmanagerOperations.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

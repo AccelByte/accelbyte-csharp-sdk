@@ -59,6 +59,31 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Event Descriptions Wrapper:  [EventDescriptions](../../AccelByte.Sdk/Api/Eventlog/Wrapper/EventDescriptions.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Event Wrapper:  [Event](../../AccelByte.Sdk/Api/Eventlog/Wrapper/Event.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### User Information Wrapper:  [UserInformation](../../AccelByte.Sdk/Api/Eventlog/Wrapper/UserInformation.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Event Registry Wrapper:  [EventRegistry](../../AccelByte.Sdk/Api/Eventlog/Wrapper/EventRegistry.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Event V2 Wrapper:  [EventV2](../../AccelByte.Sdk/Api/Eventlog/Wrapper/EventV2.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

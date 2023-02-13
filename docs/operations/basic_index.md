@@ -97,6 +97,41 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Namespace Wrapper:  [Namespace](../../AccelByte.Sdk/Api/Basic/Wrapper/Namespace.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### UserAction Wrapper:  [UserAction](../../AccelByte.Sdk/Api/Basic/Wrapper/UserAction.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### EQU8Config Wrapper:  [EQU8Config](../../AccelByte.Sdk/Api/Basic/Wrapper/EQU8Config.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### FileUpload Wrapper:  [FileUpload](../../AccelByte.Sdk/Api/Basic/Wrapper/FileUpload.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Misc Wrapper:  [Misc](../../AccelByte.Sdk/Api/Basic/Wrapper/Misc.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### UserProfile Wrapper:  [UserProfile](../../AccelByte.Sdk/Api/Basic/Wrapper/UserProfile.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/basic/v1/admin/namespaces/{namespace}/profiles/public` | POST | AdminGetUserProfilePublicInfoByIds | [AdminGetUserProfilePublicInfoByIds](../../AccelByte.Sdk/Api/Basic/Operation/UserProfile/AdminGetUserProfilePublicInfoByIds.cs) | [AdminGetUserProfilePublicInfoByIds](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/UserProfile/AdminGetUserProfilePublicInfoByIds.cs) |
+| `/basic/v1/public/namespaces/{namespace}/profiles/public` | GET | PublicGetUserProfilePublicInfoByIds | [PublicGetUserProfilePublicInfoByIds](../../AccelByte.Sdk/Api/Basic/Operation/UserProfile/PublicGetUserProfilePublicInfoByIds.cs) | [PublicGetUserProfilePublicInfoByIds](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/UserProfile/PublicGetUserProfilePublicInfoByIds.cs) |
+
+### Anonymization Wrapper:  [Anonymization](../../AccelByte.Sdk/Api/Basic/Wrapper/Anonymization.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

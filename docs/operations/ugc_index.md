@@ -158,6 +158,88 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Admin Channel Wrapper:  [AdminChannel](../../AccelByte.Sdk/Api/Ugc/Wrapper/AdminChannel.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Admin Content Wrapper:  [AdminContent](../../AccelByte.Sdk/Api/Ugc/Wrapper/AdminContent.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| [DEPRECATED] `/ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents` | POST | AdminUploadContentDirect | [AdminUploadContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/AdminUploadContentDirect.cs) | [AdminUploadContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/AdminUploadContentDirect.cs) |
+| `/ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/s3` | POST | AdminUploadContentS3 | [AdminUploadContentS3](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/AdminUploadContentS3.cs) | [AdminUploadContentS3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/AdminUploadContentS3.cs) |
+| `/ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/s3/{contentId}` | PUT | SingleAdminUpdateContentS3 | [SingleAdminUpdateContentS3](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/SingleAdminUpdateContentS3.cs) | [SingleAdminUpdateContentS3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/SingleAdminUpdateContentS3.cs) |
+| [DEPRECATED] `/ugc/v1/admin/namespaces/{namespace}/channels/{channelId}/contents/{contentId}` | PUT | SingleAdminUpdateContentDirect | [SingleAdminUpdateContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/SingleAdminUpdateContentDirect.cs) | [SingleAdminUpdateContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/SingleAdminUpdateContentDirect.cs) |
+| `/ugc/v1/admin/namespaces/{namespace}/contents/bulk` | POST | AdminGetContentBulk | [AdminGetContentBulk](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/AdminGetContentBulk.cs) | [AdminGetContentBulk](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/AdminGetContentBulk.cs) |
+| `/ugc/v1/admin/namespaces/{namespace}/contents/sharecodes/{shareCode}` | GET | AdminGetUserContentByShareCode | [AdminGetUserContentByShareCode](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/AdminGetUserContentByShareCode.cs) | [AdminGetUserContentByShareCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/AdminGetUserContentByShareCode.cs) |
+| `/ugc/v1/admin/namespaces/{namespace}/contents/{contentId}` | GET | AdminGetSpecificContent | [AdminGetSpecificContent](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/AdminGetSpecificContent.cs) | [AdminGetSpecificContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/AdminGetSpecificContent.cs) |
+| `/ugc/v1/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3/{contentId}` | PUT | AdminUpdateContentS3 | [AdminUpdateContentS3](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/AdminUpdateContentS3.cs) | [AdminUpdateContentS3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/AdminUpdateContentS3.cs) |
+| [DEPRECATED] `/ugc/v1/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | PUT | AdminUpdateContentDirect | [AdminUpdateContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/AdminUpdateContentDirect.cs) | [AdminUpdateContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/AdminUpdateContentDirect.cs) |
+| `/ugc/v1/admin/namespaces/{namespace}/users/{userId}/contents/{contentId}/hide` | PUT | AdminHideUserContent | [AdminHideUserContent](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContent/AdminHideUserContent.cs) | [AdminHideUserContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContent/AdminHideUserContent.cs) |
+
+### Admin Group Wrapper:  [AdminGroup](../../AccelByte.Sdk/Api/Ugc/Wrapper/AdminGroup.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Admin Tag Wrapper:  [AdminTag](../../AccelByte.Sdk/Api/Ugc/Wrapper/AdminTag.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Admin Type Wrapper:  [AdminType](../../AccelByte.Sdk/Api/Ugc/Wrapper/AdminType.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Anonymization Wrapper:  [Anonymization](../../AccelByte.Sdk/Api/Ugc/Wrapper/Anonymization.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Public Content Wrapper:  [PublicContent](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicContent.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ugc/v1/public/namespaces/{namespace}/contents/bulk` | POST | PublicGetContentBulk | [PublicGetContentBulk](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicGetContentBulk.cs) | [PublicGetContentBulk](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicGetContentBulk.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents/sharecodes/{shareCode}` | GET | PublicDownloadContentByShareCode | [PublicDownloadContentByShareCode](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicDownloadContentByShareCode.cs) | [PublicDownloadContentByShareCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicDownloadContentByShareCode.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents/{contentId}` | GET | PublicDownloadContentByContentID | [PublicDownloadContentByContentID](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicDownloadContentByContentID.cs) | [PublicDownloadContentByContentID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicDownloadContentByContentID.cs) |
+| [DEPRECATED] `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents` | POST | CreateContentDirect | [CreateContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/CreateContentDirect.cs) | [CreateContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/CreateContentDirect.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3` | POST | CreateContentS3 | [CreateContentS3](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/CreateContentS3.cs) | [CreateContentS3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/CreateContentS3.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3/{contentId}` | PUT | UpdateContentS3 | [UpdateContentS3](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/UpdateContentS3.cs) | [UpdateContentS3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/UpdateContentS3.cs) |
+| [DEPRECATED] `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | PUT | UpdateContentDirect | [UpdateContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/UpdateContentDirect.cs) | [UpdateContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/UpdateContentDirect.cs) |
+
+### Public Follow Wrapper:  [PublicFollow](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicFollow.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Public Like Wrapper:  [PublicLike](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicLike.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Public Download Count Wrapper:  [PublicDownloadCount](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicDownloadCount.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Public Tag Wrapper:  [PublicTag](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicTag.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Public Type Wrapper:  [PublicType](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicType.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Public Creator Wrapper:  [PublicCreator](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicCreator.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Public Channel Wrapper:  [PublicChannel](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicChannel.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Public Group Wrapper:  [PublicGroup](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicGroup.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

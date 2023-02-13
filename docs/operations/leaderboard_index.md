@@ -57,6 +57,27 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### LeaderboardConfiguration Wrapper:  [LeaderboardConfiguration](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/LeaderboardConfiguration.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### LeaderboardData Wrapper:  [LeaderboardData](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/LeaderboardData.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### UserData Wrapper:  [UserData](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/UserData.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### UserVisibility Wrapper:  [UserVisibility](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/UserVisibility.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

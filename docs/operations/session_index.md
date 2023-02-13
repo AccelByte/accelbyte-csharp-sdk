@@ -68,6 +68,52 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Operations Wrapper:  [Operations](../../AccelByte.Sdk/Api/Session/Wrapper/Operations.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Configuration Template Wrapper:  [ConfigurationTemplate](../../AccelByte.Sdk/Api/Session/Wrapper/ConfigurationTemplate.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Game Session Wrapper:  [GameSession](../../AccelByte.Sdk/Api/Session/Wrapper/GameSession.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/session/v1/public/namespaces/{namespace}/gamesession` | POST | CreateGameSession | [CreateGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/CreateGameSession.cs) | [CreateGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/CreateGameSession.cs) |
+| `/session/v1/public/namespaces/{namespace}/gamesessions/servers/{podName}` | GET | GetGameSessionByPodName | [GetGameSessionByPodName](../../AccelByte.Sdk/Api/Session/Operation/GameSession/GetGameSessionByPodName.cs) | [GetGameSessionByPodName](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/GetGameSessionByPodName.cs) |
+| `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}` | GET | GetGameSession | [GetGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/GetGameSession.cs) | [GetGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/GetGameSession.cs) |
+| `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}` | PUT | UpdateGameSession | [UpdateGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/UpdateGameSession.cs) | [UpdateGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/UpdateGameSession.cs) |
+| `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}` | PATCH | PatchUpdateGameSession | [PatchUpdateGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PatchUpdateGameSession.cs) | [PatchUpdateGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PatchUpdateGameSession.cs) |
+| `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/join` | POST | JoinGameSession | [JoinGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/JoinGameSession.cs) | [JoinGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/JoinGameSession.cs) |
+| `/session/v1/public/namespaces/{namespace}/users/me/gamesessions` | GET | PublicQueryMyGameSessions | [PublicQueryMyGameSessions](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicQueryMyGameSessions.cs) | [PublicQueryMyGameSessions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicQueryMyGameSessions.cs) |
+
+### Party Wrapper:  [Party](../../AccelByte.Sdk/Api/Session/Wrapper/Party.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/session/v1/public/namespaces/{namespace}/parties/users/me/join/code` | POST | PublicPartyJoinCode | [PublicPartyJoinCode](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicPartyJoinCode.cs) | [PublicPartyJoinCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicPartyJoinCode.cs) |
+| `/session/v1/public/namespaces/{namespace}/parties/{partyId}` | GET | PublicGetParty | [PublicGetParty](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicGetParty.cs) | [PublicGetParty](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicGetParty.cs) |
+| `/session/v1/public/namespaces/{namespace}/parties/{partyId}` | PUT | PublicUpdateParty | [PublicUpdateParty](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicUpdateParty.cs) | [PublicUpdateParty](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicUpdateParty.cs) |
+| `/session/v1/public/namespaces/{namespace}/parties/{partyId}` | PATCH | PublicPatchUpdateParty | [PublicPatchUpdateParty](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicPatchUpdateParty.cs) | [PublicPatchUpdateParty](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicPatchUpdateParty.cs) |
+| `/session/v1/public/namespaces/{namespace}/parties/{partyId}/code` | POST | PublicGeneratePartyCode | [PublicGeneratePartyCode](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicGeneratePartyCode.cs) | [PublicGeneratePartyCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicGeneratePartyCode.cs) |
+| `/session/v1/public/namespaces/{namespace}/parties/{partyId}/code` | DELETE | PublicRevokePartyCode | [PublicRevokePartyCode](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicRevokePartyCode.cs) | [PublicRevokePartyCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicRevokePartyCode.cs) |
+| `/session/v1/public/namespaces/{namespace}/parties/{partyId}/leader` | POST | PublicPromotePartyLeader | [PublicPromotePartyLeader](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicPromotePartyLeader.cs) | [PublicPromotePartyLeader](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicPromotePartyLeader.cs) |
+| `/session/v1/public/namespaces/{namespace}/parties/{partyId}/users/me/join` | POST | PublicPartyJoin | [PublicPartyJoin](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicPartyJoin.cs) | [PublicPartyJoin](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicPartyJoin.cs) |
+| `/session/v1/public/namespaces/{namespace}/party` | POST | PublicCreateParty | [PublicCreateParty](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicCreateParty.cs) | [PublicCreateParty](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicCreateParty.cs) |
+| `/session/v1/public/namespaces/{namespace}/users/me/parties` | GET | PublicQueryMyParties | [PublicQueryMyParties](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicQueryMyParties.cs) | [PublicQueryMyParties](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicQueryMyParties.cs) |
+
+### Player Wrapper:  [Player](../../AccelByte.Sdk/Api/Session/Wrapper/Player.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/session/v1/admin/namespaces/{namespace}/users/attributes` | GET | AdminQueryPlayerAttributes | [AdminQueryPlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/AdminQueryPlayerAttributes.cs) | [AdminQueryPlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/AdminQueryPlayerAttributes.cs) |
+| `/session/v1/admin/namespaces/{namespace}/users/{userId}/attributes` | GET | AdminGetPlayerAttributes | [AdminGetPlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/AdminGetPlayerAttributes.cs) | [AdminGetPlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/AdminGetPlayerAttributes.cs) |
+| `/session/v1/public/namespaces/{namespace}/users/me/attributes` | GET | PublicGetPlayerAttributes | [PublicGetPlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/PublicGetPlayerAttributes.cs) | [PublicGetPlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/PublicGetPlayerAttributes.cs) |
+| `/session/v1/public/namespaces/{namespace}/users/me/attributes` | POST | PublicStorePlayerAttributes | [PublicStorePlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/PublicStorePlayerAttributes.cs) | [PublicStorePlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/PublicStorePlayerAttributes.cs) |
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |

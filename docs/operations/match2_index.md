@@ -56,6 +56,35 @@
 
 &nbsp;  
 
+## Operations with Generic Response
+
+### Operations Wrapper:  [Operations](../../AccelByte.Sdk/Api/Match2/Wrapper/Operations.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Backfill Wrapper:  [Backfill](../../AccelByte.Sdk/Api/Match2/Wrapper/Backfill.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Match-Functions Wrapper:  [MatchFunctions](../../AccelByte.Sdk/Api/Match2/Wrapper/MatchFunctions.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Match-Pools Wrapper:  [MatchPools](../../AccelByte.Sdk/Api/Match2/Wrapper/MatchPools.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Match-Tickets Wrapper:  [MatchTickets](../../AccelByte.Sdk/Api/Match2/Wrapper/MatchTickets.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Rule-Sets Wrapper:  [RuleSets](../../AccelByte.Sdk/Api/Match2/Wrapper/RuleSets.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+
+&nbsp;  
+
 ## Models
 
 | Model | Class |
