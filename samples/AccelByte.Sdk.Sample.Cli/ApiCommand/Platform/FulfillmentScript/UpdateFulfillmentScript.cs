@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updatefulfillmentscript")]
-    public class UpdateFulfillmentScriptCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updatefulfillmentscript")]
+    public class UpdateFulfillmentScriptCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateFulfillmentScript"; } }
+        public string OperationName { get { return "UpdateFulfillmentScript"; } }
 
         [SdkCommandArgument("id")]
         public string Id { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public FulfillmentScriptUpdate Body { get; set; } = new FulfillmentScriptUpdate();
-                
+
         public UpdateFulfillmentScriptCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.FulfillmentScript wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.FulfillmentScript(_SDK);
 
             UpdateFulfillmentScript operation = new UpdateFulfillmentScript(
-                Id,                
-                Body                
-            );            
-            
+                Id,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.FulfillmentScriptInfo? response = wrapper.UpdateFulfillmentScript(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,18 +18,18 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","tokenintrospectionv3")]
-    public class TokenIntrospectionV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "tokenintrospectionv3")]
+    public class TokenIntrospectionV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "TokenIntrospectionV3"; } }
+        public string OperationName { get { return "TokenIntrospectionV3"; } }
 
         [SdkCommandArgument("token")]
         public string Token { get; set; } = String.Empty;
-                    
+
         public TokenIntrospectionV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20(_SDK);
 
             TokenIntrospectionV3 operation = new TokenIntrospectionV3(
-                Token                
-            );            
-            
+                Token
+            );
+
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenIntrospectResponse? response = wrapper.TokenIntrospectionV3(operation);
             if (response == null)
                 return "No response from server.";

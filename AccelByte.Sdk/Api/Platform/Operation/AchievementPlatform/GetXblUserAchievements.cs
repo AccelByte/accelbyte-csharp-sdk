@@ -49,9 +49,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 GetXblUserAchievements op = new GetXblUserAchievements(this,
-                    namespace_,                    
-                    userId,                    
-                    xboxUserId                    
+                    namespace_,
+                    userId,
+                    xboxUserId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,33 +67,33 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            if (xboxUserId is not null) QueryParams["xboxUserId"] = xboxUserId;
-            
 
-            
-            
-            
+            if (xboxUserId is not null) QueryParams["xboxUserId"] = xboxUserId;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetXblUserAchievements(
-            string namespace_,            
-            string userId,            
-            string xboxUserId            
+            string namespace_,
+            string userId,
+            string xboxUserId
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            if (xboxUserId is not null) QueryParams["xboxUserId"] = xboxUserId;
-            
 
-            
-            
-            
+            if (xboxUserId is not null) QueryParams["xboxUserId"] = xboxUserId;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -108,9 +108,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ADTOObjectForQueryingXboxUserAchievements? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -123,9 +123,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.ADTOObjectForQueryingXboxUserAchievements>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

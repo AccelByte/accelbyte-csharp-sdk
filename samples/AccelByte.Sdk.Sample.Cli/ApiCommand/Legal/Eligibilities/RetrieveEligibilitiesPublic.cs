@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal","retrieveeligibilitiespublic")]
-    public class RetrieveEligibilitiesPublicCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("legal", "retrieveeligibilitiespublic")]
+    public class RetrieveEligibilitiesPublicCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Legal"; } }
+        public string ServiceName { get { return "Legal"; } }
 
-        public string OperationName{ get { return "RetrieveEligibilitiesPublic"; } }
+        public string OperationName { get { return "RetrieveEligibilitiesPublic"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.Eligibilities wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.Eligibilities(_SDK);
 
             RetrieveEligibilitiesPublic operation = new RetrieveEligibilitiesPublic(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             List<AccelByte.Sdk.Api.Legal.Model.RetrieveUserEligibilitiesResponse>? response = wrapper.RetrieveEligibilitiesPublic(operation);
             if (response == null)
                 return "No response from server.";

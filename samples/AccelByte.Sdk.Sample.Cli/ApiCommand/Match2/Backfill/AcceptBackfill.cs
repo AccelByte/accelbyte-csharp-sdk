@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2","acceptbackfill")]
-    public class AcceptBackfillCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("match2", "acceptbackfill")]
+    public class AcceptBackfillCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Match2"; } }
+        public string ServiceName { get { return "Match2"; } }
 
-        public string OperationName{ get { return "AcceptBackfill"; } }
+        public string OperationName { get { return "AcceptBackfill"; } }
 
         [SdkCommandArgument("backfillID")]
         public string BackfillID { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 
         [SdkCommandData("body")]
         public ApiBackFillAcceptRequest Body { get; set; } = new ApiBackFillAcceptRequest();
-                
+
         public AcceptBackfillCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.Backfill wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.Backfill(_SDK);
 
             AcceptBackfill operation = new AcceptBackfill(
-                BackfillID,                
-                Namespace,                
-                Body                
-            );            
-            
+                BackfillID,
+                Namespace,
+                Body
+            );
+
             wrapper.AcceptBackfill(operation);
             return String.Empty;
         }

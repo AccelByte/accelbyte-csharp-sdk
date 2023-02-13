@@ -192,7 +192,7 @@ namespace AccelByte.Sdk.Tests.Services
                     .Execute(sdk.Namespace, gameSessionId);
                 #endregion
                 Assert.IsNotNull(p2GsJoin);
-            });           
+            });
 
             ApimodelsGameSessionResponse? gsCheck = _Sdk.Session.GameSession.GetGameSessionOp
                 .Execute(_Sdk.Namespace, gameSessionId);
@@ -221,7 +221,7 @@ namespace AccelByte.Sdk.Tests.Services
             });
 
             _Sdk.Session.ConfigurationTemplate.AdminDeleteConfigurationTemplateV1Op
-                .Execute(cfgTemplateName, _Sdk.Namespace);            
+                .Execute(cfgTemplateName, _Sdk.Namespace);
 
             ResetPolicy();
         }
@@ -277,7 +277,7 @@ namespace AccelByte.Sdk.Tests.Services
 
             string partyId = String.Empty;
             string joinCode = String.Empty;
-            
+
             _Player1.Run((sdk, player) =>
             {
                 #region User create a party
@@ -301,7 +301,7 @@ namespace AccelByte.Sdk.Tests.Services
                 {
                     partyId = partyResponse.Id!;
                     joinCode = partyResponse.Code!;
-                }   
+                }
             });
 
             if (partyId == String.Empty)

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","adminupdateuseremailaddressv4")]
-    public class AdminUpdateUserEmailAddressV4Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "adminupdateuseremailaddressv4")]
+    public class AdminUpdateUserEmailAddressV4Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminUpdateUserEmailAddressV4"; } }
+        public string OperationName { get { return "AdminUpdateUserEmailAddressV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelEmailUpdateRequestV4 Body { get; set; } = new ModelEmailUpdateRequestV4();
-                
+
         public AdminUpdateUserEmailAddressV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             AdminUpdateUserEmailAddressV4 operation = new AdminUpdateUserEmailAddressV4(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             wrapper.AdminUpdateUserEmailAddressV4(operation);
             return String.Empty;
         }

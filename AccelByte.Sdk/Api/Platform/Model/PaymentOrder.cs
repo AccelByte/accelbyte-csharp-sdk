@@ -453,7 +453,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class PaymentOrderItemType : StringEnum<PaymentOrderItemType>
     {
@@ -501,7 +501,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class PaymentOrderPaymentProvider : StringEnum<PaymentOrderPaymentProvider>
     {
@@ -540,7 +540,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class PaymentOrderStatus : StringEnum<PaymentOrderStatus>
     {
@@ -594,5 +594,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

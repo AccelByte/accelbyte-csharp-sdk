@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","admindeletealluserstates")]
-    public class AdminDeleteAllUserStatesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "admindeletealluserstates")]
+    public class AdminDeleteAllUserStatesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "AdminDeleteAllUserStates"; } }
+        public string OperationName { get { return "AdminDeleteAllUserStates"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.Anonymization wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.Anonymization(_SDK);
 
             AdminDeleteAllUserStates operation = new AdminDeleteAllUserStates(
-                Namespace,                
-                UserId                
-            );            
-            
+                Namespace,
+                UserId
+            );
+
             wrapper.AdminDeleteAllUserStates(operation);
             return String.Empty;
         }

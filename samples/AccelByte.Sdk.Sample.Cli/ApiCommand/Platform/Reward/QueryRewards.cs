@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","queryrewards")]
-    public class QueryRewardsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "queryrewards")]
+    public class QueryRewardsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "QueryRewards"; } }
+        public string OperationName { get { return "QueryRewards"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Reward wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Reward(_SDK);
 
             QueryRewards operation = new QueryRewards(
-                Namespace,                
-                EventTopic,                
-                Limit,                
-                Offset,                
-                (SortBy is null ? null : QueryRewardsSortBy.NewValue(SortBy))                
-            );            
-            
+                Namespace,
+                EventTopic,
+                Limit,
+                Offset,
+                (SortBy is null ? null : QueryRewardsSortBy.NewValue(SortBy))
+            );
+
             AccelByte.Sdk.Api.Platform.Model.RewardPagingSlicedResult? response = wrapper.QueryRewards(operation);
             if (response == null)
                 return "No response from server.";

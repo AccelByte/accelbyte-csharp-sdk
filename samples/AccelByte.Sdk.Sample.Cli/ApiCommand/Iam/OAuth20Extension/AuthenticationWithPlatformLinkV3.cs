@@ -18,30 +18,30 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","authenticationwithplatformlinkv3")]
-    public class AuthenticationWithPlatformLinkV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "authenticationwithplatformlinkv3")]
+    public class AuthenticationWithPlatformLinkV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AuthenticationWithPlatformLinkV3"; } }
+        public string OperationName { get { return "AuthenticationWithPlatformLinkV3"; } }
 
         [SdkCommandArgument("extend_exp")]
         public bool ExtendExp { get; set; } = false;
-                    
+
         [SdkCommandArgument("client_id")]
         public string ClientId { get; set; } = String.Empty;
-                    
+
         [SdkCommandArgument("linkingToken")]
         public string LinkingToken { get; set; } = String.Empty;
-                    
+
         [SdkCommandArgument("password")]
         public string Password { get; set; } = String.Empty;
-                    
+
         [SdkCommandArgument("username")]
         public string Username { get; set; } = String.Empty;
-                    
+
         public AuthenticationWithPlatformLinkV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension(_SDK);
 
             AuthenticationWithPlatformLinkV3 operation = new AuthenticationWithPlatformLinkV3(
-                ExtendExp,                
-                ClientId,                
-                LinkingToken,                
-                Password,                
-                Username                
-            );            
-            
+                ExtendExp,
+                ClientId,
+                LinkingToken,
+                Password,
+                Username
+            );
+
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenResponseV3? response = wrapper.AuthenticationWithPlatformLinkV3(operation);
             if (response == null)
                 return "No response from server.";

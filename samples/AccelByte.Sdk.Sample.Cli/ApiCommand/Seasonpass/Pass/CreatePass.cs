@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass","createpass")]
-    public class CreatePassCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass", "createpass")]
+    public class CreatePassCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Seasonpass"; } }
+        public string ServiceName { get { return "Seasonpass"; } }
 
-        public string OperationName{ get { return "CreatePass"; } }
+        public string OperationName { get { return "CreatePass"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 
         [SdkCommandData("body")]
         public PassCreate Body { get; set; } = new PassCreate();
-                
+
         public CreatePassCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Pass wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Pass(_SDK);
 
             CreatePass operation = new CreatePass(
-                Namespace,                
-                SeasonId,                
-                Body                
-            );            
-            
+                Namespace,
+                SeasonId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Seasonpass.Model.PassInfo? response = wrapper.CreatePass(operation);
             if (response == null)
                 return "No response from server.";

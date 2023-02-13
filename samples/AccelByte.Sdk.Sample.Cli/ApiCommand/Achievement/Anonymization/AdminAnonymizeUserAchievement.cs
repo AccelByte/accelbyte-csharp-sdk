@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Achievement.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
-    [SdkConsoleCommand("achievement","adminanonymizeuserachievement")]
-    public class AdminAnonymizeUserAchievementCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("achievement", "adminanonymizeuserachievement")]
+    public class AdminAnonymizeUserAchievementCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Achievement"; } }
+        public string ServiceName { get { return "Achievement"; } }
 
-        public string OperationName{ get { return "AdminAnonymizeUserAchievement"; } }
+        public string OperationName { get { return "AdminAnonymizeUserAchievement"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             AccelByte.Sdk.Api.Achievement.Wrapper.Anonymization wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.Anonymization(_SDK);
 
             AdminAnonymizeUserAchievement operation = new AdminAnonymizeUserAchievement(
-                Namespace,                
-                UserId                
-            );            
-            
+                Namespace,
+                UserId
+            );
+
             wrapper.AdminAnonymizeUserAchievement(operation);
             return String.Empty;
         }

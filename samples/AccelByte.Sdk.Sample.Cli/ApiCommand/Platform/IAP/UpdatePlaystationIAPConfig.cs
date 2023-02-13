@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updateplaystationiapconfig")]
-    public class UpdatePlaystationIAPConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updateplaystationiapconfig")]
+    public class UpdatePlaystationIAPConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdatePlaystationIAPConfig"; } }
+        public string OperationName { get { return "UpdatePlaystationIAPConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public PlaystationIAPConfigRequest Body { get; set; } = new PlaystationIAPConfigRequest();
-                
+
         public UpdatePlaystationIAPConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             UpdatePlaystationIAPConfig operation = new UpdatePlaystationIAPConfig(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PlayStationIAPConfigInfo? response = wrapper.UpdatePlaystationIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

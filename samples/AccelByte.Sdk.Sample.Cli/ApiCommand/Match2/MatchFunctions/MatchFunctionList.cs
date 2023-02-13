@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2","matchfunctionlist")]
-    public class MatchFunctionListCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("match2", "matchfunctionlist")]
+    public class MatchFunctionListCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Match2"; } }
+        public string ServiceName { get { return "Match2"; } }
 
-        public string OperationName{ get { return "MatchFunctionList"; } }
+        public string OperationName { get { return "MatchFunctionList"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.MatchFunctions wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.MatchFunctions(_SDK);
 
             MatchFunctionList operation = new MatchFunctionList(
-                Namespace,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Match2.Model.ApiListMatchFunctionsResponse? response = wrapper.MatchFunctionList(operation);
             if (response == null)
                 return "No response from server.";

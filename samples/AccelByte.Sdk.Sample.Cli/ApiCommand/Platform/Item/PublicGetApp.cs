@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publicgetapp")]
-    public class PublicGetAppCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "publicgetapp")]
+    public class PublicGetAppCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicGetApp"; } }
+        public string OperationName { get { return "PublicGetApp"; } }
 
         [SdkCommandArgument("itemId")]
         public string ItemId { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             PublicGetApp operation = new PublicGetApp(
-                ItemId,                
-                Namespace,                
-                Language,                
-                Region,                
-                StoreId                
-            );            
-            
+                ItemId,
+                Namespace,
+                Language,
+                Region,
+                StoreId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.AppInfo? response = wrapper.PublicGetApp(operation);
             if (response == null)
                 return "No response from server.";

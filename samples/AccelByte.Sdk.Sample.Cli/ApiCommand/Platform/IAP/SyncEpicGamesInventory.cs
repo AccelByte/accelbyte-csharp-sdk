@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","syncepicgamesinventory")]
-    public class SyncEpicGamesInventoryCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "syncepicgamesinventory")]
+    public class SyncEpicGamesInventoryCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "SyncEpicGamesInventory"; } }
+        public string OperationName { get { return "SyncEpicGamesInventory"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public EpicGamesReconcileRequest Body { get; set; } = new EpicGamesReconcileRequest();
-                
+
         public SyncEpicGamesInventoryCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             SyncEpicGamesInventory operation = new SyncEpicGamesInventory(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             List<AccelByte.Sdk.Api.Platform.Model.EpicGamesReconcileResult>? response = wrapper.SyncEpicGamesInventory(operation);
             if (response == null)
                 return "No response from server.";

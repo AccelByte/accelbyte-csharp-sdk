@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","admindeleteclientpermissionv3")]
-    public class AdminDeleteClientPermissionV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "admindeleteclientpermissionv3")]
+    public class AdminDeleteClientPermissionV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminDeleteClientPermissionV3"; } }
+        public string OperationName { get { return "AdminDeleteClientPermissionV3"; } }
 
         [SdkCommandArgument("action")]
         public long Action { get; set; } = 0;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Clients wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Clients(_SDK);
 
             AdminDeleteClientPermissionV3 operation = new AdminDeleteClientPermissionV3(
-                Action,                
-                ClientId,                
-                Namespace,                
-                Resource                
-            );            
-            
+                Action,
+                ClientId,
+                Namespace,
+                Resource
+            );
+
             wrapper.AdminDeleteClientPermissionV3(operation);
             return String.Empty;
         }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","increaseticketsale")]
-    public class IncreaseTicketSaleCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "increaseticketsale")]
+    public class IncreaseTicketSaleCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "IncreaseTicketSale"; } }
+        public string OperationName { get { return "IncreaseTicketSale"; } }
 
         [SdkCommandArgument("boothName")]
         public string BoothName { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public TicketSaleIncrementRequest Body { get; set; } = new TicketSaleIncrementRequest();
-                
+
         public IncreaseTicketSaleCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Ticket wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Ticket(_SDK);
 
             IncreaseTicketSale operation = new IncreaseTicketSale(
-                BoothName,                
-                Namespace,                
-                Body                
-            );            
-            
+                BoothName,
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.TicketSaleIncrementResult? response = wrapper.IncreaseTicketSale(operation);
             if (response == null)
                 return "No response from server.";

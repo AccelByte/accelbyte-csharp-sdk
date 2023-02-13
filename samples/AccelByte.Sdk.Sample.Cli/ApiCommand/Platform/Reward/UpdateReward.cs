@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updatereward")]
-    public class UpdateRewardCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updatereward")]
+    public class UpdateRewardCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateReward"; } }
+        public string OperationName { get { return "UpdateReward"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public RewardUpdate Body { get; set; } = new RewardUpdate();
-                
+
         public UpdateRewardCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Reward wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Reward(_SDK);
 
             UpdateReward operation = new UpdateReward(
-                Namespace,                
-                RewardId,                
-                Body                
-            );            
-            
+                Namespace,
+                RewardId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.RewardInfo? response = wrapper.UpdateReward(operation);
             if (response == null)
                 return "No response from server.";

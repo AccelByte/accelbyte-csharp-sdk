@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session","publicgamesessionreject")]
-    public class PublicGameSessionRejectCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("session", "publicgamesessionreject")]
+    public class PublicGameSessionRejectCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Session"; } }
+        public string ServiceName { get { return "Session"; } }
 
-        public string OperationName{ get { return "PublicGameSessionReject"; } }
+        public string OperationName { get { return "PublicGameSessionReject"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.GameSession wrapper = new AccelByte.Sdk.Api.Session.Wrapper.GameSession(_SDK);
 
             PublicGameSessionReject operation = new PublicGameSessionReject(
-                Namespace,                
-                SessionId                
-            );            
-            
+                Namespace,
+                SessionId
+            );
+
             wrapper.PublicGameSessionReject(operation);
             return String.Empty;
         }

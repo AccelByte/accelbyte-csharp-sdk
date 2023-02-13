@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","publicgetcreator")]
-    public class PublicGetCreatorCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "publicgetcreator")]
+    public class PublicGetCreatorCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "PublicGetCreator"; } }
+        public string OperationName { get { return "PublicGetCreator"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicCreator wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicCreator(_SDK);
 
             PublicGetCreator operation = new PublicGetCreator(
-                Namespace,                
-                UserId                
-            );            
-            
+                Namespace,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreatorResponse? response = wrapper.PublicGetCreator(operation);
             if (response == null)
                 return "No response from server.";

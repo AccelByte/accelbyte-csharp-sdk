@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updateepicgamesiapconfig")]
-    public class UpdateEpicGamesIAPConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updateepicgamesiapconfig")]
+    public class UpdateEpicGamesIAPConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateEpicGamesIAPConfig"; } }
+        public string OperationName { get { return "UpdateEpicGamesIAPConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public EpicGamesIAPConfigRequest Body { get; set; } = new EpicGamesIAPConfigRequest();
-                
+
         public UpdateEpicGamesIAPConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             UpdateEpicGamesIAPConfig operation = new UpdateEpicGamesIAPConfig(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.EpicGamesIAPConfigInfo? response = wrapper.UpdateEpicGamesIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

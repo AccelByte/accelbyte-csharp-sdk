@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group","invitegrouppublicv2")]
-    public class InviteGroupPublicV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("group", "invitegrouppublicv2")]
+    public class InviteGroupPublicV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Group"; } }
+        public string ServiceName { get { return "Group"; } }
 
-        public string OperationName{ get { return "InviteGroupPublicV2"; } }
+        public string OperationName { get { return "InviteGroupPublicV2"; } }
 
         [SdkCommandArgument("groupId")]
         public string GroupId { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.GroupMember wrapper = new AccelByte.Sdk.Api.Group.Wrapper.GroupMember(_SDK);
 
             InviteGroupPublicV2 operation = new InviteGroupPublicV2(
-                GroupId,                
-                Namespace,                
-                UserId                
-            );            
-            
+                GroupId,
+                Namespace,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Group.Model.ModelsUserInvitationResponseV1? response = wrapper.InviteGroupPublicV2(operation);
             if (response == null)
                 return "No response from server.";

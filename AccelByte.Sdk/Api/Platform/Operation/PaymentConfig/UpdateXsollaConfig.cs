@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 UpdateXsollaConfig op = new UpdateXsollaConfig(this,
-                    id                    
+                    id
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -76,34 +76,34 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["id"] = id;
-            
-            if (builder.Validate != null) QueryParams["validate"] = Convert.ToString(builder.Validate)!;
-            
 
-            
-            
+            if (builder.Validate != null) QueryParams["validate"] = Convert.ToString(builder.Validate)!;
+
+
+
+
             BodyParams = builder.Body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateXsollaConfig(
-            string id,            
-            bool? validate,            
-            Model.XsollaConfig body            
+            string id,
+            bool? validate,
+            Model.XsollaConfig body
         )
         {
             PathParams["id"] = id;
-            
-            if (validate != null) QueryParams["validate"] = Convert.ToString(validate)!;
-            
 
-            
-            
+            if (validate != null) QueryParams["validate"] = Convert.ToString(validate)!;
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -118,9 +118,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.PaymentMerchantConfigInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -133,9 +133,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.PaymentMerchantConfigInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","disableitem")]
-    public class DisableItemCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "disableitem")]
+    public class DisableItemCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "DisableItem"; } }
+        public string OperationName { get { return "DisableItem"; } }
 
         [SdkCommandArgument("itemId")]
         public string ItemId { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             DisableItem operation = new DisableItem(
-                ItemId,                
-                Namespace,                
-                StoreId                
-            );            
-            
+                ItemId,
+                Namespace,
+                StoreId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.FullItemInfo? response = wrapper.DisableItem(operation);
             if (response == null)
                 return "No response from server.";

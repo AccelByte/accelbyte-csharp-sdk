@@ -64,13 +64,13 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             get { return Operation.PostPlayerPublicRecordHandlerV1.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsBulkGetPlayerRecordResponse? BulkGetPlayerPublicRecordHandlerV1(BulkGetPlayerPublicRecordHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -79,7 +79,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -88,15 +88,16 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicDeletePlayerPublicRecordHandlerV1(PublicDeletePlayerPublicRecordHandlerV1 input) {
+        public void PublicDeletePlayerPublicRecordHandlerV1(PublicDeletePlayerPublicRecordHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -105,17 +106,17 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        
+
         public Model.ModelsPlayerRecordResponse<T1>? GetPlayerRecordHandlerV1<T1>(GetPlayerRecordHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -124,17 +125,17 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        
+
         public Model.ModelsPlayerRecordResponse<T1>? PutPlayerRecordHandlerV1<T1>(PutPlayerRecordHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -143,25 +144,26 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        
+
         public Model.ModelsPlayerRecordResponse<T1>? PostPlayerRecordHandlerV1<T1>(PostPlayerRecordHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeletePlayerRecordHandlerV1(DeletePlayerRecordHandlerV1 input) {
+        public void DeletePlayerRecordHandlerV1(DeletePlayerRecordHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -170,17 +172,17 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        
+
         public Model.ModelsPlayerRecordResponse<T1>? GetPlayerPublicRecordHandlerV1<T1>(GetPlayerPublicRecordHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -189,17 +191,17 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        
+
         public Model.ModelsPlayerRecordResponse<T1>? PutPlayerPublicRecordHandlerV1<T1>(PutPlayerPublicRecordHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -208,17 +210,17 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        
+
         public Model.ModelsPlayerRecordResponse<T1>? PostPlayerPublicRecordHandlerV1<T1>(PostPlayerPublicRecordHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

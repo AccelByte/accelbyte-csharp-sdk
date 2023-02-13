@@ -105,7 +105,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class CatalogChangeInfoItemType : StringEnum<CatalogChangeInfoItemType>
     {
@@ -153,7 +153,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class CatalogChangeInfoStatus : StringEnum<CatalogChangeInfoStatus>
     {
@@ -174,7 +174,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class CatalogChangeInfoType : StringEnum<CatalogChangeInfoType>
     {
@@ -204,5 +204,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

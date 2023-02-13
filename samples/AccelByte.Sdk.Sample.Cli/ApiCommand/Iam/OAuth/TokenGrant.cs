@@ -18,39 +18,39 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","tokengrant")]
-    public class TokenGrantCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "tokengrant")]
+    public class TokenGrantCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "TokenGrant"; } }
+        public string OperationName { get { return "TokenGrant"; } }
 
         [SdkCommandArgument("code")]
         public string Code { get; set; } = String.Empty;
-                    
+
         [SdkCommandArgument("extend_exp")]
         public bool ExtendExp { get; set; } = false;
-                    
+
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
-                    
+
         [SdkCommandArgument("password")]
         public string Password { get; set; } = String.Empty;
-                    
+
         [SdkCommandArgument("redirect_uri")]
         public string RedirectUri { get; set; } = String.Empty;
-                    
+
         [SdkCommandArgument("refresh_token")]
         public string RefreshToken { get; set; } = String.Empty;
-                    
+
         [SdkCommandArgument("username")]
         public string Username { get; set; } = String.Empty;
-                    
+
         [SdkCommandArgument("grant_type")]
         public string GrantType { get; set; } = String.Empty;
-                    
+
         public TokenGrantCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -60,26 +60,26 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             TokenGrant operation = new TokenGrant(
-                Code,                
-                ExtendExp,                
-                Namespace,                
-                Password,                
-                RedirectUri,                
-                RefreshToken,                
-                Username,                
-                TokenGrantGrantType.NewValue(GrantType)                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                Code,
+                ExtendExp,
+                Namespace,
+                Password,
+                RedirectUri,
+                RefreshToken,
+                Username,
+                TokenGrantGrantType.NewValue(GrantType)
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenResponse? response = wrapper.TokenGrant(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

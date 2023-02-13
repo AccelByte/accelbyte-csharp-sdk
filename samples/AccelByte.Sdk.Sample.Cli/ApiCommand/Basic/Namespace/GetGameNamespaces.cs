@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic","getgamenamespaces")]
-    public class GetGameNamespacesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("basic", "getgamenamespaces")]
+    public class GetGameNamespacesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Basic"; } }
+        public string ServiceName { get { return "Basic"; } }
 
-        public string OperationName{ get { return "GetGameNamespaces"; } }
+        public string OperationName { get { return "GetGameNamespaces"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.Namespace wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.Namespace(_SDK);
 
             GetGameNamespaces operation = new GetGameNamespaces(
-                Namespace,                
-                ActiveOnly                
-            );            
-            
+                Namespace,
+                ActiveOnly
+            );
+
             List<AccelByte.Sdk.Api.Basic.Model.NamespaceInfo>? response = wrapper.GetGameNamespaces(operation);
             if (response == null)
                 return "No response from server.";

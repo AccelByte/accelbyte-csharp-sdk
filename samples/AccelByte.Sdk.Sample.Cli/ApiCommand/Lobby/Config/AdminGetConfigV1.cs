@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","admingetconfigv1")]
-    public class AdminGetConfigV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "admingetconfigv1")]
+    public class AdminGetConfigV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminGetConfigV1"; } }
+        public string OperationName { get { return "AdminGetConfigV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Config(_SDK);
 
             AdminGetConfigV1 operation = new AdminGetConfigV1(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Lobby.Model.ModelsConfigReq? response = wrapper.AdminGetConfigV1(operation);
             if (response == null)
                 return "No response from server.";

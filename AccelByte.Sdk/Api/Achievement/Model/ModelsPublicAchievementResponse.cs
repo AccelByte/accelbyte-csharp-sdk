@@ -18,6 +18,9 @@ namespace AccelByte.Sdk.Api.Achievement.Model
         [JsonPropertyName("description")]
         public string? Description { get; set; }
 
+        [JsonPropertyName("global")]
+        public bool? Global { get; set; }
+
         [JsonPropertyName("goalValue")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public double? GoalValue { get; set; }

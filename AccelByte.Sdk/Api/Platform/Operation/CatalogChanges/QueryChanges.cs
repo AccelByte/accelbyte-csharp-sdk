@@ -137,8 +137,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 QueryChanges op = new QueryChanges(this,
-                    namespace_,                    
-                    storeId                    
+                    namespace_,
+                    storeId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -153,7 +153,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["storeId"] = storeId;
-            
+
             if (builder.Action is not null) QueryParams["action"] = builder.Action.Value;
             if (builder.ItemSku is not null) QueryParams["itemSku"] = builder.ItemSku;
             if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType.Value;
@@ -165,36 +165,36 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Type is not null) QueryParams["type"] = builder.Type.Value;
             if (builder.UpdatedAtEnd is not null) QueryParams["updatedAtEnd"] = builder.UpdatedAtEnd;
             if (builder.UpdatedAtStart is not null) QueryParams["updatedAtStart"] = builder.UpdatedAtStart;
-            
 
-            
+
+
             CollectionFormatMap["sortBy"] = "csv";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public QueryChanges(
-            string namespace_,            
-            string storeId,            
-            QueryChangesAction? action,            
-            string? itemSku,            
-            QueryChangesItemType? itemType,            
-            int? limit,            
-            int? offset,            
-            bool? selected,            
-            List<QueryChangesSortBy>? sortBy,            
-            QueryChangesStatus? status,            
-            QueryChangesType? type,            
-            string? updatedAtEnd,            
-            string? updatedAtStart            
+            string namespace_,
+            string storeId,
+            QueryChangesAction? action,
+            string? itemSku,
+            QueryChangesItemType? itemType,
+            int? limit,
+            int? offset,
+            bool? selected,
+            List<QueryChangesSortBy>? sortBy,
+            QueryChangesStatus? status,
+            QueryChangesType? type,
+            string? updatedAtEnd,
+            string? updatedAtStart
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["storeId"] = storeId;
-            
+
             if (action is not null) QueryParams["action"] = action.Value;
             if (itemSku is not null) QueryParams["itemSku"] = itemSku;
             if (itemType is not null) QueryParams["itemType"] = itemType.Value;
@@ -206,12 +206,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (type is not null) QueryParams["type"] = type.Value;
             if (updatedAtEnd is not null) QueryParams["updatedAtEnd"] = updatedAtEnd;
             if (updatedAtStart is not null) QueryParams["updatedAtStart"] = updatedAtStart;
-            
 
-            
+
+
             CollectionFormatMap["sortBy"] = "csv";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -220,15 +220,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.CatalogChangePagingSlicedResult>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -241,9 +241,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.CatalogChangePagingSlicedResult>>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

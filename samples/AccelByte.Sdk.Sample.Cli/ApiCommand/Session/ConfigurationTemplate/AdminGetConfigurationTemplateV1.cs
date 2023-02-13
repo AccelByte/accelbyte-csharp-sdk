@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session","admingetconfigurationtemplatev1")]
-    public class AdminGetConfigurationTemplateV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("session", "admingetconfigurationtemplatev1")]
+    public class AdminGetConfigurationTemplateV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Session"; } }
+        public string ServiceName { get { return "Session"; } }
 
-        public string OperationName{ get { return "AdminGetConfigurationTemplateV1"; } }
+        public string OperationName { get { return "AdminGetConfigurationTemplateV1"; } }
 
         [SdkCommandArgument("name")]
         public string Name { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.ConfigurationTemplate wrapper = new AccelByte.Sdk.Api.Session.Wrapper.ConfigurationTemplate(_SDK);
 
             AdminGetConfigurationTemplateV1 operation = new AdminGetConfigurationTemplateV1(
-                Name,                
-                Namespace                
-            );            
-            
+                Name,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Session.Model.ApimodelsConfigurationTemplateResponse? response = wrapper.AdminGetConfigurationTemplateV1(operation);
             if (response == null)
                 return "No response from server.";

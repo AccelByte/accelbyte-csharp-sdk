@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal","indirectbulkacceptversionedpolicy")]
-    public class IndirectBulkAcceptVersionedPolicyCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("legal", "indirectbulkacceptversionedpolicy")]
+    public class IndirectBulkAcceptVersionedPolicyCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Legal"; } }
+        public string ServiceName { get { return "Legal"; } }
 
-        public string OperationName{ get { return "IndirectBulkAcceptVersionedPolicy"; } }
+        public string OperationName { get { return "IndirectBulkAcceptVersionedPolicy"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 
         [SdkCommandData("body")]
         public List<AcceptAgreementRequest> Body { get; set; } = new List<AcceptAgreementRequest>();
-                
+
         public IndirectBulkAcceptVersionedPolicyCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -55,14 +55,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.AdminUserAgreement wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.AdminUserAgreement(_SDK);
 
             IndirectBulkAcceptVersionedPolicy operation = new IndirectBulkAcceptVersionedPolicy(
-                Namespace,                
-                UserId,                
-                PublisherUserId,                
-                ClientId,                
-                CountryCode,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                PublisherUserId,
+                ClientId,
+                CountryCode,
+                Body
+            );
+
             AccelByte.Sdk.Api.Legal.Model.AcceptAgreementResponse? response = wrapper.IndirectBulkAcceptVersionedPolicy(operation);
             if (response == null)
                 return "No response from server.";

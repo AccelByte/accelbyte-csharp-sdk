@@ -49,9 +49,9 @@ namespace AccelByte.Sdk.Api.Match2.Operation
             )
             {
                 RejectBackfill op = new RejectBackfill(this,
-                    body,                    
-                    backfillID,                    
-                    namespace_                    
+                    body,
+                    backfillID,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,33 +67,33 @@ namespace AccelByte.Sdk.Api.Match2.Operation
         {
             PathParams["backfillID"] = backfillID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public RejectBackfill(
-            string backfillID,            
-            string namespace_,            
-            Model.ApiBackFillRejectRequest body            
+            string backfillID,
+            string namespace_,
+            Model.ApiBackFillRejectRequest body
         )
         {
             PathParams["backfillID"] = backfillID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -108,16 +108,16 @@ namespace AccelByte.Sdk.Api.Match2.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

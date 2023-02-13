@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","createuserstatitem")]
-    public class CreateUserStatItemCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "createuserstatitem")]
+    public class CreateUserStatItemCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "CreateUserStatItem"; } }
+        public string OperationName { get { return "CreateUserStatItem"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.UserStatistic wrapper = new AccelByte.Sdk.Api.Social.Wrapper.UserStatistic(_SDK);
 
             CreateUserStatItem operation = new CreateUserStatItem(
-                Namespace,                
-                StatCode,                
-                UserId                
-            );            
-            
+                Namespace,
+                StatCode,
+                UserId
+            );
+
             wrapper.CreateUserStatItem(operation);
             return String.Empty;
         }

@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","userunfriendrequest")]
-    public class UserUnfriendRequestCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "userunfriendrequest")]
+    public class UserUnfriendRequestCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "UserUnfriendRequest"; } }
+        public string OperationName { get { return "UserUnfriendRequest"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelUserUnfriendRequest Body { get; set; } = new ModelUserUnfriendRequest();
-                
+
         public UserUnfriendRequestCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Friends wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Friends(_SDK);
 
             UserUnfriendRequest operation = new UserUnfriendRequest(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             wrapper.UserUnfriendRequest(operation);
             return String.Empty;
         }

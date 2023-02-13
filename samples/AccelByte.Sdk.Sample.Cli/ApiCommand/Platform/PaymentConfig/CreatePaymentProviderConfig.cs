@@ -18,18 +18,18 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","createpaymentproviderconfig")]
-    public class CreatePaymentProviderConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "createpaymentproviderconfig")]
+    public class CreatePaymentProviderConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "CreatePaymentProviderConfig"; } }
+        public string OperationName { get { return "CreatePaymentProviderConfig"; } }
 
         [SdkCommandData("body")]
         public PaymentProviderConfigEdit Body { get; set; } = new PaymentProviderConfigEdit();
-                
+
         public CreatePaymentProviderConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             CreatePaymentProviderConfig operation = new CreatePaymentProviderConfig(
-                Body                
-            );            
-            
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PaymentProviderConfigInfo? response = wrapper.CreatePaymentProviderConfig(operation);
             if (response == null)
                 return "No response from server.";

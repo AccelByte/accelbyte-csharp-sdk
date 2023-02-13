@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2","updateruleset")]
-    public class UpdateRuleSetCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("match2", "updateruleset")]
+    public class UpdateRuleSetCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Match2"; } }
+        public string ServiceName { get { return "Match2"; } }
 
-        public string OperationName{ get { return "UpdateRuleSet"; } }
+        public string OperationName { get { return "UpdateRuleSet"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,8 +34,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
         public string Ruleset { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ApiMatchRuleSetData Body { get; set; } = new ApiMatchRuleSetData();
-                
+        public ApiRuleSetPayload Body { get; set; } = new ApiRuleSetPayload();
+
         public UpdateRuleSetCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,12 +46,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.RuleSets wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.RuleSets(_SDK);
 
             UpdateRuleSet operation = new UpdateRuleSet(
-                Namespace,                
-                Ruleset,                
-                Body                
-            );            
-            
-            AccelByte.Sdk.Api.Match2.Model.ApiMatchRuleSet? response = wrapper.UpdateRuleSet(operation);
+                Namespace,
+                Ruleset,
+                Body
+            );
+
+            AccelByte.Sdk.Api.Match2.Model.ApiRuleSetPayload? response = wrapper.UpdateRuleSet(operation);
             if (response == null)
                 return "No response from server.";
 

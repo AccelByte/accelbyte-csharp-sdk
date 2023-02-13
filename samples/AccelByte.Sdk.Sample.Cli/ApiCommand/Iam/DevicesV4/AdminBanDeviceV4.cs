@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","adminbandevicev4")]
-    public class AdminBanDeviceV4Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "adminbandevicev4")]
+    public class AdminBanDeviceV4Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminBanDeviceV4"; } }
+        public string OperationName { get { return "AdminBanDeviceV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelDeviceBanRequestV4 Body { get; set; } = new ModelDeviceBanRequestV4();
-                
+
         public AdminBanDeviceV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.DevicesV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.DevicesV4(_SDK);
 
             AdminBanDeviceV4 operation = new AdminBanDeviceV4(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             wrapper.AdminBanDeviceV4(operation);
             return String.Empty;
         }

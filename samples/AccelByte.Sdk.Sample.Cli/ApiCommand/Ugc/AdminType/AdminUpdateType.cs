@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","adminupdatetype")]
-    public class AdminUpdateTypeCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "adminupdatetype")]
+    public class AdminUpdateTypeCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "AdminUpdateType"; } }
+        public string OperationName { get { return "AdminUpdateType"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
         [SdkCommandData("body")]
         public ModelsCreateTypeRequest Body { get; set; } = new ModelsCreateTypeRequest();
-                
+
         public AdminUpdateTypeCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminType wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminType(_SDK);
 
             AdminUpdateType operation = new AdminUpdateType(
-                Namespace,                
-                TypeId,                
-                Body                
-            );            
-            
+                Namespace,
+                TypeId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateTypeResponse? response = wrapper.AdminUpdateType(operation);
             if (response == null)
                 return "No response from server.";

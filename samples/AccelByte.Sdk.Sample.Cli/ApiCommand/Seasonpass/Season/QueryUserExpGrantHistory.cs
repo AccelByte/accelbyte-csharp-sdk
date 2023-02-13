@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass","queryuserexpgranthistory")]
-    public class QueryUserExpGrantHistoryCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass", "queryuserexpgranthistory")]
+    public class QueryUserExpGrantHistoryCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Seasonpass"; } }
+        public string ServiceName { get { return "Seasonpass"; } }
 
-        public string OperationName{ get { return "QueryUserExpGrantHistory"; } }
+        public string OperationName { get { return "QueryUserExpGrantHistory"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -64,17 +64,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Season wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Season(_SDK);
 
             QueryUserExpGrantHistory operation = new QueryUserExpGrantHistory(
-                Namespace,                
-                UserId,                
-                From,                
-                Limit,                
-                Offset,                
-                SeasonId,                
-                (Source is null ? null : QueryUserExpGrantHistorySource.NewValue(Source)),                
-                Tags,                
-                To                
-            );            
-            
+                Namespace,
+                UserId,
+                From,
+                Limit,
+                Offset,
+                SeasonId,
+                (Source is null ? null : QueryUserExpGrantHistorySource.NewValue(Source)),
+                Tags,
+                To
+            );
+
             AccelByte.Sdk.Api.Seasonpass.Model.ExpGrantHistoryPagingSlicedResult? response = wrapper.QueryUserExpGrantHistory(operation);
             if (response == null)
                 return "No response from server.";

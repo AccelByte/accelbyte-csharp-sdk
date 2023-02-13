@@ -69,6 +69,8 @@
 | `models.RecentPlayerQueryResponse` | [ModelsRecentPlayerQueryResponse](../../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsRecentPlayerQueryResponse.cs) |
 | `models.Server` | [ModelsServer](../../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsServer.cs) |
 | `models.SessionByUserIDsResponse` | [ModelsSessionByUserIDsResponse](../../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsSessionByUserIDsResponse.cs) |
+| `models.SessionPlayerHistory` | [ModelsSessionPlayerHistory](../../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsSessionPlayerHistory.cs) |
+| `models.SessionPlayerJoining` | [ModelsSessionPlayerJoining](../../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsSessionPlayerJoining.cs) |
 | `models.SessionQueryResponse` | [ModelsSessionQueryResponse](../../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsSessionQueryResponse.cs) |
 | `models.SessionResponse` | [ModelsSessionResponse](../../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsSessionResponse.cs) |
 | `models.StatusHistory` | [ModelsStatusHistory](../../AccelByte.Sdk/Api/Sessionbrowser/Model/ModelsStatusHistory.cs) |

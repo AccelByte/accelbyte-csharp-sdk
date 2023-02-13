@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal","updatelocalizedpolicyversion")]
-    public class UpdateLocalizedPolicyVersionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("legal", "updatelocalizedpolicyversion")]
+    public class UpdateLocalizedPolicyVersionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Legal"; } }
+        public string ServiceName { get { return "Legal"; } }
 
-        public string OperationName{ get { return "UpdateLocalizedPolicyVersion"; } }
+        public string OperationName { get { return "UpdateLocalizedPolicyVersion"; } }
 
         [SdkCommandArgument("localizedPolicyVersionId")]
         public string LocalizedPolicyVersionId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public UpdateLocalizedPolicyVersionRequest Body { get; set; } = new UpdateLocalizedPolicyVersionRequest();
-                
+
         public UpdateLocalizedPolicyVersionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.LocalizedPolicyVersions wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.LocalizedPolicyVersions(_SDK);
 
             UpdateLocalizedPolicyVersion operation = new UpdateLocalizedPolicyVersion(
-                LocalizedPolicyVersionId,                
-                Body                
-            );            
-            
+                LocalizedPolicyVersionId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Legal.Model.UpdateLocalizedPolicyVersionResponse? response = wrapper.UpdateLocalizedPolicyVersion(operation);
             if (response == null)
                 return "No response from server.";

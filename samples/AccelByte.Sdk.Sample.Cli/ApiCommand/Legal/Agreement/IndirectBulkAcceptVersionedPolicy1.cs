@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal","indirectbulkacceptversionedpolicy1")]
-    public class IndirectBulkAcceptVersionedPolicy1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("legal", "indirectbulkacceptversionedpolicy1")]
+    public class IndirectBulkAcceptVersionedPolicy1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Legal"; } }
+        public string ServiceName { get { return "Legal"; } }
 
-        public string OperationName{ get { return "IndirectBulkAcceptVersionedPolicy1"; } }
+        public string OperationName { get { return "IndirectBulkAcceptVersionedPolicy1"; } }
 
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public List<AcceptAgreementRequest> Body { get; set; } = new List<AcceptAgreementRequest>();
-                
+
         public IndirectBulkAcceptVersionedPolicy1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.Agreement wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.Agreement(_SDK);
 
             IndirectBulkAcceptVersionedPolicy1 operation = new IndirectBulkAcceptVersionedPolicy1(
-                UserId,                
-                Body                
-            );            
-            
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Legal.Model.AcceptAgreementResponse? response = wrapper.IndirectBulkAcceptVersionedPolicy1(operation);
             if (response == null)
                 return "No response from server.";

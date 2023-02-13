@@ -60,13 +60,13 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             get { return Operation.PublicUpdateAttribute.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public List<Model.GameProfileHeader>? GetUserProfiles(GetUserProfiles input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -75,7 +75,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -84,7 +84,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -93,15 +93,16 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicCreateProfile(PublicCreateProfile input) {
+        public void PublicCreateProfile(PublicCreateProfile input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -110,7 +111,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -119,15 +120,16 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicDeleteProfile(PublicDeleteProfile input) {
+        public void PublicDeleteProfile(PublicDeleteProfile input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -136,7 +138,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -145,7 +147,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

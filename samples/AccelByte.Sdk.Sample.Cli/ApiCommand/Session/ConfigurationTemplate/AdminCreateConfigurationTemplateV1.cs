@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session","admincreateconfigurationtemplatev1")]
-    public class AdminCreateConfigurationTemplateV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("session", "admincreateconfigurationtemplatev1")]
+    public class AdminCreateConfigurationTemplateV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Session"; } }
+        public string ServiceName { get { return "Session"; } }
 
-        public string OperationName{ get { return "AdminCreateConfigurationTemplateV1"; } }
+        public string OperationName { get { return "AdminCreateConfigurationTemplateV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ApimodelsCreateConfigurationTemplateRequest Body { get; set; } = new ApimodelsCreateConfigurationTemplateRequest();
-                
+
         public AdminCreateConfigurationTemplateV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.ConfigurationTemplate wrapper = new AccelByte.Sdk.Api.Session.Wrapper.ConfigurationTemplate(_SDK);
 
             AdminCreateConfigurationTemplateV1 operation = new AdminCreateConfigurationTemplateV1(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Session.Model.ApimodelsConfigurationTemplateResponse? response = wrapper.AdminCreateConfigurationTemplateV1(operation);
             if (response == null)
                 return "No response from server.";

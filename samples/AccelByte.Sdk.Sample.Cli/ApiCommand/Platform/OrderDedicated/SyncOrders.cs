@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","syncorders")]
-    public class SyncOrdersCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "syncorders")]
+    public class SyncOrdersCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "SyncOrders"; } }
+        public string OperationName { get { return "SyncOrders"; } }
 
         [SdkCommandArgument("nextEvaluatedKey")]
         public string? NextEvaluatedKey { get; set; }
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.OrderDedicated wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.OrderDedicated(_SDK);
 
             SyncOrders operation = new SyncOrders(
-                NextEvaluatedKey,                
-                End,                
-                Start                
-            );            
-            
+                NextEvaluatedKey,
+                End,
+                Start
+            );
+
             AccelByte.Sdk.Api.Platform.Model.OrderSyncResult? response = wrapper.SyncOrders(operation);
             if (response == null)
                 return "No response from server.";

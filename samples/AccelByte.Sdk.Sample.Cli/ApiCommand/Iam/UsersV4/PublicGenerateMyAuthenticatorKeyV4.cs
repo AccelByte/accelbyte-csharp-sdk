@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publicgeneratemyauthenticatorkeyv4")]
-    public class PublicGenerateMyAuthenticatorKeyV4Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicgeneratemyauthenticatorkeyv4")]
+    public class PublicGenerateMyAuthenticatorKeyV4Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicGenerateMyAuthenticatorKeyV4"; } }
+        public string OperationName { get { return "PublicGenerateMyAuthenticatorKeyV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             PublicGenerateMyAuthenticatorKeyV4 operation = new PublicGenerateMyAuthenticatorKeyV4(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelAuthenticatorKeyResponseV4? response = wrapper.PublicGenerateMyAuthenticatorKeyV4(operation);
             if (response == null)
                 return "No response from server.";

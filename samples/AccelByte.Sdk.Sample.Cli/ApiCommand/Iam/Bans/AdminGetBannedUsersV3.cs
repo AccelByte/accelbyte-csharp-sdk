@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","admingetbannedusersv3")]
-    public class AdminGetBannedUsersV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "admingetbannedusersv3")]
+    public class AdminGetBannedUsersV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminGetBannedUsersV3"; } }
+        public string OperationName { get { return "AdminGetBannedUsersV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Bans wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Bans(_SDK);
 
             AdminGetBannedUsersV3 operation = new AdminGetBannedUsersV3(
-                Namespace,                
-                ActiveOnly,                
-                BanType,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                ActiveOnly,
+                BanType,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelGetUserBanV3Response? response = wrapper.AdminGetBannedUsersV3(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","adminupdatecontentdirect")]
-    public class AdminUpdateContentDirectCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "adminupdatecontentdirect")]
+    public class AdminUpdateContentDirectCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "AdminUpdateContentDirect"; } }
+        public string OperationName { get { return "AdminUpdateContentDirect"; } }
 
         [SdkCommandArgument("channelId")]
         public string ChannelId { get; set; } = String.Empty;
@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
         [SdkCommandData("body")]
         public ModelsCreateContentRequest Body { get; set; } = new ModelsCreateContentRequest();
-                
+
         public AdminUpdateContentDirectCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -51,23 +51,23 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         {
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             AdminUpdateContentDirect operation = new AdminUpdateContentDirect(
-                ChannelId,                
-                ContentId,                
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                ChannelId,
+                ContentId,
+                Namespace,
+                UserId,
+                Body
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateContentResponse? response = wrapper.AdminUpdateContentDirect(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

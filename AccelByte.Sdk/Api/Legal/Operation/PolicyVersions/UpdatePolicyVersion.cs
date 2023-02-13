@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             )
             {
                 UpdatePolicyVersion op = new UpdatePolicyVersion(this,
-                    policyVersionId                    
+                    policyVersionId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,31 +67,31 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             PathParams["policyVersionId"] = policyVersionId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = builder.Body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdatePolicyVersion(
-            string policyVersionId,            
-            Model.UpdatePolicyVersionRequest body            
+            string policyVersionId,
+            Model.UpdatePolicyVersionRequest body
         )
         {
             PathParams["policyVersionId"] = policyVersionId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,9 +106,9 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.UpdatePolicyVersionResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -121,9 +121,9 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             {
                 return JsonSerializer.Deserialize<Model.UpdatePolicyVersionResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

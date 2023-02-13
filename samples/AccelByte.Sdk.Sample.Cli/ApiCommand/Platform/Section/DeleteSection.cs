@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","deletesection")]
-    public class DeleteSectionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "deletesection")]
+    public class DeleteSectionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "DeleteSection"; } }
+        public string OperationName { get { return "DeleteSection"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Section wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Section(_SDK);
 
             DeleteSection operation = new DeleteSection(
-                Namespace,                
-                SectionId,                
-                StoreId                
-            );            
-            
+                Namespace,
+                SectionId,
+                StoreId
+            );
+
             wrapper.DeleteSection(operation);
             return String.Empty;
         }

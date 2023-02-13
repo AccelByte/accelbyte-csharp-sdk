@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","getgametemplate")]
-    public class GetGameTemplateCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "getgametemplate")]
+    public class GetGameTemplateCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "GetGameTemplate"; } }
+        public string OperationName { get { return "GetGameTemplate"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             GetGameTemplate operation = new GetGameTemplate(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             List<AccelByte.Sdk.Api.Lobby.Model.ModelTemplateResponse>? response = wrapper.GetGameTemplate(operation);
             if (response == null)
                 return "No response from server.";

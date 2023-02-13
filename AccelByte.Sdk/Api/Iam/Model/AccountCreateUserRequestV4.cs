@@ -72,5 +72,5 @@ namespace AccelByte.Sdk.Api.Iam.Model
         {
 
         }
-    }    
+    }
 }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session","publicdeleteplayerattributes")]
-    public class PublicDeletePlayerAttributesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("session", "publicdeleteplayerattributes")]
+    public class PublicDeletePlayerAttributesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Session"; } }
+        public string ServiceName { get { return "Session"; } }
 
-        public string OperationName{ get { return "PublicDeletePlayerAttributes"; } }
+        public string OperationName { get { return "PublicDeletePlayerAttributes"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.Player wrapper = new AccelByte.Sdk.Api.Session.Wrapper.Player(_SDK);
 
             PublicDeletePlayerAttributes operation = new PublicDeletePlayerAttributes(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             wrapper.PublicDeletePlayerAttributes(operation);
             return String.Empty;
         }

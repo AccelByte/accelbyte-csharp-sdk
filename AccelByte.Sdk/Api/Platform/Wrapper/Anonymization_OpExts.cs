@@ -91,6 +91,19 @@ namespace AccelByte.Sdk.Api
             ((Platform.Wrapper.Anonymization)builder.WrapperObject!).AnonymizePayment(op);
         }
         public static void Execute(
+            this AnonymizeRevocation.AnonymizeRevocationBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AnonymizeRevocation op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            ((Platform.Wrapper.Anonymization)builder.WrapperObject!).AnonymizeRevocation(op);
+        }
+        public static void Execute(
             this AnonymizeSubscription.AnonymizeSubscriptionBuilder builder,
             string namespace_,
             string userId

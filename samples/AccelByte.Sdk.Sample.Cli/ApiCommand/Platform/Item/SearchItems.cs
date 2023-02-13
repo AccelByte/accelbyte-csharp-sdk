@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","searchitems")]
-    public class SearchItemsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "searchitems")]
+    public class SearchItemsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "SearchItems"; } }
+        public string OperationName { get { return "SearchItems"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -64,17 +64,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             SearchItems operation = new SearchItems(
-                Namespace,                
-                ActiveOnly,                
-                (ItemType is null ? null : SearchItemsItemType.NewValue(ItemType)),                
-                Limit,                
-                Offset,                
-                SortBy,                
-                StoreId,                
-                Keyword,                
-                Language                
-            );            
-            
+                Namespace,
+                ActiveOnly,
+                (ItemType is null ? null : SearchItemsItemType.NewValue(ItemType)),
+                Limit,
+                Offset,
+                SortBy,
+                StoreId,
+                Keyword,
+                Language
+            );
+
             AccelByte.Sdk.Api.Platform.Model.FullItemPagingSlicedResult? response = wrapper.SearchItems(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session","publicpatchupdateparty")]
-    public class PublicPatchUpdatePartyCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("session", "publicpatchupdateparty")]
+    public class PublicPatchUpdatePartyCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Session"; } }
+        public string ServiceName { get { return "Session"; } }
 
-        public string OperationName{ get { return "PublicPatchUpdateParty"; } }
+        public string OperationName { get { return "PublicPatchUpdateParty"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 
         [SdkCommandData("body")]
         public ApimodelsUpdatePartyRequest Body { get; set; } = new ApimodelsUpdatePartyRequest();
-                
+
         public PublicPatchUpdatePartyCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.Party wrapper = new AccelByte.Sdk.Api.Session.Wrapper.Party(_SDK);
 
             PublicPatchUpdateParty operation = new PublicPatchUpdateParty(
-                Namespace,                
-                PartyId,                
-                Body                
-            );            
-            
+                Namespace,
+                PartyId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Session.Model.ApimodelsPartySessionResponse? response = wrapper.PublicPatchUpdateParty(operation);
             if (response == null)
                 return "No response from server.";

@@ -51,8 +51,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminGetDeviceBansV4 op = new AdminGetDeviceBansV4(this,
-                    deviceId,                    
-                    namespace_                    
+                    deviceId,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,30 +67,30 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["deviceId"] = deviceId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminGetDeviceBansV4(
-            string deviceId,            
-            string namespace_            
+            string deviceId,
+            string namespace_
         )
         {
             PathParams["deviceId"] = deviceId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -105,9 +105,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelDeviceBansResponseV4? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -120,9 +120,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelDeviceBansResponseV4>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

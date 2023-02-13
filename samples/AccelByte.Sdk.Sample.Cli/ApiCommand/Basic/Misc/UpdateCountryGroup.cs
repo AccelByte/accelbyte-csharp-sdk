@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic","updatecountrygroup")]
-    public class UpdateCountryGroupCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("basic", "updatecountrygroup")]
+    public class UpdateCountryGroupCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Basic"; } }
+        public string ServiceName { get { return "Basic"; } }
 
-        public string OperationName{ get { return "UpdateCountryGroup"; } }
+        public string OperationName { get { return "UpdateCountryGroup"; } }
 
         [SdkCommandArgument("countryGroupCode")]
         public string CountryGroupCode { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 
         [SdkCommandData("body")]
         public UpdateCountryGroupRequest Body { get; set; } = new UpdateCountryGroupRequest();
-                
+
         public UpdateCountryGroupCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.Misc wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.Misc(_SDK);
 
             UpdateCountryGroup operation = new UpdateCountryGroup(
-                CountryGroupCode,                
-                Namespace,                
-                Body                
-            );            
-            
+                CountryGroupCode,
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Basic.Model.CountryGroupObject? response = wrapper.UpdateCountryGroup(operation);
             if (response == null)
                 return "No response from server.";

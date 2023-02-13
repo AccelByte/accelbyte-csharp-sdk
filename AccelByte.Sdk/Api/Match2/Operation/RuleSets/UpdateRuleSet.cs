@@ -21,6 +21,8 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// Required Scope: social
     /// 
     /// Updates an existing matchmaking rule set.
+    /// 
+    /// To use custom rules set please set enable_custom_match_function=true. Default (false).
     /// </summary>
     public class UpdateRuleSet : AccelByte.Sdk.Core.Operation
     {
@@ -43,15 +45,15 @@ namespace AccelByte.Sdk.Api.Match2.Operation
 
 
             public UpdateRuleSet Build(
-                ApiMatchRuleSetData body,
+                ApiRuleSetPayload body,
                 string namespace_,
                 string ruleset
             )
             {
                 UpdateRuleSet op = new UpdateRuleSet(this,
-                    body,                    
-                    namespace_,                    
-                    ruleset                    
+                    body,
+                    namespace_,
+                    ruleset
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -60,40 +62,40 @@ namespace AccelByte.Sdk.Api.Match2.Operation
         }
 
         private UpdateRuleSet(UpdateRuleSetBuilder builder,
-            ApiMatchRuleSetData body,
+            ApiRuleSetPayload body,
             string namespace_,
             string ruleset
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["ruleset"] = ruleset;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateRuleSet(
-            string namespace_,            
-            string ruleset,            
-            Model.ApiMatchRuleSetData body            
+            string namespace_,
+            string ruleset,
+            Model.ApiRuleSetPayload body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["ruleset"] = ruleset;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -108,24 +110,43 @@ namespace AccelByte.Sdk.Api.Match2.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
-        public Model.ApiMatchRuleSet? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+
+        public Model.ApiRuleSetPayload? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ApiMatchRuleSet>(payload);
+                return JsonSerializer.Deserialize<Model.ApiRuleSetPayload>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ApiMatchRuleSet>(payload);
+                return JsonSerializer.Deserialize<Model.ApiRuleSetPayload>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
+            throw new HttpResponseException(code, payloadString);
+        }
+
+        public Model.ApiRuleSetPayload<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
+        {
+            if (code == (HttpStatusCode)204)
+            {
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                return JsonSerializer.Deserialize<Model.ApiRuleSetPayload<T1>>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return JsonSerializer.Deserialize<Model.ApiRuleSetPayload<T1>>(payload);
+            }
+
+            var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
         }
     }

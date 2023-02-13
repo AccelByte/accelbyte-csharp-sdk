@@ -40,29 +40,31 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
             get { return Operation.PublicUnlockAchievement.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsPaginatedUserAchievementResponse? AdminListUserAchievements(AdminListUserAchievements input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminResetAchievement(AdminResetAchievement input) {
+        public void AdminResetAchievement(AdminResetAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminUnlockAchievement(AdminUnlockAchievement input) {
+        public void AdminUnlockAchievement(AdminUnlockAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -71,15 +73,16 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicUnlockAchievement(PublicUnlockAchievement input) {
+        public void PublicUnlockAchievement(PublicUnlockAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

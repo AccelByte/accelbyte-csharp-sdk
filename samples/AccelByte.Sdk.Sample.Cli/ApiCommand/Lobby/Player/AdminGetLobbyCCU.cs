@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","admingetlobbyccu")]
-    public class AdminGetLobbyCCUCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "admingetlobbyccu")]
+    public class AdminGetLobbyCCUCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminGetLobbyCCU"; } }
+        public string OperationName { get { return "AdminGetLobbyCCU"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Player wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Player(_SDK);
 
             AdminGetLobbyCCU operation = new AdminGetLobbyCCU(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Lobby.Model.ModelsGetLobbyCcuResponse? response = wrapper.AdminGetLobbyCCU(operation);
             if (response == null)
                 return "No response from server.";

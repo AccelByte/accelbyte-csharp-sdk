@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updateiapitemconfig")]
-    public class UpdateIAPItemConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updateiapitemconfig")]
+    public class UpdateIAPItemConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateIAPItemConfig"; } }
+        public string OperationName { get { return "UpdateIAPItemConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public IAPItemConfigUpdate Body { get; set; } = new IAPItemConfigUpdate();
-                
+
         public UpdateIAPItemConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             UpdateIAPItemConfig operation = new UpdateIAPItemConfig(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.IAPItemConfigInfo? response = wrapper.UpdateIAPItemConfig(operation);
             if (response == null)
                 return "No response from server.";

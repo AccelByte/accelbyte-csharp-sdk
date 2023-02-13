@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group","getgroupmemberslistadminv1")]
-    public class GetGroupMembersListAdminV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("group", "getgroupmemberslistadminv1")]
+    public class GetGroupMembersListAdminV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Group"; } }
+        public string ServiceName { get { return "Group"; } }
 
-        public string OperationName{ get { return "GetGroupMembersListAdminV1"; } }
+        public string OperationName { get { return "GetGroupMembersListAdminV1"; } }
 
         [SdkCommandArgument("groupId")]
         public string GroupId { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.GroupMember wrapper = new AccelByte.Sdk.Api.Group.Wrapper.GroupMember(_SDK);
 
             GetGroupMembersListAdminV1 operation = new GetGroupMembersListAdminV1(
-                GroupId,                
-                Namespace,                
-                Limit,                
-                Offset,                
-                Order                
-            );            
-            
+                GroupId,
+                Namespace,
+                Limit,
+                Offset,
+                Order
+            );
+
             AccelByte.Sdk.Api.Group.Model.ModelsGetGroupMemberListResponseV1? response = wrapper.GetGroupMembersListAdminV1(operation);
             if (response == null)
                 return "No response from server.";

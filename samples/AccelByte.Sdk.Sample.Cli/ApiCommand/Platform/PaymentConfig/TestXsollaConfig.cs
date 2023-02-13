@@ -18,18 +18,18 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","testxsollaconfig")]
-    public class TestXsollaConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "testxsollaconfig")]
+    public class TestXsollaConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "TestXsollaConfig"; } }
+        public string OperationName { get { return "TestXsollaConfig"; } }
 
         [SdkCommandData("body")]
         public XsollaConfig Body { get; set; } = new XsollaConfig();
-                
+
         public TestXsollaConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             TestXsollaConfig operation = new TestXsollaConfig(
-                Body                
-            );            
-            
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.TestResult? response = wrapper.TestXsollaConfig(operation);
             if (response == null)
                 return "No response from server.";

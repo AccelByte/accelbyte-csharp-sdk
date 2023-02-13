@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","synctwitchdropsentitlement")]
-    public class SyncTwitchDropsEntitlementCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "synctwitchdropsentitlement")]
+    public class SyncTwitchDropsEntitlementCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "SyncTwitchDropsEntitlement"; } }
+        public string OperationName { get { return "SyncTwitchDropsEntitlement"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public TwitchSyncRequest Body { get; set; } = new TwitchSyncRequest();
-                
+
         public SyncTwitchDropsEntitlementCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             SyncTwitchDropsEntitlement operation = new SyncTwitchDropsEntitlement(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             wrapper.SyncTwitchDropsEntitlement(operation);
             return String.Empty;
         }

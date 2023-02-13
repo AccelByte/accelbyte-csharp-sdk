@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","gettwitchiapconfig")]
-    public class GetTwitchIAPConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "gettwitchiapconfig")]
+    public class GetTwitchIAPConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetTwitchIAPConfig"; } }
+        public string OperationName { get { return "GetTwitchIAPConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             GetTwitchIAPConfig operation = new GetTwitchIAPConfig(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Platform.Model.TwitchIAPConfigInfo? response = wrapper.GetTwitchIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

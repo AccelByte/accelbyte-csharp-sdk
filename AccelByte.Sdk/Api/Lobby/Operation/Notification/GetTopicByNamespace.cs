@@ -69,7 +69,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             )
             {
                 GetTopicByNamespace op = new GetTopicByNamespace(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -82,37 +82,37 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.After is not null) QueryParams["after"] = builder.After;
             if (builder.Before is not null) QueryParams["before"] = builder.Before;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetTopicByNamespace(
-            string namespace_,            
-            string? after,            
-            string? before,            
-            long? limit            
+            string namespace_,
+            string? after,
+            string? before,
+            long? limit
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (after is not null) QueryParams["after"] = after;
             if (before is not null) QueryParams["before"] = before;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -127,9 +127,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelTopicByNamespacesResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -142,9 +142,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelTopicByNamespacesResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

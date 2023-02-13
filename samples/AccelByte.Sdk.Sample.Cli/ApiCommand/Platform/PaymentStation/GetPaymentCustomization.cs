@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getpaymentcustomization")]
-    public class GetPaymentCustomizationCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getpaymentcustomization")]
+    public class GetPaymentCustomizationCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetPaymentCustomization"; } }
+        public string OperationName { get { return "GetPaymentCustomization"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -48,22 +48,22 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentStation wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentStation(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             GetPaymentCustomization operation = new GetPaymentCustomization(
-                Namespace,                
-                Sandbox,                
-                GetPaymentCustomizationPaymentProvider.NewValue(PaymentProvider),                
-                Region                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                Namespace,
+                Sandbox,
+                GetPaymentCustomizationPaymentProvider.NewValue(PaymentProvider),
+                Region
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Platform.Model.Customization? response = wrapper.GetPaymentCustomization(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

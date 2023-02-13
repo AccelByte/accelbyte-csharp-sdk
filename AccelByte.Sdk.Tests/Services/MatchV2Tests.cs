@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Tests.Services
             });
         }
 
-        [Test]        
+        [Test]
         public void MatchPoolTests()
         {
             Assert.IsNotNull(_Sdk);
@@ -106,7 +106,7 @@ namespace AccelByte.Sdk.Tests.Services
                 ApiMatchPool? poolItem = poolList.Data!.Where(p => p.Name! == poolName).FirstOrDefault();
                 Assert.IsNotNull(poolItem);
             }
-            
+
             ITestPlayer player1 = new NewTestPlayer(_Sdk, true);
             player1.Run((sdk, player) =>
             {

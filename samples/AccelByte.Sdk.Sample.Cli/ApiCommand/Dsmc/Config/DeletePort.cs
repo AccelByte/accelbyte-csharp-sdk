@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","deleteport")]
-    public class DeletePortCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "deleteport")]
+    public class DeletePortCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "DeletePort"; } }
+        public string OperationName { get { return "DeletePort"; } }
 
         [SdkCommandArgument("name")]
         public string Name { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Config(_SDK);
 
             DeletePort operation = new DeletePort(
-                Name,                
-                Namespace                
-            );            
-            
+                Name,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDSMConfigRecord? response = wrapper.DeletePort(operation);
             if (response == null)
                 return "No response from server.";

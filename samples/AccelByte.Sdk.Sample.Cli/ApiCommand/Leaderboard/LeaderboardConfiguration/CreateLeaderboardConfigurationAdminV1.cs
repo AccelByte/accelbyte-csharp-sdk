@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard","createleaderboardconfigurationadminv1")]
-    public class CreateLeaderboardConfigurationAdminV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard", "createleaderboardconfigurationadminv1")]
+    public class CreateLeaderboardConfigurationAdminV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Leaderboard"; } }
+        public string ServiceName { get { return "Leaderboard"; } }
 
-        public string OperationName{ get { return "CreateLeaderboardConfigurationAdminV1"; } }
+        public string OperationName { get { return "CreateLeaderboardConfigurationAdminV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsLeaderboardConfigReq Body { get; set; } = new ModelsLeaderboardConfigReq();
-                
+
         public CreateLeaderboardConfigurationAdminV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardConfiguration wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardConfiguration(_SDK);
 
             CreateLeaderboardConfigurationAdminV1 operation = new CreateLeaderboardConfigurationAdminV1(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsLeaderboardConfigReq? response = wrapper.CreateLeaderboardConfigurationAdminV1(operation);
             if (response == null)
                 return "No response from server.";

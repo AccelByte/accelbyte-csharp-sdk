@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass","bulkgetuserseasonprogression")]
-    public class BulkGetUserSeasonProgressionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass", "bulkgetuserseasonprogression")]
+    public class BulkGetUserSeasonProgressionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Seasonpass"; } }
+        public string ServiceName { get { return "Seasonpass"; } }
 
-        public string OperationName{ get { return "BulkGetUserSeasonProgression"; } }
+        public string OperationName { get { return "BulkGetUserSeasonProgression"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public BulkUserProgressionRequest Body { get; set; } = new BulkUserProgressionRequest();
-                
+
         public BulkGetUserSeasonProgressionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Season wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Season(_SDK);
 
             BulkGetUserSeasonProgression operation = new BulkGetUserSeasonProgression(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             List<AccelByte.Sdk.Api.Seasonpass.Model.UserSeasonSummary>? response = wrapper.BulkGetUserSeasonProgression(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking","getallsessionsinchannel")]
-    public class GetAllSessionsInChannelCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking", "getallsessionsinchannel")]
+    public class GetAllSessionsInChannelCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Matchmaking"; } }
 
-        public string OperationName{ get { return "GetAllSessionsInChannel"; } }
+        public string OperationName { get { return "GetAllSessionsInChannel"; } }
 
         [SdkCommandArgument("channelName")]
         public string ChannelName { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
             GetAllSessionsInChannel operation = new GetAllSessionsInChannel(
-                ChannelName,                
-                Namespace                
-            );            
-            
+                ChannelName,
+                Namespace
+            );
+
             List<AccelByte.Sdk.Api.Matchmaking.Model.ModelsMatchmakingResult>? response = wrapper.GetAllSessionsInChannel(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","updatenamespaceslotconfig")]
-    public class UpdateNamespaceSlotConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "updatenamespaceslotconfig")]
+    public class UpdateNamespaceSlotConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "UpdateNamespaceSlotConfig"; } }
+        public string OperationName { get { return "UpdateNamespaceSlotConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public SlotConfigUpdate Body { get; set; } = new SlotConfigUpdate();
-                
+
         public UpdateNamespaceSlotConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.SlotConfig wrapper = new AccelByte.Sdk.Api.Social.Wrapper.SlotConfig(_SDK);
 
             UpdateNamespaceSlotConfig operation = new UpdateNamespaceSlotConfig(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Social.Model.NamespaceSlotConfigInfo? response = wrapper.UpdateNamespaceSlotConfig(operation);
             if (response == null)
                 return "No response from server.";

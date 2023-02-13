@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass","cloneseason")]
-    public class CloneSeasonCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass", "cloneseason")]
+    public class CloneSeasonCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Seasonpass"; } }
+        public string ServiceName { get { return "Seasonpass"; } }
 
-        public string OperationName{ get { return "CloneSeason"; } }
+        public string OperationName { get { return "CloneSeason"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 
         [SdkCommandData("body")]
         public SeasonCloneRequest Body { get; set; } = new SeasonCloneRequest();
-                
+
         public CloneSeasonCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Season wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Season(_SDK);
 
             CloneSeason operation = new CloneSeason(
-                Namespace,                
-                SeasonId,                
-                Body                
-            );            
-            
+                Namespace,
+                SeasonId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Seasonpass.Model.SeasonInfo? response = wrapper.CloneSeason(operation);
             if (response == null)
                 return "No response from server.";

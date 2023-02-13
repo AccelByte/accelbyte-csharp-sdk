@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session","publicpartyinvite")]
-    public class PublicPartyInviteCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("session", "publicpartyinvite")]
+    public class PublicPartyInviteCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Session"; } }
+        public string ServiceName { get { return "Session"; } }
 
-        public string OperationName{ get { return "PublicPartyInvite"; } }
+        public string OperationName { get { return "PublicPartyInvite"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 
         [SdkCommandData("body")]
         public ApimodelsSessionInviteRequest Body { get; set; } = new ApimodelsSessionInviteRequest();
-                
+
         public PublicPartyInviteCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.Party wrapper = new AccelByte.Sdk.Api.Session.Wrapper.Party(_SDK);
 
             PublicPartyInvite operation = new PublicPartyInvite(
-                Namespace,                
-                PartyId,                
-                Body                
-            );            
-            
+                Namespace,
+                PartyId,
+                Body
+            );
+
             wrapper.PublicPartyInvite(operation);
             return String.Empty;
         }

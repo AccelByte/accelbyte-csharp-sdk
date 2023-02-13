@@ -39,18 +39,14 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         {
             get { return Operation.GetMyGroupJoinRequestV2.Builder.SetWrapperObject(this); }
         }
-        public CancelInvitationGroupMemberV2.CancelInvitationGroupMemberV2Builder CancelInvitationGroupMemberV2Op
-        {
-            get { return Operation.CancelInvitationGroupMemberV2.Builder.SetWrapperObject(this); }
-        }
         #endregion
-        
+
         public Model.ModelsGetMemberRequestsListResponseV1? GetGroupJoinRequestPublicV1(GetGroupJoinRequestPublicV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -59,7 +55,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -68,7 +64,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -77,7 +73,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -86,16 +82,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ModelsCancelInvitationGroupResponseV2? CancelInvitationGroupMemberV2(CancelInvitationGroupMemberV2 input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

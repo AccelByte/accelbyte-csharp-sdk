@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             )
             {
                 PublicListTags op = new PublicListTags(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -89,40 +89,40 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Name is not null) QueryParams["name"] = builder.Name;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicListTags(
-            string namespace_,            
-            long? limit,            
-            string? name,            
-            long? offset,            
-            string? sortBy            
+            string namespace_,
+            long? limit,
+            string? name,
+            long? offset,
+            string? sortBy
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (name is not null) QueryParams["name"] = name;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -137,9 +137,9 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsPaginatedTagResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -152,9 +152,9 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsPaginatedTagResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

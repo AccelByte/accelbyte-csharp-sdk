@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publicvalidateitempurchasecondition")]
-    public class PublicValidateItemPurchaseConditionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "publicvalidateitempurchasecondition")]
+    public class PublicValidateItemPurchaseConditionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicValidateItemPurchaseCondition"; } }
+        public string OperationName { get { return "PublicValidateItemPurchaseCondition"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ItemPurchaseConditionValidateRequest Body { get; set; } = new ItemPurchaseConditionValidateRequest();
-                
+
         public PublicValidateItemPurchaseConditionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             PublicValidateItemPurchaseCondition operation = new PublicValidateItemPurchaseCondition(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             List<AccelByte.Sdk.Api.Platform.Model.ItemPurchaseConditionValidateResult>? response = wrapper.PublicValidateItemPurchaseCondition(operation);
             if (response == null)
                 return "No response from server.";

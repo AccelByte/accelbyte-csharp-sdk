@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","updatetemplatelocalizationv1admin")]
-    public class UpdateTemplateLocalizationV1AdminCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "updatetemplatelocalizationv1admin")]
+    public class UpdateTemplateLocalizationV1AdminCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "UpdateTemplateLocalizationV1Admin"; } }
+        public string OperationName { get { return "UpdateTemplateLocalizationV1Admin"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelUpdateTemplateRequest Body { get; set; } = new ModelUpdateTemplateRequest();
-                
+
         public UpdateTemplateLocalizationV1AdminCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             UpdateTemplateLocalizationV1Admin operation = new UpdateTemplateLocalizationV1Admin(
-                Namespace,                
-                TemplateLanguage,                
-                TemplateSlug,                
-                Body                
-            );            
-            
+                Namespace,
+                TemplateLanguage,
+                TemplateSlug,
+                Body
+            );
+
             wrapper.UpdateTemplateLocalizationV1Admin(operation);
             return String.Empty;
         }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","adminsetplayersessionattribute")]
-    public class AdminSetPlayerSessionAttributeCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "adminsetplayersessionattribute")]
+    public class AdminSetPlayerSessionAttributeCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminSetPlayerSessionAttribute"; } }
+        public string OperationName { get { return "AdminSetPlayerSessionAttribute"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelsSetPlayerSessionAttributeRequest Body { get; set; } = new ModelsSetPlayerSessionAttributeRequest();
-                
+
         public AdminSetPlayerSessionAttributeCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Player wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Player(_SDK);
 
             AdminSetPlayerSessionAttribute operation = new AdminSetPlayerSessionAttribute(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             wrapper.AdminSetPlayerSessionAttribute(operation);
             return String.Empty;
         }

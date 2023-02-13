@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","adminaddprofanityfilterintolist")]
-    public class AdminAddProfanityFilterIntoListCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "adminaddprofanityfilterintolist")]
+    public class AdminAddProfanityFilterIntoListCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminAddProfanityFilterIntoList"; } }
+        public string OperationName { get { return "AdminAddProfanityFilterIntoList"; } }
 
         [SdkCommandArgument("list")]
         public string List { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelsAdminAddProfanityFilterIntoListRequest Body { get; set; } = new ModelsAdminAddProfanityFilterIntoListRequest();
-                
+
         public AdminAddProfanityFilterIntoListCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Profanity wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Profanity(_SDK);
 
             AdminAddProfanityFilterIntoList operation = new AdminAddProfanityFilterIntoList(
-                List,                
-                Namespace,                
-                Body                
-            );            
-            
+                List,
+                Namespace,
+                Body
+            );
+
             wrapper.AdminAddProfanityFilterIntoList(operation);
             return String.Empty;
         }

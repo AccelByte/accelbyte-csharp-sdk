@@ -257,6 +257,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).InviteGroupPublicV2(op);
         }
+        public static Group.Model.ModelsCancelInvitationGroupResponseV2? Execute(
+            this CancelInvitationGroupMemberV2.CancelInvitationGroupMemberV2Builder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            CancelInvitationGroupMemberV2 op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return ((Group.Wrapper.GroupMember)builder.WrapperObject!).CancelInvitationGroupMemberV2(op);
+        }
         public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
             this AcceptGroupJoinRequestPublicV2.AcceptGroupJoinRequestPublicV2Builder builder,
             string groupId,

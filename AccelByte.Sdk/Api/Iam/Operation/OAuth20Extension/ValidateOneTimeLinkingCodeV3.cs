@@ -17,12 +17,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// ValidateOneTimeLinkingCodeV3
     ///
     /// This endpoint is being used to validate one time link code.
-    /// 
-    /// It require a valid user token.
-    /// 
-    /// Should specify the target platform id and current user should already linked to this platform.
-    /// 
-    /// Current user should be a headless account.
     /// </summary>
     public class ValidateOneTimeLinkingCodeV3 : AccelByte.Sdk.Core.Operation
     {
@@ -49,7 +43,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 ValidateOneTimeLinkingCodeV3 op = new ValidateOneTimeLinkingCodeV3(this,
-                    oneTimeLinkCode                    
+                    oneTimeLinkCode
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -61,28 +55,28 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string oneTimeLinkCode
         )
         {
-            
-            
+
+
             if (oneTimeLinkCode is not null) FormParams["oneTimeLinkCode"] = oneTimeLinkCode;
 
-            
-            
-            
+
+
+
 
         }
         #endregion
 
         public ValidateOneTimeLinkingCodeV3(
-            string oneTimeLinkCode            
+            string oneTimeLinkCode
         )
         {
-            
-            
+
+
             if (oneTimeLinkCode is not null) FormParams["oneTimeLinkCode"] = oneTimeLinkCode;
 
-            
-            
-            
+
+
+
 
         }
 
@@ -96,9 +90,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.OauthmodelOneTimeLinkingCodeValidationResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -111,9 +105,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.OauthmodelOneTimeLinkingCodeValidationResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

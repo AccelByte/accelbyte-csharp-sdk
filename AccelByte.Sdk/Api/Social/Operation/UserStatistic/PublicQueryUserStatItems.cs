@@ -35,6 +35,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
             public int? Offset { get; set; }
 
+            public string? SortBy { get; set; }
+
             public string? StatCodes { get; set; }
 
             public string? Tags { get; set; }
@@ -55,6 +57,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
             public PublicQueryUserStatItemsBuilder SetOffset(int _offset)
             {
                 Offset = _offset;
+                return this;
+            }
+
+            public PublicQueryUserStatItemsBuilder SetSortBy(string _sortBy)
+            {
+                SortBy = _sortBy;
                 return this;
             }
 
@@ -80,8 +88,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             )
             {
                 PublicQueryUserStatItems op = new PublicQueryUserStatItems(this,
-                    namespace_,                    
-                    userId                    
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -96,42 +104,45 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
+
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
             if (builder.StatCodes is not null) QueryParams["statCodes"] = builder.StatCodes;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicQueryUserStatItems(
-            string namespace_,            
-            string userId,            
-            int? limit,            
-            int? offset,            
-            string? statCodes,            
-            string? tags            
+            string namespace_,
+            string userId,
+            int? limit,
+            int? offset,
+            string? sortBy,
+            string? statCodes,
+            string? tags
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
+
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
             if (statCodes is not null) QueryParams["statCodes"] = statCodes;
             if (tags is not null) QueryParams["tags"] = tags;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -140,15 +151,15 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.UserStatItemPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -161,9 +172,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             {
                 return JsonSerializer.Deserialize<Model.UserStatItemPagingSlicedResult>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

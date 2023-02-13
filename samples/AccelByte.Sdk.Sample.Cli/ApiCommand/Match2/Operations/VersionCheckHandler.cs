@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2","versioncheckhandler")]
-    public class VersionCheckHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("match2", "versioncheckhandler")]
+    public class VersionCheckHandlerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Match2"; } }
+        public string ServiceName { get { return "Match2"; } }
 
-        public string OperationName{ get { return "VersionCheckHandler"; } }
+        public string OperationName { get { return "VersionCheckHandler"; } }
 
         public VersionCheckHandlerCommand(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.Operations wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.Operations(_SDK);
 
             VersionCheckHandler operation = new VersionCheckHandler(
-            );            
-            
+            );
+
             wrapper.VersionCheckHandler(operation);
             return String.Empty;
         }

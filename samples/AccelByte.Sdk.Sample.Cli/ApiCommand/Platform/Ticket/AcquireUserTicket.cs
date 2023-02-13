@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","acquireuserticket")]
-    public class AcquireUserTicketCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "acquireuserticket")]
+    public class AcquireUserTicketCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "AcquireUserTicket"; } }
+        public string OperationName { get { return "AcquireUserTicket"; } }
 
         [SdkCommandArgument("boothName")]
         public string BoothName { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public TicketAcquireRequest Body { get; set; } = new TicketAcquireRequest();
-                
+
         public AcquireUserTicketCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Ticket wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Ticket(_SDK);
 
             AcquireUserTicket operation = new AcquireUserTicket(
-                BoothName,                
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                BoothName,
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.TicketAcquireResult? response = wrapper.AcquireUserTicket(operation);
             if (response == null)
                 return "No response from server.";

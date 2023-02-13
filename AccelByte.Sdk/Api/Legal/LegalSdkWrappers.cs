@@ -46,6 +46,61 @@ namespace AccelByte.Sdk.Core
         }
         private LocalizedPolicyVersions? _LocalizedPolicyVersions = null;
 
+        public AgreementWithNamespace AgreementWithNamespace
+        {
+            get
+            {
+                if (_AgreementWithNamespace == null)
+                    _AgreementWithNamespace = new AgreementWithNamespace(_SdkObject);
+                return _AgreementWithNamespace;
+            }
+        }
+        private AgreementWithNamespace? _AgreementWithNamespace = null;
+
+        public BaseLegalPoliciesWithNamespace BaseLegalPoliciesWithNamespace
+        {
+            get
+            {
+                if (_BaseLegalPoliciesWithNamespace == null)
+                    _BaseLegalPoliciesWithNamespace = new BaseLegalPoliciesWithNamespace(_SdkObject);
+                return _BaseLegalPoliciesWithNamespace;
+            }
+        }
+        private BaseLegalPoliciesWithNamespace? _BaseLegalPoliciesWithNamespace = null;
+
+        public LocalizedPolicyVersionsWithNamespace LocalizedPolicyVersionsWithNamespace
+        {
+            get
+            {
+                if (_LocalizedPolicyVersionsWithNamespace == null)
+                    _LocalizedPolicyVersionsWithNamespace = new LocalizedPolicyVersionsWithNamespace(_SdkObject);
+                return _LocalizedPolicyVersionsWithNamespace;
+            }
+        }
+        private LocalizedPolicyVersionsWithNamespace? _LocalizedPolicyVersionsWithNamespace = null;
+
+        public PolicyVersionsWithNamespace PolicyVersionsWithNamespace
+        {
+            get
+            {
+                if (_PolicyVersionsWithNamespace == null)
+                    _PolicyVersionsWithNamespace = new PolicyVersionsWithNamespace(_SdkObject);
+                return _PolicyVersionsWithNamespace;
+            }
+        }
+        private PolicyVersionsWithNamespace? _PolicyVersionsWithNamespace = null;
+
+        public PoliciesWithNamespace PoliciesWithNamespace
+        {
+            get
+            {
+                if (_PoliciesWithNamespace == null)
+                    _PoliciesWithNamespace = new PoliciesWithNamespace(_SdkObject);
+                return _PoliciesWithNamespace;
+            }
+        }
+        private PoliciesWithNamespace? _PoliciesWithNamespace = null;
+
         public AdminUserAgreement AdminUserAgreement
         {
             get

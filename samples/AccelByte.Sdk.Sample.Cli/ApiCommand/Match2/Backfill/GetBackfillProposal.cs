@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2","getbackfillproposal")]
-    public class GetBackfillProposalCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("match2", "getbackfillproposal")]
+    public class GetBackfillProposalCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Match2"; } }
+        public string ServiceName { get { return "Match2"; } }
 
-        public string OperationName{ get { return "GetBackfillProposal"; } }
+        public string OperationName { get { return "GetBackfillProposal"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.Backfill wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.Backfill(_SDK);
 
             GetBackfillProposal operation = new GetBackfillProposal(
-                Namespace,                
-                SessionID                
-            );            
-            
+                Namespace,
+                SessionID
+            );
+
             AccelByte.Sdk.Api.Match2.Model.ApiBackfillProposalResponse? response = wrapper.GetBackfillProposal(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","existsanyuseractiveentitlement")]
-    public class ExistsAnyUserActiveEntitlementCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "existsanyuseractiveentitlement")]
+    public class ExistsAnyUserActiveEntitlementCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "ExistsAnyUserActiveEntitlement"; } }
+        public string OperationName { get { return "ExistsAnyUserActiveEntitlement"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             ExistsAnyUserActiveEntitlement operation = new ExistsAnyUserActiveEntitlement(
-                Namespace,                
-                UserId,                
-                AppIds,                
-                ItemIds,                
-                Skus                
-            );            
-            
+                Namespace,
+                UserId,
+                AppIds,
+                ItemIds,
+                Skus
+            );
+
             AccelByte.Sdk.Api.Platform.Model.Ownership? response = wrapper.ExistsAnyUserActiveEntitlement(operation);
             if (response == null)
                 return "No response from server.";

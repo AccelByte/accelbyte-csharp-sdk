@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","getuserverificationcode")]
-    public class GetUserVerificationCodeCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "getuserverificationcode")]
+    public class GetUserVerificationCodeCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "GetUserVerificationCode"; } }
+        public string OperationName { get { return "GetUserVerificationCode"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             GetUserVerificationCode operation = new GetUserVerificationCode(
-                Namespace,                
-                UserId                
-            );            
-            
+                Namespace,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelVerificationCodeResponse? response = wrapper.GetUserVerificationCode(operation);
             if (response == null)
                 return "No response from server.";

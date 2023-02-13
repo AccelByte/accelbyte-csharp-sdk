@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","publicqueryuserstatitems")]
-    public class PublicQueryUserStatItemsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "publicqueryuserstatitems")]
+    public class PublicQueryUserStatItemsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "PublicQueryUserStatItems"; } }
+        public string OperationName { get { return "PublicQueryUserStatItems"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -38,6 +38,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
         [SdkCommandArgument("offset")]
         public int? Offset { get; set; }
+
+        [SdkCommandArgument("sortBy")]
+        public string? SortBy { get; set; }
 
         [SdkCommandArgument("statCodes")]
         public string? StatCodes { get; set; }
@@ -55,14 +58,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.UserStatistic wrapper = new AccelByte.Sdk.Api.Social.Wrapper.UserStatistic(_SDK);
 
             PublicQueryUserStatItems operation = new PublicQueryUserStatItems(
-                Namespace,                
-                UserId,                
-                Limit,                
-                Offset,                
-                StatCodes,                
-                Tags                
-            );            
-            
+                Namespace,
+                UserId,
+                Limit,
+                Offset,
+                SortBy,
+                StatCodes,
+                Tags
+            );
+
             AccelByte.Sdk.Api.Social.Model.UserStatItemPagingSlicedResult? response = wrapper.PublicQueryUserStatItems(operation);
             if (response == null)
                 return "No response from server.";

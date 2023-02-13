@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","adminimportconfigv1")]
-    public class AdminImportConfigV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "adminimportconfigv1")]
+    public class AdminImportConfigV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminImportConfigV1"; } }
+        public string OperationName { get { return "AdminImportConfigV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandFile("file")]
         public Stream? File { get; set; }
-                    
+
         public AdminImportConfigV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Config(_SDK);
 
             AdminImportConfigV1 operation = new AdminImportConfigV1(
-                Namespace,                
-                File                
-            );            
-            
+                Namespace,
+                File
+            );
+
             AccelByte.Sdk.Api.Lobby.Model.ModelsImportConfigResponse? response = wrapper.AdminImportConfigV1(operation);
             if (response == null)
                 return "No response from server.";

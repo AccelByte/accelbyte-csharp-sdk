@@ -27,9 +27,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         {
             get { return Operation.UpdatePolicy.Builder.SetWrapperObject(this); }
         }
-        public SetDefaultPolicy1.SetDefaultPolicy1Builder SetDefaultPolicy1Op
+        public SetDefaultPolicy2.SetDefaultPolicy2Builder SetDefaultPolicy2Op
         {
-            get { return Operation.SetDefaultPolicy1.Builder.SetWrapperObject(this); }
+            get { return Operation.SetDefaultPolicy2.Builder.SetWrapperObject(this); }
         }
         public RetrieveLatestPolicies.RetrieveLatestPoliciesBuilder RetrieveLatestPoliciesOp
         {
@@ -44,29 +44,31 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
             get { return Operation.RetrieveLatestPoliciesByNamespaceAndCountryPublic.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public List<Model.RetrievePolicyResponse>? RetrievePolicies(RetrievePolicies input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void UpdatePolicy(UpdatePolicy input) {
+        public void UpdatePolicy(UpdatePolicy input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void SetDefaultPolicy1(SetDefaultPolicy1 input) {
+        public void SetDefaultPolicy2(SetDefaultPolicy2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -75,7 +77,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -84,7 +86,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -93,7 +95,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

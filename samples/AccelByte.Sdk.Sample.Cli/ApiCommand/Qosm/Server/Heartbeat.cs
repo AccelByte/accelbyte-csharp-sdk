@@ -18,18 +18,18 @@ using AccelByte.Sdk.Api.Qosm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
 {
-    [SdkConsoleCommand("qosm","heartbeat")]
-    public class HeartbeatCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("qosm", "heartbeat")]
+    public class HeartbeatCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Qosm"; } }
+        public string ServiceName { get { return "Qosm"; } }
 
-        public string OperationName{ get { return "Heartbeat"; } }
+        public string OperationName { get { return "Heartbeat"; } }
 
         [SdkCommandData("body")]
         public ModelsHeartbeatRequest Body { get; set; } = new ModelsHeartbeatRequest();
-                
+
         public HeartbeatCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
             AccelByte.Sdk.Api.Qosm.Wrapper.Server wrapper = new AccelByte.Sdk.Api.Qosm.Wrapper.Server(_SDK);
 
             Heartbeat operation = new Heartbeat(
-                Body                
-            );            
-            
+                Body
+            );
+
             wrapper.Heartbeat(operation);
             return String.Empty;
         }

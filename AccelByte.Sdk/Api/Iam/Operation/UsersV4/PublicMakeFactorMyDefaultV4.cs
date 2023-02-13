@@ -49,8 +49,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 PublicMakeFactorMyDefaultV4 op = new PublicMakeFactorMyDefaultV4(this,
-                    factor,                    
-                    namespace_                    
+                    factor,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -64,31 +64,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
+
+
             if (factor is not null) FormParams["factor"] = factor;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicMakeFactorMyDefaultV4(
-            string namespace_,            
-            string factor            
+            string namespace_,
+            string factor
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
+
+
             if (factor is not null) FormParams["factor"] = factor;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -103,16 +103,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

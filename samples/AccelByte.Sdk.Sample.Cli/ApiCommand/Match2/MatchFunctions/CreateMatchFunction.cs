@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2","creatematchfunction")]
-    public class CreateMatchFunctionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("match2", "creatematchfunction")]
+    public class CreateMatchFunctionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Match2"; } }
+        public string ServiceName { get { return "Match2"; } }
 
-        public string OperationName{ get { return "CreateMatchFunction"; } }
+        public string OperationName { get { return "CreateMatchFunction"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ApiMatchFunctionRequest Body { get; set; } = new ApiMatchFunctionRequest();
-                
+
         public CreateMatchFunctionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.MatchFunctions wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.MatchFunctions(_SDK);
 
             CreateMatchFunction operation = new CreateMatchFunction(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             wrapper.CreateMatchFunction(operation);
             return String.Empty;
         }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","downloadinvoicedetails")]
-    public class DownloadInvoiceDetailsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "downloadinvoicedetails")]
+    public class DownloadInvoiceDetailsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "DownloadInvoiceDetails"; } }
+        public string OperationName { get { return "DownloadInvoiceDetails"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -55,14 +55,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Invoice wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Invoice(_SDK);
 
             DownloadInvoiceDetails operation = new DownloadInvoiceDetails(
-                Namespace,                
-                Feature,                
-                ItemId,                
-                (ItemType is null ? null : DownloadInvoiceDetailsItemType.NewValue(ItemType)),                
-                EndTime,                
-                StartTime                
-            );            
-            
+                Namespace,
+                Feature,
+                ItemId,
+                (ItemType is null ? null : DownloadInvoiceDetailsItemType.NewValue(ItemType)),
+                EndTime,
+                StartTime
+            );
+
             Stream? response = wrapper.DownloadInvoiceDetails(operation);
             if (response == null)
                 return "No response from server.";

@@ -35,15 +35,15 @@ namespace AccelByte.Sdk.Api
             ((Legal.Wrapper.Policies)builder.WrapperObject!).UpdatePolicy(op);
         }
         public static void Execute(
-            this SetDefaultPolicy1.SetDefaultPolicy1Builder builder,
+            this SetDefaultPolicy2.SetDefaultPolicy2Builder builder,
             string policyId
         )
         {
-            SetDefaultPolicy1 op = builder.Build(
+            SetDefaultPolicy2 op = builder.Build(
                 policyId
             );
 
-            ((Legal.Wrapper.Policies)builder.WrapperObject!).SetDefaultPolicy1(op);
+            ((Legal.Wrapper.Policies)builder.WrapperObject!).SetDefaultPolicy2(op);
         }
         public static List<Legal.Model.RetrievePolicyPublicResponse>? Execute(
             this RetrieveLatestPolicies.RetrieveLatestPoliciesBuilder builder,

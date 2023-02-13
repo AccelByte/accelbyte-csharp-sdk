@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","admingeneratereportv4")]
-    public class AdminGenerateReportV4Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "admingeneratereportv4")]
+    public class AdminGenerateReportV4Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminGenerateReportV4"; } }
+        public string OperationName { get { return "AdminGenerateReportV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.DevicesV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.DevicesV4(_SDK);
 
             AdminGenerateReportV4 operation = new AdminGenerateReportV4(
-                Namespace,                
-                EndDate,                
-                StartDate,                
-                DeviceType                
-            );            
-            
+                Namespace,
+                EndDate,
+                StartDate,
+                DeviceType
+            );
+
             wrapper.AdminGenerateReportV4(operation);
             return String.Empty;
         }

@@ -61,9 +61,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             )
             {
                 DeleteUserStatItems2 op = new DeleteUserStatItems2(this,
-                    namespace_,                    
-                    statCode,                    
-                    userId                    
+                    namespace_,
+                    statCode,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -80,35 +80,35 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["statCode"] = statCode;
             PathParams["userId"] = userId;
-            
-            if (builder.AdditionalKey is not null) QueryParams["additionalKey"] = builder.AdditionalKey;
-            
 
-            
-            
-            
+            if (builder.AdditionalKey is not null) QueryParams["additionalKey"] = builder.AdditionalKey;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteUserStatItems2(
-            string namespace_,            
-            string statCode,            
-            string userId,            
-            string? additionalKey            
+            string namespace_,
+            string statCode,
+            string userId,
+            string? additionalKey
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["statCode"] = statCode;
             PathParams["userId"] = userId;
-            
-            if (additionalKey is not null) QueryParams["additionalKey"] = additionalKey;
-            
 
-            
-            
-            
+            if (additionalKey is not null) QueryParams["additionalKey"] = additionalKey;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -117,22 +117,22 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

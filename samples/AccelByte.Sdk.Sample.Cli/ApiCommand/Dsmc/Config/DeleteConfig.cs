@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","deleteconfig")]
-    public class DeleteConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "deleteconfig")]
+    public class DeleteConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "DeleteConfig"; } }
+        public string OperationName { get { return "DeleteConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Config(_SDK);
 
             DeleteConfig operation = new DeleteConfig(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             wrapper.DeleteConfig(operation);
             return String.Empty;
         }

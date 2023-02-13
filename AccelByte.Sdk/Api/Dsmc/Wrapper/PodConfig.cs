@@ -44,13 +44,13 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             get { return Operation.UpdatePodConfig.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsInstanceSpec? GetLowestInstanceSpec(GetLowestInstanceSpec input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -68,7 +68,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -77,15 +77,16 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeletePodConfig(DeletePodConfig input) {
+        public void DeletePodConfig(DeletePodConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -94,7 +95,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

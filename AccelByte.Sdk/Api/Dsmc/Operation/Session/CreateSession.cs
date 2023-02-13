@@ -54,8 +54,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             )
             {
                 CreateSession op = new CreateSession(this,
-                    body,                    
-                    namespace_                    
+                    body,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -69,31 +69,31 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CreateSession(
-            string namespace_,            
-            Model.ModelsCreateSessionRequest body            
+            string namespace_,
+            Model.ModelsCreateSessionRequest body
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -108,9 +108,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsSessionResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -123,9 +123,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsSessionResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             )
             {
                 AdminQueryPlayerAttributes op = new AdminQueryPlayerAttributes(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -72,31 +72,31 @@ namespace AccelByte.Sdk.Api.Session.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (builder.Users is not null) QueryParams["users"] = builder.Users;
-            
 
-            
-            
-            
+            if (builder.Users is not null) QueryParams["users"] = builder.Users;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminQueryPlayerAttributes(
-            string namespace_,            
-            string? users            
+            string namespace_,
+            string? users
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (users is not null) QueryParams["users"] = users;
-            
 
-            
-            
-            
+            if (users is not null) QueryParams["users"] = users;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -111,9 +111,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.ApimodelsPlayerAttributesResponseBody>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -126,18 +126,18 @@ namespace AccelByte.Sdk.Api.Session.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.ApimodelsPlayerAttributesResponseBody>>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
 
         public List<Model.ApimodelsPlayerAttributesResponseBody<T1>>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
-            }            
+            }
             else if (code == (HttpStatusCode)201)
             {
                 return JsonSerializer.Deserialize<List<Model.ApimodelsPlayerAttributesResponseBody<T1>>>(payload);
@@ -146,8 +146,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.ApimodelsPlayerAttributesResponseBody<T1>>>(payload);
             }
-            
-            var payloadString = Helper.ConvertInputStreamToString(payload);            
+
+            var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -28,13 +28,13 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.UpdatePaymentCallbackConfig.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.PaymentCallbackConfigInfo? GetPaymentCallbackConfig(GetPaymentCallbackConfig input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

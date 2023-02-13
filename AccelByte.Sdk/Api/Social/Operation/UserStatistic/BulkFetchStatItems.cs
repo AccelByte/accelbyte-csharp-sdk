@@ -48,9 +48,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             )
             {
                 BulkFetchStatItems op = new BulkFetchStatItems(this,
-                    namespace_,                    
-                    statCode,                    
-                    userIds                    
+                    namespace_,
+                    statCode,
+                    userIds
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -65,34 +65,34 @@ namespace AccelByte.Sdk.Api.Social.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (statCode is not null) QueryParams["statCode"] = statCode;
             if (userIds is not null) QueryParams["userIds"] = userIds;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public BulkFetchStatItems(
-            string namespace_,            
-            string statCode,            
-            string userIds            
+            string namespace_,
+            string statCode,
+            string userIds
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (statCode is not null) QueryParams["statCode"] = statCode;
             if (userIds is not null) QueryParams["userIds"] = userIds;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -101,15 +101,15 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.UserStatItemInfo>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -122,9 +122,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.UserStatItemInfo>>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","uploadkeys")]
-    public class UploadKeysCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "uploadkeys")]
+    public class UploadKeysCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UploadKeys"; } }
+        public string OperationName { get { return "UploadKeys"; } }
 
         [SdkCommandArgument("keyGroupId")]
         public string KeyGroupId { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandFile("file")]
         public Stream? File { get; set; }
-                    
+
         public UploadKeysCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.KeyGroup wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.KeyGroup(_SDK);
 
             UploadKeys operation = new UploadKeys(
-                KeyGroupId,                
-                Namespace,                
-                File                
-            );            
-            
+                KeyGroupId,
+                Namespace,
+                File
+            );
+
             AccelByte.Sdk.Api.Platform.Model.BulkOperationResult? response = wrapper.UploadKeys(operation);
             if (response == null)
                 return "No response from server.";

@@ -36,7 +36,48 @@
 | `/agreement/admin/localized-policy-versions/{localizedPolicyVersionId}` | PUT | UpdateLocalizedPolicyVersion | [UpdateLocalizedPolicyVersion](../../AccelByte.Sdk/Api/Legal/Operation/LocalizedPolicyVersions/UpdateLocalizedPolicyVersion.cs) | [UpdateLocalizedPolicyVersion](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/LocalizedPolicyVersions/UpdateLocalizedPolicyVersion.cs) |
 | `/agreement/admin/localized-policy-versions/{localizedPolicyVersionId}/attachments` | POST | RequestPresignedURL | [RequestPresignedURL](../../AccelByte.Sdk/Api/Legal/Operation/LocalizedPolicyVersions/RequestPresignedURL.cs) | [RequestPresignedURL](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/LocalizedPolicyVersions/RequestPresignedURL.cs) |
 | `/agreement/admin/localized-policy-versions/{localizedPolicyVersionId}/default` | PATCH | SetDefaultPolicy | [SetDefaultPolicy](../../AccelByte.Sdk/Api/Legal/Operation/LocalizedPolicyVersions/SetDefaultPolicy.cs) | [SetDefaultPolicy](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/LocalizedPolicyVersions/SetDefaultPolicy.cs) |
-| `/agreement/public/localized-policy-versions/{localizedPolicyVersionId}` | GET | RetrieveSingleLocalizedPolicyVersion1 | [RetrieveSingleLocalizedPolicyVersion1](../../AccelByte.Sdk/Api/Legal/Operation/LocalizedPolicyVersions/RetrieveSingleLocalizedPolicyVersion1.cs) | [RetrieveSingleLocalizedPolicyVersion1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/LocalizedPolicyVersions/RetrieveSingleLocalizedPolicyVersion1.cs) |
+| `/agreement/public/localized-policy-versions/{localizedPolicyVersionId}` | GET | RetrieveSingleLocalizedPolicyVersion2 | [RetrieveSingleLocalizedPolicyVersion2](../../AccelByte.Sdk/Api/Legal/Operation/LocalizedPolicyVersions/RetrieveSingleLocalizedPolicyVersion2.cs) | [RetrieveSingleLocalizedPolicyVersion2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/LocalizedPolicyVersions/RetrieveSingleLocalizedPolicyVersion2.cs) |
+
+### Agreement With Namespace Wrapper:  [AgreementWithNamespace](../../AccelByte.Sdk/Api/Legal/Wrapper/AgreementWithNamespace.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/agreement/admin/namespaces/{namespace}/agreements/policies/users/{userId}` | GET | RetrieveAcceptedAgreements1 | [RetrieveAcceptedAgreements1](../../AccelByte.Sdk/Api/Legal/Operation/AgreementWithNamespace/RetrieveAcceptedAgreements1.cs) | [RetrieveAcceptedAgreements1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/AgreementWithNamespace/RetrieveAcceptedAgreements1.cs) |
+| `/agreement/admin/namespaces/{namespace}/agreements/policy-versions/users` | GET | RetrieveAllUsersByPolicyVersion1 | [RetrieveAllUsersByPolicyVersion1](../../AccelByte.Sdk/Api/Legal/Operation/AgreementWithNamespace/RetrieveAllUsersByPolicyVersion1.cs) | [RetrieveAllUsersByPolicyVersion1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/AgreementWithNamespace/RetrieveAllUsersByPolicyVersion1.cs) |
+
+### Base Legal Policies With Namespace Wrapper:  [BaseLegalPoliciesWithNamespace](../../AccelByte.Sdk/Api/Legal/Wrapper/BaseLegalPoliciesWithNamespace.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/agreement/admin/namespaces/{namespace}/base-policies` | GET | RetrieveAllLegalPoliciesByNamespace | [RetrieveAllLegalPoliciesByNamespace](../../AccelByte.Sdk/Api/Legal/Operation/BaseLegalPoliciesWithNamespace/RetrieveAllLegalPoliciesByNamespace.cs) | [RetrieveAllLegalPoliciesByNamespace](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/BaseLegalPoliciesWithNamespace/RetrieveAllLegalPoliciesByNamespace.cs) |
+| `/agreement/admin/namespaces/{namespace}/base-policies` | POST | CreatePolicy1 | [CreatePolicy1](../../AccelByte.Sdk/Api/Legal/Operation/BaseLegalPoliciesWithNamespace/CreatePolicy1.cs) | [CreatePolicy1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/BaseLegalPoliciesWithNamespace/CreatePolicy1.cs) |
+| `/agreement/admin/namespaces/{namespace}/base-policies/{basePolicyId}` | GET | RetrieveSinglePolicy1 | [RetrieveSinglePolicy1](../../AccelByte.Sdk/Api/Legal/Operation/BaseLegalPoliciesWithNamespace/RetrieveSinglePolicy1.cs) | [RetrieveSinglePolicy1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/BaseLegalPoliciesWithNamespace/RetrieveSinglePolicy1.cs) |
+| `/agreement/admin/namespaces/{namespace}/base-policies/{basePolicyId}` | PATCH | PartialUpdatePolicy1 | [PartialUpdatePolicy1](../../AccelByte.Sdk/Api/Legal/Operation/BaseLegalPoliciesWithNamespace/PartialUpdatePolicy1.cs) | [PartialUpdatePolicy1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/BaseLegalPoliciesWithNamespace/PartialUpdatePolicy1.cs) |
+| `/agreement/admin/namespaces/{namespace}/base-policies/{basePolicyId}/countries/{countryCode}` | GET | RetrievePolicyCountry1 | [RetrievePolicyCountry1](../../AccelByte.Sdk/Api/Legal/Operation/BaseLegalPoliciesWithNamespace/RetrievePolicyCountry1.cs) | [RetrievePolicyCountry1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/BaseLegalPoliciesWithNamespace/RetrievePolicyCountry1.cs) |
+| `/agreement/admin/namespaces/{namespace}/policy-types` | GET | RetrieveAllPolicyTypes1 | [RetrieveAllPolicyTypes1](../../AccelByte.Sdk/Api/Legal/Operation/BaseLegalPoliciesWithNamespace/RetrieveAllPolicyTypes1.cs) | [RetrieveAllPolicyTypes1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/BaseLegalPoliciesWithNamespace/RetrieveAllPolicyTypes1.cs) |
+
+### Localized Policy Versions With Namespace Wrapper:  [LocalizedPolicyVersionsWithNamespace](../../AccelByte.Sdk/Api/Legal/Wrapper/LocalizedPolicyVersionsWithNamespace.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/agreement/admin/namespaces/{namespace}/localized-policy-versions/versions/{policyVersionId}` | GET | RetrieveLocalizedPolicyVersions1 | [RetrieveLocalizedPolicyVersions1](../../AccelByte.Sdk/Api/Legal/Operation/LocalizedPolicyVersionsWithNamespace/RetrieveLocalizedPolicyVersions1.cs) | [RetrieveLocalizedPolicyVersions1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/LocalizedPolicyVersionsWithNamespace/RetrieveLocalizedPolicyVersions1.cs) |
+| `/agreement/admin/namespaces/{namespace}/localized-policy-versions/versions/{policyVersionId}` | POST | CreateLocalizedPolicyVersion1 | [CreateLocalizedPolicyVersion1](../../AccelByte.Sdk/Api/Legal/Operation/LocalizedPolicyVersionsWithNamespace/CreateLocalizedPolicyVersion1.cs) | [CreateLocalizedPolicyVersion1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/LocalizedPolicyVersionsWithNamespace/CreateLocalizedPolicyVersion1.cs) |
+| `/agreement/admin/namespaces/{namespace}/localized-policy-versions/{localizedPolicyVersionId}` | GET | RetrieveSingleLocalizedPolicyVersion1 | [RetrieveSingleLocalizedPolicyVersion1](../../AccelByte.Sdk/Api/Legal/Operation/LocalizedPolicyVersionsWithNamespace/RetrieveSingleLocalizedPolicyVersion1.cs) | [RetrieveSingleLocalizedPolicyVersion1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/LocalizedPolicyVersionsWithNamespace/RetrieveSingleLocalizedPolicyVersion1.cs) |
+| `/agreement/admin/namespaces/{namespace}/localized-policy-versions/{localizedPolicyVersionId}` | PUT | UpdateLocalizedPolicyVersion1 | [UpdateLocalizedPolicyVersion1](../../AccelByte.Sdk/Api/Legal/Operation/LocalizedPolicyVersionsWithNamespace/UpdateLocalizedPolicyVersion1.cs) | [UpdateLocalizedPolicyVersion1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/LocalizedPolicyVersionsWithNamespace/UpdateLocalizedPolicyVersion1.cs) |
+| `/agreement/admin/namespaces/{namespace}/localized-policy-versions/{localizedPolicyVersionId}/attachments` | POST | RequestPresignedURL1 | [RequestPresignedURL1](../../AccelByte.Sdk/Api/Legal/Operation/LocalizedPolicyVersionsWithNamespace/RequestPresignedURL1.cs) | [RequestPresignedURL1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/LocalizedPolicyVersionsWithNamespace/RequestPresignedURL1.cs) |
+| `/agreement/admin/namespaces/{namespace}/localized-policy-versions/{localizedPolicyVersionId}/default` | PATCH | SetDefaultPolicy1 | [SetDefaultPolicy1](../../AccelByte.Sdk/Api/Legal/Operation/LocalizedPolicyVersionsWithNamespace/SetDefaultPolicy1.cs) | [SetDefaultPolicy1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/LocalizedPolicyVersionsWithNamespace/SetDefaultPolicy1.cs) |
+| `/agreement/public/namespaces/{namespace}/localized-policy-versions/{localizedPolicyVersionId}` | GET | RetrieveSingleLocalizedPolicyVersion3 | [RetrieveSingleLocalizedPolicyVersion3](../../AccelByte.Sdk/Api/Legal/Operation/LocalizedPolicyVersionsWithNamespace/RetrieveSingleLocalizedPolicyVersion3.cs) | [RetrieveSingleLocalizedPolicyVersion3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/LocalizedPolicyVersionsWithNamespace/RetrieveSingleLocalizedPolicyVersion3.cs) |
+
+### Policy Versions With Namespace Wrapper:  [PolicyVersionsWithNamespace](../../AccelByte.Sdk/Api/Legal/Wrapper/PolicyVersionsWithNamespace.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/agreement/admin/namespaces/{namespace}/policies/versions/{policyVersionId}` | PATCH | UpdatePolicyVersion1 | [UpdatePolicyVersion1](../../AccelByte.Sdk/Api/Legal/Operation/PolicyVersionsWithNamespace/UpdatePolicyVersion1.cs) | [UpdatePolicyVersion1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/PolicyVersionsWithNamespace/UpdatePolicyVersion1.cs) |
+| `/agreement/admin/namespaces/{namespace}/policies/versions/{policyVersionId}/latest` | PATCH | PublishPolicyVersion1 | [PublishPolicyVersion1](../../AccelByte.Sdk/Api/Legal/Operation/PolicyVersionsWithNamespace/PublishPolicyVersion1.cs) | [PublishPolicyVersion1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/PolicyVersionsWithNamespace/PublishPolicyVersion1.cs) |
+| `/agreement/admin/namespaces/{namespace}/policies/{policyId}/versions` | GET | RetrieveSinglePolicyVersion1 | [RetrieveSinglePolicyVersion1](../../AccelByte.Sdk/Api/Legal/Operation/PolicyVersionsWithNamespace/RetrieveSinglePolicyVersion1.cs) | [RetrieveSinglePolicyVersion1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/PolicyVersionsWithNamespace/RetrieveSinglePolicyVersion1.cs) |
+| `/agreement/admin/namespaces/{namespace}/policies/{policyId}/versions` | POST | CreatePolicyVersion1 | [CreatePolicyVersion1](../../AccelByte.Sdk/Api/Legal/Operation/PolicyVersionsWithNamespace/CreatePolicyVersion1.cs) | [CreatePolicyVersion1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/PolicyVersionsWithNamespace/CreatePolicyVersion1.cs) |
+
+### Policies With Namespace Wrapper:  [PoliciesWithNamespace](../../AccelByte.Sdk/Api/Legal/Wrapper/PoliciesWithNamespace.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/agreement/admin/namespaces/{namespace}/policies/{policyId}` | PATCH | UpdatePolicy1 | [UpdatePolicy1](../../AccelByte.Sdk/Api/Legal/Operation/PoliciesWithNamespace/UpdatePolicy1.cs) | [UpdatePolicy1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/PoliciesWithNamespace/UpdatePolicy1.cs) |
+| `/agreement/admin/namespaces/{namespace}/policies/{policyId}/default` | PATCH | SetDefaultPolicy3 | [SetDefaultPolicy3](../../AccelByte.Sdk/Api/Legal/Operation/PoliciesWithNamespace/SetDefaultPolicy3.cs) | [SetDefaultPolicy3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/PoliciesWithNamespace/SetDefaultPolicy3.cs) |
 
 ### Admin User Agreement Wrapper:  [AdminUserAgreement](../../AccelByte.Sdk/Api/Legal/Wrapper/AdminUserAgreement.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -53,7 +94,7 @@
 |---|---|---|---|---|
 | `/agreement/admin/policies/countries/{countryCode}` | GET | RetrievePolicies | [RetrievePolicies](../../AccelByte.Sdk/Api/Legal/Operation/Policies/RetrievePolicies.cs) | [RetrievePolicies](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Policies/RetrievePolicies.cs) |
 | `/agreement/admin/policies/{policyId}` | PATCH | UpdatePolicy | [UpdatePolicy](../../AccelByte.Sdk/Api/Legal/Operation/Policies/UpdatePolicy.cs) | [UpdatePolicy](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Policies/UpdatePolicy.cs) |
-| `/agreement/admin/policies/{policyId}/default` | PATCH | SetDefaultPolicy1 | [SetDefaultPolicy1](../../AccelByte.Sdk/Api/Legal/Operation/Policies/SetDefaultPolicy1.cs) | [SetDefaultPolicy1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Policies/SetDefaultPolicy1.cs) |
+| `/agreement/admin/policies/{policyId}/default` | PATCH | SetDefaultPolicy2 | [SetDefaultPolicy2](../../AccelByte.Sdk/Api/Legal/Operation/Policies/SetDefaultPolicy2.cs) | [SetDefaultPolicy2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Policies/SetDefaultPolicy2.cs) |
 | `/agreement/public/policies/countries/{countryCode}` | GET | RetrieveLatestPolicies | [RetrieveLatestPolicies](../../AccelByte.Sdk/Api/Legal/Operation/Policies/RetrieveLatestPolicies.cs) | [RetrieveLatestPolicies](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Policies/RetrieveLatestPolicies.cs) |
 | `/agreement/public/policies/namespaces/{namespace}` | GET | RetrieveLatestPoliciesPublic | [RetrieveLatestPoliciesPublic](../../AccelByte.Sdk/Api/Legal/Operation/Policies/RetrieveLatestPoliciesPublic.cs) | [RetrieveLatestPoliciesPublic](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Policies/RetrieveLatestPoliciesPublic.cs) |
 | `/agreement/public/policies/namespaces/{namespace}/countries/{countryCode}` | GET | RetrieveLatestPoliciesByNamespaceAndCountryPublic | [RetrieveLatestPoliciesByNamespaceAndCountryPublic](../../AccelByte.Sdk/Api/Legal/Operation/Policies/RetrieveLatestPoliciesByNamespaceAndCountryPublic.cs) | [RetrieveLatestPoliciesByNamespaceAndCountryPublic](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Policies/RetrieveLatestPoliciesByNamespaceAndCountryPublic.cs) |
@@ -109,6 +150,26 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Agreement With Namespace Wrapper:  [AgreementWithNamespace](../../AccelByte.Sdk/Api/Legal/Wrapper/AgreementWithNamespace.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Base Legal Policies With Namespace Wrapper:  [BaseLegalPoliciesWithNamespace](../../AccelByte.Sdk/Api/Legal/Wrapper/BaseLegalPoliciesWithNamespace.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Localized Policy Versions With Namespace Wrapper:  [LocalizedPolicyVersionsWithNamespace](../../AccelByte.Sdk/Api/Legal/Wrapper/LocalizedPolicyVersionsWithNamespace.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Policy Versions With Namespace Wrapper:  [PolicyVersionsWithNamespace](../../AccelByte.Sdk/Api/Legal/Wrapper/PolicyVersionsWithNamespace.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Policies With Namespace Wrapper:  [PoliciesWithNamespace](../../AccelByte.Sdk/Api/Legal/Wrapper/PoliciesWithNamespace.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### Admin User Agreement Wrapper:  [AdminUserAgreement](../../AccelByte.Sdk/Api/Legal/Wrapper/AdminUserAgreement.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -152,6 +213,7 @@
 | `AcceptAgreementRequest` | [AcceptAgreementRequest](../../AccelByte.Sdk/Api/Legal/Model/AcceptAgreementRequest.cs) |
 | `AcceptAgreementResponse` | [AcceptAgreementResponse](../../AccelByte.Sdk/Api/Legal/Model/AcceptAgreementResponse.cs) |
 | `CreateBasePolicyRequest` | [CreateBasePolicyRequest](../../AccelByte.Sdk/Api/Legal/Model/CreateBasePolicyRequest.cs) |
+| `CreateBasePolicyRequestV2` | [CreateBasePolicyRequestV2](../../AccelByte.Sdk/Api/Legal/Model/CreateBasePolicyRequestV2.cs) |
 | `CreateBasePolicyResponse` | [CreateBasePolicyResponse](../../AccelByte.Sdk/Api/Legal/Model/CreateBasePolicyResponse.cs) |
 | `CreateLocalizedPolicyVersionRequest` | [CreateLocalizedPolicyVersionRequest](../../AccelByte.Sdk/Api/Legal/Model/CreateLocalizedPolicyVersionRequest.cs) |
 | `CreateLocalizedPolicyVersionResponse` | [CreateLocalizedPolicyVersionResponse](../../AccelByte.Sdk/Api/Legal/Model/CreateLocalizedPolicyVersionResponse.cs) |
@@ -179,6 +241,7 @@
 | `RetrieveUserEligibilitiesResponse` | [RetrieveUserEligibilitiesResponse](../../AccelByte.Sdk/Api/Legal/Model/RetrieveUserEligibilitiesResponse.cs) |
 | `RetrieveUserInfoCacheStatusResponse` | [RetrieveUserInfoCacheStatusResponse](../../AccelByte.Sdk/Api/Legal/Model/RetrieveUserInfoCacheStatusResponse.cs) |
 | `UpdateBasePolicyRequest` | [UpdateBasePolicyRequest](../../AccelByte.Sdk/Api/Legal/Model/UpdateBasePolicyRequest.cs) |
+| `UpdateBasePolicyRequestV2` | [UpdateBasePolicyRequestV2](../../AccelByte.Sdk/Api/Legal/Model/UpdateBasePolicyRequestV2.cs) |
 | `UpdateBasePolicyResponse` | [UpdateBasePolicyResponse](../../AccelByte.Sdk/Api/Legal/Model/UpdateBasePolicyResponse.cs) |
 | `UpdateLocalizedPolicyVersionRequest` | [UpdateLocalizedPolicyVersionRequest](../../AccelByte.Sdk/Api/Legal/Model/UpdateLocalizedPolicyVersionRequest.cs) |
 | `UpdateLocalizedPolicyVersionResponse` | [UpdateLocalizedPolicyVersionResponse](../../AccelByte.Sdk/Api/Legal/Model/UpdateLocalizedPolicyVersionResponse.cs) |

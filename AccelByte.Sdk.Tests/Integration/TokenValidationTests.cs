@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()
-                .UseDefaultCredentialRepository()                
+                .UseDefaultCredentialRepository()
                 .EnableLog()
                 .Build();
 

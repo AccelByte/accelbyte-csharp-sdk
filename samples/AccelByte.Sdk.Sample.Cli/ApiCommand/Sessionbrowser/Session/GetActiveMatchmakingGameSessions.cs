@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser","getactivematchmakinggamesessions")]
-    public class GetActiveMatchmakingGameSessionsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser", "getactivematchmakinggamesessions")]
+    public class GetActiveMatchmakingGameSessionsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Sessionbrowser"; } }
+        public string ServiceName { get { return "Sessionbrowser"; } }
 
-        public string OperationName{ get { return "GetActiveMatchmakingGameSessions"; } }
+        public string OperationName { get { return "GetActiveMatchmakingGameSessions"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -55,14 +55,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
             GetActiveMatchmakingGameSessions operation = new GetActiveMatchmakingGameSessions(
-                Namespace,                
-                Limit,                
-                MatchId,                
-                Offset,                
-                ServerRegion,                
-                SessionId                
-            );            
-            
+                Namespace,
+                Limit,
+                MatchId,
+                Offset,
+                ServerRegion,
+                SessionId
+            );
+
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsActiveMatchmakingGameResponse? response = wrapper.GetActiveMatchmakingGameSessions(operation);
             if (response == null)
                 return "No response from server.";

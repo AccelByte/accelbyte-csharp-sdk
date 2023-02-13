@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","querychanges")]
-    public class QueryChangesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "querychanges")]
+    public class QueryChangesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "QueryChanges"; } }
+        public string OperationName { get { return "QueryChanges"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -76,21 +76,21 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.CatalogChanges wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.CatalogChanges(_SDK);
 
             QueryChanges operation = new QueryChanges(
-                Namespace,                
-                StoreId,                
-                (Action is null ? null : QueryChangesAction.NewValue(Action)),                
-                ItemSku,                
-                (ItemType is null ? null : QueryChangesItemType.NewValue(ItemType)),                
-                Limit,                
-                Offset,                
-                Selected,                
-                (SortBy is null ? null : QueryChangesSortBy.NewValue(SortBy)),                
-                (Status is null ? null : QueryChangesStatus.NewValue(Status)),                
-                (Type is null ? null : QueryChangesType.NewValue(Type)),                
-                UpdatedAtEnd,                
-                UpdatedAtStart                
-            );            
-            
+                Namespace,
+                StoreId,
+                (Action is null ? null : QueryChangesAction.NewValue(Action)),
+                ItemSku,
+                (ItemType is null ? null : QueryChangesItemType.NewValue(ItemType)),
+                Limit,
+                Offset,
+                Selected,
+                (SortBy is null ? null : QueryChangesSortBy.NewValue(SortBy)),
+                (Status is null ? null : QueryChangesStatus.NewValue(Status)),
+                (Type is null ? null : QueryChangesType.NewValue(Type)),
+                UpdatedAtEnd,
+                UpdatedAtStart
+            );
+
             List<AccelByte.Sdk.Api.Platform.Model.CatalogChangePagingSlicedResult>? response = wrapper.QueryChanges(operation);
             if (response == null)
                 return "No response from server.";

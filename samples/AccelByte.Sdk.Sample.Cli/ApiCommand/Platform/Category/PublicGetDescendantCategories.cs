@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publicgetdescendantcategories")]
-    public class PublicGetDescendantCategoriesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "publicgetdescendantcategories")]
+    public class PublicGetDescendantCategoriesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicGetDescendantCategories"; } }
+        public string OperationName { get { return "PublicGetDescendantCategories"; } }
 
         [SdkCommandArgument("categoryPath")]
         public string CategoryPath { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Category wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Category(_SDK);
 
             PublicGetDescendantCategories operation = new PublicGetDescendantCategories(
-                CategoryPath,                
-                Namespace,                
-                Language,                
-                StoreId                
-            );            
-            
+                CategoryPath,
+                Namespace,
+                Language,
+                StoreId
+            );
+
             List<AccelByte.Sdk.Api.Platform.Model.CategoryInfo>? response = wrapper.PublicGetDescendantCategories(operation);
             if (response == null)
                 return "No response from server.";

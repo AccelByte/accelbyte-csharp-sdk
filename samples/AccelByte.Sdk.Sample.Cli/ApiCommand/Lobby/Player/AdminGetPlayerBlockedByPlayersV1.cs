@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","admingetplayerblockedbyplayersv1")]
-    public class AdminGetPlayerBlockedByPlayersV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "admingetplayerblockedbyplayersv1")]
+    public class AdminGetPlayerBlockedByPlayersV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminGetPlayerBlockedByPlayersV1"; } }
+        public string OperationName { get { return "AdminGetPlayerBlockedByPlayersV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Player wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Player(_SDK);
 
             AdminGetPlayerBlockedByPlayersV1 operation = new AdminGetPlayerBlockedByPlayersV1(
-                Namespace,                
-                UserId                
-            );            
-            
+                Namespace,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Lobby.Model.ModelsGetAllPlayerBlockedByUsersResponse? response = wrapper.AdminGetPlayerBlockedByPlayersV1(operation);
             if (response == null)
                 return "No response from server.";

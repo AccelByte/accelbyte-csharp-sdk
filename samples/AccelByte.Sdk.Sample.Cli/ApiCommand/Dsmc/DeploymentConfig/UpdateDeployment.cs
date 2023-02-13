@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","updatedeployment")]
-    public class UpdateDeploymentCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "updatedeployment")]
+    public class UpdateDeploymentCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "UpdateDeployment"; } }
+        public string OperationName { get { return "UpdateDeployment"; } }
 
         [SdkCommandArgument("deployment")]
         public string Deployment { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
         [SdkCommandData("body")]
         public ModelsUpdateDeploymentRequest Body { get; set; } = new ModelsUpdateDeploymentRequest();
-                
+
         public UpdateDeploymentCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig(_SDK);
 
             UpdateDeployment operation = new UpdateDeployment(
-                Deployment,                
-                Namespace,                
-                Body                
-            );            
-            
+                Deployment,
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDeploymentWithOverride? response = wrapper.UpdateDeployment(operation);
             if (response == null)
                 return "No response from server.";

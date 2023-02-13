@@ -88,9 +88,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly FulfillmentRequestOrigin Playstation
             = new FulfillmentRequestOrigin("Playstation");
 
-        public static readonly FulfillmentRequestOrigin Stadia
-            = new FulfillmentRequestOrigin("Stadia");
-
         public static readonly FulfillmentRequestOrigin Steam
             = new FulfillmentRequestOrigin("Steam");
 
@@ -114,7 +111,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class FulfillmentRequestSource : StringEnum<FulfillmentRequestSource>
     {
@@ -159,5 +156,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

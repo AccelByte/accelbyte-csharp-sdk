@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","retrieveactiveoidcclientspublicv3")]
-    public class RetrieveActiveOIDCClientsPublicV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "retrieveactiveoidcclientspublicv3")]
+    public class RetrieveActiveOIDCClientsPublicV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "RetrieveActiveOIDCClientsPublicV3"; } }
+        public string OperationName { get { return "RetrieveActiveOIDCClientsPublicV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.ThirdPartyCredential wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.ThirdPartyCredential(_SDK);
 
             RetrieveActiveOIDCClientsPublicV3 operation = new RetrieveActiveOIDCClientsPublicV3(
-                Namespace,                
-                ClientId                
-            );            
-            
+                Namespace,
+                ClientId
+            );
+
             List<AccelByte.Sdk.Api.Iam.Model.ModelPublicThirdPartyPlatformInfo>? response = wrapper.RetrieveActiveOIDCClientsPublicV3(operation);
             if (response == null)
                 return "No response from server.";

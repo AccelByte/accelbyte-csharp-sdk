@@ -21,11 +21,23 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         [JsonPropertyName("joinable")]
         public bool? Joinable { get; set; }
 
+        [JsonPropertyName("joining")]
+        public List<ModelsSessionPlayerJoining>? Joining { get; set; }
+
         [JsonPropertyName("match_id")]
         public string? MatchId { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
+
+        [JsonPropertyName("players")]
+        public List<ModelsSessionPlayerHistory>? Players { get; set; }
+
+        [JsonPropertyName("removed_reason")]
+        public string? RemovedReason { get; set; }
+
+        [JsonPropertyName("session_type")]
+        public string? SessionType { get; set; }
 
         [JsonPropertyName("status")]
         public string? Status { get; set; }

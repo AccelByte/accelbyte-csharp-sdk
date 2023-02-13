@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","adminbanuserv3")]
-    public class AdminBanUserV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "adminbanuserv3")]
+    public class AdminBanUserV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminBanUserV3"; } }
+        public string OperationName { get { return "AdminBanUserV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelBanCreateRequest Body { get; set; } = new ModelBanCreateRequest();
-                
+
         public AdminBanUserV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             AdminBanUserV3 operation = new AdminBanUserV3(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelUserBanResponseV3? response = wrapper.AdminBanUserV3(operation);
             if (response == null)
                 return "No response from server.";

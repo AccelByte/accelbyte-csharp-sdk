@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","queryuserentitlements")]
-    public class QueryUserEntitlementsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "queryuserentitlements")]
+    public class QueryUserEntitlementsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "QueryUserEntitlements"; } }
+        public string OperationName { get { return "QueryUserEntitlements"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -67,18 +67,18 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             QueryUserEntitlements operation = new QueryUserEntitlements(
-                Namespace,                
-                UserId,                
-                ActiveOnly,                
-                (AppType is null ? null : QueryUserEntitlementsAppType.NewValue(AppType)),                
-                (EntitlementClazz is null ? null : QueryUserEntitlementsEntitlementClazz.NewValue(EntitlementClazz)),                
-                EntitlementName,                
-                Features,                
-                ItemId,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                UserId,
+                ActiveOnly,
+                (AppType is null ? null : QueryUserEntitlementsAppType.NewValue(AppType)),
+                (EntitlementClazz is null ? null : QueryUserEntitlementsEntitlementClazz.NewValue(EntitlementClazz)),
+                EntitlementName,
+                Features,
+                ItemId,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Platform.Model.EntitlementPagingSlicedResult? response = wrapper.QueryUserEntitlements(operation);
             if (response == null)
                 return "No response from server.";

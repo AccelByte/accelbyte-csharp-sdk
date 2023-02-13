@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","singleadmindeletecontent")]
-    public class SingleAdminDeleteContentCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "singleadmindeletecontent")]
+    public class SingleAdminDeleteContentCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "SingleAdminDeleteContent"; } }
+        public string OperationName { get { return "SingleAdminDeleteContent"; } }
 
         [SdkCommandArgument("channelId")]
         public string ChannelId { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent(_SDK);
 
             SingleAdminDeleteContent operation = new SingleAdminDeleteContent(
-                ChannelId,                
-                ContentId,                
-                Namespace                
-            );            
-            
+                ChannelId,
+                ContentId,
+                Namespace
+            );
+
             wrapper.SingleAdminDeleteContent(operation);
             return String.Empty;
         }

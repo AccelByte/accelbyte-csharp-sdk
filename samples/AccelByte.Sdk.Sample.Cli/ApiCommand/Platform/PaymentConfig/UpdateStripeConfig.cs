@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updatestripeconfig")]
-    public class UpdateStripeConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updatestripeconfig")]
+    public class UpdateStripeConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateStripeConfig"; } }
+        public string OperationName { get { return "UpdateStripeConfig"; } }
 
         [SdkCommandArgument("id")]
         public string Id { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public StripeConfig Body { get; set; } = new StripeConfig();
-                
+
         public UpdateStripeConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             UpdateStripeConfig operation = new UpdateStripeConfig(
-                Id,                
-                Sandbox,                
-                Validate,                
-                Body                
-            );            
-            
+                Id,
+                Sandbox,
+                Validate,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PaymentMerchantConfigInfo? response = wrapper.UpdateStripeConfig(operation);
             if (response == null)
                 return "No response from server.";

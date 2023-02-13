@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session","publicquerygamesessions")]
-    public class PublicQueryGameSessionsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("session", "publicquerygamesessions")]
+    public class PublicQueryGameSessionsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Session"; } }
+        public string ServiceName { get { return "Session"; } }
 
-        public string OperationName{ get { return "PublicQueryGameSessions"; } }
+        public string OperationName { get { return "PublicQueryGameSessions"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public Dictionary<string, object> Body { get; set; } = new Dictionary<string, object>();
-                
+
         public PublicQueryGameSessionsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.GameSession wrapper = new AccelByte.Sdk.Api.Session.Wrapper.GameSession(_SDK);
 
             PublicQueryGameSessions operation = new PublicQueryGameSessions(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Session.Model.ApimodelsGameSessionQueryResponse? response = wrapper.PublicQueryGameSessions(operation);
             if (response == null)
                 return "No response from server.";

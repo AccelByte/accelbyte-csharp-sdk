@@ -69,9 +69,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///   * epicgames : The platform_tokenâs value is an access-token obtained from Epicgames EOS Account Service.
     /// 
     /// 
-    ///   * stadia : The platform_token's value is a JWT Token, which can be obtained after calling the Stadia SDK's function.
-    /// 
-    /// 
     ///   * ps4 : The platform_tokenâs value is the authorization code returned by Sony OAuth.
     /// 
     /// 
@@ -122,9 +119,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 PublicForcePlatformLinkV3 op = new PublicForcePlatformLinkV3(this,
-                    ticket,                    
-                    namespace_,                    
-                    platformId                    
+                    ticket,
+                    namespace_,
+                    platformId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -140,33 +137,33 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
-            
-            
+
+
             if (ticket is not null) FormParams["ticket"] = ticket;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicForcePlatformLinkV3(
-            string namespace_,            
-            string platformId,            
-            string ticket            
+            string namespace_,
+            string platformId,
+            string ticket
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
-            
-            
+
+
             if (ticket is not null) FormParams["ticket"] = ticket;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -181,16 +178,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

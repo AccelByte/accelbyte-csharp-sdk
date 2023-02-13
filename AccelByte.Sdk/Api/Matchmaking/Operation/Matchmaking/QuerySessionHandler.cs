@@ -54,8 +54,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             )
             {
                 QuerySessionHandler op = new QuerySessionHandler(this,
-                    matchID,                    
-                    namespace_                    
+                    matchID,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -70,30 +70,30 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
         {
             PathParams["matchID"] = matchID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public QuerySessionHandler(
-            string matchID,            
-            string namespace_            
+            string matchID,
+            string namespace_
         )
         {
             PathParams["matchID"] = matchID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -108,9 +108,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsMatchmakingResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -123,18 +123,18 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsMatchmakingResult>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
 
         public Model.ModelsMatchmakingResult<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
-            }            
+            }
             else if (code == (HttpStatusCode)201)
             {
                 return JsonSerializer.Deserialize<Model.ModelsMatchmakingResult<T1>>(payload);
@@ -143,8 +143,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsMatchmakingResult<T1>>(payload);
             }
-            
-            var payloadString = Helper.ConvertInputStreamToString(payload);            
+
+            var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
         }
     }

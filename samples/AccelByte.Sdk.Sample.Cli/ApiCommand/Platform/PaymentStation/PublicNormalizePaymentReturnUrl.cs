@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publicnormalizepaymentreturnurl")]
-    public class PublicNormalizePaymentReturnUrlCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "publicnormalizepaymentreturnurl")]
+    public class PublicNormalizePaymentReturnUrlCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicNormalizePaymentReturnUrl"; } }
+        public string OperationName { get { return "PublicNormalizePaymentReturnUrl"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -85,24 +85,24 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentStation wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentStation(_SDK);
 
             PublicNormalizePaymentReturnUrl operation = new PublicNormalizePaymentReturnUrl(
-                Namespace,                
-                PayerID,                
-                Foreinginvoice,                
-                InvoiceId,                
-                Payload,                
-                RedirectResult,                
-                ResultCode,                
-                SessionId,                
-                Status,                
-                Token,                
-                Type,                
-                UserId,                
-                OrderNo,                
-                PaymentOrderNo,                
-                PublicNormalizePaymentReturnUrlPaymentProvider.NewValue(PaymentProvider),                
-                ReturnUrl                
-            );            
-            
+                Namespace,
+                PayerID,
+                Foreinginvoice,
+                InvoiceId,
+                Payload,
+                RedirectResult,
+                ResultCode,
+                SessionId,
+                Status,
+                Token,
+                Type,
+                UserId,
+                OrderNo,
+                PaymentOrderNo,
+                PublicNormalizePaymentReturnUrlPaymentProvider.NewValue(PaymentProvider),
+                ReturnUrl
+            );
+
             wrapper.PublicNormalizePaymentReturnUrl(operation);
             return String.Empty;
         }

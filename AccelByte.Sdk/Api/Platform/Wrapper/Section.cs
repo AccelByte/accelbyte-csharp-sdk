@@ -48,13 +48,13 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.PublicListActiveSections.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.SectionPagingSlicedResult? QuerySections(QuerySections input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -63,25 +63,26 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        
+
         public Model.FullSectionInfo<T1>? CreateSection<T1>(CreateSection input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PurgeExpiredSection(PurgeExpiredSection input) {
+        public void PurgeExpiredSection(PurgeExpiredSection input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -90,17 +91,17 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        
+
         public Model.FullSectionInfo<T1>? GetSection<T1>(GetSection input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -109,25 +110,26 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        
+
         public Model.FullSectionInfo<T1>? UpdateSection<T1>(UpdateSection input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteSection(DeleteSection input) {
+        public void DeleteSection(DeleteSection input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -136,17 +138,17 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        
+
         public List<Model.SectionInfo<T1, T2>>? PublicListActiveSections<T1, T2>(PublicListActiveSections input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1, T2>(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

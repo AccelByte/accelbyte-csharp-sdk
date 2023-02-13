@@ -188,39 +188,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeletePlaystationIAPConfig(op);
         }
-        public static Platform.Model.StadiaIAPConfigInfo? Execute(
-            this GetStadiaIAPConfig.GetStadiaIAPConfigBuilder builder,
-            string namespace_
-        )
-        {
-            GetStadiaIAPConfig op = builder.Build(
-                namespace_
-            );
-
-            return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetStadiaIAPConfig(op);
-        }
-        public static void Execute(
-            this DeleteStadiaIAPConfig.DeleteStadiaIAPConfigBuilder builder,
-            string namespace_
-        )
-        {
-            DeleteStadiaIAPConfig op = builder.Build(
-                namespace_
-            );
-
-            ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteStadiaIAPConfig(op);
-        }
-        public static Platform.Model.StadiaIAPConfigInfo? Execute(
-            this UpdateStadiaJsonConfigFile.UpdateStadiaJsonConfigFileBuilder builder,
-            string namespace_
-        )
-        {
-            UpdateStadiaJsonConfigFile op = builder.Build(
-                namespace_
-            );
-
-            return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateStadiaJsonConfigFile(op);
-        }
         public static Platform.Model.SteamIAPConfig? Execute(
             this GetSteamIAPConfig.GetSteamIAPConfigBuilder builder,
             string namespace_
@@ -447,19 +414,6 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicReconcilePlayStationStoreWithMultipleServiceLabels(op);
-        }
-        public static void Execute(
-            this SyncStadiaEntitlement.SyncStadiaEntitlementBuilder builder,
-            string namespace_,
-            string userId
-        )
-        {
-            SyncStadiaEntitlement op = builder.Build(
-                namespace_,
-                userId
-            );
-
-            ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncStadiaEntitlement(op);
         }
         public static void Execute(
             this SyncSteamInventory.SyncSteamInventoryBuilder builder,

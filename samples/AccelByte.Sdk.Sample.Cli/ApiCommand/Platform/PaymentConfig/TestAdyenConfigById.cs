@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","testadyenconfigbyid")]
-    public class TestAdyenConfigByIdCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "testadyenconfigbyid")]
+    public class TestAdyenConfigByIdCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "TestAdyenConfigById"; } }
+        public string OperationName { get { return "TestAdyenConfigById"; } }
 
         [SdkCommandArgument("id")]
         public string Id { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             TestAdyenConfigById operation = new TestAdyenConfigById(
-                Id,                
-                Sandbox                
-            );            
-            
+                Id,
+                Sandbox
+            );
+
             AccelByte.Sdk.Api.Platform.Model.TestResult? response = wrapper.TestAdyenConfigById(operation);
             if (response == null)
                 return "No response from server.";

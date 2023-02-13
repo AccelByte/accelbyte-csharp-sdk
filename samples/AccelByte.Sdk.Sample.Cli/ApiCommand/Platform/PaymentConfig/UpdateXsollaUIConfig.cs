@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updatexsollauiconfig")]
-    public class UpdateXsollaUIConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updatexsollauiconfig")]
+    public class UpdateXsollaUIConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateXsollaUIConfig"; } }
+        public string OperationName { get { return "UpdateXsollaUIConfig"; } }
 
         [SdkCommandArgument("id")]
         public string Id { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public XsollaPaywallConfigRequest Body { get; set; } = new XsollaPaywallConfigRequest();
-                
+
         public UpdateXsollaUIConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             UpdateXsollaUIConfig operation = new UpdateXsollaUIConfig(
-                Id,                
-                Body                
-            );            
-            
+                Id,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PaymentMerchantConfigInfo? response = wrapper.UpdateXsollaUIConfig(operation);
             if (response == null)
                 return "No response from server.";

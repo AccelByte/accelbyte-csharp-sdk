@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","bulkincuserstatitem")]
-    public class BulkIncUserStatItemCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "bulkincuserstatitem")]
+    public class BulkIncUserStatItemCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "BulkIncUserStatItem"; } }
+        public string OperationName { get { return "BulkIncUserStatItem"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public List<BulkUserStatItemInc> Body { get; set; } = new List<BulkUserStatItemInc>();
-                
+
         public BulkIncUserStatItemCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.UserStatistic wrapper = new AccelByte.Sdk.Api.Social.Wrapper.UserStatistic(_SDK);
 
             BulkIncUserStatItem operation = new BulkIncUserStatItem(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             List<AccelByte.Sdk.Api.Social.Model.BulkStatItemOperationResult>? response = wrapper.BulkIncUserStatItem(operation);
             if (response == null)
                 return "No response from server.";

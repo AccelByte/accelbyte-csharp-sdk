@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class EventlogUserInformation_OpExts
     {
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetUserActivitiesHandler.GetUserActivitiesHandlerBuilder builder,
             string namespace_,
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.UserInformation)builder.WrapperObject!).GetUserActivitiesHandler(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteUserActivitiesHandler.DeleteUserActivitiesHandlerBuilder builder,
             string namespace_,
@@ -42,7 +42,7 @@ namespace AccelByte.Sdk.Api
 
             ((Eventlog.Wrapper.UserInformation)builder.WrapperObject!).DeleteUserActivitiesHandler(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsUserLastActivity? Execute(
             this LastUserActivityTimeHandler.LastUserActivityTimeHandlerBuilder builder,
             string namespace_,

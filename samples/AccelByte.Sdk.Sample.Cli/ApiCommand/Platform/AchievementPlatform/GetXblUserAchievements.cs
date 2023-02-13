@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getxbluserachievements")]
-    public class GetXblUserAchievementsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getxbluserachievements")]
+    public class GetXblUserAchievementsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetXblUserAchievements"; } }
+        public string OperationName { get { return "GetXblUserAchievements"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.AchievementPlatform wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.AchievementPlatform(_SDK);
 
             GetXblUserAchievements operation = new GetXblUserAchievements(
-                Namespace,                
-                UserId,                
-                XboxUserId                
-            );            
-            
+                Namespace,
+                UserId,
+                XboxUserId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.ADTOObjectForQueryingXboxUserAchievements? response = wrapper.GetXblUserAchievements(operation);
             if (response == null)
                 return "No response from server.";

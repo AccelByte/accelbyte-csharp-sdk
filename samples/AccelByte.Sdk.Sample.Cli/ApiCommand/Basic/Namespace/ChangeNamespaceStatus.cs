@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic","changenamespacestatus")]
-    public class ChangeNamespaceStatusCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("basic", "changenamespacestatus")]
+    public class ChangeNamespaceStatusCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Basic"; } }
+        public string ServiceName { get { return "Basic"; } }
 
-        public string OperationName{ get { return "ChangeNamespaceStatus"; } }
+        public string OperationName { get { return "ChangeNamespaceStatus"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public NamespaceStatusUpdate Body { get; set; } = new NamespaceStatusUpdate();
-                
+
         public ChangeNamespaceStatusCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.Namespace wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.Namespace(_SDK);
 
             ChangeNamespaceStatus operation = new ChangeNamespaceStatus(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Basic.Model.NamespaceInfo? response = wrapper.ChangeNamespaceStatus(operation);
             if (response == null)
                 return "No response from server.";

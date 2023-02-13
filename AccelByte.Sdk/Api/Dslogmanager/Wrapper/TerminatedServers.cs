@@ -32,13 +32,13 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
             get { return Operation.CheckServerLogs.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsListTerminatedServersResponse? ListTerminatedServers(ListTerminatedServers input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -56,7 +56,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

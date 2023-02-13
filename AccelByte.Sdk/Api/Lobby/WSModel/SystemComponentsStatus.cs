@@ -16,6 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("components")]
         [JsonPropertyName("components")]
         public Dictionary<string, bool>? Components { get; set; }
-        
+
     }
 }

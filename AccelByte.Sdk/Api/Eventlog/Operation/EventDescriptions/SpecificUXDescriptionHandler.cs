@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     /// <summary>
     /// SpecificUXDescriptionHandler
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class SpecificUXDescriptionHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -59,29 +59,29 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         private SpecificUXDescriptionHandler(SpecificUXDescriptionHandlerBuilder builder
         )
         {
-            
-            if (builder.Ux is not null) QueryParams["ux"] = builder.Ux;
-            
 
-            
-            
-            
+            if (builder.Ux is not null) QueryParams["ux"] = builder.Ux;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public SpecificUXDescriptionHandler(
-            string? ux            
+            string? ux
         )
         {
-            
-            if (ux is not null) QueryParams["ux"] = ux;
-            
 
-            
-            
-            
+            if (ux is not null) QueryParams["ux"] = ux;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -90,15 +90,15 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsMultipleUX? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -111,9 +111,9 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsMultipleUX>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard","gethiddenusersv2")]
-    public class GetHiddenUsersV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard", "gethiddenusersv2")]
+    public class GetHiddenUsersV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Leaderboard"; } }
+        public string ServiceName { get { return "Leaderboard"; } }
 
-        public string OperationName{ get { return "GetHiddenUsersV2"; } }
+        public string OperationName { get { return "GetHiddenUsersV2"; } }
 
         [SdkCommandArgument("leaderboardCode")]
         public string LeaderboardCode { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.UserVisibility wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.UserVisibility(_SDK);
 
             GetHiddenUsersV2 operation = new GetHiddenUsersV2(
-                LeaderboardCode,                
-                Namespace,                
-                Limit,                
-                Offset                
-            );            
-            
+                LeaderboardCode,
+                Namespace,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsGetHiddenUserResponse? response = wrapper.GetHiddenUsersV2(operation);
             if (response == null)
                 return "No response from server.";

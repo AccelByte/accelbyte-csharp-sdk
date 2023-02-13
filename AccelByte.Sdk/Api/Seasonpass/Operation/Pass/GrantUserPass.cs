@@ -57,8 +57,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             )
             {
                 GrantUserPass op = new GrantUserPass(this,
-                    namespace_,                    
-                    userId                    
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -73,33 +73,33 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = builder.Body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GrantUserPass(
-            string namespace_,            
-            string userId,            
-            Model.UserPassGrant body            
+            string namespace_,
+            string userId,
+            Model.UserPassGrant body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -114,9 +114,9 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.UserSeasonSummary? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -129,9 +129,9 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             {
                 return JsonSerializer.Deserialize<Model.UserSeasonSummary>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session","joingamesession")]
-    public class JoinGameSessionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("session", "joingamesession")]
+    public class JoinGameSessionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Session"; } }
+        public string ServiceName { get { return "Session"; } }
 
-        public string OperationName{ get { return "JoinGameSession"; } }
+        public string OperationName { get { return "JoinGameSession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.GameSession wrapper = new AccelByte.Sdk.Api.Session.Wrapper.GameSession(_SDK);
 
             JoinGameSession operation = new JoinGameSession(
-                Namespace,                
-                SessionId                
-            );            
-            
+                Namespace,
+                SessionId
+            );
+
             AccelByte.Sdk.Api.Session.Model.ApimodelsGameSessionResponse? response = wrapper.JoinGameSession(operation);
             if (response == null)
                 return "No response from server.";

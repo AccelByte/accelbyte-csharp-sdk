@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session","deletegamesession")]
-    public class DeleteGameSessionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("session", "deletegamesession")]
+    public class DeleteGameSessionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Session"; } }
+        public string ServiceName { get { return "Session"; } }
 
-        public string OperationName{ get { return "DeleteGameSession"; } }
+        public string OperationName { get { return "DeleteGameSession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.GameSession wrapper = new AccelByte.Sdk.Api.Session.Wrapper.GameSession(_SDK);
 
             DeleteGameSession operation = new DeleteGameSession(
-                Namespace,                
-                SessionId                
-            );            
-            
+                Namespace,
+                SessionId
+            );
+
             wrapper.DeleteGameSession(operation);
             return String.Empty;
         }

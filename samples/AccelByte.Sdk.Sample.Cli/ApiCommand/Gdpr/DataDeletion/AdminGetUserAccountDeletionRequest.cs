@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Gdpr.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
 {
-    [SdkConsoleCommand("gdpr","admingetuseraccountdeletionrequest")]
-    public class AdminGetUserAccountDeletionRequestCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("gdpr", "admingetuseraccountdeletionrequest")]
+    public class AdminGetUserAccountDeletionRequestCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Gdpr"; } }
+        public string ServiceName { get { return "Gdpr"; } }
 
-        public string OperationName{ get { return "AdminGetUserAccountDeletionRequest"; } }
+        public string OperationName { get { return "AdminGetUserAccountDeletionRequest"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
             AccelByte.Sdk.Api.Gdpr.Wrapper.DataDeletion wrapper = new AccelByte.Sdk.Api.Gdpr.Wrapper.DataDeletion(_SDK);
 
             AdminGetUserAccountDeletionRequest operation = new AdminGetUserAccountDeletionRequest(
-                Namespace,                
-                UserId                
-            );            
-            
+                Namespace,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Gdpr.Model.ModelsDeletionData? response = wrapper.AdminGetUserAccountDeletionRequest(operation);
             if (response == null)
                 return "No response from server.";
