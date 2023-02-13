@@ -264,6 +264,31 @@ Or, if you need to validate permission and action, use following method.
 bool isValid = sdk.ValidateToken(accessTokenStr, permissionStr, actionInt);
 ```
 
+## Operation with Generic Response
+Since 0.28, C# Server SDK enable overloaded `ParseOperation` method with generic data type that applies to almost all operations with response model which has one or more object data type in it.
+For example:
+```csharp
+using AccelByte.Sdk.Api.Cloudsave.Model;
+using AccelByte.Sdk.Api.Cloudsave.Operation;
+
+GameRecordExample myGameRecord = new GameRecordExample()
+{
+    MyStatus = "ALIVE",
+    Location = "MOUNTAIN",
+    Character = new GameRecordExample.CharacterClass()
+    {
+        Name = "Character",
+        Strength = 10,
+        Agility = 15,
+        Intelligence = 20
+    }
+};
+
+ModelsGameRecordResponse<GameRecordExample>? response = sdk.Cloudsave.PublicGameRecord.PostGameRecordHandlerV1Op
+    .Execute<GameRecordExample>(myGameRecord, "test_record", sdk.Namespace);
+```
+The list of which endpoints that support it can be found in [here](docs/operations/)
+
 ## Samples
 
 See common use cases [here](docs/common_use_cases.md).
