@@ -1,3 +1,9 @@
+<a name="v0.28.0"></a>
+## [v0.28.0]
+- Changed operation's static var for builder object to static property.
+- Added new generic method for operation that has response with object data type in it.
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.27.0"></a>
 ## [v0.27.0]
 - Updated local OAuth Client token validation.
