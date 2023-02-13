@@ -5,6 +5,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using NUnit.Framework;
 
 using AccelByte.Sdk.Core;
@@ -71,10 +72,14 @@ namespace AccelByte.Sdk.Tests.Services
                 }, _Sdk.Namespace);
 
             #region Create a match rule set
-            ApiMatchRuleSet cRuleSetBody = new ApiMatchRuleSet()
+            ApiRuleSetPayload cRuleSetBody = new ApiRuleSetPayload()
             {
                 Name = rulesetName,
-                Data = "{\"alliance\":{\"minNumber\":\"2\",\"maxNumber\":\"10\",\"playerMinNumber\":\"2\",\"playerMaxNumber\":\"4\"},\"matchingRules\":[{\"attribute\":\"\",\"criteria\":\"distance\",\"reference\":\"\"}],\"flexingRules\":[{\"duration\":\"600\",\"attribute\":\"\",\"criteria\":\"distance\",\"reference\":\"\"}],\"match_options\":{\"options\":[{\"name\":\"\",\"type\":\"any\"}]},\"alliance_flexing_rule\":[{\"duration\":\"600\",\"min_number\":\"\",\"max_number\":\"\",\"player_min_number\":\"\",\"player_max_number\":\"\"}]}"
+                Data = new Dictionary<string, object>()
+                {
+                    {"param_1", 40},
+                    {"param_2", "A"}
+                }
             };
 
             _Sdk.Match2.RuleSets.CreateRuleSetOp
