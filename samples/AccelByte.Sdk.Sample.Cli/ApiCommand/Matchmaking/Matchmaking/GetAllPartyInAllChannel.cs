@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 Namespace                
             );            
             
-            Dictionary<string, object>? response = wrapper.GetAllPartyInAllChannel(operation);
+            Dictionary<string, List<AccelByte.Sdk.Api.Matchmaking.Model.ModelsMatchingParty>>? response = wrapper.GetAllPartyInAllChannel(operation);
             if (response == null)
                 return "No response from server.";
 
